@@ -5,23 +5,22 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SteeringPolicyPriorityAnswerData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SteeringPolicyPriorityAnswerData.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SteeringPolicyPriorityAnswerData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"answerCondition", "value"})
     public SteeringPolicyPriorityAnswerData(String answerCondition, Integer value) {
@@ -33,42 +32,40 @@ public final class SteeringPolicyPriorityAnswerData
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An expression that is used to select a set of answers that match a condition. For
-         * example, answers with matching pool properties.
-         */
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
         private String answerCondition;
 
         /**
-         * An expression that is used to select a set of answers that match a condition. For
-         * example, answers with matching pool properties.
+         * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
          *
          * @param answerCondition the value to set
          * @return this builder
-         */
+         **/
         public Builder answerCondition(String answerCondition) {
             this.answerCondition = answerCondition;
             this.__explicitlySet__.add("answerCondition");
             return this;
         }
         /**
-         * The rank assigned to the set of answers that match the expression in {@code
-         * answerCondition}. Answers with the lowest values move to the beginning of the list
-         * without changing the relative order of those with the same value. Answers can be given a
-         * value between {@code 0} and {@code 255}.
-         */
+         * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
+         * Answers with the lowest values move to the beginning of the list without changing the
+         * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
         /**
-         * The rank assigned to the set of answers that match the expression in {@code
-         * answerCondition}. Answers with the lowest values move to the beginning of the list
-         * without changing the relative order of those with the same value. Answers can be given a
-         * value between {@code 0} and {@code 255}.
+         * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
+         * Answers with the lowest values move to the beginning of the list without changing the
+         * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -99,7 +96,9 @@ public final class SteeringPolicyPriorityAnswerData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,18 +108,17 @@ public final class SteeringPolicyPriorityAnswerData
     }
 
     /**
-     * An expression that is used to select a set of answers that match a condition. For example,
-     * answers with matching pool properties.
-     */
+     * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
     private final String answerCondition;
 
     /**
-     * An expression that is used to select a set of answers that match a condition. For example,
-     * answers with matching pool properties.
+     * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
      *
      * @return the value
-     */
+     **/
     public String getAnswerCondition() {
         return answerCondition;
     }
@@ -128,20 +126,19 @@ public final class SteeringPolicyPriorityAnswerData
     /**
      * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
      * Answers with the lowest values move to the beginning of the list without changing the
-     * relative order of those with the same value. Answers can be given a value between {@code 0}
-     * and {@code 255}.
-     */
+     * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
     /**
      * The rank assigned to the set of answers that match the expression in {@code answerCondition}.
      * Answers with the lowest values move to the beginning of the list without changing the
-     * relative order of those with the same value. Answers can be given a value between {@code 0}
-     * and {@code 255}.
+     * relative order of those with the same value. Answers can be given a value between {@code 0} and {@code 255}.
      *
      * @return the value
-     */
+     **/
     public Integer getValue() {
         return value;
     }
@@ -153,7 +150,6 @@ public final class SteeringPolicyPriorityAnswerData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

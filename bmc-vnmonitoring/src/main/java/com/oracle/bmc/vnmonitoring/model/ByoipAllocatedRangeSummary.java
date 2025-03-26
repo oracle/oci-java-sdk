@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A summary of CIDR block subranges that are currently allocated to an IP pool. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * A summary of CIDR block subranges that are currently allocated to an IP pool.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ByoipAllocatedRangeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ByoipAllocatedRangeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ByoipAllocatedRangeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cidrBlock", "publicIpPoolId"})
     public ByoipAllocatedRangeSummary(String cidrBlock, String publicIpPoolId) {
@@ -33,38 +32,34 @@ public final class ByoipAllocatedRangeSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part
-         * of a BYOIP CIDR block.
-         */
+         * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
         /**
-         * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part
-         * of a BYOIP CIDR block.
-         *
+         * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
          * @param cidrBlock the value to set
          * @return this builder
-         */
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IP pool containing the CIDR block.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
         private String publicIpPoolId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IP pool containing the CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
          *
          * @param publicIpPoolId the value to set
          * @return this builder
-         */
+         **/
         public Builder publicIpPoolId(String publicIpPoolId) {
             this.publicIpPoolId = publicIpPoolId;
             this.__explicitlySet__.add("publicIpPoolId");
@@ -95,7 +90,9 @@ public final class ByoipAllocatedRangeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,35 +102,31 @@ public final class ByoipAllocatedRangeSummary
     }
 
     /**
-     * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of
-     * a BYOIP CIDR block.
-     */
+     * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
     /**
-     * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of
-     * a BYOIP CIDR block.
-     *
+     * The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
      * @return the value
-     */
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
-     * pool containing the CIDR block.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     private final String publicIpPoolId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
-     * pool containing the CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
      *
      * @return the value
-     */
+     **/
     public String getPublicIpPoolId() {
         return publicIpPoolId;
     }
@@ -145,7 +138,6 @@ public final class ByoipAllocatedRangeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

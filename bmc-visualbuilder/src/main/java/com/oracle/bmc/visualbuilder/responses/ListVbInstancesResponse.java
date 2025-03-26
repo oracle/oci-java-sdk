@@ -6,17 +6,20 @@ package com.oracle.bmc.visualbuilder.responses;
 
 import com.oracle.bmc.visualbuilder.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
      *
      * @return the value
      */
@@ -25,14 +28,13 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain
+     * For list pagination. When this header appears in the response, additional pages of results remain
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain
+     * For list pagination. When this header appears in the response, additional pages of results remain
      *
      * @return the value
      */
@@ -41,14 +43,13 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * have been previously returned
+     * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+     *
      */
     private String opcPreviousPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * have been previously returned
+     * For list pagination. When this header appears in the response, additional pages of results have been previously returned
      *
      * @return the value
      */
@@ -56,13 +57,14 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcPreviousPage;
     }
 
-    /** The returned {@code VbInstanceSummaryCollection} instance. */
+    /**
+     * The returned VbInstanceSummaryCollection instance.
+     */
     private com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
             vbInstanceSummaryCollection;
 
     /**
-     * The returned {@code VbInstanceSummaryCollection} instance.
-     *
+     * The returned VbInstanceSummaryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
@@ -80,7 +82,7 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private ListVbInstancesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPreviousPage,
@@ -93,33 +95,33 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
         this.vbInstanceSummaryCollection = vbInstanceSummaryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListVbInstancesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -130,14 +132,13 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain
+         * For list pagination. When this header appears in the response, additional pages of results remain
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain
+         * For list pagination. When this header appears in the response, additional pages of results remain
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -148,14 +149,13 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results have been previously returned
+         * For list pagination. When this header appears in the response, additional pages of results have been previously returned
+         *
          */
         private String opcPreviousPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results have been previously returned
+         * For list pagination. When this header appears in the response, additional pages of results have been previously returned
          *
          * @param opcPreviousPage the value to set
          * @return this builder
@@ -165,13 +165,14 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned {@code VbInstanceSummaryCollection} instance. */
+        /**
+         * The returned VbInstanceSummaryCollection instance.
+         */
         private com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
                 vbInstanceSummaryCollection;
 
         /**
-         * The returned {@code VbInstanceSummaryCollection} instance.
-         *
+         * The returned VbInstanceSummaryCollection instance.
          * @param vbInstanceSummaryCollection the value to set
          * @return this builder
          */
@@ -184,10 +185,8 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListVbInstancesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -201,10 +200,8 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListVbInstancesResponse build() {
             return new ListVbInstancesResponse(
                     __httpStatusCode__,
@@ -218,7 +215,6 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

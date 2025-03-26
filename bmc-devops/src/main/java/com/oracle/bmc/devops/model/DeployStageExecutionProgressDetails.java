@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details about stage execution for each target environment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Details about stage execution for each target environment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeployStageExecutionProgressDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeployStageExecutionProgressDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeployStageExecutionProgressDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetId", "targetGroup", "steps", "rollbackSteps"})
     public DeployStageExecutionProgressDetails(
@@ -40,65 +39,63 @@ public final class DeployStageExecutionProgressDetails
     public static class Builder {
         /**
          * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
         /**
-         * Group for the target environment for example, the batch number for an Instance Group
-         * deployment.
-         */
+         * Group for the target environment for example, the batch number for an Instance Group deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetGroup")
         private String targetGroup;
 
         /**
-         * Group for the target environment for example, the batch number for an Instance Group
-         * deployment.
-         *
+         * Group for the target environment for example, the batch number for an Instance Group deployment.
          * @param targetGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder targetGroup(String targetGroup) {
             this.targetGroup = targetGroup;
             this.__explicitlySet__.add("targetGroup");
             return this;
         }
-        /** Details about all the steps for one target environment. */
+        /**
+         * Details about all the steps for one target environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<DeployStageExecutionStep> steps;
 
         /**
          * Details about all the steps for one target environment.
-         *
          * @param steps the value to set
          * @return this builder
-         */
+         **/
         public Builder steps(java.util.List<DeployStageExecutionStep> steps) {
             this.steps = steps;
             this.__explicitlySet__.add("steps");
             return this;
         }
-        /** Details about all the rollback steps for one target environment. */
+        /**
+         * Details about all the rollback steps for one target environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rollbackSteps")
         private java.util.List<DeployStageExecutionStep> rollbackSteps;
 
         /**
          * Details about all the rollback steps for one target environment.
-         *
          * @param rollbackSteps the value to set
          * @return this builder
-         */
+         **/
         public Builder rollbackSteps(java.util.List<DeployStageExecutionStep> rollbackSteps) {
             this.rollbackSteps = rollbackSteps;
             this.__explicitlySet__.add("rollbackSteps");
@@ -136,7 +133,9 @@ public final class DeployStageExecutionProgressDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,58 +144,58 @@ public final class DeployStageExecutionProgressDetails
         return new Builder().copy(this);
     }
 
-    /** The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID. */
+    /**
+     * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
     /**
-     * Group for the target environment for example, the batch number for an Instance Group
-     * deployment.
-     */
+     * Group for the target environment for example, the batch number for an Instance Group deployment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetGroup")
     private final String targetGroup;
 
     /**
-     * Group for the target environment for example, the batch number for an Instance Group
-     * deployment.
-     *
+     * Group for the target environment for example, the batch number for an Instance Group deployment.
      * @return the value
-     */
+     **/
     public String getTargetGroup() {
         return targetGroup;
     }
 
-    /** Details about all the steps for one target environment. */
+    /**
+     * Details about all the steps for one target environment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<DeployStageExecutionStep> steps;
 
     /**
      * Details about all the steps for one target environment.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DeployStageExecutionStep> getSteps() {
         return steps;
     }
 
-    /** Details about all the rollback steps for one target environment. */
+    /**
+     * Details about all the rollback steps for one target environment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rollbackSteps")
     private final java.util.List<DeployStageExecutionStep> rollbackSteps;
 
     /**
      * Details about all the rollback steps for one target environment.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DeployStageExecutionStep> getRollbackSteps() {
         return rollbackSteps;
     }
@@ -208,7 +207,6 @@ public final class DeployStageExecutionProgressDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,19 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The protection rule settings. Protection rules can allow, block, or trigger an alert if a request
- * meets the parameters of an applied rule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+ * The protection rule settings. Protection rules can allow, block, or trigger an alert if a request meets the parameters of an applied rule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProtectionRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProtectionRule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProtectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -52,86 +48,81 @@ public final class ProtectionRule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique key of the protection rule. */
+        /**
+         * The unique key of the protection rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The unique key of the protection rule.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * The list of the ModSecurity rule IDs that apply to this protection rule. For more
-         * information about ModSecurity's open source WAF rules, see [Mod Security's
-         * documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-         */
+         * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modSecurityRuleIds")
         private java.util.List<String> modSecurityRuleIds;
 
         /**
-         * The list of the ModSecurity rule IDs that apply to this protection rule. For more
-         * information about ModSecurity's open source WAF rules, see [Mod Security's
-         * documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-         *
+         * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
          * @param modSecurityRuleIds the value to set
          * @return this builder
-         */
+         **/
         public Builder modSecurityRuleIds(java.util.List<String> modSecurityRuleIds) {
             this.modSecurityRuleIds = modSecurityRuleIds;
             this.__explicitlySet__.add("modSecurityRuleIds");
             return this;
         }
-        /** The name of the protection rule. */
+        /**
+         * The name of the protection rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the protection rule.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The description of the protection rule. */
+        /**
+         * The description of the protection rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the protection rule.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The action to take when the traffic is detected as malicious. If unspecified, defaults to
-         * {@code OFF}.
-         */
+         * The action to take when the traffic is detected as malicious. If unspecified, defaults to {@code OFF}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
-         * The action to take when the traffic is detected as malicious. If unspecified, defaults to
-         * {@code OFF}.
-         *
+         * The action to take when the traffic is detected as malicious. If unspecified, defaults to {@code OFF}.
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -139,22 +130,19 @@ public final class ProtectionRule
         }
         /**
          * The list of labels for the protection rule.
-         *
-         * <p>*Note:** Protection rules with a {@code ResponseBody} label will have no effect unless
-         * {@code isResponseInspected} is true.
-         */
+         * <p>
+         **Note:** Protection rules with a {@code ResponseBody} label will have no effect unless {@code isResponseInspected} is true.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
          * The list of labels for the protection rule.
-         *
-         * <p>*Note:** Protection rules with a {@code ResponseBody} label will have no effect unless
-         * {@code isResponseInspected} is true.
-         *
+         * <p>
+         **Note:** Protection rules with a {@code ResponseBody} label will have no effect unless {@code isResponseInspected} is true.
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -216,7 +204,9 @@ public final class ProtectionRule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,76 +215,73 @@ public final class ProtectionRule
         return new Builder().copy(this);
     }
 
-    /** The unique key of the protection rule. */
+    /**
+     * The unique key of the protection rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The unique key of the protection rule.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * The list of the ModSecurity rule IDs that apply to this protection rule. For more information
-     * about ModSecurity's open source WAF rules, see [Mod Security's
-     * documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-     */
+     * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modSecurityRuleIds")
     private final java.util.List<String> modSecurityRuleIds;
 
     /**
-     * The list of the ModSecurity rule IDs that apply to this protection rule. For more information
-     * about ModSecurity's open source WAF rules, see [Mod Security's
-     * documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-     *
+     * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      * @return the value
-     */
+     **/
     public java.util.List<String> getModSecurityRuleIds() {
         return modSecurityRuleIds;
     }
 
-    /** The name of the protection rule. */
+    /**
+     * The name of the protection rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the protection rule.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The description of the protection rule. */
+    /**
+     * The description of the protection rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the protection rule.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The action to take when the traffic is detected as malicious. If unspecified, defaults to
-     * {@code OFF}.
-     */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+     * The action to take when the traffic is detected as malicious. If unspecified, defaults to {@code OFF}.
+     **/
+    public enum Action {
         Off("OFF"),
         Detect("DETECT"),
         Block("BLOCK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -333,39 +320,33 @@ public final class ProtectionRule
         }
     };
     /**
-     * The action to take when the traffic is detected as malicious. If unspecified, defaults to
-     * {@code OFF}.
-     */
+     * The action to take when the traffic is detected as malicious. If unspecified, defaults to {@code OFF}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
-     * The action to take when the traffic is detected as malicious. If unspecified, defaults to
-     * {@code OFF}.
-     *
+     * The action to take when the traffic is detected as malicious. If unspecified, defaults to {@code OFF}.
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
 
     /**
      * The list of labels for the protection rule.
-     *
-     * <p>*Note:** Protection rules with a {@code ResponseBody} label will have no effect unless
-     * {@code isResponseInspected} is true.
-     */
+     * <p>
+     **Note:** Protection rules with a {@code ResponseBody} label will have no effect unless {@code isResponseInspected} is true.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
      * The list of labels for the protection rule.
-     *
-     * <p>*Note:** Protection rules with a {@code ResponseBody} label will have no effect unless
-     * {@code isResponseInspected} is true.
-     *
+     * <p>
+     **Note:** Protection rules with a {@code ResponseBody} label will have no effect unless {@code isResponseInspected} is true.
      * @return the value
-     */
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -384,7 +365,6 @@ public final class ProtectionRule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

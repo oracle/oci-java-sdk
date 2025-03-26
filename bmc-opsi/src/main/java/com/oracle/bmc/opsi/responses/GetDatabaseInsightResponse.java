@@ -6,9 +6,12 @@ package com.oracle.bmc.opsi.responses;
 
 import com.oracle.bmc.opsi.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned {@code DatabaseInsight} instance. */
+    /**
+     * The returned DatabaseInsight instance.
+     */
     private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
     /**
-     * The returned {@code DatabaseInsight} instance.
-     *
+     * The returned DatabaseInsight instance.
      * @return the value
      */
     public com.oracle.bmc.opsi.model.DatabaseInsight getDatabaseInsight() {
@@ -57,7 +62,7 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
     })
     private GetDatabaseInsightResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight) {
@@ -67,25 +72,25 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
         this.databaseInsight = databaseInsight;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetDatabaseInsightResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +105,15 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code DatabaseInsight} instance. */
+        /**
+         * The returned DatabaseInsight instance.
+         */
         private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
         /**
-         * The returned {@code DatabaseInsight} instance.
-         *
+         * The returned DatabaseInsight instance.
          * @param databaseInsight the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetDatabaseInsightResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetDatabaseInsightResponse build() {
             return new GetDatabaseInsightResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, databaseInsight);
@@ -161,7 +164,6 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

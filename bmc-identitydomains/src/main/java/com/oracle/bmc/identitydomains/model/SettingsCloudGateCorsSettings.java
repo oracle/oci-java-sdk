@@ -6,28 +6,33 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
- *
- * <p>*Added In:** 2011192329
- *
- * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
- * mutability: readWrite - required: false - returned: default - type: complex - uniqueness: none
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **Added In:** 2011192329
+ * <p>
+ **SCIM++ Properties:**
+ *  - caseExact: false
+ *  - idcsSearchable: false
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SettingsCloudGateCorsSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SettingsCloudGateCorsSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SettingsCloudGateCorsSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cloudGateCorsAllowNullOrigin",
@@ -54,26 +59,37 @@ public final class SettingsCloudGateCorsSettings
     public static class Builder {
         /**
          * Allow Null Origin (CORS) for this tenant.
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsAllowNullOrigin")
         private Boolean cloudGateCorsAllowNullOrigin;
 
         /**
          * Allow Null Origin (CORS) for this tenant.
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param cloudGateCorsAllowNullOrigin the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudGateCorsAllowNullOrigin(Boolean cloudGateCorsAllowNullOrigin) {
             this.cloudGateCorsAllowNullOrigin = cloudGateCorsAllowNullOrigin;
             this.__explicitlySet__.add("cloudGateCorsAllowNullOrigin");
@@ -81,26 +97,37 @@ public final class SettingsCloudGateCorsSettings
         }
         /**
          * Enable Cloud Gate Cross-Origin Resource Sharing (CORS) for this tenant.
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsEnabled")
         private Boolean cloudGateCorsEnabled;
 
         /**
          * Enable Cloud Gate Cross-Origin Resource Sharing (CORS) for this tenant.
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param cloudGateCorsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudGateCorsEnabled(Boolean cloudGateCorsEnabled) {
             this.cloudGateCorsEnabled = cloudGateCorsEnabled;
             this.__explicitlySet__.add("cloudGateCorsEnabled");
@@ -108,26 +135,37 @@ public final class SettingsCloudGateCorsSettings
         }
         /**
          * Cloud Gate Allowed Cross-Origin Resource Sharing (CORS) Origins for this tenant.
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsAllowedOrigins")
         private java.util.List<String> cloudGateCorsAllowedOrigins;
 
         /**
          * Cloud Gate Allowed Cross-Origin Resource Sharing (CORS) Origins for this tenant.
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param cloudGateCorsAllowedOrigins the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudGateCorsAllowedOrigins(
                 java.util.List<String> cloudGateCorsAllowedOrigins) {
             this.cloudGateCorsAllowedOrigins = cloudGateCorsAllowedOrigins;
@@ -136,55 +174,75 @@ public final class SettingsCloudGateCorsSettings
         }
         /**
          * Maximum number of seconds a CORS Pre-flight Response may be cached by client.
-         *
-         * <p>*Added In:** 2205182039
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2205182039
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsMaxAge")
         private Integer cloudGateCorsMaxAge;
 
         /**
          * Maximum number of seconds a CORS Pre-flight Response may be cached by client.
-         *
-         * <p>*Added In:** 2205182039
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2205182039
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param cloudGateCorsMaxAge the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudGateCorsMaxAge(Integer cloudGateCorsMaxAge) {
             this.cloudGateCorsMaxAge = cloudGateCorsMaxAge;
             this.__explicitlySet__.add("cloudGateCorsMaxAge");
             return this;
         }
         /**
-         * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header:
-         * Access-Control-Expose-Headers.
-         *
-         * <p>*Added In:** 2205182039
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header: Access-Control-Expose-Headers.
+         * <p>
+         **Added In:** 2205182039
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsExposedHeaders")
         private java.util.List<String> cloudGateCorsExposedHeaders;
 
         /**
-         * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header:
-         * Access-Control-Expose-Headers.
-         *
-         * <p>*Added In:** 2205182039
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header: Access-Control-Expose-Headers.
+         * <p>
+         **Added In:** 2205182039
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param cloudGateCorsExposedHeaders the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudGateCorsExposedHeaders(
                 java.util.List<String> cloudGateCorsExposedHeaders) {
             this.cloudGateCorsExposedHeaders = cloudGateCorsExposedHeaders;
@@ -230,7 +288,9 @@ public final class SettingsCloudGateCorsSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -241,127 +301,180 @@ public final class SettingsCloudGateCorsSettings
 
     /**
      * Allow Null Origin (CORS) for this tenant.
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsAllowNullOrigin")
     private final Boolean cloudGateCorsAllowNullOrigin;
 
     /**
      * Allow Null Origin (CORS) for this tenant.
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCloudGateCorsAllowNullOrigin() {
         return cloudGateCorsAllowNullOrigin;
     }
 
     /**
      * Enable Cloud Gate Cross-Origin Resource Sharing (CORS) for this tenant.
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsEnabled")
     private final Boolean cloudGateCorsEnabled;
 
     /**
      * Enable Cloud Gate Cross-Origin Resource Sharing (CORS) for this tenant.
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCloudGateCorsEnabled() {
         return cloudGateCorsEnabled;
     }
 
     /**
      * Cloud Gate Allowed Cross-Origin Resource Sharing (CORS) Origins for this tenant.
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsAllowedOrigins")
     private final java.util.List<String> cloudGateCorsAllowedOrigins;
 
     /**
      * Cloud Gate Allowed Cross-Origin Resource Sharing (CORS) Origins for this tenant.
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getCloudGateCorsAllowedOrigins() {
         return cloudGateCorsAllowedOrigins;
     }
 
     /**
      * Maximum number of seconds a CORS Pre-flight Response may be cached by client.
-     *
-     * <p>*Added In:** 2205182039
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2205182039
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsMaxAge")
     private final Integer cloudGateCorsMaxAge;
 
     /**
      * Maximum number of seconds a CORS Pre-flight Response may be cached by client.
-     *
-     * <p>*Added In:** 2205182039
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2205182039
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getCloudGateCorsMaxAge() {
         return cloudGateCorsMaxAge;
     }
 
     /**
-     * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header:
-     * Access-Control-Expose-Headers.
-     *
-     * <p>*Added In:** 2205182039
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header: Access-Control-Expose-Headers.
+     * <p>
+     **Added In:** 2205182039
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudGateCorsExposedHeaders")
     private final java.util.List<String> cloudGateCorsExposedHeaders;
 
     /**
-     * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header:
-     * Access-Control-Expose-Headers.
-     *
-     * <p>*Added In:** 2205182039
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * List of Response Headers Cloud Gate is allowed to expose in the CORS Response Header: Access-Control-Expose-Headers.
+     * <p>
+     **Added In:** 2205182039
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getCloudGateCorsExposedHeaders() {
         return cloudGateCorsExposedHeaders;
     }
@@ -373,7 +486,6 @@ public final class SettingsCloudGateCorsSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

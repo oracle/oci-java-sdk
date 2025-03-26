@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Kerberos Realm <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Kerberos Realm
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppExtensionKerberosRealmApp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppExtensionKerberosRealmApp.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppExtensionKerberosRealmApp
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "realmName",
@@ -54,99 +53,137 @@ public final class AppExtensionKerberosRealmApp
     public static class Builder {
         /**
          * The name of the Kerberos Realm that this App uses for authentication.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("realmName")
         private String realmName;
 
         /**
          * The name of the Kerberos Realm that this App uses for authentication.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param realmName the value to set
          * @return this builder
-         */
+         **/
         public Builder realmName(String realmName) {
             this.realmName = realmName;
             this.__explicitlySet__.add("realmName");
             return this;
         }
         /**
-         * The primary key that the system should use to encrypt artifacts that are specific to this
-         * Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readWrite - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterKey")
         private String masterKey;
 
         /**
-         * The primary key that the system should use to encrypt artifacts that are specific to this
-         * Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readWrite - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param masterKey the value to set
          * @return this builder
-         */
+         **/
         public Builder masterKey(String masterKey) {
             this.masterKey = masterKey;
             this.__explicitlySet__.add("masterKey");
             return this;
         }
         /**
-         * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this
-         * App unless another type of salt is specified.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         */
+         * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultEncryptionSaltType")
         private String defaultEncryptionSaltType;
 
         /**
-         * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this
-         * App unless another type of salt is specified.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         *
+         * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param defaultEncryptionSaltType the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultEncryptionSaltType(String defaultEncryptionSaltType) {
             this.defaultEncryptionSaltType = defaultEncryptionSaltType;
             this.__explicitlySet__.add("defaultEncryptionSaltType");
             return this;
         }
         /**
-         * The types of salt that are available for the system to use when encrypting
-         * Kerberos-specific artifacts for this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         */
+         * The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedEncryptionSaltTypes")
         private java.util.List<String> supportedEncryptionSaltTypes;
 
         /**
-         * The types of salt that are available for the system to use when encrypting
-         * Kerberos-specific artifacts for this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         *
+         * The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param supportedEncryptionSaltTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedEncryptionSaltTypes(
                 java.util.List<String> supportedEncryptionSaltTypes) {
             this.supportedEncryptionSaltTypes = supportedEncryptionSaltTypes;
@@ -155,22 +192,33 @@ public final class AppExtensionKerberosRealmApp
         }
         /**
          * Ticket Flags
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ticketFlags")
         private Integer ticketFlags;
 
         /**
          * Ticket Flags
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param ticketFlags the value to set
          * @return this builder
-         */
+         **/
         public Builder ticketFlags(Integer ticketFlags) {
             this.ticketFlags = ticketFlags;
             this.__explicitlySet__.add("ticketFlags");
@@ -178,22 +226,33 @@ public final class AppExtensionKerberosRealmApp
         }
         /**
          * Max Ticket Life in seconds
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTicketLife")
         private Integer maxTicketLife;
 
         /**
          * Max Ticket Life in seconds
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxTicketLife the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTicketLife(Integer maxTicketLife) {
             this.maxTicketLife = maxTicketLife;
             this.__explicitlySet__.add("maxTicketLife");
@@ -201,22 +260,33 @@ public final class AppExtensionKerberosRealmApp
         }
         /**
          * Max Renewable Age in seconds
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxRenewableAge")
         private Integer maxRenewableAge;
 
         /**
          * Max Renewable Age in seconds
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxRenewableAge the value to set
          * @return this builder
-         */
+         **/
         public Builder maxRenewableAge(Integer maxRenewableAge) {
             this.maxRenewableAge = maxRenewableAge;
             this.__explicitlySet__.add("maxRenewableAge");
@@ -269,7 +339,9 @@ public final class AppExtensionKerberosRealmApp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -280,153 +352,226 @@ public final class AppExtensionKerberosRealmApp
 
     /**
      * The name of the Kerberos Realm that this App uses for authentication.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("realmName")
     private final String realmName;
 
     /**
      * The name of the Kerberos Realm that this App uses for authentication.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRealmName() {
         return realmName;
     }
 
     /**
-     * The primary key that the system should use to encrypt artifacts that are specific to this
-     * Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readWrite - required: false - returned: request - type: string - uniqueness: none
-     */
+     * The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterKey")
     private final String masterKey;
 
     /**
-     * The primary key that the system should use to encrypt artifacts that are specific to this
-     * Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readWrite - required: false - returned: request - type: string - uniqueness: none
-     *
+     * The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMasterKey() {
         return masterKey;
     }
 
     /**
-     * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App
-     * unless another type of salt is specified.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
+     * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultEncryptionSaltType")
     private final String defaultEncryptionSaltType;
 
     /**
-     * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App
-     * unless another type of salt is specified.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     *
+     * The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDefaultEncryptionSaltType() {
         return defaultEncryptionSaltType;
     }
 
     /**
-     * The types of salt that are available for the system to use when encrypting Kerberos-specific
-     * artifacts for this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
+     * The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedEncryptionSaltTypes")
     private final java.util.List<String> supportedEncryptionSaltTypes;
 
     /**
-     * The types of salt that are available for the system to use when encrypting Kerberos-specific
-     * artifacts for this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     *
+     * The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getSupportedEncryptionSaltTypes() {
         return supportedEncryptionSaltTypes;
     }
 
     /**
      * Ticket Flags
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ticketFlags")
     private final Integer ticketFlags;
 
     /**
      * Ticket Flags
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getTicketFlags() {
         return ticketFlags;
     }
 
     /**
      * Max Ticket Life in seconds
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTicketLife")
     private final Integer maxTicketLife;
 
     /**
      * Max Ticket Life in seconds
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxTicketLife() {
         return maxTicketLife;
     }
 
     /**
      * Max Renewable Age in seconds
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxRenewableAge")
     private final Integer maxRenewableAge;
 
     /**
      * Max Renewable Age in seconds
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxRenewableAge() {
         return maxRenewableAge;
     }
@@ -438,7 +583,6 @@ public final class AppExtensionKerberosRealmApp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

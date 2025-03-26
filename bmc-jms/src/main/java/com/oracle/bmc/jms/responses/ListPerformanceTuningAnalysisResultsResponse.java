@@ -6,18 +6,19 @@ package com.oracle.bmc.jms.responses;
 
 import com.oracle.bmc.jms.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListPerformanceTuningAnalysisResultsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
      *
      * @return the value
      */
@@ -26,18 +27,17 @@ public class ListPerformanceTuningAnalysisResultsResponse
     }
 
     /**
-     * For list pagination, when this header appears in the response, additional pages of results
-     * remain. Include this value as the {@code page} parameter for the subsequent GET request to
-     * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination, when this header appears in the response, additional pages of results remain.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination, when this header appears in the response, additional pages of results
-     * remain. Include this value as the {@code page} parameter for the subsequent GET request to
-     * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination, when this header appears in the response, additional pages of results remain.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -45,13 +45,14 @@ public class ListPerformanceTuningAnalysisResultsResponse
         return opcNextPage;
     }
 
-    /** The returned {@code PerformanceTuningAnalysisResultCollection} instance. */
+    /**
+     * The returned PerformanceTuningAnalysisResultCollection instance.
+     */
     private com.oracle.bmc.jms.model.PerformanceTuningAnalysisResultCollection
             performanceTuningAnalysisResultCollection;
 
     /**
-     * The returned {@code PerformanceTuningAnalysisResultCollection} instance.
-     *
+     * The returned PerformanceTuningAnalysisResultCollection instance.
      * @return the value
      */
     public com.oracle.bmc.jms.model.PerformanceTuningAnalysisResultCollection
@@ -68,7 +69,7 @@ public class ListPerformanceTuningAnalysisResultsResponse
     })
     private ListPerformanceTuningAnalysisResultsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.jms.model.PerformanceTuningAnalysisResultCollection
@@ -79,34 +80,31 @@ public class ListPerformanceTuningAnalysisResultsResponse
         this.performanceTuningAnalysisResultCollection = performanceTuningAnalysisResultCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListPerformanceTuningAnalysisResultsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,20 +115,17 @@ public class ListPerformanceTuningAnalysisResultsResponse
         }
 
         /**
-         * For list pagination, when this header appears in the response, additional pages of
-         * results remain. Include this value as the {@code page} parameter for the subsequent GET
-         * request to get the next batch of items. For important details about how pagination works,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination, when this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination, when this header appears in the response, additional pages of
-         * results remain. Include this value as the {@code page} parameter for the subsequent GET
-         * request to get the next batch of items. For important details about how pagination works,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination, when this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -140,13 +135,14 @@ public class ListPerformanceTuningAnalysisResultsResponse
             return this;
         }
 
-        /** The returned {@code PerformanceTuningAnalysisResultCollection} instance. */
+        /**
+         * The returned PerformanceTuningAnalysisResultCollection instance.
+         */
         private com.oracle.bmc.jms.model.PerformanceTuningAnalysisResultCollection
                 performanceTuningAnalysisResultCollection;
 
         /**
-         * The returned {@code PerformanceTuningAnalysisResultCollection} instance.
-         *
+         * The returned PerformanceTuningAnalysisResultCollection instance.
          * @param performanceTuningAnalysisResultCollection the value to set
          * @return this builder
          */
@@ -160,10 +156,8 @@ public class ListPerformanceTuningAnalysisResultsResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListPerformanceTuningAnalysisResultsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -177,10 +171,8 @@ public class ListPerformanceTuningAnalysisResultsResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListPerformanceTuningAnalysisResultsResponse build() {
             return new ListPerformanceTuningAnalysisResultsResponse(
                     __httpStatusCode__,
@@ -193,7 +185,6 @@ public class ListPerformanceTuningAnalysisResultsResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

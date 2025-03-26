@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of parameter type values for training a skill. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum TrainSkillParameterType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of parameter type values for training a skill.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum TrainSkillParameterType {
     QueryEntity("QUERY_ENTITY"),
     ;
 

@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of a maintenance run history. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of a maintenance run history.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaintenanceRunHistory.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MaintenanceRunHistory.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaintenanceRunHistory
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -46,16 +46,17 @@ public final class MaintenanceRunHistory
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the maintenance run history. */
+        /**
+         * The OCID of the maintenance run history.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the maintenance run history.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -70,47 +71,50 @@ public final class MaintenanceRunHistory
             this.__explicitlySet__.add("maintenanceRunDetails");
             return this;
         }
-        /** List of database server history details. */
+        /**
+         * List of database server history details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServersHistoryDetails")
         private java.util.List<DbServerHistorySummary> dbServersHistoryDetails;
 
         /**
          * List of database server history details.
-         *
          * @param dbServersHistoryDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder dbServersHistoryDetails(
                 java.util.List<DbServerHistorySummary> dbServersHistoryDetails) {
             this.dbServersHistoryDetails = dbServersHistoryDetails;
             this.__explicitlySet__.add("dbServersHistoryDetails");
             return this;
         }
-        /** The OCID of the current execution window. */
+        /**
+         * The OCID of the current execution window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentExecutionWindow")
         private String currentExecutionWindow;
 
         /**
          * The OCID of the current execution window.
-         *
          * @param currentExecutionWindow the value to set
          * @return this builder
-         */
+         **/
         public Builder currentExecutionWindow(String currentExecutionWindow) {
             this.currentExecutionWindow = currentExecutionWindow;
             this.__explicitlySet__.add("currentExecutionWindow");
             return this;
         }
-        /** The list of granular maintenance history details. */
+        /**
+         * The list of granular maintenance history details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("granularMaintenanceHistory")
         private java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory;
 
         /**
          * The list of granular maintenance history details.
-         *
          * @param granularMaintenanceHistory the value to set
          * @return this builder
-         */
+         **/
         public Builder granularMaintenanceHistory(
                 java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory) {
             this.granularMaintenanceHistory = granularMaintenanceHistory;
@@ -156,7 +160,9 @@ public final class MaintenanceRunHistory
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,15 +171,16 @@ public final class MaintenanceRunHistory
         return new Builder().copy(this);
     }
 
-    /** The OCID of the maintenance run history. */
+    /**
+     * The OCID of the maintenance run history.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the maintenance run history.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
@@ -185,41 +192,44 @@ public final class MaintenanceRunHistory
         return maintenanceRunDetails;
     }
 
-    /** List of database server history details. */
+    /**
+     * List of database server history details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbServersHistoryDetails")
     private final java.util.List<DbServerHistorySummary> dbServersHistoryDetails;
 
     /**
      * List of database server history details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DbServerHistorySummary> getDbServersHistoryDetails() {
         return dbServersHistoryDetails;
     }
 
-    /** The OCID of the current execution window. */
+    /**
+     * The OCID of the current execution window.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentExecutionWindow")
     private final String currentExecutionWindow;
 
     /**
      * The OCID of the current execution window.
-     *
      * @return the value
-     */
+     **/
     public String getCurrentExecutionWindow() {
         return currentExecutionWindow;
     }
 
-    /** The list of granular maintenance history details. */
+    /**
+     * The list of granular maintenance history details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("granularMaintenanceHistory")
     private final java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory;
 
     /**
      * The list of granular maintenance history details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<GranularMaintenanceHistoryDetails> getGranularMaintenanceHistory() {
         return granularMaintenanceHistory;
     }
@@ -231,7 +241,6 @@ public final class MaintenanceRunHistory
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

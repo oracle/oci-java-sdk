@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The scope of analytics data. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The scope of analytics data.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FindingAnalyticsDimensions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FindingAnalyticsDimensions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FindingAnalyticsDimensions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -50,104 +49,108 @@ public final class FindingAnalyticsDimensions
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Each finding in security assessment has an associated key (think of key as a finding's
-         * name). For a given finding, the key will be the same across targets. The user can use
-         * these keys to filter the findings.
-         */
+         * Each finding in security assessment has an associated key (think of key as a finding's name).
+         * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Each finding in security assessment has an associated key (think of key as a finding's
-         * name). For a given finding, the key will be the same across targets. The user can use
-         * these keys to filter the findings.
+         * Each finding in security assessment has an associated key (think of key as a finding's name).
+         * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The category of the top finding. */
+        /**
+         * The category of the top finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topFindingCategory")
         private String topFindingCategory;
 
         /**
          * The category of the top finding.
-         *
          * @param topFindingCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder topFindingCategory(String topFindingCategory) {
             this.topFindingCategory = topFindingCategory;
             this.__explicitlySet__.add("topFindingCategory");
             return this;
         }
-        /** The short title of the finding. */
+        /**
+         * The short title of the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
          * The short title of the finding.
-         *
          * @param title the value to set
          * @return this builder
-         */
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
         /**
-         * The status of the top finding. All findings will have "severity" to indicate the risk
-         * level, but only top findings will have "status". Possible status: Pass / Risk (Low,
-         * Medium, High)/ Evaluate / Advisory / Deferred Instead of having "Low, Medium, High" in
-         * severity, "Risk" will include these three situations in status.
-         */
+         * The status of the top finding.
+         * All findings will have "severity" to indicate the risk level, but only top findings will have "status".
+         * Possible status: Pass / Risk (Low, Medium, High)/ Evaluate / Advisory / Deferred
+         * Instead of having "Low, Medium, High" in severity, "Risk" will include these three situations in status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topFindingStatus")
         private TopFindingStatus topFindingStatus;
 
         /**
-         * The status of the top finding. All findings will have "severity" to indicate the risk
-         * level, but only top findings will have "status". Possible status: Pass / Risk (Low,
-         * Medium, High)/ Evaluate / Advisory / Deferred Instead of having "Low, Medium, High" in
-         * severity, "Risk" will include these three situations in status.
+         * The status of the top finding.
+         * All findings will have "severity" to indicate the risk level, but only top findings will have "status".
+         * Possible status: Pass / Risk (Low, Medium, High)/ Evaluate / Advisory / Deferred
+         * Instead of having "Low, Medium, High" in severity, "Risk" will include these three situations in status.
          *
          * @param topFindingStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder topFindingStatus(TopFindingStatus topFindingStatus) {
             this.topFindingStatus = topFindingStatus;
             this.__explicitlySet__.add("topFindingStatus");
             return this;
         }
-        /** The severity (risk level) of the finding. */
+        /**
+         * The severity (risk level) of the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
          * The severity (risk level) of the finding.
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** The OCID of the target database. */
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
@@ -196,7 +199,9 @@ public final class FindingAnalyticsDimensions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,56 +212,58 @@ public final class FindingAnalyticsDimensions
 
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name).
-     * For a given finding, the key will be the same across targets. The user can use these keys to
-     * filter the findings.
-     */
+     * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name).
-     * For a given finding, the key will be the same across targets. The user can use these keys to
-     * filter the findings.
+     * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The category of the top finding. */
+    /**
+     * The category of the top finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topFindingCategory")
     private final String topFindingCategory;
 
     /**
      * The category of the top finding.
-     *
      * @return the value
-     */
+     **/
     public String getTopFindingCategory() {
         return topFindingCategory;
     }
 
-    /** The short title of the finding. */
+    /**
+     * The short title of the finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
      * The short title of the finding.
-     *
      * @return the value
-     */
+     **/
     public String getTitle() {
         return title;
     }
 
     /**
-     * The status of the top finding. All findings will have "severity" to indicate the risk level,
-     * but only top findings will have "status". Possible status: Pass / Risk (Low, Medium, High)/
-     * Evaluate / Advisory / Deferred Instead of having "Low, Medium, High" in severity, "Risk" will
-     * include these three situations in status.
-     */
-    public enum TopFindingStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * The status of the top finding.
+     * All findings will have "severity" to indicate the risk level, but only top findings will have "status".
+     * Possible status: Pass / Risk (Low, Medium, High)/ Evaluate / Advisory / Deferred
+     * Instead of having "Low, Medium, High" in severity, "Risk" will include these three situations in status.
+     *
+     **/
+    public enum TopFindingStatus {
         Risk("RISK"),
         Evaluate("EVALUATE"),
         Advisory("ADVISORY"),
@@ -264,8 +271,8 @@ public final class FindingAnalyticsDimensions
         Deferred("DEFERRED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -305,28 +312,31 @@ public final class FindingAnalyticsDimensions
         }
     };
     /**
-     * The status of the top finding. All findings will have "severity" to indicate the risk level,
-     * but only top findings will have "status". Possible status: Pass / Risk (Low, Medium, High)/
-     * Evaluate / Advisory / Deferred Instead of having "Low, Medium, High" in severity, "Risk" will
-     * include these three situations in status.
-     */
+     * The status of the top finding.
+     * All findings will have "severity" to indicate the risk level, but only top findings will have "status".
+     * Possible status: Pass / Risk (Low, Medium, High)/ Evaluate / Advisory / Deferred
+     * Instead of having "Low, Medium, High" in severity, "Risk" will include these three situations in status.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topFindingStatus")
     private final TopFindingStatus topFindingStatus;
 
     /**
-     * The status of the top finding. All findings will have "severity" to indicate the risk level,
-     * but only top findings will have "status". Possible status: Pass / Risk (Low, Medium, High)/
-     * Evaluate / Advisory / Deferred Instead of having "Low, Medium, High" in severity, "Risk" will
-     * include these three situations in status.
+     * The status of the top finding.
+     * All findings will have "severity" to indicate the risk level, but only top findings will have "status".
+     * Possible status: Pass / Risk (Low, Medium, High)/ Evaluate / Advisory / Deferred
+     * Instead of having "Low, Medium, High" in severity, "Risk" will include these three situations in status.
      *
      * @return the value
-     */
+     **/
     public TopFindingStatus getTopFindingStatus() {
         return topFindingStatus;
     }
 
-    /** The severity (risk level) of the finding. */
-    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The severity (risk level) of the finding.
+     **/
+    public enum Severity {
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
@@ -336,8 +346,8 @@ public final class FindingAnalyticsDimensions
         Deferred("DEFERRED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -376,28 +386,30 @@ public final class FindingAnalyticsDimensions
             return UnknownEnumValue;
         }
     };
-    /** The severity (risk level) of the finding. */
+    /**
+     * The severity (risk level) of the finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
      * The severity (risk level) of the finding.
-     *
      * @return the value
-     */
+     **/
     public Severity getSeverity() {
         return severity;
     }
 
-    /** The OCID of the target database. */
+    /**
+     * The OCID of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -409,7 +421,6 @@ public final class FindingAnalyticsDimensions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,12 +5,16 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Enum Representing various data types allowed for the custom property TEXT - String data type
- * RICH_TEXT - Rich text to hold long descriptions and formatted values NUMBER - Numeric Data type
- * BOOLEAN - Boolean type with allowed values of true or false DATE - Date data type
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum CustomPropertyDataType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Enum Representing various data types allowed for the custom property
+ * TEXT - String data type
+ * RICH_TEXT - Rich text to hold long descriptions and formatted values
+ * NUMBER - Numeric Data type
+ * BOOLEAN - Boolean type with allowed values of true or false
+ * DATE - Date data type
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum CustomPropertyDataType {
     Text("TEXT"),
     RichText("RICH_TEXT"),
     Boolean("BOOLEAN"),

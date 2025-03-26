@@ -6,179 +6,124 @@ package com.oracle.bmc.identitydomains.requests;
 
 import com.oracle.bmc.identitydomains.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutSelfRegistrationProfileExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * PutSelfRegistrationProfileRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutSelfRegistrationProfileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutSelfRegistrationProfileRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class PutSelfRegistrationProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identitydomains.model.SelfRegistrationProfile> {
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     private String selfRegistrationProfileId;
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     public String getSelfRegistrationProfileId() {
         return selfRegistrationProfileId;
     }
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     private String authorization;
 
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     public String getAuthorization() {
         return authorization;
     }
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     private String resourceTypeSchemaVersion;
 
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     public String getResourceTypeSchemaVersion() {
         return resourceTypeSchemaVersion;
     }
     /**
-     * A comma-delimited string that specifies the names of resource attributes that should be
-     * returned in the response. By default, a response that contains resource attributes contains
-     * only attributes that are defined in the schema for that resource type as returned=always or
-     * returned=default. An attribute that is defined as returned=request is returned in a response
-     * only if the request specifies its name in the value of this query parameter. If a request
-     * specifies this query parameter, the response contains the attributes that this query
-     * parameter specifies, as well as any attribute that is defined as returned=always.
+     * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
     private String attributes;
 
     /**
-     * A comma-delimited string that specifies the names of resource attributes that should be
-     * returned in the response. By default, a response that contains resource attributes contains
-     * only attributes that are defined in the schema for that resource type as returned=always or
-     * returned=default. An attribute that is defined as returned=request is returned in a response
-     * only if the request specifies its name in the value of this query parameter. If a request
-     * specifies this query parameter, the response contains the attributes that this query
-     * parameter specifies, as well as any attribute that is defined as returned=always.
+     * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
     public String getAttributes() {
         return attributes;
     }
     /**
-     * A multi-valued list of strings indicating the return type of attribute definition. The
-     * specified set of attributes can be fetched by the return type of the attribute. One or more
-     * values can be given together to fetch more than one group of attributes. If 'attributes'
-     * query parameter is also available, union of the two is fetched. Valid values - all, always,
-     * never, request, default. Values are case-insensitive.
+     * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
     private java.util.List<com.oracle.bmc.identitydomains.model.AttributeSets> attributeSets;
 
     /**
-     * A multi-valued list of strings indicating the return type of attribute definition. The
-     * specified set of attributes can be fetched by the return type of the attribute. One or more
-     * values can be given together to fetch more than one group of attributes. If 'attributes'
-     * query parameter is also available, union of the two is fetched. Valid values - all, always,
-     * never, request, default. Values are case-insensitive.
+     * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
     public java.util.List<com.oracle.bmc.identitydomains.model.AttributeSets> getAttributeSets() {
         return attributeSets;
     }
     /**
      * Replace the current instance of SelfRegistrationProfile with provided payload.
+     * <p>
+     * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+     * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+     *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+     *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+     *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+     * <p>
+     * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+     * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+     *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+     *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+     *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
      *
-     * <p>Before you specify an attribute-value in a request to replace a resource, please check the
-     * **'mutability'** property of that attribute in the resource-type schema below. Clicking on an
-     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute. -
-     * Your request to create, update or replace a resource may specify in its payload a value for
-     * any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
-     * *mutability:immutable*: - The SCIM APIs to create a resource will ignore silently any value
-     * that you specify for an attribute that is defined as *mutability:readOnly*. - The SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify a
-     * value for an attribute that is defined as *mutability:readOnly*. - Similarly, the SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify any
-     * value for an attribute that is defined as *mutability:immutable* and that already has a value
-     * in the specified resource.
-     *
-     * <p>Also, before you use the query-parameter attributes to request specific attributes, please
-     * check the **'returned'** property of that attribute in the resource-type schema below: - Your
-     * request to read a resource (or to search a resource-type) can specify as the value of
-     * attributes any attributes that are defined as *returned:default* or *returned:request* or
-     * *returned:always*: - If you request a specific set of attributes, the SCIM APIs to read a
-     * resource (or to search a resource-type) will return in each resource the set of attributes
-     * that you requested, as well as any attribute that is defined as *returned:always*. - If you
-     * do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a
-     * resource-type) will return in each resource the the set of attributes defined as
-     * *returned:default*, as well as any attribute that is defined as *returned:always*. - The SCIM
-     * APIs to read a resource (or to search a resource-type) will ignore silently any request to
-     * return an attribute that is defined as *returned:never*.
      */
     private com.oracle.bmc.identitydomains.model.SelfRegistrationProfile selfRegistrationProfile;
 
     /**
      * Replace the current instance of SelfRegistrationProfile with provided payload.
+     * <p>
+     * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+     * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+     *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+     *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+     *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+     * <p>
+     * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+     * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+     *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+     *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+     *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
      *
-     * <p>Before you specify an attribute-value in a request to replace a resource, please check the
-     * **'mutability'** property of that attribute in the resource-type schema below. Clicking on an
-     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute. -
-     * Your request to create, update or replace a resource may specify in its payload a value for
-     * any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
-     * *mutability:immutable*: - The SCIM APIs to create a resource will ignore silently any value
-     * that you specify for an attribute that is defined as *mutability:readOnly*. - The SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify a
-     * value for an attribute that is defined as *mutability:readOnly*. - Similarly, the SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify any
-     * value for an attribute that is defined as *mutability:immutable* and that already has a value
-     * in the specified resource.
-     *
-     * <p>Also, before you use the query-parameter attributes to request specific attributes, please
-     * check the **'returned'** property of that attribute in the resource-type schema below: - Your
-     * request to read a resource (or to search a resource-type) can specify as the value of
-     * attributes any attributes that are defined as *returned:default* or *returned:request* or
-     * *returned:always*: - If you request a specific set of attributes, the SCIM APIs to read a
-     * resource (or to search a resource-type) will return in each resource the set of attributes
-     * that you requested, as well as any attribute that is defined as *returned:always*. - If you
-     * do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a
-     * resource-type) will return in each resource the the set of attributes defined as
-     * *returned:default*, as well as any attribute that is defined as *returned:always*. - The SCIM
-     * APIs to read a resource (or to search a resource-type) will ignore silently any request to
-     * return an attribute that is defined as *returned:never*.
      */
     public com.oracle.bmc.identitydomains.model.SelfRegistrationProfile
             getSelfRegistrationProfile() {
         return selfRegistrationProfile;
     }
-    /** Used to make the request conditional on an ETag */
+    /**
+     * Used to make the request conditional on an ETag
+     */
     private String ifMatch;
 
-    /** Used to make the request conditional on an ETag */
+    /**
+     * Used to make the request conditional on an ETag
+     */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -186,7 +131,6 @@ public class PutSelfRegistrationProfileRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -199,15 +143,17 @@ public class PutSelfRegistrationProfileRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PutSelfRegistrationProfileRequest,
                     com.oracle.bmc.identitydomains.model.SelfRegistrationProfile> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the resource */
+        /**
+         * ID of the resource
+         */
         private String selfRegistrationProfileId = null;
 
         /**
          * ID of the resource
-         *
          * @param selfRegistrationProfileId the value to set
          * @return this builder instance
          */
@@ -217,15 +163,12 @@ public class PutSelfRegistrationProfileRequest
         }
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          */
         private String authorization = null;
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
-         *
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          * @param authorization the value to set
          * @return this builder instance
          */
@@ -235,23 +178,12 @@ public class PutSelfRegistrationProfileRequest
         }
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          */
         private String resourceTypeSchemaVersion = null;
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
-         *
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          * @param resourceTypeSchemaVersion the value to set
          * @return this builder instance
          */
@@ -261,27 +193,12 @@ public class PutSelfRegistrationProfileRequest
         }
 
         /**
-         * A comma-delimited string that specifies the names of resource attributes that should be
-         * returned in the response. By default, a response that contains resource attributes
-         * contains only attributes that are defined in the schema for that resource type as
-         * returned=always or returned=default. An attribute that is defined as returned=request is
-         * returned in a response only if the request specifies its name in the value of this query
-         * parameter. If a request specifies this query parameter, the response contains the
-         * attributes that this query parameter specifies, as well as any attribute that is defined
-         * as returned=always.
+         * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
          */
         private String attributes = null;
 
         /**
-         * A comma-delimited string that specifies the names of resource attributes that should be
-         * returned in the response. By default, a response that contains resource attributes
-         * contains only attributes that are defined in the schema for that resource type as
-         * returned=always or returned=default. An attribute that is defined as returned=request is
-         * returned in a response only if the request specifies its name in the value of this query
-         * parameter. If a request specifies this query parameter, the response contains the
-         * attributes that this query parameter specifies, as well as any attribute that is defined
-         * as returned=always.
-         *
+         * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
          * @param attributes the value to set
          * @return this builder instance
          */
@@ -291,22 +208,13 @@ public class PutSelfRegistrationProfileRequest
         }
 
         /**
-         * A multi-valued list of strings indicating the return type of attribute definition. The
-         * specified set of attributes can be fetched by the return type of the attribute. One or
-         * more values can be given together to fetch more than one group of attributes. If
-         * 'attributes' query parameter is also available, union of the two is fetched. Valid values
-         * - all, always, never, request, default. Values are case-insensitive.
+         * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
          */
         private java.util.List<com.oracle.bmc.identitydomains.model.AttributeSets> attributeSets =
                 null;
 
         /**
-         * A multi-valued list of strings indicating the return type of attribute definition. The
-         * specified set of attributes can be fetched by the return type of the attribute. One or
-         * more values can be given together to fetch more than one group of attributes. If
-         * 'attributes' query parameter is also available, union of the two is fetched. Valid values
-         * - all, always, never, request, default. Values are case-insensitive.
-         *
+         * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
          * @param attributeSets the value to set
          * @return this builder instance
          */
@@ -317,13 +225,7 @@ public class PutSelfRegistrationProfileRequest
         }
 
         /**
-         * Singular setter. A multi-valued list of strings indicating the return type of attribute
-         * definition. The specified set of attributes can be fetched by the return type of the
-         * attribute. One or more values can be given together to fetch more than one group of
-         * attributes. If 'attributes' query parameter is also available, union of the two is
-         * fetched. Valid values - all, always, never, request, default. Values are
-         * case-insensitive.
-         *
+         * Singular setter. A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -333,66 +235,37 @@ public class PutSelfRegistrationProfileRequest
 
         /**
          * Replace the current instance of SelfRegistrationProfile with provided payload.
+         * <p>
+         * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+         * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+         *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+         *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+         *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+         * <p>
+         * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+         * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+         *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+         *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+         *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
          *
-         * <p>Before you specify an attribute-value in a request to replace a resource, please check
-         * the **'mutability'** property of that attribute in the resource-type schema below.
-         * Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of
-         * that attribute. - Your request to create, update or replace a resource may specify in its
-         * payload a value for any attribute that is defined as *mutability:readWrite* or
-         * *mutability:writeOnly* or *mutability:immutable*: - The SCIM APIs to create a resource
-         * will ignore silently any value that you specify for an attribute that is defined as
-         * *mutability:readOnly*. - The SCIM APIs to update or replace a resource will fail with an
-         * error 400 Bad Request if you specify a value for an attribute that is defined as
-         * *mutability:readOnly*. - Similarly, the SCIM APIs to update or replace a resource will
-         * fail with an error 400 Bad Request if you specify any value for an attribute that is
-         * defined as *mutability:immutable* and that already has a value in the specified resource.
-         *
-         * <p>Also, before you use the query-parameter attributes to request specific attributes,
-         * please check the **'returned'** property of that attribute in the resource-type schema
-         * below: - Your request to read a resource (or to search a resource-type) can specify as
-         * the value of attributes any attributes that are defined as *returned:default* or
-         * *returned:request* or *returned:always*: - If you request a specific set of attributes,
-         * the SCIM APIs to read a resource (or to search a resource-type) will return in each
-         * resource the set of attributes that you requested, as well as any attribute that is
-         * defined as *returned:always*. - If you do not request a specific set of attributes, the
-         * SCIM APIs to read a resource (or to search a resource-type) will return in each resource
-         * the the set of attributes defined as *returned:default*, as well as any attribute that is
-         * defined as *returned:always*. - The SCIM APIs to read a resource (or to search a
-         * resource-type) will ignore silently any request to return an attribute that is defined as
-         * *returned:never*.
          */
         private com.oracle.bmc.identitydomains.model.SelfRegistrationProfile
                 selfRegistrationProfile = null;
 
         /**
          * Replace the current instance of SelfRegistrationProfile with provided payload.
-         *
-         * <p>Before you specify an attribute-value in a request to replace a resource, please check
-         * the **'mutability'** property of that attribute in the resource-type schema below.
-         * Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of
-         * that attribute. - Your request to create, update or replace a resource may specify in its
-         * payload a value for any attribute that is defined as *mutability:readWrite* or
-         * *mutability:writeOnly* or *mutability:immutable*: - The SCIM APIs to create a resource
-         * will ignore silently any value that you specify for an attribute that is defined as
-         * *mutability:readOnly*. - The SCIM APIs to update or replace a resource will fail with an
-         * error 400 Bad Request if you specify a value for an attribute that is defined as
-         * *mutability:readOnly*. - Similarly, the SCIM APIs to update or replace a resource will
-         * fail with an error 400 Bad Request if you specify any value for an attribute that is
-         * defined as *mutability:immutable* and that already has a value in the specified resource.
-         *
-         * <p>Also, before you use the query-parameter attributes to request specific attributes,
-         * please check the **'returned'** property of that attribute in the resource-type schema
-         * below: - Your request to read a resource (or to search a resource-type) can specify as
-         * the value of attributes any attributes that are defined as *returned:default* or
-         * *returned:request* or *returned:always*: - If you request a specific set of attributes,
-         * the SCIM APIs to read a resource (or to search a resource-type) will return in each
-         * resource the set of attributes that you requested, as well as any attribute that is
-         * defined as *returned:always*. - If you do not request a specific set of attributes, the
-         * SCIM APIs to read a resource (or to search a resource-type) will return in each resource
-         * the the set of attributes defined as *returned:default*, as well as any attribute that is
-         * defined as *returned:always*. - The SCIM APIs to read a resource (or to search a
-         * resource-type) will ignore silently any request to return an attribute that is defined as
-         * *returned:never*.
+         * <p>
+         * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+         * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+         *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+         *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+         *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+         * <p>
+         * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+         * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+         *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+         *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+         *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
          *
          * @param selfRegistrationProfile the value to set
          * @return this builder instance
@@ -404,12 +277,13 @@ public class PutSelfRegistrationProfileRequest
             return this;
         }
 
-        /** Used to make the request conditional on an ETag */
+        /**
+         * Used to make the request conditional on an ETag
+         */
         private String ifMatch = null;
 
         /**
          * Used to make the request conditional on an ETag
-         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -419,15 +293,12 @@ public class PutSelfRegistrationProfileRequest
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
-         *
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -438,19 +309,18 @@ public class PutSelfRegistrationProfileRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -462,7 +332,6 @@ public class PutSelfRegistrationProfileRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PutSelfRegistrationProfileRequest o) {
@@ -482,11 +351,10 @@ public class PutSelfRegistrationProfileRequest
         /**
          * Build the instance of PutSelfRegistrationProfileRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PutSelfRegistrationProfileRequest
          */
@@ -499,7 +367,6 @@ public class PutSelfRegistrationProfileRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -512,8 +379,7 @@ public class PutSelfRegistrationProfileRequest
         /**
          * Build the instance of PutSelfRegistrationProfileRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PutSelfRegistrationProfileRequest
@@ -529,15 +395,12 @@ public class PutSelfRegistrationProfileRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new PutSelfRegistrationProfileRequest(selfRegistrationProfileId, authorization,
-            // resourceTypeSchemaVersion, attributes, attributeSets, selfRegistrationProfile,
-            // ifMatch, opcRetryToken);
+            // new PutSelfRegistrationProfileRequest(selfRegistrationProfileId, authorization, resourceTypeSchemaVersion, attributes, attributeSets, selfRegistrationProfile, ifMatch, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -554,7 +417,6 @@ public class PutSelfRegistrationProfileRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

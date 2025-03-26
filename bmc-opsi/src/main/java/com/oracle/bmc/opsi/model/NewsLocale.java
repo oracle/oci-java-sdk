@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Supported languages for the news report. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum NewsLocale implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported languages for the news report.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum NewsLocale {
     En("EN"),
 
     /**

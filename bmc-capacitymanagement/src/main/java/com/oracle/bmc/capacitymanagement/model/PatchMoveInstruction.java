@@ -5,29 +5,29 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * An operation that "puts" values from elsewhere in the target, functionally equivalent to a single
- * add and then a remove. The first item of the selection is replaced, or created if the selection
- * is empty. NOT_FOUND exceptions in the selection are handled by creating the implied containing
- * structure. This operation fails if the {@code from} selection yields any exceptions, or if an
- * item is moved to any of its descendants. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * An operation that "puts" values from elsewhere in the target, functionally equivalent to a single add and then a remove.
+ * The first item of the selection is replaced, or created if the selection is empty.
+ * NOT_FOUND exceptions in the selection are handled by creating the implied containing structure.
+ * This operation fails if the {@code from} selection yields any exceptions, or if an item is moved to any of its descendants.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PatchMoveInstruction.Builder.class)
+    builder = PatchMoveInstruction.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "operation")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "operation"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PatchMoveInstruction extends PatchInstruction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -40,42 +40,38 @@ public final class PatchMoveInstruction extends PatchInstruction {
             return this;
         }
         /**
-         * The selection that is to be moved, with the same format and semantics as {@code
-         * selection}.
-         */
+         * The selection that is to be moved, with the same format and semantics as {@code selection}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("from")
         private String from;
 
         /**
-         * The selection that is to be moved, with the same format and semantics as {@code
-         * selection}.
-         *
+         * The selection that is to be moved, with the same format and semantics as {@code selection}.
          * @param from the value to set
          * @return this builder
-         */
+         **/
         public Builder from(String from) {
             this.from = from;
             this.__explicitlySet__.add("from");
             return this;
         }
         /**
-         * Where to insert the value in an array, relative to the first item in the selection. If
-         * there is no such item, then "BEFORE" specifies insertion at the first position in an
-         * array and "AFTER" specifies insertion at the last position. If the first item in the
-         * selection is not the child of an array, then this field has no effect.
-         */
+         * Where to insert the value in an array, relative to the first item in the selection.
+         * If there is no such item, then "BEFORE" specifies insertion at the first position in an array and "AFTER" specifies insertion at the last position.
+         * If the first item in the selection is not the child of an array, then this field has no effect.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Position position;
 
         /**
-         * Where to insert the value in an array, relative to the first item in the selection. If
-         * there is no such item, then "BEFORE" specifies insertion at the first position in an
-         * array and "AFTER" specifies insertion at the last position. If the first item in the
-         * selection is not the child of an array, then this field has no effect.
+         * Where to insert the value in an array, relative to the first item in the selection.
+         * If there is no such item, then "BEFORE" specifies insertion at the first position in an array and "AFTER" specifies insertion at the last position.
+         * If the first item in the selection is not the child of an array, then this field has no effect.
          *
          * @param position the value to set
          * @return this builder
-         */
+         **/
         public Builder position(Position position) {
             this.position = position;
             this.__explicitlySet__.add("position");
@@ -109,7 +105,9 @@ public final class PatchMoveInstruction extends PatchInstruction {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,26 +125,25 @@ public final class PatchMoveInstruction extends PatchInstruction {
 
     /**
      * The selection that is to be moved, with the same format and semantics as {@code selection}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("from")
     private final String from;
 
     /**
      * The selection that is to be moved, with the same format and semantics as {@code selection}.
-     *
      * @return the value
-     */
+     **/
     public String getFrom() {
         return from;
     }
 
     /**
-     * Where to insert the value in an array, relative to the first item in the selection. If there
-     * is no such item, then "BEFORE" specifies insertion at the first position in an array and
-     * "AFTER" specifies insertion at the last position. If the first item in the selection is not
-     * the child of an array, then this field has no effect.
-     */
-    public enum Position implements com.oracle.bmc.http.internal.BmcEnum {
+     * Where to insert the value in an array, relative to the first item in the selection.
+     * If there is no such item, then "BEFORE" specifies insertion at the first position in an array and "AFTER" specifies insertion at the last position.
+     * If the first item in the selection is not the child of an array, then this field has no effect.
+     *
+     **/
+    public enum Position {
         At("AT"),
         Before("BEFORE"),
         After("AFTER"),
@@ -180,22 +177,21 @@ public final class PatchMoveInstruction extends PatchInstruction {
         }
     };
     /**
-     * Where to insert the value in an array, relative to the first item in the selection. If there
-     * is no such item, then "BEFORE" specifies insertion at the first position in an array and
-     * "AFTER" specifies insertion at the last position. If the first item in the selection is not
-     * the child of an array, then this field has no effect.
-     */
+     * Where to insert the value in an array, relative to the first item in the selection.
+     * If there is no such item, then "BEFORE" specifies insertion at the first position in an array and "AFTER" specifies insertion at the last position.
+     * If the first item in the selection is not the child of an array, then this field has no effect.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Position position;
 
     /**
-     * Where to insert the value in an array, relative to the first item in the selection. If there
-     * is no such item, then "BEFORE" specifies insertion at the first position in an array and
-     * "AFTER" specifies insertion at the last position. If the first item in the selection is not
-     * the child of an array, then this field has no effect.
+     * Where to insert the value in an array, relative to the first item in the selection.
+     * If there is no such item, then "BEFORE" specifies insertion at the first position in an array and "AFTER" specifies insertion at the last position.
+     * If the first item in the selection is not the child of an array, then this field has no effect.
      *
      * @return the value
-     */
+     **/
     public Position getPosition() {
         return position;
     }
@@ -207,7 +203,6 @@ public final class PatchMoveInstruction extends PatchInstruction {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

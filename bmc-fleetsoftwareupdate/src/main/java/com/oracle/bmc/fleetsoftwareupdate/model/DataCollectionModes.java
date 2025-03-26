@@ -6,16 +6,16 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
  * Exadata Fleet Update Maintenance Cycle incident logs and trace collection operation modes.
- * ENABLE: Enable diagnostics log collection for all targets for easy troubleshooting and Oracle
- * support for this Exadata Fleet Update Maintenance Cycle and future Exadata Fleet Update Actions.
- * ENABLE_AND_RESTORE: Enable diagnostic log collection for all targets only for the current Exadata
- * Fleet Update Maintenance Cycle. After cycle finishes, log collection settings will go back to the
- * settings prior to the start of the Exadata Fleet Update Maintenance Cycle. NO_CHANGE: Use
- * existing diagnostic log collection settings on each VM Cluster. Collect logs for targets with
- * diagnostic log collection for targets with log collection already enabled.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum DataCollectionModes implements com.oracle.bmc.http.internal.BmcEnum {
+ *   ENABLE: Enable diagnostics log collection for all targets for easy troubleshooting and Oracle support for
+ *   this Exadata Fleet Update Maintenance Cycle and future Exadata Fleet Update Actions.
+ *   ENABLE_AND_RESTORE: Enable diagnostic log collection for all targets only for the current Exadata Fleet Update Maintenance Cycle.
+ *   After cycle finishes, log collection settings will go back to the settings prior to the start of the Exadata Fleet Update Maintenance Cycle.
+ *   NO_CHANGE: Use existing diagnostic log collection settings on each VM Cluster.
+ *   Collect logs for targets with diagnostic log collection for targets with log collection already enabled.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum DataCollectionModes {
     Enable("ENABLE"),
     EnableAndRestore("ENABLE_AND_RESTORE"),
     NoChange("NO_CHANGE"),

@@ -6,25 +6,24 @@ package com.oracle.bmc.core.model;
 
 /**
  * Represents an attachment between a boot volume and an instance.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BootVolumeAttachment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BootVolumeAttachment
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = BootVolumeAttachment.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -69,194 +68,203 @@ public final class BootVolumeAttachment
     public static class Builder {
         /**
          * The availability domain of an instance.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain of an instance.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The OCID of the boot volume. */
+        /**
+         * The OCID of the boot volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
         private String bootVolumeId;
 
         /**
          * The OCID of the boot volume.
-         *
          * @param bootVolumeId the value to set
          * @return this builder
-         */
+         **/
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = bootVolumeId;
             this.__explicitlySet__.add("bootVolumeId");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the boot volume attachment. */
+        /**
+         * The OCID of the boot volume attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the boot volume attachment.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the instance the boot volume is attached to. */
+        /**
+         * The OCID of the instance the boot volume is attached to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the instance the boot volume is attached to.
-         *
          * @param instanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /** The current state of the boot volume attachment. */
+        /**
+         * The current state of the boot volume attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the boot volume attachment.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the boot volume was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the boot volume was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the boot volume attachment was updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the boot volume attachment was updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled
-         * or not.
-         */
+         * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
         /**
-         * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled
-         * or not.
+         * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
          *
          * @param isPvEncryptionInTransitEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
             return this;
         }
-        /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
         private EncryptionInTransitType encryptionInTransitType;
 
         /**
-         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
          *
          * @param encryptionInTransitType the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
             this.encryptionInTransitType = encryptionInTransitType;
             this.__explicitlySet__.add("encryptionInTransitType");
@@ -325,7 +333,9 @@ public final class BootVolumeAttachment
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -336,102 +346,110 @@ public final class BootVolumeAttachment
 
     /**
      * The availability domain of an instance.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain of an instance.
-     *
-     * <p>Example: {@code Uocm:PHX-AD-1}
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The OCID of the boot volume. */
+    /**
+     * The OCID of the boot volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
     private final String bootVolumeId;
 
     /**
      * The OCID of the boot volume.
-     *
      * @return the value
-     */
+     **/
     public String getBootVolumeId() {
         return bootVolumeId;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the boot volume attachment. */
+    /**
+     * The OCID of the boot volume attachment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the boot volume attachment.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the instance the boot volume is attached to. */
+    /**
+     * The OCID of the instance the boot volume is attached to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the instance the boot volume is attached to.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceId() {
         return instanceId;
     }
 
-    /** The current state of the boot volume attachment. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the boot volume attachment.
+     **/
+    public enum LifecycleState {
         Attaching("ATTACHING"),
         Attached("ATTACHED"),
         Detaching("DETACHING"),
         Detached("DETACHED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -470,87 +488,90 @@ public final class BootVolumeAttachment
             return UnknownEnumValue;
         }
     };
-    /** The current state of the boot volume attachment. */
+    /**
+     * The current state of the boot volume attachment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the boot volume attachment.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the boot volume was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the boot volume was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the boot volume attachment was updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the boot volume attachment was updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or
-     * not.
-     */
+     * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or
-     * not.
+     * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }
 
-    /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     private final EncryptionInTransitType encryptionInTransitType;
 
     /**
-     * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
      *
      * @return the value
-     */
+     **/
     public EncryptionInTransitType getEncryptionInTransitType() {
         return encryptionInTransitType;
     }
@@ -562,7 +583,6 @@ public final class BootVolumeAttachment
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,23 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The response containing the cluster cache metrics for the Oracle Real Application Clusters
- * (Oracle RAC) database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The response containing the cluster cache metrics for the
+ * Oracle Real Application Clusters (Oracle RAC) database.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ClusterCacheMetric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ClusterCacheMetric
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ClusterCacheMetric.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ClusterCacheMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clusterCacheMetrics"})
     public ClusterCacheMetric(java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics) {
@@ -32,16 +31,17 @@ public final class ClusterCacheMetric
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of cluster cache metrics for a specific Managed Database. */
+        /**
+         * A list of cluster cache metrics for a specific Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterCacheMetrics")
         private java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics;
 
         /**
          * A list of cluster cache metrics for a specific Managed Database.
-         *
          * @param clusterCacheMetrics the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterCacheMetrics(
                 java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics) {
             this.clusterCacheMetrics = clusterCacheMetrics;
@@ -69,7 +69,9 @@ public final class ClusterCacheMetric
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,15 +80,16 @@ public final class ClusterCacheMetric
         return new Builder().copy(this);
     }
 
-    /** A list of cluster cache metrics for a specific Managed Database. */
+    /**
+     * A list of cluster cache metrics for a specific Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterCacheMetrics")
     private final java.util.List<TimeSeriesMetricDefinition> clusterCacheMetrics;
 
     /**
      * A list of cluster cache metrics for a specific Managed Database.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TimeSeriesMetricDefinition> getClusterCacheMetrics() {
         return clusterCacheMetrics;
     }
@@ -98,7 +101,6 @@ public final class ClusterCacheMetric
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

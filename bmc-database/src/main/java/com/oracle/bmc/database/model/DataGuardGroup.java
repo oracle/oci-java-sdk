@@ -5,23 +5,21 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of Data Guard setup that the given database is part of. Also includes information about
- * databases part of this Data Guard group and properties for their Data Guard configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of Data Guard setup that the given database is part of.
+ * Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataGuardGroup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DataGuardGroup
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DataGuardGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"members", "protectionMode"})
     public DataGuardGroup(
@@ -33,39 +31,39 @@ public final class DataGuardGroup
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Data Guard members, representing each database that is part of Data Guard. */
+        /**
+         * List of Data Guard members, representing each database that is part of Data Guard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("members")
         private java.util.List<DataGuardGroupMember> members;
 
         /**
          * List of Data Guard members, representing each database that is part of Data Guard.
-         *
          * @param members the value to set
          * @return this builder
-         */
+         **/
         public Builder members(java.util.List<DataGuardGroupMember> members) {
             this.members = members;
             this.__explicitlySet__.add("members");
             return this;
         }
         /**
-         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-         * Protection
-         * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * The protection mode of this Data Guard. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
         /**
-         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-         * Protection
-         * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * The protection mode of this Data Guard. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
          *
          * @param protectionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
@@ -95,7 +93,9 @@ public final class DataGuardGroup
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,33 +104,34 @@ public final class DataGuardGroup
         return new Builder().copy(this);
     }
 
-    /** List of Data Guard members, representing each database that is part of Data Guard. */
+    /**
+     * List of Data Guard members, representing each database that is part of Data Guard.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("members")
     private final java.util.List<DataGuardGroupMember> members;
 
     /**
      * List of Data Guard members, representing each database that is part of Data Guard.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DataGuardGroupMember> getMembers() {
         return members;
     }
 
     /**
-     * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-     * Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
-     */
-    public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum ProtectionMode {
         MaximumAvailability("MAXIMUM_AVAILABILITY"),
         MaximumPerformance("MAXIMUM_PERFORMANCE"),
         MaximumProtection("MAXIMUM_PROTECTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -170,22 +171,21 @@ public final class DataGuardGroup
         }
     };
     /**
-     * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-     * Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
     /**
-     * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-     * Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *
      * @return the value
-     */
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
@@ -197,7 +197,6 @@ public final class DataGuardGroup
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

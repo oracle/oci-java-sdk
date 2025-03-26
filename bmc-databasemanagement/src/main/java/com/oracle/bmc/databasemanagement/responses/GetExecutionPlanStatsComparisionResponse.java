@@ -6,17 +6,18 @@ package com.oracle.bmc.databasemanagement.responses;
 
 import com.oracle.bmc.databasemanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +25,14 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
         return opcRequestId;
     }
 
-    /** The returned {@code ExecutionPlanStatsComparision} instance. */
+    /**
+     * The returned ExecutionPlanStatsComparision instance.
+     */
     private com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
             executionPlanStatsComparision;
 
     /**
-     * The returned {@code ExecutionPlanStatsComparision} instance.
-     *
+     * The returned ExecutionPlanStatsComparision instance.
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
@@ -46,7 +48,7 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
     })
     private GetExecutionPlanStatsComparisionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
                     executionPlanStatsComparision) {
@@ -55,34 +57,31 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
         this.executionPlanStatsComparision = executionPlanStatsComparision;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetExecutionPlanStatsComparisionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,13 +91,14 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned {@code ExecutionPlanStatsComparision} instance. */
+        /**
+         * The returned ExecutionPlanStatsComparision instance.
+         */
         private com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
                 executionPlanStatsComparision;
 
         /**
-         * The returned {@code ExecutionPlanStatsComparision} instance.
-         *
+         * The returned ExecutionPlanStatsComparision instance.
          * @param executionPlanStatsComparision the value to set
          * @return this builder
          */
@@ -111,10 +111,8 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetExecutionPlanStatsComparisionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -126,10 +124,8 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetExecutionPlanStatsComparisionResponse build() {
             return new GetExecutionPlanStatsComparisionResponse(
                     __httpStatusCode__, headers, opcRequestId, executionPlanStatsComparision);
@@ -138,7 +134,6 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

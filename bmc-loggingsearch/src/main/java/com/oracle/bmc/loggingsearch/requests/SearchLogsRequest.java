@@ -6,57 +6,65 @@ package com.oracle.bmc.loggingsearch.requests;
 
 import com.oracle.bmc.loggingsearch.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingsearch/SearchLogsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use SearchLogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingsearch/SearchLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SearchLogsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public class SearchLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loggingsearch.model.SearchLogsDetails> {
 
-    /** Search request. */
+    /**
+     * Search request.
+     *
+     */
     private com.oracle.bmc.loggingsearch.model.SearchLogsDetails searchLogsDetails;
 
-    /** Search request. */
+    /**
+     * Search request.
+     *
+     */
     public com.oracle.bmc.loggingsearch.model.SearchLogsDetails getSearchLogsDetails() {
         return searchLogsDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * The maximum number of items to return in a response. Pagination is not supported in this API.
+     *
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a response. Pagination is not supported in this API.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous
-     * "Search" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous
-     * "Search" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
@@ -64,7 +72,6 @@ public class SearchLogsRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -76,10 +83,14 @@ public class SearchLogsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SearchLogsRequest, com.oracle.bmc.loggingsearch.model.SearchLogsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Search request. */
+        /**
+         * Search request.
+         *
+         */
         private com.oracle.bmc.loggingsearch.model.SearchLogsDetails searchLogsDetails = null;
 
         /**
@@ -95,14 +106,15 @@ public class SearchLogsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -113,14 +125,13 @@ public class SearchLogsRequest
         }
 
         /**
-         * The maximum number of items to return in a response. Pagination is not supported in this
-         * API.
+         * The maximum number of items to return in a response. Pagination is not supported in this API.
+         *
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a response. Pagination is not supported in this
-         * API.
+         * The maximum number of items to return in a response. Pagination is not supported in this API.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -131,16 +142,15 @@ public class SearchLogsRequest
         }
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "Search" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "Search" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -152,19 +162,18 @@ public class SearchLogsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -176,7 +185,6 @@ public class SearchLogsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SearchLogsRequest o) {
@@ -192,11 +200,10 @@ public class SearchLogsRequest
         /**
          * Build the instance of SearchLogsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SearchLogsRequest
          */
@@ -209,7 +216,6 @@ public class SearchLogsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -222,8 +228,7 @@ public class SearchLogsRequest
         /**
          * Build the instance of SearchLogsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SearchLogsRequest
@@ -241,7 +246,6 @@ public class SearchLogsRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -254,7 +258,6 @@ public class SearchLogsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

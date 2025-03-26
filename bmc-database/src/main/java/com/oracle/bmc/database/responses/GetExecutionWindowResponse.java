@@ -6,14 +6,15 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -21,14 +22,15 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +38,13 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned {@code ExecutionWindow} instance. */
+    /**
+     * The returned ExecutionWindow instance.
+     */
     private com.oracle.bmc.database.model.ExecutionWindow executionWindow;
 
     /**
-     * The returned {@code ExecutionWindow} instance.
-     *
+     * The returned ExecutionWindow instance.
      * @return the value
      */
     public com.oracle.bmc.database.model.ExecutionWindow getExecutionWindow() {
@@ -57,7 +60,7 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
     })
     private GetExecutionWindowResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.ExecutionWindow executionWindow) {
@@ -67,30 +70,28 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
         this.executionWindow = executionWindow;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetExecutionWindowResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -100,14 +101,15 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +119,13 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code ExecutionWindow} instance. */
+        /**
+         * The returned ExecutionWindow instance.
+         */
         private com.oracle.bmc.database.model.ExecutionWindow executionWindow;
 
         /**
-         * The returned {@code ExecutionWindow} instance.
-         *
+         * The returned ExecutionWindow instance.
          * @param executionWindow the value to set
          * @return this builder
          */
@@ -134,10 +137,8 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetExecutionWindowResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +151,8 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetExecutionWindowResponse build() {
             return new GetExecutionWindowResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, executionWindow);
@@ -162,7 +161,6 @@ public class GetExecutionWindowResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

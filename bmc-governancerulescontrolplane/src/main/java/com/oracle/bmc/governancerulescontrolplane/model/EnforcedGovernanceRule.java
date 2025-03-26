@@ -5,24 +5,22 @@
 package com.oracle.bmc.governancerulescontrolplane.model;
 
 /**
- * Represents the governance rule shown to the child which is a subset of governance rule resource
- * in parent tenancy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+ * Represents the governance rule shown to the child which is a subset of governance rule resource in parent tenancy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EnforcedGovernanceRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EnforcedGovernanceRule.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EnforcedGovernanceRule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -57,57 +55,48 @@ public final class EnforcedGovernanceRule
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * enforced governance rule.
-         */
+         * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the enforced governance rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * enforced governance rule.
-         *
+         * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the enforced governance rule.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * child's root compartment to which the governance rule is attached.
-         */
+         * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the child's root compartment to which the governance rule is attached.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * child's root compartment to which the governance rule is attached.
-         *
+         * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the child's root compartment to which the governance rule is attached.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Display name of the governance rule. */
+        /**
+         * Display name of the governance rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleDisplayName")
         private String governanceRuleDisplayName;
 
         /**
          * Display name of the governance rule.
-         *
          * @param governanceRuleDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder governanceRuleDisplayName(String governanceRuleDisplayName) {
             this.governanceRuleDisplayName = governanceRuleDisplayName;
             this.__explicitlySet__.add("governanceRuleDisplayName");
@@ -115,20 +104,21 @@ public final class EnforcedGovernanceRule
         }
         /**
          * Type of the governance rule, can be one of QUOTA, TAG, ALLOWED_REGIONS.
+         * <p>
+         * Example: {@code QUOTA}
          *
-         * <p>Example: {@code QUOTA}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private GovernanceRuleType type;
 
         /**
          * Type of the governance rule, can be one of QUOTA, TAG, ALLOWED_REGIONS.
-         *
-         * <p>Example: {@code QUOTA}
+         * <p>
+         * Example: {@code QUOTA}
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(GovernanceRuleType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -143,16 +133,17 @@ public final class EnforcedGovernanceRule
             this.__explicitlySet__.add("template");
             return this;
         }
-        /** The current state of the governance rule. */
+        /**
+         * The current state of the governance rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private GovernanceRuleLifecycleState lifecycleState;
 
         /**
          * The current state of the governance rule.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(GovernanceRuleLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -160,20 +151,21 @@ public final class EnforcedGovernanceRule
         }
         /**
          * Date and time the governance rule was created. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the governance rule was created. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -181,20 +173,21 @@ public final class EnforcedGovernanceRule
         }
         /**
          * Date and time the governance rule was updated. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Date and time the governance rule was updated. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -251,7 +244,9 @@ public final class EnforcedGovernanceRule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,67 +256,63 @@ public final class EnforcedGovernanceRule
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-     * of the enforced governance rule.
-     */
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the enforced governance rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-     * of the enforced governance rule.
-     *
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the enforced governance rule.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-     * of the child's root compartment to which the governance rule is attached.
-     */
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the child's root compartment to which the governance rule is attached.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-     * of the child's root compartment to which the governance rule is attached.
-     *
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the child's root compartment to which the governance rule is attached.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Display name of the governance rule. */
+    /**
+     * Display name of the governance rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleDisplayName")
     private final String governanceRuleDisplayName;
 
     /**
      * Display name of the governance rule.
-     *
      * @return the value
-     */
+     **/
     public String getGovernanceRuleDisplayName() {
         return governanceRuleDisplayName;
     }
 
     /**
      * Type of the governance rule, can be one of QUOTA, TAG, ALLOWED_REGIONS.
+     * <p>
+     * Example: {@code QUOTA}
      *
-     * <p>Example: {@code QUOTA}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final GovernanceRuleType type;
 
     /**
      * Type of the governance rule, can be one of QUOTA, TAG, ALLOWED_REGIONS.
-     *
-     * <p>Example: {@code QUOTA}
+     * <p>
+     * Example: {@code QUOTA}
      *
      * @return the value
-     */
+     **/
     public GovernanceRuleType getType() {
         return type;
     }
@@ -333,53 +324,56 @@ public final class EnforcedGovernanceRule
         return template;
     }
 
-    /** The current state of the governance rule. */
+    /**
+     * The current state of the governance rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final GovernanceRuleLifecycleState lifecycleState;
 
     /**
      * The current state of the governance rule.
-     *
      * @return the value
-     */
+     **/
     public GovernanceRuleLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Date and time the governance rule was created. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the governance rule was created. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * Date and time the governance rule was updated. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Date and time the governance rule was updated. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -391,7 +385,6 @@ public final class EnforcedGovernanceRule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

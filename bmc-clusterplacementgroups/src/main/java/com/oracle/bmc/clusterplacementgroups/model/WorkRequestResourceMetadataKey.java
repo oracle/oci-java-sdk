@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.clusterplacementgroups.model;
 
-/** The metadata key for the work request's resource metadata. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The metadata key for the work request's resource metadata.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum WorkRequestResourceMetadataKey {
     IsDryRun("IS_DRY_RUN"),
 
     /**

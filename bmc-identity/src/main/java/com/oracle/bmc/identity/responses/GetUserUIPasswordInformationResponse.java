@@ -6,11 +6,12 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,24 +25,26 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code UIPasswordInformation} instance. */
+    /**
+     * The returned UIPasswordInformation instance.
+     */
     private com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation;
 
     /**
-     * The returned {@code UIPasswordInformation} instance.
-     *
+     * The returned UIPasswordInformation instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.UIPasswordInformation getUIPasswordInformation() {
@@ -57,7 +60,7 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
     })
     private GetUserUIPasswordInformationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation) {
@@ -67,21 +70,17 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
         this.uIPasswordInformation = uIPasswordInformation;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetUserUIPasswordInformationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -89,6 +88,7 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -104,12 +104,13 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -118,12 +119,13 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned {@code UIPasswordInformation} instance. */
+        /**
+         * The returned UIPasswordInformation instance.
+         */
         private com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation;
 
         /**
-         * The returned {@code UIPasswordInformation} instance.
-         *
+         * The returned UIPasswordInformation instance.
          * @param uIPasswordInformation the value to set
          * @return this builder
          */
@@ -135,10 +137,8 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetUserUIPasswordInformationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +151,8 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetUserUIPasswordInformationResponse build() {
             return new GetUserUIPasswordInformationResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, uIPasswordInformation);
@@ -163,7 +161,6 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

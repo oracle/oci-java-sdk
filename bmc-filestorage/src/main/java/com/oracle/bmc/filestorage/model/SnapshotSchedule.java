@@ -5,23 +5,21 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * The snapshot schedule is a structure within a parent file system snapshot policy. It contains
- * data about the frequency of snapshot creation and the retention time of the taken snapshots. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * The snapshot schedule is a structure within a parent file system snapshot policy. It contains data about
+ * the frequency of snapshot creation and the retention time of the taken snapshots.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SnapshotSchedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SnapshotSchedule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SnapshotSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "schedulePrefix",
@@ -60,170 +58,183 @@ public final class SnapshotSchedule
     public static class Builder {
         /**
          * A name prefix to be applied to snapshots created by this schedule.
+         * <p>
+         * Example: {@code compliance1}
          *
-         * <p>Example: {@code compliance1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedulePrefix")
         private String schedulePrefix;
 
         /**
          * A name prefix to be applied to snapshots created by this schedule.
-         *
-         * <p>Example: {@code compliance1}
+         * <p>
+         * Example: {@code compliance1}
          *
          * @param schedulePrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder schedulePrefix(String schedulePrefix) {
             this.schedulePrefix = schedulePrefix;
             this.__explicitlySet__.add("schedulePrefix");
             return this;
         }
         /**
-         * The starting point used to begin the scheduling of the snapshots based upon recurrence
-         * string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no {@code
-         * timeScheduleStart} is provided, the value will be set to the time when the schedule was
-         * created.
-         */
+         * The starting point used to begin the scheduling of the snapshots based upon recurrence string
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * If no {@code timeScheduleStart} is provided, the value will be set to the time when the schedule was created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleStart")
         private java.util.Date timeScheduleStart;
 
         /**
-         * The starting point used to begin the scheduling of the snapshots based upon recurrence
-         * string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no {@code
-         * timeScheduleStart} is provided, the value will be set to the time when the schedule was
-         * created.
+         * The starting point used to begin the scheduling of the snapshots based upon recurrence string
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * If no {@code timeScheduleStart} is provided, the value will be set to the time when the schedule was created.
          *
          * @param timeScheduleStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduleStart(java.util.Date timeScheduleStart) {
             this.timeScheduleStart = timeScheduleStart;
             this.__explicitlySet__.add("timeScheduleStart");
             return this;
         }
-        /** The frequency of scheduled snapshots. */
+        /**
+         * The frequency of scheduled snapshots.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("period")
         private Period period;
 
         /**
          * The frequency of scheduled snapshots.
-         *
          * @param period the value to set
          * @return this builder
-         */
+         **/
         public Builder period(Period period) {
             this.period = period;
             this.__explicitlySet__.add("period");
             return this;
         }
         /**
-         * The number of seconds to retain snapshots created with this schedule. Snapshot expiration
-         * time will not be set if this value is empty.
-         */
+         * The number of seconds to retain snapshots created with this schedule.
+         * Snapshot expiration time will not be set if this value is empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionDurationInSeconds")
         private Long retentionDurationInSeconds;
 
         /**
-         * The number of seconds to retain snapshots created with this schedule. Snapshot expiration
-         * time will not be set if this value is empty.
+         * The number of seconds to retain snapshots created with this schedule.
+         * Snapshot expiration time will not be set if this value is empty.
          *
          * @param retentionDurationInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionDurationInSeconds(Long retentionDurationInSeconds) {
             this.retentionDurationInSeconds = retentionDurationInSeconds;
             this.__explicitlySet__.add("retentionDurationInSeconds");
             return this;
         }
-        /** Time zone used for scheduling the snapshot. */
+        /**
+         * Time zone used for scheduling the snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private TimeZone timeZone;
 
         /**
          * Time zone used for scheduling the snapshot.
-         *
          * @param timeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder timeZone(TimeZone timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
             return this;
         }
         /**
-         * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set,
-         * the system chooses a value at creation time.
-         */
+         * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
+         * If not set, the system chooses a value at creation time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
         private Integer hourOfDay;
 
         /**
-         * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set,
-         * the system chooses a value at creation time.
+         * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
+         * If not set, the system chooses a value at creation time.
          *
          * @param hourOfDay the value to set
          * @return this builder
-         */
+         **/
         public Builder hourOfDay(Integer hourOfDay) {
             this.hourOfDay = hourOfDay;
             this.__explicitlySet__.add("hourOfDay");
             return this;
         }
         /**
-         * The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+         * The day of the week to create a scheduled snapshot.
+         * Used for WEEKLY snapshot schedules.
          * If not set, the system chooses a value at creation time.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
 
         /**
-         * The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+         * The day of the week to create a scheduled snapshot.
+         * Used for WEEKLY snapshot schedules.
          * If not set, the system chooses a value at creation time.
          *
          * @param dayOfWeek the value to set
          * @return this builder
-         */
+         **/
         public Builder dayOfWeek(DayOfWeek dayOfWeek) {
             this.dayOfWeek = dayOfWeek;
             this.__explicitlySet__.add("dayOfWeek");
             return this;
         }
         /**
-         * The day of the month to create a scheduled snapshot. If the day does not exist for the
-         * month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+         * The day of the month to create a scheduled snapshot.
+         * If the day does not exist for the month, snapshot creation will be skipped.
+         * Used for MONTHLY and YEARLY snapshot schedules.
          * If not set, the system chooses a value at creation time.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
         private Integer dayOfMonth;
 
         /**
-         * The day of the month to create a scheduled snapshot. If the day does not exist for the
-         * month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+         * The day of the month to create a scheduled snapshot.
+         * If the day does not exist for the month, snapshot creation will be skipped.
+         * Used for MONTHLY and YEARLY snapshot schedules.
          * If not set, the system chooses a value at creation time.
          *
          * @param dayOfMonth the value to set
          * @return this builder
-         */
+         **/
         public Builder dayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             this.__explicitlySet__.add("dayOfMonth");
             return this;
         }
         /**
-         * The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not
-         * set, the system chooses a value at creation time.
-         */
+         * The month to create a scheduled snapshot.
+         * Used only for YEARLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("month")
         private Month month;
 
         /**
-         * The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not
-         * set, the system chooses a value at creation time.
+         * The month to create a scheduled snapshot.
+         * Used only for YEARLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
          *
          * @param month the value to set
          * @return this builder
-         */
+         **/
         public Builder month(Month month) {
             this.month = month;
             this.__explicitlySet__.add("month");
@@ -284,7 +295,9 @@ public final class SnapshotSchedule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -295,46 +308,48 @@ public final class SnapshotSchedule
 
     /**
      * A name prefix to be applied to snapshots created by this schedule.
+     * <p>
+     * Example: {@code compliance1}
      *
-     * <p>Example: {@code compliance1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedulePrefix")
     private final String schedulePrefix;
 
     /**
      * A name prefix to be applied to snapshots created by this schedule.
-     *
-     * <p>Example: {@code compliance1}
+     * <p>
+     * Example: {@code compliance1}
      *
      * @return the value
-     */
+     **/
     public String getSchedulePrefix() {
         return schedulePrefix;
     }
 
     /**
      * The starting point used to begin the scheduling of the snapshots based upon recurrence string
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no {@code
-     * timeScheduleStart} is provided, the value will be set to the time when the schedule was
-     * created.
-     */
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * If no {@code timeScheduleStart} is provided, the value will be set to the time when the schedule was created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleStart")
     private final java.util.Date timeScheduleStart;
 
     /**
      * The starting point used to begin the scheduling of the snapshots based upon recurrence string
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no {@code
-     * timeScheduleStart} is provided, the value will be set to the time when the schedule was
-     * created.
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * If no {@code timeScheduleStart} is provided, the value will be set to the time when the schedule was created.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduleStart() {
         return timeScheduleStart;
     }
 
-    /** The frequency of scheduled snapshots. */
-    public enum Period implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The frequency of scheduled snapshots.
+     **/
+    public enum Period {
         Hourly("HOURLY"),
         Daily("DAILY"),
         Weekly("WEEKLY"),
@@ -342,8 +357,8 @@ public final class SnapshotSchedule
         Yearly("YEARLY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -381,44 +396,48 @@ public final class SnapshotSchedule
             return UnknownEnumValue;
         }
     };
-    /** The frequency of scheduled snapshots. */
+    /**
+     * The frequency of scheduled snapshots.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("period")
     private final Period period;
 
     /**
      * The frequency of scheduled snapshots.
-     *
      * @return the value
-     */
+     **/
     public Period getPeriod() {
         return period;
     }
 
     /**
-     * The number of seconds to retain snapshots created with this schedule. Snapshot expiration
-     * time will not be set if this value is empty.
-     */
+     * The number of seconds to retain snapshots created with this schedule.
+     * Snapshot expiration time will not be set if this value is empty.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionDurationInSeconds")
     private final Long retentionDurationInSeconds;
 
     /**
-     * The number of seconds to retain snapshots created with this schedule. Snapshot expiration
-     * time will not be set if this value is empty.
+     * The number of seconds to retain snapshots created with this schedule.
+     * Snapshot expiration time will not be set if this value is empty.
      *
      * @return the value
-     */
+     **/
     public Long getRetentionDurationInSeconds() {
         return retentionDurationInSeconds;
     }
 
-    /** Time zone used for scheduling the snapshot. */
-    public enum TimeZone implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Time zone used for scheduling the snapshot.
+     **/
+    public enum TimeZone {
         Utc("UTC"),
         RegionalDataCenterTime("REGIONAL_DATA_CENTER_TIME"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -457,41 +476,45 @@ public final class SnapshotSchedule
             return UnknownEnumValue;
         }
     };
-    /** Time zone used for scheduling the snapshot. */
+    /**
+     * Time zone used for scheduling the snapshot.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final TimeZone timeZone;
 
     /**
      * Time zone used for scheduling the snapshot.
-     *
      * @return the value
-     */
+     **/
     public TimeZone getTimeZone() {
         return timeZone;
     }
 
     /**
-     * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the
-     * system chooses a value at creation time.
-     */
+     * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
+     * If not set, the system chooses a value at creation time.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
     private final Integer hourOfDay;
 
     /**
-     * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the
-     * system chooses a value at creation time.
+     * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
-     */
+     **/
     public Integer getHourOfDay() {
         return hourOfDay;
     }
 
     /**
-     * The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If
-     * not set, the system chooses a value at creation time.
-     */
-    public enum DayOfWeek implements com.oracle.bmc.http.internal.BmcEnum {
+     * The day of the week to create a scheduled snapshot.
+     * Used for WEEKLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
+     *
+     **/
+    public enum DayOfWeek {
         Monday("MONDAY"),
         Tuesday("TUESDAY"),
         Wednesday("WEDNESDAY"),
@@ -501,8 +524,8 @@ public final class SnapshotSchedule
         Sunday("SUNDAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -542,46 +565,54 @@ public final class SnapshotSchedule
         }
     };
     /**
-     * The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If
-     * not set, the system chooses a value at creation time.
-     */
+     * The day of the week to create a scheduled snapshot.
+     * Used for WEEKLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
     private final DayOfWeek dayOfWeek;
 
     /**
-     * The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If
-     * not set, the system chooses a value at creation time.
+     * The day of the week to create a scheduled snapshot.
+     * Used for WEEKLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
-     */
+     **/
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
 
     /**
-     * The day of the month to create a scheduled snapshot. If the day does not exist for the month,
-     * snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not
-     * set, the system chooses a value at creation time.
-     */
+     * The day of the month to create a scheduled snapshot.
+     * If the day does not exist for the month, snapshot creation will be skipped.
+     * Used for MONTHLY and YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
     private final Integer dayOfMonth;
 
     /**
-     * The day of the month to create a scheduled snapshot. If the day does not exist for the month,
-     * snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not
-     * set, the system chooses a value at creation time.
+     * The day of the month to create a scheduled snapshot.
+     * If the day does not exist for the month, snapshot creation will be skipped.
+     * Used for MONTHLY and YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
-     */
+     **/
     public Integer getDayOfMonth() {
         return dayOfMonth;
     }
 
     /**
-     * The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not
-     * set, the system chooses a value at creation time.
-     */
-    public enum Month implements com.oracle.bmc.http.internal.BmcEnum {
+     * The month to create a scheduled snapshot.
+     * Used only for YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
+     *
+     **/
+    public enum Month {
         January("JANUARY"),
         February("FEBRUARY"),
         March("MARCH"),
@@ -596,8 +627,8 @@ public final class SnapshotSchedule
         December("DECEMBER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -636,18 +667,21 @@ public final class SnapshotSchedule
         }
     };
     /**
-     * The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not
-     * set, the system chooses a value at creation time.
-     */
+     * The month to create a scheduled snapshot.
+     * Used only for YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("month")
     private final Month month;
 
     /**
-     * The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not
-     * set, the system chooses a value at creation time.
+     * The month to create a scheduled snapshot.
+     * Used only for YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
-     */
+     **/
     public Month getMonth() {
         return month;
     }
@@ -659,7 +693,6 @@ public final class SnapshotSchedule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

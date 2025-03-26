@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The type of MySQL Database System. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum MdsType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of MySQL Database System.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum MdsType {
     Ha("HA"),
     Heatwave("HEATWAVE"),
     Standalone("STANDALONE"),

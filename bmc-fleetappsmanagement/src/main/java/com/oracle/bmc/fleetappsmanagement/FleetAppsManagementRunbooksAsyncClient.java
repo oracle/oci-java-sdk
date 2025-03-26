@@ -4,32 +4,28 @@
  */
 package com.oracle.bmc.fleetappsmanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.fleetappsmanagement.internal.http.*;
 import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for FleetAppsManagementRunbooks service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for FleetAppsManagementRunbooks service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public class FleetAppsManagementRunbooksAsyncClient
-        extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements FleetAppsManagementRunbooksAsync {
-    /** Service instance for FleetAppsManagementRunbooks. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public class FleetAppsManagementRunbooksAsyncClient implements FleetAppsManagementRunbooksAsync {
+    /**
+     * Service instance for FleetAppsManagementRunbooks.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FLEETAPPSMANAGEMENTRUNBOOKS")
@@ -40,539 +36,112 @@ public class FleetAppsManagementRunbooksAsyncClient
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(FleetAppsManagementRunbooksAsyncClient.class);
 
-    FleetAppsManagementRunbooksAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, FleetAppsManagementRunbooksAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "fleetappsmanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public FleetAppsManagementRunbooksAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new FleetAppsManagementRunbooksAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateRunbookResponse> createRunbook(
-            CreateRunbookRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<CreateRunbookRequest, CreateRunbookResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateRunbookDetails(), "createRunbookDetails is required");
-
-        return clientCall(request, CreateRunbookResponse::builder)
-                .logger(LOG, "createRunbook")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "CreateRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/CreateRunbook")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateRunbookRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("runbooks")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.Runbook.class,
-                        CreateRunbookResponse.Builder::runbook)
-                .handleResponseHeaderString("location", CreateRunbookResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location", CreateRunbookResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", CreateRunbookResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateRunbookResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateRunbookResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateTaskRecordResponse> createTaskRecord(
-            CreateTaskRecordRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateTaskRecordRequest, CreateTaskRecordResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateTaskRecordDetails(), "createTaskRecordDetails is required");
-
-        return clientCall(request, CreateTaskRecordResponse::builder)
-                .logger(LOG, "createTaskRecord")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "CreateTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/CreateTaskRecord")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTaskRecordRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("taskRecords")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.TaskRecord.class,
-                        CreateTaskRecordResponse.Builder::taskRecord)
-                .handleResponseHeaderString("etag", CreateTaskRecordResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTaskRecordResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteRunbookResponse> deleteRunbook(
-            DeleteRunbookRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeleteRunbookRequest, DeleteRunbookResponse>
-                    handler) {
-
-        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
-
-        return clientCall(request, DeleteRunbookResponse::builder)
-                .logger(LOG, "deleteRunbook")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "DeleteRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/DeleteRunbook")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteRunbookRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("runbooks")
-                .appendPathParam(request.getRunbookId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteRunbookResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteRunbookResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteTaskRecordResponse> deleteTaskRecord(
-            DeleteTaskRecordRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteTaskRecordRequest, DeleteTaskRecordResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
-
-        return clientCall(request, DeleteTaskRecordResponse::builder)
-                .logger(LOG, "deleteTaskRecord")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "DeleteTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/DeleteTaskRecord")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTaskRecordRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("taskRecords")
-                .appendPathParam(request.getTaskRecordId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteTaskRecordResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTaskRecordResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetRunbookResponse> getRunbook(
-            GetRunbookRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetRunbookRequest, GetRunbookResponse>
-                    handler) {
-
-        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
-
-        return clientCall(request, GetRunbookResponse::builder)
-                .logger(LOG, "getRunbook")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "GetRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/GetRunbook")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRunbookRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("runbooks")
-                .appendPathParam(request.getRunbookId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.Runbook.class,
-                        GetRunbookResponse.Builder::runbook)
-                .handleResponseHeaderString("etag", GetRunbookResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRunbookResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTaskRecordResponse> getTaskRecord(
-            GetTaskRecordRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetTaskRecordRequest, GetTaskRecordResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
-
-        return clientCall(request, GetTaskRecordResponse::builder)
-                .logger(LOG, "getTaskRecord")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "GetTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/GetTaskRecord")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTaskRecordRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("taskRecords")
-                .appendPathParam(request.getTaskRecordId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.TaskRecord.class,
-                        GetTaskRecordResponse.Builder::taskRecord)
-                .handleResponseHeaderString("etag", GetTaskRecordResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTaskRecordResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListRunbooksResponse> listRunbooks(
-            ListRunbooksRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListRunbooksRequest, ListRunbooksResponse>
-                    handler) {
-
-        return clientCall(request, ListRunbooksResponse::builder)
-                .logger(LOG, "listRunbooks")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "ListRunbooks",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/RunbookCollection/ListRunbooks")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListRunbooksRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("runbooks")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendEnumQueryParam("type", request.getType())
-                .appendEnumQueryParam("runbookRelevance", request.getRunbookRelevance())
-                .appendQueryParam("platform", request.getPlatform())
-                .appendQueryParam("operation", request.getOperation())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.RunbookCollection.class,
-                        ListRunbooksResponse.Builder::runbookCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListRunbooksResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListRunbooksResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTaskRecordsResponse> listTaskRecords(
-            ListTaskRecordsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListTaskRecordsRequest, ListTaskRecordsResponse>
-                    handler) {
-
-        return clientCall(request, ListTaskRecordsResponse::builder)
-                .logger(LOG, "listTaskRecords")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "ListTaskRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecordCollection/ListTaskRecords")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTaskRecordsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("taskRecords")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("platform", request.getPlatform())
-                .appendEnumQueryParam("type", request.getType())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.TaskRecordCollection.class,
-                        ListTaskRecordsResponse.Builder::taskRecordCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTaskRecordsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTaskRecordsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PublishRunbookResponse> publishRunbook(
-            PublishRunbookRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            PublishRunbookRequest, PublishRunbookResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getPublishRunbookDetails(), "publishRunbookDetails is required");
-
-        return clientCall(request, PublishRunbookResponse::builder)
-                .logger(LOG, "publishRunbook")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "PublishRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/PublishRunbook")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishRunbookRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("runbooks")
-                .appendPathParam("actions")
-                .appendPathParam("publishRunbook")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", PublishRunbookResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", PublishRunbookResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SetDefaultRunbookResponse> setDefaultRunbook(
-            SetDefaultRunbookRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            SetDefaultRunbookRequest, SetDefaultRunbookResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getSetDefaultRunbookDetails(), "setDefaultRunbookDetails is required");
-
-        return clientCall(request, SetDefaultRunbookResponse::builder)
-                .logger(LOG, "setDefaultRunbook")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "SetDefaultRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/SetDefaultRunbook")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SetDefaultRunbookRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("runbooks")
-                .appendPathParam("actions")
-                .appendPathParam("setDefaultRunbook")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.Runbook.class,
-                        SetDefaultRunbookResponse.Builder::runbook)
-                .handleResponseHeaderString("etag", SetDefaultRunbookResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", SetDefaultRunbookResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateRunbookResponse> updateRunbook(
-            UpdateRunbookRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateRunbookRequest, UpdateRunbookResponse>
-                    handler) {
-
-        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateRunbookDetails(), "updateRunbookDetails is required");
-
-        return clientCall(request, UpdateRunbookResponse::builder)
-                .logger(LOG, "updateRunbook")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "UpdateRunbook",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/UpdateRunbook")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateRunbookRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("runbooks")
-                .appendPathParam(request.getRunbookId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateRunbookResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateRunbookResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateTaskRecordResponse> updateTaskRecord(
-            UpdateTaskRecordRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateTaskRecordRequest, UpdateTaskRecordResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTaskRecordDetails(), "updateTaskRecordDetails is required");
-
-        return clientCall(request, UpdateTaskRecordResponse::builder)
-                .logger(LOG, "updateTaskRecord")
-                .serviceDetails(
-                        "FleetAppsManagementRunbooks",
-                        "UpdateTaskRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/UpdateTaskRecord")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTaskRecordRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("taskRecords")
-                .appendPathParam(request.getTaskRecordId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateTaskRecordResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTaskRecordResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public FleetAppsManagementRunbooksAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public FleetAppsManagementRunbooksAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public FleetAppsManagementRunbooksAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public FleetAppsManagementRunbooksAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public FleetAppsManagementRunbooksAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -580,26 +149,26 @@ public class FleetAppsManagementRunbooksAsyncClient
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public FleetAppsManagementRunbooksAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -608,29 +177,29 @@ public class FleetAppsManagementRunbooksAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public FleetAppsManagementRunbooksAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -643,14 +212,821 @@ public class FleetAppsManagementRunbooksAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public FleetAppsManagementRunbooksAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, FleetAppsManagementRunbooksAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public FleetAppsManagementRunbooksAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new FleetAppsManagementRunbooksAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRunbookResponse> createRunbook(
+            CreateRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateRunbookRequest, CreateRunbookResponse>
+                    handler) {
+        LOG.trace("Called async createRunbook");
+        final CreateRunbookRequest interceptedRequest =
+                CreateRunbookConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRunbookConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "CreateRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/CreateRunbook");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateRunbookResponse>
+                transformer =
+                        CreateRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateRunbookRequest, CreateRunbookResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateRunbookRequest, CreateRunbookResponse>,
+                        java.util.concurrent.Future<CreateRunbookResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRunbookDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateRunbookRequest, CreateRunbookResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTaskRecordResponse> createTaskRecord(
+            CreateTaskRecordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateTaskRecordRequest, CreateTaskRecordResponse>
+                    handler) {
+        LOG.trace("Called async createTaskRecord");
+        final CreateTaskRecordRequest interceptedRequest =
+                CreateTaskRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTaskRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "CreateTaskRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/CreateTaskRecord");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTaskRecordResponse>
+                transformer =
+                        CreateTaskRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateTaskRecordRequest, CreateTaskRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTaskRecordRequest, CreateTaskRecordResponse>,
+                        java.util.concurrent.Future<CreateTaskRecordResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTaskRecordDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTaskRecordRequest, CreateTaskRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRunbookResponse> deleteRunbook(
+            DeleteRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteRunbookRequest, DeleteRunbookResponse>
+                    handler) {
+        LOG.trace("Called async deleteRunbook");
+        final DeleteRunbookRequest interceptedRequest =
+                DeleteRunbookConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRunbookConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "DeleteRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/DeleteRunbook");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRunbookResponse>
+                transformer =
+                        DeleteRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteRunbookRequest, DeleteRunbookResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteRunbookRequest, DeleteRunbookResponse>,
+                        java.util.concurrent.Future<DeleteRunbookResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteRunbookRequest, DeleteRunbookResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskRecordResponse> deleteTaskRecord(
+            DeleteTaskRecordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTaskRecordRequest, DeleteTaskRecordResponse>
+                    handler) {
+        LOG.trace("Called async deleteTaskRecord");
+        final DeleteTaskRecordRequest interceptedRequest =
+                DeleteTaskRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTaskRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "DeleteTaskRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/DeleteTaskRecord");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskRecordResponse>
+                transformer =
+                        DeleteTaskRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteTaskRecordRequest, DeleteTaskRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteTaskRecordRequest, DeleteTaskRecordResponse>,
+                        java.util.concurrent.Future<DeleteTaskRecordResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteTaskRecordRequest, DeleteTaskRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRunbookResponse> getRunbook(
+            GetRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetRunbookRequest, GetRunbookResponse>
+                    handler) {
+        LOG.trace("Called async getRunbook");
+        final GetRunbookRequest interceptedRequest = GetRunbookConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRunbookConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/GetRunbook");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRunbookResponse>
+                transformer =
+                        GetRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetRunbookRequest, GetRunbookResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetRunbookRequest, GetRunbookResponse>,
+                        java.util.concurrent.Future<GetRunbookResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetRunbookRequest, GetRunbookResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTaskRecordResponse> getTaskRecord(
+            GetTaskRecordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetTaskRecordRequest, GetTaskRecordResponse>
+                    handler) {
+        LOG.trace("Called async getTaskRecord");
+        final GetTaskRecordRequest interceptedRequest =
+                GetTaskRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTaskRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetTaskRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/GetTaskRecord");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTaskRecordResponse>
+                transformer =
+                        GetTaskRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetTaskRecordRequest, GetTaskRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTaskRecordRequest, GetTaskRecordResponse>,
+                        java.util.concurrent.Future<GetTaskRecordResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTaskRecordRequest, GetTaskRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRunbooksResponse> listRunbooks(
+            ListRunbooksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListRunbooksRequest, ListRunbooksResponse>
+                    handler) {
+        LOG.trace("Called async listRunbooks");
+        final ListRunbooksRequest interceptedRequest =
+                ListRunbooksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRunbooksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbooks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/RunbookCollection/ListRunbooks");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRunbooksResponse>
+                transformer =
+                        ListRunbooksConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListRunbooksRequest, ListRunbooksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRunbooksRequest, ListRunbooksResponse>,
+                        java.util.concurrent.Future<ListRunbooksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRunbooksRequest, ListRunbooksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTaskRecordsResponse> listTaskRecords(
+            ListTaskRecordsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTaskRecordsRequest, ListTaskRecordsResponse>
+                    handler) {
+        LOG.trace("Called async listTaskRecords");
+        final ListTaskRecordsRequest interceptedRequest =
+                ListTaskRecordsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTaskRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListTaskRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecordCollection/ListTaskRecords");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTaskRecordsResponse>
+                transformer =
+                        ListTaskRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListTaskRecordsRequest, ListTaskRecordsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTaskRecordsRequest, ListTaskRecordsResponse>,
+                        java.util.concurrent.Future<ListTaskRecordsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTaskRecordsRequest, ListTaskRecordsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishRunbookResponse> publishRunbook(
+            PublishRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PublishRunbookRequest, PublishRunbookResponse>
+                    handler) {
+        LOG.trace("Called async publishRunbook");
+        final PublishRunbookRequest interceptedRequest =
+                PublishRunbookConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishRunbookConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "PublishRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/PublishRunbook");
+        final java.util.function.Function<javax.ws.rs.core.Response, PublishRunbookResponse>
+                transformer =
+                        PublishRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<PublishRunbookRequest, PublishRunbookResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PublishRunbookRequest, PublishRunbookResponse>,
+                        java.util.concurrent.Future<PublishRunbookResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPublishRunbookDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PublishRunbookRequest, PublishRunbookResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetDefaultRunbookResponse> setDefaultRunbook(
+            SetDefaultRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetDefaultRunbookRequest, SetDefaultRunbookResponse>
+                    handler) {
+        LOG.trace("Called async setDefaultRunbook");
+        final SetDefaultRunbookRequest interceptedRequest =
+                SetDefaultRunbookConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetDefaultRunbookConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "SetDefaultRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/SetDefaultRunbook");
+        final java.util.function.Function<javax.ws.rs.core.Response, SetDefaultRunbookResponse>
+                transformer =
+                        SetDefaultRunbookConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SetDefaultRunbookRequest, SetDefaultRunbookResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetDefaultRunbookRequest, SetDefaultRunbookResponse>,
+                        java.util.concurrent.Future<SetDefaultRunbookResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSetDefaultRunbookDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetDefaultRunbookRequest, SetDefaultRunbookResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRunbookResponse> updateRunbook(
+            UpdateRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateRunbookRequest, UpdateRunbookResponse>
+                    handler) {
+        LOG.trace("Called async updateRunbook");
+        final UpdateRunbookRequest interceptedRequest =
+                UpdateRunbookConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRunbookConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "UpdateRunbook",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/UpdateRunbook");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRunbookResponse>
+                transformer =
+                        UpdateRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateRunbookRequest, UpdateRunbookResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateRunbookRequest, UpdateRunbookResponse>,
+                        java.util.concurrent.Future<UpdateRunbookResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRunbookDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateRunbookRequest, UpdateRunbookResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskRecordResponse> updateTaskRecord(
+            UpdateTaskRecordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTaskRecordRequest, UpdateTaskRecordResponse>
+                    handler) {
+        LOG.trace("Called async updateTaskRecord");
+        final UpdateTaskRecordRequest interceptedRequest =
+                UpdateTaskRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTaskRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "UpdateTaskRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/UpdateTaskRecord");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskRecordResponse>
+                transformer =
+                        UpdateTaskRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateTaskRecordRequest, UpdateTaskRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTaskRecordRequest, UpdateTaskRecordResponse>,
+                        java.util.concurrent.Future<UpdateTaskRecordResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTaskRecordDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTaskRecordRequest, UpdateTaskRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

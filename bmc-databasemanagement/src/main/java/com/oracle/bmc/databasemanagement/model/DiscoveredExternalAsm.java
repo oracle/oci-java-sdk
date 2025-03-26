@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an ASM discovered in an external DB system discovery run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an ASM discovered in an external DB system discovery run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalAsm.Builder.class)
+    builder = DiscoveredExternalAsm.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalAsm extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -91,49 +91,48 @@ public final class DiscoveredExternalAsm extends DiscoveredExternalDbSystemCompo
             return this;
         }
         /**
-         * The directory in which ASM is installed. This is the same directory in which Oracle Grid
-         * Infrastructure is installed.
-         */
+         * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridHome")
         private String gridHome;
 
         /**
-         * The directory in which ASM is installed. This is the same directory in which Oracle Grid
-         * Infrastructure is installed.
-         *
+         * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
          * @param gridHome the value to set
          * @return this builder
-         */
+         **/
         public Builder gridHome(String gridHome) {
             this.gridHome = gridHome;
             this.__explicitlySet__.add("gridHome");
             return this;
         }
-        /** Indicates whether Oracle Flex ASM is enabled or not. */
+        /**
+         * Indicates whether Oracle Flex ASM is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexEnabled")
         private Boolean isFlexEnabled;
 
         /**
          * Indicates whether Oracle Flex ASM is enabled or not.
-         *
          * @param isFlexEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlexEnabled(Boolean isFlexEnabled) {
             this.isFlexEnabled = isFlexEnabled;
             this.__explicitlySet__.add("isFlexEnabled");
             return this;
         }
-        /** The ASM version. */
+        /**
+         * The ASM version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The ASM version.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -224,7 +223,9 @@ public final class DiscoveredExternalAsm extends DiscoveredExternalDbSystemCompo
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -263,44 +264,43 @@ public final class DiscoveredExternalAsm extends DiscoveredExternalDbSystemCompo
     }
 
     /**
-     * The directory in which ASM is installed. This is the same directory in which Oracle Grid
-     * Infrastructure is installed.
-     */
+     * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridHome")
     private final String gridHome;
 
     /**
-     * The directory in which ASM is installed. This is the same directory in which Oracle Grid
-     * Infrastructure is installed.
-     *
+     * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
      * @return the value
-     */
+     **/
     public String getGridHome() {
         return gridHome;
     }
 
-    /** Indicates whether Oracle Flex ASM is enabled or not. */
+    /**
+     * Indicates whether Oracle Flex ASM is enabled or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexEnabled")
     private final Boolean isFlexEnabled;
 
     /**
      * Indicates whether Oracle Flex ASM is enabled or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFlexEnabled() {
         return isFlexEnabled;
     }
 
-    /** The ASM version. */
+    /**
+     * The ASM version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The ASM version.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
@@ -326,7 +326,6 @@ public final class DiscoveredExternalAsm extends DiscoveredExternalDbSystemCompo
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

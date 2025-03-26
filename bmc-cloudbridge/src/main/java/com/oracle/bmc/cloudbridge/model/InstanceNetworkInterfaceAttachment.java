@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Describes a network interface attachment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Describes a network interface attachment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceNetworkInterfaceAttachment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceNetworkInterfaceAttachment.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceNetworkInterfaceAttachment
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "attachmentKey",
@@ -49,91 +48,97 @@ public final class InstanceNetworkInterfaceAttachment
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the network interface attachment. */
+        /**
+         * The ID of the network interface attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentKey")
         private String attachmentKey;
 
         /**
          * The ID of the network interface attachment.
-         *
          * @param attachmentKey the value to set
          * @return this builder
-         */
+         **/
         public Builder attachmentKey(String attachmentKey) {
             this.attachmentKey = attachmentKey;
             this.__explicitlySet__.add("attachmentKey");
             return this;
         }
-        /** The timestamp when the attachment initiated. */
+        /**
+         * The timestamp when the attachment initiated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAttach")
         private java.util.Date timeAttach;
 
         /**
          * The timestamp when the attachment initiated.
-         *
          * @param timeAttach the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAttach(java.util.Date timeAttach) {
             this.timeAttach = timeAttach;
             this.__explicitlySet__.add("timeAttach");
             return this;
         }
-        /** Indicates whether the network interface is deleted when the instance is terminated. */
+        /**
+         * Indicates whether the network interface is deleted when the instance is terminated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeleteOnTermination")
         private Boolean isDeleteOnTermination;
 
         /**
          * Indicates whether the network interface is deleted when the instance is terminated.
-         *
          * @param isDeleteOnTermination the value to set
          * @return this builder
-         */
+         **/
         public Builder isDeleteOnTermination(Boolean isDeleteOnTermination) {
             this.isDeleteOnTermination = isDeleteOnTermination;
             this.__explicitlySet__.add("isDeleteOnTermination");
             return this;
         }
-        /** The index of the device on the instance for the network interface attachment. */
+        /**
+         * The index of the device on the instance for the network interface attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deviceIndex")
         private Integer deviceIndex;
 
         /**
          * The index of the device on the instance for the network interface attachment.
-         *
          * @param deviceIndex the value to set
          * @return this builder
-         */
+         **/
         public Builder deviceIndex(Integer deviceIndex) {
             this.deviceIndex = deviceIndex;
             this.__explicitlySet__.add("deviceIndex");
             return this;
         }
-        /** The index of the network card. */
+        /**
+         * The index of the network card.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkCardIndex")
         private Integer networkCardIndex;
 
         /**
          * The index of the network card.
-         *
          * @param networkCardIndex the value to set
          * @return this builder
-         */
+         **/
         public Builder networkCardIndex(Integer networkCardIndex) {
             this.networkCardIndex = networkCardIndex;
             this.__explicitlySet__.add("networkCardIndex");
             return this;
         }
-        /** The attachment state. */
+        /**
+         * The attachment state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The attachment state.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -182,7 +187,9 @@ public final class InstanceNetworkInterfaceAttachment
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class InstanceNetworkInterfaceAttachment
         return new Builder().copy(this);
     }
 
-    /** The ID of the network interface attachment. */
+    /**
+     * The ID of the network interface attachment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentKey")
     private final String attachmentKey;
 
     /**
      * The ID of the network interface attachment.
-     *
      * @return the value
-     */
+     **/
     public String getAttachmentKey() {
         return attachmentKey;
     }
 
-    /** The timestamp when the attachment initiated. */
+    /**
+     * The timestamp when the attachment initiated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAttach")
     private final java.util.Date timeAttach;
 
     /**
      * The timestamp when the attachment initiated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAttach() {
         return timeAttach;
     }
 
-    /** Indicates whether the network interface is deleted when the instance is terminated. */
+    /**
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteOnTermination")
     private final Boolean isDeleteOnTermination;
 
     /**
      * Indicates whether the network interface is deleted when the instance is terminated.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDeleteOnTermination() {
         return isDeleteOnTermination;
     }
 
-    /** The index of the device on the instance for the network interface attachment. */
+    /**
+     * The index of the device on the instance for the network interface attachment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deviceIndex")
     private final Integer deviceIndex;
 
     /**
      * The index of the device on the instance for the network interface attachment.
-     *
      * @return the value
-     */
+     **/
     public Integer getDeviceIndex() {
         return deviceIndex;
     }
 
-    /** The index of the network card. */
+    /**
+     * The index of the network card.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkCardIndex")
     private final Integer networkCardIndex;
 
     /**
      * The index of the network card.
-     *
      * @return the value
-     */
+     **/
     public Integer getNetworkCardIndex() {
         return networkCardIndex;
     }
 
-    /** The attachment state. */
+    /**
+     * The attachment state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The attachment state.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
@@ -276,7 +289,6 @@ public final class InstanceNetworkInterfaceAttachment
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

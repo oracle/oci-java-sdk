@@ -5,23 +5,22 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Details to create a new Remediation Recipe. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+ * Details to create a new Remediation Recipe.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateRemediationRecipeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateRemediationRecipeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateRemediationRecipeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -62,36 +61,32 @@ public final class CreateRemediationRecipeDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * remediation recipe.
-         */
+         * The compartment Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * remediation recipe.
-         *
+         * The compartment Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of the remediation recipe. */
+        /**
+         * The name of the remediation recipe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the remediation recipe.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -134,59 +129,52 @@ public final class CreateRemediationRecipeDetails
             return this;
         }
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * knowledge base.
-         */
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
         private String knowledgeBaseId;
 
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * knowledge base.
-         *
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
          * @param knowledgeBaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder knowledgeBaseId(String knowledgeBaseId) {
             this.knowledgeBaseId = knowledgeBaseId;
             this.__explicitlySet__.add("knowledgeBaseId");
             return this;
         }
         /**
-         * Boolean indicating if a run should be automatically triggered once the knowledge base is
-         * updated.
-         */
+         * Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRunTriggeredOnKbChange")
         private Boolean isRunTriggeredOnKbChange;
 
         /**
-         * Boolean indicating if a run should be automatically triggered once the knowledge base is
-         * updated.
-         *
+         * Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
          * @param isRunTriggeredOnKbChange the value to set
          * @return this builder
-         */
+         **/
         public Builder isRunTriggeredOnKbChange(Boolean isRunTriggeredOnKbChange) {
             this.isRunTriggeredOnKbChange = isRunTriggeredOnKbChange;
             this.__explicitlySet__.add("isRunTriggeredOnKbChange");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -195,7 +183,8 @@ public final class CreateRemediationRecipeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -205,7 +194,7 @@ public final class CreateRemediationRecipeDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -271,7 +260,9 @@ public final class CreateRemediationRecipeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -281,33 +272,29 @@ public final class CreateRemediationRecipeDetails
     }
 
     /**
-     * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * remediation recipe.
-     */
+     * The compartment Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * remediation recipe.
-     *
+     * The compartment Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of the remediation recipe. */
+    /**
+     * The name of the remediation recipe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the remediation recipe.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -341,71 +328,65 @@ public final class CreateRemediationRecipeDetails
     }
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * knowledge base.
-     */
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
     private final String knowledgeBaseId;
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * knowledge base.
-     *
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * @return the value
-     */
+     **/
     public String getKnowledgeBaseId() {
         return knowledgeBaseId;
     }
 
     /**
-     * Boolean indicating if a run should be automatically triggered once the knowledge base is
-     * updated.
-     */
+     * Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRunTriggeredOnKbChange")
     private final Boolean isRunTriggeredOnKbChange;
 
     /**
-     * Boolean indicating if a run should be automatically triggered once the knowledge base is
-     * updated.
-     *
+     * Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
      * @return the value
-     */
+     **/
     public Boolean getIsRunTriggeredOnKbChange() {
         return isRunTriggeredOnKbChange;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -417,7 +398,6 @@ public final class CreateRemediationRecipeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

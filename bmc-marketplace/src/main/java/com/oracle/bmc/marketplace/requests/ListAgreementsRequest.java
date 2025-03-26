@@ -6,64 +6,80 @@ package com.oracle.bmc.marketplace.requests;
 
 import com.oracle.bmc.marketplace.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListAgreementsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAgreementsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListAgreementsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAgreementsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique identifier for the listing. */
+    /**
+     * The unique identifier for the listing.
+     */
     private String listingId;
 
-    /** The unique identifier for the listing. */
+    /**
+     * The unique identifier for the listing.
+     */
     public String getListingId() {
         return listingId;
     }
-    /** The version of the package. Package versions are unique within a listing. */
+    /**
+     * The version of the package. Package versions are unique within a listing.
+     */
     private String packageVersion;
 
-    /** The version of the package. Package versions are unique within a listing. */
+    /**
+     * The version of the package. Package versions are unique within a listing.
+     */
     public String getPackageVersion() {
         return packageVersion;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     private Integer limit;
 
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
-    /** The unique identifier for the compartment. */
+    /**
+     * The unique identifier for the compartment.
+     */
     private String compartmentId;
 
-    /** The unique identifier for the compartment. */
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -71,15 +87,17 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAgreementsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier for the listing. */
+        /**
+         * The unique identifier for the listing.
+         */
         private String listingId = null;
 
         /**
          * The unique identifier for the listing.
-         *
          * @param listingId the value to set
          * @return this builder instance
          */
@@ -88,12 +106,13 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The version of the package. Package versions are unique within a listing. */
+        /**
+         * The version of the package. Package versions are unique within a listing.
+         */
         private String packageVersion = null;
 
         /**
          * The version of the package. Package versions are unique within a listing.
-         *
          * @param packageVersion the value to set
          * @return this builder instance
          */
@@ -103,14 +122,15 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -121,14 +141,13 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
          */
         private Integer limit = null;
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -138,12 +157,13 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -152,12 +172,13 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The unique identifier for the compartment. */
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -168,19 +189,18 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -192,7 +212,6 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAgreementsRequest o) {
@@ -210,11 +229,10 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListAgreementsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAgreementsRequest
          */
@@ -228,8 +246,7 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListAgreementsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAgreementsRequest
@@ -243,14 +260,12 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.page = page;
             request.compartmentId = compartmentId;
             return request;
-            // new ListAgreementsRequest(listingId, packageVersion, opcRequestId, limit, page,
-            // compartmentId);
+            // new ListAgreementsRequest(listingId, packageVersion, opcRequestId, limit, page, compartmentId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -265,7 +280,6 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Represents a specific version of a registration profile. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Represents a specific version of a registration profile.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProfileVersion.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProfileVersion
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProfileVersion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -91,104 +88,100 @@ public final class ProfileVersion
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * registration profile.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * registration profile.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the registration profile.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the registration profile.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** A user-friendly name for the profile. */
+        /**
+         * A user-friendly name for the profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name for the profile.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of the registration profile. */
+        /**
+         * The description of the registration profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the registration profile.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * management station to associate with an instance once registered. Management stations are
-         * only used with non-OCI instances.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+         * instance once registered. Management stations are only used with non-OCI instances.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
         private String managementStationId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * management station to associate with an instance once registered. Management stations are
-         * only used with non-OCI instances.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+         * instance once registered. Management stations are only used with non-OCI instances.
          *
          * @param managementStationId the value to set
          * @return this builder
-         */
+         **/
         public Builder managementStationId(String managementStationId) {
             this.managementStationId = managementStationId;
             this.__explicitlySet__.add("managementStationId");
             return this;
         }
-        /** The list of software sources that the registration profile will use. */
+        /**
+         * The list of software sources that the registration profile will use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<SoftwareSourceDetails> softwareSources;
 
         /**
          * The list of software sources that the registration profile will use.
-         *
          * @param softwareSources the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSources(java.util.List<SoftwareSourceDetails> softwareSources) {
             this.softwareSources = softwareSources;
             this.__explicitlySet__.add("softwareSources");
@@ -221,188 +214,181 @@ public final class ProfileVersion
             this.__explicitlySet__.add("lifecycleStage");
             return this;
         }
-        /** The type of profile. */
+        /**
+         * The type of profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileType")
         private ProfileType profileType;
 
         /**
          * The type of profile.
-         *
          * @param profileType the value to set
          * @return this builder
-         */
+         **/
         public Builder profileType(ProfileType profileType) {
             this.profileType = profileType;
             this.__explicitlySet__.add("profileType");
             return this;
         }
-        /** The vendor of the operating system for the instance. */
+        /**
+         * The vendor of the operating system for the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private VendorName vendorName;
 
         /**
          * The vendor of the operating system for the instance.
-         *
          * @param vendorName the value to set
          * @return this builder
-         */
+         **/
         public Builder vendorName(VendorName vendorName) {
             this.vendorName = vendorName;
             this.__explicitlySet__.add("vendorName");
             return this;
         }
-        /** The operating system family. */
+        /**
+         * The operating system family.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
          * The operating system family.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(OsFamily osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** The architecture type. */
+        /**
+         * The architecture type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archType")
         private ArchType archType;
 
         /**
          * The architecture type.
-         *
          * @param archType the value to set
          * @return this builder
-         */
+         **/
         public Builder archType(ArchType archType) {
             this.archType = archType;
             this.__explicitlySet__.add("archType");
             return this;
         }
         /**
-         * The time the registration profile was created (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the registration profile was created (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         *
+         * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the registration profile was last modified (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The time the registration profile was last modified (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         *
+         * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
             return this;
         }
-        /** The version of the profile. */
+        /**
+         * The version of the profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
         private String profileVersion;
 
         /**
          * The version of the profile.
-         *
          * @param profileVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder profileVersion(String profileVersion) {
             this.profileVersion = profileVersion;
             this.__explicitlySet__.add("profileVersion");
             return this;
         }
-        /** The current state of the registration profile. */
+        /**
+         * The current state of the registration profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Profile.LifecycleState lifecycleState;
 
         /**
          * The current state of the registration profile.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(Profile.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The type of instance to register. */
+        /**
+         * The type of instance to register.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
         private RegistrationType registrationType;
 
         /**
          * The type of instance to register.
-         *
          * @param registrationType the value to set
          * @return this builder
-         */
+         **/
         public Builder registrationType(RegistrationType registrationType) {
             this.registrationType = registrationType;
             this.__explicitlySet__.add("registrationType");
             return this;
         }
         /**
-         * Indicates if the profile is set as the default. There is exactly one default profile for
-         * a specified architecture, OS family, registration type, and vendor. When registering an
-         * instance with the corresonding characteristics, the default profile is used, unless
-         * another profile is specified.
-         */
+         * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
         private Boolean isDefaultProfile;
 
         /**
-         * Indicates if the profile is set as the default. There is exactly one default profile for
-         * a specified architecture, OS family, registration type, and vendor. When registering an
-         * instance with the corresonding characteristics, the default profile is used, unless
-         * another profile is specified.
+         * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
          *
          * @param isDefaultProfile the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefaultProfile(Boolean isDefaultProfile) {
             this.isDefaultProfile = isDefaultProfile;
             this.__explicitlySet__.add("isDefaultProfile");
             return this;
         }
         /**
-         * Indicates if the profile was created by the service. OS Management Hub provides a limited
-         * set of standardized profiles that can be used to register Autonomous Linux or Windows
-         * instances.
-         */
+         * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isServiceProvidedProfile")
         private Boolean isServiceProvidedProfile;
 
         /**
-         * Indicates if the profile was created by the service. OS Management Hub provides a limited
-         * set of standardized profiles that can be used to register Autonomous Linux or Windows
-         * instances.
+         * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
          *
          * @param isServiceProvidedProfile the value to set
          * @return this builder
-         */
+         **/
         public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
             this.isServiceProvidedProfile = isServiceProvidedProfile;
             this.__explicitlySet__.add("isServiceProvidedProfile");
@@ -507,7 +493,9 @@ public final class ProfileVersion
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -517,93 +505,89 @@ public final class ProfileVersion
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * registration profile.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * registration profile.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the registration profile.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the registration profile.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** A user-friendly name for the profile. */
+    /**
+     * A user-friendly name for the profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name for the profile.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description of the registration profile. */
+    /**
+     * The description of the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the registration profile.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * management station to associate with an instance once registered. Management stations are
-     * only used with non-OCI instances.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+     * instance once registered. Management stations are only used with non-OCI instances.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * management station to associate with an instance once registered. Management stations are
-     * only used with non-OCI instances.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+     * instance once registered. Management stations are only used with non-OCI instances.
      *
      * @return the value
-     */
+     **/
     public String getManagementStationId() {
         return managementStationId;
     }
 
-    /** The list of software sources that the registration profile will use. */
+    /**
+     * The list of software sources that the registration profile will use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceDetails> softwareSources;
 
     /**
      * The list of software sources that the registration profile will use.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SoftwareSourceDetails> getSoftwareSources() {
         return softwareSources;
     }
@@ -629,128 +613,130 @@ public final class ProfileVersion
         return lifecycleStage;
     }
 
-    /** The type of profile. */
+    /**
+     * The type of profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileType")
     private final ProfileType profileType;
 
     /**
      * The type of profile.
-     *
      * @return the value
-     */
+     **/
     public ProfileType getProfileType() {
         return profileType;
     }
 
-    /** The vendor of the operating system for the instance. */
+    /**
+     * The vendor of the operating system for the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
      * The vendor of the operating system for the instance.
-     *
      * @return the value
-     */
+     **/
     public VendorName getVendorName() {
         return vendorName;
     }
 
-    /** The operating system family. */
+    /**
+     * The operating system family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * The operating system family.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** The architecture type. */
+    /**
+     * The architecture type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchType archType;
 
     /**
      * The architecture type.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchType() {
         return archType;
     }
 
     /**
-     * The time the registration profile was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the registration profile was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the registration profile was last modified (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The time the registration profile was last modified (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
 
-    /** The version of the profile. */
+    /**
+     * The version of the profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
     private final String profileVersion;
 
     /**
      * The version of the profile.
-     *
      * @return the value
-     */
+     **/
     public String getProfileVersion() {
         return profileVersion;
     }
 
-    /** The current state of the registration profile. */
+    /**
+     * The current state of the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Profile.LifecycleState lifecycleState;
 
     /**
      * The current state of the registration profile.
-     *
      * @return the value
-     */
+     **/
     public Profile.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The type of instance to register. */
-    public enum RegistrationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of instance to register.
+     **/
+    public enum RegistrationType {
         OciLinux("OCI_LINUX"),
         NonOciLinux("NON_OCI_LINUX"),
         OciWindows("OCI_WINDOWS"),
         AutonomousLinux("AUTONOMOUS_LINUX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -789,53 +775,48 @@ public final class ProfileVersion
             return UnknownEnumValue;
         }
     };
-    /** The type of instance to register. */
+    /**
+     * The type of instance to register.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
     private final RegistrationType registrationType;
 
     /**
      * The type of instance to register.
-     *
      * @return the value
-     */
+     **/
     public RegistrationType getRegistrationType() {
         return registrationType;
     }
 
     /**
-     * Indicates if the profile is set as the default. There is exactly one default profile for a
-     * specified architecture, OS family, registration type, and vendor. When registering an
-     * instance with the corresonding characteristics, the default profile is used, unless another
-     * profile is specified.
-     */
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
     private final Boolean isDefaultProfile;
 
     /**
-     * Indicates if the profile is set as the default. There is exactly one default profile for a
-     * specified architecture, OS family, registration type, and vendor. When registering an
-     * instance with the corresonding characteristics, the default profile is used, unless another
-     * profile is specified.
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDefaultProfile() {
         return isDefaultProfile;
     }
 
     /**
-     * Indicates if the profile was created by the service. OS Management Hub provides a limited set
-     * of standardized profiles that can be used to register Autonomous Linux or Windows instances.
-     */
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isServiceProvidedProfile")
     private final Boolean isServiceProvidedProfile;
 
     /**
-     * Indicates if the profile was created by the service. OS Management Hub provides a limited set
-     * of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsServiceProvidedProfile() {
         return isServiceProvidedProfile;
     }
@@ -847,7 +828,6 @@ public final class ProfileVersion
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

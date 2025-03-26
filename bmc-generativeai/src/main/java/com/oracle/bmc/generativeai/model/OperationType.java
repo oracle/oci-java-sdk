@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.generativeai.model;
 
-/** The resources affected by this work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The resources affected by this work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+public enum OperationType {
     CreateModel("CREATE_MODEL"),
     DeleteModel("DELETE_MODEL"),
     MoveModel("MOVE_MODEL"),

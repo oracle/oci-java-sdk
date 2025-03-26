@@ -10,7 +10,9 @@ import java.util.Random;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-/** String manipulation utilities. */
+/**
+ * String manipulation utilities.
+ */
 public enum StringUtils {
     ; // prevent instantiation
 
@@ -18,7 +20,6 @@ public enum StringUtils {
 
     /**
      * Return true if this string is either null or just whitespace.
-     *
      * @param s the string
      * @return true if this string is either null or just whitespace.
      */
@@ -28,7 +29,6 @@ public enum StringUtils {
 
     /**
      * Return true if this string is not null and not just whitespace.
-     *
      * @param s the string
      * @return true if this string is not null and not just whitespace.
      */
@@ -39,7 +39,7 @@ public enum StringUtils {
     /**
      * Join the collection of objects to a string.
      *
-     * <p>Objects that are null are represented by the empty string.
+     * Objects that are null are represented by the empty string.
      *
      * @param objects collection of objects
      * @param delimiter delimiter between the objects
@@ -56,7 +56,6 @@ public enum StringUtils {
 
     /**
      * Replace the placeholders in the template with the values in the replacement mapping.
-     *
      * @param template template string
      * @param replacements map from key to replacement value
      * @param prefix prefix of the placeholder
@@ -78,11 +77,10 @@ public enum StringUtils {
     }
 
     /**
-     * Returns a string of random printable characters at least minLengthInclusive characters and
-     * less than maxLengthExclusive characters long.
+     * Returns a string of random printable characters at least minLengthInclusive characters and less than
+     * maxLengthExclusive characters long.
      *
-     * <p>The characters have ASCII codes ranging from 32 to 125 (both inclusive) and include
-     * spaces.
+     * The characters have ASCII codes ranging from 32 to 125 (both inclusive) and include spaces.
      *
      * @param minLengthInclusive minimum length (inclusive)
      * @param maxLengthExclusive maximum length (exclusive)
@@ -99,8 +97,7 @@ public enum StringUtils {
     /**
      * Returns a string of random printable characters of the requested length.
      *
-     * <p>The characters have ASCII codes ranging from 32 to 125 (both inclusive) and include
-     * spaces.
+     * The characters have ASCII codes ranging from 32 to 125 (both inclusive) and include spaces.
      *
      * @param length length in characters
      * @return the random string
@@ -115,10 +112,10 @@ public enum StringUtils {
     }
 
     /**
-     * Returns a string of random alphabetic characters at least minLengthInclusive characters and
-     * less than maxLengthExclusive characters long.
+     * Returns a string of random alphabetic characters at least minLengthInclusive characters and less than
+     * maxLengthExclusive characters long.
      *
-     * <p>The characters range from 'A' - 'Z' or from 'a' - 'z' (all inclusive).
+     * The characters range from 'A' - 'Z' or from 'a' - 'z' (all inclusive).
      *
      * @param minLengthInclusive minimum length (inclusive)
      * @param maxLengthExclusive maximum length (exclusive)
@@ -135,7 +132,7 @@ public enum StringUtils {
     /**
      * Returns a string of random alphabetic characters of the requested length.
      *
-     * <p>The characters range from 'A' - 'Z' or from 'a' - 'z' (all inclusive).
+     * The characters range from 'A' - 'Z' or from 'a' - 'z' (all inclusive).
      *
      * @param length length in characters
      * @return the random string
@@ -171,7 +168,6 @@ public enum StringUtils {
 
     /**
      * Returns true if any of the strings passed in are blank, as determined by isBlank.
-     *
      * @param strings strings to check
      * @return true if any of the strings are blank
      */
@@ -192,7 +188,6 @@ public enum StringUtils {
 
     /**
      * Returns true if none of the strings passed in are blank, as determined by isBlank.
-     *
      * @param strings strings to check
      * @return true if none of the strings are blank
      */
@@ -202,7 +197,6 @@ public enum StringUtils {
 
     /**
      * Returns true if all of the strings passed in are blank, as determined by isBlank.
-     *
      * @param strings strings to check
      * @return true if all of the strings are blank
      */
@@ -220,7 +214,6 @@ public enum StringUtils {
 
     /**
      * Returns true if the string is not empty.
-     *
      * @param s string to check
      * @return true if not empty
      */
@@ -230,7 +223,6 @@ public enum StringUtils {
 
     /**
      * Returns true if the string is empty.
-     *
      * @param s string to check
      * @return true if empty
      */
@@ -240,7 +232,6 @@ public enum StringUtils {
 
     /**
      * Returns the string in uppercase, or null if it was null
-     *
      * @param s string to convert to uppercase
      * @return string in uppercase, or null if it was null
      */
@@ -253,7 +244,6 @@ public enum StringUtils {
 
     /**
      * Return the first length characters of the string.
-     *
      * @param s string
      * @param length number of characters
      * @return first s
@@ -271,7 +261,6 @@ public enum StringUtils {
 
     /**
      * Return the length of the string, or 0 if the string is null.
-     *
      * @param s string
      * @return length of string or 0 if string is null
      */
@@ -283,9 +272,7 @@ public enum StringUtils {
     }
 
     /**
-     * Return true if the string contains the search string, ignoring case, or false if either is
-     * null.
-     *
+     * Return true if the string contains the search string, ignoring case, or false if either is null.
      * @param s string
      * @param searchStr substring to search for
      * @return true if the string contains the search string, or false if either is null
@@ -299,7 +286,6 @@ public enum StringUtils {
 
     /**
      * Null-safe case-insensitive equals.
-     *
      * @param s1 first string
      * @param s2 second string
      * @return true if equals, ignoring case
@@ -316,7 +302,6 @@ public enum StringUtils {
 
     /**
      * Return true if the string contains the search string, or false if either is null.
-     *
      * @param s string
      * @param searchStr substring to search for
      * @return true if the string contains the search string, or false if either is null
@@ -330,7 +315,6 @@ public enum StringUtils {
 
     /**
      * Repeat the substring count times.
-     *
      * @param substring substring
      * @param count number of times to occur
      * @return repeated substring

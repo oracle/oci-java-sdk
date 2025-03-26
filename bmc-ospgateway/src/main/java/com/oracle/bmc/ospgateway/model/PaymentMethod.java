@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ospgateway.model;
 
-/** Payment method */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-public enum PaymentMethod implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Payment method
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+public enum PaymentMethod {
     CreditCard("CREDIT_CARD"),
     Paypal("PAYPAL"),
 

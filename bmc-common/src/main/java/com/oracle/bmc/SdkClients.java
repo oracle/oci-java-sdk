@@ -7,7 +7,9 @@ package com.oracle.bmc;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/** Internal Annotation to trigger the creation of SDK clients. */
+/**
+ * Internal Annotation to trigger the creation of SDK clients.
+ */
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface SdkClients {
     Class<?>[] value();

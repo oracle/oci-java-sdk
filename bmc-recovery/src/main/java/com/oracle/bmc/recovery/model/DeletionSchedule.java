@@ -5,14 +5,13 @@
 package com.oracle.bmc.recovery.model;
 
 /**
- * The preferred schedule to delete a protected database and its backups after you terminate the
- * source database - * If you do not specify a value, then Recovery Service schedules to delete the
- * protected database 72 hours (3 days) after the database is terminated. * If you set the option as
- * DELETE_AFTER_RETENTION_PERIOD, then Recovery Service schedules to delete the protected database
- * after the backup retention period expires.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
-public enum DeletionSchedule implements com.oracle.bmc.http.internal.BmcEnum {
+ * The preferred schedule to delete a protected database and its backups after you terminate the source database -
+ * * If you do not specify a value, then Recovery Service schedules to delete the protected database 72 hours (3 days) after the database is terminated.
+ * * If you set the option as DELETE_AFTER_RETENTION_PERIOD, then Recovery Service schedules to delete the protected database after the backup retention period expires.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+public enum DeletionSchedule {
     DeleteAfterRetentionPeriod("DELETE_AFTER_RETENTION_PERIOD"),
     DeleteAfter72Hours("DELETE_AFTER_72_HOURS"),
     ;

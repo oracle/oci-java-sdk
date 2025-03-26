@@ -6,27 +6,32 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * Settings related to the Mobile App Notification channel, such as pull
- *
- * <p>*Added In:** 17.4.2
- *
- * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite -
- * required: true - returned: default - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **Added In:** 17.4.2
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsSearchable: false
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: true
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AuthenticationFactorSettingsNotificationSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AuthenticationFactorSettingsNotificationSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticationFactorSettingsNotificationSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pullEnabled"})
     public AuthenticationFactorSettingsNotificationSettings(Boolean pullEnabled) {
@@ -37,29 +42,38 @@ public final class AuthenticationFactorSettingsNotificationSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * If true, indicates that the Mobile App Pull Notification channel is enabled for
-         * authentication
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pullEnabled")
         private Boolean pullEnabled;
 
         /**
-         * If true, indicates that the Mobile App Pull Notification channel is enabled for
-         * authentication
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param pullEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder pullEnabled(Boolean pullEnabled) {
             this.pullEnabled = pullEnabled;
             this.__explicitlySet__.add("pullEnabled");
@@ -87,7 +101,9 @@ public final class AuthenticationFactorSettingsNotificationSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +113,37 @@ public final class AuthenticationFactorSettingsNotificationSettings
     }
 
     /**
-     * If true, indicates that the Mobile App Pull Notification channel is enabled for
-     * authentication
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pullEnabled")
     private final Boolean pullEnabled;
 
     /**
-     * If true, indicates that the Mobile App Pull Notification channel is enabled for
-     * authentication
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getPullEnabled() {
         return pullEnabled;
     }
@@ -130,7 +155,6 @@ public final class AuthenticationFactorSettingsNotificationSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

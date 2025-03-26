@@ -5,34 +5,35 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The configuration details for updating a certificate authority (CA). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+ * The configuration details for updating a certificate authority (CA).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType",
-        defaultImpl = UpdateCertificateAuthorityConfigDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType",
+    defaultImpl = UpdateCertificateAuthorityConfigDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateSubordinateCaIssuedByInternalCaConfigDetails.class,
-            name = "SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA"),
+        value = UpdateSubordinateCaIssuedByInternalCaConfigDetails.class,
+        name = "SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateRootCaByGeneratingInternallyConfigDetails.class,
-            name = "ROOT_CA_GENERATED_INTERNALLY")
+        value = UpdateRootCaByGeneratingInternallyConfigDetails.class,
+        name = "ROOT_CA_GENERATED_INTERNALLY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateCertificateAuthorityConfigDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"versionName", "stage"})
     protected UpdateCertificateAuthorityConfigDetails(String versionName, Stage stage) {
@@ -42,30 +43,28 @@ public class UpdateCertificateAuthorityConfigDetails
     }
 
     /**
-     * The name of the CA version. When the value is not null, a name is unique across versions of a
-     * given CA.
-     */
+     * The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
     /**
-     * The name of the CA version. When the value is not null, a name is unique across versions of a
-     * given CA.
+     * The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
      *
      * @return the value
-     */
+     **/
     public String getVersionName() {
         return versionName;
     }
 
     /**
-     * The rotation state of the CA. The default is {@code PENDING}, meaning that the CA is staged
-     * and available for use. A CA version that you mark as {@code CURRENT} is currently in use, but
-     * you don't yet want to rotate it into current, active use. For example, you might create or
-     * update a CA and mark its rotation state as {@code PENDING} if you haven't yet updated the
-     * certificate on the target system.
-     */
-    public enum Stage implements com.oracle.bmc.http.internal.BmcEnum {
+     * The rotation state of the CA. The default is {@code PENDING}, meaning that the CA is staged and available for use. A CA version
+     * that you mark as {@code CURRENT} is currently in use, but you don't yet want to rotate it into current, active use. For example,
+     * you might create or update a CA and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
+     *
+     **/
+    public enum Stage {
         Current("CURRENT"),
         Pending("PENDING"),
         ;
@@ -98,24 +97,21 @@ public class UpdateCertificateAuthorityConfigDetails
         }
     };
     /**
-     * The rotation state of the CA. The default is {@code PENDING}, meaning that the CA is staged
-     * and available for use. A CA version that you mark as {@code CURRENT} is currently in use, but
-     * you don't yet want to rotate it into current, active use. For example, you might create or
-     * update a CA and mark its rotation state as {@code PENDING} if you haven't yet updated the
-     * certificate on the target system.
-     */
+     * The rotation state of the CA. The default is {@code PENDING}, meaning that the CA is staged and available for use. A CA version
+     * that you mark as {@code CURRENT} is currently in use, but you don't yet want to rotate it into current, active use. For example,
+     * you might create or update a CA and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stage")
     private final Stage stage;
 
     /**
-     * The rotation state of the CA. The default is {@code PENDING}, meaning that the CA is staged
-     * and available for use. A CA version that you mark as {@code CURRENT} is currently in use, but
-     * you don't yet want to rotate it into current, active use. For example, you might create or
-     * update a CA and mark its rotation state as {@code PENDING} if you haven't yet updated the
-     * certificate on the target system.
+     * The rotation state of the CA. The default is {@code PENDING}, meaning that the CA is staged and available for use. A CA version
+     * that you mark as {@code CURRENT} is currently in use, but you don't yet want to rotate it into current, active use. For example,
+     * you might create or update a CA and mark its rotation state as {@code PENDING} if you haven't yet updated the certificate on the target system.
      *
      * @return the value
-     */
+     **/
     public Stage getStage() {
         return stage;
     }
@@ -127,7 +123,6 @@ public class UpdateCertificateAuthorityConfigDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,18 @@ package com.oracle.bmc.loadbalancer.responses;
 
 import com.oracle.bmc.loadbalancer.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,17 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -43,18 +45,21 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Reflects the current version of the load balancer and the resources it contains. The value
-     * only changes when the load balancer or an associated resource is created, updated, or delete
+     * Reflects the current version of the load balancer and the resources it contains.
+     * The value only changes when the load balancer or an associated resource is created,
+     * updated, or delete
+     * <p>
+     * For optimistic concurrency control. See {@code if-match}.
      *
-     * <p>For optimistic concurrency control. See {@code if-match}.
      */
     private String eTag;
 
     /**
-     * Reflects the current version of the load balancer and the resources it contains. The value
-     * only changes when the load balancer or an associated resource is created, updated, or delete
-     *
-     * <p>For optimistic concurrency control. See {@code if-match}.
+     * Reflects the current version of the load balancer and the resources it contains.
+     * The value only changes when the load balancer or an associated resource is created,
+     * updated, or delete
+     * <p>
+     * For optimistic concurrency control. See {@code if-match}.
      *
      * @return the value
      */
@@ -62,12 +67,13 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
         return eTag;
     }
 
-    /** A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances. */
+    /**
+     * A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances.
+     */
     private java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy> items;
 
     /**
-     * A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances.
-     *
+     * A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy> getItems() {
@@ -84,7 +90,7 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListRoutingPoliciesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String eTag,
@@ -96,33 +102,31 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListRoutingPoliciesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -133,16 +137,17 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -153,20 +158,21 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Reflects the current version of the load balancer and the resources it contains. The
-         * value only changes when the load balancer or an associated resource is created, updated,
-         * or delete
+         * Reflects the current version of the load balancer and the resources it contains.
+         * The value only changes when the load balancer or an associated resource is created,
+         * updated, or delete
+         * <p>
+         * For optimistic concurrency control. See {@code if-match}.
          *
-         * <p>For optimistic concurrency control. See {@code if-match}.
          */
         private String eTag;
 
         /**
-         * Reflects the current version of the load balancer and the resources it contains. The
-         * value only changes when the load balancer or an associated resource is created, updated,
-         * or delete
-         *
-         * <p>For optimistic concurrency control. See {@code if-match}.
+         * Reflects the current version of the load balancer and the resources it contains.
+         * The value only changes when the load balancer or an associated resource is created,
+         * updated, or delete
+         * <p>
+         * For optimistic concurrency control. See {@code if-match}.
          *
          * @param eTag the value to set
          * @return this builder
@@ -176,12 +182,13 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances. */
+        /**
+         * A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances.
+         */
         private java.util.List<com.oracle.bmc.loadbalancer.model.RoutingPolicy> items;
 
         /**
-         * A list of {@code com.oracle.bmc.loadbalancer.model.RoutingPolicy} instances.
-         *
+         * A list of com.oracle.bmc.loadbalancer.model.RoutingPolicy instances.
          * @param items the value to set
          * @return this builder
          */
@@ -193,10 +200,8 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListRoutingPoliciesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -210,10 +215,8 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListRoutingPoliciesResponse build() {
             return new ListRoutingPoliciesResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, eTag, items);
@@ -222,7 +225,6 @@ public class ListRoutingPoliciesResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

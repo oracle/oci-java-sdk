@@ -5,23 +5,23 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * The statistics of data ingestion job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * The statistics of data ingestion job.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataIngestionJobStatistics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DataIngestionJobStatistics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataIngestionJobStatistics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "numberOfFailedFiles",
@@ -38,46 +38,49 @@ public final class DataIngestionJobStatistics
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of files that have failed during the ingestion. */
+        /**
+         * The number of files that have failed during the ingestion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfFailedFiles")
         private Integer numberOfFailedFiles;
 
         /**
          * The number of files that have failed during the ingestion.
-         *
          * @param numberOfFailedFiles the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfFailedFiles(Integer numberOfFailedFiles) {
             this.numberOfFailedFiles = numberOfFailedFiles;
             this.__explicitlySet__.add("numberOfFailedFiles");
             return this;
         }
-        /** The number of files that have been successfully ingested during the ingestion. */
+        /**
+         * The number of files that have been successfully ingested during the ingestion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfIngestedFiles")
         private Integer numberOfIngestedFiles;
 
         /**
          * The number of files that have been successfully ingested during the ingestion.
-         *
          * @param numberOfIngestedFiles the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfIngestedFiles(Integer numberOfIngestedFiles) {
             this.numberOfIngestedFiles = numberOfIngestedFiles;
             this.__explicitlySet__.add("numberOfIngestedFiles");
             return this;
         }
-        /** The duration of this ingestion job. */
+        /**
+         * The duration of this ingestion job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
         private Integer durationInSeconds;
 
         /**
          * The duration of this ingestion job.
-         *
          * @param durationInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder durationInSeconds(Integer durationInSeconds) {
             this.durationInSeconds = durationInSeconds;
             this.__explicitlySet__.add("durationInSeconds");
@@ -114,7 +117,9 @@ public final class DataIngestionJobStatistics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,41 +128,44 @@ public final class DataIngestionJobStatistics
         return new Builder().copy(this);
     }
 
-    /** The number of files that have failed during the ingestion. */
+    /**
+     * The number of files that have failed during the ingestion.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfFailedFiles")
     private final Integer numberOfFailedFiles;
 
     /**
      * The number of files that have failed during the ingestion.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfFailedFiles() {
         return numberOfFailedFiles;
     }
 
-    /** The number of files that have been successfully ingested during the ingestion. */
+    /**
+     * The number of files that have been successfully ingested during the ingestion.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfIngestedFiles")
     private final Integer numberOfIngestedFiles;
 
     /**
      * The number of files that have been successfully ingested during the ingestion.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfIngestedFiles() {
         return numberOfIngestedFiles;
     }
 
-    /** The duration of this ingestion job. */
+    /**
+     * The duration of this ingestion job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
     private final Integer durationInSeconds;
 
     /**
      * The duration of this ingestion job.
-     *
      * @return the value
-     */
+     **/
     public Integer getDurationInSeconds() {
         return durationInSeconds;
     }
@@ -169,7 +177,6 @@ public final class DataIngestionJobStatistics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

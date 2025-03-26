@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Properties used to publish an Oracle Cloud Infrastructure Data Flow object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Properties used to publish an Oracle Cloud Infrastructure Data Flow object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateExternalPublicationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateExternalPublicationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateExternalPublicationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applicationId",
@@ -50,68 +49,64 @@ public final class CreateExternalPublicationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique OCID of the identifier that is returned after creating the Oracle Cloud
-         * Infrastructure Data Flow application.
-         */
+         * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
         /**
-         * The unique OCID of the identifier that is returned after creating the Oracle Cloud
-         * Infrastructure Data Flow application.
-         *
+         * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
          * @param applicationId the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
             return this;
         }
         /**
-         * The OCID of the compartment where the application is created in the Oracle Cloud
-         * Infrastructure Data Flow Service.
-         */
+         * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
         private String applicationCompartmentId;
 
         /**
-         * The OCID of the compartment where the application is created in the Oracle Cloud
-         * Infrastructure Data Flow Service.
-         *
+         * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
          * @param applicationCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationCompartmentId(String applicationCompartmentId) {
             this.applicationCompartmentId = applicationCompartmentId;
             this.__explicitlySet__.add("applicationCompartmentId");
             return this;
         }
-        /** The name of the application. */
+        /**
+         * The name of the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the application.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The details of the data flow or the application. */
+        /**
+         * The details of the data flow or the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The details of the data flow or the application.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -178,7 +173,9 @@ public final class CreateExternalPublicationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -188,61 +185,57 @@ public final class CreateExternalPublicationDetails
     }
 
     /**
-     * The unique OCID of the identifier that is returned after creating the Oracle Cloud
-     * Infrastructure Data Flow application.
-     */
+     * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
     /**
-     * The unique OCID of the identifier that is returned after creating the Oracle Cloud
-     * Infrastructure Data Flow application.
-     *
+     * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
      * @return the value
-     */
+     **/
     public String getApplicationId() {
         return applicationId;
     }
 
     /**
-     * The OCID of the compartment where the application is created in the Oracle Cloud
-     * Infrastructure Data Flow Service.
-     */
+     * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
     private final String applicationCompartmentId;
 
     /**
-     * The OCID of the compartment where the application is created in the Oracle Cloud
-     * Infrastructure Data Flow Service.
-     *
+     * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
      * @return the value
-     */
+     **/
     public String getApplicationCompartmentId() {
         return applicationCompartmentId;
     }
 
-    /** The name of the application. */
+    /**
+     * The name of the application.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the application.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The details of the data flow or the application. */
+    /**
+     * The details of the data flow or the application.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The details of the data flow or the application.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -268,7 +261,6 @@ public final class CreateExternalPublicationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

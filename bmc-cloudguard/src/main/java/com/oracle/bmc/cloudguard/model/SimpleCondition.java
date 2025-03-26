@@ -5,82 +5,85 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Information for a simple condition. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Information for a simple condition.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SimpleCondition.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SimpleCondition extends Condition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Parameter key */
+        /**
+         * Parameter key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameter")
         private String parameter;
 
         /**
          * Parameter key
-         *
          * @param parameter the value to set
          * @return this builder
-         */
+         **/
         public Builder parameter(String parameter) {
             this.parameter = parameter;
             this.__explicitlySet__.add("parameter");
             return this;
         }
-        /** Type of operator */
+        /**
+         * Type of operator
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private OperatorType operator;
 
         /**
          * Type of operator
-         *
          * @param operator the value to set
          * @return this builder
-         */
+         **/
         public Builder operator(OperatorType operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /** Value of operator in condition */
+        /**
+         * Value of operator in condition
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Value of operator in condition
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Type of value in condition */
+        /**
+         * Type of value in condition
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ConditionValueType valueType;
 
         /**
          * Type of value in condition
-         *
          * @param valueType the value to set
          * @return this builder
-         */
+         **/
         public Builder valueType(ConditionValueType valueType) {
             this.valueType = valueType;
             this.__explicitlySet__.add("valueType");
@@ -117,7 +120,9 @@ public final class SimpleCondition extends Condition {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,54 +141,58 @@ public final class SimpleCondition extends Condition {
         this.valueType = valueType;
     }
 
-    /** Parameter key */
+    /**
+     * Parameter key
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     private final String parameter;
 
     /**
      * Parameter key
-     *
      * @return the value
-     */
+     **/
     public String getParameter() {
         return parameter;
     }
 
-    /** Type of operator */
+    /**
+     * Type of operator
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final OperatorType operator;
 
     /**
      * Type of operator
-     *
      * @return the value
-     */
+     **/
     public OperatorType getOperator() {
         return operator;
     }
 
-    /** Value of operator in condition */
+    /**
+     * Value of operator in condition
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Value of operator in condition
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Type of value in condition */
+    /**
+     * Type of value in condition
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ConditionValueType valueType;
 
     /**
      * Type of value in condition
-     *
      * @return the value
-     */
+     **/
     public ConditionValueType getValueType() {
         return valueType;
     }
@@ -195,7 +204,6 @@ public final class SimpleCondition extends Condition {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

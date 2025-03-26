@@ -6,57 +6,72 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateAssociationParametersExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ValidateAssociationParametersRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateAssociationParametersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ValidateAssociationParametersRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ValidateAssociationParametersRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** Details for the new log analytics associations. */
+    /**
+     * Details for the new log analytics associations.
+     */
     private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails
             upsertLogAnalyticsAssociationDetails;
 
-    /** Details for the new log analytics associations. */
+    /**
+     * Details for the new log analytics associations.
+     */
     public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails
             getUpsertLogAnalyticsAssociationDetails() {
         return upsertLogAnalyticsAssociationDetails;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -89,15 +104,22 @@ public class ValidateAssociationParametersRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The attribute used to sort the returned association parameters */
+    /**
+     * The attribute used to sort the returned association parameters
+     */
     private SortBy sortBy;
 
-    /** The attribute used to sort the returned association parameters */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The attribute used to sort the returned association parameters
+     **/
+    public enum SortBy {
         SourceDisplayName("sourceDisplayName"),
         Status("status"),
         ;
@@ -130,40 +152,47 @@ public class ValidateAssociationParametersRequest
         }
     };
 
-    /** The attribute used to sort the returned association parameters */
+    /**
+     * The attribute used to sort the returned association parameters
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -181,10 +210,14 @@ public class ValidateAssociationParametersRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ValidateAssociationParametersRequest,
                     com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -198,13 +231,14 @@ public class ValidateAssociationParametersRequest
             return this;
         }
 
-        /** Details for the new log analytics associations. */
+        /**
+         * Details for the new log analytics associations.
+         */
         private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails
                 upsertLogAnalyticsAssociationDetails = null;
 
         /**
          * Details for the new log analytics associations.
-         *
          * @param upsertLogAnalyticsAssociationDetails the value to set
          * @return this builder instance
          */
@@ -215,12 +249,13 @@ public class ValidateAssociationParametersRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -230,15 +265,12 @@ public class ValidateAssociationParametersRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -247,7 +279,10 @@ public class ValidateAssociationParametersRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -261,12 +296,13 @@ public class ValidateAssociationParametersRequest
             return this;
         }
 
-        /** The attribute used to sort the returned association parameters */
+        /**
+         * The attribute used to sort the returned association parameters
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned association parameters
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -277,19 +313,20 @@ public class ValidateAssociationParametersRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -299,12 +336,13 @@ public class ValidateAssociationParametersRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -315,19 +353,18 @@ public class ValidateAssociationParametersRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -339,7 +376,6 @@ public class ValidateAssociationParametersRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ValidateAssociationParametersRequest o) {
@@ -359,11 +395,10 @@ public class ValidateAssociationParametersRequest
         /**
          * Build the instance of ValidateAssociationParametersRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ValidateAssociationParametersRequest
          */
@@ -376,7 +411,6 @@ public class ValidateAssociationParametersRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -390,8 +424,7 @@ public class ValidateAssociationParametersRequest
         /**
          * Build the instance of ValidateAssociationParametersRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ValidateAssociationParametersRequest
@@ -408,15 +441,12 @@ public class ValidateAssociationParametersRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ValidateAssociationParametersRequest(namespaceName,
-            // upsertLogAnalyticsAssociationDetails, limit, page, sortOrder, sortBy, opcRetryToken,
-            // opcRequestId);
+            // new ValidateAssociationParametersRequest(namespaceName, upsertLogAnalyticsAssociationDetails, limit, page, sortOrder, sortBy, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -433,7 +463,6 @@ public class ValidateAssociationParametersRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

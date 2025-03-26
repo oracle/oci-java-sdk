@@ -6,82 +6,91 @@ package com.oracle.bmc.governancerulescontrolplane.requests;
 
 import com.oracle.bmc.governancerulescontrolplane.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListInclusionCriteriaExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListInclusionCriteriaRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListInclusionCriteriaExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInclusionCriteriaRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class ListInclusionCriteriaRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique governance rule identifier. */
+    /**
+     * Unique governance rule identifier.
+     */
     private String governanceRuleId;
 
-    /** Unique governance rule identifier. */
+    /**
+     * Unique governance rule identifier.
+     */
     public String getGovernanceRuleId() {
         return governanceRuleId;
     }
-    /** Unique inclusion criterion identifier. */
+    /**
+     * Unique inclusion criterion identifier.
+     */
     private String inclusionCriterionId;
 
-    /** Unique inclusion criterion identifier. */
+    /**
+     * Unique inclusion criterion identifier.
+     */
     public String getInclusionCriterionId() {
         return inclusionCriterionId;
     }
     /**
-     * A filter to return only resources when their lifecycle state matches the given lifecycle
-     * state.
+     * A filter to return only resources when their lifecycle state matches the given lifecycle state.
      */
     private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion.LifecycleState
             lifecycleState;
 
     /**
-     * A filter to return only resources when their lifecycle state matches the given lifecycle
-     * state.
+     * A filter to return only resources when their lifecycle state matches the given lifecycle state.
      */
     public com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.governancerulescontrolplane.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.governancerulescontrolplane.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -115,16 +124,20 @@ public class ListInclusionCriteriaRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -132,15 +145,17 @@ public class ListInclusionCriteriaRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListInclusionCriteriaRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique governance rule identifier. */
+        /**
+         * Unique governance rule identifier.
+         */
         private String governanceRuleId = null;
 
         /**
          * Unique governance rule identifier.
-         *
          * @param governanceRuleId the value to set
          * @return this builder instance
          */
@@ -149,12 +164,13 @@ public class ListInclusionCriteriaRequest
             return this;
         }
 
-        /** Unique inclusion criterion identifier. */
+        /**
+         * Unique inclusion criterion identifier.
+         */
         private String inclusionCriterionId = null;
 
         /**
          * Unique inclusion criterion identifier.
-         *
          * @param inclusionCriterionId the value to set
          * @return this builder instance
          */
@@ -164,16 +180,13 @@ public class ListInclusionCriteriaRequest
         }
 
         /**
-         * A filter to return only resources when their lifecycle state matches the given lifecycle
-         * state.
+         * A filter to return only resources when their lifecycle state matches the given lifecycle state.
          */
         private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources when their lifecycle state matches the given lifecycle
-         * state.
-         *
+         * A filter to return only resources when their lifecycle state matches the given lifecycle state.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -184,12 +197,13 @@ public class ListInclusionCriteriaRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -199,15 +213,12 @@ public class ListInclusionCriteriaRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -216,12 +227,13 @@ public class ListInclusionCriteriaRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.governancerulescontrolplane.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -232,14 +244,13 @@ public class ListInclusionCriteriaRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -249,12 +260,13 @@ public class ListInclusionCriteriaRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -265,19 +277,18 @@ public class ListInclusionCriteriaRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -289,7 +300,6 @@ public class ListInclusionCriteriaRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListInclusionCriteriaRequest o) {
@@ -309,11 +319,10 @@ public class ListInclusionCriteriaRequest
         /**
          * Build the instance of ListInclusionCriteriaRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListInclusionCriteriaRequest
          */
@@ -327,8 +336,7 @@ public class ListInclusionCriteriaRequest
         /**
          * Build the instance of ListInclusionCriteriaRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListInclusionCriteriaRequest
@@ -344,14 +352,12 @@ public class ListInclusionCriteriaRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListInclusionCriteriaRequest(governanceRuleId, inclusionCriterionId,
-            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListInclusionCriteriaRequest(governanceRuleId, inclusionCriterionId, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -368,7 +374,6 @@ public class ListInclusionCriteriaRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

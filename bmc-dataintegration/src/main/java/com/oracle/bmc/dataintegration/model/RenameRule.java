@@ -5,24 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Lets you rename an attribute. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Lets you rename an attribute.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RenameRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RenameRule extends ProjectionRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -88,46 +87,49 @@ public final class RenameRule extends ProjectionRule {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Specifies whether to skip remaining rules when a match is found. */
+        /**
+         * Specifies whether to skip remaining rules when a match is found.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
         private Boolean isSkipRemainingRulesOnMatch;
 
         /**
          * Specifies whether to skip remaining rules when a match is found.
-         *
          * @param isSkipRemainingRulesOnMatch the value to set
          * @return this builder
-         */
+         **/
         public Builder isSkipRemainingRulesOnMatch(Boolean isSkipRemainingRulesOnMatch) {
             this.isSkipRemainingRulesOnMatch = isSkipRemainingRulesOnMatch;
             this.__explicitlySet__.add("isSkipRemainingRulesOnMatch");
             return this;
         }
-        /** The attribute name that needs to be renamed. */
+        /**
+         * The attribute name that needs to be renamed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fromName")
         private String fromName;
 
         /**
          * The attribute name that needs to be renamed.
-         *
          * @param fromName the value to set
          * @return this builder
-         */
+         **/
         public Builder fromName(String fromName) {
             this.fromName = fromName;
             this.__explicitlySet__.add("fromName");
             return this;
         }
-        /** The new attribute name. */
+        /**
+         * The new attribute name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toName")
         private String toName;
 
         /**
          * The new attribute name.
-         *
          * @param toName the value to set
          * @return this builder
-         */
+         **/
         public Builder toName(String toName) {
             this.toName = toName;
             this.__explicitlySet__.add("toName");
@@ -192,7 +194,9 @@ public final class RenameRule extends ProjectionRule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -226,41 +230,44 @@ public final class RenameRule extends ProjectionRule {
         this.toName = toName;
     }
 
-    /** Specifies whether to skip remaining rules when a match is found. */
+    /**
+     * Specifies whether to skip remaining rules when a match is found.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     private final Boolean isSkipRemainingRulesOnMatch;
 
     /**
      * Specifies whether to skip remaining rules when a match is found.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSkipRemainingRulesOnMatch() {
         return isSkipRemainingRulesOnMatch;
     }
 
-    /** The attribute name that needs to be renamed. */
+    /**
+     * The attribute name that needs to be renamed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fromName")
     private final String fromName;
 
     /**
      * The attribute name that needs to be renamed.
-     *
      * @return the value
-     */
+     **/
     public String getFromName() {
         return fromName;
     }
 
-    /** The new attribute name. */
+    /**
+     * The new attribute name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("toName")
     private final String toName;
 
     /**
      * The new attribute name.
-     *
      * @return the value
-     */
+     **/
     public String getToName() {
         return toName;
     }
@@ -272,7 +279,6 @@ public final class RenameRule extends ProjectionRule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

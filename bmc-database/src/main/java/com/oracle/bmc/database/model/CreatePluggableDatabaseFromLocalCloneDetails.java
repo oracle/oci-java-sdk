@@ -5,58 +5,56 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Specifies the creation type Local Clone. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Specifies the creation type Local Clone.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreatePluggableDatabaseFromLocalCloneDetails.Builder.class)
+    builder = CreatePluggableDatabaseFromLocalCloneDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "creationType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "creationType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreatePluggableDatabaseFromLocalCloneDetails
         extends CreatePluggableDatabaseCreationTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the Source Pluggable Database. */
+        /**
+         * The OCID of the Source Pluggable Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourcePluggableDatabaseId")
         private String sourcePluggableDatabaseId;
 
         /**
          * The OCID of the Source Pluggable Database.
-         *
          * @param sourcePluggableDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourcePluggableDatabaseId(String sourcePluggableDatabaseId) {
             this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
             this.__explicitlySet__.add("sourcePluggableDatabaseId");
             return this;
         }
         /**
-         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs
-         * to be thick cloned.
-         */
+         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isThinClone")
         private Boolean isThinClone;
 
         /**
-         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs
-         * to be thick cloned.
-         *
+         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
          * @param isThinClone the value to set
          * @return this builder
-         */
+         **/
         public Builder isThinClone(Boolean isThinClone) {
             this.isThinClone = isThinClone;
             this.__explicitlySet__.add("isThinClone");
@@ -88,7 +86,9 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,32 +105,30 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
         this.isThinClone = isThinClone;
     }
 
-    /** The OCID of the Source Pluggable Database. */
+    /**
+     * The OCID of the Source Pluggable Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePluggableDatabaseId")
     private final String sourcePluggableDatabaseId;
 
     /**
      * The OCID of the Source Pluggable Database.
-     *
      * @return the value
-     */
+     **/
     public String getSourcePluggableDatabaseId() {
         return sourcePluggableDatabaseId;
     }
 
     /**
-     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to
-     * be thick cloned.
-     */
+     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isThinClone")
     private final Boolean isThinClone;
 
     /**
-     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to
-     * be thick cloned.
-     *
+     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
      * @return the value
-     */
+     **/
     public Boolean getIsThinClone() {
         return isThinClone;
     }
@@ -142,7 +140,6 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

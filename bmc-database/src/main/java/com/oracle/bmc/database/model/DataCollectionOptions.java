@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud
- * VM cluster/VMBM DBCS. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataCollectionOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DataCollectionOptions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataCollectionOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isDiagnosticsEventsEnabled",
@@ -42,87 +41,58 @@ public final class DataCollectionOptions
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM
-         * cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service
-         * notifications for guest VM issues. Diagnostic collection also allows Oracle to provide
-         * enhanced service and proactive support for your Exadata system. You can enable diagnostic
-         * collection during VM cluster/Cloud VM cluster provisioning. You can also disable or
-         * enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster}
-         * API.
-         */
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDiagnosticsEventsEnabled")
         private Boolean isDiagnosticsEventsEnabled;
 
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM
-         * cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service
-         * notifications for guest VM issues. Diagnostic collection also allows Oracle to provide
-         * enhanced service and proactive support for your Exadata system. You can enable diagnostic
-         * collection during VM cluster/Cloud VM cluster provisioning. You can also disable or
-         * enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster}
-         * API.
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
          *
          * @param isDiagnosticsEventsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDiagnosticsEventsEnabled(Boolean isDiagnosticsEventsEnabled) {
             this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
             this.__explicitlySet__.add("isDiagnosticsEventsEnabled");
             return this;
         }
         /**
-         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster /
-         * VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share
-         * it with its operations and support personnel. You may also receive notifications for some
-         * events. Collecting health diagnostics enables Oracle to provide proactive support and
-         * enhanced service for your system. Optionally enable health monitoring while provisioning
-         * a system. You can also disable or enable health monitoring anytime using the {@code
-         * UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
-         */
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
+         * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHealthMonitoringEnabled")
         private Boolean isHealthMonitoringEnabled;
 
         /**
-         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster /
-         * VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share
-         * it with its operations and support personnel. You may also receive notifications for some
-         * events. Collecting health diagnostics enables Oracle to provide proactive support and
-         * enhanced service for your system. Optionally enable health monitoring while provisioning
-         * a system. You can also disable or enable health monitoring anytime using the {@code
-         * UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
+         * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
          *
          * @param isHealthMonitoringEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isHealthMonitoringEnabled(Boolean isHealthMonitoringEnabled) {
             this.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
             this.__explicitlySet__.add("isHealthMonitoringEnabled");
             return this;
         }
         /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster /
-         * Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive
-         * Events service notifications for guest VM issues, collect incident logs and traces, and
-         * use them to diagnose issues and resolve them. Optionally enable incident logs collection
-         * while provisioning a system. You can also disable or enable incident logs collection
-         * anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code
-         * updateDbsystem} API.
-         */
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
+         * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncidentLogsEnabled")
         private Boolean isIncidentLogsEnabled;
 
         /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster /
-         * Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive
-         * Events service notifications for guest VM issues, collect incident logs and traces, and
-         * use them to diagnose issues and resolve them. Optionally enable incident logs collection
-         * while provisioning a system. You can also disable or enable incident logs collection
-         * anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code
-         * updateDbsystem} API.
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
+         * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
          *
          * @param isIncidentLogsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isIncidentLogsEnabled(Boolean isIncidentLogsEnabled) {
             this.isIncidentLogsEnabled = isIncidentLogsEnabled;
             this.__explicitlySet__.add("isIncidentLogsEnabled");
@@ -159,7 +129,9 @@ public final class DataCollectionOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,78 +141,53 @@ public final class DataCollectionOptions
     }
 
     /**
-     * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM
-     * DBCS. Enabling diagnostic collection allows you to receive Events service notifications for
-     * guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and
-     * proactive support for your Exadata system. You can enable diagnostic collection during VM
-     * cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using
-     * the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
-     */
+     * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDiagnosticsEventsEnabled")
     private final Boolean isDiagnosticsEventsEnabled;
 
     /**
-     * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM
-     * DBCS. Enabling diagnostic collection allows you to receive Events service notifications for
-     * guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and
-     * proactive support for your Exadata system. You can enable diagnostic collection during VM
-     * cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using
-     * the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
+     * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the {@code UpdateVmCluster} or {@code updateCloudVmCluster} API.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDiagnosticsEventsEnabled() {
         return isDiagnosticsEventsEnabled;
     }
 
     /**
-     * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM
-     * DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with
-     * its operations and support personnel. You may also receive notifications for some events.
-     * Collecting health diagnostics enables Oracle to provide proactive support and enhanced
-     * service for your system. Optionally enable health monitoring while provisioning a system. You
-     * can also disable or enable health monitoring anytime using the {@code UpdateVmCluster},
-     * {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
-     */
+     * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
+     * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHealthMonitoringEnabled")
     private final Boolean isHealthMonitoringEnabled;
 
     /**
-     * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM
-     * DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with
-     * its operations and support personnel. You may also receive notifications for some events.
-     * Collecting health diagnostics enables Oracle to provide proactive support and enhanced
-     * service for your system. Optionally enable health monitoring while provisioning a system. You
-     * can also disable or enable health monitoring anytime using the {@code UpdateVmCluster},
-     * {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
+     * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
+     * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHealthMonitoringEnabled() {
         return isHealthMonitoringEnabled;
     }
 
     /**
-     * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud
-     * VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events
-     * service notifications for guest VM issues, collect incident logs and traces, and use them to
-     * diagnose issues and resolve them. Optionally enable incident logs collection while
-     * provisioning a system. You can also disable or enable incident logs collection anytime using
-     * the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
-     */
+     * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
+     * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncidentLogsEnabled")
     private final Boolean isIncidentLogsEnabled;
 
     /**
-     * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud
-     * VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events
-     * service notifications for guest VM issues, collect incident logs and traces, and use them to
-     * diagnose issues and resolve them. Optionally enable incident logs collection while
-     * provisioning a system. You can also disable or enable incident logs collection anytime using
-     * the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
+     * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
+     * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsIncidentLogsEnabled() {
         return isIncidentLogsEnabled;
     }
@@ -252,7 +199,6 @@ public final class DataCollectionOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

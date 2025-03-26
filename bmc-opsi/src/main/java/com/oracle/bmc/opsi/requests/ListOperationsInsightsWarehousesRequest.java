@@ -6,103 +6,120 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOperationsInsightsWarehousesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListOperationsInsightsWarehousesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOperationsInsightsWarehousesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOperationsInsightsWarehousesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListOperationsInsightsWarehousesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources that match the entire display name. */
+    /**
+     * A filter to return only resources that match the entire display name.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name. */
+    /**
+     * A filter to return only resources that match the entire display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** Unique Ops Insights Warehouse identifier */
+    /**
+     * Unique Ops Insights Warehouse identifier
+     */
     private String id;
 
-    /** Unique Ops Insights Warehouse identifier */
+    /**
+     * Unique Ops Insights Warehouse identifier
+     */
     public String getId() {
         return id;
     }
-    /** Lifecycle states */
+    /**
+     * Lifecycle states
+     */
     private java.util.List<com.oracle.bmc.opsi.model.OperationsInsightsWarehouseLifecycleState>
             lifecycleState;
 
-    /** Lifecycle states */
+    /**
+     * Lifecycle states
+     */
     public java.util.List<com.oracle.bmc.opsi.model.OperationsInsightsWarehouseLifecycleState>
             getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -136,22 +153,23 @@ public class ListOperationsInsightsWarehousesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -160,19 +178,17 @@ public class ListOperationsInsightsWarehousesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOperationsInsightsWarehousesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -181,12 +197,13 @@ public class ListOperationsInsightsWarehousesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name. */
+        /**
+         * A filter to return only resources that match the entire display name.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -195,12 +212,13 @@ public class ListOperationsInsightsWarehousesRequest
             return this;
         }
 
-        /** Unique Ops Insights Warehouse identifier */
+        /**
+         * Unique Ops Insights Warehouse identifier
+         */
         private String id = null;
 
         /**
          * Unique Ops Insights Warehouse identifier
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -209,13 +227,14 @@ public class ListOperationsInsightsWarehousesRequest
             return this;
         }
 
-        /** Lifecycle states */
+        /**
+         * Lifecycle states
+         */
         private java.util.List<com.oracle.bmc.opsi.model.OperationsInsightsWarehouseLifecycleState>
                 lifecycleState = null;
 
         /**
          * Lifecycle states
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -228,7 +247,6 @@ public class ListOperationsInsightsWarehousesRequest
 
         /**
          * Singular setter. Lifecycle states
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -237,17 +255,20 @@ public class ListOperationsInsightsWarehousesRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -259,16 +280,17 @@ public class ListOperationsInsightsWarehousesRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -278,7 +300,10 @@ public class ListOperationsInsightsWarehousesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -293,16 +318,13 @@ public class ListOperationsInsightsWarehousesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -313,14 +335,15 @@ public class ListOperationsInsightsWarehousesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -332,19 +355,18 @@ public class ListOperationsInsightsWarehousesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -356,7 +378,6 @@ public class ListOperationsInsightsWarehousesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListOperationsInsightsWarehousesRequest o) {
@@ -375,14 +396,12 @@ public class ListOperationsInsightsWarehousesRequest
         }
 
         /**
-         * Build the instance of ListOperationsInsightsWarehousesRequest as configured by this
-         * builder
+         * Build the instance of ListOperationsInsightsWarehousesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListOperationsInsightsWarehousesRequest
          */
@@ -394,11 +413,9 @@ public class ListOperationsInsightsWarehousesRequest
         }
 
         /**
-         * Build the instance of ListOperationsInsightsWarehousesRequest as configured by this
-         * builder
+         * Build the instance of ListOperationsInsightsWarehousesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListOperationsInsightsWarehousesRequest
@@ -416,14 +433,12 @@ public class ListOperationsInsightsWarehousesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListOperationsInsightsWarehousesRequest(compartmentId, displayName, id,
-            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListOperationsInsightsWarehousesRequest(compartmentId, displayName, id, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -441,7 +456,6 @@ public class ListOperationsInsightsWarehousesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

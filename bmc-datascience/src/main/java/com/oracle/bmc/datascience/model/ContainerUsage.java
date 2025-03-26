@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The Usage of the container. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ContainerUsage implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The Usage of the container.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ContainerUsage {
     Inference("INFERENCE"),
     FineTune("FINE_TUNE"),
     Evaluation("EVALUATION"),

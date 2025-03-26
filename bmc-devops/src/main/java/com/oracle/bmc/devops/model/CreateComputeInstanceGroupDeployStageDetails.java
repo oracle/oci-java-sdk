@@ -5,25 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Instance Group Rolling deployment stage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies the Instance Group Rolling deployment stage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateComputeInstanceGroupDeployStageDetails.Builder.class)
+    builder = CreateComputeInstanceGroupDeployStageDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "deployStageType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "deployStageType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateComputeInstanceGroupDeployStageDetails extends CreateDeployStageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -82,47 +82,50 @@ public final class CreateComputeInstanceGroupDeployStageDetails extends CreateDe
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** A compute instance group environment OCID for rolling deployment. */
+        /**
+         * A compute instance group environment OCID for rolling deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupDeployEnvironmentId")
         private String computeInstanceGroupDeployEnvironmentId;
 
         /**
          * A compute instance group environment OCID for rolling deployment.
-         *
          * @param computeInstanceGroupDeployEnvironmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder computeInstanceGroupDeployEnvironmentId(
                 String computeInstanceGroupDeployEnvironmentId) {
             this.computeInstanceGroupDeployEnvironmentId = computeInstanceGroupDeployEnvironmentId;
             this.__explicitlySet__.add("computeInstanceGroupDeployEnvironmentId");
             return this;
         }
-        /** The OCID of the artifact that contains the deployment specification. */
+        /**
+         * The OCID of the artifact that contains the deployment specification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
         private String deploymentSpecDeployArtifactId;
 
         /**
          * The OCID of the artifact that contains the deployment specification.
-         *
          * @param deploymentSpecDeployArtifactId the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentSpecDeployArtifactId(String deploymentSpecDeployArtifactId) {
             this.deploymentSpecDeployArtifactId = deploymentSpecDeployArtifactId;
             this.__explicitlySet__.add("deploymentSpecDeployArtifactId");
             return this;
         }
-        /** Additional file artifact OCIDs. */
+        /**
+         * Additional file artifact OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
         private java.util.List<String> deployArtifactIds;
 
         /**
          * Additional file artifact OCIDs.
-         *
          * @param deployArtifactIds the value to set
          * @return this builder
-         */
+         **/
         public Builder deployArtifactIds(java.util.List<String> deployArtifactIds) {
             this.deployArtifactIds = deployArtifactIds;
             this.__explicitlySet__.add("deployArtifactIds");
@@ -236,7 +239,9 @@ public final class CreateComputeInstanceGroupDeployStageDetails extends CreateDe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -276,41 +281,44 @@ public final class CreateComputeInstanceGroupDeployStageDetails extends CreateDe
         this.loadBalancerConfig = loadBalancerConfig;
     }
 
-    /** A compute instance group environment OCID for rolling deployment. */
+    /**
+     * A compute instance group environment OCID for rolling deployment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceGroupDeployEnvironmentId")
     private final String computeInstanceGroupDeployEnvironmentId;
 
     /**
      * A compute instance group environment OCID for rolling deployment.
-     *
      * @return the value
-     */
+     **/
     public String getComputeInstanceGroupDeployEnvironmentId() {
         return computeInstanceGroupDeployEnvironmentId;
     }
 
-    /** The OCID of the artifact that contains the deployment specification. */
+    /**
+     * The OCID of the artifact that contains the deployment specification.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentSpecDeployArtifactId")
     private final String deploymentSpecDeployArtifactId;
 
     /**
      * The OCID of the artifact that contains the deployment specification.
-     *
      * @return the value
-     */
+     **/
     public String getDeploymentSpecDeployArtifactId() {
         return deploymentSpecDeployArtifactId;
     }
 
-    /** Additional file artifact OCIDs. */
+    /**
+     * Additional file artifact OCIDs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactIds")
     private final java.util.List<String> deployArtifactIds;
 
     /**
      * Additional file artifact OCIDs.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDeployArtifactIds() {
         return deployArtifactIds;
     }
@@ -350,7 +358,6 @@ public final class CreateComputeInstanceGroupDeployStageDetails extends CreateDe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

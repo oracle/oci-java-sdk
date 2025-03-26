@@ -5,11 +5,10 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Indicates which type of Gather Optimizer Statistics Collection or Optimizer Statistics Advisor
- * tasks or its objects should be aggregated.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum OptimizerStatisticsGroupByTypes implements com.oracle.bmc.http.internal.BmcEnum {
+ * Indicates which type of Gather Optimizer Statistics Collection or Optimizer Statistics Advisor tasks or its objects should be aggregated.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum OptimizerStatisticsGroupByTypes {
     TaskStatus("TASK_STATUS"),
     TaskObjectsStatus("TASK_OBJECTS_STATUS"),
 

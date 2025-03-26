@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Allowed values for logType. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum LogTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Allowed values for logType.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum LogTypes {
     Log("LOG"),
     LogEvents("LOG_EVENTS"),
 

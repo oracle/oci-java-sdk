@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.dts;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for TransferJob service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for TransferJob service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
-public class TransferJobAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements TransferJobAsync {
-    /** Service instance for TransferJob. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+public class TransferJobAsyncClient implements TransferJobAsync {
+    /**
+     * Service instance for TransferJob.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("TRANSFERJOB")
@@ -40,322 +37,112 @@ public class TransferJobAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(TransferJobAsyncClient.class);
 
-    TransferJobAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, TransferJobAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "dts";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public TransferJobAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new TransferJobAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeTransferJobCompartmentResponse>
-            changeTransferJobCompartment(
-                    ChangeTransferJobCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeTransferJobCompartmentRequest,
-                                    ChangeTransferJobCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getTransferJobId(), "transferJobId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeTransferJobCompartmentDetails(),
-                "changeTransferJobCompartmentDetails is required");
-
-        return clientCall(request, ChangeTransferJobCompartmentResponse::builder)
-                .logger(LOG, "changeTransferJobCompartment")
-                .serviceDetails("TransferJob", "ChangeTransferJobCompartment", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeTransferJobCompartmentRequest::builder)
-                .basePath("/20171001")
-                .appendPathParam("transferJobs")
-                .appendPathParam(request.getTransferJobId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeTransferJobCompartmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", ChangeTransferJobCompartmentResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateTransferJobResponse> createTransferJob(
-            CreateTransferJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateTransferJobRequest, CreateTransferJobResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateTransferJobDetails(), "createTransferJobDetails is required");
-
-        return clientCall(request, CreateTransferJobResponse::builder)
-                .logger(LOG, "createTransferJob")
-                .serviceDetails("TransferJob", "CreateTransferJob", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTransferJobRequest::builder)
-                .basePath("/20171001")
-                .appendPathParam("transferJobs")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.dts.model.TransferJob.class,
-                        CreateTransferJobResponse.Builder::transferJob)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTransferJobResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateTransferJobResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteTransferJobResponse> deleteTransferJob(
-            DeleteTransferJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteTransferJobRequest, DeleteTransferJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getId(), "id must not be blank");
-
-        return clientCall(request, DeleteTransferJobResponse::builder)
-                .logger(LOG, "deleteTransferJob")
-                .serviceDetails("TransferJob", "DeleteTransferJob", "")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTransferJobRequest::builder)
-                .basePath("/20171001")
-                .appendPathParam("transferJobs")
-                .appendPathParam(request.getId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTransferJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTransferJobResponse> getTransferJob(
-            GetTransferJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetTransferJobRequest, GetTransferJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getId(), "id must not be blank");
-
-        return clientCall(request, GetTransferJobResponse::builder)
-                .logger(LOG, "getTransferJob")
-                .serviceDetails("TransferJob", "GetTransferJob", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTransferJobRequest::builder)
-                .basePath("/20171001")
-                .appendPathParam("transferJobs")
-                .appendPathParam(request.getId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.dts.model.TransferJob.class,
-                        GetTransferJobResponse.Builder::transferJob)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTransferJobResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetTransferJobResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTransferJobsResponse> listTransferJobs(
-            ListTransferJobsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListTransferJobsRequest, ListTransferJobsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListTransferJobsResponse::builder)
-                .logger(LOG, "listTransferJobs")
-                .serviceDetails("TransferJob", "ListTransferJobs", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTransferJobsRequest::builder)
-                .basePath("/20171001")
-                .appendPathParam("transferJobs")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.dts.model.TransferJobSummary.class,
-                        ListTransferJobsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTransferJobsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTransferJobsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateTransferJobResponse> updateTransferJob(
-            UpdateTransferJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateTransferJobRequest, UpdateTransferJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getId(), "id must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTransferJobDetails(), "updateTransferJobDetails is required");
-
-        return clientCall(request, UpdateTransferJobResponse::builder)
-                .logger(LOG, "updateTransferJob")
-                .serviceDetails("TransferJob", "UpdateTransferJob", "")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTransferJobRequest::builder)
-                .basePath("/20171001")
-                .appendPathParam("transferJobs")
-                .appendPathParam(request.getId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.dts.model.TransferJob.class,
-                        UpdateTransferJobResponse.Builder::transferJob)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTransferJobResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateTransferJobResponse.Builder::etag)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public TransferJobAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public TransferJobAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public TransferJobAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public TransferJobAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public TransferJobAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -363,26 +150,26 @@ public class TransferJobAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public TransferJobAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -391,29 +178,29 @@ public class TransferJobAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public TransferJobAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -426,14 +213,531 @@ public class TransferJobAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public TransferJobAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, TransferJobAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public TransferJobAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new TransferJobAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeTransferJobCompartmentResponse>
+            changeTransferJobCompartment(
+                    ChangeTransferJobCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeTransferJobCompartmentRequest,
+                                    ChangeTransferJobCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeTransferJobCompartment");
+        final ChangeTransferJobCompartmentRequest interceptedRequest =
+                ChangeTransferJobCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTransferJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferJob",
+                        "ChangeTransferJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeTransferJobCompartmentResponse>
+                transformer =
+                        ChangeTransferJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeTransferJobCompartmentRequest, ChangeTransferJobCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeTransferJobCompartmentRequest,
+                                ChangeTransferJobCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeTransferJobCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTransferJobCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeTransferJobCompartmentRequest, ChangeTransferJobCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransferJobResponse> createTransferJob(
+            CreateTransferJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateTransferJobRequest, CreateTransferJobResponse>
+                    handler) {
+        LOG.trace("Called async createTransferJob");
+        final CreateTransferJobRequest interceptedRequest =
+                CreateTransferJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTransferJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferJob", "CreateTransferJob", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTransferJobResponse>
+                transformer =
+                        CreateTransferJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateTransferJobRequest, CreateTransferJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTransferJobRequest, CreateTransferJobResponse>,
+                        java.util.concurrent.Future<CreateTransferJobResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTransferJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTransferJobRequest, CreateTransferJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransferJobResponse> deleteTransferJob(
+            DeleteTransferJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTransferJobRequest, DeleteTransferJobResponse>
+                    handler) {
+        LOG.trace("Called async deleteTransferJob");
+        final DeleteTransferJobRequest interceptedRequest =
+                DeleteTransferJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTransferJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferJob", "DeleteTransferJob", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTransferJobResponse>
+                transformer =
+                        DeleteTransferJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteTransferJobRequest, DeleteTransferJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteTransferJobRequest, DeleteTransferJobResponse>,
+                        java.util.concurrent.Future<DeleteTransferJobResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteTransferJobRequest, DeleteTransferJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransferJobResponse> getTransferJob(
+            GetTransferJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTransferJobRequest, GetTransferJobResponse>
+                    handler) {
+        LOG.trace("Called async getTransferJob");
+        final GetTransferJobRequest interceptedRequest =
+                GetTransferJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTransferJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferJob", "GetTransferJob", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTransferJobResponse>
+                transformer =
+                        GetTransferJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetTransferJobRequest, GetTransferJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTransferJobRequest, GetTransferJobResponse>,
+                        java.util.concurrent.Future<GetTransferJobResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTransferJobRequest, GetTransferJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTransferJobsResponse> listTransferJobs(
+            ListTransferJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTransferJobsRequest, ListTransferJobsResponse>
+                    handler) {
+        LOG.trace("Called async listTransferJobs");
+        final ListTransferJobsRequest interceptedRequest =
+                ListTransferJobsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTransferJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferJob", "ListTransferJobs", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTransferJobsResponse>
+                transformer =
+                        ListTransferJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListTransferJobsRequest, ListTransferJobsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTransferJobsRequest, ListTransferJobsResponse>,
+                        java.util.concurrent.Future<ListTransferJobsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTransferJobsRequest, ListTransferJobsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTransferJobResponse> updateTransferJob(
+            UpdateTransferJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTransferJobRequest, UpdateTransferJobResponse>
+                    handler) {
+        LOG.trace("Called async updateTransferJob");
+        final UpdateTransferJobRequest interceptedRequest =
+                UpdateTransferJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTransferJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "TransferJob", "UpdateTransferJob", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTransferJobResponse>
+                transformer =
+                        UpdateTransferJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateTransferJobRequest, UpdateTransferJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTransferJobRequest, UpdateTransferJobResponse>,
+                        java.util.concurrent.Future<UpdateTransferJobResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTransferJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTransferJobRequest, UpdateTransferJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

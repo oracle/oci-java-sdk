@@ -5,26 +5,25 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The details of the configuration for creating a certificate based on the keys from an imported
- * certificate. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+ * The details of the configuration for creating a certificate based on the keys from an imported certificate.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateCertificateByImportingConfigDetails.Builder.class)
+    builder = CreateCertificateByImportingConfigDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateCertificateByImportingConfigDetails
         extends CreateCertificateConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -37,61 +36,65 @@ public final class CreateCertificateByImportingConfigDetails
             this.__explicitlySet__.add("versionName");
             return this;
         }
-        /** The certificate chain (in PEM format) for the imported certificate. */
+        /**
+         * The certificate chain (in PEM format) for the imported certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certChainPem")
         private String certChainPem;
 
         /**
          * The certificate chain (in PEM format) for the imported certificate.
-         *
          * @param certChainPem the value to set
          * @return this builder
-         */
+         **/
         public Builder certChainPem(String certChainPem) {
             this.certChainPem = certChainPem;
             this.__explicitlySet__.add("certChainPem");
             return this;
         }
-        /** The private key (in PEM format) for the imported certificate. */
+        /**
+         * The private key (in PEM format) for the imported certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
         private String privateKeyPem;
 
         /**
          * The private key (in PEM format) for the imported certificate.
-         *
          * @param privateKeyPem the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyPem(String privateKeyPem) {
             this.privateKeyPem = privateKeyPem;
             this.__explicitlySet__.add("privateKeyPem");
             return this;
         }
-        /** The certificate (in PEM format) for the imported certificate. */
+        /**
+         * The certificate (in PEM format) for the imported certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificatePem")
         private String certificatePem;
 
         /**
          * The certificate (in PEM format) for the imported certificate.
-         *
          * @param certificatePem the value to set
          * @return this builder
-         */
+         **/
         public Builder certificatePem(String certificatePem) {
             this.certificatePem = certificatePem;
             this.__explicitlySet__.add("certificatePem");
             return this;
         }
-        /** An optional passphrase for the private key. */
+        /**
+         * An optional passphrase for the private key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
         private String privateKeyPemPassphrase;
 
         /**
          * An optional passphrase for the private key.
-         *
          * @param privateKeyPemPassphrase the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyPemPassphrase(String privateKeyPemPassphrase) {
             this.privateKeyPemPassphrase = privateKeyPemPassphrase;
             this.__explicitlySet__.add("privateKeyPemPassphrase");
@@ -136,7 +139,9 @@ public final class CreateCertificateByImportingConfigDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,54 +164,58 @@ public final class CreateCertificateByImportingConfigDetails
         this.privateKeyPemPassphrase = privateKeyPemPassphrase;
     }
 
-    /** The certificate chain (in PEM format) for the imported certificate. */
+    /**
+     * The certificate chain (in PEM format) for the imported certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certChainPem")
     private final String certChainPem;
 
     /**
      * The certificate chain (in PEM format) for the imported certificate.
-     *
      * @return the value
-     */
+     **/
     public String getCertChainPem() {
         return certChainPem;
     }
 
-    /** The private key (in PEM format) for the imported certificate. */
+    /**
+     * The private key (in PEM format) for the imported certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
     private final String privateKeyPem;
 
     /**
      * The private key (in PEM format) for the imported certificate.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateKeyPem() {
         return privateKeyPem;
     }
 
-    /** The certificate (in PEM format) for the imported certificate. */
+    /**
+     * The certificate (in PEM format) for the imported certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificatePem")
     private final String certificatePem;
 
     /**
      * The certificate (in PEM format) for the imported certificate.
-     *
      * @return the value
-     */
+     **/
     public String getCertificatePem() {
         return certificatePem;
     }
 
-    /** An optional passphrase for the private key. */
+    /**
+     * An optional passphrase for the private key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
     private final String privateKeyPemPassphrase;
 
     /**
      * An optional passphrase for the private key.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateKeyPemPassphrase() {
         return privateKeyPemPassphrase;
     }
@@ -218,7 +227,6 @@ public final class CreateCertificateByImportingConfigDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,18 +6,19 @@ package com.oracle.bmc.capacitymanagement.responses;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class ListInternalNamespaceOccOverviewsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,16 +27,17 @@ public class ListInternalNamespaceOccOverviewsResponse
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -43,12 +45,13 @@ public class ListInternalNamespaceOccOverviewsResponse
         return opcNextPage;
     }
 
-    /** The returned {@code OccOverviewCollection} instance. */
+    /**
+     * The returned OccOverviewCollection instance.
+     */
     private com.oracle.bmc.capacitymanagement.model.OccOverviewCollection occOverviewCollection;
 
     /**
-     * The returned {@code OccOverviewCollection} instance.
-     *
+     * The returned OccOverviewCollection instance.
      * @return the value
      */
     public com.oracle.bmc.capacitymanagement.model.OccOverviewCollection
@@ -65,7 +68,7 @@ public class ListInternalNamespaceOccOverviewsResponse
     })
     private ListInternalNamespaceOccOverviewsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.capacitymanagement.model.OccOverviewCollection occOverviewCollection) {
@@ -75,34 +78,31 @@ public class ListInternalNamespaceOccOverviewsResponse
         this.occOverviewCollection = occOverviewCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListInternalNamespaceOccOverviewsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -113,16 +113,17 @@ public class ListInternalNamespaceOccOverviewsResponse
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -132,12 +133,13 @@ public class ListInternalNamespaceOccOverviewsResponse
             return this;
         }
 
-        /** The returned {@code OccOverviewCollection} instance. */
+        /**
+         * The returned OccOverviewCollection instance.
+         */
         private com.oracle.bmc.capacitymanagement.model.OccOverviewCollection occOverviewCollection;
 
         /**
-         * The returned {@code OccOverviewCollection} instance.
-         *
+         * The returned OccOverviewCollection instance.
          * @param occOverviewCollection the value to set
          * @return this builder
          */
@@ -150,10 +152,8 @@ public class ListInternalNamespaceOccOverviewsResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListInternalNamespaceOccOverviewsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -166,10 +166,8 @@ public class ListInternalNamespaceOccOverviewsResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListInternalNamespaceOccOverviewsResponse build() {
             return new ListInternalNamespaceOccOverviewsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, occOverviewCollection);
@@ -178,7 +176,6 @@ public class ListInternalNamespaceOccOverviewsResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

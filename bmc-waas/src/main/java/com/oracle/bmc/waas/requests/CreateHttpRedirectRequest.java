@@ -6,50 +6,44 @@ package com.oracle.bmc.waas.requests;
 
 import com.oracle.bmc.waas.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateHttpRedirectExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateHttpRedirectRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateHttpRedirectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateHttpRedirectRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class CreateHttpRedirectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.waas.model.CreateHttpRedirectDetails> {
 
-    /** The details of the HTTP Redirect. */
+    /**
+     * The details of the HTTP Redirect.
+     */
     private com.oracle.bmc.waas.model.CreateHttpRedirectDetails createHttpRedirectDetails;
 
-    /** The details of the HTTP Redirect. */
+    /**
+     * The details of the HTTP Redirect.
+     */
     public com.oracle.bmc.waas.model.CreateHttpRedirectDetails getCreateHttpRedirectDetails() {
         return createHttpRedirectDetails;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations *Example:* If a
-     * resource has been deleted and purged from the system, then a retry of the original delete
-     * request may be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+     * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations *Example:* If a
-     * resource has been deleted and purged from the system, then a retry of the original delete
-     * request may be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+     * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -57,7 +51,6 @@ public class CreateHttpRedirectRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -70,16 +63,18 @@ public class CreateHttpRedirectRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateHttpRedirectRequest,
                     com.oracle.bmc.waas.model.CreateHttpRedirectDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details of the HTTP Redirect. */
+        /**
+         * The details of the HTTP Redirect.
+         */
         private com.oracle.bmc.waas.model.CreateHttpRedirectDetails createHttpRedirectDetails =
                 null;
 
         /**
          * The details of the HTTP Redirect.
-         *
          * @param createHttpRedirectDetails the value to set
          * @return this builder instance
          */
@@ -90,15 +85,12 @@ public class CreateHttpRedirectRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -108,21 +100,14 @@ public class CreateHttpRedirectRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations *Example:* If
-         * a resource has been deleted and purged from the system, then a retry of the original
-         * delete request may be rejected.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+         * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations *Example:* If
-         * a resource has been deleted and purged from the system, then a retry of the original
-         * delete request may be rejected.
-         *
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations
+         * *Example:* If a resource has been deleted and purged from the system, then a retry of the original delete request may be rejected.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -133,19 +118,18 @@ public class CreateHttpRedirectRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -157,7 +141,6 @@ public class CreateHttpRedirectRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateHttpRedirectRequest o) {
@@ -172,11 +155,10 @@ public class CreateHttpRedirectRequest
         /**
          * Build the instance of CreateHttpRedirectRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateHttpRedirectRequest
          */
@@ -189,7 +171,6 @@ public class CreateHttpRedirectRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -202,8 +183,7 @@ public class CreateHttpRedirectRequest
         /**
          * Build the instance of CreateHttpRedirectRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateHttpRedirectRequest
@@ -214,14 +194,12 @@ public class CreateHttpRedirectRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateHttpRedirectRequest(createHttpRedirectDetails, opcRequestId,
-            // opcRetryToken);
+            // new CreateHttpRedirectRequest(createHttpRedirectDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -233,7 +211,6 @@ public class CreateHttpRedirectRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

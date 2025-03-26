@@ -5,57 +5,57 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a Run Local Script step. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details for updating a Run Local Script step.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateRunLocalScriptUserDefinedStepDetails.Builder.class)
+    builder = UpdateRunLocalScriptUserDefinedStepDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "stepType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "stepType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateRunLocalScriptUserDefinedStepDetails
         extends UpdateDrPlanUserDefinedStepDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
          * The OCID of the instance on which this script or command should be executed.
+         * <p>
+         **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+         * instance is currently present.
+         * <p>
+         **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+         * <p>
+         * Example: {@code ocid1.instance.oc1..uniqueID}
          *
-         * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the
-         * region where the instance is currently present.
-         *
-         * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-         * instance.
-         *
-         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
         private String runOnInstanceId;
 
         /**
          * The OCID of the instance on which this script or command should be executed.
-         *
-         * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the
-         * region where the instance is currently present.
-         *
-         * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-         * instance.
-         *
-         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
+         * <p>
+         **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+         * instance is currently present.
+         * <p>
+         **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+         * <p>
+         * Example: {@code ocid1.instance.oc1..uniqueID}
          *
          * @param runOnInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder runOnInstanceId(String runOnInstanceId) {
             this.runOnInstanceId = runOnInstanceId;
             this.__explicitlySet__.add("runOnInstanceId");
@@ -63,20 +63,21 @@ public final class UpdateRunLocalScriptUserDefinedStepDetails
         }
         /**
          * The script name and arguments.
+         * <p>
+         * Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
          *
-         * <p>Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scriptCommand")
         private String scriptCommand;
 
         /**
          * The script name and arguments.
-         *
-         * <p>Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
+         * <p>
+         * Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
          *
          * @param scriptCommand the value to set
          * @return this builder
-         */
+         **/
         public Builder scriptCommand(String scriptCommand) {
             this.scriptCommand = scriptCommand;
             this.__explicitlySet__.add("scriptCommand");
@@ -84,20 +85,21 @@ public final class UpdateRunLocalScriptUserDefinedStepDetails
         }
         /**
          * The userid on the instance to be used for executing the script or command.
+         * <p>
+         * Example: {@code opc}
          *
-         * <p>Example: {@code opc}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
         private String runAsUser;
 
         /**
          * The userid on the instance to be used for executing the script or command.
-         *
-         * <p>Example: {@code opc}
+         * <p>
+         * Example: {@code opc}
          *
          * @param runAsUser the value to set
          * @return this builder
-         */
+         **/
         public Builder runAsUser(String runAsUser) {
             this.runAsUser = runAsUser;
             this.__explicitlySet__.add("runAsUser");
@@ -132,7 +134,9 @@ public final class UpdateRunLocalScriptUserDefinedStepDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,69 +156,70 @@ public final class UpdateRunLocalScriptUserDefinedStepDetails
 
     /**
      * The OCID of the instance on which this script or command should be executed.
+     * <p>
+     **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+     * instance is currently present.
+     * <p>
+     **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+     * <p>
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
-     * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region
-     * where the instance is currently present.
-     *
-     * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-     * instance.
-     *
-     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
     private final String runOnInstanceId;
 
     /**
      * The OCID of the instance on which this script or command should be executed.
-     *
-     * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region
-     * where the instance is currently present.
-     *
-     * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-     * instance.
-     *
-     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
+     * <p>
+     **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+     * instance is currently present.
+     * <p>
+     **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+     * <p>
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getRunOnInstanceId() {
         return runOnInstanceId;
     }
 
     /**
      * The script name and arguments.
+     * <p>
+     * Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
      *
-     * <p>Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptCommand")
     private final String scriptCommand;
 
     /**
      * The script name and arguments.
-     *
-     * <p>Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
+     * <p>
+     * Example: {@code /usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3}
      *
      * @return the value
-     */
+     **/
     public String getScriptCommand() {
         return scriptCommand;
     }
 
     /**
      * The userid on the instance to be used for executing the script or command.
+     * <p>
+     * Example: {@code opc}
      *
-     * <p>Example: {@code opc}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
     private final String runAsUser;
 
     /**
      * The userid on the instance to be used for executing the script or command.
-     *
-     * <p>Example: {@code opc}
+     * <p>
+     * Example: {@code opc}
      *
      * @return the value
-     */
+     **/
     public String getRunAsUser() {
         return runAsUser;
     }
@@ -226,7 +231,6 @@ public final class UpdateRunLocalScriptUserDefinedStepDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

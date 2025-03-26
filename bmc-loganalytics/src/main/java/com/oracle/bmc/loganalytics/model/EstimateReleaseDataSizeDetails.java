@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the input used to estimate the size of data to be released <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * This is the input used to estimate the size of data to be released
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EstimateReleaseDataSizeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EstimateReleaseDataSizeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EstimateReleaseDataSizeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeDataStarted", "timeDataEnded"})
     public EstimateReleaseDataSizeDetails(
@@ -33,31 +33,33 @@ public final class EstimateReleaseDataSizeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the start of the time range for the data to be released */
+        /**
+         * This is the start of the time range for the data to be released
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
         /**
          * This is the start of the time range for the data to be released
-         *
          * @param timeDataStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-        /** This is the end of the time range for the data to be released */
+        /**
+         * This is the end of the time range for the data to be released
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
         /**
          * This is the end of the time range for the data to be released
-         *
          * @param timeDataEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
@@ -88,7 +90,9 @@ public final class EstimateReleaseDataSizeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +101,30 @@ public final class EstimateReleaseDataSizeDetails
         return new Builder().copy(this);
     }
 
-    /** This is the start of the time range for the data to be released */
+    /**
+     * This is the start of the time range for the data to be released
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
     /**
      * This is the start of the time range for the data to be released
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
 
-    /** This is the end of the time range for the data to be released */
+    /**
+     * This is the end of the time range for the data to be released
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
     /**
      * This is the end of the time range for the data to be released
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
@@ -130,7 +136,6 @@ public final class EstimateReleaseDataSizeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

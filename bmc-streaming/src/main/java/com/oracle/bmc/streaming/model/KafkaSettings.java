@@ -5,21 +5,19 @@
 package com.oracle.bmc.streaming.model;
 
 /**
- * Settings for the Kafka compatibility layer. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+ * Settings for the Kafka compatibility layer.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KafkaSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class KafkaSettings extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class KafkaSettings extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bootstrapServers",
@@ -41,61 +39,65 @@ public final class KafkaSettings extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Bootstrap servers. */
+        /**
+         * Bootstrap servers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
         private String bootstrapServers;
 
         /**
          * Bootstrap servers.
-         *
          * @param bootstrapServers the value to set
          * @return this builder
-         */
+         **/
         public Builder bootstrapServers(String bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             this.__explicitlySet__.add("bootstrapServers");
             return this;
         }
-        /** Enable auto creation of topic on the server. */
+        /**
+         * Enable auto creation of topic on the server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoCreateTopicsEnable")
         private Boolean autoCreateTopicsEnable;
 
         /**
          * Enable auto creation of topic on the server.
-         *
          * @param autoCreateTopicsEnable the value to set
          * @return this builder
-         */
+         **/
         public Builder autoCreateTopicsEnable(Boolean autoCreateTopicsEnable) {
             this.autoCreateTopicsEnable = autoCreateTopicsEnable;
             this.__explicitlySet__.add("autoCreateTopicsEnable");
             return this;
         }
-        /** The number of hours to keep a log file before deleting it (in hours). */
+        /**
+         * The number of hours to keep a log file before deleting it (in hours).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logRetentionHours")
         private Integer logRetentionHours;
 
         /**
          * The number of hours to keep a log file before deleting it (in hours).
-         *
          * @param logRetentionHours the value to set
          * @return this builder
-         */
+         **/
         public Builder logRetentionHours(Integer logRetentionHours) {
             this.logRetentionHours = logRetentionHours;
             this.__explicitlySet__.add("logRetentionHours");
             return this;
         }
-        /** The default number of log partitions per topic. */
+        /**
+         * The default number of log partitions per topic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numPartitions")
         private Integer numPartitions;
 
         /**
          * The default number of log partitions per topic.
-         *
          * @param numPartitions the value to set
          * @return this builder
-         */
+         **/
         public Builder numPartitions(Integer numPartitions) {
             this.numPartitions = numPartitions;
             this.__explicitlySet__.add("numPartitions");
@@ -136,7 +138,9 @@ public final class KafkaSettings extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,54 +149,58 @@ public final class KafkaSettings extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Bootstrap servers. */
+    /**
+     * Bootstrap servers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
     private final String bootstrapServers;
 
     /**
      * Bootstrap servers.
-     *
      * @return the value
-     */
+     **/
     public String getBootstrapServers() {
         return bootstrapServers;
     }
 
-    /** Enable auto creation of topic on the server. */
+    /**
+     * Enable auto creation of topic on the server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoCreateTopicsEnable")
     private final Boolean autoCreateTopicsEnable;
 
     /**
      * Enable auto creation of topic on the server.
-     *
      * @return the value
-     */
+     **/
     public Boolean getAutoCreateTopicsEnable() {
         return autoCreateTopicsEnable;
     }
 
-    /** The number of hours to keep a log file before deleting it (in hours). */
+    /**
+     * The number of hours to keep a log file before deleting it (in hours).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logRetentionHours")
     private final Integer logRetentionHours;
 
     /**
      * The number of hours to keep a log file before deleting it (in hours).
-     *
      * @return the value
-     */
+     **/
     public Integer getLogRetentionHours() {
         return logRetentionHours;
     }
 
-    /** The default number of log partitions per topic. */
+    /**
+     * The default number of log partitions per topic.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numPartitions")
     private final Integer numPartitions;
 
     /**
      * The default number of log partitions per topic.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumPartitions() {
         return numPartitions;
     }
@@ -204,7 +212,6 @@ public final class KafkaSettings extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

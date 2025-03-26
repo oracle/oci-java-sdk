@@ -5,31 +5,30 @@
 package com.oracle.bmc.servicecatalog.model;
 
 /**
- * A base object for all types of private application packages. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+ * A base object for all types of private application packages.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "packageType",
-        defaultImpl = PrivateApplicationPackage.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "packageType",
+    defaultImpl = PrivateApplicationPackage.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PrivateApplicationStackPackage.class,
-            name = "STACK")
+        value = PrivateApplicationStackPackage.class,
+        name = "STACK"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PrivateApplicationPackage
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PrivateApplicationPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -53,82 +52,83 @@ public class PrivateApplicationPackage
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * private application package.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * private application package.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * private application where the package is hosted.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateApplicationId")
     private final String privateApplicationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * private application where the package is hosted.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
      *
      * @return the value
-     */
+     **/
     public String getPrivateApplicationId() {
         return privateApplicationId;
     }
 
-    /** The display name of the package. */
+    /**
+     * The display name of the package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the package.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The package version. */
+    /**
+     * The package version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The package version.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
     /**
-     * The date and time the private application package was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2021-05-27T21:10:29.600Z}
      *
-     * <p>Example: {@code 2021-05-27T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the private application package was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2021-05-27T21:10:29.600Z}
+     * The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2021-05-27T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -140,7 +140,6 @@ public class PrivateApplicationPackage
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

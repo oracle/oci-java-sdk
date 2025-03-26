@@ -5,29 +5,27 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Drops the selected list of Sql statements from the current Sql tuning set. The basicFilter
- * parameter specifies the Sql predicate to filter the Sql from the Sql tuning set defined on
- * attributes of the SQLSET_ROW. If a valid filter criteria is specified, then, Sql statements
- * matching this filter criteria will be deleted from the current Sql tuning set. If filter criteria
- * is not specified, then, all Sql statements will be deleted from the current Sql tuning set. It
- * takes either credentialDetails or databaseCredential. It's recommended to provide
- * databaseCredential <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * Drops the selected list of Sql statements from the current Sql tuning set.
+ * The basicFilter parameter specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+ * If a valid filter criteria is specified, then, Sql statements matching this filter criteria will be deleted from the current Sql tuning set.
+ * If filter criteria is not specified, then, all Sql statements will be deleted from the current Sql tuning set.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DropSqlsInSqlTuningSetDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DropSqlsInSqlTuningSetDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DropSqlsInSqlTuningSetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -74,72 +72,72 @@ public final class DropSqlsInSqlTuningSetDetails
             return this;
         }
         /**
-         * Flag to indicate whether to drop the Sql statements or just display the plsql used to
-         * drop the Sql statements.
-         */
+         * Flag to indicate whether to drop the Sql statements or just display the plsql used to drop the Sql statements.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("showSqlOnly")
         private Integer showSqlOnly;
 
         /**
-         * Flag to indicate whether to drop the Sql statements or just display the plsql used to
-         * drop the Sql statements.
+         * Flag to indicate whether to drop the Sql statements or just display the plsql used to drop the Sql statements.
          *
          * @param showSqlOnly the value to set
          * @return this builder
-         */
+         **/
         public Builder showSqlOnly(Integer showSqlOnly) {
             this.showSqlOnly = showSqlOnly;
             this.__explicitlySet__.add("showSqlOnly");
             return this;
         }
-        /** The owner of the Sql tuning set. */
+        /**
+         * The owner of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * The owner of the Sql tuning set.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** The name of the Sql tuning set. */
+        /**
+         * The name of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Sql tuning set.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on
-         * attributes of the SQLSET_ROW. User could use any combination of the following columns
-         * with appropriate values as Sql predicate Refer to the documentation
-         * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
-         */
+         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+         * User could use any combination of the following columns with appropriate values as Sql predicate
+         * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("basicFilter")
         private String basicFilter;
 
         /**
-         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on
-         * attributes of the SQLSET_ROW. User could use any combination of the following columns
-         * with appropriate values as Sql predicate Refer to the documentation
-         * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+         * User could use any combination of the following columns with appropriate values as Sql predicate
+         * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
          *
          * @param basicFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder basicFilter(String basicFilter) {
             this.basicFilter = basicFilter;
             this.__explicitlySet__.add("basicFilter");
@@ -188,7 +186,9 @@ public final class DropSqlsInSqlTuningSetDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -212,65 +212,65 @@ public final class DropSqlsInSqlTuningSetDetails
     }
 
     /**
-     * Flag to indicate whether to drop the Sql statements or just display the plsql used to drop
-     * the Sql statements.
-     */
+     * Flag to indicate whether to drop the Sql statements or just display the plsql used to drop the Sql statements.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("showSqlOnly")
     private final Integer showSqlOnly;
 
     /**
-     * Flag to indicate whether to drop the Sql statements or just display the plsql used to drop
-     * the Sql statements.
+     * Flag to indicate whether to drop the Sql statements or just display the plsql used to drop the Sql statements.
      *
      * @return the value
-     */
+     **/
     public Integer getShowSqlOnly() {
         return showSqlOnly;
     }
 
-    /** The owner of the Sql tuning set. */
+    /**
+     * The owner of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * The owner of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** The name of the Sql tuning set. */
+    /**
+     * The name of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes
-     * of the SQLSET_ROW. User could use any combination of the following columns with appropriate
-     * values as Sql predicate Refer to the documentation
-     * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
-     */
+     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+     * User could use any combination of the following columns with appropriate values as Sql predicate
+     * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("basicFilter")
     private final String basicFilter;
 
     /**
-     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes
-     * of the SQLSET_ROW. User could use any combination of the following columns with appropriate
-     * values as Sql predicate Refer to the documentation
-     * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+     * User could use any combination of the following columns with appropriate values as Sql predicate
+     * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
      *
      * @return the value
-     */
+     **/
     public String getBasicFilter() {
         return basicFilter;
     }
@@ -282,7 +282,6 @@ public final class DropSqlsInSqlTuningSetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

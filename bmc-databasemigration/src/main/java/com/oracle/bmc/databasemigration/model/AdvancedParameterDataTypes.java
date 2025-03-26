@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** Advanced Parameter Data types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum AdvancedParameterDataTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Advanced Parameter Data types.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum AdvancedParameterDataTypes {
     String("STRING"),
     Integer("INTEGER"),
     Float("FLOAT"),

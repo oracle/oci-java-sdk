@@ -4,18 +4,17 @@
  */
 package com.oracle.bmc.sch;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.sch.internal.http.*;
 import com.oracle.bmc.sch.requests.*;
 import com.oracle.bmc.sch.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
-public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements ServiceConnector {
-    /** Service instance for ServiceConnector. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+public class ServiceConnectorClient implements ServiceConnector {
+    /**
+     * Service instance for ServiceConnector.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SERVICECONNECTOR")
@@ -23,22 +22,319 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                     .serviceEndpointTemplate(
                             "https://service-connector-hub.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ServiceConnectorClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final ServiceConnectorWaiters waiters;
 
     private final ServiceConnectorPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    ServiceConnectorClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public ServiceConnectorClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected ServiceConnectorClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -60,11 +356,29 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
         this.waiters = new ServiceConnectorWaiters(executorService, this);
 
         this.paginators = new ServiceConnectorPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -72,8 +386,8 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ServiceConnectorClient> {
@@ -81,8 +395,6 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "sch";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -90,7 +402,6 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -101,413 +412,610 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public ServiceConnectorClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new ServiceConnectorClient(this, authenticationDetailsProvider, executorService);
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new ServiceConnectorClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public ActivateServiceConnectorResponse activateServiceConnector(
             ActivateServiceConnectorRequest request) {
+        LOG.trace("Called activateServiceConnector");
+        final ActivateServiceConnectorRequest interceptedRequest =
+                ActivateServiceConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateServiceConnectorConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getServiceConnectorId(), "serviceConnectorId must not be blank");
-
-        return clientCall(request, ActivateServiceConnectorResponse::builder)
-                .logger(LOG, "activateServiceConnector")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "ActivateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ActivateServiceConnector")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ActivateServiceConnectorRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .appendPathParam(request.getServiceConnectorId())
-                .appendPathParam("actions")
-                .appendPathParam("activate")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ActivateServiceConnectorResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", ActivateServiceConnectorResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ActivateServiceConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateServiceConnectorResponse>
+                transformer =
+                        ActivateServiceConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeServiceConnectorCompartmentResponse changeServiceConnectorCompartment(
             ChangeServiceConnectorCompartmentRequest request) {
+        LOG.trace("Called changeServiceConnectorCompartment");
+        final ChangeServiceConnectorCompartmentRequest interceptedRequest =
+                ChangeServiceConnectorCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeServiceConnectorCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getServiceConnectorId(), "serviceConnectorId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeServiceConnectorCompartmentDetails(),
-                "changeServiceConnectorCompartmentDetails is required");
-
-        return clientCall(request, ChangeServiceConnectorCompartmentResponse::builder)
-                .logger(LOG, "changeServiceConnectorCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "ChangeServiceConnectorCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ChangeServiceConnectorCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeServiceConnectorCompartmentRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .appendPathParam(request.getServiceConnectorId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeServiceConnectorCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeServiceConnectorCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ChangeServiceConnectorCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeServiceConnectorCompartmentResponse>
+                transformer =
+                        ChangeServiceConnectorCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeServiceConnectorCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateServiceConnectorResponse createServiceConnector(
             CreateServiceConnectorRequest request) {
-        Objects.requireNonNull(
-                request.getCreateServiceConnectorDetails(),
-                "createServiceConnectorDetails is required");
+        LOG.trace("Called createServiceConnector");
+        final CreateServiceConnectorRequest interceptedRequest =
+                CreateServiceConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceConnectorConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateServiceConnectorResponse::builder)
-                .logger(LOG, "createServiceConnector")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "CreateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/CreateServiceConnector")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateServiceConnectorRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateServiceConnectorResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateServiceConnectorResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/CreateServiceConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateServiceConnectorResponse>
+                transformer =
+                        CreateServiceConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateServiceConnectorDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeactivateServiceConnectorResponse deactivateServiceConnector(
             DeactivateServiceConnectorRequest request) {
+        LOG.trace("Called deactivateServiceConnector");
+        final DeactivateServiceConnectorRequest interceptedRequest =
+                DeactivateServiceConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateServiceConnectorConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getServiceConnectorId(), "serviceConnectorId must not be blank");
-
-        return clientCall(request, DeactivateServiceConnectorResponse::builder)
-                .logger(LOG, "deactivateServiceConnector")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "DeactivateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeactivateServiceConnector")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DeactivateServiceConnectorRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .appendPathParam(request.getServiceConnectorId())
-                .appendPathParam("actions")
-                .appendPathParam("deactivate")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeactivateServiceConnectorResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeactivateServiceConnectorResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeactivateServiceConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateServiceConnectorResponse>
+                transformer =
+                        DeactivateServiceConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteServiceConnectorResponse deleteServiceConnector(
             DeleteServiceConnectorRequest request) {
+        LOG.trace("Called deleteServiceConnector");
+        final DeleteServiceConnectorRequest interceptedRequest =
+                DeleteServiceConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceConnectorConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getServiceConnectorId(), "serviceConnectorId must not be blank");
-
-        return clientCall(request, DeleteServiceConnectorResponse::builder)
-                .logger(LOG, "deleteServiceConnector")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "DeleteServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeleteServiceConnector")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteServiceConnectorRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .appendPathParam(request.getServiceConnectorId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteServiceConnectorResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteServiceConnectorResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeleteServiceConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceConnectorResponse>
+                transformer =
+                        DeleteServiceConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetServiceConnectorResponse getServiceConnector(GetServiceConnectorRequest request) {
+        LOG.trace("Called getServiceConnector");
+        final GetServiceConnectorRequest interceptedRequest =
+                GetServiceConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceConnectorConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getServiceConnectorId(), "serviceConnectorId must not be blank");
-
-        return clientCall(request, GetServiceConnectorResponse::builder)
-                .logger(LOG, "getServiceConnector")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "GetServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/GetServiceConnector")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetServiceConnectorRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .appendPathParam(request.getServiceConnectorId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.sch.model.ServiceConnector.class,
-                        GetServiceConnectorResponse.Builder::serviceConnector)
-                .handleResponseHeaderString("etag", GetServiceConnectorResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetServiceConnectorResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/GetServiceConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceConnectorResponse>
+                transformer =
+                        GetServiceConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.sch.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/GetWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListServiceConnectorsResponse listServiceConnectors(
             ListServiceConnectorsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listServiceConnectors");
+        final ListServiceConnectorsRequest interceptedRequest =
+                ListServiceConnectorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServiceConnectorsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListServiceConnectorsResponse::builder)
-                .logger(LOG, "listServiceConnectors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "ListServiceConnectors",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ListServiceConnectors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListServiceConnectorsRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.sch.model.ServiceConnectorCollection.class,
-                        ListServiceConnectorsResponse.Builder::serviceConnectorCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListServiceConnectorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListServiceConnectorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListServiceConnectorsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ListServiceConnectors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListServiceConnectorsResponse>
+                transformer =
+                        ListServiceConnectorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.sch.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListWorkRequestErrorsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestError/ListWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.sch.model.WorkRequestLogEntryCollection.class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListWorkRequestLogsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestLogEntry/ListWorkRequestLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.sch.model.WorkRequestCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/ListWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateServiceConnectorResponse updateServiceConnector(
             UpdateServiceConnectorRequest request) {
+        LOG.trace("Called updateServiceConnector");
+        final UpdateServiceConnectorRequest interceptedRequest =
+                UpdateServiceConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateServiceConnectorConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getServiceConnectorId(), "serviceConnectorId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateServiceConnectorDetails(),
-                "updateServiceConnectorDetails is required");
-
-        return clientCall(request, UpdateServiceConnectorResponse::builder)
-                .logger(LOG, "updateServiceConnector")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ServiceConnector",
                         "UpdateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/UpdateServiceConnector")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateServiceConnectorRequest::builder)
-                .basePath("/20200909")
-                .appendPathParam("serviceConnectors")
-                .appendPathParam(request.getServiceConnectorId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateServiceConnectorResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateServiceConnectorResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/UpdateServiceConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceConnectorResponse>
+                transformer =
+                        UpdateServiceConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateServiceConnectorDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -518,209 +1026,5 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
     @Override
     public ServiceConnectorPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ServiceConnectorClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

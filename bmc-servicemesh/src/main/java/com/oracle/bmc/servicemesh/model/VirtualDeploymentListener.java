@@ -5,23 +5,22 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Listener configuration for a virtual deployment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * Listener configuration for a virtual deployment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VirtualDeploymentListener.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VirtualDeploymentListener.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VirtualDeploymentListener
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"protocol", "port", "requestTimeoutInMs", "idleTimeoutInMs"})
     public VirtualDeploymentListener(
@@ -35,79 +34,73 @@ public final class VirtualDeploymentListener
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of protocol used in virtual deployment. */
+        /**
+         * Type of protocol used in virtual deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * Type of protocol used in virtual deployment.
-         *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /** Port in which virtual deployment is running. */
+        /**
+         * Port in which virtual deployment is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Port in which virtual deployment is running.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The maximum duration in milliseconds for the deployed service to respond to an incoming
-         * request through the listener. If provided, the timeout value overrides the default
-         * timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the
-         * GRPC listeners. The value 0 (zero) indicates that the timeout is disabled. The timeout
-         * cannot be configured for the TCP and TLS_PASSTHROUGH listeners. For streaming responses
-         * from the deployed service, consider either keeping the timeout disabled or set a
-         * sufficiently high value.
-         */
+         * The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.
+         * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.
+         * The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.
+         * For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestTimeoutInMs")
         private Long requestTimeoutInMs;
 
         /**
-         * The maximum duration in milliseconds for the deployed service to respond to an incoming
-         * request through the listener. If provided, the timeout value overrides the default
-         * timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the
-         * GRPC listeners. The value 0 (zero) indicates that the timeout is disabled. The timeout
-         * cannot be configured for the TCP and TLS_PASSTHROUGH listeners. For streaming responses
-         * from the deployed service, consider either keeping the timeout disabled or set a
-         * sufficiently high value.
+         * The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.
+         * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.
+         * The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.
+         * For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
          *
          * @param requestTimeoutInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder requestTimeoutInMs(Long requestTimeoutInMs) {
             this.requestTimeoutInMs = requestTimeoutInMs;
             this.__explicitlySet__.add("requestTimeoutInMs");
             return this;
         }
         /**
-         * The maximum duration in milliseconds for which the request's stream may be idle. The
-         * value 0 (zero) indicates that the timeout is disabled.
-         */
+         * The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMs")
         private Long idleTimeoutInMs;
 
         /**
-         * The maximum duration in milliseconds for which the request's stream may be idle. The
-         * value 0 (zero) indicates that the timeout is disabled.
-         *
+         * The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
          * @param idleTimeoutInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder idleTimeoutInMs(Long idleTimeoutInMs) {
             this.idleTimeoutInMs = idleTimeoutInMs;
             this.__explicitlySet__.add("idleTimeoutInMs");
@@ -148,7 +141,9 @@ public final class VirtualDeploymentListener
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,8 +152,10 @@ public final class VirtualDeploymentListener
         return new Builder().copy(this);
     }
 
-    /** Type of protocol used in virtual deployment. */
-    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of protocol used in virtual deployment.
+     **/
+    public enum Protocol {
         Http("HTTP"),
         TlsPassthrough("TLS_PASSTHROUGH"),
         Tcp("TCP"),
@@ -166,8 +163,8 @@ public final class VirtualDeploymentListener
         Grpc("GRPC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -206,70 +203,66 @@ public final class VirtualDeploymentListener
             return UnknownEnumValue;
         }
     };
-    /** Type of protocol used in virtual deployment. */
+    /**
+     * Type of protocol used in virtual deployment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * Type of protocol used in virtual deployment.
-     *
      * @return the value
-     */
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
 
-    /** Port in which virtual deployment is running. */
+    /**
+     * Port in which virtual deployment is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Port in which virtual deployment is running.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The maximum duration in milliseconds for the deployed service to respond to an incoming
-     * request through the listener. If provided, the timeout value overrides the default timeout of
-     * 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners.
-     * The value 0 (zero) indicates that the timeout is disabled. The timeout cannot be configured
-     * for the TCP and TLS_PASSTHROUGH listeners. For streaming responses from the deployed service,
-     * consider either keeping the timeout disabled or set a sufficiently high value.
-     */
+     * The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.
+     * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.
+     * The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.
+     * For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestTimeoutInMs")
     private final Long requestTimeoutInMs;
 
     /**
-     * The maximum duration in milliseconds for the deployed service to respond to an incoming
-     * request through the listener. If provided, the timeout value overrides the default timeout of
-     * 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners.
-     * The value 0 (zero) indicates that the timeout is disabled. The timeout cannot be configured
-     * for the TCP and TLS_PASSTHROUGH listeners. For streaming responses from the deployed service,
-     * consider either keeping the timeout disabled or set a sufficiently high value.
+     * The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.
+     * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.
+     * The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.
+     * For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
      *
      * @return the value
-     */
+     **/
     public Long getRequestTimeoutInMs() {
         return requestTimeoutInMs;
     }
 
     /**
-     * The maximum duration in milliseconds for which the request's stream may be idle. The value 0
-     * (zero) indicates that the timeout is disabled.
-     */
+     * The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMs")
     private final Long idleTimeoutInMs;
 
     /**
-     * The maximum duration in milliseconds for which the request's stream may be idle. The value 0
-     * (zero) indicates that the timeout is disabled.
-     *
+     * The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
      * @return the value
-     */
+     **/
     public Long getIdleTimeoutInMs() {
         return idleTimeoutInMs;
     }
@@ -281,7 +274,6 @@ public final class VirtualDeploymentListener
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

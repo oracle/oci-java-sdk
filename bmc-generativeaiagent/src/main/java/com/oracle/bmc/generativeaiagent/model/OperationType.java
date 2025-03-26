@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.generativeaiagent.model;
 
-/** The asynchronous operation tracked by the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The asynchronous operation tracked by the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+public enum OperationType {
     CreateAgent("CREATE_AGENT"),
     UpdateAgent("UPDATE_AGENT"),
     DeleteAgent("DELETE_AGENT"),
@@ -27,6 +29,10 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateTool("CREATE_TOOL"),
     UpdateTool("UPDATE_TOOL"),
     DeleteTool("DELETE_TOOL"),
+    CreateProvisionedCapacity("CREATE_PROVISIONED_CAPACITY"),
+    UpdateProvisionedCapacity("UPDATE_PROVISIONED_CAPACITY"),
+    DeleteProvisionedCapacity("DELETE_PROVISIONED_CAPACITY"),
+    MoveProvisionedCapacity("MOVE_PROVISIONED_CAPACITY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

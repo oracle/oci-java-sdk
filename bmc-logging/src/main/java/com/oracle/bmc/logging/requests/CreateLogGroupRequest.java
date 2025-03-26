@@ -6,50 +6,58 @@ package com.oracle.bmc.logging.requests;
 
 import com.oracle.bmc.logging.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateLogGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateLogGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class CreateLogGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.logging.model.CreateLogGroupDetails> {
 
-    /** Details to create log group. */
+    /**
+     * Details to create log group.
+     */
     private com.oracle.bmc.logging.model.CreateLogGroupDetails createLogGroupDetails;
 
-    /** Details to create log group. */
+    /**
+     * Details to create log group.
+     */
     public com.oracle.bmc.logging.model.CreateLogGroupDetails getCreateLogGroupDetails() {
         return createLogGroupDetails;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error, without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error, without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated
+     * before then due to conflicting operations (e.g., if a resource has been
+     * deleted and purged from the system, then a retry of the original
+     * creation request may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error, without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error, without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated
+     * before then due to conflicting operations (e.g., if a resource has been
+     * deleted and purged from the system, then a retry of the original
+     * creation request may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -57,7 +65,6 @@ public class CreateLogGroupRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -69,15 +76,17 @@ public class CreateLogGroupRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateLogGroupRequest, com.oracle.bmc.logging.model.CreateLogGroupDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details to create log group. */
+        /**
+         * Details to create log group.
+         */
         private com.oracle.bmc.logging.model.CreateLogGroupDetails createLogGroupDetails = null;
 
         /**
          * Details to create log group.
-         *
          * @param createLogGroupDetails the value to set
          * @return this builder instance
          */
@@ -88,19 +97,22 @@ public class CreateLogGroupRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error, without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error, without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated
+         * before then due to conflicting operations (e.g., if a resource has been
+         * deleted and purged from the system, then a retry of the original
          * creation request may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error, without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error, without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated
+         * before then due to conflicting operations (e.g., if a resource has been
+         * deleted and purged from the system, then a retry of the original
          * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
@@ -112,14 +124,15 @@ public class CreateLogGroupRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -131,19 +144,18 @@ public class CreateLogGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -155,7 +167,6 @@ public class CreateLogGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateLogGroupRequest o) {
@@ -170,11 +181,10 @@ public class CreateLogGroupRequest
         /**
          * Build the instance of CreateLogGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateLogGroupRequest
          */
@@ -187,7 +197,6 @@ public class CreateLogGroupRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -200,8 +209,7 @@ public class CreateLogGroupRequest
         /**
          * Build the instance of CreateLogGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateLogGroupRequest
@@ -218,7 +226,6 @@ public class CreateLogGroupRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -230,7 +237,6 @@ public class CreateLogGroupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

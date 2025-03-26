@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.core.model;
 
-/** Address type of the CIDR/IP within a VCN or subnet */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum AddressType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Address type of the CIDR/IP within a VCN or subnet
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum AddressType {
     PrivateIPv4("Private_IPv4"),
     OracleAllocatedPublicIPv4("Oracle_Allocated_Public_IPv4"),
     ByoipIPv4("BYOIP_IPv4"),

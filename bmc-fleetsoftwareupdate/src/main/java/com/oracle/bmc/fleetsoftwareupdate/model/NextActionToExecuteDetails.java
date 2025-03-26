@@ -5,23 +5,23 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Details of the next Exadata Fleet Update Action to execute in a Maintenance Cycle. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Details of the next Exadata Fleet Update Action to execute in a Maintenance Cycle.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NextActionToExecuteDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NextActionToExecuteDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NextActionToExecuteDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "timeToStart"})
     public NextActionToExecuteDetails(DetailedActionTypes type, java.util.Date timeToStart) {
@@ -32,7 +32,10 @@ public final class NextActionToExecuteDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of Exadata Fleet Update Action */
+        /**
+         * Type of Exadata Fleet Update Action
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DetailedActionTypes type;
 
@@ -41,26 +44,27 @@ public final class NextActionToExecuteDetails
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(DetailedActionTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action
-         * has been scheduled. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-         */
+         * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action has been scheduled.
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeToStart")
         private java.util.Date timeToStart;
 
         /**
-         * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action
-         * has been scheduled. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action has been scheduled.
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
          * @param timeToStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeToStart(java.util.Date timeToStart) {
             this.timeToStart = timeToStart;
             this.__explicitlySet__.add("timeToStart");
@@ -91,7 +95,9 @@ public final class NextActionToExecuteDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,7 +106,10 @@ public final class NextActionToExecuteDetails
         return new Builder().copy(this);
     }
 
-    /** Type of Exadata Fleet Update Action */
+    /**
+     * Type of Exadata Fleet Update Action
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DetailedActionTypes type;
 
@@ -108,24 +117,25 @@ public final class NextActionToExecuteDetails
      * Type of Exadata Fleet Update Action
      *
      * @return the value
-     */
+     **/
     public DetailedActionTypes getType() {
         return type;
     }
 
     /**
-     * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action has
-     * been scheduled. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-     */
+     * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action has been scheduled.
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeToStart")
     private final java.util.Date timeToStart;
 
     /**
-     * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action has
-     * been scheduled. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the Exadata Fleet Update Action is expected to start. Null if no Action has been scheduled.
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeToStart() {
         return timeToStart;
     }
@@ -137,7 +147,6 @@ public final class NextActionToExecuteDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

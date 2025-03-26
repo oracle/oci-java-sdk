@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Create Standby Autonomous Container Database to an existing Autonomous Container Database <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Create Standby Autonomous Container Database to an existing Autonomous Container Database
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddStandbyAutonomousContainerDatabaseDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddStandbyAutonomousContainerDatabaseDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddStandbyAutonomousContainerDatabaseDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fastStartFailOverLagLimitInSeconds",
@@ -64,16 +64,17 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The lag time for my preference based on data loss tolerance in seconds. */
+        /**
+         * The lag time for my preference based on data loss tolerance in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
         private Integer fastStartFailOverLagLimitInSeconds;
 
         /**
          * The lag time for my preference based on data loss tolerance in seconds.
-         *
          * @param fastStartFailOverLagLimitInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder fastStartFailOverLagLimitInSeconds(
                 Integer fastStartFailOverLagLimitInSeconds) {
             this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
@@ -81,19 +82,18 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
             return this;
         }
         /**
-         * Indicates whether Automatic Failover is enabled for Autonomous Container Database
-         * Dataguard Association
-         */
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
         private Boolean isAutomaticFailoverEnabled;
 
         /**
-         * Indicates whether Automatic Failover is enabled for Autonomous Container Database
-         * Dataguard Association
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
          *
          * @param isAutomaticFailoverEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             this.__explicitlySet__.add("isAutomaticFailoverEnabled");
@@ -114,20 +114,21 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where the standby Autonomous Container Database will be created.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+         * will be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "peerAutonomousContainerDatabaseCompartmentId")
         private String peerAutonomousContainerDatabaseCompartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where the standby Autonomous Container Database will be created.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+         * will be created.
          *
          * @param peerAutonomousContainerDatabaseCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerAutonomousContainerDatabaseCompartmentId(
                 String peerAutonomousContainerDatabaseCompartmentId) {
             this.peerAutonomousContainerDatabaseCompartmentId =
@@ -135,16 +136,17 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
             this.__explicitlySet__.add("peerAutonomousContainerDatabaseCompartmentId");
             return this;
         }
-        /** The display name for the peer Autonomous Container Database. */
+        /**
+         * The display name for the peer Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseDisplayName")
         private String peerAutonomousContainerDatabaseDisplayName;
 
         /**
          * The display name for the peer Autonomous Container Database.
-         *
          * @param peerAutonomousContainerDatabaseDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder peerAutonomousContainerDatabaseDisplayName(
                 String peerAutonomousContainerDatabaseDisplayName) {
             this.peerAutonomousContainerDatabaseDisplayName =
@@ -153,44 +155,41 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer cloud Autonomous Exadata VM Cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
         private String peerCloudAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer cloud Autonomous Exadata VM Cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
          * @param peerCloudAutonomousVmClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             this.__explicitlySet__.add("peerCloudAutonomousVmClusterId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer Autonomous Exadata VM Cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
         private String peerAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer Autonomous Exadata VM Cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
          * @param peerAutonomousVmClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
             this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
             this.__explicitlySet__.add("peerAutonomousVmClusterId");
             return this;
         }
-        /** Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created. */
+        /**
+         * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
         private String peerDbUniqueName;
 
@@ -199,7 +198,7 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
          *
          * @param peerDbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder peerDbUniqueName(String peerDbUniqueName) {
             this.peerDbUniqueName = peerDbUniqueName;
             this.__explicitlySet__.add("peerDbUniqueName");
@@ -207,43 +206,41 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
         }
         /**
          * The protection mode of this Autonomous Data Guard association. For more information, see
-         * [Oracle Data Guard Protection
-         * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
         /**
          * The protection mode of this Autonomous Data Guard association. For more information, see
-         * [Oracle Data Guard Protection
-         * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
          *
          * @param protectionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
         /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous
-         * Container Database. This value represents the number of days before scheduled maintenance
-         * of the primary database.
-         */
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         * This value represents the number of days before scheduled maintenance of the primary database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
         private Integer standbyMaintenanceBufferInDays;
 
         /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous
-         * Container Database. This value represents the number of days before scheduled maintenance
-         * of the primary database.
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         * This value represents the number of days before scheduled maintenance of the primary database.
          *
          * @param standbyMaintenanceBufferInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
             this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
@@ -312,7 +309,9 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -321,32 +320,32 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
         return new Builder().copy(this);
     }
 
-    /** The lag time for my preference based on data loss tolerance in seconds. */
+    /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
     private final Integer fastStartFailOverLagLimitInSeconds;
 
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getFastStartFailOverLagLimitInSeconds() {
         return fastStartFailOverLagLimitInSeconds;
     }
 
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard
-     * Association
-     */
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
     private final Boolean isAutomaticFailoverEnabled;
 
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard
-     * Association
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutomaticFailoverEnabled() {
         return isAutomaticFailoverEnabled;
     }
@@ -361,70 +360,69 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where the standby Autonomous Container Database will be created.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+     * will be created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseCompartmentId")
     private final String peerAutonomousContainerDatabaseCompartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where the standby Autonomous Container Database will be created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+     * will be created.
      *
      * @return the value
-     */
+     **/
     public String getPeerAutonomousContainerDatabaseCompartmentId() {
         return peerAutonomousContainerDatabaseCompartmentId;
     }
 
-    /** The display name for the peer Autonomous Container Database. */
+    /**
+     * The display name for the peer Autonomous Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseDisplayName")
     private final String peerAutonomousContainerDatabaseDisplayName;
 
     /**
      * The display name for the peer Autonomous Container Database.
-     *
      * @return the value
-     */
+     **/
     public String getPeerAutonomousContainerDatabaseDisplayName() {
         return peerAutonomousContainerDatabaseDisplayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloud Autonomous Exadata VM Cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
     private final String peerCloudAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloud Autonomous Exadata VM Cluster.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * @return the value
-     */
+     **/
     public String getPeerCloudAutonomousVmClusterId() {
         return peerCloudAutonomousVmClusterId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * Autonomous Exadata VM Cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
     private final String peerAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * Autonomous Exadata VM Cluster.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
      * @return the value
-     */
+     **/
     public String getPeerAutonomousVmClusterId() {
         return peerAutonomousVmClusterId;
     }
 
-    /** Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created. */
+    /**
+     * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
     private final String peerDbUniqueName;
 
@@ -432,18 +430,18 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
      * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.
      *
      * @return the value
-     */
+     **/
     public String getPeerDbUniqueName() {
         return peerDbUniqueName;
     }
 
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see
-     * [Oracle Data Guard Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
-     */
-    public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum ProtectionMode {
         MaximumAvailability("MAXIMUM_AVAILABILITY"),
         MaximumPerformance("MAXIMUM_PERFORMANCE"),
         ;
@@ -477,40 +475,38 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
     };
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see
-     * [Oracle Data Guard Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see
-     * [Oracle Data Guard Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *
      * @return the value
-     */
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
 
     /**
-     * The scheduling detail for the quarterly maintenance window of the standby Autonomous
-     * Container Database. This value represents the number of days before scheduled maintenance of
-     * the primary database.
-     */
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+     * This value represents the number of days before scheduled maintenance of the primary database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
     private final Integer standbyMaintenanceBufferInDays;
 
     /**
-     * The scheduling detail for the quarterly maintenance window of the standby Autonomous
-     * Container Database. This value represents the number of days before scheduled maintenance of
-     * the primary database.
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+     * This value represents the number of days before scheduled maintenance of the primary database.
      *
      * @return the value
-     */
+     **/
     public Integer getStandbyMaintenanceBufferInDays() {
         return standbyMaintenanceBufferInDays;
     }
@@ -522,7 +518,6 @@ public final class AddStandbyAutonomousContainerDatabaseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Autonomous Database wallet details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The Autonomous Database wallet details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDatabaseWallet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousDatabaseWallet.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseWallet
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lifecycleState", "timeRotated"})
     public AutonomousDatabaseWallet(LifecycleState lifecycleState, java.util.Date timeRotated) {
@@ -32,31 +32,33 @@ public final class AutonomousDatabaseWallet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The current lifecycle state of the Autonomous Database wallet. */
+        /**
+         * The current lifecycle state of the Autonomous Database wallet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the Autonomous Database wallet.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The date and time the wallet was last rotated. */
+        /**
+         * The date and time the wallet was last rotated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRotated")
         private java.util.Date timeRotated;
 
         /**
          * The date and time the wallet was last rotated.
-         *
          * @param timeRotated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRotated(java.util.Date timeRotated) {
             this.timeRotated = timeRotated;
             this.__explicitlySet__.add("timeRotated");
@@ -87,7 +89,9 @@ public final class AutonomousDatabaseWallet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,14 +100,16 @@ public final class AutonomousDatabaseWallet
         return new Builder().copy(this);
     }
 
-    /** The current lifecycle state of the Autonomous Database wallet. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current lifecycle state of the Autonomous Database wallet.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Updating("UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -142,28 +148,30 @@ public final class AutonomousDatabaseWallet
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the Autonomous Database wallet. */
+    /**
+     * The current lifecycle state of the Autonomous Database wallet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the Autonomous Database wallet.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The date and time the wallet was last rotated. */
+    /**
+     * The date and time the wallet was last rotated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRotated")
     private final java.util.Date timeRotated;
 
     /**
      * The date and time the wallet was last rotated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRotated() {
         return timeRotated;
     }
@@ -175,7 +183,6 @@ public final class AutonomousDatabaseWallet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Day of week for the maintenance. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum Day implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Day of week for the maintenance.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum Day {
     Monday("MONDAY"),
     Tuesday("TUESDAY"),
     Wednesday("WEDNESDAY"),

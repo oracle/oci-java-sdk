@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Lake data asset type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details for the Lake data asset type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDataAssetFromLake.Builder.class)
+    builder = UpdateDataAssetFromLake.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDataAssetFromLake extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,46 +116,49 @@ public final class UpdateDataAssetFromLake extends UpdateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /** The Lake Ocid. */
+        /**
+         * The Lake Ocid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lakeId")
         private String lakeId;
 
         /**
          * The Lake Ocid.
-         *
          * @param lakeId the value to set
          * @return this builder
-         */
+         **/
         public Builder lakeId(String lakeId) {
             this.lakeId = lakeId;
             this.__explicitlySet__.add("lakeId");
             return this;
         }
-        /** The metastoreId for the specified Lake Resource. */
+        /**
+         * The metastoreId for the specified Lake Resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
         /**
          * The metastoreId for the specified Lake Resource.
-         *
          * @param metastoreId the value to set
          * @return this builder
-         */
+         **/
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-        /** The rangerEndpoint for the specified Lake Resource. */
+        /**
+         * The rangerEndpoint for the specified Lake Resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lakeProxyEndpoint")
         private String lakeProxyEndpoint;
 
         /**
          * The rangerEndpoint for the specified Lake Resource.
-         *
          * @param lakeProxyEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder lakeProxyEndpoint(String lakeProxyEndpoint) {
             this.lakeProxyEndpoint = lakeProxyEndpoint;
             this.__explicitlySet__.add("lakeProxyEndpoint");
@@ -245,7 +248,9 @@ public final class UpdateDataAssetFromLake extends UpdateDataAssetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -287,41 +292,44 @@ public final class UpdateDataAssetFromLake extends UpdateDataAssetDetails {
         this.defaultConnection = defaultConnection;
     }
 
-    /** The Lake Ocid. */
+    /**
+     * The Lake Ocid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lakeId")
     private final String lakeId;
 
     /**
      * The Lake Ocid.
-     *
      * @return the value
-     */
+     **/
     public String getLakeId() {
         return lakeId;
     }
 
-    /** The metastoreId for the specified Lake Resource. */
+    /**
+     * The metastoreId for the specified Lake Resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
     /**
      * The metastoreId for the specified Lake Resource.
-     *
      * @return the value
-     */
+     **/
     public String getMetastoreId() {
         return metastoreId;
     }
 
-    /** The rangerEndpoint for the specified Lake Resource. */
+    /**
+     * The rangerEndpoint for the specified Lake Resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lakeProxyEndpoint")
     private final String lakeProxyEndpoint;
 
     /**
      * The rangerEndpoint for the specified Lake Resource.
-     *
      * @return the value
-     */
+     **/
     public String getLakeProxyEndpoint() {
         return lakeProxyEndpoint;
     }
@@ -340,7 +348,6 @@ public final class UpdateDataAssetFromLake extends UpdateDataAssetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

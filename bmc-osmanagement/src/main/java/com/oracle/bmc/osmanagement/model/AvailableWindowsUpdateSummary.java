@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * An update available for installation on the Windows managed instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+ * An update available for installation on the Windows managed instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AvailableWindowsUpdateSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AvailableWindowsUpdateSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AvailableWindowsUpdateSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -46,81 +45,88 @@ public final class AvailableWindowsUpdateSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Windows Update name */
+        /**
+         * Windows Update name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Windows Update name
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
-         * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
-         */
+         * Unique identifier for the Windows update. NOTE - This is not an OCID,
+         * but is a unique identifier assigned by Microsoft.
+         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
-         * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         * Unique identifier for the Windows update. NOTE - This is not an OCID,
+         * but is a unique identifier assigned by Microsoft.
+         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The purpose of this update. */
+        /**
+         * The purpose of this update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateTypes updateType;
 
         /**
          * The purpose of this update.
-         *
          * @param updateType the value to set
          * @return this builder
-         */
+         **/
         public Builder updateType(UpdateTypes updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /** Indicates whether the update can be installed using OSMS. */
+        /**
+         * Indicates whether the update can be installed using OSMS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForInstallation")
         private IsEligibleForInstallation isEligibleForInstallation;
 
         /**
          * Indicates whether the update can be installed using OSMS.
-         *
          * @param isEligibleForInstallation the value to set
          * @return this builder
-         */
+         **/
         public Builder isEligibleForInstallation(
                 IsEligibleForInstallation isEligibleForInstallation) {
             this.isEligibleForInstallation = isEligibleForInstallation;
             this.__explicitlySet__.add("isEligibleForInstallation");
             return this;
         }
-        /** Indicates whether a reboot may be required to complete installation of this update. */
+        /**
+         * Indicates whether a reboot may be required to complete installation of this update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequiredForInstallation")
         private Boolean isRebootRequiredForInstallation;
 
         /**
          * Indicates whether a reboot may be required to complete installation of this update.
-         *
          * @param isRebootRequiredForInstallation the value to set
          * @return this builder
-         */
+         **/
         public Builder isRebootRequiredForInstallation(Boolean isRebootRequiredForInstallation) {
             this.isRebootRequiredForInstallation = isRebootRequiredForInstallation;
             this.__explicitlySet__.add("isRebootRequiredForInstallation");
@@ -165,7 +171,9 @@ public final class AvailableWindowsUpdateSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -174,71 +182,78 @@ public final class AvailableWindowsUpdateSummary
         return new Builder().copy(this);
     }
 
-    /** Windows Update name */
+    /**
+     * Windows Update name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Windows Update name
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
-     * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
-     */
+     * Unique identifier for the Windows update. NOTE - This is not an OCID,
+     * but is a unique identifier assigned by Microsoft.
+     * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
-     * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+     * Unique identifier for the Windows update. NOTE - This is not an OCID,
+     * but is a unique identifier assigned by Microsoft.
+     * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The purpose of this update. */
+    /**
+     * The purpose of this update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateTypes updateType;
 
     /**
      * The purpose of this update.
-     *
      * @return the value
-     */
+     **/
     public UpdateTypes getUpdateType() {
         return updateType;
     }
 
-    /** Indicates whether the update can be installed using OSMS. */
+    /**
+     * Indicates whether the update can be installed using OSMS.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForInstallation")
     private final IsEligibleForInstallation isEligibleForInstallation;
 
     /**
      * Indicates whether the update can be installed using OSMS.
-     *
      * @return the value
-     */
+     **/
     public IsEligibleForInstallation getIsEligibleForInstallation() {
         return isEligibleForInstallation;
     }
 
-    /** Indicates whether a reboot may be required to complete installation of this update. */
+    /**
+     * Indicates whether a reboot may be required to complete installation of this update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequiredForInstallation")
     private final Boolean isRebootRequiredForInstallation;
 
     /**
      * Indicates whether a reboot may be required to complete installation of this update.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRebootRequiredForInstallation() {
         return isRebootRequiredForInstallation;
     }
@@ -250,7 +265,6 @@ public final class AvailableWindowsUpdateSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,26 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for a software package available for installation on a managed
- * instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for a software package available for installation on a managed instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdatablePackageSummary.Builder.class)
+    builder = UpdatablePackageSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "packageClassification")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "packageClassification"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdatablePackageSummary extends PackageSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,61 +80,65 @@ public final class UpdatablePackageSummary extends PackageSummary {
             this.__explicitlySet__.add("softwareSources");
             return this;
         }
-        /** The version of the package that is currently installed on the instance. */
+        /**
+         * The version of the package that is currently installed on the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
         private String installedVersion;
 
         /**
          * The version of the package that is currently installed on the instance.
-         *
          * @param installedVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder installedVersion(String installedVersion) {
             this.installedVersion = installedVersion;
             this.__explicitlySet__.add("installedVersion");
             return this;
         }
-        /** The type of update. */
+        /**
+         * The type of update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private ClassificationTypes updateType;
 
         /**
          * The type of update.
-         *
          * @param updateType the value to set
          * @return this builder
-         */
+         **/
         public Builder updateType(ClassificationTypes updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /** List of errata applicable to this update. */
+        /**
+         * List of errata applicable to this update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errata")
         private java.util.List<String> errata;
 
         /**
          * List of errata applicable to this update.
-         *
          * @param errata the value to set
          * @return this builder
-         */
+         **/
         public Builder errata(java.util.List<String> errata) {
             this.errata = errata;
             this.__explicitlySet__.add("errata");
             return this;
         }
-        /** List of CVEs applicable to this erratum. */
+        /**
+         * List of CVEs applicable to this erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
         private java.util.List<String> relatedCves;
 
         /**
          * List of CVEs applicable to this erratum.
-         *
          * @param relatedCves the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedCves(java.util.List<String> relatedCves) {
             this.relatedCves = relatedCves;
             this.__explicitlySet__.add("relatedCves");
@@ -200,7 +203,9 @@ public final class UpdatablePackageSummary extends PackageSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -228,54 +233,58 @@ public final class UpdatablePackageSummary extends PackageSummary {
         this.relatedCves = relatedCves;
     }
 
-    /** The version of the package that is currently installed on the instance. */
+    /**
+     * The version of the package that is currently installed on the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
     private final String installedVersion;
 
     /**
      * The version of the package that is currently installed on the instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstalledVersion() {
         return installedVersion;
     }
 
-    /** The type of update. */
+    /**
+     * The type of update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final ClassificationTypes updateType;
 
     /**
      * The type of update.
-     *
      * @return the value
-     */
+     **/
     public ClassificationTypes getUpdateType() {
         return updateType;
     }
 
-    /** List of errata applicable to this update. */
+    /**
+     * List of errata applicable to this update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errata")
     private final java.util.List<String> errata;
 
     /**
      * List of errata applicable to this update.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getErrata() {
         return errata;
     }
 
-    /** List of CVEs applicable to this erratum. */
+    /**
+     * List of CVEs applicable to this erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
     private final java.util.List<String> relatedCves;
 
     /**
      * List of CVEs applicable to this erratum.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRelatedCves() {
         return relatedCves;
     }
@@ -287,7 +296,6 @@ public final class UpdatablePackageSummary extends PackageSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

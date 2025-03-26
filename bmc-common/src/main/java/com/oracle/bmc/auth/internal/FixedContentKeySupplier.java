@@ -20,12 +20,11 @@ import java.security.spec.RSAPrivateCrtKeySpec;
 import java.security.spec.RSAPublicKeySpec;
 
 /**
- * This is a SessionKeySupplier which fakes the ability to refresh its contained key. It is
- * initialised once with fixed values of private key and (optional) passphrase; that key is always
- * returned.
+ * This is a SessionKeySupplier which fakes the ability to refresh its contained key.
+ * It is initialised once with fixed values of private key and (optional) passphrase; that key is always returned.
  */
 public class FixedContentKeySupplier implements SessionKeySupplier {
-    private final KeyPair keyPair;
+    final private KeyPair keyPair;
 
     public FixedContentKeySupplier(String privateKeyContents, char[] passphrase) {
         try (ByteArrayInputStream inputStream =
@@ -56,6 +55,16 @@ public class FixedContentKeySupplier implements SessionKeySupplier {
     @Override
     public KeyPair getKeyPair() {
         return keyPair;
+    }
+
+    @Override
+    public RSAPublicKey getPublicKey() {
+        return (RSAPublicKey) keyPair.getPublic();
+    }
+
+    @Override
+    public RSAPrivateKey getPrivateKey() {
+        return (RSAPrivateKey) keyPair.getPrivate();
     }
 
     @Override

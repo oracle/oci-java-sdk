@@ -6,17 +6,18 @@ package com.oracle.bmc.cloudguard.responses;
 
 import com.oracle.bmc.cloudguard.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,17 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -42,12 +44,13 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /** The returned {@code SecurityRecipeCollection} instance. */
+    /**
+     * The returned SecurityRecipeCollection instance.
+     */
     private com.oracle.bmc.cloudguard.model.SecurityRecipeCollection securityRecipeCollection;
 
     /**
-     * The returned {@code SecurityRecipeCollection} instance.
-     *
+     * The returned SecurityRecipeCollection instance.
      * @return the value
      */
     public com.oracle.bmc.cloudguard.model.SecurityRecipeCollection getSecurityRecipeCollection() {
@@ -63,7 +66,7 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListSecurityRecipesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.SecurityRecipeCollection securityRecipeCollection) {
@@ -73,33 +76,31 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
         this.securityRecipeCollection = securityRecipeCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListSecurityRecipesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,16 +111,17 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -129,12 +131,13 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code SecurityRecipeCollection} instance. */
+        /**
+         * The returned SecurityRecipeCollection instance.
+         */
         private com.oracle.bmc.cloudguard.model.SecurityRecipeCollection securityRecipeCollection;
 
         /**
-         * The returned {@code SecurityRecipeCollection} instance.
-         *
+         * The returned SecurityRecipeCollection instance.
          * @param securityRecipeCollection the value to set
          * @return this builder
          */
@@ -146,10 +149,8 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListSecurityRecipesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,10 +163,8 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListSecurityRecipesResponse build() {
             return new ListSecurityRecipesResponse(
                     __httpStatusCode__,
@@ -178,7 +177,6 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

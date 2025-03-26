@@ -5,25 +5,25 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * PayPal Payment related details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+ * PayPal Payment related details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PaypalPaymentDetail.Builder.class)
+    builder = PaypalPaymentDetail.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "paymentMethod")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "paymentMethod"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PaypalPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -53,31 +53,33 @@ public final class PaypalPaymentDetail extends PaymentDetail {
             this.__explicitlySet__.add("amountPaid");
             return this;
         }
-        /** The id (email address) of the paypal payment */
+        /**
+         * The id (email address) of the paypal payment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paypalId")
         private String paypalId;
 
         /**
          * The id (email address) of the paypal payment
-         *
          * @param paypalId the value to set
          * @return this builder
-         */
+         **/
         public Builder paypalId(String paypalId) {
             this.paypalId = paypalId;
             this.__explicitlySet__.add("paypalId");
             return this;
         }
-        /** paypal payment reference */
+        /**
+         * paypal payment reference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paypalReference")
         private String paypalReference;
 
         /**
          * paypal payment reference
-         *
          * @param paypalReference the value to set
          * @return this builder
-         */
+         **/
         public Builder paypalReference(String paypalReference) {
             this.paypalReference = paypalReference;
             this.__explicitlySet__.add("paypalReference");
@@ -122,7 +124,9 @@ public final class PaypalPaymentDetail extends PaymentDetail {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,28 +147,30 @@ public final class PaypalPaymentDetail extends PaymentDetail {
         this.paypalReference = paypalReference;
     }
 
-    /** The id (email address) of the paypal payment */
+    /**
+     * The id (email address) of the paypal payment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("paypalId")
     private final String paypalId;
 
     /**
      * The id (email address) of the paypal payment
-     *
      * @return the value
-     */
+     **/
     public String getPaypalId() {
         return paypalId;
     }
 
-    /** paypal payment reference */
+    /**
+     * paypal payment reference
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("paypalReference")
     private final String paypalReference;
 
     /**
      * paypal payment reference
-     *
      * @return the value
-     */
+     **/
     public String getPaypalReference() {
         return paypalReference;
     }
@@ -176,7 +182,6 @@ public final class PaypalPaymentDetail extends PaymentDetail {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

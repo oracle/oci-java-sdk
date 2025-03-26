@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.queue;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.queue.internal.http.*;
 import com.oracle.bmc.queue.requests.*;
 import com.oracle.bmc.queue.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for Queue service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Queue service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements QueueAsync {
-    /** Service instance for Queue. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+public class QueueAsyncClient implements QueueAsync {
+    /**
+     * Service instance for Queue.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("QUEUE")
@@ -39,409 +36,112 @@ public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(QueueAsyncClient.class);
 
-    QueueAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, QueueAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "queue";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public QueueAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new QueueAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteMessageResponse> deleteMessage(
-            DeleteMessageRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeleteMessageRequest, DeleteMessageResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-
-        Validate.notBlank(request.getMessageReceipt(), "messageReceipt must not be blank");
-
-        return clientCall(request, DeleteMessageResponse::builder)
-                .logger(LOG, "deleteMessage")
-                .serviceDetails(
-                        "Queue",
-                        "DeleteMessage",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessage")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteMessageRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("messages")
-                .appendPathParam(request.getMessageReceipt())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteMessageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteMessagesResponse> deleteMessages(
-            DeleteMessagesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteMessagesRequest, DeleteMessagesResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-        Objects.requireNonNull(
-                request.getDeleteMessagesDetails(), "deleteMessagesDetails is required");
-
-        return clientCall(request, DeleteMessagesResponse::builder)
-                .logger(LOG, "deleteMessages")
-                .serviceDetails(
-                        "Queue",
-                        "DeleteMessages",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessages")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DeleteMessagesRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("messages")
-                .appendPathParam("actions")
-                .appendPathParam("deleteMessages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.queue.model.DeleteMessagesResult.class,
-                        DeleteMessagesResponse.Builder::deleteMessagesResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteMessagesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMessagesResponse> getMessages(
-            GetMessagesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetMessagesRequest, GetMessagesResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-
-        return clientCall(request, GetMessagesResponse::builder)
-                .logger(LOG, "getMessages")
-                .serviceDetails(
-                        "Queue",
-                        "GetMessages",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/GetMessages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMessagesRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("messages")
-                .appendQueryParam("visibilityInSeconds", request.getVisibilityInSeconds())
-                .appendQueryParam("timeoutInSeconds", request.getTimeoutInSeconds())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("channelFilter", request.getChannelFilter())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.queue.model.GetMessages.class,
-                        GetMessagesResponse.Builder::getMessages)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMessagesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetStatsResponse> getStats(
-            GetStatsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetStatsRequest, GetStatsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-
-        return clientCall(request, GetStatsResponse::builder)
-                .logger(LOG, "getStats")
-                .serviceDetails(
-                        "Queue",
-                        "GetStats",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueStats/GetStats")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStatsRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("stats")
-                .appendQueryParam("channelId", request.getChannelId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.queue.model.QueueStats.class,
-                        GetStatsResponse.Builder::queueStats)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStatsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListChannelsResponse> listChannels(
-            ListChannelsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-
-        return clientCall(request, ListChannelsResponse::builder)
-                .logger(LOG, "listChannels")
-                .serviceDetails(
-                        "Queue",
-                        "ListChannels",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ChannelCollection/ListChannels")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListChannelsRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("channels")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("channelFilter", request.getChannelFilter())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.queue.model.ChannelCollection.class,
-                        ListChannelsResponse.Builder::channelCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListChannelsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListChannelsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutMessagesResponse> putMessages(
-            PutMessagesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<PutMessagesRequest, PutMessagesResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-        Objects.requireNonNull(request.getPutMessagesDetails(), "putMessagesDetails is required");
-
-        return clientCall(request, PutMessagesResponse::builder)
-                .logger(LOG, "putMessages")
-                .serviceDetails(
-                        "Queue",
-                        "PutMessages",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/PutMessage/PutMessages")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PutMessagesRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("messages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.queue.model.PutMessages.class,
-                        PutMessagesResponse.Builder::putMessages)
-                .handleResponseHeaderString(
-                        "opc-request-id", PutMessagesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateMessageResponse> updateMessage(
-            UpdateMessageRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateMessageRequest, UpdateMessageResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-
-        Validate.notBlank(request.getMessageReceipt(), "messageReceipt must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateMessageDetails(), "updateMessageDetails is required");
-
-        return clientCall(request, UpdateMessageResponse::builder)
-                .logger(LOG, "updateMessage")
-                .serviceDetails(
-                        "Queue",
-                        "UpdateMessage",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/UpdatedMessage/UpdateMessage")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateMessageRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("messages")
-                .appendPathParam(request.getMessageReceipt())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.queue.model.UpdatedMessage.class,
-                        UpdateMessageResponse.Builder::updatedMessage)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateMessageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateMessagesResponse> updateMessages(
-            UpdateMessagesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateMessagesRequest, UpdateMessagesResponse>
-                    handler) {
-
-        Validate.notBlank(request.getQueueId(), "queueId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateMessagesDetails(), "updateMessagesDetails is required");
-
-        return clientCall(request, UpdateMessagesResponse::builder)
-                .logger(LOG, "updateMessages")
-                .serviceDetails(
-                        "Queue",
-                        "UpdateMessages",
-                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/UpdateMessages")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpdateMessagesRequest::builder)
-                .basePath("/20210201")
-                .appendPathParam("queues")
-                .appendPathParam(request.getQueueId())
-                .appendPathParam("messages")
-                .appendPathParam("actions")
-                .appendPathParam("updateMessages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.queue.model.UpdateMessagesResult.class,
-                        UpdateMessagesResponse.Builder::updateMessagesResult)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateMessagesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public QueueAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public QueueAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public QueueAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public QueueAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public QueueAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -449,26 +149,26 @@ public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public QueueAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -477,29 +177,29 @@ public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public QueueAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -512,14 +212,619 @@ public class QueueAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public QueueAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, QueueAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public QueueAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new QueueAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMessageResponse> deleteMessage(
+            DeleteMessageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteMessageRequest, DeleteMessageResponse>
+                    handler) {
+        LOG.trace("Called async deleteMessage");
+        final DeleteMessageRequest interceptedRequest =
+                DeleteMessageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMessageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "DeleteMessage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessage");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMessageResponse>
+                transformer =
+                        DeleteMessageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteMessageRequest, DeleteMessageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMessageRequest, DeleteMessageResponse>,
+                        java.util.concurrent.Future<DeleteMessageResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMessageRequest, DeleteMessageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMessagesResponse> deleteMessages(
+            DeleteMessagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMessagesRequest, DeleteMessagesResponse>
+                    handler) {
+        LOG.trace("Called async deleteMessages");
+        final DeleteMessagesRequest interceptedRequest =
+                DeleteMessagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMessagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "DeleteMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessages");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMessagesResponse>
+                transformer =
+                        DeleteMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteMessagesRequest, DeleteMessagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMessagesRequest, DeleteMessagesResponse>,
+                        java.util.concurrent.Future<DeleteMessagesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDeleteMessagesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMessagesRequest, DeleteMessagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessagesResponse> getMessages(
+            GetMessagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetMessagesRequest, GetMessagesResponse>
+                    handler) {
+        LOG.trace("Called async getMessages");
+        final GetMessagesRequest interceptedRequest =
+                GetMessagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMessagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "GetMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/GetMessages");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMessagesResponse>
+                transformer =
+                        GetMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMessagesRequest, GetMessagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMessagesRequest, GetMessagesResponse>,
+                        java.util.concurrent.Future<GetMessagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMessagesRequest, GetMessagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStatsResponse> getStats(
+            GetStatsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetStatsRequest, GetStatsResponse>
+                    handler) {
+        LOG.trace("Called async getStats");
+        final GetStatsRequest interceptedRequest = GetStatsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStatsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "GetStats",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueStats/GetStats");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStatsResponse> transformer =
+                GetStatsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetStatsRequest, GetStatsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetStatsRequest, GetStatsResponse>,
+                        java.util.concurrent.Future<GetStatsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStatsRequest, GetStatsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelsResponse> listChannels(
+            ListChannelsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
+                    handler) {
+        LOG.trace("Called async listChannels");
+        final ListChannelsRequest interceptedRequest =
+                ListChannelsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListChannelsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "ListChannels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ChannelCollection/ListChannels");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListChannelsResponse>
+                transformer =
+                        ListChannelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListChannelsRequest, ListChannelsResponse>,
+                        java.util.concurrent.Future<ListChannelsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListChannelsRequest, ListChannelsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMessagesResponse> putMessages(
+            PutMessagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutMessagesRequest, PutMessagesResponse>
+                    handler) {
+        LOG.trace("Called async putMessages");
+        final PutMessagesRequest interceptedRequest =
+                PutMessagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutMessagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "PutMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/PutMessage/PutMessages");
+        final java.util.function.Function<javax.ws.rs.core.Response, PutMessagesResponse>
+                transformer =
+                        PutMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<PutMessagesRequest, PutMessagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PutMessagesRequest, PutMessagesResponse>,
+                        java.util.concurrent.Future<PutMessagesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPutMessagesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PutMessagesRequest, PutMessagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMessageResponse> updateMessage(
+            UpdateMessageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateMessageRequest, UpdateMessageResponse>
+                    handler) {
+        LOG.trace("Called async updateMessage");
+        final UpdateMessageRequest interceptedRequest =
+                UpdateMessageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMessageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "UpdateMessage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/UpdatedMessage/UpdateMessage");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMessageResponse>
+                transformer =
+                        UpdateMessageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateMessageRequest, UpdateMessageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMessageRequest, UpdateMessageResponse>,
+                        java.util.concurrent.Future<UpdateMessageResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMessageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMessageRequest, UpdateMessageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMessagesResponse> updateMessages(
+            UpdateMessagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMessagesRequest, UpdateMessagesResponse>
+                    handler) {
+        LOG.trace("Called async updateMessages");
+        final UpdateMessagesRequest interceptedRequest =
+                UpdateMessagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMessagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Queue",
+                        "UpdateMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/UpdateMessages");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMessagesResponse>
+                transformer =
+                        UpdateMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateMessagesRequest, UpdateMessagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMessagesRequest, UpdateMessagesResponse>,
+                        java.util.concurrent.Future<UpdateMessagesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMessagesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMessagesRequest, UpdateMessagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

@@ -4,9 +4,8 @@
  */
 package com.oracle.bmc.common;
 
-import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
-import com.oracle.bmc.internal.Alloy;
+import com.oracle.bmc.internal.GuavaUtils;
 import org.slf4j.Logger;
 
 import java.util.Locale;
@@ -14,7 +13,6 @@ import java.util.Optional;
 
 /**
  * A builder for clients that can be configured to target a certain region
- *
  * @param <B> actual builder class
  * @param <C> client class
  */
@@ -23,28 +21,17 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RegionalClientBuilder.class);
 
-    protected Region region;
-
     public RegionalClientBuilder(Service service) {
         super(service);
     }
 
     /**
      * Set the region for the client to be created.
-     *
      * @param region region
      * @return this builder
      */
     public B region(com.oracle.bmc.Region region) {
-        if (Alloy.shouldUseOnlyAlloyRegions()) {
-            try {
-                com.oracle.bmc.Region.valueOf(region.getRegionId());
-            } catch (IllegalArgumentException e) {
-                Alloy.throwUnknownAlloyRegionIfAppropriate(region.getRegionId(), e);
-            }
-        }
-        setRegion(region);
-        Optional<String> endpoint = region.getEndpoint(service);
+        Optional<String> endpoint = GuavaUtils.adaptFromGuava(region.getEndpoint(service));
         if (endpoint.isPresent()) {
             endpoint(endpoint.get());
         } else {
@@ -56,7 +43,6 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
 
     /**
      * Set the region for the client to be created.
-     *
      * @param regionId region
      * @return this builder
      */
@@ -66,15 +52,9 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             return region(region);
         } catch (IllegalArgumentException e) {
-            Alloy.throwUnknownAlloyRegionIfAppropriate(regionId, e);
             LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(service, regionId);
             return endpoint(endpoint);
         }
-    }
-
-    private B setRegion(Region region) {
-        this.region = region;
-        return (B) this;
     }
 }

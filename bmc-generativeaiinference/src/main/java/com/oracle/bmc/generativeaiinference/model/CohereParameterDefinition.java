@@ -5,23 +5,22 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * A definition of tool parameter. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * A definition of tool parameter.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CohereParameterDefinition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CohereParameterDefinition.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CohereParameterDefinition
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description", "type", "isRequired"})
     public CohereParameterDefinition(String description, String type, Boolean isRequired) {
@@ -33,50 +32,49 @@ public final class CohereParameterDefinition
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The description of the parameter. */
+        /**
+         * The description of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the parameter.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The type of the parameter. Must be a valid Python type. */
+        /**
+         * The type of the parameter. Must be a valid Python type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of the parameter. Must be a valid Python type.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Denotes whether the parameter is always present (required) or not. Defaults to not
-         * required.
-         */
+         * Denotes whether the parameter is always present (required) or not. Defaults to not required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
-         * Denotes whether the parameter is always present (required) or not. Defaults to not
-         * required.
-         *
+         * Denotes whether the parameter is always present (required) or not. Defaults to not required.
          * @param isRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
@@ -110,7 +108,9 @@ public final class CohereParameterDefinition
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,43 +119,44 @@ public final class CohereParameterDefinition
         return new Builder().copy(this);
     }
 
-    /** The description of the parameter. */
+    /**
+     * The description of the parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the parameter.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The type of the parameter. Must be a valid Python type. */
+    /**
+     * The type of the parameter. Must be a valid Python type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of the parameter. Must be a valid Python type.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
      * Denotes whether the parameter is always present (required) or not. Defaults to not required.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
      * Denotes whether the parameter is always present (required) or not. Defaults to not required.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
@@ -167,7 +168,6 @@ public final class CohereParameterDefinition
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

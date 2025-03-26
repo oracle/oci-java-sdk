@@ -5,23 +5,19 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * Results of a queue search. Contains both QueueSummary items and other information, such as
- * metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * Results of a queue search. Contains both QueueSummary items and other information, such as metadata.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueueCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class QueueCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class QueueCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public QueueCollection(java.util.List<QueueSummary> items) {
@@ -31,16 +27,17 @@ public final class QueueCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of queues. */
+        /**
+         * List of queues.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<QueueSummary> items;
 
         /**
          * List of queues.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<QueueSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -67,7 +64,9 @@ public final class QueueCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +75,16 @@ public final class QueueCollection
         return new Builder().copy(this);
     }
 
-    /** List of queues. */
+    /**
+     * List of queues.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<QueueSummary> items;
 
     /**
      * List of queues.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<QueueSummary> getItems() {
         return items;
     }
@@ -96,7 +96,6 @@ public final class QueueCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

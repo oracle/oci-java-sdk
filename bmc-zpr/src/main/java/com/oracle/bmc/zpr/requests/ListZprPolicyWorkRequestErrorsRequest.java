@@ -6,84 +6,87 @@ package com.oracle.bmc.zpr.requests;
 
 import com.oracle.bmc.zpr.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestErrorsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListZprPolicyWorkRequestErrorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListZprPolicyWorkRequestErrorsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
 public class ListZprPolicyWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asynchronous work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asynchronous work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID. The only valid characters for request IDs
-     * are letters, numbers, underscore, and dash.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     * The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID. The only valid characters for request IDs
-     * are letters, numbers, underscore, and dash.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     * The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for {@code
-     * timestamp} is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for {@code timestamp} is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for {@code
-     * timestamp} is descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for {@code timestamp} is descending.
+     *
+     **/
+    public enum SortBy {
         Timestamp("timestamp"),
         ;
 
@@ -116,16 +119,20 @@ public class ListZprPolicyWorkRequestErrorsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for {@code
-     * timestamp} is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for {@code timestamp} is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     private com.oracle.bmc.zpr.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public com.oracle.bmc.zpr.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -133,19 +140,17 @@ public class ListZprPolicyWorkRequestErrorsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListZprPolicyWorkRequestErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asynchronous work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asynchronous work request.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -155,16 +160,19 @@ public class ListZprPolicyWorkRequestErrorsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID. The only valid characters for request
-         * IDs are letters, numbers, underscore, and dash.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         * The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID. The only valid characters for request
-         * IDs are letters, numbers, underscore, and dash.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         * The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -176,15 +184,16 @@ public class ListZprPolicyWorkRequestErrorsRequest
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -196,15 +205,16 @@ public class ListZprPolicyWorkRequestErrorsRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -215,14 +225,13 @@ public class ListZprPolicyWorkRequestErrorsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for {@code
-         * timestamp} is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for {@code timestamp} is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for {@code
-         * timestamp} is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for {@code timestamp} is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -232,12 +241,13 @@ public class ListZprPolicyWorkRequestErrorsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private com.oracle.bmc.zpr.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -248,19 +258,18 @@ public class ListZprPolicyWorkRequestErrorsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -272,7 +281,6 @@ public class ListZprPolicyWorkRequestErrorsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListZprPolicyWorkRequestErrorsRequest o) {
@@ -290,11 +298,10 @@ public class ListZprPolicyWorkRequestErrorsRequest
         /**
          * Build the instance of ListZprPolicyWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListZprPolicyWorkRequestErrorsRequest
          */
@@ -308,8 +315,7 @@ public class ListZprPolicyWorkRequestErrorsRequest
         /**
          * Build the instance of ListZprPolicyWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListZprPolicyWorkRequestErrorsRequest
@@ -324,14 +330,12 @@ public class ListZprPolicyWorkRequestErrorsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListZprPolicyWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit,
-            // sortBy, sortOrder);
+            // new ListZprPolicyWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -346,7 +350,6 @@ public class ListZprPolicyWorkRequestErrorsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

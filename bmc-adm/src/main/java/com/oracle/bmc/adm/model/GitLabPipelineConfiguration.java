@@ -5,121 +5,115 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Extends a Verify configuration with appropriate data to reach and use the build service provided
- * by a GitLab Pipeline. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+ * Extends a Verify configuration with appropriate data to reach and use the build service provided by a GitLab Pipeline.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GitLabPipelineConfiguration.Builder.class)
+    builder = GitLabPipelineConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "buildServiceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "buildServiceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GitLabPipelineConfiguration extends VerifyConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The location of the Repository where the GitLab Pipeline will be run. The expected format
-         * is https://gitlab.com/[groupName]/[repoName]
-         */
+         * The location of the Repository where the GitLab Pipeline will be run.
+         * The expected format is https://gitlab.com/[groupName]/[repoName]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
         /**
-         * The location of the Repository where the GitLab Pipeline will be run. The expected format
-         * is https://gitlab.com/[groupName]/[repoName]
+         * The location of the Repository where the GitLab Pipeline will be run.
+         * The expected format is https://gitlab.com/[groupName]/[repoName]
          *
          * @param repositoryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
             return this;
         }
-        /** The username that will trigger the GitLab Pipeline. */
+        /**
+         * The username that will trigger the GitLab Pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
          * The username that will trigger the GitLab Pipeline.
-         *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
-         * pipeline.
-         */
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+         * The PAT provides the credentials to access the GitLab pipeline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patSecretId")
         private String patSecretId;
 
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
-         * pipeline.
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+         * The PAT provides the credentials to access the GitLab pipeline.
          *
          * @param patSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder patSecretId(String patSecretId) {
             this.patSecretId = patSecretId;
             this.__explicitlySet__.add("patSecretId");
             return this;
         }
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
-         */
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret.
+         * The Secret provides access to the trigger for a GitLab pipeline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerSecretId")
         private String triggerSecretId;
 
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret.
+         * The Secret provides access to the trigger for a GitLab pipeline.
          *
          * @param triggerSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder triggerSecretId(String triggerSecretId) {
             this.triggerSecretId = triggerSecretId;
             this.__explicitlySet__.add("triggerSecretId");
             return this;
         }
         /**
-         * Additional key-value pairs passed as parameters to the build service when running an
-         * experiment.
-         */
+         * Additional key-value pairs passed as parameters to the build service when running an experiment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalParameters")
         private java.util.Map<String, String> additionalParameters;
 
         /**
-         * Additional key-value pairs passed as parameters to the build service when running an
-         * experiment.
-         *
+         * Additional key-value pairs passed as parameters to the build service when running an experiment.
          * @param additionalParameters the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalParameters(java.util.Map<String, String> additionalParameters) {
             this.additionalParameters = additionalParameters;
             this.__explicitlySet__.add("additionalParameters");
@@ -164,7 +158,9 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,88 +185,83 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
     }
 
     /**
-     * The location of the Repository where the GitLab Pipeline will be run. The expected format is
-     * https://gitlab.com/[groupName]/[repoName]
-     */
+     * The location of the Repository where the GitLab Pipeline will be run.
+     * The expected format is https://gitlab.com/[groupName]/[repoName]
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
     /**
-     * The location of the Repository where the GitLab Pipeline will be run. The expected format is
-     * https://gitlab.com/[groupName]/[repoName]
+     * The location of the Repository where the GitLab Pipeline will be run.
+     * The expected format is https://gitlab.com/[groupName]/[repoName]
      *
      * @return the value
-     */
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
 
-    /** The username that will trigger the GitLab Pipeline. */
+    /**
+     * The username that will trigger the GitLab Pipeline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username that will trigger the GitLab Pipeline.
-     *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
-     * pipeline.
-     */
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+     * The PAT provides the credentials to access the GitLab pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patSecretId")
     private final String patSecretId;
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
-     * pipeline.
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+     * The PAT provides the credentials to access the GitLab pipeline.
      *
      * @return the value
-     */
+     **/
     public String getPatSecretId() {
         return patSecretId;
     }
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
-     */
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret.
+     * The Secret provides access to the trigger for a GitLab pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerSecretId")
     private final String triggerSecretId;
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret.
+     * The Secret provides access to the trigger for a GitLab pipeline.
      *
      * @return the value
-     */
+     **/
     public String getTriggerSecretId() {
         return triggerSecretId;
     }
 
     /**
-     * Additional key-value pairs passed as parameters to the build service when running an
-     * experiment.
-     */
+     * Additional key-value pairs passed as parameters to the build service when running an experiment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalParameters")
     private final java.util.Map<String, String> additionalParameters;
 
     /**
-     * Additional key-value pairs passed as parameters to the build service when running an
-     * experiment.
-     *
+     * Additional key-value pairs passed as parameters to the build service when running an experiment.
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdditionalParameters() {
         return additionalParameters;
     }
@@ -282,7 +273,6 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

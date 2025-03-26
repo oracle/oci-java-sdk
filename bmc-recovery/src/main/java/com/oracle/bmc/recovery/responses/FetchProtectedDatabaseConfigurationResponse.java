@@ -6,10 +6,13 @@ package com.oracle.bmc.recovery.responses;
 
 import com.oracle.bmc.recovery.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class FetchProtectedDatabaseConfigurationResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -22,14 +25,15 @@ public class FetchProtectedDatabaseConfigurationResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,7 +41,10 @@ public class FetchProtectedDatabaseConfigurationResponse
         return opcRequestId;
     }
 
-    /** Contains filename passed in header. */
+    /**
+     * Contains filename passed in header.
+     *
+     */
     private String opcFilename;
 
     /**
@@ -49,7 +56,10 @@ public class FetchProtectedDatabaseConfigurationResponse
         return opcFilename;
     }
 
-    /** Contains file checksum passed in header. */
+    /**
+     * Contains file checksum passed in header.
+     *
+     */
     private String opcChecksum;
 
     /**
@@ -61,12 +71,13 @@ public class FetchProtectedDatabaseConfigurationResponse
         return opcChecksum;
     }
 
-    /** The returned {@code java.io.InputStream} instance. */
+    /**
+     * The returned java.io.InputStream instance.
+     */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned {@code java.io.InputStream} instance.
-     *
+     * The returned java.io.InputStream instance.
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -84,7 +95,7 @@ public class FetchProtectedDatabaseConfigurationResponse
     })
     private FetchProtectedDatabaseConfigurationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcFilename,
@@ -98,26 +109,25 @@ public class FetchProtectedDatabaseConfigurationResponse
         this.inputStream = inputStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    FetchProtectedDatabaseConfigurationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -132,14 +142,15 @@ public class FetchProtectedDatabaseConfigurationResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -149,7 +160,10 @@ public class FetchProtectedDatabaseConfigurationResponse
             return this;
         }
 
-        /** Contains filename passed in header. */
+        /**
+         * Contains filename passed in header.
+         *
+         */
         private String opcFilename;
 
         /**
@@ -163,7 +177,10 @@ public class FetchProtectedDatabaseConfigurationResponse
             return this;
         }
 
-        /** Contains file checksum passed in header. */
+        /**
+         * Contains file checksum passed in header.
+         *
+         */
         private String opcChecksum;
 
         /**
@@ -177,12 +194,13 @@ public class FetchProtectedDatabaseConfigurationResponse
             return this;
         }
 
-        /** The returned {@code java.io.InputStream} instance. */
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned {@code java.io.InputStream} instance.
-         *
+         * The returned java.io.InputStream instance.
          * @param inputStream the value to set
          * @return this builder
          */
@@ -193,10 +211,8 @@ public class FetchProtectedDatabaseConfigurationResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(FetchProtectedDatabaseConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -211,10 +227,8 @@ public class FetchProtectedDatabaseConfigurationResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public FetchProtectedDatabaseConfigurationResponse build() {
             return new FetchProtectedDatabaseConfigurationResponse(
                     __httpStatusCode__,
@@ -229,7 +243,6 @@ public class FetchProtectedDatabaseConfigurationResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

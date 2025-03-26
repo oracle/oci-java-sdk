@@ -6,17 +6,18 @@ package com.oracle.bmc.dns.responses;
 
 import com.oracle.bmc.dns.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,14 +26,15 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
      *
      * @return the value
      */
@@ -41,14 +43,17 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * The current version of the resource, ending with a representation-specific suffix. This value
-     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
      */
     private String eTag;
 
     /**
-     * The current version of the resource, ending with a representation-specific suffix. This value
-     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
+     * The current version of the resource, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
      *
      * @return the value
      */
@@ -56,12 +61,13 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         return eTag;
     }
 
-    /** The returned {@code SteeringPolicyAttachment} instance. */
+    /**
+     * The returned SteeringPolicyAttachment instance.
+     */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
     /**
-     * The returned {@code SteeringPolicyAttachment} instance.
-     *
+     * The returned SteeringPolicyAttachment instance.
      * @return the value
      */
     public com.oracle.bmc.dns.model.SteeringPolicyAttachment getSteeringPolicyAttachment() {
@@ -78,7 +84,7 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
     })
     private UpdateSteeringPolicyAttachmentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcWorkRequestId,
             String eTag,
@@ -90,34 +96,31 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         this.steeringPolicyAttachment = steeringPolicyAttachment;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateSteeringPolicyAttachmentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -128,14 +131,15 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -146,16 +150,17 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * The current version of the resource, ending with a representation-specific suffix. This
-         * value may be used in If-Match and If-None-Match headers for later requests of the same
-         * resource.
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
+         *
          */
         private String eTag;
 
         /**
-         * The current version of the resource, ending with a representation-specific suffix. This
-         * value may be used in If-Match and If-None-Match headers for later requests of the same
-         * resource.
+         * The current version of the resource, ending with a
+         * representation-specific suffix. This value may be used in If-Match
+         * and If-None-Match headers for later requests of the same resource.
          *
          * @param eTag the value to set
          * @return this builder
@@ -165,12 +170,13 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned {@code SteeringPolicyAttachment} instance. */
+        /**
+         * The returned SteeringPolicyAttachment instance.
+         */
         private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
         /**
-         * The returned {@code SteeringPolicyAttachment} instance.
-         *
+         * The returned SteeringPolicyAttachment instance.
          * @param steeringPolicyAttachment the value to set
          * @return this builder
          */
@@ -182,10 +188,8 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateSteeringPolicyAttachmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -199,10 +203,8 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateSteeringPolicyAttachmentResponse build() {
             return new UpdateSteeringPolicyAttachmentResponse(
                     __httpStatusCode__,
@@ -216,7 +218,6 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

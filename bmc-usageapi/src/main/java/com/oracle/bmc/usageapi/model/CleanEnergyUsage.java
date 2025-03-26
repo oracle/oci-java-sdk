@@ -5,22 +5,19 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Clean energy usage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+ * Clean energy usage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CleanEnergyUsage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CleanEnergyUsage
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CleanEnergyUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"region", "ad", "usage"})
     public CleanEnergyUsage(String region, String ad, Double usage) {
@@ -32,46 +29,49 @@ public final class CleanEnergyUsage
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The region. */
+        /**
+         * The region.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The region.
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** The availability domain. */
+        /**
+         * The availability domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private String ad;
 
         /**
          * The availability domain.
-         *
          * @param ad the value to set
          * @return this builder
-         */
+         **/
         public Builder ad(String ad) {
             this.ad = ad;
             this.__explicitlySet__.add("ad");
             return this;
         }
-        /** The percentage of clean enery used. */
+        /**
+         * The percentage of clean enery used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
         /**
          * The percentage of clean enery used.
-         *
          * @param usage the value to set
          * @return this builder
-         */
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
@@ -104,7 +104,9 @@ public final class CleanEnergyUsage
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +115,44 @@ public final class CleanEnergyUsage
         return new Builder().copy(this);
     }
 
-    /** The region. */
+    /**
+     * The region.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The region.
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** The availability domain. */
+    /**
+     * The availability domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final String ad;
 
     /**
      * The availability domain.
-     *
      * @return the value
-     */
+     **/
     public String getAd() {
         return ad;
     }
 
-    /** The percentage of clean enery used. */
+    /**
+     * The percentage of clean enery used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
     /**
      * The percentage of clean enery used.
-     *
      * @return the value
-     */
+     **/
     public Double getUsage() {
         return usage;
     }
@@ -159,7 +164,6 @@ public final class CleanEnergyUsage
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

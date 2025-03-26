@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Type of request for FTP monitor. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum FtpRequestType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of request for FTP monitor.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum FtpRequestType {
     List("LIST"),
     Upload("UPLOAD"),
     Download("DOWNLOAD"),

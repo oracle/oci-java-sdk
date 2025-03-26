@@ -16,8 +16,8 @@ import com.oracle.bmc.database.responses.CreateAutonomousDatabaseBackupResponse;
 import com.oracle.bmc.database.responses.GetAutonomousDatabaseBackupResponse;
 
 /**
- * Example class to show the usage of Create, Get, and Delete of Autonomous Database Backups. This
- * example assumes that an Autonomous Database is already in Available state.
+ * Example class to show the usage of Create, Get, and Delete of Autonomous Database Backups.
+ * This example assumes that an Autonomous Database is already in Available state.
  */
 public class AutonomousDatabaseBackupExample {
     public static void main(String[] args) throws Exception {
@@ -30,10 +30,8 @@ public class AutonomousDatabaseBackupExample {
 
         String autonomousDatabaseId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -41,8 +39,8 @@ public class AutonomousDatabaseBackupExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        DatabaseClient dbClient =
-                DatabaseClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        DatabaseClient dbClient = new DatabaseClient(provider);
+        dbClient.setRegion(Region.US_PHOENIX_1);
 
         // Create
         CreateAutonomousDatabaseBackupDetails createAutonomousDatabaseBackupDetails =

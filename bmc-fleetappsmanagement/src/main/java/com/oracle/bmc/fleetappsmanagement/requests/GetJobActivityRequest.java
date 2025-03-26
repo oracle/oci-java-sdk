@@ -6,31 +6,41 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetJobActivityExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJobActivityRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetJobActivityExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJobActivityRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique SchedulerJob identifier */
+    /**
+     * unique SchedulerJob identifier
+     */
     private String schedulerJobId;
 
-    /** unique SchedulerJob identifier */
+    /**
+     * unique SchedulerJob identifier
+     */
     public String getSchedulerJobId() {
         return schedulerJobId;
     }
-    /** unique jobActivity identifier */
+    /**
+     * unique jobActivity identifier
+     */
     private String jobActivityId;
 
-    /** unique jobActivity identifier */
+    /**
+     * unique jobActivity identifier
+     */
     public String getJobActivityId() {
         return jobActivityId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,15 +48,17 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetJobActivityRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique SchedulerJob identifier */
+        /**
+         * unique SchedulerJob identifier
+         */
         private String schedulerJobId = null;
 
         /**
          * unique SchedulerJob identifier
-         *
          * @param schedulerJobId the value to set
          * @return this builder instance
          */
@@ -55,12 +67,13 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** unique jobActivity identifier */
+        /**
+         * unique jobActivity identifier
+         */
         private String jobActivityId = null;
 
         /**
          * unique jobActivity identifier
-         *
          * @param jobActivityId the value to set
          * @return this builder instance
          */
@@ -69,12 +82,13 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -85,19 +99,18 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -109,7 +122,6 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetJobActivityRequest o) {
@@ -124,11 +136,10 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetJobActivityRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetJobActivityRequest
          */
@@ -142,8 +153,7 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetJobActivityRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetJobActivityRequest
@@ -160,7 +170,6 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -172,7 +181,6 @@ public class GetJobActivityRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,21 +5,19 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * The response to the chat conversation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * The response to the chat conversation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChatResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ChatResult extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ChatResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"modelId", "modelVersion", "chatResponse"})
     public ChatResult(String modelId, String modelVersion, BaseChatResponse chatResponse) {
@@ -31,31 +29,33 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the model that's used in this inference request. */
+        /**
+         * The OCID of the model that's used in this inference request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
          * The OCID of the model that's used in this inference request.
-         *
          * @param modelId the value to set
          * @return this builder
-         */
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
             return this;
         }
-        /** The version of the model. */
+        /**
+         * The version of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The version of the model.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -97,7 +97,9 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,28 +108,30 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The OCID of the model that's used in this inference request. */
+    /**
+     * The OCID of the model that's used in this inference request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
      * The OCID of the model that's used in this inference request.
-     *
      * @return the value
-     */
+     **/
     public String getModelId() {
         return modelId;
     }
 
-    /** The version of the model. */
+    /**
+     * The version of the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The version of the model.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -146,7 +150,6 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Each value of this attribute represent a certificate that this App uses when it acts as an
- * OAuthClient. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AppCertificates.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AppCertificates
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AppCertificates extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certAlias",
@@ -48,24 +44,35 @@ public final class AppCertificates
     public static class Builder {
         /**
          * Certificate alias
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certAlias")
         private String certAlias;
 
         /**
          * Certificate alias
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
          * @param certAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder certAlias(String certAlias) {
             this.certAlias = certAlias;
             this.__explicitlySet__.add("certAlias");
@@ -73,24 +80,35 @@ public final class AppCertificates
         }
         /**
          * sha1Thumbprint
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sha1Thumbprint")
         private String sha1Thumbprint;
 
         /**
          * sha1Thumbprint
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param sha1Thumbprint the value to set
          * @return this builder
-         */
+         **/
         public Builder sha1Thumbprint(String sha1Thumbprint) {
             this.sha1Thumbprint = sha1Thumbprint;
             this.__explicitlySet__.add("sha1Thumbprint");
@@ -98,24 +116,35 @@ public final class AppCertificates
         }
         /**
          * Certificate kid
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kid")
         private String kid;
 
         /**
          * Certificate kid
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param kid the value to set
          * @return this builder
-         */
+         **/
         public Builder kid(String kid) {
             this.kid = kid;
             this.__explicitlySet__.add("kid");
@@ -123,24 +152,35 @@ public final class AppCertificates
         }
         /**
          * Certificate x5t
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("x5t")
         private String x5t;
 
         /**
          * Certificate x5t
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param x5t the value to set
          * @return this builder
-         */
+         **/
         public Builder x5t(String x5t) {
             this.x5t = x5t;
             this.__explicitlySet__.add("x5t");
@@ -148,24 +188,35 @@ public final class AppCertificates
         }
         /**
          * Base-64-encoded certificate.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: binary - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: binary
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("x509Base64Certificate")
         private Object x509Base64Certificate;
 
         /**
          * Base-64-encoded certificate.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: binary - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: binary
+         *  - uniqueness: none
          * @param x509Base64Certificate the value to set
          * @return this builder
-         */
+         **/
         public Builder x509Base64Certificate(Object x509Base64Certificate) {
             this.x509Base64Certificate = x509Base64Certificate;
             this.__explicitlySet__.add("x509Base64Certificate");
@@ -210,7 +261,9 @@ public final class AppCertificates
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,105 +274,170 @@ public final class AppCertificates
 
     /**
      * Certificate alias
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certAlias")
     private final String certAlias;
 
     /**
      * Certificate alias
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCertAlias() {
         return certAlias;
     }
 
     /**
      * sha1Thumbprint
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha1Thumbprint")
     private final String sha1Thumbprint;
 
     /**
      * sha1Thumbprint
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getSha1Thumbprint() {
         return sha1Thumbprint;
     }
 
     /**
      * Certificate kid
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kid")
     private final String kid;
 
     /**
      * Certificate kid
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getKid() {
         return kid;
     }
 
     /**
      * Certificate x5t
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("x5t")
     private final String x5t;
 
     /**
      * Certificate x5t
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getX5t() {
         return x5t;
     }
 
     /**
      * Base-64-encoded certificate.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: binary - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: binary
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("x509Base64Certificate")
     private final Object x509Base64Certificate;
 
     /**
      * Base-64-encoded certificate.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: binary - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: binary
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Object getX509Base64Certificate() {
         return x509Base64Certificate;
     }
@@ -331,7 +449,6 @@ public final class AppCertificates
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

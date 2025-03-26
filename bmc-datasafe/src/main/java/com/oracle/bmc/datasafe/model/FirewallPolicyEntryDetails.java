@@ -5,61 +5,55 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * SQL Firewall policy details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * SQL Firewall policy details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FirewallPolicyEntryDetails.Builder.class)
+    builder = FirewallPolicyEntryDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entryType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entryType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FirewallPolicyEntryDetails extends EntryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The time the the SQL Firewall policy was generated on the target database, in the format
-         * defined by RFC3339.
-         */
+         * The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
         private java.util.Date timeGenerated;
 
         /**
-         * The time the the SQL Firewall policy was generated on the target database, in the format
-         * defined by RFC3339.
-         *
+         * The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
          * @param timeGenerated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeGenerated(java.util.Date timeGenerated) {
             this.timeGenerated = timeGenerated;
             this.__explicitlySet__.add("timeGenerated");
             return this;
         }
         /**
-         * The last date and time the status of the SQL Firewall policy was updated on the target
-         * database, in the format defined by RFC3339.
-         */
+         * The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
         private java.util.Date timeStatusUpdated;
 
         /**
-         * The last date and time the status of the SQL Firewall policy was updated on the target
-         * database, in the format defined by RFC3339.
-         *
+         * The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
          * @param timeStatusUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStatusUpdated(java.util.Date timeStatusUpdated) {
             this.timeStatusUpdated = timeStatusUpdated;
             this.__explicitlySet__.add("timeStatusUpdated");
@@ -90,7 +84,9 @@ public final class FirewallPolicyEntryDetails extends EntryDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -108,35 +104,29 @@ public final class FirewallPolicyEntryDetails extends EntryDetails {
     }
 
     /**
-     * The time the the SQL Firewall policy was generated on the target database, in the format
-     * defined by RFC3339.
-     */
+     * The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
     private final java.util.Date timeGenerated;
 
     /**
-     * The time the the SQL Firewall policy was generated on the target database, in the format
-     * defined by RFC3339.
-     *
+     * The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeGenerated() {
         return timeGenerated;
     }
 
     /**
-     * The last date and time the status of the SQL Firewall policy was updated on the target
-     * database, in the format defined by RFC3339.
-     */
+     * The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
     private final java.util.Date timeStatusUpdated;
 
     /**
-     * The last date and time the status of the SQL Firewall policy was updated on the target
-     * database, in the format defined by RFC3339.
-     *
+     * The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStatusUpdated() {
         return timeStatusUpdated;
     }
@@ -148,7 +138,6 @@ public final class FirewallPolicyEntryDetails extends EntryDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

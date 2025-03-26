@@ -6,62 +6,69 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFleetRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFleetRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class UpdateFleetRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.jms.model.UpdateFleetDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /** The new details for the Fleet. */
+    /**
+     * The new details for the Fleet.
+     */
     private com.oracle.bmc.jms.model.UpdateFleetDetails updateFleetDetails;
 
-    /** The new details for the Fleet. */
+    /**
+     * The new details for the Fleet.
+     */
     public com.oracle.bmc.jms.model.UpdateFleetDetails getUpdateFleetDetails() {
         return updateFleetDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the ETag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the ETag you provide matches the
-     * resource's current ETag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * ETag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the ETag you
+     * provide matches the resource's current ETag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the ETag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the ETag you provide matches the
-     * resource's current ETag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * ETag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the ETag you
+     * provide matches the resource's current ETag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -73,19 +80,17 @@ public class UpdateFleetRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateFleetRequest, com.oracle.bmc.jms.model.UpdateFleetDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -94,12 +99,13 @@ public class UpdateFleetRequest
             return this;
         }
 
-        /** The new details for the Fleet. */
+        /**
+         * The new details for the Fleet.
+         */
         private com.oracle.bmc.jms.model.UpdateFleetDetails updateFleetDetails = null;
 
         /**
          * The new details for the Fleet.
-         *
          * @param updateFleetDetails the value to set
          * @return this builder instance
          */
@@ -110,18 +116,21 @@ public class UpdateFleetRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the ETag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the ETag you provide
-         * matches the resource's current ETag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * ETag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the ETag you
+         * provide matches the resource's current ETag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the ETag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the ETag you provide
-         * matches the resource's current ETag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * ETag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the ETag you
+         * provide matches the resource's current ETag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -131,12 +140,13 @@ public class UpdateFleetRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -147,19 +157,18 @@ public class UpdateFleetRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -171,7 +180,6 @@ public class UpdateFleetRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateFleetRequest o) {
@@ -187,11 +195,10 @@ public class UpdateFleetRequest
         /**
          * Build the instance of UpdateFleetRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateFleetRequest
          */
@@ -204,7 +211,6 @@ public class UpdateFleetRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -217,8 +223,7 @@ public class UpdateFleetRequest
         /**
          * Build the instance of UpdateFleetRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateFleetRequest
@@ -236,7 +241,6 @@ public class UpdateFleetRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -249,7 +253,6 @@ public class UpdateFleetRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

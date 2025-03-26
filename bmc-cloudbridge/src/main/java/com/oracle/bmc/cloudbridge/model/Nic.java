@@ -5,21 +5,19 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * The VNIC configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * The VNIC configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Nic.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Nic extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Nic extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "label",
@@ -47,91 +45,97 @@ public final class Nic extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Provides a label and summary information for the device. */
+        /**
+         * Provides a label and summary information for the device.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * Provides a label and summary information for the device.
-         *
          * @param label the value to set
          * @return this builder
-         */
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-        /** Switch name. */
+        /**
+         * Switch name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("switchName")
         private String switchName;
 
         /**
          * Switch name.
-         *
          * @param switchName the value to set
          * @return this builder
-         */
+         **/
         public Builder switchName(String switchName) {
             this.switchName = switchName;
             this.__explicitlySet__.add("switchName");
             return this;
         }
-        /** Mac address of the VM. */
+        /**
+         * Mac address of the VM.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
         private String macAddress;
 
         /**
          * Mac address of the VM.
-         *
          * @param macAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder macAddress(String macAddress) {
             this.macAddress = macAddress;
             this.__explicitlySet__.add("macAddress");
             return this;
         }
-        /** Mac address type. */
+        /**
+         * Mac address type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macAddressType")
         private String macAddressType;
 
         /**
          * Mac address type.
-         *
          * @param macAddressType the value to set
          * @return this builder
-         */
+         **/
         public Builder macAddressType(String macAddressType) {
             this.macAddressType = macAddressType;
             this.__explicitlySet__.add("macAddressType");
             return this;
         }
-        /** Network name. */
+        /**
+         * Network name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkName")
         private String networkName;
 
         /**
          * Network name.
-         *
          * @param networkName the value to set
          * @return this builder
-         */
+         **/
         public Builder networkName(String networkName) {
             this.networkName = networkName;
             this.__explicitlySet__.add("networkName");
             return this;
         }
-        /** List of IP addresses. */
+        /**
+         * List of IP addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
         private java.util.List<String> ipAddresses;
 
         /**
          * List of IP addresses.
-         *
          * @param ipAddresses the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddresses(java.util.List<String> ipAddresses) {
             this.ipAddresses = ipAddresses;
             this.__explicitlySet__.add("ipAddresses");
@@ -180,7 +184,9 @@ public final class Nic extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,80 +195,86 @@ public final class Nic extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /** Provides a label and summary information for the device. */
+    /**
+     * Provides a label and summary information for the device.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * Provides a label and summary information for the device.
-     *
      * @return the value
-     */
+     **/
     public String getLabel() {
         return label;
     }
 
-    /** Switch name. */
+    /**
+     * Switch name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("switchName")
     private final String switchName;
 
     /**
      * Switch name.
-     *
      * @return the value
-     */
+     **/
     public String getSwitchName() {
         return switchName;
     }
 
-    /** Mac address of the VM. */
+    /**
+     * Mac address of the VM.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
     private final String macAddress;
 
     /**
      * Mac address of the VM.
-     *
      * @return the value
-     */
+     **/
     public String getMacAddress() {
         return macAddress;
     }
 
-    /** Mac address type. */
+    /**
+     * Mac address type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddressType")
     private final String macAddressType;
 
     /**
      * Mac address type.
-     *
      * @return the value
-     */
+     **/
     public String getMacAddressType() {
         return macAddressType;
     }
 
-    /** Network name. */
+    /**
+     * Network name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkName")
     private final String networkName;
 
     /**
      * Network name.
-     *
      * @return the value
-     */
+     **/
     public String getNetworkName() {
         return networkName;
     }
 
-    /** List of IP addresses. */
+    /**
+     * List of IP addresses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
     private final java.util.List<String> ipAddresses;
 
     /**
      * List of IP addresses.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getIpAddresses() {
         return ipAddresses;
     }
@@ -274,7 +286,6 @@ public final class Nic extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

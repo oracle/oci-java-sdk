@@ -6,26 +6,28 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * Sign-on Policy.
- *
- * <p>*Deprecated Since: 17.3.4**
- *
- * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite -
- * required: false - returned: default - type: complex <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **Deprecated Since: 17.3.4**
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsSearchable: true
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AppSignonPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AppSignonPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AppSignonPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "ref"})
     public AppSignonPolicy(String value, String ref) {
@@ -38,28 +40,39 @@ public final class AppSignonPolicy
     public static class Builder {
         /**
          * Identifier of the Policy.
-         *
-         * <p>*Deprecated Since: 17.3.4**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Deprecated Since: 17.3.4**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Identifier of the Policy.
-         *
-         * <p>*Deprecated Since: 17.3.4**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Deprecated Since: 17.3.4**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -67,26 +80,37 @@ public final class AppSignonPolicy
         }
         /**
          * URI of the policy.
-         *
-         * <p>*Deprecated Since: 17.3.4**
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         */
+         * <p>
+         **Deprecated Since: 17.3.4**
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
 
         /**
          * URI of the policy.
-         *
-         * <p>*Deprecated Since: 17.3.4**
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         *
+         * <p>
+         **Deprecated Since: 17.3.4**
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param ref the value to set
          * @return this builder
-         */
+         **/
         public Builder ref(String ref) {
             this.ref = ref;
             this.__explicitlySet__.add("ref");
@@ -116,7 +140,9 @@ public final class AppSignonPolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,50 +153,74 @@ public final class AppSignonPolicy
 
     /**
      * Identifier of the Policy.
-     *
-     * <p>*Deprecated Since: 17.3.4**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Deprecated Since: 17.3.4**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Identifier of the Policy.
-     *
-     * <p>*Deprecated Since: 17.3.4**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Deprecated Since: 17.3.4**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * URI of the policy.
-     *
-     * <p>*Deprecated Since: 17.3.4**
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     */
+     * <p>
+     **Deprecated Since: 17.3.4**
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
 
     /**
      * URI of the policy.
-     *
-     * <p>*Deprecated Since: 17.3.4**
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     *
+     * <p>
+     **Deprecated Since: 17.3.4**
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRef() {
         return ref;
     }
@@ -182,7 +232,6 @@ public final class AppSignonPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

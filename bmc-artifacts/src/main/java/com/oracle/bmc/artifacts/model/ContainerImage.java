@@ -5,22 +5,19 @@
 package com.oracle.bmc.artifacts.model;
 
 /**
- * Container image metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Container image metadata.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ContainerImage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ContainerImage
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ContainerImage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -88,324 +85,320 @@ public final class ContainerImage
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The compartment OCID to which the container image belongs. Inferred from the container
-         * repository.
-         */
+         * The compartment OCID to which the container image belongs. Inferred from the container repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment OCID to which the container image belongs. Inferred from the container
-         * repository.
-         *
+         * The compartment OCID to which the container image belongs. Inferred from the container repository.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * user or principal that created the resource.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * user or principal that created the resource.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** The container image digest. */
+        /**
+         * The container image digest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digest")
         private String digest;
 
         /**
          * The container image digest.
-         *
          * @param digest the value to set
          * @return this builder
-         */
+         **/
         public Builder digest(String digest) {
             this.digest = digest;
             this.__explicitlySet__.add("digest");
             return this;
         }
         /**
-         * The repository name and the most recent version associated with the image. If there are
-         * no versions associated with the image, then last known version and digest are used
-         * instead. If the last known version is unavailable, then 'unknown' is used instead of the
-         * version.
+         * The repository name and the most recent version associated with the image.
+         * If there are no versions associated with the image, then last known version and digest are used instead.
+         * If the last known version is unavailable, then 'unknown' is used instead of the version.
+         * <p>
+         * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
          *
-         * <p>Example: {@code ubuntu:latest} or {@code
-         * ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The repository name and the most recent version associated with the image. If there are
-         * no versions associated with the image, then last known version and digest are used
-         * instead. If the last known version is unavailable, then 'unknown' is used instead of the
-         * version.
-         *
-         * <p>Example: {@code ubuntu:latest} or {@code
-         * ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
+         * The repository name and the most recent version associated with the image.
+         * If there are no versions associated with the image, then last known version and digest are used instead.
+         * If the last known version is unavailable, then 'unknown' is used instead of the version.
+         * <p>
+         * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * container image.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
          *
-         * <p>Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * container image.
-         *
-         * <p>Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+         * <p>
+         * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Layers of which the image is composed, ordered by the layer digest. */
+        /**
+         * Layers of which the image is composed, ordered by the layer digest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("layers")
         private java.util.List<ContainerImageLayer> layers;
 
         /**
          * Layers of which the image is composed, ordered by the layer digest.
-         *
          * @param layers the value to set
          * @return this builder
-         */
+         **/
         public Builder layers(java.util.List<ContainerImageLayer> layers) {
             this.layers = layers;
             this.__explicitlySet__.add("layers");
             return this;
         }
-        /** The total size of the container image layers in bytes. */
+        /**
+         * The total size of the container image layers in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
         private Long layersSizeInBytes;
 
         /**
          * The total size of the container image layers in bytes.
-         *
          * @param layersSizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder layersSizeInBytes(Long layersSizeInBytes) {
             this.layersSizeInBytes = layersSizeInBytes;
             this.__explicitlySet__.add("layersSizeInBytes");
             return this;
         }
-        /** The current state of the container image. */
+        /**
+         * The current state of the container image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the container image.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The size of the container image manifest in bytes. */
+        /**
+         * The size of the container image manifest in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manifestSizeInBytes")
         private Integer manifestSizeInBytes;
 
         /**
          * The size of the container image manifest in bytes.
-         *
          * @param manifestSizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder manifestSizeInBytes(Integer manifestSizeInBytes) {
             this.manifestSizeInBytes = manifestSizeInBytes;
             this.__explicitlySet__.add("manifestSizeInBytes");
             return this;
         }
-        /** Total number of pulls. */
+        /**
+         * Total number of pulls.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pullCount")
         private Long pullCount;
 
         /**
          * Total number of pulls.
-         *
          * @param pullCount the value to set
          * @return this builder
-         */
+         **/
         public Builder pullCount(Long pullCount) {
             this.pullCount = pullCount;
             this.__explicitlySet__.add("pullCount");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * container repository.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * container repository.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
          * @param repositoryId the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
             return this;
         }
-        /** The container repository name. */
+        /**
+         * The container repository name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
         private String repositoryName;
 
         /**
          * The container repository name.
-         *
          * @param repositoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryName(String repositoryName) {
             this.repositoryName = repositoryName;
             this.__explicitlySet__.add("repositoryName");
             return this;
         }
-        /** An RFC 3339 timestamp indicating when the image was created. */
+        /**
+         * An RFC 3339 timestamp indicating when the image was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * An RFC 3339 timestamp indicating when the image was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** An RFC 3339 timestamp indicating when the image was last pulled. */
+        /**
+         * An RFC 3339 timestamp indicating when the image was last pulled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastPulled")
         private java.util.Date timeLastPulled;
 
         /**
          * An RFC 3339 timestamp indicating when the image was last pulled.
-         *
          * @param timeLastPulled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastPulled(java.util.Date timeLastPulled) {
             this.timeLastPulled = timeLastPulled;
             this.__explicitlySet__.add("timeLastPulled");
             return this;
         }
-        /** The most recent version associated with this image. */
+        /**
+         * The most recent version associated with this image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The most recent version associated with this image.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The versions associated with this image. */
+        /**
+         * The versions associated with this image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versions")
         private java.util.List<ContainerVersion> versions;
 
         /**
          * The versions associated with this image.
-         *
          * @param versions the value to set
          * @return this builder
-         */
+         **/
         public Builder versions(java.util.List<ContainerVersion> versions) {
             this.versions = versions;
             this.__explicitlySet__.add("versions");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -415,7 +408,8 @@ public final class ContainerImage
         /**
          * The system tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
@@ -425,7 +419,7 @@ public final class ContainerImage
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -526,7 +520,9 @@ public final class ContainerImage
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -536,133 +532,130 @@ public final class ContainerImage
     }
 
     /**
-     * The compartment OCID to which the container image belongs. Inferred from the container
-     * repository.
-     */
+     * The compartment OCID to which the container image belongs. Inferred from the container repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment OCID to which the container image belongs. Inferred from the container
-     * repository.
-     *
+     * The compartment OCID to which the container image belongs. Inferred from the container repository.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-     * or principal that created the resource.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-     * or principal that created the resource.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user or principal that created the resource.
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** The container image digest. */
+    /**
+     * The container image digest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("digest")
     private final String digest;
 
     /**
      * The container image digest.
-     *
      * @return the value
-     */
+     **/
     public String getDigest() {
         return digest;
     }
 
     /**
-     * The repository name and the most recent version associated with the image. If there are no
-     * versions associated with the image, then last known version and digest are used instead. If
-     * the last known version is unavailable, then 'unknown' is used instead of the version.
+     * The repository name and the most recent version associated with the image.
+     * If there are no versions associated with the image, then last known version and digest are used instead.
+     * If the last known version is unavailable, then 'unknown' is used instead of the version.
+     * <p>
+     * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
      *
-     * <p>Example: {@code ubuntu:latest} or {@code
-     * ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The repository name and the most recent version associated with the image. If there are no
-     * versions associated with the image, then last known version and digest are used instead. If
-     * the last known version is unavailable, then 'unknown' is used instead of the version.
-     *
-     * <p>Example: {@code ubuntu:latest} or {@code
-     * ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
+     * The repository name and the most recent version associated with the image.
+     * If there are no versions associated with the image, then last known version and digest are used instead.
+     * If the last known version is unavailable, then 'unknown' is used instead of the version.
+     * <p>
+     * Example: {@code ubuntu:latest} or {@code ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * container image.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+     * <p>
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
      *
-     * <p>Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * container image.
-     *
-     * <p>Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+     * <p>
+     * Example: {@code ocid1.containerimage.oc1..exampleuniqueID}
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Layers of which the image is composed, ordered by the layer digest. */
+    /**
+     * Layers of which the image is composed, ordered by the layer digest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("layers")
     private final java.util.List<ContainerImageLayer> layers;
 
     /**
      * Layers of which the image is composed, ordered by the layer digest.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ContainerImageLayer> getLayers() {
         return layers;
     }
 
-    /** The total size of the container image layers in bytes. */
+    /**
+     * The total size of the container image layers in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
     private final Long layersSizeInBytes;
 
     /**
      * The total size of the container image layers in bytes.
-     *
      * @return the value
-     */
+     **/
     public Long getLayersSizeInBytes() {
         return layersSizeInBytes;
     }
 
-    /** The current state of the container image. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the container image.
+     **/
+    public enum LifecycleState {
         Available("AVAILABLE"),
         Deleted("DELETED"),
         Deleting("DELETING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -701,186 +694,190 @@ public final class ContainerImage
             return UnknownEnumValue;
         }
     };
-    /** The current state of the container image. */
+    /**
+     * The current state of the container image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the container image.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The size of the container image manifest in bytes. */
+    /**
+     * The size of the container image manifest in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("manifestSizeInBytes")
     private final Integer manifestSizeInBytes;
 
     /**
      * The size of the container image manifest in bytes.
-     *
      * @return the value
-     */
+     **/
     public Integer getManifestSizeInBytes() {
         return manifestSizeInBytes;
     }
 
-    /** Total number of pulls. */
+    /**
+     * Total number of pulls.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pullCount")
     private final Long pullCount;
 
     /**
      * Total number of pulls.
-     *
      * @return the value
-     */
+     **/
     public Long getPullCount() {
         return pullCount;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * container repository.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * container repository.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
      * @return the value
-     */
+     **/
     public String getRepositoryId() {
         return repositoryId;
     }
 
-    /** The container repository name. */
+    /**
+     * The container repository name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
     private final String repositoryName;
 
     /**
      * The container repository name.
-     *
      * @return the value
-     */
+     **/
     public String getRepositoryName() {
         return repositoryName;
     }
 
-    /** An RFC 3339 timestamp indicating when the image was created. */
+    /**
+     * An RFC 3339 timestamp indicating when the image was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * An RFC 3339 timestamp indicating when the image was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** An RFC 3339 timestamp indicating when the image was last pulled. */
+    /**
+     * An RFC 3339 timestamp indicating when the image was last pulled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastPulled")
     private final java.util.Date timeLastPulled;
 
     /**
      * An RFC 3339 timestamp indicating when the image was last pulled.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastPulled() {
         return timeLastPulled;
     }
 
-    /** The most recent version associated with this image. */
+    /**
+     * The most recent version associated with this image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The most recent version associated with this image.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The versions associated with this image. */
+    /**
+     * The versions associated with this image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("versions")
     private final java.util.List<ContainerVersion> versions;
 
     /**
      * The versions associated with this image.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ContainerVersion> getVersions() {
         return versions;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * The system tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The system tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * The system tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -892,7 +889,6 @@ public final class ContainerImage
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

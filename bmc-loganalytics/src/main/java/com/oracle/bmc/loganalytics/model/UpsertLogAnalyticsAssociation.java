@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * UpsertLogAnalyticsAssociation <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * UpsertLogAnalyticsAssociation
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpsertLogAnalyticsAssociation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpsertLogAnalyticsAssociation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpsertLogAnalyticsAssociation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "agentId",
@@ -58,136 +57,145 @@ public final class UpsertLogAnalyticsAssociation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The agent unique identifier. */
+        /**
+         * The agent unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
          * The agent unique identifier.
-         *
          * @param agentId the value to set
          * @return this builder
-         */
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /** The source name. */
+        /**
+         * The source name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
         /**
          * The source name.
-         *
          * @param sourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /** The source type internal name. */
+        /**
+         * The source type internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
         private String sourceTypeName;
 
         /**
          * The source type internal name.
-         *
          * @param sourceTypeName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceTypeName(String sourceTypeName) {
             this.sourceTypeName = sourceTypeName;
             this.__explicitlySet__.add("sourceTypeName");
             return this;
         }
-        /** The entity unique identifier. */
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * The entity unique identifier.
-         *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /** The entity name. */
+        /**
+         * The entity name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * The entity name.
-         *
          * @param entityName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-        /** The entity type internal name. */
+        /**
+         * The entity type internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
         private String entityTypeName;
 
         /**
          * The entity type internal name.
-         *
          * @param entityTypeName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityTypeName(String entityTypeName) {
             this.entityTypeName = entityTypeName;
             this.__explicitlySet__.add("entityTypeName");
             return this;
         }
-        /** The host name. */
+        /**
+         * The host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * The host name.
-         *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The log group unique identifier. */
+        /**
+         * The log group unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
          * The log group unique identifier.
-         *
          * @param logGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
-        /** A list of association properties. */
+        /**
+         * A list of association properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
         private java.util.List<AssociationProperty> associationProperties;
 
         /**
          * A list of association properties.
-         *
          * @param associationProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder associationProperties(
                 java.util.List<AssociationProperty> associationProperties) {
             this.associationProperties = associationProperties;
@@ -249,7 +257,9 @@ public final class UpsertLogAnalyticsAssociation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -258,119 +268,128 @@ public final class UpsertLogAnalyticsAssociation
         return new Builder().copy(this);
     }
 
-    /** The agent unique identifier. */
+    /**
+     * The agent unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * The agent unique identifier.
-     *
      * @return the value
-     */
+     **/
     public String getAgentId() {
         return agentId;
     }
 
-    /** The source name. */
+    /**
+     * The source name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
     /**
      * The source name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceName() {
         return sourceName;
     }
 
-    /** The source type internal name. */
+    /**
+     * The source type internal name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
     private final String sourceTypeName;
 
     /**
      * The source type internal name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceTypeName() {
         return sourceTypeName;
     }
 
-    /** The entity unique identifier. */
+    /**
+     * The entity unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * The entity unique identifier.
-     *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
-    /** The entity name. */
+    /**
+     * The entity name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * The entity name.
-     *
      * @return the value
-     */
+     **/
     public String getEntityName() {
         return entityName;
     }
 
-    /** The entity type internal name. */
+    /**
+     * The entity type internal name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
     private final String entityTypeName;
 
     /**
      * The entity type internal name.
-     *
      * @return the value
-     */
+     **/
     public String getEntityTypeName() {
         return entityTypeName;
     }
 
-    /** The host name. */
+    /**
+     * The host name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * The host name.
-     *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The log group unique identifier. */
+    /**
+     * The log group unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
      * The log group unique identifier.
-     *
      * @return the value
-     */
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
 
-    /** A list of association properties. */
+    /**
+     * A list of association properties.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
     private final java.util.List<AssociationProperty> associationProperties;
 
     /**
      * A list of association properties.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssociationProperty> getAssociationProperties() {
         return associationProperties;
     }
@@ -382,7 +401,6 @@ public final class UpsertLogAnalyticsAssociation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

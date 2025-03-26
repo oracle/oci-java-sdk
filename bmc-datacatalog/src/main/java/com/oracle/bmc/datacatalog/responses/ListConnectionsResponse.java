@@ -6,17 +6,18 @@ package com.oracle.bmc.datacatalog.responses;
 
 import com.oracle.bmc.datacatalog.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,13 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional
-     * pages of results remain. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional
-     * pages of results remain. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -42,12 +40,13 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned {@code ConnectionCollection} instance. */
+    /**
+     * The returned ConnectionCollection instance.
+     */
     private com.oracle.bmc.datacatalog.model.ConnectionCollection connectionCollection;
 
     /**
-     * The returned {@code ConnectionCollection} instance.
-     *
+     * The returned ConnectionCollection instance.
      * @return the value
      */
     public com.oracle.bmc.datacatalog.model.ConnectionCollection getConnectionCollection() {
@@ -63,7 +62,7 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private ListConnectionsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datacatalog.model.ConnectionCollection connectionCollection) {
@@ -73,33 +72,31 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
         this.connectionCollection = connectionCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListConnectionsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,16 +107,13 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional
-         * pages of results remain. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional
-         * pages of results remain. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -129,12 +123,13 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned {@code ConnectionCollection} instance. */
+        /**
+         * The returned ConnectionCollection instance.
+         */
         private com.oracle.bmc.datacatalog.model.ConnectionCollection connectionCollection;
 
         /**
-         * The returned {@code ConnectionCollection} instance.
-         *
+         * The returned ConnectionCollection instance.
          * @param connectionCollection the value to set
          * @return this builder
          */
@@ -146,10 +141,8 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListConnectionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,10 +155,8 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListConnectionsResponse build() {
             return new ListConnectionsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, connectionCollection);
@@ -174,7 +165,6 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

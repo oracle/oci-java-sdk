@@ -6,37 +6,41 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListTableStatisticsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTableStatisticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListTableStatisticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTableStatisticsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     private String opcNamedCredentialId;
 
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     public String getOpcNamedCredentialId() {
         return opcNamedCredentialId;
     }
@@ -44,19 +48,17 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTableStatisticsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -65,12 +67,13 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -79,12 +82,13 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The OCID of the Named Credential. */
+        /**
+         * The OCID of the Named Credential.
+         */
         private String opcNamedCredentialId = null;
 
         /**
          * The OCID of the Named Credential.
-         *
          * @param opcNamedCredentialId the value to set
          * @return this builder instance
          */
@@ -95,19 +99,18 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -119,7 +122,6 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListTableStatisticsRequest o) {
@@ -134,11 +136,10 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListTableStatisticsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListTableStatisticsRequest
          */
@@ -152,8 +153,7 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListTableStatisticsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTableStatisticsRequest
@@ -164,14 +164,12 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
             request.opcRequestId = opcRequestId;
             request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new ListTableStatisticsRequest(managedDatabaseId, opcRequestId,
-            // opcNamedCredentialId);
+            // new ListTableStatisticsRequest(managedDatabaseId, opcRequestId, opcNamedCredentialId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -183,7 +181,6 @@ public class ListTableStatisticsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

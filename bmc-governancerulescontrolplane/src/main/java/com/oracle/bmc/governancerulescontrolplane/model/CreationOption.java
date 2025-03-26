@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.governancerulescontrolplane.model;
 
-/** The type of option used to create the governance rule, could be one of TEMPLATE or CLONE. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
-public enum CreationOption implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of option used to create the governance rule, could be one of TEMPLATE or CLONE.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+public enum CreationOption {
     Template("TEMPLATE"),
     Clone("CLONE"),
 

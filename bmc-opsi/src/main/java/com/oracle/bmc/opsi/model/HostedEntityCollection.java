@@ -5,23 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Returns a list of hosted entities for the specific host. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Returns a list of hosted entities for the specific host.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HostedEntityCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = HostedEntityCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostedEntityCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeIntervalStart", "timeIntervalEnd", "items"})
     public HostedEntityCollection(
@@ -36,37 +36,42 @@ public final class HostedEntityCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The start timestamp that was passed into the request. */
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
-         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /** The end timestamp that was passed into the request. */
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
-         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /** List of hosted entities details. */
+        /**
+         * List of hosted entities details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<HostedEntitySummary> items;
 
@@ -75,7 +80,7 @@ public final class HostedEntityCollection
          *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<HostedEntitySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -110,7 +115,9 @@ public final class HostedEntityCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,33 +126,38 @@ public final class HostedEntityCollection
         return new Builder().copy(this);
     }
 
-    /** The start timestamp that was passed into the request. */
+    /**
+     * The start timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /** The end timestamp that was passed into the request. */
+    /**
+     * The end timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /** List of hosted entities details. */
+    /**
+     * List of hosted entities details.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<HostedEntitySummary> items;
 
@@ -153,7 +165,7 @@ public final class HostedEntityCollection
      * List of hosted entities details.
      *
      * @return the value
-     */
+     **/
     public java.util.List<HostedEntitySummary> getItems() {
         return items;
     }
@@ -165,7 +177,6 @@ public final class HostedEntityCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

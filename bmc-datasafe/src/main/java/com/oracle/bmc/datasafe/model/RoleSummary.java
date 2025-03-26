@@ -5,21 +5,19 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of a role fetched from the database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The details of a role fetched from the database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoleSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RoleSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RoleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "roleName",
@@ -50,106 +48,113 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the role. */
+        /**
+         * The name of the role.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("roleName")
         private String roleName;
 
         /**
          * The name of the role.
-         *
          * @param roleName the value to set
          * @return this builder
-         */
+         **/
         public Builder roleName(String roleName) {
             this.roleName = roleName;
             this.__explicitlySet__.add("roleName");
             return this;
         }
-        /** Type of authentication. */
+        /**
+         * Type of authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private String authenticationType;
 
         /**
          * Type of authentication.
-         *
          * @param authenticationType the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationType(String authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
-        /** Is password required. */
+        /**
+         * Is password required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPasswordRequired")
         private Boolean isPasswordRequired;
 
         /**
          * Is password required.
-         *
          * @param isPasswordRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isPasswordRequired(Boolean isPasswordRequired) {
             this.isPasswordRequired = isPasswordRequired;
             this.__explicitlySet__.add("isPasswordRequired");
             return this;
         }
-        /** Is the role common. */
+        /**
+         * Is the role common.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
         private Boolean isCommon;
 
         /**
          * Is the role common.
-         *
          * @param isCommon the value to set
          * @return this builder
-         */
+         **/
         public Builder isCommon(Boolean isCommon) {
             this.isCommon = isCommon;
             this.__explicitlySet__.add("isCommon");
             return this;
         }
-        /** Is the role oracle maintained. */
+        /**
+         * Is the role oracle maintained.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
         private Boolean isOracleMaintained;
 
         /**
          * Is the role oracle maintained.
-         *
          * @param isOracleMaintained the value to set
          * @return this builder
-         */
+         **/
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
             this.isOracleMaintained = isOracleMaintained;
             this.__explicitlySet__.add("isOracleMaintained");
             return this;
         }
-        /** Is the role inherited. */
+        /**
+         * Is the role inherited.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInherited")
         private Boolean isInherited;
 
         /**
          * Is the role inherited.
-         *
          * @param isInherited the value to set
          * @return this builder
-         */
+         **/
         public Builder isInherited(Boolean isInherited) {
             this.isInherited = isInherited;
             this.__explicitlySet__.add("isInherited");
             return this;
         }
-        /** Is the role implicit. */
+        /**
+         * Is the role implicit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isImplicit")
         private Boolean isImplicit;
 
         /**
          * Is the role implicit.
-         *
          * @param isImplicit the value to set
          * @return this builder
-         */
+         **/
         public Builder isImplicit(Boolean isImplicit) {
             this.isImplicit = isImplicit;
             this.__explicitlySet__.add("isImplicit");
@@ -202,7 +207,9 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,93 +218,100 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The name of the role. */
+    /**
+     * The name of the role.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("roleName")
     private final String roleName;
 
     /**
      * The name of the role.
-     *
      * @return the value
-     */
+     **/
     public String getRoleName() {
         return roleName;
     }
 
-    /** Type of authentication. */
+    /**
+     * Type of authentication.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final String authenticationType;
 
     /**
      * Type of authentication.
-     *
      * @return the value
-     */
+     **/
     public String getAuthenticationType() {
         return authenticationType;
     }
 
-    /** Is password required. */
+    /**
+     * Is password required.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPasswordRequired")
     private final Boolean isPasswordRequired;
 
     /**
      * Is password required.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPasswordRequired() {
         return isPasswordRequired;
     }
 
-    /** Is the role common. */
+    /**
+     * Is the role common.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
     private final Boolean isCommon;
 
     /**
      * Is the role common.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCommon() {
         return isCommon;
     }
 
-    /** Is the role oracle maintained. */
+    /**
+     * Is the role oracle maintained.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
     private final Boolean isOracleMaintained;
 
     /**
      * Is the role oracle maintained.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOracleMaintained() {
         return isOracleMaintained;
     }
 
-    /** Is the role inherited. */
+    /**
+     * Is the role inherited.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInherited")
     private final Boolean isInherited;
 
     /**
      * Is the role inherited.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsInherited() {
         return isInherited;
     }
 
-    /** Is the role implicit. */
+    /**
+     * Is the role implicit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isImplicit")
     private final Boolean isImplicit;
 
     /**
      * Is the role implicit.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsImplicit() {
         return isImplicit;
     }
@@ -309,7 +323,6 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

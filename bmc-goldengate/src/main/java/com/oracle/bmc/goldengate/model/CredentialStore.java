@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The type of credential store for OGG. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum CredentialStore implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of credential store for OGG.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum CredentialStore {
     Goldengate("GOLDENGATE"),
     Iam("IAM"),
 

@@ -6,70 +6,78 @@ package com.oracle.bmc.monitoring.requests;
 
 import com.oracle.bmc.monitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeMetricsDataExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeMetricsDataRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeMetricsDataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeMetricsDataRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class SummarizeMetricsDataRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the resources monitored by the metric that you are searching for. Use
-     * tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * resources monitored by the metric that you are searching for. Use tenancyId to search in
+     * the root compartment.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the resources monitored by the metric that you are searching for. Use
-     * tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * resources monitored by the metric that you are searching for. Use tenancyId to search in
+     * the root compartment.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The dimensions used to filter for metrics. */
+    /**
+     * The dimensions used to filter for metrics.
+     */
     private com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails summarizeMetricsDataDetails;
 
-    /** The dimensions used to filter for metrics. */
+    /**
+     * The dimensions used to filter for metrics.
+     */
     public com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails
             getSummarizeMetricsDataDetails() {
         return summarizeMetricsDataDetails;
     }
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can
-     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-     * compartment). A true value requires the user to have tenancy-level permissions. If this
-     * requirement is not met, then the call is rejected. When false, returns resources from only
-     * the compartment specified in compartmentId. Default is false.
+     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+     * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+     * then the call is rejected. When false, returns resources from only the compartment specified in
+     * compartmentId. Default is false.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can
-     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-     * compartment). A true value requires the user to have tenancy-level permissions. If this
-     * requirement is not met, then the call is rejected. When false, returns resources from only
-     * the compartment specified in compartmentId. Default is false.
+     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+     * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+     * then the call is rejected. When false, returns resources from only the compartment specified in
+     * compartmentId. Default is false.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
@@ -77,7 +85,6 @@ public class SummarizeMetricsDataRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -90,24 +97,26 @@ public class SummarizeMetricsDataRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeMetricsDataRequest,
                     com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the resources monitored by the metric that you are searching for.
-         * Use tenancyId to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * resources monitored by the metric that you are searching for. Use tenancyId to search in
+         * the root compartment.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the resources monitored by the metric that you are searching for.
-         * Use tenancyId to search in the root compartment.
-         *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * resources monitored by the metric that you are searching for. Use tenancyId to search in
+         * the root compartment.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -117,13 +126,14 @@ public class SummarizeMetricsDataRequest
             return this;
         }
 
-        /** The dimensions used to filter for metrics. */
+        /**
+         * The dimensions used to filter for metrics.
+         */
         private com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails
                 summarizeMetricsDataDetails = null;
 
         /**
          * The dimensions used to filter for metrics.
-         *
          * @param summarizeMetricsDataDetails the value to set
          * @return this builder instance
          */
@@ -135,14 +145,15 @@ public class SummarizeMetricsDataRequest
         }
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -154,19 +165,20 @@ public class SummarizeMetricsDataRequest
 
         /**
          * When true, returns resources from all compartments and subcompartments. The parameter can
-         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-         * compartment). A true value requires the user to have tenancy-level permissions. If this
-         * requirement is not met, then the call is rejected. When false, returns resources from
-         * only the compartment specified in compartmentId. Default is false.
+         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+         * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+         * then the call is rejected. When false, returns resources from only the compartment specified in
+         * compartmentId. Default is false.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * When true, returns resources from all compartments and subcompartments. The parameter can
-         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-         * compartment). A true value requires the user to have tenancy-level permissions. If this
-         * requirement is not met, then the call is rejected. When false, returns resources from
-         * only the compartment specified in compartmentId. Default is false.
+         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+         * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+         * then the call is rejected. When false, returns resources from only the compartment specified in
+         * compartmentId. Default is false.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -178,19 +190,18 @@ public class SummarizeMetricsDataRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -202,7 +213,6 @@ public class SummarizeMetricsDataRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeMetricsDataRequest o) {
@@ -218,11 +228,10 @@ public class SummarizeMetricsDataRequest
         /**
          * Build the instance of SummarizeMetricsDataRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeMetricsDataRequest
          */
@@ -235,7 +244,6 @@ public class SummarizeMetricsDataRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -248,8 +256,7 @@ public class SummarizeMetricsDataRequest
         /**
          * Build the instance of SummarizeMetricsDataRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeMetricsDataRequest
@@ -261,14 +268,12 @@ public class SummarizeMetricsDataRequest
             request.opcRequestId = opcRequestId;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             return request;
-            // new SummarizeMetricsDataRequest(compartmentId, summarizeMetricsDataDetails,
-            // opcRequestId, compartmentIdInSubtree);
+            // new SummarizeMetricsDataRequest(compartmentId, summarizeMetricsDataDetails, opcRequestId, compartmentIdInSubtree);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -281,7 +286,6 @@ public class SummarizeMetricsDataRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

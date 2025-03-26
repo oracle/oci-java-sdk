@@ -40,7 +40,7 @@ public class CreateLoadBalancerSSLCipherExample {
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
 
-        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
+        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
 
         System.out.println(
                 "Creating new ssl ciphers " + cipherName + " with ciphers" + ciphers + "...");
@@ -164,14 +164,12 @@ public class CreateLoadBalancerSSLCipherExample {
      * Creates a backend set in a given load balancer.
      *
      * @param loadBalancerClient the client used to communicate with the service
-     * @param loadBalancerId the OCID of the load balancer we're adding the backend set to
+     * @param loadBalancerId  the OCID of the load balancer we're adding the backend set to
      * @param backendSetName a string display name for the backend set
-     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN,
-     *     LEAST_CONNECTIONS, etc)
-     * @param healthChecker a healthCheckerDetails object describing the health check parameters for
-     *     the backends
-     * @param lbcspDetails a LBCookieSessionPersistenceConfigurationDetails object describing the
-     *     parameters for LB cookie-based session persistence
+     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN, LEAST_CONNECTIONS, etc)
+     * @param healthChecker a healthCheckerDetails object describing the health check parameters for the backends
+     * @param lbcspDetails a LBCookieSessionPersistenceConfigurationDetails object describing the parameters for
+     *                     LB cookie-based session persistence
      * @param sslConfigurationDetails the ssl configuration object
      */
     private static void createBackendSet(
@@ -211,7 +209,7 @@ public class CreateLoadBalancerSSLCipherExample {
      * Updates a backend set in a given load balancer.
      *
      * @param loadBalancerClient the client used to communicate with the service
-     * @param loadBalancerId the OCID of the load balancer that contains the backend set to update
+     * @param loadBalancerId  the OCID of the load balancer that contains the backend set to update
      * @param cipherName the name of the cipher to be updated
      * @param updatedCiphers The updated array of ciphers
      */

@@ -5,22 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Aggregated data per disk. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Aggregated data per disk.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiskStatistics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DiskStatistics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DiskStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "diskName",
@@ -42,61 +39,65 @@ public final class DiskStatistics
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the disk. */
+        /**
+         * Name of the disk.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskName")
         private String diskName;
 
         /**
          * Name of the disk.
-         *
          * @param diskName the value to set
          * @return this builder
-         */
+         **/
         public Builder diskName(String diskName) {
             this.diskName = diskName;
             this.__explicitlySet__.add("diskName");
             return this;
         }
-        /** Value for unallocated space in a disk. */
+        /**
+         * Value for unallocated space in a disk.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskUnallocatedInGBs")
         private Double diskUnallocatedInGBs;
 
         /**
          * Value for unallocated space in a disk.
-         *
          * @param diskUnallocatedInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder diskUnallocatedInGBs(Double diskUnallocatedInGBs) {
             this.diskUnallocatedInGBs = diskUnallocatedInGBs;
             this.__explicitlySet__.add("diskUnallocatedInGBs");
             return this;
         }
-        /** Disk usage. */
+        /**
+         * Disk usage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskUsageInGBs")
         private Double diskUsageInGBs;
 
         /**
          * Disk usage.
-         *
          * @param diskUsageInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder diskUsageInGBs(Double diskUsageInGBs) {
             this.diskUsageInGBs = diskUsageInGBs;
             this.__explicitlySet__.add("diskUsageInGBs");
             return this;
         }
-        /** Size of the disk. */
+        /**
+         * Size of the disk.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskSizeInGBs")
         private Double diskSizeInGBs;
 
         /**
          * Size of the disk.
-         *
          * @param diskSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder diskSizeInGBs(Double diskSizeInGBs) {
             this.diskSizeInGBs = diskSizeInGBs;
             this.__explicitlySet__.add("diskSizeInGBs");
@@ -137,7 +138,9 @@ public final class DiskStatistics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -146,54 +149,58 @@ public final class DiskStatistics
         return new Builder().copy(this);
     }
 
-    /** Name of the disk. */
+    /**
+     * Name of the disk.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskName")
     private final String diskName;
 
     /**
      * Name of the disk.
-     *
      * @return the value
-     */
+     **/
     public String getDiskName() {
         return diskName;
     }
 
-    /** Value for unallocated space in a disk. */
+    /**
+     * Value for unallocated space in a disk.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskUnallocatedInGBs")
     private final Double diskUnallocatedInGBs;
 
     /**
      * Value for unallocated space in a disk.
-     *
      * @return the value
-     */
+     **/
     public Double getDiskUnallocatedInGBs() {
         return diskUnallocatedInGBs;
     }
 
-    /** Disk usage. */
+    /**
+     * Disk usage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskUsageInGBs")
     private final Double diskUsageInGBs;
 
     /**
      * Disk usage.
-     *
      * @return the value
-     */
+     **/
     public Double getDiskUsageInGBs() {
         return diskUsageInGBs;
     }
 
-    /** Size of the disk. */
+    /**
+     * Size of the disk.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskSizeInGBs")
     private final Double diskSizeInGBs;
 
     /**
      * Size of the disk.
-     *
      * @return the value
-     */
+     **/
     public Double getDiskSizeInGBs() {
         return diskSizeInGBs;
     }
@@ -205,7 +212,6 @@ public final class DiskStatistics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

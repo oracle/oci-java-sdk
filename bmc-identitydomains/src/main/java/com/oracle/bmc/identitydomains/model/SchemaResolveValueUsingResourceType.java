@@ -5,24 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This attribute gives a maps for resolving Resource Type after reading it's value from
- * "csvColumnForResolvingResourceType" attribute <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This attribute gives a maps for resolving Resource Type after reading it's value from "csvColumnForResolvingResourceType" attribute
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SchemaResolveValueUsingResourceType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SchemaResolveValueUsingResourceType.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SchemaResolveValueUsingResourceType
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"valueToBeResolved", "resolveBy"})
     public SchemaResolveValueUsingResourceType(String valueToBeResolved, String resolveBy) {
@@ -35,47 +33,67 @@ public final class SchemaResolveValueUsingResourceType
     public static class Builder {
         /**
          * Specifies the value which should be resolved by a Resource type.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueToBeResolved")
         private String valueToBeResolved;
 
         /**
          * Specifies the value which should be resolved by a Resource type.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param valueToBeResolved the value to set
          * @return this builder
-         */
+         **/
         public Builder valueToBeResolved(String valueToBeResolved) {
             this.valueToBeResolved = valueToBeResolved;
             this.__explicitlySet__.add("valueToBeResolved");
             return this;
         }
         /**
-         * Specifies the Resource type with which the value given in \\"valueToBeResolved\\"
-         * attribute should be resolved
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the Resource type with which the value given in \\"valueToBeResolved\\" attribute should be resolved
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolveBy")
         private String resolveBy;
 
         /**
-         * Specifies the Resource type with which the value given in \\"valueToBeResolved\\"
-         * attribute should be resolved
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the Resource type with which the value given in \\"valueToBeResolved\\" attribute should be resolved
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param resolveBy the value to set
          * @return this builder
-         */
+         **/
         public Builder resolveBy(String resolveBy) {
             this.resolveBy = resolveBy;
             this.__explicitlySet__.add("resolveBy");
@@ -106,7 +124,9 @@ public final class SchemaResolveValueUsingResourceType
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,44 +137,64 @@ public final class SchemaResolveValueUsingResourceType
 
     /**
      * Specifies the value which should be resolved by a Resource type.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueToBeResolved")
     private final String valueToBeResolved;
 
     /**
      * Specifies the value which should be resolved by a Resource type.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValueToBeResolved() {
         return valueToBeResolved;
     }
 
     /**
-     * Specifies the Resource type with which the value given in \\"valueToBeResolved\\" attribute
-     * should be resolved
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Specifies the Resource type with which the value given in \\"valueToBeResolved\\" attribute should be resolved
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolveBy")
     private final String resolveBy;
 
     /**
-     * Specifies the Resource type with which the value given in \\"valueToBeResolved\\" attribute
-     * should be resolved
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Specifies the Resource type with which the value given in \\"valueToBeResolved\\" attribute should be resolved
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getResolveBy() {
         return resolveBy;
     }
@@ -166,7 +206,6 @@ public final class SchemaResolveValueUsingResourceType
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

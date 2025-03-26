@@ -5,31 +5,31 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The connector details used to connect to the external DB system component. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The connector details used to connect to the external DB system component.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectorType",
-        defaultImpl = ExternalDbSystemDiscoveryConnector.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectorType",
+    defaultImpl = ExternalDbSystemDiscoveryConnector.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalDbSystemDiscoveryMacsConnector.class,
-            name = "MACS")
+        value = ExternalDbSystemDiscoveryMacsConnector.class,
+        name = "MACS"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ExternalDbSystemDiscoveryConnector
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -49,60 +49,62 @@ public class ExternalDbSystemDiscoveryConnector
         this.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
     }
 
-    /** The user-friendly name for the external connector. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the external connector. The name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the external connector. The name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The status of connectivity to the external DB system component. */
+    /**
+     * The status of connectivity to the external DB system component.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStatus")
     private final String connectionStatus;
 
     /**
      * The status of connectivity to the external DB system component.
-     *
      * @return the value
-     */
+     **/
     public String getConnectionStatus() {
         return connectionStatus;
     }
 
     /**
-     * The error message indicating the reason for connection failure or {@code null} if the
-     * connection was successful.
-     */
+     * The error message indicating the reason for connection failure or {@code null} if
+     * the connection was successful.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionFailureMessage")
     private final String connectionFailureMessage;
 
     /**
-     * The error message indicating the reason for connection failure or {@code null} if the
-     * connection was successful.
+     * The error message indicating the reason for connection failure or {@code null} if
+     * the connection was successful.
      *
      * @return the value
-     */
+     **/
     public String getConnectionFailureMessage() {
         return connectionFailureMessage;
     }
 
     /**
      * The date and time the connectionStatus of the external DB system connector was last updated.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeConnectionStatusLastUpdated")
     private final java.util.Date timeConnectionStatusLastUpdated;
 
     /**
      * The date and time the connectionStatus of the external DB system connector was last updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeConnectionStatusLastUpdated() {
         return timeConnectionStatusLastUpdated;
     }
@@ -114,7 +116,6 @@ public class ExternalDbSystemDiscoveryConnector
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -173,13 +174,15 @@ public class ExternalDbSystemDiscoveryConnector
         return result;
     }
 
-    /** The type of connector. */
-    public enum ConnectorType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of connector.
+     **/
+    public enum ConnectorType {
         Macs("MACS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

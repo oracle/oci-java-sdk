@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Operating System types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum OsFamily implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Operating System types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum OsFamily {
     Linux("LINUX"),
     Windows("WINDOWS"),
     Macos("MACOS"),

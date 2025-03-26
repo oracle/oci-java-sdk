@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The shape configuration for a shape in a capacity report. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The shape configuration for a shape in a capacity report.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CapacityReportInstanceShapeConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CapacityReportInstanceShapeConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CapacityReportInstanceShapeConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "nvmes"})
     public CapacityReportInstanceShapeConfig(Float ocpus, Float memoryInGBs, Integer nvmes) {
@@ -33,7 +33,10 @@ public final class CapacityReportInstanceShapeConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The total number of OCPUs available to the instance. */
+        /**
+         * The total number of OCPUs available to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
@@ -42,13 +45,16 @@ public final class CapacityReportInstanceShapeConfig
          *
          * @param ocpus the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /** The total amount of memory available to the instance, in gigabytes. */
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
@@ -57,13 +63,16 @@ public final class CapacityReportInstanceShapeConfig
          *
          * @param memoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-        /** The number of NVMe drives to be used for storage. */
+        /**
+         * The number of NVMe drives to be used for storage.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
         private Integer nvmes;
 
@@ -72,7 +81,7 @@ public final class CapacityReportInstanceShapeConfig
          *
          * @param nvmes the value to set
          * @return this builder
-         */
+         **/
         public Builder nvmes(Integer nvmes) {
             this.nvmes = nvmes;
             this.__explicitlySet__.add("nvmes");
@@ -106,7 +115,9 @@ public final class CapacityReportInstanceShapeConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,7 +126,10 @@ public final class CapacityReportInstanceShapeConfig
         return new Builder().copy(this);
     }
 
-    /** The total number of OCPUs available to the instance. */
+    /**
+     * The total number of OCPUs available to the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
@@ -123,12 +137,15 @@ public final class CapacityReportInstanceShapeConfig
      * The total number of OCPUs available to the instance.
      *
      * @return the value
-     */
+     **/
     public Float getOcpus() {
         return ocpus;
     }
 
-    /** The total amount of memory available to the instance, in gigabytes. */
+    /**
+     * The total amount of memory available to the instance, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
@@ -136,12 +153,15 @@ public final class CapacityReportInstanceShapeConfig
      * The total amount of memory available to the instance, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }
 
-    /** The number of NVMe drives to be used for storage. */
+    /**
+     * The number of NVMe drives to be used for storage.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
     private final Integer nvmes;
 
@@ -149,7 +169,7 @@ public final class CapacityReportInstanceShapeConfig
      * The number of NVMe drives to be used for storage.
      *
      * @return the value
-     */
+     **/
     public Integer getNvmes() {
         return nvmes;
     }
@@ -161,7 +181,6 @@ public final class CapacityReportInstanceShapeConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

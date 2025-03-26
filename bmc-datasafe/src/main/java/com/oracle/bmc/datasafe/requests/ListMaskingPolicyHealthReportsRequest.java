@@ -6,104 +6,99 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListMaskingPolicyHealthReportsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskingPolicyHealthReportsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListMaskingPolicyHealthReportsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * A filter to return only the resources that match the specified masking policy health report
-     * OCID.
+     * A filter to return only the resources that match the specified masking policy health report OCID.
      */
     private String maskingPolicyHealthReportId;
 
     /**
-     * A filter to return only the resources that match the specified masking policy health report
-     * OCID.
+     * A filter to return only the resources that match the specified masking policy health report OCID.
      */
     public String getMaskingPolicyHealthReportId() {
         return maskingPolicyHealthReportId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -137,19 +132,24 @@ public class ListMaskingPolicyHealthReportsRequest
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** sort by */
+    /**
+     * sort by
+     */
     private SortBy sortBy;
 
-    /** sort by */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * sort by
+     **/
+    public enum SortBy {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         ;
@@ -182,15 +182,21 @@ public class ListMaskingPolicyHealthReportsRequest
         }
     };
 
-    /** sort by */
+    /**
+     * sort by
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -223,35 +229,55 @@ public class ListMaskingPolicyHealthReportsRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** A filter to return only resources that match the specified display name. */
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the specified display name. */
+    /**
+     * A filter to return only resources that match the specified display name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     private String targetId;
 
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
-    /** A filter to return only the resources that match the specified masking policy OCID. */
+    /**
+     * A filter to return only the resources that match the specified masking policy OCID.
+     */
     private String maskingPolicyId;
 
-    /** A filter to return only the resources that match the specified masking policy OCID. */
+    /**
+     * A filter to return only the resources that match the specified masking policy OCID.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
-    /** A filter to return only the resources that match the specified lifecycle states. */
+    /**
+     * A filter to return only the resources that match the specified lifecycle states.
+     */
     private com.oracle.bmc.datasafe.model.MaskingLifecycleState lifecycleState;
 
-    /** A filter to return only the resources that match the specified lifecycle states. */
+    /**
+     * A filter to return only the resources that match the specified lifecycle states.
+     */
     public com.oracle.bmc.datasafe.model.MaskingLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -259,15 +285,17 @@ public class ListMaskingPolicyHealthReportsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMaskingPolicyHealthReportsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -277,15 +305,12 @@ public class ListMaskingPolicyHealthReportsRequest
         }
 
         /**
-         * A filter to return only the resources that match the specified masking policy health
-         * report OCID.
+         * A filter to return only the resources that match the specified masking policy health report OCID.
          */
         private String maskingPolicyHealthReportId = null;
 
         /**
-         * A filter to return only the resources that match the specified masking policy health
-         * report OCID.
-         *
+         * A filter to return only the resources that match the specified masking policy health report OCID.
          * @param maskingPolicyHealthReportId the value to set
          * @return this builder instance
          */
@@ -295,17 +320,12 @@ public class ListMaskingPolicyHealthReportsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -315,19 +335,12 @@ public class ListMaskingPolicyHealthReportsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -336,12 +349,13 @@ public class ListMaskingPolicyHealthReportsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -351,16 +365,15 @@ public class ListMaskingPolicyHealthReportsRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -371,18 +384,19 @@ public class ListMaskingPolicyHealthReportsRequest
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -392,12 +406,13 @@ public class ListMaskingPolicyHealthReportsRequest
             return this;
         }
 
-        /** sort by */
+        /**
+         * sort by
+         */
         private SortBy sortBy = null;
 
         /**
          * sort by
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -406,12 +421,13 @@ public class ListMaskingPolicyHealthReportsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -420,7 +436,10 @@ public class ListMaskingPolicyHealthReportsRequest
             return this;
         }
 
-        /** A filter to return only resources that match the specified display name. */
+        /**
+         * A filter to return only resources that match the specified display name.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -434,12 +453,13 @@ public class ListMaskingPolicyHealthReportsRequest
             return this;
         }
 
-        /** A filter to return only items related to a specific target OCID. */
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -448,12 +468,13 @@ public class ListMaskingPolicyHealthReportsRequest
             return this;
         }
 
-        /** A filter to return only the resources that match the specified masking policy OCID. */
+        /**
+         * A filter to return only the resources that match the specified masking policy OCID.
+         */
         private String maskingPolicyId = null;
 
         /**
          * A filter to return only the resources that match the specified masking policy OCID.
-         *
          * @param maskingPolicyId the value to set
          * @return this builder instance
          */
@@ -462,12 +483,13 @@ public class ListMaskingPolicyHealthReportsRequest
             return this;
         }
 
-        /** A filter to return only the resources that match the specified lifecycle states. */
+        /**
+         * A filter to return only the resources that match the specified lifecycle states.
+         */
         private com.oracle.bmc.datasafe.model.MaskingLifecycleState lifecycleState = null;
 
         /**
          * A filter to return only the resources that match the specified lifecycle states.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -479,19 +501,18 @@ public class ListMaskingPolicyHealthReportsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -503,7 +524,6 @@ public class ListMaskingPolicyHealthReportsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMaskingPolicyHealthReportsRequest o) {
@@ -528,11 +548,10 @@ public class ListMaskingPolicyHealthReportsRequest
         /**
          * Build the instance of ListMaskingPolicyHealthReportsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMaskingPolicyHealthReportsRequest
          */
@@ -546,8 +565,7 @@ public class ListMaskingPolicyHealthReportsRequest
         /**
          * Build the instance of ListMaskingPolicyHealthReportsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMaskingPolicyHealthReportsRequest
@@ -569,15 +587,12 @@ public class ListMaskingPolicyHealthReportsRequest
             request.maskingPolicyId = maskingPolicyId;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListMaskingPolicyHealthReportsRequest(compartmentId, maskingPolicyHealthReportId,
-            // limit, page, opcRequestId, compartmentIdInSubtree, accessLevel, sortBy, sortOrder,
-            // displayName, targetId, maskingPolicyId, lifecycleState);
+            // new ListMaskingPolicyHealthReportsRequest(compartmentId, maskingPolicyHealthReportId, limit, page, opcRequestId, compartmentIdInSubtree, accessLevel, sortBy, sortOrder, displayName, targetId, maskingPolicyId, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -599,7 +614,6 @@ public class ListMaskingPolicyHealthReportsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

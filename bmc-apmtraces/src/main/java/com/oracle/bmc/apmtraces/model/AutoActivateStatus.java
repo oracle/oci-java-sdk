@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Status of autoactivation for the given data key in the APM Domain. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Status of autoactivation for the given data key in the APM Domain.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutoActivateStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AutoActivateStatus
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AutoActivateStatus.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AutoActivateStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"state", "dataKey"})
     public AutoActivateStatus(String state, DataKey dataKey) {
@@ -33,25 +32,27 @@ public final class AutoActivateStatus
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if
-         * "OFF" auto-activate is set to false.
-         */
+         * State of autoactivation in this APM Domain.  If "ON" auto-activate is set to true, if "OFF" auto-activate is set to false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
-         * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if
-         * "OFF" auto-activate is set to false.
+         * State of autoactivation in this APM Domain.  If "ON" auto-activate is set to true, if "OFF" auto-activate is set to false.
          *
          * @param state the value to set
          * @return this builder
-         */
+         **/
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /** Data key type for which auto-activate needs needs to be turned on or off. */
+        /**
+         * Data key type for which auto-activate needs needs to be turned on or off.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataKey")
         private DataKey dataKey;
 
@@ -60,7 +61,7 @@ public final class AutoActivateStatus
          *
          * @param dataKey the value to set
          * @return this builder
-         */
+         **/
         public Builder dataKey(DataKey dataKey) {
             this.dataKey = dataKey;
             this.__explicitlySet__.add("dataKey");
@@ -90,7 +91,9 @@ public final class AutoActivateStatus
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +103,32 @@ public final class AutoActivateStatus
     }
 
     /**
-     * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if "OFF"
-     * auto-activate is set to false.
-     */
+     * State of autoactivation in this APM Domain.  If "ON" auto-activate is set to true, if "OFF" auto-activate is set to false.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
-     * State of autoactivation in this APM Domain. If "ON" auto-activate is set to true, if "OFF"
-     * auto-activate is set to false.
+     * State of autoactivation in this APM Domain.  If "ON" auto-activate is set to true, if "OFF" auto-activate is set to false.
      *
      * @return the value
-     */
+     **/
     public String getState() {
         return state;
     }
 
-    /** Data key type for which auto-activate needs needs to be turned on or off. */
-    public enum DataKey implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Data key type for which auto-activate needs needs to be turned on or off.
+     *
+     **/
+    public enum DataKey {
         PrivateDataKey("PRIVATE_DATA_KEY"),
         PublicDataKey("PUBLIC_DATA_KEY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -162,7 +167,10 @@ public final class AutoActivateStatus
             return UnknownEnumValue;
         }
     };
-    /** Data key type for which auto-activate needs needs to be turned on or off. */
+    /**
+     * Data key type for which auto-activate needs needs to be turned on or off.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataKey")
     private final DataKey dataKey;
 
@@ -170,7 +178,7 @@ public final class AutoActivateStatus
      * Data key type for which auto-activate needs needs to be turned on or off.
      *
      * @return the value
-     */
+     **/
     public DataKey getDataKey() {
         return dataKey;
     }
@@ -182,7 +190,6 @@ public final class AutoActivateStatus
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

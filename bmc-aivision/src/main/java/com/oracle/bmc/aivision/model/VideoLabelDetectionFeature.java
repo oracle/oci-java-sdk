@@ -5,72 +5,75 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Video label detection feature <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Video label detection feature
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VideoLabelDetectionFeature.Builder.class)
+    builder = VideoLabelDetectionFeature.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "featureType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "featureType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VideoLabelDetectionFeature extends VideoFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The minimum confidence score, between 0 and 1, when the value is set, results with lower
-         * confidence will not be returned.
-         */
+         * The minimum confidence score, between 0 and 1,
+         * when the value is set, results with lower confidence will not be returned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minConfidence")
         private Float minConfidence;
 
         /**
-         * The minimum confidence score, between 0 and 1, when the value is set, results with lower
-         * confidence will not be returned.
+         * The minimum confidence score, between 0 and 1,
+         * when the value is set, results with lower confidence will not be returned.
          *
          * @param minConfidence the value to set
          * @return this builder
-         */
+         **/
         public Builder minConfidence(Float minConfidence) {
             this.minConfidence = minConfidence;
             this.__explicitlySet__.add("minConfidence");
             return this;
         }
-        /** The maximum number of results per video frame to return. */
+        /**
+         * The maximum number of results per video frame to return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
         private Integer maxResults;
 
         /**
          * The maximum number of results per video frame to return.
-         *
          * @param maxResults the value to set
          * @return this builder
-         */
+         **/
         public Builder maxResults(Integer maxResults) {
             this.maxResults = maxResults;
             this.__explicitlySet__.add("maxResults");
             return this;
         }
-        /** The custom model ID. */
+        /**
+         * The custom model ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
          * The custom model ID.
-         *
          * @param modelId the value to set
          * @return this builder
-         */
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
@@ -105,7 +108,9 @@ public final class VideoLabelDetectionFeature extends VideoFeature {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,44 +128,47 @@ public final class VideoLabelDetectionFeature extends VideoFeature {
     }
 
     /**
-     * The minimum confidence score, between 0 and 1, when the value is set, results with lower
-     * confidence will not be returned.
-     */
+     * The minimum confidence score, between 0 and 1,
+     * when the value is set, results with lower confidence will not be returned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minConfidence")
     private final Float minConfidence;
 
     /**
-     * The minimum confidence score, between 0 and 1, when the value is set, results with lower
-     * confidence will not be returned.
+     * The minimum confidence score, between 0 and 1,
+     * when the value is set, results with lower confidence will not be returned.
      *
      * @return the value
-     */
+     **/
     public Float getMinConfidence() {
         return minConfidence;
     }
 
-    /** The maximum number of results per video frame to return. */
+    /**
+     * The maximum number of results per video frame to return.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
     private final Integer maxResults;
 
     /**
      * The maximum number of results per video frame to return.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxResults() {
         return maxResults;
     }
 
-    /** The custom model ID. */
+    /**
+     * The custom model ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
      * The custom model ID.
-     *
      * @return the value
-     */
+     **/
     public String getModelId() {
         return modelId;
     }
@@ -172,7 +180,6 @@ public final class VideoLabelDetectionFeature extends VideoFeature {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

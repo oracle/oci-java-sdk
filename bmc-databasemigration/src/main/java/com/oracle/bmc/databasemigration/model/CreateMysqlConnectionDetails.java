@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * The information about a new MySQL Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * The information about a new MySQL Connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMysqlConnectionDetails.Builder.class)
+    builder = CreateMysqlConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMysqlConnectionDetails extends CreateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -145,189 +145,203 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-         * HeatWave Database Service
-         */
+         * The type of MySQL source or target connection.
+         * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private MysqlConnection.TechnologyType technologyType;
 
         /**
-         * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-         * HeatWave Database Service
+         * The type of MySQL source or target connection.
+         * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
          *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(MysqlConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** The IP Address of the host. */
+        /**
+         * The IP Address of the host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * The IP Address of the host.
-         *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The port to be used for the connection. */
+        /**
+         * The port to be used for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port to be used for the connection.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The name of the database being referenced. */
+        /**
+         * The name of the database being referenced.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
         /**
          * The name of the database being referenced.
-         *
          * @param databaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-        /** Security Type for MySQL. */
+        /**
+         * Security Type for MySQL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private MysqlConnection.SecurityProtocol securityProtocol;
 
         /**
          * Security Type for MySQL.
-         *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(MysqlConnection.SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
-        /** SSL modes for MySQL. */
+        /**
+         * SSL modes for MySQL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
         private MysqlConnection.SslMode sslMode;
 
         /**
          * SSL modes for MySQL.
-         *
          * @param sslMode the value to set
          * @return this builder
-         */
+         **/
         public Builder sslMode(MysqlConnection.SslMode sslMode) {
             this.sslMode = sslMode;
             this.__explicitlySet__.add("sslMode");
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-         * public key (for 1 and 2-way SSL).
-         */
+         * Database Certificate - The base64 encoded content of mysql.pem file
+         * containing the server public key (for 1 and 2-way SSL).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-         * public key (for 1 and 2-way SSL).
+         * Database Certificate - The base64 encoded content of mysql.pem file
+         * containing the server public key (for 1 and 2-way SSL).
          *
          * @param sslCa the value to set
          * @return this builder
-         */
+         **/
         public Builder sslCa(String sslCa) {
             this.sslCa = sslCa;
             this.__explicitlySet__.add("sslCa");
             return this;
         }
         /**
-         * Certificates revoked by certificate authorities (CA). Server certificate must not be on
-         * this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable
-         * if TLS/MTLS option is selected.
-         */
+         * Certificates revoked by certificate authorities (CA).
+         * Server certificate must not be on this list (for 1 and 2-way SSL).
+         * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
         private String sslCrl;
 
         /**
-         * Certificates revoked by certificate authorities (CA). Server certificate must not be on
-         * this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable
-         * if TLS/MTLS option is selected.
+         * Certificates revoked by certificate authorities (CA).
+         * Server certificate must not be on this list (for 1 and 2-way SSL).
+         * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
          *
          * @param sslCrl the value to set
          * @return this builder
-         */
+         **/
         public Builder sslCrl(String sslCrl) {
             this.sslCrl = sslCrl;
             this.__explicitlySet__.add("sslCrl");
             return this;
         }
         /**
-         * Client Certificate - The base64 encoded content of client-cert.pem file containing the
-         * client public key (for 2-way SSL).
-         */
+         * Client Certificate - The base64 encoded content of client-cert.pem file
+         * containing the client public key (for 2-way SSL).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
         private String sslCert;
 
         /**
-         * Client Certificate - The base64 encoded content of client-cert.pem file containing the
-         * client public key (for 2-way SSL).
+         * Client Certificate - The base64 encoded content of client-cert.pem file
+         * containing the client public key (for 2-way SSL).
          *
          * @param sslCert the value to set
          * @return this builder
-         */
+         **/
         public Builder sslCert(String sslCert) {
             this.sslCert = sslCert;
             this.__explicitlySet__.add("sslCert");
             return this;
         }
-        /** Client Key - The client-key.pem containing the client private key (for 2-way SSL). */
+        /**
+         * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
         private String sslKey;
 
         /**
          * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
-         *
          * @param sslKey the value to set
          * @return this builder
-         */
+         **/
         public Builder sslKey(String sslKey) {
             this.sslKey = sslKey;
             this.__explicitlySet__.add("sslKey");
             return this;
         }
-        /** An array of name-value pair attribute entries. */
+        /**
+         * An array of name-value pair attribute entries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
         private java.util.List<NameValuePair> additionalAttributes;
 
         /**
          * An array of name-value pair attribute entries.
-         *
          * @param additionalAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalAttributes(java.util.List<NameValuePair> additionalAttributes) {
             this.additionalAttributes = additionalAttributes;
             this.__explicitlySet__.add("additionalAttributes");
             return this;
         }
-        /** The OCID of the database system being referenced. */
+        /**
+         * The OCID of the database system being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
@@ -336,7 +350,7 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
          *
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
@@ -461,7 +475,9 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -526,167 +542,181 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-     * HeatWave Database Service
-     */
+     * The type of MySQL source or target connection.
+     * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final MysqlConnection.TechnologyType technologyType;
 
     /**
-     * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-     * HeatWave Database Service
+     * The type of MySQL source or target connection.
+     * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
      *
      * @return the value
-     */
+     **/
     public MysqlConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** The IP Address of the host. */
+    /**
+     * The IP Address of the host.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * The IP Address of the host.
-     *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The port to be used for the connection. */
+    /**
+     * The port to be used for the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port to be used for the connection.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** The name of the database being referenced. */
+    /**
+     * The name of the database being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
     /**
      * The name of the database being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
 
-    /** Security Type for MySQL. */
+    /**
+     * Security Type for MySQL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final MysqlConnection.SecurityProtocol securityProtocol;
 
     /**
      * Security Type for MySQL.
-     *
      * @return the value
-     */
+     **/
     public MysqlConnection.SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
-    /** SSL modes for MySQL. */
+    /**
+     * SSL modes for MySQL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
     private final MysqlConnection.SslMode sslMode;
 
     /**
      * SSL modes for MySQL.
-     *
      * @return the value
-     */
+     **/
     public MysqlConnection.SslMode getSslMode() {
         return sslMode;
     }
 
     /**
-     * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-     * public key (for 1 and 2-way SSL).
-     */
+     * Database Certificate - The base64 encoded content of mysql.pem file
+     * containing the server public key (for 1 and 2-way SSL).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of mysql.pem file containing the server
-     * public key (for 1 and 2-way SSL).
+     * Database Certificate - The base64 encoded content of mysql.pem file
+     * containing the server public key (for 1 and 2-way SSL).
      *
      * @return the value
-     */
+     **/
     public String getSslCa() {
         return sslCa;
     }
 
     /**
-     * Certificates revoked by certificate authorities (CA). Server certificate must not be on this
-     * list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if
-     * TLS/MTLS option is selected.
-     */
+     * Certificates revoked by certificate authorities (CA).
+     * Server certificate must not be on this list (for 1 and 2-way SSL).
+     * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
     private final String sslCrl;
 
     /**
-     * Certificates revoked by certificate authorities (CA). Server certificate must not be on this
-     * list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if
-     * TLS/MTLS option is selected.
+     * Certificates revoked by certificate authorities (CA).
+     * Server certificate must not be on this list (for 1 and 2-way SSL).
+     * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      *
      * @return the value
-     */
+     **/
     public String getSslCrl() {
         return sslCrl;
     }
 
     /**
-     * Client Certificate - The base64 encoded content of client-cert.pem file containing the client
-     * public key (for 2-way SSL).
-     */
+     * Client Certificate - The base64 encoded content of client-cert.pem file
+     * containing the client public key (for 2-way SSL).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
     private final String sslCert;
 
     /**
-     * Client Certificate - The base64 encoded content of client-cert.pem file containing the client
-     * public key (for 2-way SSL).
+     * Client Certificate - The base64 encoded content of client-cert.pem file
+     * containing the client public key (for 2-way SSL).
      *
      * @return the value
-     */
+     **/
     public String getSslCert() {
         return sslCert;
     }
 
-    /** Client Key - The client-key.pem containing the client private key (for 2-way SSL). */
+    /**
+     * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
     private final String sslKey;
 
     /**
      * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
-     *
      * @return the value
-     */
+     **/
     public String getSslKey() {
         return sslKey;
     }
 
-    /** An array of name-value pair attribute entries. */
+    /**
+     * An array of name-value pair attribute entries.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
     private final java.util.List<NameValuePair> additionalAttributes;
 
     /**
      * An array of name-value pair attribute entries.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NameValuePair> getAdditionalAttributes() {
         return additionalAttributes;
     }
 
-    /** The OCID of the database system being referenced. */
+    /**
+     * The OCID of the database system being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
@@ -694,7 +724,7 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
      * The OCID of the database system being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -706,7 +736,6 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

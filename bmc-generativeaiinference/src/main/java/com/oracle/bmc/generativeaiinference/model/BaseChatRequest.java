@@ -5,33 +5,34 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * The base class to use for the chat inference request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * The base class to use for the chat inference request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "apiFormat",
-        defaultImpl = BaseChatRequest.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "apiFormat",
+    defaultImpl = BaseChatRequest.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = GenericChatRequest.class,
-            name = "GENERIC"),
+        value = GenericChatRequest.class,
+        name = "GENERIC"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CohereChatRequest.class,
-            name = "COHERE")
+        value = CohereChatRequest.class,
+        name = "COHERE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class BaseChatRequest extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class BaseChatRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected BaseChatRequest() {
@@ -45,7 +46,6 @@ public class BaseChatRequest extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -79,11 +79,12 @@ public class BaseChatRequest extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The API format for the model's family group. COHERE is for the Cohere family models such as
-     * the cohere.command-r-16k and cohere.command-r-plus models. GENERIC is for other model
-     * families such as the meta.llama-3-70b-instruct model.
-     */
-    public enum ApiFormat implements com.oracle.bmc.http.internal.BmcEnum {
+     * The API format for the model's family group.
+     * COHERE is for the Cohere family models such as the cohere.command-r-16k and cohere.command-r-plus models.
+     * GENERIC is for other model families such as the meta.llama-3-70b-instruct model.
+     *
+     **/
+    public enum ApiFormat {
         Cohere("COHERE"),
         Generic("GENERIC"),
         ;

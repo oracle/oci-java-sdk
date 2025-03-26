@@ -6,68 +6,74 @@ package com.oracle.bmc.ons.requests;
 
 import com.oracle.bmc.ons.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/PublishMessageExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use PublishMessageRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/PublishMessageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PublishMessageRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class PublishMessageRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ons.model.MessageDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+     *
      */
     private String topicId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+     *
      */
     public String getTopicId() {
         return topicId;
     }
-    /** The message to publish. */
+    /**
+     * The message to publish.
+     */
     private com.oracle.bmc.ons.model.MessageDetails messageDetails;
 
-    /** The message to publish. */
+    /**
+     * The message to publish.
+     */
     public com.oracle.bmc.ons.model.MessageDetails getMessageDetails() {
         return messageDetails;
     }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * **Deprecated.** Support for JSON is deprecated. You can send a JSON payload even when
-     * transmitting the payload as a raw string. Configure your receiving system to read the raw
-     * payload as JSON format.
+     * **Deprecated.**
+     * Support for JSON is deprecated.
+     * You can send a JSON payload even when transmitting the payload as a raw string.
+     * Configure your receiving system to read the raw payload as JSON format.
+     * <p>
+     * Type of message body in the request.
+     * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
      *
-     * <p>Type of message body in the request. For {@code messageType} of JSON, a default key-value
-     * pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached:
-     * <url>"}.}
      */
     private MessageType messageType;
 
     /**
-     * **Deprecated.** Support for JSON is deprecated. You can send a JSON payload even when
-     * transmitting the payload as a raw string. Configure your receiving system to read the raw
-     * payload as JSON format.
+     * **Deprecated.**
+     * Support for JSON is deprecated.
+     * You can send a JSON payload even when transmitting the payload as a raw string.
+     * Configure your receiving system to read the raw payload as JSON format.
+     * <p>
+     * Type of message body in the request.
+     * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
      *
-     * <p>Type of message body in the request. For {@code messageType} of JSON, a default key-value
-     * pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached:
-     * <url>"}.}
-     */
-    public enum MessageType implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum MessageType {
         Json("JSON"),
         RawText("RAW_TEXT"),
         ;
@@ -101,13 +107,14 @@ public class PublishMessageRequest
     };
 
     /**
-     * **Deprecated.** Support for JSON is deprecated. You can send a JSON payload even when
-     * transmitting the payload as a raw string. Configure your receiving system to read the raw
-     * payload as JSON format.
+     * **Deprecated.**
+     * Support for JSON is deprecated.
+     * You can send a JSON payload even when transmitting the payload as a raw string.
+     * Configure your receiving system to read the raw payload as JSON format.
+     * <p>
+     * Type of message body in the request.
+     * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
      *
-     * <p>Type of message body in the request. For {@code messageType} of JSON, a default key-value
-     * pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached:
-     * <url>"}.}
      */
     public MessageType getMessageType() {
         return messageType;
@@ -115,7 +122,6 @@ public class PublishMessageRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -127,18 +133,18 @@ public class PublishMessageRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PublishMessageRequest, com.oracle.bmc.ons.model.MessageDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         *
          */
         private String topicId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
          *
          * @param topicId the value to set
          * @return this builder instance
@@ -148,12 +154,13 @@ public class PublishMessageRequest
             return this;
         }
 
-        /** The message to publish. */
+        /**
+         * The message to publish.
+         */
         private com.oracle.bmc.ons.model.MessageDetails messageDetails = null;
 
         /**
          * The message to publish.
-         *
          * @param messageDetails the value to set
          * @return this builder instance
          */
@@ -163,14 +170,15 @@ public class PublishMessageRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -181,24 +189,25 @@ public class PublishMessageRequest
         }
 
         /**
-         * **Deprecated.** Support for JSON is deprecated. You can send a JSON payload even when
-         * transmitting the payload as a raw string. Configure your receiving system to read the raw
-         * payload as JSON format.
+         * **Deprecated.**
+         * Support for JSON is deprecated.
+         * You can send a JSON payload even when transmitting the payload as a raw string.
+         * Configure your receiving system to read the raw payload as JSON format.
+         * <p>
+         * Type of message body in the request.
+         * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
          *
-         * <p>Type of message body in the request. For {@code messageType} of JSON, a default
-         * key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm
-         * breached: <url>"}.}
          */
         private MessageType messageType = null;
 
         /**
-         * **Deprecated.** Support for JSON is deprecated. You can send a JSON payload even when
-         * transmitting the payload as a raw string. Configure your receiving system to read the raw
-         * payload as JSON format.
-         *
-         * <p>Type of message body in the request. For {@code messageType} of JSON, a default
-         * key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm
-         * breached: <url>"}.}
+         * **Deprecated.**
+         * Support for JSON is deprecated.
+         * You can send a JSON payload even when transmitting the payload as a raw string.
+         * Configure your receiving system to read the raw payload as JSON format.
+         * <p>
+         * Type of message body in the request.
+         * For {@code messageType} of JSON, a default key-value pair is required. Example: {@code {"default": "Alarm breached", "Email": "Alarm breached: <url>"}.}
          *
          * @param messageType the value to set
          * @return this builder instance
@@ -210,19 +219,18 @@ public class PublishMessageRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -234,7 +242,6 @@ public class PublishMessageRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PublishMessageRequest o) {
@@ -250,11 +257,10 @@ public class PublishMessageRequest
         /**
          * Build the instance of PublishMessageRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PublishMessageRequest
          */
@@ -267,7 +273,6 @@ public class PublishMessageRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -280,8 +285,7 @@ public class PublishMessageRequest
         /**
          * Build the instance of PublishMessageRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PublishMessageRequest
@@ -299,7 +303,6 @@ public class PublishMessageRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -312,7 +315,6 @@ public class PublishMessageRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

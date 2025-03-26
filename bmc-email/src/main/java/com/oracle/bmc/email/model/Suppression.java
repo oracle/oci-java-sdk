@@ -5,21 +5,19 @@
 package com.oracle.bmc.email.model;
 
 /**
- * The full information representing an email suppression. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+ * The full information representing an email suppression.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Suppression.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Suppression extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -57,177 +55,182 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the compartment to contain the suppression. Since suppressions are at the
-         * customer level, this must be the tenancy OCID.
-         */
+         * The OCID of the compartment to contain the suppression. Since
+         * suppressions are at the customer level, this must be the tenancy
+         * OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment to contain the suppression. Since suppressions are at the
-         * customer level, this must be the tenancy OCID.
+         * The OCID of the compartment to contain the suppression. Since
+         * suppressions are at the customer level, this must be the tenancy
+         * OCID.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Email address of the suppression. */
+        /**
+         * Email address of the suppression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
         /**
          * Email address of the suppression.
-         *
          * @param emailAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
             return this;
         }
-        /** The unique ID of the suppression. */
+        /**
+         * The unique ID of the suppression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique ID of the suppression.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The reason that the email address was suppressed. For more information on the types of
-         * bounces, see [Suppression
-         * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-         */
+         * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private SuppressionReason reason;
 
         /**
-         * The reason that the email address was suppressed. For more information on the types of
-         * bounces, see [Suppression
-         * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-         *
+         * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
          * @param reason the value to set
          * @return this builder
-         */
+         **/
         public Builder reason(SuppressionReason reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
         /**
-         * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z
-         * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ"
+         * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z
-         * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ"
+         * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-         * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The last date and time the suppression prevented submission
+         * in "YYYY-MM-ddThh:mmZ"
+         * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSuppressed")
         private java.util.Date timeLastSuppressed;
 
         /**
-         * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-         * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * The last date and time the suppression prevented submission
+         * in "YYYY-MM-ddThh:mmZ"
+         * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeLastSuppressed the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSuppressed(java.util.Date timeLastSuppressed) {
             this.timeLastSuppressed = timeLastSuppressed;
             this.__explicitlySet__.add("timeLastSuppressed");
             return this;
         }
         /**
-         * The value of the Message-ID header from the email that triggered a suppression. This
-         * value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for
-         * all types of suppressions.
-         */
+         * The value of the Message-ID header from the email that triggered a suppression.
+         * This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets.
+         * Not provided for all types of suppressions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageId")
         private String messageId;
 
         /**
-         * The value of the Message-ID header from the email that triggered a suppression. This
-         * value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for
-         * all types of suppressions.
+         * The value of the Message-ID header from the email that triggered a suppression.
+         * This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets.
+         * Not provided for all types of suppressions.
          *
          * @param messageId the value to set
          * @return this builder
-         */
+         **/
         public Builder messageId(String messageId) {
             this.messageId = messageId;
             this.__explicitlySet__.add("messageId");
             return this;
         }
         /**
-         * The specific error message returned by a system that resulted in the suppression. This
-         * message is usually an SMTP error code with additional descriptive text. Not provided for
-         * all types of suppressions.
-         */
+         * The specific error message returned by a system that resulted in the suppression.
+         * This message is usually an SMTP error code with additional descriptive text.
+         * Not provided for all types of suppressions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorDetail")
         private String errorDetail;
 
         /**
-         * The specific error message returned by a system that resulted in the suppression. This
-         * message is usually an SMTP error code with additional descriptive text. Not provided for
-         * all types of suppressions.
+         * The specific error message returned by a system that resulted in the suppression.
+         * This message is usually an SMTP error code with additional descriptive text.
+         * Not provided for all types of suppressions.
          *
          * @param errorDetail the value to set
          * @return this builder
-         */
+         **/
         public Builder errorDetail(String errorDetail) {
             this.errorDetail = errorDetail;
             this.__explicitlySet__.add("errorDetail");
             return this;
         }
         /**
-         * DNS name of the source of the error that caused the suppression. Will be set to either
-         * the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when
-         * available. Not provided for all types of suppressions, and not always known.
+         * DNS name of the source of the error that caused the suppression.
+         * Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available.
+         * Not provided for all types of suppressions, and not always known.
+         * <p>
+         * Note: Most SMTP errors that cause suppressions come from software run by email receiving systems rather than from OCI email delivery itself.
          *
-         * <p>Note: Most SMTP errors that cause suppressions come from software run by email
-         * receiving systems rather than from OCI email delivery itself.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorSource")
         private String errorSource;
 
         /**
-         * DNS name of the source of the error that caused the suppression. Will be set to either
-         * the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when
-         * available. Not provided for all types of suppressions, and not always known.
-         *
-         * <p>Note: Most SMTP errors that cause suppressions come from software run by email
-         * receiving systems rather than from OCI email delivery itself.
+         * DNS name of the source of the error that caused the suppression.
+         * Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available.
+         * Not provided for all types of suppressions, and not always known.
+         * <p>
+         * Note: Most SMTP errors that cause suppressions come from software run by email receiving systems rather than from OCI email delivery itself.
          *
          * @param errorSource the value to set
          * @return this builder
-         */
+         **/
         public Builder errorSource(String errorSource) {
             this.errorSource = errorSource;
             this.__explicitlySet__.add("errorSource");
@@ -288,7 +291,9 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -298,160 +303,165 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The OCID of the compartment to contain the suppression. Since suppressions are at the
-     * customer level, this must be the tenancy OCID.
-     */
+     * The OCID of the compartment to contain the suppression. Since
+     * suppressions are at the customer level, this must be the tenancy
+     * OCID.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment to contain the suppression. Since suppressions are at the
-     * customer level, this must be the tenancy OCID.
+     * The OCID of the compartment to contain the suppression. Since
+     * suppressions are at the customer level, this must be the tenancy
+     * OCID.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Email address of the suppression. */
+    /**
+     * Email address of the suppression.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
     /**
      * Email address of the suppression.
-     *
      * @return the value
-     */
+     **/
     public String getEmailAddress() {
         return emailAddress;
     }
 
-    /** The unique ID of the suppression. */
+    /**
+     * The unique ID of the suppression.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique ID of the suppression.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The reason that the email address was suppressed. For more information on the types of
-     * bounces, see [Suppression
-     * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-     */
+     * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final SuppressionReason reason;
 
     /**
-     * The reason that the email address was suppressed. For more information on the types of
-     * bounces, see [Suppression
-     * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-     *
+     * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * @return the value
-     */
+     **/
     public SuppressionReason getReason() {
         return reason;
     }
 
     /**
-     * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ"
+     * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ"
+     * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-     * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The last date and time the suppression prevented submission
+     * in "YYYY-MM-ddThh:mmZ"
+     * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSuppressed")
     private final java.util.Date timeLastSuppressed;
 
     /**
-     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-     * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * The last date and time the suppression prevented submission
+     * in "YYYY-MM-ddThh:mmZ"
+     * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSuppressed() {
         return timeLastSuppressed;
     }
 
     /**
-     * The value of the Message-ID header from the email that triggered a suppression. This value is
-     * as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of
-     * suppressions.
-     */
+     * The value of the Message-ID header from the email that triggered a suppression.
+     * This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets.
+     * Not provided for all types of suppressions.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageId")
     private final String messageId;
 
     /**
-     * The value of the Message-ID header from the email that triggered a suppression. This value is
-     * as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of
-     * suppressions.
+     * The value of the Message-ID header from the email that triggered a suppression.
+     * This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets.
+     * Not provided for all types of suppressions.
      *
      * @return the value
-     */
+     **/
     public String getMessageId() {
         return messageId;
     }
 
     /**
-     * The specific error message returned by a system that resulted in the suppression. This
-     * message is usually an SMTP error code with additional descriptive text. Not provided for all
-     * types of suppressions.
-     */
+     * The specific error message returned by a system that resulted in the suppression.
+     * This message is usually an SMTP error code with additional descriptive text.
+     * Not provided for all types of suppressions.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorDetail")
     private final String errorDetail;
 
     /**
-     * The specific error message returned by a system that resulted in the suppression. This
-     * message is usually an SMTP error code with additional descriptive text. Not provided for all
-     * types of suppressions.
+     * The specific error message returned by a system that resulted in the suppression.
+     * This message is usually an SMTP error code with additional descriptive text.
+     * Not provided for all types of suppressions.
      *
      * @return the value
-     */
+     **/
     public String getErrorDetail() {
         return errorDetail;
     }
 
     /**
-     * DNS name of the source of the error that caused the suppression. Will be set to either the
-     * remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when
-     * available. Not provided for all types of suppressions, and not always known.
+     * DNS name of the source of the error that caused the suppression.
+     * Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available.
+     * Not provided for all types of suppressions, and not always known.
+     * <p>
+     * Note: Most SMTP errors that cause suppressions come from software run by email receiving systems rather than from OCI email delivery itself.
      *
-     * <p>Note: Most SMTP errors that cause suppressions come from software run by email receiving
-     * systems rather than from OCI email delivery itself.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorSource")
     private final String errorSource;
 
     /**
-     * DNS name of the source of the error that caused the suppression. Will be set to either the
-     * remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when
-     * available. Not provided for all types of suppressions, and not always known.
-     *
-     * <p>Note: Most SMTP errors that cause suppressions come from software run by email receiving
-     * systems rather than from OCI email delivery itself.
+     * DNS name of the source of the error that caused the suppression.
+     * Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available.
+     * Not provided for all types of suppressions, and not always known.
+     * <p>
+     * Note: Most SMTP errors that cause suppressions come from software run by email receiving systems rather than from OCI email delivery itself.
      *
      * @return the value
-     */
+     **/
     public String getErrorSource() {
         return errorSource;
     }
@@ -463,7 +473,6 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,24 @@
 package com.oracle.bmc.globallydistributeddatabase.model;
 
 /**
- * Details of the request to upload the CA signed certificates to GSMs and generate wallets for GSMs
- * of the sharded database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+ * Details of the request to upload the CA signed certificates to GSMs and generate wallets for
+ * GSMs of the sharded database.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UploadSignedCertificateAndGenerateWalletDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UploadSignedCertificateAndGenerateWalletDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UploadSignedCertificateAndGenerateWalletDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"caSignedCertificate"})
     public UploadSignedCertificateAndGenerateWalletDetails(String caSignedCertificate) {
@@ -32,16 +32,17 @@ public final class UploadSignedCertificateAndGenerateWalletDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The CA signed certificate key.. */
+        /**
+         * The CA signed certificate key..
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caSignedCertificate")
         private String caSignedCertificate;
 
         /**
          * The CA signed certificate key..
-         *
          * @param caSignedCertificate the value to set
          * @return this builder
-         */
+         **/
         public Builder caSignedCertificate(String caSignedCertificate) {
             this.caSignedCertificate = caSignedCertificate;
             this.__explicitlySet__.add("caSignedCertificate");
@@ -69,7 +70,9 @@ public final class UploadSignedCertificateAndGenerateWalletDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,15 +81,16 @@ public final class UploadSignedCertificateAndGenerateWalletDetails
         return new Builder().copy(this);
     }
 
-    /** The CA signed certificate key.. */
+    /**
+     * The CA signed certificate key..
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caSignedCertificate")
     private final String caSignedCertificate;
 
     /**
      * The CA signed certificate key..
-     *
      * @return the value
-     */
+     **/
     public String getCaSignedCertificate() {
         return caSignedCertificate;
     }
@@ -98,7 +102,6 @@ public final class UploadSignedCertificateAndGenerateWalletDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

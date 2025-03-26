@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Provides the IP Inventory details of a subnet and its associated resources. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Provides the IP Inventory details of a subnet and its associated resources.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IpInventorySubnetResourceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IpInventorySubnetResourceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IpInventorySubnetResourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ipId",
@@ -68,184 +68,192 @@ public final class IpInventorySubnetResourceSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IP address.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipId")
         private String ipId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IP address.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
          * @param ipId the value to set
          * @return this builder
-         */
+         **/
         public Builder ipId(String ipId) {
             this.ipId = ipId;
             this.__explicitlySet__.add("ipId");
             return this;
         }
-        /** Lists the allocated private IP address. */
+        /**
+         * Lists the allocated private IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * Lists the allocated private IP address.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** Lifetime of the allocated private IP address. */
+        /**
+         * Lifetime of the allocated private IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddressLifetime")
         private IpAddressLifetime ipAddressLifetime;
 
         /**
          * Lifetime of the allocated private IP address.
-         *
          * @param ipAddressLifetime the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddressLifetime(IpAddressLifetime ipAddressLifetime) {
             this.ipAddressLifetime = ipAddressLifetime;
             this.__explicitlySet__.add("ipAddressLifetime");
             return this;
         }
-        /** The address range the IP address is assigned from. */
+        /**
+         * The address range the IP address is assigned from.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentCidr")
         private String parentCidr;
 
         /**
          * The address range the IP address is assigned from.
-         *
          * @param parentCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder parentCidr(String parentCidr) {
             this.parentCidr = parentCidr;
             this.__explicitlySet__.add("parentCidr");
             return this;
         }
-        /** Associated public IP address for the private IP address. */
+        /**
+         * Associated public IP address for the private IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedPublicIp")
         private String associatedPublicIp;
 
         /**
          * Associated public IP address for the private IP address.
-         *
          * @param associatedPublicIp the value to set
          * @return this builder
-         */
+         **/
         public Builder associatedPublicIp(String associatedPublicIp) {
             this.associatedPublicIp = associatedPublicIp;
             this.__explicitlySet__.add("associatedPublicIp");
             return this;
         }
-        /** Lifetime of the assigned public IP address. */
+        /**
+         * Lifetime of the assigned public IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpLifetime")
         private PublicIpLifetime publicIpLifetime;
 
         /**
          * Lifetime of the assigned public IP address.
-         *
          * @param publicIpLifetime the value to set
          * @return this builder
-         */
+         **/
         public Builder publicIpLifetime(PublicIpLifetime publicIpLifetime) {
             this.publicIpLifetime = publicIpLifetime;
             this.__explicitlySet__.add("publicIpLifetime");
             return this;
         }
-        /** Public IP address Pool the IP address is allocated from. */
+        /**
+         * Public IP address Pool the IP address is allocated from.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedPublicIpPool")
         private AssociatedPublicIpPool associatedPublicIpPool;
 
         /**
          * Public IP address Pool the IP address is allocated from.
-         *
          * @param associatedPublicIpPool the value to set
          * @return this builder
-         */
+         **/
         public Builder associatedPublicIpPool(AssociatedPublicIpPool associatedPublicIpPool) {
             this.associatedPublicIpPool = associatedPublicIpPool;
             this.__explicitlySet__.add("associatedPublicIpPool");
             return this;
         }
-        /** DNS hostname of the IP address. */
+        /**
+         * DNS hostname of the IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsHostName")
         private String dnsHostName;
 
         /**
          * DNS hostname of the IP address.
-         *
          * @param dnsHostName the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsHostName(String dnsHostName) {
             this.dnsHostName = dnsHostName;
             this.__explicitlySet__.add("dnsHostName");
             return this;
         }
-        /** Name of the created resource. */
+        /**
+         * Name of the created resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assignedResourceName")
         private String assignedResourceName;
 
         /**
          * Name of the created resource.
-         *
          * @param assignedResourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder assignedResourceName(String assignedResourceName) {
             this.assignedResourceName = assignedResourceName;
             this.__explicitlySet__.add("assignedResourceName");
             return this;
         }
-        /** Type of the resource. */
+        /**
+         * Type of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assignedResourceType")
         private AssignedResourceType assignedResourceType;
 
         /**
          * Type of the resource.
-         *
          * @param assignedResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder assignedResourceType(AssignedResourceType assignedResourceType) {
             this.assignedResourceType = assignedResourceType;
             this.__explicitlySet__.add("assignedResourceType");
             return this;
         }
-        /** Address type of the allocated private IP address. */
+        /**
+         * Address type of the allocated private IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addressType")
         private String addressType;
 
         /**
          * Address type of the allocated private IP address.
-         *
          * @param addressType the value to set
          * @return this builder
-         */
+         **/
         public Builder addressType(String addressType) {
             this.addressType = addressType;
             this.__explicitlySet__.add("addressType");
             return this;
         }
-        /** Assigned time of the private IP address. */
+        /**
+         * Assigned time of the private IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assignedTime")
         private java.util.Date assignedTime;
 
         /**
          * Assigned time of the private IP address.
-         *
          * @param assignedTime the value to set
          * @return this builder
-         */
+         **/
         public Builder assignedTime(java.util.Date assignedTime) {
             this.assignedTime = assignedTime;
             this.__explicitlySet__.add("assignedTime");
@@ -318,7 +326,9 @@ public final class IpInventorySubnetResourceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -328,43 +338,43 @@ public final class IpInventorySubnetResourceSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
-     * address.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipId")
     private final String ipId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
-     * address.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
      * @return the value
-     */
+     **/
     public String getIpId() {
         return ipId;
     }
 
-    /** Lists the allocated private IP address. */
+    /**
+     * Lists the allocated private IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * Lists the allocated private IP address.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** Lifetime of the allocated private IP address. */
-    public enum IpAddressLifetime implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifetime of the allocated private IP address.
+     **/
+    public enum IpAddressLifetime {
         Ephemeral("Ephemeral"),
         Reserved("Reserved"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -403,53 +413,58 @@ public final class IpInventorySubnetResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** Lifetime of the allocated private IP address. */
+    /**
+     * Lifetime of the allocated private IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddressLifetime")
     private final IpAddressLifetime ipAddressLifetime;
 
     /**
      * Lifetime of the allocated private IP address.
-     *
      * @return the value
-     */
+     **/
     public IpAddressLifetime getIpAddressLifetime() {
         return ipAddressLifetime;
     }
 
-    /** The address range the IP address is assigned from. */
+    /**
+     * The address range the IP address is assigned from.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentCidr")
     private final String parentCidr;
 
     /**
      * The address range the IP address is assigned from.
-     *
      * @return the value
-     */
+     **/
     public String getParentCidr() {
         return parentCidr;
     }
 
-    /** Associated public IP address for the private IP address. */
+    /**
+     * Associated public IP address for the private IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedPublicIp")
     private final String associatedPublicIp;
 
     /**
      * Associated public IP address for the private IP address.
-     *
      * @return the value
-     */
+     **/
     public String getAssociatedPublicIp() {
         return associatedPublicIp;
     }
 
-    /** Lifetime of the assigned public IP address. */
-    public enum PublicIpLifetime implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifetime of the assigned public IP address.
+     **/
+    public enum PublicIpLifetime {
         Ephemeral("Ephemeral"),
         Reserved("Reserved"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -488,27 +503,30 @@ public final class IpInventorySubnetResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** Lifetime of the assigned public IP address. */
+    /**
+     * Lifetime of the assigned public IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpLifetime")
     private final PublicIpLifetime publicIpLifetime;
 
     /**
      * Lifetime of the assigned public IP address.
-     *
      * @return the value
-     */
+     **/
     public PublicIpLifetime getPublicIpLifetime() {
         return publicIpLifetime;
     }
 
-    /** Public IP address Pool the IP address is allocated from. */
-    public enum AssociatedPublicIpPool implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Public IP address Pool the IP address is allocated from.
+     **/
+    public enum AssociatedPublicIpPool {
         Oracle("ORACLE"),
         Byoip("BYOIP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -547,52 +565,57 @@ public final class IpInventorySubnetResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** Public IP address Pool the IP address is allocated from. */
+    /**
+     * Public IP address Pool the IP address is allocated from.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedPublicIpPool")
     private final AssociatedPublicIpPool associatedPublicIpPool;
 
     /**
      * Public IP address Pool the IP address is allocated from.
-     *
      * @return the value
-     */
+     **/
     public AssociatedPublicIpPool getAssociatedPublicIpPool() {
         return associatedPublicIpPool;
     }
 
-    /** DNS hostname of the IP address. */
+    /**
+     * DNS hostname of the IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsHostName")
     private final String dnsHostName;
 
     /**
      * DNS hostname of the IP address.
-     *
      * @return the value
-     */
+     **/
     public String getDnsHostName() {
         return dnsHostName;
     }
 
-    /** Name of the created resource. */
+    /**
+     * Name of the created resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedResourceName")
     private final String assignedResourceName;
 
     /**
      * Name of the created resource.
-     *
      * @return the value
-     */
+     **/
     public String getAssignedResourceName() {
         return assignedResourceName;
     }
 
-    /** Type of the resource. */
-    public enum AssignedResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the resource.
+     **/
+    public enum AssignedResourceType {
         Resource("Resource"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -631,41 +654,44 @@ public final class IpInventorySubnetResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** Type of the resource. */
+    /**
+     * Type of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedResourceType")
     private final AssignedResourceType assignedResourceType;
 
     /**
      * Type of the resource.
-     *
      * @return the value
-     */
+     **/
     public AssignedResourceType getAssignedResourceType() {
         return assignedResourceType;
     }
 
-    /** Address type of the allocated private IP address. */
+    /**
+     * Address type of the allocated private IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressType")
     private final String addressType;
 
     /**
      * Address type of the allocated private IP address.
-     *
      * @return the value
-     */
+     **/
     public String getAddressType() {
         return addressType;
     }
 
-    /** Assigned time of the private IP address. */
+    /**
+     * Assigned time of the private IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedTime")
     private final java.util.Date assignedTime;
 
     /**
      * Assigned time of the private IP address.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getAssignedTime() {
         return assignedTime;
     }
@@ -677,7 +703,6 @@ public final class IpInventorySubnetResourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

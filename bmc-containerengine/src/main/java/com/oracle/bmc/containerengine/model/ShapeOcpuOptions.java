@@ -5,22 +5,19 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * Properties of OCPUs. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * Properties of OCPUs.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeOcpuOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ShapeOcpuOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ShapeOcpuOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"min", "max"})
     public ShapeOcpuOptions(Float min, Float max) {
@@ -31,31 +28,33 @@ public final class ShapeOcpuOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The minimum number of OCPUs. */
+        /**
+         * The minimum number of OCPUs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Float min;
 
         /**
          * The minimum number of OCPUs.
-         *
          * @param min the value to set
          * @return this builder
-         */
+         **/
         public Builder min(Float min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-        /** The maximum number of OCPUs. */
+        /**
+         * The maximum number of OCPUs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Float max;
 
         /**
          * The maximum number of OCPUs.
-         *
          * @param max the value to set
          * @return this builder
-         */
+         **/
         public Builder max(Float max) {
             this.max = max;
             this.__explicitlySet__.add("max");
@@ -85,7 +84,9 @@ public final class ShapeOcpuOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,28 +95,30 @@ public final class ShapeOcpuOptions
         return new Builder().copy(this);
     }
 
-    /** The minimum number of OCPUs. */
+    /**
+     * The minimum number of OCPUs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Float min;
 
     /**
      * The minimum number of OCPUs.
-     *
      * @return the value
-     */
+     **/
     public Float getMin() {
         return min;
     }
 
-    /** The maximum number of OCPUs. */
+    /**
+     * The maximum number of OCPUs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Float max;
 
     /**
      * The maximum number of OCPUs.
-     *
      * @return the value
-     */
+     **/
     public Float getMax() {
         return max;
     }
@@ -127,7 +130,6 @@ public final class ShapeOcpuOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

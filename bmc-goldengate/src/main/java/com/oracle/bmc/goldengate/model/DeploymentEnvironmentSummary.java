@@ -5,23 +5,23 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The metadata specific to a production or development/testing environment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The metadata specific to a production or development/testing environment.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeploymentEnvironmentSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeploymentEnvironmentSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeploymentEnvironmentSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "environmentType",
@@ -62,46 +62,47 @@ public final class DeploymentEnvironmentSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specifies whether the deployment is used in a production or development/testing
-         * environment.
-         */
+         * Specifies whether the deployment is used in a production or development/testing environment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private EnvironmentType environmentType;
 
         /**
-         * Specifies whether the deployment is used in a production or development/testing
-         * environment.
+         * Specifies whether the deployment is used in a production or development/testing environment.
          *
          * @param environmentType the value to set
          * @return this builder
-         */
+         **/
         public Builder environmentType(EnvironmentType environmentType) {
             this.environmentType = environmentType;
             this.__explicitlySet__.add("environmentType");
             return this;
         }
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
-         */
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
          *
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(DeploymentCategory category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -110,13 +111,16 @@ public final class DeploymentEnvironmentSummary
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The minimum CPU core count. */
+        /**
+         * The minimum CPU core count.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minCpuCoreCount")
         private Integer minCpuCoreCount;
 
@@ -125,13 +129,16 @@ public final class DeploymentEnvironmentSummary
          *
          * @param minCpuCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minCpuCoreCount(Integer minCpuCoreCount) {
             this.minCpuCoreCount = minCpuCoreCount;
             this.__explicitlySet__.add("minCpuCoreCount");
             return this;
         }
-        /** The default CPU core count. */
+        /**
+         * The default CPU core count.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultCpuCoreCount")
         private Integer defaultCpuCoreCount;
 
@@ -140,13 +147,16 @@ public final class DeploymentEnvironmentSummary
          *
          * @param defaultCpuCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultCpuCoreCount(Integer defaultCpuCoreCount) {
             this.defaultCpuCoreCount = defaultCpuCoreCount;
             this.__explicitlySet__.add("defaultCpuCoreCount");
             return this;
         }
-        /** The maximum CPU core count. */
+        /**
+         * The maximum CPU core count.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
         private Integer maxCpuCoreCount;
 
@@ -155,13 +165,16 @@ public final class DeploymentEnvironmentSummary
          *
          * @param maxCpuCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
             this.maxCpuCoreCount = maxCpuCoreCount;
             this.__explicitlySet__.add("maxCpuCoreCount");
             return this;
         }
-        /** Specifies whether the "Auto scaling" option should be enabled by default or not. */
+        /**
+         * Specifies whether the "Auto scaling" option should be enabled by default or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabledByDefault")
         private Boolean isAutoScalingEnabledByDefault;
 
@@ -170,13 +183,16 @@ public final class DeploymentEnvironmentSummary
          *
          * @param isAutoScalingEnabledByDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoScalingEnabledByDefault(Boolean isAutoScalingEnabledByDefault) {
             this.isAutoScalingEnabledByDefault = isAutoScalingEnabledByDefault;
             this.__explicitlySet__.add("isAutoScalingEnabledByDefault");
             return this;
         }
-        /** The multiplier value between CPU core count and network bandwidth. */
+        /**
+         * The multiplier value between CPU core count and network bandwidth.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkBandwidthPerOcpuInGbps")
         private Integer networkBandwidthPerOcpuInGbps;
 
@@ -185,13 +201,16 @@ public final class DeploymentEnvironmentSummary
          *
          * @param networkBandwidthPerOcpuInGbps the value to set
          * @return this builder
-         */
+         **/
         public Builder networkBandwidthPerOcpuInGbps(Integer networkBandwidthPerOcpuInGbps) {
             this.networkBandwidthPerOcpuInGbps = networkBandwidthPerOcpuInGbps;
             this.__explicitlySet__.add("networkBandwidthPerOcpuInGbps");
             return this;
         }
-        /** The multiplier value between CPU core count and memory size. */
+        /**
+         * The multiplier value between CPU core count and memory size.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOcpuInGBs")
         private Integer memoryPerOcpuInGBs;
 
@@ -200,13 +219,16 @@ public final class DeploymentEnvironmentSummary
          *
          * @param memoryPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryPerOcpuInGBs(Integer memoryPerOcpuInGBs) {
             this.memoryPerOcpuInGBs = memoryPerOcpuInGBs;
             this.__explicitlySet__.add("memoryPerOcpuInGBs");
             return this;
         }
-        /** The multiplier value between CPU core count and storage usage limit size. */
+        /**
+         * The multiplier value between CPU core count and storage usage limit size.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsageLimitPerOcpuInGBs")
         private Integer storageUsageLimitPerOcpuInGBs;
 
@@ -215,7 +237,7 @@ public final class DeploymentEnvironmentSummary
          *
          * @param storageUsageLimitPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder storageUsageLimitPerOcpuInGBs(Integer storageUsageLimitPerOcpuInGBs) {
             this.storageUsageLimitPerOcpuInGBs = storageUsageLimitPerOcpuInGBs;
             this.__explicitlySet__.add("storageUsageLimitPerOcpuInGBs");
@@ -280,7 +302,9 @@ public final class DeploymentEnvironmentSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -291,7 +315,8 @@ public final class DeploymentEnvironmentSummary
 
     /**
      * Specifies whether the deployment is used in a production or development/testing environment.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final EnvironmentType environmentType;
 
@@ -299,31 +324,33 @@ public final class DeploymentEnvironmentSummary
      * Specifies whether the deployment is used in a production or development/testing environment.
      *
      * @return the value
-     */
+     **/
     public EnvironmentType getEnvironmentType() {
         return environmentType;
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
-     */
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      *
      * @return the value
-     */
+     **/
     public DeploymentCategory getCategory() {
         return category;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -331,12 +358,15 @@ public final class DeploymentEnvironmentSummary
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The minimum CPU core count. */
+    /**
+     * The minimum CPU core count.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minCpuCoreCount")
     private final Integer minCpuCoreCount;
 
@@ -344,12 +374,15 @@ public final class DeploymentEnvironmentSummary
      * The minimum CPU core count.
      *
      * @return the value
-     */
+     **/
     public Integer getMinCpuCoreCount() {
         return minCpuCoreCount;
     }
 
-    /** The default CPU core count. */
+    /**
+     * The default CPU core count.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCpuCoreCount")
     private final Integer defaultCpuCoreCount;
 
@@ -357,12 +390,15 @@ public final class DeploymentEnvironmentSummary
      * The default CPU core count.
      *
      * @return the value
-     */
+     **/
     public Integer getDefaultCpuCoreCount() {
         return defaultCpuCoreCount;
     }
 
-    /** The maximum CPU core count. */
+    /**
+     * The maximum CPU core count.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
     private final Integer maxCpuCoreCount;
 
@@ -370,12 +406,15 @@ public final class DeploymentEnvironmentSummary
      * The maximum CPU core count.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxCpuCoreCount() {
         return maxCpuCoreCount;
     }
 
-    /** Specifies whether the "Auto scaling" option should be enabled by default or not. */
+    /**
+     * Specifies whether the "Auto scaling" option should be enabled by default or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabledByDefault")
     private final Boolean isAutoScalingEnabledByDefault;
 
@@ -383,12 +422,15 @@ public final class DeploymentEnvironmentSummary
      * Specifies whether the "Auto scaling" option should be enabled by default or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoScalingEnabledByDefault() {
         return isAutoScalingEnabledByDefault;
     }
 
-    /** The multiplier value between CPU core count and network bandwidth. */
+    /**
+     * The multiplier value between CPU core count and network bandwidth.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkBandwidthPerOcpuInGbps")
     private final Integer networkBandwidthPerOcpuInGbps;
 
@@ -396,12 +438,15 @@ public final class DeploymentEnvironmentSummary
      * The multiplier value between CPU core count and network bandwidth.
      *
      * @return the value
-     */
+     **/
     public Integer getNetworkBandwidthPerOcpuInGbps() {
         return networkBandwidthPerOcpuInGbps;
     }
 
-    /** The multiplier value between CPU core count and memory size. */
+    /**
+     * The multiplier value between CPU core count and memory size.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOcpuInGBs")
     private final Integer memoryPerOcpuInGBs;
 
@@ -409,12 +454,15 @@ public final class DeploymentEnvironmentSummary
      * The multiplier value between CPU core count and memory size.
      *
      * @return the value
-     */
+     **/
     public Integer getMemoryPerOcpuInGBs() {
         return memoryPerOcpuInGBs;
     }
 
-    /** The multiplier value between CPU core count and storage usage limit size. */
+    /**
+     * The multiplier value between CPU core count and storage usage limit size.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsageLimitPerOcpuInGBs")
     private final Integer storageUsageLimitPerOcpuInGBs;
 
@@ -422,7 +470,7 @@ public final class DeploymentEnvironmentSummary
      * The multiplier value between CPU core count and storage usage limit size.
      *
      * @return the value
-     */
+     **/
     public Integer getStorageUsageLimitPerOcpuInGBs() {
         return storageUsageLimitPerOcpuInGBs;
     }
@@ -434,7 +482,6 @@ public final class DeploymentEnvironmentSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

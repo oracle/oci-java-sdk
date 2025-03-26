@@ -5,16 +5,18 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * Common lifecycle states for resources in a Sql Endpoint: CREATING - The resource is being created
- * and might not be usable until the entire metadata is defined. ACTIVE - The resource is valid and
- * available for access. DELETING - The resource is being deleted, and might require a deep clean of
- * any children. DELETED - The resource has been deleted, and isn't available. FAILED - The resource
- * is in a failed state due to validation or other errors. UPDATING - The resource is being updated
- * and might not be usable until all changes are commited. NEEDS_ATTENTION - The resource needs
- * customer/operator intervention.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum SqlEndpointLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+ * Common lifecycle states for resources in a Sql Endpoint:
+ * CREATING        - The resource is being created and might not be usable until the entire metadata is defined.
+ * ACTIVE          - The resource is valid and available for access.
+ * DELETING        - The resource is being deleted, and might require a deep clean of any children.
+ * DELETED         - The resource has been deleted, and isn't available.
+ * FAILED          - The resource is in a failed state due to validation or other errors.
+ * UPDATING        - The resource is being updated and might not be usable until all changes are commited.
+ * NEEDS_ATTENTION - The resource needs customer/operator intervention.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+public enum SqlEndpointLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),

@@ -5,24 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * It is the event in which the maintenance action will be be performed on the customer instance on
- * the scheduled date and time. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * It is the event in which the maintenance action will be be performed on the customer instance on the scheduled date and time.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceMaintenanceEvent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceMaintenanceEvent.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceMaintenanceEvent
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -109,44 +108,44 @@ public final class InstanceMaintenanceEvent
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -154,65 +153,67 @@ public final class InstanceMaintenanceEvent
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance event.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance event.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the instance. */
+        /**
+         * The OCID of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the instance.
-         *
          * @param instanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /** The OCID of the compartment that contains the instance. */
+        /**
+         * The OCID of the compartment that contains the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -221,94 +222,88 @@ public final class InstanceMaintenanceEvent
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * This indicates the priority and allowed actions for this Maintenance. Higher priority
-         * forms of Maintenance have tighter restrictions and may not be rescheduled, while lower
-         * priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see
-         * the [Instance
-         * Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-         * documentation for details.
-         */
+         * This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have
+         * tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled,
+         * deferred, or even cancelled. Please see the
+         * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceCategory")
         private MaintenanceCategory maintenanceCategory;
 
         /**
-         * This indicates the priority and allowed actions for this Maintenance. Higher priority
-         * forms of Maintenance have tighter restrictions and may not be rescheduled, while lower
-         * priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see
-         * the [Instance
-         * Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-         * documentation for details.
+         * This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have
+         * tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled,
+         * deferred, or even cancelled. Please see the
+         * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
          *
          * @param maintenanceCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder maintenanceCategory(MaintenanceCategory maintenanceCategory) {
             this.maintenanceCategory = maintenanceCategory;
             this.__explicitlySet__.add("maintenanceCategory");
             return this;
         }
         /**
-         * This is the reason that Maintenance is being performed. See [Instance
-         * Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-         * documentation for details.
-         */
+         * This is the reason that Maintenance is being performed. See
+         * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceReason")
         private MaintenanceReason maintenanceReason;
 
         /**
-         * This is the reason that Maintenance is being performed. See [Instance
-         * Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-         * documentation for details.
+         * This is the reason that Maintenance is being performed. See
+         * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
          *
          * @param maintenanceReason the value to set
          * @return this builder
-         */
+         **/
         public Builder maintenanceReason(MaintenanceReason maintenanceReason) {
             this.maintenanceReason = maintenanceReason;
             this.__explicitlySet__.add("maintenanceReason");
             return this;
         }
         /**
-         * This is the action that will be performed on the Instance by OCI when the Maintenance
-         * begins.
-         */
+         * This is the action that will be performed on the Instance by OCI when the Maintenance begins.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceAction")
         private InstanceAction instanceAction;
 
         /**
-         * This is the action that will be performed on the Instance by OCI when the Maintenance
-         * begins.
+         * This is the action that will be performed on the Instance by OCI when the Maintenance begins.
          *
          * @param instanceAction the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceAction(InstanceAction instanceAction) {
             this.instanceAction = instanceAction;
             this.__explicitlySet__.add("instanceAction");
             return this;
         }
         /**
-         * These are alternative actions to the requested instanceAction that can be taken to
-         * resolve the Maintenance.
-         */
+         * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternativeResolutionActions")
         private java.util.List<InstanceMaintenanceAlternativeResolutionActions>
                 alternativeResolutionActions;
 
         /**
-         * These are alternative actions to the requested instanceAction that can be taken to
-         * resolve the Maintenance.
+         * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
          *
          * @param alternativeResolutionActions the value to set
          * @return this builder
-         */
+         **/
         public Builder alternativeResolutionActions(
                 java.util.List<InstanceMaintenanceAlternativeResolutionActions>
                         alternativeResolutionActions) {
@@ -316,7 +311,10 @@ public final class InstanceMaintenanceEvent
             this.__explicitlySet__.add("alternativeResolutionActions");
             return this;
         }
-        /** The time at which the Maintenance actually started. */
+        /**
+         * The time at which the Maintenance actually started.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
@@ -325,13 +323,16 @@ public final class InstanceMaintenanceEvent
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time at which the Maintenance actually finished. */
+        /**
+         * The time at which the Maintenance actually finished.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
@@ -340,32 +341,36 @@ public final class InstanceMaintenanceEvent
          *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /**
-         * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance
-         * will not begin before this time.
-         */
+         * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before
+         * this time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeWindowStart")
         private java.util.Date timeWindowStart;
 
         /**
-         * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance
-         * will not begin before this time.
+         * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before
+         * this time.
          *
          * @param timeWindowStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeWindowStart(java.util.Date timeWindowStart) {
             this.timeWindowStart = timeWindowStart;
             this.__explicitlySet__.add("timeWindowStart");
             return this;
         }
-        /** The duration of the time window Maintenance is scheduled to begin within. */
+        /**
+         * The duration of the time window Maintenance is scheduled to begin within.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startWindowDuration")
         private String startWindowDuration;
 
@@ -374,89 +379,92 @@ public final class InstanceMaintenanceEvent
          *
          * @param startWindowDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder startWindowDuration(String startWindowDuration) {
             this.startWindowDuration = startWindowDuration;
             this.__explicitlySet__.add("startWindowDuration");
             return this;
         }
         /**
-         * This is the estimated duration of the Maintenance, once the Maintenance has entered the
-         * STARTED state.
-         */
+         * This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedDuration")
         private String estimatedDuration;
 
         /**
-         * This is the estimated duration of the Maintenance, once the Maintenance has entered the
-         * STARTED state.
+         * This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
          *
          * @param estimatedDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedDuration(String estimatedDuration) {
             this.estimatedDuration = estimatedDuration;
             this.__explicitlySet__.add("estimatedDuration");
             return this;
         }
         /**
-         * It is the scheduled hard due date and time of the maintenance event. The maintenance
-         * event will happen at this time and the due date will not be extended.
-         */
+         * It is the scheduled hard due date and time of the maintenance event.
+         * The maintenance event will happen at this time and the due date will not be extended.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeHardDueDate")
         private java.util.Date timeHardDueDate;
 
         /**
-         * It is the scheduled hard due date and time of the maintenance event. The maintenance
-         * event will happen at this time and the due date will not be extended.
+         * It is the scheduled hard due date and time of the maintenance event.
+         * The maintenance event will happen at this time and the due date will not be extended.
          *
          * @param timeHardDueDate the value to set
          * @return this builder
-         */
+         **/
         public Builder timeHardDueDate(java.util.Date timeHardDueDate) {
             this.timeHardDueDate = timeHardDueDate;
             this.__explicitlySet__.add("timeHardDueDate");
             return this;
         }
         /**
-         * Indicates if this MaintenanceEvent is capable of being rescheduled up to the
-         * timeHardDueDate.
-         */
+         * Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canReschedule")
         private Boolean canReschedule;
 
         /**
-         * Indicates if this MaintenanceEvent is capable of being rescheduled up to the
-         * timeHardDueDate.
+         * Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
          *
          * @param canReschedule the value to set
          * @return this builder
-         */
+         **/
         public Builder canReschedule(Boolean canReschedule) {
             this.canReschedule = canReschedule;
             this.__explicitlySet__.add("canReschedule");
             return this;
         }
         /**
-         * The date and time the maintenance event was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         * The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the maintenance event was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current state of the maintenance event. */
+        /**
+         * The current state of the maintenance event.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -465,13 +473,16 @@ public final class InstanceMaintenanceEvent
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Provides more details about the state of the maintenance event. */
+        /**
+         * Provides more details about the state of the maintenance event.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -480,13 +491,16 @@ public final class InstanceMaintenanceEvent
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The creator of the maintenance event. */
+        /**
+         * The creator of the maintenance event.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private CreatedBy createdBy;
 
@@ -495,74 +509,76 @@ public final class InstanceMaintenanceEvent
          *
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(CreatedBy createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
         /**
-         * It is the descriptive information about the maintenance taking place on the customer
-         * instance.
-         */
+         * It is the descriptive information about the maintenance taking place on the customer instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * It is the descriptive information about the maintenance taking place on the customer
-         * instance.
+         * It is the descriptive information about the maintenance taking place on the customer instance.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * A unique identifier that will group Instances that have a relationship with one another
-         * and must be scheduled together for the Maintenance to proceed. Any Instances that have a
-         * relationship with one another from a Maintenance perspective will have a matching
-         * correlationToken.
-         */
+         * A unique identifier that will group Instances that have a relationship with one another and must be scheduled
+         * together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance
+         * perspective will have a matching correlationToken.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("correlationToken")
         private String correlationToken;
 
         /**
-         * A unique identifier that will group Instances that have a relationship with one another
-         * and must be scheduled together for the Maintenance to proceed. Any Instances that have a
-         * relationship with one another from a Maintenance perspective will have a matching
-         * correlationToken.
+         * A unique identifier that will group Instances that have a relationship with one another and must be scheduled
+         * together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance
+         * perspective will have a matching correlationToken.
          *
          * @param correlationToken the value to set
          * @return this builder
-         */
+         **/
         public Builder correlationToken(String correlationToken) {
             this.correlationToken = correlationToken;
             this.__explicitlySet__.add("correlationToken");
             return this;
         }
         /**
-         * For Instances that have local storage, this field is set to true when local storage will
-         * be deleted as a result of the Maintenance.
-         */
+         * For Instances that have local storage, this field is set to true when local storage
+         * will be deleted as a result of the Maintenance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canDeleteLocalStorage")
         private Boolean canDeleteLocalStorage;
 
         /**
-         * For Instances that have local storage, this field is set to true when local storage will
-         * be deleted as a result of the Maintenance.
+         * For Instances that have local storage, this field is set to true when local storage
+         * will be deleted as a result of the Maintenance.
          *
          * @param canDeleteLocalStorage the value to set
          * @return this builder
-         */
+         **/
         public Builder canDeleteLocalStorage(Boolean canDeleteLocalStorage) {
             this.canDeleteLocalStorage = canDeleteLocalStorage;
             this.__explicitlySet__.add("canDeleteLocalStorage");
             return this;
         }
-        /** Additional details of the maintenance in the form of json. */
+        /**
+         * Additional details of the maintenance in the form of json.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, String> additionalDetails;
 
@@ -571,7 +587,7 @@ public final class InstanceMaintenanceEvent
          *
          * @param additionalDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalDetails(java.util.Map<String, String> additionalDetails) {
             this.additionalDetails = additionalDetails;
             this.__explicitlySet__.add("additionalDetails");
@@ -696,7 +712,9 @@ public final class InstanceMaintenanceEvent
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -706,99 +724,101 @@ public final class InstanceMaintenanceEvent
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance event.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance event.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the instance. */
+    /**
+     * The OCID of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceId() {
         return instanceId;
     }
 
-    /** The OCID of the compartment that contains the instance. */
+    /**
+     * The OCID of the compartment that contains the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -806,19 +826,19 @@ public final class InstanceMaintenanceEvent
      * The OCID of the compartment that contains the instance.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * This indicates the priority and allowed actions for this Maintenance. Higher priority forms
-     * of Maintenance have tighter restrictions and may not be rescheduled, while lower
-     * priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the
-     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-     * documentation for details.
-     */
-    public enum MaintenanceCategory implements com.oracle.bmc.http.internal.BmcEnum {
+     * This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have
+     * tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled,
+     * deferred, or even cancelled. Please see the
+     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+     *
+     **/
+    public enum MaintenanceCategory {
         Emergency("EMERGENCY"),
         Mandatory("MANDATORY"),
         Flexible("FLEXIBLE"),
@@ -826,8 +846,8 @@ public final class InstanceMaintenanceEvent
         Notification("NOTIFICATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -867,34 +887,33 @@ public final class InstanceMaintenanceEvent
         }
     };
     /**
-     * This indicates the priority and allowed actions for this Maintenance. Higher priority forms
-     * of Maintenance have tighter restrictions and may not be rescheduled, while lower
-     * priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the
-     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-     * documentation for details.
-     */
+     * This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have
+     * tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled,
+     * deferred, or even cancelled. Please see the
+     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceCategory")
     private final MaintenanceCategory maintenanceCategory;
 
     /**
-     * This indicates the priority and allowed actions for this Maintenance. Higher priority forms
-     * of Maintenance have tighter restrictions and may not be rescheduled, while lower
-     * priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the
-     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-     * documentation for details.
+     * This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have
+     * tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled,
+     * deferred, or even cancelled. Please see the
+     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
      *
      * @return the value
-     */
+     **/
     public MaintenanceCategory getMaintenanceCategory() {
         return maintenanceCategory;
     }
 
     /**
-     * This is the reason that Maintenance is being performed. See [Instance
-     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-     * documentation for details.
-     */
-    public enum MaintenanceReason implements com.oracle.bmc.http.internal.BmcEnum {
+     * This is the reason that Maintenance is being performed. See
+     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+     *
+     **/
+    public enum MaintenanceReason {
         Evacuation("EVACUATION"),
         EnvironmentalFactors("ENVIRONMENTAL_FACTORS"),
         Decommission("DECOMMISSION"),
@@ -903,8 +922,8 @@ public final class InstanceMaintenanceEvent
         SecurityUpdate("SECURITY_UPDATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -944,36 +963,36 @@ public final class InstanceMaintenanceEvent
         }
     };
     /**
-     * This is the reason that Maintenance is being performed. See [Instance
-     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-     * documentation for details.
-     */
+     * This is the reason that Maintenance is being performed. See
+     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceReason")
     private final MaintenanceReason maintenanceReason;
 
     /**
-     * This is the reason that Maintenance is being performed. See [Instance
-     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm)
-     * documentation for details.
+     * This is the reason that Maintenance is being performed. See
+     * [Instance Maintenance](https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
      *
      * @return the value
-     */
+     **/
     public MaintenanceReason getMaintenanceReason() {
         return maintenanceReason;
     }
 
     /**
      * This is the action that will be performed on the Instance by OCI when the Maintenance begins.
-     */
-    public enum InstanceAction implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum InstanceAction {
         RebootMigration("REBOOT_MIGRATION"),
         Terminate("TERMINATE"),
         Stop("STOP"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1014,7 +1033,8 @@ public final class InstanceMaintenanceEvent
     };
     /**
      * This is the action that will be performed on the Instance by OCI when the Maintenance begins.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAction")
     private final InstanceAction instanceAction;
 
@@ -1022,31 +1042,33 @@ public final class InstanceMaintenanceEvent
      * This is the action that will be performed on the Instance by OCI when the Maintenance begins.
      *
      * @return the value
-     */
+     **/
     public InstanceAction getInstanceAction() {
         return instanceAction;
     }
 
     /**
-     * These are alternative actions to the requested instanceAction that can be taken to resolve
-     * the Maintenance.
-     */
+     * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternativeResolutionActions")
     private final java.util.List<InstanceMaintenanceAlternativeResolutionActions>
             alternativeResolutionActions;
 
     /**
-     * These are alternative actions to the requested instanceAction that can be taken to resolve
-     * the Maintenance.
+     * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<InstanceMaintenanceAlternativeResolutionActions>
             getAlternativeResolutionActions() {
         return alternativeResolutionActions;
     }
 
-    /** The time at which the Maintenance actually started. */
+    /**
+     * The time at which the Maintenance actually started.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
@@ -1054,12 +1076,15 @@ public final class InstanceMaintenanceEvent
      * The time at which the Maintenance actually started.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time at which the Maintenance actually finished. */
+    /**
+     * The time at which the Maintenance actually finished.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
@@ -1067,29 +1092,33 @@ public final class InstanceMaintenanceEvent
      * The time at which the Maintenance actually finished.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
     /**
-     * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will
-     * not begin before this time.
-     */
+     * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before
+     * this time.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeWindowStart")
     private final java.util.Date timeWindowStart;
 
     /**
-     * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will
-     * not begin before this time.
+     * The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before
+     * this time.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeWindowStart() {
         return timeWindowStart;
     }
 
-    /** The duration of the time window Maintenance is scheduled to begin within. */
+    /**
+     * The duration of the time window Maintenance is scheduled to begin within.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startWindowDuration")
     private final String startWindowDuration;
 
@@ -1097,48 +1126,49 @@ public final class InstanceMaintenanceEvent
      * The duration of the time window Maintenance is scheduled to begin within.
      *
      * @return the value
-     */
+     **/
     public String getStartWindowDuration() {
         return startWindowDuration;
     }
 
     /**
-     * This is the estimated duration of the Maintenance, once the Maintenance has entered the
-     * STARTED state.
-     */
+     * This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedDuration")
     private final String estimatedDuration;
 
     /**
-     * This is the estimated duration of the Maintenance, once the Maintenance has entered the
-     * STARTED state.
+     * This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
      *
      * @return the value
-     */
+     **/
     public String getEstimatedDuration() {
         return estimatedDuration;
     }
 
     /**
-     * It is the scheduled hard due date and time of the maintenance event. The maintenance event
-     * will happen at this time and the due date will not be extended.
-     */
+     * It is the scheduled hard due date and time of the maintenance event.
+     * The maintenance event will happen at this time and the due date will not be extended.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeHardDueDate")
     private final java.util.Date timeHardDueDate;
 
     /**
-     * It is the scheduled hard due date and time of the maintenance event. The maintenance event
-     * will happen at this time and the due date will not be extended.
+     * It is the scheduled hard due date and time of the maintenance event.
+     * The maintenance event will happen at this time and the due date will not be extended.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeHardDueDate() {
         return timeHardDueDate;
     }
 
     /**
      * Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canReschedule")
     private final Boolean canReschedule;
 
@@ -1146,30 +1176,34 @@ public final class InstanceMaintenanceEvent
      * Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanReschedule() {
         return canReschedule;
     }
 
     /**
-     * The date and time the maintenance event was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     * The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the maintenance event was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The current state of the maintenance event. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the maintenance event.
+     *
+     **/
+    public enum LifecycleState {
         Scheduled("SCHEDULED"),
         Started("STARTED"),
         Processing("PROCESSING"),
@@ -1178,8 +1212,8 @@ public final class InstanceMaintenanceEvent
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1218,7 +1252,10 @@ public final class InstanceMaintenanceEvent
             return UnknownEnumValue;
         }
     };
-    /** The current state of the maintenance event. */
+    /**
+     * The current state of the maintenance event.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -1226,12 +1263,15 @@ public final class InstanceMaintenanceEvent
      * The current state of the maintenance event.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Provides more details about the state of the maintenance event. */
+    /**
+     * Provides more details about the state of the maintenance event.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -1239,19 +1279,22 @@ public final class InstanceMaintenanceEvent
      * Provides more details about the state of the maintenance event.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The creator of the maintenance event. */
-    public enum CreatedBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The creator of the maintenance event.
+     *
+     **/
+    public enum CreatedBy {
         Customer("CUSTOMER"),
         System("SYSTEM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1290,7 +1333,10 @@ public final class InstanceMaintenanceEvent
             return UnknownEnumValue;
         }
     };
-    /** The creator of the maintenance event. */
+    /**
+     * The creator of the maintenance event.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final CreatedBy createdBy;
 
@@ -1298,67 +1344,69 @@ public final class InstanceMaintenanceEvent
      * The creator of the maintenance event.
      *
      * @return the value
-     */
+     **/
     public CreatedBy getCreatedBy() {
         return createdBy;
     }
 
     /**
-     * It is the descriptive information about the maintenance taking place on the customer
-     * instance.
-     */
+     * It is the descriptive information about the maintenance taking place on the customer instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * It is the descriptive information about the maintenance taking place on the customer
-     * instance.
+     * It is the descriptive information about the maintenance taking place on the customer instance.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * A unique identifier that will group Instances that have a relationship with one another and
-     * must be scheduled together for the Maintenance to proceed. Any Instances that have a
-     * relationship with one another from a Maintenance perspective will have a matching
-     * correlationToken.
-     */
+     * A unique identifier that will group Instances that have a relationship with one another and must be scheduled
+     * together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance
+     * perspective will have a matching correlationToken.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("correlationToken")
     private final String correlationToken;
 
     /**
-     * A unique identifier that will group Instances that have a relationship with one another and
-     * must be scheduled together for the Maintenance to proceed. Any Instances that have a
-     * relationship with one another from a Maintenance perspective will have a matching
-     * correlationToken.
+     * A unique identifier that will group Instances that have a relationship with one another and must be scheduled
+     * together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance
+     * perspective will have a matching correlationToken.
      *
      * @return the value
-     */
+     **/
     public String getCorrelationToken() {
         return correlationToken;
     }
 
     /**
-     * For Instances that have local storage, this field is set to true when local storage will be
-     * deleted as a result of the Maintenance.
-     */
+     * For Instances that have local storage, this field is set to true when local storage
+     * will be deleted as a result of the Maintenance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canDeleteLocalStorage")
     private final Boolean canDeleteLocalStorage;
 
     /**
-     * For Instances that have local storage, this field is set to true when local storage will be
-     * deleted as a result of the Maintenance.
+     * For Instances that have local storage, this field is set to true when local storage
+     * will be deleted as a result of the Maintenance.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanDeleteLocalStorage() {
         return canDeleteLocalStorage;
     }
 
-    /** Additional details of the maintenance in the form of json. */
+    /**
+     * Additional details of the maintenance in the form of json.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, String> additionalDetails;
 
@@ -1366,7 +1414,7 @@ public final class InstanceMaintenanceEvent
      * Additional details of the maintenance in the form of json.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdditionalDetails() {
         return additionalDetails;
     }
@@ -1378,7 +1426,6 @@ public final class InstanceMaintenanceEvent
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

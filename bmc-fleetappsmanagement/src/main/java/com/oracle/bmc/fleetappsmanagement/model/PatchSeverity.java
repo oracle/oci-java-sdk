@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** Possible Patch severities. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum PatchSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Patch severities.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum PatchSeverity {
     Critical("CRITICAL"),
     High("HIGH"),
     Medium("MEDIUM"),

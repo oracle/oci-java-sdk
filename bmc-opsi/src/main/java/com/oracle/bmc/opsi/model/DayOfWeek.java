@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Day of the week in which the news report will be sent if the frequency is set to WEEKLY. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum DayOfWeek implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum DayOfWeek {
     Monday("MONDAY"),
     Tuesday("TUESDAY"),
     Wednesday("WEDNESDAY"),

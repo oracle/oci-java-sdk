@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Response of an individual attribute item in the bulk pin operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Response of an individual attribute item in the bulk pin operation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AttributePinResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AttributePinResponse
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AttributePinResponse.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AttributePinResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "attributeName",
@@ -49,7 +48,10 @@ public final class AttributePinResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Attribute that was pinned by this bulk operation. */
+        /**
+         * Attribute that was pinned by this bulk operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
         private String attributeName;
 
@@ -58,13 +60,16 @@ public final class AttributePinResponse
          *
          * @param attributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeName(String attributeName) {
             this.attributeName = attributeName;
             this.__explicitlySet__.add("attributeName");
             return this;
         }
-        /** Notes added to this attribute. */
+        /**
+         * Notes added to this attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notes")
         private String notes;
 
@@ -73,13 +78,16 @@ public final class AttributePinResponse
          *
          * @param notes the value to set
          * @return this builder
-         */
+         **/
         public Builder notes(String notes) {
             this.notes = notes;
             this.__explicitlySet__.add("notes");
             return this;
         }
-        /** Type of operation - pin. */
+        /**
+         * Type of operation - pin.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -88,96 +96,85 @@ public final class AttributePinResponse
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
         /**
-         * Namespace of the attribute whose properties were updated. The attributeNameSpace will
-         * default to TRACES if it is not passed in.
-         */
+         * Namespace of the attribute whose properties were updated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
         private AttributeNameSpace attributeNameSpace;
 
         /**
-         * Namespace of the attribute whose properties were updated. The attributeNameSpace will
-         * default to TRACES if it is not passed in.
+         * Namespace of the attribute whose properties were updated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
          *
          * @param attributeNameSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeNameSpace(AttributeNameSpace attributeNameSpace) {
             this.attributeNameSpace = attributeNameSpace;
             this.__explicitlySet__.add("attributeNameSpace");
             return this;
         }
         /**
-         * Status of the attribute after this operation. The attribute can have one of the following
-         * statuses after the pin operation. The attribute can have either a success status or an
-         * error status. The status of the attribute must be correlated with the operation status
-         * property in the bulk operation metadata object. The bulk operation will be successful
-         * only when all attributes in the bulk request are processed successfully and they get a
-         * success status back. The following are successful status values of individual attribute
-         * items in a bulk attribute pin operation. ATTRIBUTE_PINNED - The attribute is marked
-         * pinned and associated notes have been added. ATTRIBUTE_ALREADY_PINNED - The caller is
-         * trying to pin an attribute that has already been pinned. DUPLICATE_ATTRIBUTE - The
-         * attribute is a duplicate of an attribute that was present in this bulk request. Note that
-         * we deduplicate the attribute collection, process only unique attributes, and call out
-         * duplicates. A duplicate attribute in a bulk request will not prevent the processing of
-         * further attributes in the bulk operation. The following values are error statuses and the
-         * bulk processing is stopped when the first error is encountered. PIN_NOT_ALLOWED - The
-         * caller has asked to pin an active attribute which is not allowed. INVALID_ATTRIBUTE - The
-         * attribute is invalid. ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there
-         * was another attribute in this bulk request collection that resulted in a processing
-         * error.
-         */
+         * Status of the attribute after this operation.  The attribute can have one of the following statuses after the pin operation.  The attribute
+         * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+         * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+         * The following are successful status values of individual attribute items in a bulk attribute pin operation.
+         * ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have been added.
+         * ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has already been pinned.
+         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+         * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+         * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
+         * PIN_NOT_ALLOWED - The caller has asked to pin an active attribute which is not allowed.
+         * INVALID_ATTRIBUTE - The attribute is invalid.
+         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeStatus")
         private AttributeStatus attributeStatus;
 
         /**
-         * Status of the attribute after this operation. The attribute can have one of the following
-         * statuses after the pin operation. The attribute can have either a success status or an
-         * error status. The status of the attribute must be correlated with the operation status
-         * property in the bulk operation metadata object. The bulk operation will be successful
-         * only when all attributes in the bulk request are processed successfully and they get a
-         * success status back. The following are successful status values of individual attribute
-         * items in a bulk attribute pin operation. ATTRIBUTE_PINNED - The attribute is marked
-         * pinned and associated notes have been added. ATTRIBUTE_ALREADY_PINNED - The caller is
-         * trying to pin an attribute that has already been pinned. DUPLICATE_ATTRIBUTE - The
-         * attribute is a duplicate of an attribute that was present in this bulk request. Note that
-         * we deduplicate the attribute collection, process only unique attributes, and call out
-         * duplicates. A duplicate attribute in a bulk request will not prevent the processing of
-         * further attributes in the bulk operation. The following values are error statuses and the
-         * bulk processing is stopped when the first error is encountered. PIN_NOT_ALLOWED - The
-         * caller has asked to pin an active attribute which is not allowed. INVALID_ATTRIBUTE - The
-         * attribute is invalid. ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there
-         * was another attribute in this bulk request collection that resulted in a processing
-         * error.
+         * Status of the attribute after this operation.  The attribute can have one of the following statuses after the pin operation.  The attribute
+         * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+         * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+         * The following are successful status values of individual attribute items in a bulk attribute pin operation.
+         * ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have been added.
+         * ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has already been pinned.
+         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+         * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+         * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
+         * PIN_NOT_ALLOWED - The caller has asked to pin an active attribute which is not allowed.
+         * INVALID_ATTRIBUTE - The attribute is invalid.
+         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
          *
          * @param attributeStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeStatus(AttributeStatus attributeStatus) {
             this.attributeStatus = attributeStatus;
             this.__explicitlySet__.add("attributeStatus");
             return this;
         }
         /**
-         * Time when the attribute was activated or deactivated. Note that ingest might not have
-         * picked up the changes even if this time has elapsed.
-         */
+         * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the attribute was activated or deactivated. Note that ingest might not have
-         * picked up the changes even if this time has elapsed.
+         * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -226,7 +223,9 @@ public final class AttributePinResponse
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -235,7 +234,10 @@ public final class AttributePinResponse
         return new Builder().copy(this);
     }
 
-    /** Attribute that was pinned by this bulk operation. */
+    /**
+     * Attribute that was pinned by this bulk operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
     private final String attributeName;
 
@@ -243,12 +245,15 @@ public final class AttributePinResponse
      * Attribute that was pinned by this bulk operation.
      *
      * @return the value
-     */
+     **/
     public String getAttributeName() {
         return attributeName;
     }
 
-    /** Notes added to this attribute. */
+    /**
+     * Notes added to this attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notes")
     private final String notes;
 
@@ -256,18 +261,21 @@ public final class AttributePinResponse
      * Notes added to this attribute.
      *
      * @return the value
-     */
+     **/
     public String getNotes() {
         return notes;
     }
 
-    /** Type of operation - pin. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation - pin.
+     *
+     **/
+    public enum OperationType {
         Pin("PIN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -306,7 +314,10 @@ public final class AttributePinResponse
             return UnknownEnumValue;
         }
     };
-    /** Type of operation - pin. */
+    /**
+     * Type of operation - pin.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -314,22 +325,23 @@ public final class AttributePinResponse
      * Type of operation - pin.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
     /**
-     * Namespace of the attribute whose properties were updated. The attributeNameSpace will default
-     * to TRACES if it is not passed in.
-     */
-    public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
+     * Namespace of the attribute whose properties were updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
+    public enum AttributeNameSpace {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -369,42 +381,39 @@ public final class AttributePinResponse
         }
     };
     /**
-     * Namespace of the attribute whose properties were updated. The attributeNameSpace will default
-     * to TRACES if it is not passed in.
-     */
+     * Namespace of the attribute whose properties were updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
     private final AttributeNameSpace attributeNameSpace;
 
     /**
-     * Namespace of the attribute whose properties were updated. The attributeNameSpace will default
-     * to TRACES if it is not passed in.
+     * Namespace of the attribute whose properties were updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
      *
      * @return the value
-     */
+     **/
     public AttributeNameSpace getAttributeNameSpace() {
         return attributeNameSpace;
     }
 
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the pin operation. The attribute can have either a success status or an error
-     * status. The status of the attribute must be correlated with the operation status property in
-     * the bulk operation metadata object. The bulk operation will be successful only when all
-     * attributes in the bulk request are processed successfully and they get a success status back.
-     * The following are successful status values of individual attribute items in a bulk attribute
-     * pin operation. ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have
-     * been added. ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has
-     * already been pinned. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that
-     * was present in this bulk request. Note that we deduplicate the attribute collection, process
-     * only unique attributes, and call out duplicates. A duplicate attribute in a bulk request will
-     * not prevent the processing of further attributes in the bulk operation. The following values
-     * are error statuses and the bulk processing is stopped when the first error is encountered.
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the pin operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk attribute pin operation.
+     * ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have been added.
+     * ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has already been pinned.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
      * PIN_NOT_ALLOWED - The caller has asked to pin an active attribute which is not allowed.
-     * INVALID_ATTRIBUTE - The attribute is invalid. ATTRIBUTE_NOT_PROCESSED - The attribute was not
-     * processed, as there was another attribute in this bulk request collection that resulted in a
-     * processing error.
-     */
-    public enum AttributeStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * INVALID_ATTRIBUTE - The attribute is invalid.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     *
+     **/
+    public enum AttributeStatus {
         AttributeAlreadyPinned("ATTRIBUTE_ALREADY_PINNED"),
         AttributePinned("ATTRIBUTE_PINNED"),
         PinNotAllowed("PIN_NOT_ALLOWED"),
@@ -413,8 +422,8 @@ public final class AttributePinResponse
         AttributeNotProcessed("ATTRIBUTE_NOT_PROCESSED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -454,65 +463,55 @@ public final class AttributePinResponse
         }
     };
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the pin operation. The attribute can have either a success status or an error
-     * status. The status of the attribute must be correlated with the operation status property in
-     * the bulk operation metadata object. The bulk operation will be successful only when all
-     * attributes in the bulk request are processed successfully and they get a success status back.
-     * The following are successful status values of individual attribute items in a bulk attribute
-     * pin operation. ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have
-     * been added. ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has
-     * already been pinned. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that
-     * was present in this bulk request. Note that we deduplicate the attribute collection, process
-     * only unique attributes, and call out duplicates. A duplicate attribute in a bulk request will
-     * not prevent the processing of further attributes in the bulk operation. The following values
-     * are error statuses and the bulk processing is stopped when the first error is encountered.
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the pin operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk attribute pin operation.
+     * ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have been added.
+     * ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has already been pinned.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
      * PIN_NOT_ALLOWED - The caller has asked to pin an active attribute which is not allowed.
-     * INVALID_ATTRIBUTE - The attribute is invalid. ATTRIBUTE_NOT_PROCESSED - The attribute was not
-     * processed, as there was another attribute in this bulk request collection that resulted in a
-     * processing error.
-     */
+     * INVALID_ATTRIBUTE - The attribute is invalid.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeStatus")
     private final AttributeStatus attributeStatus;
 
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the pin operation. The attribute can have either a success status or an error
-     * status. The status of the attribute must be correlated with the operation status property in
-     * the bulk operation metadata object. The bulk operation will be successful only when all
-     * attributes in the bulk request are processed successfully and they get a success status back.
-     * The following are successful status values of individual attribute items in a bulk attribute
-     * pin operation. ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have
-     * been added. ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has
-     * already been pinned. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that
-     * was present in this bulk request. Note that we deduplicate the attribute collection, process
-     * only unique attributes, and call out duplicates. A duplicate attribute in a bulk request will
-     * not prevent the processing of further attributes in the bulk operation. The following values
-     * are error statuses and the bulk processing is stopped when the first error is encountered.
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the pin operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk attribute pin operation.
+     * ATTRIBUTE_PINNED - The attribute is marked pinned and associated notes have been added.
+     * ATTRIBUTE_ALREADY_PINNED - The caller is trying to pin an attribute that has already been pinned.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
      * PIN_NOT_ALLOWED - The caller has asked to pin an active attribute which is not allowed.
-     * INVALID_ATTRIBUTE - The attribute is invalid. ATTRIBUTE_NOT_PROCESSED - The attribute was not
-     * processed, as there was another attribute in this bulk request collection that resulted in a
-     * processing error.
+     * INVALID_ATTRIBUTE - The attribute is invalid.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
      *
      * @return the value
-     */
+     **/
     public AttributeStatus getAttributeStatus() {
         return attributeStatus;
     }
 
     /**
-     * Time when the attribute was activated or deactivated. Note that ingest might not have picked
-     * up the changes even if this time has elapsed.
-     */
+     * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the attribute was activated or deactivated. Note that ingest might not have picked
-     * up the changes even if this time has elapsed.
+     * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -524,7 +523,6 @@ public final class AttributePinResponse
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

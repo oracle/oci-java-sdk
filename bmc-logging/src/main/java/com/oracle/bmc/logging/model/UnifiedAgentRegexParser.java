@@ -5,25 +5,25 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Regexp parser. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Regexp parser.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentRegexParser.Builder.class)
+    builder = UnifiedAgentRegexParser.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "parserType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "parserType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -89,31 +89,33 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-        /** Regex pattern. */
+        /**
+         * Regex pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
         /**
          * Regex pattern.
-         *
          * @param expression the value to set
          * @return this builder
-         */
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-        /** Time format. */
+        /**
+         * Time format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
         private String timeFormat;
 
         /**
          * Time format.
-         *
          * @param timeFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFormat(String timeFormat) {
             this.timeFormat = timeFormat;
             this.__explicitlySet__.add("timeFormat");
@@ -174,7 +176,9 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -206,28 +210,30 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
         this.timeFormat = timeFormat;
     }
 
-    /** Regex pattern. */
+    /**
+     * Regex pattern.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
     /**
      * Regex pattern.
-     *
      * @return the value
-     */
+     **/
     public String getExpression() {
         return expression;
     }
 
-    /** Time format. */
+    /**
+     * Time format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
     private final String timeFormat;
 
     /**
      * Time format.
-     *
      * @return the value
-     */
+     **/
     public String getTimeFormat() {
         return timeFormat;
     }
@@ -239,7 +245,6 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

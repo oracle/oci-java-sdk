@@ -5,24 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes specific to Apps that represent instances of Multicloud Service
- * App <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines attributes specific to Apps that represent instances of Multicloud Service App
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppExtensionMulticloudServiceAppApp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppExtensionMulticloudServiceAppApp.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppExtensionMulticloudServiceAppApp
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"multicloudServiceType", "multicloudPlatformUrl"})
     public AppExtensionMulticloudServiceAppApp(
@@ -35,62 +33,78 @@ public final class AppExtensionMulticloudServiceAppApp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specifies the service type for which the application is configured for multicloud
-         * integration. For applicable external service types, app will invoke multicloud service
-         * for runtime operations
-         *
-         * <p>*Added In:** 2301202328
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: true - returned: request - type: string - uniqueness:
-         * none
-         */
+         * Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
+         * <p>
+         **Added In:** 2301202328
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multicloudServiceType")
         private MulticloudServiceType multicloudServiceType;
 
         /**
-         * Specifies the service type for which the application is configured for multicloud
-         * integration. For applicable external service types, app will invoke multicloud service
-         * for runtime operations
-         *
-         * <p>*Added In:** 2301202328
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: true - returned: request - type: string - uniqueness:
-         * none
-         *
+         * Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
+         * <p>
+         **Added In:** 2301202328
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param multicloudServiceType the value to set
          * @return this builder
-         */
+         **/
         public Builder multicloudServiceType(MulticloudServiceType multicloudServiceType) {
             this.multicloudServiceType = multicloudServiceType;
             this.__explicitlySet__.add("multicloudServiceType");
             return this;
         }
         /**
-         * The multicloud platform service URL which the application will invoke for runtime
-         * operations such as AWSCredentials api invocation
-         *
-         * <p>*Added In:** 2301202328
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: request - type: string - uniqueness: none
-         */
+         * The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
+         * <p>
+         **Added In:** 2301202328
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multicloudPlatformUrl")
         private String multicloudPlatformUrl;
 
         /**
-         * The multicloud platform service URL which the application will invoke for runtime
-         * operations such as AWSCredentials api invocation
-         *
-         * <p>*Added In:** 2301202328
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: request - type: string - uniqueness: none
-         *
+         * The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
+         * <p>
+         **Added In:** 2301202328
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param multicloudPlatformUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder multicloudPlatformUrl(String multicloudPlatformUrl) {
             this.multicloudPlatformUrl = multicloudPlatformUrl;
             this.__explicitlySet__.add("multicloudPlatformUrl");
@@ -122,7 +136,9 @@ public final class AppExtensionMulticloudServiceAppApp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,21 +148,26 @@ public final class AppExtensionMulticloudServiceAppApp
     }
 
     /**
-     * Specifies the service type for which the application is configured for multicloud
-     * integration. For applicable external service types, app will invoke multicloud service for
-     * runtime operations
-     *
-     * <p>*Added In:** 2301202328
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: request - type: string - uniqueness: none
-     */
-    public enum MulticloudServiceType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
+     * <p>
+     **Added In:** 2301202328
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum MulticloudServiceType {
         AwsCognito("AWSCognito"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -186,57 +207,75 @@ public final class AppExtensionMulticloudServiceAppApp
         }
     };
     /**
-     * Specifies the service type for which the application is configured for multicloud
-     * integration. For applicable external service types, app will invoke multicloud service for
-     * runtime operations
-     *
-     * <p>*Added In:** 2301202328
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: request - type: string - uniqueness: none
-     */
+     * Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
+     * <p>
+     **Added In:** 2301202328
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("multicloudServiceType")
     private final MulticloudServiceType multicloudServiceType;
 
     /**
-     * Specifies the service type for which the application is configured for multicloud
-     * integration. For applicable external service types, app will invoke multicloud service for
-     * runtime operations
-     *
-     * <p>*Added In:** 2301202328
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: request - type: string - uniqueness: none
-     *
+     * Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
+     * <p>
+     **Added In:** 2301202328
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public MulticloudServiceType getMulticloudServiceType() {
         return multicloudServiceType;
     }
 
     /**
-     * The multicloud platform service URL which the application will invoke for runtime operations
-     * such as AWSCredentials api invocation
-     *
-     * <p>*Added In:** 2301202328
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
+     * The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
+     * <p>
+     **Added In:** 2301202328
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("multicloudPlatformUrl")
     private final String multicloudPlatformUrl;
 
     /**
-     * The multicloud platform service URL which the application will invoke for runtime operations
-     * such as AWSCredentials api invocation
-     *
-     * <p>*Added In:** 2301202328
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: request - type: string - uniqueness: none
-     *
+     * The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
+     * <p>
+     **Added In:** 2301202328
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMulticloudPlatformUrl() {
         return multicloudPlatformUrl;
     }
@@ -248,7 +287,6 @@ public final class AppExtensionMulticloudServiceAppApp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

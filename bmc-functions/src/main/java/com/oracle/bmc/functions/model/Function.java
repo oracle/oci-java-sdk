@@ -5,22 +5,20 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * A function resource defines the code (Docker image) and configuration for a specific function.
- * Functions are defined in applications. Avoid entering confidential information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * A function resource defines the code (Docker image) and configuration for a specific function. Functions are defined in applications. Avoid entering confidential information.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Function.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Function extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Function extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -88,44 +86,45 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * function.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * function.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The display name of the function. The display name is unique within the application
-         * containing the function.
-         */
+         * The display name of the function. The display name is unique within the application containing the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the function. The display name is unique within the application
-         * containing the function.
+         * The display name of the function. The display name is unique within the application containing the function.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The current state of the function. */
+        /**
+         * The current state of the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -134,28 +133,32 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The OCID of the application the function belongs to. */
+        /**
+         * The OCID of the application the function belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
         /**
          * The OCID of the application the function belongs to.
-         *
          * @param applicationId the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
             return this;
         }
-        /** The OCID of the compartment that contains the function. */
+        /**
+         * The OCID of the compartment that contains the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -164,7 +167,7 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -172,43 +175,43 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The qualified name of the Docker image to use in the function, including the image tag.
-         * The image should be in the OCI Registry that is in the same region as the function
-         * itself. Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-         */
+         * The image should be in the OCI Registry that is in the same region as the function itself.
+         * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("image")
         private String image;
 
         /**
          * The qualified name of the Docker image to use in the function, including the image tag.
-         * The image should be in the OCI Registry that is in the same region as the function
-         * itself. Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
+         * The image should be in the OCI Registry that is in the same region as the function itself.
+         * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
          *
          * @param image the value to set
          * @return this builder
-         */
+         **/
         public Builder image(String image) {
             this.image = image;
             this.__explicitlySet__.add("image");
             return this;
         }
         /**
-         * The image digest for the version of the image that will be pulled when invoking this
-         * function. If no value is specified, the digest currently associated with the image in the
-         * OCI Registry will be used. Example: {@code
-         * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-         */
+         * The image digest for the version of the image that will be pulled when invoking this function.
+         * If no value is specified, the digest currently associated with the image in the OCI Registry will be used.
+         * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
         private String imageDigest;
 
         /**
-         * The image digest for the version of the image that will be pulled when invoking this
-         * function. If no value is specified, the digest currently associated with the image in the
-         * OCI Registry will be used. Example: {@code
-         * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
+         * The image digest for the version of the image that will be pulled when invoking this function.
+         * If no value is specified, the digest currently associated with the image in the OCI Registry will be used.
+         * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
          *
          * @param imageDigest the value to set
          * @return this builder
-         */
+         **/
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = imageDigest;
             this.__explicitlySet__.add("imageDigest");
@@ -224,80 +227,78 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions
-         * in the application, extracted from the image manifest.
-         */
+         * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private Shape shape;
 
         /**
-         * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions
-         * in the application, extracted from the image manifest.
+         * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(Shape shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** Maximum usable memory for the function (MiB). */
+        /**
+         * Maximum usable memory for the function (MiB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
         private Long memoryInMBs;
 
         /**
          * Maximum usable memory for the function (MiB).
-         *
          * @param memoryInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryInMBs(Long memoryInMBs) {
             this.memoryInMBs = memoryInMBs;
             this.__explicitlySet__.add("memoryInMBs");
             return this;
         }
         /**
-         * Function configuration. Overrides application configuration. Keys must be ASCII strings
-         * consisting solely of letters, digits, and the '_' (underscore) character, and must not
-         * begin with a digit. Values should be limited to printable unicode characters.
+         * Function configuration. Overrides application configuration.
+         * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+         * <p>
+         * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+         * <p>
+         * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
          *
-         * <p>Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
-         *
-         * <p>The maximum size for all configuration keys and values is limited to 4KB. This is
-         * measured as the sum of octets necessary to represent each key and value in UTF-8.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private java.util.Map<String, String> config;
 
         /**
-         * Function configuration. Overrides application configuration. Keys must be ASCII strings
-         * consisting solely of letters, digits, and the '_' (underscore) character, and must not
-         * begin with a digit. Values should be limited to printable unicode characters.
-         *
-         * <p>Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
-         *
-         * <p>The maximum size for all configuration keys and values is limited to 4KB. This is
-         * measured as the sum of octets necessary to represent each key and value in UTF-8.
+         * Function configuration. Overrides application configuration.
+         * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+         * <p>
+         * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+         * <p>
+         * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
          *
          * @param config the value to set
          * @return this builder
-         */
+         **/
         public Builder config(java.util.Map<String, String> config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-        /** Timeout for executions of the function. Value in seconds. */
+        /**
+         * Timeout for executions of the function. Value in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
         /**
          * Timeout for executions of the function. Value in seconds.
-         *
          * @param timeoutInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             this.__explicitlySet__.add("timeoutInSeconds");
@@ -323,69 +324,64 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The base https invoke URL to set on a client in order to invoke a function. This URL will
-         * never change over the lifetime of the function and can be cached.
-         */
+         * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invokeEndpoint")
         private String invokeEndpoint;
 
         /**
-         * The base https invoke URL to set on a client in order to invoke a function. This URL will
-         * never change over the lifetime of the function and can be cached.
+         * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
          *
          * @param invokeEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder invokeEndpoint(String invokeEndpoint) {
             this.invokeEndpoint = invokeEndpoint;
             this.__explicitlySet__.add("invokeEndpoint");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -393,46 +389,48 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The time the function was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2018-09-12T22:47:12.613Z}
          *
-         * <p>Example: {@code 2018-09-12T22:47:12.613Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the function was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2018-09-12T22:47:12.613Z}
+         * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2018-09-12T22:47:12.613Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the function was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2018-09-12T22:47:12.613Z}
          *
-         * <p>Example: {@code 2018-09-12T22:47:12.613Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the function was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2018-09-12T22:47:12.613Z}
+         * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * <p>
+         * Example: {@code 2018-09-12T22:47:12.613Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -533,7 +531,9 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -543,41 +543,42 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * function.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * function.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The display name of the function. The display name is unique within the application
-     * containing the function.
-     */
+     * The display name of the function. The display name is unique within the application containing the function.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the function. The display name is unique within the application
-     * containing the function.
+     * The display name of the function. The display name is unique within the application containing the function.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The current state of the function. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the function.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -587,8 +588,8 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -627,7 +628,10 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The current state of the function. */
+    /**
+     * The current state of the function.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -635,25 +639,29 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
      * The current state of the function.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The OCID of the application the function belongs to. */
+    /**
+     * The OCID of the application the function belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
     /**
      * The OCID of the application the function belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationId() {
         return applicationId;
     }
 
-    /** The OCID of the compartment that contains the function. */
+    /**
+     * The OCID of the compartment that contains the function.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -661,47 +669,47 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
      * The OCID of the compartment that contains the function.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The qualified name of the Docker image to use in the function, including the image tag. The
-     * image should be in the OCI Registry that is in the same region as the function itself.
+     * The qualified name of the Docker image to use in the function, including the image tag.
+     * The image should be in the OCI Registry that is in the same region as the function itself.
      * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("image")
     private final String image;
 
     /**
-     * The qualified name of the Docker image to use in the function, including the image tag. The
-     * image should be in the OCI Registry that is in the same region as the function itself.
+     * The qualified name of the Docker image to use in the function, including the image tag.
+     * The image should be in the OCI Registry that is in the same region as the function itself.
      * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
      *
      * @return the value
-     */
+     **/
     public String getImage() {
         return image;
     }
 
     /**
-     * The image digest for the version of the image that will be pulled when invoking this
-     * function. If no value is specified, the digest currently associated with the image in the OCI
-     * Registry will be used. Example: {@code
-     * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-     */
+     * The image digest for the version of the image that will be pulled when invoking this function.
+     * If no value is specified, the digest currently associated with the image in the OCI Registry will be used.
+     * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
     private final String imageDigest;
 
     /**
-     * The image digest for the version of the image that will be pulled when invoking this
-     * function. If no value is specified, the digest currently associated with the image in the OCI
-     * Registry will be used. Example: {@code
-     * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
+     * The image digest for the version of the image that will be pulled when invoking this function.
+     * If no value is specified, the digest currently associated with the image in the OCI Registry will be used.
+     * Example: {@code sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
      *
      * @return the value
-     */
+     **/
     public String getImageDigest() {
         return imageDigest;
     }
@@ -714,17 +722,17 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in
-     * the application, extracted from the image manifest.
-     */
-    public enum Shape implements com.oracle.bmc.http.internal.BmcEnum {
+     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+     *
+     **/
+    public enum Shape {
         GenericX86("GENERIC_X86"),
         GenericArm("GENERIC_ARM"),
         GenericX86Arm("GENERIC_X86_ARM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -763,73 +771,71 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         }
     };
     /**
-     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in
-     * the application, extracted from the image manifest.
-     */
+     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final Shape shape;
 
     /**
-     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in
-     * the application, extracted from the image manifest.
+     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
      *
      * @return the value
-     */
+     **/
     public Shape getShape() {
         return shape;
     }
 
-    /** Maximum usable memory for the function (MiB). */
+    /**
+     * Maximum usable memory for the function (MiB).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
     private final Long memoryInMBs;
 
     /**
      * Maximum usable memory for the function (MiB).
-     *
      * @return the value
-     */
+     **/
     public Long getMemoryInMBs() {
         return memoryInMBs;
     }
 
     /**
-     * Function configuration. Overrides application configuration. Keys must be ASCII strings
-     * consisting solely of letters, digits, and the '_' (underscore) character, and must not begin
-     * with a digit. Values should be limited to printable unicode characters.
+     * Function configuration. Overrides application configuration.
+     * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+     * <p>
+     * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+     * <p>
+     * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      *
-     * <p>Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
-     *
-     * <p>The maximum size for all configuration keys and values is limited to 4KB. This is measured
-     * as the sum of octets necessary to represent each key and value in UTF-8.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final java.util.Map<String, String> config;
 
     /**
-     * Function configuration. Overrides application configuration. Keys must be ASCII strings
-     * consisting solely of letters, digits, and the '_' (underscore) character, and must not begin
-     * with a digit. Values should be limited to printable unicode characters.
-     *
-     * <p>Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
-     *
-     * <p>The maximum size for all configuration keys and values is limited to 4KB. This is measured
-     * as the sum of octets necessary to represent each key and value in UTF-8.
+     * Function configuration. Overrides application configuration.
+     * Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.
+     * <p>
+     * Example: {@code {"MY_FUNCTION_CONFIG": "ConfVal"}}
+     * <p>
+     * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getConfig() {
         return config;
     }
 
-    /** Timeout for executions of the function. Value in seconds. */
+    /**
+     * Timeout for executions of the function. Value in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
      * Timeout for executions of the function. Value in seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
@@ -849,106 +855,103 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The base https invoke URL to set on a client in order to invoke a function. This URL will
-     * never change over the lifetime of the function and can be cached.
-     */
+     * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("invokeEndpoint")
     private final String invokeEndpoint;
 
     /**
-     * The base https invoke URL to set on a client in order to invoke a function. This URL will
-     * never change over the lifetime of the function and can be cached.
+     * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      *
      * @return the value
-     */
+     **/
     public String getInvokeEndpoint() {
         return invokeEndpoint;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The time the function was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2018-09-12T22:47:12.613Z}
      *
-     * <p>Example: {@code 2018-09-12T22:47:12.613Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the function was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2018-09-12T22:47:12.613Z}
+     * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2018-09-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the function was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2018-09-12T22:47:12.613Z}
      *
-     * <p>Example: {@code 2018-09-12T22:47:12.613Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the function was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2018-09-12T22:47:12.613Z}
+     * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2018-09-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -960,7 +963,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

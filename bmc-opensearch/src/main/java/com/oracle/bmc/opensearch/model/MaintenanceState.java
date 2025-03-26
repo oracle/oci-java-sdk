@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/** State of the maintenance activity */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum MaintenanceState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * State of the maintenance activity
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+public enum MaintenanceState {
     Scheduled("SCHEDULED"),
     Rescheduled("RESCHEDULED"),
     ToBeScheduled("TO_BE_SCHEDULED"),

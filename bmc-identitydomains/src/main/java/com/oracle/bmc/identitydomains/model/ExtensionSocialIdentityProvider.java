@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Social Identity Provider Extension Schema <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Social Identity Provider Extension Schema
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionSocialIdentityProvider.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionSocialIdentityProvider.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionSocialIdentityProvider
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "accountLinkingEnabled",
@@ -96,59 +95,79 @@ public final class ExtensionSocialIdentityProvider
     public static class Builder {
         /**
          * Whether account linking is enabled
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountLinkingEnabled")
         private Boolean accountLinkingEnabled;
 
         /**
          * Whether account linking is enabled
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param accountLinkingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder accountLinkingEnabled(Boolean accountLinkingEnabled) {
             this.accountLinkingEnabled = accountLinkingEnabled;
             this.__explicitlySet__.add("accountLinkingEnabled");
             return this;
         }
         /**
-         * Whether social auto redirect is enabled. The IDP policy should be configured with only
-         * one Social IDP, and without username/password selected.
-         *
-         * <p>*Added In:** 2310202314
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoRedirectEnabled")
         private Boolean autoRedirectEnabled;
 
         /**
-         * Whether social auto redirect is enabled. The IDP policy should be configured with only
-         * one Social IDP, and without username/password selected.
-         *
-         * <p>*Added In:** 2310202314
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param autoRedirectEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder autoRedirectEnabled(Boolean autoRedirectEnabled) {
             this.autoRedirectEnabled = autoRedirectEnabled;
             this.__explicitlySet__.add("autoRedirectEnabled");
@@ -156,90 +175,119 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Whether Social JIT Provisioning is enabled
-         *
-         * <p>*Added In:** 2307282043
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2307282043
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("socialJitProvisioningEnabled")
         private Boolean socialJitProvisioningEnabled;
 
         /**
          * Whether Social JIT Provisioning is enabled
-         *
-         * <p>*Added In:** 2307282043
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2307282043
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param socialJitProvisioningEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder socialJitProvisioningEnabled(Boolean socialJitProvisioningEnabled) {
             this.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
             this.__explicitlySet__.add("socialJitProvisioningEnabled");
             return this;
         }
         /**
-         * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a
-         * static list
-         *
-         * <p>*Added In:** 2310202314
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jitProvGroupStaticListEnabled")
         private Boolean jitProvGroupStaticListEnabled;
 
         /**
-         * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a
-         * static list
-         *
-         * <p>*Added In:** 2310202314
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param jitProvGroupStaticListEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder jitProvGroupStaticListEnabled(Boolean jitProvGroupStaticListEnabled) {
             this.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
             this.__explicitlySet__.add("jitProvGroupStaticListEnabled");
             return this;
         }
         /**
-         * Lists the groups each social JIT-provisioned user is a member. Just-in-Time
-         * user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
-         *
-         * <p>*Added In:** 2310202314
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex - uniqueness: none
-         */
+         * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jitProvAssignedGroups")
         private java.util.List<IdentityProviderJitProvAssignedGroups> jitProvAssignedGroups;
 
         /**
-         * Lists the groups each social JIT-provisioned user is a member. Just-in-Time
-         * user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
-         *
-         * <p>*Added In:** 2310202314
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex - uniqueness: none
-         *
+         * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param jitProvAssignedGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder jitProvAssignedGroups(
                 java.util.List<IdentityProviderJitProvAssignedGroups> jitProvAssignedGroups) {
             this.jitProvAssignedGroups = jitProvAssignedGroups;
@@ -248,28 +296,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Whether registration is enabled
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registrationEnabled")
         private Boolean registrationEnabled;
 
         /**
          * Whether registration is enabled
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param registrationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder registrationEnabled(Boolean registrationEnabled) {
             this.registrationEnabled = registrationEnabled;
             this.__explicitlySet__.add("registrationEnabled");
@@ -277,28 +336,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Status
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Status
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -306,28 +376,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Social IDP Authorization URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authzUrl")
         private String authzUrl;
 
         /**
          * Social IDP Authorization URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param authzUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder authzUrl(String authzUrl) {
             this.authzUrl = authzUrl;
             this.__explicitlySet__.add("authzUrl");
@@ -335,28 +416,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Social IDP Access token URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessTokenUrl")
         private String accessTokenUrl;
 
         /**
          * Social IDP Access token URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param accessTokenUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder accessTokenUrl(String accessTokenUrl) {
             this.accessTokenUrl = accessTokenUrl;
             this.__explicitlySet__.add("accessTokenUrl");
@@ -364,28 +456,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Relay Param variable for Social IDP
-         *
-         * <p>*Added In:** 2305190132
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [relayParamKey] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2305190132
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [relayParamKey]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relayIdpParamMappings")
         private java.util.List<IdentityProviderRelayIdpParamMappings> relayIdpParamMappings;
 
         /**
          * Relay Param variable for Social IDP
-         *
-         * <p>*Added In:** 2305190132
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [relayParamKey] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2305190132
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [relayParamKey]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param relayIdpParamMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder relayIdpParamMappings(
                 java.util.List<IdentityProviderRelayIdpParamMappings> relayIdpParamMappings) {
             this.relayIdpParamMappings = relayIdpParamMappings;
@@ -394,28 +497,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Social IDP User profile URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileUrl")
         private String profileUrl;
 
         /**
          * Social IDP User profile URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param profileUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder profileUrl(String profileUrl) {
             this.profileUrl = profileUrl;
             this.__explicitlySet__.add("profileUrl");
@@ -423,28 +537,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Scope to request
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private java.util.List<String> scope;
 
         /**
          * Scope to request
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(java.util.List<String> scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
@@ -452,28 +577,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Admin scope to request
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminScope")
         private java.util.List<String> adminScope;
 
         /**
          * Admin scope to request
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param adminScope the value to set
          * @return this builder
-         */
+         **/
         public Builder adminScope(java.util.List<String> adminScope) {
             this.adminScope = adminScope;
             this.__explicitlySet__.add("adminScope");
@@ -481,28 +617,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Social IDP Client Application Client ID
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumerKey")
         private String consumerKey;
 
         /**
          * Social IDP Client Application Client ID
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param consumerKey the value to set
          * @return this builder
-         */
+         **/
         public Builder consumerKey(String consumerKey) {
             this.consumerKey = consumerKey;
             this.__explicitlySet__.add("consumerKey");
@@ -510,28 +657,41 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Social IDP Client Application Client Secret
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive:
-         * encrypt - multiValued: false - mutability: readWrite - required: true - returned: default
-         * - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - idcsSensitive: encrypt
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumerSecret")
         private String consumerSecret;
 
         /**
          * Social IDP Client Application Client Secret
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive:
-         * encrypt - multiValued: false - mutability: readWrite - required: true - returned: default
-         * - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - idcsSensitive: encrypt
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param consumerSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder consumerSecret(String consumerSecret) {
             this.consumerSecret = consumerSecret;
             this.__explicitlySet__.add("consumerSecret");
@@ -539,28 +699,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Service Provider Name
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceProviderName")
         private String serviceProviderName;
 
         /**
          * Service Provider Name
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param serviceProviderName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceProviderName(String serviceProviderName) {
             this.serviceProviderName = serviceProviderName;
             this.__explicitlySet__.add("serviceProviderName");
@@ -568,26 +739,37 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Social IDP allowed clock skew time
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockSkewInSeconds")
         private Integer clockSkewInSeconds;
 
         /**
          * Social IDP allowed clock skew time
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param clockSkewInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder clockSkewInSeconds(Integer clockSkewInSeconds) {
             this.clockSkewInSeconds = clockSkewInSeconds;
             this.__explicitlySet__.add("clockSkewInSeconds");
@@ -595,28 +777,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * redirect URL for social idp
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
         private String redirectUrl;
 
         /**
          * redirect URL for social idp
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param redirectUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder redirectUrl(String redirectUrl) {
             this.redirectUrl = redirectUrl;
             this.__explicitlySet__.add("redirectUrl");
@@ -624,28 +817,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Discovery URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryUrl")
         private String discoveryUrl;
 
         /**
          * Discovery URL
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param discoveryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder discoveryUrl(String discoveryUrl) {
             this.discoveryUrl = discoveryUrl;
             this.__explicitlySet__.add("discoveryUrl");
@@ -653,28 +857,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Whether the client credential is contained in payload
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientCredentialInPayload")
         private Boolean clientCredentialInPayload;
 
         /**
          * Whether the client credential is contained in payload
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param clientCredentialInPayload the value to set
          * @return this builder
-         */
+         **/
         public Builder clientCredentialInPayload(Boolean clientCredentialInPayload) {
             this.clientCredentialInPayload = clientCredentialInPayload;
             this.__explicitlySet__.add("clientCredentialInPayload");
@@ -682,28 +897,39 @@ public final class ExtensionSocialIdentityProvider
         }
         /**
          * Id attribute used for account linking
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idAttribute")
         private String idAttribute;
 
         /**
          * Id attribute used for account linking
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder idAttribute(String idAttribute) {
             this.idAttribute = idAttribute;
             this.__explicitlySet__.add("idAttribute");
@@ -812,7 +1038,9 @@ public final class ExtensionSocialIdentityProvider
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -823,183 +1051,254 @@ public final class ExtensionSocialIdentityProvider
 
     /**
      * Whether account linking is enabled
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountLinkingEnabled")
     private final Boolean accountLinkingEnabled;
 
     /**
      * Whether account linking is enabled
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAccountLinkingEnabled() {
         return accountLinkingEnabled;
     }
 
     /**
-     * Whether social auto redirect is enabled. The IDP policy should be configured with only one
-     * Social IDP, and without username/password selected.
-     *
-     * <p>*Added In:** 2310202314
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoRedirectEnabled")
     private final Boolean autoRedirectEnabled;
 
     /**
-     * Whether social auto redirect is enabled. The IDP policy should be configured with only one
-     * Social IDP, and without username/password selected.
-     *
-     * <p>*Added In:** 2310202314
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAutoRedirectEnabled() {
         return autoRedirectEnabled;
     }
 
     /**
      * Whether Social JIT Provisioning is enabled
-     *
-     * <p>*Added In:** 2307282043
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2307282043
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("socialJitProvisioningEnabled")
     private final Boolean socialJitProvisioningEnabled;
 
     /**
      * Whether Social JIT Provisioning is enabled
-     *
-     * <p>*Added In:** 2307282043
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2307282043
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getSocialJitProvisioningEnabled() {
         return socialJitProvisioningEnabled;
     }
 
     /**
-     * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static
-     * list
-     *
-     * <p>*Added In:** 2310202314
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jitProvGroupStaticListEnabled")
     private final Boolean jitProvGroupStaticListEnabled;
 
     /**
-     * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static
-     * list
-     *
-     * <p>*Added In:** 2310202314
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getJitProvGroupStaticListEnabled() {
         return jitProvGroupStaticListEnabled;
     }
 
     /**
-     * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning
-     * applies this static list when jitProvGroupStaticListEnabled:true.
-     *
-     * <p>*Added In:** 2310202314
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jitProvAssignedGroups")
     private final java.util.List<IdentityProviderJitProvAssignedGroups> jitProvAssignedGroups;
 
     /**
-     * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning
-     * applies this static list when jitProvGroupStaticListEnabled:true.
-     *
-     * <p>*Added In:** 2310202314
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<IdentityProviderJitProvAssignedGroups> getJitProvAssignedGroups() {
         return jitProvAssignedGroups;
     }
 
     /**
      * Whether registration is enabled
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registrationEnabled")
     private final Boolean registrationEnabled;
 
     /**
      * Whether registration is enabled
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getRegistrationEnabled() {
         return registrationEnabled;
     }
 
     /**
      * Status
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Status {
         Created("created"),
         Deleted("deleted"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1039,381 +1338,570 @@ public final class ExtensionSocialIdentityProvider
     };
     /**
      * Status
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Status
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
      * Social IDP Authorization URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authzUrl")
     private final String authzUrl;
 
     /**
      * Social IDP Authorization URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAuthzUrl() {
         return authzUrl;
     }
 
     /**
      * Social IDP Access token URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessTokenUrl")
     private final String accessTokenUrl;
 
     /**
      * Social IDP Access token URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAccessTokenUrl() {
         return accessTokenUrl;
     }
 
     /**
      * Relay Param variable for Social IDP
-     *
-     * <p>*Added In:** 2305190132
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [relayParamKey] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2305190132
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [relayParamKey]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relayIdpParamMappings")
     private final java.util.List<IdentityProviderRelayIdpParamMappings> relayIdpParamMappings;
 
     /**
      * Relay Param variable for Social IDP
-     *
-     * <p>*Added In:** 2305190132
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [relayParamKey] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2305190132
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [relayParamKey]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<IdentityProviderRelayIdpParamMappings> getRelayIdpParamMappings() {
         return relayIdpParamMappings;
     }
 
     /**
      * Social IDP User profile URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileUrl")
     private final String profileUrl;
 
     /**
      * Social IDP User profile URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getProfileUrl() {
         return profileUrl;
     }
 
     /**
      * Scope to request
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final java.util.List<String> scope;
 
     /**
      * Scope to request
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getScope() {
         return scope;
     }
 
     /**
      * Admin scope to request
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminScope")
     private final java.util.List<String> adminScope;
 
     /**
      * Admin scope to request
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getAdminScope() {
         return adminScope;
     }
 
     /**
      * Social IDP Client Application Client ID
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumerKey")
     private final String consumerKey;
 
     /**
      * Social IDP Client Application Client ID
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getConsumerKey() {
         return consumerKey;
     }
 
     /**
      * Social IDP Client Application Client Secret
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive: encrypt -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - idcsSensitive: encrypt
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumerSecret")
     private final String consumerSecret;
 
     /**
      * Social IDP Client Application Client Secret
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive: encrypt -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - idcsSensitive: encrypt
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getConsumerSecret() {
         return consumerSecret;
     }
 
     /**
      * Service Provider Name
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceProviderName")
     private final String serviceProviderName;
 
     /**
      * Service Provider Name
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getServiceProviderName() {
         return serviceProviderName;
     }
 
     /**
      * Social IDP allowed clock skew time
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockSkewInSeconds")
     private final Integer clockSkewInSeconds;
 
     /**
      * Social IDP allowed clock skew time
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getClockSkewInSeconds() {
         return clockSkewInSeconds;
     }
 
     /**
      * redirect URL for social idp
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
     private final String redirectUrl;
 
     /**
      * redirect URL for social idp
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRedirectUrl() {
         return redirectUrl;
     }
 
     /**
      * Discovery URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryUrl")
     private final String discoveryUrl;
 
     /**
      * Discovery URL
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDiscoveryUrl() {
         return discoveryUrl;
     }
 
     /**
      * Whether the client credential is contained in payload
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientCredentialInPayload")
     private final Boolean clientCredentialInPayload;
 
     /**
      * Whether the client credential is contained in payload
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getClientCredentialInPayload() {
         return clientCredentialInPayload;
     }
 
     /**
      * Id attribute used for account linking
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idAttribute")
     private final String idAttribute;
 
     /**
      * Id attribute used for account linking
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdAttribute() {
         return idAttribute;
     }
@@ -1425,7 +1913,6 @@ public final class ExtensionSocialIdentityProvider
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

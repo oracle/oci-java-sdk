@@ -6,26 +6,31 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSensitiveTypesExportExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetSensitiveTypesExportRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSensitiveTypesExportExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSensitiveTypesExportRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetSensitiveTypesExportRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the sensitive types export. */
+    /**
+     * The OCID of the sensitive types export.
+     */
     private String sensitiveTypesExportId;
 
-    /** The OCID of the sensitive types export. */
+    /**
+     * The OCID of the sensitive types export.
+     */
     public String getSensitiveTypesExportId() {
         return sensitiveTypesExportId;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,15 +38,17 @@ public class GetSensitiveTypesExportRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetSensitiveTypesExportRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the sensitive types export. */
+        /**
+         * The OCID of the sensitive types export.
+         */
         private String sensitiveTypesExportId = null;
 
         /**
          * The OCID of the sensitive types export.
-         *
          * @param sensitiveTypesExportId the value to set
          * @return this builder instance
          */
@@ -50,12 +57,13 @@ public class GetSensitiveTypesExportRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -66,19 +74,18 @@ public class GetSensitiveTypesExportRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -90,7 +97,6 @@ public class GetSensitiveTypesExportRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetSensitiveTypesExportRequest o) {
@@ -104,11 +110,10 @@ public class GetSensitiveTypesExportRequest
         /**
          * Build the instance of GetSensitiveTypesExportRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetSensitiveTypesExportRequest
          */
@@ -122,8 +127,7 @@ public class GetSensitiveTypesExportRequest
         /**
          * Build the instance of GetSensitiveTypesExportRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetSensitiveTypesExportRequest
@@ -139,7 +143,6 @@ public class GetSensitiveTypesExportRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -150,7 +153,6 @@ public class GetSensitiveTypesExportRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

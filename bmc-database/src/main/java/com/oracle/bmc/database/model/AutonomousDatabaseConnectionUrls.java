@@ -5,29 +5,25 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser
- * from a Compute instance within your VCN or that has a direct connection to your VCN. Note that
- * these URLs are provided by the console only for databases on [dedicated Exadata
- * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+ * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+ * <p>
+ * Example: {@code {"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}}
  *
- * <p>Example: {@code {"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl",
- * "https://<hostname>/ords..."}} <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDatabaseConnectionUrls.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousDatabaseConnectionUrls.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseConnectionUrls
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlDevWebUrl",
@@ -61,91 +57,97 @@ public final class AutonomousDatabaseConnectionUrls
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Oracle SQL Developer Web URL. */
+        /**
+         * Oracle SQL Developer Web URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlDevWebUrl")
         private String sqlDevWebUrl;
 
         /**
          * Oracle SQL Developer Web URL.
-         *
          * @param sqlDevWebUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlDevWebUrl(String sqlDevWebUrl) {
             this.sqlDevWebUrl = sqlDevWebUrl;
             this.__explicitlySet__.add("sqlDevWebUrl");
             return this;
         }
-        /** Oracle Application Express (APEX) URL. */
+        /**
+         * Oracle Application Express (APEX) URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apexUrl")
         private String apexUrl;
 
         /**
          * Oracle Application Express (APEX) URL.
-         *
          * @param apexUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder apexUrl(String apexUrl) {
             this.apexUrl = apexUrl;
             this.__explicitlySet__.add("apexUrl");
             return this;
         }
-        /** Oracle Machine Learning user management URL. */
+        /**
+         * Oracle Machine Learning user management URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
         private String machineLearningUserManagementUrl;
 
         /**
          * Oracle Machine Learning user management URL.
-         *
          * @param machineLearningUserManagementUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
             this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
             this.__explicitlySet__.add("machineLearningUserManagementUrl");
             return this;
         }
-        /** The URL of the Graph Studio for the Autonomous Database. */
+        /**
+         * The URL of the Graph Studio for the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
         private String graphStudioUrl;
 
         /**
          * The URL of the Graph Studio for the Autonomous Database.
-         *
          * @param graphStudioUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder graphStudioUrl(String graphStudioUrl) {
             this.graphStudioUrl = graphStudioUrl;
             this.__explicitlySet__.add("graphStudioUrl");
             return this;
         }
-        /** The URL of the MongoDB API for the Autonomous Database. */
+        /**
+         * The URL of the MongoDB API for the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mongoDbUrl")
         private String mongoDbUrl;
 
         /**
          * The URL of the MongoDB API for the Autonomous Database.
-         *
          * @param mongoDbUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder mongoDbUrl(String mongoDbUrl) {
             this.mongoDbUrl = mongoDbUrl;
             this.__explicitlySet__.add("mongoDbUrl");
             return this;
         }
-        /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database. */
+        /**
+         * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
         private String machineLearningNotebookUrl;
 
         /**
          * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
-         *
          * @param machineLearningNotebookUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder machineLearningNotebookUrl(String machineLearningNotebookUrl) {
             this.machineLearningNotebookUrl = machineLearningNotebookUrl;
             this.__explicitlySet__.add("machineLearningNotebookUrl");
@@ -153,31 +155,31 @@ public final class AutonomousDatabaseConnectionUrls
         }
         /**
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ordsUrl")
         private String ordsUrl;
 
         /**
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
-         *
          * @param ordsUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder ordsUrl(String ordsUrl) {
             this.ordsUrl = ordsUrl;
             this.__explicitlySet__.add("ordsUrl");
             return this;
         }
-        /** The URL of the Database Transforms for the Autonomous Database. */
+        /**
+         * The URL of the Database Transforms for the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
         private String databaseTransformsUrl;
 
         /**
          * The URL of the Database Transforms for the Autonomous Database.
-         *
          * @param databaseTransformsUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseTransformsUrl(String databaseTransformsUrl) {
             this.databaseTransformsUrl = databaseTransformsUrl;
             this.__explicitlySet__.add("databaseTransformsUrl");
@@ -234,7 +236,9 @@ public final class AutonomousDatabaseConnectionUrls
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -243,106 +247,114 @@ public final class AutonomousDatabaseConnectionUrls
         return new Builder().copy(this);
     }
 
-    /** Oracle SQL Developer Web URL. */
+    /**
+     * Oracle SQL Developer Web URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlDevWebUrl")
     private final String sqlDevWebUrl;
 
     /**
      * Oracle SQL Developer Web URL.
-     *
      * @return the value
-     */
+     **/
     public String getSqlDevWebUrl() {
         return sqlDevWebUrl;
     }
 
-    /** Oracle Application Express (APEX) URL. */
+    /**
+     * Oracle Application Express (APEX) URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("apexUrl")
     private final String apexUrl;
 
     /**
      * Oracle Application Express (APEX) URL.
-     *
      * @return the value
-     */
+     **/
     public String getApexUrl() {
         return apexUrl;
     }
 
-    /** Oracle Machine Learning user management URL. */
+    /**
+     * Oracle Machine Learning user management URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
     private final String machineLearningUserManagementUrl;
 
     /**
      * Oracle Machine Learning user management URL.
-     *
      * @return the value
-     */
+     **/
     public String getMachineLearningUserManagementUrl() {
         return machineLearningUserManagementUrl;
     }
 
-    /** The URL of the Graph Studio for the Autonomous Database. */
+    /**
+     * The URL of the Graph Studio for the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
     private final String graphStudioUrl;
 
     /**
      * The URL of the Graph Studio for the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public String getGraphStudioUrl() {
         return graphStudioUrl;
     }
 
-    /** The URL of the MongoDB API for the Autonomous Database. */
+    /**
+     * The URL of the MongoDB API for the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mongoDbUrl")
     private final String mongoDbUrl;
 
     /**
      * The URL of the MongoDB API for the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public String getMongoDbUrl() {
         return mongoDbUrl;
     }
 
-    /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database. */
+    /**
+     * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
     private final String machineLearningNotebookUrl;
 
     /**
      * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public String getMachineLearningNotebookUrl() {
         return machineLearningNotebookUrl;
     }
 
-    /** The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database. */
+    /**
+     * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ordsUrl")
     private final String ordsUrl;
 
     /**
      * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public String getOrdsUrl() {
         return ordsUrl;
     }
 
-    /** The URL of the Database Transforms for the Autonomous Database. */
+    /**
+     * The URL of the Database Transforms for the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
     private final String databaseTransformsUrl;
 
     /**
      * The URL of the Database Transforms for the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseTransformsUrl() {
         return databaseTransformsUrl;
     }
@@ -354,7 +366,6 @@ public final class AutonomousDatabaseConnectionUrls
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of Parameter types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum ParameterType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of Parameter types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum ParameterType {
     String("STRING"),
     Integer("INTEGER"),
     Float("FLOAT"),

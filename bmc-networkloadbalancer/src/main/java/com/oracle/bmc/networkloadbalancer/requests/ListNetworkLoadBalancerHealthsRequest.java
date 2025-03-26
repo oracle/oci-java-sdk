@@ -6,48 +6,49 @@ package com.oracle.bmc.networkloadbalancer.requests;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancerHealthsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListNetworkLoadBalancerHealthsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancerHealthsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListNetworkLoadBalancerHealthsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class ListNetworkLoadBalancerHealthsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the network load balancers to list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the network load balancers to list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The sort order to use, either 'asc' (ascending) or 'desc' (descending). */
+    /**
+     * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
+     */
     private com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' (ascending) or 'desc' (descending). */
+    /**
+     * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
+     */
     public com.oracle.bmc.networkloadbalancer.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified, then
-     * timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified, then
-     * timeCreated is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -81,9 +82,9 @@ public class ListNetworkLoadBalancerHealthsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified, then
-     * timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -91,44 +92,46 @@ public class ListNetworkLoadBalancerHealthsRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of results per page or items to return, in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page or items to return, in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page from which to start retrieving results. For list
-     * pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The page token representing the page from which to start retrieving results.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from which to start retrieving results. For list
-     * pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The page token representing the page from which to start retrieving results.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
@@ -137,18 +140,18 @@ public class ListNetworkLoadBalancerHealthsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListNetworkLoadBalancerHealthsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the network load balancers to list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the network load balancers to list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -158,12 +161,13 @@ public class ListNetworkLoadBalancerHealthsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' (ascending) or 'desc' (descending). */
+        /**
+         * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
+         */
         private com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -173,16 +177,15 @@ public class ListNetworkLoadBalancerHealthsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. The default order for
-         * timeCreated is descending. The default order for displayName is ascending. If no value is
-         * specified, then timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+         * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. The default order for
-         * timeCreated is descending. The default order for displayName is ascending. If no value is
-         * specified, then timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+         * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -195,6 +198,7 @@ public class ListNetworkLoadBalancerHealthsRequest
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
+         *
          */
         private String opcRequestId = null;
 
@@ -211,16 +215,15 @@ public class ListNetworkLoadBalancerHealthsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page or items to return, in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page or items to return, in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -231,18 +234,17 @@ public class ListNetworkLoadBalancerHealthsRequest
         }
 
         /**
-         * The page token representing the page from which to start retrieving results. For list
-         * pagination. The value of the {@code opc-next-page} response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The page token representing the page from which to start retrieving results.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from which to start retrieving results. For list
-         * pagination. The value of the {@code opc-next-page} response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The page token representing the page from which to start retrieving results.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -254,19 +256,18 @@ public class ListNetworkLoadBalancerHealthsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -278,7 +279,6 @@ public class ListNetworkLoadBalancerHealthsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListNetworkLoadBalancerHealthsRequest o) {
@@ -296,11 +296,10 @@ public class ListNetworkLoadBalancerHealthsRequest
         /**
          * Build the instance of ListNetworkLoadBalancerHealthsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListNetworkLoadBalancerHealthsRequest
          */
@@ -314,8 +313,7 @@ public class ListNetworkLoadBalancerHealthsRequest
         /**
          * Build the instance of ListNetworkLoadBalancerHealthsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListNetworkLoadBalancerHealthsRequest
@@ -330,14 +328,12 @@ public class ListNetworkLoadBalancerHealthsRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListNetworkLoadBalancerHealthsRequest(compartmentId, sortOrder, sortBy,
-            // opcRequestId, limit, page);
+            // new ListNetworkLoadBalancerHealthsRequest(compartmentId, sortOrder, sortBy, opcRequestId, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -352,7 +348,6 @@ public class ListNetworkLoadBalancerHealthsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

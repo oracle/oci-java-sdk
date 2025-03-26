@@ -6,59 +6,54 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportLogsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListMaskingPolicyHealthReportLogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskingPolicyHealthReportLogsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListMaskingPolicyHealthReportLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the masking health report. */
+    /**
+     * The OCID of the masking health report.
+     */
     private String maskingPolicyHealthReportId;
 
-    /** The OCID of the masking health report. */
+    /**
+     * The OCID of the masking health report.
+     */
     public String getMaskingPolicyHealthReportId() {
         return maskingPolicyHealthReportId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -91,22 +86,32 @@ public class ListMaskingPolicyHealthReportLogsRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** sort by */
+    /**
+     * sort by
+     */
     private SortBy sortBy;
 
-    /** sort by */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * sort by
+     **/
+    public enum SortBy {
         LogType("logType"),
         ;
 
@@ -138,15 +143,21 @@ public class ListMaskingPolicyHealthReportLogsRequest
         }
     };
 
-    /** sort by */
+    /**
+     * sort by
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** A filter to return only the resources that match the specified log message type. */
+    /**
+     * A filter to return only the resources that match the specified log message type.
+     */
     private MessageType messageType;
 
-    /** A filter to return only the resources that match the specified log message type. */
-    public enum MessageType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only the resources that match the specified log message type.
+     **/
+    public enum MessageType {
         Pass("PASS"),
         Warning("WARNING"),
         Error("ERROR"),
@@ -180,7 +191,9 @@ public class ListMaskingPolicyHealthReportLogsRequest
         }
     };
 
-    /** A filter to return only the resources that match the specified log message type. */
+    /**
+     * A filter to return only the resources that match the specified log message type.
+     */
     public MessageType getMessageType() {
         return messageType;
     }
@@ -188,15 +201,17 @@ public class ListMaskingPolicyHealthReportLogsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMaskingPolicyHealthReportLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the masking health report. */
+        /**
+         * The OCID of the masking health report.
+         */
         private String maskingPolicyHealthReportId = null;
 
         /**
          * The OCID of the masking health report.
-         *
          * @param maskingPolicyHealthReportId the value to set
          * @return this builder instance
          */
@@ -206,17 +221,12 @@ public class ListMaskingPolicyHealthReportLogsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -226,19 +236,12 @@ public class ListMaskingPolicyHealthReportLogsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -247,12 +250,13 @@ public class ListMaskingPolicyHealthReportLogsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -261,12 +265,13 @@ public class ListMaskingPolicyHealthReportLogsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -275,12 +280,13 @@ public class ListMaskingPolicyHealthReportLogsRequest
             return this;
         }
 
-        /** sort by */
+        /**
+         * sort by
+         */
         private SortBy sortBy = null;
 
         /**
          * sort by
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -289,12 +295,13 @@ public class ListMaskingPolicyHealthReportLogsRequest
             return this;
         }
 
-        /** A filter to return only the resources that match the specified log message type. */
+        /**
+         * A filter to return only the resources that match the specified log message type.
+         */
         private MessageType messageType = null;
 
         /**
          * A filter to return only the resources that match the specified log message type.
-         *
          * @param messageType the value to set
          * @return this builder instance
          */
@@ -305,19 +312,18 @@ public class ListMaskingPolicyHealthReportLogsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -329,7 +335,6 @@ public class ListMaskingPolicyHealthReportLogsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMaskingPolicyHealthReportLogsRequest o) {
@@ -346,14 +351,12 @@ public class ListMaskingPolicyHealthReportLogsRequest
         }
 
         /**
-         * Build the instance of ListMaskingPolicyHealthReportLogsRequest as configured by this
-         * builder
+         * Build the instance of ListMaskingPolicyHealthReportLogsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMaskingPolicyHealthReportLogsRequest
          */
@@ -365,11 +368,9 @@ public class ListMaskingPolicyHealthReportLogsRequest
         }
 
         /**
-         * Build the instance of ListMaskingPolicyHealthReportLogsRequest as configured by this
-         * builder
+         * Build the instance of ListMaskingPolicyHealthReportLogsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMaskingPolicyHealthReportLogsRequest
@@ -385,14 +386,12 @@ public class ListMaskingPolicyHealthReportLogsRequest
             request.sortBy = sortBy;
             request.messageType = messageType;
             return request;
-            // new ListMaskingPolicyHealthReportLogsRequest(maskingPolicyHealthReportId, limit,
-            // page, sortOrder, opcRequestId, sortBy, messageType);
+            // new ListMaskingPolicyHealthReportLogsRequest(maskingPolicyHealthReportId, limit, page, sortOrder, opcRequestId, sortBy, messageType);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -408,7 +407,6 @@ public class ListMaskingPolicyHealthReportLogsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

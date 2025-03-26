@@ -5,25 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * An object that defines the
- * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) and the
- * availability of a vendor software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * An object that defines the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) and the availability of a vendor software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SoftwareSourceAvailability.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SoftwareSourceAvailability.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SoftwareSourceAvailability
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"softwareSourceId", "availability", "availabilityAtOci"})
     public SoftwareSourceAvailability(
@@ -37,53 +34,48 @@ public final class SoftwareSourceAvailability
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * vendor software source.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * vendor software source.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
          * @param softwareSourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
             return this;
         }
         /**
-         * Availability of the software source to instances in private data centers or third-party
-         * clouds.
-         */
+         * Availability of the software source to instances in private data centers or third-party clouds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availability")
         private Availability availability;
 
         /**
-         * Availability of the software source to instances in private data centers or third-party
-         * clouds.
-         *
+         * Availability of the software source to instances in private data centers or third-party clouds.
          * @param availability the value to set
          * @return this builder
-         */
+         **/
         public Builder availability(Availability availability) {
             this.availability = availability;
             this.__explicitlySet__.add("availability");
             return this;
         }
-        /** Availability of the software source to OCI instances. */
+        /**
+         * Availability of the software source to OCI instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
         private Availability availabilityAtOci;
 
         /**
          * Availability of the software source to OCI instances.
-         *
          * @param availabilityAtOci the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityAtOci(Availability availabilityAtOci) {
             this.availabilityAtOci = availabilityAtOci;
             this.__explicitlySet__.add("availabilityAtOci");
@@ -118,7 +110,9 @@ public final class SoftwareSourceAvailability
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,48 +122,43 @@ public final class SoftwareSourceAvailability
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * vendor software source.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * vendor software source.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
      * @return the value
-     */
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
 
     /**
-     * Availability of the software source to instances in private data centers or third-party
-     * clouds.
-     */
+     * Availability of the software source to instances in private data centers or third-party clouds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availability")
     private final Availability availability;
 
     /**
-     * Availability of the software source to instances in private data centers or third-party
-     * clouds.
-     *
+     * Availability of the software source to instances in private data centers or third-party clouds.
      * @return the value
-     */
+     **/
     public Availability getAvailability() {
         return availability;
     }
 
-    /** Availability of the software source to OCI instances. */
+    /**
+     * Availability of the software source to OCI instances.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
     private final Availability availabilityAtOci;
 
     /**
      * Availability of the software source to OCI instances.
-     *
      * @return the value
-     */
+     **/
     public Availability getAvailabilityAtOci() {
         return availabilityAtOci;
     }
@@ -181,7 +170,6 @@ public final class SoftwareSourceAvailability
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,21 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Metadata about the bulk pin operation. The bulk pin operation is atomic and binary. If the
- * processing of any of the attributes in the bulk pin request results in a processing or validation
- * error, then none of the attributes in the request are pinned. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Metadata about the bulk pin operation.  The bulk pin operation is atomic and binary.  If the processing of any of the attributes
+ * in the bulk pin request results in a processing or validation error, then none of the attributes in the request are pinned.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BulkPinMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BulkPinMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BulkPinMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationStatus",
@@ -45,35 +42,37 @@ public final class BulkPinMetadata
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Operation status of the bulk pin operation. SUCCESS - The bulk pin operation has
-         * succeeded and all the attributes in the bulk pin request have been pinned by this
-         * operation or pinned earlier. The following are error statuses for the bulk pin operation.
-         * EMPTY_ATTRIBUTE_LIST - The bulk pin request object was empty and did not contain any
-         * attributes to be pinned. INVALID_BULK_REQUEST - The bulk request contains invalid
-         * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-         * resulted in a processing error.
-         */
+         * Operation status of the bulk pin operation.
+         * SUCCESS - The bulk pin operation has succeeded and all the attributes in the bulk pin request have been pinned by this operation or pinned earlier.
+         * The following are error statuses for the bulk pin operation.
+         * EMPTY_ATTRIBUTE_LIST - The bulk pin request object was empty and did not contain any attributes to be pinned.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
         /**
-         * Operation status of the bulk pin operation. SUCCESS - The bulk pin operation has
-         * succeeded and all the attributes in the bulk pin request have been pinned by this
-         * operation or pinned earlier. The following are error statuses for the bulk pin operation.
-         * EMPTY_ATTRIBUTE_LIST - The bulk pin request object was empty and did not contain any
-         * attributes to be pinned. INVALID_BULK_REQUEST - The bulk request contains invalid
-         * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-         * resulted in a processing error.
+         * Operation status of the bulk pin operation.
+         * SUCCESS - The bulk pin operation has succeeded and all the attributes in the bulk pin request have been pinned by this operation or pinned earlier.
+         * The following are error statuses for the bulk pin operation.
+         * EMPTY_ATTRIBUTE_LIST - The bulk pin request object was empty and did not contain any attributes to be pinned.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
          *
          * @param operationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-        /** Type of operation. */
+        /**
+         * Type of operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -82,7 +81,7 @@ public final class BulkPinMetadata
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
@@ -90,7 +89,8 @@ public final class BulkPinMetadata
         }
         /**
          * Total number attributes (both string and numeric) in TRACES namespace that were pinned.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributesPinned")
         private Integer attributesPinned;
 
@@ -99,26 +99,25 @@ public final class BulkPinMetadata
          *
          * @param attributesPinned the value to set
          * @return this builder
-         */
+         **/
         public Builder attributesPinned(Integer attributesPinned) {
             this.attributesPinned = attributesPinned;
             this.__explicitlySet__.add("attributesPinned");
             return this;
         }
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * pinned.
-         */
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesPinned")
         private Integer syntheticAttributesPinned;
 
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * pinned.
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
          *
          * @param syntheticAttributesPinned the value to set
          * @return this builder
-         */
+         **/
         public Builder syntheticAttributesPinned(Integer syntheticAttributesPinned) {
             this.syntheticAttributesPinned = syntheticAttributesPinned;
             this.__explicitlySet__.add("syntheticAttributesPinned");
@@ -159,7 +158,9 @@ public final class BulkPinMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,21 +170,22 @@ public final class BulkPinMetadata
     }
 
     /**
-     * Operation status of the bulk pin operation. SUCCESS - The bulk pin operation has succeeded
-     * and all the attributes in the bulk pin request have been pinned by this operation or pinned
-     * earlier. The following are error statuses for the bulk pin operation. EMPTY_ATTRIBUTE_LIST -
-     * The bulk pin request object was empty and did not contain any attributes to be pinned.
-     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that
-     * resulted in a validation error, or an attribute that resulted in a processing error.
-     */
-    public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * Operation status of the bulk pin operation.
+     * SUCCESS - The bulk pin operation has succeeded and all the attributes in the bulk pin request have been pinned by this operation or pinned earlier.
+     * The following are error statuses for the bulk pin operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk pin request object was empty and did not contain any attributes to be pinned.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
+    public enum OperationStatus {
         Success("SUCCESS"),
         EmptyAttributeList("EMPTY_ATTRIBUTE_LIST"),
         InvalidBulkRequest("INVALID_BULK_REQUEST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -223,37 +225,41 @@ public final class BulkPinMetadata
         }
     };
     /**
-     * Operation status of the bulk pin operation. SUCCESS - The bulk pin operation has succeeded
-     * and all the attributes in the bulk pin request have been pinned by this operation or pinned
-     * earlier. The following are error statuses for the bulk pin operation. EMPTY_ATTRIBUTE_LIST -
-     * The bulk pin request object was empty and did not contain any attributes to be pinned.
-     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that
-     * resulted in a validation error, or an attribute that resulted in a processing error.
-     */
+     * Operation status of the bulk pin operation.
+     * SUCCESS - The bulk pin operation has succeeded and all the attributes in the bulk pin request have been pinned by this operation or pinned earlier.
+     * The following are error statuses for the bulk pin operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk pin request object was empty and did not contain any attributes to be pinned.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
     /**
-     * Operation status of the bulk pin operation. SUCCESS - The bulk pin operation has succeeded
-     * and all the attributes in the bulk pin request have been pinned by this operation or pinned
-     * earlier. The following are error statuses for the bulk pin operation. EMPTY_ATTRIBUTE_LIST -
-     * The bulk pin request object was empty and did not contain any attributes to be pinned.
-     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that
-     * resulted in a validation error, or an attribute that resulted in a processing error.
+     * Operation status of the bulk pin operation.
+     * SUCCESS - The bulk pin operation has succeeded and all the attributes in the bulk pin request have been pinned by this operation or pinned earlier.
+     * The following are error statuses for the bulk pin operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk pin request object was empty and did not contain any attributes to be pinned.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
      *
      * @return the value
-     */
+     **/
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
 
-    /** Type of operation. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation.
+     *
+     **/
+    public enum OperationType {
         Pin("PIN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -292,7 +298,10 @@ public final class BulkPinMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type of operation. */
+    /**
+     * Type of operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -300,12 +309,15 @@ public final class BulkPinMetadata
      * Type of operation.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /** Total number attributes (both string and numeric) in TRACES namespace that were pinned. */
+    /**
+     * Total number attributes (both string and numeric) in TRACES namespace that were pinned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributesPinned")
     private final Integer attributesPinned;
 
@@ -313,14 +325,15 @@ public final class BulkPinMetadata
      * Total number attributes (both string and numeric) in TRACES namespace that were pinned.
      *
      * @return the value
-     */
+     **/
     public Integer getAttributesPinned() {
         return attributesPinned;
     }
 
     /**
      * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesPinned")
     private final Integer syntheticAttributesPinned;
 
@@ -328,7 +341,7 @@ public final class BulkPinMetadata
      * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
      *
      * @return the value
-     */
+     **/
     public Integer getSyntheticAttributesPinned() {
         return syntheticAttributesPinned;
     }
@@ -340,7 +353,6 @@ public final class BulkPinMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,27 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The details of the local task. The local tasks are specific to a single runbook. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The details of the local task.
+ * The local tasks are specific to a single runbook.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedLocalTaskDetails.Builder.class)
+    builder = AssociatedLocalTaskDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "scope")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "scope"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,61 +38,65 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
             this.__explicitlySet__.add("executionDetails");
             return this;
         }
-        /** The description of the task. */
+        /**
+         * The description of the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the task.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The platform of the runbook. */
+        /**
+         * The platform of the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platform")
         private String platform;
 
         /**
          * The platform of the runbook.
-         *
          * @param platform the value to set
          * @return this builder
-         */
+         **/
         public Builder platform(String platform) {
             this.platform = platform;
             this.__explicitlySet__.add("platform");
             return this;
         }
-        /** Make a copy of this task in Library */
+        /**
+         * Make a copy of this task in Library
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCopyToLibraryEnabled")
         private Boolean isCopyToLibraryEnabled;
 
         /**
          * Make a copy of this task in Library
-         *
          * @param isCopyToLibraryEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCopyToLibraryEnabled(Boolean isCopyToLibraryEnabled) {
             this.isCopyToLibraryEnabled = isCopyToLibraryEnabled;
             this.__explicitlySet__.add("isCopyToLibraryEnabled");
             return this;
         }
-        /** The OS for the task. */
+        /**
+         * The OS for the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osType")
         private OsType osType;
 
         /**
          * The OS for the task.
-         *
          * @param osType the value to set
          * @return this builder
-         */
+         **/
         public Builder osType(OsType osType) {
             this.osType = osType;
             this.__explicitlySet__.add("osType");
@@ -105,46 +111,49 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** Is this a discovery output task? */
+        /**
+         * Is this a discovery output task?
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
         private Boolean isDiscoveryOutputTask;
 
         /**
          * Is this a discovery output task?
-         *
          * @param isDiscoveryOutputTask the value to set
          * @return this builder
-         */
+         **/
         public Builder isDiscoveryOutputTask(Boolean isDiscoveryOutputTask) {
             this.isDiscoveryOutputTask = isDiscoveryOutputTask;
             this.__explicitlySet__.add("isDiscoveryOutputTask");
             return this;
         }
-        /** Is this an Apply Subject Task? Ex. Patch Execution Task */
+        /**
+         * Is this an Apply Subject Task? Ex. Patch Execution Task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
         private Boolean isApplySubjectTask;
 
         /**
          * Is this an Apply Subject Task? Ex. Patch Execution Task
-         *
          * @param isApplySubjectTask the value to set
          * @return this builder
-         */
+         **/
         public Builder isApplySubjectTask(Boolean isApplySubjectTask) {
             this.isApplySubjectTask = isApplySubjectTask;
             this.__explicitlySet__.add("isApplySubjectTask");
             return this;
         }
-        /** The name of the task */
+        /**
+         * The name of the task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the task
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -205,7 +214,9 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -244,54 +255,58 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
         return executionDetails;
     }
 
-    /** The description of the task. */
+    /**
+     * The description of the task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the task.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The platform of the runbook. */
+    /**
+     * The platform of the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platform")
     private final String platform;
 
     /**
      * The platform of the runbook.
-     *
      * @return the value
-     */
+     **/
     public String getPlatform() {
         return platform;
     }
 
-    /** Make a copy of this task in Library */
+    /**
+     * Make a copy of this task in Library
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCopyToLibraryEnabled")
     private final Boolean isCopyToLibraryEnabled;
 
     /**
      * Make a copy of this task in Library
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCopyToLibraryEnabled() {
         return isCopyToLibraryEnabled;
     }
 
-    /** The OS for the task. */
+    /**
+     * The OS for the task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osType")
     private final OsType osType;
 
     /**
      * The OS for the task.
-     *
      * @return the value
-     */
+     **/
     public OsType getOsType() {
         return osType;
     }
@@ -303,41 +318,44 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
         return properties;
     }
 
-    /** Is this a discovery output task? */
+    /**
+     * Is this a discovery output task?
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
     private final Boolean isDiscoveryOutputTask;
 
     /**
      * Is this a discovery output task?
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDiscoveryOutputTask() {
         return isDiscoveryOutputTask;
     }
 
-    /** Is this an Apply Subject Task? Ex. Patch Execution Task */
+    /**
+     * Is this an Apply Subject Task? Ex. Patch Execution Task
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
     private final Boolean isApplySubjectTask;
 
     /**
      * Is this an Apply Subject Task? Ex. Patch Execution Task
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsApplySubjectTask() {
         return isApplySubjectTask;
     }
 
-    /** The name of the task */
+    /**
+     * The name of the task
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the task
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -349,7 +367,6 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

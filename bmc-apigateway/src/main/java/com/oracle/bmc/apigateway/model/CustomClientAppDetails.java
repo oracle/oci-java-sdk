@@ -5,72 +5,74 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Client App Credentials to be provided again. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * Client App Credentials to be provided again.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomClientAppDetails.Builder.class)
+    builder = CustomClientAppDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CustomClientAppDetails extends ClientAppDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Client ID for the OAuth2/OIDC app. */
+        /**
+         * Client ID for the OAuth2/OIDC app.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
          * Client ID for the OAuth2/OIDC app.
-         *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Vault Service secret resource.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretId")
         private String clientSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Vault Service secret resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
          *
          * @param clientSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecretId(String clientSecretId) {
             this.clientSecretId = clientSecretId;
             this.__explicitlySet__.add("clientSecretId");
             return this;
         }
-        /** The version number of the client secret to use. */
+        /**
+         * The version number of the client secret to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretVersionNumber")
         private Long clientSecretVersionNumber;
 
         /**
          * The version number of the client secret to use.
-         *
          * @param clientSecretVersionNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecretVersionNumber(Long clientSecretVersionNumber) {
             this.clientSecretVersionNumber = clientSecretVersionNumber;
             this.__explicitlySet__.add("clientSecretVersionNumber");
@@ -105,7 +107,9 @@ public final class CustomClientAppDetails extends ClientAppDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,45 +127,46 @@ public final class CustomClientAppDetails extends ClientAppDetails {
         this.clientSecretVersionNumber = clientSecretVersionNumber;
     }
 
-    /** Client ID for the OAuth2/OIDC app. */
+    /**
+     * Client ID for the OAuth2/OIDC app.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
      * Client ID for the OAuth2/OIDC app.
-     *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Vault Service secret resource.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretId")
     private final String clientSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Vault Service secret resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
      *
      * @return the value
-     */
+     **/
     public String getClientSecretId() {
         return clientSecretId;
     }
 
-    /** The version number of the client secret to use. */
+    /**
+     * The version number of the client secret to use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretVersionNumber")
     private final Long clientSecretVersionNumber;
 
     /**
      * The version number of the client secret to use.
-     *
      * @return the value
-     */
+     **/
     public Long getClientSecretVersionNumber() {
         return clientSecretVersionNumber;
     }
@@ -173,7 +178,6 @@ public final class CustomClientAppDetails extends ClientAppDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Patch <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details of the Patch
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CompliancePatchDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CompliancePatchDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CompliancePatchDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "patchId",
@@ -52,91 +51,97 @@ public final class CompliancePatchDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** patch OCID. */
+        /**
+         * patch OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
         /**
          * patch OCID.
-         *
          * @param patchId the value to set
          * @return this builder
-         */
+         **/
         public Builder patchId(String patchId) {
             this.patchId = patchId;
             this.__explicitlySet__.add("patchId");
             return this;
         }
-        /** patch Name. */
+        /**
+         * patch Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchName")
         private String patchName;
 
         /**
          * patch Name.
-         *
          * @param patchName the value to set
          * @return this builder
-         */
+         **/
         public Builder patchName(String patchName) {
             this.patchName = patchName;
             this.__explicitlySet__.add("patchName");
             return this;
         }
-        /** Patch Description. */
+        /**
+         * Patch Description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchDescription")
         private String patchDescription;
 
         /**
          * Patch Description.
-         *
          * @param patchDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder patchDescription(String patchDescription) {
             this.patchDescription = patchDescription;
             this.__explicitlySet__.add("patchDescription");
             return this;
         }
-        /** Date on which patch was released */
+        /**
+         * Date on which patch was released
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
          * Date on which patch was released
-         *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-        /** Type of patch. */
+        /**
+         * Type of patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchType")
         private String patchType;
 
         /**
          * Type of patch.
-         *
          * @param patchType the value to set
          * @return this builder
-         */
+         **/
         public Builder patchType(String patchType) {
             this.patchType = patchType;
             this.__explicitlySet__.add("patchType");
             return this;
         }
-        /** Patch Severity. */
+        /**
+         * Patch Severity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private PatchSeverity severity;
 
         /**
          * Patch Severity.
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(PatchSeverity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
@@ -198,7 +203,9 @@ public final class CompliancePatchDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,80 +214,86 @@ public final class CompliancePatchDetail
         return new Builder().copy(this);
     }
 
-    /** patch OCID. */
+    /**
+     * patch OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
     /**
      * patch OCID.
-     *
      * @return the value
-     */
+     **/
     public String getPatchId() {
         return patchId;
     }
 
-    /** patch Name. */
+    /**
+     * patch Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchName")
     private final String patchName;
 
     /**
      * patch Name.
-     *
      * @return the value
-     */
+     **/
     public String getPatchName() {
         return patchName;
     }
 
-    /** Patch Description. */
+    /**
+     * Patch Description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchDescription")
     private final String patchDescription;
 
     /**
      * Patch Description.
-     *
      * @return the value
-     */
+     **/
     public String getPatchDescription() {
         return patchDescription;
     }
 
-    /** Date on which patch was released */
+    /**
+     * Date on which patch was released
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
      * Date on which patch was released
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
 
-    /** Type of patch. */
+    /**
+     * Type of patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
     private final String patchType;
 
     /**
      * Type of patch.
-     *
      * @return the value
-     */
+     **/
     public String getPatchType() {
         return patchType;
     }
 
-    /** Patch Severity. */
+    /**
+     * Patch Severity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final PatchSeverity severity;
 
     /**
      * Patch Severity.
-     *
      * @return the value
-     */
+     **/
     public PatchSeverity getSeverity() {
         return severity;
     }
@@ -299,7 +312,6 @@ public final class CompliancePatchDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

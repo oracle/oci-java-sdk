@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/** Service or component which is used to provision and manage the subscription. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public enum ClassicSubscriptionManagedBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Service or component which is used to provision and manage the subscription.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public enum ClassicSubscriptionManagedBy {
     Appsmanager("APPSMANAGER"),
     Servicemanagerproxy("SERVICEMANAGERPROXY"),
     Fusionapps("FUSIONAPPS"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about updating a monitored resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The information about updating a monitored resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMonitoredResourceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateMonitoredResourceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMonitoredResourceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -64,22 +63,26 @@ public final class UpdateMonitoredResourceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Monitored resource display name. */
+        /**
+         * Monitored resource display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Monitored resource display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Host name of the monitored resource. */
+        /**
+         * Host name of the monitored resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
@@ -88,34 +91,38 @@ public final class UpdateMonitoredResourceDetails
          *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
         /**
-         * Time zone in the form of tz database canonical zone ID. Specifies the preference with a
-         * value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-         * America/Los_Angeles
-         */
+         * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+         * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+         * For example - America/Los_Angeles
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
         private String resourceTimeZone;
 
         /**
-         * Time zone in the form of tz database canonical zone ID. Specifies the preference with a
-         * value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-         * America/Los_Angeles
+         * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+         * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+         * For example - America/Los_Angeles
          *
          * @param resourceTimeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceTimeZone(String resourceTimeZone) {
             this.resourceTimeZone = resourceTimeZone;
             this.__explicitlySet__.add("resourceTimeZone");
             return this;
         }
-        /** List of monitored resource properties. */
+        /**
+         * List of monitored resource properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MonitoredResourceProperty> properties;
 
@@ -124,7 +131,7 @@ public final class UpdateMonitoredResourceDetails
          *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.List<MonitoredResourceProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -159,24 +166,27 @@ public final class UpdateMonitoredResourceDetails
         }
         /**
          * List of MonitoredResourceCredentials. This property complements the existing
-         * "credentials" property by allowing user to specify more than one credential. If both
-         * "credential" and "additionalCredentials" are specified, union of the values is used as
-         * list of credentials applicable for this resource. If any duplicate found in the combined
-         * list of "credentials" and "additionalCredentials", an error will be thrown.
-         */
+         * "credentials" property by allowing user to specify more than one credential.
+         * If both "credential" and "additionalCredentials" are specified, union of the
+         * values is used as list of credentials applicable for this resource.
+         * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+         * an error will be thrown.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalCredentials")
         private java.util.List<MonitoredResourceCredential> additionalCredentials;
 
         /**
          * List of MonitoredResourceCredentials. This property complements the existing
-         * "credentials" property by allowing user to specify more than one credential. If both
-         * "credential" and "additionalCredentials" are specified, union of the values is used as
-         * list of credentials applicable for this resource. If any duplicate found in the combined
-         * list of "credentials" and "additionalCredentials", an error will be thrown.
+         * "credentials" property by allowing user to specify more than one credential.
+         * If both "credential" and "additionalCredentials" are specified, union of the
+         * values is used as list of credentials applicable for this resource.
+         * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+         * an error will be thrown.
          *
          * @param additionalCredentials the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalCredentials(
                 java.util.List<MonitoredResourceCredential> additionalCredentials) {
             this.additionalCredentials = additionalCredentials;
@@ -185,24 +195,27 @@ public final class UpdateMonitoredResourceDetails
         }
         /**
          * List of MonitoredResourceAliasCredentials. This property complements the existing
-         * "aliases" property by allowing user to specify more than one credential alias. If both
-         * "aliases" and "additionalAliases" are specified, union of the values is used as list of
-         * aliases applicable for this resource. If any duplicate found in the combined list of
-         * "alias" and "additionalAliases", an error will be thrown.
-         */
+         * "aliases" property by allowing user to specify more than one credential alias.
+         * If both "aliases" and "additionalAliases" are specified, union of the
+         * values is used as list of aliases applicable for this resource.
+         * If any duplicate found in the combined list of "alias" and "additionalAliases",
+         * an error will be thrown.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalAliases")
         private java.util.List<MonitoredResourceAliasCredential> additionalAliases;
 
         /**
          * List of MonitoredResourceAliasCredentials. This property complements the existing
-         * "aliases" property by allowing user to specify more than one credential alias. If both
-         * "aliases" and "additionalAliases" are specified, union of the values is used as list of
-         * aliases applicable for this resource. If any duplicate found in the combined list of
-         * "alias" and "additionalAliases", an error will be thrown.
+         * "aliases" property by allowing user to specify more than one credential alias.
+         * If both "aliases" and "additionalAliases" are specified, union of the
+         * values is used as list of aliases applicable for this resource.
+         * If any duplicate found in the combined list of "alias" and "additionalAliases",
+         * an error will be thrown.
          *
          * @param additionalAliases the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalAliases(
                 java.util.List<MonitoredResourceAliasCredential> additionalAliases) {
             this.additionalAliases = additionalAliases;
@@ -210,19 +223,20 @@ public final class UpdateMonitoredResourceDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -231,7 +245,8 @@ public final class UpdateMonitoredResourceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -241,7 +256,7 @@ public final class UpdateMonitoredResourceDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -311,7 +326,9 @@ public final class UpdateMonitoredResourceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -320,20 +337,24 @@ public final class UpdateMonitoredResourceDetails
         return new Builder().copy(this);
     }
 
-    /** Monitored resource display name. */
+    /**
+     * Monitored resource display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Monitored resource display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Host name of the monitored resource. */
+    /**
+     * Host name of the monitored resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
@@ -341,31 +362,35 @@ public final class UpdateMonitoredResourceDetails
      * Host name of the monitored resource.
      *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
     /**
-     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value
-     * that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
-     */
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+     * For example - America/Los_Angeles
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
     private final String resourceTimeZone;
 
     /**
-     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value
-     * that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+     * For example - America/Los_Angeles
      *
      * @return the value
-     */
+     **/
     public String getResourceTimeZone() {
         return resourceTimeZone;
     }
 
-    /** List of monitored resource properties. */
+    /**
+     * List of monitored resource properties.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MonitoredResourceProperty> properties;
 
@@ -373,7 +398,7 @@ public final class UpdateMonitoredResourceDetails
      * List of monitored resource properties.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MonitoredResourceProperty> getProperties() {
         return properties;
     }
@@ -400,81 +425,89 @@ public final class UpdateMonitoredResourceDetails
     }
 
     /**
-     * List of MonitoredResourceCredentials. This property complements the existing "credentials"
-     * property by allowing user to specify more than one credential. If both "credential" and
-     * "additionalCredentials" are specified, union of the values is used as list of credentials
-     * applicable for this resource. If any duplicate found in the combined list of "credentials"
-     * and "additionalCredentials", an error will be thrown.
-     */
+     * List of MonitoredResourceCredentials. This property complements the existing
+     * "credentials" property by allowing user to specify more than one credential.
+     * If both "credential" and "additionalCredentials" are specified, union of the
+     * values is used as list of credentials applicable for this resource.
+     * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+     * an error will be thrown.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalCredentials")
     private final java.util.List<MonitoredResourceCredential> additionalCredentials;
 
     /**
-     * List of MonitoredResourceCredentials. This property complements the existing "credentials"
-     * property by allowing user to specify more than one credential. If both "credential" and
-     * "additionalCredentials" are specified, union of the values is used as list of credentials
-     * applicable for this resource. If any duplicate found in the combined list of "credentials"
-     * and "additionalCredentials", an error will be thrown.
+     * List of MonitoredResourceCredentials. This property complements the existing
+     * "credentials" property by allowing user to specify more than one credential.
+     * If both "credential" and "additionalCredentials" are specified, union of the
+     * values is used as list of credentials applicable for this resource.
+     * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+     * an error will be thrown.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MonitoredResourceCredential> getAdditionalCredentials() {
         return additionalCredentials;
     }
 
     /**
-     * List of MonitoredResourceAliasCredentials. This property complements the existing "aliases"
-     * property by allowing user to specify more than one credential alias. If both "aliases" and
-     * "additionalAliases" are specified, union of the values is used as list of aliases applicable
-     * for this resource. If any duplicate found in the combined list of "alias" and
-     * "additionalAliases", an error will be thrown.
-     */
+     * List of MonitoredResourceAliasCredentials. This property complements the existing
+     * "aliases" property by allowing user to specify more than one credential alias.
+     * If both "aliases" and "additionalAliases" are specified, union of the
+     * values is used as list of aliases applicable for this resource.
+     * If any duplicate found in the combined list of "alias" and "additionalAliases",
+     * an error will be thrown.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalAliases")
     private final java.util.List<MonitoredResourceAliasCredential> additionalAliases;
 
     /**
-     * List of MonitoredResourceAliasCredentials. This property complements the existing "aliases"
-     * property by allowing user to specify more than one credential alias. If both "aliases" and
-     * "additionalAliases" are specified, union of the values is used as list of aliases applicable
-     * for this resource. If any duplicate found in the combined list of "alias" and
-     * "additionalAliases", an error will be thrown.
+     * List of MonitoredResourceAliasCredentials. This property complements the existing
+     * "aliases" property by allowing user to specify more than one credential alias.
+     * If both "aliases" and "additionalAliases" are specified, union of the
+     * values is used as list of aliases applicable for this resource.
+     * If any duplicate found in the combined list of "alias" and "additionalAliases",
+     * an error will be thrown.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MonitoredResourceAliasCredential> getAdditionalAliases() {
         return additionalAliases;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -486,7 +519,6 @@ public final class UpdateMonitoredResourceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

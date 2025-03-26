@@ -5,22 +5,19 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * The model for the product metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The model for the product metadata.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProductSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProductSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProductSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -48,107 +45,109 @@ public final class ProductSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name for the product. */
+        /**
+         * The name for the product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name for the product.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The code for the product. */
+        /**
+         * The code for the product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
          * The code for the product.
-         *
          * @param code the value to set
          * @return this builder
-         */
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** The product group for the product. */
+        /**
+         * The product group for the product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productGroup")
         private String productGroup;
 
         /**
          * The product group for the product.
-         *
          * @param productGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder productGroup(String productGroup) {
             this.productGroup = productGroup;
             this.__explicitlySet__.add("productGroup");
             return this;
         }
-        /** The current state for the product. */
+        /**
+         * The current state for the product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Product.LifecycleState lifecycleState;
 
         /**
          * The current state for the product.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(Product.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the product was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the product was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2022-09-15T21:10:29.600Z}
          *
-         * <p>Example: {@code 2022-09-15T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the product was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2022-09-15T21:10:29.600Z}
+         * The date and time the product was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2022-09-15T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the product was updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the product was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2022-09-15T21:10:29.600Z}
          *
-         * <p>Example: {@code 2022-09-15T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the product was updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2022-09-15T21:10:29.600Z}
+         * The date and time the product was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2022-09-15T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -197,7 +196,9 @@ public final class ProductSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -206,96 +207,98 @@ public final class ProductSummary
         return new Builder().copy(this);
     }
 
-    /** The name for the product. */
+    /**
+     * The name for the product.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name for the product.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The code for the product. */
+    /**
+     * The code for the product.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
      * The code for the product.
-     *
      * @return the value
-     */
+     **/
     public String getCode() {
         return code;
     }
 
-    /** The product group for the product. */
+    /**
+     * The product group for the product.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productGroup")
     private final String productGroup;
 
     /**
      * The product group for the product.
-     *
      * @return the value
-     */
+     **/
     public String getProductGroup() {
         return productGroup;
     }
 
-    /** The current state for the product. */
+    /**
+     * The current state for the product.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Product.LifecycleState lifecycleState;
 
     /**
      * The current state for the product.
-     *
      * @return the value
-     */
+     **/
     public Product.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the product was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the product was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2022-09-15T21:10:29.600Z}
      *
-     * <p>Example: {@code 2022-09-15T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the product was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2022-09-15T21:10:29.600Z}
+     * The date and time the product was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2022-09-15T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the product was updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the product was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2022-09-15T21:10:29.600Z}
      *
-     * <p>Example: {@code 2022-09-15T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the product was updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2022-09-15T21:10:29.600Z}
+     * The date and time the product was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2022-09-15T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -307,7 +310,6 @@ public final class ProductSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

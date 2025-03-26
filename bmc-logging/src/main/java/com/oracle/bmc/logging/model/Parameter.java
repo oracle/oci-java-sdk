@@ -5,21 +5,19 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Parameters that a resource category supports. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Parameters that a resource category supports.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Parameter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Parameter extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Parameter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type", "pattern"})
     public Parameter(String name, Type type, String pattern) {
@@ -31,16 +29,17 @@ public final class Parameter extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Parameter name. */
+        /**
+         * Parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Parameter name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -55,16 +54,17 @@ public final class Parameter extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Java regex pattern to validate a parameter value. */
+        /**
+         * Java regex pattern to validate a parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
         /**
          * Java regex pattern to validate a parameter value.
-         *
          * @param pattern the value to set
          * @return this builder
-         */
+         **/
         public Builder pattern(String pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
@@ -97,7 +97,9 @@ public final class Parameter extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,28 +108,30 @@ public final class Parameter extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Parameter name. */
+    /**
+     * Parameter name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Parameter name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum Type {
         Integer("integer"),
         String("string"),
         Boolean("boolean"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -172,15 +176,16 @@ public final class Parameter extends com.oracle.bmc.http.client.internal.Explici
         return type;
     }
 
-    /** Java regex pattern to validate a parameter value. */
+    /**
+     * Java regex pattern to validate a parameter value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
     /**
      * Java regex pattern to validate a parameter value.
-     *
      * @return the value
-     */
+     **/
     public String getPattern() {
         return pattern;
     }
@@ -192,7 +197,6 @@ public final class Parameter extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

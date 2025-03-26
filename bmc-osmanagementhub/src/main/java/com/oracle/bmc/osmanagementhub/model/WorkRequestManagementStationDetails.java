@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Details about management station actions. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Details about management station actions.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WorkRequestManagementStationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = WorkRequestManagementStationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class WorkRequestManagementStationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"managementStationVersion", "config", "softwareSourceIds"})
     public WorkRequestManagementStationDetails(
@@ -36,46 +35,49 @@ public final class WorkRequestManagementStationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Target version to update the management station software. */
+        /**
+         * Target version to update the management station software.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementStationVersion")
         private String managementStationVersion;
 
         /**
          * Target version to update the management station software.
-         *
          * @param managementStationVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder managementStationVersion(String managementStationVersion) {
             this.managementStationVersion = managementStationVersion;
             this.__explicitlySet__.add("managementStationVersion");
             return this;
         }
-        /** The configuration of the management station. */
+        /**
+         * The configuration of the management station.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private byte[] config;
 
         /**
          * The configuration of the management station.
-         *
          * @param config the value to set
          * @return this builder
-         */
+         **/
         public Builder config(byte[] config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-        /** Optional list for mirrors to sync. */
+        /**
+         * Optional list for mirrors to sync.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
          * Optional list for mirrors to sync.
-         *
          * @param softwareSourceIds the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceIds(java.util.List<String> softwareSourceIds) {
             this.softwareSourceIds = softwareSourceIds;
             this.__explicitlySet__.add("softwareSourceIds");
@@ -110,7 +112,9 @@ public final class WorkRequestManagementStationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,41 +123,44 @@ public final class WorkRequestManagementStationDetails
         return new Builder().copy(this);
     }
 
-    /** Target version to update the management station software. */
+    /**
+     * Target version to update the management station software.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationVersion")
     private final String managementStationVersion;
 
     /**
      * Target version to update the management station software.
-     *
      * @return the value
-     */
+     **/
     public String getManagementStationVersion() {
         return managementStationVersion;
     }
 
-    /** The configuration of the management station. */
+    /**
+     * The configuration of the management station.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final byte[] config;
 
     /**
      * The configuration of the management station.
-     *
      * @return the value
-     */
+     **/
     public byte[] getConfig() {
         return config;
     }
 
-    /** Optional list for mirrors to sync. */
+    /**
+     * Optional list for mirrors to sync.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
      * Optional list for mirrors to sync.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSoftwareSourceIds() {
         return softwareSourceIds;
     }
@@ -165,7 +172,6 @@ public final class WorkRequestManagementStationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

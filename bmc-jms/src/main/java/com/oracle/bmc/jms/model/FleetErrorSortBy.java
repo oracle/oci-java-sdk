@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field used to sort fleet errors. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum FleetErrorSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort fleet errors.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum FleetErrorSortBy {
     TimeFirstSeen("TIME_FIRST_SEEN"),
     TimeLastSeen("TIME_LAST_SEEN"),
     ;

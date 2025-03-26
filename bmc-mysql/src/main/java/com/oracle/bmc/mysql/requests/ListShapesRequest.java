@@ -6,46 +6,50 @@ package com.oracle.bmc.mysql.requests;
 
 import com.oracle.bmc.mysql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListShapesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListShapesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListShapesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListShapesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-     * specific request, please provide the request ID that you supplied in this header with the
-     * request.
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-     * specific request, please provide the request ID that you supplied in this header with the
-     * request.
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Return shapes that are supported by the service feature. */
+    /**
+     * Return shapes that are supported by the service feature.
+     *
+     */
     private java.util.List<IsSupportedFor> isSupportedFor;
 
-    /** Return shapes that are supported by the service feature. */
-    public enum IsSupportedFor implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Return shapes that are supported by the service feature.
+     *
+     **/
+    public enum IsSupportedFor {
         Dbsystem("DBSYSTEM"),
         Heatwavecluster("HEATWAVECLUSTER"),
         ;
@@ -78,21 +82,32 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
-    /** Return shapes that are supported by the service feature. */
+    /**
+     * Return shapes that are supported by the service feature.
+     *
+     */
     public java.util.List<IsSupportedFor> getIsSupportedFor() {
         return isSupportedFor;
     }
-    /** The name of the Availability Domain. */
+    /**
+     * The name of the Availability Domain.
+     */
     private String availabilityDomain;
 
-    /** The name of the Availability Domain. */
+    /**
+     * The name of the Availability Domain.
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
-    /** Name */
+    /**
+     * Name
+     */
     private String name;
 
-    /** Name */
+    /**
+     * Name
+     */
     public String getName() {
         return name;
     }
@@ -100,19 +115,17 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListShapesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -122,16 +135,17 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-         * specific request, please provide the request ID that you supplied in this header with the
-         * request.
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-         * specific request, please provide the request ID that you supplied in this header with the
-         * request.
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -141,7 +155,10 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** Return shapes that are supported by the service feature. */
+        /**
+         * Return shapes that are supported by the service feature.
+         *
+         */
         private java.util.List<IsSupportedFor> isSupportedFor = null;
 
         /**
@@ -165,12 +182,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this.isSupportedFor(java.util.Arrays.asList(singularValue));
         }
 
-        /** The name of the Availability Domain. */
+        /**
+         * The name of the Availability Domain.
+         */
         private String availabilityDomain = null;
 
         /**
          * The name of the Availability Domain.
-         *
          * @param availabilityDomain the value to set
          * @return this builder instance
          */
@@ -179,12 +197,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** Name */
+        /**
+         * Name
+         */
         private String name = null;
 
         /**
          * Name
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -195,19 +214,18 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -219,7 +237,6 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListShapesRequest o) {
@@ -236,11 +253,10 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListShapesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListShapesRequest
          */
@@ -254,8 +270,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListShapesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListShapesRequest
@@ -268,14 +283,12 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.availabilityDomain = availabilityDomain;
             request.name = name;
             return request;
-            // new ListShapesRequest(compartmentId, opcRequestId, isSupportedFor,
-            // availabilityDomain, name);
+            // new ListShapesRequest(compartmentId, opcRequestId, isSupportedFor, availabilityDomain, name);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -289,7 +302,6 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

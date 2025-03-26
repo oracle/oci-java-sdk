@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details about the scheduled resources for which query needs to be run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Details about the scheduled resources for which query needs to be run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScheduledQueryScopeDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ScheduledQueryScopeDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScheduledQueryScopeDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"region", "resourceIds", "resourceType"})
     public ScheduledQueryScopeDetail(
@@ -34,46 +33,49 @@ public final class ScheduledQueryScopeDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** region on which scheduled query needs to be run */
+        /**
+         * region on which scheduled query needs to be run
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * region on which scheduled query needs to be run
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** List of OCIDs on scheduled query needs to run */
+        /**
+         * List of OCIDs on scheduled query needs to run
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
         private java.util.List<String> resourceIds;
 
         /**
          * List of OCIDs on scheduled query needs to run
-         *
          * @param resourceIds the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceIds(java.util.List<String> resourceIds) {
             this.resourceIds = resourceIds;
             this.__explicitlySet__.add("resourceIds");
             return this;
         }
-        /** Type of resource */
+        /**
+         * Type of resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * Type of resource
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
@@ -107,7 +109,9 @@ public final class ScheduledQueryScopeDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +120,44 @@ public final class ScheduledQueryScopeDetail
         return new Builder().copy(this);
     }
 
-    /** region on which scheduled query needs to be run */
+    /**
+     * region on which scheduled query needs to be run
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * region on which scheduled query needs to be run
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** List of OCIDs on scheduled query needs to run */
+    /**
+     * List of OCIDs on scheduled query needs to run
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
     private final java.util.List<String> resourceIds;
 
     /**
      * List of OCIDs on scheduled query needs to run
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getResourceIds() {
         return resourceIds;
     }
 
-    /** Type of resource */
+    /**
+     * Type of resource
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * Type of resource
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
@@ -162,7 +169,6 @@ public final class ScheduledQueryScopeDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

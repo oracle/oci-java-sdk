@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible adhoc query states */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum AdhocQueryResultState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible adhoc query states
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum AdhocQueryResultState {
     Accepted("ACCEPTED"),
     Created("CREATED"),
     InProgress("IN_PROGRESS"),

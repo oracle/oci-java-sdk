@@ -9,31 +9,23 @@ import com.oracle.bmc.identity.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Identity where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Identity where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class IdentityPaginators {
     private final Identity client;
 
@@ -42,20 +34,17 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBulkActionResourceTypes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listBulkActionResourceTypes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBulkActionResourceTypesResponse>
             listBulkActionResourceTypesResponseIterator(
                     final ListBulkActionResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBulkActionResourceTypesRequest.Builder,
-                ListBulkActionResourceTypesRequest,
+                ListBulkActionResourceTypesRequest.Builder, ListBulkActionResourceTypesRequest,
                 ListBulkActionResourceTypesResponse>(
                 new java.util.function.Supplier<ListBulkActionResourceTypesRequest.Builder>() {
                     @Override
@@ -98,22 +87,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.BulkActionResourceType} objects contained in responses from the
-     * listBulkActionResourceTypes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.BulkActionResourceType} objects
+     * contained in responses from the listBulkActionResourceTypes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.BulkActionResourceType} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.BulkActionResourceType} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.BulkActionResourceType>
             listBulkActionResourceTypesRecordIterator(
                     final ListBulkActionResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBulkActionResourceTypesRequest.Builder,
-                ListBulkActionResourceTypesRequest,
+                ListBulkActionResourceTypesRequest.Builder, ListBulkActionResourceTypesRequest,
                 ListBulkActionResourceTypesResponse,
                 com.oracle.bmc.identity.model.BulkActionResourceType>(
                 new java.util.function.Supplier<ListBulkActionResourceTypesRequest.Builder>() {
@@ -166,20 +152,17 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBulkEditTagsResourceTypes operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listBulkEditTagsResourceTypes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBulkEditTagsResourceTypesResponse>
             listBulkEditTagsResourceTypesResponseIterator(
                     final ListBulkEditTagsResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBulkEditTagsResourceTypesRequest.Builder,
-                ListBulkEditTagsResourceTypesRequest,
+                ListBulkEditTagsResourceTypesRequest.Builder, ListBulkEditTagsResourceTypesRequest,
                 ListBulkEditTagsResourceTypesResponse>(
                 new java.util.function.Supplier<ListBulkEditTagsResourceTypesRequest.Builder>() {
                     @Override
@@ -223,22 +206,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.BulkEditTagsResourceType} objects contained in responses from
-     * the listBulkEditTagsResourceTypes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.BulkEditTagsResourceType} objects
+     * contained in responses from the listBulkEditTagsResourceTypes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.BulkEditTagsResourceType} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.BulkEditTagsResourceType} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.BulkEditTagsResourceType>
             listBulkEditTagsResourceTypesRecordIterator(
                     final ListBulkEditTagsResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBulkEditTagsResourceTypesRequest.Builder,
-                ListBulkEditTagsResourceTypesRequest,
+                ListBulkEditTagsResourceTypesRequest.Builder, ListBulkEditTagsResourceTypesRequest,
                 ListBulkEditTagsResourceTypesResponse,
                 com.oracle.bmc.identity.model.BulkEditTagsResourceType>(
                 new java.util.function.Supplier<ListBulkEditTagsResourceTypesRequest.Builder>() {
@@ -292,12 +272,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCompartments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCompartments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCompartmentsResponse> listCompartmentsResponseIterator(
             final ListCompartmentsRequest request) {
@@ -343,21 +322,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.Compartment} objects contained in responses from the
-     * listCompartments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.Compartment} objects
+     * contained in responses from the listCompartments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.Compartment} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.Compartment} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.Compartment> listCompartmentsRecordIterator(
             final ListCompartmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCompartmentsRequest.Builder,
-                ListCompartmentsRequest,
-                ListCompartmentsResponse,
+                ListCompartmentsRequest.Builder, ListCompartmentsRequest, ListCompartmentsResponse,
                 com.oracle.bmc.identity.model.Compartment>(
                 new java.util.function.Supplier<ListCompartmentsRequest.Builder>() {
                     @Override
@@ -408,18 +384,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCostTrackingTags operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCostTrackingTags operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCostTrackingTagsResponse> listCostTrackingTagsResponseIterator(
             final ListCostTrackingTagsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCostTrackingTagsRequest.Builder,
-                ListCostTrackingTagsRequest,
+                ListCostTrackingTagsRequest.Builder, ListCostTrackingTagsRequest,
                 ListCostTrackingTagsResponse>(
                 new java.util.function.Supplier<ListCostTrackingTagsRequest.Builder>() {
                     @Override
@@ -461,22 +435,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.Tag}
-     * objects contained in responses from the listCostTrackingTags operation. This iterable will
-     * fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.Tag} objects
+     * contained in responses from the listCostTrackingTags operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.Tag} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.Tag} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.Tag> listCostTrackingTagsRecordIterator(
             final ListCostTrackingTagsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCostTrackingTagsRequest.Builder,
-                ListCostTrackingTagsRequest,
-                ListCostTrackingTagsResponse,
-                com.oracle.bmc.identity.model.Tag>(
+                ListCostTrackingTagsRequest.Builder, ListCostTrackingTagsRequest,
+                ListCostTrackingTagsResponse, com.oracle.bmc.identity.model.Tag>(
                 new java.util.function.Supplier<ListCostTrackingTagsRequest.Builder>() {
                     @Override
                     public ListCostTrackingTagsRequest.Builder get() {
@@ -526,18 +497,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDbCredentials operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDbCredentials operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDbCredentialsResponse> listDbCredentialsResponseIterator(
             final ListDbCredentialsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDbCredentialsRequest.Builder,
-                ListDbCredentialsRequest,
+                ListDbCredentialsRequest.Builder, ListDbCredentialsRequest,
                 ListDbCredentialsResponse>(
                 new java.util.function.Supplier<ListDbCredentialsRequest.Builder>() {
                     @Override
@@ -579,22 +548,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.DbCredentialSummary} objects contained in responses from the
-     * listDbCredentials operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.DbCredentialSummary} objects
+     * contained in responses from the listDbCredentials operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.DbCredentialSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.DbCredentialSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.DbCredentialSummary>
             listDbCredentialsRecordIterator(final ListDbCredentialsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDbCredentialsRequest.Builder,
-                ListDbCredentialsRequest,
-                ListDbCredentialsResponse,
-                com.oracle.bmc.identity.model.DbCredentialSummary>(
+                ListDbCredentialsRequest.Builder, ListDbCredentialsRequest,
+                ListDbCredentialsResponse, com.oracle.bmc.identity.model.DbCredentialSummary>(
                 new java.util.function.Supplier<ListDbCredentialsRequest.Builder>() {
                     @Override
                     public ListDbCredentialsRequest.Builder get() {
@@ -644,12 +610,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDomains
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDomains operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDomainsResponse> listDomainsResponseIterator(
             final ListDomainsRequest request) {
@@ -694,21 +659,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.DomainSummary} objects contained in responses from the
-     * listDomains operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.DomainSummary} objects
+     * contained in responses from the listDomains operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.DomainSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.DomainSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.DomainSummary> listDomainsRecordIterator(
             final ListDomainsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDomainsRequest.Builder,
-                ListDomainsRequest,
-                ListDomainsResponse,
+                ListDomainsRequest.Builder, ListDomainsRequest, ListDomainsResponse,
                 com.oracle.bmc.identity.model.DomainSummary>(
                 new java.util.function.Supplier<ListDomainsRequest.Builder>() {
                     @Override
@@ -758,18 +720,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDynamicGroups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDynamicGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDynamicGroupsResponse> listDynamicGroupsResponseIterator(
             final ListDynamicGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDynamicGroupsRequest.Builder,
-                ListDynamicGroupsRequest,
+                ListDynamicGroupsRequest.Builder, ListDynamicGroupsRequest,
                 ListDynamicGroupsResponse>(
                 new java.util.function.Supplier<ListDynamicGroupsRequest.Builder>() {
                     @Override
@@ -811,22 +771,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.DynamicGroup} objects contained in responses from the
-     * listDynamicGroups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.DynamicGroup} objects
+     * contained in responses from the listDynamicGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.DynamicGroup} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.DynamicGroup} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.DynamicGroup> listDynamicGroupsRecordIterator(
             final ListDynamicGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDynamicGroupsRequest.Builder,
-                ListDynamicGroupsRequest,
-                ListDynamicGroupsResponse,
-                com.oracle.bmc.identity.model.DynamicGroup>(
+                ListDynamicGroupsRequest.Builder, ListDynamicGroupsRequest,
+                ListDynamicGroupsResponse, com.oracle.bmc.identity.model.DynamicGroup>(
                 new java.util.function.Supplier<ListDynamicGroupsRequest.Builder>() {
                     @Override
                     public ListDynamicGroupsRequest.Builder get() {
@@ -876,12 +833,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listGroups
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListGroupsResponse> listGroupsResponseIterator(
             final ListGroupsRequest request) {
@@ -926,21 +882,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.Group} objects contained in responses from the listGroups
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.Group} objects
+     * contained in responses from the listGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.Group} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.Group} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.Group> listGroupsRecordIterator(
             final ListGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListGroupsRequest.Builder,
-                ListGroupsRequest,
-                ListGroupsResponse,
+                ListGroupsRequest.Builder, ListGroupsRequest, ListGroupsResponse,
                 com.oracle.bmc.identity.model.Group>(
                 new java.util.function.Supplier<ListGroupsRequest.Builder>() {
                     @Override
@@ -989,19 +942,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIamWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listIamWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIamWorkRequestErrorsResponse> listIamWorkRequestErrorsResponseIterator(
             final ListIamWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIamWorkRequestErrorsRequest.Builder,
-                ListIamWorkRequestErrorsRequest,
+                ListIamWorkRequestErrorsRequest.Builder, ListIamWorkRequestErrorsRequest,
                 ListIamWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListIamWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1044,21 +994,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.IamWorkRequestErrorSummary} objects contained in responses from
-     * the listIamWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.IamWorkRequestErrorSummary} objects
+     * contained in responses from the listIamWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.IamWorkRequestErrorSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.IamWorkRequestErrorSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.IamWorkRequestErrorSummary>
             listIamWorkRequestErrorsRecordIterator(final ListIamWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIamWorkRequestErrorsRequest.Builder,
-                ListIamWorkRequestErrorsRequest,
+                ListIamWorkRequestErrorsRequest.Builder, ListIamWorkRequestErrorsRequest,
                 ListIamWorkRequestErrorsResponse,
                 com.oracle.bmc.identity.model.IamWorkRequestErrorSummary>(
                 new java.util.function.Supplier<ListIamWorkRequestErrorsRequest.Builder>() {
@@ -1112,19 +1059,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIamWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listIamWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIamWorkRequestLogsResponse> listIamWorkRequestLogsResponseIterator(
             final ListIamWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIamWorkRequestLogsRequest.Builder,
-                ListIamWorkRequestLogsRequest,
+                ListIamWorkRequestLogsRequest.Builder, ListIamWorkRequestLogsRequest,
                 ListIamWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListIamWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1167,21 +1111,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.IamWorkRequestLogSummary} objects contained in responses from
-     * the listIamWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.IamWorkRequestLogSummary} objects
+     * contained in responses from the listIamWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.IamWorkRequestLogSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.IamWorkRequestLogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.IamWorkRequestLogSummary>
             listIamWorkRequestLogsRecordIterator(final ListIamWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIamWorkRequestLogsRequest.Builder,
-                ListIamWorkRequestLogsRequest,
+                ListIamWorkRequestLogsRequest.Builder, ListIamWorkRequestLogsRequest,
                 ListIamWorkRequestLogsResponse,
                 com.oracle.bmc.identity.model.IamWorkRequestLogSummary>(
                 new java.util.function.Supplier<ListIamWorkRequestLogsRequest.Builder>() {
@@ -1234,18 +1175,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIamWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIamWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIamWorkRequestsResponse> listIamWorkRequestsResponseIterator(
             final ListIamWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIamWorkRequestsRequest.Builder,
-                ListIamWorkRequestsRequest,
+                ListIamWorkRequestsRequest.Builder, ListIamWorkRequestsRequest,
                 ListIamWorkRequestsResponse>(
                 new java.util.function.Supplier<ListIamWorkRequestsRequest.Builder>() {
                     @Override
@@ -1287,22 +1226,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.IamWorkRequestSummary} objects contained in responses from the
-     * listIamWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.IamWorkRequestSummary} objects
+     * contained in responses from the listIamWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.IamWorkRequestSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.IamWorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.IamWorkRequestSummary>
             listIamWorkRequestsRecordIterator(final ListIamWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIamWorkRequestsRequest.Builder,
-                ListIamWorkRequestsRequest,
-                ListIamWorkRequestsResponse,
-                com.oracle.bmc.identity.model.IamWorkRequestSummary>(
+                ListIamWorkRequestsRequest.Builder, ListIamWorkRequestsRequest,
+                ListIamWorkRequestsResponse, com.oracle.bmc.identity.model.IamWorkRequestSummary>(
                 new java.util.function.Supplier<ListIamWorkRequestsRequest.Builder>() {
                     @Override
                     public ListIamWorkRequestsRequest.Builder get() {
@@ -1352,19 +1288,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIdentityProviderGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listIdentityProviderGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIdentityProviderGroupsResponse> listIdentityProviderGroupsResponseIterator(
             final ListIdentityProviderGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIdentityProviderGroupsRequest.Builder,
-                ListIdentityProviderGroupsRequest,
+                ListIdentityProviderGroupsRequest.Builder, ListIdentityProviderGroupsRequest,
                 ListIdentityProviderGroupsResponse>(
                 new java.util.function.Supplier<ListIdentityProviderGroupsRequest.Builder>() {
                     @Override
@@ -1407,22 +1340,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.IdentityProviderGroupSummary} objects contained in responses
-     * from the listIdentityProviderGroups operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.IdentityProviderGroupSummary} objects
+     * contained in responses from the listIdentityProviderGroups operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.IdentityProviderGroupSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.IdentityProviderGroupSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.IdentityProviderGroupSummary>
             listIdentityProviderGroupsRecordIterator(
                     final ListIdentityProviderGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIdentityProviderGroupsRequest.Builder,
-                ListIdentityProviderGroupsRequest,
+                ListIdentityProviderGroupsRequest.Builder, ListIdentityProviderGroupsRequest,
                 ListIdentityProviderGroupsResponse,
                 com.oracle.bmc.identity.model.IdentityProviderGroupSummary>(
                 new java.util.function.Supplier<ListIdentityProviderGroupsRequest.Builder>() {
@@ -1477,19 +1407,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIdentityProviders operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listIdentityProviders operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIdentityProvidersResponse> listIdentityProvidersResponseIterator(
             final ListIdentityProvidersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIdentityProvidersRequest.Builder,
-                ListIdentityProvidersRequest,
+                ListIdentityProvidersRequest.Builder, ListIdentityProvidersRequest,
                 ListIdentityProvidersResponse>(
                 new java.util.function.Supplier<ListIdentityProvidersRequest.Builder>() {
                     @Override
@@ -1532,23 +1459,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.IdentityProvider} objects contained in responses from the
-     * listIdentityProviders operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.IdentityProvider} objects
+     * contained in responses from the listIdentityProviders operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.IdentityProvider} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.IdentityProvider} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.IdentityProvider>
             listIdentityProvidersRecordIterator(final ListIdentityProvidersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIdentityProvidersRequest.Builder,
-                ListIdentityProvidersRequest,
-                ListIdentityProvidersResponse,
-                com.oracle.bmc.identity.model.IdentityProvider>(
+                ListIdentityProvidersRequest.Builder, ListIdentityProvidersRequest,
+                ListIdentityProvidersResponse, com.oracle.bmc.identity.model.IdentityProvider>(
                 new java.util.function.Supplier<ListIdentityProvidersRequest.Builder>() {
                     @Override
                     public ListIdentityProvidersRequest.Builder get() {
@@ -1599,18 +1522,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIdpGroupMappings operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIdpGroupMappings operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIdpGroupMappingsResponse> listIdpGroupMappingsResponseIterator(
             final ListIdpGroupMappingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIdpGroupMappingsRequest.Builder,
-                ListIdpGroupMappingsRequest,
+                ListIdpGroupMappingsRequest.Builder, ListIdpGroupMappingsRequest,
                 ListIdpGroupMappingsResponse>(
                 new java.util.function.Supplier<ListIdpGroupMappingsRequest.Builder>() {
                     @Override
@@ -1652,22 +1573,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.IdpGroupMapping} objects contained in responses from the
-     * listIdpGroupMappings operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.IdpGroupMapping} objects
+     * contained in responses from the listIdpGroupMappings operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.IdpGroupMapping} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.IdpGroupMapping} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.IdpGroupMapping>
             listIdpGroupMappingsRecordIterator(final ListIdpGroupMappingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIdpGroupMappingsRequest.Builder,
-                ListIdpGroupMappingsRequest,
-                ListIdpGroupMappingsResponse,
-                com.oracle.bmc.identity.model.IdpGroupMapping>(
+                ListIdpGroupMappingsRequest.Builder, ListIdpGroupMappingsRequest,
+                ListIdpGroupMappingsResponse, com.oracle.bmc.identity.model.IdpGroupMapping>(
                 new java.util.function.Supplier<ListIdpGroupMappingsRequest.Builder>() {
                     @Override
                     public ListIdpGroupMappingsRequest.Builder get() {
@@ -1717,18 +1635,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMfaTotpDevices operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMfaTotpDevices operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMfaTotpDevicesResponse> listMfaTotpDevicesResponseIterator(
             final ListMfaTotpDevicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMfaTotpDevicesRequest.Builder,
-                ListMfaTotpDevicesRequest,
+                ListMfaTotpDevicesRequest.Builder, ListMfaTotpDevicesRequest,
                 ListMfaTotpDevicesResponse>(
                 new java.util.function.Supplier<ListMfaTotpDevicesRequest.Builder>() {
                     @Override
@@ -1770,22 +1686,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.MfaTotpDeviceSummary} objects contained in responses from the
-     * listMfaTotpDevices operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.MfaTotpDeviceSummary} objects
+     * contained in responses from the listMfaTotpDevices operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.MfaTotpDeviceSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.MfaTotpDeviceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.MfaTotpDeviceSummary>
             listMfaTotpDevicesRecordIterator(final ListMfaTotpDevicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMfaTotpDevicesRequest.Builder,
-                ListMfaTotpDevicesRequest,
-                ListMfaTotpDevicesResponse,
-                com.oracle.bmc.identity.model.MfaTotpDeviceSummary>(
+                ListMfaTotpDevicesRequest.Builder, ListMfaTotpDevicesRequest,
+                ListMfaTotpDevicesResponse, com.oracle.bmc.identity.model.MfaTotpDeviceSummary>(
                 new java.util.function.Supplier<ListMfaTotpDevicesRequest.Builder>() {
                     @Override
                     public ListMfaTotpDevicesRequest.Builder get() {
@@ -1835,18 +1748,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNetworkSources operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSources operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNetworkSourcesResponse> listNetworkSourcesResponseIterator(
             final ListNetworkSourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNetworkSourcesRequest.Builder,
-                ListNetworkSourcesRequest,
+                ListNetworkSourcesRequest.Builder, ListNetworkSourcesRequest,
                 ListNetworkSourcesResponse>(
                 new java.util.function.Supplier<ListNetworkSourcesRequest.Builder>() {
                     @Override
@@ -1888,22 +1799,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.NetworkSourcesSummary} objects contained in responses from the
-     * listNetworkSources operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.NetworkSourcesSummary} objects
+     * contained in responses from the listNetworkSources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.NetworkSourcesSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.NetworkSourcesSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.NetworkSourcesSummary>
             listNetworkSourcesRecordIterator(final ListNetworkSourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNetworkSourcesRequest.Builder,
-                ListNetworkSourcesRequest,
-                ListNetworkSourcesResponse,
-                com.oracle.bmc.identity.model.NetworkSourcesSummary>(
+                ListNetworkSourcesRequest.Builder, ListNetworkSourcesRequest,
+                ListNetworkSourcesResponse, com.oracle.bmc.identity.model.NetworkSourcesSummary>(
                 new java.util.function.Supplier<ListNetworkSourcesRequest.Builder>() {
                     @Override
                     public ListNetworkSourcesRequest.Builder get() {
@@ -1953,19 +1861,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOAuthClientCredentials operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listOAuthClientCredentials operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOAuthClientCredentialsResponse> listOAuthClientCredentialsResponseIterator(
             final ListOAuthClientCredentialsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOAuthClientCredentialsRequest.Builder,
-                ListOAuthClientCredentialsRequest,
+                ListOAuthClientCredentialsRequest.Builder, ListOAuthClientCredentialsRequest,
                 ListOAuthClientCredentialsResponse>(
                 new java.util.function.Supplier<ListOAuthClientCredentialsRequest.Builder>() {
                     @Override
@@ -2008,22 +1913,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} objects contained in responses
-     * from the listOAuthClientCredentials operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} objects
+     * contained in responses from the listOAuthClientCredentials operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary>
             listOAuthClientCredentialsRecordIterator(
                     final ListOAuthClientCredentialsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOAuthClientCredentialsRequest.Builder,
-                ListOAuthClientCredentialsRequest,
+                ListOAuthClientCredentialsRequest.Builder, ListOAuthClientCredentialsRequest,
                 ListOAuthClientCredentialsResponse,
                 com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary>(
                 new java.util.function.Supplier<ListOAuthClientCredentialsRequest.Builder>() {
@@ -2078,12 +1980,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPolicies
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPoliciesResponse> listPoliciesResponseIterator(
             final ListPoliciesRequest request) {
@@ -2128,21 +2029,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.Policy} objects contained in responses from the listPolicies
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.Policy} objects
+     * contained in responses from the listPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.Policy} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.Policy} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.Policy> listPoliciesRecordIterator(
             final ListPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPoliciesRequest.Builder,
-                ListPoliciesRequest,
-                ListPoliciesResponse,
+                ListPoliciesRequest.Builder, ListPoliciesRequest, ListPoliciesResponse,
                 com.oracle.bmc.identity.model.Policy>(
                 new java.util.function.Supplier<ListPoliciesRequest.Builder>() {
                     @Override
@@ -2192,19 +2090,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listStandardTagNamespaces operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listStandardTagNamespaces operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListStandardTagNamespacesResponse> listStandardTagNamespacesResponseIterator(
             final ListStandardTagNamespacesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListStandardTagNamespacesRequest.Builder,
-                ListStandardTagNamespacesRequest,
+                ListStandardTagNamespacesRequest.Builder, ListStandardTagNamespacesRequest,
                 ListStandardTagNamespacesResponse>(
                 new java.util.function.Supplier<ListStandardTagNamespacesRequest.Builder>() {
                     @Override
@@ -2247,22 +2142,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary} objects contained in
-     * responses from the listStandardTagNamespaces operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary} objects
+     * contained in responses from the listStandardTagNamespaces operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary>
             listStandardTagNamespacesRecordIterator(
                     final ListStandardTagNamespacesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListStandardTagNamespacesRequest.Builder,
-                ListStandardTagNamespacesRequest,
+                ListStandardTagNamespacesRequest.Builder, ListStandardTagNamespacesRequest,
                 ListStandardTagNamespacesResponse,
                 com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary>(
                 new java.util.function.Supplier<ListStandardTagNamespacesRequest.Builder>() {
@@ -2319,12 +2211,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTagDefaults operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTagDefaults operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTagDefaultsResponse> listTagDefaultsResponseIterator(
             final ListTagDefaultsRequest request) {
@@ -2369,21 +2260,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.TagDefaultSummary} objects contained in responses from the
-     * listTagDefaults operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TagDefaultSummary} objects
+     * contained in responses from the listTagDefaults operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.TagDefaultSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TagDefaultSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.TagDefaultSummary> listTagDefaultsRecordIterator(
             final ListTagDefaultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTagDefaultsRequest.Builder,
-                ListTagDefaultsRequest,
-                ListTagDefaultsResponse,
+                ListTagDefaultsRequest.Builder, ListTagDefaultsRequest, ListTagDefaultsResponse,
                 com.oracle.bmc.identity.model.TagDefaultSummary>(
                 new java.util.function.Supplier<ListTagDefaultsRequest.Builder>() {
                     @Override
@@ -2433,18 +2321,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTagNamespaces operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTagNamespaces operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTagNamespacesResponse> listTagNamespacesResponseIterator(
             final ListTagNamespacesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTagNamespacesRequest.Builder,
-                ListTagNamespacesRequest,
+                ListTagNamespacesRequest.Builder, ListTagNamespacesRequest,
                 ListTagNamespacesResponse>(
                 new java.util.function.Supplier<ListTagNamespacesRequest.Builder>() {
                     @Override
@@ -2486,22 +2372,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.TagNamespaceSummary} objects contained in responses from the
-     * listTagNamespaces operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TagNamespaceSummary} objects
+     * contained in responses from the listTagNamespaces operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.TagNamespaceSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TagNamespaceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.TagNamespaceSummary>
             listTagNamespacesRecordIterator(final ListTagNamespacesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTagNamespacesRequest.Builder,
-                ListTagNamespacesRequest,
-                ListTagNamespacesResponse,
-                com.oracle.bmc.identity.model.TagNamespaceSummary>(
+                ListTagNamespacesRequest.Builder, ListTagNamespacesRequest,
+                ListTagNamespacesResponse, com.oracle.bmc.identity.model.TagNamespaceSummary>(
                 new java.util.function.Supplier<ListTagNamespacesRequest.Builder>() {
                     @Override
                     public ListTagNamespacesRequest.Builder get() {
@@ -2551,20 +2434,17 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTaggingWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listTaggingWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTaggingWorkRequestErrorsResponse>
             listTaggingWorkRequestErrorsResponseIterator(
                     final ListTaggingWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTaggingWorkRequestErrorsRequest.Builder,
-                ListTaggingWorkRequestErrorsRequest,
+                ListTaggingWorkRequestErrorsRequest.Builder, ListTaggingWorkRequestErrorsRequest,
                 ListTaggingWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListTaggingWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -2608,22 +2488,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary} objects contained in responses
-     * from the listTaggingWorkRequestErrors operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary} objects
+     * contained in responses from the listTaggingWorkRequestErrors operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary>
             listTaggingWorkRequestErrorsRecordIterator(
                     final ListTaggingWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTaggingWorkRequestErrorsRequest.Builder,
-                ListTaggingWorkRequestErrorsRequest,
+                ListTaggingWorkRequestErrorsRequest.Builder, ListTaggingWorkRequestErrorsRequest,
                 ListTaggingWorkRequestErrorsResponse,
                 com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary>(
                 new java.util.function.Supplier<ListTaggingWorkRequestErrorsRequest.Builder>() {
@@ -2679,19 +2556,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTaggingWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listTaggingWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTaggingWorkRequestLogsResponse> listTaggingWorkRequestLogsResponseIterator(
             final ListTaggingWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTaggingWorkRequestLogsRequest.Builder,
-                ListTaggingWorkRequestLogsRequest,
+                ListTaggingWorkRequestLogsRequest.Builder, ListTaggingWorkRequestLogsRequest,
                 ListTaggingWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListTaggingWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -2734,22 +2608,19 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} objects contained in responses
-     * from the listTaggingWorkRequestLogs operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} objects
+     * contained in responses from the listTaggingWorkRequestLogs operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary>
             listTaggingWorkRequestLogsRecordIterator(
                     final ListTaggingWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTaggingWorkRequestLogsRequest.Builder,
-                ListTaggingWorkRequestLogsRequest,
+                ListTaggingWorkRequestLogsRequest.Builder, ListTaggingWorkRequestLogsRequest,
                 ListTaggingWorkRequestLogsResponse,
                 com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary>(
                 new java.util.function.Supplier<ListTaggingWorkRequestLogsRequest.Builder>() {
@@ -2804,19 +2675,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTaggingWorkRequests operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listTaggingWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTaggingWorkRequestsResponse> listTaggingWorkRequestsResponseIterator(
             final ListTaggingWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTaggingWorkRequestsRequest.Builder,
-                ListTaggingWorkRequestsRequest,
+                ListTaggingWorkRequestsRequest.Builder, ListTaggingWorkRequestsRequest,
                 ListTaggingWorkRequestsResponse>(
                 new java.util.function.Supplier<ListTaggingWorkRequestsRequest.Builder>() {
                     @Override
@@ -2859,21 +2727,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.TaggingWorkRequestSummary} objects contained in responses from
-     * the listTaggingWorkRequests operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestSummary} objects
+     * contained in responses from the listTaggingWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.TaggingWorkRequestSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.TaggingWorkRequestSummary>
             listTaggingWorkRequestsRecordIterator(final ListTaggingWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTaggingWorkRequestsRequest.Builder,
-                ListTaggingWorkRequestsRequest,
+                ListTaggingWorkRequestsRequest.Builder, ListTaggingWorkRequestsRequest,
                 ListTaggingWorkRequestsResponse,
                 com.oracle.bmc.identity.model.TaggingWorkRequestSummary>(
                 new java.util.function.Supplier<ListTaggingWorkRequestsRequest.Builder>() {
@@ -2926,12 +2791,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTags
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTags operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTagsResponse> listTagsResponseIterator(final ListTagsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -2975,21 +2839,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.TagSummary} objects contained in responses from the listTags
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TagSummary} objects
+     * contained in responses from the listTags operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.TagSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TagSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.TagSummary> listTagsRecordIterator(
             final ListTagsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTagsRequest.Builder,
-                ListTagsRequest,
-                ListTagsResponse,
+                ListTagsRequest.Builder, ListTagsRequest, ListTagsResponse,
                 com.oracle.bmc.identity.model.TagSummary>(
                 new java.util.function.Supplier<ListTagsRequest.Builder>() {
                     @Override
@@ -3039,19 +2900,16 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listUserGroupMemberships operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listUserGroupMemberships operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUserGroupMembershipsResponse> listUserGroupMembershipsResponseIterator(
             final ListUserGroupMembershipsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListUserGroupMembershipsRequest.Builder,
-                ListUserGroupMembershipsRequest,
+                ListUserGroupMembershipsRequest.Builder, ListUserGroupMembershipsRequest,
                 ListUserGroupMembershipsResponse>(
                 new java.util.function.Supplier<ListUserGroupMembershipsRequest.Builder>() {
                     @Override
@@ -3094,21 +2952,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.UserGroupMembership} objects contained in responses from the
-     * listUserGroupMemberships operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.UserGroupMembership} objects
+     * contained in responses from the listUserGroupMemberships operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.UserGroupMembership} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.UserGroupMembership} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.UserGroupMembership>
             listUserGroupMembershipsRecordIterator(final ListUserGroupMembershipsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUserGroupMembershipsRequest.Builder,
-                ListUserGroupMembershipsRequest,
+                ListUserGroupMembershipsRequest.Builder, ListUserGroupMembershipsRequest,
                 ListUserGroupMembershipsResponse,
                 com.oracle.bmc.identity.model.UserGroupMembership>(
                 new java.util.function.Supplier<ListUserGroupMembershipsRequest.Builder>() {
@@ -3161,12 +3016,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listUsers
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listUsers operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUsersResponse> listUsersResponseIterator(final ListUsersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -3210,21 +3064,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.User}
-     * objects contained in responses from the listUsers operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.User} objects
+     * contained in responses from the listUsers operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.User} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.User} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.User> listUsersRecordIterator(
             final ListUsersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUsersRequest.Builder,
-                ListUsersRequest,
-                ListUsersResponse,
+                ListUsersRequest.Builder, ListUsersRequest, ListUsersResponse,
                 com.oracle.bmc.identity.model.User>(
                 new java.util.function.Supplier<ListUsersRequest.Builder>() {
                     @Override
@@ -3273,12 +3124,11 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -3324,21 +3174,18 @@ public class IdentityPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.identity.model.WorkRequestSummary} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.identity.model.WorkRequestSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.identity.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.identity.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

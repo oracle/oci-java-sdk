@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.aispeech;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.aispeech.internal.http.*;
 import com.oracle.bmc.aispeech.requests.*;
 import com.oracle.bmc.aispeech.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for AIServiceSpeech service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for AIServiceSpeech service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
-public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements AIServiceSpeechAsync {
-    /** Service instance for AIServiceSpeech. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
+    /**
+     * Service instance for AIServiceSpeech.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AISERVICESPEECH")
@@ -40,818 +37,112 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(AIServiceSpeechAsyncClient.class);
 
-    AIServiceSpeechAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        this(builder, authenticationDetailsProvider, true);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
 
-    AIServiceSpeechAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            boolean isStreamWarningEnabled) {
-        super(builder, authenticationDetailsProvider);
-
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
-                            "AIServiceSpeechAsyncClient", "synthesizeSpeech"));
-        }
-    }
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, AIServiceSpeechAsyncClient> {
-        private boolean isStreamWarningEnabled = true;
-
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "aispeech";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public AIServiceSpeechAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new AIServiceSpeechAsyncClient(
-                    this, authenticationDetailsProvider, isStreamWarningEnabled);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelTranscriptionJobResponse> cancelTranscriptionJob(
-            CancelTranscriptionJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelTranscriptionJobRequest, CancelTranscriptionJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-
-        return clientCall(request, CancelTranscriptionJobResponse::builder)
-                .logger(LOG, "cancelTranscriptionJob")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "CancelTranscriptionJob",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelTranscriptionJobRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .appendPathParam("actions")
-                .appendPathParam("cancel")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelTranscriptionJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelTranscriptionTaskResponse> cancelTranscriptionTask(
-            CancelTranscriptionTaskRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelTranscriptionTaskRequest, CancelTranscriptionTaskResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-
-        Validate.notBlank(
-                request.getTranscriptionTaskId(), "transcriptionTaskId must not be blank");
-
-        return clientCall(request, CancelTranscriptionTaskResponse::builder)
-                .logger(LOG, "cancelTranscriptionTask")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "CancelTranscriptionTask",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelTranscriptionTaskRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .appendPathParam("transcriptionTasks")
-                .appendPathParam(request.getTranscriptionTaskId())
-                .appendPathParam("actions")
-                .appendPathParam("cancel")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelTranscriptionTaskResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeCustomizationCompartmentResponse>
-            changeCustomizationCompartment(
-                    ChangeCustomizationCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeCustomizationCompartmentRequest,
-                                    ChangeCustomizationCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCustomizationCompartmentDetails(),
-                "changeCustomizationCompartmentDetails is required");
-
-        return clientCall(request, ChangeCustomizationCompartmentResponse::builder)
-                .logger(LOG, "changeCustomizationCompartment")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "ChangeCustomizationCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/ChangeCustomizationCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCustomizationCompartmentRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("customizations")
-                .appendPathParam(request.getCustomizationId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeCustomizationCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeTranscriptionJobCompartmentResponse>
-            changeTranscriptionJobCompartment(
-                    ChangeTranscriptionJobCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeTranscriptionJobCompartmentRequest,
-                                    ChangeTranscriptionJobCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeTranscriptionJobCompartmentDetails(),
-                "changeTranscriptionJobCompartmentDetails is required");
-
-        return clientCall(request, ChangeTranscriptionJobCompartmentResponse::builder)
-                .logger(LOG, "changeTranscriptionJobCompartment")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "ChangeTranscriptionJobCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeTranscriptionJobCompartmentRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeTranscriptionJobCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateCustomizationResponse> createCustomization(
-            CreateCustomizationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateCustomizationRequest, CreateCustomizationResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateCustomizationDetails(), "createCustomizationDetails is required");
-
-        return clientCall(request, CreateCustomizationResponse::builder)
-                .logger(LOG, "createCustomization")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "CreateCustomization",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/CreateCustomization")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCustomizationRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("customizations")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.Customization.class,
-                        CreateCustomizationResponse.Builder::customization)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCustomizationResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateCustomizationResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateRealtimeSessionTokenResponse>
-            createRealtimeSessionToken(
-                    CreateRealtimeSessionTokenRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateRealtimeSessionTokenRequest,
-                                    CreateRealtimeSessionTokenResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateRealtimeSessionTokenDetails(),
-                "createRealtimeSessionTokenDetails is required");
-
-        return clientCall(request, CreateRealtimeSessionTokenResponse::builder)
-                .logger(LOG, "createRealtimeSessionToken")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "CreateRealtimeSessionToken",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/RealtimeSessionToken/CreateRealtimeSessionToken")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateRealtimeSessionTokenRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("actions")
-                .appendPathParam("realtimeSessionToken")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.RealtimeSessionToken.class,
-                        CreateRealtimeSessionTokenResponse.Builder::realtimeSessionToken)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateRealtimeSessionTokenResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateRealtimeSessionTokenResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateTranscriptionJobResponse> createTranscriptionJob(
-            CreateTranscriptionJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateTranscriptionJobDetails(),
-                "createTranscriptionJobDetails is required");
-
-        return clientCall(request, CreateTranscriptionJobResponse::builder)
-                .logger(LOG, "createTranscriptionJob")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "CreateTranscriptionJob",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTranscriptionJobRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.TranscriptionJob.class,
-                        CreateTranscriptionJobResponse.Builder::transcriptionJob)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTranscriptionJobResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateTranscriptionJobResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteCustomizationResponse> deleteCustomization(
-            DeleteCustomizationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteCustomizationRequest, DeleteCustomizationResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
-
-        return clientCall(request, DeleteCustomizationResponse::builder)
-                .logger(LOG, "deleteCustomization")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "DeleteCustomization",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/DeleteCustomization")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteCustomizationRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("customizations")
-                .appendPathParam(request.getCustomizationId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteCustomizationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteTranscriptionJobResponse> deleteTranscriptionJob(
-            DeleteTranscriptionJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-
-        return clientCall(request, DeleteTranscriptionJobResponse::builder)
-                .logger(LOG, "deleteTranscriptionJob")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "DeleteTranscriptionJob",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/DeleteTranscriptionJob")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTranscriptionJobRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTranscriptionJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCustomizationResponse> getCustomization(
-            GetCustomizationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetCustomizationRequest, GetCustomizationResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
-
-        return clientCall(request, GetCustomizationResponse::builder)
-                .logger(LOG, "getCustomization")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "GetCustomization",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/GetCustomization")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCustomizationRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("customizations")
-                .appendPathParam(request.getCustomizationId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.Customization.class,
-                        GetCustomizationResponse.Builder::customization)
-                .handleResponseHeaderString("etag", GetCustomizationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCustomizationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTranscriptionJobResponse> getTranscriptionJob(
-            GetTranscriptionJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetTranscriptionJobRequest, GetTranscriptionJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-
-        return clientCall(request, GetTranscriptionJobResponse::builder)
-                .logger(LOG, "getTranscriptionJob")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "GetTranscriptionJob",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTranscriptionJobRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.TranscriptionJob.class,
-                        GetTranscriptionJobResponse.Builder::transcriptionJob)
-                .handleResponseHeaderString("etag", GetTranscriptionJobResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTranscriptionJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTranscriptionTaskResponse> getTranscriptionTask(
-            GetTranscriptionTaskRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-
-        Validate.notBlank(
-                request.getTranscriptionTaskId(), "transcriptionTaskId must not be blank");
-
-        return clientCall(request, GetTranscriptionTaskResponse::builder)
-                .logger(LOG, "getTranscriptionTask")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "GetTranscriptionTask",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTranscriptionTaskRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .appendPathParam("transcriptionTasks")
-                .appendPathParam(request.getTranscriptionTaskId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.TranscriptionTask.class,
-                        GetTranscriptionTaskResponse.Builder::transcriptionTask)
-                .handleResponseHeaderString("etag", GetTranscriptionTaskResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTranscriptionTaskResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCustomizationsResponse> listCustomizations(
-            ListCustomizationsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListCustomizationsRequest, ListCustomizationsResponse>
-                    handler) {
-
-        return clientCall(request, ListCustomizationsResponse::builder)
-                .logger(LOG, "listCustomizations")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "ListCustomizations",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/ListCustomizations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCustomizationsRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("customizations")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.CustomizationCollection.class,
-                        ListCustomizationsResponse.Builder::customizationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCustomizationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCustomizationsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListCustomizationsResponse.Builder::opcPrevPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTranscriptionJobsResponse> listTranscriptionJobs(
-            ListTranscriptionJobsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>
-                    handler) {
-
-        return clientCall(request, ListTranscriptionJobsResponse::builder)
-                .logger(LOG, "listTranscriptionJobs")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "ListTranscriptionJobs",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTranscriptionJobsRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.TranscriptionJobCollection.class,
-                        ListTranscriptionJobsResponse.Builder::transcriptionJobCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTranscriptionJobsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTranscriptionJobsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListTranscriptionJobsResponse.Builder::opcPrevPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTranscriptionTasksResponse> listTranscriptionTasks(
-            ListTranscriptionTasksRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-
-        return clientCall(request, ListTranscriptionTasksResponse::builder)
-                .logger(LOG, "listTranscriptionTasks")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "ListTranscriptionTasks",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTranscriptionTasksRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .appendPathParam("transcriptionTasks")
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.TranscriptionTaskCollection.class,
-                        ListTranscriptionTasksResponse.Builder::transcriptionTaskCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTranscriptionTasksResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTranscriptionTasksResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListTranscriptionTasksResponse.Builder::opcPrevPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListVoicesResponse> listVoices(
-            ListVoicesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListVoicesRequest, ListVoicesResponse>
-                    handler) {
-
-        return clientCall(request, ListVoicesResponse::builder)
-                .logger(LOG, "listVoices")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "ListVoices",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Voice/ListVoices")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListVoicesRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("voices")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("modelName", request.getModelName())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.VoiceCollection.class,
-                        ListVoicesResponse.Builder::voiceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListVoicesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SynthesizeSpeechResponse> synthesizeSpeech(
-            SynthesizeSpeechRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            SynthesizeSpeechRequest, SynthesizeSpeechResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getSynthesizeSpeechDetails(), "synthesizeSpeechDetails is required");
-
-        return clientCall(request, SynthesizeSpeechResponse::builder)
-                .logger(LOG, "synthesizeSpeech")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "SynthesizeSpeech",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/SynthesizeSpeech/SynthesizeSpeech")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SynthesizeSpeechRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("actions")
-                .appendPathParam("synthesizeSpeech")
-                .accept("audio/mpeg", "audio/ogg", "audio/pcm", "audio/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        java.io.InputStream.class, SynthesizeSpeechResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id", SynthesizeSpeechResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateCustomizationResponse> updateCustomization(
-            UpdateCustomizationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateCustomizationRequest, UpdateCustomizationResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCustomizationId(), "customizationId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCustomizationDetails(), "updateCustomizationDetails is required");
-
-        return clientCall(request, UpdateCustomizationResponse::builder)
-                .logger(LOG, "updateCustomization")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "UpdateCustomization",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/UpdateCustomization")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCustomizationRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("customizations")
-                .appendPathParam(request.getCustomizationId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.Customization.class,
-                        UpdateCustomizationResponse.Builder::customization)
-                .handleResponseHeaderString("etag", UpdateCustomizationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCustomizationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateTranscriptionJobResponse> updateTranscriptionJob(
-            UpdateTranscriptionJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateTranscriptionJobRequest, UpdateTranscriptionJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTranscriptionJobDetails(),
-                "updateTranscriptionJobDetails is required");
-
-        return clientCall(request, UpdateTranscriptionJobResponse::builder)
-                .logger(LOG, "updateTranscriptionJob")
-                .serviceDetails(
-                        "AIServiceSpeech",
-                        "UpdateTranscriptionJob",
-                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTranscriptionJobRequest::builder)
-                .basePath("/20220101")
-                .appendPathParam("transcriptionJobs")
-                .appendPathParam(request.getTranscriptionJobId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.aispeech.model.TranscriptionJob.class,
-                        UpdateTranscriptionJobResponse.Builder::transcriptionJob)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTranscriptionJobResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateTranscriptionJobResponse.Builder::etag)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public AIServiceSpeechAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public AIServiceSpeechAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public AIServiceSpeechAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public AIServiceSpeechAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public AIServiceSpeechAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -859,26 +150,26 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public AIServiceSpeechAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -887,29 +178,29 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public AIServiceSpeechAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -922,14 +213,1205 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public AIServiceSpeechAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "AIServiceSpeechAsyncClient", "synthesizeSpeech"));
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, AIServiceSpeechAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public AIServiceSpeechAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new AIServiceSpeechAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelTranscriptionJobResponse> cancelTranscriptionJob(
+            CancelTranscriptionJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelTranscriptionJobRequest, CancelTranscriptionJobResponse>
+                    handler) {
+        LOG.trace("Called async cancelTranscriptionJob");
+        final CancelTranscriptionJobRequest interceptedRequest =
+                CancelTranscriptionJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CancelTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelTranscriptionJobResponse>
+                transformer =
+                        CancelTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelTranscriptionJobRequest, CancelTranscriptionJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelTranscriptionJobRequest, CancelTranscriptionJobResponse>,
+                        java.util.concurrent.Future<CancelTranscriptionJobResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelTranscriptionJobRequest, CancelTranscriptionJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelTranscriptionTaskResponse> cancelTranscriptionTask(
+            CancelTranscriptionTaskRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelTranscriptionTaskRequest, CancelTranscriptionTaskResponse>
+                    handler) {
+        LOG.trace("Called async cancelTranscriptionTask");
+        final CancelTranscriptionTaskRequest interceptedRequest =
+                CancelTranscriptionTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelTranscriptionTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CancelTranscriptionTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelTranscriptionTaskResponse>
+                transformer =
+                        CancelTranscriptionTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelTranscriptionTaskRequest, CancelTranscriptionTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelTranscriptionTaskRequest, CancelTranscriptionTaskResponse>,
+                        java.util.concurrent.Future<CancelTranscriptionTaskResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelTranscriptionTaskRequest, CancelTranscriptionTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCustomizationCompartmentResponse>
+            changeCustomizationCompartment(
+                    ChangeCustomizationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCustomizationCompartmentRequest,
+                                    ChangeCustomizationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeCustomizationCompartment");
+        final ChangeCustomizationCompartmentRequest interceptedRequest =
+                ChangeCustomizationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCustomizationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ChangeCustomizationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/ChangeCustomizationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCustomizationCompartmentResponse>
+                transformer =
+                        ChangeCustomizationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCustomizationCompartmentRequest,
+                        ChangeCustomizationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCustomizationCompartmentRequest,
+                                ChangeCustomizationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeCustomizationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCustomizationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCustomizationCompartmentRequest, ChangeCustomizationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeTranscriptionJobCompartmentResponse>
+            changeTranscriptionJobCompartment(
+                    ChangeTranscriptionJobCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeTranscriptionJobCompartmentRequest,
+                                    ChangeTranscriptionJobCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeTranscriptionJobCompartment");
+        final ChangeTranscriptionJobCompartmentRequest interceptedRequest =
+                ChangeTranscriptionJobCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTranscriptionJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ChangeTranscriptionJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeTranscriptionJobCompartmentResponse>
+                transformer =
+                        ChangeTranscriptionJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeTranscriptionJobCompartmentRequest,
+                        ChangeTranscriptionJobCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeTranscriptionJobCompartmentRequest,
+                                ChangeTranscriptionJobCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeTranscriptionJobCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTranscriptionJobCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeTranscriptionJobCompartmentRequest,
+                    ChangeTranscriptionJobCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomizationResponse> createCustomization(
+            CreateCustomizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomizationRequest, CreateCustomizationResponse>
+                    handler) {
+        LOG.trace("Called async createCustomization");
+        final CreateCustomizationRequest interceptedRequest =
+                CreateCustomizationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCustomizationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CreateCustomization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/CreateCustomization");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCustomizationResponse>
+                transformer =
+                        CreateCustomizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCustomizationRequest, CreateCustomizationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCustomizationRequest, CreateCustomizationResponse>,
+                        java.util.concurrent.Future<CreateCustomizationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCustomizationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCustomizationRequest, CreateCustomizationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRealtimeSessionTokenResponse>
+            createRealtimeSessionToken(
+                    CreateRealtimeSessionTokenRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateRealtimeSessionTokenRequest,
+                                    CreateRealtimeSessionTokenResponse>
+                            handler) {
+        LOG.trace("Called async createRealtimeSessionToken");
+        final CreateRealtimeSessionTokenRequest interceptedRequest =
+                CreateRealtimeSessionTokenConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRealtimeSessionTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CreateRealtimeSessionToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/RealtimeSessionToken/CreateRealtimeSessionToken");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateRealtimeSessionTokenResponse>
+                transformer =
+                        CreateRealtimeSessionTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateRealtimeSessionTokenRequest, CreateRealtimeSessionTokenResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateRealtimeSessionTokenRequest,
+                                CreateRealtimeSessionTokenResponse>,
+                        java.util.concurrent.Future<CreateRealtimeSessionTokenResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRealtimeSessionTokenDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateRealtimeSessionTokenRequest, CreateRealtimeSessionTokenResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTranscriptionJobResponse> createTranscriptionJob(
+            CreateTranscriptionJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>
+                    handler) {
+        LOG.trace("Called async createTranscriptionJob");
+        final CreateTranscriptionJobRequest interceptedRequest =
+                CreateTranscriptionJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "CreateTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTranscriptionJobResponse>
+                transformer =
+                        CreateTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>,
+                        java.util.concurrent.Future<CreateTranscriptionJobResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTranscriptionJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomizationResponse> deleteCustomization(
+            DeleteCustomizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomizationRequest, DeleteCustomizationResponse>
+                    handler) {
+        LOG.trace("Called async deleteCustomization");
+        final DeleteCustomizationRequest interceptedRequest =
+                DeleteCustomizationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCustomizationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "DeleteCustomization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/DeleteCustomization");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomizationResponse>
+                transformer =
+                        DeleteCustomizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCustomizationRequest, DeleteCustomizationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCustomizationRequest, DeleteCustomizationResponse>,
+                        java.util.concurrent.Future<DeleteCustomizationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCustomizationRequest, DeleteCustomizationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTranscriptionJobResponse> deleteTranscriptionJob(
+            DeleteTranscriptionJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>
+                    handler) {
+        LOG.trace("Called async deleteTranscriptionJob");
+        final DeleteTranscriptionJobRequest interceptedRequest =
+                DeleteTranscriptionJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "DeleteTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/DeleteTranscriptionJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTranscriptionJobResponse>
+                transformer =
+                        DeleteTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>,
+                        java.util.concurrent.Future<DeleteTranscriptionJobResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomizationResponse> getCustomization(
+            GetCustomizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCustomizationRequest, GetCustomizationResponse>
+                    handler) {
+        LOG.trace("Called async getCustomization");
+        final GetCustomizationRequest interceptedRequest =
+                GetCustomizationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCustomizationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "GetCustomization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/GetCustomization");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCustomizationResponse>
+                transformer =
+                        GetCustomizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCustomizationRequest, GetCustomizationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCustomizationRequest, GetCustomizationResponse>,
+                        java.util.concurrent.Future<GetCustomizationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCustomizationRequest, GetCustomizationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTranscriptionJobResponse> getTranscriptionJob(
+            GetTranscriptionJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTranscriptionJobRequest, GetTranscriptionJobResponse>
+                    handler) {
+        LOG.trace("Called async getTranscriptionJob");
+        final GetTranscriptionJobRequest interceptedRequest =
+                GetTranscriptionJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "GetTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTranscriptionJobResponse>
+                transformer =
+                        GetTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetTranscriptionJobRequest, GetTranscriptionJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTranscriptionJobRequest, GetTranscriptionJobResponse>,
+                        java.util.concurrent.Future<GetTranscriptionJobResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTranscriptionJobRequest, GetTranscriptionJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTranscriptionTaskResponse> getTranscriptionTask(
+            GetTranscriptionTaskRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>
+                    handler) {
+        LOG.trace("Called async getTranscriptionTask");
+        final GetTranscriptionTaskRequest interceptedRequest =
+                GetTranscriptionTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTranscriptionTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "GetTranscriptionTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTranscriptionTaskResponse>
+                transformer =
+                        GetTranscriptionTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>,
+                        java.util.concurrent.Future<GetTranscriptionTaskResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomizationsResponse> listCustomizations(
+            ListCustomizationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCustomizationsRequest, ListCustomizationsResponse>
+                    handler) {
+        LOG.trace("Called async listCustomizations");
+        final ListCustomizationsRequest interceptedRequest =
+                ListCustomizationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCustomizationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ListCustomizations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/ListCustomizations");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCustomizationsResponse>
+                transformer =
+                        ListCustomizationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCustomizationsRequest, ListCustomizationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCustomizationsRequest, ListCustomizationsResponse>,
+                        java.util.concurrent.Future<ListCustomizationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCustomizationsRequest, ListCustomizationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTranscriptionJobsResponse> listTranscriptionJobs(
+            ListTranscriptionJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>
+                    handler) {
+        LOG.trace("Called async listTranscriptionJobs");
+        final ListTranscriptionJobsRequest interceptedRequest =
+                ListTranscriptionJobsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTranscriptionJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ListTranscriptionJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTranscriptionJobsResponse>
+                transformer =
+                        ListTranscriptionJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>,
+                        java.util.concurrent.Future<ListTranscriptionJobsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTranscriptionTasksResponse> listTranscriptionTasks(
+            ListTranscriptionTasksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>
+                    handler) {
+        LOG.trace("Called async listTranscriptionTasks");
+        final ListTranscriptionTasksRequest interceptedRequest =
+                ListTranscriptionTasksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTranscriptionTasksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ListTranscriptionTasks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTranscriptionTasksResponse>
+                transformer =
+                        ListTranscriptionTasksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>,
+                        java.util.concurrent.Future<ListTranscriptionTasksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVoicesResponse> listVoices(
+            ListVoicesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListVoicesRequest, ListVoicesResponse>
+                    handler) {
+        LOG.trace("Called async listVoices");
+        final ListVoicesRequest interceptedRequest = ListVoicesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVoicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "ListVoices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Voice/ListVoices");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVoicesResponse>
+                transformer =
+                        ListVoicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListVoicesRequest, ListVoicesResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVoicesRequest, ListVoicesResponse>,
+                        java.util.concurrent.Future<ListVoicesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVoicesRequest, ListVoicesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SynthesizeSpeechResponse> synthesizeSpeech(
+            SynthesizeSpeechRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SynthesizeSpeechRequest, SynthesizeSpeechResponse>
+                    handler) {
+        LOG.trace("Called async synthesizeSpeech");
+        final SynthesizeSpeechRequest interceptedRequest =
+                SynthesizeSpeechConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SynthesizeSpeechConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "SynthesizeSpeech",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/SynthesizeSpeech/SynthesizeSpeech");
+        final java.util.function.Function<javax.ws.rs.core.Response, SynthesizeSpeechResponse>
+                transformer =
+                        SynthesizeSpeechConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SynthesizeSpeechRequest, SynthesizeSpeechResponse>,
+                        java.util.concurrent.Future<SynthesizeSpeechResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSynthesizeSpeechDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SynthesizeSpeechRequest, SynthesizeSpeechResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomizationResponse> updateCustomization(
+            UpdateCustomizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomizationRequest, UpdateCustomizationResponse>
+                    handler) {
+        LOG.trace("Called async updateCustomization");
+        final UpdateCustomizationRequest interceptedRequest =
+                UpdateCustomizationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCustomizationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "UpdateCustomization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Customization/UpdateCustomization");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomizationResponse>
+                transformer =
+                        UpdateCustomizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCustomizationRequest, UpdateCustomizationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCustomizationRequest, UpdateCustomizationResponse>,
+                        java.util.concurrent.Future<UpdateCustomizationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCustomizationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCustomizationRequest, UpdateCustomizationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTranscriptionJobResponse> updateTranscriptionJob(
+            UpdateTranscriptionJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTranscriptionJobRequest, UpdateTranscriptionJobResponse>
+                    handler) {
+        LOG.trace("Called async updateTranscriptionJob");
+        final UpdateTranscriptionJobRequest interceptedRequest =
+                UpdateTranscriptionJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTranscriptionJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceSpeech",
+                        "UpdateTranscriptionJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTranscriptionJobResponse>
+                transformer =
+                        UpdateTranscriptionJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateTranscriptionJobRequest, UpdateTranscriptionJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTranscriptionJobRequest, UpdateTranscriptionJobResponse>,
+                        java.util.concurrent.Future<UpdateTranscriptionJobResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTranscriptionJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTranscriptionJobRequest, UpdateTranscriptionJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.bds.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+public enum OperationTypes {
     CreateBds("CREATE_BDS"),
     UpdateBds("UPDATE_BDS"),
     DeleteBds("DELETE_BDS"),

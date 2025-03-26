@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum OperationType {
     CreateDiscovery("CREATE_DISCOVERY"),
     DeleteDiscovery("DELETE_DISCOVERY"),
     CreateCollection("CREATE_COLLECTION"),

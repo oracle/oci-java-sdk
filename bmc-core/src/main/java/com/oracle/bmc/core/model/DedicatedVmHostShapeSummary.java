@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The shape used to launch the dedicated virtual machine (VM) host. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The shape used to launch the dedicated virtual machine (VM) host.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DedicatedVmHostShapeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DedicatedVmHostShapeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DedicatedVmHostShapeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"availabilityDomain", "dedicatedVmHostShape"})
     public DedicatedVmHostShapeSummary(String availabilityDomain, String dedicatedVmHostShape) {
@@ -32,7 +32,10 @@ public final class DedicatedVmHostShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The shape's availability domain. */
+        /**
+         * The shape's availability domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -41,26 +44,27 @@ public final class DedicatedVmHostShapeSummary
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The name of the dedicated VM host shape. You can enumerate all available shapes by
-         * calling {@link DedicatedVmHostShapes}.
-         */
+         * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
+         * {@link DedicatedVmHostShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
         private String dedicatedVmHostShape;
 
         /**
-         * The name of the dedicated VM host shape. You can enumerate all available shapes by
-         * calling {@link DedicatedVmHostShapes}.
+         * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
+         * {@link DedicatedVmHostShapes}.
          *
          * @param dedicatedVmHostShape the value to set
          * @return this builder
-         */
+         **/
         public Builder dedicatedVmHostShape(String dedicatedVmHostShape) {
             this.dedicatedVmHostShape = dedicatedVmHostShape;
             this.__explicitlySet__.add("dedicatedVmHostShape");
@@ -92,7 +96,9 @@ public final class DedicatedVmHostShapeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,7 +107,10 @@ public final class DedicatedVmHostShapeSummary
         return new Builder().copy(this);
     }
 
-    /** The shape's availability domain. */
+    /**
+     * The shape's availability domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
@@ -109,7 +118,7 @@ public final class DedicatedVmHostShapeSummary
      * The shape's availability domain.
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -117,7 +126,8 @@ public final class DedicatedVmHostShapeSummary
     /**
      * The name of the dedicated VM host shape. You can enumerate all available shapes by calling
      * {@link DedicatedVmHostShapes}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
     private final String dedicatedVmHostShape;
 
@@ -126,7 +136,7 @@ public final class DedicatedVmHostShapeSummary
      * {@link DedicatedVmHostShapes}.
      *
      * @return the value
-     */
+     **/
     public String getDedicatedVmHostShape() {
         return dedicatedVmHostShape;
     }
@@ -138,7 +148,6 @@ public final class DedicatedVmHostShapeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

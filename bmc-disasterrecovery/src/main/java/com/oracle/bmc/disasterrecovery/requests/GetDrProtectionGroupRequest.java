@@ -6,33 +6,39 @@ package com.oracle.bmc.disasterrecovery.requests;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/GetDrProtectionGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDrProtectionGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/GetDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDrProtectionGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class GetDrProtectionGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
      * The OCID of the DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,20 +46,22 @@ public class GetDrProtectionGroupRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDrProtectionGroupRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * The OCID of the DR protection group.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
          * The OCID of the DR protection group.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance
@@ -63,7 +71,10 @@ public class GetDrProtectionGroupRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -79,19 +90,18 @@ public class GetDrProtectionGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -103,7 +113,6 @@ public class GetDrProtectionGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetDrProtectionGroupRequest o) {
@@ -117,11 +126,10 @@ public class GetDrProtectionGroupRequest
         /**
          * Build the instance of GetDrProtectionGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetDrProtectionGroupRequest
          */
@@ -135,8 +143,7 @@ public class GetDrProtectionGroupRequest
         /**
          * Build the instance of GetDrProtectionGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetDrProtectionGroupRequest
@@ -152,7 +159,6 @@ public class GetDrProtectionGroupRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -161,7 +167,6 @@ public class GetDrProtectionGroupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

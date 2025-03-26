@@ -5,21 +5,20 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Definition of a span object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Definition of a span object.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Span.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -72,21 +71,22 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier (spanId) for the span. Note that this field is defined as spanKey in
-         * the API and it maps to the spanId in the trace data in Application Performance
-         * Monitoring.
-         */
+         * Unique identifier (spanId) for the span.  Note that this field is
+         * defined as spanKey in the API and it maps to the spanId in the trace data
+         * in Application Performance Monitoring.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Unique identifier (spanId) for the span. Note that this field is defined as spanKey in
-         * the API and it maps to the spanId in the trace data in Application Performance
-         * Monitoring.
+         * Unique identifier (spanId) for the span.  Note that this field is
+         * defined as spanKey in the API and it maps to the spanId in the trace data
+         * in Application Performance Monitoring.
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -94,7 +94,8 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * Unique parent identifier for the span if one exists. For root spans this will be null.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentSpanKey")
         private String parentSpanKey;
 
@@ -103,13 +104,16 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param parentSpanKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentSpanKey(String parentSpanKey) {
             this.parentSpanKey = parentSpanKey;
             this.__explicitlySet__.add("parentSpanKey");
             return this;
         }
-        /** Unique identifier for the trace. */
+        /**
+         * Unique identifier for the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceKey")
         private String traceKey;
 
@@ -118,43 +122,52 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param traceKey the value to set
          * @return this builder
-         */
+         **/
         public Builder traceKey(String traceKey) {
             this.traceKey = traceKey;
             this.__explicitlySet__.add("traceKey");
             return this;
         }
-        /** Span start time. Timestamp when the span was started. */
+        /**
+         * Span start time.  Timestamp when the span was started.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * Span start time. Timestamp when the span was started.
+         * Span start time.  Timestamp when the span was started.
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** Span end time. Timestamp when the span was completed. */
+        /**
+         * Span end time.  Timestamp when the span was completed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * Span end time. Timestamp when the span was completed.
+         * Span end time.  Timestamp when the span was completed.
          *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** Total span duration in milliseconds. */
+        /**
+         * Total span duration in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
         private Long durationInMs;
 
@@ -163,30 +176,34 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param durationInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder durationInMs(Long durationInMs) {
             this.durationInMs = durationInMs;
             this.__explicitlySet__.add("durationInMs");
             return this;
         }
         /**
-         * Span name associated with the trace. This is usually the method or URI of the request.
-         */
+         * Span name associated with the trace.  This is usually the method or URI of the request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationName")
         private String operationName;
 
         /**
-         * Span name associated with the trace. This is usually the method or URI of the request.
+         * Span name associated with the trace.  This is usually the method or URI of the request.
          *
          * @param operationName the value to set
          * @return this builder
-         */
+         **/
         public Builder operationName(String operationName) {
             this.operationName = operationName;
             this.__explicitlySet__.add("operationName");
             return this;
         }
-        /** Service name associated with the span. */
+        /**
+         * Service name associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
@@ -195,13 +212,16 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** Kind associated with the span. */
+        /**
+         * Kind associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kind")
         private String kind;
 
@@ -210,13 +230,16 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param kind the value to set
          * @return this builder
-         */
+         **/
         public Builder kind(String kind) {
             this.kind = kind;
             this.__explicitlySet__.add("kind");
             return this;
         }
-        /** List of tags associated with the span. */
+        /**
+         * List of tags associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
@@ -225,13 +248,16 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tag> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
-        /** Metadata about the tags in the span. */
+        /**
+         * Metadata about the tags in the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagsMetadata")
         private java.util.Map<String, TagMetadata> tagsMetadata;
 
@@ -240,13 +266,16 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param tagsMetadata the value to set
          * @return this builder
-         */
+         **/
         public Builder tagsMetadata(java.util.Map<String, TagMetadata> tagsMetadata) {
             this.tagsMetadata = tagsMetadata;
             this.__explicitlySet__.add("tagsMetadata");
             return this;
         }
-        /** List of logs associated with the span. */
+        /**
+         * List of logs associated with the span.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logs")
         private java.util.List<SpanLogCollection> logs;
 
@@ -255,13 +284,16 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param logs the value to set
          * @return this builder
-         */
+         **/
         public Builder logs(java.util.List<SpanLogCollection> logs) {
             this.logs = logs;
             this.__explicitlySet__.add("logs");
             return this;
         }
-        /** Indicates if the span has an error. */
+        /**
+         * Indicates if the span has an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isError")
         private Boolean isError;
 
@@ -270,13 +302,16 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param isError the value to set
          * @return this builder
-         */
+         **/
         public Builder isError(Boolean isError) {
             this.isError = isError;
             this.__explicitlySet__.add("isError");
             return this;
         }
-        /** Source of span (spans, syn_spans). */
+        /**
+         * Source of span (spans, syn_spans).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private SourceName sourceName;
 
@@ -285,7 +320,7 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param sourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceName(SourceName sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
@@ -366,7 +401,9 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -376,23 +413,29 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * Unique identifier (spanId) for the span. Note that this field is defined as spanKey in the
-     * API and it maps to the spanId in the trace data in Application Performance Monitoring.
-     */
+     * Unique identifier (spanId) for the span.  Note that this field is
+     * defined as spanKey in the API and it maps to the spanId in the trace data
+     * in Application Performance Monitoring.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Unique identifier (spanId) for the span. Note that this field is defined as spanKey in the
-     * API and it maps to the spanId in the trace data in Application Performance Monitoring.
+     * Unique identifier (spanId) for the span.  Note that this field is
+     * defined as spanKey in the API and it maps to the spanId in the trace data
+     * in Application Performance Monitoring.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Unique parent identifier for the span if one exists. For root spans this will be null. */
+    /**
+     * Unique parent identifier for the span if one exists. For root spans this will be null.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSpanKey")
     private final String parentSpanKey;
 
@@ -400,12 +443,15 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Unique parent identifier for the span if one exists. For root spans this will be null.
      *
      * @return the value
-     */
+     **/
     public String getParentSpanKey() {
         return parentSpanKey;
     }
 
-    /** Unique identifier for the trace. */
+    /**
+     * Unique identifier for the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceKey")
     private final String traceKey;
 
@@ -413,38 +459,47 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Unique identifier for the trace.
      *
      * @return the value
-     */
+     **/
     public String getTraceKey() {
         return traceKey;
     }
 
-    /** Span start time. Timestamp when the span was started. */
+    /**
+     * Span start time.  Timestamp when the span was started.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * Span start time. Timestamp when the span was started.
+     * Span start time.  Timestamp when the span was started.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** Span end time. Timestamp when the span was completed. */
+    /**
+     * Span end time.  Timestamp when the span was completed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
-     * Span end time. Timestamp when the span was completed.
+     * Span end time.  Timestamp when the span was completed.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** Total span duration in milliseconds. */
+    /**
+     * Total span duration in milliseconds.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
     private final Long durationInMs;
 
@@ -452,25 +507,31 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Total span duration in milliseconds.
      *
      * @return the value
-     */
+     **/
     public Long getDurationInMs() {
         return durationInMs;
     }
 
-    /** Span name associated with the trace. This is usually the method or URI of the request. */
+    /**
+     * Span name associated with the trace.  This is usually the method or URI of the request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
     private final String operationName;
 
     /**
-     * Span name associated with the trace. This is usually the method or URI of the request.
+     * Span name associated with the trace.  This is usually the method or URI of the request.
      *
      * @return the value
-     */
+     **/
     public String getOperationName() {
         return operationName;
     }
 
-    /** Service name associated with the span. */
+    /**
+     * Service name associated with the span.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
@@ -478,12 +539,15 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Service name associated with the span.
      *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** Kind associated with the span. */
+    /**
+     * Kind associated with the span.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kind")
     private final String kind;
 
@@ -491,12 +555,15 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Kind associated with the span.
      *
      * @return the value
-     */
+     **/
     public String getKind() {
         return kind;
     }
 
-    /** List of tags associated with the span. */
+    /**
+     * List of tags associated with the span.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tag> tags;
 
@@ -504,12 +571,15 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * List of tags associated with the span.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Tag> getTags() {
         return tags;
     }
 
-    /** Metadata about the tags in the span. */
+    /**
+     * Metadata about the tags in the span.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagsMetadata")
     private final java.util.Map<String, TagMetadata> tagsMetadata;
 
@@ -517,12 +587,15 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Metadata about the tags in the span.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, TagMetadata> getTagsMetadata() {
         return tagsMetadata;
     }
 
-    /** List of logs associated with the span. */
+    /**
+     * List of logs associated with the span.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logs")
     private final java.util.List<SpanLogCollection> logs;
 
@@ -530,12 +603,15 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * List of logs associated with the span.
      *
      * @return the value
-     */
+     **/
     public java.util.List<SpanLogCollection> getLogs() {
         return logs;
     }
 
-    /** Indicates if the span has an error. */
+    /**
+     * Indicates if the span has an error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isError")
     private final Boolean isError;
 
@@ -543,19 +619,22 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Indicates if the span has an error.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsError() {
         return isError;
     }
 
-    /** Source of span (spans, syn_spans). */
-    public enum SourceName implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Source of span (spans, syn_spans).
+     *
+     **/
+    public enum SourceName {
         Spans("SPANS"),
         SynSpans("SYN_SPANS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -594,7 +673,10 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** Source of span (spans, syn_spans). */
+    /**
+     * Source of span (spans, syn_spans).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final SourceName sourceName;
 
@@ -602,7 +684,7 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * Source of span (spans, syn_spans).
      *
      * @return the value
-     */
+     **/
     public SourceName getSourceName() {
         return sourceName;
     }
@@ -614,7 +696,6 @@ public final class Span extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

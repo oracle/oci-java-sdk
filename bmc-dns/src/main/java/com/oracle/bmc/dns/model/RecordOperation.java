@@ -5,24 +5,22 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * An extension of the existing record resource, describing either a precondition, an add, or a
- * remove. Preconditions check all fields, including read-only data like {@code recordHash} and
- * {@code rrsetVersion}. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ * An extension of the existing record resource, describing either a
+ * precondition, an add, or a remove. Preconditions check all fields,
+ * including read-only data like {@code recordHash} and {@code rrsetVersion}.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RecordOperation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RecordOperation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RecordOperation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "domain",
@@ -56,7 +54,10 @@ public final class RecordOperation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The fully qualified domain name where the record can be located. */
+        /**
+         * The fully qualified domain name where the record can be located.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
@@ -65,13 +66,16 @@ public final class RecordOperation
          *
          * @param domain the value to set
          * @return this builder
-         */
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-        /** A unique identifier for the record within its zone. */
+        /**
+         * A unique identifier for the record within its zone.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recordHash")
         private String recordHash;
 
@@ -80,108 +84,107 @@ public final class RecordOperation
          *
          * @param recordHash the value to set
          * @return this builder
-         */
+         **/
         public Builder recordHash(String recordHash) {
             this.recordHash = recordHash;
             this.__explicitlySet__.add("recordHash");
             return this;
         }
         /**
-         * A Boolean flag indicating whether or not parts of the record are unable to be explicitly
-         * managed.
-         */
+         * A Boolean flag indicating whether or not parts of the record
+         * are unable to be explicitly managed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
         private Boolean isProtected;
 
         /**
-         * A Boolean flag indicating whether or not parts of the record are unable to be explicitly
-         * managed.
+         * A Boolean flag indicating whether or not parts of the record
+         * are unable to be explicitly managed.
          *
          * @param isProtected the value to set
          * @return this builder
-         */
+         **/
         public Builder isProtected(Boolean isProtected) {
             this.isProtected = isProtected;
             this.__explicitlySet__.add("isProtected");
             return this;
         }
         /**
-         * The record's data, as whitespace-delimited tokens in type-specific presentation format.
-         * All RDATA is normalized and the returned presentation of your RDATA may differ from its
-         * initial input. For more information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-         */
+         * The record's data, as whitespace-delimited tokens in
+         * type-specific presentation format. All RDATA is normalized and the
+         * returned presentation of your RDATA may differ from its initial input.
+         * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
 
         /**
-         * The record's data, as whitespace-delimited tokens in type-specific presentation format.
-         * All RDATA is normalized and the returned presentation of your RDATA may differ from its
-         * initial input. For more information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         * The record's data, as whitespace-delimited tokens in
+         * type-specific presentation format. All RDATA is normalized and the
+         * returned presentation of your RDATA may differ from its initial input.
+         * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
          *
          * @param rdata the value to set
          * @return this builder
-         */
+         **/
         public Builder rdata(String rdata) {
             this.rdata = rdata;
             this.__explicitlySet__.add("rdata");
             return this;
         }
         /**
-         * The latest version of the record's zone in which its RRSet differs from the preceding
-         * version.
-         */
+         * The latest version of the record's zone in which its RRSet differs
+         * from the preceding version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rrsetVersion")
         private String rrsetVersion;
 
         /**
-         * The latest version of the record's zone in which its RRSet differs from the preceding
-         * version.
+         * The latest version of the record's zone in which its RRSet differs
+         * from the preceding version.
          *
          * @param rrsetVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder rrsetVersion(String rrsetVersion) {
             this.rrsetVersion = rrsetVersion;
             this.__explicitlySet__.add("rrsetVersion");
             return this;
         }
         /**
-         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record
-         * (RR)
-         * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-         */
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rtype")
         private String rtype;
 
         /**
-         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record
-         * (RR)
-         * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
          *
          * @param rtype the value to set
          * @return this builder
-         */
+         **/
         public Builder rtype(String rtype) {
             this.rtype = rtype;
             this.__explicitlySet__.add("rtype");
             return this;
         }
         /**
-         * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not
-         * recommended.
-         */
+         * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ttl")
         private Integer ttl;
 
         /**
-         * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not
-         * recommended.
+         * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
          *
          * @param ttl the value to set
          * @return this builder
-         */
+         **/
         public Builder ttl(Integer ttl) {
             this.ttl = ttl;
             this.__explicitlySet__.add("ttl");
@@ -189,48 +192,55 @@ public final class RecordOperation
         }
         /**
          * A description of how a record relates to a PATCH operation.
+         * <p>
          *
-         * <p>- {@code REQUIRE} indicates a precondition that record data **must** already exist. -
-         * {@code PROHIBIT} indicates a precondition that record data **must not** already exist. -
-         * {@code ADD} indicates that record data **must** exist after successful application. -
-         * {@code REMOVE} indicates that record data **must not** exist after successful
-         * application.
+         * - {@code REQUIRE} indicates a precondition that record data **must** already exist.
+         * - {@code PROHIBIT} indicates a precondition that record data **must not** already exist.
+         * - {@code ADD} indicates that record data **must** exist after successful application.
+         * - {@code REMOVE} indicates that record data **must not** exist after successful application.
+         * <p>
          *
-         * <p>**Note:** {@code ADD} and {@code REMOVE} operations can succeed even if they require
-         * no changes when applied, such as when the described records are already present or
-         * absent.
+         *   **Note:** {@code ADD} and {@code REMOVE} operations can succeed even if
+         *   they require no changes when applied, such as when the described
+         *   records are already present or absent.
+         * <p>
          *
-         * <p>**Note:** {@code ADD} and {@code REMOVE} operations can describe changes for more than
-         * one record.
+         *   **Note:** {@code ADD} and {@code REMOVE} operations can describe changes for
+         *   more than one record.
+         * <p>
          *
-         * <p>**Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
-         * specifies a new TTL for every record in the www.example.com AAAA RRSet.
-         */
+         *   **Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
+         *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
         /**
          * A description of how a record relates to a PATCH operation.
+         * <p>
          *
-         * <p>- {@code REQUIRE} indicates a precondition that record data **must** already exist. -
-         * {@code PROHIBIT} indicates a precondition that record data **must not** already exist. -
-         * {@code ADD} indicates that record data **must** exist after successful application. -
-         * {@code REMOVE} indicates that record data **must not** exist after successful
-         * application.
+         * - {@code REQUIRE} indicates a precondition that record data **must** already exist.
+         * - {@code PROHIBIT} indicates a precondition that record data **must not** already exist.
+         * - {@code ADD} indicates that record data **must** exist after successful application.
+         * - {@code REMOVE} indicates that record data **must not** exist after successful application.
+         * <p>
          *
-         * <p>**Note:** {@code ADD} and {@code REMOVE} operations can succeed even if they require
-         * no changes when applied, such as when the described records are already present or
-         * absent.
+         *   **Note:** {@code ADD} and {@code REMOVE} operations can succeed even if
+         *   they require no changes when applied, such as when the described
+         *   records are already present or absent.
+         * <p>
          *
-         * <p>**Note:** {@code ADD} and {@code REMOVE} operations can describe changes for more than
-         * one record.
+         *   **Note:** {@code ADD} and {@code REMOVE} operations can describe changes for
+         *   more than one record.
+         * <p>
          *
-         * <p>**Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
-         * specifies a new TTL for every record in the www.example.com AAAA RRSet.
+         *   **Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
+         *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
          *
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
@@ -287,7 +297,9 @@ public final class RecordOperation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -296,7 +308,10 @@ public final class RecordOperation
         return new Builder().copy(this);
     }
 
-    /** The fully qualified domain name where the record can be located. */
+    /**
+     * The fully qualified domain name where the record can be located.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
@@ -304,12 +319,15 @@ public final class RecordOperation
      * The fully qualified domain name where the record can be located.
      *
      * @return the value
-     */
+     **/
     public String getDomain() {
         return domain;
     }
 
-    /** A unique identifier for the record within its zone. */
+    /**
+     * A unique identifier for the record within its zone.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordHash")
     private final String recordHash;
 
@@ -317,118 +335,125 @@ public final class RecordOperation
      * A unique identifier for the record within its zone.
      *
      * @return the value
-     */
+     **/
     public String getRecordHash() {
         return recordHash;
     }
 
     /**
-     * A Boolean flag indicating whether or not parts of the record are unable to be explicitly
-     * managed.
-     */
+     * A Boolean flag indicating whether or not parts of the record
+     * are unable to be explicitly managed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
     private final Boolean isProtected;
 
     /**
-     * A Boolean flag indicating whether or not parts of the record are unable to be explicitly
-     * managed.
+     * A Boolean flag indicating whether or not parts of the record
+     * are unable to be explicitly managed.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsProtected() {
         return isProtected;
     }
 
     /**
-     * The record's data, as whitespace-delimited tokens in type-specific presentation format. All
-     * RDATA is normalized and the returned presentation of your RDATA may differ from its initial
-     * input. For more information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-     */
+     * The record's data, as whitespace-delimited tokens in
+     * type-specific presentation format. All RDATA is normalized and the
+     * returned presentation of your RDATA may differ from its initial input.
+     * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
 
     /**
-     * The record's data, as whitespace-delimited tokens in type-specific presentation format. All
-     * RDATA is normalized and the returned presentation of your RDATA may differ from its initial
-     * input. For more information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     * The record's data, as whitespace-delimited tokens in
+     * type-specific presentation format. All RDATA is normalized and the
+     * returned presentation of your RDATA may differ from its initial input.
+     * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      *
      * @return the value
-     */
+     **/
     public String getRdata() {
         return rdata;
     }
 
     /**
-     * The latest version of the record's zone in which its RRSet differs from the preceding
-     * version.
-     */
+     * The latest version of the record's zone in which its RRSet differs
+     * from the preceding version.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rrsetVersion")
     private final String rrsetVersion;
 
     /**
-     * The latest version of the record's zone in which its RRSet differs from the preceding
-     * version.
+     * The latest version of the record's zone in which its RRSet differs
+     * from the preceding version.
      *
      * @return the value
-     */
+     **/
     public String getRrsetVersion() {
         return rrsetVersion;
     }
 
     /**
-     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR)
-     * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-     */
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
     private final String rtype;
 
     /**
-     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR)
-     * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      * @return the value
-     */
+     **/
     public String getRtype() {
         return rtype;
     }
 
     /**
-     * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not
-     * recommended.
-     */
+     * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
     private final Integer ttl;
 
     /**
-     * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not
-     * recommended.
+     * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      *
      * @return the value
-     */
+     **/
     public Integer getTtl() {
         return ttl;
     }
 
     /**
      * A description of how a record relates to a PATCH operation.
+     * <p>
      *
-     * <p>- {@code REQUIRE} indicates a precondition that record data **must** already exist. -
-     * {@code PROHIBIT} indicates a precondition that record data **must not** already exist. -
-     * {@code ADD} indicates that record data **must** exist after successful application. - {@code
-     * REMOVE} indicates that record data **must not** exist after successful application.
+     * - {@code REQUIRE} indicates a precondition that record data **must** already exist.
+     * - {@code PROHIBIT} indicates a precondition that record data **must not** already exist.
+     * - {@code ADD} indicates that record data **must** exist after successful application.
+     * - {@code REMOVE} indicates that record data **must not** exist after successful application.
+     * <p>
      *
-     * <p>**Note:** {@code ADD} and {@code REMOVE} operations can succeed even if they require no
-     * changes when applied, such as when the described records are already present or absent.
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can succeed even if
+     *   they require no changes when applied, such as when the described
+     *   records are already present or absent.
+     * <p>
      *
-     * <p>**Note:** {@code ADD} and {@code REMOVE} operations can describe changes for more than one
-     * record.
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can describe changes for
+     *   more than one record.
+     * <p>
      *
-     * <p>**Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }} specifies
-     * a new TTL for every record in the www.example.com AAAA RRSet.
-     */
-    public enum Operation implements com.oracle.bmc.http.internal.BmcEnum {
+     *   **Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
+     *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
+     *
+     **/
+    public enum Operation {
         Require("REQUIRE"),
         Prohibit("PROHIBIT"),
         Add("ADD"),
@@ -464,43 +489,54 @@ public final class RecordOperation
     };
     /**
      * A description of how a record relates to a PATCH operation.
+     * <p>
      *
-     * <p>- {@code REQUIRE} indicates a precondition that record data **must** already exist. -
-     * {@code PROHIBIT} indicates a precondition that record data **must not** already exist. -
-     * {@code ADD} indicates that record data **must** exist after successful application. - {@code
-     * REMOVE} indicates that record data **must not** exist after successful application.
+     * - {@code REQUIRE} indicates a precondition that record data **must** already exist.
+     * - {@code PROHIBIT} indicates a precondition that record data **must not** already exist.
+     * - {@code ADD} indicates that record data **must** exist after successful application.
+     * - {@code REMOVE} indicates that record data **must not** exist after successful application.
+     * <p>
      *
-     * <p>**Note:** {@code ADD} and {@code REMOVE} operations can succeed even if they require no
-     * changes when applied, such as when the described records are already present or absent.
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can succeed even if
+     *   they require no changes when applied, such as when the described
+     *   records are already present or absent.
+     * <p>
      *
-     * <p>**Note:** {@code ADD} and {@code REMOVE} operations can describe changes for more than one
-     * record.
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can describe changes for
+     *   more than one record.
+     * <p>
      *
-     * <p>**Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }} specifies
-     * a new TTL for every record in the www.example.com AAAA RRSet.
-     */
+     *   **Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
+     *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Operation operation;
 
     /**
      * A description of how a record relates to a PATCH operation.
+     * <p>
      *
-     * <p>- {@code REQUIRE} indicates a precondition that record data **must** already exist. -
-     * {@code PROHIBIT} indicates a precondition that record data **must not** already exist. -
-     * {@code ADD} indicates that record data **must** exist after successful application. - {@code
-     * REMOVE} indicates that record data **must not** exist after successful application.
+     * - {@code REQUIRE} indicates a precondition that record data **must** already exist.
+     * - {@code PROHIBIT} indicates a precondition that record data **must not** already exist.
+     * - {@code ADD} indicates that record data **must** exist after successful application.
+     * - {@code REMOVE} indicates that record data **must not** exist after successful application.
+     * <p>
      *
-     * <p>**Note:** {@code ADD} and {@code REMOVE} operations can succeed even if they require no
-     * changes when applied, such as when the described records are already present or absent.
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can succeed even if
+     *   they require no changes when applied, such as when the described
+     *   records are already present or absent.
+     * <p>
      *
-     * <p>**Note:** {@code ADD} and {@code REMOVE} operations can describe changes for more than one
-     * record.
+     *   **Note:** {@code ADD} and {@code REMOVE} operations can describe changes for
+     *   more than one record.
+     * <p>
      *
-     * <p>**Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }} specifies
-     * a new TTL for every record in the www.example.com AAAA RRSet.
+     *   **Example:** {@code { "domain": "www.example.com", "rtype": "AAAA", "ttl": 60 }}
+     *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
      *
      * @return the value
-     */
+     **/
     public Operation getOperation() {
         return operation;
     }
@@ -512,7 +548,6 @@ public final class RecordOperation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

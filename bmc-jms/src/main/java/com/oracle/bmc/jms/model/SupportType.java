@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Support category for the Java release family. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum SupportType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Support category for the Java release family.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum SupportType {
     Lts("LTS"),
     NonLts("NON_LTS"),
 

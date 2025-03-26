@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of consumer group privileges. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A summary of consumer group privileges.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConsumerGroupPrivilegeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ConsumerGroupPrivilegeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConsumerGroupPrivilegeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "grantOption", "initialGroup"})
     public ConsumerGroupPrivilegeSummary(
@@ -34,50 +33,49 @@ public final class ConsumerGroupPrivilegeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the granted consumer group privilege. */
+        /**
+         * The name of the granted consumer group privilege.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the granted consumer group privilege.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Indicates whether the privilege is granted with the GRANT option (YES) or not (NO). */
+        /**
+         * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
         private GrantOption grantOption;
 
         /**
          * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
-         *
          * @param grantOption the value to set
          * @return this builder
-         */
+         **/
         public Builder grantOption(GrantOption grantOption) {
             this.grantOption = grantOption;
             this.__explicitlySet__.add("grantOption");
             return this;
         }
         /**
-         * Indicates whether the consumer group is designated as the default for this user or role
-         * (YES) or not (NO).
-         */
+         * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialGroup")
         private InitialGroup initialGroup;
 
         /**
-         * Indicates whether the consumer group is designated as the default for this user or role
-         * (YES) or not (NO).
-         *
+         * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
          * @param initialGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder initialGroup(InitialGroup initialGroup) {
             this.initialGroup = initialGroup;
             this.__explicitlySet__.add("initialGroup");
@@ -112,7 +110,9 @@ public final class ConsumerGroupPrivilegeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,27 +121,30 @@ public final class ConsumerGroupPrivilegeSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the granted consumer group privilege. */
+    /**
+     * The name of the granted consumer group privilege.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the granted consumer group privilege.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Indicates whether the privilege is granted with the GRANT option (YES) or not (NO). */
-    public enum GrantOption implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
+     **/
+    public enum GrantOption {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -180,30 +183,30 @@ public final class ConsumerGroupPrivilegeSummary
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the privilege is granted with the GRANT option (YES) or not (NO). */
+    /**
+     * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
     private final GrantOption grantOption;
 
     /**
      * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public GrantOption getGrantOption() {
         return grantOption;
     }
 
     /**
-     * Indicates whether the consumer group is designated as the default for this user or role (YES)
-     * or not (NO).
-     */
-    public enum InitialGroup implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
+     **/
+    public enum InitialGroup {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -243,18 +246,15 @@ public final class ConsumerGroupPrivilegeSummary
         }
     };
     /**
-     * Indicates whether the consumer group is designated as the default for this user or role (YES)
-     * or not (NO).
-     */
+     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialGroup")
     private final InitialGroup initialGroup;
 
     /**
-     * Indicates whether the consumer group is designated as the default for this user or role (YES)
-     * or not (NO).
-     *
+     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      * @return the value
-     */
+     **/
     public InitialGroup getInitialGroup() {
         return initialGroup;
     }
@@ -266,7 +266,6 @@ public final class ConsumerGroupPrivilegeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

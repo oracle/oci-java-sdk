@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field to sort installation sites. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum InstallationSiteSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field to sort installation sites.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum InstallationSiteSortBy {
     ManagedInstanceId("managedInstanceId"),
     JreDistribution("jreDistribution"),
     JreVendor("jreVendor"),

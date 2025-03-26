@@ -8,70 +8,69 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
 /**
- * Use the Database Management API to monitor and manage resources such as Oracle Databases, MySQL
- * Databases, and External Database Systems. For more information, see [Database
- * Management](https://docs.oracle.com/iaas/database-management/home.htm).
+ * Use the Database Management API to monitor and manage resources such as
+ * Oracle Databases, MySQL Databases, and External Database Systems.
+ * For more information, see [Database Management](https://docs.oracle.com/iaas/database-management/home.htm).
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public interface DbManagementAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
      * Adds data files or temp files to the tablespace.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AddDataFilesResponse> addDataFiles(
             AddDataFilesRequest request,
@@ -79,15 +78,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds a Managed Database to a specific Managed Database Group. After the database is added, it
-     * will be included in the management activities performed on the Managed Database Group.
+     * Adds a Managed Database to a specific Managed Database Group.
+     * After the database is added, it will be included in the
+     * management activities performed on the Managed Database Group.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AddManagedDatabaseToManagedDatabaseGroupResponse>
             addManagedDatabaseToManagedDatabaseGroup(
@@ -98,39 +99,43 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the metadata for each ADDM task who's end snapshot time falls within the provided start
-     * and end time. Details include the name of the ADDM task, description, user, status and
-     * creation date time.
+     * Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AddmTasksResponse> addmTasks(
             AddmTasksRequest request,
             com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse> handler);
 
     /**
-     * Changes database parameter values. There are two kinds of database parameters:
+     * Changes database parameter values. There are two kinds of database
+     * parameters:
+     * <p>
+     * - Dynamic parameters: They can be changed for the current Oracle
+     * Database instance. The changes take effect immediately.
+     * - Static parameters: They cannot be changed for the current instance.
+     * You must change these parameters and then restart the database before
+     * changes take effect.
+     * <p>
+     **Note:** If the instance is started using a text initialization
+     * parameter file, the parameter changes are applicable only for the
+     * current instance. You must update them manually to be passed to
+     * a future instance.
      *
-     * <p>- Dynamic parameters: They can be changed for the current Oracle Database instance. The
-     * changes take effect immediately. - Static parameters: They cannot be changed for the current
-     * instance. You must change these parameters and then restart the database before changes take
-     * effect.
-     *
-     * <p>*Note:** If the instance is started using a text initialization parameter file, the
-     * parameter changes are applicable only for the current instance. You must update them manually
-     * to be passed to a future instance.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDatabaseParametersResponse> changeDatabaseParameters(
             ChangeDatabaseParametersRequest request,
@@ -139,15 +144,14 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the Database Management private endpoint and its dependent resources to the specified
-     * compartment.
+     * Moves the Database Management private endpoint and its dependent resources to the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDbManagementPrivateEndpointCompartmentResponse>
             changeDbManagementPrivateEndpointCompartment(
@@ -158,15 +162,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the external DB system and its related resources (excluding databases) to the specified
-     * compartment.
+     * Moves the external DB system and its related resources (excluding databases) to the specified compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExternalDbSystemCompartmentResponse>
             changeExternalDbSystemCompartment(
@@ -177,15 +181,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the Exadata infrastructure and its related resources (Exadata storage server, Exadata
-     * storage server connectors and Exadata storage server grid) to the specified compartment.
+     * Moves the Exadata infrastructure and its related resources (Exadata storage server, Exadata storage server connectors and Exadata storage server grid) to the specified compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExternalExadataInfrastructureCompartmentResponse>
             changeExternalExadataInfrastructureCompartment(
@@ -198,12 +202,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Moves a job.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeJobCompartmentResponse> changeJobCompartment(
             ChangeJobCompartmentRequest request,
@@ -212,15 +217,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a Managed Database Group to a different compartment. The destination compartment must
-     * not have a Managed Database Group with the same name.
+     * Moves a Managed Database Group to a different compartment.
+     * The destination compartment must not have a Managed Database Group
+     * with the same name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeManagedDatabaseGroupCompartmentResponse>
             changeManagedDatabaseGroupCompartment(
@@ -231,15 +238,17 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a named credential to a different compartment. The destination compartment must not
-     * have a named credential with the same name.
+     * Moves a named credential to a different compartment.
+     * The destination compartment must not have a named credential
+     * with the same name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeNamedCredentialCompartmentResponse>
             changeNamedCredentialCompartment(
@@ -250,17 +259,19 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Changes the retention period of unused plans. The period can range between 5 and 523 weeks.
+     * Changes the retention period of unused plans. The period can range
+     * between 5 and 523 weeks.
+     * <p>
+     * The database purges plans that have not been used for longer than
+     * the plan retention period.
      *
-     * <p>The database purges plans that have not been used for longer than the plan retention
-     * period.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangePlanRetentionResponse> changePlanRetention(
             ChangePlanRetentionRequest request,
@@ -269,15 +280,16 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Changes the disk space limit for the SQL Management Base. The allowable range for this limit
-     * is between 1% and 50%.
+     * Changes the disk space limit for the SQL Management Base. The allowable
+     * range for this limit is between 1% and 50%.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSpaceBudgetResponse> changeSpaceBudget(
             ChangeSpaceBudgetRequest request,
@@ -288,12 +300,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Changes one or more attributes of a single plan or all plans associated with a SQL statement.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSqlPlanBaselinesAttributesResponse>
             changeSqlPlanBaselinesAttributes(
@@ -307,12 +320,13 @@ public interface DbManagementAsync extends AutoCloseable {
      * Checks the status of the external DB system component connection specified in this connector.
      * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CheckExternalDbSystemConnectorConnectionStatusResponse>
             checkExternalDbSystemConnectorConnectionStatus(
@@ -323,15 +337,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Checks the status of the Exadata storage server connection specified by
-     * exadataStorageConnectorId.
+     * Checks the status of the Exadata storage server connection specified by exadataStorageConnectorId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CheckExternalExadataStorageConnectorResponse>
             checkExternalExadataStorageConnector(
@@ -342,15 +356,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Check the status of the external database connection specified in this connector. This
-     * operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     * Check the status of the external database connection specified in this connector.
+     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CheckExternalMySqlDatabaseConnectorConnectionStatusResponse>
             checkExternalMySqlDatabaseConnectorConnectionStatus(
@@ -361,15 +376,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Configures automatic capture filters to capture only those statements that match the filter
-     * criteria.
+     * Configures automatic capture filters to capture only those statements
+     * that match the filter criteria.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ConfigureAutomaticCaptureFiltersResponse>
             configureAutomaticCaptureFilters(
@@ -380,15 +396,17 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Configures the Automatic SPM Evolve Advisor task `SYS_AUTO_SPM_EVOLVE_TASK` by specifying
-     * task parameters. As the task is owned by `SYS`, only `SYS` can set task parameters.
+     * Configures the Automatic SPM Evolve Advisor task `SYS_AUTO_SPM_EVOLVE_TASK`
+     * by specifying task parameters. As the task is owned by `SYS`, only `SYS` can
+     * set task parameters.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ConfigureAutomaticSpmEvolveAdvisorTaskResponse>
             configureAutomaticSpmEvolveAdvisorTask(
@@ -401,12 +419,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates a new Database Management private endpoint.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDbManagementPrivateEndpointResponse>
             createDbManagementPrivateEndpoint(
@@ -419,12 +438,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates an external DB system and its related resources.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalDbSystemResponse> createExternalDbSystem(
             CreateExternalDbSystemRequest request,
@@ -437,10 +457,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalDbSystemConnectorResponse>
             createExternalDbSystemConnector(
@@ -453,12 +473,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates an external DB system discovery resource and initiates the discovery process.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalDbSystemDiscoveryResponse>
             createExternalDbSystemDiscovery(
@@ -469,16 +490,20 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates an OCI resource for the Exadata infrastructure and enables the Monitoring service for
-     * the Exadata infrastructure. The following resource/subresources are created: Infrastructure
-     * Storage server connectors Storage servers Storage grids
+     * Creates an OCI resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
+     * The following resource/subresources are created:
+     *   Infrastructure
+     *   Storage server connectors
+     *   Storage servers
+     *   Storage grids
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalExadataInfrastructureResponse>
             createExternalExadataInfrastructure(
@@ -491,12 +516,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates the Exadata storage server connector after validating the connection information.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalExadataStorageConnectorResponse>
             createExternalExadataStorageConnector(
@@ -509,12 +535,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates an external MySQL database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalMySqlDatabaseResponse> createExternalMySqlDatabase(
             CreateExternalMySqlDatabaseRequest request,
@@ -525,12 +552,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates an external MySQL connector resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExternalMySqlDatabaseConnectorResponse>
             createExternalMySqlDatabaseConnector(
@@ -541,31 +569,33 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a job to be executed on a Managed Database or Managed Database Group. Only one of the
-     * parameters, managedDatabaseId or managedDatabaseGroupId should be provided as input in
-     * CreateJobDetails resource in request body.
+     * Creates a job to be executed on a Managed Database or Managed Database Group. Only one
+     * of the parameters, managedDatabaseId or managedDatabaseGroupId should be provided as
+     * input in CreateJobDetails resource in request body.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateJobResponse> createJob(
             CreateJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handler);
 
     /**
-     * Creates a Managed Database Group. The group does not contain any Managed Databases when it is
-     * created, and they must be added later.
+     * Creates a Managed Database Group. The group does not contain any
+     * Managed Databases when it is created, and they must be added later.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateManagedDatabaseGroupResponse> createManagedDatabaseGroup(
             CreateManagedDatabaseGroupRequest request,
@@ -576,12 +606,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates a named credential.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateNamedCredentialResponse> createNamedCredential(
             CreateNamedCredentialRequest request,
@@ -592,12 +623,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates a tablespace within the Managed Database specified by managedDatabaseId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateTablespaceResponse> createTablespace(
             CreateTablespaceRequest request,
@@ -609,10 +641,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDbManagementPrivateEndpointResponse>
             deleteDbManagementPrivateEndpoint(
@@ -625,12 +657,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the external DB system specified by `externalDbSystemId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalDbSystemResponse> deleteExternalDbSystem(
             DeleteExternalDbSystemRequest request,
@@ -641,12 +674,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the external connector specified by `externalDbSystemConnectorId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalDbSystemConnectorResponse>
             deleteExternalDbSystemConnector(
@@ -659,12 +693,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalDbSystemDiscoveryResponse>
             deleteExternalDbSystemDiscovery(
@@ -677,12 +712,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the Exadata infrastructure specified by externalExadataInfrastructureId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalExadataInfrastructureResponse>
             deleteExternalExadataInfrastructure(
@@ -695,12 +731,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the Exadata storage server connector specified by exadataStorageConnectorId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalExadataStorageConnectorResponse>
             deleteExternalExadataStorageConnector(
@@ -713,12 +750,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalMySqlDatabaseResponse> deleteExternalMySqlDatabase(
             DeleteExternalMySqlDatabaseRequest request,
@@ -727,15 +765,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database
-     * connector.
+     * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database connector.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExternalMySqlDatabaseConnectorResponse>
             deleteExternalMySqlDatabaseConnector(
@@ -750,25 +788,26 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteJobResponse> deleteJob(
             DeleteJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handler);
 
     /**
-     * Deletes the Managed Database Group specified by managedDatabaseGroupId. If the group contains
-     * Managed Databases, then it cannot be deleted.
+     * Deletes the Managed Database Group specified by managedDatabaseGroupId.
+     * If the group contains Managed Databases, then it cannot be deleted.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteManagedDatabaseGroupResponse> deleteManagedDatabaseGroup(
             DeleteManagedDatabaseGroupRequest request,
@@ -779,12 +818,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the named credential specified by namedCredentialId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteNamedCredentialResponse> deleteNamedCredential(
             DeleteNamedCredentialRequest request,
@@ -795,12 +835,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Deletes the preferred credential based on the credentialName.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeletePreferredCredentialResponse> deletePreferredCredential(
             DeletePreferredCredentialRequest request,
@@ -811,12 +852,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables automatic initial plan capture.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableAutomaticInitialPlanCaptureResponse>
             disableAutomaticInitialPlanCapture(
@@ -828,16 +870,17 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Disables the Automatic SPM Evolve Advisor task.
-     *
-     * <p>One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
+     * <p>
+     * One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
      * Thus, the same task enables or disables both.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableAutomaticSpmEvolveAdvisorTaskResponse>
             disableAutomaticSpmEvolveAdvisorTask(
@@ -850,12 +893,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables a Database Management feature for the specified Autonomous Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableAutonomousDatabaseManagementFeatureResponse>
             disableAutonomousDatabaseManagementFeature(
@@ -868,12 +912,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables a Database Management feature for the specified Oracle cloud database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableDatabaseManagementFeatureResponse>
             disableDatabaseManagementFeature(
@@ -886,12 +931,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables a Database Management feature for the specified external container database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalContainerDatabaseManagementFeatureResponse>
             disableExternalContainerDatabaseManagementFeature(
@@ -902,15 +948,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables Database Management service for all the components of the specified external DB
-     * system (except databases).
+     * Disables Database Management service for all the components of the specified
+     * external DB system (except databases).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalDbSystemDatabaseManagementResponse>
             disableExternalDbSystemDatabaseManagement(
@@ -921,15 +968,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables Stack Monitoring for all the components of the specified external DB system (except
-     * databases).
+     * Disables Stack Monitoring for all the components of the specified
+     * external DB system (except databases).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalDbSystemStackMonitoringResponse>
             disableExternalDbSystemStackMonitoring(
@@ -940,20 +988,22 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables Database Management for the Exadata infrastructure specified by
-     * externalExadataInfrastructureId. It covers the following components:
+     * Disables Database Management for the Exadata infrastructure specified by externalExadataInfrastructureId.
+     * It covers the following components:
+     * <p>
+     * - Exadata infrastructure
+     * - Exadata storage grid
+     * - Exadata storage server
+     * <p>
+     * Note that Database Management will not be disabled for the DB systems within the Exadata infrastructure and should be disabled explicitly, if required.
      *
-     * <p>- Exadata infrastructure - Exadata storage grid - Exadata storage server
-     *
-     * <p>Note that Database Management will not be disabled for the DB systems within the Exadata
-     * infrastructure and should be disabled explicitly, if required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalExadataInfrastructureManagementResponse>
             disableExternalExadataInfrastructureManagement(
@@ -966,12 +1016,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables Database Management for an external MySQL Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalMySqlDatabaseManagementResponse>
             disableExternalMySqlDatabaseManagement(
@@ -984,12 +1035,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables a Database Management feature for the specified external non-container database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalNonContainerDatabaseManagementFeatureResponse>
             disableExternalNonContainerDatabaseManagementFeature(
@@ -1002,12 +1054,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables a Database Management feature for the specified external pluggable database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalPluggableDatabaseManagementFeatureResponse>
             disableExternalPluggableDatabaseManagementFeature(
@@ -1019,16 +1072,17 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Disables the high-frequency Automatic SPM Evolve Advisor task.
+     * <p>
+     * It is available only on Oracle Exadata Database Machine, Oracle Database Exadata
+     * Cloud Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
      *
-     * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
-     * Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
             disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
@@ -1041,12 +1095,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Disables a Database Management feature for the specified Oracle cloud pluggable database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisablePluggableDatabaseManagementFeatureResponse>
             disablePluggableDatabaseManagementFeature(
@@ -1058,15 +1113,16 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Disables the use of SQL plan baselines stored in SQL Management Base.
+     * <p>
+     * When disabled, the optimizer does not use any SQL plan baselines.
      *
-     * <p>When disabled, the optimizer does not use any SQL plan baselines.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableSqlPlanBaselinesUsageResponse> disableSqlPlanBaselinesUsage(
             DisableSqlPlanBaselinesUsageRequest request,
@@ -1077,32 +1133,32 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Completes the Exadata system prechecking on the following:
+     * <p>
+     * - Verifies if the DB systems are valid RAC DB systems or return 400 status code with NON_RAC_DATABASE_SYSTEM error code.
+     * - Verifies if the ASM connector defined for each DB system or return 400 status code with CONNECTOR_NOT_DEFINED error code.
+     * - Verifies if the agents associated with ASM are valid and could be used for the Exadata storage servers or return 400 status code with
+     * INVALID_AGENT error code.
+     * - Verifies if it is an Exadata system or return 400 status code with INVALID_EXADATA_SYSTEM error code.
+     * <p>
+     * Starts the discovery process for the Exadata system infrastructure. The following resources/components are discovered
+     * <p>
+     * - Exadata storage servers from each DB systems
+     * - Exadata storage grid for all Exadata storage servers
+     * - Exadata infrastructure
+     * <p>
+     * The same API covers both new discovery and rediscovery cases.
+     *   For the new discovery case, new managed resources/sub-resources are created or the existing ones are overridden.
+     *   For rediscovery case, the existing managed resources/sub-resources are checked to find out which ones should be added or which ones
+     * should be
+     *     removed based on the unique key defined for each resource/sub-resource.
      *
-     * <p>- Verifies if the DB systems are valid RAC DB systems or return 400 status code with
-     * NON_RAC_DATABASE_SYSTEM error code. - Verifies if the ASM connector defined for each DB
-     * system or return 400 status code with CONNECTOR_NOT_DEFINED error code. - Verifies if the
-     * agents associated with ASM are valid and could be used for the Exadata storage servers or
-     * return 400 status code with INVALID_AGENT error code. - Verifies if it is an Exadata system
-     * or return 400 status code with INVALID_EXADATA_SYSTEM error code.
-     *
-     * <p>Starts the discovery process for the Exadata system infrastructure. The following
-     * resources/components are discovered
-     *
-     * <p>- Exadata storage servers from each DB systems - Exadata storage grid for all Exadata
-     * storage servers - Exadata infrastructure
-     *
-     * <p>The same API covers both new discovery and rediscovery cases. For the new discovery case,
-     * new managed resources/sub-resources are created or the existing ones are overridden. For
-     * rediscovery case, the existing managed resources/sub-resources are checked to find out which
-     * ones should be added or which ones should be removed based on the unique key defined for each
-     * resource/sub-resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DiscoverExternalExadataInfrastructureResponse>
             discoverExternalExadataInfrastructure(
@@ -1115,12 +1171,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Drops a single plan or all plans associated with a SQL statement.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DropSqlPlanBaselinesResponse> dropSqlPlanBaselines(
             DropSqlPlanBaselinesRequest request,
@@ -1129,15 +1186,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Drops the tablespace specified by tablespaceName within the Managed Database specified by
-     * managedDatabaseId.
+     * Drops the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DropTablespaceResponse> dropTablespace(
             DropTablespaceRequest request,
@@ -1145,21 +1202,22 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Enables automatic initial plan capture. When enabled, the database checks whether executed
-     * SQL statements are eligible for automatic capture. It creates initial plan baselines for
-     * eligible statements.
+     * Enables automatic initial plan capture. When enabled, the database checks whether
+     * executed SQL statements are eligible for automatic capture. It creates initial
+     * plan baselines for eligible statements.
+     * <p>
+     * By default, the database creates a SQL plan baseline for every eligible repeatable
+     * statement, including all recursive SQL and monitoring SQL. Thus, automatic capture
+     * may result in the creation of an extremely large number of plan baselines. To limit
+     * the statements that are eligible for plan baselines, configure filters.
      *
-     * <p>By default, the database creates a SQL plan baseline for every eligible repeatable
-     * statement, including all recursive SQL and monitoring SQL. Thus, automatic capture may result
-     * in the creation of an extremely large number of plan baselines. To limit the statements that
-     * are eligible for plan baselines, configure filters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableAutomaticInitialPlanCaptureResponse>
             enableAutomaticInitialPlanCapture(
@@ -1172,23 +1230,25 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables the Automatic SPM Evolve Advisor task. By default, the automatic task
      * `SYS_AUTO_SPM_EVOLVE_TASK` runs every day in the scheduled maintenance window.
-     *
-     * <p>The SPM Evolve Advisor performs the following tasks:
-     *
-     * <p>- Checks AWR for top SQL - Looks for alternative plans in all available sources - Adds
-     * unaccepted plans to the plan history - Tests the execution of as many plans as possible
-     * during the maintenance window - Adds the alternative plan to the baseline if it performs
-     * better than the current plan
-     *
-     * <p>One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
+     * <p>
+     * The SPM Evolve Advisor performs the following tasks:
+     * <p>
+     * - Checks AWR for top SQL
+     * - Looks for alternative plans in all available sources
+     * - Adds unaccepted plans to the plan history
+     * - Tests the execution of as many plans as possible during the maintenance window
+     * - Adds the alternative plan to the baseline if it performs better than the current plan
+     * <p>
+     * One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
      * Thus, the same task enables or disables both.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableAutomaticSpmEvolveAdvisorTaskResponse>
             enableAutomaticSpmEvolveAdvisorTask(
@@ -1201,12 +1261,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables a Database Management feature for the specified Autonomous Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableAutonomousDatabaseManagementFeatureResponse>
             enableAutonomousDatabaseManagementFeature(
@@ -1219,12 +1280,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables a Database Management feature for the specified cloud database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableDatabaseManagementFeatureResponse>
             enableDatabaseManagementFeature(
@@ -1237,12 +1299,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables a Database Management feature for the specified external container database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalContainerDatabaseManagementFeatureResponse>
             enableExternalContainerDatabaseManagementFeature(
@@ -1253,15 +1316,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables Database Management service for all the components of the specified external DB
-     * system (except databases).
+     * Enables Database Management service for all the components of the specified
+     * external DB system (except databases).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalDbSystemDatabaseManagementResponse>
             enableExternalDbSystemDatabaseManagement(
@@ -1272,15 +1336,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables Stack Monitoring for all the components of the specified external DB system (except
-     * databases).
+     * Enables Stack Monitoring for all the components of the specified
+     * external DB system (except databases).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalDbSystemStackMonitoringResponse>
             enableExternalDbSystemStackMonitoring(
@@ -1291,17 +1356,20 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables Database Management for the Exadata infrastructure specified by
-     * externalExadataInfrastructureId. It covers the following components:
+     * Enables Database Management for the Exadata infrastructure specified by externalExadataInfrastructureId. It covers the following
+     * components:
+     * <p>
+     * - Exadata infrastructure
+     * - Exadata storage grid
+     * - Exadata storage server
      *
-     * <p>- Exadata infrastructure - Exadata storage grid - Exadata storage server
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalExadataInfrastructureManagementResponse>
             enableExternalExadataInfrastructureManagement(
@@ -1314,12 +1382,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables Database Management for an external MySQL Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalMySqlDatabaseManagementResponse>
             enableExternalMySqlDatabaseManagement(
@@ -1332,12 +1401,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables Database Management feature for the specified external non-container database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalNonContainerDatabaseManagementFeatureResponse>
             enableExternalNonContainerDatabaseManagementFeature(
@@ -1350,12 +1420,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables a Database Management feature for the specified external pluggable database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExternalPluggableDatabaseManagementFeatureResponse>
             enableExternalPluggableDatabaseManagementFeature(
@@ -1366,21 +1437,23 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables the high-frequency Automatic SPM Evolve Advisor task. The high-frequency task runs
-     * every hour and runs for no longer than 30 minutes. These settings are not configurable.
+     * Enables the high-frequency Automatic SPM Evolve Advisor task. The high-frequency
+     * task runs every hour and runs for no longer than 30 minutes. These settings
+     * are not configurable.
+     * <p>
+     * The high-frequency task complements the standard Automatic SPM Evolve Advisor task.
+     * They are independent and are scheduled through two different frameworks.
+     * <p>
+     * It is available only on Oracle Exadata Database Machine, Oracle Database Exadata
+     * Cloud Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
      *
-     * <p>The high-frequency task complements the standard Automatic SPM Evolve Advisor task. They
-     * are independent and are scheduled through two different frameworks.
-     *
-     * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
-     * Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
             enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
@@ -1393,12 +1466,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Enables a Database Management feature for the specified Oracle cloud pluggable database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnablePluggableDatabaseManagementFeatureResponse>
             enablePluggableDatabaseManagementFeature(
@@ -1410,16 +1484,17 @@ public interface DbManagementAsync extends AutoCloseable {
 
     /**
      * Enables the use of SQL plan baselines stored in SQL Management Base.
+     * <p>
+     * When enabled, the optimizer uses SQL plan baselines to select plans
+     * to avoid potential performance regressions.
      *
-     * <p>When enabled, the optimizer uses SQL plan baselines to select plans to avoid potential
-     * performance regressions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableSqlPlanBaselinesUsageResponse> enableSqlPlanBaselinesUsage(
             EnableSqlPlanBaselinesUsageRequest request,
@@ -1430,12 +1505,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Creates an AWR snapshot for the target database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GenerateAwrSnapshotResponse> generateAwrSnapshot(
             GenerateAwrSnapshotRequest request,
@@ -1446,12 +1522,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the AWR report for the specific database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrDbReportResponse> getAwrDbReport(
             GetAwrDbReportRequest request,
@@ -1461,12 +1538,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the SQL health check report for one SQL of the specific database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrDbSqlReportResponse> getAwrDbSqlReport(
             GetAwrDbSqlReportRequest request,
@@ -1475,15 +1553,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the metrics related to cluster cache for the Oracle Real Application Clusters (Oracle
-     * RAC) database specified by managedDatabaseId.
+     * Gets the metrics related to cluster cache for the Oracle
+     * Real Application Clusters (Oracle RAC) database specified
+     * by managedDatabaseId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetClusterCacheMetricResponse> getClusterCacheMetric(
             GetClusterCacheMetricRequest request,
@@ -1492,17 +1572,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the fleet of container databases (CDBs) and their backup details and metrics, in a
-     * compartment or Database Group. The databaseHostedIn query parameter must be provided to list
-     * either cloud or external databases. Either the CompartmentId or the ManagedDatabaseGroupId
-     * query parameters must be provided to retrieve the HA and backup metrics.
+     * Gets the fleet of container databases (CDBs) and their backup details and metrics, in a compartment or Database Group.
+     * The databaseHostedIn query parameter must be provided to list either cloud or external databases.
+     * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the HA and backup metrics.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseFleetBackupMetricsResponse>
             getDatabaseFleetBackupMetrics(
@@ -1513,17 +1593,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the fleet of Oracle Data Guard-enabled container databases (CDBs) along with Data Guard
-     * metrics and standby databases, in a compartment or Database Group. Either the CompartmentId
-     * or the ManagedDatabaseGroupId query parameters must be provided to retrieve the list of
-     * databases and Data Guard metrics.
+     * Gets the fleet of Oracle Data Guard-enabled container databases (CDBs) along with Data Guard metrics and standby databases, in a compartment or Database Group.
+     * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the list of databases and Data Guard metrics.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseFleetDataguardMetricsResponse>
             getDatabaseFleetDataguardMetrics(
@@ -1534,16 +1613,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the fleet of container databases (CDBs) and their HA and backup metrics in a compartment
-     * or in a Database Group. Either the CompartmentId or the ManagedDatabaseGroupId query
-     * parameters must be provided to retrieve the HA and backup metrics.
+     * Gets the fleet of container databases (CDBs) and their HA and backup metrics in a compartment or in a Database Group.
+     * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the HA and backup metrics.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseFleetHaOverviewMetricsResponse>
             getDatabaseFleetHaOverviewMetrics(
@@ -1554,16 +1633,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the health metrics for a fleet of databases in a compartment or in a Managed Database
-     * Group. Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be
-     * provided to retrieve the health metrics.
+     * Gets the health metrics for a fleet of databases in a compartment or in a Managed Database Group.
+     * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the health metrics.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseFleetHealthMetricsResponse>
             getDatabaseFleetHealthMetrics(
@@ -1576,12 +1655,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets HA and backup details with metrics and backup history for a single database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseHaBackupDetailsResponse> getDatabaseHaBackupDetails(
             GetDatabaseHaBackupDetailsRequest request,
@@ -1590,15 +1670,14 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a summary of the activity and resource usage metrics like DB Time, CPU, User I/O, Wait,
-     * Storage, and Memory for a Managed Database.
+     * Gets a summary of the activity and resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory for a Managed Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseHomeMetricsResponse> getDatabaseHomeMetrics(
             GetDatabaseHomeMetricsRequest request,
@@ -1607,18 +1686,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a historical summary of the Database Guard performance metrics for Managed Databases. If
-     * the peerDatabaseCompartmentId is specified, then the metrics are only retrieved from the
-     * specified compartment. If the peerDatabaseCompartmentId is not specified, then the metrics
-     * are retrieved from the compartment of the Managed Database specified by the
-     * ManagedDatabaseId.
+     * Gets a historical summary of the Database Guard performance metrics for Managed Databases.
+     * If the peerDatabaseCompartmentId is specified, then the metrics are only retrieved from the specified compartment.
+     * If the peerDatabaseCompartmentId is not specified, then the metrics are retrieved from the compartment of the Managed Database specified by the ManagedDatabaseId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDataguardPerformanceMetricsResponse>
             getDataguardPerformanceMetrics(
@@ -1633,10 +1711,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDbManagementPrivateEndpointResponse>
             getDbManagementPrivateEndpoint(
@@ -1649,12 +1727,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external ASM specified by `externalAsmId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalAsmResponse> getExternalAsm(
             GetExternalAsmRequest request,
@@ -1662,15 +1741,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets configuration details including disk groups for the external ASM specified by
-     * `externalAsmId`.
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalAsmConfigurationResponse> getExternalAsmConfiguration(
             GetExternalAsmConfigurationRequest request,
@@ -1681,12 +1760,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalAsmInstanceResponse> getExternalAsmInstance(
             GetExternalAsmInstanceRequest request,
@@ -1697,12 +1777,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external cluster specified by `externalClusterId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalClusterResponse> getExternalCluster(
             GetExternalClusterRequest request,
@@ -1713,12 +1794,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalClusterInstanceResponse> getExternalClusterInstance(
             GetExternalClusterInstanceRequest request,
@@ -1729,12 +1811,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external DB home specified by `externalDbHomeId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalDbHomeResponse> getExternalDbHome(
             GetExternalDbHomeRequest request,
@@ -1745,12 +1828,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external DB node specified by `externalDbNodeId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalDbNodeResponse> getExternalDbNode(
             GetExternalDbNodeRequest request,
@@ -1761,12 +1845,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external DB system specified by `externalDbSystemId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalDbSystemResponse> getExternalDbSystem(
             GetExternalDbSystemRequest request,
@@ -1777,12 +1862,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalDbSystemConnectorResponse> getExternalDbSystemConnector(
             GetExternalDbSystemConnectorRequest request,
@@ -1792,15 +1878,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details for the external DB system discovery resource specified by
-     * `externalDbSystemDiscoveryId`.
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalDbSystemDiscoveryResponse> getExternalDbSystemDiscovery(
             GetExternalDbSystemDiscoveryRequest request,
@@ -1810,15 +1896,16 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId.
-     * It includes the DB systems and storage grid within the Exadata infrastructure.
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
+     * Exadata infrastructure.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalExadataInfrastructureResponse>
             getExternalExadataInfrastructure(
@@ -1829,15 +1916,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the details for the Exadata storage server connector specified by
-     * exadataStorageConnectorId.
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalExadataStorageConnectorResponse>
             getExternalExadataStorageConnector(
@@ -1850,12 +1937,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalExadataStorageGridResponse>
             getExternalExadataStorageGrid(
@@ -1868,12 +1956,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalExadataStorageServerResponse>
             getExternalExadataStorageServer(
@@ -1886,12 +1975,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the external listener specified by `externalListenerId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalListenerResponse> getExternalListener(
             GetExternalListenerRequest request,
@@ -1902,12 +1992,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Retrieves the external MySQL database information.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalMySqlDatabaseResponse> getExternalMySqlDatabase(
             GetExternalMySqlDatabaseRequest request,
@@ -1918,12 +2009,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Retrieves the MySQL database connector.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExternalMySqlDatabaseConnectorResponse>
             getExternalMySqlDatabaseConnector(
@@ -1936,12 +2028,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Get the IORM plan from the specific Exadata storage server.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetIormPlanResponse> getIormPlan(
             GetIormPlanRequest request,
@@ -1950,12 +2043,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the job specified by jobId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetJobResponse> getJob(
             GetJobRequest request,
@@ -1964,12 +2058,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the job execution specified by jobExecutionId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetJobExecutionResponse> getJobExecution(
             GetJobExecutionRequest request,
@@ -1979,12 +2074,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the job run specified by jobRunId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetJobRunResponse> getJobRun(
             GetJobRunRequest request,
@@ -1993,12 +2089,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the Managed Database specified by managedDatabaseId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetManagedDatabaseResponse> getManagedDatabase(
             GetManagedDatabaseRequest request,
@@ -2009,12 +2106,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetManagedDatabaseGroupResponse> getManagedDatabaseGroup(
             GetManagedDatabaseGroupRequest request,
@@ -2025,12 +2123,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details for the named credential specified by namedCredentialId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetNamedCredentialResponse> getNamedCredential(
             GetNamedCredentialRequest request,
@@ -2041,12 +2140,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the open alerts from the specified Exadata storage server.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOpenAlertHistoryResponse> getOpenAlertHistory(
             GetOpenAlertHistoryRequest request,
@@ -2055,15 +2155,16 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes
-     * details of the Managed Database, findings, recommendations, rationale, and examples.
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionResponse>
             getOptimizerStatisticsAdvisorExecution(
@@ -2074,15 +2175,14 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor
-     * execution.
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionScriptResponse>
             getOptimizerStatisticsAdvisorExecutionScript(
@@ -2093,15 +2193,14 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified
-     * Managed Database.
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOptimizerStatisticsCollectionOperationResponse>
             getOptimizerStatisticsCollectionOperation(
@@ -2112,17 +2211,18 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a summary of the resource usage metrics such as CPU, User I/O, and Storage for each PDB
-     * within a specific CDB. If comparmentId is specified, then the metrics for each PDB (within
-     * the CDB) in the specified compartment are retrieved. If compartmentId is not specified, then
-     * the metrics for all the PDBs within the CDB are retrieved.
+     * Gets a summary of the resource usage metrics such as CPU, User I/O, and Storage for each
+     * PDB within a specific CDB. If comparmentId is specified, then the metrics for
+     * each PDB (within the CDB) in the specified compartment are retrieved.
+     * If compartmentId is not specified, then the metrics for all the PDBs within the CDB are retrieved.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetPdbMetricsResponse> getPdbMetrics(
             GetPdbMetricsRequest request,
@@ -2130,18 +2230,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a comparative summary of the baseline and target values of the Data Guard performance
-     * metrics for Managed Databases. If the peerDatabaseCompartmentId is specified, then the
-     * metrics are only retrieved from the specified compartment. If the peerDatabaseCompartmentId
-     * is not specified, then the metrics are retrieved from the compartment of the Managed Database
-     * specified by the ManagedDatabaseId.
+     * Gets a comparative summary of the baseline and target values of the Data Guard performance metrics for Managed Databases.
+     * If the peerDatabaseCompartmentId is specified, then the metrics are only retrieved from the specified compartment.
+     * If the peerDatabaseCompartmentId is not specified, then the metrics are retrieved from the compartment of the Managed Database specified by the ManagedDatabaseId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetPeerDatabaseMetricsResponse> getPeerDatabaseMetrics(
             GetPeerDatabaseMetricsRequest request,
@@ -2152,12 +2251,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the preferred credential details for a Managed Database based on credentialName.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetPreferredCredentialResponse> getPreferredCredential(
             GetPreferredCredentialRequest request,
@@ -2168,12 +2268,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the SQL plan baseline details for the specified planName.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSqlPlanBaselineResponse> getSqlPlanBaseline(
             GetSqlPlanBaselineRequest request,
@@ -2182,16 +2283,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the configuration details of SQL plan baselines for the specified Managed Database. The
-     * details include the settings for the capture and use of SQL plan baselines, SPM Evolve
-     * Advisor task, and SQL Management Base.
+     * Gets the configuration details of SQL plan baselines for the specified
+     * Managed Database. The details include the settings for the capture and use of
+     * SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSqlPlanBaselineConfigurationResponse>
             getSqlPlanBaselineConfiguration(
@@ -2202,15 +2304,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the details of the tablespace specified by tablespaceName within the Managed Database
-     * specified by managedDatabaseId.
+     * Gets the details of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetTablespaceResponse> getTablespace(
             GetTablespaceRequest request,
@@ -2220,12 +2322,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetTopSqlCpuActivityResponse> getTopSqlCpuActivity(
             GetTopSqlCpuActivityRequest request,
@@ -2236,12 +2339,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the details of the user specified by managedDatabaseId and userName.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetUserResponse> getUser(
             GetUserRequest request,
@@ -2252,10 +2356,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -2263,15 +2367,14 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Asynchronously implements the findings and recommendations of the Optimizer Statistics
-     * Advisor execution.
+     * Asynchronously implements the findings and recommendations of the Optimizer Statistics Advisor execution.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
             implementOptimizerStatisticsAdvisorRecommendations(
@@ -2286,10 +2389,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAsmPropertiesResponse> listAsmProperties(
             ListAsmPropertiesRequest request,
@@ -2302,10 +2405,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAssociatedDatabasesResponse> listAssociatedDatabases(
             ListAssociatedDatabasesRequest request,
@@ -2316,12 +2419,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists AWR snapshots for the specified database in the AWR.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrDbSnapshotsResponse> listAwrDbSnapshots(
             ListAwrDbSnapshotsRequest request,
@@ -2330,15 +2434,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of databases and their snapshot summary details available in the AWR of the
-     * specified Managed Database.
+     * Gets the list of databases and their snapshot summary details available in the AWR of the specified Managed Database.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrDbsResponse> listAwrDbs(
             ListAwrDbsRequest request,
@@ -2349,10 +2453,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListConsumerGroupPrivilegesResponse> listConsumerGroupPrivileges(
             ListConsumerGroupPrivilegesRequest request,
@@ -2363,12 +2467,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists the SQL statements from shared SQL area, also called the cursor cache.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListCursorCacheStatementsResponse> listCursorCacheStatements(
             ListCursorCacheStatementsRequest request,
@@ -2377,15 +2482,14 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS
-     * !='Y'.
+     * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !='Y'.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDataAccessContainersResponse> listDataAccessContainers(
             ListDataAccessContainersRequest request,
@@ -2394,15 +2498,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of database parameters for the specified Managed Database. The parameters are
-     * listed in alphabetical order, along with their current values.
+     * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDatabaseParametersResponse> listDatabaseParameters(
             ListDatabaseParametersRequest request,
@@ -2413,12 +2517,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets a list of Database Management private endpoints.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDbManagementPrivateEndpointsResponse>
             listDbManagementPrivateEndpoints(
@@ -2431,12 +2536,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalAsmDiskGroupsResponse> listExternalAsmDiskGroups(
             ListExternalAsmDiskGroupsRequest request,
@@ -2449,10 +2555,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalAsmInstancesResponse> listExternalAsmInstances(
             ListExternalAsmInstancesRequest request,
@@ -2463,12 +2569,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists ASM users for the external ASM specified by `externalAsmId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalAsmUsersResponse> listExternalAsmUsers(
             ListExternalAsmUsersRequest request,
@@ -2481,10 +2588,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalAsmsResponse> listExternalAsms(
             ListExternalAsmsRequest request,
@@ -2496,10 +2603,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalClusterInstancesResponse> listExternalClusterInstances(
             ListExternalClusterInstancesRequest request,
@@ -2513,10 +2620,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalClustersResponse> listExternalClusters(
             ListExternalClustersRequest request,
@@ -2529,10 +2636,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalDatabasesResponse> listExternalDatabases(
             ListExternalDatabasesRequest request,
@@ -2545,10 +2652,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalDbHomesResponse> listExternalDbHomes(
             ListExternalDbHomesRequest request,
@@ -2561,10 +2668,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalDbNodesResponse> listExternalDbNodes(
             ListExternalDbNodesRequest request,
@@ -2577,10 +2684,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalDbSystemConnectorsResponse>
             listExternalDbSystemConnectors(
@@ -2595,10 +2702,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalDbSystemDiscoveriesResponse>
             listExternalDbSystemDiscoveries(
@@ -2613,10 +2720,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalDbSystemsResponse> listExternalDbSystems(
             ListExternalDbSystemsRequest request,
@@ -2627,12 +2734,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists the Exadata infrastructure resources in the specified compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalExadataInfrastructuresResponse>
             listExternalExadataInfrastructures(
@@ -2645,12 +2753,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalExadataStorageConnectorsResponse>
             listExternalExadataStorageConnectors(
@@ -2663,12 +2772,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists the Exadata storage servers for the specified Exadata infrastructure.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalExadataStorageServersResponse>
             listExternalExadataStorageServers(
@@ -2679,15 +2789,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the database services registered with the specified external listener for the specified
-     * Managed Database.
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalListenerServicesResponse> listExternalListenerServices(
             ListExternalListenerServicesRequest request,
@@ -2701,10 +2812,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalListenersResponse> listExternalListeners(
             ListExternalListenersRequest request,
@@ -2715,12 +2826,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the list of External MySQL Databases.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExternalMySqlDatabasesResponse> listExternalMySqlDatabases(
             ListExternalMySqlDatabasesRequest request,
@@ -2729,18 +2841,18 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the job execution for a specific ID or the list of job executions for a job, job run,
-     * Managed Database or Managed Database Group in a specific compartment. Only one of the
-     * parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be
-     * provided. If none of these parameters is provided, all the job executions in the compartment
-     * are listed. Job executions can also be filtered based on the name and status parameters.
+     * Gets the job execution for a specific ID or the list of job executions for a job, job run, Managed Database or Managed Database Group
+     * in a specific compartment. Only one of the parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be provided.
+     * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
+     * based on the name and status parameters.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListJobExecutionsResponse> listJobExecutions(
             ListJobExecutionsRequest request,
@@ -2749,53 +2861,54 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the job run for a specific ID or the list of job runs for a job, Managed Database or
-     * Managed Database Group in a specific compartment. Only one of the parameters, ID, jobId,
-     * managedDatabaseId, or managedDatabaseGroupId should be provided. If none of these parameters
-     * is provided, all the job runs in the compartment are listed. Job runs can also be filtered
-     * based on name and runStatus parameters.
+     * Gets the job run for a specific ID or the list of job runs for a job, Managed Database or Managed Database Group
+     * in a specific compartment. Only one of the parameters, ID, jobId, managedDatabaseId, or managedDatabaseGroupId
+     * should be provided. If none of these parameters is provided, all the job runs in the compartment are listed.
+     * Job runs can also be filtered based on name and runStatus parameters.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListJobRunsResponse> listJobRuns(
             ListJobRunsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse> handler);
 
     /**
-     * Gets the job for a specific ID or the list of jobs for a Managed Database or Managed Database
-     * Group in a specific compartment. Only one of the parameters, ID, managedDatabaseId or
-     * managedDatabaseGroupId, should be provided. If none of these parameters is provided, all the
-     * jobs in the compartment are listed. Jobs can also be filtered based on the name and
-     * lifecycleState parameters.
+     * Gets the job for a specific ID or the list of jobs for a Managed Database or Managed Database Group
+     * in a specific compartment. Only one of the parameters, ID, managedDatabaseId or managedDatabaseGroupId,
+     * should be provided. If none of these parameters is provided, all the jobs in the compartment are listed.
+     * Jobs can also be filtered based on the name and lifecycleState parameters.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListJobsResponse> listJobs(
             ListJobsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
 
     /**
-     * Gets the Managed Database Group for a specific ID or the list of Managed Database Groups in a
-     * specific compartment. Managed Database Groups can also be filtered based on the name
-     * parameter. Only one of the parameters, ID or name should be provided. If none of these
-     * parameters is provided, all the Managed Database Groups in the compartment are listed.
+     * Gets the Managed Database Group for a specific ID or the list of Managed Database Groups in
+     * a specific compartment. Managed Database Groups can also be filtered based on the name parameter.
+     * Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
+     * all the Managed Database Groups in the compartment are listed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedDatabaseGroupsResponse> listManagedDatabaseGroups(
             ListManagedDatabaseGroupsRequest request,
@@ -2804,20 +2917,20 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific
-     * compartment. Managed Databases can be filtered based on the name parameter. Only one of the
-     * parameters, ID or name should be provided. If neither of these parameters is provided, all
-     * the Managed Databases in the compartment are listed. Managed Databases can also be filtered
-     * based on the deployment type and management option. If the deployment type is not specified
-     * or if it is `ONPREMISE`, then the management option is not considered and Managed Databases
-     * with `ADVANCED` management option are listed.
+     * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
+     * Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
+     * should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
+     * are listed. Managed Databases can also be filtered based on the deployment type and management option.
+     * If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
+     * considered and Managed Databases with `ADVANCED` management option are listed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedDatabasesResponse> listManagedDatabases(
             ListManagedDatabasesRequest request,
@@ -2828,12 +2941,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the list of External MySQL Database connectors.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMySqlDatabaseConnectorsResponse> listMySqlDatabaseConnectors(
             ListMySqlDatabaseConnectorsRequest request,
@@ -2842,15 +2956,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a single named credential specified by the name or all the named credentials in a
-     * specific compartment.
+     * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListNamedCredentialsResponse> listNamedCredentials(
             ListNamedCredentialsRequest request,
@@ -2863,10 +2977,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListObjectPrivilegesResponse> listObjectPrivileges(
             ListObjectPrivilegesRequest request,
@@ -2875,18 +2989,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the details of the Optimizer Statistics Advisor task executions, such as their
-     * duration, and the number of findings, if any. Optionally, you can specify a date-time range
-     * (of seven days) to obtain the list of executions that fall within the specified time range.
-     * If the date-time range is not specified, then the executions in the last seven days are
-     * listed.
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOptimizerStatisticsAdvisorExecutionsResponse>
             listOptimizerStatisticsAdvisorExecutions(
@@ -2897,21 +3010,20 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or
-     * object status for the specified Managed Database. You must specify a value for
-     * GroupByQueryParam to determine whether the data should be grouped by task status or task
-     * object status. Optionally, you can specify a date-time range (of seven days) to obtain
-     * collection aggregations within the specified time range. If the date-time range is not
-     * specified, then the operations in the last seven days are listed. You can further filter the
-     * results by providing the optional type of TaskTypeQueryParam. If the task type not provided,
-     * then both Auto and Manual tasks are considered for aggregation.
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type not provided, then both Auto and Manual tasks are considered for aggregation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOptimizerStatisticsCollectionAggregationsResponse>
             listOptimizerStatisticsCollectionAggregations(
@@ -2922,22 +3034,21 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the Optimizer Statistics Collection (Auto and Manual) task operation summary for the
-     * specified Managed Database. The summary includes the details of each operation and the number
-     * of tasks grouped by status: Completed, In Progress, Failed, and so on. Optionally, you can
-     * specify a date-time range (of seven days) to obtain the list of operations that fall within
-     * the specified time range. If the date-time range is not specified, then the operations in the
-     * last seven days are listed. This API also enables the pagination of results and the
-     * opc-next-page response header indicates whether there is a next page. If you use the same
-     * header value in a consecutive request, the next page records are returned. To obtain the
-     * required results, you can apply the different types of filters supported by this API.
+     * Lists the Optimizer Statistics Collection (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOptimizerStatisticsCollectionOperationsResponse>
             listOptimizerStatisticsCollectionOperations(
@@ -2950,12 +3061,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the list of preferred credentials for a given Managed Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListPreferredCredentialsResponse> listPreferredCredentials(
             ListPreferredCredentialsRequest request,
@@ -2968,10 +3080,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListProxiedForUsersResponse> listProxiedForUsers(
             ListProxiedForUsersRequest request,
@@ -2984,10 +3096,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListProxyUsersResponse> listProxyUsers(
             ListProxyUsersRequest request,
@@ -2999,25 +3111,25 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListRolesResponse> listRoles(
             ListRolesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handler);
 
     /**
-     * Lists the database jobs used for loading SQL plan baselines in the specified Managed
-     * Database.
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSqlPlanBaselineJobsResponse> listSqlPlanBaselineJobs(
             ListSqlPlanBaselineJobsRequest request,
@@ -3028,12 +3140,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Lists the SQL plan baselines for the specified Managed Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSqlPlanBaselinesResponse> listSqlPlanBaselines(
             ListSqlPlanBaselinesRequest request,
@@ -3046,10 +3159,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSystemPrivilegesResponse> listSystemPrivileges(
             ListSystemPrivilegesRequest request,
@@ -3058,15 +3171,16 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the database table statistics grouped by different statuses such as Not Stale Stats,
-     * Stale Stats, and No Stats. This also includes the percentage of each status.
+     * Lists the database table statistics grouped by different statuses such as Not Stale Stats, Stale Stats, and No Stats.
+     * This also includes the percentage of each status.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTableStatisticsResponse> listTableStatistics(
             ListTableStatisticsRequest request,
@@ -3079,10 +3193,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTablespacesResponse> listTablespaces(
             ListTablespacesRequest request,
@@ -3094,10 +3208,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListUsersResponse> listUsers(
             ListUsersRequest request,
@@ -3106,12 +3220,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Returns a paginated list of errors for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -3122,12 +3237,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Returns a paginated list of logs for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -3138,12 +3254,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * The list of work requests in a specific compartment was retrieved successfully.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -3151,17 +3268,19 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Loads plans from Automatic Workload Repository (AWR) snapshots. You must specify the
-     * beginning and ending of the snapshot range. Optionally, you can apply a filter to load only
-     * plans that meet specified criteria. By default, the optimizer uses the loaded plans the next
-     * time that the database executes the SQL statements.
+     * Loads plans from Automatic Workload Repository (AWR) snapshots. You must
+     * specify the beginning and ending of the snapshot range. Optionally, you
+     * can apply a filter to load only plans that meet specified criteria. By
+     * default, the optimizer uses the loaded plans the next time that the database
+     * executes the SQL statements.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<LoadSqlPlanBaselinesFromAwrResponse> loadSqlPlanBaselinesFromAwr(
             LoadSqlPlanBaselinesFromAwrRequest request,
@@ -3170,16 +3289,17 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Loads plans for statements directly from the shared SQL area, also called the cursor cache.
-     * By applying a filter on the module name, the schema, or the SQL ID you identify the SQL
-     * statement or set of SQL statements to load.
+     * Loads plans for statements directly from the shared SQL area, also called
+     * the cursor cache. By applying a filter on the module name, the schema, or
+     * the SQL ID you identify the SQL statement or set of SQL statements to load.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<LoadSqlPlanBaselinesFromCursorCacheResponse>
             loadSqlPlanBaselinesFromCursorCache(
@@ -3192,12 +3312,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Modifies the Database Management feature for the specified Autonomous Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ModifyAutonomousDatabaseManagementFeatureResponse>
             modifyAutonomousDatabaseManagementFeature(
@@ -3210,12 +3331,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Modifies a Database Management feature for the specified Oracle cloud database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ModifyDatabaseManagementFeatureResponse>
             modifyDatabaseManagementFeature(
@@ -3228,12 +3350,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Modifies the Database Management feature for the specified Oracle cloud pluggable database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ModifyPluggableDatabaseManagementFeatureResponse>
             modifyPluggableDatabaseManagementFeature(
@@ -3246,12 +3369,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<PatchExternalDbSystemDiscoveryResponse>
             patchExternalDbSystemDiscovery(
@@ -3264,12 +3388,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Removes a data file or temp file from the tablespace.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RemoveDataFileResponse> removeDataFile(
             RemoveDataFileRequest request,
@@ -3277,16 +3402,18 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes a Managed Database from a Managed Database Group. Any management activities that are
-     * currently running on this database will continue to run to completion. However, any
-     * activities scheduled to run in the future will not be performed on this database.
+     * Removes a Managed Database from a Managed Database Group. Any management
+     * activities that are currently running on this database will continue to
+     * run to completion. However, any activities scheduled to run in the future
+     * will not be performed on this database.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
             removeManagedDatabaseFromManagedDatabaseGroup(
@@ -3299,12 +3426,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Resets database parameter values to their default or startup values.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ResetDatabaseParametersResponse> resetDatabaseParameters(
             ResetDatabaseParametersRequest request,
@@ -3315,12 +3443,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Resizes a data file or temp file within the tablespace.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ResizeDataFileResponse> resizeDataFile(
             ResizeDataFileRequest request,
@@ -3328,15 +3457,16 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates and executes a historic ADDM task using the specified AWR snapshot IDs. If an
-     * existing ADDM task uses the provided awr snapshot IDs, the existing task will be returned.
+     * Creates and executes a historic ADDM task using the specified AWR snapshot IDs. If an existing ADDM task
+     * uses the provided awr snapshot IDs, the existing task will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RunHistoricAddmResponse> runHistoricAddm(
             RunHistoricAddmRequest request,
@@ -3346,12 +3476,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbCpuUsagesResponse> summarizeAwrDbCpuUsages(
             SummarizeAwrDbCpuUsagesRequest request,
@@ -3360,15 +3491,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes the metric samples for the specified database in the AWR. The metric samples are
-     * summarized based on the Time dimension for each metric.
+     * Summarizes the metric samples for the specified database in the AWR. The metric samples are summarized based on the Time dimension for each metric.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbMetricsResponse> summarizeAwrDbMetrics(
             SummarizeAwrDbMetricsRequest request,
@@ -3377,21 +3508,19 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes the database parameter change history for one database parameter of the specified
-     * database in AWR. One change history record contains the previous value, the changed value,
-     * and the corresponding time range. If the database parameter value was changed multiple times
-     * within the time range, then multiple change history records are created for the same
-     * parameter. Note that this API only returns information on change history details for one
-     * database parameter. To get a list of all the database parameters whose values were changed
-     * during a specified time range, use the following API endpoint:
+     * Summarizes the database parameter change history for one database parameter of the specified database in AWR. One change history record contains
+     * the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
+     * Note that this API only returns information on change history details for one database parameter.
+     * To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameters
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbParameterChangesResponse>
             summarizeAwrDbParameterChanges(
@@ -3402,30 +3531,25 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the database parameter history for the specified database in AWR. This includes
-     * the list of database parameters, with information on whether the parameter values were
-     * modified within the query time range. Note that each database parameter is only listed once.
-     * Depending on the optional query parameters, the returned summary gets all the database
-     * parameters, which include:
-     *
-     * <p>- Each parameter whose value was changed during the time range: (valueChanged =\"Y\") -
-     * Each parameter whose value was unchanged during the time range: (valueChanged =\"N\") - Each
-     * parameter whose value was changed at the system level during the time range: (valueChanged
-     * =\"Y\" and valueModified = \"SYSTEM_MOD\") - Each parameter whose value was unchanged during
-     * the time range, however, the value is not the default value: (valueChanged =\"N\" and
-     * valueDefault = \"FALSE\")
-     *
-     * <p>Note that this API does not return information on the number of times each database
-     * parameter has been changed within the time range. To get the database parameter value change
-     * history for a specific parameter, use the following API endpoint:
+     * Summarizes the database parameter history for the specified database in AWR. This includes the list of database
+     * parameters, with information on whether the parameter values were modified within the query time range. Note that
+     * each database parameter is only listed once. Depending on the optional query parameters, the returned summary gets all the database parameters, which include:
+     * <p>
+     * - Each parameter whose value was changed during the time range:  (valueChanged =\"Y\")
+     * - Each parameter whose value was unchanged during the time range:  (valueChanged =\"N\")
+     * - Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\")
+     * - Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+     * <p>
+     * Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameterChanges
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbParametersResponse> summarizeAwrDbParameters(
             SummarizeAwrDbParametersRequest request,
@@ -3434,15 +3558,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes the AWR snapshot ranges that contain continuous snapshots, for the specified
-     * Managed Database.
+     * Summarizes the AWR snapshot ranges that contain continuous snapshots, for the specified Managed Database.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbSnapshotRangesResponse> summarizeAwrDbSnapshotRanges(
             SummarizeAwrDbSnapshotRangesRequest request,
@@ -3452,15 +3576,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes the AWR SYSSTAT sample data for the specified database in AWR. The statistical
-     * data is summarized based on the Time dimension for each statistic.
+     * Summarizes the AWR SYSSTAT sample data for the specified database in AWR. The statistical data is summarized based on the Time dimension for each statistic.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbSysstatsResponse> summarizeAwrDbSysstats(
             SummarizeAwrDbSysstatsRequest request,
@@ -3471,12 +3595,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Summarizes the AWR top wait events.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbTopWaitEventsResponse> summarizeAwrDbTopWaitEvents(
             SummarizeAwrDbTopWaitEventsRequest request,
@@ -3485,15 +3610,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes AWR wait event data into value buckets and frequency, for the specified database
-     * in the AWR.
+     * Summarizes AWR wait event data into value buckets and frequency, for the specified database in the AWR.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbWaitEventBucketsResponse>
             summarizeAwrDbWaitEventBuckets(
@@ -3504,15 +3629,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the AWR wait event sample data for the specified database in the AWR. The event
-     * data is summarized based on the Time dimension for each event.
+     * Summarizes the AWR wait event sample data for the specified database in the AWR. The event data is summarized based on the Time dimension for each event.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDbWaitEventsResponse> summarizeAwrDbWaitEvents(
             SummarizeAwrDbWaitEventsRequest request,
@@ -3523,12 +3648,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets metrics for the external ASM specified by `externalAsmId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExternalAsmMetricsResponse> summarizeExternalAsmMetrics(
             SummarizeExternalAsmMetricsRequest request,
@@ -3539,12 +3665,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets metrics for the external cluster specified by `externalClusterId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExternalClusterMetricsResponse>
             summarizeExternalClusterMetrics(
@@ -3557,12 +3684,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets metrics for the external DB node specified by `externalDbNodeId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExternalDbNodeMetricsResponse>
             summarizeExternalDbNodeMetrics(
@@ -3573,15 +3701,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets availability metrics for the components present in the external DB system specified by
-     * `externalDbSystemId`.
+     * Gets availability metrics for the components present in the external DB system specified by `externalDbSystemId`.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExternalDbSystemAvailabilityMetricsResponse>
             summarizeExternalDbSystemAvailabilityMetrics(
@@ -3594,12 +3722,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets metrics for the external listener specified by `externalListenerId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExternalListenerMetricsResponse>
             summarizeExternalListenerMetrics(
@@ -3610,16 +3739,14 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the number of job executions grouped by status for a job, Managed Database, or Database
-     * Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or
-     * managedDatabaseGroupId should be provided.
+     * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeJobExecutionsStatusesResponse>
             summarizeJobExecutionsStatuses(
@@ -3630,15 +3757,16 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the availability metrics related to managed database for the Oracle database specified
-     * by managedDatabaseId.
+     * Gets the availability metrics related to managed database for the Oracle
+     * database specified by managedDatabaseId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeManagedDatabaseAvailabilityMetricsResponse>
             summarizeManagedDatabaseAvailabilityMetrics(
@@ -3651,12 +3779,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the number of SQL plan baselines aggregated by their attributes.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlPlanBaselinesResponse> summarizeSqlPlanBaselines(
             SummarizeSqlPlanBaselinesRequest request,
@@ -3667,12 +3796,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Gets the number of SQL plan baselines aggregated by the age of their last execution in weeks.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlPlanBaselinesByLastExecutionResponse>
             summarizeSqlPlanBaselinesByLastExecution(
@@ -3685,12 +3815,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Tests the named credential.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<TestNamedCredentialResponse> testNamedCredential(
             TestNamedCredentialRequest request,
@@ -3701,12 +3832,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Tests the preferred credential.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<TestPreferredCredentialResponse> testPreferredCredential(
             TestPreferredCredentialRequest request,
@@ -3719,10 +3851,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDbManagementPrivateEndpointResponse>
             updateDbManagementPrivateEndpoint(
@@ -3735,12 +3867,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external ASM specified by `externalAsmId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalAsmResponse> updateExternalAsm(
             UpdateExternalAsmRequest request,
@@ -3751,12 +3884,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external ASM instance specified by `externalAsmInstanceId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalAsmInstanceResponse> updateExternalAsmInstance(
             UpdateExternalAsmInstanceRequest request,
@@ -3767,12 +3901,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external cluster specified by `externalClusterId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalClusterResponse> updateExternalCluster(
             UpdateExternalClusterRequest request,
@@ -3783,12 +3918,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external cluster instance specified by `externalClusterInstanceId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalClusterInstanceResponse>
             updateExternalClusterInstance(
@@ -3801,12 +3937,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external DB home specified by `externalDbHomeId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalDbHomeResponse> updateExternalDbHome(
             UpdateExternalDbHomeRequest request,
@@ -3817,12 +3954,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external DB node specified by `externalDbNodeId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalDbNodeResponse> updateExternalDbNode(
             UpdateExternalDbNodeRequest request,
@@ -3833,12 +3971,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external DB system specified by `externalDbSystemId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalDbSystemResponse> updateExternalDbSystem(
             UpdateExternalDbSystemRequest request,
@@ -3851,10 +3990,10 @@ public interface DbManagementAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalDbSystemConnectorResponse>
             updateExternalDbSystemConnector(
@@ -3867,12 +4006,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external DB system discovery specified by `externalDbSystemDiscoveryId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalDbSystemDiscoveryResponse>
             updateExternalDbSystemDiscovery(
@@ -3883,15 +4023,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the details for the Exadata infrastructure specified by
-     * externalExadataInfrastructureId.
+     * Updates the details for the Exadata infrastructure specified by externalExadataInfrastructureId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalExadataInfrastructureResponse>
             updateExternalExadataInfrastructure(
@@ -3904,12 +4044,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the Exadata storage server connector specified by exadataStorageConnectorId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalExadataStorageConnectorResponse>
             updateExternalExadataStorageConnector(
@@ -3922,12 +4063,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the Exadata storage server grid specified by exadataStorageGridId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalExadataStorageGridResponse>
             updateExternalExadataStorageGrid(
@@ -3940,12 +4082,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the Exadata storage server specified by exadataStorageServerId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalExadataStorageServerResponse>
             updateExternalExadataStorageServer(
@@ -3958,12 +4101,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the external listener specified by `externalListenerId`.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalListenerResponse> updateExternalListener(
             UpdateExternalListenerRequest request,
@@ -3974,12 +4118,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the External Mysql Database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalMysqlDatabaseResponse> updateExternalMysqlDatabase(
             UpdateExternalMysqlDatabaseRequest request,
@@ -3990,12 +4135,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the External Mysql Database Connector.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExternalMysqlDatabaseConnectorResponse>
             updateExternalMysqlDatabaseConnector(
@@ -4006,15 +4152,15 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the details for the recurring scheduled job specified by jobId. Note that
-     * non-recurring (one time) jobs cannot be updated.
+     * Updates the details for the recurring scheduled job specified by jobId. Note that non-recurring (one time) jobs cannot be updated.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateJobResponse> updateJob(
             UpdateJobRequest request,
@@ -4023,12 +4169,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the Managed Database specified by managedDatabaseId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateManagedDatabaseResponse> updateManagedDatabase(
             UpdateManagedDatabaseRequest request,
@@ -4039,12 +4186,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateManagedDatabaseGroupResponse> updateManagedDatabaseGroup(
             UpdateManagedDatabaseGroupRequest request,
@@ -4055,12 +4203,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the named credential specified by namedCredentialId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateNamedCredentialResponse> updateNamedCredential(
             UpdateNamedCredentialRequest request,
@@ -4071,12 +4220,13 @@ public interface DbManagementAsync extends AutoCloseable {
     /**
      * Updates the preferred credential based on the credentialName.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdatePreferredCredentialResponse> updatePreferredCredential(
             UpdatePreferredCredentialRequest request,
@@ -4085,15 +4235,15 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the attributes of the tablespace specified by tablespaceName within the Managed
-     * Database specified by managedDatabaseId.
+     * Updates the attributes of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTablespaceResponse> updateTablespace(
             UpdateTablespaceRequest request,

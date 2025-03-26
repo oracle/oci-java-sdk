@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Backup destination details, including the list of databases using the backup destination. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Backup destination details, including the list of databases using the backup destination.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BackupDestinationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BackupDestinationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BackupDestinationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -89,83 +88,80 @@ public final class BackupDestinationSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The user-provided name of the backup destination. */
+        /**
+         * The user-provided name of the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-provided name of the backup destination.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Type of the backup destination. */
+        /**
+         * Type of the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of the backup destination.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** List of databases associated with the backup destination. */
+        /**
+         * List of databases associated with the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedDatabases")
         private java.util.List<AssociatedDatabaseDetails> associatedDatabases;
 
         /**
          * List of databases associated with the backup destination.
-         *
          * @param associatedDatabases the value to set
          * @return this builder
-         */
+         **/
         public Builder associatedDatabases(
                 java.util.List<AssociatedDatabaseDetails> associatedDatabases) {
             this.associatedDatabases = associatedDatabases;
@@ -173,201 +169,194 @@ public final class BackupDestinationSummary
             return this;
         }
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the
-         * Recovery Appliance.
-         */
+         * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the
-         * Recovery Appliance.
-         *
+         * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that
-         * are used to access the Recovery Appliance.
-         */
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
         private java.util.List<String> vpcUsers;
 
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that
-         * are used to access the Recovery Appliance.
-         *
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
          * @param vpcUsers the value to set
          * @return this builder
-         */
+         **/
         public Builder vpcUsers(java.util.List<String> vpcUsers) {
             this.vpcUsers = vpcUsers;
             this.__explicitlySet__.add("vpcUsers");
             return this;
         }
         /**
-         * The local directory path on each VM cluster node where the NFS server location is
-         * mounted. The local directory path and the NFS server location must each be the same
-         * across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously
-         * on all of the VM cluster nodes.
-         */
+         * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
         private String localMountPointPath;
 
         /**
-         * The local directory path on each VM cluster node where the NFS server location is
-         * mounted. The local directory path and the NFS server location must each be the same
-         * across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously
-         * on all of the VM cluster nodes.
+         * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
          *
          * @param localMountPointPath the value to set
          * @return this builder
-         */
+         **/
         public Builder localMountPointPath(String localMountPointPath) {
             this.localMountPointPath = localMountPointPath;
             this.__explicitlySet__.add("localMountPointPath");
             return this;
         }
-        /** NFS Mount type for backup destination. */
+        /**
+         * NFS Mount type for backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
         private NfsMountType nfsMountType;
 
         /**
          * NFS Mount type for backup destination.
-         *
          * @param nfsMountType the value to set
          * @return this builder
-         */
+         **/
         public Builder nfsMountType(NfsMountType nfsMountType) {
             this.nfsMountType = nfsMountType;
             this.__explicitlySet__.add("nfsMountType");
             return this;
         }
-        /** Host names or IP addresses for NFS Auto mount. */
+        /**
+         * Host names or IP addresses for NFS Auto mount.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
         private java.util.List<String> nfsServer;
 
         /**
          * Host names or IP addresses for NFS Auto mount.
-         *
          * @param nfsServer the value to set
          * @return this builder
-         */
+         **/
         public Builder nfsServer(java.util.List<String> nfsServer) {
             this.nfsServer = nfsServer;
             this.__explicitlySet__.add("nfsServer");
             return this;
         }
-        /** Specifies the directory on which to mount the file system */
+        /**
+         * Specifies the directory on which to mount the file system
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
         private String nfsServerExport;
 
         /**
          * Specifies the directory on which to mount the file system
-         *
          * @param nfsServerExport the value to set
          * @return this builder
-         */
+         **/
         public Builder nfsServerExport(String nfsServerExport) {
             this.nfsServerExport = nfsServerExport;
             this.__explicitlySet__.add("nfsServerExport");
             return this;
         }
-        /** The current lifecycle state of the backup destination. */
+        /**
+         * The current lifecycle state of the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the backup destination.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The date and time the backup destination was created. */
+        /**
+         * The date and time the backup destination was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the backup destination was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * A descriptive text associated with the lifecycleState. Typically contains additional
-         * displayable text
-         */
+         * A descriptive text associated with the lifecycleState.
+         * Typically contains additional displayable text
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A descriptive text associated with the lifecycleState. Typically contains additional
-         * displayable text
+         * A descriptive text associated with the lifecycleState.
+         * Typically contains additional displayable text
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -376,54 +365,47 @@ public final class BackupDestinationSummary
         }
         /**
          * The total storage size of the backup destination in GBs, rounded to the nearest integer.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalStorageSizeInGBs")
         private Integer totalStorageSizeInGBs;
 
         /**
          * The total storage size of the backup destination in GBs, rounded to the nearest integer.
-         *
          * @param totalStorageSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder totalStorageSizeInGBs(Integer totalStorageSizeInGBs) {
             this.totalStorageSizeInGBs = totalStorageSizeInGBs;
             this.__explicitlySet__.add("totalStorageSizeInGBs");
             return this;
         }
         /**
-         * The total amount of space utilized on the backup destination (in GBs), rounded to the
-         * nearest integer.
-         */
+         * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utilizedStorageSizeInGBs")
         private Integer utilizedStorageSizeInGBs;
 
         /**
-         * The total amount of space utilized on the backup destination (in GBs), rounded to the
-         * nearest integer.
-         *
+         * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
          * @param utilizedStorageSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder utilizedStorageSizeInGBs(Integer utilizedStorageSizeInGBs) {
             this.utilizedStorageSizeInGBs = utilizedStorageSizeInGBs;
             this.__explicitlySet__.add("utilizedStorageSizeInGBs");
             return this;
         }
         /**
-         * The time when the total storage size and the utilized storage size of the backup
-         * destination are updated.
-         */
+         * The time when the total storage size and the utilized storage size of the backup destination are updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
         private java.util.Date timeAtWhichStorageDetailsAreUpdated;
 
         /**
-         * The time when the total storage size and the utilized storage size of the backup
-         * destination are updated.
-         *
+         * The time when the total storage size and the utilized storage size of the backup destination are updated.
          * @param timeAtWhichStorageDetailsAreUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAtWhichStorageDetailsAreUpdated(
                 java.util.Date timeAtWhichStorageDetailsAreUpdated) {
             this.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
@@ -526,7 +508,9 @@ public final class BackupDestinationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -536,60 +520,57 @@ public final class BackupDestinationSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The user-provided name of the backup destination. */
+    /**
+     * The user-provided name of the backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-provided name of the backup destination.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Type of the backup destination. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the backup destination.
+     **/
+    public enum Type {
         Nfs("NFS"),
         RecoveryAppliance("RECOVERY_APPLIANCE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -626,95 +607,88 @@ public final class BackupDestinationSummary
             return UnknownEnumValue;
         }
     };
-    /** Type of the backup destination. */
+    /**
+     * Type of the backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the backup destination.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** List of databases associated with the backup destination. */
+    /**
+     * List of databases associated with the backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedDatabases")
     private final java.util.List<AssociatedDatabaseDetails> associatedDatabases;
 
     /**
      * List of databases associated with the backup destination.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssociatedDatabaseDetails> getAssociatedDatabases() {
         return associatedDatabases;
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the
-     * Recovery Appliance.
-     */
+     * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the
-     * Recovery Appliance.
-     *
+     * For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are
-     * used to access the Recovery Appliance.
-     */
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUsers")
     private final java.util.List<String> vpcUsers;
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are
-     * used to access the Recovery Appliance.
-     *
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      * @return the value
-     */
+     **/
     public java.util.List<String> getVpcUsers() {
         return vpcUsers;
     }
 
     /**
-     * The local directory path on each VM cluster node where the NFS server location is mounted.
-     * The local directory path and the NFS server location must each be the same across all of the
-     * VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM
-     * cluster nodes.
-     */
+     * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
     private final String localMountPointPath;
 
     /**
-     * The local directory path on each VM cluster node where the NFS server location is mounted.
-     * The local directory path and the NFS server location must each be the same across all of the
-     * VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM
-     * cluster nodes.
+     * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      *
      * @return the value
-     */
+     **/
     public String getLocalMountPointPath() {
         return localMountPointPath;
     }
 
-    /** NFS Mount type for backup destination. */
-    public enum NfsMountType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * NFS Mount type for backup destination.
+     **/
+    public enum NfsMountType {
         SelfMount("SELF_MOUNT"),
         AutomatedMount("AUTOMATED_MOUNT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -753,54 +727,59 @@ public final class BackupDestinationSummary
             return UnknownEnumValue;
         }
     };
-    /** NFS Mount type for backup destination. */
+    /**
+     * NFS Mount type for backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
     private final NfsMountType nfsMountType;
 
     /**
      * NFS Mount type for backup destination.
-     *
      * @return the value
-     */
+     **/
     public NfsMountType getNfsMountType() {
         return nfsMountType;
     }
 
-    /** Host names or IP addresses for NFS Auto mount. */
+    /**
+     * Host names or IP addresses for NFS Auto mount.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
     private final java.util.List<String> nfsServer;
 
     /**
      * Host names or IP addresses for NFS Auto mount.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNfsServer() {
         return nfsServer;
     }
 
-    /** Specifies the directory on which to mount the file system */
+    /**
+     * Specifies the directory on which to mount the file system
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
     private final String nfsServerExport;
 
     /**
      * Specifies the directory on which to mount the file system
-     *
      * @return the value
-     */
+     **/
     public String getNfsServerExport() {
         return nfsServerExport;
     }
 
-    /** The current lifecycle state of the backup destination. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current lifecycle state of the backup destination.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Failed("FAILED"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -839,134 +818,130 @@ public final class BackupDestinationSummary
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the backup destination. */
+    /**
+     * The current lifecycle state of the backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the backup destination.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The date and time the backup destination was created. */
+    /**
+     * The date and time the backup destination was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the backup destination was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * A descriptive text associated with the lifecycleState. Typically contains additional
-     * displayable text
-     */
+     * A descriptive text associated with the lifecycleState.
+     * Typically contains additional displayable text
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A descriptive text associated with the lifecycleState. Typically contains additional
-     * displayable text
+     * A descriptive text associated with the lifecycleState.
+     * Typically contains additional displayable text
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** The total storage size of the backup destination in GBs, rounded to the nearest integer. */
+    /**
+     * The total storage size of the backup destination in GBs, rounded to the nearest integer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalStorageSizeInGBs")
     private final Integer totalStorageSizeInGBs;
 
     /**
      * The total storage size of the backup destination in GBs, rounded to the nearest integer.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalStorageSizeInGBs() {
         return totalStorageSizeInGBs;
     }
 
     /**
-     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest
-     * integer.
-     */
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("utilizedStorageSizeInGBs")
     private final Integer utilizedStorageSizeInGBs;
 
     /**
-     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest
-     * integer.
-     *
+     * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
      * @return the value
-     */
+     **/
     public Integer getUtilizedStorageSizeInGBs() {
         return utilizedStorageSizeInGBs;
     }
 
     /**
-     * The time when the total storage size and the utilized storage size of the backup destination
-     * are updated.
-     */
+     * The time when the total storage size and the utilized storage size of the backup destination are updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
     private final java.util.Date timeAtWhichStorageDetailsAreUpdated;
 
     /**
-     * The time when the total storage size and the utilized storage size of the backup destination
-     * are updated.
-     *
+     * The time when the total storage size and the utilized storage size of the backup destination are updated.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAtWhichStorageDetailsAreUpdated() {
         return timeAtWhichStorageDetailsAreUpdated;
     }
@@ -978,7 +953,6 @@ public final class BackupDestinationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

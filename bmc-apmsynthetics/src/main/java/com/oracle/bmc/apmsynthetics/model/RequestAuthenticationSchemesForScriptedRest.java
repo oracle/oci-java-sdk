@@ -4,10 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Monitor request http auth scheme for Scripted Rest monitor. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum RequestAuthenticationSchemesForScriptedRest
-        implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Monitor request http auth scheme for Scripted Rest monitor.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum RequestAuthenticationSchemesForScriptedRest {
     None("NONE"),
     ResourcePrincipal("RESOURCE_PRINCIPAL"),
 

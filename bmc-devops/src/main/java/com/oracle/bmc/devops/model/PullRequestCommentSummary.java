@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * summary of a pullRequest comment <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * summary of a pullRequest comment
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PullRequestCommentSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PullRequestCommentSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PullRequestCommentSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,121 +78,129 @@ public final class PullRequestCommentSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID of the pull request that this comment belongs to */
+        /**
+         * OCID of the pull request that this comment belongs to
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pullRequestId")
         private String pullRequestId;
 
         /**
          * OCID of the pull request that this comment belongs to
-         *
          * @param pullRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder pullRequestId(String pullRequestId) {
             this.pullRequestId = pullRequestId;
             this.__explicitlySet__.add("pullRequestId");
             return this;
         }
-        /** Content of the Comment. */
+        /**
+         * Content of the Comment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private String data;
 
         /**
          * Content of the Comment.
-         *
          * @param data the value to set
          * @return this builder
-         */
+         **/
         public Builder data(String data) {
             this.data = data;
             this.__explicitlySet__.add("data");
             return this;
         }
-        /** ID of parent Comment */
+        /**
+         * ID of parent Comment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
          * ID of parent Comment
-         *
          * @param parentId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
-        /** File path in the commit */
+        /**
+         * File path in the commit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filePath")
         private String filePath;
 
         /**
          * File path in the commit
-         *
          * @param filePath the value to set
          * @return this builder
-         */
+         **/
         public Builder filePath(String filePath) {
             this.filePath = filePath;
             this.__explicitlySet__.add("filePath");
             return this;
         }
-        /** Commit SHA */
+        /**
+         * Commit SHA
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitId")
         private String commitId;
 
         /**
          * Commit SHA
-         *
          * @param commitId the value to set
          * @return this builder
-         */
+         **/
         public Builder commitId(String commitId) {
             this.commitId = commitId;
             this.__explicitlySet__.add("commitId");
             return this;
         }
-        /** File path in the target commit */
+        /**
+         * File path in the target commit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileType")
         private PullRequestComment.FileType fileType;
 
         /**
          * File path in the target commit
-         *
          * @param fileType the value to set
          * @return this builder
-         */
+         **/
         public Builder fileType(PullRequestComment.FileType fileType) {
             this.fileType = fileType;
             this.__explicitlySet__.add("fileType");
             return this;
         }
-        /** Line number in the file */
+        /**
+         * Line number in the file
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
         private Integer lineNumber;
 
         /**
          * Line number in the file
-         *
          * @param lineNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder lineNumber(Integer lineNumber) {
             this.lineNumber = lineNumber;
             this.__explicitlySet__.add("lineNumber");
@@ -208,35 +215,33 @@ public final class PullRequestCommentSummary
             this.__explicitlySet__.add("likes");
             return this;
         }
-        /** Status of the Comment */
+        /**
+         * Status of the Comment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private PullRequestComment.Status status;
 
         /**
          * Status of the Comment
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(PullRequestComment.Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * Creation timestamp. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
+         * Creation timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Creation timestamp. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * Creation timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -252,19 +257,16 @@ public final class PullRequestCommentSummary
             return this;
         }
         /**
-         * Latest update timestamp. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
+         * Latest update timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Latest update timestamp. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * Latest update timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -279,31 +281,33 @@ public final class PullRequestCommentSummary
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-        /** Shows the status of an inline comments context */
+        /**
+         * Shows the status of an inline comments context
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contextStatus")
         private PullRequestComment.ContextStatus contextStatus;
 
         /**
          * Shows the status of an inline comments context
-         *
          * @param contextStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder contextStatus(PullRequestComment.ContextStatus contextStatus) {
             this.contextStatus = contextStatus;
             this.__explicitlySet__.add("contextStatus");
             return this;
         }
-        /** 4 line snippet to be displayed as context for inline comments */
+        /**
+         * 4 line snippet to be displayed as context for inline comments
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commentContext")
         private java.util.List<DiffLineDetails> commentContext;
 
         /**
          * 4 line snippet to be displayed as context for inline comments
-         *
          * @param commentContext the value to set
          * @return this builder
-         */
+         **/
         public Builder commentContext(java.util.List<DiffLineDetails> commentContext) {
             this.commentContext = commentContext;
             this.__explicitlySet__.add("commentContext");
@@ -392,7 +396,9 @@ public final class PullRequestCommentSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -401,106 +407,114 @@ public final class PullRequestCommentSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * Unique identifier that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OCID of the pull request that this comment belongs to */
+    /**
+     * OCID of the pull request that this comment belongs to
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pullRequestId")
     private final String pullRequestId;
 
     /**
      * OCID of the pull request that this comment belongs to
-     *
      * @return the value
-     */
+     **/
     public String getPullRequestId() {
         return pullRequestId;
     }
 
-    /** Content of the Comment. */
+    /**
+     * Content of the Comment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     private final String data;
 
     /**
      * Content of the Comment.
-     *
      * @return the value
-     */
+     **/
     public String getData() {
         return data;
     }
 
-    /** ID of parent Comment */
+    /**
+     * ID of parent Comment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
      * ID of parent Comment
-     *
      * @return the value
-     */
+     **/
     public String getParentId() {
         return parentId;
     }
 
-    /** File path in the commit */
+    /**
+     * File path in the commit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filePath")
     private final String filePath;
 
     /**
      * File path in the commit
-     *
      * @return the value
-     */
+     **/
     public String getFilePath() {
         return filePath;
     }
 
-    /** Commit SHA */
+    /**
+     * Commit SHA
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitId")
     private final String commitId;
 
     /**
      * Commit SHA
-     *
      * @return the value
-     */
+     **/
     public String getCommitId() {
         return commitId;
     }
 
-    /** File path in the target commit */
+    /**
+     * File path in the target commit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileType")
     private final PullRequestComment.FileType fileType;
 
     /**
      * File path in the target commit
-     *
      * @return the value
-     */
+     **/
     public PullRequestComment.FileType getFileType() {
         return fileType;
     }
 
-    /** Line number in the file */
+    /**
+     * Line number in the file
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
     private final Integer lineNumber;
 
     /**
      * Line number in the file
-     *
      * @return the value
-     */
+     **/
     public Integer getLineNumber() {
         return lineNumber;
     }
@@ -512,32 +526,30 @@ public final class PullRequestCommentSummary
         return likes;
     }
 
-    /** Status of the Comment */
+    /**
+     * Status of the Comment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final PullRequestComment.Status status;
 
     /**
      * Status of the Comment
-     *
      * @return the value
-     */
+     **/
     public PullRequestComment.Status getStatus() {
         return status;
     }
 
     /**
-     * Creation timestamp. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * Creation timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Creation timestamp. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * Creation timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -550,18 +562,15 @@ public final class PullRequestCommentSummary
     }
 
     /**
-     * Latest update timestamp. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * Latest update timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Latest update timestamp. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * Latest update timestamp. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -573,28 +582,30 @@ public final class PullRequestCommentSummary
         return updatedBy;
     }
 
-    /** Shows the status of an inline comments context */
+    /**
+     * Shows the status of an inline comments context
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contextStatus")
     private final PullRequestComment.ContextStatus contextStatus;
 
     /**
      * Shows the status of an inline comments context
-     *
      * @return the value
-     */
+     **/
     public PullRequestComment.ContextStatus getContextStatus() {
         return contextStatus;
     }
 
-    /** 4 line snippet to be displayed as context for inline comments */
+    /**
+     * 4 line snippet to be displayed as context for inline comments
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commentContext")
     private final java.util.List<DiffLineDetails> commentContext;
 
     /**
      * 4 line snippet to be displayed as context for inline comments
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DiffLineDetails> getCommentContext() {
         return commentContext;
     }
@@ -606,7 +617,6 @@ public final class PullRequestCommentSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

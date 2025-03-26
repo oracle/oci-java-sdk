@@ -5,23 +5,21 @@
 package com.oracle.bmc.accessgovernancecp.model;
 
 /**
- * The details of a GovenanceInstance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
+ * The details of a GovenanceInstance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GovernanceInstance.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class GovernanceInstance
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = GovernanceInstance.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class GovernanceInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -70,46 +68,49 @@ public final class GovernanceInstance
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique OCID of the GovernanceInstance. */
+        /**
+         * The unique OCID of the GovernanceInstance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique OCID of the GovernanceInstance.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name for the GovernanceInstance. */
+        /**
+         * The name for the GovernanceInstance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name for the GovernanceInstance.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment where the GovernanceInstance resides. */
+        /**
+         * The OCID of the compartment where the GovernanceInstance resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where the GovernanceInstance resides.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -117,106 +118,111 @@ public final class GovernanceInstance
         }
         /**
          * The time the the GovernanceInstance was created in an RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the GovernanceInstance was created in an RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the GovernanceInstance was updated in an RFC3339 formatted datetime string. */
+        /**
+         * The time the GovernanceInstance was updated in an RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the GovernanceInstance was updated in an RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the GovernanceInstance. */
+        /**
+         * The current state of the GovernanceInstance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private InstanceLifecycleState lifecycleState;
 
         /**
          * The current state of the GovernanceInstance.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(InstanceLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The description of the GovernanceInstance. */
+        /**
+         * The description of the GovernanceInstance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the GovernanceInstance.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The licenseType being used. */
+        /**
+         * The licenseType being used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private LicenseType licenseType;
 
         /**
          * The licenseType being used.
-         *
          * @param licenseType the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseType(LicenseType licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-        /** The namespace for tenancy object storage. */
+        /**
+         * The namespace for tenancy object storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyNamespace")
         private String tenancyNamespace;
 
         /**
          * The namespace for tenancy object storage.
-         *
          * @param tenancyNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyNamespace(String tenancyNamespace) {
             this.tenancyNamespace = tenancyNamespace;
             this.__explicitlySet__.add("tenancyNamespace");
             return this;
         }
-        /** The access URL of the GovernanceInstance. */
+        /**
+         * The access URL of the GovernanceInstance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
         private String instanceUrl;
 
         /**
          * The access URL of the GovernanceInstance.
-         *
          * @param instanceUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = instanceUrl;
             this.__explicitlySet__.add("instanceUrl");
@@ -225,7 +231,8 @@ public final class GovernanceInstance
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -235,7 +242,7 @@ public final class GovernanceInstance
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -243,38 +250,40 @@ public final class GovernanceInstance
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -351,7 +360,9 @@ public final class GovernanceInstance
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -360,183 +371,196 @@ public final class GovernanceInstance
         return new Builder().copy(this);
     }
 
-    /** The unique OCID of the GovernanceInstance. */
+    /**
+     * The unique OCID of the GovernanceInstance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique OCID of the GovernanceInstance.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name for the GovernanceInstance. */
+    /**
+     * The name for the GovernanceInstance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name for the GovernanceInstance.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment where the GovernanceInstance resides. */
+    /**
+     * The OCID of the compartment where the GovernanceInstance resides.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the GovernanceInstance resides.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The time the the GovernanceInstance was created in an RFC3339 formatted datetime string. */
+    /**
+     * The time the the GovernanceInstance was created in an RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the GovernanceInstance was created in an RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the GovernanceInstance was updated in an RFC3339 formatted datetime string. */
+    /**
+     * The time the GovernanceInstance was updated in an RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the GovernanceInstance was updated in an RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the GovernanceInstance. */
+    /**
+     * The current state of the GovernanceInstance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final InstanceLifecycleState lifecycleState;
 
     /**
      * The current state of the GovernanceInstance.
-     *
      * @return the value
-     */
+     **/
     public InstanceLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The description of the GovernanceInstance. */
+    /**
+     * The description of the GovernanceInstance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the GovernanceInstance.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The licenseType being used. */
+    /**
+     * The licenseType being used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final LicenseType licenseType;
 
     /**
      * The licenseType being used.
-     *
      * @return the value
-     */
+     **/
     public LicenseType getLicenseType() {
         return licenseType;
     }
 
-    /** The namespace for tenancy object storage. */
+    /**
+     * The namespace for tenancy object storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyNamespace")
     private final String tenancyNamespace;
 
     /**
      * The namespace for tenancy object storage.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyNamespace() {
         return tenancyNamespace;
     }
 
-    /** The access URL of the GovernanceInstance. */
+    /**
+     * The access URL of the GovernanceInstance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
     private final String instanceUrl;
 
     /**
      * The access URL of the GovernanceInstance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceUrl() {
         return instanceUrl;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -548,7 +572,6 @@ public final class GovernanceInstance
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

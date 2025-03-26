@@ -5,21 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Query builder filter action to apply edit to queryString. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Query builder filter action to apply edit to queryString.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Filter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Filter extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldName", "values", "operator"})
     public Filter(String fieldName, java.util.List<Object> values, Operator operator) {
@@ -32,48 +31,45 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Field filter references when inserting filter into the query string. Field must be a
-         * valid logging analytics out-of-the-box field, virtual field calculated in the query or a
-         * user defined field.
-         */
+         * Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
-         * Field filter references when inserting filter into the query string. Field must be a
-         * valid logging analytics out-of-the-box field, virtual field calculated in the query or a
-         * user defined field.
+         * Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
          *
          * @param fieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
         /**
-         * Field values that will be inserted into the query string for the specified fieldName.
-         * Please note all values should reflect the fields data type otherwise the insert is
-         * subject to fail.
-         */
+         * Field values that will be inserted into the query string for the specified fieldName. Please note all values should reflect the fields data type otherwise the insert is subject to fail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<Object> values;
 
         /**
-         * Field values that will be inserted into the query string for the specified fieldName.
-         * Please note all values should reflect the fields data type otherwise the insert is
-         * subject to fail.
+         * Field values that will be inserted into the query string for the specified fieldName. Please note all values should reflect the fields data type otherwise the insert is subject to fail.
          *
          * @param values the value to set
          * @return this builder
-         */
+         **/
         public Builder values(java.util.List<Object> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
-        /** Operator to apply when editing the query string. */
+        /**
+         * Operator to apply when editing the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
@@ -82,7 +78,7 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
          *
          * @param operator the value to set
          * @return this builder
-         */
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
@@ -115,7 +111,9 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,43 +123,42 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * Field filter references when inserting filter into the query string. Field must be a valid
-     * logging analytics out-of-the-box field, virtual field calculated in the query or a user
-     * defined field.
-     */
+     * Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
-     * Field filter references when inserting filter into the query string. Field must be a valid
-     * logging analytics out-of-the-box field, virtual field calculated in the query or a user
-     * defined field.
+     * Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
      *
      * @return the value
-     */
+     **/
     public String getFieldName() {
         return fieldName;
     }
 
     /**
-     * Field values that will be inserted into the query string for the specified fieldName. Please
-     * note all values should reflect the fields data type otherwise the insert is subject to fail.
-     */
+     * Field values that will be inserted into the query string for the specified fieldName. Please note all values should reflect the fields data type otherwise the insert is subject to fail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<Object> values;
 
     /**
-     * Field values that will be inserted into the query string for the specified fieldName. Please
-     * note all values should reflect the fields data type otherwise the insert is subject to fail.
+     * Field values that will be inserted into the query string for the specified fieldName. Please note all values should reflect the fields data type otherwise the insert is subject to fail.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Object> getValues() {
         return values;
     }
 
-    /** Operator to apply when editing the query string. */
-    public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Operator to apply when editing the query string.
+     *
+     **/
+    public enum Operator {
         Clear("CLEAR"),
         Replace("REPLACE"),
         Equals("EQUALS"),
@@ -209,7 +206,10 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
             throw new IllegalArgumentException("Invalid Operator: " + key);
         }
     };
-    /** Operator to apply when editing the query string. */
+    /**
+     * Operator to apply when editing the query string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
@@ -217,7 +217,7 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
      * Operator to apply when editing the query string.
      *
      * @return the value
-     */
+     **/
     public Operator getOperator() {
         return operator;
     }
@@ -229,7 +229,6 @@ public final class Filter extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

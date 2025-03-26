@@ -9,15 +9,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * A wrapper around an {@link InputStream} that turns the {@code close} method into a no-op, and
- * requires the calling of the {@code doClose} method instead.
+ * A wrapper around an {@link InputStream} that turns the {@code close} method into a no-op, and requires the calling
+ * of the {@code doClose} method instead.
  *
- * <p>This is necessary, because Jersey closes a stream once it has been read, but we may want to
- * reset and read it again for retries.
+ * This is necessary, because Jersey closes a stream once it has been read, but we may want to reset and read it again
+ * for retries.
  */
-public final class KeepOpenInputStream extends FilterInputStream {
+public class KeepOpenInputStream extends FilterInputStream {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(KeepOpenInputStream.class);
+
+    public volatile InputStream innerStream;
 
     public KeepOpenInputStream(InputStream is) {
         super(is);
@@ -27,26 +29,25 @@ public final class KeepOpenInputStream extends FilterInputStream {
                             "Stream '%s' does not support mark/reset, retries won't work",
                             is.getClass().getName()));
         }
+        this.innerStream = is;
     }
 
     @Override
-    public void close() throws IOException {
+    public final void close() throws IOException {
         LOG.debug("Not closing stream yet");
     }
 
     /**
      * This method actually closes the stream, what {@code close()} is not doing.
-     *
-     * @throws IOException if actually closing the stream throws an exception
+     * @throws IOException
      */
-    public void doClose() throws IOException {
+    public final void doClose() throws IOException {
         LOG.debug("Closing stream now");
         super.close();
     }
 
     /**
      * Close a stream, dealing properly with {@link KeepOpenInputStream}s.
-     *
      * @param is input stream to close
      */
     public static void closeStream(InputStream is) {

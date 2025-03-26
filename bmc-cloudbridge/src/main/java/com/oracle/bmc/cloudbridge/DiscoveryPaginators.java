@@ -9,31 +9,23 @@ import com.oracle.bmc.cloudbridge.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Discovery where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Discovery where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class DiscoveryPaginators {
     private final Discovery client;
 
@@ -42,19 +34,16 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAssetSourceConnections operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAssetSourceConnections operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAssetSourceConnectionsResponse> listAssetSourceConnectionsResponseIterator(
             final ListAssetSourceConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAssetSourceConnectionsRequest.Builder,
-                ListAssetSourceConnectionsRequest,
+                ListAssetSourceConnectionsRequest.Builder, ListAssetSourceConnectionsRequest,
                 ListAssetSourceConnectionsResponse>(
                 new java.util.function.Supplier<ListAssetSourceConnectionsRequest.Builder>() {
                     @Override
@@ -97,22 +86,19 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.cloudbridge.model.AssetSourceConnection} objects contained in responses from
-     * the listAssetSourceConnections operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudbridge.model.AssetSourceConnection} objects
+     * contained in responses from the listAssetSourceConnections operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.cloudbridge.model.AssetSourceConnection} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudbridge.model.AssetSourceConnection} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudbridge.model.AssetSourceConnection>
             listAssetSourceConnectionsRecordIterator(
                     final ListAssetSourceConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAssetSourceConnectionsRequest.Builder,
-                ListAssetSourceConnectionsRequest,
+                ListAssetSourceConnectionsRequest.Builder, ListAssetSourceConnectionsRequest,
                 ListAssetSourceConnectionsResponse,
                 com.oracle.bmc.cloudbridge.model.AssetSourceConnection>(
                 new java.util.function.Supplier<ListAssetSourceConnectionsRequest.Builder>() {
@@ -165,12 +151,11 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAssetSources operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAssetSources operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAssetSourcesResponse> listAssetSourcesResponseIterator(
             final ListAssetSourcesRequest request) {
@@ -216,21 +201,18 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.cloudbridge.model.AssetSourceSummary} objects contained in responses from the
-     * listAssetSources operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudbridge.model.AssetSourceSummary} objects
+     * contained in responses from the listAssetSources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.cloudbridge.model.AssetSourceSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudbridge.model.AssetSourceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudbridge.model.AssetSourceSummary>
             listAssetSourcesRecordIterator(final ListAssetSourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAssetSourcesRequest.Builder,
-                ListAssetSourcesRequest,
-                ListAssetSourcesResponse,
+                ListAssetSourcesRequest.Builder, ListAssetSourcesRequest, ListAssetSourcesResponse,
                 com.oracle.bmc.cloudbridge.model.AssetSourceSummary>(
                 new java.util.function.Supplier<ListAssetSourcesRequest.Builder>() {
                     @Override
@@ -281,19 +263,16 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDiscoverySchedules operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDiscoverySchedules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDiscoverySchedulesResponse> listDiscoverySchedulesResponseIterator(
             final ListDiscoverySchedulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDiscoverySchedulesRequest.Builder,
-                ListDiscoverySchedulesRequest,
+                ListDiscoverySchedulesRequest.Builder, ListDiscoverySchedulesRequest,
                 ListDiscoverySchedulesResponse>(
                 new java.util.function.Supplier<ListDiscoverySchedulesRequest.Builder>() {
                     @Override
@@ -336,21 +315,18 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.cloudbridge.model.DiscoveryScheduleSummary} objects contained in responses
-     * from the listDiscoverySchedules operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudbridge.model.DiscoveryScheduleSummary} objects
+     * contained in responses from the listDiscoverySchedules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.cloudbridge.model.DiscoveryScheduleSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudbridge.model.DiscoveryScheduleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudbridge.model.DiscoveryScheduleSummary>
             listDiscoverySchedulesRecordIterator(final ListDiscoverySchedulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDiscoverySchedulesRequest.Builder,
-                ListDiscoverySchedulesRequest,
+                ListDiscoverySchedulesRequest.Builder, ListDiscoverySchedulesRequest,
                 ListDiscoverySchedulesResponse,
                 com.oracle.bmc.cloudbridge.model.DiscoveryScheduleSummary>(
                 new java.util.function.Supplier<ListDiscoverySchedulesRequest.Builder>() {
@@ -404,19 +380,16 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSupportedCloudRegions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSupportedCloudRegions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSupportedCloudRegionsResponse> listSupportedCloudRegionsResponseIterator(
             final ListSupportedCloudRegionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSupportedCloudRegionsRequest.Builder,
-                ListSupportedCloudRegionsRequest,
+                ListSupportedCloudRegionsRequest.Builder, ListSupportedCloudRegionsRequest,
                 ListSupportedCloudRegionsResponse>(
                 new java.util.function.Supplier<ListSupportedCloudRegionsRequest.Builder>() {
                     @Override
@@ -459,22 +432,19 @@ public class DiscoveryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary} objects contained in responses
-     * from the listSupportedCloudRegions operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary} objects
+     * contained in responses from the listSupportedCloudRegions operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary>
             listSupportedCloudRegionsRecordIterator(
                     final ListSupportedCloudRegionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSupportedCloudRegionsRequest.Builder,
-                ListSupportedCloudRegionsRequest,
+                ListSupportedCloudRegionsRequest.Builder, ListSupportedCloudRegionsRequest,
                 ListSupportedCloudRegionsResponse,
                 com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary>(
                 new java.util.function.Supplier<ListSupportedCloudRegionsRequest.Builder>() {

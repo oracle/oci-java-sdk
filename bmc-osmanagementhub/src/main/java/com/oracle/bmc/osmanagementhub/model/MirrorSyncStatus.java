@@ -5,22 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Status summary of the mirror sync. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Status summary of the mirror sync.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MirrorSyncStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MirrorSyncStatus
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MirrorSyncStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"unsynced", "queued", "syncing", "synced", "failed"})
     public MirrorSyncStatus(
@@ -35,76 +32,81 @@ public final class MirrorSyncStatus
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total number of software sources that have not yet been synced. */
+        /**
+         * Total number of software sources that have not yet been synced.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unsynced")
         private Integer unsynced;
 
         /**
          * Total number of software sources that have not yet been synced.
-         *
          * @param unsynced the value to set
          * @return this builder
-         */
+         **/
         public Builder unsynced(Integer unsynced) {
             this.unsynced = unsynced;
             this.__explicitlySet__.add("unsynced");
             return this;
         }
-        /** Total number of software sources that are queued for sync. */
+        /**
+         * Total number of software sources that are queued for sync.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queued")
         private Integer queued;
 
         /**
          * Total number of software sources that are queued for sync.
-         *
          * @param queued the value to set
          * @return this builder
-         */
+         **/
         public Builder queued(Integer queued) {
             this.queued = queued;
             this.__explicitlySet__.add("queued");
             return this;
         }
-        /** Total number of software sources currently syncing. */
+        /**
+         * Total number of software sources currently syncing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syncing")
         private Integer syncing;
 
         /**
          * Total number of software sources currently syncing.
-         *
          * @param syncing the value to set
          * @return this builder
-         */
+         **/
         public Builder syncing(Integer syncing) {
             this.syncing = syncing;
             this.__explicitlySet__.add("syncing");
             return this;
         }
-        /** Total number of software sources that successfully synced. */
+        /**
+         * Total number of software sources that successfully synced.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("synced")
         private Integer synced;
 
         /**
          * Total number of software sources that successfully synced.
-         *
          * @param synced the value to set
          * @return this builder
-         */
+         **/
         public Builder synced(Integer synced) {
             this.synced = synced;
             this.__explicitlySet__.add("synced");
             return this;
         }
-        /** Total number of software sources that failed to sync. */
+        /**
+         * Total number of software sources that failed to sync.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failed")
         private Integer failed;
 
         /**
          * Total number of software sources that failed to sync.
-         *
          * @param failed the value to set
          * @return this builder
-         */
+         **/
         public Builder failed(Integer failed) {
             this.failed = failed;
             this.__explicitlySet__.add("failed");
@@ -145,7 +147,9 @@ public final class MirrorSyncStatus
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -154,67 +158,72 @@ public final class MirrorSyncStatus
         return new Builder().copy(this);
     }
 
-    /** Total number of software sources that have not yet been synced. */
+    /**
+     * Total number of software sources that have not yet been synced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unsynced")
     private final Integer unsynced;
 
     /**
      * Total number of software sources that have not yet been synced.
-     *
      * @return the value
-     */
+     **/
     public Integer getUnsynced() {
         return unsynced;
     }
 
-    /** Total number of software sources that are queued for sync. */
+    /**
+     * Total number of software sources that are queued for sync.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queued")
     private final Integer queued;
 
     /**
      * Total number of software sources that are queued for sync.
-     *
      * @return the value
-     */
+     **/
     public Integer getQueued() {
         return queued;
     }
 
-    /** Total number of software sources currently syncing. */
+    /**
+     * Total number of software sources currently syncing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syncing")
     private final Integer syncing;
 
     /**
      * Total number of software sources currently syncing.
-     *
      * @return the value
-     */
+     **/
     public Integer getSyncing() {
         return syncing;
     }
 
-    /** Total number of software sources that successfully synced. */
+    /**
+     * Total number of software sources that successfully synced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("synced")
     private final Integer synced;
 
     /**
      * Total number of software sources that successfully synced.
-     *
      * @return the value
-     */
+     **/
     public Integer getSynced() {
         return synced;
     }
 
-    /** Total number of software sources that failed to sync. */
+    /**
+     * Total number of software sources that failed to sync.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failed")
     private final Integer failed;
 
     /**
      * Total number of software sources that failed to sync.
-     *
      * @return the value
-     */
+     **/
     public Integer getFailed() {
         return failed;
     }
@@ -226,7 +235,6 @@ public final class MirrorSyncStatus
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

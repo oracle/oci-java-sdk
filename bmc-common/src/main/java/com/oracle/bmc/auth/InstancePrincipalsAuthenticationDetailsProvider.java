@@ -11,17 +11,17 @@ import org.slf4j.Logger;
 import java.time.Duration;
 
 /**
- * Implementation of {@link BasicAuthenticationDetailsProvider} that integrates with instance
- * principal authentication endpoints to generate service tokens used for actual signing.
- *
- * <p>Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests may
- * be rotated periodically).
+ * Implementation of {@link BasicAuthenticationDetailsProvider} that integrates
+ * with instance principal authentication endpoints to generate service tokens
+ * used for actual signing.
+ * <p>
+ * Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests
+ * may be rotated periodically).
  */
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class InstancePrincipalsAuthenticationDetailsProvider
         extends AbstractRequestingAuthenticationDetailsProvider
-        implements RegionProvider,
-                RefreshableOnNotAuthenticatedProvider<String>,
+        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String>,
                 ConfigurableRefreshOnNotAuthenticatedProvider<String> {
 
     private static final Logger LOG =
@@ -39,7 +39,6 @@ public class InstancePrincipalsAuthenticationDetailsProvider
 
     /**
      * Creates a new InstancePrincipalsAuthenticationDetailsProviderBuilder.
-     *
      * @return A new builder instance.
      */
     public static InstancePrincipalsAuthenticationDetailsProviderBuilder builder() {
@@ -50,6 +49,7 @@ public class InstancePrincipalsAuthenticationDetailsProvider
      * Refreshes the authentication data used by the provider
      *
      * @return the refreshed authentication data
+     *
      * @deprecated use {@link #refresh()} instead
      */
     @Deprecated
@@ -81,7 +81,9 @@ public class InstancePrincipalsAuthenticationDetailsProvider
         return this.region;
     }
 
-    /** Builder for InstancePrincipalsAuthenticationDetailsProviderBuilder. */
+    /**
+     * Builder for InstancePrincipalsAuthenticationDetailsProviderBuilder.
+     */
     public static class InstancePrincipalsAuthenticationDetailsProviderBuilder
             extends AbstractFederationClientAuthenticationDetailsProviderBuilder<
                     InstancePrincipalsAuthenticationDetailsProviderBuilder,
@@ -118,22 +120,6 @@ public class InstancePrincipalsAuthenticationDetailsProvider
             // Do not remove this method. Due to compile time resolution, older generated
             // clients will bind to this, not the one in the superclass
             return super.leafCertificateSupplier(leafCertificateSupplier);
-        }
-
-        @Override
-        public InstancePrincipalsAuthenticationDetailsProviderBuilder detectEndpointRetries(
-                int detectEndpointRetries) {
-            // Do not remove this method. Due to compile time resolution, older generated
-            // clients will bind to this, not the one in the superclass
-            return super.detectEndpointRetries(detectEndpointRetries);
-        }
-
-        @Override
-        public InstancePrincipalsAuthenticationDetailsProviderBuilder timeoutForEachRetry(
-                int timeoutForEachRetry) {
-            // Do not remove this method. Due to compile time resolution, older generated
-            // clients will bind to this, not the one in the superclass
-            return super.timeoutForEachRetry(timeoutForEachRetry);
         }
     }
 }

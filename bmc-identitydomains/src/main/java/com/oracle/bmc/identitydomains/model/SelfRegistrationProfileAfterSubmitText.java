@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Text to be displayed on UI after doing self registration <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Text to be displayed on UI after doing self registration
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SelfRegistrationProfileAfterSubmitText.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SelfRegistrationProfileAfterSubmitText.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SelfRegistrationProfileAfterSubmitText
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"locale", "value", "isDefault"})
     public SelfRegistrationProfileAfterSubmitText(String locale, String value, Boolean isDefault) {
@@ -35,26 +34,39 @@ public final class SelfRegistrationProfileAfterSubmitText
     public static class Builder {
         /**
          * Type of user's locale e.g. en-CA
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-         * "locales" and attrValues.value eq "$(type)" - idcsCanonicalValueSourceResourceType:
-         * AllowedValue - idcsSearchable: true - multiValued: false - mutability: readWrite -
-         * required: true - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(type)"
+         *  - idcsCanonicalValueSourceResourceType: AllowedValue
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locale")
         private String locale;
 
         /**
          * Type of user's locale e.g. en-CA
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-         * "locales" and attrValues.value eq "$(type)" - idcsCanonicalValueSourceResourceType:
-         * AllowedValue - idcsSearchable: true - multiValued: false - mutability: readWrite -
-         * required: true - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(type)"
+         *  - idcsCanonicalValueSourceResourceType: AllowedValue
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param locale the value to set
          * @return this builder
-         */
+         **/
         public Builder locale(String locale) {
             this.locale = locale;
             this.__explicitlySet__.add("locale");
@@ -62,51 +74,67 @@ public final class SelfRegistrationProfileAfterSubmitText
         }
         /**
          * Localized value of after submit text in corresponding locale
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Localized value of after submit text in corresponding locale
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
         /**
-         * If true, specifies that the localized attribute instance value is the default and will be
-         * returned if no localized value found for requesting user's preferred locale. One and only
-         * one instance should have this attribute set to true.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * If true, specifies that the localized attribute instance value is the default and will be returned if no localized value found for requesting user's preferred locale. One and only one instance should have this attribute set to true.
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("default")
         private Boolean isDefault;
 
         /**
-         * If true, specifies that the localized attribute instance value is the default and will be
-         * returned if no localized value found for requesting user's preferred locale. One and only
-         * one instance should have this attribute set to true.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * If true, specifies that the localized attribute instance value is the default and will be returned if no localized value found for requesting user's preferred locale. One and only one instance should have this attribute set to true.
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -141,7 +169,9 @@ public final class SelfRegistrationProfileAfterSubmitText
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,71 +182,102 @@ public final class SelfRegistrationProfileAfterSubmitText
 
     /**
      * Type of user's locale e.g. en-CA
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-     * "locales" and attrValues.value eq "$(type)" - idcsCanonicalValueSourceResourceType:
-     * AllowedValue - idcsSearchable: true - multiValued: false - mutability: readWrite - required:
-     * true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(type)"
+     *  - idcsCanonicalValueSourceResourceType: AllowedValue
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locale")
     private final String locale;
 
     /**
      * Type of user's locale e.g. en-CA
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-     * "locales" and attrValues.value eq "$(type)" - idcsCanonicalValueSourceResourceType:
-     * AllowedValue - idcsSearchable: true - multiValued: false - mutability: readWrite - required:
-     * true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(type)"
+     *  - idcsCanonicalValueSourceResourceType: AllowedValue
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLocale() {
         return locale;
     }
 
     /**
      * Localized value of after submit text in corresponding locale
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Localized value of after submit text in corresponding locale
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
-     * If true, specifies that the localized attribute instance value is the default and will be
-     * returned if no localized value found for requesting user's preferred locale. One and only one
-     * instance should have this attribute set to true.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * If true, specifies that the localized attribute instance value is the default and will be returned if no localized value found for requesting user's preferred locale. One and only one instance should have this attribute set to true.
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("default")
     private final Boolean isDefault;
 
     /**
-     * If true, specifies that the localized attribute instance value is the default and will be
-     * returned if no localized value found for requesting user's preferred locale. One and only one
-     * instance should have this attribute set to true.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * If true, specifies that the localized attribute instance value is the default and will be returned if no localized value found for requesting user's preferred locale. One and only one instance should have this attribute set to true.
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean isDefault() {
         return isDefault;
     }
@@ -228,7 +289,6 @@ public final class SelfRegistrationProfileAfterSubmitText
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

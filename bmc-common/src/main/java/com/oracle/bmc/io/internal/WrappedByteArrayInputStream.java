@@ -7,11 +7,11 @@ package com.oracle.bmc.io.internal;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.io.DuplicatableInputStream;
 
 /**
- * Basic extension to {@link ByteArrayInputStream} that lets you create duplicate streams from the
- * same underlying byte buffer.
+ * Basic extension to {@link ByteArrayInputStream} that lets you create duplicate
+ * streams from the same underlying byte buffer.
  */
 public class WrappedByteArrayInputStream extends ByteArrayInputStream
         implements DuplicatableInputStream {
@@ -21,7 +21,6 @@ public class WrappedByteArrayInputStream extends ByteArrayInputStream
 
     /**
      * Create a new stream from the given buffer.
-     *
      * @param buf The byte buffer.
      */
     public WrappedByteArrayInputStream(byte[] buf) {
@@ -30,10 +29,9 @@ public class WrappedByteArrayInputStream extends ByteArrayInputStream
 
     /**
      * Create a new stream from the given buffer.
-     *
-     * @param buf The byte buffer.
-     * @param offset The offset in the buffer of the first byte to read.
-     * @param length The maximum number of bytes to read from the buffer.
+     * @param buf      The byte buffer.
+     * @param offset   The offset in the buffer of the first byte to read.
+     * @param length   The maximum number of bytes to read from the buffer.
      */
     public WrappedByteArrayInputStream(byte[] buf, int offset, int length) {
         super(buf, offset, length);

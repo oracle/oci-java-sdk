@@ -4,15 +4,14 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.io.DuplicatableInputStream;
 
 import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
 import com.oracle.bmc.util.internal.Validate;
 
 /**
- * The configuration for the {@code UploadManager}. For more information, please refer to the online
- * documentation found <a
- * href="https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm">here</a>.
+ * The configuration for the {@code UploadManager}.  For more information, please refer to the online documentation
+ * found <a href="https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm">here</a>.
  */
 public class UploadConfiguration {
     private static final org.slf4j.Logger LOG =
@@ -30,45 +29,40 @@ public class UploadConfiguration {
 
     /**
      * Minimum length in MiB before an upload is performed using multi-part upload, default 128.
-     *
-     * <p>Note: Accepted values: 0 - 51200. Using a large value is not recommended.
+     * <p>
+     * Note: Accepted values: 0 - 51200.  Using a large value is not recommended.
      */
     private final long minimumLengthForMultipartUpload;
     /**
      * Length in MiB for each part of a multi-part upload (except the last), default 128.
-     *
-     * <p>Accepted values: 1 - 51200. Using a large value is not recommended.
+     * <p>
+     * Accepted values: 1 - 51200.  Using a large value is not recommended.
      */
     private final long lengthPerUploadPart;
     /**
-     * Maximum number of parts to split an upload into, default 10,000 (max allowable parts by
-     * Object Storage Service).
-     *
-     * <p>Note: Accepted values: 1 - 10000
-     *
-     * @deprecated no longer configurable as maxPartsForMultipartUpload is always configured as the
-     *     default of 10,000. Use {@link #MAXIMUM_NUM_ALLOWED_PARTS instead}
+     * Maximum number of parts to split an upload into, default 10,000 (max allowable parts by Object Storage Service).
+     * <p>
+     * Note: Accepted values: 1 - 10000
+     * @deprecated no longer configurable as maxPartsForMultipartUpload is always configured as the default of 10,000.
+     * Use {@link #MAXIMUM_NUM_ALLOWED_PARTS instead}
      */
     @Deprecated private final int maxPartsForMultipartUpload;
     /**
-     * Flag to indicate that MD5 should be set on every PutObject call. If not provided, the SDK
-     * will calculate it before uploading the object. Default is false.
-     *
-     * <p>Note, having the SDK calculate it could lead to OutOfMemory exceptions if the stream
-     * cannot be duplicated, ie does not implement {@link DuplicatableInputStream}, as the entire
-     * stream will have to be read into memory.
+     * Flag to indicate that MD5 should be set on every PutObject call.  If not provided, the SDK will calculate it before
+     * uploading the object. Default is false.
+     * <p>
+     * Note, having the SDK calculate it could lead to OutOfMemory exceptions if the stream cannot be duplicated,
+     * ie does not implement {@link DuplicatableInputStream}, as the entire stream will have to be read into memory.
      */
     private final boolean enforceMd5BeforeUpload;
     /**
-     * Flag to indicate that MD5 should be set on every part of a multi-part upload. The SDK will
-     * calculate the MD5 before uploading for each part it creates. Default is false.
-     *
-     * <p>Note, having the SDK calculate it could lead to OutOfMemory exceptions if the source
-     * stream for the part cannot be duplicated, ie does not implement {@link
-     * DuplicatableInputStream}, as the entire part will have to be read into memory.
+     * Flag to indicate that MD5 should be set on every part of a multi-part upload.  The SDK will calculate the MD5 before uploading
+     * for each part it creates.  Default is false.
+     * <p>
+     * Note, having the SDK calculate it could lead to OutOfMemory exceptions if the source stream for the part cannot be duplicated,
+     * ie does not implement {@link DuplicatableInputStream}, as the entire part will have to be read into memory.
      */
     private final boolean enforceMd5BeforeMultipartUpload;
-
     /**
      * Flag to indicate that additional checksum should be set on every PutObject call. If not
      * provided, the SDK will calculate it before uploading the object. Default is null.
@@ -121,17 +115,17 @@ public class UploadConfiguration {
      * DuplicatableInputStream}, as the entire part will have to be read into memory.
      */
     private final ChecksumAlgorithm enforceAdditionalChecksumBeforeMultipartUpload;
-
-    /** Flag to indicate that multi-part uploads can be used. Default is true. */
+    /**
+     * Flag to indicate that multi-part uploads can be used.  Default is true.
+     */
     private final boolean allowMultipartUploads;
     /**
-     * Flag to indicate that multi-part uploads can upload individual parts in parallel if possible.
-     * Default is true.
+     * Flag to indicate that multi-part uploads can upload individual parts in parallel if possible.  Default is true.
      */
     private final boolean allowParallelUploads;
     /**
-     * Flag to indicate that uploads that fail should not be automatically aborted (client is
-     * reponsible for always cleaning up failed uploads themselves). Default is false.
+     * Flag to indicate that uploads that fail should not be automatically aborted (client is reponsible for always cleaning up
+     * failed uploads themselves).  Default is false.
      */
     private final boolean disableAutoAbort;
     /**
@@ -157,6 +151,49 @@ public class UploadConfiguration {
 
     // Explicit @Builder on constructor so we can enforce default values.
     private UploadConfiguration(
+            Integer minimumLengthForMultipartUpload,
+            Integer lengthPerUploadPart,
+            Boolean enforceMd5BeforeUpload,
+            Boolean enforceMd5BeforeMultipartUpload,
+            Boolean allowMultipartUploads,
+            Boolean allowParallelUploads,
+            Boolean disableAutoAbort) {
+        this(
+                minimumLengthForMultipartUpload,
+                lengthPerUploadPart,
+                enforceMd5BeforeUpload,
+                enforceMd5BeforeMultipartUpload,
+                null,
+                null,
+                allowMultipartUploads,
+                allowParallelUploads,
+                disableAutoAbort,
+                null);
+    }
+
+    /**
+     * Create a configuration for the {@link UploadManager} with an additional checksum algorithm.
+     *
+     * @param minimumLengthForMultipartUpload Minimum length in MiB before an upload is performed
+     *     using multi-part upload
+     * @param lengthPerUploadPart Length in MiB for each part of a multi-part upload (except the
+     *     last)
+     * @param enforceMd5BeforeUpload Flag to indicate that MD5 should be set on every PutObject call
+     * @param enforceMd5BeforeMultipartUpload Flag to indicate that MD5 should be set on every part
+     *     of a multi-part upload
+     * @param enforceAdditionalChecksumBeforeUpload Flag to indicate that additional checksum should
+     *     be set on every PutObject call
+     * @param enforceAdditionalChecksumBeforeMultipartUpload Flag to indicate that additional
+     *     checksum should be set on every part of a multi-part upload
+     * @param allowMultipartUploads Flag to indicate that multi-part uploads can be used
+     * @param allowParallelUploads Flag to indicate that multi-part uploads can upload individual
+     *     parts in parallel if possible
+     * @param disableAutoAbort Flag to indicate that uploads that fail should not be automatically
+     *     aborted
+     * @param additionalChecksumAlgorithm The additional checksum algorithm to be used for data
+     *     integrity checks
+     */
+    public UploadConfiguration(
             Integer minimumLengthForMultipartUpload,
             Integer lengthPerUploadPart,
             Boolean enforceMd5BeforeUpload,
@@ -188,7 +225,8 @@ public class UploadConfiguration {
                 this.minimumLengthForMultipartUpload >= 0L,
                 String.format(
                         "minimumLengthForMultipartUpload [%s] must be greater than or equal to %s",
-                        this.minimumLengthForMultipartUpload, 0L));
+                        this.minimumLengthForMultipartUpload,
+                        0L));
         Validate.inclusiveBetween(
                 MINIMUM_ALLOWED_LENGTH_PER_PART_MB,
                 MAXIMUM_ALLOWED_LENGTH_PER_PART_MB,
@@ -200,18 +238,21 @@ public class UploadConfiguration {
                         MAXIMUM_ALLOWED_LENGTH_PER_PART_MB));
         Validate.isTrue(
                 this.enforceAdditionalChecksumBeforeUpload == null
-                        || this.enforceAdditionalChecksumBeforeUpload == ChecksumAlgorithm.Sha256
-                        || this.enforceAdditionalChecksumBeforeUpload == ChecksumAlgorithm.Sha384
-                        || this.enforceAdditionalChecksumBeforeUpload == ChecksumAlgorithm.Crc32C,
+                        || this.enforceAdditionalChecksumBeforeUpload.equals(
+                                ChecksumAlgorithm.Sha256)
+                        || this.enforceAdditionalChecksumBeforeUpload.equals(
+                                ChecksumAlgorithm.Sha384)
+                        || this.enforceAdditionalChecksumBeforeUpload.equals(
+                                ChecksumAlgorithm.Crc32C),
                 "Invalid value for enforceAdditionalChecksumBeforeUpload. Valid values are: SHA256, SHA384, CRC32C.");
         Validate.isTrue(
                 this.enforceAdditionalChecksumBeforeMultipartUpload == null
-                        || this.enforceAdditionalChecksumBeforeMultipartUpload
-                                == ChecksumAlgorithm.Sha256
-                        || this.enforceAdditionalChecksumBeforeMultipartUpload
-                                == ChecksumAlgorithm.Sha384
-                        || this.enforceAdditionalChecksumBeforeMultipartUpload
-                                == ChecksumAlgorithm.Crc32C,
+                        || this.enforceAdditionalChecksumBeforeMultipartUpload.equals(
+                                ChecksumAlgorithm.Sha256)
+                        || this.enforceAdditionalChecksumBeforeMultipartUpload.equals(
+                                ChecksumAlgorithm.Sha384)
+                        || this.enforceAdditionalChecksumBeforeMultipartUpload.equals(
+                                ChecksumAlgorithm.Crc32C),
                 "Invalid value for enforceAdditionalChecksumBeforeMultipartUpload. Valid values are: SHA256, SHA384, CRC32C.");
     }
 
@@ -228,11 +269,9 @@ public class UploadConfiguration {
         private ChecksumAlgorithm additionalChecksumAlgorithm;
 
         /**
-         * Sets the enforce MD5 flag for both {@link #enforceMd5BeforeUpload(Boolean)} and {@link
-         * #enforceMd5BeforeMultipartUpload(Boolean)} (Boolean)} in a single call.
-         *
-         * @param enforceMd5 true to enforce MD5 everywhere, false to enforce it nowhere, null to
-         *     use default values.
+         * Sets the enforce MD5 flag for both {@link #enforceMd5BeforeUpload(Boolean)} and
+         * {@link #enforceMd5BeforeMultipartUpload(Boolean)} (Boolean)} in a single call.
+         * @param enforceMd5 true to enforce MD5 everywhere, false to enforce it nowhere, null to use default values.
          * @return the current builder instance
          */
         public UploadConfigurationBuilder enforceMd5(Boolean enforceMd5) {
@@ -258,8 +297,8 @@ public class UploadConfiguration {
         }
 
         /**
-         * @deprecated maxPartsForMultipartUpload is no longer configurable and will always be set
-         *     to {@link #MAXIMUM_NUM_ALLOWED_PARTS}
+         * @deprecated maxPartsForMultipartUpload is no longer configurable and will always be set to
+         * {@link #MAXIMUM_NUM_ALLOWED_PARTS}
          */
         @Deprecated
         public UploadConfigurationBuilder maxPartsForMultipartUpload(
@@ -271,7 +310,9 @@ public class UploadConfiguration {
             return this;
         }
 
-        /** @deprecated use {@link #lengthPerUploadPart(Integer)} instead. */
+        /**
+         * @deprecated use {@link #lengthPerUploadPart(Integer)} instead.
+         */
         @Deprecated
         public UploadConfigurationBuilder minimumLengthPerUploadPart(
                 Integer minimumLengthPerUploadPart) {
@@ -284,28 +325,36 @@ public class UploadConfiguration {
 
         UploadConfigurationBuilder() {}
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public UploadConfiguration.UploadConfigurationBuilder minimumLengthForMultipartUpload(
                 final Integer minimumLengthForMultipartUpload) {
             this.minimumLengthForMultipartUpload = minimumLengthForMultipartUpload;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public UploadConfiguration.UploadConfigurationBuilder lengthPerUploadPart(
                 final Integer lengthPerUploadPart) {
             this.lengthPerUploadPart = lengthPerUploadPart;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public UploadConfiguration.UploadConfigurationBuilder enforceMd5BeforeUpload(
                 final Boolean enforceMd5BeforeUpload) {
             this.enforceMd5BeforeUpload = enforceMd5BeforeUpload;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public UploadConfiguration.UploadConfigurationBuilder enforceMd5BeforeMultipartUpload(
                 final Boolean enforceMd5BeforeMultipartUpload) {
             this.enforceMd5BeforeMultipartUpload = enforceMd5BeforeMultipartUpload;
@@ -328,21 +377,27 @@ public class UploadConfiguration {
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public UploadConfiguration.UploadConfigurationBuilder allowMultipartUploads(
                 final Boolean allowMultipartUploads) {
             this.allowMultipartUploads = allowMultipartUploads;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public UploadConfiguration.UploadConfigurationBuilder allowParallelUploads(
                 final Boolean allowParallelUploads) {
             this.allowParallelUploads = allowParallelUploads;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public UploadConfiguration.UploadConfigurationBuilder disableAutoAbort(
                 final Boolean disableAutoAbort) {
             this.disableAutoAbort = disableAutoAbort;
@@ -406,8 +461,8 @@ public class UploadConfiguration {
 
     /**
      * Minimum length in MiB before an upload is performed using multi-part upload, default 128.
-     *
-     * <p>Note: Accepted values: 0 - 51200. Using a large value is not recommended.
+     * <p>
+     * Note: Accepted values: 0 - 51200.  Using a large value is not recommended.
      */
     public long getMinimumLengthForMultipartUpload() {
         return this.minimumLengthForMultipartUpload;
@@ -415,21 +470,19 @@ public class UploadConfiguration {
 
     /**
      * Length in MiB for each part of a multi-part upload (except the last), default 128.
-     *
-     * <p>Accepted values: 1 - 51200. Using a large value is not recommended.
+     * <p>
+     * Accepted values: 1 - 51200.  Using a large value is not recommended.
      */
     public long getLengthPerUploadPart() {
         return this.lengthPerUploadPart;
     }
 
     /**
-     * Maximum number of parts to split an upload into, default 10,000 (max allowable parts by
-     * Object Storage Service).
-     *
-     * <p>Note: Accepted values: 1 - 10000
-     *
-     * @deprecated no longer configurable as maxPartsForMultipartUpload is always configured as the
-     *     default of 10,000. Use {@link #MAXIMUM_NUM_ALLOWED_PARTS instead}
+     * Maximum number of parts to split an upload into, default 10,000 (max allowable parts by Object Storage Service).
+     * <p>
+     * Note: Accepted values: 1 - 10000
+     * @deprecated no longer configurable as maxPartsForMultipartUpload is always configured as the default of 10,000.
+     * Use {@link #MAXIMUM_NUM_ALLOWED_PARTS instead}
      */
     @java.lang.Deprecated
     public int getMaxPartsForMultipartUpload() {
@@ -437,24 +490,22 @@ public class UploadConfiguration {
     }
 
     /**
-     * Flag to indicate that MD5 should be set on every PutObject call. If not provided, the SDK
-     * will calculate it before uploading the object. Default is false.
-     *
-     * <p>Note, having the SDK calculate it could lead to OutOfMemory exceptions if the stream
-     * cannot be duplicated, ie does not implement {@link DuplicatableInputStream}, as the entire
-     * stream will have to be read into memory.
+     * Flag to indicate that MD5 should be set on every PutObject call.  If not provided, the SDK will calculate it before
+     * uploading the object. Default is false.
+     * <p>
+     * Note, having the SDK calculate it could lead to OutOfMemory exceptions if the stream cannot be duplicated,
+     * ie does not implement {@link DuplicatableInputStream}, as the entire stream will have to be read into memory.
      */
     public boolean isEnforceMd5BeforeUpload() {
         return this.enforceMd5BeforeUpload;
     }
 
     /**
-     * Flag to indicate that MD5 should be set on every part of a multi-part upload. The SDK will
-     * calculate the MD5 before uploading for each part it creates. Default is false.
-     *
-     * <p>Note, having the SDK calculate it could lead to OutOfMemory exceptions if the source
-     * stream for the part cannot be duplicated, ie does not implement {@link
-     * DuplicatableInputStream}, as the entire part will have to be read into memory.
+     * Flag to indicate that MD5 should be set on every part of a multi-part upload.  The SDK will calculate the MD5 before uploading
+     * for each part it creates.  Default is false.
+     * <p>
+     * Note, having the SDK calculate it could lead to OutOfMemory exceptions if the source stream for the part cannot be duplicated,
+     * ie does not implement {@link DuplicatableInputStream}, as the entire part will have to be read into memory.
      */
     public boolean isEnforceMd5BeforeMultipartUpload() {
         return this.enforceMd5BeforeMultipartUpload;
@@ -464,7 +515,7 @@ public class UploadConfiguration {
      * Flag to indicate that additional checksum should be set on every PutObject call. If not
      * provided, the SDK will calculate it before uploading the object. Default is null.
      *
-     * <p>Note: Valid values are "SHA256", "SHA384", "CRC32C".
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},{@link ChecksumAlgorithm#Sha384}.
      */
     public ChecksumAlgorithm getEnforceAdditionalChecksumBeforeUpload() {
         return this.enforceAdditionalChecksumBeforeUpload;
@@ -475,34 +526,37 @@ public class UploadConfiguration {
      * The SDK will calculate the additional checksum before uploading for each part it creates.
      * Default is null.
      *
-     * <p>Note: Valid values are "SHA256", "SHA384", "CRC32C".
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},{@link ChecksumAlgorithm#Sha384}.
      */
     public ChecksumAlgorithm getEnforceAdditionalChecksumBeforeMultipartUpload() {
         return this.enforceAdditionalChecksumBeforeMultipartUpload;
     }
 
-    /** Flag to indicate that multi-part uploads can be used. Default is true. */
+    /**
+     * Flag to indicate that multi-part uploads can be used.  Default is true.
+     */
     public boolean isAllowMultipartUploads() {
         return this.allowMultipartUploads;
     }
 
     /**
-     * Flag to indicate that multi-part uploads can upload individual parts in parallel if possible.
-     * Default is true.
+     * Flag to indicate that multi-part uploads can upload individual parts in parallel if possible.  Default is true.
      */
     public boolean isAllowParallelUploads() {
         return this.allowParallelUploads;
     }
 
     /**
-     * Flag to indicate that uploads that fail should not be automatically aborted (client is
-     * reponsible for always cleaning up failed uploads themselves). Default is false.
+     * Flag to indicate that uploads that fail should not be automatically aborted (client is reponsible for always cleaning up
+     * failed uploads themselves).  Default is false.
      */
     public boolean isDisableAutoAbort() {
         return this.disableAutoAbort;
     }
 
-    /** The value of the additional checksum algorithm. Default is null. */
+    /** The value of the additional checksum algorithm. Default is null.
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},{@link ChecksumAlgorithm#Sha384}.
+     * */
     public ChecksumAlgorithm getAdditionalChecksumAlgorithm() {
         return this.additionalChecksumAlgorithm;
     }

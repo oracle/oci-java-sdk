@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Overall state of the mirror. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum OverallState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Overall state of the mirror.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum OverallState {
     Normal("NORMAL"),
     Registrationerror("REGISTRATIONERROR"),
     Syncing("SYNCING"),

@@ -6,38 +6,46 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListWorkRequestsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only work requests that match the specific operation type. */
+    /**
+     * A filter to return only work requests that match the specific operation type.
+     */
     private String operationType;
 
-    /** A filter to return only work requests that match the specific operation type. */
+    /**
+     * A filter to return only work requests that match the specific operation type.
+     */
     public String getOperationType() {
         return operationType;
     }
     /**
-     * The field used for sorting. Only one sorting parameter can be specified. The default order is
-     * descending.
+     * The field used for sorting. Only one sorting parameter can be specified.
+     * The default order is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field used for sorting. Only one sorting parameter can be specified. The default order is
-     * descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field used for sorting. Only one sorting parameter can be specified.
+     * The default order is descending.
+     *
+     **/
+    public enum SortBy {
         Starttime("STARTTIME"),
         Finishtime("FINISHTIME"),
         Acceptedtime("ACCEPTEDTIME"),
@@ -72,17 +80,22 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field used for sorting. Only one sorting parameter can be specified. The default order is
-     * descending.
+     * The field used for sorting. Only one sorting parameter can be specified.
+     * The default order is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sorting order for the work requests, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sorting order for the work requests, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -115,99 +128,99 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
-    /** The sorting order for the work requests, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** A filter to return only work requests that match the specified resource OCID. */
+    /**
+     * A filter to return only work requests that match the specified resource OCID.
+     */
     private String resourceId;
 
-    /** A filter to return only work requests that match the specified resource OCID. */
+    /**
+     * A filter to return only work requests that match the specified resource OCID.
+     */
     public String getResourceId() {
         return resourceId;
     }
     /**
-     * A filter to return only work requests that are associated to the specified target database
-     * OCID.
+     * A filter to return only work requests that are associated to the specified target database OCID.
      */
     private String targetDatabaseId;
 
     /**
-     * A filter to return only work requests that are associated to the specified target database
-     * OCID.
+     * A filter to return only work requests that are associated to the specified target database OCID.
      */
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -241,10 +254,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
@@ -253,15 +267,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -270,12 +286,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return only work requests that match the specific operation type. */
+        /**
+         * A filter to return only work requests that match the specific operation type.
+         */
         private String operationType = null;
 
         /**
          * A filter to return only work requests that match the specific operation type.
-         *
          * @param operationType the value to set
          * @return this builder instance
          */
@@ -285,14 +302,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field used for sorting. Only one sorting parameter can be specified. The default
-         * order is descending.
+         * The field used for sorting. Only one sorting parameter can be specified.
+         * The default order is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used for sorting. Only one sorting parameter can be specified. The default
-         * order is descending.
+         * The field used for sorting. Only one sorting parameter can be specified.
+         * The default order is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -302,12 +320,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sorting order for the work requests, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -316,12 +335,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return only work requests that match the specified resource OCID. */
+        /**
+         * A filter to return only work requests that match the specified resource OCID.
+         */
         private String resourceId = null;
 
         /**
          * A filter to return only work requests that match the specified resource OCID.
-         *
          * @param resourceId the value to set
          * @return this builder instance
          */
@@ -331,15 +351,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only work requests that are associated to the specified target
-         * database OCID.
+         * A filter to return only work requests that are associated to the specified target database OCID.
          */
         private String targetDatabaseId = null;
 
         /**
-         * A filter to return only work requests that are associated to the specified target
-         * database OCID.
-         *
+         * A filter to return only work requests that are associated to the specified target database OCID.
          * @param targetDatabaseId the value to set
          * @return this builder instance
          */
@@ -348,12 +365,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -363,19 +381,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -385,17 +396,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -405,16 +411,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -425,18 +430,19 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -448,19 +454,18 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -472,7 +477,6 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestsRequest o) {
@@ -495,11 +499,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestsRequest
          */
@@ -513,8 +516,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestsRequest
@@ -533,15 +535,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, operationType, sortBy, sortOrder,
-            // resourceId, targetDatabaseId, opcRequestId, page, limit, compartmentIdInSubtree,
-            // accessLevel);
+            // new ListWorkRequestsRequest(compartmentId, operationType, sortBy, sortOrder, resourceId, targetDatabaseId, opcRequestId, page, limit, compartmentIdInSubtree, accessLevel);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -561,7 +560,6 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

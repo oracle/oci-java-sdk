@@ -5,29 +5,26 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The shape of the DB system. The shape determines resources to allocate to the DB system - CPU
- * cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+ * The shape of the DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
+ * If you're an administrator who needs to write policies to give users access,
+ * see [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DbSystemShapeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DbSystemShapeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DbSystemShapeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -112,116 +109,113 @@ public final class DbSystemShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the shape used for the DB system. */
+        /**
+         * The name of the shape used for the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the shape used for the DB system.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The family of the shape used for the DB system. */
+        /**
+         * The family of the shape used for the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
         private String shapeFamily;
 
         /**
          * The family of the shape used for the DB system.
-         *
          * @param shapeFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeFamily(String shapeFamily) {
             this.shapeFamily = shapeFamily;
             this.__explicitlySet__.add("shapeFamily");
             return this;
         }
         /**
-         * The shape type for the virtual machine DB system. Shape type is determined by CPU
-         * hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code
-         * AMPERE_FLEX_A1}.
-         */
+         * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
         private ShapeType shapeType;
 
         /**
-         * The shape type for the virtual machine DB system. Shape type is determined by CPU
-         * hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code
-         * AMPERE_FLEX_A1}.
-         *
+         * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
          * @param shapeType the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeType(ShapeType shapeType) {
             this.shapeType = shapeType;
             this.__explicitlySet__.add("shapeType");
             return this;
         }
-        /** Deprecated. Use {@code name} instead of {@code shape}. */
+        /**
+         * Deprecated. Use {@code name} instead of {@code shape}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * Deprecated. Use {@code name} instead of {@code shape}.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The maximum number of CPU cores that can be enabled on the DB system for this shape. */
+        /**
+         * The maximum number of CPU cores that can be enabled on the DB system for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
         private Integer availableCoreCount;
 
         /**
          * The maximum number of CPU cores that can be enabled on the DB system for this shape.
-         *
          * @param availableCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder availableCoreCount(Integer availableCoreCount) {
             this.availableCoreCount = availableCoreCount;
             this.__explicitlySet__.add("availableCoreCount");
             return this;
         }
-        /** The minimum number of CPU cores that can be enabled on the DB system for this shape. */
+        /**
+         * The minimum number of CPU cores that can be enabled on the DB system for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
         private Integer minimumCoreCount;
 
         /**
          * The minimum number of CPU cores that can be enabled on the DB system for this shape.
-         *
          * @param minimumCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minimumCoreCount(Integer minimumCoreCount) {
             this.minimumCoreCount = minimumCoreCount;
             this.__explicitlySet__.add("minimumCoreCount");
             return this;
         }
         /**
-         * The discrete number by which the CPU core count for this shape can be increased or
-         * decreased.
-         */
+         * The discrete number by which the CPU core count for this shape can be increased or decreased.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
         private Integer coreCountIncrement;
 
         /**
-         * The discrete number by which the CPU core count for this shape can be increased or
-         * decreased.
-         *
+         * The discrete number by which the CPU core count for this shape can be increased or decreased.
          * @param coreCountIncrement the value to set
          * @return this builder
-         */
+         **/
         public Builder coreCountIncrement(Integer coreCountIncrement) {
             this.coreCountIncrement = coreCountIncrement;
             this.__explicitlySet__.add("coreCountIncrement");
@@ -229,16 +223,15 @@ public final class DbSystemShapeSummary
         }
         /**
          * The minimum number of Exadata storage servers available for the Exadata infrastructure.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minStorageCount")
         private Integer minStorageCount;
 
         /**
          * The minimum number of Exadata storage servers available for the Exadata infrastructure.
-         *
          * @param minStorageCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minStorageCount(Integer minStorageCount) {
             this.minStorageCount = minStorageCount;
             this.__explicitlySet__.add("minStorageCount");
@@ -246,35 +239,31 @@ public final class DbSystemShapeSummary
         }
         /**
          * The maximum number of Exadata storage servers available for the Exadata infrastructure.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxStorageCount")
         private Integer maxStorageCount;
 
         /**
          * The maximum number of Exadata storage servers available for the Exadata infrastructure.
-         *
          * @param maxStorageCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maxStorageCount(Integer maxStorageCount) {
             this.maxStorageCount = maxStorageCount;
             this.__explicitlySet__.add("maxStorageCount");
             return this;
         }
         /**
-         * The maximum data storage available per storage server for this shape. Only applicable to
-         * ExaCC Elastic shapes.
-         */
+         * The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableDataStoragePerServerInTBs")
         private Double availableDataStoragePerServerInTBs;
 
         /**
-         * The maximum data storage available per storage server for this shape. Only applicable to
-         * ExaCC Elastic shapes.
-         *
+         * The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
          * @param availableDataStoragePerServerInTBs the value to set
          * @return this builder
-         */
+         **/
         public Builder availableDataStoragePerServerInTBs(
                 Double availableDataStoragePerServerInTBs) {
             this.availableDataStoragePerServerInTBs = availableDataStoragePerServerInTBs;
@@ -282,245 +271,240 @@ public final class DbSystemShapeSummary
             return this;
         }
         /**
-         * The maximum memory available per database node for this shape. Only applicable to ExaCC
-         * Elastic shapes.
-         */
+         * The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryPerNodeInGBs")
         private Integer availableMemoryPerNodeInGBs;
 
         /**
-         * The maximum memory available per database node for this shape. Only applicable to ExaCC
-         * Elastic shapes.
-         *
+         * The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
          * @param availableMemoryPerNodeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder availableMemoryPerNodeInGBs(Integer availableMemoryPerNodeInGBs) {
             this.availableMemoryPerNodeInGBs = availableMemoryPerNodeInGBs;
             this.__explicitlySet__.add("availableMemoryPerNodeInGBs");
             return this;
         }
         /**
-         * The maximum Db Node storage available per database node for this shape. Only applicable
-         * to ExaCC Elastic shapes.
-         */
+         * The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodePerNodeInGBs")
         private Integer availableDbNodePerNodeInGBs;
 
         /**
-         * The maximum Db Node storage available per database node for this shape. Only applicable
-         * to ExaCC Elastic shapes.
-         *
+         * The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
          * @param availableDbNodePerNodeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder availableDbNodePerNodeInGBs(Integer availableDbNodePerNodeInGBs) {
             this.availableDbNodePerNodeInGBs = availableDbNodePerNodeInGBs;
             this.__explicitlySet__.add("availableDbNodePerNodeInGBs");
             return this;
         }
-        /** The minimum number of CPU cores that can be enabled per node for this shape. */
+        /**
+         * The minimum number of CPU cores that can be enabled per node for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minCoreCountPerNode")
         private Integer minCoreCountPerNode;
 
         /**
          * The minimum number of CPU cores that can be enabled per node for this shape.
-         *
          * @param minCoreCountPerNode the value to set
          * @return this builder
-         */
+         **/
         public Builder minCoreCountPerNode(Integer minCoreCountPerNode) {
             this.minCoreCountPerNode = minCoreCountPerNode;
             this.__explicitlySet__.add("minCoreCountPerNode");
             return this;
         }
-        /** The maximum memory that can be enabled for this shape. */
+        /**
+         * The maximum memory that can be enabled for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryInGBs")
         private Integer availableMemoryInGBs;
 
         /**
          * The maximum memory that can be enabled for this shape.
-         *
          * @param availableMemoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder availableMemoryInGBs(Integer availableMemoryInGBs) {
             this.availableMemoryInGBs = availableMemoryInGBs;
             this.__explicitlySet__.add("availableMemoryInGBs");
             return this;
         }
-        /** The minimum memory that need be allocated per node for this shape. */
+        /**
+         * The minimum memory that need be allocated per node for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minMemoryPerNodeInGBs")
         private Integer minMemoryPerNodeInGBs;
 
         /**
          * The minimum memory that need be allocated per node for this shape.
-         *
          * @param minMemoryPerNodeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder minMemoryPerNodeInGBs(Integer minMemoryPerNodeInGBs) {
             this.minMemoryPerNodeInGBs = minMemoryPerNodeInGBs;
             this.__explicitlySet__.add("minMemoryPerNodeInGBs");
             return this;
         }
-        /** The maximum Db Node storage that can be enabled for this shape. */
+        /**
+         * The maximum Db Node storage that can be enabled for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodeStorageInGBs")
         private Integer availableDbNodeStorageInGBs;
 
         /**
          * The maximum Db Node storage that can be enabled for this shape.
-         *
          * @param availableDbNodeStorageInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder availableDbNodeStorageInGBs(Integer availableDbNodeStorageInGBs) {
             this.availableDbNodeStorageInGBs = availableDbNodeStorageInGBs;
             this.__explicitlySet__.add("availableDbNodeStorageInGBs");
             return this;
         }
-        /** The minimum Db Node storage that need be allocated per node for this shape. */
+        /**
+         * The minimum Db Node storage that need be allocated per node for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minDbNodeStoragePerNodeInGBs")
         private Integer minDbNodeStoragePerNodeInGBs;
 
         /**
          * The minimum Db Node storage that need be allocated per node for this shape.
-         *
          * @param minDbNodeStoragePerNodeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder minDbNodeStoragePerNodeInGBs(Integer minDbNodeStoragePerNodeInGBs) {
             this.minDbNodeStoragePerNodeInGBs = minDbNodeStoragePerNodeInGBs;
             this.__explicitlySet__.add("minDbNodeStoragePerNodeInGBs");
             return this;
         }
-        /** The maximum DATA storage that can be enabled for this shape. */
+        /**
+         * The maximum DATA storage that can be enabled for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableDataStorageInTBs")
         private Integer availableDataStorageInTBs;
 
         /**
          * The maximum DATA storage that can be enabled for this shape.
-         *
          * @param availableDataStorageInTBs the value to set
          * @return this builder
-         */
+         **/
         public Builder availableDataStorageInTBs(Integer availableDataStorageInTBs) {
             this.availableDataStorageInTBs = availableDataStorageInTBs;
             this.__explicitlySet__.add("availableDataStorageInTBs");
             return this;
         }
-        /** The minimum data storage that need be allocated for this shape. */
+        /**
+         * The minimum data storage that need be allocated for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minDataStorageInTBs")
         private Integer minDataStorageInTBs;
 
         /**
          * The minimum data storage that need be allocated for this shape.
-         *
          * @param minDataStorageInTBs the value to set
          * @return this builder
-         */
+         **/
         public Builder minDataStorageInTBs(Integer minDataStorageInTBs) {
             this.minDataStorageInTBs = minDataStorageInTBs;
             this.__explicitlySet__.add("minDataStorageInTBs");
             return this;
         }
-        /** The display name of the shape used for the DB system. */
+        /**
+         * The display name of the shape used for the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the shape used for the DB system.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
-         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
-         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
-         * OCPU compute model is legacy.
-         */
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
-         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
-         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
-         * OCPU compute model is legacy.
-         *
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * @param computeModel the value to set
          * @return this builder
-         */
+         **/
         public Builder computeModel(ComputeModel computeModel) {
             this.computeModel = computeModel;
             this.__explicitlySet__.add("computeModel");
             return this;
         }
-        /** If true, the shape supports configurable DB and Storage Server types. */
+        /**
+         * If true, the shape supports configurable DB and Storage Server types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areServerTypesSupported")
         private Boolean areServerTypesSupported;
 
         /**
          * If true, the shape supports configurable DB and Storage Server types.
-         *
          * @param areServerTypesSupported the value to set
          * @return this builder
-         */
+         **/
         public Builder areServerTypesSupported(Boolean areServerTypesSupported) {
             this.areServerTypesSupported = areServerTypesSupported;
             this.__explicitlySet__.add("areServerTypesSupported");
             return this;
         }
-        /** The minimum number of compute servers available for this shape. */
+        /**
+         * The minimum number of compute servers available for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
         private Integer minimumNodeCount;
 
         /**
          * The minimum number of compute servers available for this shape.
-         *
          * @param minimumNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minimumNodeCount(Integer minimumNodeCount) {
             this.minimumNodeCount = minimumNodeCount;
             this.__explicitlySet__.add("minimumNodeCount");
             return this;
         }
-        /** The maximum number of compute servers available for this shape. */
+        /**
+         * The maximum number of compute servers available for this shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
         private Integer maximumNodeCount;
 
         /**
          * The maximum number of compute servers available for this shape.
-         *
          * @param maximumNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maximumNodeCount(Integer maximumNodeCount) {
             this.maximumNodeCount = maximumNodeCount;
             this.__explicitlySet__.add("maximumNodeCount");
             return this;
         }
         /**
-         * The maximum number of CPU cores per database node that can be enabled for this shape.
-         * Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
-         */
+         * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
         private Integer availableCoreCountPerNode;
 
         /**
-         * The maximum number of CPU cores per database node that can be enabled for this shape.
-         * Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
-         *
+         * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
          * @param availableCoreCountPerNode the value to set
          * @return this builder
-         */
+         **/
         public Builder availableCoreCountPerNode(Integer availableCoreCountPerNode) {
             this.availableCoreCountPerNode = availableCoreCountPerNode;
             this.__explicitlySet__.add("availableCoreCountPerNode");
@@ -646,7 +630,9 @@ public final class DbSystemShapeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -655,46 +641,46 @@ public final class DbSystemShapeSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the shape used for the DB system. */
+    /**
+     * The name of the shape used for the DB system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the shape used for the DB system.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The family of the shape used for the DB system. */
+    /**
+     * The family of the shape used for the DB system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
     private final String shapeFamily;
 
     /**
      * The family of the shape used for the DB system.
-     *
      * @return the value
-     */
+     **/
     public String getShapeFamily() {
         return shapeFamily;
     }
 
     /**
-     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware.
-     * Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code
-     * AMPERE_FLEX_A1}.
-     */
-    public enum ShapeType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
+     **/
+    public enum ShapeType {
         Amd("AMD"),
         Intel("INTEL"),
         IntelFlexX9("INTEL_FLEX_X9"),
         AmpereFlexA1("AMPERE_FLEX_A1"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -734,272 +720,267 @@ public final class DbSystemShapeSummary
         }
     };
     /**
-     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware.
-     * Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code
-     * AMPERE_FLEX_A1}.
-     */
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
     private final ShapeType shapeType;
 
     /**
-     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware.
-     * Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code
-     * AMPERE_FLEX_A1}.
-     *
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
      * @return the value
-     */
+     **/
     public ShapeType getShapeType() {
         return shapeType;
     }
 
-    /** Deprecated. Use {@code name} instead of {@code shape}. */
+    /**
+     * Deprecated. Use {@code name} instead of {@code shape}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * Deprecated. Use {@code name} instead of {@code shape}.
-     *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** The maximum number of CPU cores that can be enabled on the DB system for this shape. */
+    /**
+     * The maximum number of CPU cores that can be enabled on the DB system for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
     private final Integer availableCoreCount;
 
     /**
      * The maximum number of CPU cores that can be enabled on the DB system for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getAvailableCoreCount() {
         return availableCoreCount;
     }
 
-    /** The minimum number of CPU cores that can be enabled on the DB system for this shape. */
+    /**
+     * The minimum number of CPU cores that can be enabled on the DB system for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
     private final Integer minimumCoreCount;
 
     /**
      * The minimum number of CPU cores that can be enabled on the DB system for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinimumCoreCount() {
         return minimumCoreCount;
     }
 
     /**
      * The discrete number by which the CPU core count for this shape can be increased or decreased.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
     private final Integer coreCountIncrement;
 
     /**
      * The discrete number by which the CPU core count for this shape can be increased or decreased.
-     *
      * @return the value
-     */
+     **/
     public Integer getCoreCountIncrement() {
         return coreCountIncrement;
     }
 
-    /** The minimum number of Exadata storage servers available for the Exadata infrastructure. */
+    /**
+     * The minimum number of Exadata storage servers available for the Exadata infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minStorageCount")
     private final Integer minStorageCount;
 
     /**
      * The minimum number of Exadata storage servers available for the Exadata infrastructure.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinStorageCount() {
         return minStorageCount;
     }
 
-    /** The maximum number of Exadata storage servers available for the Exadata infrastructure. */
+    /**
+     * The maximum number of Exadata storage servers available for the Exadata infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxStorageCount")
     private final Integer maxStorageCount;
 
     /**
      * The maximum number of Exadata storage servers available for the Exadata infrastructure.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxStorageCount() {
         return maxStorageCount;
     }
 
     /**
-     * The maximum data storage available per storage server for this shape. Only applicable to
-     * ExaCC Elastic shapes.
-     */
+     * The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDataStoragePerServerInTBs")
     private final Double availableDataStoragePerServerInTBs;
 
     /**
-     * The maximum data storage available per storage server for this shape. Only applicable to
-     * ExaCC Elastic shapes.
-     *
+     * The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
      * @return the value
-     */
+     **/
     public Double getAvailableDataStoragePerServerInTBs() {
         return availableDataStoragePerServerInTBs;
     }
 
     /**
-     * The maximum memory available per database node for this shape. Only applicable to ExaCC
-     * Elastic shapes.
-     */
+     * The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryPerNodeInGBs")
     private final Integer availableMemoryPerNodeInGBs;
 
     /**
-     * The maximum memory available per database node for this shape. Only applicable to ExaCC
-     * Elastic shapes.
-     *
+     * The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      * @return the value
-     */
+     **/
     public Integer getAvailableMemoryPerNodeInGBs() {
         return availableMemoryPerNodeInGBs;
     }
 
     /**
-     * The maximum Db Node storage available per database node for this shape. Only applicable to
-     * ExaCC Elastic shapes.
-     */
+     * The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodePerNodeInGBs")
     private final Integer availableDbNodePerNodeInGBs;
 
     /**
-     * The maximum Db Node storage available per database node for this shape. Only applicable to
-     * ExaCC Elastic shapes.
-     *
+     * The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      * @return the value
-     */
+     **/
     public Integer getAvailableDbNodePerNodeInGBs() {
         return availableDbNodePerNodeInGBs;
     }
 
-    /** The minimum number of CPU cores that can be enabled per node for this shape. */
+    /**
+     * The minimum number of CPU cores that can be enabled per node for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minCoreCountPerNode")
     private final Integer minCoreCountPerNode;
 
     /**
      * The minimum number of CPU cores that can be enabled per node for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinCoreCountPerNode() {
         return minCoreCountPerNode;
     }
 
-    /** The maximum memory that can be enabled for this shape. */
+    /**
+     * The maximum memory that can be enabled for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryInGBs")
     private final Integer availableMemoryInGBs;
 
     /**
      * The maximum memory that can be enabled for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getAvailableMemoryInGBs() {
         return availableMemoryInGBs;
     }
 
-    /** The minimum memory that need be allocated per node for this shape. */
+    /**
+     * The minimum memory that need be allocated per node for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minMemoryPerNodeInGBs")
     private final Integer minMemoryPerNodeInGBs;
 
     /**
      * The minimum memory that need be allocated per node for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinMemoryPerNodeInGBs() {
         return minMemoryPerNodeInGBs;
     }
 
-    /** The maximum Db Node storage that can be enabled for this shape. */
+    /**
+     * The maximum Db Node storage that can be enabled for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodeStorageInGBs")
     private final Integer availableDbNodeStorageInGBs;
 
     /**
      * The maximum Db Node storage that can be enabled for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getAvailableDbNodeStorageInGBs() {
         return availableDbNodeStorageInGBs;
     }
 
-    /** The minimum Db Node storage that need be allocated per node for this shape. */
+    /**
+     * The minimum Db Node storage that need be allocated per node for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minDbNodeStoragePerNodeInGBs")
     private final Integer minDbNodeStoragePerNodeInGBs;
 
     /**
      * The minimum Db Node storage that need be allocated per node for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinDbNodeStoragePerNodeInGBs() {
         return minDbNodeStoragePerNodeInGBs;
     }
 
-    /** The maximum DATA storage that can be enabled for this shape. */
+    /**
+     * The maximum DATA storage that can be enabled for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableDataStorageInTBs")
     private final Integer availableDataStorageInTBs;
 
     /**
      * The maximum DATA storage that can be enabled for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getAvailableDataStorageInTBs() {
         return availableDataStorageInTBs;
     }
 
-    /** The minimum data storage that need be allocated for this shape. */
+    /**
+     * The minimum data storage that need be allocated for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minDataStorageInTBs")
     private final Integer minDataStorageInTBs;
 
     /**
      * The minimum data storage that need be allocated for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinDataStorageInTBs() {
         return minDataStorageInTBs;
     }
 
-    /** The display name of the shape used for the DB system. */
+    /**
+     * The display name of the shape used for the DB system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the shape used for the DB system.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
-     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
-     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy.
-     */
-    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     **/
+    public enum ComputeModel {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1039,78 +1020,71 @@ public final class DbSystemShapeSummary
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
-     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
-     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy.
-     */
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
-     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
-     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy.
-     *
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * @return the value
-     */
+     **/
     public ComputeModel getComputeModel() {
         return computeModel;
     }
 
-    /** If true, the shape supports configurable DB and Storage Server types. */
+    /**
+     * If true, the shape supports configurable DB and Storage Server types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areServerTypesSupported")
     private final Boolean areServerTypesSupported;
 
     /**
      * If true, the shape supports configurable DB and Storage Server types.
-     *
      * @return the value
-     */
+     **/
     public Boolean getAreServerTypesSupported() {
         return areServerTypesSupported;
     }
 
-    /** The minimum number of compute servers available for this shape. */
+    /**
+     * The minimum number of compute servers available for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
     private final Integer minimumNodeCount;
 
     /**
      * The minimum number of compute servers available for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinimumNodeCount() {
         return minimumNodeCount;
     }
 
-    /** The maximum number of compute servers available for this shape. */
+    /**
+     * The maximum number of compute servers available for this shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
     private final Integer maximumNodeCount;
 
     /**
      * The maximum number of compute servers available for this shape.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaximumNodeCount() {
         return maximumNodeCount;
     }
 
     /**
-     * The maximum number of CPU cores per database node that can be enabled for this shape. Only
-     * applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
-     */
+     * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
     private final Integer availableCoreCountPerNode;
 
     /**
-     * The maximum number of CPU cores per database node that can be enabled for this shape. Only
-     * applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
-     *
+     * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
      * @return the value
-     */
+     **/
     public Integer getAvailableCoreCountPerNode() {
         return availableCoreCountPerNode;
     }
@@ -1122,7 +1096,6 @@ public final class DbSystemShapeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

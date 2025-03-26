@@ -6,127 +6,169 @@ package com.oracle.bmc.apmsynthetics.requests;
 
 import com.oracle.bmc.apmsynthetics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListMonitorsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMonitorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListMonitorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMonitorsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     private String apmDomainId;
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
-    /** A filter to return only the resources that match the entire display name. */
+    /**
+     * A filter to return only the resources that match the entire display name.
+     */
     private String displayName;
 
-    /** A filter to return only the resources that match the entire display name. */
+    /**
+     * A filter to return only the resources that match the entire display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only monitors using scriptId. */
+    /**
+     * A filter to return only monitors using scriptId.
+     */
     private String scriptId;
 
-    /** A filter to return only monitors using scriptId. */
+    /**
+     * A filter to return only monitors using scriptId.
+     */
     public String getScriptId() {
         return scriptId;
     }
-    /** The name of the public or dedicated vantage point. */
+    /**
+     * The name of the public or dedicated vantage point.
+     *
+     */
     private String vantagePoint;
 
-    /** The name of the public or dedicated vantage point. */
+    /**
+     * The name of the public or dedicated vantage point.
+     *
+     */
     public String getVantagePoint() {
         return vantagePoint;
     }
     /**
-     * A filter to return only monitors that match the given monitor type. Supported values are
-     * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
+     * A filter to return only monitors that match the given monitor type.
+     * Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
+     *
      */
     private String monitorType;
 
     /**
-     * A filter to return only monitors that match the given monitor type. Supported values are
-     * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
+     * A filter to return only monitors that match the given monitor type.
+     * Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
+     *
      */
     public String getMonitorType() {
         return monitorType;
     }
-    /** A filter to return only monitors that match the status given. */
+    /**
+     * A filter to return only monitors that match the status given.
+     */
     private com.oracle.bmc.apmsynthetics.model.MonitorStatus status;
 
-    /** A filter to return only monitors that match the status given. */
+    /**
+     * A filter to return only monitors that match the status given.
+     */
     public com.oracle.bmc.apmsynthetics.model.MonitorStatus getStatus() {
         return status;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The maximum number of results per page, or items to return in a paginated "List" call. For
-     * information on how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The maximum number of results per page, or items to return in a paginated
+     * "List" call. For information on how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     private String page;
 
     /**
-     * The maximum number of results per page, or items to return in a paginated "List" call. For
-     * information on how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The maximum number of results per page, or items to return in a paginated
+     * "List" call. For information on how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     public String getPage() {
         return page;
     }
-    /** A filter to return the monitors whose maintenance window is currently active. */
+    /**
+     * A filter to return the monitors whose maintenance window is currently active.
+     */
     private Boolean isMaintenanceWindowActive;
 
-    /** A filter to return the monitors whose maintenance window is currently active. */
+    /**
+     * A filter to return the monitors whose maintenance window is currently active.
+     */
     public Boolean getIsMaintenanceWindowActive() {
         return isMaintenanceWindowActive;
     }
-    /** A filter to return the monitors whose maintenance window is set. */
+    /**
+     * A filter to return the monitors whose maintenance window is set.
+     */
     private Boolean isMaintenanceWindowSet;
 
-    /** A filter to return the monitors whose maintenance window is set. */
+    /**
+     * A filter to return the monitors whose maintenance window is set.
+     */
     public Boolean getIsMaintenanceWindowSet() {
         return isMaintenanceWindowSet;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default
-     * sort order is ascending.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
+     *
      */
     private com.oracle.bmc.apmsynthetics.model.SortOrders sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default
-     * sort order is ascending.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
+     *
      */
     public com.oracle.bmc.apmsynthetics.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order of displayName is
-     * ascending. Default order of timeCreated and timeUpdated is descending. The displayName sort
-     * by is case insensitive.
+     * The field to sort by. Only one sort order may be provided.
+     * Default order of displayName is ascending.
+     * Default order of timeCreated and timeUpdated is descending.
+     * The displayName sort by is case insensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order of displayName is
-     * ascending. Default order of timeCreated and timeUpdated is descending. The displayName sort
-     * by is case insensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided.
+     * Default order of displayName is ascending.
+     * Default order of timeCreated and timeUpdated is descending.
+     * The displayName sort by is case insensitive.
+     *
+     **/
+    public enum SortBy {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
@@ -164,22 +206,26 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order of displayName is
-     * ascending. Default order of timeCreated and timeUpdated is descending. The displayName sort
-     * by is case insensitive.
+     * The field to sort by. Only one sort order may be provided.
+     * Default order of displayName is ascending.
+     * Default order of timeCreated and timeUpdated is descending.
+     * The displayName sort by is case insensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -188,10 +234,14 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMonitorsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM domain ID the request is intended for. */
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
@@ -205,12 +255,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only the resources that match the entire display name. */
+        /**
+         * A filter to return only the resources that match the entire display name.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only the resources that match the entire display name.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -219,12 +270,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only monitors using scriptId. */
+        /**
+         * A filter to return only monitors using scriptId.
+         */
         private String scriptId = null;
 
         /**
          * A filter to return only monitors using scriptId.
-         *
          * @param scriptId the value to set
          * @return this builder instance
          */
@@ -233,7 +285,10 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The name of the public or dedicated vantage point. */
+        /**
+         * The name of the public or dedicated vantage point.
+         *
+         */
         private String vantagePoint = null;
 
         /**
@@ -248,14 +303,15 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A filter to return only monitors that match the given monitor type. Supported values are
-         * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
+         * A filter to return only monitors that match the given monitor type.
+         * Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
+         *
          */
         private String monitorType = null;
 
         /**
-         * A filter to return only monitors that match the given monitor type. Supported values are
-         * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
+         * A filter to return only monitors that match the given monitor type.
+         * Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
          *
          * @param monitorType the value to set
          * @return this builder instance
@@ -265,12 +321,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only monitors that match the status given. */
+        /**
+         * A filter to return only monitors that match the status given.
+         */
         private com.oracle.bmc.apmsynthetics.model.MonitorStatus status = null;
 
         /**
          * A filter to return only monitors that match the status given.
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -279,12 +336,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -294,20 +352,21 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The maximum number of results per page, or items to return in a paginated "List" call.
-         * For information on how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The maximum number of results per page, or items to return in a paginated
+         * "List" call. For information on how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
-         * <p>Example: {@code 50}
          */
         private String page = null;
 
         /**
-         * The maximum number of results per page, or items to return in a paginated "List" call.
-         * For information on how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 50}
+         * The maximum number of results per page, or items to return in a paginated
+         * "List" call. For information on how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
          * @param page the value to set
          * @return this builder instance
@@ -317,12 +376,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return the monitors whose maintenance window is currently active. */
+        /**
+         * A filter to return the monitors whose maintenance window is currently active.
+         */
         private Boolean isMaintenanceWindowActive = null;
 
         /**
          * A filter to return the monitors whose maintenance window is currently active.
-         *
          * @param isMaintenanceWindowActive the value to set
          * @return this builder instance
          */
@@ -331,12 +391,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return the monitors whose maintenance window is set. */
+        /**
+         * A filter to return the monitors whose maintenance window is set.
+         */
         private Boolean isMaintenanceWindowSet = null;
 
         /**
          * A filter to return the monitors whose maintenance window is set.
-         *
          * @param isMaintenanceWindowSet the value to set
          * @return this builder instance
          */
@@ -346,14 +407,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         * Default sort order is ascending.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
+         *
          */
         private com.oracle.bmc.apmsynthetics.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         * Default sort order is ascending.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -364,16 +424,19 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order of displayName
-         * is ascending. Default order of timeCreated and timeUpdated is descending. The displayName
-         * sort by is case insensitive.
+         * The field to sort by. Only one sort order may be provided.
+         * Default order of displayName is ascending.
+         * Default order of timeCreated and timeUpdated is descending.
+         * The displayName sort by is case insensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order of displayName
-         * is ascending. Default order of timeCreated and timeUpdated is descending. The displayName
-         * sort by is case insensitive.
+         * The field to sort by. Only one sort order may be provided.
+         * Default order of displayName is ascending.
+         * Default order of timeCreated and timeUpdated is descending.
+         * The displayName sort by is case insensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -384,14 +447,15 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -403,19 +467,18 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -427,7 +490,6 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMonitorsRequest o) {
@@ -452,11 +514,10 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListMonitorsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMonitorsRequest
          */
@@ -470,8 +531,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListMonitorsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMonitorsRequest
@@ -492,15 +552,12 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMonitorsRequest(apmDomainId, displayName, scriptId, vantagePoint,
-            // monitorType, status, limit, page, isMaintenanceWindowActive, isMaintenanceWindowSet,
-            // sortOrder, sortBy, opcRequestId);
+            // new ListMonitorsRequest(apmDomainId, displayName, scriptId, vantagePoint, monitorType, status, limit, page, isMaintenanceWindowActive, isMaintenanceWindowSet, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -522,7 +579,6 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.mediaservices.model;
 
 /**
- * The information about new MediaAsset. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+ * The information about new MediaAsset.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMediaAssetDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMediaAssetDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMediaAssetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceMediaWorkflowId",
@@ -88,264 +87,277 @@ public final class CreateMediaAssetDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the MediaWorkflow used to produce this asset. */
+        /**
+         * The ID of the MediaWorkflow used to produce this asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceMediaWorkflowId")
         private String sourceMediaWorkflowId;
 
         /**
          * The ID of the MediaWorkflow used to produce this asset.
-         *
          * @param sourceMediaWorkflowId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceMediaWorkflowId(String sourceMediaWorkflowId) {
             this.sourceMediaWorkflowId = sourceMediaWorkflowId;
             this.__explicitlySet__.add("sourceMediaWorkflowId");
             return this;
         }
-        /** The ID of the MediaWorkflowJob used to produce this asset. */
+        /**
+         * The ID of the MediaWorkflowJob used to produce this asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowJobId")
         private String mediaWorkflowJobId;
 
         /**
          * The ID of the MediaWorkflowJob used to produce this asset.
-         *
          * @param mediaWorkflowJobId the value to set
          * @return this builder
-         */
+         **/
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
             this.mediaWorkflowJobId = mediaWorkflowJobId;
             this.__explicitlySet__.add("mediaWorkflowJobId");
             return this;
         }
-        /** The version of the MediaWorkflow used to produce this asset. */
+        /**
+         * The version of the MediaWorkflow used to produce this asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceMediaWorkflowVersion")
         private Long sourceMediaWorkflowVersion;
 
         /**
          * The version of the MediaWorkflow used to produce this asset.
-         *
          * @param sourceMediaWorkflowVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceMediaWorkflowVersion(Long sourceMediaWorkflowVersion) {
             this.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
             this.__explicitlySet__.add("sourceMediaWorkflowVersion");
             return this;
         }
         /**
-         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
-         * information.
-         */
+         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
-         * information.
-         *
+         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The type of the media asset. */
+        /**
+         * The type of the media asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private AssetType type;
 
         /**
          * The type of the media asset.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(AssetType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The ID of the parent asset from which this asset is derived. */
+        /**
+         * The ID of the parent asset from which this asset is derived.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentMediaAssetId")
         private String parentMediaAssetId;
 
         /**
          * The ID of the parent asset from which this asset is derived.
-         *
          * @param parentMediaAssetId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentMediaAssetId(String parentMediaAssetId) {
             this.parentMediaAssetId = parentMediaAssetId;
             this.__explicitlySet__.add("parentMediaAssetId");
             return this;
         }
-        /** The ID of the senior most asset from which this asset is derived. */
+        /**
+         * The ID of the senior most asset from which this asset is derived.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterMediaAssetId")
         private String masterMediaAssetId;
 
         /**
          * The ID of the senior most asset from which this asset is derived.
-         *
          * @param masterMediaAssetId the value to set
          * @return this builder
-         */
+         **/
         public Builder masterMediaAssetId(String masterMediaAssetId) {
             this.masterMediaAssetId = masterMediaAssetId;
             this.__explicitlySet__.add("masterMediaAssetId");
             return this;
         }
-        /** The name of the object storage bucket where this asset is located. */
+        /**
+         * The name of the object storage bucket where this asset is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The name of the object storage bucket where this asset is located.
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The object storage namespace where this asset is located. */
+        /**
+         * The object storage namespace where this asset is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * The object storage namespace where this asset is located.
-         *
          * @param namespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /** The object storage object name that identifies this asset. */
+        /**
+         * The object storage object name that identifies this asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The object storage object name that identifies this asset.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** eTag of the underlying object storage object. */
+        /**
+         * eTag of the underlying object storage object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectEtag")
         private String objectEtag;
 
         /**
          * eTag of the underlying object storage object.
-         *
          * @param objectEtag the value to set
          * @return this builder
-         */
+         **/
         public Builder objectEtag(String objectEtag) {
             this.objectEtag = objectEtag;
             this.__explicitlySet__.add("objectEtag");
             return this;
         }
-        /** List of Metadata. */
+        /**
+         * List of Metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.List<Metadata> metadata;
 
         /**
          * List of Metadata.
-         *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.List<Metadata> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
-        /** The start index for video segment files. */
+        /**
+         * The start index for video segment files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("segmentRangeStartIndex")
         private Long segmentRangeStartIndex;
 
         /**
          * The start index for video segment files.
-         *
          * @param segmentRangeStartIndex the value to set
          * @return this builder
-         */
+         **/
         public Builder segmentRangeStartIndex(Long segmentRangeStartIndex) {
             this.segmentRangeStartIndex = segmentRangeStartIndex;
             this.__explicitlySet__.add("segmentRangeStartIndex");
             return this;
         }
-        /** The end index for video segment files. */
+        /**
+         * The end index for video segment files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("segmentRangeEndIndex")
         private Long segmentRangeEndIndex;
 
         /**
          * The end index for video segment files.
-         *
          * @param segmentRangeEndIndex the value to set
          * @return this builder
-         */
+         **/
         public Builder segmentRangeEndIndex(Long segmentRangeEndIndex) {
             this.segmentRangeEndIndex = segmentRangeEndIndex;
             this.__explicitlySet__.add("segmentRangeEndIndex");
             return this;
         }
-        /** list of tags for the MediaAsset. */
+        /**
+         * list of tags for the MediaAsset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mediaAssetTags")
         private java.util.List<MediaAssetTag> mediaAssetTags;
 
         /**
          * list of tags for the MediaAsset.
-         *
          * @param mediaAssetTags the value to set
          * @return this builder
-         */
+         **/
         public Builder mediaAssetTags(java.util.List<MediaAssetTag> mediaAssetTags) {
             this.mediaAssetTags = mediaAssetTags;
             this.__explicitlySet__.add("mediaAssetTags");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -354,7 +366,8 @@ public final class CreateMediaAssetDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -364,23 +377,24 @@ public final class CreateMediaAssetDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
@@ -481,7 +495,9 @@ public final class CreateMediaAssetDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -490,261 +506,276 @@ public final class CreateMediaAssetDetails
         return new Builder().copy(this);
     }
 
-    /** The ID of the MediaWorkflow used to produce this asset. */
+    /**
+     * The ID of the MediaWorkflow used to produce this asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceMediaWorkflowId")
     private final String sourceMediaWorkflowId;
 
     /**
      * The ID of the MediaWorkflow used to produce this asset.
-     *
      * @return the value
-     */
+     **/
     public String getSourceMediaWorkflowId() {
         return sourceMediaWorkflowId;
     }
 
-    /** The ID of the MediaWorkflowJob used to produce this asset. */
+    /**
+     * The ID of the MediaWorkflowJob used to produce this asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowJobId")
     private final String mediaWorkflowJobId;
 
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
-     *
      * @return the value
-     */
+     **/
     public String getMediaWorkflowJobId() {
         return mediaWorkflowJobId;
     }
 
-    /** The version of the MediaWorkflow used to produce this asset. */
+    /**
+     * The version of the MediaWorkflow used to produce this asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceMediaWorkflowVersion")
     private final Long sourceMediaWorkflowVersion;
 
     /**
      * The version of the MediaWorkflow used to produce this asset.
-     *
      * @return the value
-     */
+     **/
     public Long getSourceMediaWorkflowVersion() {
         return sourceMediaWorkflowVersion;
     }
 
     /**
-     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
-     * information.
-     */
+     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
-     * information.
-     *
+     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The type of the media asset. */
+    /**
+     * The type of the media asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final AssetType type;
 
     /**
      * The type of the media asset.
-     *
      * @return the value
-     */
+     **/
     public AssetType getType() {
         return type;
     }
 
-    /** The ID of the parent asset from which this asset is derived. */
+    /**
+     * The ID of the parent asset from which this asset is derived.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentMediaAssetId")
     private final String parentMediaAssetId;
 
     /**
      * The ID of the parent asset from which this asset is derived.
-     *
      * @return the value
-     */
+     **/
     public String getParentMediaAssetId() {
         return parentMediaAssetId;
     }
 
-    /** The ID of the senior most asset from which this asset is derived. */
+    /**
+     * The ID of the senior most asset from which this asset is derived.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterMediaAssetId")
     private final String masterMediaAssetId;
 
     /**
      * The ID of the senior most asset from which this asset is derived.
-     *
      * @return the value
-     */
+     **/
     public String getMasterMediaAssetId() {
         return masterMediaAssetId;
     }
 
-    /** The name of the object storage bucket where this asset is located. */
+    /**
+     * The name of the object storage bucket where this asset is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The name of the object storage bucket where this asset is located.
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** The object storage namespace where this asset is located. */
+    /**
+     * The object storage namespace where this asset is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * The object storage namespace where this asset is located.
-     *
      * @return the value
-     */
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /** The object storage object name that identifies this asset. */
+    /**
+     * The object storage object name that identifies this asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The object storage object name that identifies this asset.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** eTag of the underlying object storage object. */
+    /**
+     * eTag of the underlying object storage object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectEtag")
     private final String objectEtag;
 
     /**
      * eTag of the underlying object storage object.
-     *
      * @return the value
-     */
+     **/
     public String getObjectEtag() {
         return objectEtag;
     }
 
-    /** List of Metadata. */
+    /**
+     * List of Metadata.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.List<Metadata> metadata;
 
     /**
      * List of Metadata.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Metadata> getMetadata() {
         return metadata;
     }
 
-    /** The start index for video segment files. */
+    /**
+     * The start index for video segment files.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("segmentRangeStartIndex")
     private final Long segmentRangeStartIndex;
 
     /**
      * The start index for video segment files.
-     *
      * @return the value
-     */
+     **/
     public Long getSegmentRangeStartIndex() {
         return segmentRangeStartIndex;
     }
 
-    /** The end index for video segment files. */
+    /**
+     * The end index for video segment files.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("segmentRangeEndIndex")
     private final Long segmentRangeEndIndex;
 
     /**
      * The end index for video segment files.
-     *
      * @return the value
-     */
+     **/
     public Long getSegmentRangeEndIndex() {
         return segmentRangeEndIndex;
     }
 
-    /** list of tags for the MediaAsset. */
+    /**
+     * list of tags for the MediaAsset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mediaAssetTags")
     private final java.util.List<MediaAssetTag> mediaAssetTags;
 
     /**
      * list of tags for the MediaAsset.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MediaAssetTag> getMediaAssetTags() {
         return mediaAssetTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
@@ -756,7 +787,6 @@ public final class CreateMediaAssetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

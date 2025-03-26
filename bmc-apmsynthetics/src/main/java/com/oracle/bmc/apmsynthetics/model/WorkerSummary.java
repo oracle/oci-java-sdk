@@ -5,21 +5,19 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Information about On-premise VP worker. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Information about On-premise VP worker.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkerSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkerSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkerSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,38 +73,32 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * On-premise VP worker.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * On-premise VP worker.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise VP worker.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-         * confidential information.
-         */
+         * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-         * confidential information.
-         *
+         * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -114,16 +106,15 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * Unique permanent name of the On-premise VP worker. This is the same as the displayName.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Unique permanent name of the On-premise VP worker. This is the same as the displayName.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -138,173 +129,183 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("versionDetails");
             return this;
         }
-        /** Configuration details of the On-premise VP worker. */
+        /**
+         * Configuration details of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
         private Object configurationDetails;
 
         /**
          * Configuration details of the On-premise VP worker.
-         *
          * @param configurationDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder configurationDetails(Object configurationDetails) {
             this.configurationDetails = configurationDetails;
             this.__explicitlySet__.add("configurationDetails");
             return this;
         }
-        /** Type of the On-premise VP worker. */
+        /**
+         * Type of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workerType")
         private OnPremiseVantagePointWorkerType workerType;
 
         /**
          * Type of the On-premise VP worker.
-         *
          * @param workerType the value to set
          * @return this builder
-         */
+         **/
         public Builder workerType(OnPremiseVantagePointWorkerType workerType) {
             this.workerType = workerType;
             this.__explicitlySet__.add("workerType");
             return this;
         }
-        /** Enables or disables the On-premise VP worker. */
+        /**
+         * Enables or disables the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OnPremiseVantagePointWorkerStatus status;
 
         /**
          * Enables or disables the On-premise VP worker.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(OnPremiseVantagePointWorkerStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Priority of the On-premise VP worker to schedule monitors. */
+        /**
+         * Priority of the On-premise VP worker to schedule monitors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
         /**
          * Priority of the On-premise VP worker to schedule monitors.
-         *
          * @param priority the value to set
          * @return this builder
-         */
+         **/
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
-        /** Geographical information of the On-premise VP worker. */
+        /**
+         * Geographical information of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
         private String geoInfo;
 
         /**
          * Geographical information of the On-premise VP worker.
-         *
          * @param geoInfo the value to set
          * @return this builder
-         */
+         **/
         public Builder geoInfo(String geoInfo) {
             this.geoInfo = geoInfo;
             this.__explicitlySet__.add("geoInfo");
             return this;
         }
-        /** Monitors list assigned to the On-premise VP worker. */
+        /**
+         * Monitors list assigned to the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitorList")
         private java.util.List<WorkerMonitorList> monitorList;
 
         /**
          * Monitors list assigned to the On-premise VP worker.
-         *
          * @param monitorList the value to set
          * @return this builder
-         */
+         **/
         public Builder monitorList(java.util.List<WorkerMonitorList> monitorList) {
             this.monitorList = monitorList;
             this.__explicitlySet__.add("monitorList");
             return this;
         }
         /**
-         * The time the resource was last synced, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
-         */
+         * The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSyncup")
         private java.util.Date timeLastSyncup;
 
         /**
-         * The time the resource was last synced, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
+         * The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
          *
          * @param timeLastSyncup the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSyncup(java.util.Date timeLastSyncup) {
             this.timeLastSyncup = timeLastSyncup;
             this.__explicitlySet__.add("timeLastSyncup");
             return this;
         }
         /**
-         * The time the resource was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
-         */
+         * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the resource was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
+         * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the resource was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-13T22:47:12.613Z}
-         */
+         * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the resource was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-13T22:47:12.613Z}
+         * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-13T22:47:12.613Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -313,7 +314,8 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -323,7 +325,7 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -409,7 +411,9 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -419,48 +423,43 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * On-premise VP worker.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * On-premise VP worker.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise VP worker.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-     * confidential information.
-     */
+     * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-     * confidential information.
-     *
+     * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Unique permanent name of the On-premise VP worker. This is the same as the displayName. */
+    /**
+     * Unique permanent name of the On-premise VP worker. This is the same as the displayName.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Unique permanent name of the On-premise VP worker. This is the same as the displayName.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -472,171 +471,182 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
         return versionDetails;
     }
 
-    /** Configuration details of the On-premise VP worker. */
+    /**
+     * Configuration details of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
     private final Object configurationDetails;
 
     /**
      * Configuration details of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public Object getConfigurationDetails() {
         return configurationDetails;
     }
 
-    /** Type of the On-premise VP worker. */
+    /**
+     * Type of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workerType")
     private final OnPremiseVantagePointWorkerType workerType;
 
     /**
      * Type of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public OnPremiseVantagePointWorkerType getWorkerType() {
         return workerType;
     }
 
-    /** Enables or disables the On-premise VP worker. */
+    /**
+     * Enables or disables the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OnPremiseVantagePointWorkerStatus status;
 
     /**
      * Enables or disables the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public OnPremiseVantagePointWorkerStatus getStatus() {
         return status;
     }
 
-    /** Priority of the On-premise VP worker to schedule monitors. */
+    /**
+     * Priority of the On-premise VP worker to schedule monitors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
     /**
      * Priority of the On-premise VP worker to schedule monitors.
-     *
      * @return the value
-     */
+     **/
     public Integer getPriority() {
         return priority;
     }
 
-    /** Geographical information of the On-premise VP worker. */
+    /**
+     * Geographical information of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
     private final String geoInfo;
 
     /**
      * Geographical information of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getGeoInfo() {
         return geoInfo;
     }
 
-    /** Monitors list assigned to the On-premise VP worker. */
+    /**
+     * Monitors list assigned to the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("monitorList")
     private final java.util.List<WorkerMonitorList> monitorList;
 
     /**
      * Monitors list assigned to the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<WorkerMonitorList> getMonitorList() {
         return monitorList;
     }
 
     /**
-     * The time the resource was last synced, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
-     */
+     * The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSyncup")
     private final java.util.Date timeLastSyncup;
 
     /**
-     * The time the resource was last synced, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
+     * The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSyncup() {
         return timeLastSyncup;
     }
 
     /**
-     * The time the resource was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
-     */
+     * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the resource was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
+     * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the resource was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-13T22:47:12.613Z}
-     */
+     * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-13T22:47:12.613Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the resource was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-13T22:47:12.613Z}
+     * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-13T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -648,7 +658,6 @@ public final class WorkerSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

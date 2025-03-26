@@ -5,23 +5,22 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Decryption Profile used on the firewall policy rules. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Decryption Profile used on the firewall policy rules.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DecryptionProfileSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DecryptionProfileSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DecryptionProfileSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type", "parentResourceId"})
     public DecryptionProfileSummary(String name, InspectionType type, String parentResourceId) {
@@ -33,16 +32,17 @@ public final class DecryptionProfileSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the secret. */
+        /**
+         * Name of the secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the secret.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -50,37 +50,39 @@ public final class DecryptionProfileSummary
         }
         /**
          * Type of the secrets mapped based on the policy.
+         * <p>
+         * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
+         *   * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
          *
-         * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
-         * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private InspectionType type;
 
         /**
          * Type of the secrets mapped based on the policy.
-         *
-         * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
-         * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
+         * <p>
+         * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
+         *   * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(InspectionType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** OCID of the Network Firewall Policy this decryption profile belongs to. */
+        /**
+         * OCID of the Network Firewall Policy this decryption profile belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
         private String parentResourceId;
 
         /**
          * OCID of the Network Firewall Policy this decryption profile belongs to.
-         *
          * @param parentResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
@@ -114,7 +116,9 @@ public final class DecryptionProfileSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,49 +127,52 @@ public final class DecryptionProfileSummary
         return new Builder().copy(this);
     }
 
-    /** Name of the secret. */
+    /**
+     * Name of the secret.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the secret.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * Type of the secrets mapped based on the policy.
+     * <p>
+     * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
+     *   * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
      *
-     * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
-     * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final InspectionType type;
 
     /**
      * Type of the secrets mapped based on the policy.
-     *
-     * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
-     * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
+     * <p>
+     * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
+     *   * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
      *
      * @return the value
-     */
+     **/
     public InspectionType getType() {
         return type;
     }
 
-    /** OCID of the Network Firewall Policy this decryption profile belongs to. */
+    /**
+     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
     private final String parentResourceId;
 
     /**
      * OCID of the Network Firewall Policy this decryption profile belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getParentResourceId() {
         return parentResourceId;
     }
@@ -177,7 +184,6 @@ public final class DecryptionProfileSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Single Scheduling Window details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The Single Scheduling Window details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WindowPreferenceDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = WindowPreferenceDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class WindowPreferenceDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "months",
@@ -49,115 +49,105 @@ public final class WindowPreferenceDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Months during the year when scheduled window should be performed. */
+        /**
+         * Months during the year when scheduled window should be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("months")
         private java.util.List<Month> months;
 
         /**
          * Months during the year when scheduled window should be performed.
-         *
          * @param months the value to set
          * @return this builder
-         */
+         **/
         public Builder months(java.util.List<Month> months) {
             this.months = months;
             this.__explicitlySet__.add("months");
             return this;
         }
         /**
-         * Weeks during the month when scheduled window should be performed. Weeks start on the 1st,
-         * 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end
-         * based on calendar dates, not days of the week. For example, to allow scheduling window
-         * during the 2nd week of the month (from the 8th day to the 14th day of the month), use the
-         * value 2. Scheduling window cannot be scheduled for the fifth week of months that contain
-         * more than 28 days. Note that this parameter works in conjunction with the daysOfWeek and
-         * startTime parameters to allow you to specify specific days of the week and hours that
-         * scheduled window will be performed.
-         */
+         * Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week.
+         * For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days.
+         * Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weeksOfMonth")
         private java.util.List<Integer> weeksOfMonth;
 
         /**
-         * Weeks during the month when scheduled window should be performed. Weeks start on the 1st,
-         * 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end
-         * based on calendar dates, not days of the week. For example, to allow scheduling window
-         * during the 2nd week of the month (from the 8th day to the 14th day of the month), use the
-         * value 2. Scheduling window cannot be scheduled for the fifth week of months that contain
-         * more than 28 days. Note that this parameter works in conjunction with the daysOfWeek and
-         * startTime parameters to allow you to specify specific days of the week and hours that
-         * scheduled window will be performed.
+         * Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week.
+         * For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days.
+         * Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
          *
          * @param weeksOfMonth the value to set
          * @return this builder
-         */
+         **/
         public Builder weeksOfMonth(java.util.List<Integer> weeksOfMonth) {
             this.weeksOfMonth = weeksOfMonth;
             this.__explicitlySet__.add("weeksOfMonth");
             return this;
         }
-        /** Days during the week when scheduling window should be performed. */
+        /**
+         * Days during the week when scheduling window should be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysOfWeek")
         private java.util.List<DayOfWeek> daysOfWeek;
 
         /**
          * Days during the week when scheduling window should be performed.
-         *
          * @param daysOfWeek the value to set
          * @return this builder
-         */
+         **/
         public Builder daysOfWeek(java.util.List<DayOfWeek> daysOfWeek) {
             this.daysOfWeek = daysOfWeek;
             this.__explicitlySet__.add("daysOfWeek");
             return this;
         }
-        /** The scheduling window start time. The value must use the ISO-8601 format "hh:mm". */
+        /**
+         * The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private String startTime;
 
         /**
          * The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
-         *
          * @param startTime the value to set
          * @return this builder
-         */
+         **/
         public Builder startTime(String startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
         /**
-         * Duration window allows user to set a duration they plan to allocate for Scheduling
-         * window. The duration is in minutes.
-         */
+         * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private Integer duration;
 
         /**
-         * Duration window allows user to set a duration they plan to allocate for Scheduling
-         * window. The duration is in minutes.
+         * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
          *
          * @param duration the value to set
          * @return this builder
-         */
+         **/
         public Builder duration(Integer duration) {
             this.duration = duration;
             this.__explicitlySet__.add("duration");
             return this;
         }
         /**
-         * Indicates if duration the user plans to allocate for scheduling window is strictly
-         * enforced. The default value is {@code FALSE}.
-         */
+         * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedDuration")
         private Boolean isEnforcedDuration;
 
         /**
-         * Indicates if duration the user plans to allocate for scheduling window is strictly
-         * enforced. The default value is {@code FALSE}.
-         *
+         * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
          * @param isEnforcedDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnforcedDuration(Boolean isEnforcedDuration) {
             this.isEnforcedDuration = isEnforcedDuration;
             this.__explicitlySet__.add("isEnforcedDuration");
@@ -206,7 +196,9 @@ public final class WindowPreferenceDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -215,104 +207,94 @@ public final class WindowPreferenceDetail
         return new Builder().copy(this);
     }
 
-    /** Months during the year when scheduled window should be performed. */
+    /**
+     * Months during the year when scheduled window should be performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("months")
     private final java.util.List<Month> months;
 
     /**
      * Months during the year when scheduled window should be performed.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Month> getMonths() {
         return months;
     }
 
     /**
-     * Weeks during the month when scheduled window should be performed. Weeks start on the 1st,
-     * 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end
-     * based on calendar dates, not days of the week. For example, to allow scheduling window during
-     * the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2.
-     * Scheduling window cannot be scheduled for the fifth week of months that contain more than 28
-     * days. Note that this parameter works in conjunction with the daysOfWeek and startTime
-     * parameters to allow you to specify specific days of the week and hours that scheduled window
-     * will be performed.
-     */
+     * Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week.
+     * For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days.
+     * Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weeksOfMonth")
     private final java.util.List<Integer> weeksOfMonth;
 
     /**
-     * Weeks during the month when scheduled window should be performed. Weeks start on the 1st,
-     * 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end
-     * based on calendar dates, not days of the week. For example, to allow scheduling window during
-     * the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2.
-     * Scheduling window cannot be scheduled for the fifth week of months that contain more than 28
-     * days. Note that this parameter works in conjunction with the daysOfWeek and startTime
-     * parameters to allow you to specify specific days of the week and hours that scheduled window
-     * will be performed.
+     * Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week.
+     * For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days.
+     * Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Integer> getWeeksOfMonth() {
         return weeksOfMonth;
     }
 
-    /** Days during the week when scheduling window should be performed. */
+    /**
+     * Days during the week when scheduling window should be performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysOfWeek")
     private final java.util.List<DayOfWeek> daysOfWeek;
 
     /**
      * Days during the week when scheduling window should be performed.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DayOfWeek> getDaysOfWeek() {
         return daysOfWeek;
     }
 
-    /** The scheduling window start time. The value must use the ISO-8601 format "hh:mm". */
+    /**
+     * The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final String startTime;
 
     /**
      * The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
-     *
      * @return the value
-     */
+     **/
     public String getStartTime() {
         return startTime;
     }
 
     /**
-     * Duration window allows user to set a duration they plan to allocate for Scheduling window.
-     * The duration is in minutes.
-     */
+     * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final Integer duration;
 
     /**
-     * Duration window allows user to set a duration they plan to allocate for Scheduling window.
-     * The duration is in minutes.
+     * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      *
      * @return the value
-     */
+     **/
     public Integer getDuration() {
         return duration;
     }
 
     /**
-     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced.
-     * The default value is {@code FALSE}.
-     */
+     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedDuration")
     private final Boolean isEnforcedDuration;
 
     /**
-     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced.
-     * The default value is {@code FALSE}.
-     *
+     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
      * @return the value
-     */
+     **/
     public Boolean getIsEnforcedDuration() {
         return isEnforcedDuration;
     }
@@ -324,7 +306,6 @@ public final class WindowPreferenceDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

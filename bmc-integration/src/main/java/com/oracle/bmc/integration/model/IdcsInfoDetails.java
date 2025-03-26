@@ -5,22 +5,19 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Information for IDCS access <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+ * Information for IDCS access
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdcsInfoDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IdcsInfoDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IdcsInfoDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "idcsAppLocationUrl",
@@ -45,78 +42,85 @@ public final class IdcsInfoDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** URL for the location of the IDCS Application (used by IDCS APIs) */
+        /**
+         * URL for the location of the IDCS Application (used by IDCS APIs)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAppLocationUrl")
         private String idcsAppLocationUrl;
 
         /**
          * URL for the location of the IDCS Application (used by IDCS APIs)
-         *
          * @param idcsAppLocationUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAppLocationUrl(String idcsAppLocationUrl) {
             this.idcsAppLocationUrl = idcsAppLocationUrl;
             this.__explicitlySet__.add("idcsAppLocationUrl");
             return this;
         }
-        /** The IDCS application display name associated with the instance */
+        /**
+         * The IDCS application display name associated with the instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAppDisplayName")
         private String idcsAppDisplayName;
 
         /**
          * The IDCS application display name associated with the instance
-         *
          * @param idcsAppDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAppDisplayName(String idcsAppDisplayName) {
             this.idcsAppDisplayName = idcsAppDisplayName;
             this.__explicitlySet__.add("idcsAppDisplayName");
             return this;
         }
-        /** The IDCS application ID associated with the instance */
+        /**
+         * The IDCS application ID associated with the instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAppId")
         private String idcsAppId;
 
         /**
          * The IDCS application ID associated with the instance
-         *
          * @param idcsAppId the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAppId(String idcsAppId) {
             this.idcsAppId = idcsAppId;
             this.__explicitlySet__.add("idcsAppId");
             return this;
         }
-        /** The IDCS application name associated with the instance */
+        /**
+         * The IDCS application name associated with the instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAppName")
         private String idcsAppName;
 
         /**
          * The IDCS application name associated with the instance
-         *
          * @param idcsAppName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAppName(String idcsAppName) {
             this.idcsAppName = idcsAppName;
             this.__explicitlySet__.add("idcsAppName");
             return this;
         }
         /**
-         * The URL used as the primary audience for integration flows in this instance type: string
-         */
+         * The URL used as the primary audience for integration flows in this instance
+         * type: string
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instancePrimaryAudienceUrl")
         private String instancePrimaryAudienceUrl;
 
         /**
-         * The URL used as the primary audience for integration flows in this instance type: string
+         * The URL used as the primary audience for integration flows in this instance
+         * type: string
          *
          * @param instancePrimaryAudienceUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder instancePrimaryAudienceUrl(String instancePrimaryAudienceUrl) {
             this.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
             this.__explicitlySet__.add("instancePrimaryAudienceUrl");
@@ -161,7 +165,9 @@ public final class IdcsInfoDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -170,67 +176,76 @@ public final class IdcsInfoDetails
         return new Builder().copy(this);
     }
 
-    /** URL for the location of the IDCS Application (used by IDCS APIs) */
+    /**
+     * URL for the location of the IDCS Application (used by IDCS APIs)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAppLocationUrl")
     private final String idcsAppLocationUrl;
 
     /**
      * URL for the location of the IDCS Application (used by IDCS APIs)
-     *
      * @return the value
-     */
+     **/
     public String getIdcsAppLocationUrl() {
         return idcsAppLocationUrl;
     }
 
-    /** The IDCS application display name associated with the instance */
+    /**
+     * The IDCS application display name associated with the instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAppDisplayName")
     private final String idcsAppDisplayName;
 
     /**
      * The IDCS application display name associated with the instance
-     *
      * @return the value
-     */
+     **/
     public String getIdcsAppDisplayName() {
         return idcsAppDisplayName;
     }
 
-    /** The IDCS application ID associated with the instance */
+    /**
+     * The IDCS application ID associated with the instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAppId")
     private final String idcsAppId;
 
     /**
      * The IDCS application ID associated with the instance
-     *
      * @return the value
-     */
+     **/
     public String getIdcsAppId() {
         return idcsAppId;
     }
 
-    /** The IDCS application name associated with the instance */
+    /**
+     * The IDCS application name associated with the instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAppName")
     private final String idcsAppName;
 
     /**
      * The IDCS application name associated with the instance
-     *
      * @return the value
-     */
+     **/
     public String getIdcsAppName() {
         return idcsAppName;
     }
 
-    /** The URL used as the primary audience for integration flows in this instance type: string */
+    /**
+     * The URL used as the primary audience for integration flows in this instance
+     * type: string
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePrimaryAudienceUrl")
     private final String instancePrimaryAudienceUrl;
 
     /**
-     * The URL used as the primary audience for integration flows in this instance type: string
+     * The URL used as the primary audience for integration flows in this instance
+     * type: string
      *
      * @return the value
-     */
+     **/
     public String getInstancePrimaryAudienceUrl() {
         return instancePrimaryAudienceUrl;
     }
@@ -242,7 +257,6 @@ public final class IdcsInfoDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

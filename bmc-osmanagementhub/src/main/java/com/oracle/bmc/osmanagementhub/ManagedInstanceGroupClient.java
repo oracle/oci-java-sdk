@@ -4,40 +4,336 @@
  */
 package com.oracle.bmc.osmanagementhub;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.osmanagementhub.internal.http.*;
 import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements ManagedInstanceGroup {
-    /** Service instance for ManagedInstanceGroup. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
+    /**
+     * Service instance for ManagedInstanceGroup.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MANAGEDINSTANCEGROUP")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ManagedInstanceGroupClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final ManagedInstanceGroupWaiters waiters;
 
     private final ManagedInstanceGroupPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    ManagedInstanceGroupClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected ManagedInstanceGroupClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -59,11 +355,29 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         this.waiters = new ManagedInstanceGroupWaiters(executorService, this);
 
         this.paginators = new ManagedInstanceGroupPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -71,8 +385,8 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -81,8 +395,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "osmanagementhub";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -90,7 +402,6 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -101,1062 +412,1303 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public ManagedInstanceGroupClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new ManagedInstanceGroupClient(
-                    this, authenticationDetailsProvider, executorService);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public AttachManagedInstancesToManagedInstanceGroupResponse
             attachManagedInstancesToManagedInstanceGroup(
                     AttachManagedInstancesToManagedInstanceGroupRequest request) {
+        LOG.trace("Called attachManagedInstancesToManagedInstanceGroup");
+        final AttachManagedInstancesToManagedInstanceGroupRequest interceptedRequest =
+                AttachManagedInstancesToManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachManagedInstancesToManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getAttachManagedInstancesToManagedInstanceGroupDetails(),
-                "attachManagedInstancesToManagedInstanceGroupDetails is required");
-
-        return clientCall(request, AttachManagedInstancesToManagedInstanceGroupResponse::builder)
-                .logger(LOG, "attachManagedInstancesToManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "AttachManagedInstancesToManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachManagedInstancesToManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AttachManagedInstancesToManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("attachManagedInstances")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        AttachManagedInstancesToManagedInstanceGroupResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AttachManagedInstancesToManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachManagedInstancesToManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        AttachManagedInstancesToManagedInstanceGroupResponse>
+                transformer =
+                        AttachManagedInstancesToManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAttachManagedInstancesToManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public AttachSoftwareSourcesToManagedInstanceGroupResponse
             attachSoftwareSourcesToManagedInstanceGroup(
                     AttachSoftwareSourcesToManagedInstanceGroupRequest request) {
+        LOG.trace("Called attachSoftwareSourcesToManagedInstanceGroup");
+        final AttachSoftwareSourcesToManagedInstanceGroupRequest interceptedRequest =
+                AttachSoftwareSourcesToManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachSoftwareSourcesToManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getAttachSoftwareSourcesToManagedInstanceGroupDetails(),
-                "attachSoftwareSourcesToManagedInstanceGroupDetails is required");
-
-        return clientCall(request, AttachSoftwareSourcesToManagedInstanceGroupResponse::builder)
-                .logger(LOG, "attachSoftwareSourcesToManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "AttachSoftwareSourcesToManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachSoftwareSourcesToManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AttachSoftwareSourcesToManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("attachSoftwareSources")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        AttachSoftwareSourcesToManagedInstanceGroupResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AttachSoftwareSourcesToManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachSoftwareSourcesToManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        AttachSoftwareSourcesToManagedInstanceGroupResponse>
+                transformer =
+                        AttachSoftwareSourcesToManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAttachSoftwareSourcesToManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeManagedInstanceGroupCompartmentResponse changeManagedInstanceGroupCompartment(
             ChangeManagedInstanceGroupCompartmentRequest request) {
+        LOG.trace("Called changeManagedInstanceGroupCompartment");
+        final ChangeManagedInstanceGroupCompartmentRequest interceptedRequest =
+                ChangeManagedInstanceGroupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeManagedInstanceGroupCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeManagedInstanceGroupCompartmentDetails(),
-                "changeManagedInstanceGroupCompartmentDetails is required");
-
-        return clientCall(request, ChangeManagedInstanceGroupCompartmentResponse::builder)
-                .logger(LOG, "changeManagedInstanceGroupCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ChangeManagedInstanceGroupCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeManagedInstanceGroupCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeManagedInstanceGroupCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeManagedInstanceGroupCompartmentResponse>
+                transformer =
+                        ChangeManagedInstanceGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeManagedInstanceGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateManagedInstanceGroupResponse createManagedInstanceGroup(
             CreateManagedInstanceGroupRequest request) {
-        Objects.requireNonNull(
-                request.getCreateManagedInstanceGroupDetails(),
-                "createManagedInstanceGroupDetails is required");
+        LOG.trace("Called createManagedInstanceGroup");
+        final CreateManagedInstanceGroupRequest interceptedRequest =
+                CreateManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateManagedInstanceGroupResponse::builder)
-                .logger(LOG, "createManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "CreateManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/CreateManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup.class,
-                        CreateManagedInstanceGroupResponse.Builder::managedInstanceGroup)
-                .handleResponseHeaderString(
-                        "etag", CreateManagedInstanceGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/CreateManagedInstanceGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
+                transformer =
+                        CreateManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteManagedInstanceGroupResponse deleteManagedInstanceGroup(
             DeleteManagedInstanceGroupRequest request) {
+        LOG.trace("Called deleteManagedInstanceGroup");
+        final DeleteManagedInstanceGroupRequest interceptedRequest =
+                DeleteManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-
-        return clientCall(request, DeleteManagedInstanceGroupResponse::builder)
-                .logger(LOG, "deleteManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "DeleteManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DeleteManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DeleteManagedInstanceGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>
+                transformer =
+                        DeleteManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DetachManagedInstancesFromManagedInstanceGroupResponse
             detachManagedInstancesFromManagedInstanceGroup(
                     DetachManagedInstancesFromManagedInstanceGroupRequest request) {
+        LOG.trace("Called detachManagedInstancesFromManagedInstanceGroup");
+        final DetachManagedInstancesFromManagedInstanceGroupRequest interceptedRequest =
+                DetachManagedInstancesFromManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachManagedInstancesFromManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getDetachManagedInstancesFromManagedInstanceGroupDetails(),
-                "detachManagedInstancesFromManagedInstanceGroupDetails is required");
-
-        return clientCall(request, DetachManagedInstancesFromManagedInstanceGroupResponse::builder)
-                .logger(LOG, "detachManagedInstancesFromManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "DetachManagedInstancesFromManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachManagedInstancesFromManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DetachManagedInstancesFromManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("detachManagedInstances")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DetachManagedInstancesFromManagedInstanceGroupResponse.Builder
-                                ::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachManagedInstancesFromManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DetachManagedInstancesFromManagedInstanceGroupResponse>
+                transformer =
+                        DetachManagedInstancesFromManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDetachManagedInstancesFromManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DetachSoftwareSourcesFromManagedInstanceGroupResponse
             detachSoftwareSourcesFromManagedInstanceGroup(
                     DetachSoftwareSourcesFromManagedInstanceGroupRequest request) {
+        LOG.trace("Called detachSoftwareSourcesFromManagedInstanceGroup");
+        final DetachSoftwareSourcesFromManagedInstanceGroupRequest interceptedRequest =
+                DetachSoftwareSourcesFromManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachSoftwareSourcesFromManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getDetachSoftwareSourcesFromManagedInstanceGroupDetails(),
-                "detachSoftwareSourcesFromManagedInstanceGroupDetails is required");
-
-        return clientCall(request, DetachSoftwareSourcesFromManagedInstanceGroupResponse::builder)
-                .logger(LOG, "detachSoftwareSourcesFromManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "DetachSoftwareSourcesFromManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachSoftwareSourcesFromManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DetachSoftwareSourcesFromManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("detachSoftwareSources")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DetachSoftwareSourcesFromManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachSoftwareSourcesFromManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DetachSoftwareSourcesFromManagedInstanceGroupResponse>
+                transformer =
+                        DetachSoftwareSourcesFromManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDetachSoftwareSourcesFromManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DisableModuleStreamOnManagedInstanceGroupResponse
             disableModuleStreamOnManagedInstanceGroup(
                     DisableModuleStreamOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called disableModuleStreamOnManagedInstanceGroup");
+        final DisableModuleStreamOnManagedInstanceGroupRequest interceptedRequest =
+                DisableModuleStreamOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableModuleStreamOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getDisableModuleStreamOnManagedInstanceGroupDetails(),
-                "disableModuleStreamOnManagedInstanceGroupDetails is required");
-
-        return clientCall(request, DisableModuleStreamOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "disableModuleStreamOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "DisableModuleStreamOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DisableModuleStreamOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DisableModuleStreamOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("disableModuleStream")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DisableModuleStreamOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DisableModuleStreamOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DisableModuleStreamOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DisableModuleStreamOnManagedInstanceGroupResponse>
+                transformer =
+                        DisableModuleStreamOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDisableModuleStreamOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public EnableModuleStreamOnManagedInstanceGroupResponse
             enableModuleStreamOnManagedInstanceGroup(
                     EnableModuleStreamOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called enableModuleStreamOnManagedInstanceGroup");
+        final EnableModuleStreamOnManagedInstanceGroupRequest interceptedRequest =
+                EnableModuleStreamOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableModuleStreamOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getEnableModuleStreamOnManagedInstanceGroupDetails(),
-                "enableModuleStreamOnManagedInstanceGroupDetails is required");
-
-        return clientCall(request, EnableModuleStreamOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "enableModuleStreamOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "EnableModuleStreamOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/EnableModuleStreamOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EnableModuleStreamOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("enableModuleStream")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        EnableModuleStreamOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        EnableModuleStreamOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/EnableModuleStreamOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableModuleStreamOnManagedInstanceGroupResponse>
+                transformer =
+                        EnableModuleStreamOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableModuleStreamOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetManagedInstanceGroupResponse getManagedInstanceGroup(
             GetManagedInstanceGroupRequest request) {
+        LOG.trace("Called getManagedInstanceGroup");
+        final GetManagedInstanceGroupRequest interceptedRequest =
+                GetManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-
-        return clientCall(request, GetManagedInstanceGroupResponse::builder)
-                .logger(LOG, "getManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "GetManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/GetManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup.class,
-                        GetManagedInstanceGroupResponse.Builder::managedInstanceGroup)
-                .handleResponseHeaderString("etag", GetManagedInstanceGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/GetManagedInstanceGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetManagedInstanceGroupResponse>
+                transformer =
+                        GetManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public InstallModuleStreamProfileOnManagedInstanceGroupResponse
             installModuleStreamProfileOnManagedInstanceGroup(
                     InstallModuleStreamProfileOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called installModuleStreamProfileOnManagedInstanceGroup");
+        final InstallModuleStreamProfileOnManagedInstanceGroupRequest interceptedRequest =
+                InstallModuleStreamProfileOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallModuleStreamProfileOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getInstallModuleStreamProfileOnManagedInstanceGroupDetails(),
-                "installModuleStreamProfileOnManagedInstanceGroupDetails is required");
-
-        return clientCall(
-                        request, InstallModuleStreamProfileOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "installModuleStreamProfileOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "InstallModuleStreamProfileOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallModuleStreamProfileOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(InstallModuleStreamProfileOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("installStreamProfile")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        InstallModuleStreamProfileOnManagedInstanceGroupResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        InstallModuleStreamProfileOnManagedInstanceGroupResponse.Builder
-                                ::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallModuleStreamProfileOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        InstallModuleStreamProfileOnManagedInstanceGroupResponse>
+                transformer =
+                        InstallModuleStreamProfileOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getInstallModuleStreamProfileOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public InstallPackagesOnManagedInstanceGroupResponse installPackagesOnManagedInstanceGroup(
             InstallPackagesOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called installPackagesOnManagedInstanceGroup");
+        final InstallPackagesOnManagedInstanceGroupRequest interceptedRequest =
+                InstallPackagesOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallPackagesOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getInstallPackagesOnManagedInstanceGroupDetails(),
-                "installPackagesOnManagedInstanceGroupDetails is required");
-
-        return clientCall(request, InstallPackagesOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "installPackagesOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "InstallPackagesOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallPackagesOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(InstallPackagesOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("installPackages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        InstallPackagesOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        InstallPackagesOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallPackagesOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, InstallPackagesOnManagedInstanceGroupResponse>
+                transformer =
+                        InstallPackagesOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getInstallPackagesOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public InstallWindowsUpdatesOnManagedInstanceGroupResponse
             installWindowsUpdatesOnManagedInstanceGroup(
                     InstallWindowsUpdatesOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called installWindowsUpdatesOnManagedInstanceGroup");
+        final InstallWindowsUpdatesOnManagedInstanceGroupRequest interceptedRequest =
+                InstallWindowsUpdatesOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallWindowsUpdatesOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getInstallWindowsUpdatesOnManagedInstanceGroupDetails(),
-                "installWindowsUpdatesOnManagedInstanceGroupDetails is required");
-
-        return clientCall(request, InstallWindowsUpdatesOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "installWindowsUpdatesOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "InstallWindowsUpdatesOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallWindowsUpdatesOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(InstallWindowsUpdatesOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("installWindowsUpdates")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        InstallWindowsUpdatesOnManagedInstanceGroupResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        InstallWindowsUpdatesOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallWindowsUpdatesOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        InstallWindowsUpdatesOnManagedInstanceGroupResponse>
+                transformer =
+                        InstallWindowsUpdatesOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getInstallWindowsUpdatesOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListManagedInstanceGroupAvailableModulesResponse
             listManagedInstanceGroupAvailableModules(
                     ListManagedInstanceGroupAvailableModulesRequest request) {
+        LOG.trace("Called listManagedInstanceGroupAvailableModules");
+        final ListManagedInstanceGroupAvailableModulesRequest interceptedRequest =
+                ListManagedInstanceGroupAvailableModulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceGroupAvailableModulesConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-
-        return clientCall(request, ListManagedInstanceGroupAvailableModulesResponse::builder)
-                .logger(LOG, "listManagedInstanceGroupAvailableModules")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupAvailableModules",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableModules")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedInstanceGroupAvailableModulesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("availableModules")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model
-                                .ManagedInstanceGroupAvailableModuleCollection.class,
-                        ListManagedInstanceGroupAvailableModulesResponse.Builder
-                                ::managedInstanceGroupAvailableModuleCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagedInstanceGroupAvailableModulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagedInstanceGroupAvailableModulesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableModules");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagedInstanceGroupAvailableModulesResponse>
+                transformer =
+                        ListManagedInstanceGroupAvailableModulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListManagedInstanceGroupAvailablePackagesResponse
             listManagedInstanceGroupAvailablePackages(
                     ListManagedInstanceGroupAvailablePackagesRequest request) {
+        LOG.trace("Called listManagedInstanceGroupAvailablePackages");
+        final ListManagedInstanceGroupAvailablePackagesRequest interceptedRequest =
+                ListManagedInstanceGroupAvailablePackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceGroupAvailablePackagesConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-
-        return clientCall(request, ListManagedInstanceGroupAvailablePackagesResponse::builder)
-                .logger(LOG, "listManagedInstanceGroupAvailablePackages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupAvailablePackages",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailablePackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedInstanceGroupAvailablePackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("availablePackages")
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("isLatest", request.getIsLatest())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model
-                                .ManagedInstanceGroupAvailablePackageCollection.class,
-                        ListManagedInstanceGroupAvailablePackagesResponse.Builder
-                                ::managedInstanceGroupAvailablePackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagedInstanceGroupAvailablePackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagedInstanceGroupAvailablePackagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailablePackages");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedInstanceGroupAvailablePackagesResponse>
+                transformer =
+                        ListManagedInstanceGroupAvailablePackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListManagedInstanceGroupAvailableSoftwareSourcesResponse
             listManagedInstanceGroupAvailableSoftwareSources(
                     ListManagedInstanceGroupAvailableSoftwareSourcesRequest request) {
+        LOG.trace("Called listManagedInstanceGroupAvailableSoftwareSources");
+        final ListManagedInstanceGroupAvailableSoftwareSourcesRequest interceptedRequest =
+                ListManagedInstanceGroupAvailableSoftwareSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceGroupAvailableSoftwareSourcesConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-
-        return clientCall(
-                        request, ListManagedInstanceGroupAvailableSoftwareSourcesResponse::builder)
-                .logger(LOG, "listManagedInstanceGroupAvailableSoftwareSources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupAvailableSoftwareSources",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableSoftwareSources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedInstanceGroupAvailableSoftwareSourcesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("availableSoftwareSources")
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.AvailableSoftwareSourceCollection
-                                .class,
-                        ListManagedInstanceGroupAvailableSoftwareSourcesResponse.Builder
-                                ::availableSoftwareSourceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagedInstanceGroupAvailableSoftwareSourcesResponse.Builder
-                                ::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagedInstanceGroupAvailableSoftwareSourcesResponse.Builder
-                                ::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableSoftwareSources");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedInstanceGroupAvailableSoftwareSourcesResponse>
+                transformer =
+                        ListManagedInstanceGroupAvailableSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListManagedInstanceGroupInstalledPackagesResponse
             listManagedInstanceGroupInstalledPackages(
                     ListManagedInstanceGroupInstalledPackagesRequest request) {
+        LOG.trace("Called listManagedInstanceGroupInstalledPackages");
+        final ListManagedInstanceGroupInstalledPackagesRequest interceptedRequest =
+                ListManagedInstanceGroupInstalledPackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceGroupInstalledPackagesConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-
-        return clientCall(request, ListManagedInstanceGroupInstalledPackagesResponse::builder)
-                .logger(LOG, "listManagedInstanceGroupInstalledPackages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupInstalledPackages",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupInstalledPackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedInstanceGroupInstalledPackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("installedPackages")
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("timeInstallDateStart", request.getTimeInstallDateStart())
-                .appendQueryParam("timeInstallDateEnd", request.getTimeInstallDateEnd())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model
-                                .ManagedInstanceGroupInstalledPackageCollection.class,
-                        ListManagedInstanceGroupInstalledPackagesResponse.Builder
-                                ::managedInstanceGroupInstalledPackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagedInstanceGroupInstalledPackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagedInstanceGroupInstalledPackagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupInstalledPackages");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedInstanceGroupInstalledPackagesResponse>
+                transformer =
+                        ListManagedInstanceGroupInstalledPackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListManagedInstanceGroupModulesResponse listManagedInstanceGroupModules(
             ListManagedInstanceGroupModulesRequest request) {
+        LOG.trace("Called listManagedInstanceGroupModules");
+        final ListManagedInstanceGroupModulesRequest interceptedRequest =
+                ListManagedInstanceGroupModulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceGroupModulesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-
-        return clientCall(request, ListManagedInstanceGroupModulesResponse::builder)
-                .logger(LOG, "listManagedInstanceGroupModules")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupModules",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupModules")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedInstanceGroupModulesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("modules")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendQueryParam("streamName", request.getStreamName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupModuleCollection
-                                .class,
-                        ListManagedInstanceGroupModulesResponse.Builder
-                                ::managedInstanceGroupModuleCollection)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ListManagedInstanceGroupModulesResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagedInstanceGroupModulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagedInstanceGroupModulesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupModules");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagedInstanceGroupModulesResponse>
+                transformer =
+                        ListManagedInstanceGroupModulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListManagedInstanceGroupsResponse listManagedInstanceGroups(
             ListManagedInstanceGroupsRequest request) {
+        LOG.trace("Called listManagedInstanceGroups");
+        final ListManagedInstanceGroupsRequest interceptedRequest =
+                ListManagedInstanceGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceGroupsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListManagedInstanceGroupsResponse::builder)
-                .logger(LOG, "listManagedInstanceGroups")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroups",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroups")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedInstanceGroupsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("managedInstanceGroupId", request.getManagedInstanceGroupId())
-                .appendQueryParam("softwareSourceId", request.getSoftwareSourceId())
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendEnumQueryParam("archType", request.getArchType())
-                .appendEnumQueryParam("osFamily", request.getOsFamily())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendListQueryParam(
-                        "location",
-                        request.getLocation(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "locationNotEqualTo",
-                        request.getLocationNotEqualTo(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam(
-                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroupCollection.class,
-                        ListManagedInstanceGroupsResponse.Builder::managedInstanceGroupCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListManagedInstanceGroupsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListManagedInstanceGroupsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>
+                transformer =
+                        ListManagedInstanceGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ManageModuleStreamsOnManagedInstanceGroupResponse
             manageModuleStreamsOnManagedInstanceGroup(
                     ManageModuleStreamsOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called manageModuleStreamsOnManagedInstanceGroup");
+        final ManageModuleStreamsOnManagedInstanceGroupRequest interceptedRequest =
+                ManageModuleStreamsOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ManageModuleStreamsOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getManageModuleStreamsOnManagedInstanceGroupDetails(),
-                "manageModuleStreamsOnManagedInstanceGroupDetails is required");
-
-        return clientCall(request, ManageModuleStreamsOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "manageModuleStreamsOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "ManageModuleStreamsOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ManageModuleStreamsOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ManageModuleStreamsOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("manageModuleStreams")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ManageModuleStreamsOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ManageModuleStreamsOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ManageModuleStreamsOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ManageModuleStreamsOnManagedInstanceGroupResponse>
+                transformer =
+                        ManageModuleStreamsOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getManageModuleStreamsOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RebootManagedInstanceGroupResponse rebootManagedInstanceGroup(
             RebootManagedInstanceGroupRequest request) {
+        LOG.trace("Called rebootManagedInstanceGroup");
+        final RebootManagedInstanceGroupRequest interceptedRequest =
+                RebootManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RebootManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getRebootManagedInstanceGroupDetails(),
-                "rebootManagedInstanceGroupDetails is required");
-
-        return clientCall(request, RebootManagedInstanceGroupResponse::builder)
-                .logger(LOG, "rebootManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "RebootManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RebootManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RebootManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("reboot")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RebootManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RebootManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RebootManagedInstanceGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, RebootManagedInstanceGroupResponse>
+                transformer =
+                        RebootManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRebootManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemoveModuleStreamProfileFromManagedInstanceGroupResponse
             removeModuleStreamProfileFromManagedInstanceGroup(
                     RemoveModuleStreamProfileFromManagedInstanceGroupRequest request) {
+        LOG.trace("Called removeModuleStreamProfileFromManagedInstanceGroup");
+        final RemoveModuleStreamProfileFromManagedInstanceGroupRequest interceptedRequest =
+                RemoveModuleStreamProfileFromManagedInstanceGroupConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveModuleStreamProfileFromManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getRemoveModuleStreamProfileFromManagedInstanceGroupDetails(),
-                "removeModuleStreamProfileFromManagedInstanceGroupDetails is required");
-
-        return clientCall(
-                        request, RemoveModuleStreamProfileFromManagedInstanceGroupResponse::builder)
-                .logger(LOG, "removeModuleStreamProfileFromManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "RemoveModuleStreamProfileFromManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemoveModuleStreamProfileFromManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveModuleStreamProfileFromManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("removeStreamProfile")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RemoveModuleStreamProfileFromManagedInstanceGroupResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemoveModuleStreamProfileFromManagedInstanceGroupResponse.Builder
-                                ::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemoveModuleStreamProfileFromManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        RemoveModuleStreamProfileFromManagedInstanceGroupResponse>
+                transformer =
+                        RemoveModuleStreamProfileFromManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemoveModuleStreamProfileFromManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemovePackagesFromManagedInstanceGroupResponse removePackagesFromManagedInstanceGroup(
             RemovePackagesFromManagedInstanceGroupRequest request) {
+        LOG.trace("Called removePackagesFromManagedInstanceGroup");
+        final RemovePackagesFromManagedInstanceGroupRequest interceptedRequest =
+                RemovePackagesFromManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemovePackagesFromManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getRemovePackagesFromManagedInstanceGroupDetails(),
-                "removePackagesFromManagedInstanceGroupDetails is required");
-
-        return clientCall(request, RemovePackagesFromManagedInstanceGroupResponse::builder)
-                .logger(LOG, "removePackagesFromManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "RemovePackagesFromManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemovePackagesFromManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemovePackagesFromManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("removePackages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RemovePackagesFromManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemovePackagesFromManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemovePackagesFromManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemovePackagesFromManagedInstanceGroupResponse>
+                transformer =
+                        RemovePackagesFromManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemovePackagesFromManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SwitchModuleStreamOnManagedInstanceGroupResponse
             switchModuleStreamOnManagedInstanceGroup(
                     SwitchModuleStreamOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called switchModuleStreamOnManagedInstanceGroup");
+        final SwitchModuleStreamOnManagedInstanceGroupRequest interceptedRequest =
+                SwitchModuleStreamOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchModuleStreamOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getSwitchModuleStreamOnManagedInstanceGroupDetails(),
-                "switchModuleStreamOnManagedInstanceGroupDetails is required");
-
-        return clientCall(request, SwitchModuleStreamOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "switchModuleStreamOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "SwitchModuleStreamOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/SwitchModuleStreamOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SwitchModuleStreamOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("moduleStreams")
-                .appendPathParam("switchModuleStream")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        SwitchModuleStreamOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SwitchModuleStreamOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/SwitchModuleStreamOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SwitchModuleStreamOnManagedInstanceGroupResponse>
+                transformer =
+                        SwitchModuleStreamOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSwitchModuleStreamOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateAllPackagesOnManagedInstanceGroupResponse updateAllPackagesOnManagedInstanceGroup(
             UpdateAllPackagesOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called updateAllPackagesOnManagedInstanceGroup");
+        final UpdateAllPackagesOnManagedInstanceGroupRequest interceptedRequest =
+                UpdateAllPackagesOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAllPackagesOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateAllPackagesOnManagedInstanceGroupDetails(),
-                "updateAllPackagesOnManagedInstanceGroupDetails is required");
-
-        return clientCall(request, UpdateAllPackagesOnManagedInstanceGroupResponse::builder)
-                .logger(LOG, "updateAllPackagesOnManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "UpdateAllPackagesOnManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateAllPackagesOnManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpdateAllPackagesOnManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("updateAllPackages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateAllPackagesOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateAllPackagesOnManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateAllPackagesOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAllPackagesOnManagedInstanceGroupResponse>
+                transformer =
+                        UpdateAllPackagesOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateAllPackagesOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateManagedInstanceGroupResponse updateManagedInstanceGroup(
             UpdateManagedInstanceGroupRequest request) {
+        LOG.trace("Called updateManagedInstanceGroup");
+        final UpdateManagedInstanceGroupRequest interceptedRequest =
+                UpdateManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateManagedInstanceGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateManagedInstanceGroupDetails(),
-                "updateManagedInstanceGroupDetails is required");
-
-        return clientCall(request, UpdateManagedInstanceGroupResponse::builder)
-                .logger(LOG, "updateManagedInstanceGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "ManagedInstanceGroup",
                         "UpdateManagedInstanceGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateManagedInstanceGroup")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateManagedInstanceGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceGroups")
-                .appendPathParam(request.getManagedInstanceGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ManagedInstanceGroup.class,
-                        UpdateManagedInstanceGroupResponse.Builder::managedInstanceGroup)
-                .handleResponseHeaderString(
-                        "etag", UpdateManagedInstanceGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateManagedInstanceGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateManagedInstanceGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateManagedInstanceGroupResponse>
+                transformer =
+                        UpdateManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -1167,209 +1719,5 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
     @Override
     public ManagedInstanceGroupPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public ManagedInstanceGroupClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

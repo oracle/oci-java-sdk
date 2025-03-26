@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of removing Virtual Machines from the Exadata VM cluster on Exascale Infrastructure.
- * Applies to Exadata Database Service on Exascale Infrastructure only. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of removing Virtual Machines from the Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RemoveVirtualMachineFromExadbVmClusterDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RemoveVirtualMachineFromExadbVmClusterDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RemoveVirtualMachineFromExadbVmClusterDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dbNodes"})
     public RemoveVirtualMachineFromExadbVmClusterDetails(java.util.List<DbNodeDetails> dbNodes) {
@@ -33,19 +32,16 @@ public final class RemoveVirtualMachineFromExadbVmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be
-         * removed.
-         */
+         * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be removed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodes")
         private java.util.List<DbNodeDetails> dbNodes;
 
         /**
-         * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be
-         * removed.
-         *
+         * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be removed.
          * @param dbNodes the value to set
          * @return this builder
-         */
+         **/
         public Builder dbNodes(java.util.List<DbNodeDetails> dbNodes) {
             this.dbNodes = dbNodes;
             this.__explicitlySet__.add("dbNodes");
@@ -73,7 +69,9 @@ public final class RemoveVirtualMachineFromExadbVmClusterDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -83,18 +81,15 @@ public final class RemoveVirtualMachineFromExadbVmClusterDetails
     }
 
     /**
-     * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be
-     * removed.
-     */
+     * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be removed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodes")
     private final java.util.List<DbNodeDetails> dbNodes;
 
     /**
-     * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be
-     * removed.
-     *
+     * The list of ExaCS DB nodes for the Exadata VM cluster on Exascale Infrastructure to be removed.
      * @return the value
-     */
+     **/
     public java.util.List<DbNodeDetails> getDbNodes() {
         return dbNodes;
     }
@@ -106,7 +101,6 @@ public final class RemoveVirtualMachineFromExadbVmClusterDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

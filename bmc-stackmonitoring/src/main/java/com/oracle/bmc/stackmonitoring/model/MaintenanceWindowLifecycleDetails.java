@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Lifecycle details of Maintenance Windows */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MaintenanceWindowLifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle details of Maintenance Windows
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MaintenanceWindowLifecycleDetails {
     InProgress("IN_PROGRESS"),
     Scheduled("SCHEDULED"),
     Completed("COMPLETED"),

@@ -6,42 +6,42 @@ package com.oracle.bmc.licensemanager.requests;
 
 import com.oracle.bmc.licensemanager.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProductLicensesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProductLicensesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * used for the license record, product license, and configuration.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+     *
      */
     private String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * used for the license record, product license, and configuration.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
@@ -49,28 +49,38 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Indicates if the given compartment is the root compartment. */
+    /**
+     * Indicates if the given compartment is the root compartment.
+     */
     private Boolean isCompartmentIdInSubtree;
 
-    /** Indicates if the given compartment is the root compartment. */
+    /**
+     * Indicates if the given compartment is the root compartment.
+     */
     public Boolean getIsCompartmentIdInSubtree() {
         return isCompartmentIdInSubtree;
     }
-    /** The sort order to use, whether {@code ASC} or {@code DESC}. */
+    /**
+     * The sort order to use, whether {@code ASC} or {@code DESC}.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, whether {@code ASC} or {@code DESC}. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, whether {@code ASC} or {@code DESC}.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -103,27 +113,31 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
-    /** The sort order to use, whether {@code ASC} or {@code DESC}. */
+    /**
+     * The sort order to use, whether {@code ASC} or {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
      * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code totalLicenseUnitsConsumed}
+     * <p>
+     * **totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
      *
-     * <p>Default: {@code totalLicenseUnitsConsumed}
-     *
-     * <p>**totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
      */
     private SortBy sortBy;
 
     /**
      * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code totalLicenseUnitsConsumed}
+     * <p>
+     * **totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
      *
-     * <p>Default: {@code totalLicenseUnitsConsumed}
-     *
-     * <p>**totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         TotalLicenseUnitsConsumed("totalLicenseUnitsConsumed"),
         ;
 
@@ -157,10 +171,11 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code totalLicenseUnitsConsumed}
+     * <p>
+     * **totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
      *
-     * <p>Default: {@code totalLicenseUnitsConsumed}
-     *
-     * <p>**totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -169,20 +184,18 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListProductLicensesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
-         * the license record, product license, and configuration.
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for
-         * the license record, product license, and configuration.
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -192,12 +205,13 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -207,15 +221,12 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -225,14 +236,15 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -242,12 +254,13 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Indicates if the given compartment is the root compartment. */
+        /**
+         * Indicates if the given compartment is the root compartment.
+         */
         private Boolean isCompartmentIdInSubtree = null;
 
         /**
          * Indicates if the given compartment is the root compartment.
-         *
          * @param isCompartmentIdInSubtree the value to set
          * @return this builder instance
          */
@@ -256,12 +269,13 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, whether {@code ASC} or {@code DESC}. */
+        /**
+         * The sort order to use, whether {@code ASC} or {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether {@code ASC} or {@code DESC}.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -272,19 +286,20 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Specifies the attribute with which to sort the rules.
+         * <p>
+         * Default: {@code totalLicenseUnitsConsumed}
+         * <p>
+         * **totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
          *
-         * <p>Default: {@code totalLicenseUnitsConsumed}
-         *
-         * <p>**totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
          */
         private SortBy sortBy = null;
 
         /**
          * Specifies the attribute with which to sort the rules.
-         *
-         * <p>Default: {@code totalLicenseUnitsConsumed}
-         *
-         * <p>**totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
+         * <p>
+         * Default: {@code totalLicenseUnitsConsumed}
+         * <p>
+         * **totalLicenseUnitsConsumed:** Sorts by totalLicenseUnitsConsumed of ProductLicense.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -296,19 +311,18 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -320,7 +334,6 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListProductLicensesRequest o) {
@@ -339,11 +352,10 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListProductLicensesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListProductLicensesRequest
          */
@@ -357,8 +369,7 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListProductLicensesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListProductLicensesRequest
@@ -373,14 +384,12 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListProductLicensesRequest(compartmentId, limit, page, opcRequestId,
-            // isCompartmentIdInSubtree, sortOrder, sortBy);
+            // new ListProductLicensesRequest(compartmentId, limit, page, opcRequestId, isCompartmentIdInSubtree, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -396,7 +405,6 @@ public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

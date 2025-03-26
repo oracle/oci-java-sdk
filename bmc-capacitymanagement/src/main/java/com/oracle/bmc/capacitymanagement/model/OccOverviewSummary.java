@@ -5,24 +5,22 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * The overview summary is used to represent an array item that shall be used to represent the
- * overview of the catalog resources along with their corresponding capacity requests. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * The overview summary is used to represent an array item that shall be used to represent the overview of the catalog resources along with their corresponding capacity requests.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OccOverviewSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OccOverviewSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OccOverviewSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OccOverviewSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -69,182 +67,160 @@ public final class OccOverviewSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the compartment from which the api call is made. This will be used for
-         * authorizing the request.
-         */
+         * The OCID of the compartment from which the api call is made. This will be used for authorizing the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment from which the api call is made. This will be used for
-         * authorizing the request.
-         *
+         * The OCID of the compartment from which the api call is made. This will be used for authorizing the request.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of the month along with year for which this summary corresponds to. */
+        /**
+         * The name of the month along with year for which this summary corresponds to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("periodValue")
         private String periodValue;
 
         /**
          * The name of the month along with year for which this summary corresponds to.
-         *
          * @param periodValue the value to set
          * @return this builder
-         */
+         **/
         public Builder periodValue(String periodValue) {
             this.periodValue = periodValue;
             this.__explicitlySet__.add("periodValue");
             return this;
         }
-        /** The name of the resource for which we have aggregated the value. */
+        /**
+         * The name of the resource for which we have aggregated the value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The name of the resource for which we have aggregated the value.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
         /**
-         * The quantity of the resource which is available at the end of the period of
-         * aggregationDetails model in consideration.
-         */
+         * The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalAvailable")
         private Long totalAvailable;
 
         /**
-         * The quantity of the resource which is available at the end of the period of
-         * aggregationDetails model in consideration.
-         *
+         * The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
          * @param totalAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder totalAvailable(Long totalAvailable) {
             this.totalAvailable = totalAvailable;
             this.__explicitlySet__.add("totalAvailable");
             return this;
         }
         /**
-         * The quantity of the resource which is demanded by customers via capacity requests against
-         * the resource name at the end of the time period in consideration for overview.
-         */
+         * The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalDemanded")
         private Long totalDemanded;
 
         /**
-         * The quantity of the resource which is demanded by customers via capacity requests against
-         * the resource name at the end of the time period in consideration for overview.
-         *
+         * The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
          * @param totalDemanded the value to set
          * @return this builder
-         */
+         **/
         public Builder totalDemanded(Long totalDemanded) {
             this.totalDemanded = totalDemanded;
             this.__explicitlySet__.add("totalDemanded");
             return this;
         }
         /**
-         * The quantity of the resource which is supplied by Oracle to the customer against the
-         * resource name at the end of the time period in consideration.
-         */
+         * The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSupplied")
         private Long totalSupplied;
 
         /**
-         * The quantity of the resource which is supplied by Oracle to the customer against the
-         * resource name at the end of the time period in consideration.
-         *
+         * The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
          * @param totalSupplied the value to set
          * @return this builder
-         */
+         **/
         public Builder totalSupplied(Long totalSupplied) {
             this.totalSupplied = totalSupplied;
             this.__explicitlySet__.add("totalSupplied");
             return this;
         }
-        /** The quantity of the resource which is rejected by Oracle. */
+        /**
+         * The quantity of the resource which is rejected by Oracle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalRejected")
         private Long totalRejected;
 
         /**
          * The quantity of the resource which is rejected by Oracle.
-         *
          * @param totalRejected the value to set
          * @return this builder
-         */
+         **/
         public Builder totalRejected(Long totalRejected) {
             this.totalRejected = totalRejected;
             this.__explicitlySet__.add("totalRejected");
             return this;
         }
         /**
-         * The quantity of the resource which is cancelled by the customer. Once the capacity
-         * request was submitted, the customer can still cancel it. This field sums up those values.
-         */
+         * The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCancelled")
         private Long totalCancelled;
 
         /**
-         * The quantity of the resource which is cancelled by the customer. Once the capacity
-         * request was submitted, the customer can still cancel it. This field sums up those values.
-         *
+         * The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
          * @param totalCancelled the value to set
          * @return this builder
-         */
+         **/
         public Builder totalCancelled(Long totalCancelled) {
             this.totalCancelled = totalCancelled;
             this.__explicitlySet__.add("totalCancelled");
             return this;
         }
         /**
-         * The quantity of the resource which Oracle was unable to supply. For a given capacity
-         * request, Oracle sometimes cannot supply the entire value demanded by the customer. In
-         * such cases a partial value is provided, thereby leaving behind a portion of unfulfilled
-         * values. This field sums that up.
-         */
+         * The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalUnfulfilled")
         private Long totalUnfulfilled;
 
         /**
-         * The quantity of the resource which Oracle was unable to supply. For a given capacity
-         * request, Oracle sometimes cannot supply the entire value demanded by the customer. In
-         * such cases a partial value is provided, thereby leaving behind a portion of unfulfilled
-         * values. This field sums that up.
-         *
+         * The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
          * @param totalUnfulfilled the value to set
          * @return this builder
-         */
+         **/
         public Builder totalUnfulfilled(Long totalUnfulfilled) {
             this.totalUnfulfilled = totalUnfulfilled;
             this.__explicitlySet__.add("totalUnfulfilled");
             return this;
         }
         /**
-         * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied,
-         * totalRejected, totalCancelled and totalUnfulfilled by workload types
-         */
+         * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadTypeBreakdownBlob")
         private String workloadTypeBreakdownBlob;
 
         /**
-         * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied,
-         * totalRejected, totalCancelled and totalUnfulfilled by workload types
-         *
+         * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
          * @param workloadTypeBreakdownBlob the value to set
          * @return this builder
-         */
+         **/
         public Builder workloadTypeBreakdownBlob(String workloadTypeBreakdownBlob) {
             this.workloadTypeBreakdownBlob = workloadTypeBreakdownBlob;
             this.__explicitlySet__.add("workloadTypeBreakdownBlob");
@@ -252,35 +228,31 @@ public final class OccOverviewSummary
         }
         /**
          * A raw json blob containing all the capacity requests corresponding to the resource name
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityRequestsBlob")
         private String capacityRequestsBlob;
 
         /**
          * A raw json blob containing all the capacity requests corresponding to the resource name
-         *
          * @param capacityRequestsBlob the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityRequestsBlob(String capacityRequestsBlob) {
             this.capacityRequestsBlob = capacityRequestsBlob;
             this.__explicitlySet__.add("capacityRequestsBlob");
             return this;
         }
         /**
-         * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is
-         * measured.
-         */
+         * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
-         * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is
-         * measured.
-         *
+         * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -353,7 +325,9 @@ public final class OccOverviewSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -363,193 +337,169 @@ public final class OccOverviewSummary
     }
 
     /**
-     * The OCID of the compartment from which the api call is made. This will be used for
-     * authorizing the request.
-     */
+     * The OCID of the compartment from which the api call is made. This will be used for authorizing the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment from which the api call is made. This will be used for
-     * authorizing the request.
-     *
+     * The OCID of the compartment from which the api call is made. This will be used for authorizing the request.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of the month along with year for which this summary corresponds to. */
+    /**
+     * The name of the month along with year for which this summary corresponds to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("periodValue")
     private final String periodValue;
 
     /**
      * The name of the month along with year for which this summary corresponds to.
-     *
      * @return the value
-     */
+     **/
     public String getPeriodValue() {
         return periodValue;
     }
 
-    /** The name of the resource for which we have aggregated the value. */
+    /**
+     * The name of the resource for which we have aggregated the value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The name of the resource for which we have aggregated the value.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
     /**
-     * The quantity of the resource which is available at the end of the period of
-     * aggregationDetails model in consideration.
-     */
+     * The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalAvailable")
     private final Long totalAvailable;
 
     /**
-     * The quantity of the resource which is available at the end of the period of
-     * aggregationDetails model in consideration.
-     *
+     * The quantity of the resource which is available at the end of the period of aggregationDetails model in consideration.
      * @return the value
-     */
+     **/
     public Long getTotalAvailable() {
         return totalAvailable;
     }
 
     /**
-     * The quantity of the resource which is demanded by customers via capacity requests against the
-     * resource name at the end of the time period in consideration for overview.
-     */
+     * The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDemanded")
     private final Long totalDemanded;
 
     /**
-     * The quantity of the resource which is demanded by customers via capacity requests against the
-     * resource name at the end of the time period in consideration for overview.
-     *
+     * The quantity of the resource which is demanded by customers via capacity requests against the resource name at the end of the time period in consideration for overview.
      * @return the value
-     */
+     **/
     public Long getTotalDemanded() {
         return totalDemanded;
     }
 
     /**
-     * The quantity of the resource which is supplied by Oracle to the customer against the resource
-     * name at the end of the time period in consideration.
-     */
+     * The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSupplied")
     private final Long totalSupplied;
 
     /**
-     * The quantity of the resource which is supplied by Oracle to the customer against the resource
-     * name at the end of the time period in consideration.
-     *
+     * The quantity of the resource which is supplied by Oracle to the customer against the resource name at the end of the time period in consideration.
      * @return the value
-     */
+     **/
     public Long getTotalSupplied() {
         return totalSupplied;
     }
 
-    /** The quantity of the resource which is rejected by Oracle. */
+    /**
+     * The quantity of the resource which is rejected by Oracle.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalRejected")
     private final Long totalRejected;
 
     /**
      * The quantity of the resource which is rejected by Oracle.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalRejected() {
         return totalRejected;
     }
 
     /**
-     * The quantity of the resource which is cancelled by the customer. Once the capacity request
-     * was submitted, the customer can still cancel it. This field sums up those values.
-     */
+     * The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCancelled")
     private final Long totalCancelled;
 
     /**
-     * The quantity of the resource which is cancelled by the customer. Once the capacity request
-     * was submitted, the customer can still cancel it. This field sums up those values.
-     *
+     * The quantity of the resource which is cancelled by the customer. Once the capacity request was submitted, the customer can still cancel it. This field sums up those values.
      * @return the value
-     */
+     **/
     public Long getTotalCancelled() {
         return totalCancelled;
     }
 
     /**
-     * The quantity of the resource which Oracle was unable to supply. For a given capacity request,
-     * Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a
-     * partial value is provided, thereby leaving behind a portion of unfulfilled values. This field
-     * sums that up.
-     */
+     * The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalUnfulfilled")
     private final Long totalUnfulfilled;
 
     /**
-     * The quantity of the resource which Oracle was unable to supply. For a given capacity request,
-     * Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a
-     * partial value is provided, thereby leaving behind a portion of unfulfilled values. This field
-     * sums that up.
-     *
+     * The quantity of the resource which Oracle was unable to supply. For a given capacity request, Oracle sometimes cannot supply the entire value demanded by the customer. In such cases a partial value is provided, thereby leaving behind a portion of unfulfilled values. This field sums that up.
      * @return the value
-     */
+     **/
     public Long getTotalUnfulfilled() {
         return totalUnfulfilled;
     }
 
     /**
-     * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied,
-     * totalRejected, totalCancelled and totalUnfulfilled by workload types
-     */
+     * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadTypeBreakdownBlob")
     private final String workloadTypeBreakdownBlob;
 
     /**
-     * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied,
-     * totalRejected, totalCancelled and totalUnfulfilled by workload types
-     *
+     * A raw json blob containing breakdown of totalAvailable, totalDemanded, totalSupplied, totalRejected, totalCancelled and totalUnfulfilled by workload types
      * @return the value
-     */
+     **/
     public String getWorkloadTypeBreakdownBlob() {
         return workloadTypeBreakdownBlob;
     }
 
-    /** A raw json blob containing all the capacity requests corresponding to the resource name */
+    /**
+     * A raw json blob containing all the capacity requests corresponding to the resource name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityRequestsBlob")
     private final String capacityRequestsBlob;
 
     /**
      * A raw json blob containing all the capacity requests corresponding to the resource name
-     *
      * @return the value
-     */
+     **/
     public String getCapacityRequestsBlob() {
         return capacityRequestsBlob;
     }
 
     /**
-     * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is
-     * measured.
-     */
+     * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
-     * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is
-     * measured.
-     *
+     * The unit e.g SERVER in which the above values like totalAvailable, totalSupplied etc is measured.
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
@@ -561,7 +511,6 @@ public final class OccOverviewSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

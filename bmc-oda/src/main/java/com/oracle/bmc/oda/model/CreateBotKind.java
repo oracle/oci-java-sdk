@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The kinds of Bot creation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum CreateBotKind implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The kinds of Bot creation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum CreateBotKind {
     New("NEW"),
     Clone("CLONE"),
     Version("VERSION"),

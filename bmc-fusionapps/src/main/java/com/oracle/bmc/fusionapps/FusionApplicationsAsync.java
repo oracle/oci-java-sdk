@@ -8,71 +8,67 @@ import com.oracle.bmc.fusionapps.requests.*;
 import com.oracle.bmc.fusionapps.responses.*;
 
 /**
- * Use the Fusion Applications Environment Management API to manage the environments where your
- * Fusion Applications run. For more information, see the [Fusion Applications Environment
- * Management documentation](https://docs.oracle.com/iaas/Content/fusion-applications/home.htm).
+ * Use the Fusion Applications Environment Management API to manage the environments where your Fusion Applications run. For more information, see the [Fusion Applications Environment Management documentation](https://docs.oracle.com/iaas/Content/fusion-applications/home.htm).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public interface FusionApplicationsAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a FusionEnvironment into a different compartment. When provided, If-Match is checked
-     * against ETag values of the resource.
+     * Moves a FusionEnvironment into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeFusionEnvironmentCompartmentResponse>
             changeFusionEnvironmentCompartment(
@@ -83,15 +79,16 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a FusionEnvironmentFamily into a different compartment. When provided, If-Match is
-     * checked against ETag values of the resource.
+     * Moves a FusionEnvironmentFamily into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeFusionEnvironmentFamilyCompartmentResponse>
             changeFusionEnvironmentFamilyCompartment(
@@ -104,12 +101,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Creates a new DataMaskingActivity.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataMaskingActivityResponse> createDataMaskingActivity(
             CreateDataMaskingActivityRequest request,
@@ -120,12 +118,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Creates a new FusionEnvironment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateFusionEnvironmentResponse> createFusionEnvironment(
             CreateFusionEnvironmentRequest request,
@@ -138,10 +137,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateFusionEnvironmentAdminUserResponse>
             createFusionEnvironmentAdminUser(
@@ -154,12 +153,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Creates a new FusionEnvironmentFamily.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateFusionEnvironmentFamilyResponse>
             createFusionEnvironmentFamily(
@@ -172,12 +172,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Creates a new RefreshActivity.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateRefreshActivityResponse> createRefreshActivity(
             CreateRefreshActivityRequest request,
@@ -188,12 +189,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Attaches a service instance to the fusion pod.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateServiceAttachmentResponse> createServiceAttachment(
             CreateServiceAttachmentRequest request,
@@ -206,10 +208,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteFusionEnvironmentResponse> deleteFusionEnvironment(
             DeleteFusionEnvironmentRequest request,
@@ -222,10 +224,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteFusionEnvironmentAdminUserResponse>
             deleteFusionEnvironmentAdminUser(
@@ -240,10 +242,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteFusionEnvironmentFamilyResponse>
             deleteFusionEnvironmentFamily(
@@ -258,10 +260,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteRefreshActivityResponse> deleteRefreshActivity(
             DeleteRefreshActivityRequest request,
@@ -274,10 +276,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteServiceAttachmentResponse> deleteServiceAttachment(
             DeleteServiceAttachmentRequest request,
@@ -286,15 +288,15 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Begin the process of showing the details about where to retrieve data extract for a Fusion
-     * environment.
+     * Begin the process of showing the details about where to retrieve data extract for a Fusion environment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GenerateExtractDetailsResponse> generateExtractDetails(
             GenerateExtractDetailsRequest request,
@@ -307,10 +309,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDataMaskingActivityResponse> getDataMaskingActivity(
             GetDataMaskingActivityRequest request,
@@ -323,10 +325,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetFusionEnvironmentResponse> getFusionEnvironment(
             GetFusionEnvironmentRequest request,
@@ -339,10 +341,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetFusionEnvironmentFamilyResponse> getFusionEnvironmentFamily(
             GetFusionEnvironmentFamilyRequest request,
@@ -351,15 +353,14 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the number of environments (usage) of each type in the fusion environment family, as
-     * well as the limit that's allowed to be created based on the group's associated subscriptions.
+     * Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that's allowed to be created based on the group's associated subscriptions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetFusionEnvironmentFamilyLimitsAndUsageResponse>
             getFusionEnvironmentFamilyLimitsAndUsage(
@@ -374,10 +375,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetFusionEnvironmentFamilySubscriptionDetailResponse>
             getFusionEnvironmentFamilySubscriptionDetail(
@@ -392,10 +393,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetFusionEnvironmentStatusResponse> getFusionEnvironmentStatus(
             GetFusionEnvironmentStatusRequest request,
@@ -408,10 +409,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetRefreshActivityResponse> getRefreshActivity(
             GetRefreshActivityRequest request,
@@ -424,10 +425,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetScheduledActivityResponse> getScheduledActivity(
             GetScheduledActivityRequest request,
@@ -440,10 +441,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetServiceAttachmentResponse> getServiceAttachment(
             GetServiceAttachmentRequest request,
@@ -456,10 +457,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -469,12 +470,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Begin the process of generating the data extract for a Fusion environment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<InitiateExtractResponse> initiateExtract(
             InitiateExtractRequest request,
@@ -486,10 +488,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAdminUsersResponse> listAdminUsers(
             ListAdminUsersRequest request,
@@ -499,12 +501,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Returns a list of DataMaskingActivities.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDataMaskingActivitiesResponse> listDataMaskingActivities(
             ListDataMaskingActivitiesRequest request,
@@ -515,12 +518,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Returns a list of FusionEnvironmentFamilies.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListFusionEnvironmentFamiliesResponse>
             listFusionEnvironmentFamilies(
@@ -533,12 +537,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Returns a list of FusionEnvironments.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListFusionEnvironmentsResponse> listFusionEnvironments(
             ListFusionEnvironmentsRequest request,
@@ -549,12 +554,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Returns a list of RefreshActivities.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListRefreshActivitiesResponse> listRefreshActivities(
             ListRefreshActivitiesRequest request,
@@ -565,12 +571,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Returns a list of ScheduledActivities.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListScheduledActivitiesResponse> listScheduledActivities(
             ListScheduledActivitiesRequest request,
@@ -581,12 +588,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Returns a list of service attachments.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListServiceAttachmentsResponse> listServiceAttachments(
             ListServiceAttachmentsRequest request,
@@ -599,10 +607,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTimeAvailableForRefreshesResponse>
             listTimeAvailableForRefreshes(
@@ -615,12 +623,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Return a (paginated) list of errors for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -631,12 +640,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Return a (paginated) list of logs for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -647,12 +657,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Lists the work requests in a compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -660,16 +671,14 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Reset FusionEnvironment admin password. This API will be deprecated on Mon, 15 Jan 2024
-     * 01:00:00 GMT. Users can reset password themselves, FAaaS will no longer provide an API for
-     * this.
+     * Reset FusionEnvironment admin password. This API will be deprecated on Mon, 15 Jan 2024 01:00:00 GMT. Users can reset password themselves, FAaaS will no longer provide an API for this.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ResetFusionEnvironmentPasswordResponse>
             resetFusionEnvironmentPassword(
@@ -684,10 +693,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateFusionEnvironmentResponse> updateFusionEnvironment(
             UpdateFusionEnvironmentRequest request,
@@ -700,10 +709,10 @@ public interface FusionApplicationsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateFusionEnvironmentFamilyResponse>
             updateFusionEnvironmentFamily(
@@ -716,12 +725,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Updates a scheduled RefreshActivity.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateRefreshActivityResponse> updateRefreshActivity(
             UpdateRefreshActivityRequest request,
@@ -732,12 +742,13 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     /**
      * Verify whether a service instance can be attached to the fusion pod
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<VerifyServiceAttachmentResponse> verifyServiceAttachment(
             VerifyServiceAttachmentRequest request,

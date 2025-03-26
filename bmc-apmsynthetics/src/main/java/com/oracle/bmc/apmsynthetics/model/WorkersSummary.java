@@ -5,22 +5,20 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the workers in a specific On-premise vantage point. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the workers in a specific On-premise vantage point.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkersSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkersSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkersSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "total",
@@ -48,91 +46,97 @@ public final class WorkersSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total number of workers in a specific On-premise vantage point. */
+        /**
+         * Total number of workers in a specific On-premise vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("total")
         private Integer total;
 
         /**
          * Total number of workers in a specific On-premise vantage point.
-         *
          * @param total the value to set
          * @return this builder
-         */
+         **/
         public Builder total(Integer total) {
             this.total = total;
             this.__explicitlySet__.add("total");
             return this;
         }
-        /** Number of available workers in a specific On-premise vantage point. */
+        /**
+         * Number of available workers in a specific On-premise vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("available")
         private Integer available;
 
         /**
          * Number of available workers in a specific On-premise vantage point.
-         *
          * @param available the value to set
          * @return this builder
-         */
+         **/
         public Builder available(Integer available) {
             this.available = available;
             this.__explicitlySet__.add("available");
             return this;
         }
-        /** Number of occupied workers in a specific On-premise vantage point. */
+        /**
+         * Number of occupied workers in a specific On-premise vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("used")
         private Integer used;
 
         /**
          * Number of occupied workers in a specific On-premise vantage point.
-         *
          * @param used the value to set
          * @return this builder
-         */
+         **/
         public Builder used(Integer used) {
             this.used = used;
             this.__explicitlySet__.add("used");
             return this;
         }
-        /** Number of disabled workers in a specific On-premise vantage point. */
+        /**
+         * Number of disabled workers in a specific On-premise vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disabled")
         private Integer disabled;
 
         /**
          * Number of disabled workers in a specific On-premise vantage point.
-         *
          * @param disabled the value to set
          * @return this builder
-         */
+         **/
         public Builder disabled(Integer disabled) {
             this.disabled = disabled;
             this.__explicitlySet__.add("disabled");
             return this;
         }
-        /** Minimum version among the workers in a specific On-premise vantage point. */
+        /**
+         * Minimum version among the workers in a specific On-premise vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minVersion")
         private String minVersion;
 
         /**
          * Minimum version among the workers in a specific On-premise vantage point.
-         *
          * @param minVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder minVersion(String minVersion) {
             this.minVersion = minVersion;
             this.__explicitlySet__.add("minVersion");
             return this;
         }
-        /** List of available capabilities in a specific On-premise vantage point. */
+        /**
+         * List of available capabilities in a specific On-premise vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCapabilities")
         private java.util.List<AvailableCapability> availableCapabilities;
 
         /**
          * List of available capabilities in a specific On-premise vantage point.
-         *
          * @param availableCapabilities the value to set
          * @return this builder
-         */
+         **/
         public Builder availableCapabilities(
                 java.util.List<AvailableCapability> availableCapabilities) {
             this.availableCapabilities = availableCapabilities;
@@ -182,7 +186,9 @@ public final class WorkersSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +197,86 @@ public final class WorkersSummary
         return new Builder().copy(this);
     }
 
-    /** Total number of workers in a specific On-premise vantage point. */
+    /**
+     * Total number of workers in a specific On-premise vantage point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("total")
     private final Integer total;
 
     /**
      * Total number of workers in a specific On-premise vantage point.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotal() {
         return total;
     }
 
-    /** Number of available workers in a specific On-premise vantage point. */
+    /**
+     * Number of available workers in a specific On-premise vantage point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("available")
     private final Integer available;
 
     /**
      * Number of available workers in a specific On-premise vantage point.
-     *
      * @return the value
-     */
+     **/
     public Integer getAvailable() {
         return available;
     }
 
-    /** Number of occupied workers in a specific On-premise vantage point. */
+    /**
+     * Number of occupied workers in a specific On-premise vantage point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("used")
     private final Integer used;
 
     /**
      * Number of occupied workers in a specific On-premise vantage point.
-     *
      * @return the value
-     */
+     **/
     public Integer getUsed() {
         return used;
     }
 
-    /** Number of disabled workers in a specific On-premise vantage point. */
+    /**
+     * Number of disabled workers in a specific On-premise vantage point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("disabled")
     private final Integer disabled;
 
     /**
      * Number of disabled workers in a specific On-premise vantage point.
-     *
      * @return the value
-     */
+     **/
     public Integer getDisabled() {
         return disabled;
     }
 
-    /** Minimum version among the workers in a specific On-premise vantage point. */
+    /**
+     * Minimum version among the workers in a specific On-premise vantage point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minVersion")
     private final String minVersion;
 
     /**
      * Minimum version among the workers in a specific On-premise vantage point.
-     *
      * @return the value
-     */
+     **/
     public String getMinVersion() {
         return minVersion;
     }
 
-    /** List of available capabilities in a specific On-premise vantage point. */
+    /**
+     * List of available capabilities in a specific On-premise vantage point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCapabilities")
     private final java.util.List<AvailableCapability> availableCapabilities;
 
     /**
      * List of available capabilities in a specific On-premise vantage point.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AvailableCapability> getAvailableCapabilities() {
         return availableCapabilities;
     }
@@ -276,7 +288,6 @@ public final class WorkersSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

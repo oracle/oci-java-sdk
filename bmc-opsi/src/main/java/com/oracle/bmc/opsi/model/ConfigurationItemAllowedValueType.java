@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Allowed value type of configuration item. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ConfigurationItemAllowedValueType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Allowed value type of configuration item.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ConfigurationItemAllowedValueType {
     Limit("LIMIT"),
     Pick("PICK"),
     FreeText("FREE_TEXT"),

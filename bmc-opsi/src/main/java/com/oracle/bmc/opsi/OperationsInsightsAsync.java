@@ -8,72 +8,68 @@ import com.oracle.bmc.opsi.requests.*;
 import com.oracle.bmc.opsi.responses.*;
 
 /**
- * Use the Ops Insights API to perform data extraction operations to obtain database resource
- * utilization, performance statistics, and reference information. For more information, see [About
- * Oracle Cloud Infrastructure Ops
- * Insights](https://docs.oracle.com/iaas/en-us/iaas/operations-insights/doc/operations-insights.html).
+ * Use the Ops Insights API to perform data extraction operations to obtain database
+ * resource utilization, performance statistics, and reference information. For more information,
+ * see [About Oracle Cloud Infrastructure Ops Insights](https://docs.oracle.com/iaas/en-us/iaas/operations-insights/doc/operations-insights.html).
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface OperationsInsightsAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Add new members (e.g. databases and hosts) to an Exadata system in Operations Insights.
-     * Exadata-related metric collection and analysis will be started.
+     * Add new members (e.g. databases and hosts) to an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AddExadataInsightMembersResponse> addExadataInsightMembers(
             AddExadataInsightMembersRequest request,
@@ -86,10 +82,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
             changeAutonomousDatabaseInsightAdvancedFeatures(
@@ -100,15 +96,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves an AwrHubSource resource from one compartment to another. When provided, If-Match is
-     * checked against ETag values of the resource.
+     * Moves an AwrHubSource resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAwrHubSourceCompartmentResponse>
             changeAwrHubSourceCompartment(
@@ -119,15 +114,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a DatabaseInsight resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a DatabaseInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDatabaseInsightCompartmentResponse>
             changeDatabaseInsightCompartment(
@@ -138,15 +132,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a EnterpriseManagerBridge resource from one compartment to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a EnterpriseManagerBridge resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeEnterpriseManagerBridgeCompartmentResponse>
             changeEnterpriseManagerBridgeCompartment(
@@ -157,15 +150,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves an Exadata insight resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves an Exadata insight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExadataInsightCompartmentResponse>
             changeExadataInsightCompartment(
@@ -176,15 +168,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Change the connection details of an External MySQL database insight. When provided, If-Match
-     * is checked against ETag values of the resource.
+     * Change the connection details of an External MySQL database insight. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeExternalMysqlDatabaseInsightConnectionResponse>
             changeExternalMysqlDatabaseInsightConnection(
@@ -195,15 +186,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a HostInsight resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a HostInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeHostInsightCompartmentResponse> changeHostInsightCompartment(
             ChangeHostInsightCompartmentRequest request,
@@ -213,15 +203,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Change the connection details of a Cloud MACS-managed database insight. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Change the connection details of a Cloud MACS-managed database insight. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeMacsManagedCloudDatabaseInsightConnectionResponse>
             changeMacsManagedCloudDatabaseInsightConnection(
@@ -232,15 +221,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a news report resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a news report resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeNewsReportCompartmentResponse> changeNewsReportCompartment(
             ChangeNewsReportCompartmentRequest request,
@@ -249,15 +237,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a private endpoint from one compartment to another. When provided, If-Match is checked
-     * against ETag values of the resource.
+     * Moves a private endpoint from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
             changeOperationsInsightsPrivateEndpointCompartment(
@@ -268,15 +255,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a Operations Insights Warehouse resource from one compartment to another. When
-     * provided, If-Match is checked against ETag values of the resource.
+     * Moves a Operations Insights Warehouse resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeOperationsInsightsWarehouseCompartmentResponse>
             changeOperationsInsightsWarehouseCompartment(
@@ -291,10 +277,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeOpsiConfigurationCompartmentResponse>
             changeOpsiConfigurationCompartment(
@@ -305,15 +291,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Change the connection details of a co-managed database insight. When provided, If-Match is
-     * checked against ETag values of the resource.
+     * Change the connection details of a co-managed  database insight. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangePeComanagedDatabaseInsightResponse>
             changePeComanagedDatabaseInsight(
@@ -324,15 +309,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a AWR hub resource for the tenant in Operations Insights. This resource will be
-     * created in root compartment.
+     * Create a AWR hub resource for the tenant in Operations Insights.
+     * This resource will be created in root compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAwrHubResponse> createAwrHub(
             CreateAwrHubRequest request,
@@ -342,12 +328,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Register Awr Hub source
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAwrHubSourceResponse> createAwrHubSource(
             CreateAwrHubSourceRequest request,
@@ -356,15 +343,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a Database Insight resource for a database in Operations Insights. The database will
-     * be enabled in Operations Insights. Database metric collection and analysis will be started.
+     * Create a Database Insight resource for a database in Operations Insights. The database will be enabled in Operations Insights. Database metric collection and analysis will be started.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDatabaseInsightResponse> createDatabaseInsight(
             CreateDatabaseInsightRequest request,
@@ -375,12 +362,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Create a Enterprise Manager bridge in Operations Insights.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateEnterpriseManagerBridgeResponse>
             createEnterpriseManagerBridge(
@@ -391,16 +379,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata
-     * system will be enabled in Operations Insights. Exadata-related metric collection and analysis
-     * will be started.
+     * Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateExadataInsightResponse> createExadataInsight(
             CreateExadataInsightRequest request,
@@ -409,15 +396,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops
-     * Insights. Host metric collection and analysis will be started.
+     * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateHostInsightResponse> createHostInsight(
             CreateHostInsightRequest request,
@@ -426,15 +413,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights
-     * will be emailed as per selected frequency.
+     * Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateNewsReportResponse> createNewsReport(
             CreateNewsReportRequest request,
@@ -442,15 +429,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a private endpoint resource for the tenant in Ops Insights. This resource will be
-     * created in customer compartment.
+     * Create a private endpoint resource for the tenant in Ops Insights.
+     * This resource will be created in customer compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateOperationsInsightsPrivateEndpointResponse>
             createOperationsInsightsPrivateEndpoint(
@@ -461,17 +449,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be
-     * provisioned for this tenant. There is only expected to be 1 warehouse per tenant. The
-     * warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type' header is
-     * passed to the API, a warehouse resource without ADW or Schema provisioning is created.
+     * Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
+     * header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateOperationsInsightsWarehouseResponse>
             createOperationsInsightsWarehouse(
@@ -485,12 +473,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      * Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
      * This resource will be created in root compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateOperationsInsightsWarehouseUserResponse>
             createOperationsInsightsWarehouseUser(
@@ -503,12 +492,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Create an OPSI configuration resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateOpsiConfigurationResponse> createOpsiConfiguration(
             CreateOpsiConfigurationRequest request,
@@ -521,10 +511,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAwrHubResponse> deleteAwrHub(
             DeleteAwrHubRequest request,
@@ -536,10 +526,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAwrHubObjectResponse> deleteAwrHubObject(
             DeleteAwrHubObjectRequest request,
@@ -552,10 +542,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAwrHubSourceResponse> deleteAwrHubSource(
             DeleteAwrHubSourceRequest request,
@@ -568,10 +558,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDatabaseInsightResponse> deleteDatabaseInsight(
             DeleteDatabaseInsightRequest request,
@@ -580,15 +570,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes an Operations Insights Enterprise Manager bridge. If any database insight is still
-     * referencing this bridge, the operation will fail.
+     * Deletes an Operations Insights Enterprise Manager bridge. If any database insight is still referencing this bridge, the operation will fail.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteEnterpriseManagerBridgeResponse>
             deleteEnterpriseManagerBridge(
@@ -603,10 +592,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteExadataInsightResponse> deleteExadataInsight(
             DeleteExadataInsightRequest request,
@@ -619,10 +608,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteHostInsightResponse> deleteHostInsight(
             DeleteHostInsightRequest request,
@@ -635,10 +624,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteNewsReportResponse> deleteNewsReport(
             DeleteNewsReportRequest request,
@@ -650,10 +639,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteOperationsInsightsPrivateEndpointResponse>
             deleteOperationsInsightsPrivateEndpoint(
@@ -664,17 +653,18 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes an Operations Insights Warehouse. There is only expected to be 1 warehouse per
-     * tenant. The warehouse is expected to be in the root compartment. User must delete AWR Hub
-     * resource for this warehouse before calling this operation. User must delete the warehouse
-     * users before calling this operation.
+     * Deletes an Operations Insights Warehouse. There is only expected to be 1 warehouse per tenant.
+     * The warehouse is expected to be in the root compartment.
+     * User must delete AWR Hub resource for this warehouse before calling this operation.
+     * User must delete the warehouse users before calling this operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteOperationsInsightsWarehouseResponse>
             deleteOperationsInsightsWarehouse(
@@ -689,10 +679,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteOperationsInsightsWarehouseUserResponse>
             deleteOperationsInsightsWarehouseUser(
@@ -707,10 +697,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteOpsiConfigurationResponse> deleteOpsiConfiguration(
             DeleteOpsiConfigurationRequest request,
@@ -719,15 +709,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Disable advanced features for an Autonomous Database in Operations Insights. The connection
-     * detail and advanced features will be removed.
+     * Disable advanced features for an Autonomous Database in Operations Insights. The connection detail and advanced features will be removed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
             disableAutonomousDatabaseInsightAdvancedFeatures(
@@ -738,15 +727,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables a Awr Hub source database in Operations Insights. This will stop the Awr data flow
-     * for the given Awr Hub source.
+     * Disables a Awr Hub source database in Operations Insights. This will stop the Awr data flow for the given Awr Hub source.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableAwrHubSourceResponse> disableAwrHubSource(
             DisableAwrHubSourceRequest request,
@@ -755,15 +743,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Disables a database in Operations Insights. Database metric collection and analysis will be
-     * stopped.
+     * Disables a database in Operations Insights. Database metric collection and analysis will be stopped.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableDatabaseInsightResponse> disableDatabaseInsight(
             DisableDatabaseInsightRequest request,
@@ -772,15 +759,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Disables an Exadata system in Operations Insights. Exadata-related metric collection and
-     * analysis will be stopped.
+     * Disables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be stopped.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExadataInsightResponse> disableExadataInsight(
             DisableExadataInsightRequest request,
@@ -793,10 +779,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableHostInsightResponse> disableHostInsight(
             DisableHostInsightRequest request,
@@ -805,15 +791,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Download the ADW wallet for Operations Insights Warehouse using which the Hub data is
-     * exposed.
+     * Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DownloadOperationsInsightsWarehouseWalletResponse>
             downloadOperationsInsightsWarehouseWallet(
@@ -824,15 +809,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables advanced features for an Autonomous Database in Operations Insights. A direct
-     * connection will be available for further collection.
+     * Enables advanced features for an Autonomous Database in Operations Insights. A direct connection will be available for further collection.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
             enableAutonomousDatabaseInsightAdvancedFeatures(
@@ -843,15 +827,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables a Awr Hub source database in Operations Insights. This will resume the Awr data flow
-     * for the given Awr Hub source if it was stopped earlier.
+     * Enables a Awr Hub source database in Operations Insights. This will resume the Awr data flow for the given Awr Hub source if it was stopped earlier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableAwrHubSourceResponse> enableAwrHubSource(
             EnableAwrHubSourceRequest request,
@@ -860,15 +843,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Enables a database in Operations Insights. Database metric collection and analysis will be
-     * started.
+     * Enables a database in Operations Insights. Database metric collection and analysis will be started.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableDatabaseInsightResponse> enableDatabaseInsight(
             EnableDatabaseInsightRequest request,
@@ -877,15 +859,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Enables an Exadata system in Operations Insights. Exadata-related metric collection and
-     * analysis will be started.
+     * Enables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableExadataInsightResponse> enableExadataInsight(
             EnableExadataInsightRequest request,
@@ -898,10 +879,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableHostInsightResponse> enableHostInsight(
             EnableHostInsightRequest request,
@@ -912,12 +893,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets the AWR report for the specified database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrDatabaseReportResponse> getAwrDatabaseReport(
             GetAwrDatabaseReportRequest request,
@@ -928,12 +910,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets the SQL health check report for one SQL of the specified database.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrDatabaseSqlReportResponse> getAwrDatabaseSqlReport(
             GetAwrDatabaseSqlReportRequest request,
@@ -946,10 +929,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrHubResponse> getAwrHub(
             GetAwrHubRequest request,
@@ -960,10 +943,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrHubObjectResponse> getAwrHubObject(
             GetAwrHubObjectRequest request,
@@ -975,10 +958,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrHubSourceResponse> getAwrHubSource(
             GetAwrHubSourceRequest request,
@@ -986,17 +969,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the AWR report for the specified source database in the AWR hub. The difference between
-     * the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not be greater than 7 days.
-     * Either beginSnapshotIdentifierGreaterThanOrEqualTo & endSnapshotIdentifierLessThanOrEqualTo
-     * params Or timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are required.
+     * Gets the AWR report for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not be greater than 7 days.
+     * Either beginSnapshotIdentifierGreaterThanOrEqualTo & endSnapshotIdentifierLessThanOrEqualTo params Or timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are required.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAwrReportResponse> getAwrReport(
             GetAwrReportRequest request,
@@ -1008,10 +990,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDatabaseInsightResponse> getDatabaseInsight(
             GetDatabaseInsightRequest request,
@@ -1024,10 +1006,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetEnterpriseManagerBridgeResponse> getEnterpriseManagerBridge(
             GetEnterpriseManagerBridgeRequest request,
@@ -1040,10 +1022,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetExadataInsightResponse> getExadataInsight(
             GetExadataInsightRequest request,
@@ -1056,10 +1038,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetHostInsightResponse> getHostInsight(
             GetHostInsightRequest request,
@@ -1071,10 +1053,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetNewsReportResponse> getNewsReport(
             GetNewsReportRequest request,
@@ -1086,10 +1068,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOperationsInsightsPrivateEndpointResponse>
             getOperationsInsightsPrivateEndpoint(
@@ -1100,15 +1082,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets details of an Ops Insights Warehouse. There is only expected to be 1 warehouse per
-     * tenant. The warehouse is expected to be in the root compartment.
+     * Gets details of an Ops Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOperationsInsightsWarehouseResponse>
             getOperationsInsightsWarehouse(
@@ -1123,10 +1106,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOperationsInsightsWarehouseUserResponse>
             getOperationsInsightsWarehouseUser(
@@ -1137,18 +1120,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets details of an OPSI configuration resource. Values specified in configItemField and
-     * configItemCustomStatus query params will be considered, only if configItems field is
-     * requested as part of opsiConfigField query param. Values specified in configItemCustomStatus
-     * will determine whether only customized configuration items or only non-customized
-     * configuration items or both have to be returned.
+     * Gets details of an OPSI configuration resource.
+     * Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+     * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOpsiConfigurationResponse> getOpsiConfiguration(
             GetOpsiConfigurationRequest request,
@@ -1161,10 +1143,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetOpsiDataObjectResponse> getOpsiDataObject(
             GetOpsiDataObjectRequest request,
@@ -1177,10 +1159,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -1190,12 +1172,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets the Awr Hub object's user-defined metadata and entity tag (ETag).
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<HeadAwrHubObjectResponse> headAwrHubObject(
             HeadAwrHubObjectRequest request,
@@ -1206,12 +1189,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      * This endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
      * Either databaseId or id must be specified.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestAddmReportsResponse> ingestAddmReports(
             IngestAddmReportsRequest request,
@@ -1224,10 +1208,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestDatabaseConfigurationResponse> ingestDatabaseConfiguration(
             IngestDatabaseConfigurationRequest request,
@@ -1240,10 +1224,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestHostConfigurationResponse> ingestHostConfiguration(
             IngestHostConfigurationRequest request,
@@ -1256,10 +1240,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestHostMetricsResponse> ingestHostMetrics(
             IngestHostMetricsRequest request,
@@ -1268,15 +1252,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The MySql SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest
-     * pipeline. Either databaseId or id must be specified.
+     * The MySql SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestMySqlSqlStatsResponse> ingestMySqlSqlStats(
             IngestMySqlSqlStatsRequest request,
@@ -1285,17 +1270,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest
-     * pipeline. Either databaseId or id must be specified. Disclaimer: SQL text being uploaded
-     * explicitly via APIs is already masked. All sensitive literals contained in the sqlFullText
-     * column are masked prior to ingestion.
+     * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     * Disclaimer: SQL text being uploaded explicitly via APIs is already masked. All sensitive literals contained in the sqlFullText column are masked prior to ingestion.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestMySqlSqlTextResponse> ingestMySqlSqlText(
             IngestMySqlSqlTextRequest request,
@@ -1307,12 +1292,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      * The sqlbucket endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
      * Either databaseId or id must be specified.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestSqlBucketResponse> ingestSqlBucket(
             IngestSqlBucketRequest request,
@@ -1320,15 +1306,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The SqlPlanLines endpoint takes in a JSON payload, persists it in Operation Insights ingest
-     * pipeline. Either databaseId or id must be specified.
+     * The SqlPlanLines endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestSqlPlanLinesResponse> ingestSqlPlanLines(
             IngestSqlPlanLinesRequest request,
@@ -1340,12 +1327,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      * The SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
      * Either databaseId or id must be specified.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestSqlStatsResponse> ingestSqlStats(
             IngestSqlStatsRequest request,
@@ -1353,17 +1341,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest
-     * pipeline. Either databaseId or id must be specified. Disclaimer: SQL text being uploaded
-     * explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column
-     * should be masked prior to ingestion.
+     * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<IngestSqlTextResponse> ingestSqlText(
             IngestSqlTextRequest request,
@@ -1373,12 +1361,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets list of ADDM finding categories.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAddmDbFindingCategoriesResponse> listAddmDbFindingCategories(
             ListAddmDbFindingCategoriesRequest request,
@@ -1389,12 +1378,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Get the ADDM findings time series for the specified databases for a given time period.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAddmDbFindingsTimeSeriesResponse> listAddmDbFindingsTimeSeries(
             ListAddmDbFindingsTimeSeriesRequest request,
@@ -1406,12 +1396,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets list of ADDM database parameter categories for the specified databases.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAddmDbParameterCategoriesResponse>
             listAddmDbParameterCategories(
@@ -1424,12 +1415,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets list of ADDM recommendation categories for the specified databases.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAddmDbRecommendationCategoriesResponse>
             listAddmDbRecommendationCategories(
@@ -1442,12 +1434,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets time series data for ADDM recommendations for the specified databases.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAddmDbRecommendationsTimeSeriesResponse>
             listAddmDbRecommendationsTimeSeries(
@@ -1460,12 +1453,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets a list of ADDM database information
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAddmDbsResponse> listAddmDbs(
             ListAddmDbsRequest request,
@@ -1474,12 +1468,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Lists AWR snapshots for the specified database in the AWR.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrDatabaseSnapshotsResponse> listAwrDatabaseSnapshots(
             ListAwrDatabaseSnapshotsRequest request,
@@ -1490,12 +1485,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets the list of databases and their snapshot summary details available in the AWRHub.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrDatabasesResponse> listAwrDatabases(
             ListAwrDatabasesRequest request,
@@ -1505,12 +1501,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets a list of Awr Hub objects. Awr Hub id needs to specified.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrHubObjectsResponse> listAwrHubObjects(
             ListAwrHubObjectsRequest request,
@@ -1523,10 +1520,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrHubSourcesResponse> listAwrHubSources(
             ListAwrHubSourcesRequest request,
@@ -1535,32 +1532,31 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources
-     * are expected to be in root compartment.
+     * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrHubsResponse> listAwrHubs(
             ListAwrHubsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListAwrHubsRequest, ListAwrHubsResponse> handler);
 
     /**
-     * Lists AWR snapshots for the specified source database in the AWR hub. The difference between
-     * the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of
-     * 1 day. The timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are optional. If these
-     * params are not provided, by default last 1 day snapshots will be returned.
+     * Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
+     * The timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAwrSnapshotsResponse> listAwrSnapshots(
             ListAwrSnapshotsRequest request,
@@ -1568,17 +1564,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of database insight configurations based on the query parameters specified.
-     * Either compartmentId or databaseInsightId query parameter must be specified. When both
-     * compartmentId and compartmentIdInSubtree are specified, a list of database insight
-     * configurations in that compartment and in all sub-compartments will be returned.
+     * Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of database insight configurations in that compartment and in all sub-compartments will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDatabaseConfigurationsResponse> listDatabaseConfigurations(
             ListDatabaseConfigurationsRequest request,
@@ -1587,17 +1582,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of database insights based on the query parameters specified. Either
-     * compartmentId or id query parameter must be specified. When both compartmentId and
-     * compartmentIdInSubtree are specified, a list of database insights in that compartment and in
-     * all sub-compartments will be returned.
+     * Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDatabaseInsightsResponse> listDatabaseInsights(
             ListDatabaseInsightsRequest request,
@@ -1606,16 +1600,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be
-     * specified. When both compartmentId and compartmentIdInSubtree are specified, a list of
-     * bridges in that compartment and in all sub-compartments will be returned.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListEnterpriseManagerBridgesResponse> listEnterpriseManagerBridges(
             ListEnterpriseManagerBridgesRequest request,
@@ -1625,15 +1619,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of exadata insight configurations. Either compartmentId or exadataInsightsId
-     * query parameter must be specified.
+     * Gets a list of exadata insight configurations. Either compartmentId or exadataInsightsId query parameter must be specified.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExadataConfigurationsResponse> listExadataConfigurations(
             ListExadataConfigurationsRequest request,
@@ -1642,17 +1635,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of Exadata insights based on the query parameters specified. Either compartmentId
-     * or id query parameter must be specified. When both compartmentId and compartmentIdInSubtree
-     * are specified, a list of Exadata insights in that compartment and in all sub-compartments
-     * will be returned.
+     * Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListExadataInsightsResponse> listExadataInsights(
             ListExadataInsightsRequest request,
@@ -1661,17 +1653,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of host insight configurations based on the query parameters specified. Either
-     * compartmentId or hostInsightId query parameter must be specified. When both compartmentId and
-     * compartmentIdInSubtree are specified, a list of host insight configurations in that
-     * compartment and in all sub-compartments will be returned.
+     * Gets a list of host insight configurations based on the query parameters specified. Either compartmentId or hostInsightId query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of host insight configurations in that compartment and in all sub-compartments will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListHostConfigurationsResponse> listHostConfigurations(
             ListHostConfigurationsRequest request,
@@ -1680,17 +1671,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of host insights based on the query parameters specified. Either compartmentId or
-     * id query parameter must be specified. When both compartmentId and compartmentIdInSubtree are
-     * specified, a list of host insights in that compartment and in all sub-compartments will be
-     * returned.
+     * Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListHostInsightsResponse> listHostInsights(
             ListHostInsightsRequest request,
@@ -1700,12 +1690,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Get a list of hosted entities details.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListHostedEntitiesResponse> listHostedEntities(
             ListHostedEntitiesRequest request,
@@ -1714,17 +1705,19 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of agent entities available to add a new hostInsight. An agent entity is
-     * \"available\" and will be shown if all the following conditions are true: 1. The agent OCID
-     * is not already being used for an existing hostInsight. 2. The agent availabilityStatus =
-     * 'ACTIVE' 3. The agent lifecycleState = 'ACTIVE'
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is \"available\"
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = 'ACTIVE'
+     *    3.  The agent lifecycleState = 'ACTIVE'
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListImportableAgentEntitiesResponse> listImportableAgentEntities(
             ListImportableAgentEntitiesRequest request,
@@ -1733,18 +1726,21 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of available compute intances running cloud agent to add a new hostInsight. An
-     * Compute entity is \"available\" and will be shown if all the following conditions are true:
-     * 1. Compute is running OCA 2. OCI Management Agent is not enabled or If OCI Management Agent
-     * is enabled 2.1 The agent OCID is not already being used for an existing hostInsight. 2.2 The
-     * agent availabilityStatus = 'ACTIVE' 2.3 The agent lifecycleState = 'ACTIVE'
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is \"available\"
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. OCI Management Agent is not enabled or If OCI Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = 'ACTIVE'
+     *       2.3 The agent lifecycleState = 'ACTIVE'
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListImportableComputeEntitiesResponse>
             listImportableComputeEntities(
@@ -1755,15 +1751,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of importable entities for an Operations Insights Enterprise Manager bridge that
-     * have not been imported before.
+     * Gets a list of importable entities for an Operations Insights Enterprise Manager bridge that have not been imported before.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListImportableEnterpriseManagerEntitiesResponse>
             listImportableEnterpriseManagerEntities(
@@ -1774,15 +1770,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of news reports based on the query parameters specified. Either compartmentId or
-     * id query parameter must be specified.
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListNewsReportsResponse> listNewsReports(
             ListNewsReportsRequest request,
@@ -1794,10 +1790,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOperationsInsightsPrivateEndpointsResponse>
             listOperationsInsightsPrivateEndpoints(
@@ -1808,15 +1804,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be
-     * specified. All these resources are expected to be in root compartment.
+     * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOperationsInsightsWarehouseUsersResponse>
             listOperationsInsightsWarehouseUsers(
@@ -1827,16 +1823,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified. There
-     * is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root
-     * compartment.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOperationsInsightsWarehousesResponse>
             listOperationsInsightsWarehouses(
@@ -1849,12 +1845,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets a list of OPSI configuration resources based on the query parameters specified.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOpsiConfigurationsResponse> listOpsiConfigurations(
             ListOpsiConfigurationsRequest request,
@@ -1863,15 +1860,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of OPSI data objects based on the query parameters specified. CompartmentId id
-     * query parameter must be specified.
+     * Gets a list of OPSI data objects based on the query parameters specified. CompartmentId id query parameter must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListOpsiDataObjectsResponse> listOpsiDataObjects(
             ListOpsiDataObjectsRequest request,
@@ -1880,16 +1877,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Query SQL Warehouse to list the plan xml for a given SQL execution plan. This returns a
-     * SqlPlanCollection object, but is currently limited to a single plan. Either databaseId or id
-     * must be specified.
+     * Query SQL Warehouse to list the plan xml for a given SQL execution plan. This returns a SqlPlanCollection object, but is currently limited to a single plan.
+     * Either databaseId or id must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSqlPlansResponse> listSqlPlans(
             ListSqlPlansRequest request,
@@ -1897,16 +1894,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Search SQL by SQL Identifier across databases in a compartment and in all sub-compartments if
-     * specified. And get the SQL Text and the details of the databases executing the SQL for a
-     * given time period.
+     * Search SQL by SQL Identifier across databases in a compartment and in all sub-compartments if specified.
+     * And get the SQL Text and the details of the databases executing the SQL for a given time period.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSqlSearchesResponse> listSqlSearches(
             ListSqlSearchesRequest request,
@@ -1914,15 +1911,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Query SQL Warehouse to get the full SQL Text for a SQL in a compartment and in all
-     * sub-compartments if specified.
+     * Query SQL Warehouse to get the full SQL Text for a SQL in a compartment and in all sub-compartments if specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSqlTextsResponse> listSqlTexts(
             ListSqlTextsRequest request,
@@ -1930,15 +1927,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of Warehouse data objects (e.g: views, tables), based on the query parameters
-     * specified.
+     * Gets a list of Warehouse data objects (e.g: views, tables), based on the query parameters specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWarehouseDataObjectsResponse> listWarehouseDataObjects(
             ListWarehouseDataObjectsRequest request,
@@ -1949,12 +1946,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Return a (paginated) list of errors for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -1965,12 +1963,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Return a (paginated) list of logs for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -1979,15 +1978,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the work requests in a compartment. Either compartmentId or id must be specified. Only
-     * one of id, resourceId or relatedResourceId can be specified optionally.
+     * Lists the work requests in a compartment. Either compartmentId or id must be specified. Only one of id, resourceId or relatedResourceId can be specified optionally.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -1997,12 +1996,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Creates a new object or overwrites an existing object with the same name to the Awr Hub.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<PutAwrHubObjectResponse> putAwrHubObject(
             PutAwrHubObjectRequest request,
@@ -2010,16 +2010,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Queries an OPSI data object with the inputs provided and sends the result set back. Either
-     * analysisTimeInterval or timeIntervalStart and timeIntervalEnd parameters need to be passed as
-     * well.
+     * Queries an OPSI data object with the inputs provided and sends the result set back. Either analysisTimeInterval
+     * or timeIntervalStart and timeIntervalEnd parameters need to be passed as well.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<QueryOpsiDataObjectDataResponse> queryOpsiDataObjectData(
             QueryOpsiDataObjectDataRequest request,
@@ -2028,16 +2028,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Queries Warehouse data objects (e.g: views, tables) with the inputs provided and sends the
-     * result set back. Any data to which an OperationsInsightsWarehouseUser with a permission to
-     * the corresponding Warehouse can be queried.
+     * Queries Warehouse data objects (e.g: views, tables) with the inputs provided and sends the result set back.
+     * Any data to which an OperationsInsightsWarehouseUser with a permission to the corresponding Warehouse can be queried.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<QueryWarehouseDataObjectDataResponse> queryWarehouseDataObjectData(
             QueryWarehouseDataObjectDataRequest request,
@@ -2051,10 +2051,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RotateOperationsInsightsWarehouseWalletResponse>
             rotateOperationsInsightsWarehouseWallet(
@@ -2067,12 +2067,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Summarizes ADDM findings for the specified databases.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAddmDbFindingsResponse> summarizeAddmDbFindings(
             SummarizeAddmDbFindingsRequest request,
@@ -2082,15 +2083,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Summarizes the AWR database parameter change history for the specified parameter. There will
-     * be one element for each time that parameter changed during the specified time period. This
-     * API is limited to only one parameter per request.
+     * be one element for each time that parameter changed during the specified time period.
+     * This API is limited to only one parameter per request.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAddmDbParameterChangesResponse>
             summarizeAddmDbParameterChanges(
@@ -2101,17 +2103,18 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes database parameter history information for the specified databases. Return a list
-     * of parameters with information on whether the parameter values were changed or not within the
-     * specified time period. The response does not include the individual parameter changes within
-     * the time period.
+     * Summarizes database parameter history information for the specified databases. Return a list of parameters
+     * with information on whether the parameter values were changed or not within the specified
+     * time period. The response does not include the individual parameter changes within the time
+     * period.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAddmDbParametersResponse> summarizeAddmDbParameters(
             SummarizeAddmDbParametersRequest request,
@@ -2122,12 +2125,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Summarizes ADDM recommendations for the specified databases.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAddmDbRecommendationsResponse>
             summarizeAddmDbRecommendations(
@@ -2140,12 +2144,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Summarizes Schema objects for the specified databases for the specified objectIdentifiers
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAddmDbSchemaObjectsResponse> summarizeAddmDbSchemaObjects(
             SummarizeAddmDbSchemaObjectsRequest request,
@@ -2157,12 +2162,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Summarizes SQL Statements for the specified databases for the specified sqlIdentifiers
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAddmDbSqlStatementsResponse> summarizeAddmDbSqlStatements(
             SummarizeAddmDbSqlStatementsRequest request,
@@ -2172,18 +2178,19 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR. Based
-     * on the time range provided as part of query param, the metrics points will be returned in the
-     * response as below. - if time range is <=7 days then the metrics points will be for every
-     * MINUTES - if time range is <=2 hours then the metrics points will be for every 10 SECONDS -
-     * if time range is >7 days then the metrics points will be for every HOUR.
+     * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.
+     * Based on the time range provided as part of query param, the metrics points will be returned in the response as below.
+     * - if time range is <=7 days then the metrics points will be for every MINUTES
+     * - if time range is <=2 hours then the metrics points will be for every 10 SECONDS
+     * - if time range is >7 days then the metrics points will be for every HOUR.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseCpuUsagesResponse>
             summarizeAwrDatabaseCpuUsages(
@@ -2194,15 +2201,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the metric samples for the specified database in the AWR. The metric samples are
-     * summarized based on the Time dimension for each metric.
+     * Summarizes the metric samples for the specified database in the AWR. The metric samples are summarized based on the Time dimension for each metric.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseMetricsResponse> summarizeAwrDatabaseMetrics(
             SummarizeAwrDatabaseMetricsRequest request,
@@ -2211,21 +2218,19 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarizes the database parameter change history for one database parameter of the specified
-     * database in AWR. One change history record contains the previous value, the changed value,
-     * and the corresponding time range. If the database parameter value was changed multiple times
-     * within the time range, then multiple change history records are created for the same
-     * parameter. Note that this API only returns information on change history details for one
-     * database parameter. To get a list of all the database parameters whose values were changed
-     * during a specified time range, use the following API endpoint:
+     * Summarizes the database parameter change history for one database parameter of the specified database in AWR. One change history record contains
+     * the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
+     * Note that this API only returns information on change history details for one database parameter.
+     * To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
      * /awrHubs/{awrHubId}/awrDbParameters?awrSourceDatabaseIdentifier={awrSourceDbId}
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseParameterChangesResponse>
             summarizeAwrDatabaseParameterChanges(
@@ -2236,33 +2241,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the database parameter history for the specified database in AWR. This includes
-     * the list of database parameters, with information on whether the parameter values were
-     * modified within the query time range. Note that each database parameter is only listed once.
-     * Depending on the optional query parameters, the returned summary gets all the database
-     * parameters, which include:
-     *
-     * <p>Queryparam (valueChanged =\"Y\") - Each parameter whose value was changed during the time
-     * range, \"isChanged : true\" in response for the DB params. Queryparam (valueChanged =\"N\") -
-     * Each parameter whose value was unchanged during the time range, \"isChanged : false\" in
-     * response for the DB params. Queryparam (valueChanged =\"Y\" and valueModified =
-     * \"SYSTEM_MOD\") - Each parameter whose value was changed at the system level during the time
-     * range, \"isChanged : true\" & \"valueModified : SYSTEM_MOD\" in response for the DB params.
-     * Queryparam (valueChanged =\"N\" and valueDefault = \"FALSE\") - Each parameter whose value
-     * was unchanged during the time range, however, the value is not the default value, \"isChanged
-     * : true\" & \"isDefault : false\" in response for the DB params.
-     *
-     * <p>Note that this API does not return information on the number of times each database
-     * parameter has been changed within the time range. To get the database parameter value change
-     * history for a specific parameter, use the following API endpoint:
+     * Summarizes the database parameter history for the specified database in AWR. This includes the list of database
+     * parameters, with information on whether the parameter values were modified within the query time range. Note that
+     * each database parameter is only listed once. Depending on the optional query parameters, the returned summary gets all the database parameters, which include:
+     * <p>
+     * Queryparam (valueChanged =\"Y\") - Each parameter whose value was changed during the time range, \"isChanged : true\" in response for the DB params.
+     * Queryparam (valueChanged =\"N\") - Each parameter whose value was unchanged during the time range, \"isChanged : false\" in response for the DB params.
+     * Queryparam (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\") - Each parameter whose value was changed at the system level during the time range, \"isChanged : true\" & \"valueModified : SYSTEM_MOD\" in response for the DB params.
+     * Queryparam (valueChanged =\"N\" and  valueDefault = \"FALSE\") - Each parameter whose value was unchanged during the time range, however, the value is not the default value, \"isChanged : true\" & \"isDefault : false\" in response for the DB params.
+     * <p>
+     * Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
      * /awrHubs/{awrHubId}/awrDbParameterChanges?awrSourceDatabaseIdentifier={awrSourceDbId}
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseParametersResponse>
             summarizeAwrDatabaseParameters(
@@ -2273,15 +2270,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the AWR snapshot ranges that contain continuous snapshots, for the specified
-     * AWRHub.
+     * Summarizes the AWR snapshot ranges that contain continuous snapshots, for the specified AWRHub.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseSnapshotRangesResponse>
             summarizeAwrDatabaseSnapshotRanges(
@@ -2292,15 +2289,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the AWR SYSSTAT sample data for the specified database in AWR. The statistical
-     * data is summarized based on the Time dimension for each statistic.
+     * Summarizes the AWR SYSSTAT sample data for the specified database in AWR. The statistical data is summarized based on the Time dimension for each statistic.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseSysstatsResponse> summarizeAwrDatabaseSysstats(
             SummarizeAwrDatabaseSysstatsRequest request,
@@ -2312,12 +2309,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Summarizes the AWR top wait events.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseTopWaitEventsResponse>
             summarizeAwrDatabaseTopWaitEvents(
@@ -2328,15 +2326,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes AWR wait event data into value buckets and frequency, for the specified database
-     * in the AWR.
+     * Summarizes AWR wait event data into value buckets and frequency, for the specified database in the AWR.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseWaitEventBucketsResponse>
             summarizeAwrDatabaseWaitEventBuckets(
@@ -2347,15 +2345,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the AWR wait event sample data for the specified database in the AWR. The event
-     * data is summarized based on the Time dimension for each event.
+     * Summarizes the AWR wait event sample data for the specified database in the AWR. The event data is summarized based on the Time dimension for each event.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrDatabaseWaitEventsResponse>
             summarizeAwrDatabaseWaitEvents(
@@ -2368,12 +2366,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets a list of summary of AWR Sources.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAwrSourcesSummariesResponse> summarizeAwrSourcesSummaries(
             SummarizeAwrSourcesSummariesRequest request,
@@ -2383,17 +2382,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the applicable configuration items based on the query parameters specified.
-     * Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
-     * Values specified in configItemField param will determine what fields for each configuration
-     * items have to be returned.
+     * Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeConfigurationItemsResponse> summarizeConfigurationItems(
             SummarizeConfigurationItemsRequest request,
@@ -2402,17 +2400,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns response with time series data (endTimestamp, capacity, baseCapacity) for the time
-     * period specified. The maximum time range for analysis is 2 years, hence this is intentionally
-     * not paginated. If compartmentIdInSubtree is specified, aggregates resources in a compartment
-     * and in all sub-compartments.
+     * Returns response with time series data (endTimestamp, capacity, baseCapacity) for the time period specified.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeDatabaseInsightResourceCapacityTrendResponse>
             summarizeDatabaseInsightResourceCapacityTrend(
@@ -2423,16 +2421,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get Forecast predictions for CPU and Storage resources since a time in the past. If
-     * compartmentIdInSubtree is specified, aggregates resources in a compartment and in all
-     * sub-compartments.
+     * Get Forecast predictions for CPU and Storage resources since a time in the past.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeDatabaseInsightResourceForecastTrendResponse>
             summarizeDatabaseInsightResourceForecastTrend(
@@ -2443,16 +2441,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the Resource statistics (usage,capacity, usage change percent, utilization percent,
-     * base capacity, isAutoScalingEnabled) for each database filtered by utilization level in a
-     * compartment and in all sub-compartments if specified.
+     * Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled)
+     * for each database filtered by utilization level in a compartment and in all sub-compartments if specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeDatabaseInsightResourceStatisticsResponse>
             summarizeDatabaseInsightResourceStatistics(
@@ -2463,18 +2461,18 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * A cumulative distribution function is used to rank the usage data points per database within
-     * the specified time period. For each database, the minimum data point with a ranking > the
-     * percentile value is included in the summation. Linear regression functions are used to
-     * calculate the usage change percentage. If compartmentIdInSubtree is specified, aggregates
-     * resources in a compartment and in all sub-compartments.
+     * A cumulative distribution function is used to rank the usage data points per database within the specified time period.
+     * For each database, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeDatabaseInsightResourceUsageResponse>
             summarizeDatabaseInsightResourceUsage(
@@ -2485,17 +2483,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with time series data (endTimestamp, usage, capacity) for the time period
-     * specified. The maximum time range for analysis is 2 years, hence this is intentionally not
-     * paginated. If compartmentIdInSubtree is specified, aggregates resources in a compartment and
-     * in all sub-compartments.
+     * Returns response with time series data (endTimestamp, usage, capacity) for the time period specified.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeDatabaseInsightResourceUsageTrendResponse>
             summarizeDatabaseInsightResourceUsageTrend(
@@ -2506,16 +2504,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets resources with current utilization (high and low) and projected utilization (high and
-     * low) for a resource type over specified time period. If compartmentIdInSubtree is specified,
-     * aggregates resources in a compartment and in all sub-compartments.
+     * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeDatabaseInsightResourceUtilizationInsightResponse>
             summarizeDatabaseInsightResourceUtilizationInsight(
@@ -2526,16 +2524,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with usage time series data (endTimestamp, usage, capacity) with breakdown
-     * by tablespaceName for the time period specified. The maximum time range for analysis is 2
-     * years, hence this is intentionally not paginated. Either databaseId or id must be specified.
+     * Returns response with usage time series data (endTimestamp, usage, capacity) with breakdown by tablespaceName for the time period specified.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * Either databaseId or id must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeDatabaseInsightTablespaceUsageTrendResponse>
             summarizeDatabaseInsightTablespaceUsageTrend(
@@ -2546,26 +2545,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with time series data (endTimestamp, capacity) for the time period specified
-     * for an exadata system for a resource metric. Additionally resources can be filtered using
-     * databaseInsightId, hostInsightId or storageServerName query parameters. Top five resources
-     * are returned if total exceeds the limit specified. Valid values for ResourceType DATABASE are
-     * CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId,
-     * cdbName and hostName query parameter applies to ResourceType DATABASE. Valid values for
-     * ResourceType HOST are CPU and MEMORY. HostName is returned in name field. HostInsightId and
-     * hostName query parameter applies to ResourceType HOST. Valid values for ResourceType
-     * STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name
-     * field for resourceMetric IOPS and THROUGHPUT and asmName is returned in name field for
-     * resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType
-     * STORAGE_SERVER. Valid values for ResourceType DISKGROUP is STORAGE. Comma delimited
-     * (asmName,diskgroupName) is returned in name field.
+     * Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system for a resource metric.
+     * Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+     * Top five resources are returned if total exceeds the limit specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId, cdbName and hostName query parameter applies to ResourceType DATABASE.
+     * Valid values for ResourceType HOST are CPU and MEMORY. HostName is returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+     * and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+     * Valid values for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceCapacityTrendResponse>
             summarizeExadataInsightResourceCapacityTrend(
@@ -2576,18 +2571,19 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with time series data (endTimestamp, capacity) for the time period specified
-     * for an exadata system or fleet aggregation for a resource metric. The maximum time range for
-     * analysis is 2 years, hence this is intentionally not paginated. Valid values for ResourceType
-     * DATABASE are CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and
-     * MEMORY. Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     * Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system or fleet aggregation for a resource metric.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
             summarizeExadataInsightResourceCapacityTrendAggregated(
@@ -2598,26 +2594,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get historical usage and forecast predictions for an exadata system with breakdown by
-     * databases, hosts or storage servers. Additionally resources can be filtered using
-     * databaseInsightId, hostInsightId or storageServerName query parameters. Top five resources
-     * are returned if total exceeds the limit specified. Valid values for ResourceType DATABASE are
-     * CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId ,
-     * cdbName and hostName query parameter applies to ResourceType DATABASE. Valid values for
-     * ResourceType HOST are CPU and MEMORY. HostName s returned in name field. HostInsightId and
-     * hostName query parameter applies to ResourceType HOST. Valid values for ResourceType
-     * STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name
-     * field for resourceMetric IOPS and THROUGHPUT and asmName is returned in name field for
-     * resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType
-     * STORAGE_SERVER. Valid value for ResourceType DISKGROUP is STORAGE. Comma delimited
-     * (asmName,diskgroupName) is returned in name field.
+     * Get historical usage and forecast predictions for an exadata system with breakdown by databases, hosts or storage servers.
+     * Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+     * Top five resources are returned if total exceeds the limit specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId , cdbName and hostName query parameter applies to ResourceType DATABASE.
+     * Valid values for ResourceType HOST are CPU and MEMORY. HostName s returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+     * and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+     * Valid value for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceForecastTrendResponse>
             summarizeExadataInsightResourceForecastTrend(
@@ -2628,17 +2620,18 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get aggregated historical usage and forecast predictions for resources. Either compartmentId
-     * or exadataInsightsId query parameter must be specified. Valid values for ResourceType
-     * DATABASE are CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and
-     * MEMORY. Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     * Get aggregated historical usage and forecast predictions for resources. Either compartmentId or exadataInsightsId query parameter must be specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
             summarizeExadataInsightResourceForecastTrendAggregated(
@@ -2649,18 +2642,19 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the Resource statistics (usage, capacity, usage change percent, utilization percent)
-     * for each resource based on resourceMetric filtered by utilization level. Valid values for
-     * ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are
-     * CPU and MEMORY. Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS, THROUGHPUT.
+     * Lists the Resource statistics (usage, capacity, usage change percent, utilization percent) for each resource based on resourceMetric filtered by utilization level.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS, THROUGHPUT.
      * Valid value for ResourceType DISKGROUP is STORAGE.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceStatisticsResponse>
             summarizeExadataInsightResourceStatistics(
@@ -2671,19 +2665,20 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * A cumulative distribution function is used to rank the usage data points per resource within
-     * the specified time period. For each resource, the minimum data point with a ranking > the
-     * percentile value is included in the summation. Linear regression functions are used to
-     * calculate the usage change percentage. Valid values for ResourceType DATABASE are
-     * CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and MEMORY. Valid
-     * values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     * A cumulative distribution function is used to rank the usage data points per resource within the specified time period.
+     * For each resource, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceUsageResponse>
             summarizeExadataInsightResourceUsage(
@@ -2694,19 +2689,20 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * A cumulative distribution function is used to rank the usage data points per database within
-     * the specified time period. For each database, the minimum data point with a ranking > the
-     * percentile value is included in the summation. Linear regression functions are used to
-     * calculate the usage change percentage. Valid values for ResourceType DATABASE are
-     * CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and MEMORY. Valid
-     * values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     * A cumulative distribution function is used to rank the usage data points per database within the specified time period.
+     * For each database, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceUsageAggregatedResponse>
             summarizeExadataInsightResourceUsageAggregated(
@@ -2717,17 +2713,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets current utilization, projected utilization and days to reach projectedUtilization for an
-     * exadata system over specified time period. Valid values for ResourceType DATABASE are
-     * CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and MEMORY. Valid
-     * values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     * Gets current utilization, projected utilization and days to reach projectedUtilization for an exadata system over specified time period. Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and MEMORY. Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataInsightResourceUtilizationInsightResponse>
             summarizeExadataInsightResourceUtilizationInsight(
@@ -2742,10 +2735,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeExadataMembersResponse> summarizeExadataMembers(
             SummarizeExadataMembersRequest request,
@@ -2756,12 +2749,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Returns response with disk(s) statistics for a host.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightDiskStatisticsResponse>
             summarizeHostInsightDiskStatistics(
@@ -2774,12 +2768,13 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Returns response with some recommendations if apply for a host.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightHostRecommendationResponse>
             summarizeHostInsightHostRecommendation(
@@ -2790,15 +2785,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with usage time series data with breakdown by IO interface for the time
-     * period specified.
+     * Returns response with usage time series data with breakdown by IO interface for the time period specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightIoUsageTrendResponse>
             summarizeHostInsightIoUsageTrend(
@@ -2809,15 +2804,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with usage time series data with breakdown by network interface for the time
-     * period specified.
+     * Returns response with usage time series data with breakdown by network interface for the time period specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightNetworkUsageTrendResponse>
             summarizeHostInsightNetworkUsageTrend(
@@ -2828,17 +2823,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with time series data (endTimestamp, capacity) for the time period
-     * specified. The maximum time range for analysis is 2 years, hence this is intentionally not
-     * paginated. If compartmentIdInSubtree is specified, aggregates resources in a compartment and
-     * in all sub-compartments.
+     * Returns response with time series data (endTimestamp, capacity) for the time period specified.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightResourceCapacityTrendResponse>
             summarizeHostInsightResourceCapacityTrend(
@@ -2849,16 +2844,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get Forecast predictions for CPU or memory resources since a time in the past. If
-     * compartmentIdInSubtree is specified, aggregates resources in a compartment and in all
-     * sub-compartments.
+     * Get Forecast predictions for CPU or memory resources since a time in the past.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightResourceForecastTrendResponse>
             summarizeHostInsightResourceForecastTrend(
@@ -2869,16 +2864,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the resource statistics (usage, capacity, usage change percent, utilization percent,
-     * load) for each host filtered by utilization level in a compartment and in all
-     * sub-compartments if specified.
+     * Lists the resource statistics (usage, capacity, usage change percent, utilization percent, load) for each host filtered
+     * by utilization level in a compartment and in all sub-compartments if specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightResourceStatisticsResponse>
             summarizeHostInsightResourceStatistics(
@@ -2889,18 +2884,18 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * A cumulative distribution function is used to rank the usage data points per host within the
-     * specified time period. For each host, the minimum data point with a ranking > the percentile
-     * value is included in the summation. Linear regression functions are used to calculate the
-     * usage change percentage. If compartmentIdInSubtree is specified, aggregates resources in a
-     * compartment and in all sub-compartments.
+     * A cumulative distribution function is used to rank the usage data points per host within the specified time period.
+     * For each host, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightResourceUsageResponse>
             summarizeHostInsightResourceUsage(
@@ -2911,17 +2906,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with time series data (endTimestamp, usage, capacity) for the time period
-     * specified. The maximum time range for analysis is 2 years, hence this is intentionally not
-     * paginated. If compartmentIdInSubtree is specified, aggregates resources in a compartment and
-     * in all sub-compartments.
+     * Returns response with time series data (endTimestamp, usage, capacity) for the time period specified.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightResourceUsageTrendResponse>
             summarizeHostInsightResourceUsageTrend(
@@ -2932,16 +2927,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets resources with current utilization (high and low) and projected utilization (high and
-     * low) for a resource type over specified time period. If compartmentIdInSubtree is specified,
-     * aggregates resources in a compartment and in all sub-compartments.
+     * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightResourceUtilizationInsightResponse>
             summarizeHostInsightResourceUtilizationInsight(
@@ -2952,15 +2947,15 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with usage time series data with breakdown by filesystem for the time period
-     * specified.
+     * Returns response with usage time series data with breakdown by filesystem for the time period specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightStorageUsageTrendResponse>
             summarizeHostInsightStorageUsageTrend(
@@ -2971,17 +2966,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with aggregated data (timestamp, usageData) for top processes on a specific
-     * date. Data is aggregated for the time specified and processes are sorted descendent by the
-     * process metric specified (CPU, MEMORY, VIRTUAL_MEMORY). hostInsightId, processMetric must be
-     * specified.
+     * Returns response with aggregated data (timestamp, usageData) for top processes on a specific date.
+     * Data is aggregated for the time specified and processes are sorted descendent by the process metric specified (CPU, MEMORY, VIRTUAL_MEMORY).
+     * hostInsightId, processMetric must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightTopProcessesUsageResponse>
             summarizeHostInsightTopProcessesUsage(
@@ -2992,17 +2987,17 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns response with aggregated time series data (timeIntervalstart, timeIntervalEnd,
-     * commandArgs, usageData) for top processes. Data is aggregated for the time period specified
-     * and proceses are sorted descendent by the proces metric specified (CPU, MEMORY,
-     * VIRTUAL_MEMORY). HostInsight Id and Process metric must be specified
+     * Returns response with aggregated time series data (timeIntervalstart, timeIntervalEnd, commandArgs, usageData) for top processes.
+     * Data is aggregated for the time period specified and proceses are sorted descendent by the proces metric specified (CPU, MEMORY, VIRTUAL_MEMORY).
+     * HostInsight Id and Process metric must be specified
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeHostInsightTopProcessesUsageTrendResponse>
             summarizeHostInsightTopProcessesUsageTrend(
@@ -3013,16 +3008,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the details of resources used by an Operations Insights Warehouse. There is only
-     * expected to be 1 warehouse per tenant. The warehouse is expected to be in the root
-     * compartment.
+     * Gets the details of resources used by an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeOperationsInsightsWarehouseResourceUsageResponse>
             summarizeOperationsInsightsWarehouseResourceUsage(
@@ -3033,16 +3028,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database
-     * time for a given time period across the given databases or database types in a compartment
-     * and in all sub-compartments if specified.
+     * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
+     * time period across the given databases or database types in a compartment and in all sub-compartments if specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlInsightsResponse> summarizeSqlInsights(
             SummarizeSqlInsightsRequest request,
@@ -3051,15 +3046,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Query SQL Warehouse to get the performance insights on the execution plans for a given SQL
-     * for a given time period. Either databaseId or id must be specified.
+     * Query SQL Warehouse to get the performance insights on the execution plans for a given SQL for a given time period.
+     * Either databaseId or id must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlPlanInsightsResponse> summarizeSqlPlanInsights(
             SummarizeSqlPlanInsightsRequest request,
@@ -3068,15 +3064,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Query SQL Warehouse to summarize the response time distribution of query executions for a
-     * given SQL for a given time period. Either databaseId or id must be specified.
+     * Query SQL Warehouse to summarize the response time distribution of query executions for a given SQL for a given time period.
+     * Either databaseId or id must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlResponseTimeDistributionsResponse>
             summarizeSqlResponseTimeDistributions(
@@ -3087,16 +3084,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Query SQL Warehouse to get the performance statistics for SQLs taking greater than X%
-     * database time for a given time period across the given databases or database types in a
-     * compartment and in all sub-compartments if specified.
+     * Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given
+     * time period across the given databases or database types in a compartment and in all sub-compartments if specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlStatisticsResponse> summarizeSqlStatistics(
             SummarizeSqlStatisticsRequest request,
@@ -3105,16 +3102,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Query SQL Warehouse to get the performance statistics time series for a given SQL across
-     * given databases for a given time period in a compartment and in all sub-compartments if
-     * specified.
+     * Query SQL Warehouse to get the performance statistics time series for a given SQL across given databases for a
+     * given time period in a compartment and in all sub-compartments if specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlStatisticsTimeSeriesResponse>
             summarizeSqlStatisticsTimeSeries(
@@ -3125,15 +3122,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Query SQL Warehouse to get the performance statistics time series for a given SQL by
-     * execution plans for a given time period. Either databaseId or id must be specified.
+     * Query SQL Warehouse to get the performance statistics time series for a given SQL by execution plans for a given time period.
+     * Either databaseId or id must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeSqlStatisticsTimeSeriesByPlanResponse>
             summarizeSqlStatisticsTimeSeriesByPlan(
@@ -3148,10 +3146,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<TestMacsManagedCloudDatabaseInsightConnectionResponse>
             testMacsManagedCloudDatabaseInsightConnection(
@@ -3166,10 +3164,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAwrHubResponse> updateAwrHub(
             UpdateAwrHubRequest request,
@@ -3181,10 +3179,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAwrHubSourceResponse> updateAwrHubSource(
             UpdateAwrHubSourceRequest request,
@@ -3197,10 +3195,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDatabaseInsightResponse> updateDatabaseInsight(
             UpdateDatabaseInsightRequest request,
@@ -3213,10 +3211,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateEnterpriseManagerBridgeResponse>
             updateEnterpriseManagerBridge(
@@ -3231,10 +3229,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateExadataInsightResponse> updateExadataInsight(
             UpdateExadataInsightRequest request,
@@ -3247,10 +3245,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateHostInsightResponse> updateHostInsight(
             UpdateHostInsightRequest request,
@@ -3259,14 +3257,14 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the configuration of a news report.
+     * Updates the  configuration of a news report.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateNewsReportResponse> updateNewsReport(
             UpdateNewsReportRequest request,
@@ -3278,10 +3276,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateOperationsInsightsPrivateEndpointResponse>
             updateOperationsInsightsPrivateEndpoint(
@@ -3292,15 +3290,16 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the configuration of an Ops Insights Warehouse. There is only expected to be 1
-     * warehouse per tenant. The warehouse is expected to be in the root compartment.
+     * Updates the configuration of an Ops Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateOperationsInsightsWarehouseResponse>
             updateOperationsInsightsWarehouse(
@@ -3315,10 +3314,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateOperationsInsightsWarehouseUserResponse>
             updateOperationsInsightsWarehouseUser(
@@ -3333,10 +3332,10 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateOpsiConfigurationResponse> updateOpsiConfiguration(
             UpdateOpsiConfigurationRequest request,

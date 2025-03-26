@@ -5,27 +5,27 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about monitored resource tags. Request will fail if at least one of freeformTags
- * or definedTags are not specified. Provided tags will be added or updated in the existing list of
- * tags for the affected resources. Resources to be updated are identified based on association
- * types specified. If association types are not specified, then tags will be updated only for the
- * current resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The information about monitored resource tags. Request will fail if at least one of
+ * freeformTags or definedTags are not specified.
+ * Provided tags will be added or updated in the existing list of tags for the affected resources.
+ * Resources to be updated are identified based on association types specified.
+ * If association types are not specified, then tags will be updated only for the current resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateAndPropagateTagsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateAndPropagateTagsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAndPropagateTagsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"freeformTags", "definedTags", "associationTypes"})
     public UpdateAndPropagateTagsDetails(
@@ -41,19 +41,20 @@ public final class UpdateAndPropagateTagsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -62,7 +63,8 @@ public final class UpdateAndPropagateTagsDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -72,7 +74,7 @@ public final class UpdateAndPropagateTagsDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -81,22 +83,23 @@ public final class UpdateAndPropagateTagsDetails
         }
         /**
          * Association types that will be traversed recursively starting from the current resource,
-         * to identify resources for which the tags will be updated. If no association type is
-         * specified, only current resource will be updated. Default is empty list, which means no
-         * related resources will be updated.
-         */
+         * to identify resources for which the tags will be updated.
+         * If no association type is specified, only current resource will be updated.
+         * Default is empty list, which means no related resources will be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationTypes")
         private java.util.List<String> associationTypes;
 
         /**
          * Association types that will be traversed recursively starting from the current resource,
-         * to identify resources for which the tags will be updated. If no association type is
-         * specified, only current resource will be updated. Default is empty list, which means no
-         * related resources will be updated.
+         * to identify resources for which the tags will be updated.
+         * If no association type is specified, only current resource will be updated.
+         * Default is empty list, which means no related resources will be updated.
          *
          * @param associationTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder associationTypes(java.util.List<String> associationTypes) {
             this.associationTypes = associationTypes;
             this.__explicitlySet__.add("associationTypes");
@@ -131,7 +134,9 @@ public final class UpdateAndPropagateTagsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,56 +146,59 @@ public final class UpdateAndPropagateTagsDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Association types that will be traversed recursively starting from the current resource, to
-     * identify resources for which the tags will be updated. If no association type is specified,
-     * only current resource will be updated. Default is empty list, which means no related
-     * resources will be updated.
-     */
+     * Association types that will be traversed recursively starting from the current resource,
+     * to identify resources for which the tags will be updated.
+     * If no association type is specified, only current resource will be updated.
+     * Default is empty list, which means no related resources will be updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationTypes")
     private final java.util.List<String> associationTypes;
 
     /**
-     * Association types that will be traversed recursively starting from the current resource, to
-     * identify resources for which the tags will be updated. If no association type is specified,
-     * only current resource will be updated. Default is empty list, which means no related
-     * resources will be updated.
+     * Association types that will be traversed recursively starting from the current resource,
+     * to identify resources for which the tags will be updated.
+     * If no association type is specified, only current resource will be updated.
+     * Default is empty list, which means no related resources will be updated.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAssociationTypes() {
         return associationTypes;
     }
@@ -202,7 +210,6 @@ public final class UpdateAndPropagateTagsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

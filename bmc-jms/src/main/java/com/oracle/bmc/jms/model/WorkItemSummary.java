@@ -5,22 +5,19 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Work item to complete a work request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Work item to complete a work request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkItemSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkItemSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkItemSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -51,31 +48,33 @@ public final class WorkItemSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique ID of ths work item. */
+        /**
+         * The unique ID of ths work item.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique ID of ths work item.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the work request created this work item. */
+        /**
+         * The OCID of the work request created this work item.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * The OCID of the work request created this work item.
-         *
          * @param workRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
@@ -99,50 +98,51 @@ public final class WorkItemSummary
             this.__explicitlySet__.add("details");
             return this;
         }
-        /** The status of the work item. */
+        /**
+         * The status of the work item.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkItemStatus status;
 
         /**
          * The status of the work item.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(WorkItemStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Number of times this work item is retried. */
+        /**
+         * Number of times this work item is retried.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
         private Integer retryCount;
 
         /**
          * Number of times this work item is retried.
-         *
          * @param retryCount the value to set
          * @return this builder
-         */
+         **/
         public Builder retryCount(Integer retryCount) {
             this.retryCount = retryCount;
             this.__explicitlySet__.add("retryCount");
             return this;
         }
         /**
-         * The date and time the work item was last updated. (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The date and time the work item was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
         private java.util.Date timeLastUpdated;
 
         /**
-         * The date and time the work item was last updated. (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The date and time the work item was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeLastUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
             this.timeLastUpdated = timeLastUpdated;
             this.__explicitlySet__.add("timeLastUpdated");
@@ -195,7 +195,9 @@ public final class WorkItemSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -204,28 +206,30 @@ public final class WorkItemSummary
         return new Builder().copy(this);
     }
 
-    /** The unique ID of ths work item. */
+    /**
+     * The unique ID of ths work item.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique ID of ths work item.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the work request created this work item. */
+    /**
+     * The OCID of the work request created this work item.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * The OCID of the work request created this work item.
-     *
      * @return the value
-     */
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -244,45 +248,46 @@ public final class WorkItemSummary
         return details;
     }
 
-    /** The status of the work item. */
+    /**
+     * The status of the work item.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkItemStatus status;
 
     /**
      * The status of the work item.
-     *
      * @return the value
-     */
+     **/
     public WorkItemStatus getStatus() {
         return status;
     }
 
-    /** Number of times this work item is retried. */
+    /**
+     * Number of times this work item is retried.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
     private final Integer retryCount;
 
     /**
      * Number of times this work item is retried.
-     *
      * @return the value
-     */
+     **/
     public Integer getRetryCount() {
         return retryCount;
     }
 
     /**
-     * The date and time the work item was last updated. (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The date and time the work item was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
     private final java.util.Date timeLastUpdated;
 
     /**
-     * The date and time the work item was last updated. (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time the work item was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastUpdated() {
         return timeLastUpdated;
     }
@@ -294,7 +299,6 @@ public final class WorkItemSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

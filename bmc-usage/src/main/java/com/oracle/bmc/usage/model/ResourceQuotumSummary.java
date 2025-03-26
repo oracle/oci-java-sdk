@@ -5,23 +5,23 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The resource quota balance details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * The resource quota balance details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceQuotumSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourceQuotumSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceQuotumSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -58,136 +58,145 @@ public final class ResourceQuotumSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The resource name. */
+        /**
+         * The resource name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The resource name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Used to indicate if further quota consumption isAllowed. */
+        /**
+         * Used to indicate if further quota consumption isAllowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAllowed")
         private Boolean isAllowed;
 
         /**
          * Used to indicate if further quota consumption isAllowed.
-         *
          * @param isAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isAllowed(Boolean isAllowed) {
             this.isAllowed = isAllowed;
             this.__explicitlySet__.add("isAllowed");
             return this;
         }
-        /** The quota limit. */
+        /**
+         * The quota limit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private Double limit;
 
         /**
          * The quota limit.
-         *
          * @param limit the value to set
          * @return this builder
-         */
+         **/
         public Builder limit(Double limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
             return this;
         }
-        /** The quota balance. */
+        /**
+         * The quota balance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("balance")
         private Double balance;
 
         /**
          * The quota balance.
-         *
          * @param balance the value to set
          * @return this builder
-         */
+         **/
         public Builder balance(Double balance) {
             this.balance = balance;
             this.__explicitlySet__.add("balance");
             return this;
         }
-        /** Used to indicate if overages are incurred. */
+        /**
+         * Used to indicate if overages are incurred.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverage")
         private Boolean isOverage;
 
         /**
          * Used to indicate if overages are incurred.
-         *
          * @param isOverage the value to set
          * @return this builder
-         */
+         **/
         public Builder isOverage(Boolean isOverage) {
             this.isOverage = isOverage;
             this.__explicitlySet__.add("isOverage");
             return this;
         }
-        /** The purchased quota limit. */
+        /**
+         * The purchased quota limit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purchasedLimit")
         private Double purchasedLimit;
 
         /**
          * The purchased quota limit.
-         *
          * @param purchasedLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder purchasedLimit(Double purchasedLimit) {
             this.purchasedLimit = purchasedLimit;
             this.__explicitlySet__.add("purchasedLimit");
             return this;
         }
-        /** The service name. */
+        /**
+         * The service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
          * The service name.
-         *
          * @param service the value to set
          * @return this builder
-         */
+         **/
         public Builder service(String service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /** Used to indicate any resource dependencies. */
+        /**
+         * Used to indicate any resource dependencies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDependency")
         private Boolean isDependency;
 
         /**
          * Used to indicate any resource dependencies.
-         *
          * @param isDependency the value to set
          * @return this builder
-         */
+         **/
         public Builder isDependency(Boolean isDependency) {
             this.isDependency = isDependency;
             this.__explicitlySet__.add("isDependency");
             return this;
         }
-        /** The affected resource name. */
+        /**
+         * The affected resource name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("affectedResource")
         private String affectedResource;
 
         /**
          * The affected resource name.
-         *
          * @param affectedResource the value to set
          * @return this builder
-         */
+         **/
         public Builder affectedResource(String affectedResource) {
             this.affectedResource = affectedResource;
             this.__explicitlySet__.add("affectedResource");
@@ -248,7 +257,9 @@ public final class ResourceQuotumSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -257,119 +268,128 @@ public final class ResourceQuotumSummary
         return new Builder().copy(this);
     }
 
-    /** The resource name. */
+    /**
+     * The resource name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The resource name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Used to indicate if further quota consumption isAllowed. */
+    /**
+     * Used to indicate if further quota consumption isAllowed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAllowed")
     private final Boolean isAllowed;
 
     /**
      * Used to indicate if further quota consumption isAllowed.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAllowed() {
         return isAllowed;
     }
 
-    /** The quota limit. */
+    /**
+     * The quota limit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final Double limit;
 
     /**
      * The quota limit.
-     *
      * @return the value
-     */
+     **/
     public Double getLimit() {
         return limit;
     }
 
-    /** The quota balance. */
+    /**
+     * The quota balance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("balance")
     private final Double balance;
 
     /**
      * The quota balance.
-     *
      * @return the value
-     */
+     **/
     public Double getBalance() {
         return balance;
     }
 
-    /** Used to indicate if overages are incurred. */
+    /**
+     * Used to indicate if overages are incurred.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverage")
     private final Boolean isOverage;
 
     /**
      * Used to indicate if overages are incurred.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOverage() {
         return isOverage;
     }
 
-    /** The purchased quota limit. */
+    /**
+     * The purchased quota limit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("purchasedLimit")
     private final Double purchasedLimit;
 
     /**
      * The purchased quota limit.
-     *
      * @return the value
-     */
+     **/
     public Double getPurchasedLimit() {
         return purchasedLimit;
     }
 
-    /** The service name. */
+    /**
+     * The service name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
      * The service name.
-     *
      * @return the value
-     */
+     **/
     public String getService() {
         return service;
     }
 
-    /** Used to indicate any resource dependencies. */
+    /**
+     * Used to indicate any resource dependencies.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDependency")
     private final Boolean isDependency;
 
     /**
      * Used to indicate any resource dependencies.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDependency() {
         return isDependency;
     }
 
-    /** The affected resource name. */
+    /**
+     * The affected resource name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("affectedResource")
     private final String affectedResource;
 
     /**
      * The affected resource name.
-     *
      * @return the value
-     */
+     **/
     public String getAffectedResource() {
         return affectedResource;
     }
@@ -381,7 +401,6 @@ public final class ResourceQuotumSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

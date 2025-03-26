@@ -6,83 +6,104 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RestoreDeploymentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use RestoreDeploymentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RestoreDeploymentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RestoreDeploymentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class RestoreDeploymentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.goldengate.model.RestoreDeploymentDetails> {
 
-    /** A unique DeploymentBackup identifier. */
+    /**
+     * A unique DeploymentBackup identifier.
+     *
+     */
     private String deploymentBackupId;
 
-    /** A unique DeploymentBackup identifier. */
+    /**
+     * A unique DeploymentBackup identifier.
+     *
+     */
     public String getDeploymentBackupId() {
         return deploymentBackupId;
     }
-    /** A placeholder for any additional metadata to describe the deployment restore. */
+    /**
+     * A placeholder for any additional metadata to describe the deployment restore.
+     *
+     */
     private com.oracle.bmc.goldengate.model.RestoreDeploymentDetails restoreDeploymentDetails;
 
-    /** A placeholder for any additional metadata to describe the deployment restore. */
+    /**
+     * A placeholder for any additional metadata to describe the deployment restore.
+     *
+     */
     public com.oracle.bmc.goldengate.model.RestoreDeploymentDetails getRestoreDeploymentDetails() {
         return restoreDeploymentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -95,10 +116,14 @@ public class RestoreDeploymentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RestoreDeploymentRequest,
                     com.oracle.bmc.goldengate.model.RestoreDeploymentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique DeploymentBackup identifier. */
+        /**
+         * A unique DeploymentBackup identifier.
+         *
+         */
         private String deploymentBackupId = null;
 
         /**
@@ -112,7 +137,10 @@ public class RestoreDeploymentRequest
             return this;
         }
 
-        /** A placeholder for any additional metadata to describe the deployment restore. */
+        /**
+         * A placeholder for any additional metadata to describe the deployment restore.
+         *
+         */
         private com.oracle.bmc.goldengate.model.RestoreDeploymentDetails restoreDeploymentDetails =
                 null;
 
@@ -130,17 +158,18 @@ public class RestoreDeploymentRequest
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -150,7 +179,10 @@ public class RestoreDeploymentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -165,20 +197,19 @@ public class RestoreDeploymentRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -188,12 +219,13 @@ public class RestoreDeploymentRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -204,19 +236,18 @@ public class RestoreDeploymentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -228,7 +259,6 @@ public class RestoreDeploymentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RestoreDeploymentRequest o) {
@@ -246,11 +276,10 @@ public class RestoreDeploymentRequest
         /**
          * Build the instance of RestoreDeploymentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RestoreDeploymentRequest
          */
@@ -263,7 +292,6 @@ public class RestoreDeploymentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -276,8 +304,7 @@ public class RestoreDeploymentRequest
         /**
          * Build the instance of RestoreDeploymentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RestoreDeploymentRequest
@@ -291,14 +318,12 @@ public class RestoreDeploymentRequest
             request.opcRetryToken = opcRetryToken;
             request.isLockOverride = isLockOverride;
             return request;
-            // new RestoreDeploymentRequest(deploymentBackupId, restoreDeploymentDetails, ifMatch,
-            // opcRequestId, opcRetryToken, isLockOverride);
+            // new RestoreDeploymentRequest(deploymentBackupId, restoreDeploymentDetails, ifMatch, opcRequestId, opcRetryToken, isLockOverride);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -313,7 +338,6 @@ public class RestoreDeploymentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * maskingPolicyColumnsInfo object has details of column group with schema details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * maskingPolicyColumnsInfo object has details of column group with schema details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaskingPolicyColumnsInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MaskingPolicyColumnsInfo.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaskingPolicyColumnsInfo
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "schemaName",
@@ -43,31 +42,33 @@ public final class MaskingPolicyColumnsInfo
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the schema that contains the database column(s). */
+        /**
+         * The name of the schema that contains the database column(s).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
          * The name of the schema that contains the database column(s).
-         *
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The type of the database object that contains the masking policy. */
+        /**
+         * The type of the database object that contains the masking policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private ObjectType objectType;
 
         /**
          * The type of the database object that contains the masking policy.
-         *
          * @param objectType the value to set
          * @return this builder
-         */
+         **/
         public Builder objectType(ObjectType objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
@@ -75,35 +76,33 @@ public final class MaskingPolicyColumnsInfo
         }
         /**
          * The name of the object (table or editioning view) that contains the database column(s).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The name of the object (table or editioning view) that contains the database column(s).
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
         /**
-         * Group of columns in referential relation. Order needs to be maintained in the elements of
-         * the parent/child array listing.
-         */
+         * Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referentialColumnGroup")
         private java.util.List<String> referentialColumnGroup;
 
         /**
-         * Group of columns in referential relation. Order needs to be maintained in the elements of
-         * the parent/child array listing.
+         * Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
          *
          * @param referentialColumnGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder referentialColumnGroup(java.util.List<String> referentialColumnGroup) {
             this.referentialColumnGroup = referentialColumnGroup;
             this.__explicitlySet__.add("referentialColumnGroup");
@@ -144,7 +143,9 @@ public final class MaskingPolicyColumnsInfo
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,26 +154,29 @@ public final class MaskingPolicyColumnsInfo
         return new Builder().copy(this);
     }
 
-    /** The name of the schema that contains the database column(s). */
+    /**
+     * The name of the schema that contains the database column(s).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
      * The name of the schema that contains the database column(s).
-     *
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** The type of the database object that contains the masking policy. */
-    public enum ObjectType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the database object that contains the masking policy.
+     **/
+    public enum ObjectType {
         Table("TABLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -211,45 +215,46 @@ public final class MaskingPolicyColumnsInfo
             return UnknownEnumValue;
         }
     };
-    /** The type of the database object that contains the masking policy. */
+    /**
+     * The type of the database object that contains the masking policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final ObjectType objectType;
 
     /**
      * The type of the database object that contains the masking policy.
-     *
      * @return the value
-     */
+     **/
     public ObjectType getObjectType() {
         return objectType;
     }
 
-    /** The name of the object (table or editioning view) that contains the database column(s). */
+    /**
+     * The name of the object (table or editioning view) that contains the database column(s).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The name of the object (table or editioning view) that contains the database column(s).
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
     /**
-     * Group of columns in referential relation. Order needs to be maintained in the elements of the
-     * parent/child array listing.
-     */
+     * Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referentialColumnGroup")
     private final java.util.List<String> referentialColumnGroup;
 
     /**
-     * Group of columns in referential relation. Order needs to be maintained in the elements of the
-     * parent/child array listing.
+     * Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getReferentialColumnGroup() {
         return referentialColumnGroup;
     }
@@ -261,7 +266,6 @@ public final class MaskingPolicyColumnsInfo
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

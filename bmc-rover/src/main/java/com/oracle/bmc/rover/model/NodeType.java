@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.rover.model;
 
-/** Possible rover node types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-public enum NodeType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible rover node types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+public enum NodeType {
     Standalone("STANDALONE"),
     Clustered("CLUSTERED"),
     Station("STATION"),

@@ -5,35 +5,36 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The Deterministic Substitution masking format uses the specified substitution column as the
- * source of masked values. It performs hash-based substitution to replace the original data in a
- * column with values from the substitution column. As a masking operation renames tables
- * temporarily, the substitution column must be in a table that has no masking column. Also, you may
- * want to ensure that the substitution column has sufficient values to uniquely mask the target
- * column.
+ * The Deterministic Substitution masking format uses the specified substitution column
+ * as the source of masked values. It performs hash-based substitution to replace the
+ * original data in a column with values from the substitution column. As a masking
+ * operation renames tables temporarily, the substitution column must be in a table
+ * that has no masking column. Also, you may want to ensure that the substitution column
+ * has sufficient values to uniquely mask the target column.
+ * <p>
+ * Deterministic Substitution requires a seed value while submitting a masking work
+ * request. Passing the same seed value when masking multiple times or masking different
+ * databases ensures that the data is masked deterministically. To learn more, check
+ * Deterministic Substitution in the Data Safe documentation.
  *
- * <p>Deterministic Substitution requires a seed value while submitting a masking work request.
- * Passing the same seed value when masking multiple times or masking different databases ensures
- * that the data is masked deterministically. To learn more, check Deterministic Substitution in the
- * Data Safe documentation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeterministicSubstitutionFormatEntry.Builder.class)
+    builder = DeterministicSubstitutionFormatEntry.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -45,46 +46,49 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The name of the schema that contains the substitution column. */
+        /**
+         * The name of the schema that contains the substitution column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
          * The name of the schema that contains the substitution column.
-         *
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The name of the table that contains the substitution column. */
+        /**
+         * The name of the table that contains the substitution column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
         /**
          * The name of the table that contains the substitution column.
-         *
          * @param tableName the value to set
          * @return this builder
-         */
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-        /** The name of the substitution column. */
+        /**
+         * The name of the substitution column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
         /**
          * The name of the substitution column.
-         *
          * @param columnName the value to set
          * @return this builder
-         */
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
@@ -122,7 +126,9 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,41 +146,44 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
         this.columnName = columnName;
     }
 
-    /** The name of the schema that contains the substitution column. */
+    /**
+     * The name of the schema that contains the substitution column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
      * The name of the schema that contains the substitution column.
-     *
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** The name of the table that contains the substitution column. */
+    /**
+     * The name of the table that contains the substitution column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
     /**
      * The name of the table that contains the substitution column.
-     *
      * @return the value
-     */
+     **/
     public String getTableName() {
         return tableName;
     }
 
-    /** The name of the substitution column. */
+    /**
+     * The name of the substitution column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
     /**
      * The name of the substitution column.
-     *
      * @return the value
-     */
+     **/
     public String getColumnName() {
         return columnName;
     }
@@ -186,7 +195,6 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

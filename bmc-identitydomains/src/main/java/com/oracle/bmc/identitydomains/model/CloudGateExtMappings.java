@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of Cloud Gate Mappings that map Apps to this Cloud Gate <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * A list of Cloud Gate Mappings that map Apps to this Cloud Gate
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CloudGateExtMappings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CloudGateExtMappings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CloudGateExtMappings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CloudGateExtMappings extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mappingId",
@@ -66,49 +64,71 @@ public final class CloudGateExtMappings
     public static class Builder {
         /**
          * The id of the Cloud Gate Mapping
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mappingId")
         private String mappingId;
 
         /**
          * The id of the Cloud Gate Mapping
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mappingId the value to set
          * @return this builder
-         */
+         **/
         public Builder mappingId(String mappingId) {
             this.mappingId = mappingId;
             this.__explicitlySet__.add("mappingId");
             return this;
         }
         /**
-         * Resource prefix for this mapping. This will be used to define the location block
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Resource prefix for this mapping.  This will be used to define the location block
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrefix")
         private String resourcePrefix;
 
         /**
-         * Resource prefix for this mapping. This will be used to define the location block
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Resource prefix for this mapping.  This will be used to define the location block
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param resourcePrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder resourcePrefix(String resourcePrefix) {
             this.resourcePrefix = resourcePrefix;
             this.__explicitlySet__.add("resourcePrefix");
@@ -116,51 +136,71 @@ public final class CloudGateExtMappings
         }
         /**
          * NGINX ProxyPass entry for this Mapping
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("proxyPass")
         private String proxyPass;
 
         /**
          * NGINX ProxyPass entry for this Mapping
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param proxyPass the value to set
          * @return this builder
-         */
+         **/
         public Builder proxyPass(String proxyPass) {
             this.proxyPass = proxyPass;
             this.__explicitlySet__.add("proxyPass");
             return this;
         }
         /**
-         * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the
-         * associated Cloud Gate list
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serverId")
         private String serverId;
 
         /**
-         * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the
-         * associated Cloud Gate list
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param serverId the value to set
          * @return this builder
-         */
+         **/
         public Builder serverId(String serverId) {
             this.serverId = serverId;
             this.__explicitlySet__.add("serverId");
@@ -168,24 +208,35 @@ public final class CloudGateExtMappings
         }
         /**
          * More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nginxSettings")
         private String nginxSettings;
 
         /**
          * More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param nginxSettings the value to set
          * @return this builder
-         */
+         **/
         public Builder nginxSettings(String nginxSettings) {
             this.nginxSettings = nginxSettings;
             this.__explicitlySet__.add("nginxSettings");
@@ -193,24 +244,35 @@ public final class CloudGateExtMappings
         }
         /**
          * The ID of the App being mapped to
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appId")
         private String appId;
 
         /**
          * The ID of the App being mapped to
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param appId the value to set
          * @return this builder
-         */
+         **/
         public Builder appId(String appId) {
             this.appId = appId;
             this.__explicitlySet__.add("appId");
@@ -218,24 +280,35 @@ public final class CloudGateExtMappings
         }
         /**
          * The id of the App being mapped to
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The id of the App being mapped to
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -243,28 +316,39 @@ public final class CloudGateExtMappings
         }
         /**
          * The name (Client ID) of the App being mapped to
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name (Client ID) of the App being mapped to
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -272,24 +356,35 @@ public final class CloudGateExtMappings
         }
         /**
          * URI of the App being mapped to
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: reference -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
 
         /**
          * URI of the App being mapped to
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: reference -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param ref the value to set
          * @return this builder
-         */
+         **/
         public Builder ref(String ref) {
             this.ref = ref;
             this.__explicitlySet__.add("ref");
@@ -297,55 +392,75 @@ public final class CloudGateExtMappings
         }
         /**
          * The Web Tier policy name used for the App that is mapped to this Cloud Gate
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyName")
         private String policyName;
 
         /**
          * The Web Tier policy name used for the App that is mapped to this Cloud Gate
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param policyName the value to set
          * @return this builder
-         */
+         **/
         public Builder policyName(String policyName) {
             this.policyName = policyName;
             this.__explicitlySet__.add("policyName");
             return this;
         }
         /**
-         * Upstream server group instance for the Mapping. This is one of the upstream server group
-         * IDs(upstream blocks) from the associated Cloud Gate list
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Upstream server group instance for the Mapping. This is one of the upstream server group IDs(upstream blocks) from the associated Cloud Gate list
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upstreamServerGroupId")
         private String upstreamServerGroupId;
 
         /**
-         * Upstream server group instance for the Mapping. This is one of the upstream server group
-         * IDs(upstream blocks) from the associated Cloud Gate list
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Upstream server group instance for the Mapping. This is one of the upstream server group IDs(upstream blocks) from the associated Cloud Gate list
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param upstreamServerGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder upstreamServerGroupId(String upstreamServerGroupId) {
             this.upstreamServerGroupId = upstreamServerGroupId;
             this.__explicitlySet__.add("upstreamServerGroupId");
@@ -414,7 +529,9 @@ public final class CloudGateExtMappings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -425,245 +542,382 @@ public final class CloudGateExtMappings
 
     /**
      * The id of the Cloud Gate Mapping
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mappingId")
     private final String mappingId;
 
     /**
      * The id of the Cloud Gate Mapping
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMappingId() {
         return mappingId;
     }
 
     /**
-     * Resource prefix for this mapping. This will be used to define the location block
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     */
+     * Resource prefix for this mapping.  This will be used to define the location block
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrefix")
     private final String resourcePrefix;
 
     /**
-     * Resource prefix for this mapping. This will be used to define the location block
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     *
+     * Resource prefix for this mapping.  This will be used to define the location block
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getResourcePrefix() {
         return resourcePrefix;
     }
 
     /**
      * NGINX ProxyPass entry for this Mapping
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("proxyPass")
     private final String proxyPass;
 
     /**
      * NGINX ProxyPass entry for this Mapping
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getProxyPass() {
         return proxyPass;
     }
 
     /**
-     * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the
-     * associated Cloud Gate list
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     */
+     * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverId")
     private final String serverId;
 
     /**
-     * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the
-     * associated Cloud Gate list
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     *
+     * Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getServerId() {
         return serverId;
     }
 
     /**
      * More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nginxSettings")
     private final String nginxSettings;
 
     /**
      * More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getNginxSettings() {
         return nginxSettings;
     }
 
     /**
      * The ID of the App being mapped to
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appId")
     private final String appId;
 
     /**
      * The ID of the App being mapped to
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAppId() {
         return appId;
     }
 
     /**
      * The id of the App being mapped to
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The id of the App being mapped to
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * The name (Client ID) of the App being mapped to
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name (Client ID) of the App being mapped to
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * URI of the App being mapped to
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
 
     /**
      * URI of the App being mapped to
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRef() {
         return ref;
     }
 
     /**
      * The Web Tier policy name used for the App that is mapped to this Cloud Gate
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
     private final String policyName;
 
     /**
      * The Web Tier policy name used for the App that is mapped to this Cloud Gate
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPolicyName() {
         return policyName;
     }
 
     /**
-     * Upstream server group instance for the Mapping. This is one of the upstream server group
-     * IDs(upstream blocks) from the associated Cloud Gate list
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Upstream server group instance for the Mapping. This is one of the upstream server group IDs(upstream blocks) from the associated Cloud Gate list
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upstreamServerGroupId")
     private final String upstreamServerGroupId;
 
     /**
-     * Upstream server group instance for the Mapping. This is one of the upstream server group
-     * IDs(upstream blocks) from the associated Cloud Gate list
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Upstream server group instance for the Mapping. This is one of the upstream server group IDs(upstream blocks) from the associated Cloud Gate list
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getUpstreamServerGroupId() {
         return upstreamServerGroupId;
     }
@@ -675,7 +929,6 @@ public final class CloudGateExtMappings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

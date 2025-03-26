@@ -6,68 +6,67 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointScanProxyExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateOdaPrivateEndpointScanProxyRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOdaPrivateEndpointScanProxyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateOdaPrivateEndpointScanProxyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oda.model.CreateOdaPrivateEndpointScanProxyDetails> {
 
-    /** Details for the new ODA Private Endpoint Scan Proxy. */
+    /**
+     * Details for the new ODA Private Endpoint Scan Proxy.
+     */
     private com.oracle.bmc.oda.model.CreateOdaPrivateEndpointScanProxyDetails
             createOdaPrivateEndpointScanProxyDetails;
 
-    /** Details for the new ODA Private Endpoint Scan Proxy. */
+    /**
+     * Details for the new ODA Private Endpoint Scan Proxy.
+     */
     public com.oracle.bmc.oda.model.CreateOdaPrivateEndpointScanProxyDetails
             getCreateOdaPrivateEndpointScanProxyDetails() {
         return createOdaPrivateEndpointScanProxyDetails;
     }
     /**
-     * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String odaPrivateEndpointId;
 
     /**
-     * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getOdaPrivateEndpointId() {
         return odaPrivateEndpointId;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's a
-     * timeout or server error without the risk of executing that same action again.
-     *
-     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's a
-     * timeout or server error without the risk of executing that same action again.
-     *
-     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -75,7 +74,6 @@ public class CreateOdaPrivateEndpointScanProxyRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -88,16 +86,18 @@ public class CreateOdaPrivateEndpointScanProxyRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateOdaPrivateEndpointScanProxyRequest,
                     com.oracle.bmc.oda.model.CreateOdaPrivateEndpointScanProxyDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new ODA Private Endpoint Scan Proxy. */
+        /**
+         * Details for the new ODA Private Endpoint Scan Proxy.
+         */
         private com.oracle.bmc.oda.model.CreateOdaPrivateEndpointScanProxyDetails
                 createOdaPrivateEndpointScanProxyDetails = null;
 
         /**
          * Details for the new ODA Private Endpoint Scan Proxy.
-         *
          * @param createOdaPrivateEndpointScanProxyDetails the value to set
          * @return this builder instance
          */
@@ -110,15 +110,12 @@ public class CreateOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String odaPrivateEndpointId = null;
 
         /**
-         * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param odaPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -128,15 +125,12 @@ public class CreateOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -146,22 +140,23 @@ public class CreateOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's a
-         * timeout or server error without the risk of executing that same action again.
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
          *
-         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
-         * are conflicting operations. For example, if an instance was deleted and purged from the
-         * system, then the service might reject a retry of the original creation request.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's a
-         * timeout or server error without the risk of executing that same action again.
-         *
-         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
-         * are conflicting operations. For example, if an instance was deleted and purged from the
-         * system, then the service might reject a retry of the original creation request.
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -173,19 +168,18 @@ public class CreateOdaPrivateEndpointScanProxyRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -197,7 +191,6 @@ public class CreateOdaPrivateEndpointScanProxyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateOdaPrivateEndpointScanProxyRequest o) {
@@ -212,14 +205,12 @@ public class CreateOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * Build the instance of CreateOdaPrivateEndpointScanProxyRequest as configured by this
-         * builder
+         * Build the instance of CreateOdaPrivateEndpointScanProxyRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateOdaPrivateEndpointScanProxyRequest
          */
@@ -232,7 +223,6 @@ public class CreateOdaPrivateEndpointScanProxyRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -244,11 +234,9 @@ public class CreateOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * Build the instance of CreateOdaPrivateEndpointScanProxyRequest as configured by this
-         * builder
+         * Build the instance of CreateOdaPrivateEndpointScanProxyRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateOdaPrivateEndpointScanProxyRequest
@@ -262,15 +250,12 @@ public class CreateOdaPrivateEndpointScanProxyRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new
-            // CreateOdaPrivateEndpointScanProxyRequest(createOdaPrivateEndpointScanProxyDetails,
-            // odaPrivateEndpointId, opcRequestId, opcRetryToken);
+            // new CreateOdaPrivateEndpointScanProxyRequest(createOdaPrivateEndpointScanProxyDetails, odaPrivateEndpointId, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -283,7 +268,6 @@ public class CreateOdaPrivateEndpointScanProxyRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

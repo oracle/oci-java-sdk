@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum OperationType {
     CreateJavaDownloadToken("CREATE_JAVA_DOWNLOAD_TOKEN"),
     UpdateJavaDownloadToken("UPDATE_JAVA_DOWNLOAD_TOKEN"),
     DeleteJavaDownloadToken("DELETE_JAVA_DOWNLOAD_TOKEN"),

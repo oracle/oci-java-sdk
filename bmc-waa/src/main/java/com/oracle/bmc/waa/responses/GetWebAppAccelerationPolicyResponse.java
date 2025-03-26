@@ -6,9 +6,12 @@ package com.oracle.bmc.waa.responses;
 
 import com.oracle.bmc.waa.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned {@code WebAppAccelerationPolicy} instance. */
+    /**
+     * The returned WebAppAccelerationPolicy instance.
+     */
     private com.oracle.bmc.waa.model.WebAppAccelerationPolicy webAppAccelerationPolicy;
 
     /**
-     * The returned {@code WebAppAccelerationPolicy} instance.
-     *
+     * The returned WebAppAccelerationPolicy instance.
      * @return the value
      */
     public com.oracle.bmc.waa.model.WebAppAccelerationPolicy getWebAppAccelerationPolicy() {
@@ -57,7 +62,7 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
     })
     private GetWebAppAccelerationPolicyResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waa.model.WebAppAccelerationPolicy webAppAccelerationPolicy) {
@@ -67,26 +72,25 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
         this.webAppAccelerationPolicy = webAppAccelerationPolicy;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetWebAppAccelerationPolicyResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -101,14 +105,15 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,12 +123,13 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code WebAppAccelerationPolicy} instance. */
+        /**
+         * The returned WebAppAccelerationPolicy instance.
+         */
         private com.oracle.bmc.waa.model.WebAppAccelerationPolicy webAppAccelerationPolicy;
 
         /**
-         * The returned {@code WebAppAccelerationPolicy} instance.
-         *
+         * The returned WebAppAccelerationPolicy instance.
          * @param webAppAccelerationPolicy the value to set
          * @return this builder
          */
@@ -135,10 +141,8 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetWebAppAccelerationPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +155,8 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetWebAppAccelerationPolicyResponse build() {
             return new GetWebAppAccelerationPolicyResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, webAppAccelerationPolicy);
@@ -163,7 +165,6 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

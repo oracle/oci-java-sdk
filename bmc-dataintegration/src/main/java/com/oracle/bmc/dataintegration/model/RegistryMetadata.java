@@ -5,22 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Information about the object and its parent. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Information about the object and its parent.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RegistryMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RegistryMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RegistryMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "aggregatorKey",
@@ -45,80 +42,81 @@ public final class RegistryMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The owning object's key for this object. */
+        /**
+         * The owning object's key for this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
         private String aggregatorKey;
 
         /**
          * The owning object's key for this object.
-         *
          * @param aggregatorKey the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregatorKey(String aggregatorKey) {
             this.aggregatorKey = aggregatorKey;
             this.__explicitlySet__.add("aggregatorKey");
             return this;
         }
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can
-         * define your own labels and use them to categorize content.
-         */
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can
-         * define your own labels and use them to categorize content.
-         *
+         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-        /** The registry version. */
+        /**
+         * The registry version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
         private Integer registryVersion;
 
         /**
          * The registry version.
-         *
          * @param registryVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder registryVersion(Integer registryVersion) {
             this.registryVersion = registryVersion;
             this.__explicitlySet__.add("registryVersion");
             return this;
         }
-        /** The identifying key for the object. */
+        /**
+         * The identifying key for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The identifying key for the object.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Specifies whether this object is a favorite or not. */
+        /**
+         * Specifies whether this object is a favorite or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
         private Boolean isFavorite;
 
         /**
          * Specifies whether this object is a favorite or not.
-         *
          * @param isFavorite the value to set
          * @return this builder
-         */
+         **/
         public Builder isFavorite(Boolean isFavorite) {
             this.isFavorite = isFavorite;
             this.__explicitlySet__.add("isFavorite");
@@ -163,7 +161,9 @@ public final class RegistryMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,71 +172,72 @@ public final class RegistryMetadata
         return new Builder().copy(this);
     }
 
-    /** The owning object's key for this object. */
+    /**
+     * The owning object's key for this object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatorKey")
     private final String aggregatorKey;
 
     /**
      * The owning object's key for this object.
-     *
      * @return the value
-     */
+     **/
     public String getAggregatorKey() {
         return aggregatorKey;
     }
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define
-     * your own labels and use them to categorize content.
-     */
+     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define
-     * your own labels and use them to categorize content.
-     *
+     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
      * @return the value
-     */
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
 
-    /** The registry version. */
+    /**
+     * The registry version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
     private final Integer registryVersion;
 
     /**
      * The registry version.
-     *
      * @return the value
-     */
+     **/
     public Integer getRegistryVersion() {
         return registryVersion;
     }
 
-    /** The identifying key for the object. */
+    /**
+     * The identifying key for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The identifying key for the object.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Specifies whether this object is a favorite or not. */
+    /**
+     * Specifies whether this object is a favorite or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     private final Boolean isFavorite;
 
     /**
      * Specifies whether this object is a favorite or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFavorite() {
         return isFavorite;
     }
@@ -248,7 +249,6 @@ public final class RegistryMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

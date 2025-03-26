@@ -5,23 +5,22 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Details for enabling Oracle Managed custom endpoint <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+ * Details for enabling Oracle Managed custom endpoint
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddOracleManagedCustomEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddOracleManagedCustomEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddOracleManagedCustomEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostname", "dnsType", "dnsZoneName"})
     public AddOracleManagedCustomEndpointDetails(
@@ -34,46 +33,49 @@ public final class AddOracleManagedCustomEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Oracle managed custom hostname */
+        /**
+         * Oracle managed custom hostname
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * Oracle managed custom hostname
-         *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /** Type of DNS. */
+        /**
+         * Type of DNS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsType")
         private DnsType dnsType;
 
         /**
          * Type of DNS.
-         *
          * @param dnsType the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsType(DnsType dnsType) {
             this.dnsType = dnsType;
             this.__explicitlySet__.add("dnsType");
             return this;
         }
-        /** DNS Zone name */
+        /**
+         * DNS Zone name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZoneName")
         private String dnsZoneName;
 
         /**
          * DNS Zone name
-         *
          * @param dnsZoneName the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsZoneName(String dnsZoneName) {
             this.dnsZoneName = dnsZoneName;
             this.__explicitlySet__.add("dnsZoneName");
@@ -108,7 +110,9 @@ public final class AddOracleManagedCustomEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,21 +121,24 @@ public final class AddOracleManagedCustomEndpointDetails
         return new Builder().copy(this);
     }
 
-    /** Oracle managed custom hostname */
+    /**
+     * Oracle managed custom hostname
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * Oracle managed custom hostname
-     *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
 
-    /** Type of DNS. */
-    public enum DnsType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of DNS.
+     **/
+    public enum DnsType {
         Oci("OCI"),
         ;
 
@@ -162,28 +169,30 @@ public final class AddOracleManagedCustomEndpointDetails
             throw new IllegalArgumentException("Invalid DnsType: " + key);
         }
     };
-    /** Type of DNS. */
+    /**
+     * Type of DNS.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsType")
     private final DnsType dnsType;
 
     /**
      * Type of DNS.
-     *
      * @return the value
-     */
+     **/
     public DnsType getDnsType() {
         return dnsType;
     }
 
-    /** DNS Zone name */
+    /**
+     * DNS Zone name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZoneName")
     private final String dnsZoneName;
 
     /**
      * DNS Zone name
-     *
      * @return the value
-     */
+     **/
     public String getDnsZoneName() {
         return dnsZoneName;
     }
@@ -195,7 +204,6 @@ public final class AddOracleManagedCustomEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

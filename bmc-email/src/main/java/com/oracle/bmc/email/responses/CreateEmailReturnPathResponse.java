@@ -6,9 +6,12 @@ package com.oracle.bmc.email.responses;
 
 import com.oracle.bmc.email.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** The full URI of the resource related to the request */
+    /**
+     * The full URI of the resource related to the request
+     *
+     */
     private String contentLocation;
 
     /**
@@ -20,7 +23,10 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
         return contentLocation;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -32,7 +38,10 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The full URI of the resource related to the request */
+    /**
+     * The full URI of the resource related to the request
+     *
+     */
     private String location;
 
     /**
@@ -45,14 +54,15 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -61,14 +71,13 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      * @return the value
      */
@@ -76,12 +85,13 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
         return opcWorkRequestId;
     }
 
-    /** The returned {@code EmailReturnPath} instance. */
+    /**
+     * The returned EmailReturnPath instance.
+     */
     private com.oracle.bmc.email.model.EmailReturnPath emailReturnPath;
 
     /**
-     * The returned {@code EmailReturnPath} instance.
-     *
+     * The returned EmailReturnPath instance.
      * @return the value
      */
     public com.oracle.bmc.email.model.EmailReturnPath getEmailReturnPath() {
@@ -100,7 +110,7 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
     })
     private CreateEmailReturnPathResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String contentLocation,
             String etag,
             String location,
@@ -116,25 +126,25 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
         this.emailReturnPath = emailReturnPath;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateEmailReturnPathResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** The full URI of the resource related to the request */
+        /**
+         * The full URI of the resource related to the request
+         *
+         */
         private String contentLocation;
 
         /**
@@ -148,7 +158,10 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -162,7 +175,10 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The full URI of the resource related to the request */
+        /**
+         * The full URI of the resource related to the request
+         *
+         */
         private String location;
 
         /**
@@ -177,14 +193,15 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -195,14 +212,13 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -212,12 +228,13 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code EmailReturnPath} instance. */
+        /**
+         * The returned EmailReturnPath instance.
+         */
         private com.oracle.bmc.email.model.EmailReturnPath emailReturnPath;
 
         /**
-         * The returned {@code EmailReturnPath} instance.
-         *
+         * The returned EmailReturnPath instance.
          * @param emailReturnPath the value to set
          * @return this builder
          */
@@ -228,10 +245,8 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateEmailReturnPathResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -247,10 +262,8 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateEmailReturnPathResponse build() {
             return new CreateEmailReturnPathResponse(
                     __httpStatusCode__,
@@ -266,7 +279,6 @@ public class CreateEmailReturnPathResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

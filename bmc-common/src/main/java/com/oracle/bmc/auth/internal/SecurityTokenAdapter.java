@@ -134,10 +134,9 @@ public class SecurityTokenAdapter {
         }
     }
 
-    /**
-     * Get the duration the token is valid, from issue time to expiration time.
+    /** Get half of the token duration
      *
-     * @return token validity duration
+     * @return half of the token duration
      */
     public Duration getTokenValidDuration() {
         if (!jwt.isPresent()) {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Parameters to use to create details for a new managed list. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Parameters to use to create details for a new managed list.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateManagedListDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateManagedListDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateManagedListDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -57,50 +56,53 @@ public final class CreateManagedListDetails
     public static class Builder {
         /**
          * Managed list display name.
+         * <p>
+         * Avoid entering confidential information.
          *
-         * <p>Avoid entering confidential information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Managed list display name.
-         *
-         * <p>Avoid entering confidential information.
+         * <p>
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment OCID */
+        /**
+         * Compartment OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment OCID
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCID of the source managed list */
+        /**
+         * OCID of the source managed list
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
         private String sourceManagedListId;
 
         /**
          * OCID of the source managed list
-         *
          * @param sourceManagedListId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceManagedListId(String sourceManagedListId) {
             this.sourceManagedListId = sourceManagedListId;
             this.__explicitlySet__.add("sourceManagedListId");
@@ -108,73 +110,77 @@ public final class CreateManagedListDetails
         }
         /**
          * Managed list description
+         * <p>
+         * Avoid entering confidential information.
          *
-         * <p>Avoid entering confidential information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Managed list description
-         *
-         * <p>Avoid entering confidential information.
+         * <p>
+         * Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Type of information stored in the list */
+        /**
+         * Type of information stored in the list
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ManagedListType listType;
 
         /**
          * Type of information stored in the list
-         *
          * @param listType the value to set
          * @return this builder
-         */
+         **/
         public Builder listType(ManagedListType listType) {
             this.listType = listType;
             this.__explicitlySet__.add("listType");
             return this;
         }
-        /** List of items in the managed list */
+        /**
+         * List of items in the managed list
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listItems")
         private java.util.List<String> listItems;
 
         /**
          * List of items in the managed list
-         *
          * @param listItems the value to set
          * @return this builder
-         */
+         **/
         public Builder listItems(java.util.List<String> listItems) {
             this.listItems = listItems;
             this.__explicitlySet__.add("listItems");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
          *
-         * <p>Avoid entering confidential information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         *
-         * <p>Avoid entering confidential information.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -183,7 +189,8 @@ public final class CreateManagedListDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -193,7 +200,7 @@ public final class CreateManagedListDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -251,7 +258,9 @@ public final class CreateManagedListDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -262,128 +271,136 @@ public final class CreateManagedListDetails
 
     /**
      * Managed list display name.
+     * <p>
+     * Avoid entering confidential information.
      *
-     * <p>Avoid entering confidential information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Managed list display name.
-     *
-     * <p>Avoid entering confidential information.
+     * <p>
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment OCID */
+    /**
+     * Compartment OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment OCID
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** OCID of the source managed list */
+    /**
+     * OCID of the source managed list
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
     private final String sourceManagedListId;
 
     /**
      * OCID of the source managed list
-     *
      * @return the value
-     */
+     **/
     public String getSourceManagedListId() {
         return sourceManagedListId;
     }
 
     /**
      * Managed list description
+     * <p>
+     * Avoid entering confidential information.
      *
-     * <p>Avoid entering confidential information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Managed list description
-     *
-     * <p>Avoid entering confidential information.
+     * <p>
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Type of information stored in the list */
+    /**
+     * Type of information stored in the list
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
     private final ManagedListType listType;
 
     /**
      * Type of information stored in the list
-     *
      * @return the value
-     */
+     **/
     public ManagedListType getListType() {
         return listType;
     }
 
-    /** List of items in the managed list */
+    /**
+     * List of items in the managed list
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listItems")
     private final java.util.List<String> listItems;
 
     /**
      * List of items in the managed list
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getListItems() {
         return listItems;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
-     * <p>Avoid entering confidential information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     *
-     * <p>Avoid entering confidential information.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -395,7 +412,6 @@ public final class CreateManagedListDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,18 +4,17 @@
  */
 package com.oracle.bmc.marketplacepublisher;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.marketplacepublisher.internal.http.*;
 import com.oracle.bmc.marketplacepublisher.requests.*;
 import com.oracle.bmc.marketplacepublisher.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements MarketplacePublisher {
-    /** Service instance for MarketplacePublisher. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public class MarketplacePublisherClient implements MarketplacePublisher {
+    /**
+     * Service instance for MarketplacePublisher.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MARKETPLACEPUBLISHER")
@@ -23,22 +22,319 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                     .serviceEndpointTemplate(
                             "https://marketplace-publisher.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(MarketplacePublisherClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final MarketplacePublisherWaiters waiters;
 
     private final MarketplacePublisherPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    MarketplacePublisherClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public MarketplacePublisherClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected MarketplacePublisherClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -60,11 +356,29 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
         this.waiters = new MarketplacePublisherWaiters(executorService, this);
 
         this.paginators = new MarketplacePublisherPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -72,8 +386,8 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -82,8 +396,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "marketplacepublisher";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -91,7 +403,6 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -102,2300 +413,3036 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public MarketplacePublisherClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new MarketplacePublisherClient(
-                    this, authenticationDetailsProvider, executorService);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public ActivateTermVersionResponse activateTermVersion(ActivateTermVersionRequest request) {
+        LOG.trace("Called activateTermVersion");
+        final ActivateTermVersionRequest interceptedRequest =
+                ActivateTermVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateTermVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-
-        return clientCall(request, ActivateTermVersionResponse::builder)
-                .logger(LOG, "activateTermVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ActivateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/ActivateTermVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ActivateTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .appendPathParam("actions")
-                .appendPathParam("Activate")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        ActivateTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", ActivateTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ActivateTermVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/ActivateTermVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateTermVersionResponse>
+                transformer =
+                        ActivateTermVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
+        LOG.trace("Called cancelWorkRequest");
+        final CancelWorkRequestRequest interceptedRequest =
+                CancelWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, CancelWorkRequestResponse::builder)
-                .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/CancelWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(CancelWorkRequestRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/CancelWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                transformer =
+                        CancelWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CascadingDeleteListingResponse cascadingDeleteListing(
             CascadingDeleteListingRequest request) {
+        LOG.trace("Called cascadingDeleteListing");
+        final CascadingDeleteListingRequest interceptedRequest =
+                CascadingDeleteListingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteListingConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-
-        return clientCall(request, CascadingDeleteListingResponse::builder)
-                .logger(LOG, "cascadingDeleteListing")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CascadingDeleteListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CascadingDeleteListing")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CascadingDeleteListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .appendPathParam("actions")
-                .appendPathParam("cascadingDelete")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CascadingDeleteListingResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CascadingDeleteListingResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CascadingDeleteListing");
+        java.util.function.Function<javax.ws.rs.core.Response, CascadingDeleteListingResponse>
+                transformer =
+                        CascadingDeleteListingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CascadingDeleteListingRevisionResponse cascadingDeleteListingRevision(
             CascadingDeleteListingRevisionRequest request) {
+        LOG.trace("Called cascadingDeleteListingRevision");
+        final CascadingDeleteListingRevisionRequest interceptedRequest =
+                CascadingDeleteListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, CascadingDeleteListingRevisionResponse::builder)
-                .logger(LOG, "cascadingDeleteListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CascadingDeleteListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CascadingDeleteListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CascadingDeleteListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("cascadingDelete")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CascadingDeleteListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CascadingDeleteListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CascadingDeleteListingRevision");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CascadingDeleteListingRevisionResponse>
+                transformer =
+                        CascadingDeleteListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeArtifactCompartmentResponse changeArtifactCompartment(
             ChangeArtifactCompartmentRequest request) {
+        LOG.trace("Called changeArtifactCompartment");
+        final ChangeArtifactCompartmentRequest interceptedRequest =
+                ChangeArtifactCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeArtifactCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeArtifactCompartmentDetails(),
-                "changeArtifactCompartmentDetails is required");
-
-        return clientCall(request, ChangeArtifactCompartmentResponse::builder)
-                .logger(LOG, "changeArtifactCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ChangeArtifactCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ChangeArtifactCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeArtifactCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeArtifactCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ChangeArtifactCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeArtifactCompartmentResponse>
+                transformer =
+                        ChangeArtifactCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeArtifactCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeListingCompartmentResponse changeListingCompartment(
             ChangeListingCompartmentRequest request) {
+        LOG.trace("Called changeListingCompartment");
+        final ChangeListingCompartmentRequest interceptedRequest =
+                ChangeListingCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeListingCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeListingCompartmentDetails(),
-                "changeListingCompartmentDetails is required");
-
-        return clientCall(request, ChangeListingCompartmentResponse::builder)
-                .logger(LOG, "changeListingCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ChangeListingCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/ChangeListingCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeListingCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeListingCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/ChangeListingCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeListingCompartmentResponse>
+                transformer =
+                        ChangeListingCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeListingCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeListingRevisionToNewStatusResponse changeListingRevisionToNewStatus(
             ChangeListingRevisionToNewStatusRequest request) {
+        LOG.trace("Called changeListingRevisionToNewStatus");
+        final ChangeListingRevisionToNewStatusRequest interceptedRequest =
+                ChangeListingRevisionToNewStatusConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeListingRevisionToNewStatusConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, ChangeListingRevisionToNewStatusResponse::builder)
-                .logger(LOG, "changeListingRevisionToNewStatus")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ChangeListingRevisionToNewStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/ChangeListingRevisionToNewStatus")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeListingRevisionToNewStatusRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("changeToNewStatus")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        ChangeListingRevisionToNewStatusResponse.Builder::listingRevision)
-                .handleResponseHeaderString(
-                        "etag", ChangeListingRevisionToNewStatusResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeListingRevisionToNewStatusResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/ChangeListingRevisionToNewStatus");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeListingRevisionToNewStatusResponse>
+                transformer =
+                        ChangeListingRevisionToNewStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeTermCompartmentResponse changeTermCompartment(
             ChangeTermCompartmentRequest request) {
+        LOG.trace("Called changeTermCompartment");
+        final ChangeTermCompartmentRequest interceptedRequest =
+                ChangeTermCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTermCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeTermCompartmentDetails(),
-                "changeTermCompartmentDetails is required");
-
-        return clientCall(request, ChangeTermCompartmentResponse::builder)
-                .logger(LOG, "changeTermCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ChangeTermCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/ChangeTermCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeTermCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeTermCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/ChangeTermCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeTermCompartmentResponse>
+                transformer =
+                        ChangeTermCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeTermCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CloneListingRevisionResponse cloneListingRevision(CloneListingRevisionRequest request) {
+        LOG.trace("Called cloneListingRevision");
+        final CloneListingRevisionRequest interceptedRequest =
+                CloneListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CloneListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, CloneListingRevisionResponse::builder)
-                .logger(LOG, "cloneListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CloneListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CloneListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CloneListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("clone")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CloneListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CloneListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CloneListingRevision");
+        java.util.function.Function<javax.ws.rs.core.Response, CloneListingRevisionResponse>
+                transformer =
+                        CloneListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateArtifactResponse createArtifact(CreateArtifactRequest request) {
-        Objects.requireNonNull(
-                request.getCreateArtifactDetails(), "createArtifactDetails is required");
+        LOG.trace("Called createArtifact");
+        final CreateArtifactRequest interceptedRequest =
+                CreateArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateArtifactConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateArtifactResponse::builder)
-                .logger(LOG, "createArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CreateArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/CreateArtifact")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/CreateArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateArtifactResponse> transformer =
+                CreateArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateArtifactDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateListingResponse createListing(CreateListingRequest request) {
-        Objects.requireNonNull(
-                request.getCreateListingDetails(), "createListingDetails is required");
+        LOG.trace("Called createListing");
+        final CreateListingRequest interceptedRequest =
+                CreateListingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateListingResponse::builder)
-                .logger(LOG, "createListing")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CreateListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CreateListing")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Listing.class,
-                        CreateListingResponse.Builder::listing)
-                .handleResponseHeaderString("etag", CreateListingResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateListingResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CreateListing");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateListingResponse> transformer =
+                CreateListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateListingDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateListingRevisionResponse createListingRevision(
             CreateListingRevisionRequest request) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionDetails(),
-                "createListingRevisionDetails is required");
+        LOG.trace("Called createListingRevision");
+        final CreateListingRevisionRequest interceptedRequest =
+                CreateListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateListingRevisionResponse::builder)
-                .logger(LOG, "createListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CreateListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        CreateListingRevisionResponse.Builder::listingRevision)
-                .handleResponseHeaderString("etag", CreateListingRevisionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CreateListingRevision");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateListingRevisionResponse>
+                transformer =
+                        CreateListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateListingRevisionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateListingRevisionAttachmentResponse createListingRevisionAttachment(
             CreateListingRevisionAttachmentRequest request) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionAttachmentDetails(),
-                "createListingRevisionAttachmentDetails is required");
+        LOG.trace("Called createListingRevisionAttachment");
+        final CreateListingRevisionAttachmentRequest interceptedRequest =
+                CreateListingRevisionAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "createListingRevisionAttachment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/CreateListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        CreateListingRevisionAttachmentResponse.Builder::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateListingRevisionAttachmentResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/CreateListingRevisionAttachment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateListingRevisionAttachmentResponse>
+                transformer =
+                        CreateListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateListingRevisionAttachmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateListingRevisionNoteResponse createListingRevisionNote(
             CreateListingRevisionNoteRequest request) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionNoteDetails(),
-                "createListingRevisionNoteDetails is required");
+        LOG.trace("Called createListingRevisionNote");
+        final CreateListingRevisionNoteRequest interceptedRequest =
+                CreateListingRevisionNoteConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionNoteConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateListingRevisionNoteResponse::builder)
-                .logger(LOG, "createListingRevisionNote")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/CreateListingRevisionNote")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote.class,
-                        CreateListingRevisionNoteResponse.Builder::listingRevisionNote)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateListingRevisionNoteResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateListingRevisionNoteResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/CreateListingRevisionNote");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateListingRevisionNoteResponse>
+                transformer =
+                        CreateListingRevisionNoteConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateListingRevisionNoteDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateListingRevisionPackageResponse createListingRevisionPackage(
             CreateListingRevisionPackageRequest request) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionPackageDetails(),
-                "createListingRevisionPackageDetails is required");
+        LOG.trace("Called createListingRevisionPackage");
+        final CreateListingRevisionPackageRequest interceptedRequest =
+                CreateListingRevisionPackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateListingRevisionPackageResponse::builder)
-                .logger(LOG, "createListingRevisionPackage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CreateListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/CreateListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
-                        CreateListingRevisionPackageResponse.Builder::listingRevisionPackage)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateListingRevisionPackageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateListingRevisionPackageResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/CreateListingRevisionPackage");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateListingRevisionPackageResponse>
+                transformer =
+                        CreateListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateListingRevisionPackageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateTermResponse createTerm(CreateTermRequest request) {
-        Objects.requireNonNull(request.getCreateTermDetails(), "createTermDetails is required");
+        LOG.trace("Called createTerm");
+        final CreateTermRequest interceptedRequest = CreateTermConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTermConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateTermResponse::builder)
-                .logger(LOG, "createTerm")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "CreateTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/CreateTerm")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Term.class,
-                        CreateTermResponse.Builder::term)
-                .handleResponseHeaderString("etag", CreateTermResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTermResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/CreateTerm");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTermResponse> transformer =
+                CreateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateTermDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateTermVersionResponse createTermVersion(CreateTermVersionRequest request) {
-        Objects.requireNonNull(
-                request.getCreateTermVersionContent(), "createTermVersionContent is required");
-
-        Objects.requireNonNull(request.getTermId(), "termId is required");
-
-        return clientCall(request, CreateTermVersionResponse::builder)
-                .logger(LOG, "createTermVersion")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/CreateTermVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("display-name", request.getDisplayName())
-                .appendHeader("term-id", request.getTermId())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        CreateTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", CreateTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTermVersionResponse.Builder::opcRequestId)
-                .callSync();
+        LOG.trace("Called createTermVersion");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, CreateTermVersionRequest.builder());
+            }
+            final CreateTermVersionRequest interceptedRequest =
+                    CreateTermVersionConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    CreateTermVersionConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "MarketplacePublisher",
+                            "CreateTermVersion",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/CreateTermVersion");
+            java.util.function.Function<javax.ws.rs.core.Response, CreateTermVersionResponse>
+                    transformer =
+                            CreateTermVersionConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getCreateTermVersionContent(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getCreateTermVersionContent(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getCreateTermVersionContent());
+        }
     }
 
     @Override
     public DeleteArtifactResponse deleteArtifact(DeleteArtifactRequest request) {
+        LOG.trace("Called deleteArtifact");
+        final DeleteArtifactRequest interceptedRequest =
+                DeleteArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteArtifactConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-
-        return clientCall(request, DeleteArtifactResponse::builder)
-                .logger(LOG, "deleteArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/DeleteArtifact")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/DeleteArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteArtifactResponse> transformer =
+                DeleteArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteListingResponse deleteListing(DeleteListingRequest request) {
+        LOG.trace("Called deleteListing");
+        final DeleteListingRequest interceptedRequest =
+                DeleteListingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-
-        return clientCall(request, DeleteListingResponse::builder)
-                .logger(LOG, "deleteListing")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/DeleteListing")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteListingResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/DeleteListing");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteListingResponse> transformer =
+                DeleteListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteListingRevisionResponse deleteListingRevision(
             DeleteListingRevisionRequest request) {
+        LOG.trace("Called deleteListingRevision");
+        final DeleteListingRevisionRequest interceptedRequest =
+                DeleteListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionResponse::builder)
-                .logger(LOG, "deleteListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/DeleteListingRevision")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/DeleteListingRevision");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteListingRevisionResponse>
+                transformer =
+                        DeleteListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteListingRevisionAttachmentResponse deleteListingRevisionAttachment(
             DeleteListingRevisionAttachmentRequest request) {
+        LOG.trace("Called deleteListingRevisionAttachment");
+        final DeleteListingRevisionAttachmentRequest interceptedRequest =
+                DeleteListingRevisionAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "deleteListingRevisionAttachment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/DeleteListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/DeleteListingRevisionAttachment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteListingRevisionAttachmentResponse>
+                transformer =
+                        DeleteListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteListingRevisionNoteResponse deleteListingRevisionNote(
             DeleteListingRevisionNoteRequest request) {
+        LOG.trace("Called deleteListingRevisionNote");
+        final DeleteListingRevisionNoteRequest interceptedRequest =
+                DeleteListingRevisionNoteConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionNoteConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionNoteId(), "listingRevisionNoteId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionNoteResponse::builder)
-                .logger(LOG, "deleteListingRevisionNote")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/DeleteListingRevisionNote")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .appendPathParam(request.getListingRevisionNoteId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteListingRevisionNoteResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/DeleteListingRevisionNote");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteListingRevisionNoteResponse>
+                transformer =
+                        DeleteListingRevisionNoteConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteListingRevisionPackageResponse deleteListingRevisionPackage(
             DeleteListingRevisionPackageRequest request) {
+        LOG.trace("Called deleteListingRevisionPackage");
+        final DeleteListingRevisionPackageRequest interceptedRequest =
+                DeleteListingRevisionPackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionPackageResponse::builder)
-                .logger(LOG, "deleteListingRevisionPackage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/DeleteListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteListingRevisionPackageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/DeleteListingRevisionPackage");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteListingRevisionPackageResponse>
+                transformer =
+                        DeleteListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteTermResponse deleteTerm(DeleteTermRequest request) {
+        LOG.trace("Called deleteTerm");
+        final DeleteTermRequest interceptedRequest = DeleteTermConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTermConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-
-        return clientCall(request, DeleteTermResponse::builder)
-                .logger(LOG, "deleteTerm")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/DeleteTerm")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTermResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/DeleteTerm");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTermResponse> transformer =
+                DeleteTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteTermVersionResponse deleteTermVersion(DeleteTermVersionRequest request) {
+        LOG.trace("Called deleteTermVersion");
+        final DeleteTermVersionRequest interceptedRequest =
+                DeleteTermVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTermVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-
-        return clientCall(request, DeleteTermVersionResponse::builder)
-                .logger(LOG, "deleteTermVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "DeleteTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/DeleteTermVersion")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTermVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/DeleteTermVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTermVersionResponse>
+                transformer =
+                        DeleteTermVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetArtifactResponse getArtifact(GetArtifactRequest request) {
+        LOG.trace("Called getArtifact");
+        final GetArtifactRequest interceptedRequest =
+                GetArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetArtifactConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-
-        return clientCall(request, GetArtifactResponse::builder)
-                .logger(LOG, "getArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/GetArtifact")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Artifact.class,
-                        GetArtifactResponse.Builder::artifact)
-                .handleResponseHeaderString("etag", GetArtifactResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/GetArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, GetArtifactResponse> transformer =
+                GetArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCategoryResponse getCategory(GetCategoryRequest request) {
+        LOG.trace("Called getCategory");
+        final GetCategoryRequest interceptedRequest =
+                GetCategoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCategoryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCategoryCode(), "categoryCode must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetCategoryResponse::builder)
-                .logger(LOG, "getCategory")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetCategory",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Category/GetCategory")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCategoryRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("categories")
-                .appendPathParam(request.getCategoryCode())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Category.class,
-                        GetCategoryResponse.Builder::category)
-                .handleResponseHeaderString("etag", GetCategoryResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCategoryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Category/GetCategory");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse> transformer =
+                GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetListingResponse getListing(GetListingRequest request) {
+        LOG.trace("Called getListing");
+        final GetListingRequest interceptedRequest = GetListingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-
-        return clientCall(request, GetListingResponse::builder)
-                .logger(LOG, "getListing")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/GetListing")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Listing.class,
-                        GetListingResponse.Builder::listing)
-                .handleResponseHeaderString("etag", GetListingResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/GetListing");
+        java.util.function.Function<javax.ws.rs.core.Response, GetListingResponse> transformer =
+                GetListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetListingRevisionResponse getListingRevision(GetListingRevisionRequest request) {
+        LOG.trace("Called getListingRevision");
+        final GetListingRevisionRequest interceptedRequest =
+                GetListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, GetListingRevisionResponse::builder)
-                .logger(LOG, "getListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/GetListingRevision")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        GetListingRevisionResponse.Builder::listingRevision)
-                .handleResponseHeaderString("etag", GetListingRevisionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/GetListingRevision");
+        java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionResponse>
+                transformer =
+                        GetListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetListingRevisionAttachmentResponse getListingRevisionAttachment(
             GetListingRevisionAttachmentRequest request) {
+        LOG.trace("Called getListingRevisionAttachment");
+        final GetListingRevisionAttachmentRequest interceptedRequest =
+                GetListingRevisionAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-
-        return clientCall(request, GetListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "getListingRevisionAttachment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/GetListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        GetListingRevisionAttachmentResponse.Builder::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", GetListingRevisionAttachmentResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/GetListingRevisionAttachment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionAttachmentResponse>
+                transformer =
+                        GetListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetListingRevisionNoteResponse getListingRevisionNote(
             GetListingRevisionNoteRequest request) {
+        LOG.trace("Called getListingRevisionNote");
+        final GetListingRevisionNoteRequest interceptedRequest =
+                GetListingRevisionNoteConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionNoteConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionNoteId(), "listingRevisionNoteId must not be blank");
-
-        return clientCall(request, GetListingRevisionNoteResponse::builder)
-                .logger(LOG, "getListingRevisionNote")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/GetListingRevisionNote")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .appendPathParam(request.getListingRevisionNoteId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote.class,
-                        GetListingRevisionNoteResponse.Builder::listingRevisionNote)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingRevisionNoteResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetListingRevisionNoteResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/GetListingRevisionNote");
+        java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionNoteResponse>
+                transformer =
+                        GetListingRevisionNoteConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetListingRevisionPackageResponse getListingRevisionPackage(
             GetListingRevisionPackageRequest request) {
+        LOG.trace("Called getListingRevisionPackage");
+        final GetListingRevisionPackageRequest interceptedRequest =
+                GetListingRevisionPackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, GetListingRevisionPackageResponse::builder)
-                .logger(LOG, "getListingRevisionPackage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/GetListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
-                        GetListingRevisionPackageResponse.Builder::listingRevisionPackage)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingRevisionPackageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetListingRevisionPackageResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/GetListingRevisionPackage");
+        java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionPackageResponse>
+                transformer =
+                        GetListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetMarketResponse getMarket(GetMarketRequest request) {
+        LOG.trace("Called getMarket");
+        final GetMarketRequest interceptedRequest = GetMarketConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMarketConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getMarketCode(), "marketCode must not be blank");
-
-        return clientCall(request, GetMarketResponse::builder)
-                .logger(LOG, "getMarket")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetMarket",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Market/GetMarket")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMarketRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("markets")
-                .appendPathParam(request.getMarketCode())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Market.class,
-                        GetMarketResponse.Builder::market)
-                .handleResponseHeaderString("etag", GetMarketResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMarketResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Market/GetMarket");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMarketResponse> transformer =
+                GetMarketConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetProductResponse getProduct(GetProductRequest request) {
+        LOG.trace("Called getProduct");
+        final GetProductRequest interceptedRequest = GetProductConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProductConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProductCode(), "productCode must not be blank");
-
-        return clientCall(request, GetProductResponse::builder)
-                .logger(LOG, "getProduct")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetProduct",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Product/GetProduct")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetProductRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("products")
-                .appendPathParam(request.getProductCode())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Product.class,
-                        GetProductResponse.Builder::product)
-                .handleResponseHeaderString("etag", GetProductResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetProductResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Product/GetProduct");
+        java.util.function.Function<javax.ws.rs.core.Response, GetProductResponse> transformer =
+                GetProductConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPublisherResponse getPublisher(GetPublisherRequest request) {
+        LOG.trace("Called getPublisher");
+        final GetPublisherRequest interceptedRequest =
+                GetPublisherConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublisherConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPublisherId(), "publisherId must not be blank");
-
-        return clientCall(request, GetPublisherResponse::builder)
-                .logger(LOG, "getPublisher")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetPublisher",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Publisher/GetPublisher")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPublisherRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("publishers")
-                .appendPathParam(request.getPublisherId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Publisher.class,
-                        GetPublisherResponse.Builder::publisher)
-                .handleResponseHeaderString("etag", GetPublisherResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPublisherResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Publisher/GetPublisher");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPublisherResponse> transformer =
+                GetPublisherConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetTermResponse getTerm(GetTermRequest request) {
+        LOG.trace("Called getTerm");
+        final GetTermRequest interceptedRequest = GetTermConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTermConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-
-        return clientCall(request, GetTermResponse::builder)
-                .logger(LOG, "getTerm")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/GetTerm")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Term.class,
-                        GetTermResponse.Builder::term)
-                .handleResponseHeaderString("etag", GetTermResponse.Builder::etag)
-                .handleResponseHeaderString("opc-request-id", GetTermResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/GetTerm");
+        java.util.function.Function<javax.ws.rs.core.Response, GetTermResponse> transformer =
+                GetTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetTermVersionResponse getTermVersion(GetTermVersionRequest request) {
+        LOG.trace("Called getTermVersion");
+        final GetTermVersionRequest interceptedRequest =
+                GetTermVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTermVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-
-        return clientCall(request, GetTermVersionResponse::builder)
-                .logger(LOG, "getTermVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/GetTermVersion")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        GetTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", GetTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTermVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/GetTermVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, GetTermVersionResponse> transformer =
+                GetTermVersionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/GetWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListArtifactsResponse listArtifacts(ListArtifactsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listArtifacts");
+        final ListArtifactsRequest interceptedRequest =
+                ListArtifactsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListArtifactsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListArtifactsResponse::builder)
-                .logger(LOG, "listArtifacts")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListArtifacts",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ArtifactCollection/ListArtifacts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListArtifactsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ArtifactCollection.class,
-                        ListArtifactsResponse.Builder::artifactCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListArtifactsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListArtifactsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ArtifactCollection/ListArtifacts");
+        java.util.function.Function<javax.ws.rs.core.Response, ListArtifactsResponse> transformer =
+                ListArtifactsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCategoriesResponse listCategories(ListCategoriesRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listCategories");
+        final ListCategoriesRequest interceptedRequest =
+                ListCategoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCategoriesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListCategoriesResponse::builder)
-                .logger(LOG, "listCategories")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/CategoryCollection/ListCategories")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCategoriesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("categories")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("productCode", request.getProductCode())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.CategoryCollection.class,
-                        ListCategoriesResponse.Builder::categoryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCategoriesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCategoriesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/CategoryCollection/ListCategories");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse> transformer =
+                ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListListingRevisionAttachmentsResponse listListingRevisionAttachments(
             ListListingRevisionAttachmentsRequest request) {
-        Objects.requireNonNull(request.getListingRevisionId(), "listingRevisionId is required");
+        LOG.trace("Called listListingRevisionAttachments");
+        final ListListingRevisionAttachmentsRequest interceptedRequest =
+                ListListingRevisionAttachmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionAttachmentsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListListingRevisionAttachmentsResponse::builder)
-                .logger(LOG, "listListingRevisionAttachments")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisionAttachments",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachmentCollection/ListListingRevisionAttachments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionAttachmentsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendQueryParam("listingRevisionId", request.getListingRevisionId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model
-                                .ListingRevisionAttachmentCollection.class,
-                        ListListingRevisionAttachmentsResponse.Builder
-                                ::listingRevisionAttachmentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListListingRevisionAttachmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListListingRevisionAttachmentsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachmentCollection/ListListingRevisionAttachments");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListListingRevisionAttachmentsResponse>
+                transformer =
+                        ListListingRevisionAttachmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListListingRevisionNotesResponse listListingRevisionNotes(
             ListListingRevisionNotesRequest request) {
-        Objects.requireNonNull(request.getListingRevisionId(), "listingRevisionId is required");
+        LOG.trace("Called listListingRevisionNotes");
+        final ListListingRevisionNotesRequest interceptedRequest =
+                ListListingRevisionNotesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionNotesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListListingRevisionNotesResponse::builder)
-                .logger(LOG, "listListingRevisionNotes")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisionNotes",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNoteCollection/ListListingRevisionNotes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionNotesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("listingRevisionId", request.getListingRevisionId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteCollection
-                                .class,
-                        ListListingRevisionNotesResponse.Builder::listingRevisionNoteCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingRevisionNotesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingRevisionNotesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNoteCollection/ListListingRevisionNotes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListListingRevisionNotesResponse>
+                transformer =
+                        ListListingRevisionNotesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListListingRevisionPackagesResponse listListingRevisionPackages(
             ListListingRevisionPackagesRequest request) {
-        Objects.requireNonNull(request.getListingRevisionId(), "listingRevisionId is required");
+        LOG.trace("Called listListingRevisionPackages");
+        final ListListingRevisionPackagesRequest interceptedRequest =
+                ListListingRevisionPackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionPackagesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListListingRevisionPackagesResponse::builder)
-                .logger(LOG, "listListingRevisionPackages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisionPackages",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackageCollection/ListListingRevisionPackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionPackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("listingRevisionId", request.getListingRevisionId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageCollection
-                                .class,
-                        ListListingRevisionPackagesResponse.Builder
-                                ::listingRevisionPackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingRevisionPackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingRevisionPackagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackageCollection/ListListingRevisionPackages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListListingRevisionPackagesResponse>
+                transformer =
+                        ListListingRevisionPackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListListingRevisionsResponse listListingRevisions(ListListingRevisionsRequest request) {
-        Objects.requireNonNull(request.getListingId(), "listingId is required");
+        LOG.trace("Called listListingRevisions");
+        final ListListingRevisionsRequest interceptedRequest =
+                ListListingRevisionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListListingRevisionsResponse::builder)
-                .logger(LOG, "listListingRevisions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListListingRevisions",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionCollection/ListListingRevisions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendQueryParam("listingId", request.getListingId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("listingRevisionStatus", request.getListingRevisionStatus())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionCollection.class,
-                        ListListingRevisionsResponse.Builder::listingRevisionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingRevisionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingRevisionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionCollection/ListListingRevisions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListListingRevisionsResponse>
+                transformer =
+                        ListListingRevisionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListListingsResponse listListings(ListListingsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listListings");
+        final ListListingsRequest interceptedRequest =
+                ListListingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListListingsResponse::builder)
-                .logger(LOG, "listListings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListListings",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingCollection/ListListings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingCollection.class,
-                        ListListingsResponse.Builder::listingCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingCollection/ListListings");
+        java.util.function.Function<javax.ws.rs.core.Response, ListListingsResponse> transformer =
+                ListListingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListMarketsResponse listMarkets(ListMarketsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listMarkets");
+        final ListMarketsRequest interceptedRequest =
+                ListMarketsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMarketsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListMarketsResponse::builder)
-                .logger(LOG, "listMarkets")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListMarkets",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/MarketCollection/ListMarkets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMarketsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("markets")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.MarketCollection.class,
-                        ListMarketsResponse.Builder::marketCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMarketsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMarketsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/MarketCollection/ListMarkets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMarketsResponse> transformer =
+                ListMarketsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListProductsResponse listProducts(ListProductsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listProducts");
+        final ListProductsRequest interceptedRequest =
+                ListProductsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProductsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListProductsResponse::builder)
-                .logger(LOG, "listProducts")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListProducts",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ProductCollection/ListProducts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListProductsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("products")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ProductCollection.class,
-                        ListProductsResponse.Builder::productCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListProductsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListProductsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ProductCollection/ListProducts");
+        java.util.function.Function<javax.ws.rs.core.Response, ListProductsResponse> transformer =
+                ListProductsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPublishersResponse listPublishers(ListPublishersRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listPublishers");
+        final ListPublishersRequest interceptedRequest =
+                ListPublishersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublishersConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListPublishersResponse::builder)
-                .logger(LOG, "listPublishers")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListPublishers",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/PublisherCollection/ListPublishers")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPublishersRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("publishers")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.PublisherCollection.class,
-                        ListPublishersResponse.Builder::publisherCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPublishersResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPublishersResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/PublisherCollection/ListPublishers");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPublishersResponse> transformer =
+                ListPublishersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListTermVersionsResponse listTermVersions(ListTermVersionsRequest request) {
-        Objects.requireNonNull(request.getTermId(), "termId is required");
+        LOG.trace("Called listTermVersions");
+        final ListTermVersionsRequest interceptedRequest =
+                ListTermVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTermVersionsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListTermVersionsResponse::builder)
-                .logger(LOG, "listTermVersions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListTermVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersionCollection/ListTermVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTermVersionsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendQueryParam("termId", request.getTermId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersionCollection.class,
-                        ListTermVersionsResponse.Builder::termVersionCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTermVersionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTermVersionsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersionCollection/ListTermVersions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListTermVersionsResponse>
+                transformer =
+                        ListTermVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListTermsResponse listTerms(ListTermsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listTerms");
+        final ListTermsRequest interceptedRequest = ListTermsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTermsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListTermsResponse::builder)
-                .logger(LOG, "listTerms")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListTerms",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermCollection/ListTerms")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTermsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermCollection.class,
-                        ListTermsResponse.Builder::termCollection)
-                .handleResponseHeaderString("opc-next-page", ListTermsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTermsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermCollection/ListTerms");
+        java.util.function.Function<javax.ws.rs.core.Response, ListTermsResponse> transformer =
+                ListTermsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestError/ListWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntryCollection
-                                .class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestLogEntry/ListWorkRequestLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequestSummaryCollection
-                                .class,
-                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/ListWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public MarkListingRevisionPackageAsDefaultResponse markListingRevisionPackageAsDefault(
             MarkListingRevisionPackageAsDefaultRequest request) {
+        LOG.trace("Called markListingRevisionPackageAsDefault");
+        final MarkListingRevisionPackageAsDefaultRequest interceptedRequest =
+                MarkListingRevisionPackageAsDefaultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MarkListingRevisionPackageAsDefaultConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, MarkListingRevisionPackageAsDefaultResponse::builder)
-                .logger(LOG, "markListingRevisionPackageAsDefault")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "MarkListingRevisionPackageAsDefault",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/MarkListingRevisionPackageAsDefault")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(MarkListingRevisionPackageAsDefaultRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .appendPathParam("actions")
-                .appendPathParam("markAsDefault")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        MarkListingRevisionPackageAsDefaultResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        MarkListingRevisionPackageAsDefaultResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/MarkListingRevisionPackageAsDefault");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, MarkListingRevisionPackageAsDefaultResponse>
+                transformer =
+                        MarkListingRevisionPackageAsDefaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PublishListingRevisionResponse publishListingRevision(
             PublishListingRevisionRequest request) {
+        LOG.trace("Called publishListingRevision");
+        final PublishListingRevisionRequest interceptedRequest =
+                PublishListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, PublishListingRevisionResponse::builder)
-                .logger(LOG, "publishListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "PublishListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("publish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PublishListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", PublishListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevision");
+        java.util.function.Function<javax.ws.rs.core.Response, PublishListingRevisionResponse>
+                transformer =
+                        PublishListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PublishListingRevisionAsPrivateResponse publishListingRevisionAsPrivate(
             PublishListingRevisionAsPrivateRequest request) {
-        Objects.requireNonNull(
-                request.getPublishListingRevisionAsPrivateDetails(),
-                "publishListingRevisionAsPrivateDetails is required");
+        LOG.trace("Called publishListingRevisionAsPrivate");
+        final PublishListingRevisionAsPrivateRequest interceptedRequest =
+                PublishListingRevisionAsPrivateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishListingRevisionAsPrivateConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, PublishListingRevisionAsPrivateResponse::builder)
-                .logger(LOG, "publishListingRevisionAsPrivate")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "PublishListingRevisionAsPrivate",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevisionAsPrivate")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishListingRevisionAsPrivateRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("publishAsPrivate")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PublishListingRevisionAsPrivateResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PublishListingRevisionAsPrivateResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevisionAsPrivate");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PublishListingRevisionAsPrivateResponse>
+                transformer =
+                        PublishListingRevisionAsPrivateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getPublishListingRevisionAsPrivateDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PublishListingRevisionPackageResponse publishListingRevisionPackage(
             PublishListingRevisionPackageRequest request) {
+        LOG.trace("Called publishListingRevisionPackage");
+        final PublishListingRevisionPackageRequest interceptedRequest =
+                PublishListingRevisionPackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, PublishListingRevisionPackageResponse::builder)
-                .logger(LOG, "publishListingRevisionPackage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "PublishListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/PublishListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .appendPathParam("actions")
-                .appendPathParam("publish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PublishListingRevisionPackageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PublishListingRevisionPackageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/PublishListingRevisionPackage");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PublishListingRevisionPackageResponse>
+                transformer =
+                        PublishListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SubmitListingRevisionForReviewResponse submitListingRevisionForReview(
             SubmitListingRevisionForReviewRequest request) {
-        Objects.requireNonNull(
-                request.getSubmitListingRevisionForReviewDetails(),
-                "submitListingRevisionForReviewDetails is required");
+        LOG.trace("Called submitListingRevisionForReview");
+        final SubmitListingRevisionForReviewRequest interceptedRequest =
+                SubmitListingRevisionForReviewConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SubmitListingRevisionForReviewConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, SubmitListingRevisionForReviewResponse::builder)
-                .logger(LOG, "submitListingRevisionForReview")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "SubmitListingRevisionForReview",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/SubmitListingRevisionForReview")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SubmitListingRevisionForReviewRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("submitForReview")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        SubmitListingRevisionForReviewResponse.Builder::listingRevision)
-                .handleResponseHeaderString(
-                        "etag", SubmitListingRevisionForReviewResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SubmitListingRevisionForReviewResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/SubmitListingRevisionForReview");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SubmitListingRevisionForReviewResponse>
+                transformer =
+                        SubmitListingRevisionForReviewConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSubmitListingRevisionForReviewDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UnPublishListingRevisionPackageResponse unPublishListingRevisionPackage(
             UnPublishListingRevisionPackageRequest request) {
+        LOG.trace("Called unPublishListingRevisionPackage");
+        final UnPublishListingRevisionPackageRequest interceptedRequest =
+                UnPublishListingRevisionPackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnPublishListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, UnPublishListingRevisionPackageResponse::builder)
-                .logger(LOG, "unPublishListingRevisionPackage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UnPublishListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UnPublishListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UnPublishListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .appendPathParam("actions")
-                .appendPathParam("unPublish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UnPublishListingRevisionPackageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UnPublishListingRevisionPackageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UnPublishListingRevisionPackage");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UnPublishListingRevisionPackageResponse>
+                transformer =
+                        UnPublishListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateArtifactResponse updateArtifact(UpdateArtifactRequest request) {
+        LOG.trace("Called updateArtifact");
+        final UpdateArtifactRequest interceptedRequest =
+                UpdateArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateArtifactConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateArtifactDetails(), "updateArtifactDetails is required");
-
-        return clientCall(request, UpdateArtifactResponse::builder)
-                .logger(LOG, "updateArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UpdateArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/UpdateArtifact")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/UpdateArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateArtifactResponse> transformer =
+                UpdateArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateArtifactDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateListingResponse updateListing(UpdateListingRequest request) {
+        LOG.trace("Called updateListing");
+        final UpdateListingRequest interceptedRequest =
+                UpdateListingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingDetails(), "updateListingDetails is required");
-
-        return clientCall(request, UpdateListingResponse::builder)
-                .logger(LOG, "updateListing")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UpdateListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/UpdateListing")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Listing.class,
-                        UpdateListingResponse.Builder::listing)
-                .handleResponseHeaderString("etag", UpdateListingResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateListingResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/UpdateListing");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateListingResponse> transformer =
+                UpdateListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateListingDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateListingRevisionResponse updateListingRevision(
             UpdateListingRevisionRequest request) {
+        LOG.trace("Called updateListingRevision");
+        final UpdateListingRevisionRequest interceptedRequest =
+                UpdateListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionDetails(),
-                "updateListingRevisionDetails is required");
-
-        return clientCall(request, UpdateListingRevisionResponse::builder)
-                .logger(LOG, "updateListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevision")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        UpdateListingRevisionResponse.Builder::listingRevision)
-                .handleResponseHeaderString("etag", UpdateListingRevisionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevision");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateListingRevisionResponse>
+                transformer =
+                        UpdateListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateListingRevisionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateListingRevisionAttachmentResponse updateListingRevisionAttachment(
             UpdateListingRevisionAttachmentRequest request) {
+        LOG.trace("Called updateListingRevisionAttachment");
+        final UpdateListingRevisionAttachmentRequest interceptedRequest =
+                UpdateListingRevisionAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionAttachmentDetails(),
-                "updateListingRevisionAttachmentDetails is required");
-
-        return clientCall(request, UpdateListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "updateListingRevisionAttachment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        UpdateListingRevisionAttachmentResponse.Builder::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionAttachmentResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateListingRevisionAttachmentResponse>
+                transformer =
+                        UpdateListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateListingRevisionAttachmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateListingRevisionAttachmentContentResponse updateListingRevisionAttachmentContent(
             UpdateListingRevisionAttachmentContentRequest request) {
-
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionAttachmentContent(),
-                "updateListingRevisionAttachmentContent is required");
-
-        return clientCall(request, UpdateListingRevisionAttachmentContentResponse::builder)
-                .logger(LOG, "updateListingRevisionAttachmentContent")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListingRevisionAttachmentContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionAttachmentContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .appendPathParam("content")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        UpdateListingRevisionAttachmentContentResponse.Builder
-                                ::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionAttachmentContentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionAttachmentContentResponse.Builder::etag)
-                .callSync();
+        LOG.trace("Called updateListingRevisionAttachmentContent");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateListingRevisionAttachmentContentRequest.builder());
+            }
+            final UpdateListingRevisionAttachmentContentRequest interceptedRequest =
+                    UpdateListingRevisionAttachmentContentConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateListingRevisionAttachmentContentConverter.fromRequest(
+                            client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "MarketplacePublisher",
+                            "UpdateListingRevisionAttachmentContent",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response,
+                            UpdateListingRevisionAttachmentContentResponse>
+                    transformer =
+                            UpdateListingRevisionAttachmentContentConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUpdateListingRevisionAttachmentContent(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUpdateListingRevisionAttachmentContent(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUpdateListingRevisionAttachmentContent());
+        }
     }
 
     @Override
     public UpdateListingRevisionIconContentResponse updateListingRevisionIconContent(
             UpdateListingRevisionIconContentRequest request) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionIconContent(),
-                "updateListingRevisionIconContent is required");
-
-        return clientCall(request, UpdateListingRevisionIconContentResponse::builder)
-                .logger(LOG, "updateListingRevisionIconContent")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListingRevisionIconContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevisionIconContent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionIconContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("icon")
-                .appendPathParam("content")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        UpdateListingRevisionIconContentResponse.Builder::listingRevision)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionIconContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionIconContentResponse.Builder::opcRequestId)
-                .callSync();
+        LOG.trace("Called updateListingRevisionIconContent");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateListingRevisionIconContentRequest.builder());
+            }
+            final UpdateListingRevisionIconContentRequest interceptedRequest =
+                    UpdateListingRevisionIconContentConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateListingRevisionIconContentConverter.fromRequest(
+                            client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "MarketplacePublisher",
+                            "UpdateListingRevisionIconContent",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevisionIconContent");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, UpdateListingRevisionIconContentResponse>
+                    transformer =
+                            UpdateListingRevisionIconContentConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUpdateListingRevisionIconContent(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUpdateListingRevisionIconContent(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUpdateListingRevisionIconContent());
+        }
     }
 
     @Override
     public UpdateListingRevisionPackageResponse updateListingRevisionPackage(
             UpdateListingRevisionPackageRequest request) {
+        LOG.trace("Called updateListingRevisionPackage");
+        final UpdateListingRevisionPackageRequest interceptedRequest =
+                UpdateListingRevisionPackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionPackageDetails(),
-                "updateListingRevisionPackageDetails is required");
-
-        return clientCall(request, UpdateListingRevisionPackageResponse::builder)
-                .logger(LOG, "updateListingRevisionPackage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UpdateListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UpdateListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
-                        UpdateListingRevisionPackageResponse.Builder::listingRevisionPackage)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionPackageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionPackageResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UpdateListingRevisionPackage");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateListingRevisionPackageResponse>
+                transformer =
+                        UpdateListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateListingRevisionPackageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateTermResponse updateTerm(UpdateTermRequest request) {
+        LOG.trace("Called updateTerm");
+        final UpdateTermRequest interceptedRequest = UpdateTermConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTermConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-        Objects.requireNonNull(request.getUpdateTermDetails(), "updateTermDetails is required");
-
-        return clientCall(request, UpdateTermResponse::builder)
-                .logger(LOG, "updateTerm")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UpdateTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/UpdateTerm")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Term.class,
-                        UpdateTermResponse.Builder::term)
-                .handleResponseHeaderString("etag", UpdateTermResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTermResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/UpdateTerm");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTermResponse> transformer =
+                UpdateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateTermDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateTermVersionResponse updateTermVersion(UpdateTermVersionRequest request) {
+        LOG.trace("Called updateTermVersion");
+        final UpdateTermVersionRequest interceptedRequest =
+                UpdateTermVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTermVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTermVersionDetails(), "updateTermVersionDetails is required");
-
-        return clientCall(request, UpdateTermVersionResponse::builder)
-                .logger(LOG, "updateTermVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "UpdateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersion")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        UpdateTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", UpdateTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTermVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTermVersionResponse>
+                transformer =
+                        UpdateTermVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateTermVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateTermVersionContentResponse updateTermVersionContent(
             UpdateTermVersionContentRequest request) {
-
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTermVersionContent(), "updateTermVersionContent is required");
-
-        return clientCall(request, UpdateTermVersionContentResponse::builder)
-                .logger(LOG, "updateTermVersionContent")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateTermVersionContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersionContent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTermVersionContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .appendPathParam("content")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("display-name", request.getDisplayName())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        UpdateTermVersionContentResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", UpdateTermVersionContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTermVersionContentResponse.Builder::opcRequestId)
-                .callSync();
+        LOG.trace("Called updateTermVersionContent");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateTermVersionContentRequest.builder());
+            }
+            final UpdateTermVersionContentRequest interceptedRequest =
+                    UpdateTermVersionContentConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateTermVersionContentConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "MarketplacePublisher",
+                            "UpdateTermVersionContent",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersionContent");
+            java.util.function.Function<javax.ws.rs.core.Response, UpdateTermVersionContentResponse>
+                    transformer =
+                            UpdateTermVersionContentConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUpdateTermVersionContent(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUpdateTermVersionContent(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUpdateTermVersionContent());
+        }
     }
 
     @Override
     public ValidateAndPublishArtifactResponse validateAndPublishArtifact(
             ValidateAndPublishArtifactRequest request) {
+        LOG.trace("Called validateAndPublishArtifact");
+        final ValidateAndPublishArtifactRequest interceptedRequest =
+                ValidateAndPublishArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateAndPublishArtifactConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-
-        return clientCall(request, ValidateAndPublishArtifactResponse::builder)
-                .logger(LOG, "validateAndPublishArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "ValidateAndPublishArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ValidateAndPublishArtifact")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateAndPublishArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .appendPathParam("actions")
-                .appendPathParam("validateAndPublish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ValidateAndPublishArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateAndPublishArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ValidateAndPublishArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateAndPublishArtifactResponse>
+                transformer =
+                        ValidateAndPublishArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public WithdrawListingRevisionResponse withdrawListingRevision(
             WithdrawListingRevisionRequest request) {
+        LOG.trace("Called withdrawListingRevision");
+        final WithdrawListingRevisionRequest interceptedRequest =
+                WithdrawListingRevisionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                WithdrawListingRevisionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, WithdrawListingRevisionResponse::builder)
-                .logger(LOG, "withdrawListingRevision")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "MarketplacePublisher",
                         "WithdrawListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/WithdrawListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(WithdrawListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("withdraw")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        WithdrawListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", WithdrawListingRevisionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/WithdrawListingRevision");
+        java.util.function.Function<javax.ws.rs.core.Response, WithdrawListingRevisionResponse>
+                transformer =
+                        WithdrawListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -2408,207 +3455,29 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
         return paginators;
     }
 
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public MarketplacePublisherClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Possible backup types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum DeploymentBackupType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible backup types.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum DeploymentBackupType {
     Incremental("INCREMENTAL"),
     Full("FULL"),
 

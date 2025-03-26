@@ -5,22 +5,19 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * AWS EBS volume related properties. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * AWS EBS volume related properties.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AwsEbsProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AwsEbsProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AwsEbsProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "attachments",
@@ -63,166 +60,177 @@ public final class AwsEbsProperties
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Information about the volume attachments. */
+        /**
+         * Information about the volume attachments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachments")
         private java.util.List<VolumeAttachment> attachments;
 
         /**
          * Information about the volume attachments.
-         *
          * @param attachments the value to set
          * @return this builder
-         */
+         **/
         public Builder attachments(java.util.List<VolumeAttachment> attachments) {
             this.attachments = attachments;
             this.__explicitlySet__.add("attachments");
             return this;
         }
-        /** The Availability Zone for the volume. */
+        /**
+         * The Availability Zone for the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityZone")
         private String availabilityZone;
 
         /**
          * The Availability Zone for the volume.
-         *
          * @param availabilityZone the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityZone(String availabilityZone) {
             this.availabilityZone = availabilityZone;
             this.__explicitlySet__.add("availabilityZone");
             return this;
         }
-        /** Indicates whether the volume is encrypted. */
+        /**
+         * Indicates whether the volume is encrypted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEncrypted")
         private Boolean isEncrypted;
 
         /**
          * Indicates whether the volume is encrypted.
-         *
          * @param isEncrypted the value to set
          * @return this builder
-         */
+         **/
         public Builder isEncrypted(Boolean isEncrypted) {
             this.isEncrypted = isEncrypted;
             this.__explicitlySet__.add("isEncrypted");
             return this;
         }
-        /** The number of I/O operations per second. */
+        /**
+         * The number of I/O operations per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iops")
         private Integer iops;
 
         /**
          * The number of I/O operations per second.
-         *
          * @param iops the value to set
          * @return this builder
-         */
+         **/
         public Builder iops(Integer iops) {
             this.iops = iops;
             this.__explicitlySet__.add("iops");
             return this;
         }
-        /** Indicates whether Amazon EBS Multi-Attach is enabled. */
+        /**
+         * Indicates whether Amazon EBS Multi-Attach is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiAttachEnabled")
         private Boolean isMultiAttachEnabled;
 
         /**
          * Indicates whether Amazon EBS Multi-Attach is enabled.
-         *
          * @param isMultiAttachEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isMultiAttachEnabled(Boolean isMultiAttachEnabled) {
             this.isMultiAttachEnabled = isMultiAttachEnabled;
             this.__explicitlySet__.add("isMultiAttachEnabled");
             return this;
         }
-        /** The size of the volume, in GiBs. */
+        /**
+         * The size of the volume, in GiBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGiBs")
         private Integer sizeInGiBs;
 
         /**
          * The size of the volume, in GiBs.
-         *
          * @param sizeInGiBs the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInGiBs(Integer sizeInGiBs) {
             this.sizeInGiBs = sizeInGiBs;
             this.__explicitlySet__.add("sizeInGiBs");
             return this;
         }
-        /** The volume state. */
+        /**
+         * The volume state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The volume state.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Any tags assigned to the volume. */
+        /**
+         * Any tags assigned to the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
         /**
          * Any tags assigned to the volume.
-         *
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tag> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
-        /** The throughput that the volume supports, in MiB/s. */
+        /**
+         * The throughput that the volume supports, in MiB/s.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("throughput")
         private Integer throughput;
 
         /**
          * The throughput that the volume supports, in MiB/s.
-         *
          * @param throughput the value to set
          * @return this builder
-         */
+         **/
         public Builder throughput(Integer throughput) {
             this.throughput = throughput;
             this.__explicitlySet__.add("throughput");
             return this;
         }
-        /** The ID of the volume. */
+        /**
+         * The ID of the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeKey")
         private String volumeKey;
 
         /**
          * The ID of the volume.
-         *
          * @param volumeKey the value to set
          * @return this builder
-         */
+         **/
         public Builder volumeKey(String volumeKey) {
             this.volumeKey = volumeKey;
             this.__explicitlySet__.add("volumeKey");
             return this;
         }
-        /** The volume type. */
+        /**
+         * The volume type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeType")
         private String volumeType;
 
         /**
          * The volume type.
-         *
          * @param volumeType the value to set
          * @return this builder
-         */
+         **/
         public Builder volumeType(String volumeType) {
             this.volumeType = volumeType;
             this.__explicitlySet__.add("volumeType");
@@ -291,7 +299,9 @@ public final class AwsEbsProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -300,145 +310,156 @@ public final class AwsEbsProperties
         return new Builder().copy(this);
     }
 
-    /** Information about the volume attachments. */
+    /**
+     * Information about the volume attachments.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachments")
     private final java.util.List<VolumeAttachment> attachments;
 
     /**
      * Information about the volume attachments.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VolumeAttachment> getAttachments() {
         return attachments;
     }
 
-    /** The Availability Zone for the volume. */
+    /**
+     * The Availability Zone for the volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityZone")
     private final String availabilityZone;
 
     /**
      * The Availability Zone for the volume.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityZone() {
         return availabilityZone;
     }
 
-    /** Indicates whether the volume is encrypted. */
+    /**
+     * Indicates whether the volume is encrypted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEncrypted")
     private final Boolean isEncrypted;
 
     /**
      * Indicates whether the volume is encrypted.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEncrypted() {
         return isEncrypted;
     }
 
-    /** The number of I/O operations per second. */
+    /**
+     * The number of I/O operations per second.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("iops")
     private final Integer iops;
 
     /**
      * The number of I/O operations per second.
-     *
      * @return the value
-     */
+     **/
     public Integer getIops() {
         return iops;
     }
 
-    /** Indicates whether Amazon EBS Multi-Attach is enabled. */
+    /**
+     * Indicates whether Amazon EBS Multi-Attach is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiAttachEnabled")
     private final Boolean isMultiAttachEnabled;
 
     /**
      * Indicates whether Amazon EBS Multi-Attach is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMultiAttachEnabled() {
         return isMultiAttachEnabled;
     }
 
-    /** The size of the volume, in GiBs. */
+    /**
+     * The size of the volume, in GiBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGiBs")
     private final Integer sizeInGiBs;
 
     /**
      * The size of the volume, in GiBs.
-     *
      * @return the value
-     */
+     **/
     public Integer getSizeInGiBs() {
         return sizeInGiBs;
     }
 
-    /** The volume state. */
+    /**
+     * The volume state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The volume state.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** Any tags assigned to the volume. */
+    /**
+     * Any tags assigned to the volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tag> tags;
 
     /**
      * Any tags assigned to the volume.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Tag> getTags() {
         return tags;
     }
 
-    /** The throughput that the volume supports, in MiB/s. */
+    /**
+     * The throughput that the volume supports, in MiB/s.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("throughput")
     private final Integer throughput;
 
     /**
      * The throughput that the volume supports, in MiB/s.
-     *
      * @return the value
-     */
+     **/
     public Integer getThroughput() {
         return throughput;
     }
 
-    /** The ID of the volume. */
+    /**
+     * The ID of the volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeKey")
     private final String volumeKey;
 
     /**
      * The ID of the volume.
-     *
      * @return the value
-     */
+     **/
     public String getVolumeKey() {
         return volumeKey;
     }
 
-    /** The volume type. */
+    /**
+     * The volume type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeType")
     private final String volumeType;
 
     /**
      * The volume type.
-     *
      * @return the value
-     */
+     **/
     public String getVolumeType() {
         return volumeType;
     }
@@ -450,7 +471,6 @@ public final class AwsEbsProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

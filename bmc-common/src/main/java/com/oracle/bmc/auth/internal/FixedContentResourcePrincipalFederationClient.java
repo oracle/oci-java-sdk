@@ -12,7 +12,9 @@ import org.slf4j.Logger;
 import java.time.Duration;
 import java.util.Optional;
 
-/** This class returns a security token, supplied as a fixed value. */
+/**
+ * This class returns a security token, supplied as a fixed value.
+ */
 public class FixedContentResourcePrincipalFederationClient
         implements FederationClient, ProvidesConfigurableRefresh {
     private static final Logger LOG =
@@ -61,12 +63,9 @@ public class FixedContentResourcePrincipalFederationClient
 
     private String refreshAndGetSecurityTokenInner(
             final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
-        // Since this client will be used in a multi-threaded environment (from within a service
-        // API),
-        // this needs to be synchronized to make sure multiple calls are not updating the security
-        // token at the same time.
-        // This should not be a blocking/dead-locked call. The worst I can see at this point is that
-        // the auth service does
+        // Since this client will be used in a multi-threaded environment (from within a service API),
+        // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
+        // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
         // not respond and this call times out, throwing exception
         synchronized (this) {
             // Check again to see if the JWT is still invalid, unless we want to skip that check

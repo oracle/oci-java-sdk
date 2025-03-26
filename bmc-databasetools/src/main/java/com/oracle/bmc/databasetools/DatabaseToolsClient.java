@@ -4,40 +4,336 @@
  */
 package com.oracle.bmc.databasetools;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.databasetools.internal.http.*;
 import com.oracle.bmc.databasetools.requests.*;
 import com.oracle.bmc.databasetools.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements DatabaseTools {
-    /** Service instance for DatabaseTools. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+public class DatabaseToolsClient implements DatabaseTools {
+    /**
+     * Service instance for DatabaseTools.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DATABASETOOLS")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://dbtools.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DatabaseToolsClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final DatabaseToolsWaiters waiters;
 
     private final DatabaseToolsPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    DatabaseToolsClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public DatabaseToolsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected DatabaseToolsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -59,11 +355,29 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
         this.waiters = new DatabaseToolsWaiters(executorService, this);
 
         this.paginators = new DatabaseToolsPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -71,8 +385,8 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DatabaseToolsClient> {
@@ -80,8 +394,6 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "databasetools";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -89,7 +401,6 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -100,864 +411,1088 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public DatabaseToolsClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new DatabaseToolsClient(this, authenticationDetailsProvider, executorService);
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new DatabaseToolsClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public AddDatabaseToolsConnectionLockResponse addDatabaseToolsConnectionLock(
             AddDatabaseToolsConnectionLockRequest request) {
+        LOG.trace("Called addDatabaseToolsConnectionLock");
+        final AddDatabaseToolsConnectionLockRequest interceptedRequest =
+                AddDatabaseToolsConnectionLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDatabaseToolsConnectionLockConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsConnectionId(),
-                "databaseToolsConnectionId must not be blank");
-        Objects.requireNonNull(
-                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
-
-        return clientCall(request, AddDatabaseToolsConnectionLockResponse::builder)
-                .logger(LOG, "addDatabaseToolsConnectionLock")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "AddDatabaseToolsConnectionLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddDatabaseToolsConnectionLockRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendPathParam(request.getDatabaseToolsConnectionId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsConnection.class,
-                        AddDatabaseToolsConnectionLockResponse.Builder::databaseToolsConnection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AddDatabaseToolsConnectionLockResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", AddDatabaseToolsConnectionLockResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddDatabaseToolsConnectionLockResponse>
+                transformer =
+                        AddDatabaseToolsConnectionLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public AddDatabaseToolsPrivateEndpointLockResponse addDatabaseToolsPrivateEndpointLock(
             AddDatabaseToolsPrivateEndpointLockRequest request) {
+        LOG.trace("Called addDatabaseToolsPrivateEndpointLock");
+        final AddDatabaseToolsPrivateEndpointLockRequest interceptedRequest =
+                AddDatabaseToolsPrivateEndpointLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDatabaseToolsPrivateEndpointLockConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsPrivateEndpointId(),
-                "databaseToolsPrivateEndpointId must not be blank");
-        Objects.requireNonNull(
-                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
-
-        return clientCall(request, AddDatabaseToolsPrivateEndpointLockResponse::builder)
-                .logger(LOG, "addDatabaseToolsPrivateEndpointLock")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "AddDatabaseToolsPrivateEndpointLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddDatabaseToolsPrivateEndpointLockRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint.class,
-                        AddDatabaseToolsPrivateEndpointLockResponse.Builder
-                                ::databaseToolsPrivateEndpoint)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AddDatabaseToolsPrivateEndpointLockResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", AddDatabaseToolsPrivateEndpointLockResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddDatabaseToolsPrivateEndpointLockResponse>
+                transformer =
+                        AddDatabaseToolsPrivateEndpointLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeDatabaseToolsConnectionCompartmentResponse
             changeDatabaseToolsConnectionCompartment(
                     ChangeDatabaseToolsConnectionCompartmentRequest request) {
+        LOG.trace("Called changeDatabaseToolsConnectionCompartment");
+        final ChangeDatabaseToolsConnectionCompartmentRequest interceptedRequest =
+                ChangeDatabaseToolsConnectionCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseToolsConnectionCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsConnectionId(),
-                "databaseToolsConnectionId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeDatabaseToolsConnectionCompartmentDetails(),
-                "changeDatabaseToolsConnectionCompartmentDetails is required");
-
-        return clientCall(request, ChangeDatabaseToolsConnectionCompartmentResponse::builder)
-                .logger(LOG, "changeDatabaseToolsConnectionCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ChangeDatabaseToolsConnectionCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeDatabaseToolsConnectionCompartmentRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendPathParam(request.getDatabaseToolsConnectionId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeDatabaseToolsConnectionCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeDatabaseToolsConnectionCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseToolsConnectionCompartmentResponse>
+                transformer =
+                        ChangeDatabaseToolsConnectionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDatabaseToolsConnectionCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeDatabaseToolsPrivateEndpointCompartmentResponse
             changeDatabaseToolsPrivateEndpointCompartment(
                     ChangeDatabaseToolsPrivateEndpointCompartmentRequest request) {
+        LOG.trace("Called changeDatabaseToolsPrivateEndpointCompartment");
+        final ChangeDatabaseToolsPrivateEndpointCompartmentRequest interceptedRequest =
+                ChangeDatabaseToolsPrivateEndpointCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseToolsPrivateEndpointCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsPrivateEndpointId(),
-                "databaseToolsPrivateEndpointId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeDatabaseToolsPrivateEndpointCompartmentDetails(),
-                "changeDatabaseToolsPrivateEndpointCompartmentDetails is required");
-
-        return clientCall(request, ChangeDatabaseToolsPrivateEndpointCompartmentResponse::builder)
-                .logger(LOG, "changeDatabaseToolsPrivateEndpointCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ChangeDatabaseToolsPrivateEndpointCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeDatabaseToolsPrivateEndpointCompartmentRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeDatabaseToolsPrivateEndpointCompartmentResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeDatabaseToolsPrivateEndpointCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeDatabaseToolsPrivateEndpointCompartmentResponse>
+                transformer =
+                        ChangeDatabaseToolsPrivateEndpointCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDatabaseToolsPrivateEndpointCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDatabaseToolsConnectionResponse createDatabaseToolsConnection(
             CreateDatabaseToolsConnectionRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDatabaseToolsConnectionDetails(),
-                "createDatabaseToolsConnectionDetails is required");
+        LOG.trace("Called createDatabaseToolsConnection");
+        final CreateDatabaseToolsConnectionRequest interceptedRequest =
+                CreateDatabaseToolsConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDatabaseToolsConnectionConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDatabaseToolsConnectionResponse::builder)
-                .logger(LOG, "createDatabaseToolsConnection")
-                .serviceDetails("DatabaseTools", "CreateDatabaseToolsConnection", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDatabaseToolsConnectionRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsConnection.class,
-                        CreateDatabaseToolsConnectionResponse.Builder::databaseToolsConnection)
-                .handleResponseHeaderString(
-                        "location", CreateDatabaseToolsConnectionResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "etag", CreateDatabaseToolsConnectionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDatabaseToolsConnectionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateDatabaseToolsConnectionResponse.Builder::opcRequestId)
-                .callSync();
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsConnection",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateDatabaseToolsConnectionResponse>
+                transformer =
+                        CreateDatabaseToolsConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateDatabaseToolsConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDatabaseToolsPrivateEndpointResponse createDatabaseToolsPrivateEndpoint(
             CreateDatabaseToolsPrivateEndpointRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDatabaseToolsPrivateEndpointDetails(),
-                "createDatabaseToolsPrivateEndpointDetails is required");
+        LOG.trace("Called createDatabaseToolsPrivateEndpoint");
+        final CreateDatabaseToolsPrivateEndpointRequest interceptedRequest =
+                CreateDatabaseToolsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDatabaseToolsPrivateEndpointConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDatabaseToolsPrivateEndpointResponse::builder)
-                .logger(LOG, "createDatabaseToolsPrivateEndpoint")
-                .serviceDetails("DatabaseTools", "CreateDatabaseToolsPrivateEndpoint", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDatabaseToolsPrivateEndpointRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint.class,
-                        CreateDatabaseToolsPrivateEndpointResponse.Builder
-                                ::databaseToolsPrivateEndpoint)
-                .handleResponseHeaderString(
-                        "location", CreateDatabaseToolsPrivateEndpointResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "etag", CreateDatabaseToolsPrivateEndpointResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDatabaseToolsPrivateEndpointResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateDatabaseToolsPrivateEndpointResponse.Builder::opcRequestId)
-                .callSync();
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateDatabaseToolsPrivateEndpointResponse>
+                transformer =
+                        CreateDatabaseToolsPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateDatabaseToolsPrivateEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDatabaseToolsConnectionResponse deleteDatabaseToolsConnection(
             DeleteDatabaseToolsConnectionRequest request) {
+        LOG.trace("Called deleteDatabaseToolsConnection");
+        final DeleteDatabaseToolsConnectionRequest interceptedRequest =
+                DeleteDatabaseToolsConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDatabaseToolsConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsConnectionId(),
-                "databaseToolsConnectionId must not be blank");
-
-        return clientCall(request, DeleteDatabaseToolsConnectionResponse::builder)
-                .logger(LOG, "deleteDatabaseToolsConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "DeleteDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDatabaseToolsConnectionRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendPathParam(request.getDatabaseToolsConnectionId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDatabaseToolsConnectionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteDatabaseToolsConnectionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteDatabaseToolsConnectionResponse>
+                transformer =
+                        DeleteDatabaseToolsConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDatabaseToolsPrivateEndpointResponse deleteDatabaseToolsPrivateEndpoint(
             DeleteDatabaseToolsPrivateEndpointRequest request) {
+        LOG.trace("Called deleteDatabaseToolsPrivateEndpoint");
+        final DeleteDatabaseToolsPrivateEndpointRequest interceptedRequest =
+                DeleteDatabaseToolsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDatabaseToolsPrivateEndpointConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsPrivateEndpointId(),
-                "databaseToolsPrivateEndpointId must not be blank");
-
-        return clientCall(request, DeleteDatabaseToolsPrivateEndpointResponse::builder)
-                .logger(LOG, "deleteDatabaseToolsPrivateEndpoint")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "DeleteDatabaseToolsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDatabaseToolsPrivateEndpointRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDatabaseToolsPrivateEndpointResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteDatabaseToolsPrivateEndpointResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteDatabaseToolsPrivateEndpointResponse>
+                transformer =
+                        DeleteDatabaseToolsPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDatabaseToolsConnectionResponse getDatabaseToolsConnection(
             GetDatabaseToolsConnectionRequest request) {
+        LOG.trace("Called getDatabaseToolsConnection");
+        final GetDatabaseToolsConnectionRequest interceptedRequest =
+                GetDatabaseToolsConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsConnectionId(),
-                "databaseToolsConnectionId must not be blank");
-
-        return clientCall(request, GetDatabaseToolsConnectionResponse::builder)
-                .logger(LOG, "getDatabaseToolsConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "GetDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDatabaseToolsConnectionRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendPathParam(request.getDatabaseToolsConnectionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsConnection.class,
-                        GetDatabaseToolsConnectionResponse.Builder::databaseToolsConnection)
-                .handleResponseHeaderString(
-                        "etag", GetDatabaseToolsConnectionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDatabaseToolsConnectionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseToolsConnectionResponse>
+                transformer =
+                        GetDatabaseToolsConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDatabaseToolsEndpointServiceResponse getDatabaseToolsEndpointService(
             GetDatabaseToolsEndpointServiceRequest request) {
+        LOG.trace("Called getDatabaseToolsEndpointService");
+        final GetDatabaseToolsEndpointServiceRequest interceptedRequest =
+                GetDatabaseToolsEndpointServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsEndpointServiceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsEndpointServiceId(),
-                "databaseToolsEndpointServiceId must not be blank");
-
-        return clientCall(request, GetDatabaseToolsEndpointServiceResponse::builder)
-                .logger(LOG, "getDatabaseToolsEndpointService")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "GetDatabaseToolsEndpointService",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDatabaseToolsEndpointServiceRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsEndpointServices")
-                .appendPathParam(request.getDatabaseToolsEndpointServiceId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsEndpointService.class,
-                        GetDatabaseToolsEndpointServiceResponse.Builder
-                                ::databaseToolsEndpointService)
-                .handleResponseHeaderString(
-                        "etag", GetDatabaseToolsEndpointServiceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetDatabaseToolsEndpointServiceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseToolsEndpointServiceResponse>
+                transformer =
+                        GetDatabaseToolsEndpointServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDatabaseToolsPrivateEndpointResponse getDatabaseToolsPrivateEndpoint(
             GetDatabaseToolsPrivateEndpointRequest request) {
+        LOG.trace("Called getDatabaseToolsPrivateEndpoint");
+        final GetDatabaseToolsPrivateEndpointRequest interceptedRequest =
+                GetDatabaseToolsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseToolsPrivateEndpointConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsPrivateEndpointId(),
-                "databaseToolsPrivateEndpointId must not be blank");
-
-        return clientCall(request, GetDatabaseToolsPrivateEndpointResponse::builder)
-                .logger(LOG, "getDatabaseToolsPrivateEndpoint")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "GetDatabaseToolsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDatabaseToolsPrivateEndpointRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint.class,
-                        GetDatabaseToolsPrivateEndpointResponse.Builder
-                                ::databaseToolsPrivateEndpoint)
-                .handleResponseHeaderString(
-                        "etag", GetDatabaseToolsPrivateEndpointResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetDatabaseToolsPrivateEndpointResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseToolsPrivateEndpointResponse>
+                transformer =
+                        GetDatabaseToolsPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDatabaseToolsConnectionsResponse listDatabaseToolsConnections(
             ListDatabaseToolsConnectionsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listDatabaseToolsConnections");
+        final ListDatabaseToolsConnectionsRequest interceptedRequest =
+                ListDatabaseToolsConnectionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsConnectionsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDatabaseToolsConnectionsResponse::builder)
-                .logger(LOG, "listDatabaseToolsConnections")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ListDatabaseToolsConnections",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDatabaseToolsConnectionsRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendListQueryParam(
-                        "type",
-                        request.getType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "runtimeSupport",
-                        request.getRuntimeSupport(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam(
-                        "relatedResourceIdentifier", request.getRelatedResourceIdentifier())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsConnectionCollection.class,
-                        ListDatabaseToolsConnectionsResponse.Builder
-                                ::databaseToolsConnectionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListDatabaseToolsConnectionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDatabaseToolsConnectionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseToolsConnectionsResponse>
+                transformer =
+                        ListDatabaseToolsConnectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDatabaseToolsEndpointServicesResponse listDatabaseToolsEndpointServices(
             ListDatabaseToolsEndpointServicesRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listDatabaseToolsEndpointServices");
+        final ListDatabaseToolsEndpointServicesRequest interceptedRequest =
+                ListDatabaseToolsEndpointServicesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsEndpointServicesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDatabaseToolsEndpointServicesResponse::builder)
-                .logger(LOG, "listDatabaseToolsEndpointServices")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ListDatabaseToolsEndpointServices",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDatabaseToolsEndpointServicesRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsEndpointServices")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsEndpointServiceCollection
-                                .class,
-                        ListDatabaseToolsEndpointServicesResponse.Builder
-                                ::databaseToolsEndpointServiceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListDatabaseToolsEndpointServicesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListDatabaseToolsEndpointServicesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseToolsEndpointServicesResponse>
+                transformer =
+                        ListDatabaseToolsEndpointServicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDatabaseToolsPrivateEndpointsResponse listDatabaseToolsPrivateEndpoints(
             ListDatabaseToolsPrivateEndpointsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listDatabaseToolsPrivateEndpoints");
+        final ListDatabaseToolsPrivateEndpointsRequest interceptedRequest =
+                ListDatabaseToolsPrivateEndpointsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseToolsPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDatabaseToolsPrivateEndpointsResponse::builder)
-                .logger(LOG, "listDatabaseToolsPrivateEndpoints")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ListDatabaseToolsPrivateEndpoints",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDatabaseToolsPrivateEndpointsRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("subnetId", request.getSubnetId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("endpointServiceId", request.getEndpointServiceId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpointCollection
-                                .class,
-                        ListDatabaseToolsPrivateEndpointsResponse.Builder
-                                ::databaseToolsPrivateEndpointCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListDatabaseToolsPrivateEndpointsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListDatabaseToolsPrivateEndpointsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseToolsPrivateEndpointsResponse>
+                transformer =
+                        ListDatabaseToolsPrivateEndpointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.WorkRequestLogEntryCollection.class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("resourceIdentifier", request.getResourceIdentifier())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.WorkRequestCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemoveDatabaseToolsConnectionLockResponse removeDatabaseToolsConnectionLock(
             RemoveDatabaseToolsConnectionLockRequest request) {
+        LOG.trace("Called removeDatabaseToolsConnectionLock");
+        final RemoveDatabaseToolsConnectionLockRequest interceptedRequest =
+                RemoveDatabaseToolsConnectionLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDatabaseToolsConnectionLockConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsConnectionId(),
-                "databaseToolsConnectionId must not be blank");
-        Objects.requireNonNull(
-                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
-
-        return clientCall(request, RemoveDatabaseToolsConnectionLockResponse::builder)
-                .logger(LOG, "removeDatabaseToolsConnectionLock")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "RemoveDatabaseToolsConnectionLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveDatabaseToolsConnectionLockRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendPathParam(request.getDatabaseToolsConnectionId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsConnection.class,
-                        RemoveDatabaseToolsConnectionLockResponse.Builder::databaseToolsConnection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemoveDatabaseToolsConnectionLockResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", RemoveDatabaseToolsConnectionLockResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveDatabaseToolsConnectionLockResponse>
+                transformer =
+                        RemoveDatabaseToolsConnectionLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemoveDatabaseToolsPrivateEndpointLockResponse removeDatabaseToolsPrivateEndpointLock(
             RemoveDatabaseToolsPrivateEndpointLockRequest request) {
+        LOG.trace("Called removeDatabaseToolsPrivateEndpointLock");
+        final RemoveDatabaseToolsPrivateEndpointLockRequest interceptedRequest =
+                RemoveDatabaseToolsPrivateEndpointLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDatabaseToolsPrivateEndpointLockConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsPrivateEndpointId(),
-                "databaseToolsPrivateEndpointId must not be blank");
-        Objects.requireNonNull(
-                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
-
-        return clientCall(request, RemoveDatabaseToolsPrivateEndpointLockResponse::builder)
-                .logger(LOG, "removeDatabaseToolsPrivateEndpointLock")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "RemoveDatabaseToolsPrivateEndpointLock",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveDatabaseToolsPrivateEndpointLockRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint.class,
-                        RemoveDatabaseToolsPrivateEndpointLockResponse.Builder
-                                ::databaseToolsPrivateEndpoint)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemoveDatabaseToolsPrivateEndpointLockResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", RemoveDatabaseToolsPrivateEndpointLockResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveDatabaseToolsPrivateEndpointLockResponse>
+                transformer =
+                        RemoveDatabaseToolsPrivateEndpointLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDatabaseToolsConnectionResponse updateDatabaseToolsConnection(
             UpdateDatabaseToolsConnectionRequest request) {
+        LOG.trace("Called updateDatabaseToolsConnection");
+        final UpdateDatabaseToolsConnectionRequest interceptedRequest =
+                UpdateDatabaseToolsConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseToolsConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsConnectionId(),
-                "databaseToolsConnectionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDatabaseToolsConnectionDetails(),
-                "updateDatabaseToolsConnectionDetails is required");
-
-        return clientCall(request, UpdateDatabaseToolsConnectionResponse::builder)
-                .logger(LOG, "updateDatabaseToolsConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "UpdateDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDatabaseToolsConnectionRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendPathParam(request.getDatabaseToolsConnectionId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDatabaseToolsConnectionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateDatabaseToolsConnectionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDatabaseToolsConnectionResponse>
+                transformer =
+                        UpdateDatabaseToolsConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDatabaseToolsConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDatabaseToolsPrivateEndpointResponse updateDatabaseToolsPrivateEndpoint(
             UpdateDatabaseToolsPrivateEndpointRequest request) {
+        LOG.trace("Called updateDatabaseToolsPrivateEndpoint");
+        final UpdateDatabaseToolsPrivateEndpointRequest interceptedRequest =
+                UpdateDatabaseToolsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseToolsPrivateEndpointConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsPrivateEndpointId(),
-                "databaseToolsPrivateEndpointId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDatabaseToolsPrivateEndpointDetails(),
-                "updateDatabaseToolsPrivateEndpointDetails is required");
-
-        return clientCall(request, UpdateDatabaseToolsPrivateEndpointResponse::builder)
-                .logger(LOG, "updateDatabaseToolsPrivateEndpoint")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "UpdateDatabaseToolsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDatabaseToolsPrivateEndpointRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsPrivateEndpoints")
-                .appendPathParam(request.getDatabaseToolsPrivateEndpointId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDatabaseToolsPrivateEndpointResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateDatabaseToolsPrivateEndpointResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDatabaseToolsPrivateEndpointResponse>
+                transformer =
+                        UpdateDatabaseToolsPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDatabaseToolsPrivateEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateDatabaseToolsConnectionResponse validateDatabaseToolsConnection(
             ValidateDatabaseToolsConnectionRequest request) {
+        LOG.trace("Called validateDatabaseToolsConnection");
+        final ValidateDatabaseToolsConnectionRequest interceptedRequest =
+                ValidateDatabaseToolsConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateDatabaseToolsConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDatabaseToolsConnectionId(),
-                "databaseToolsConnectionId must not be blank");
-        Objects.requireNonNull(
-                request.getValidateDatabaseToolsConnectionDetails(),
-                "validateDatabaseToolsConnectionDetails is required");
-
-        return clientCall(request, ValidateDatabaseToolsConnectionResponse::builder)
-                .logger(LOG, "validateDatabaseToolsConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DatabaseTools",
                         "ValidateDatabaseToolsConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateDatabaseToolsConnectionRequest::builder)
-                .basePath("/20201005")
-                .appendPathParam("databaseToolsConnections")
-                .appendPathParam(request.getDatabaseToolsConnectionId())
-                .appendPathParam("actions")
-                .appendPathParam("validateConnection")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
-                                .class,
-                        ValidateDatabaseToolsConnectionResponse.Builder
-                                ::validateDatabaseToolsConnectionResult)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ValidateDatabaseToolsConnectionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateDatabaseToolsConnectionResponse>
+                transformer =
+                        ValidateDatabaseToolsConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getValidateDatabaseToolsConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -968,209 +1503,5 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
     @Override
     public DatabaseToolsPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DatabaseToolsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

@@ -6,70 +6,64 @@ package com.oracle.bmc.waas.requests;
 
 import com.oracle.bmc.waas.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListHttpRedirectsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListHttpRedirectsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListHttpRedirectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListHttpRedirectsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment. This number is generated when the compartment is created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment. This number is generated when the compartment is created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
-     * 10}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
-     * 10}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified,
-     * defaults to {@code DESC}.
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
      */
     private SortOrder sortOrder;
 
     /**
-     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified,
-     * defaults to {@code DESC}.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -103,17 +97,20 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified,
-     * defaults to {@code DESC}.
+     * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort the results of the List query. */
+    /**
+     * The field to sort the results of the List query.
+     */
     private SortBy sortBy;
 
-    /** The field to sort the results of the List query. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort the results of the List query.
+     **/
+    public enum SortBy {
         Id("id"),
         Domain("domain"),
         Target("target"),
@@ -148,47 +145,63 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The field to sort the results of the List query. */
+    /**
+     * The field to sort the results of the List query.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Filter redirects using a list of redirect OCIDs. */
+    /**
+     * Filter redirects using a list of redirect OCIDs.
+     */
     private java.util.List<String> id;
 
-    /** Filter redirects using a list of redirect OCIDs. */
+    /**
+     * Filter redirects using a list of redirect OCIDs.
+     */
     public java.util.List<String> getId() {
         return id;
     }
-    /** Filter redirects using a display name. */
+    /**
+     * Filter redirects using a display name.
+     */
     private java.util.List<String> displayName;
 
-    /** Filter redirects using a display name. */
+    /**
+     * Filter redirects using a display name.
+     */
     public java.util.List<String> getDisplayName() {
         return displayName;
     }
-    /** Filter redirects using a list of lifecycle states. */
+    /**
+     * Filter redirects using a list of lifecycle states.
+     */
     private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState;
 
-    /** Filter redirects using a list of lifecycle states. */
+    /**
+     * Filter redirects using a list of lifecycle states.
+     */
     public java.util.List<com.oracle.bmc.waas.model.LifecycleStates> getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter that matches redirects created on or after the specified date and time. */
+    /**
+     * A filter that matches redirects created on or after the specified date and time.
+     */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
-    /** A filter that matches redirects created on or after the specified date and time. */
+    /**
+     * A filter that matches redirects created on or after the specified date and time.
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
     /**
-     * A filter that matches redirects created before the specified date-time. Default to 1 day
-     * before now.
+     * A filter that matches redirects created before the specified date-time. Default to 1 day before now.
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * A filter that matches redirects created before the specified date-time. Default to 1 day
-     * before now.
+     * A filter that matches redirects created before the specified date-time. Default to 1 day before now.
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
@@ -197,19 +210,17 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListHttpRedirectsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment. This number is generated when the compartment is created.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment. This number is generated when the compartment is created.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -219,15 +230,12 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -237,15 +245,12 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to
-         * {@code 10}.
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to
-         * {@code 10}.
-         *
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
          * @param limit the value to set
          * @return this builder instance
          */
@@ -261,7 +266,6 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -271,15 +275,12 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The value of the sorting direction of resources in a paginated 'List' call. If
-         * unspecified, defaults to {@code DESC}.
+         * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The value of the sorting direction of resources in a paginated 'List' call. If
-         * unspecified, defaults to {@code DESC}.
-         *
+         * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to {@code DESC}.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -288,12 +289,13 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The field to sort the results of the List query. */
+        /**
+         * The field to sort the results of the List query.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort the results of the List query.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -302,12 +304,13 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Filter redirects using a list of redirect OCIDs. */
+        /**
+         * Filter redirects using a list of redirect OCIDs.
+         */
         private java.util.List<String> id = null;
 
         /**
          * Filter redirects using a list of redirect OCIDs.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -318,7 +321,6 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Filter redirects using a list of redirect OCIDs.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -326,12 +328,13 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter redirects using a display name. */
+        /**
+         * Filter redirects using a display name.
+         */
         private java.util.List<String> displayName = null;
 
         /**
          * Filter redirects using a display name.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -342,7 +345,6 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Filter redirects using a display name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -350,12 +352,13 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
             return this.displayName(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter redirects using a list of lifecycle states. */
+        /**
+         * Filter redirects using a list of lifecycle states.
+         */
         private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState = null;
 
         /**
          * Filter redirects using a list of lifecycle states.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -367,7 +370,6 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Filter redirects using a list of lifecycle states.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -375,12 +377,13 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
             return this.lifecycleState(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter that matches redirects created on or after the specified date and time. */
+        /**
+         * A filter that matches redirects created on or after the specified date and time.
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
          * A filter that matches redirects created on or after the specified date and time.
-         *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -391,15 +394,12 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * A filter that matches redirects created before the specified date-time. Default to 1 day
-         * before now.
+         * A filter that matches redirects created before the specified date-time. Default to 1 day before now.
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * A filter that matches redirects created before the specified date-time. Default to 1 day
-         * before now.
-         *
+         * A filter that matches redirects created before the specified date-time. Default to 1 day before now.
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
@@ -410,19 +410,18 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -434,7 +433,6 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListHttpRedirectsRequest o) {
@@ -457,11 +455,10 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListHttpRedirectsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListHttpRedirectsRequest
          */
@@ -475,8 +472,7 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListHttpRedirectsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListHttpRedirectsRequest
@@ -495,15 +491,12 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             request.timeCreatedLessThan = timeCreatedLessThan;
             return request;
-            // new ListHttpRedirectsRequest(compartmentId, opcRequestId, limit, page, sortOrder,
-            // sortBy, id, displayName, lifecycleState, timeCreatedGreaterThanOrEqualTo,
-            // timeCreatedLessThan);
+            // new ListHttpRedirectsRequest(compartmentId, opcRequestId, limit, page, sortOrder, sortBy, id, displayName, lifecycleState, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -523,7 +516,6 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.servicecatalog.model;
 
-/** Possible values for the resource's pricing model. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
-public enum PricingTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible values for the resource's pricing model.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+public enum PricingTypeEnum {
     Free("FREE"),
     Byol("BYOL"),
     Paygo("PAYGO"),

@@ -6,44 +6,52 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportSkillExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ExportSkillRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportSkillExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ExportSkillRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ExportSkillRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.oda.model.ExportSkillDetails> {
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     private String odaInstanceId;
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     private String skillId;
 
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
-    /** Where in Object Storage to export the Skill to. */
+    /**
+     * Where in Object Storage to export the Skill to.
+     */
     private com.oracle.bmc.oda.model.ExportSkillDetails exportSkillDetails;
 
-    /** Where in Object Storage to export the Skill to. */
+    /**
+     * Where in Object Storage to export the Skill to.
+     */
     public com.oracle.bmc.oda.model.ExportSkillDetails getExportSkillDetails() {
         return exportSkillDetails;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -51,7 +59,6 @@ public class ExportSkillRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -63,15 +70,17 @@ public class ExportSkillRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ExportSkillRequest, com.oracle.bmc.oda.model.ExportSkillDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Digital Assistant instance identifier. */
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
-         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -80,12 +89,13 @@ public class ExportSkillRequest
             return this;
         }
 
-        /** Unique Skill identifier. */
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
-         *
          * @param skillId the value to set
          * @return this builder instance
          */
@@ -94,12 +104,13 @@ public class ExportSkillRequest
             return this;
         }
 
-        /** Where in Object Storage to export the Skill to. */
+        /**
+         * Where in Object Storage to export the Skill to.
+         */
         private com.oracle.bmc.oda.model.ExportSkillDetails exportSkillDetails = null;
 
         /**
          * Where in Object Storage to export the Skill to.
-         *
          * @param exportSkillDetails the value to set
          * @return this builder instance
          */
@@ -110,15 +121,12 @@ public class ExportSkillRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -129,19 +137,18 @@ public class ExportSkillRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -153,7 +160,6 @@ public class ExportSkillRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ExportSkillRequest o) {
@@ -169,11 +175,10 @@ public class ExportSkillRequest
         /**
          * Build the instance of ExportSkillRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ExportSkillRequest
          */
@@ -186,7 +191,6 @@ public class ExportSkillRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -199,8 +203,7 @@ public class ExportSkillRequest
         /**
          * Build the instance of ExportSkillRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ExportSkillRequest
@@ -218,7 +221,6 @@ public class ExportSkillRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -231,7 +233,6 @@ public class ExportSkillRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

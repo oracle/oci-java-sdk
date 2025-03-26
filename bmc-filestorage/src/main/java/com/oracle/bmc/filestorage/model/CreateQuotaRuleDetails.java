@@ -5,23 +5,22 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Details for creating a quota rule in the file system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Details for creating a quota rule in the file system.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateQuotaRuleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateQuotaRuleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateQuotaRuleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "principalType",
@@ -46,7 +45,10 @@ public final class CreateQuotaRuleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the owner of this quota rule and usage. */
+        /**
+         * The type of the owner of this quota rule and usage.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalType")
         private PrincipalType principalType;
 
@@ -55,76 +57,82 @@ public final class CreateQuotaRuleDetails
          *
          * @param principalType the value to set
          * @return this builder
-         */
+         **/
         public Builder principalType(PrincipalType principalType) {
             this.principalType = principalType;
             this.__explicitlySet__.add("principalType");
             return this;
         }
         /**
-         * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-         * operating systems use this integer value to identify a user or group to manage access
-         * control.
-         */
+         * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+         * identify a user or group to manage access control.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalId")
         private Integer principalId;
 
         /**
-         * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-         * operating systems use this integer value to identify a user or group to manage access
-         * control.
+         * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+         * identify a user or group to manage access control.
          *
          * @param principalId the value to set
          * @return this builder
-         */
+         **/
         public Builder principalId(Integer principalId) {
             this.principalId = principalId;
             this.__explicitlySet__.add("principalId");
             return this;
         }
         /**
-         * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule
-         * is enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-         * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-         * quota rule is violated.
-         */
+         * Whether the quota rule will be enforced.
+         * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+         * exceeds the hard quota limit.
+         * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHardQuota")
         private Boolean isHardQuota;
 
         /**
-         * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule
-         * is enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-         * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-         * quota rule is violated.
+         * Whether the quota rule will be enforced.
+         * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+         * exceeds the hard quota limit.
+         * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
          *
          * @param isHardQuota the value to set
          * @return this builder
-         */
+         **/
         public Builder isHardQuota(Boolean isHardQuota) {
             this.isHardQuota = isHardQuota;
             this.__explicitlySet__.add("isHardQuota");
             return this;
         }
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-         * confidential information. Example: {@code UserXYZ's quota}
-         */
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * Example: {@code UserXYZ's quota}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-         * confidential information. Example: {@code UserXYZ's quota}
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * Example: {@code UserXYZ's quota}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The value of the quota rule in gigabytes. */
+        /**
+         * The value of the quota rule in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quotaLimitInGigabytes")
         private Integer quotaLimitInGigabytes;
 
@@ -133,7 +141,7 @@ public final class CreateQuotaRuleDetails
          *
          * @param quotaLimitInGigabytes the value to set
          * @return this builder
-         */
+         **/
         public Builder quotaLimitInGigabytes(Integer quotaLimitInGigabytes) {
             this.quotaLimitInGigabytes = quotaLimitInGigabytes;
             this.__explicitlySet__.add("quotaLimitInGigabytes");
@@ -178,7 +186,9 @@ public final class CreateQuotaRuleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -187,8 +197,11 @@ public final class CreateQuotaRuleDetails
         return new Builder().copy(this);
     }
 
-    /** The type of the owner of this quota rule and usage. */
-    public enum PrincipalType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the owner of this quota rule and usage.
+     *
+     **/
+    public enum PrincipalType {
         FileSystemLevel("FILE_SYSTEM_LEVEL"),
         DefaultGroup("DEFAULT_GROUP"),
         DefaultUser("DEFAULT_USER"),
@@ -223,7 +236,10 @@ public final class CreateQuotaRuleDetails
             throw new IllegalArgumentException("Invalid PrincipalType: " + key);
         }
     };
-    /** The type of the owner of this quota rule and usage. */
+    /**
+     * The type of the owner of this quota rule and usage.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalType")
     private final PrincipalType principalType;
 
@@ -231,69 +247,75 @@ public final class CreateQuotaRuleDetails
      * The type of the owner of this quota rule and usage.
      *
      * @return the value
-     */
+     **/
     public PrincipalType getPrincipalType() {
         return principalType;
     }
 
     /**
-     * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-     * operating systems use this integer value to identify a user or group to manage access
-     * control.
-     */
+     * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+     * identify a user or group to manage access control.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalId")
     private final Integer principalId;
 
     /**
-     * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-     * operating systems use this integer value to identify a user or group to manage access
-     * control.
+     * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+     * identify a user or group to manage access control.
      *
      * @return the value
-     */
+     **/
     public Integer getPrincipalId() {
         return principalId;
     }
 
     /**
-     * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule is
-     * enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-     * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-     * quota rule is violated.
-     */
+     * Whether the quota rule will be enforced.
+     * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+     * exceeds the hard quota limit.
+     * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHardQuota")
     private final Boolean isHardQuota;
 
     /**
-     * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule is
-     * enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-     * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-     * quota rule is violated.
+     * Whether the quota rule will be enforced.
+     * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+     * exceeds the hard quota limit.
+     * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHardQuota() {
         return isHardQuota;
     }
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-     * confidential information. Example: {@code UserXYZ's quota}
-     */
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * Example: {@code UserXYZ's quota}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-     * confidential information. Example: {@code UserXYZ's quota}
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * Example: {@code UserXYZ's quota}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The value of the quota rule in gigabytes. */
+    /**
+     * The value of the quota rule in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quotaLimitInGigabytes")
     private final Integer quotaLimitInGigabytes;
 
@@ -301,7 +323,7 @@ public final class CreateQuotaRuleDetails
      * The value of the quota rule in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Integer getQuotaLimitInGigabytes() {
         return quotaLimitInGigabytes;
     }
@@ -313,7 +335,6 @@ public final class CreateQuotaRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

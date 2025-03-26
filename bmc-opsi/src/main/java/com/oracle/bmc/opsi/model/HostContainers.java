@@ -5,24 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Host Containers details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Host Containers details
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostContainers.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostContainers extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -34,91 +34,97 @@ public final class HostContainers extends HostConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** Container Id (full) */
+        /**
+         * Container Id (full)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerId")
         private String containerId;
 
         /**
          * Container Id (full)
-         *
          * @param containerId the value to set
          * @return this builder
-         */
+         **/
         public Builder containerId(String containerId) {
             this.containerId = containerId;
             this.__explicitlySet__.add("containerId");
             return this;
         }
-        /** Container Name */
+        /**
+         * Container Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerName")
         private String containerName;
 
         /**
          * Container Name
-         *
          * @param containerName the value to set
          * @return this builder
-         */
+         **/
         public Builder containerName(String containerName) {
             this.containerName = containerName;
             this.__explicitlySet__.add("containerName");
             return this;
         }
-        /** Container Image */
+        /**
+         * Container Image
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerImage")
         private String containerImage;
 
         /**
          * Container Image
-         *
          * @param containerImage the value to set
          * @return this builder
-         */
+         **/
         public Builder containerImage(String containerImage) {
             this.containerImage = containerImage;
             this.__explicitlySet__.add("containerImage");
             return this;
         }
-        /** Container Image Tag (version) */
+        /**
+         * Container Image Tag (version)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerImageTag")
         private String containerImageTag;
 
         /**
          * Container Image Tag (version)
-         *
          * @param containerImageTag the value to set
          * @return this builder
-         */
+         **/
         public Builder containerImageTag(String containerImageTag) {
             this.containerImageTag = containerImageTag;
             this.__explicitlySet__.add("containerImageTag");
             return this;
         }
-        /** Container Image Digest */
+        /**
+         * Container Image Digest
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerImageDigest")
         private String containerImageDigest;
 
         /**
          * Container Image Digest
-         *
          * @param containerImageDigest the value to set
          * @return this builder
-         */
+         **/
         public Builder containerImageDigest(String containerImageDigest) {
             this.containerImageDigest = containerImageDigest;
             this.__explicitlySet__.add("containerImageDigest");
             return this;
         }
-        /** Container open ports */
+        /**
+         * Container open ports
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerPorts")
         private String containerPorts;
 
         /**
          * Container open ports
-         *
          * @param containerPorts the value to set
          * @return this builder
-         */
+         **/
         public Builder containerPorts(String containerPorts) {
             this.containerPorts = containerPorts;
             this.__explicitlySet__.add("containerPorts");
@@ -171,7 +177,9 @@ public final class HostContainers extends HostConfigurationMetricGroup {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -198,80 +206,86 @@ public final class HostContainers extends HostConfigurationMetricGroup {
         this.containerPorts = containerPorts;
     }
 
-    /** Container Id (full) */
+    /**
+     * Container Id (full)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerId")
     private final String containerId;
 
     /**
      * Container Id (full)
-     *
      * @return the value
-     */
+     **/
     public String getContainerId() {
         return containerId;
     }
 
-    /** Container Name */
+    /**
+     * Container Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerName")
     private final String containerName;
 
     /**
      * Container Name
-     *
      * @return the value
-     */
+     **/
     public String getContainerName() {
         return containerName;
     }
 
-    /** Container Image */
+    /**
+     * Container Image
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerImage")
     private final String containerImage;
 
     /**
      * Container Image
-     *
      * @return the value
-     */
+     **/
     public String getContainerImage() {
         return containerImage;
     }
 
-    /** Container Image Tag (version) */
+    /**
+     * Container Image Tag (version)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerImageTag")
     private final String containerImageTag;
 
     /**
      * Container Image Tag (version)
-     *
      * @return the value
-     */
+     **/
     public String getContainerImageTag() {
         return containerImageTag;
     }
 
-    /** Container Image Digest */
+    /**
+     * Container Image Digest
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerImageDigest")
     private final String containerImageDigest;
 
     /**
      * Container Image Digest
-     *
      * @return the value
-     */
+     **/
     public String getContainerImageDigest() {
         return containerImageDigest;
     }
 
-    /** Container open ports */
+    /**
+     * Container open ports
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerPorts")
     private final String containerPorts;
 
     /**
      * Container open ports
-     *
      * @return the value
-     */
+     **/
     public String getContainerPorts() {
         return containerPorts;
     }
@@ -283,7 +297,6 @@ public final class HostContainers extends HostConfigurationMetricGroup {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

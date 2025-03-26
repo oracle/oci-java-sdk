@@ -5,22 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Partial information about the VM Cluster which includes name, memory allocated etc. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Partial information about the VM Cluster which includes name, memory allocated etc.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VmClusterSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VmClusterSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VmClusterSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vmclusterName",
@@ -42,61 +39,65 @@ public final class VmClusterSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the VM Cluster. */
+        /**
+         * The name of the VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmclusterName")
         private String vmclusterName;
 
         /**
          * The name of the VM Cluster.
-         *
          * @param vmclusterName the value to set
          * @return this builder
-         */
+         **/
         public Builder vmclusterName(String vmclusterName) {
             this.vmclusterName = vmclusterName;
             this.__explicitlySet__.add("vmclusterName");
             return this;
         }
-        /** The memory allocated on a VM Cluster. */
+        /**
+         * The memory allocated on a VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryAllocatedInGBs")
         private Integer memoryAllocatedInGBs;
 
         /**
          * The memory allocated on a VM Cluster.
-         *
          * @param memoryAllocatedInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryAllocatedInGBs(Integer memoryAllocatedInGBs) {
             this.memoryAllocatedInGBs = memoryAllocatedInGBs;
             this.__explicitlySet__.add("memoryAllocatedInGBs");
             return this;
         }
-        /** The CPU allocated on a VM Cluster. */
+        /**
+         * The CPU allocated on a VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
         private Integer cpuAllocated;
 
         /**
          * The CPU allocated on a VM Cluster.
-         *
          * @param cpuAllocated the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuAllocated(Integer cpuAllocated) {
             this.cpuAllocated = cpuAllocated;
             this.__explicitlySet__.add("cpuAllocated");
             return this;
         }
-        /** The number of DB nodes on a VM Cluster. */
+        /**
+         * The number of DB nodes on a VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodesCount")
         private Integer dbNodesCount;
 
         /**
          * The number of DB nodes on a VM Cluster.
-         *
          * @param dbNodesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder dbNodesCount(Integer dbNodesCount) {
             this.dbNodesCount = dbNodesCount;
             this.__explicitlySet__.add("dbNodesCount");
@@ -137,7 +138,9 @@ public final class VmClusterSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -146,54 +149,58 @@ public final class VmClusterSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the VM Cluster. */
+    /**
+     * The name of the VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmclusterName")
     private final String vmclusterName;
 
     /**
      * The name of the VM Cluster.
-     *
      * @return the value
-     */
+     **/
     public String getVmclusterName() {
         return vmclusterName;
     }
 
-    /** The memory allocated on a VM Cluster. */
+    /**
+     * The memory allocated on a VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryAllocatedInGBs")
     private final Integer memoryAllocatedInGBs;
 
     /**
      * The memory allocated on a VM Cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemoryAllocatedInGBs() {
         return memoryAllocatedInGBs;
     }
 
-    /** The CPU allocated on a VM Cluster. */
+    /**
+     * The CPU allocated on a VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
     private final Integer cpuAllocated;
 
     /**
      * The CPU allocated on a VM Cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getCpuAllocated() {
         return cpuAllocated;
     }
 
-    /** The number of DB nodes on a VM Cluster. */
+    /**
+     * The number of DB nodes on a VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodesCount")
     private final Integer dbNodesCount;
 
     /**
      * The number of DB nodes on a VM Cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getDbNodesCount() {
         return dbNodesCount;
     }
@@ -205,7 +212,6 @@ public final class VmClusterSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

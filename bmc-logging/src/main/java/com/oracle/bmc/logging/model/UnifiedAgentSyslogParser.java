@@ -5,25 +5,25 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Syslog Parser. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Syslog Parser.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentSyslogParser.Builder.class)
+    builder = UnifiedAgentSyslogParser.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "parserType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "parserType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -89,95 +89,97 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-        /** Time format. */
+        /**
+         * Time format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
         private String timeFormat;
 
         /**
          * Time format.
-         *
          * @param timeFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFormat(String timeFormat) {
             this.timeFormat = timeFormat;
             this.__explicitlySet__.add("timeFormat");
             return this;
         }
-        /** RFC 5424 time format. */
+        /**
+         * RFC 5424 time format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rfc5424TimeFormat")
         private String rfc5424TimeFormat;
 
         /**
          * RFC 5424 time format.
-         *
          * @param rfc5424TimeFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder rfc5424TimeFormat(String rfc5424TimeFormat) {
             this.rfc5424TimeFormat = rfc5424TimeFormat;
             this.__explicitlySet__.add("rfc5424TimeFormat");
             return this;
         }
-        /** Syslog message format. */
+        /**
+         * Syslog message format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
         private MessageFormat messageFormat;
 
         /**
          * Syslog message format.
-         *
          * @param messageFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder messageFormat(MessageFormat messageFormat) {
             this.messageFormat = messageFormat;
             this.__explicitlySet__.add("messageFormat");
             return this;
         }
-        /** Specifies with priority or not. Corresponds to the Fluentd with_priority parameter. */
+        /**
+         * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isWithPriority")
         private Boolean isWithPriority;
 
         /**
          * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
-         *
          * @param isWithPriority the value to set
          * @return this builder
-         */
+         **/
         public Builder isWithPriority(Boolean isWithPriority) {
             this.isWithPriority = isWithPriority;
             this.__explicitlySet__.add("isWithPriority");
             return this;
         }
         /**
-         * Specifies whether or not to support colonless ident. Corresponds to the Fluentd
-         * support_colonless_ident parameter.
-         */
+         * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportColonlessIdent")
         private Boolean isSupportColonlessIdent;
 
         /**
-         * Specifies whether or not to support colonless ident. Corresponds to the Fluentd
-         * support_colonless_ident parameter.
-         *
+         * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
          * @param isSupportColonlessIdent the value to set
          * @return this builder
-         */
+         **/
         public Builder isSupportColonlessIdent(Boolean isSupportColonlessIdent) {
             this.isSupportColonlessIdent = isSupportColonlessIdent;
             this.__explicitlySet__.add("isSupportColonlessIdent");
             return this;
         }
-        /** Syslog parser type. */
+        /**
+         * Syslog parser type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syslogParserType")
         private SyslogParserType syslogParserType;
 
         /**
          * Syslog parser type.
-         *
          * @param syslogParserType the value to set
          * @return this builder
-         */
+         **/
         public Builder syslogParserType(SyslogParserType syslogParserType) {
             this.syslogParserType = syslogParserType;
             this.__explicitlySet__.add("syslogParserType");
@@ -254,7 +256,9 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -294,41 +298,45 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         this.syslogParserType = syslogParserType;
     }
 
-    /** Time format. */
+    /**
+     * Time format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
     private final String timeFormat;
 
     /**
      * Time format.
-     *
      * @return the value
-     */
+     **/
     public String getTimeFormat() {
         return timeFormat;
     }
 
-    /** RFC 5424 time format. */
+    /**
+     * RFC 5424 time format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rfc5424TimeFormat")
     private final String rfc5424TimeFormat;
 
     /**
      * RFC 5424 time format.
-     *
      * @return the value
-     */
+     **/
     public String getRfc5424TimeFormat() {
         return rfc5424TimeFormat;
     }
 
-    /** Syslog message format. */
-    public enum MessageFormat implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Syslog message format.
+     **/
+    public enum MessageFormat {
         Rfc3164("RFC3164"),
         Rfc5424("RFC5424"),
         Auto("AUTO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -367,57 +375,58 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return UnknownEnumValue;
         }
     };
-    /** Syslog message format. */
+    /**
+     * Syslog message format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
     private final MessageFormat messageFormat;
 
     /**
      * Syslog message format.
-     *
      * @return the value
-     */
+     **/
     public MessageFormat getMessageFormat() {
         return messageFormat;
     }
 
-    /** Specifies with priority or not. Corresponds to the Fluentd with_priority parameter. */
+    /**
+     * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isWithPriority")
     private final Boolean isWithPriority;
 
     /**
      * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsWithPriority() {
         return isWithPriority;
     }
 
     /**
-     * Specifies whether or not to support colonless ident. Corresponds to the Fluentd
-     * support_colonless_ident parameter.
-     */
+     * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportColonlessIdent")
     private final Boolean isSupportColonlessIdent;
 
     /**
-     * Specifies whether or not to support colonless ident. Corresponds to the Fluentd
-     * support_colonless_ident parameter.
-     *
+     * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * @return the value
-     */
+     **/
     public Boolean getIsSupportColonlessIdent() {
         return isSupportColonlessIdent;
     }
 
-    /** Syslog parser type. */
-    public enum SyslogParserType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Syslog parser type.
+     **/
+    public enum SyslogParserType {
         String("STRING"),
         Regexp("REGEXP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -456,15 +465,16 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return UnknownEnumValue;
         }
     };
-    /** Syslog parser type. */
+    /**
+     * Syslog parser type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syslogParserType")
     private final SyslogParserType syslogParserType;
 
     /**
      * Syslog parser type.
-     *
      * @return the value
-     */
+     **/
     public SyslogParserType getSyslogParserType() {
         return syslogParserType;
     }
@@ -476,7 +486,6 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

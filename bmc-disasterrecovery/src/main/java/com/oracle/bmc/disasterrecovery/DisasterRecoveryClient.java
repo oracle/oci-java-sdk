@@ -4,18 +4,17 @@
  */
 package com.oracle.bmc.disasterrecovery;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.disasterrecovery.internal.http.*;
 import com.oracle.bmc.disasterrecovery.requests.*;
 import com.oracle.bmc.disasterrecovery.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements DisasterRecovery {
-    /** Service instance for DisasterRecovery. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public class DisasterRecoveryClient implements DisasterRecovery {
+    /**
+     * Service instance for DisasterRecovery.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DISASTERRECOVERY")
@@ -23,22 +22,319 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                     .serviceEndpointTemplate(
                             "https://disaster-recovery.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DisasterRecoveryClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final DisasterRecoveryWaiters waiters;
 
     private final DisasterRecoveryPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    DisasterRecoveryClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public DisasterRecoveryClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected DisasterRecoveryClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -60,11 +356,29 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
         this.waiters = new DisasterRecoveryWaiters(executorService, this);
 
         this.paginators = new DisasterRecoveryPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -72,8 +386,8 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DisasterRecoveryClient> {
@@ -81,8 +395,6 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "disasterrecovery";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -90,7 +402,6 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -101,1055 +412,1377 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public DisasterRecoveryClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new DisasterRecoveryClient(this, authenticationDetailsProvider, executorService);
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new DisasterRecoveryClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public AssociateDrProtectionGroupResponse associateDrProtectionGroup(
             AssociateDrProtectionGroupRequest request) {
-        Objects.requireNonNull(
-                request.getAssociateDrProtectionGroupDetails(),
-                "associateDrProtectionGroupDetails is required");
+        LOG.trace("Called associateDrProtectionGroup");
+        final AssociateDrProtectionGroupRequest interceptedRequest =
+                AssociateDrProtectionGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AssociateDrProtectionGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDrProtectionGroupId(), "drProtectionGroupId must not be blank");
-
-        return clientCall(request, AssociateDrProtectionGroupResponse::builder)
-                .logger(LOG, "associateDrProtectionGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "AssociateDrProtectionGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/AssociateDrProtectionGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AssociateDrProtectionGroupRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendPathParam(request.getDrProtectionGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("associate")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        AssociateDrProtectionGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", AssociateDrProtectionGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/AssociateDrProtectionGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, AssociateDrProtectionGroupResponse>
+                transformer =
+                        AssociateDrProtectionGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAssociateDrProtectionGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelDrPlanExecutionResponse cancelDrPlanExecution(
             CancelDrPlanExecutionRequest request) {
-        Objects.requireNonNull(
-                request.getCancelDrPlanExecutionDetails(),
-                "cancelDrPlanExecutionDetails is required");
+        LOG.trace("Called cancelDrPlanExecution");
+        final CancelDrPlanExecutionRequest interceptedRequest =
+                CancelDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, CancelDrPlanExecutionResponse::builder)
-                .logger(LOG, "cancelDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "CancelDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CancelDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .appendPathParam("actions")
-                .appendPathParam("cancel")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CancelDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CancelDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelDrPlanExecutionResponse>
+                transformer =
+                        CancelDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCancelDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
+        LOG.trace("Called cancelWorkRequest");
+        final CancelWorkRequestRequest interceptedRequest =
+                CancelWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, CancelWorkRequestResponse::builder)
-                .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/CancelWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(CancelWorkRequestRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/CancelWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                transformer =
+                        CancelWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeDrProtectionGroupCompartmentResponse changeDrProtectionGroupCompartment(
             ChangeDrProtectionGroupCompartmentRequest request) {
-        Objects.requireNonNull(
-                request.getChangeDrProtectionGroupCompartmentDetails(),
-                "changeDrProtectionGroupCompartmentDetails is required");
+        LOG.trace("Called changeDrProtectionGroupCompartment");
+        final ChangeDrProtectionGroupCompartmentRequest interceptedRequest =
+                ChangeDrProtectionGroupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDrProtectionGroupCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDrProtectionGroupId(), "drProtectionGroupId must not be blank");
-
-        return clientCall(request, ChangeDrProtectionGroupCompartmentResponse::builder)
-                .logger(LOG, "changeDrProtectionGroupCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ChangeDrProtectionGroupCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ChangeDrProtectionGroupCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeDrProtectionGroupCompartmentRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendPathParam(request.getDrProtectionGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeDrProtectionGroupCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeDrProtectionGroupCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ChangeDrProtectionGroupCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDrProtectionGroupCompartmentResponse>
+                transformer =
+                        ChangeDrProtectionGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDrProtectionGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDrPlanResponse createDrPlan(CreateDrPlanRequest request) {
-        Objects.requireNonNull(request.getCreateDrPlanDetails(), "createDrPlanDetails is required");
+        LOG.trace("Called createDrPlan");
+        final CreateDrPlanRequest interceptedRequest =
+                CreateDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDrPlanConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDrPlanResponse::builder)
-                .logger(LOG, "createDrPlan")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "CreateDrPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/CreateDrPlan")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDrPlanRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlans")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrPlan.class,
-                        CreateDrPlanResponse.Builder::drPlan)
-                .handleResponseHeaderString("location", CreateDrPlanResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateDrPlanResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateDrPlanResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDrPlanResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/CreateDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDrPlanResponse> transformer =
+                CreateDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDrPlanDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDrPlanExecutionResponse createDrPlanExecution(
             CreateDrPlanExecutionRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDrPlanExecutionDetails(),
-                "createDrPlanExecutionDetails is required");
+        LOG.trace("Called createDrPlanExecution");
+        final CreateDrPlanExecutionRequest interceptedRequest =
+                CreateDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDrPlanExecutionResponse::builder)
-                .logger(LOG, "createDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "CreateDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CreateDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrPlanExecution.class,
-                        CreateDrPlanExecutionResponse.Builder::drPlanExecution)
-                .handleResponseHeaderString(
-                        "location", CreateDrPlanExecutionResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateDrPlanExecutionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CreateDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDrPlanExecutionResponse>
+                transformer =
+                        CreateDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDrProtectionGroupResponse createDrProtectionGroup(
             CreateDrProtectionGroupRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDrProtectionGroupDetails(),
-                "createDrProtectionGroupDetails is required");
+        LOG.trace("Called createDrProtectionGroup");
+        final CreateDrProtectionGroupRequest interceptedRequest =
+                CreateDrProtectionGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDrProtectionGroupConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDrProtectionGroupResponse::builder)
-                .logger(LOG, "createDrProtectionGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "CreateDrProtectionGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/CreateDrProtectionGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDrProtectionGroupRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrProtectionGroup.class,
-                        CreateDrProtectionGroupResponse.Builder::drProtectionGroup)
-                .handleResponseHeaderString(
-                        "location", CreateDrProtectionGroupResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateDrProtectionGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDrProtectionGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDrProtectionGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/CreateDrProtectionGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDrProtectionGroupResponse>
+                transformer =
+                        CreateDrProtectionGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDrProtectionGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDrPlanResponse deleteDrPlan(DeleteDrPlanRequest request) {
+        LOG.trace("Called deleteDrPlan");
+        final DeleteDrPlanRequest interceptedRequest =
+                DeleteDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDrPlanConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanId(), "drPlanId must not be blank");
-
-        return clientCall(request, DeleteDrPlanResponse::builder)
-                .logger(LOG, "deleteDrPlan")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "DeleteDrPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/DeleteDrPlan")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDrPlanRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlans")
-                .appendPathParam(request.getDrPlanId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDrPlanResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/DeleteDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrPlanResponse> transformer =
+                DeleteDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDrPlanExecutionResponse deleteDrPlanExecution(
             DeleteDrPlanExecutionRequest request) {
+        LOG.trace("Called deleteDrPlanExecution");
+        final DeleteDrPlanExecutionRequest interceptedRequest =
+                DeleteDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, DeleteDrPlanExecutionResponse::builder)
-                .logger(LOG, "deleteDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "DeleteDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/DeleteDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/DeleteDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrPlanExecutionResponse>
+                transformer =
+                        DeleteDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDrProtectionGroupResponse deleteDrProtectionGroup(
             DeleteDrProtectionGroupRequest request) {
+        LOG.trace("Called deleteDrProtectionGroup");
+        final DeleteDrProtectionGroupRequest interceptedRequest =
+                DeleteDrProtectionGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDrProtectionGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDrProtectionGroupId(), "drProtectionGroupId must not be blank");
-
-        return clientCall(request, DeleteDrProtectionGroupResponse::builder)
-                .logger(LOG, "deleteDrProtectionGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "DeleteDrProtectionGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DeleteDrProtectionGroup")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDrProtectionGroupRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendPathParam(request.getDrProtectionGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDrProtectionGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDrProtectionGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DeleteDrProtectionGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDrProtectionGroupResponse>
+                transformer =
+                        DeleteDrProtectionGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DisassociateDrProtectionGroupResponse disassociateDrProtectionGroup(
             DisassociateDrProtectionGroupRequest request) {
-        Objects.requireNonNull(
-                request.getDisassociateDrProtectionGroupDetails(),
-                "disassociateDrProtectionGroupDetails is required");
+        LOG.trace("Called disassociateDrProtectionGroup");
+        final DisassociateDrProtectionGroupRequest interceptedRequest =
+                DisassociateDrProtectionGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisassociateDrProtectionGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDrProtectionGroupId(), "drProtectionGroupId must not be blank");
-
-        return clientCall(request, DisassociateDrProtectionGroupResponse::builder)
-                .logger(LOG, "disassociateDrProtectionGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "DisassociateDrProtectionGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DisassociateDrProtectionGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DisassociateDrProtectionGroupRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendPathParam(request.getDrProtectionGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("disassociate")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DisassociateDrProtectionGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DisassociateDrProtectionGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DisassociateDrProtectionGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DisassociateDrProtectionGroupResponse>
+                transformer =
+                        DisassociateDrProtectionGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDisassociateDrProtectionGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDrPlanResponse getDrPlan(GetDrPlanRequest request) {
+        LOG.trace("Called getDrPlan");
+        final GetDrPlanRequest interceptedRequest = GetDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDrPlanConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanId(), "drPlanId must not be blank");
-
-        return clientCall(request, GetDrPlanResponse::builder)
-                .logger(LOG, "getDrPlan")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "GetDrPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/GetDrPlan")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDrPlanRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlans")
-                .appendPathParam(request.getDrPlanId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrPlan.class,
-                        GetDrPlanResponse.Builder::drPlan)
-                .handleResponseHeaderString("etag", GetDrPlanResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDrPlanResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/GetDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrPlanResponse> transformer =
+                GetDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDrPlanExecutionResponse getDrPlanExecution(GetDrPlanExecutionRequest request) {
+        LOG.trace("Called getDrPlanExecution");
+        final GetDrPlanExecutionRequest interceptedRequest =
+                GetDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, GetDrPlanExecutionResponse::builder)
-                .logger(LOG, "getDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "GetDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/GetDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrPlanExecution.class,
-                        GetDrPlanExecutionResponse.Builder::drPlanExecution)
-                .handleResponseHeaderString("etag", GetDrPlanExecutionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/GetDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrPlanExecutionResponse>
+                transformer =
+                        GetDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDrProtectionGroupResponse getDrProtectionGroup(GetDrProtectionGroupRequest request) {
+        LOG.trace("Called getDrProtectionGroup");
+        final GetDrProtectionGroupRequest interceptedRequest =
+                GetDrProtectionGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDrProtectionGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDrProtectionGroupId(), "drProtectionGroupId must not be blank");
-
-        return clientCall(request, GetDrProtectionGroupResponse::builder)
-                .logger(LOG, "getDrProtectionGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "GetDrProtectionGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/GetDrProtectionGroup")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDrProtectionGroupRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendPathParam(request.getDrProtectionGroupId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrProtectionGroup.class,
-                        GetDrProtectionGroupResponse.Builder::drProtectionGroup)
-                .handleResponseHeaderString("etag", GetDrProtectionGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDrProtectionGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/GetDrProtectionGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDrProtectionGroupResponse>
+                transformer =
+                        GetDrProtectionGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/GetWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public IgnoreDrPlanExecutionResponse ignoreDrPlanExecution(
             IgnoreDrPlanExecutionRequest request) {
-        Objects.requireNonNull(
-                request.getIgnoreDrPlanExecutionDetails(),
-                "ignoreDrPlanExecutionDetails is required");
+        LOG.trace("Called ignoreDrPlanExecution");
+        final IgnoreDrPlanExecutionRequest interceptedRequest =
+                IgnoreDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                IgnoreDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, IgnoreDrPlanExecutionResponse::builder)
-                .logger(LOG, "ignoreDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "IgnoreDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/IgnoreDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(IgnoreDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .appendPathParam("actions")
-                .appendPathParam("ignore")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        IgnoreDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", IgnoreDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/IgnoreDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, IgnoreDrPlanExecutionResponse>
+                transformer =
+                        IgnoreDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getIgnoreDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDrPlanExecutionsResponse listDrPlanExecutions(ListDrPlanExecutionsRequest request) {
-        Objects.requireNonNull(request.getDrProtectionGroupId(), "drProtectionGroupId is required");
+        LOG.trace("Called listDrPlanExecutions");
+        final ListDrPlanExecutionsRequest interceptedRequest =
+                ListDrPlanExecutionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrPlanExecutionsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDrPlanExecutionsResponse::builder)
-                .logger(LOG, "listDrPlanExecutions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ListDrPlanExecutions",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ListDrPlanExecutions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDrPlanExecutionsRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendQueryParam("drProtectionGroupId", request.getDrProtectionGroupId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("drPlanExecutionId", request.getDrPlanExecutionId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrPlanExecutionCollection.class,
-                        ListDrPlanExecutionsResponse.Builder::drPlanExecutionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDrPlanExecutionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDrPlanExecutionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ListDrPlanExecutions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrPlanExecutionsResponse>
+                transformer =
+                        ListDrPlanExecutionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDrPlansResponse listDrPlans(ListDrPlansRequest request) {
-        Objects.requireNonNull(request.getDrProtectionGroupId(), "drProtectionGroupId is required");
+        LOG.trace("Called listDrPlans");
+        final ListDrPlansRequest interceptedRequest =
+                ListDrPlansConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrPlansConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDrPlansResponse::builder)
-                .logger(LOG, "listDrPlans")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ListDrPlans",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/ListDrPlans")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDrPlansRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlans")
-                .appendQueryParam("drProtectionGroupId", request.getDrProtectionGroupId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("drPlanId", request.getDrPlanId())
-                .appendEnumQueryParam("drPlanType", request.getDrPlanType())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("lifecycleSubState", request.getLifecycleSubState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrPlanCollection.class,
-                        ListDrPlansResponse.Builder::drPlanCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDrPlansResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDrPlansResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/ListDrPlans");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrPlansResponse> transformer =
+                ListDrPlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDrProtectionGroupsResponse listDrProtectionGroups(
             ListDrProtectionGroupsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listDrProtectionGroups");
+        final ListDrProtectionGroupsRequest interceptedRequest =
+                ListDrProtectionGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrProtectionGroupsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDrProtectionGroupsResponse::builder)
-                .logger(LOG, "listDrProtectionGroups")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ListDrProtectionGroups",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ListDrProtectionGroups")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDrProtectionGroupsRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("drProtectionGroupId", request.getDrProtectionGroupId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("role", request.getRole())
-                .appendEnumQueryParam("lifecycleSubState", request.getLifecycleSubState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.DrProtectionGroupCollection.class,
-                        ListDrProtectionGroupsResponse.Builder::drProtectionGroupCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDrProtectionGroupsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDrProtectionGroupsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ListDrProtectionGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDrProtectionGroupsResponse>
+                transformer =
+                        ListDrProtectionGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestError/ListWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.WorkRequestLogEntryCollection.class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestLogEntry/ListWorkRequestLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
+        LOG.trace("Called listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.disasterrecovery.model.WorkRequestSummaryCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/ListWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PauseDrPlanExecutionResponse pauseDrPlanExecution(PauseDrPlanExecutionRequest request) {
-        Objects.requireNonNull(
-                request.getPauseDrPlanExecutionDetails(),
-                "pauseDrPlanExecutionDetails is required");
+        LOG.trace("Called pauseDrPlanExecution");
+        final PauseDrPlanExecutionRequest interceptedRequest =
+                PauseDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PauseDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, PauseDrPlanExecutionResponse::builder)
-                .logger(LOG, "pauseDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "PauseDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/PauseDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PauseDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .appendPathParam("actions")
-                .appendPathParam("pause")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PauseDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", PauseDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/PauseDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, PauseDrPlanExecutionResponse>
+                transformer =
+                        PauseDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getPauseDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RefreshDrPlanResponse refreshDrPlan(RefreshDrPlanRequest request) {
-        Objects.requireNonNull(
-                request.getRefreshDrPlanDetails(), "refreshDrPlanDetails is required");
+        LOG.trace("Called refreshDrPlan");
+        final RefreshDrPlanRequest interceptedRequest =
+                RefreshDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshDrPlanConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanId(), "drPlanId must not be blank");
-
-        return clientCall(request, RefreshDrPlanResponse::builder)
-                .logger(LOG, "refreshDrPlan")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "RefreshDrPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/RefreshDrPlan")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RefreshDrPlanRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlans")
-                .appendPathParam(request.getDrPlanId())
-                .appendPathParam("actions")
-                .appendPathParam("refresh")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", RefreshDrPlanResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RefreshDrPlanResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/RefreshDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshDrPlanResponse> transformer =
+                RefreshDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRefreshDrPlanDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ResumeDrPlanExecutionResponse resumeDrPlanExecution(
             ResumeDrPlanExecutionRequest request) {
-        Objects.requireNonNull(
-                request.getResumeDrPlanExecutionDetails(),
-                "resumeDrPlanExecutionDetails is required");
+        LOG.trace("Called resumeDrPlanExecution");
+        final ResumeDrPlanExecutionRequest interceptedRequest =
+                ResumeDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResumeDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, ResumeDrPlanExecutionResponse::builder)
-                .logger(LOG, "resumeDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "ResumeDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ResumeDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ResumeDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .appendPathParam("actions")
-                .appendPathParam("resume")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ResumeDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", ResumeDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ResumeDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, ResumeDrPlanExecutionResponse>
+                transformer =
+                        ResumeDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getResumeDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RetryDrPlanExecutionResponse retryDrPlanExecution(RetryDrPlanExecutionRequest request) {
-        Objects.requireNonNull(
-                request.getRetryDrPlanExecutionDetails(),
-                "retryDrPlanExecutionDetails is required");
+        LOG.trace("Called retryDrPlanExecution");
+        final RetryDrPlanExecutionRequest interceptedRequest =
+                RetryDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetryDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, RetryDrPlanExecutionResponse::builder)
-                .logger(LOG, "retryDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "RetryDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/RetryDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RetryDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .appendPathParam("actions")
-                .appendPathParam("retry")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RetryDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RetryDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/RetryDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, RetryDrPlanExecutionResponse>
+                transformer =
+                        RetryDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRetryDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDrPlanResponse updateDrPlan(UpdateDrPlanRequest request) {
-        Objects.requireNonNull(request.getUpdateDrPlanDetails(), "updateDrPlanDetails is required");
+        LOG.trace("Called updateDrPlan");
+        final UpdateDrPlanRequest interceptedRequest =
+                UpdateDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrPlanConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanId(), "drPlanId must not be blank");
-
-        return clientCall(request, UpdateDrPlanResponse::builder)
-                .logger(LOG, "updateDrPlan")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "UpdateDrPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/UpdateDrPlan")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDrPlanRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlans")
-                .appendPathParam(request.getDrPlanId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateDrPlanResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDrPlanResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/UpdateDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrPlanResponse> transformer =
+                UpdateDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDrPlanDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDrPlanExecutionResponse updateDrPlanExecution(
             UpdateDrPlanExecutionRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateDrPlanExecutionDetails(),
-                "updateDrPlanExecutionDetails is required");
+        LOG.trace("Called updateDrPlanExecution");
+        final UpdateDrPlanExecutionRequest interceptedRequest =
+                UpdateDrPlanExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrPlanExecutionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanExecutionId(), "drPlanExecutionId must not be blank");
-
-        return clientCall(request, UpdateDrPlanExecutionResponse::builder)
-                .logger(LOG, "updateDrPlanExecution")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "UpdateDrPlanExecution",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/UpdateDrPlanExecution")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDrPlanExecutionRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlanExecutions")
-                .appendPathParam(request.getDrPlanExecutionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDrPlanExecutionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDrPlanExecutionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/UpdateDrPlanExecution");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrPlanExecutionResponse>
+                transformer =
+                        UpdateDrPlanExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDrPlanExecutionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDrProtectionGroupResponse updateDrProtectionGroup(
             UpdateDrProtectionGroupRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateDrProtectionGroupDetails(),
-                "updateDrProtectionGroupDetails is required");
+        LOG.trace("Called updateDrProtectionGroup");
+        final UpdateDrProtectionGroupRequest interceptedRequest =
+                UpdateDrProtectionGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrProtectionGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDrProtectionGroupId(), "drProtectionGroupId must not be blank");
-
-        return clientCall(request, UpdateDrProtectionGroupResponse::builder)
-                .logger(LOG, "updateDrProtectionGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "UpdateDrProtectionGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroup")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDrProtectionGroupRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendPathParam(request.getDrProtectionGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDrProtectionGroupResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDrProtectionGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrProtectionGroupResponse>
+                transformer =
+                        UpdateDrProtectionGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDrProtectionGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDrProtectionGroupRoleResponse updateDrProtectionGroupRole(
             UpdateDrProtectionGroupRoleRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateDrProtectionGroupRoleDetails(),
-                "updateDrProtectionGroupRoleDetails is required");
+        LOG.trace("Called updateDrProtectionGroupRole");
+        final UpdateDrProtectionGroupRoleRequest interceptedRequest =
+                UpdateDrProtectionGroupRoleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrProtectionGroupRoleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDrProtectionGroupId(), "drProtectionGroupId must not be blank");
-
-        return clientCall(request, UpdateDrProtectionGroupRoleResponse::builder)
-                .logger(LOG, "updateDrProtectionGroupRole")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "UpdateDrProtectionGroupRole",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroupRole")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpdateDrProtectionGroupRoleRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drProtectionGroups")
-                .appendPathParam(request.getDrProtectionGroupId())
-                .appendPathParam("actions")
-                .appendPathParam("updateRole")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDrProtectionGroupRoleResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDrProtectionGroupRoleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroupRole");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDrProtectionGroupRoleResponse>
+                transformer =
+                        UpdateDrProtectionGroupRoleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDrProtectionGroupRoleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public VerifyDrPlanResponse verifyDrPlan(VerifyDrPlanRequest request) {
-        Objects.requireNonNull(request.getVerifyDrPlanDetails(), "verifyDrPlanDetails is required");
+        LOG.trace("Called verifyDrPlan");
+        final VerifyDrPlanRequest interceptedRequest =
+                VerifyDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                VerifyDrPlanConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDrPlanId(), "drPlanId must not be blank");
-
-        return clientCall(request, VerifyDrPlanResponse::builder)
-                .logger(LOG, "verifyDrPlan")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DisasterRecovery",
                         "VerifyDrPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/VerifyDrPlan")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(VerifyDrPlanRequest::builder)
-                .basePath("/20220125")
-                .appendPathParam("drPlans")
-                .appendPathParam(request.getDrPlanId())
-                .appendPathParam("actions")
-                .appendPathParam("verify")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", VerifyDrPlanResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", VerifyDrPlanResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/VerifyDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, VerifyDrPlanResponse> transformer =
+                VerifyDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getVerifyDrPlanDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -1160,209 +1793,5 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     @Override
     public DisasterRecoveryPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DisasterRecoveryClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

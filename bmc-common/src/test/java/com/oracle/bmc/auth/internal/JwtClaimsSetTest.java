@@ -72,8 +72,7 @@ public class JwtClaimsSetTest {
                 jwk);
 
         // we may have to replace('-', '+').replace('_', '/') in the module (jwk.n)
-        // see
-        // https://stackoverflow.com/questions/28584080/base64-java-lang-illegalargumentexception-illegal-character
+        // see https://stackoverflow.com/questions/28584080/base64-java-lang-illegalargumentexception-illegal-character
         Optional<RSAPublicKey> jwkRsa = AuthUtils.toPublicKeyFromJson(jwk);
         assertTrue(jwkRsa.isPresent());
     }

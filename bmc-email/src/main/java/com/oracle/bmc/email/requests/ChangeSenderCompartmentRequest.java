@@ -6,60 +6,68 @@ package com.oracle.bmc.email.requests;
 
 import com.oracle.bmc.email.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeSenderCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeSenderCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class ChangeSenderCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.email.model.ChangeSenderCompartmentDetails> {
 
-    /** The unique OCID of the sender. */
+    /**
+     * The unique OCID of the sender.
+     */
     private String senderId;
 
-    /** The unique OCID of the sender. */
+    /**
+     * The unique OCID of the sender.
+     */
     public String getSenderId() {
         return senderId;
     }
-    /** Details for moving a sender into a different compartment. */
+    /**
+     * Details for moving a sender into a different compartment.
+     */
     private com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
             changeSenderCompartmentDetails;
 
-    /** Details for moving a sender into a different compartment. */
+    /**
+     * Details for moving a sender into a different compartment.
+     */
     public com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
             getChangeSenderCompartmentDetails() {
         return changeSenderCompartmentDetails;
     }
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     private String opcRequestId;
 
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +80,17 @@ public class ChangeSenderCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeSenderCompartmentRequest,
                     com.oracle.bmc.email.model.ChangeSenderCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique OCID of the sender. */
+        /**
+         * The unique OCID of the sender.
+         */
         private String senderId = null;
 
         /**
          * The unique OCID of the sender.
-         *
          * @param senderId the value to set
          * @return this builder instance
          */
@@ -89,13 +99,14 @@ public class ChangeSenderCompartmentRequest
             return this;
         }
 
-        /** Details for moving a sender into a different compartment. */
+        /**
+         * Details for moving a sender into a different compartment.
+         */
         private com.oracle.bmc.email.model.ChangeSenderCompartmentDetails
                 changeSenderCompartmentDetails = null;
 
         /**
          * Details for moving a sender into a different compartment.
-         *
          * @param changeSenderCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -107,18 +118,17 @@ public class ChangeSenderCompartmentRequest
         }
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -128,12 +138,13 @@ public class ChangeSenderCompartmentRequest
             return this;
         }
 
-        /** The request ID for tracing from the system */
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -144,19 +155,18 @@ public class ChangeSenderCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,7 +178,6 @@ public class ChangeSenderCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeSenderCompartmentRequest o) {
@@ -184,11 +193,10 @@ public class ChangeSenderCompartmentRequest
         /**
          * Build the instance of ChangeSenderCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeSenderCompartmentRequest
          */
@@ -201,7 +209,6 @@ public class ChangeSenderCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -214,8 +221,7 @@ public class ChangeSenderCompartmentRequest
         /**
          * Build the instance of ChangeSenderCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeSenderCompartmentRequest
@@ -227,14 +233,12 @@ public class ChangeSenderCompartmentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ChangeSenderCompartmentRequest(senderId, changeSenderCompartmentDetails, ifMatch,
-            // opcRequestId);
+            // new ChangeSenderCompartmentRequest(senderId, changeSenderCompartmentDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -247,7 +251,6 @@ public class ChangeSenderCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

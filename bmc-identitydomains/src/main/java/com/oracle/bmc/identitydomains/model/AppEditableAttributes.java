@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * App attributes editable by subject <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * App attributes editable by subject
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppEditableAttributes.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppEditableAttributes.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppEditableAttributes
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name"})
     public AppEditableAttributes(String name) {
@@ -32,33 +31,40 @@ public final class AppEditableAttributes
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of the attribute. The attribute name will be qualified by schema name if any
-         * extension schema defines the attribute. The attribute name will not be qualified by
-         * schema name if the base schema defines the attribute.
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Name of the attribute. The attribute name will be qualified by schema name if any
-         * extension schema defines the attribute. The attribute name will not be qualified by
-         * schema name if the base schema defines the attribute.
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -85,7 +91,9 @@ public final class AppEditableAttributes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +103,39 @@ public final class AppEditableAttributes
     }
 
     /**
-     * Name of the attribute. The attribute name will be qualified by schema name if any extension
-     * schema defines the attribute. The attribute name will not be qualified by schema name if the
-     * base schema defines the attribute.
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     */
+     * Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the attribute. The attribute name will be qualified by schema name if any extension
-     * schema defines the attribute. The attribute name will not be qualified by schema name if the
-     * base schema defines the attribute.
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     *
+     * Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -130,7 +147,6 @@ public final class AppEditableAttributes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

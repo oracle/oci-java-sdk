@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** Indicates that a grantee can grant privilege to others via ADMIN_OPTION or GRANT_OPTION. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum PrivilegeGrantableOption implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Indicates that a grantee can grant privilege to others via ADMIN_OPTION or GRANT_OPTION.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum PrivilegeGrantableOption {
     AdminOption("ADMIN_OPTION"),
     GrantOption("GRANT_OPTION"),
 

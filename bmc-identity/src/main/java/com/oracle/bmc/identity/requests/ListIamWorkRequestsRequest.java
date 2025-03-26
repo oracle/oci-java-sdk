@@ -6,50 +6,72 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIamWorkRequestsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListIamWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIamWorkRequestsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment (remember that the tenancy is simply the root compartment). */
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment (remember that the tenancy is simply the root compartment). */
+    /**
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The identifier of the resource the work request affects. */
+    /**
+     * The identifier of the resource the work request affects.
+     */
     private String resourceIdentifier;
 
-    /** The identifier of the resource the work request affects. */
+    /**
+     * The identifier of the resource the work request affects.
+     */
     public String getResourceIdentifier() {
         return resourceIdentifier;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -58,11 +80,13 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListIamWorkRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+         *
          */
         private String compartmentId = null;
 
@@ -77,7 +101,10 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -91,7 +118,10 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -105,12 +135,13 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The identifier of the resource the work request affects. */
+        /**
+         * The identifier of the resource the work request affects.
+         */
         private String resourceIdentifier = null;
 
         /**
          * The identifier of the resource the work request affects.
-         *
          * @param resourceIdentifier the value to set
          * @return this builder instance
          */
@@ -122,6 +153,7 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -139,19 +171,18 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -163,7 +194,6 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListIamWorkRequestsRequest o) {
@@ -180,11 +210,10 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListIamWorkRequestsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListIamWorkRequestsRequest
          */
@@ -198,8 +227,7 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListIamWorkRequestsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListIamWorkRequestsRequest
@@ -212,14 +240,12 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
             request.resourceIdentifier = resourceIdentifier;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListIamWorkRequestsRequest(compartmentId, page, limit, resourceIdentifier,
-            // opcRequestId);
+            // new ListIamWorkRequestsRequest(compartmentId, page, limit, resourceIdentifier, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -233,7 +259,6 @@ public class ListIamWorkRequestsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

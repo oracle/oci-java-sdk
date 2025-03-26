@@ -6,86 +6,93 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAssociatedDatabasesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListAssociatedDatabasesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAssociatedDatabasesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAssociatedDatabasesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListAssociatedDatabasesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Management private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      */
     private String dbManagementPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Management private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      */
     public String getDbManagementPrivateEndpointId() {
         return dbManagementPrivateEndpointId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
-    /** The option to sort databases using a specific Database Management private endpoint. */
+    /**
+     * The option to sort databases using a specific Database Management private endpoint.
+     *
+     */
     private SortBy sortBy;
 
-    /** The option to sort databases using a specific Database Management private endpoint. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The option to sort databases using a specific Database Management private endpoint.
+     *
+     **/
+    public enum SortBy {
         TimeRegistered("timeRegistered"),
         ;
 
@@ -117,7 +124,10 @@ public class ListAssociatedDatabasesRequest
         }
     };
 
-    /** The option to sort databases using a specific Database Management private endpoint. */
+    /**
+     * The option to sort databases using a specific Database Management private endpoint.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -125,19 +135,17 @@ public class ListAssociatedDatabasesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAssociatedDatabasesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Management private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
          */
         private String dbManagementPrivateEndpointId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Management private endpoint.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
          * @param dbManagementPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -147,15 +155,12 @@ public class ListAssociatedDatabasesRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -164,12 +169,13 @@ public class ListAssociatedDatabasesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -178,12 +184,13 @@ public class ListAssociatedDatabasesRequest
             return this;
         }
 
-        /** The maximum number of records returned in the paginated response. */
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -193,14 +200,15 @@ public class ListAssociatedDatabasesRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -211,15 +219,12 @@ public class ListAssociatedDatabasesRequest
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
-         *
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -228,7 +233,10 @@ public class ListAssociatedDatabasesRequest
             return this;
         }
 
-        /** The option to sort databases using a specific Database Management private endpoint. */
+        /**
+         * The option to sort databases using a specific Database Management private endpoint.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -244,19 +252,18 @@ public class ListAssociatedDatabasesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -268,7 +275,6 @@ public class ListAssociatedDatabasesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAssociatedDatabasesRequest o) {
@@ -287,11 +293,10 @@ public class ListAssociatedDatabasesRequest
         /**
          * Build the instance of ListAssociatedDatabasesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAssociatedDatabasesRequest
          */
@@ -305,8 +310,7 @@ public class ListAssociatedDatabasesRequest
         /**
          * Build the instance of ListAssociatedDatabasesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAssociatedDatabasesRequest
@@ -321,14 +325,12 @@ public class ListAssociatedDatabasesRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListAssociatedDatabasesRequest(dbManagementPrivateEndpointId, compartmentId,
-            // opcRequestId, limit, page, sortOrder, sortBy);
+            // new ListAssociatedDatabasesRequest(dbManagementPrivateEndpointId, compartmentId, opcRequestId, limit, page, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -344,7 +346,6 @@ public class ListAssociatedDatabasesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Alarm condition summary information about alarm condition <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Alarm condition summary information about alarm condition
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AlarmConditionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AlarmConditionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AlarmConditionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -77,211 +76,212 @@ public final class AlarmConditionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Alarm Condition
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Alarm Condition
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * monitoring template.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitoringTemplateId")
         private String monitoringTemplateId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * monitoring template.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
          * @param monitoringTemplateId the value to set
          * @return this builder
-         */
+         **/
         public Builder monitoringTemplateId(String monitoringTemplateId) {
             this.monitoringTemplateId = monitoringTemplateId;
             this.__explicitlySet__.add("monitoringTemplateId");
             return this;
         }
-        /** The OCID of the composite resource type like EBS/PEOPLE_SOFT. */
+        /**
+         * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
         private String compositeType;
 
         /**
          * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
-         *
          * @param compositeType the value to set
          * @return this builder
-         */
+         **/
         public Builder compositeType(String compositeType) {
             this.compositeType = compositeType;
             this.__explicitlySet__.add("compositeType");
             return this;
         }
         /**
-         * The stack monitoring service or application emitting the metric that is evaluated by the
-         * alarm.
-         */
+         * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The stack monitoring service or application emitting the metric that is evaluated by the
-         * alarm.
-         *
+         * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The resource group OCID. */
+        /**
+         * The resource group OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The resource group OCID.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The metric name. */
+        /**
+         * The metric name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
         /**
          * The metric name.
-         *
          * @param metricName the value to set
          * @return this builder
-         */
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-        /** Type of alarm condition type. */
+        /**
+         * Type of alarm condition type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionType")
         private ConditionType conditionType;
 
         /**
          * Type of alarm condition type.
-         *
          * @param conditionType the value to set
          * @return this builder
-         */
+         **/
         public Builder conditionType(ConditionType conditionType) {
             this.conditionType = conditionType;
             this.__explicitlySet__.add("conditionType");
             return this;
         }
-        /** Alarm conditions */
+        /**
+         * Alarm conditions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditions")
         private java.util.List<Condition> conditions;
 
         /**
          * Alarm conditions
-         *
          * @param conditions the value to set
          * @return this builder
-         */
+         **/
         public Builder conditions(java.util.List<Condition> conditions) {
             this.conditions = conditions;
             this.__explicitlySet__.add("conditions");
             return this;
         }
-        /** The current status of the alarm condition i.e. whether it is Applied or Not Applied */
+        /**
+         * The current status of the alarm condition i.e. whether it is Applied or Not Applied
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private AlarmConditionLifeCycleDetails status;
 
         /**
          * The current status of the alarm condition i.e. whether it is Applied or Not Applied
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(AlarmConditionLifeCycleDetails status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The current lifecycle state of the alarm condition. */
+        /**
+         * The current lifecycle state of the alarm condition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AlarmConditionLifeCycleStates lifecycleState;
 
         /**
          * The current lifecycle state of the alarm condition.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(AlarmConditionLifeCycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The date and time the monitoringTemplate was created. Format defined by RFC3339. */
+        /**
+         * The date and time the monitoringTemplate was created. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the monitoringTemplate was created. Format defined by RFC3339.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the monitoringTemplate was updated. Format defined by RFC3339. */
+        /**
+         * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -290,7 +290,8 @@ public final class AlarmConditionSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -300,7 +301,7 @@ public final class AlarmConditionSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -308,19 +309,20 @@ public final class AlarmConditionSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -405,7 +407,9 @@ public final class AlarmConditionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -415,220 +419,223 @@ public final class AlarmConditionSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Alarm Condition
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Alarm Condition
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Alarm Condition
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * monitoring template.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("monitoringTemplateId")
     private final String monitoringTemplateId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * monitoring template.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
      * @return the value
-     */
+     **/
     public String getMonitoringTemplateId() {
         return monitoringTemplateId;
     }
 
-    /** The OCID of the composite resource type like EBS/PEOPLE_SOFT. */
+    /**
+     * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
     private final String compositeType;
 
     /**
      * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
-     *
      * @return the value
-     */
+     **/
     public String getCompositeType() {
         return compositeType;
     }
 
     /**
-     * The stack monitoring service or application emitting the metric that is evaluated by the
-     * alarm.
-     */
+     * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The stack monitoring service or application emitting the metric that is evaluated by the
-     * alarm.
-     *
+     * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The resource group OCID. */
+    /**
+     * The resource group OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The resource group OCID.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** The metric name. */
+    /**
+     * The metric name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
     /**
      * The metric name.
-     *
      * @return the value
-     */
+     **/
     public String getMetricName() {
         return metricName;
     }
 
-    /** Type of alarm condition type. */
+    /**
+     * Type of alarm condition type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionType")
     private final ConditionType conditionType;
 
     /**
      * Type of alarm condition type.
-     *
      * @return the value
-     */
+     **/
     public ConditionType getConditionType() {
         return conditionType;
     }
 
-    /** Alarm conditions */
+    /**
+     * Alarm conditions
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditions")
     private final java.util.List<Condition> conditions;
 
     /**
      * Alarm conditions
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Condition> getConditions() {
         return conditions;
     }
 
-    /** The current status of the alarm condition i.e. whether it is Applied or Not Applied */
+    /**
+     * The current status of the alarm condition i.e. whether it is Applied or Not Applied
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final AlarmConditionLifeCycleDetails status;
 
     /**
      * The current status of the alarm condition i.e. whether it is Applied or Not Applied
-     *
      * @return the value
-     */
+     **/
     public AlarmConditionLifeCycleDetails getStatus() {
         return status;
     }
 
-    /** The current lifecycle state of the alarm condition. */
+    /**
+     * The current lifecycle state of the alarm condition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AlarmConditionLifeCycleStates lifecycleState;
 
     /**
      * The current lifecycle state of the alarm condition.
-     *
      * @return the value
-     */
+     **/
     public AlarmConditionLifeCycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The date and time the monitoringTemplate was created. Format defined by RFC3339. */
+    /**
+     * The date and time the monitoringTemplate was created. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the monitoringTemplate was created. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time the monitoringTemplate was updated. Format defined by RFC3339. */
+    /**
+     * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -640,7 +647,6 @@ public final class AlarmConditionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

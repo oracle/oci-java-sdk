@@ -6,64 +6,81 @@ package com.oracle.bmc.aidocument.requests;
 
 import com.oracle.bmc.aidocument.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/UpdateProjectExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateProjectRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/UpdateProjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateProjectRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 public class UpdateProjectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aidocument.model.UpdateProjectDetails> {
 
-    /** A unique project identifier. */
+    /**
+     * A unique project identifier.
+     */
     private String projectId;
 
-    /** A unique project identifier. */
+    /**
+     * A unique project identifier.
+     */
     public String getProjectId() {
         return projectId;
     }
-    /** The project metadata to be updated. */
+    /**
+     * The project metadata to be updated.
+     */
     private com.oracle.bmc.aidocument.model.UpdateProjectDetails updateProjectDetails;
 
-    /** The project metadata to be updated. */
+    /**
+     * The project metadata to be updated.
+     */
     public com.oracle.bmc.aidocument.model.UpdateProjectDetails getUpdateProjectDetails() {
         return updateProjectDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -75,15 +92,17 @@ public class UpdateProjectRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateProjectRequest, com.oracle.bmc.aidocument.model.UpdateProjectDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique project identifier. */
+        /**
+         * A unique project identifier.
+         */
         private String projectId = null;
 
         /**
          * A unique project identifier.
-         *
          * @param projectId the value to set
          * @return this builder instance
          */
@@ -92,12 +111,13 @@ public class UpdateProjectRequest
             return this;
         }
 
-        /** The project metadata to be updated. */
+        /**
+         * The project metadata to be updated.
+         */
         private com.oracle.bmc.aidocument.model.UpdateProjectDetails updateProjectDetails = null;
 
         /**
          * The project metadata to be updated.
-         *
          * @param updateProjectDetails the value to set
          * @return this builder instance
          */
@@ -108,18 +128,21 @@ public class UpdateProjectRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -129,12 +152,13 @@ public class UpdateProjectRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -143,12 +167,13 @@ public class UpdateProjectRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -159,19 +184,18 @@ public class UpdateProjectRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -183,7 +207,6 @@ public class UpdateProjectRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateProjectRequest o) {
@@ -200,11 +223,10 @@ public class UpdateProjectRequest
         /**
          * Build the instance of UpdateProjectRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateProjectRequest
          */
@@ -217,7 +239,6 @@ public class UpdateProjectRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -230,8 +251,7 @@ public class UpdateProjectRequest
         /**
          * Build the instance of UpdateProjectRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateProjectRequest
@@ -244,14 +264,12 @@ public class UpdateProjectRequest
             request.opcRequestId = opcRequestId;
             request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateProjectRequest(projectId, updateProjectDetails, ifMatch, opcRequestId,
-            // isLockOverride);
+            // new UpdateProjectRequest(projectId, updateProjectDetails, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -265,7 +283,6 @@ public class UpdateProjectRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

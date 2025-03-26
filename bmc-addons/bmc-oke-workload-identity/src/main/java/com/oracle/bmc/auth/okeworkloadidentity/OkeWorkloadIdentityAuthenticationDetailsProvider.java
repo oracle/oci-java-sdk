@@ -19,12 +19,12 @@ import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeTenancyOnlyAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeWorkloadIdentityResourcePrincipalsFederationClient;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.StandardClientProperties;
+import com.oracle.bmc.http.ApacheConfigurator;
+import com.oracle.bmc.http.ApacheConnectorProperties;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.slf4j.Logger;
 
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManagerFactory;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -40,26 +40,22 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Implementation of OkeWorkloadIdentityAuthenticationDetailsProvider. This provider can only be
- * used inside pods.
- *
- * <p>Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests
+ * Implementation of OkeWorkloadIdentityAuthenticationDetailsProvider.
+ * This provider can only be used inside pods.
+ * <p>
+ * Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests
  * will be rotated periodically).
  */
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class OkeWorkloadIdentityAuthenticationDetailsProvider
         extends AbstractRequestingAuthenticationDetailsProvider
-        implements RegionProvider,
-                RefreshableOnNotAuthenticatedProvider<String>,
+        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String>,
                 ProvidesConfigurableRefresh {
 
     /**
-     * Returns the region where the java code using oke workload identity resource principal
-     * authentication is running at
+     * Returns the region where the java code using oke workload identity resource principal authentication is running at
      *
      * @return Region object.
      */
@@ -72,12 +68,16 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
     /** Environment variable of the path for Kubernetes service account cert. */
     private static final String KUBERNETES_SERVICE_ACCOUNT_CERT_PATH_ENV =
             "OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH";
+
+    private static final Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(
+                    OkeWorkloadIdentityResourcePrincipalsFederationClient.class);
     /**
      * Constructor of OkeWorkloadIdentityAuthenticationDetailsProvider.
      *
-     * @param federationClient federation client implementation.
+     * @param federationClient   federation client implementation.
      * @param sessionKeySupplier session key supplier implementation.
-     * @param region the region
+     * @param region             the region
      */
     private OkeWorkloadIdentityAuthenticationDetailsProvider(
             FederationClient federationClient,
@@ -131,13 +131,17 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         return this.federationClient.refreshAndGetSecurityToken();
     }
 
-    /** Builder for OkeWorkloadIdentityAuthenticationDetailsProviderBuilder. */
+    /**
+     * Builder for OkeWorkloadIdentityAuthenticationDetailsProviderBuilder.
+     */
     public static class OkeWorkloadIdentityAuthenticationDetailsProviderBuilder
             extends AbstractFederationClientAuthenticationDetailsProviderBuilder<
                     OkeWorkloadIdentityAuthenticationDetailsProviderBuilder,
                     OkeWorkloadIdentityAuthenticationDetailsProvider> {
 
-        /** The configuration for the circuit breaker. */
+        /**
+         * The configuration for the circuit breaker.
+         */
         private CircuitBreakerConfiguration circuitBreakerConfig;
 
         private ServiceAccountTokenSupplier serviceAccountTokenSupplier;
@@ -147,9 +151,7 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         }
 
         /**
-         * Configures the tenancyId to use. Used for constructing
-         * KeyPairAuthenticationDetailsProvider, it is not used by actual.
-         *
+         * Configures the tenancyId to use. Used for constructing KeyPairAuthenticationDetailsProvider, it is not used by actual.
          * @param tenancyId
          * @return OkeWorkloadIdentityAuthenticationDetailsProviderBuilder
          */
@@ -158,7 +160,9 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
             return this;
         }
 
-        /** Sets value for the circuit breaker configuration". */
+        /**
+         * Sets value for the circuit breaker configuration".
+         */
         public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder circuitBreakerConfig(
                 CircuitBreakerConfiguration circuitBreakerConfig) {
             this.circuitBreakerConfig = circuitBreakerConfig;
@@ -202,7 +206,7 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
                     new OkeTenancyOnlyAuthenticationDetailsProvider();
 
             // Set ca cert when talking to proxymux using https.
-            SSLContext sslCtx;
+            SSLContext sslCtx = null;
             String kubernetesCaCertPath =
                     System.getenv(KUBERNETES_SERVICE_ACCOUNT_CERT_PATH_ENV) != null
                             ? System.getenv(KUBERNETES_SERVICE_ACCOUNT_CERT_PATH_ENV)
@@ -260,39 +264,22 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
                         "Kubernetes service account ca cert doesn't exist.");
             }
 
-            ClientConfigurator configurator =
-                    builder -> {
-                        builder.property(
-                                StandardClientProperties.HOSTNAME_VERIFIER,
-                                new javax.net.ssl.HostnameVerifier() {
-                                    @Override
-                                    public boolean verify(String s, SSLSession sslSession) {
-                                        return true;
-                                    }
+            final ApacheConnectorProperties apacheConnectorProperties =
+                    ApacheConnectorProperties.builder()
+                            .sslContext(sslCtx)
+                            .hostnameVerifier(NoopHostnameVerifier.INSTANCE)
+                            .build();
+            final ApacheConfigurator configurator =
+                    new ApacheConfigurator.NonBuffering(apacheConnectorProperties);
 
-                                    @Override
-                                    public final String toString() {
-                                        return "NO_OP";
-                                    }
-                                });
-                        builder.property(StandardClientProperties.SSL_CONTEXT, sslCtx);
-                        builder.property(StandardClientProperties.BUFFER_REQUEST, false);
-                    };
-
-            List<ClientConfigurator> additionalConfigurators = new ArrayList<>();
-            if (this.federationClientConfigurator != null) {
-                additionalConfigurators.add(this.federationClientConfigurator);
-            }
-            additionalConfigurators.addAll(this.additionalFederationClientConfigurators);
-
-            // create federation client
+            //create federation client
             return new OkeWorkloadIdentityResourcePrincipalsFederationClient(
+                    federationEndpoint,
                     sessionKeySupplier,
                     serviceAccountTokenSupplier,
                     provider,
                     configurator,
-                    circuitBreakerConfig,
-                    additionalConfigurators);
+                    circuitBreakerConfig);
         }
 
         @Override

@@ -5,44 +5,44 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * Static type of dimension value (passed as-is). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+ * Static type of dimension value (passed as-is).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = StaticDimensionValue.Builder.class)
+    builder = StaticDimensionValue.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class StaticDimensionValue extends DimensionValueDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The data extracted from the specified dimension value (passed as-is). Unicode characters
-         * only. For information on valid dimension keys and values, see {@link
-         * #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
-         */
+         * The data extracted from the specified dimension value (passed as-is). Unicode characters only.
+         * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The data extracted from the specified dimension value (passed as-is). Unicode characters
-         * only. For information on valid dimension keys and values, see {@link
-         * #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+         * The data extracted from the specified dimension value (passed as-is). Unicode characters only.
+         * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -69,7 +69,9 @@ public final class StaticDimensionValue extends DimensionValueDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -85,20 +87,19 @@ public final class StaticDimensionValue extends DimensionValueDetails {
     }
 
     /**
-     * The data extracted from the specified dimension value (passed as-is). Unicode characters
-     * only. For information on valid dimension keys and values, see {@link
-     * #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
-     */
+     * The data extracted from the specified dimension value (passed as-is). Unicode characters only.
+     * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The data extracted from the specified dimension value (passed as-is). Unicode characters
-     * only. For information on valid dimension keys and values, see {@link
-     * #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+     * The data extracted from the specified dimension value (passed as-is). Unicode characters only.
+     * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
@@ -110,7 +111,6 @@ public final class StaticDimensionValue extends DimensionValueDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

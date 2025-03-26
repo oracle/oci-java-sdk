@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.mngdmac.model;
 
-/** The asynchronous operation tracked by the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The asynchronous operation tracked by the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
+public enum OperationType {
     CreateMacOrder("CREATE_MAC_ORDER"),
     UpdateMacOrder("UPDATE_MAC_ORDER"),
     CancelMacOrder("CANCEL_MAC_ORDER"),

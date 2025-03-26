@@ -5,38 +5,39 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * A reference to a threat indicator resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * A reference to a threat indicator resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IndicatorReference.Builder.class)
+    builder = IndicatorReference.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IndicatorReference extends EntityReference {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique OCID of the referenced threat indicator. */
+        /**
+         * The unique OCID of the referenced threat indicator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indicatorId")
         private String indicatorId;
 
         /**
          * The unique OCID of the referenced threat indicator.
-         *
          * @param indicatorId the value to set
          * @return this builder
-         */
+         **/
         public Builder indicatorId(String indicatorId) {
             this.indicatorId = indicatorId;
             this.__explicitlySet__.add("indicatorId");
@@ -63,7 +64,9 @@ public final class IndicatorReference extends EntityReference {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,15 +81,16 @@ public final class IndicatorReference extends EntityReference {
         this.indicatorId = indicatorId;
     }
 
-    /** The unique OCID of the referenced threat indicator. */
+    /**
+     * The unique OCID of the referenced threat indicator.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("indicatorId")
     private final String indicatorId;
 
     /**
      * The unique OCID of the referenced threat indicator.
-     *
      * @return the value
-     */
+     **/
     public String getIndicatorId() {
         return indicatorId;
     }
@@ -98,7 +102,6 @@ public final class IndicatorReference extends EntityReference {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,18 @@ package com.oracle.bmc.ocicontrolcenter.responses;
 
 import com.oracle.bmc.ocicontrolcenter.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
 public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,19 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this
+     * header appears in the response, then a partial list might have been
+     * returned. Include this value as the {@code page} parameter for the subsequent
+     * GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this
+     * header appears in the response, then a partial list might have been
+     * returned. Include this value as the {@code page} parameter for the subsequent
+     * GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -42,12 +46,13 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned {@code MetricPropertyCollection} instance. */
+    /**
+     * The returned MetricPropertyCollection instance.
+     */
     private com.oracle.bmc.ocicontrolcenter.model.MetricPropertyCollection metricPropertyCollection;
 
     /**
-     * The returned {@code MetricPropertyCollection} instance.
-     *
+     * The returned MetricPropertyCollection instance.
      * @return the value
      */
     public com.oracle.bmc.ocicontrolcenter.model.MetricPropertyCollection
@@ -64,7 +69,7 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListMetricPropertiesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.ocicontrolcenter.model.MetricPropertyCollection
@@ -75,33 +80,31 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
         this.metricPropertyCollection = metricPropertyCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListMetricPropertiesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -112,16 +115,19 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this
+         * header appears in the response, then a partial list might have been
+         * returned. Include this value as the {@code page} parameter for the subsequent
+         * GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this
+         * header appears in the response, then a partial list might have been
+         * returned. Include this value as the {@code page} parameter for the subsequent
+         * GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -131,13 +137,14 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code MetricPropertyCollection} instance. */
+        /**
+         * The returned MetricPropertyCollection instance.
+         */
         private com.oracle.bmc.ocicontrolcenter.model.MetricPropertyCollection
                 metricPropertyCollection;
 
         /**
-         * The returned {@code MetricPropertyCollection} instance.
-         *
+         * The returned MetricPropertyCollection instance.
          * @param metricPropertyCollection the value to set
          * @return this builder
          */
@@ -150,10 +157,8 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListMetricPropertiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -166,10 +171,8 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListMetricPropertiesResponse build() {
             return new ListMetricPropertiesResponse(
                     __httpStatusCode__,
@@ -182,7 +185,6 @@ public class ListMetricPropertiesResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

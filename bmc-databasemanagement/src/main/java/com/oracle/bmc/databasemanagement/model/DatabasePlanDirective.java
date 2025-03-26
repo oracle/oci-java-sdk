@@ -5,24 +5,23 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Manages resource allocation among databases. Besides the name, at least one other property must
- * be available. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * Manages resource allocation among databases. Besides the name, at least one other property must be available.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabasePlanDirective.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DatabasePlanDirective.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DatabasePlanDirective
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -86,16 +85,17 @@ public final class DatabasePlanDirective
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of a database or a profile. */
+        /**
+         * The name of a database or a profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of a database or a profile.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -103,47 +103,54 @@ public final class DatabasePlanDirective
         }
         /**
          * The relative priority of a database in the database plan. A higher share value implies
-         * higher priority and more access to the I/O resources. Use either share or (level,
-         * allocation). All plan directives in a database plan should use the same setting.
+         * higher priority and more access to the I/O resources.
+         * Use either share or (level, allocation). All plan directives in a database plan
+         * should use the same setting.
          * Share-based resource allocation is the recommended method for a database plan.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("share")
         private Integer share;
 
         /**
          * The relative priority of a database in the database plan. A higher share value implies
-         * higher priority and more access to the I/O resources. Use either share or (level,
-         * allocation). All plan directives in a database plan should use the same setting.
+         * higher priority and more access to the I/O resources.
+         * Use either share or (level, allocation). All plan directives in a database plan
+         * should use the same setting.
          * Share-based resource allocation is the recommended method for a database plan.
          *
          * @param share the value to set
          * @return this builder
-         */
+         **/
         public Builder share(Integer share) {
             this.share = share;
             this.__explicitlySet__.add("share");
             return this;
         }
         /**
-         * The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1
-         * first, and then remaining resources are allocated to level 2, and so on.
-         */
+         * The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first,
+         * and then remaining resources are allocated to level 2, and so on.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Integer level;
 
         /**
-         * The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1
-         * first, and then remaining resources are allocated to level 2, and so on.
+         * The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first,
+         * and then remaining resources are allocated to level 2, and so on.
          *
          * @param level the value to set
          * @return this builder
-         */
+         **/
         public Builder level(Integer level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
-        /** The resource allocation as a percentage (0-100) within the level. */
+        /**
+         * The resource allocation as a percentage (0-100) within the level.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allocation")
         private Integer allocation;
 
@@ -152,222 +159,229 @@ public final class DatabasePlanDirective
          *
          * @param allocation the value to set
          * @return this builder
-         */
+         **/
         public Builder allocation(Integer allocation) {
             this.allocation = allocation;
             this.__explicitlySet__.add("allocation");
             return this;
         }
-        /** The maximum I/O utilization limit as a percentage of the available resources. */
+        /**
+         * The maximum I/O utilization limit as a percentage of the available resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private Integer limit;
 
         /**
          * The maximum I/O utilization limit as a percentage of the available resources.
-         *
          * @param limit the value to set
          * @return this builder
-         */
+         **/
         public Builder limit(Integer limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
             return this;
         }
         /**
-         * Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is
-         * reserved for mission-critical databases. flashcache=off is invalid in a directive that
-         * contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
-         */
+         * Controls use of Exadata Smart Flash Cache by a database.
+         * This ensures that cache space is reserved for mission-critical databases.
+         * flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlashCacheOn")
         private Boolean isFlashCacheOn;
 
         /**
-         * Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is
-         * reserved for mission-critical databases. flashcache=off is invalid in a directive that
-         * contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+         * Controls use of Exadata Smart Flash Cache by a database.
+         * This ensures that cache space is reserved for mission-critical databases.
+         * flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
          *
          * @param isFlashCacheOn the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlashCacheOn(Boolean isFlashCacheOn) {
             this.isFlashCacheOn = isFlashCacheOn;
             this.__explicitlySet__.add("isFlashCacheOn");
             return this;
         }
         /**
-         * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache
-         * space is reserved for mission-critical databases. pmemcache=off is invalid in a directive
-         * that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
-         */
+         * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space
+         * is reserved for mission-critical databases.
+         * pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPmemCacheOn")
         private Boolean isPmemCacheOn;
 
         /**
-         * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache
-         * space is reserved for mission-critical databases. pmemcache=off is invalid in a directive
-         * that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+         * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space
+         * is reserved for mission-critical databases.
+         * pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
          *
          * @param isPmemCacheOn the value to set
          * @return this builder
-         */
+         **/
         public Builder isPmemCacheOn(Boolean isPmemCacheOn) {
             this.isPmemCacheOn = isPmemCacheOn;
             this.__explicitlySet__.add("isPmemCacheOn");
             return this;
         }
         /**
-         * Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart
-         * Flash Log is reserved for mission-critical databases.
-         */
+         * Controls use of Exadata Smart Flash Log by a database.
+         * This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlashLogOn")
         private Boolean isFlashLogOn;
 
         /**
-         * Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart
-         * Flash Log is reserved for mission-critical databases.
+         * Controls use of Exadata Smart Flash Log by a database.
+         * This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
          *
          * @param isFlashLogOn the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlashLogOn(Boolean isFlashLogOn) {
             this.isFlashLogOn = isFlashLogOn;
             this.__explicitlySet__.add("isFlashLogOn");
             return this;
         }
         /**
-         * Controls use of persistent memory logging (PMEM log) by a database. This ensures that
-         * PMEM log is reserved for mission-critical databases.
-         */
+         * Controls use of persistent memory logging (PMEM log) by a database.
+         * This ensures that PMEM log is reserved for mission-critical databases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPmemLogOn")
         private Boolean isPmemLogOn;
 
         /**
-         * Controls use of persistent memory logging (PMEM log) by a database. This ensures that
-         * PMEM log is reserved for mission-critical databases.
+         * Controls use of persistent memory logging (PMEM log) by a database.
+         * This ensures that PMEM log is reserved for mission-critical databases.
          *
          * @param isPmemLogOn the value to set
          * @return this builder
-         */
+         **/
         public Builder isPmemLogOn(Boolean isPmemLogOn) {
             this.isPmemLogOn = isPmemLogOn;
             this.__explicitlySet__.add("isPmemLogOn");
             return this;
         }
         /**
-         * Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not
-         * full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You
-         * can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify
-         * larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at
-         * least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the
-         * same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it
-         * is specified.
-         */
+         * Defines a soft limit for space usage in Exadata Smart Flash Cache.
+         * If the cache is not full, the limit can be exceeded.
+         * You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes),
+         * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+         * The value for flashcachelimit must be at least 4 MB.
+         * The flashcachelimit and flashcachesize attributes cannot be specified in the same directive.
+         * The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flashCacheLimit")
         private String flashCacheLimit;
 
         /**
-         * Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not
-         * full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You
-         * can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify
-         * larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at
-         * least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the
-         * same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it
-         * is specified.
+         * Defines a soft limit for space usage in Exadata Smart Flash Cache.
+         * If the cache is not full, the limit can be exceeded.
+         * You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes),
+         * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+         * The value for flashcachelimit must be at least 4 MB.
+         * The flashcachelimit and flashcachesize attributes cannot be specified in the same directive.
+         * The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
          *
          * @param flashCacheLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder flashCacheLimit(String flashCacheLimit) {
             this.flashCacheLimit = flashCacheLimit;
             this.__explicitlySet__.add("flashCacheLimit");
             return this;
         }
         /**
-         * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify
-         * the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G
-         * (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
-         * The value for flashcachemin must be at least 4 MB. In any plan, the sum of all
-         * flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If
-         * flashcachelimit is specified, then the value for flashcachemin cannot exceed
-         * flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot
-         * exceed flashcachesize.
-         */
+         * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache.
+         * You specify the value for flashcachemin in bytes. You can also use the suffixes
+         * M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+         * The value for flashcachemin must be at least 4 MB.
+         * In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache.
+         * If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit.
+         * If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flashCacheMin")
         private String flashCacheMin;
 
         /**
-         * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify
-         * the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G
-         * (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
-         * The value for flashcachemin must be at least 4 MB. In any plan, the sum of all
-         * flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If
-         * flashcachelimit is specified, then the value for flashcachemin cannot exceed
-         * flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot
-         * exceed flashcachesize.
+         * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache.
+         * You specify the value for flashcachemin in bytes. You can also use the suffixes
+         * M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+         * The value for flashcachemin must be at least 4 MB.
+         * In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache.
+         * If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit.
+         * If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
          *
          * @param flashCacheMin the value to set
          * @return this builder
-         */
+         **/
         public Builder flashCacheMin(String flashCacheMin) {
             this.flashCacheMin = flashCacheMin;
             this.__explicitlySet__.add("flashCacheMin");
             return this;
         }
         /**
-         * Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be
-         * exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart
-         * Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then
-         * each flashcachesize definition represents a guaranteed space allocation. However,
-         * starting with Oracle Exadata System Software release 19.2.0 you can use the
-         * flashcachesize attribute to over-provision space in Exadata Smart Flash Cache.
-         * Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the
-         * flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
-         */
+         * Defines a hard limit for space usage in Exadata Smart Flash Cache.
+         * The limit cannot be exceeded, even if the cache is not full.
+         * In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin
+         * and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation.
+         * However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize
+         * attribute to over-provision space in Exadata Smart Flash Cache. Consequently,
+         * if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize
+         * allocations, then only flashcachemin is guaranteed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flashCacheSize")
         private String flashCacheSize;
 
         /**
-         * Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be
-         * exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart
-         * Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then
-         * each flashcachesize definition represents a guaranteed space allocation. However,
-         * starting with Oracle Exadata System Software release 19.2.0 you can use the
-         * flashcachesize attribute to over-provision space in Exadata Smart Flash Cache.
-         * Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the
-         * flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
+         * Defines a hard limit for space usage in Exadata Smart Flash Cache.
+         * The limit cannot be exceeded, even if the cache is not full.
+         * In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin
+         * and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation.
+         * However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize
+         * attribute to over-provision space in Exadata Smart Flash Cache. Consequently,
+         * if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize
+         * allocations, then only flashcachemin is guaranteed.
          *
          * @param flashCacheSize the value to set
          * @return this builder
-         */
+         **/
         public Builder flashCacheSize(String flashCacheSize) {
             this.flashCacheSize = flashCacheSize;
             this.__explicitlySet__.add("flashCacheSize");
             return this;
         }
         /**
-         * Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache
-         * is not full, the limit can be exceeded. You specify the value for pmemcachelimit in
-         * bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to
-         * specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must
-         * be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in
-         * the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if
-         * it is specified.
-         */
+         * Defines a soft limit for space usage in the persistent memory (PMEM) cache.
+         * If the cache is not full, the limit can be exceeded.
+         * You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes),
+         * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+         * The value for pmemcachelimit must be at least 4 MB.
+         * The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive.
+         * The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pmemCacheLimit")
         private String pmemCacheLimit;
 
         /**
-         * Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache
-         * is not full, the limit can be exceeded. You specify the value for pmemcachelimit in
-         * bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to
-         * specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must
-         * be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in
-         * the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if
-         * it is specified.
+         * Defines a soft limit for space usage in the persistent memory (PMEM) cache.
+         * If the cache is not full, the limit can be exceeded.
+         * You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes),
+         * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+         * The value for pmemcachelimit must be at least 4 MB.
+         * The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive.
+         * The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
          *
          * @param pmemCacheLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder pmemCacheLimit(String pmemCacheLimit) {
             this.pmemCacheLimit = pmemCacheLimit;
             this.__explicitlySet__.add("pmemCacheLimit");
@@ -375,7 +389,8 @@ public final class DatabasePlanDirective
         }
         /**
          * Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pmemCacheMin")
         private String pmemCacheMin;
 
@@ -384,111 +399,109 @@ public final class DatabasePlanDirective
          *
          * @param pmemCacheMin the value to set
          * @return this builder
-         */
+         **/
         public Builder pmemCacheMin(String pmemCacheMin) {
             this.pmemCacheMin = pmemCacheMin;
             this.__explicitlySet__.add("pmemCacheMin");
             return this;
         }
         /**
-         * Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit
-         * cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the
-         * PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then
-         * each pmemcachesize definition represents a guaranteed space allocation. However, you can
-         * use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently,
-         * if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize
+         * Defines a hard limit for space usage in the persistent memory (PMEM) cache.
+         * The limit cannot be exceeded, even if the cache is not full.
+         * In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and
+         * pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation.
+         * However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache.
+         * Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize
          * allocations, then only pmemcachemin is guaranteed.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pmemCacheSize")
         private String pmemCacheSize;
 
         /**
-         * Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit
-         * cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the
-         * PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then
-         * each pmemcachesize definition represents a guaranteed space allocation. However, you can
-         * use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently,
-         * if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize
+         * Defines a hard limit for space usage in the persistent memory (PMEM) cache.
+         * The limit cannot be exceeded, even if the cache is not full.
+         * In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and
+         * pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation.
+         * However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache.
+         * Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize
          * allocations, then only pmemcachemin is guaranteed.
          *
          * @param pmemCacheSize the value to set
          * @return this builder
-         */
+         **/
         public Builder pmemCacheSize(String pmemCacheSize) {
             this.pmemCacheSize = pmemCacheSize;
             this.__explicitlySet__.add("pmemCacheSize");
             return this;
         }
         /**
-         * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster
-         * attribute to distinguish between databases with the same name running in different Oracle
-         * ASM clusters.
-         */
+         * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to
+         * distinguish between databases with the same name running in different Oracle ASM clusters.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("asmCluster")
         private String asmCluster;
 
         /**
-         * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster
-         * attribute to distinguish between databases with the same name running in different Oracle
-         * ASM clusters.
+         * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to
+         * distinguish between databases with the same name running in different Oracle ASM clusters.
          *
          * @param asmCluster the value to set
          * @return this builder
-         */
+         **/
         public Builder asmCluster(String asmCluster) {
             this.asmCluster = asmCluster;
             this.__explicitlySet__.add("asmCluster");
             return this;
         }
         /**
-         * Enables you to create a profile or template, to ease management and configuration of
-         * resource plans in environments with many databases.
+         * Enables you to create a profile or template, to ease management and configuration of resource plans
+         * in environments with many databases.
+         * <p>
+         * - type=database: Specifies a directive that applies to a specific database.
+         * If type in not specified, then the directive defaults to the database type.
+         * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+         * <p>
+         * To associate a database with an IORM profile, you must set the database initialization
+         *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
          *
-         * <p>- type=database: Specifies a directive that applies to a specific database. If type in
-         * not specified, then the directive defaults to the database type. - type=profile:
-         * Specifies a directive that applies to a profile rather than a specific database.
-         *
-         * <p>To associate a database with an IORM profile, you must set the database initialization
-         * parameter db_performance_profile to the value of the profile name. Databases that map to
-         * a profile inherit the settings specified in the profile.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DatabasePlanTypeEnum type;
 
         /**
-         * Enables you to create a profile or template, to ease management and configuration of
-         * resource plans in environments with many databases.
-         *
-         * <p>- type=database: Specifies a directive that applies to a specific database. If type in
-         * not specified, then the directive defaults to the database type. - type=profile:
-         * Specifies a directive that applies to a profile rather than a specific database.
-         *
-         * <p>To associate a database with an IORM profile, you must set the database initialization
-         * parameter db_performance_profile to the value of the profile name. Databases that map to
-         * a profile inherit the settings specified in the profile.
+         * Enables you to create a profile or template, to ease management and configuration of resource plans
+         * in environments with many databases.
+         * <p>
+         * - type=database: Specifies a directive that applies to a specific database.
+         * If type in not specified, then the directive defaults to the database type.
+         * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+         * <p>
+         * To associate a database with an IORM profile, you must set the database initialization
+         *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(DatabasePlanTypeEnum type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Enables you to specify different plan directives based on the Oracle Data Guard database
-         * role.
-         */
+         * Enables you to specify different plan directives based on the Oracle Data Guard database role.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private DatabasePlanRoleEnum role;
 
         /**
-         * Enables you to specify different plan directives based on the Oracle Data Guard database
-         * role.
+         * Enables you to specify different plan directives based on the Oracle Data Guard database role.
          *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(DatabasePlanRoleEnum role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -585,7 +598,9 @@ public final class DatabasePlanDirective
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -594,36 +609,40 @@ public final class DatabasePlanDirective
         return new Builder().copy(this);
     }
 
-    /** The name of a database or a profile. */
+    /**
+     * The name of a database or a profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of a database or a profile.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The relative priority of a database in the database plan. A higher share value implies higher
-     * priority and more access to the I/O resources. Use either share or (level, allocation). All
-     * plan directives in a database plan should use the same setting. Share-based resource
-     * allocation is the recommended method for a database plan.
-     */
+     * The relative priority of a database in the database plan. A higher share value implies
+     * higher priority and more access to the I/O resources.
+     * Use either share or (level, allocation). All plan directives in a database plan
+     * should use the same setting.
+     * Share-based resource allocation is the recommended method for a database plan.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("share")
     private final Integer share;
 
     /**
-     * The relative priority of a database in the database plan. A higher share value implies higher
-     * priority and more access to the I/O resources. Use either share or (level, allocation). All
-     * plan directives in a database plan should use the same setting. Share-based resource
-     * allocation is the recommended method for a database plan.
+     * The relative priority of a database in the database plan. A higher share value implies
+     * higher priority and more access to the I/O resources.
+     * Use either share or (level, allocation). All plan directives in a database plan
+     * should use the same setting.
+     * Share-based resource allocation is the recommended method for a database plan.
      *
      * @return the value
-     */
+     **/
     public Integer getShare() {
         return share;
     }
@@ -631,7 +650,8 @@ public final class DatabasePlanDirective
     /**
      * The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first,
      * and then remaining resources are allocated to level 2, and so on.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Integer level;
 
@@ -640,12 +660,15 @@ public final class DatabasePlanDirective
      * and then remaining resources are allocated to level 2, and so on.
      *
      * @return the value
-     */
+     **/
     public Integer getLevel() {
         return level;
     }
 
-    /** The resource allocation as a percentage (0-100) within the level. */
+    /**
+     * The resource allocation as a percentage (0-100) within the level.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allocation")
     private final Integer allocation;
 
@@ -653,203 +676,219 @@ public final class DatabasePlanDirective
      * The resource allocation as a percentage (0-100) within the level.
      *
      * @return the value
-     */
+     **/
     public Integer getAllocation() {
         return allocation;
     }
 
-    /** The maximum I/O utilization limit as a percentage of the available resources. */
+    /**
+     * The maximum I/O utilization limit as a percentage of the available resources.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final Integer limit;
 
     /**
      * The maximum I/O utilization limit as a percentage of the available resources.
-     *
      * @return the value
-     */
+     **/
     public Integer getLimit() {
         return limit;
     }
 
     /**
-     * Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is
-     * reserved for mission-critical databases. flashcache=off is invalid in a directive that
-     * contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
-     */
+     * Controls use of Exadata Smart Flash Cache by a database.
+     * This ensures that cache space is reserved for mission-critical databases.
+     * flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlashCacheOn")
     private final Boolean isFlashCacheOn;
 
     /**
-     * Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is
-     * reserved for mission-critical databases. flashcache=off is invalid in a directive that
-     * contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
+     * Controls use of Exadata Smart Flash Cache by a database.
+     * This ensures that cache space is reserved for mission-critical databases.
+     * flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFlashCacheOn() {
         return isFlashCacheOn;
     }
 
     /**
-     * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache
-     * space is reserved for mission-critical databases. pmemcache=off is invalid in a directive
-     * that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
-     */
+     * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space
+     * is reserved for mission-critical databases.
+     * pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPmemCacheOn")
     private final Boolean isPmemCacheOn;
 
     /**
-     * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache
-     * space is reserved for mission-critical databases. pmemcache=off is invalid in a directive
-     * that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
+     * Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space
+     * is reserved for mission-critical databases.
+     * pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPmemCacheOn() {
         return isPmemCacheOn;
     }
 
     /**
-     * Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash
-     * Log is reserved for mission-critical databases.
-     */
+     * Controls use of Exadata Smart Flash Log by a database.
+     * This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlashLogOn")
     private final Boolean isFlashLogOn;
 
     /**
-     * Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash
-     * Log is reserved for mission-critical databases.
+     * Controls use of Exadata Smart Flash Log by a database.
+     * This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFlashLogOn() {
         return isFlashLogOn;
     }
 
     /**
-     * Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM
-     * log is reserved for mission-critical databases.
-     */
+     * Controls use of persistent memory logging (PMEM log) by a database.
+     * This ensures that PMEM log is reserved for mission-critical databases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPmemLogOn")
     private final Boolean isPmemLogOn;
 
     /**
-     * Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM
-     * log is reserved for mission-critical databases.
+     * Controls use of persistent memory logging (PMEM log) by a database.
+     * This ensures that PMEM log is reserved for mission-critical databases.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPmemLogOn() {
         return isPmemLogOn;
     }
 
     /**
-     * Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full,
-     * the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also
-     * use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For
-     * example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The
-     * flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The
-     * value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
-     */
+     * Defines a soft limit for space usage in Exadata Smart Flash Cache.
+     * If the cache is not full, the limit can be exceeded.
+     * You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes),
+     * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+     * The value for flashcachelimit must be at least 4 MB.
+     * The flashcachelimit and flashcachesize attributes cannot be specified in the same directive.
+     * The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flashCacheLimit")
     private final String flashCacheLimit;
 
     /**
-     * Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full,
-     * the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also
-     * use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For
-     * example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The
-     * flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The
-     * value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
+     * Defines a soft limit for space usage in Exadata Smart Flash Cache.
+     * If the cache is not full, the limit can be exceeded.
+     * You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes),
+     * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+     * The value for flashcachelimit must be at least 4 MB.
+     * The flashcachelimit and flashcachesize attributes cannot be specified in the same directive.
+     * The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
      *
      * @return the value
-     */
+     **/
     public String getFlashCacheLimit() {
         return flashCacheLimit;
     }
 
     /**
-     * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the
-     * value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes),
-     * or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for
-     * flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot
-     * exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value
-     * for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the
-     * value for flashcachemin cannot exceed flashcachesize.
-     */
+     * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache.
+     * You specify the value for flashcachemin in bytes. You can also use the suffixes
+     * M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+     * The value for flashcachemin must be at least 4 MB.
+     * In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache.
+     * If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit.
+     * If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flashCacheMin")
     private final String flashCacheMin;
 
     /**
-     * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the
-     * value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes),
-     * or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for
-     * flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot
-     * exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value
-     * for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the
-     * value for flashcachemin cannot exceed flashcachesize.
+     * Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache.
+     * You specify the value for flashcachemin in bytes. You can also use the suffixes
+     * M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+     * The value for flashcachemin must be at least 4 MB.
+     * In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache.
+     * If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit.
+     * If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
      *
      * @return the value
-     */
+     **/
     public String getFlashCacheMin() {
         return flashCacheMin;
     }
 
     /**
-     * Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be
-     * exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash
-     * Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each
-     * flashcachesize definition represents a guaranteed space allocation. However, starting with
-     * Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to
-     * over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart
-     * Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then
-     * only flashcachemin is guaranteed.
-     */
+     * Defines a hard limit for space usage in Exadata Smart Flash Cache.
+     * The limit cannot be exceeded, even if the cache is not full.
+     * In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin
+     * and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation.
+     * However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize
+     * attribute to over-provision space in Exadata Smart Flash Cache. Consequently,
+     * if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize
+     * allocations, then only flashcachemin is guaranteed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flashCacheSize")
     private final String flashCacheSize;
 
     /**
-     * Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be
-     * exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash
-     * Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each
-     * flashcachesize definition represents a guaranteed space allocation. However, starting with
-     * Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to
-     * over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart
-     * Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then
-     * only flashcachemin is guaranteed.
+     * Defines a hard limit for space usage in Exadata Smart Flash Cache.
+     * The limit cannot be exceeded, even if the cache is not full.
+     * In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin
+     * and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation.
+     * However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize
+     * attribute to over-provision space in Exadata Smart Flash Cache. Consequently,
+     * if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize
+     * allocations, then only flashcachemin is guaranteed.
      *
      * @return the value
-     */
+     **/
     public String getFlashCacheSize() {
         return flashCacheSize;
     }
 
     /**
-     * Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is
-     * not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You
-     * can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger
-     * values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB.
+     * Defines a soft limit for space usage in the persistent memory (PMEM) cache.
+     * If the cache is not full, the limit can be exceeded.
+     * You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes),
+     * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+     * The value for pmemcachelimit must be at least 4 MB.
      * The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive.
      * The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pmemCacheLimit")
     private final String pmemCacheLimit;
 
     /**
-     * Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is
-     * not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You
-     * can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger
-     * values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB.
+     * Defines a soft limit for space usage in the persistent memory (PMEM) cache.
+     * If the cache is not full, the limit can be exceeded.
+     * You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes),
+     * G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T.
+     * The value for pmemcachelimit must be at least 4 MB.
      * The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive.
      * The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
      *
      * @return the value
-     */
+     **/
     public String getPmemCacheLimit() {
         return pmemCacheLimit;
     }
 
-    /** Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache. */
+    /**
+     * Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pmemCacheMin")
     private final String pmemCacheMin;
 
@@ -857,103 +896,101 @@ public final class DatabasePlanDirective
      * Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
      *
      * @return the value
-     */
+     **/
     public String getPmemCacheMin() {
         return pmemCacheMin;
     }
 
     /**
-     * Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot
-     * be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache
-     * can accommodate all of the pmemcachemin and pmemcachesize allocations, then each
-     * pmemcachesize definition represents a guaranteed space allocation. However, you can use the
-     * pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM
-     * cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then
-     * only pmemcachemin is guaranteed.
-     */
+     * Defines a hard limit for space usage in the persistent memory (PMEM) cache.
+     * The limit cannot be exceeded, even if the cache is not full.
+     * In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and
+     * pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation.
+     * However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache.
+     * Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize
+     * allocations, then only pmemcachemin is guaranteed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pmemCacheSize")
     private final String pmemCacheSize;
 
     /**
-     * Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot
-     * be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache
-     * can accommodate all of the pmemcachemin and pmemcachesize allocations, then each
-     * pmemcachesize definition represents a guaranteed space allocation. However, you can use the
-     * pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM
-     * cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then
-     * only pmemcachemin is guaranteed.
+     * Defines a hard limit for space usage in the persistent memory (PMEM) cache.
+     * The limit cannot be exceeded, even if the cache is not full.
+     * In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and
+     * pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation.
+     * However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache.
+     * Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize
+     * allocations, then only pmemcachemin is guaranteed.
      *
      * @return the value
-     */
+     **/
     public String getPmemCacheSize() {
         return pmemCacheSize;
     }
 
     /**
-     * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster
-     * attribute to distinguish between databases with the same name running in different Oracle ASM
-     * clusters.
-     */
+     * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to
+     * distinguish between databases with the same name running in different Oracle ASM clusters.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("asmCluster")
     private final String asmCluster;
 
     /**
-     * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster
-     * attribute to distinguish between databases with the same name running in different Oracle ASM
-     * clusters.
+     * Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to
+     * distinguish between databases with the same name running in different Oracle ASM clusters.
      *
      * @return the value
-     */
+     **/
     public String getAsmCluster() {
         return asmCluster;
     }
 
     /**
-     * Enables you to create a profile or template, to ease management and configuration of resource
-     * plans in environments with many databases.
+     * Enables you to create a profile or template, to ease management and configuration of resource plans
+     * in environments with many databases.
+     * <p>
+     * - type=database: Specifies a directive that applies to a specific database.
+     * If type in not specified, then the directive defaults to the database type.
+     * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+     * <p>
+     * To associate a database with an IORM profile, you must set the database initialization
+     *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
      *
-     * <p>- type=database: Specifies a directive that applies to a specific database. If type in not
-     * specified, then the directive defaults to the database type. - type=profile: Specifies a
-     * directive that applies to a profile rather than a specific database.
-     *
-     * <p>To associate a database with an IORM profile, you must set the database initialization
-     * parameter db_performance_profile to the value of the profile name. Databases that map to a
-     * profile inherit the settings specified in the profile.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DatabasePlanTypeEnum type;
 
     /**
-     * Enables you to create a profile or template, to ease management and configuration of resource
-     * plans in environments with many databases.
-     *
-     * <p>- type=database: Specifies a directive that applies to a specific database. If type in not
-     * specified, then the directive defaults to the database type. - type=profile: Specifies a
-     * directive that applies to a profile rather than a specific database.
-     *
-     * <p>To associate a database with an IORM profile, you must set the database initialization
-     * parameter db_performance_profile to the value of the profile name. Databases that map to a
-     * profile inherit the settings specified in the profile.
+     * Enables you to create a profile or template, to ease management and configuration of resource plans
+     * in environments with many databases.
+     * <p>
+     * - type=database: Specifies a directive that applies to a specific database.
+     * If type in not specified, then the directive defaults to the database type.
+     * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+     * <p>
+     * To associate a database with an IORM profile, you must set the database initialization
+     *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
      *
      * @return the value
-     */
+     **/
     public DatabasePlanTypeEnum getType() {
         return type;
     }
 
     /**
-     * Enables you to specify different plan directives based on the Oracle Data Guard database
-     * role.
-     */
+     * Enables you to specify different plan directives based on the Oracle Data Guard database role.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final DatabasePlanRoleEnum role;
 
     /**
-     * Enables you to specify different plan directives based on the Oracle Data Guard database
-     * role.
+     * Enables you to specify different plan directives based on the Oracle Data Guard database role.
      *
      * @return the value
-     */
+     **/
     public DatabasePlanRoleEnum getRole() {
         return role;
     }
@@ -965,7 +1002,6 @@ public final class DatabasePlanDirective
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of Identity Providers. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum AuthenticationIdentityProvider implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of Identity Providers.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum AuthenticationIdentityProvider {
     Generic("GENERIC"),
     Oam("OAM"),
     Google("GOOGLE"),

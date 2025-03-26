@@ -5,21 +5,19 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The response to a request to encrypt the plaintext data. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * The response to a request to encrypt the plaintext data.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EncryptedData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EncryptedData extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EncryptedData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ciphertext",
@@ -41,46 +39,49 @@ public final class EncryptedData extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The encrypted data. */
+        /**
+         * The encrypted data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
         private String ciphertext;
 
         /**
          * The encrypted data.
-         *
          * @param ciphertext the value to set
          * @return this builder
-         */
+         **/
         public Builder ciphertext(String ciphertext) {
             this.ciphertext = ciphertext;
             this.__explicitlySet__.add("ciphertext");
             return this;
         }
-        /** The OCID of the key used to encrypt the ciphertext. */
+        /**
+         * The OCID of the key used to encrypt the ciphertext.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
          * The OCID of the key used to encrypt the ciphertext.
-         *
          * @param keyId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-        /** The OCID of the key version used to encrypt the ciphertext. */
+        /**
+         * The OCID of the key version used to encrypt the ciphertext.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
 
         /**
          * The OCID of the key version used to encrypt the ciphertext.
-         *
          * @param keyVersionId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyVersionId(String keyVersionId) {
             this.keyVersionId = keyVersionId;
             this.__explicitlySet__.add("keyVersionId");
@@ -88,28 +89,27 @@ public final class EncryptedData extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
-         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced
-         * Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter
-         * Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the key is an asymmetric key that uses
-         * the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
-         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA
-         * encryption algorithm with a SHA-256 hash and uses OAEP.
-         */
+         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+         * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+         * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+         * and uses OAEP.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
         /**
          * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
-         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced
-         * Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter
-         * Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the key is an asymmetric key that uses
-         * the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
-         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA
-         * encryption algorithm with a SHA-256 hash and uses OAEP.
+         * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+         * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+         * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+         * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+         * and uses OAEP.
          *
          * @param encryptionAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
@@ -150,7 +150,9 @@ public final class EncryptedData extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,62 +161,65 @@ public final class EncryptedData extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The encrypted data. */
+    /**
+     * The encrypted data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ciphertext")
     private final String ciphertext;
 
     /**
      * The encrypted data.
-     *
      * @return the value
-     */
+     **/
     public String getCiphertext() {
         return ciphertext;
     }
 
-    /** The OCID of the key used to encrypt the ciphertext. */
+    /**
+     * The OCID of the key used to encrypt the ciphertext.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
      * The OCID of the key used to encrypt the ciphertext.
-     *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
-    /** The OCID of the key version used to encrypt the ciphertext. */
+    /**
+     * The OCID of the key version used to encrypt the ciphertext.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     private final String keyVersionId;
 
     /**
      * The OCID of the key version used to encrypt the ciphertext.
-     *
      * @return the value
-     */
+     **/
     public String getKeyVersionId() {
         return keyVersionId;
     }
 
     /**
      * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
-     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced
-     * Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter
-     * Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the key is an asymmetric key that uses the
-     * RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). {@code
-     * RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption
-     * algorithm with a SHA-256 hash and uses OAEP.
-     */
-    public enum EncryptionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+     * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+     * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+     * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+     * and uses OAEP.
+     *
+     **/
+    public enum EncryptionAlgorithm {
         Aes256Gcm("AES_256_GCM"),
         RsaOaepSha1("RSA_OAEP_SHA_1"),
         RsaOaepSha256("RSA_OAEP_SHA_256"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -255,27 +260,26 @@ public final class EncryptedData extends com.oracle.bmc.http.client.internal.Exp
     };
     /**
      * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
-     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced
-     * Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter
-     * Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the key is an asymmetric key that uses the
-     * RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). {@code
-     * RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption
-     * algorithm with a SHA-256 hash and uses OAEP.
-     */
+     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+     * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+     * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+     * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+     * and uses OAEP.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
     /**
      * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key.
-     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced
-     * Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter
-     * Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the key is an asymmetric key that uses the
-     * RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). {@code
-     * RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption
-     * algorithm with a SHA-256 hash and uses OAEP.
+     * {@code AES_256_GCM} indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+     * that the mode of encryption is the Galois/Counter Mode (GCM). {@code RSA_OAEP_SHA_1} indicates that the
+     * key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+     * {@code RSA_OAEP_SHA_256} indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+     * and uses OAEP.
      *
      * @return the value
-     */
+     **/
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }
@@ -287,7 +291,6 @@ public final class EncryptedData extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

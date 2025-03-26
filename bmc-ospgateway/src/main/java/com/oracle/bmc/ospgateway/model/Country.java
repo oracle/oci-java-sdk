@@ -5,21 +5,19 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Country details model <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+ * Country details model
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Country.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Country extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Country extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "countryId",
@@ -45,79 +43,80 @@ public final class Country extends com.oracle.bmc.http.client.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indentifier of the country. This is a DB side unique id which was generated when the
-         * entity was created in the table
-         */
+         * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryId")
         private java.math.BigDecimal countryId;
 
         /**
-         * Indentifier of the country. This is a DB side unique id which was generated when the
-         * entity was created in the table
-         *
+         * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
          * @param countryId the value to set
          * @return this builder
-         */
+         **/
         public Builder countryId(java.math.BigDecimal countryId) {
             this.countryId = countryId;
             this.__explicitlySet__.add("countryId");
             return this;
         }
-        /** Country code in ISO-3166-1 2-letter format */
+        /**
+         * Country code in ISO-3166-1 2-letter format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
         private String countryCode;
 
         /**
          * Country code in ISO-3166-1 2-letter format
-         *
          * @param countryCode the value to set
          * @return this builder
-         */
+         **/
         public Builder countryCode(String countryCode) {
             this.countryCode = countryCode;
             this.__explicitlySet__.add("countryCode");
             return this;
         }
-        /** Name of the country */
+        /**
+         * Name of the country
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryName")
         private String countryName;
 
         /**
          * Name of the country
-         *
          * @param countryName the value to set
          * @return this builder
-         */
+         **/
         public Builder countryName(String countryName) {
             this.countryName = countryName;
             this.__explicitlySet__.add("countryName");
             return this;
         }
-        /** Language identifier */
+        /**
+         * Language identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageId")
         private java.math.BigDecimal languageId;
 
         /**
          * Language identifier
-         *
          * @param languageId the value to set
          * @return this builder
-         */
+         **/
         public Builder languageId(java.math.BigDecimal languageId) {
             this.languageId = languageId;
             this.__explicitlySet__.add("languageId");
             return this;
         }
-        /** Country code in ISO-3166-1 3-letter format */
+        /**
+         * Country code in ISO-3166-1 3-letter format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ascii3CountryCode")
         private String ascii3CountryCode;
 
         /**
          * Country code in ISO-3166-1 3-letter format
-         *
          * @param ascii3CountryCode the value to set
          * @return this builder
-         */
+         **/
         public Builder ascii3CountryCode(String ascii3CountryCode) {
             this.ascii3CountryCode = ascii3CountryCode;
             this.__explicitlySet__.add("ascii3CountryCode");
@@ -162,7 +161,9 @@ public final class Country extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,70 +173,71 @@ public final class Country extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * Indentifier of the country. This is a DB side unique id which was generated when the entity
-     * was created in the table
-     */
+     * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryId")
     private final java.math.BigDecimal countryId;
 
     /**
-     * Indentifier of the country. This is a DB side unique id which was generated when the entity
-     * was created in the table
-     *
+     * Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getCountryId() {
         return countryId;
     }
 
-    /** Country code in ISO-3166-1 2-letter format */
+    /**
+     * Country code in ISO-3166-1 2-letter format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
     private final String countryCode;
 
     /**
      * Country code in ISO-3166-1 2-letter format
-     *
      * @return the value
-     */
+     **/
     public String getCountryCode() {
         return countryCode;
     }
 
-    /** Name of the country */
+    /**
+     * Name of the country
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
     private final String countryName;
 
     /**
      * Name of the country
-     *
      * @return the value
-     */
+     **/
     public String getCountryName() {
         return countryName;
     }
 
-    /** Language identifier */
+    /**
+     * Language identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageId")
     private final java.math.BigDecimal languageId;
 
     /**
      * Language identifier
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getLanguageId() {
         return languageId;
     }
 
-    /** Country code in ISO-3166-1 3-letter format */
+    /**
+     * Country code in ISO-3166-1 3-letter format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ascii3CountryCode")
     private final String ascii3CountryCode;
 
     /**
      * Country code in ISO-3166-1 3-letter format
-     *
      * @return the value
-     */
+     **/
     public String getAscii3CountryCode() {
         return ascii3CountryCode;
     }
@@ -247,7 +249,6 @@ public final class Country extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

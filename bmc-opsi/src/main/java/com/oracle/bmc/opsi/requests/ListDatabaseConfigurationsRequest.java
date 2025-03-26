@@ -6,94 +6,99 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListDatabaseConfigurationsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDatabaseConfigurationsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListDatabaseConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabaseConfigurationsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListDatabaseConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Unique Enterprise Manager bridge identifier */
+    /**
+     * Unique Enterprise Manager bridge identifier
+     */
     private String enterpriseManagerBridgeId;
 
-    /** Unique Enterprise Manager bridge identifier */
+    /**
+     * Unique Enterprise Manager bridge identifier
+     */
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
     /**
-     * Optional list of database insight resource
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private java.util.List<String> id;
 
     /**
-     * Optional list of database insight resource
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     public java.util.List<String> getId() {
         return id;
     }
     /**
-     * Optional list of database
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated DBaaS entity.
+     * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
      */
     private java.util.List<String> databaseId;
 
     /**
-     * Optional list of database
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated DBaaS entity.
+     * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
      */
     public java.util.List<String> getDatabaseId() {
         return databaseId;
     }
     /**
-     * Optional list of exadata insight resource
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of exadata insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private java.util.List<String> exadataInsightId;
 
     /**
-     * Optional list of exadata insight resource
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of exadata insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
     }
-    /** Filter by one or more cdb name. */
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
     private java.util.List<String> cdbName;
 
-    /** Filter by one or more cdb name. */
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
     public java.util.List<String> getCdbName() {
         return cdbName;
     }
     /**
-     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-     * EXTERNAL-PDB, EXTERNAL-NONCDB.
+     * Filter by one or more database type.
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+     *
      */
     private java.util.List<DatabaseType> databaseType;
 
     /**
-     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-     * EXTERNAL-PDB, EXTERNAL-NONCDB.
-     */
-    public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Filter by one or more database type.
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+     *
+     **/
+    public enum DatabaseType {
         AdwS("ADW-S"),
         AtpS("ATP-S"),
         AdwD("ADW-D"),
@@ -145,62 +150,75 @@ public class ListDatabaseConfigurationsRequest
     };
 
     /**
-     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-     * EXTERNAL-PDB, EXTERNAL-NONCDB.
+     * Filter by one or more database type.
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+     *
      */
     public java.util.List<DatabaseType> getDatabaseType() {
         return databaseType;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Database configuration list sort options. If {@code fields} parameter is selected, the {@code
-     * sortBy} parameter must be one of the fields specified.
+     * Database configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * Database configuration list sort options. If {@code fields} parameter is selected, the {@code
-     * sortBy} parameter must be one of the fields specified.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * Database configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+     *
+     **/
+    public enum SortBy {
         DatabaseName("databaseName"),
         DatabaseDisplayName("databaseDisplayName"),
         DatabaseType("databaseType"),
@@ -235,121 +253,141 @@ public class ListDatabaseConfigurationsRequest
     };
 
     /**
-     * Database configuration list sort options. If {@code fields} parameter is selected, the {@code
-     * sortBy} parameter must be one of the fields specified.
+     * Database configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Filter by one or more hostname. */
+    /**
+     * Filter by one or more hostname.
+     *
+     */
     private java.util.List<String> hostName;
 
-    /** Filter by one or more hostname. */
+    /**
+     * Filter by one or more hostname.
+     *
+     */
     public java.util.List<String> getHostName() {
         return hostName;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
-     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
-     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
-     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     private java.util.List<String> definedTagEquals;
 
     /**
-     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
-     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
-     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
-     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
     /**
-     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
-     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
-     * are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
      */
     private java.util.List<String> freeformTagEquals;
 
     /**
-     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
-     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
-     * are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
      */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified defined tags
-     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
-     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
-     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
-     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-     * different tag names, or both) are interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     private java.util.List<String> definedTagExists;
 
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified defined tags
-     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
-     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
-     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
-     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-     * different tag names, or both) are interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified freeform
-     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
-     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for different tag names are
-     * interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
      */
     private java.util.List<String> freeformTagExists;
 
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified freeform
-     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
-     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for different tag names are
-     * interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
      */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
-    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     private Boolean compartmentIdInSubtree;
 
-    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
-    /** Optional list of Exadata Insight VM cluster name. */
+    /**
+     * Optional list of Exadata Insight VM cluster name.
+     *
+     */
     private java.util.List<String> vmclusterName;
 
-    /** Optional list of Exadata Insight VM cluster name. */
+    /**
+     * Optional list of Exadata Insight VM cluster name.
+     *
+     */
     public java.util.List<String> getVmclusterName() {
         return vmclusterName;
     }
@@ -357,19 +395,17 @@ public class ListDatabaseConfigurationsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDatabaseConfigurationsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -378,12 +414,13 @@ public class ListDatabaseConfigurationsRequest
             return this;
         }
 
-        /** Unique Enterprise Manager bridge identifier */
+        /**
+         * Unique Enterprise Manager bridge identifier
+         */
         private String enterpriseManagerBridgeId = null;
 
         /**
          * Unique Enterprise Manager bridge identifier
-         *
          * @param enterpriseManagerBridgeId the value to set
          * @return this builder instance
          */
@@ -393,14 +430,13 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Optional list of database insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          */
         private java.util.List<String> id = null;
 
         /**
-         * Optional list of database insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance
@@ -411,8 +447,7 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. Optional list of database insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -422,16 +457,13 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Optional list of database
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated DBaaS entity.
+         * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
          */
         private java.util.List<String> databaseId = null;
 
         /**
-         * Optional list of database
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated DBaaS entity.
+         * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
          * @param databaseId the value to set
          * @return this builder instance
@@ -442,9 +474,7 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. Optional list of database
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated DBaaS entity.
+         * Singular setter. Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -454,14 +484,13 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Optional list of exadata insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of exadata insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          */
         private java.util.List<String> exadataInsightId = null;
 
         /**
-         * Optional list of exadata insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of exadata insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -472,8 +501,7 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. Optional list of exadata insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -482,7 +510,10 @@ public class ListDatabaseConfigurationsRequest
             return this.exadataInsightId(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by one or more cdb name. */
+        /**
+         * Filter by one or more cdb name.
+         *
+         */
         private java.util.List<String> cdbName = null;
 
         /**
@@ -507,14 +538,15 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-         * EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         *
          */
         private java.util.List<DatabaseType> databaseType = null;
 
         /**
-         * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-         * EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
          * @param databaseType the value to set
          * @return this builder instance
@@ -525,8 +557,8 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. Filter by one or more database type. Possible values are ADW-S, ATP-S,
-         * ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Singular setter. Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -536,17 +568,20 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -558,16 +593,17 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -577,7 +613,10 @@ public class ListDatabaseConfigurationsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -592,14 +631,13 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Database configuration list sort options. If {@code fields} parameter is selected, the
-         * {@code sortBy} parameter must be one of the fields specified.
+         * Database configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * Database configuration list sort options. If {@code fields} parameter is selected, the
-         * {@code sortBy} parameter must be one of the fields specified.
+         * Database configuration list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -609,7 +647,10 @@ public class ListDatabaseConfigurationsRequest
             return this;
         }
 
-        /** Filter by one or more hostname. */
+        /**
+         * Filter by one or more hostname.
+         *
+         */
         private java.util.List<String> hostName = null;
 
         /**
@@ -634,14 +675,15 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -652,20 +694,19 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * A list of tag filters to apply. Only resources with a defined tag matching the value will
-         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
-         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
          */
         private java.util.List<String> definedTagEquals = null;
 
         /**
-         * A list of tag filters to apply. Only resources with a defined tag matching the value will
-         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
-         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagEquals the value to set
          * @return this builder instance
@@ -676,11 +717,10 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply. Only resources with a defined tag
-         * matching the value will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.{value}". All inputs are case-insensitive. Multiple values for the
-         * same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different
-         * keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -690,18 +730,17 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * A list of tag filters to apply. Only resources with a freeform tag matching the value
-         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
-         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
-         * for different tag names are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
          */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
-         * A list of tag filters to apply. Only resources with a freeform tag matching the value
-         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
-         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
-         * for different tag names are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
          * @param freeformTagEquals the value to set
          * @return this builder instance
@@ -712,10 +751,9 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply. Only resources with a freeform tag
-         * matching the value will be returned. The key for each tag is "{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same tag name are interpreted as
-         * "OR". Values for different tag names are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -725,26 +763,23 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified defined
-         * tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
          */
         private java.util.List<String> definedTagExists = null;
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified defined
-         * tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagExists the value to set
          * @return this builder instance
@@ -755,14 +790,12 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply. Only resources for which the
-         * specified defined tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -772,20 +805,19 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified freeform
-         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
-         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
-         * Absence ("false" at the end) is not supported. Multiple values for different tag names
-         * are interpreted as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
          */
         private java.util.List<String> freeformTagExists = null;
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified freeform
-         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
-         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
-         * Absence ("false" at the end) is not supported. Multiple values for different tag names
-         * are interpreted as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
          *
          * @param freeformTagExists the value to set
          * @return this builder instance
@@ -796,11 +828,10 @@ public class ListDatabaseConfigurationsRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply. Only resources for which the
-         * specified freeform tags exist the value will be returned. The key for each tag is
-         * "{tagName}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * different tag names are interpreted as "AND".
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -809,7 +840,10 @@ public class ListDatabaseConfigurationsRequest
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
-        /** A flag to search all resources within a given compartment and all sub-compartments. */
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -823,7 +857,10 @@ public class ListDatabaseConfigurationsRequest
             return this;
         }
 
-        /** Optional list of Exadata Insight VM cluster name. */
+        /**
+         * Optional list of Exadata Insight VM cluster name.
+         *
+         */
         private java.util.List<String> vmclusterName = null;
 
         /**
@@ -849,19 +886,18 @@ public class ListDatabaseConfigurationsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -873,7 +909,6 @@ public class ListDatabaseConfigurationsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDatabaseConfigurationsRequest o) {
@@ -904,11 +939,10 @@ public class ListDatabaseConfigurationsRequest
         /**
          * Build the instance of ListDatabaseConfigurationsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDatabaseConfigurationsRequest
          */
@@ -922,8 +956,7 @@ public class ListDatabaseConfigurationsRequest
         /**
          * Build the instance of ListDatabaseConfigurationsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDatabaseConfigurationsRequest
@@ -950,16 +983,12 @@ public class ListDatabaseConfigurationsRequest
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.vmclusterName = vmclusterName;
             return request;
-            // new ListDatabaseConfigurationsRequest(compartmentId, enterpriseManagerBridgeId, id,
-            // databaseId, exadataInsightId, cdbName, databaseType, limit, page, sortOrder, sortBy,
-            // hostName, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists,
-            // freeformTagExists, compartmentIdInSubtree, vmclusterName);
+            // new ListDatabaseConfigurationsRequest(compartmentId, enterpriseManagerBridgeId, id, databaseId, exadataInsightId, cdbName, databaseType, limit, page, sortOrder, sortBy, hostName, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, vmclusterName);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -987,7 +1016,6 @@ public class ListDatabaseConfigurationsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

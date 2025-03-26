@@ -6,29 +6,35 @@ package com.oracle.bmc.capacitymanagement.requests;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccCustomerGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOccCustomerGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOccCustomerGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the customer group. */
+    /**
+     * The OCID of the customer group.
+     *
+     */
     private String occCustomerGroupId;
 
-    /** The OCID of the customer group. */
+    /**
+     * The OCID of the customer group.
+     *
+     */
     public String getOccCustomerGroupId() {
         return occCustomerGroupId;
     }
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -37,10 +43,14 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetOccCustomerGroupRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the customer group. */
+        /**
+         * The OCID of the customer group.
+         *
+         */
         private String occCustomerGroupId = null;
 
         /**
@@ -55,14 +65,15 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -74,19 +85,18 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -98,7 +108,6 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetOccCustomerGroupRequest o) {
@@ -112,11 +121,10 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of GetOccCustomerGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetOccCustomerGroupRequest
          */
@@ -130,8 +138,7 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of GetOccCustomerGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetOccCustomerGroupRequest
@@ -147,7 +154,6 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -156,7 +162,6 @@ public class GetOccCustomerGroupRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

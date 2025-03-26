@@ -8,8 +8,8 @@ public interface ProgressReporter {
     /**
      * Notification to indicate that progress was made during an upload operation.
      *
-     * <p>Note that the {@code completed} value may decrease from one invocation to the next if any
-     * part of the upload to to be retried.
+     * Note that the {@code completed} value may decrease from one invocation to the next if any part
+     * of the upload to to be retried.
      *
      * @param completed The number of bytes that have been already been uploaded for this operation.
      * @param total The total number of bytes to upload for this operation.

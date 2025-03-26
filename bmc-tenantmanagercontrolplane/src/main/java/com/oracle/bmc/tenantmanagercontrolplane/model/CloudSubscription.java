@@ -5,25 +5,25 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Subscription information for compartment ID. Only root compartments are allowed. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * Subscription information for compartment ID. Only root compartments are allowed.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CloudSubscription.Builder.class)
+    builder = CloudSubscription.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entityVersion")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityVersion"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CloudSubscription extends Subscription {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -90,46 +90,49 @@ public final class CloudSubscription extends Subscription {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** Unique Oracle Cloud Subscriptions identifier that is immutable on creation. */
+        /**
+         * Unique Oracle Cloud Subscriptions identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionNumber")
         private String subscriptionNumber;
 
         /**
          * Unique Oracle Cloud Subscriptions identifier that is immutable on creation.
-         *
          * @param subscriptionNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionNumber(String subscriptionNumber) {
             this.subscriptionNumber = subscriptionNumber;
             this.__explicitlySet__.add("subscriptionNumber");
             return this;
         }
-        /** Currency code. For example USD, MXN. */
+        /**
+         * Currency code. For example USD, MXN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
         /**
          * Currency code. For example USD, MXN.
-         *
          * @param currencyCode the value to set
          * @return this builder
-         */
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-        /** Lifecycle state of the subscription. */
+        /**
+         * Lifecycle state of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SubscriptionLifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the subscription.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(SubscriptionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -194,7 +197,9 @@ public final class CloudSubscription extends Subscription {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,41 +226,44 @@ public final class CloudSubscription extends Subscription {
         this.lifecycleState = lifecycleState;
     }
 
-    /** Unique Oracle Cloud Subscriptions identifier that is immutable on creation. */
+    /**
+     * Unique Oracle Cloud Subscriptions identifier that is immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionNumber")
     private final String subscriptionNumber;
 
     /**
      * Unique Oracle Cloud Subscriptions identifier that is immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getSubscriptionNumber() {
         return subscriptionNumber;
     }
 
-    /** Currency code. For example USD, MXN. */
+    /**
+     * Currency code. For example USD, MXN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
     /**
      * Currency code. For example USD, MXN.
-     *
      * @return the value
-     */
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
 
-    /** Lifecycle state of the subscription. */
+    /**
+     * Lifecycle state of the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SubscriptionLifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the subscription.
-     *
      * @return the value
-     */
+     **/
     public SubscriptionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -267,7 +275,6 @@ public final class CloudSubscription extends Subscription {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

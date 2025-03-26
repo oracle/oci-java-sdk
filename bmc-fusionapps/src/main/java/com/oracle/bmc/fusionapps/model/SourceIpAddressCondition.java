@@ -5,47 +5,48 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * An access control rule condition that requires a match on the specified source IP address or
- * address range. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * An access control rule condition that requires a match on the specified source IP address or address range.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SourceIpAddressCondition.Builder.class)
+    builder = SourceIpAddressCondition.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "attributeName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "attributeName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SourceIpAddressCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An IPv4 or IPv6 address range that the source IP address of an incoming packet must
-         * match. The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y
-         * or x:x::x/y) strings. Specify 0.0.0.0/0 or ::/0 to match all incoming traffic. example:
-         * "192.168.0.0/16"
-         */
+         * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
+         * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
+         * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
+         * example: "192.168.0.0/16"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
         private String attributeValue;
 
         /**
-         * An IPv4 or IPv6 address range that the source IP address of an incoming packet must
-         * match. The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y
-         * or x:x::x/y) strings. Specify 0.0.0.0/0 or ::/0 to match all incoming traffic. example:
-         * "192.168.0.0/16"
+         * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
+         * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
+         * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
+         * example: "192.168.0.0/16"
          *
          * @param attributeValue the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeValue(String attributeValue) {
             this.attributeValue = attributeValue;
             this.__explicitlySet__.add("attributeValue");
@@ -72,7 +73,9 @@ public final class SourceIpAddressCondition extends RuleCondition {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -89,19 +92,22 @@ public final class SourceIpAddressCondition extends RuleCondition {
 
     /**
      * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
-     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y)
-     * strings. Specify 0.0.0.0/0 or ::/0 to match all incoming traffic. example: "192.168.0.0/16"
-     */
+     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
+     * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
+     * example: "192.168.0.0/16"
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
     private final String attributeValue;
 
     /**
      * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
-     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y)
-     * strings. Specify 0.0.0.0/0 or ::/0 to match all incoming traffic. example: "192.168.0.0/16"
+     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
+     * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
+     * example: "192.168.0.0/16"
      *
      * @return the value
-     */
+     **/
     public String getAttributeValue() {
         return attributeValue;
     }
@@ -113,7 +119,6 @@ public final class SourceIpAddressCondition extends RuleCondition {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

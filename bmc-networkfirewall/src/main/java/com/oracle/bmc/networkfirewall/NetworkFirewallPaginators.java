@@ -9,31 +9,23 @@ import com.oracle.bmc.networkfirewall.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of NetworkFirewall where multiple pages of data may be fetched. Two styles
- * of iteration are supported:
+ * to any list operations of NetworkFirewall where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class NetworkFirewallPaginators {
     private final NetworkFirewall client;
 
@@ -42,12 +34,11 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAddressLists operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAddressLists operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAddressListsResponse> listAddressListsResponseIterator(
             final ListAddressListsRequest request) {
@@ -93,21 +84,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.AddressListSummary} objects contained in responses from
-     * the listAddressLists operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.AddressListSummary} objects
+     * contained in responses from the listAddressLists operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.AddressListSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.AddressListSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.AddressListSummary>
             listAddressListsRecordIterator(final ListAddressListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAddressListsRequest.Builder,
-                ListAddressListsRequest,
-                ListAddressListsResponse,
+                ListAddressListsRequest.Builder, ListAddressListsRequest, ListAddressListsResponse,
                 com.oracle.bmc.networkfirewall.model.AddressListSummary>(
                 new java.util.function.Supplier<ListAddressListsRequest.Builder>() {
                     @Override
@@ -158,19 +146,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listApplicationGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listApplicationGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListApplicationGroupsResponse> listApplicationGroupsResponseIterator(
             final ListApplicationGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListApplicationGroupsRequest.Builder,
-                ListApplicationGroupsRequest,
+                ListApplicationGroupsRequest.Builder, ListApplicationGroupsRequest,
                 ListApplicationGroupsResponse>(
                 new java.util.function.Supplier<ListApplicationGroupsRequest.Builder>() {
                     @Override
@@ -213,21 +198,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.ApplicationGroupSummary} objects contained in responses
-     * from the listApplicationGroups operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.ApplicationGroupSummary} objects
+     * contained in responses from the listApplicationGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.ApplicationGroupSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.ApplicationGroupSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.ApplicationGroupSummary>
             listApplicationGroupsRecordIterator(final ListApplicationGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListApplicationGroupsRequest.Builder,
-                ListApplicationGroupsRequest,
+                ListApplicationGroupsRequest.Builder, ListApplicationGroupsRequest,
                 ListApplicationGroupsResponse,
                 com.oracle.bmc.networkfirewall.model.ApplicationGroupSummary>(
                 new java.util.function.Supplier<ListApplicationGroupsRequest.Builder>() {
@@ -282,12 +264,11 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listApplications operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listApplications operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListApplicationsResponse> listApplicationsResponseIterator(
             final ListApplicationsRequest request) {
@@ -333,21 +314,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.ApplicationSummary} objects contained in responses from
-     * the listApplications operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.ApplicationSummary} objects
+     * contained in responses from the listApplications operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.ApplicationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.ApplicationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.ApplicationSummary>
             listApplicationsRecordIterator(final ListApplicationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListApplicationsRequest.Builder,
-                ListApplicationsRequest,
-                ListApplicationsResponse,
+                ListApplicationsRequest.Builder, ListApplicationsRequest, ListApplicationsResponse,
                 com.oracle.bmc.networkfirewall.model.ApplicationSummary>(
                 new java.util.function.Supplier<ListApplicationsRequest.Builder>() {
                     @Override
@@ -398,19 +376,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDecryptionProfiles operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDecryptionProfiles operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDecryptionProfilesResponse> listDecryptionProfilesResponseIterator(
             final ListDecryptionProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDecryptionProfilesRequest.Builder,
-                ListDecryptionProfilesRequest,
+                ListDecryptionProfilesRequest.Builder, ListDecryptionProfilesRequest,
                 ListDecryptionProfilesResponse>(
                 new java.util.function.Supplier<ListDecryptionProfilesRequest.Builder>() {
                     @Override
@@ -453,21 +428,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.DecryptionProfileSummary} objects contained in responses
-     * from the listDecryptionProfiles operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.DecryptionProfileSummary} objects
+     * contained in responses from the listDecryptionProfiles operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.DecryptionProfileSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.DecryptionProfileSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.DecryptionProfileSummary>
             listDecryptionProfilesRecordIterator(final ListDecryptionProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDecryptionProfilesRequest.Builder,
-                ListDecryptionProfilesRequest,
+                ListDecryptionProfilesRequest.Builder, ListDecryptionProfilesRequest,
                 ListDecryptionProfilesResponse,
                 com.oracle.bmc.networkfirewall.model.DecryptionProfileSummary>(
                 new java.util.function.Supplier<ListDecryptionProfilesRequest.Builder>() {
@@ -522,18 +494,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDecryptionRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDecryptionRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDecryptionRulesResponse> listDecryptionRulesResponseIterator(
             final ListDecryptionRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDecryptionRulesRequest.Builder,
-                ListDecryptionRulesRequest,
+                ListDecryptionRulesRequest.Builder, ListDecryptionRulesRequest,
                 ListDecryptionRulesResponse>(
                 new java.util.function.Supplier<ListDecryptionRulesRequest.Builder>() {
                     @Override
@@ -575,21 +545,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.DecryptionRuleSummary} objects contained in responses
-     * from the listDecryptionRules operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.DecryptionRuleSummary} objects
+     * contained in responses from the listDecryptionRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.DecryptionRuleSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.DecryptionRuleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.DecryptionRuleSummary>
             listDecryptionRulesRecordIterator(final ListDecryptionRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDecryptionRulesRequest.Builder,
-                ListDecryptionRulesRequest,
+                ListDecryptionRulesRequest.Builder, ListDecryptionRulesRequest,
                 ListDecryptionRulesResponse,
                 com.oracle.bmc.networkfirewall.model.DecryptionRuleSummary>(
                 new java.util.function.Supplier<ListDecryptionRulesRequest.Builder>() {
@@ -643,18 +610,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMappedSecrets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMappedSecrets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMappedSecretsResponse> listMappedSecretsResponseIterator(
             final ListMappedSecretsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMappedSecretsRequest.Builder,
-                ListMappedSecretsRequest,
+                ListMappedSecretsRequest.Builder, ListMappedSecretsRequest,
                 ListMappedSecretsResponse>(
                 new java.util.function.Supplier<ListMappedSecretsRequest.Builder>() {
                     @Override
@@ -696,21 +661,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.MappedSecretSummary} objects contained in responses from
-     * the listMappedSecrets operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.MappedSecretSummary} objects
+     * contained in responses from the listMappedSecrets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.MappedSecretSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.MappedSecretSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.MappedSecretSummary>
             listMappedSecretsRecordIterator(final ListMappedSecretsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMappedSecretsRequest.Builder,
-                ListMappedSecretsRequest,
+                ListMappedSecretsRequest.Builder, ListMappedSecretsRequest,
                 ListMappedSecretsResponse,
                 com.oracle.bmc.networkfirewall.model.MappedSecretSummary>(
                 new java.util.function.Supplier<ListMappedSecretsRequest.Builder>() {
@@ -763,20 +725,17 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNetworkFirewallPolicies operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listNetworkFirewallPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNetworkFirewallPoliciesResponse>
             listNetworkFirewallPoliciesResponseIterator(
                     final ListNetworkFirewallPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNetworkFirewallPoliciesRequest.Builder,
-                ListNetworkFirewallPoliciesRequest,
+                ListNetworkFirewallPoliciesRequest.Builder, ListNetworkFirewallPoliciesRequest,
                 ListNetworkFirewallPoliciesResponse>(
                 new java.util.function.Supplier<ListNetworkFirewallPoliciesRequest.Builder>() {
                     @Override
@@ -819,22 +778,19 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummary} objects contained in
-     * responses from the listNetworkFirewallPolicies operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummary} objects
+     * contained in responses from the listNetworkFirewallPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummary>
             listNetworkFirewallPoliciesRecordIterator(
                     final ListNetworkFirewallPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNetworkFirewallPoliciesRequest.Builder,
-                ListNetworkFirewallPoliciesRequest,
+                ListNetworkFirewallPoliciesRequest.Builder, ListNetworkFirewallPoliciesRequest,
                 ListNetworkFirewallPoliciesResponse,
                 com.oracle.bmc.networkfirewall.model.NetworkFirewallPolicySummary>(
                 new java.util.function.Supplier<ListNetworkFirewallPoliciesRequest.Builder>() {
@@ -891,18 +847,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNetworkFirewalls operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNetworkFirewalls operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNetworkFirewallsResponse> listNetworkFirewallsResponseIterator(
             final ListNetworkFirewallsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNetworkFirewallsRequest.Builder,
-                ListNetworkFirewallsRequest,
+                ListNetworkFirewallsRequest.Builder, ListNetworkFirewallsRequest,
                 ListNetworkFirewallsResponse>(
                 new java.util.function.Supplier<ListNetworkFirewallsRequest.Builder>() {
                     @Override
@@ -944,21 +898,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary} objects contained in responses
-     * from the listNetworkFirewalls operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary} objects
+     * contained in responses from the listNetworkFirewalls operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary>
             listNetworkFirewallsRecordIterator(final ListNetworkFirewallsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNetworkFirewallsRequest.Builder,
-                ListNetworkFirewallsRequest,
+                ListNetworkFirewallsRequest.Builder, ListNetworkFirewallsRequest,
                 ListNetworkFirewallsResponse,
                 com.oracle.bmc.networkfirewall.model.NetworkFirewallSummary>(
                 new java.util.function.Supplier<ListNetworkFirewallsRequest.Builder>() {
@@ -1012,18 +963,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityRulesResponse> listSecurityRulesResponseIterator(
             final ListSecurityRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityRulesRequest.Builder,
-                ListSecurityRulesRequest,
+                ListSecurityRulesRequest.Builder, ListSecurityRulesRequest,
                 ListSecurityRulesResponse>(
                 new java.util.function.Supplier<ListSecurityRulesRequest.Builder>() {
                     @Override
@@ -1065,21 +1014,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.SecurityRuleSummary} objects contained in responses from
-     * the listSecurityRules operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.SecurityRuleSummary} objects
+     * contained in responses from the listSecurityRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.SecurityRuleSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.SecurityRuleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.SecurityRuleSummary>
             listSecurityRulesRecordIterator(final ListSecurityRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityRulesRequest.Builder,
-                ListSecurityRulesRequest,
+                ListSecurityRulesRequest.Builder, ListSecurityRulesRequest,
                 ListSecurityRulesResponse,
                 com.oracle.bmc.networkfirewall.model.SecurityRuleSummary>(
                 new java.util.function.Supplier<ListSecurityRulesRequest.Builder>() {
@@ -1132,12 +1078,11 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listServiceLists operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listServiceLists operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServiceListsResponse> listServiceListsResponseIterator(
             final ListServiceListsRequest request) {
@@ -1183,21 +1128,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.ServiceListSummary} objects contained in responses from
-     * the listServiceLists operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.ServiceListSummary} objects
+     * contained in responses from the listServiceLists operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.ServiceListSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.ServiceListSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.ServiceListSummary>
             listServiceListsRecordIterator(final ListServiceListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListServiceListsRequest.Builder,
-                ListServiceListsRequest,
-                ListServiceListsResponse,
+                ListServiceListsRequest.Builder, ListServiceListsRequest, ListServiceListsResponse,
                 com.oracle.bmc.networkfirewall.model.ServiceListSummary>(
                 new java.util.function.Supplier<ListServiceListsRequest.Builder>() {
                     @Override
@@ -1248,12 +1190,11 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listServices
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listServices operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServicesResponse> listServicesResponseIterator(
             final ListServicesRequest request) {
@@ -1298,21 +1239,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.ServiceSummary} objects contained in responses from the
-     * listServices operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.ServiceSummary} objects
+     * contained in responses from the listServices operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.ServiceSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.ServiceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.ServiceSummary> listServicesRecordIterator(
             final ListServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListServicesRequest.Builder,
-                ListServicesRequest,
-                ListServicesResponse,
+                ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse,
                 com.oracle.bmc.networkfirewall.model.ServiceSummary>(
                 new java.util.function.Supplier<ListServicesRequest.Builder>() {
                     @Override
@@ -1362,19 +1300,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTunnelInspectionRules operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listTunnelInspectionRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTunnelInspectionRulesResponse> listTunnelInspectionRulesResponseIterator(
             final ListTunnelInspectionRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTunnelInspectionRulesRequest.Builder,
-                ListTunnelInspectionRulesRequest,
+                ListTunnelInspectionRulesRequest.Builder, ListTunnelInspectionRulesRequest,
                 ListTunnelInspectionRulesResponse>(
                 new java.util.function.Supplier<ListTunnelInspectionRulesRequest.Builder>() {
                     @Override
@@ -1417,22 +1352,19 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary} objects contained in
-     * responses from the listTunnelInspectionRules operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary} objects
+     * contained in responses from the listTunnelInspectionRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary>
             listTunnelInspectionRulesRecordIterator(
                     final ListTunnelInspectionRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTunnelInspectionRulesRequest.Builder,
-                ListTunnelInspectionRulesRequest,
+                ListTunnelInspectionRulesRequest.Builder, ListTunnelInspectionRulesRequest,
                 ListTunnelInspectionRulesResponse,
                 com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary>(
                 new java.util.function.Supplier<ListTunnelInspectionRulesRequest.Builder>() {
@@ -1489,12 +1421,11 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listUrlLists
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listUrlLists operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUrlListsResponse> listUrlListsResponseIterator(
             final ListUrlListsRequest request) {
@@ -1539,21 +1470,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.UrlListSummary} objects contained in responses from the
-     * listUrlLists operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.UrlListSummary} objects
+     * contained in responses from the listUrlLists operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.UrlListSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.UrlListSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.UrlListSummary> listUrlListsRecordIterator(
             final ListUrlListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUrlListsRequest.Builder,
-                ListUrlListsRequest,
-                ListUrlListsResponse,
+                ListUrlListsRequest.Builder, ListUrlListsRequest, ListUrlListsResponse,
                 com.oracle.bmc.networkfirewall.model.UrlListSummary>(
                 new java.util.function.Supplier<ListUrlListsRequest.Builder>() {
                     @Override
@@ -1603,19 +1531,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1658,21 +1583,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.WorkRequestError} objects contained in responses from
-     * the listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.WorkRequestError} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.networkfirewall.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
@@ -1725,18 +1647,16 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1778,21 +1698,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry} objects contained in responses from
-     * the listWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.networkfirewall.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
@@ -1845,12 +1762,11 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1896,21 +1812,18 @@ public class NetworkFirewallPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.networkfirewall.model.WorkRequestSummary} objects contained in responses from
-     * the listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.networkfirewall.model.WorkRequestSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.networkfirewall.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.networkfirewall.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

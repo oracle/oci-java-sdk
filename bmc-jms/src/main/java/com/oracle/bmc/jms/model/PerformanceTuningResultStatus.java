@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Possible Performance Tuning Result statuses. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum PerformanceTuningResultStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Performance Tuning Result statuses.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum PerformanceTuningResultStatus {
     ActionRecommended("ACTION_RECOMMENDED"),
     NoWarnings("NO_WARNINGS"),
 

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudbridge.model;
 
-/** Lifecycle state of an asset source. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public enum AssetSourceLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle state of an asset source.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+public enum AssetSourceLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),

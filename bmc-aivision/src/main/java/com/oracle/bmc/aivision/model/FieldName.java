@@ -5,21 +5,19 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The name of a form field. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The name of a form field.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FieldName.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class FieldName extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class FieldName extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "confidence", "boundingPolygon", "wordIndexes"})
     public FieldName(
@@ -36,31 +34,33 @@ public final class FieldName extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the field. */
+        /**
+         * The name of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the field.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The confidence score between 0 and 1. */
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * The confidence score between 0 and 1.
-         *
          * @param confidence the value to set
          * @return this builder
-         */
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -75,16 +75,17 @@ public final class FieldName extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("boundingPolygon");
             return this;
         }
-        /** The indexes of the words in the field name. */
+        /**
+         * The indexes of the words in the field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
         private java.util.List<Integer> wordIndexes;
 
         /**
          * The indexes of the words in the field name.
-         *
          * @param wordIndexes the value to set
          * @return this builder
-         */
+         **/
         public Builder wordIndexes(java.util.List<Integer> wordIndexes) {
             this.wordIndexes = wordIndexes;
             this.__explicitlySet__.add("wordIndexes");
@@ -122,7 +123,9 @@ public final class FieldName extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,28 +134,30 @@ public final class FieldName extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The name of the field. */
+    /**
+     * The name of the field.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the field.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The confidence score between 0 and 1. */
+    /**
+     * The confidence score between 0 and 1.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * The confidence score between 0 and 1.
-     *
      * @return the value
-     */
+     **/
     public Float getConfidence() {
         return confidence;
     }
@@ -164,15 +169,16 @@ public final class FieldName extends com.oracle.bmc.http.client.internal.Explici
         return boundingPolygon;
     }
 
-    /** The indexes of the words in the field name. */
+    /**
+     * The indexes of the words in the field name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     private final java.util.List<Integer> wordIndexes;
 
     /**
      * The indexes of the words in the field name.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Integer> getWordIndexes() {
         return wordIndexes;
     }
@@ -184,7 +190,6 @@ public final class FieldName extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -42,7 +42,8 @@ public class NoMixedOciJavaSdkVersionsRuleTest {
                         .map(NoMixedOciJavaSdkVersionsRuleTest::toArtifact)
                         .collect(Collectors.toList());
         List<String> ignored =
-                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList).stream()
+                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList)
+                        .stream()
                         .map(NoMixedOciJavaSdkVersionsRuleTest::toSimpleGav)
                         .collect(Collectors.toList());
         assertThat(ignored.toString(), ignored, contains("javax.servlet:javax.servlet-api:2.1.0"));
@@ -50,7 +51,8 @@ public class NoMixedOciJavaSdkVersionsRuleTest {
         // try variations on allowedList
         allowedList.add("javax.crypto:javax.crypto");
         ignored =
-                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList).stream()
+                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList)
+                        .stream()
                         .map(NoMixedOciJavaSdkVersionsRuleTest::toSimpleGav)
                         .collect(Collectors.toList());
         assertThat(
@@ -62,7 +64,8 @@ public class NoMixedOciJavaSdkVersionsRuleTest {
         // with wildcards
         allowedList.add("*.servlet:*");
         ignored =
-                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList).stream()
+                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList)
+                        .stream()
                         .map(NoMixedOciJavaSdkVersionsRuleTest::toSimpleGav)
                         .collect(Collectors.toList());
         assertThat(
@@ -75,7 +78,8 @@ public class NoMixedOciJavaSdkVersionsRuleTest {
 
         allowedList.add("*javax.inject*");
         ignored =
-                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList).stream()
+                NoMixedOciJavaSdkVersionsRule.ignoredDependencies(artifacts, allowedList)
+                        .stream()
                         .map(NoMixedOciJavaSdkVersionsRuleTest::toSimpleGav)
                         .collect(Collectors.toList());
         assertThat(

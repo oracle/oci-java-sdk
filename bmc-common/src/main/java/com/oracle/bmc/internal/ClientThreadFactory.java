@@ -8,12 +8,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicLong;
 
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 import static java.lang.String.format;
 
 import com.oracle.bmc.util.internal.Validate;
 
-/** A thread factory for use in clients. */
+/**
+ * A thread factory for use in clients.
+ */
 public class ClientThreadFactory implements ThreadFactory {
     private final String nameFormat;
     private final Boolean isDaemon;

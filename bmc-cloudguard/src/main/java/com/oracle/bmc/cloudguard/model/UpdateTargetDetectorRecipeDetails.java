@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Parameters to be used to update a target detector recipe. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Parameters to be used to update a target detector recipe.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateTargetDetectorRecipeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateTargetDetectorRecipeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateTargetDetectorRecipeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "detectorRecipeId",
@@ -40,46 +39,49 @@ public final class UpdateTargetDetectorRecipeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the target detector recipe */
+        /**
+         * Unique identifier for the target detector recipe
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
 
         /**
          * Unique identifier for the target detector recipe
-         *
          * @param detectorRecipeId the value to set
          * @return this builder
-         */
+         **/
         public Builder detectorRecipeId(String detectorRecipeId) {
             this.detectorRecipeId = detectorRecipeId;
             this.__explicitlySet__.add("detectorRecipeId");
             return this;
         }
-        /** Is validation to be performed for attaching the detector recipe? */
+        /**
+         * Is validation to be performed for attaching the detector recipe?
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isValidationOnlyQuery")
         private Boolean isValidationOnlyQuery;
 
         /**
          * Is validation to be performed for attaching the detector recipe?
-         *
          * @param isValidationOnlyQuery the value to set
          * @return this builder
-         */
+         **/
         public Builder isValidationOnlyQuery(Boolean isValidationOnlyQuery) {
             this.isValidationOnlyQuery = isValidationOnlyQuery;
             this.__explicitlySet__.add("isValidationOnlyQuery");
             return this;
         }
-        /** List of updates to be applied to detector rules in target detector recipe */
+        /**
+         * List of updates to be applied to detector rules in target detector recipe
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
         /**
          * List of updates to be applied to detector rules in target detector recipe
-         *
          * @param detectorRules the value to set
          * @return this builder
-         */
+         **/
         public Builder detectorRules(
                 java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules) {
             this.detectorRules = detectorRules;
@@ -115,7 +117,9 @@ public final class UpdateTargetDetectorRecipeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,41 +128,44 @@ public final class UpdateTargetDetectorRecipeDetails
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the target detector recipe */
+    /**
+     * Unique identifier for the target detector recipe
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
     private final String detectorRecipeId;
 
     /**
      * Unique identifier for the target detector recipe
-     *
      * @return the value
-     */
+     **/
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
 
-    /** Is validation to be performed for attaching the detector recipe? */
+    /**
+     * Is validation to be performed for attaching the detector recipe?
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidationOnlyQuery")
     private final Boolean isValidationOnlyQuery;
 
     /**
      * Is validation to be performed for attaching the detector recipe?
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsValidationOnlyQuery() {
         return isValidationOnlyQuery;
     }
 
-    /** List of updates to be applied to detector rules in target detector recipe */
+    /**
+     * List of updates to be applied to detector rules in target detector recipe
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
     /**
      * List of updates to be applied to detector rules in target detector recipe
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UpdateTargetRecipeDetectorRuleDetails> getDetectorRules() {
         return detectorRules;
     }
@@ -170,7 +177,6 @@ public final class UpdateTargetDetectorRecipeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

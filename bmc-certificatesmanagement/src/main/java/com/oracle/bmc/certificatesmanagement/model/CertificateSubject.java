@@ -5,24 +5,22 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The subject of the certificate, which is a distinguished name that identifies the entity that
- * owns the public key in the certificate. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+ * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CertificateSubject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CertificateSubject
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CertificateSubject.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CertificateSubject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "commonName",
@@ -83,260 +81,273 @@ public final class CertificateSubject
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Common name or fully-qualified domain name (RDN CN). */
+        /**
+         * Common name or fully-qualified domain name (RDN CN).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commonName")
         private String commonName;
 
         /**
          * Common name or fully-qualified domain name (RDN CN).
-         *
          * @param commonName the value to set
          * @return this builder
-         */
+         **/
         public Builder commonName(String commonName) {
             this.commonName = commonName;
             this.__explicitlySet__.add("commonName");
             return this;
         }
-        /** Country name (RDN C). */
+        /**
+         * Country name (RDN C).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
          * Country name (RDN C).
-         *
          * @param country the value to set
          * @return this builder
-         */
+         **/
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /** Domain component (RDN DC). */
+        /**
+         * Domain component (RDN DC).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainComponent")
         private String domainComponent;
 
         /**
          * Domain component (RDN DC).
-         *
          * @param domainComponent the value to set
          * @return this builder
-         */
+         **/
         public Builder domainComponent(String domainComponent) {
             this.domainComponent = domainComponent;
             this.__explicitlySet__.add("domainComponent");
             return this;
         }
-        /** Distinguished name qualifier(RDN DNQ). */
+        /**
+         * Distinguished name qualifier(RDN DNQ).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("distinguishedNameQualifier")
         private String distinguishedNameQualifier;
 
         /**
          * Distinguished name qualifier(RDN DNQ).
-         *
          * @param distinguishedNameQualifier the value to set
          * @return this builder
-         */
+         **/
         public Builder distinguishedNameQualifier(String distinguishedNameQualifier) {
             this.distinguishedNameQualifier = distinguishedNameQualifier;
             this.__explicitlySet__.add("distinguishedNameQualifier");
             return this;
         }
-        /** Personal generational qualifier (for example, Sr., Jr. 3rd, or IV). */
+        /**
+         * Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("generationQualifier")
         private String generationQualifier;
 
         /**
          * Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-         *
          * @param generationQualifier the value to set
          * @return this builder
-         */
+         **/
         public Builder generationQualifier(String generationQualifier) {
             this.generationQualifier = generationQualifier;
             this.__explicitlySet__.add("generationQualifier");
             return this;
         }
-        /** Personal given name (RDN G or GN). */
+        /**
+         * Personal given name (RDN G or GN).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("givenName")
         private String givenName;
 
         /**
          * Personal given name (RDN G or GN).
-         *
          * @param givenName the value to set
          * @return this builder
-         */
+         **/
         public Builder givenName(String givenName) {
             this.givenName = givenName;
             this.__explicitlySet__.add("givenName");
             return this;
         }
-        /** Personal initials. */
+        /**
+         * Personal initials.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initials")
         private String initials;
 
         /**
          * Personal initials.
-         *
          * @param initials the value to set
          * @return this builder
-         */
+         **/
         public Builder initials(String initials) {
             this.initials = initials;
             this.__explicitlySet__.add("initials");
             return this;
         }
-        /** Locality (RDN L). */
+        /**
+         * Locality (RDN L).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localityName")
         private String localityName;
 
         /**
          * Locality (RDN L).
-         *
          * @param localityName the value to set
          * @return this builder
-         */
+         **/
         public Builder localityName(String localityName) {
             this.localityName = localityName;
             this.__explicitlySet__.add("localityName");
             return this;
         }
-        /** Organization (RDN O). */
+        /**
+         * Organization (RDN O).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organization")
         private String organization;
 
         /**
          * Organization (RDN O).
-         *
          * @param organization the value to set
          * @return this builder
-         */
+         **/
         public Builder organization(String organization) {
             this.organization = organization;
             this.__explicitlySet__.add("organization");
             return this;
         }
-        /** Organizational unit (RDN OU). */
+        /**
+         * Organizational unit (RDN OU).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
         private String organizationalUnit;
 
         /**
          * Organizational unit (RDN OU).
-         *
          * @param organizationalUnit the value to set
          * @return this builder
-         */
+         **/
         public Builder organizationalUnit(String organizationalUnit) {
             this.organizationalUnit = organizationalUnit;
             this.__explicitlySet__.add("organizationalUnit");
             return this;
         }
-        /** Subject pseudonym. */
+        /**
+         * Subject pseudonym.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pseudonym")
         private String pseudonym;
 
         /**
          * Subject pseudonym.
-         *
          * @param pseudonym the value to set
          * @return this builder
-         */
+         **/
         public Builder pseudonym(String pseudonym) {
             this.pseudonym = pseudonym;
             this.__explicitlySet__.add("pseudonym");
             return this;
         }
         /**
-         * Unique subject identifier, which is not the same as the certificate serial number (RDN
-         * SERIALNUMBER).
-         */
+         * Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
         private String serialNumber;
 
         /**
-         * Unique subject identifier, which is not the same as the certificate serial number (RDN
-         * SERIALNUMBER).
-         *
+         * Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
          * @param serialNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = serialNumber;
             this.__explicitlySet__.add("serialNumber");
             return this;
         }
-        /** State or province name (RDN ST or S). */
+        /**
+         * State or province name (RDN ST or S).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateOrProvinceName")
         private String stateOrProvinceName;
 
         /**
          * State or province name (RDN ST or S).
-         *
          * @param stateOrProvinceName the value to set
          * @return this builder
-         */
+         **/
         public Builder stateOrProvinceName(String stateOrProvinceName) {
             this.stateOrProvinceName = stateOrProvinceName;
             this.__explicitlySet__.add("stateOrProvinceName");
             return this;
         }
-        /** Street address (RDN STREET). */
+        /**
+         * Street address (RDN STREET).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("street")
         private String street;
 
         /**
          * Street address (RDN STREET).
-         *
          * @param street the value to set
          * @return this builder
-         */
+         **/
         public Builder street(String street) {
             this.street = street;
             this.__explicitlySet__.add("street");
             return this;
         }
-        /** Personal surname (RDN SN). */
+        /**
+         * Personal surname (RDN SN).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("surname")
         private String surname;
 
         /**
          * Personal surname (RDN SN).
-         *
          * @param surname the value to set
          * @return this builder
-         */
+         **/
         public Builder surname(String surname) {
             this.surname = surname;
             this.__explicitlySet__.add("surname");
             return this;
         }
-        /** Title (RDN T or TITLE). */
+        /**
+         * Title (RDN T or TITLE).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
          * Title (RDN T or TITLE).
-         *
          * @param title the value to set
          * @return this builder
-         */
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
-        /** User ID (RDN UID). */
+        /**
+         * User ID (RDN UID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * User ID (RDN UID).
-         *
          * @param userId the value to set
          * @return this builder
-         */
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
@@ -429,7 +440,9 @@ public final class CertificateSubject
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -438,227 +451,240 @@ public final class CertificateSubject
         return new Builder().copy(this);
     }
 
-    /** Common name or fully-qualified domain name (RDN CN). */
+    /**
+     * Common name or fully-qualified domain name (RDN CN).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonName")
     private final String commonName;
 
     /**
      * Common name or fully-qualified domain name (RDN CN).
-     *
      * @return the value
-     */
+     **/
     public String getCommonName() {
         return commonName;
     }
 
-    /** Country name (RDN C). */
+    /**
+     * Country name (RDN C).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
      * Country name (RDN C).
-     *
      * @return the value
-     */
+     **/
     public String getCountry() {
         return country;
     }
 
-    /** Domain component (RDN DC). */
+    /**
+     * Domain component (RDN DC).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainComponent")
     private final String domainComponent;
 
     /**
      * Domain component (RDN DC).
-     *
      * @return the value
-     */
+     **/
     public String getDomainComponent() {
         return domainComponent;
     }
 
-    /** Distinguished name qualifier(RDN DNQ). */
+    /**
+     * Distinguished name qualifier(RDN DNQ).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("distinguishedNameQualifier")
     private final String distinguishedNameQualifier;
 
     /**
      * Distinguished name qualifier(RDN DNQ).
-     *
      * @return the value
-     */
+     **/
     public String getDistinguishedNameQualifier() {
         return distinguishedNameQualifier;
     }
 
-    /** Personal generational qualifier (for example, Sr., Jr. 3rd, or IV). */
+    /**
+     * Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("generationQualifier")
     private final String generationQualifier;
 
     /**
      * Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-     *
      * @return the value
-     */
+     **/
     public String getGenerationQualifier() {
         return generationQualifier;
     }
 
-    /** Personal given name (RDN G or GN). */
+    /**
+     * Personal given name (RDN G or GN).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("givenName")
     private final String givenName;
 
     /**
      * Personal given name (RDN G or GN).
-     *
      * @return the value
-     */
+     **/
     public String getGivenName() {
         return givenName;
     }
 
-    /** Personal initials. */
+    /**
+     * Personal initials.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initials")
     private final String initials;
 
     /**
      * Personal initials.
-     *
      * @return the value
-     */
+     **/
     public String getInitials() {
         return initials;
     }
 
-    /** Locality (RDN L). */
+    /**
+     * Locality (RDN L).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localityName")
     private final String localityName;
 
     /**
      * Locality (RDN L).
-     *
      * @return the value
-     */
+     **/
     public String getLocalityName() {
         return localityName;
     }
 
-    /** Organization (RDN O). */
+    /**
+     * Organization (RDN O).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("organization")
     private final String organization;
 
     /**
      * Organization (RDN O).
-     *
      * @return the value
-     */
+     **/
     public String getOrganization() {
         return organization;
     }
 
-    /** Organizational unit (RDN OU). */
+    /**
+     * Organizational unit (RDN OU).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
     private final String organizationalUnit;
 
     /**
      * Organizational unit (RDN OU).
-     *
      * @return the value
-     */
+     **/
     public String getOrganizationalUnit() {
         return organizationalUnit;
     }
 
-    /** Subject pseudonym. */
+    /**
+     * Subject pseudonym.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pseudonym")
     private final String pseudonym;
 
     /**
      * Subject pseudonym.
-     *
      * @return the value
-     */
+     **/
     public String getPseudonym() {
         return pseudonym;
     }
 
     /**
-     * Unique subject identifier, which is not the same as the certificate serial number (RDN
-     * SERIALNUMBER).
-     */
+     * Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     private final String serialNumber;
 
     /**
-     * Unique subject identifier, which is not the same as the certificate serial number (RDN
-     * SERIALNUMBER).
-     *
+     * Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
      * @return the value
-     */
+     **/
     public String getSerialNumber() {
         return serialNumber;
     }
 
-    /** State or province name (RDN ST or S). */
+    /**
+     * State or province name (RDN ST or S).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateOrProvinceName")
     private final String stateOrProvinceName;
 
     /**
      * State or province name (RDN ST or S).
-     *
      * @return the value
-     */
+     **/
     public String getStateOrProvinceName() {
         return stateOrProvinceName;
     }
 
-    /** Street address (RDN STREET). */
+    /**
+     * Street address (RDN STREET).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("street")
     private final String street;
 
     /**
      * Street address (RDN STREET).
-     *
      * @return the value
-     */
+     **/
     public String getStreet() {
         return street;
     }
 
-    /** Personal surname (RDN SN). */
+    /**
+     * Personal surname (RDN SN).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("surname")
     private final String surname;
 
     /**
      * Personal surname (RDN SN).
-     *
      * @return the value
-     */
+     **/
     public String getSurname() {
         return surname;
     }
 
-    /** Title (RDN T or TITLE). */
+    /**
+     * Title (RDN T or TITLE).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
      * Title (RDN T or TITLE).
-     *
      * @return the value
-     */
+     **/
     public String getTitle() {
         return title;
     }
 
-    /** User ID (RDN UID). */
+    /**
+     * User ID (RDN UID).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * User ID (RDN UID).
-     *
      * @return the value
-     */
+     **/
     public String getUserId() {
         return userId;
     }
@@ -670,7 +696,6 @@ public final class CertificateSubject
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

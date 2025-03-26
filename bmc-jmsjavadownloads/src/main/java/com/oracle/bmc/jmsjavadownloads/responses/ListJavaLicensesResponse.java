@@ -6,17 +6,18 @@ package com.oracle.bmc.jmsjavadownloads.responses;
 
 import com.oracle.bmc.jmsjavadownloads.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
      *
      * @return the value
      */
@@ -25,18 +26,17 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. Include this value as the {@code page} parameter for the subsequent GET request to
-     * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. Include this value as the {@code page} parameter for the subsequent GET request to
-     * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -44,12 +44,13 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned {@code JavaLicenseCollection} instance. */
+    /**
+     * The returned JavaLicenseCollection instance.
+     */
     private com.oracle.bmc.jmsjavadownloads.model.JavaLicenseCollection javaLicenseCollection;
 
     /**
-     * The returned {@code JavaLicenseCollection} instance.
-     *
+     * The returned JavaLicenseCollection instance.
      * @return the value
      */
     public com.oracle.bmc.jmsjavadownloads.model.JavaLicenseCollection getJavaLicenseCollection() {
@@ -65,7 +66,7 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListJavaLicensesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.jmsjavadownloads.model.JavaLicenseCollection javaLicenseCollection) {
@@ -75,33 +76,31 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
         this.javaLicenseCollection = javaLicenseCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListJavaLicensesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -112,20 +111,17 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. Include this value as the {@code page} parameter for the subsequent GET
-         * request to get the next batch of items. For important details about how pagination works,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. Include this value as the {@code page} parameter for the subsequent GET
-         * request to get the next batch of items. For important details about how pagination works,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -135,12 +131,13 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code JavaLicenseCollection} instance. */
+        /**
+         * The returned JavaLicenseCollection instance.
+         */
         private com.oracle.bmc.jmsjavadownloads.model.JavaLicenseCollection javaLicenseCollection;
 
         /**
-         * The returned {@code JavaLicenseCollection} instance.
-         *
+         * The returned JavaLicenseCollection instance.
          * @param javaLicenseCollection the value to set
          * @return this builder
          */
@@ -152,10 +149,8 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListJavaLicensesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -168,10 +163,8 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListJavaLicensesResponse build() {
             return new ListJavaLicensesResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, javaLicenseCollection);
@@ -180,7 +173,6 @@ public class ListJavaLicensesResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

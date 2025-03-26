@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The configuration of the Database Management service. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The configuration of the Database Management service.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabaseManagementConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DatabaseManagementConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseManagementConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"databaseManagementStatus", "connectorId", "licenseModel"})
     public DatabaseManagementConfig(
@@ -36,41 +35,42 @@ public final class DatabaseManagementConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The status of the Database Management service. */
+        /**
+         * The status of the Database Management service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
         private DatabaseManagementStatus databaseManagementStatus;
 
         /**
          * The status of the Database Management service.
-         *
          * @param databaseManagementStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseManagementStatus(DatabaseManagementStatus databaseManagementStatus) {
             this.databaseManagementStatus = databaseManagementStatus;
             this.__explicitlySet__.add("databaseManagementStatus");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external database connector.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external database connector.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
          * @param connectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-        /** The Oracle license model that applies to the external database. */
+        /**
+         * The Oracle license model that applies to the external database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -79,7 +79,7 @@ public final class DatabaseManagementConfig
          *
          * @param licenseModel the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
@@ -114,7 +114,9 @@ public final class DatabaseManagementConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,8 +125,10 @@ public final class DatabaseManagementConfig
         return new Builder().copy(this);
     }
 
-    /** The status of the Database Management service. */
-    public enum DatabaseManagementStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the Database Management service.
+     **/
+    public enum DatabaseManagementStatus {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
         Disabling("DISABLING"),
@@ -133,8 +137,8 @@ public final class DatabaseManagementConfig
         FailedDisabling("FAILED_DISABLING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -173,44 +177,45 @@ public final class DatabaseManagementConfig
             return UnknownEnumValue;
         }
     };
-    /** The status of the Database Management service. */
+    /**
+     * The status of the Database Management service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
     private final DatabaseManagementStatus databaseManagementStatus;
 
     /**
      * The status of the Database Management service.
-     *
      * @return the value
-     */
+     **/
     public DatabaseManagementStatus getDatabaseManagementStatus() {
         return databaseManagementStatus;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external database connector.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external database connector.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
      * @return the value
-     */
+     **/
     public String getConnectorId() {
         return connectorId;
     }
 
-    /** The Oracle license model that applies to the external database. */
-    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Oracle license model that applies to the external database.
+     *
+     **/
+    public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -249,7 +254,10 @@ public final class DatabaseManagementConfig
             return UnknownEnumValue;
         }
     };
-    /** The Oracle license model that applies to the external database. */
+    /**
+     * The Oracle license model that applies to the external database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
@@ -257,7 +265,7 @@ public final class DatabaseManagementConfig
      * The Oracle license model that applies to the external database.
      *
      * @return the value
-     */
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
@@ -269,7 +277,6 @@ public final class DatabaseManagementConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

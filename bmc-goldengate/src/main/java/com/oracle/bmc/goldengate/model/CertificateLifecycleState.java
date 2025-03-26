@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Possible certificate lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum CertificateLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible certificate lifecycle states.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum CertificateLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),

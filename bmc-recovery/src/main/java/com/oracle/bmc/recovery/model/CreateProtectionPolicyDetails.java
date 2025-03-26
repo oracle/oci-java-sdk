@@ -5,23 +5,22 @@
 package com.oracle.bmc.recovery.model;
 
 /**
- * Describes the parameters required to create a custom protection policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+ * Describes the parameters required to create a custom protection policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateProtectionPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateProtectionPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateProtectionPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -53,146 +52,126 @@ public final class CreateProtectionPolicyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user provided name for the protection policy. The 'displayName' does not have to be
-         * unique, and it can be modified. Avoid entering confidential information.
-         */
+         * A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user provided name for the protection policy. The 'displayName' does not have to be
-         * unique, and it can be modified. Avoid entering confidential information.
-         *
+         * A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The maximum number of days to retain backups for a protected database. */
+        /**
+         * The maximum number of days to retain backups for a protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
         private Integer backupRetentionPeriodInDays;
 
         /**
          * The maximum number of days to retain backups for a protected database.
-         *
          * @param backupRetentionPeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
             this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
             this.__explicitlySet__.add("backupRetentionPeriodInDays");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Indicates whether the protection policy enforces Recovery Service to retain backups in
-         * the same cloud service environment where your Oracle Database is provisioned. This
-         * parameter is applicable if your Oracle Database runs in a different cloud service
-         * environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter
-         * to TRUE, then Recovery Service stores the database backups locally in the same cloud
-         * service environment where the database resides. For example, if your Oracle Database is
-         * provisioned on Microsoft Azure, then Recovery Service stores the database backups in
-         * Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection
-         * policy after you create it.
-         */
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+         * This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure.
+         * If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure.
+         * Note:
+         * You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
         private Boolean mustEnforceCloudLocality;
 
         /**
-         * Indicates whether the protection policy enforces Recovery Service to retain backups in
-         * the same cloud service environment where your Oracle Database is provisioned. This
-         * parameter is applicable if your Oracle Database runs in a different cloud service
-         * environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter
-         * to TRUE, then Recovery Service stores the database backups locally in the same cloud
-         * service environment where the database resides. For example, if your Oracle Database is
-         * provisioned on Microsoft Azure, then Recovery Service stores the database backups in
-         * Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection
-         * policy after you create it.
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+         * This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure.
+         * If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure.
+         * Note:
+         * You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
          *
          * @param mustEnforceCloudLocality the value to set
          * @return this builder
-         */
+         **/
         public Builder mustEnforceCloudLocality(Boolean mustEnforceCloudLocality) {
             this.mustEnforceCloudLocality = mustEnforceCloudLocality;
             this.__explicitlySet__.add("mustEnforceCloudLocality");
             return this;
         }
         /**
-         * An RFC3339 formatted datetime string that specifies the exact date and time for the
-         * retention lock to take effect and permanently lock the retention period defined in the
-         * policy.
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * <p>
+         * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+         * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+         * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+         * * However, you are only allowed to increase the retention period on or after the retention lock date.
+         * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
          *
-         * <p>The retention lock feature controls whether Recovery Service strictly preserves
-         * backups for the duration defined in a policy. Retention lock is useful to enforce
-         * recovery window compliance and to prevent unintentional modifications to protected
-         * database backups. * Recovery Service enforces a 14-day delay before the retention lock
-         * set for a policy can take effect. Therefore, you must set policyLockedDateTime to a date
-         * that occurs 14 days after the current date. * For example, assuming that the current date
-         * is Aug 1, 2023 9 pm, you can set policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug
-         * 15, 2023, 9:00 pm), or greater. * During the 14-day delay period, you can either increase
-         * or decrease the retention period in the policy. * However, you are only allowed to
-         * increase the retention period on or after the retention lock date. * You cannot change
-         * the value of policyLockedDateTime if the retention lock is already in effect.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
         private String policyLockedDateTime;
 
         /**
-         * An RFC3339 formatted datetime string that specifies the exact date and time for the
-         * retention lock to take effect and permanently lock the retention period defined in the
-         * policy.
-         *
-         * <p>The retention lock feature controls whether Recovery Service strictly preserves
-         * backups for the duration defined in a policy. Retention lock is useful to enforce
-         * recovery window compliance and to prevent unintentional modifications to protected
-         * database backups. * Recovery Service enforces a 14-day delay before the retention lock
-         * set for a policy can take effect. Therefore, you must set policyLockedDateTime to a date
-         * that occurs 14 days after the current date. * For example, assuming that the current date
-         * is Aug 1, 2023 9 pm, you can set policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug
-         * 15, 2023, 9:00 pm), or greater. * During the 14-day delay period, you can either increase
-         * or decrease the retention period in the policy. * However, you are only allowed to
-         * increase the retention period on or after the retention lock date. * You cannot change
-         * the value of policyLockedDateTime if the retention lock is already in effect.
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * <p>
+         * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+         * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+         * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+         * * However, you are only allowed to increase the retention period on or after the retention lock date.
+         * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
          *
          * @param policyLockedDateTime the value to set
          * @return this builder
-         */
+         **/
         public Builder policyLockedDateTime(String policyLockedDateTime) {
             this.policyLockedDateTime = policyLockedDateTime;
             this.__explicitlySet__.add("policyLockedDateTime");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -200,22 +179,19 @@ public final class CreateProtectionPolicyDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see
-         * [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-         */
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see
-         * [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -269,7 +245,9 @@ public final class CreateProtectionPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -279,150 +257,133 @@ public final class CreateProtectionPolicyDetails
     }
 
     /**
-     * A user provided name for the protection policy. The 'displayName' does not have to be unique,
-     * and it can be modified. Avoid entering confidential information.
-     */
+     * A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user provided name for the protection policy. The 'displayName' does not have to be unique,
-     * and it can be modified. Avoid entering confidential information.
-     *
+     * A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The maximum number of days to retain backups for a protected database. */
+    /**
+     * The maximum number of days to retain backups for a protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
     private final Integer backupRetentionPeriodInDays;
 
     /**
      * The maximum number of days to retain backups for a protected database.
-     *
      * @return the value
-     */
+     **/
     public Integer getBackupRetentionPeriodInDays() {
         return backupRetentionPeriodInDays;
     }
 
-    /** Compartment Identifier */
+    /**
+     * Compartment Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
-     * same cloud service environment where your Oracle Database is provisioned. This parameter is
-     * applicable if your Oracle Database runs in a different cloud service environment, such as
-     * Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery
-     * Service stores the database backups locally in the same cloud service environment where the
-     * database resides. For example, if your Oracle Database is provisioned on Microsoft Azure,
-     * then Recovery Service stores the database backups in Azure. Note: You cannot change the
-     * mustEnforceCloudLocality setting for a protection policy after you create it.
-     */
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure.
+     * If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure.
+     * Note:
+     * You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
     private final Boolean mustEnforceCloudLocality;
 
     /**
-     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
-     * same cloud service environment where your Oracle Database is provisioned. This parameter is
-     * applicable if your Oracle Database runs in a different cloud service environment, such as
-     * Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery
-     * Service stores the database backups locally in the same cloud service environment where the
-     * database resides. For example, if your Oracle Database is provisioned on Microsoft Azure,
-     * then Recovery Service stores the database backups in Azure. Note: You cannot change the
-     * mustEnforceCloudLocality setting for a protection policy after you create it.
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure.
+     * If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure.
+     * Note:
+     * You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
      *
      * @return the value
-     */
+     **/
     public Boolean getMustEnforceCloudLocality() {
         return mustEnforceCloudLocality;
     }
 
     /**
-     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
-     * lock to take effect and permanently lock the retention period defined in the policy.
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * <p>
+     * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
      *
-     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
-     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
-     * compliance and to prevent unintentional modifications to protected database backups. *
-     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take
-     * effect. Therefore, you must set policyLockedDateTime to a date that occurs 14 days after the
-     * current date. * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set
-     * policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater. *
-     * During the 14-day delay period, you can either increase or decrease the retention period in
-     * the policy. * However, you are only allowed to increase the retention period on or after the
-     * retention lock date. * You cannot change the value of policyLockedDateTime if the retention
-     * lock is already in effect.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
     private final String policyLockedDateTime;
 
     /**
-     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
-     * lock to take effect and permanently lock the retention period defined in the policy.
-     *
-     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
-     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
-     * compliance and to prevent unintentional modifications to protected database backups. *
-     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take
-     * effect. Therefore, you must set policyLockedDateTime to a date that occurs 14 days after the
-     * current date. * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set
-     * policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater. *
-     * During the 14-day delay period, you can either increase or decrease the retention period in
-     * the policy. * However, you are only allowed to increase the retention period on or after the
-     * retention lock date. * You cannot change the value of policyLockedDateTime if the retention
-     * lock is already in effect.
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * <p>
+     * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
      *
      * @return the value
-     */
+     **/
     public String getPolicyLockedDateTime() {
         return policyLockedDateTime;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -434,7 +395,6 @@ public final class CreateProtectionPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

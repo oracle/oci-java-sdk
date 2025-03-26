@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.desktops.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+public enum OperationType {
     CreateDesktopPool("CREATE_DESKTOP_POOL"),
     UpdateDesktopPool("UPDATE_DESKTOP_POOL"),
     DeleteDesktopPool("DELETE_DESKTOP_POOL"),

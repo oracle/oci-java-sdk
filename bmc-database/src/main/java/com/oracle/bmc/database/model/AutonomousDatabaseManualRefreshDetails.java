@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of manual refresh for an Autonomous Database refreshable clone. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of manual refresh for an Autonomous Database refreshable clone.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDatabaseManualRefreshDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousDatabaseManualRefreshDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseManualRefreshDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeRefreshCutoff"})
     public AutonomousDatabaseManualRefreshDetails(java.util.Date timeRefreshCutoff) {
@@ -32,21 +32,16 @@ public final class AutonomousDatabaseManualRefreshDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The timestamp to which the Autonomous Database refreshable clone will be refreshed.
-         * Changes made in the primary database after this timestamp are not part of the data
-         * refresh.
-         */
+         * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRefreshCutoff")
         private java.util.Date timeRefreshCutoff;
 
         /**
-         * The timestamp to which the Autonomous Database refreshable clone will be refreshed.
-         * Changes made in the primary database after this timestamp are not part of the data
-         * refresh.
-         *
+         * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
          * @param timeRefreshCutoff the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRefreshCutoff(java.util.Date timeRefreshCutoff) {
             this.timeRefreshCutoff = timeRefreshCutoff;
             this.__explicitlySet__.add("timeRefreshCutoff");
@@ -74,7 +69,9 @@ public final class AutonomousDatabaseManualRefreshDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -84,18 +81,15 @@ public final class AutonomousDatabaseManualRefreshDetails
     }
 
     /**
-     * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes
-     * made in the primary database after this timestamp are not part of the data refresh.
-     */
+     * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRefreshCutoff")
     private final java.util.Date timeRefreshCutoff;
 
     /**
-     * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes
-     * made in the primary database after this timestamp are not part of the data refresh.
-     *
+     * The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRefreshCutoff() {
         return timeRefreshCutoff;
     }
@@ -107,7 +101,6 @@ public final class AutonomousDatabaseManualRefreshDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

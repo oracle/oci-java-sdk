@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Possible deploymentUpgrade lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum DeploymentUpgradeLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible deploymentUpgrade lifecycle states.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum DeploymentUpgradeLifecycleState {
     Waiting("WAITING"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

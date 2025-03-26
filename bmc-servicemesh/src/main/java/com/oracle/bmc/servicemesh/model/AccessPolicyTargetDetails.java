@@ -6,40 +6,41 @@ package com.oracle.bmc.servicemesh.model;
 
 /**
  * Target of the access policy. This can either be the source or the destination of the traffic.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = AccessPolicyTargetDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = AccessPolicyTargetDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalServiceAccessPolicyTargetDetails.class,
-            name = "EXTERNAL_SERVICE"),
+        value = ExternalServiceAccessPolicyTargetDetails.class,
+        name = "EXTERNAL_SERVICE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = VirtualServiceAccessPolicyTargetDetails.class,
-            name = "VIRTUAL_SERVICE"),
+        value = VirtualServiceAccessPolicyTargetDetails.class,
+        name = "VIRTUAL_SERVICE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AllVirtualServicesAccessPolicyTargetDetails.class,
-            name = "ALL_VIRTUAL_SERVICES"),
+        value = AllVirtualServicesAccessPolicyTargetDetails.class,
+        name = "ALL_VIRTUAL_SERVICES"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = IngressGatewayAccessPolicyTargetDetails.class,
-            name = "INGRESS_GATEWAY")
+        value = IngressGatewayAccessPolicyTargetDetails.class,
+        name = "INGRESS_GATEWAY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class AccessPolicyTargetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class AccessPolicyTargetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected AccessPolicyTargetDetails() {
@@ -53,7 +54,6 @@ public class AccessPolicyTargetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -86,8 +86,10 @@ public class AccessPolicyTargetDetails
         return result;
     }
 
-    /** Traffic type of the target. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Traffic type of the target.
+     **/
+    public enum Type {
         AllVirtualServices("ALL_VIRTUAL_SERVICES"),
         VirtualService("VIRTUAL_SERVICE"),
         ExternalService("EXTERNAL_SERVICE"),

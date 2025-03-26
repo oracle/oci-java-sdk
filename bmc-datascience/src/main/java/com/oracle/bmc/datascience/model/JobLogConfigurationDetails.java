@@ -5,23 +5,23 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Logging configuration for resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Logging configuration for resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JobLogConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = JobLogConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JobLogConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "enableLogging",
@@ -40,22 +40,26 @@ public final class JobLogConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** If customer logging is enabled for job runs. */
+        /**
+         * If customer logging is enabled for job runs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableLogging")
         private Boolean enableLogging;
 
         /**
          * If customer logging is enabled for job runs.
-         *
          * @param enableLogging the value to set
          * @return this builder
-         */
+         **/
         public Builder enableLogging(Boolean enableLogging) {
             this.enableLogging = enableLogging;
             this.__explicitlySet__.add("enableLogging");
             return this;
         }
-        /** If automatic on-behalf-of log object creation is enabled for job runs. */
+        /**
+         * If automatic on-behalf-of log object creation is enabled for job runs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableAutoLogCreation")
         private Boolean enableAutoLogCreation;
 
@@ -64,13 +68,16 @@ public final class JobLogConfigurationDetails
          *
          * @param enableAutoLogCreation the value to set
          * @return this builder
-         */
+         **/
         public Builder enableAutoLogCreation(Boolean enableAutoLogCreation) {
             this.enableAutoLogCreation = enableAutoLogCreation;
             this.__explicitlySet__.add("enableAutoLogCreation");
             return this;
         }
-        /** The log group id for where log objects are for job runs. */
+        /**
+         * The log group id for where log objects are for job runs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
@@ -79,13 +86,16 @@ public final class JobLogConfigurationDetails
          *
          * @param logGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
-        /** The log id the job run will push logs too. */
+        /**
+         * The log id the job run will push logs too.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logId")
         private String logId;
 
@@ -94,7 +104,7 @@ public final class JobLogConfigurationDetails
          *
          * @param logId the value to set
          * @return this builder
-         */
+         **/
         public Builder logId(String logId) {
             this.logId = logId;
             this.__explicitlySet__.add("logId");
@@ -135,7 +145,9 @@ public final class JobLogConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,20 +156,24 @@ public final class JobLogConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /** If customer logging is enabled for job runs. */
+    /**
+     * If customer logging is enabled for job runs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableLogging")
     private final Boolean enableLogging;
 
     /**
      * If customer logging is enabled for job runs.
-     *
      * @return the value
-     */
+     **/
     public Boolean getEnableLogging() {
         return enableLogging;
     }
 
-    /** If automatic on-behalf-of log object creation is enabled for job runs. */
+    /**
+     * If automatic on-behalf-of log object creation is enabled for job runs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableAutoLogCreation")
     private final Boolean enableAutoLogCreation;
 
@@ -165,12 +181,15 @@ public final class JobLogConfigurationDetails
      * If automatic on-behalf-of log object creation is enabled for job runs.
      *
      * @return the value
-     */
+     **/
     public Boolean getEnableAutoLogCreation() {
         return enableAutoLogCreation;
     }
 
-    /** The log group id for where log objects are for job runs. */
+    /**
+     * The log group id for where log objects are for job runs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
@@ -178,12 +197,15 @@ public final class JobLogConfigurationDetails
      * The log group id for where log objects are for job runs.
      *
      * @return the value
-     */
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
 
-    /** The log id the job run will push logs too. */
+    /**
+     * The log id the job run will push logs too.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logId")
     private final String logId;
 
@@ -191,7 +213,7 @@ public final class JobLogConfigurationDetails
      * The log id the job run will push logs too.
      *
      * @return the value
-     */
+     **/
     public String getLogId() {
         return logId;
     }
@@ -203,7 +225,6 @@ public final class JobLogConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

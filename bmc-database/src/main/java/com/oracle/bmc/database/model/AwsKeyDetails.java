@@ -5,82 +5,85 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for AWS encryption key. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details for AWS encryption key.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AwsKeyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "provider")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "provider"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AwsKeyDetails extends AutonomousDatabaseEncryptionKeyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** AWS key service endpoint URI */
+        /**
+         * AWS key service endpoint URI
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceEndpointUri")
         private String serviceEndpointUri;
 
         /**
          * AWS key service endpoint URI
-         *
          * @param serviceEndpointUri the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceEndpointUri(String serviceEndpointUri) {
             this.serviceEndpointUri = serviceEndpointUri;
             this.__explicitlySet__.add("serviceEndpointUri");
             return this;
         }
-        /** AWS key ARN */
+        /**
+         * AWS key ARN
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyArn")
         private String keyArn;
 
         /**
          * AWS key ARN
-         *
          * @param keyArn the value to set
          * @return this builder
-         */
+         **/
         public Builder keyArn(String keyArn) {
             this.keyArn = keyArn;
             this.__explicitlySet__.add("keyArn");
             return this;
         }
-        /** AWS ARN role */
+        /**
+         * AWS ARN role
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arnRole")
         private String arnRole;
 
         /**
          * AWS ARN role
-         *
          * @param arnRole the value to set
          * @return this builder
-         */
+         **/
         public Builder arnRole(String arnRole) {
             this.arnRole = arnRole;
             this.__explicitlySet__.add("arnRole");
             return this;
         }
-        /** AWS external ID */
+        /**
+         * AWS external ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
         private String externalId;
 
         /**
          * AWS external ID
-         *
          * @param externalId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalId(String externalId) {
             this.externalId = externalId;
             this.__explicitlySet__.add("externalId");
@@ -118,7 +121,9 @@ public final class AwsKeyDetails extends AutonomousDatabaseEncryptionKeyDetails 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,54 +142,58 @@ public final class AwsKeyDetails extends AutonomousDatabaseEncryptionKeyDetails 
         this.externalId = externalId;
     }
 
-    /** AWS key service endpoint URI */
+    /**
+     * AWS key service endpoint URI
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceEndpointUri")
     private final String serviceEndpointUri;
 
     /**
      * AWS key service endpoint URI
-     *
      * @return the value
-     */
+     **/
     public String getServiceEndpointUri() {
         return serviceEndpointUri;
     }
 
-    /** AWS key ARN */
+    /**
+     * AWS key ARN
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyArn")
     private final String keyArn;
 
     /**
      * AWS key ARN
-     *
      * @return the value
-     */
+     **/
     public String getKeyArn() {
         return keyArn;
     }
 
-    /** AWS ARN role */
+    /**
+     * AWS ARN role
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arnRole")
     private final String arnRole;
 
     /**
      * AWS ARN role
-     *
      * @return the value
-     */
+     **/
     public String getArnRole() {
         return arnRole;
     }
 
-    /** AWS external ID */
+    /**
+     * AWS external ID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
     private final String externalId;
 
     /**
      * AWS external ID
-     *
      * @return the value
-     */
+     **/
     public String getExternalId() {
         return externalId;
     }
@@ -196,7 +205,6 @@ public final class AwsKeyDetails extends AutonomousDatabaseEncryptionKeyDetails 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

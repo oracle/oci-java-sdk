@@ -12,12 +12,12 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.FederationClient;
 
 /**
- * This constructs a default implementation of the {@link
- * ResourcePrincipalAuthenticationDetailsProvider}, integrates principal authentication services to
- * generate resource principal session token used for actual signing.
- *
- * <p>Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests may
- * be rotated periodically).
+ * This constructs a default implementation of the {@link ResourcePrincipalAuthenticationDetailsProvider}, integrates
+ * with resource principal authentication services to generate resource principal session token
+ * used for actual signing.
+ * <p>
+ * Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests
+ * may be rotated periodically).
  */
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class ResourcePrincipalsV3AuthenticationDetailsProvider
@@ -53,9 +53,9 @@ public class ResourcePrincipalsV3AuthenticationDetailsProvider
     /**
      * Constructor of ResourcePrincipalAuthenticationDetailsProvider.
      *
-     * @param federationClient federation client implementation.
+     * @param federationClient   federation client implementation.
      * @param sessionKeySupplier session key supplier implementation.
-     * @param region the region
+     * @param region             the region
      */
     ResourcePrincipalsV3AuthenticationDetailsProvider(
             FederationClient federationClient,
@@ -83,22 +83,28 @@ public class ResourcePrincipalsV3AuthenticationDetailsProvider
         return federationClient.refreshAndGetSecurityToken();
     }
 
-    /** Builder for ResourcePrincipalsAuthenticationDetailsProviderBuilder. */
+    /**
+     * Builder for ResourcePrincipalsAuthenticationDetailsProviderBuilder.
+     */
     public static class ResourcePrincipalsV3AuthenticationDetailsProviderBuilder
             extends ResourcePrincipalAuthenticationDetailsProvider
                     .ResourcePrincipalAuthenticationDetailsProviderBuilder {
 
         /**
          * The endpoint that can provide the parent resource principal token.
-         *
-         * <p>Required.
+         * <p>
+         * Required.
          */
         private String resourcePrincipalTokenUrlForParentResource;
 
-        /** The federation endpoint/RPST endpoint for parent resource */
+        /**
+         * The federation endpoint/RPST endpoint for parent resource
+         */
         private String federationEndpointForParentResource;
 
-        /** Configures the resourcePrincipalTokenUrlForParentResource to use. */
+        /**
+         * Configures the resourcePrincipalTokenUrlForParentResource to use.
+         */
         public ResourcePrincipalsV3AuthenticationDetailsProviderBuilder
                 resourcePrincipalTokenUrlForParentResource(
                         String resourcePrincipalTokenUrlForParentResource) {
@@ -107,7 +113,9 @@ public class ResourcePrincipalsV3AuthenticationDetailsProvider
             return this;
         }
 
-        /** Configures the resourcePrincipalTokenUrlForParentResource to use. */
+        /**
+         * Configures the resourcePrincipalTokenUrlForParentResource to use.
+         */
         public ResourcePrincipalsV3AuthenticationDetailsProviderBuilder
                 federationEndpointForParentResource(String federationEndpointForParentResource) {
             this.federationEndpointForParentResource = federationEndpointForParentResource;
@@ -193,8 +201,7 @@ public class ResourcePrincipalsV3AuthenticationDetailsProvider
         }
 
         /**
-         * Helper method that interprets the runtime environment to build a v2.2-configured leaf
-         * client
+         * Helper method that interprets the runtime environment to build a v2.2-configured client
          *
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
@@ -226,8 +233,7 @@ public class ResourcePrincipalsV3AuthenticationDetailsProvider
         /**
          * Builds a new instance of ResourcePrincipalsV3AuthenticationDetailsProvider
          *
-         * @param leafResourceAuthProvider instance of
-         *     ResourcePrincipalAuthenticationDetailsProvider for leaf resource
+         * @param leafResourceAuthProvider instance of ResourcePrincipalAuthenticationDetailsProvider for leaf resource
          */
         public ResourcePrincipalsV3AuthenticationDetailsProvider build(
                 ResourcePrincipalAuthenticationDetailsProvider leafResourceAuthProvider) {

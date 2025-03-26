@@ -5,23 +5,21 @@
 package com.oracle.bmc.marketplaceprivateoffer.model;
 
 /**
- * the internal details of an offer that are only visible to the seller <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * the internal details of an offer that are only visible to the seller
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OfferInternalDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OfferInternalDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OfferInternalDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OfferInternalDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"customFields", "internalNotes"})
     public OfferInternalDetail(java.util.List<CustomField> customFields, String internalNotes) {
@@ -32,31 +30,33 @@ public final class OfferInternalDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of key value pairs specified by the seller */
+        /**
+         * A list of key value pairs specified by the seller
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customFields")
         private java.util.List<CustomField> customFields;
 
         /**
          * A list of key value pairs specified by the seller
-         *
          * @param customFields the value to set
          * @return this builder
-         */
+         **/
         public Builder customFields(java.util.List<CustomField> customFields) {
             this.customFields = customFields;
             this.__explicitlySet__.add("customFields");
             return this;
         }
-        /** Internal notes only intended for the Publisher of the Offer */
+        /**
+         * Internal notes only intended for the Publisher of the Offer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalNotes")
         private String internalNotes;
 
         /**
          * Internal notes only intended for the Publisher of the Offer
-         *
          * @param internalNotes the value to set
          * @return this builder
-         */
+         **/
         public Builder internalNotes(String internalNotes) {
             this.internalNotes = internalNotes;
             this.__explicitlySet__.add("internalNotes");
@@ -87,7 +87,9 @@ public final class OfferInternalDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +98,30 @@ public final class OfferInternalDetail
         return new Builder().copy(this);
     }
 
-    /** A list of key value pairs specified by the seller */
+    /**
+     * A list of key value pairs specified by the seller
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customFields")
     private final java.util.List<CustomField> customFields;
 
     /**
      * A list of key value pairs specified by the seller
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CustomField> getCustomFields() {
         return customFields;
     }
 
-    /** Internal notes only intended for the Publisher of the Offer */
+    /**
+     * Internal notes only intended for the Publisher of the Offer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalNotes")
     private final String internalNotes;
 
     /**
      * Internal notes only intended for the Publisher of the Offer
-     *
      * @return the value
-     */
+     **/
     public String getInternalNotes() {
         return internalNotes;
     }
@@ -129,7 +133,6 @@ public final class OfferInternalDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

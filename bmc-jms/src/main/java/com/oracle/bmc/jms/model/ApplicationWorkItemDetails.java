@@ -5,25 +5,25 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The work item details with JFR related information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The work item details with JFR related information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApplicationWorkItemDetails.Builder.class)
+    builder = ApplicationWorkItemDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApplicationWorkItemDetails extends WorkItemDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,61 +35,65 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
             this.__explicitlySet__.add("workItemType");
             return this;
         }
-        /** The unique key of the application of the JFR. */
+        /**
+         * The unique key of the application of the JFR.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
         private String applicationKey;
 
         /**
          * The unique key of the application of the JFR.
-         *
          * @param applicationKey the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationKey(String applicationKey) {
             this.applicationKey = applicationKey;
             this.__explicitlySet__.add("applicationKey");
             return this;
         }
-        /** The unique key of the application installation of the JFR. */
+        /**
+         * The unique key of the application installation of the JFR.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationKey")
         private String applicationInstallationKey;
 
         /**
          * The unique key of the application installation of the JFR.
-         *
          * @param applicationInstallationKey the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationInstallationKey(String applicationInstallationKey) {
             this.applicationInstallationKey = applicationInstallationKey;
             this.__explicitlySet__.add("applicationInstallationKey");
             return this;
         }
-        /** The application name. */
+        /**
+         * The application name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
         private String applicationName;
 
         /**
          * The application name.
-         *
          * @param applicationName the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationName(String applicationName) {
             this.applicationName = applicationName;
             this.__explicitlySet__.add("applicationName");
             return this;
         }
-        /** The full path on which application installation was detected. */
+        /**
+         * The full path on which application installation was detected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationPath")
         private String applicationInstallationPath;
 
         /**
          * The full path on which application installation was detected.
-         *
          * @param applicationInstallationPath the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationInstallationPath(String applicationInstallationPath) {
             this.applicationInstallationPath = applicationInstallationPath;
             this.__explicitlySet__.add("applicationInstallationPath");
@@ -134,7 +138,9 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,54 +163,58 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
         this.applicationInstallationPath = applicationInstallationPath;
     }
 
-    /** The unique key of the application of the JFR. */
+    /**
+     * The unique key of the application of the JFR.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
     private final String applicationKey;
 
     /**
      * The unique key of the application of the JFR.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationKey() {
         return applicationKey;
     }
 
-    /** The unique key of the application installation of the JFR. */
+    /**
+     * The unique key of the application installation of the JFR.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationKey")
     private final String applicationInstallationKey;
 
     /**
      * The unique key of the application installation of the JFR.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationInstallationKey() {
         return applicationInstallationKey;
     }
 
-    /** The application name. */
+    /**
+     * The application name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
     private final String applicationName;
 
     /**
      * The application name.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationName() {
         return applicationName;
     }
 
-    /** The full path on which application installation was detected. */
+    /**
+     * The full path on which application installation was detected.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationPath")
     private final String applicationInstallationPath;
 
     /**
      * The full path on which application installation was detected.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationInstallationPath() {
         return applicationInstallationPath;
     }
@@ -216,7 +226,6 @@ public final class ApplicationWorkItemDetails extends WorkItemDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,83 +6,100 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildRunSnapshotsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListBuildRunSnapshotsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildRunSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBuildRunSnapshotsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class ListBuildRunSnapshotsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique PullRequest identifier */
+    /**
+     * unique PullRequest identifier
+     */
     private String pullRequestId;
 
-    /** unique PullRequest identifier */
+    /**
+     * unique PullRequest identifier
+     */
     public String getPullRequestId() {
         return pullRequestId;
     }
-    /** Unique build pipeline identifier. */
+    /**
+     * Unique build pipeline identifier.
+     */
     private String pipelineId;
 
-    /** Unique build pipeline identifier. */
+    /**
+     * Unique build pipeline identifier.
+     */
     public String getPipelineId() {
         return pipelineId;
     }
-    /** Unique build run identifier. */
+    /**
+     * Unique build run identifier.
+     */
     private String buildRunId;
 
-    /** Unique build run identifier. */
+    /**
+     * Unique build run identifier.
+     */
     public String getBuildRunId() {
         return buildRunId;
     }
-    /** Commit ID in a repository. */
+    /**
+     * Commit ID in a repository.
+     */
     private String commitId;
 
-    /** Commit ID in a repository. */
+    /**
+     * Commit ID in a repository.
+     */
     public String getCommitId() {
         return commitId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use. Use either ascending or descending. */
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
-    /** The sort order to use. Use either ascending or descending. */
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for time created is
-     * descending. Default order for name is ascending. If no value is specified time created is
-     * default.
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for name is ascending. If no value is specified time created is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for time created is
-     * descending. Default order for name is ascending. If no value is specified time created is
-     * default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for name is ascending. If no value is specified time created is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         Name("name"),
         ;
@@ -116,22 +133,19 @@ public class ListBuildRunSnapshotsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for time created is
-     * descending. Default order for name is ascending. If no value is specified time created is
-     * default.
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for name is ascending. If no value is specified time created is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -140,15 +154,17 @@ public class ListBuildRunSnapshotsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBuildRunSnapshotsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique PullRequest identifier */
+        /**
+         * unique PullRequest identifier
+         */
         private String pullRequestId = null;
 
         /**
          * unique PullRequest identifier
-         *
          * @param pullRequestId the value to set
          * @return this builder instance
          */
@@ -157,12 +173,13 @@ public class ListBuildRunSnapshotsRequest
             return this;
         }
 
-        /** Unique build pipeline identifier. */
+        /**
+         * Unique build pipeline identifier.
+         */
         private String pipelineId = null;
 
         /**
          * Unique build pipeline identifier.
-         *
          * @param pipelineId the value to set
          * @return this builder instance
          */
@@ -171,12 +188,13 @@ public class ListBuildRunSnapshotsRequest
             return this;
         }
 
-        /** Unique build run identifier. */
+        /**
+         * Unique build run identifier.
+         */
         private String buildRunId = null;
 
         /**
          * Unique build run identifier.
-         *
          * @param buildRunId the value to set
          * @return this builder instance
          */
@@ -185,12 +203,13 @@ public class ListBuildRunSnapshotsRequest
             return this;
         }
 
-        /** Commit ID in a repository. */
+        /**
+         * Commit ID in a repository.
+         */
         private String commitId = null;
 
         /**
          * Commit ID in a repository.
-         *
          * @param commitId the value to set
          * @return this builder instance
          */
@@ -199,12 +218,13 @@ public class ListBuildRunSnapshotsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -214,15 +234,12 @@ public class ListBuildRunSnapshotsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -231,12 +248,13 @@ public class ListBuildRunSnapshotsRequest
             return this;
         }
 
-        /** The sort order to use. Use either ascending or descending. */
+        /**
+         * The sort order to use. Use either ascending or descending.
+         */
         private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use. Use either ascending or descending.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -246,16 +264,13 @@ public class ListBuildRunSnapshotsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for time created
-         * is descending. Default order for name is ascending. If no value is specified time created
-         * is default.
+         * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for name is ascending. If no value is specified time created is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for time created
-         * is descending. Default order for name is ascending. If no value is specified time created
-         * is default.
+         * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for name is ascending. If no value is specified time created is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -266,15 +281,12 @@ public class ListBuildRunSnapshotsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -285,19 +297,18 @@ public class ListBuildRunSnapshotsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -309,7 +320,6 @@ public class ListBuildRunSnapshotsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListBuildRunSnapshotsRequest o) {
@@ -330,11 +340,10 @@ public class ListBuildRunSnapshotsRequest
         /**
          * Build the instance of ListBuildRunSnapshotsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListBuildRunSnapshotsRequest
          */
@@ -348,8 +357,7 @@ public class ListBuildRunSnapshotsRequest
         /**
          * Build the instance of ListBuildRunSnapshotsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListBuildRunSnapshotsRequest
@@ -366,14 +374,12 @@ public class ListBuildRunSnapshotsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListBuildRunSnapshotsRequest(pullRequestId, pipelineId, buildRunId, commitId,
-            // limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListBuildRunSnapshotsRequest(pullRequestId, pipelineId, buildRunId, commitId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -391,7 +397,6 @@ public class ListBuildRunSnapshotsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,38 +5,39 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Query Properties applicable to SQL type of collection method <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Query Properties applicable to SQL type of collection method
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlQueryProperties.Builder.class)
+    builder = SqlQueryProperties.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "collectionMethod")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "collectionMethod"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlQueryProperties extends MetricExtensionQueryProperties {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of SQL data collection method i.e. either a Statement or SQL Script File */
+        /**
+         * Type of SQL data collection method i.e. either a Statement or SQL Script File
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
         private SqlQueryTypes sqlType;
 
         /**
          * Type of SQL data collection method i.e. either a Statement or SQL Script File
-         *
          * @param sqlType the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlType(SqlQueryTypes sqlType) {
             this.sqlType = sqlType;
             this.__explicitlySet__.add("sqlType");
@@ -51,16 +52,17 @@ public final class SqlQueryProperties extends MetricExtensionQueryProperties {
             this.__explicitlySet__.add("sqlDetails");
             return this;
         }
-        /** List of values and position of PL/SQL procedure IN parameters */
+        /**
+         * List of values and position of PL/SQL procedure IN parameters
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inParamDetails")
         private java.util.List<SqlInParamDetails> inParamDetails;
 
         /**
          * List of values and position of PL/SQL procedure IN parameters
-         *
          * @param inParamDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder inParamDetails(java.util.List<SqlInParamDetails> inParamDetails) {
             this.inParamDetails = inParamDetails;
             this.__explicitlySet__.add("inParamDetails");
@@ -110,7 +112,9 @@ public final class SqlQueryProperties extends MetricExtensionQueryProperties {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,15 +136,16 @@ public final class SqlQueryProperties extends MetricExtensionQueryProperties {
         this.outParamDetails = outParamDetails;
     }
 
-    /** Type of SQL data collection method i.e. either a Statement or SQL Script File */
+    /**
+     * Type of SQL data collection method i.e. either a Statement or SQL Script File
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
     private final SqlQueryTypes sqlType;
 
     /**
      * Type of SQL data collection method i.e. either a Statement or SQL Script File
-     *
      * @return the value
-     */
+     **/
     public SqlQueryTypes getSqlType() {
         return sqlType;
     }
@@ -152,15 +157,16 @@ public final class SqlQueryProperties extends MetricExtensionQueryProperties {
         return sqlDetails;
     }
 
-    /** List of values and position of PL/SQL procedure IN parameters */
+    /**
+     * List of values and position of PL/SQL procedure IN parameters
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inParamDetails")
     private final java.util.List<SqlInParamDetails> inParamDetails;
 
     /**
      * List of values and position of PL/SQL procedure IN parameters
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SqlInParamDetails> getInParamDetails() {
         return inParamDetails;
     }
@@ -179,7 +185,6 @@ public final class SqlQueryProperties extends MetricExtensionQueryProperties {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

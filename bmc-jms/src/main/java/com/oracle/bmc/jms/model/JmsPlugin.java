@@ -5,21 +5,20 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Information about a JmsPlugin that has been registered. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Information about a JmsPlugin that has been registered.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JmsPlugin.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JmsPlugin extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JmsPlugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -81,129 +80,125 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * identify this JmsPlugin.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * identify this JmsPlugin.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-         * deployed.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-         * deployed.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
          * @param agentId the value to set
          * @return this builder
-         */
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /** The agent type. */
+        /**
+         * The agent type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentType")
         private AgentType agentType;
 
         /**
          * The agent type.
-         *
          * @param agentType the value to set
          * @return this builder
-         */
+         **/
         public Builder agentType(AgentType agentType) {
             this.agentType = agentType;
             this.__explicitlySet__.add("agentType");
             return this;
         }
-        /** The lifecycle state. */
+        /**
+         * The lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JmsPluginLifecycleState lifecycleState;
 
         /**
          * The lifecycle state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(JmsPluginLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The availability status. */
+        /**
+         * The availability status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
         private JmsPluginAvailabilityStatus availabilityStatus;
 
         /**
          * The availability status.
-         *
          * @param availabilityStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityStatus(JmsPluginAvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             this.__explicitlySet__.add("availabilityStatus");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * fleet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
          *
          * @param fleetId the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
         /**
-         * The OMA/OCA agent's compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OMA/OCA agent's compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The hostname of the agent. */
+        /**
+         * The hostname of the agent.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
@@ -212,73 +207,80 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /** The operating system family for the plugin. */
+        /**
+         * The operating system family for the plugin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
          * The operating system family for the plugin.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(OsFamily osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** The architecture of the operating system of the plugin. */
+        /**
+         * The architecture of the operating system of the plugin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osArchitecture")
         private String osArchitecture;
 
         /**
          * The architecture of the operating system of the plugin.
-         *
          * @param osArchitecture the value to set
          * @return this builder
-         */
+         **/
         public Builder osArchitecture(String osArchitecture) {
             this.osArchitecture = osArchitecture;
             this.__explicitlySet__.add("osArchitecture");
             return this;
         }
-        /** The distribution of the operating system of the plugin. */
+        /**
+         * The distribution of the operating system of the plugin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osDistribution")
         private String osDistribution;
 
         /**
          * The distribution of the operating system of the plugin.
-         *
          * @param osDistribution the value to set
          * @return this builder
-         */
+         **/
         public Builder osDistribution(String osDistribution) {
             this.osDistribution = osDistribution;
             this.__explicitlySet__.add("osDistribution");
             return this;
         }
-        /** The version of the plugin. */
+        /**
+         * The version of the plugin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
         private String pluginVersion;
 
         /**
          * The version of the plugin.
-         *
          * @param pluginVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder pluginVersion(String pluginVersion) {
             this.pluginVersion = pluginVersion;
             this.__explicitlySet__.add("pluginVersion");
             return this;
         }
-        /** The date and time the plugin was registered. */
+        /**
+         * The date and time the plugin was registered.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRegistered")
         private java.util.Date timeRegistered;
 
@@ -287,30 +289,31 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param timeRegistered the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRegistered(java.util.Date timeRegistered) {
             this.timeRegistered = timeRegistered;
             this.__explicitlySet__.add("timeRegistered");
             return this;
         }
         /**
-         * The date and time the resource was _last_ reported to JMS. This is potentially _after_
-         * the specified time period provided by the filters. For example, a resource can be last
-         * reported to JMS before the start of a specified time period, if it is also reported
-         * during the time period.
-         */
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
         /**
-         * The date and time the resource was _last_ reported to JMS. This is potentially _after_
-         * the specified time period provided by the filters. For example, a resource can be last
-         * reported to JMS before the start of a specified time period, if it is also reported
-         * during the time period.
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
          *
          * @param timeLastSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -318,20 +321,19 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-         */
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -339,50 +341,46 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
-         * and Tag
-         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-         */
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
-         * and Tag
-         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -475,7 +473,9 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -485,115 +485,111 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify
-     * this JmsPlugin.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify
-     * this JmsPlugin.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-     * deployed.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is
-     * deployed.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
      * @return the value
-     */
+     **/
     public String getAgentId() {
         return agentId;
     }
 
-    /** The agent type. */
+    /**
+     * The agent type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentType")
     private final AgentType agentType;
 
     /**
      * The agent type.
-     *
      * @return the value
-     */
+     **/
     public AgentType getAgentType() {
         return agentType;
     }
 
-    /** The lifecycle state. */
+    /**
+     * The lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JmsPluginLifecycleState lifecycleState;
 
     /**
      * The lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public JmsPluginLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The availability status. */
+    /**
+     * The availability status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
     private final JmsPluginAvailabilityStatus availabilityStatus;
 
     /**
      * The availability status.
-     *
      * @return the value
-     */
+     **/
     public JmsPluginAvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * fleet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
      *
      * @return the value
-     */
+     **/
     public String getFleetId() {
         return fleetId;
     }
 
     /**
-     * The OMA/OCA agent's compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OMA/OCA agent's compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The hostname of the agent. */
+    /**
+     * The hostname of the agent.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
@@ -601,64 +597,71 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
      * The hostname of the agent.
      *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
 
-    /** The operating system family for the plugin. */
+    /**
+     * The operating system family for the plugin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * The operating system family for the plugin.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** The architecture of the operating system of the plugin. */
+    /**
+     * The architecture of the operating system of the plugin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osArchitecture")
     private final String osArchitecture;
 
     /**
      * The architecture of the operating system of the plugin.
-     *
      * @return the value
-     */
+     **/
     public String getOsArchitecture() {
         return osArchitecture;
     }
 
-    /** The distribution of the operating system of the plugin. */
+    /**
+     * The distribution of the operating system of the plugin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osDistribution")
     private final String osDistribution;
 
     /**
      * The distribution of the operating system of the plugin.
-     *
      * @return the value
-     */
+     **/
     public String getOsDistribution() {
         return osDistribution;
     }
 
-    /** The version of the plugin. */
+    /**
+     * The version of the plugin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
     private final String pluginVersion;
 
     /**
      * The version of the plugin.
-     *
      * @return the value
-     */
+     **/
     public String getPluginVersion() {
         return pluginVersion;
     }
 
-    /** The date and time the plugin was registered. */
+    /**
+     * The date and time the plugin was registered.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRegistered")
     private final java.util.Date timeRegistered;
 
@@ -666,91 +669,89 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
      * The date and time the plugin was registered.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRegistered() {
         return timeRegistered;
     }
 
     /**
-     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the
-     * specified time period provided by the filters. For example, a resource can be last reported
-     * to JMS before the start of a specified time period, if it is also reported during the time
-     * period.
-     */
+     * The date and time the resource was _last_ reported to JMS.
+     * This is potentially _after_ the specified time period provided by the filters.
+     * For example, a resource can be last reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
     /**
-     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the
-     * specified time period provided by the filters. For example, a resource can be last reported
-     * to JMS before the start of a specified time period, if it is also reported during the time
-     * period.
+     * The date and time the resource was _last_ reported to JMS.
+     * This is potentially _after_ the specified time period provided by the filters.
+     * For example, a resource can be last reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -762,7 +763,6 @@ public final class JmsPlugin extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

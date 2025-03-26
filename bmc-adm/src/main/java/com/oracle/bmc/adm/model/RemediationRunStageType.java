@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.adm.model;
 
-/** Remediation Run stage type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-public enum RemediationRunStageType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Remediation Run stage type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+public enum RemediationRunStageType {
     Detect("DETECT"),
     Recommend("RECOMMEND"),
     Verify("VERIFY"),

@@ -6,71 +6,92 @@ package com.oracle.bmc.fleetsoftwareupdate.requests;
 
 import com.oracle.bmc.fleetsoftwareupdate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuCollectionCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeFsuCollectionCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuCollectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeFsuCollectionCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 public class ChangeFsuCollectionCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetsoftwareupdate.model.ChangeFsuCollectionCompartmentDetails> {
 
-    /** Unique Exadata Fleet Update Collection identifier. */
+    /**
+     * Unique Exadata Fleet Update Collection identifier.
+     *
+     */
     private String fsuCollectionId;
 
-    /** Unique Exadata Fleet Update Collection identifier. */
+    /**
+     * Unique Exadata Fleet Update Collection identifier.
+     *
+     */
     public String getFsuCollectionId() {
         return fsuCollectionId;
     }
-    /** The compartment where the Exadata Fleet Update Collection will be moved to. */
+    /**
+     * The compartment where the Exadata Fleet Update Collection will be moved to.
+     *
+     */
     private com.oracle.bmc.fleetsoftwareupdate.model.ChangeFsuCollectionCompartmentDetails
             changeFsuCollectionCompartmentDetails;
 
-    /** The compartment where the Exadata Fleet Update Collection will be moved to. */
+    /**
+     * The compartment where the Exadata Fleet Update Collection will be moved to.
+     *
+     */
     public com.oracle.bmc.fleetsoftwareupdate.model.ChangeFsuCollectionCompartmentDetails
             getChangeFsuCollectionCompartmentDetails() {
         return changeFsuCollectionCompartmentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -78,7 +99,6 @@ public class ChangeFsuCollectionCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -93,10 +113,14 @@ public class ChangeFsuCollectionCompartmentRequest
                     ChangeFsuCollectionCompartmentRequest,
                     com.oracle.bmc.fleetsoftwareupdate.model
                             .ChangeFsuCollectionCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Exadata Fleet Update Collection identifier. */
+        /**
+         * Unique Exadata Fleet Update Collection identifier.
+         *
+         */
         private String fsuCollectionId = null;
 
         /**
@@ -110,7 +134,10 @@ public class ChangeFsuCollectionCompartmentRequest
             return this;
         }
 
-        /** The compartment where the Exadata Fleet Update Collection will be moved to. */
+        /**
+         * The compartment where the Exadata Fleet Update Collection will be moved to.
+         *
+         */
         private com.oracle.bmc.fleetsoftwareupdate.model.ChangeFsuCollectionCompartmentDetails
                 changeFsuCollectionCompartmentDetails = null;
 
@@ -128,18 +155,21 @@ public class ChangeFsuCollectionCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -149,7 +179,10 @@ public class ChangeFsuCollectionCompartmentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -165,19 +198,20 @@ public class ChangeFsuCollectionCompartmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -189,19 +223,18 @@ public class ChangeFsuCollectionCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -213,7 +246,6 @@ public class ChangeFsuCollectionCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeFsuCollectionCompartmentRequest o) {
@@ -230,11 +262,10 @@ public class ChangeFsuCollectionCompartmentRequest
         /**
          * Build the instance of ChangeFsuCollectionCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeFsuCollectionCompartmentRequest
          */
@@ -247,7 +278,6 @@ public class ChangeFsuCollectionCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -262,8 +292,7 @@ public class ChangeFsuCollectionCompartmentRequest
         /**
          * Build the instance of ChangeFsuCollectionCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeFsuCollectionCompartmentRequest
@@ -277,14 +306,12 @@ public class ChangeFsuCollectionCompartmentRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeFsuCollectionCompartmentRequest(fsuCollectionId,
-            // changeFsuCollectionCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
+            // new ChangeFsuCollectionCompartmentRequest(fsuCollectionId, changeFsuCollectionCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -298,7 +325,6 @@ public class ChangeFsuCollectionCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

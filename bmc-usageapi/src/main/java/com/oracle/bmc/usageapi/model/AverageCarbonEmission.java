@@ -5,23 +5,22 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Average carbon emission. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+ * Average carbon emission.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AverageCarbonEmission.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AverageCarbonEmission.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AverageCarbonEmission
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"skuPartNumber", "averageCarbonEmission"})
     public AverageCarbonEmission(String skuPartNumber, Double averageCarbonEmission) {
@@ -32,31 +31,33 @@ public final class AverageCarbonEmission
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The sku part number. */
+        /**
+         * The sku part number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skuPartNumber")
         private String skuPartNumber;
 
         /**
          * The sku part number.
-         *
          * @param skuPartNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder skuPartNumber(String skuPartNumber) {
             this.skuPartNumber = skuPartNumber;
             this.__explicitlySet__.add("skuPartNumber");
             return this;
         }
-        /** The average carbon emissions by SKU. */
+        /**
+         * The average carbon emissions by SKU.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("averageCarbonEmission")
         private Double averageCarbonEmission;
 
         /**
          * The average carbon emissions by SKU.
-         *
          * @param averageCarbonEmission the value to set
          * @return this builder
-         */
+         **/
         public Builder averageCarbonEmission(Double averageCarbonEmission) {
             this.averageCarbonEmission = averageCarbonEmission;
             this.__explicitlySet__.add("averageCarbonEmission");
@@ -87,7 +88,9 @@ public final class AverageCarbonEmission
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class AverageCarbonEmission
         return new Builder().copy(this);
     }
 
-    /** The sku part number. */
+    /**
+     * The sku part number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuPartNumber")
     private final String skuPartNumber;
 
     /**
      * The sku part number.
-     *
      * @return the value
-     */
+     **/
     public String getSkuPartNumber() {
         return skuPartNumber;
     }
 
-    /** The average carbon emissions by SKU. */
+    /**
+     * The average carbon emissions by SKU.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("averageCarbonEmission")
     private final Double averageCarbonEmission;
 
     /**
      * The average carbon emissions by SKU.
-     *
      * @return the value
-     */
+     **/
     public Double getAverageCarbonEmission() {
         return averageCarbonEmission;
     }
@@ -129,7 +134,6 @@ public final class AverageCarbonEmission
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,18 +6,15 @@ package com.oracle.bmc.objectstorage.responses;
 
 import com.oracle.bmc.objectstorage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
-     *
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -25,14 +22,15 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
      *
      * @return the value
      */
@@ -41,26 +39,25 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For paginating a list of PEs. In the GET request, set the limit to the number of Private
-     * Endpoint items that you want returned in the response. If the {@code opc-next-page} header
-     * appears in the response, then this is a partial list and there are additional Private
-     * Endpoint's to get. Include the header's value as the {@code page} parameter in the subsequent
-     * GET request to get the next batch of PEs. Repeat this process to retrieve the entire list of
-     * Private Endpoint's. By default, the page limit is set to 25 Private Endpoint's per page, but
-     * you can specify a value from 1 to 1000. For more details about how pagination works, see
-     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For paginating a list of PEs.
+     * In the GET request, set the limit to the number of Private Endpoint items that you want returned in the response.
+     * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
+     * Private Endpoint's to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
+     * next batch of PEs. Repeat this process to retrieve the entire list of Private Endpoint's.
+     * By default, the page limit is set to 25 Private Endpoint's per page, but you can specify a value from 1 to 1000.
+     * For more details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For paginating a list of PEs. In the GET request, set the limit to the number of Private
-     * Endpoint items that you want returned in the response. If the {@code opc-next-page} header
-     * appears in the response, then this is a partial list and there are additional Private
-     * Endpoint's to get. Include the header's value as the {@code page} parameter in the subsequent
-     * GET request to get the next batch of PEs. Repeat this process to retrieve the entire list of
-     * Private Endpoint's. By default, the page limit is set to 25 Private Endpoint's per page, but
-     * you can specify a value from 1 to 1000. For more details about how pagination works, see
-     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For paginating a list of PEs.
+     * In the GET request, set the limit to the number of Private Endpoint items that you want returned in the response.
+     * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
+     * Private Endpoint's to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
+     * next batch of PEs. Repeat this process to retrieve the entire list of Private Endpoint's.
+     * By default, the page limit is set to 25 Private Endpoint's per page, but you can specify a value from 1 to 1000.
+     * For more details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -68,12 +65,13 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** A list of {@code com.oracle.bmc.objectstorage.model.PrivateEndpointSummary} instances. */
+    /**
+     * A list of com.oracle.bmc.objectstorage.model.PrivateEndpointSummary instances.
+     */
     private java.util.List<com.oracle.bmc.objectstorage.model.PrivateEndpointSummary> items;
 
     /**
-     * A list of {@code com.oracle.bmc.objectstorage.model.PrivateEndpointSummary} instances.
-     *
+     * A list of com.oracle.bmc.objectstorage.model.PrivateEndpointSummary instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.objectstorage.model.PrivateEndpointSummary> getItems() {
@@ -90,7 +88,7 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListPrivateEndpointsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String opcNextPage,
@@ -102,34 +100,28 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListPrivateEndpointsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
-         *
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -139,14 +131,15 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -157,28 +150,25 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For paginating a list of PEs. In the GET request, set the limit to the number of Private
-         * Endpoint items that you want returned in the response. If the {@code opc-next-page}
-         * header appears in the response, then this is a partial list and there are additional
-         * Private Endpoint's to get. Include the header's value as the {@code page} parameter in
-         * the subsequent GET request to get the next batch of PEs. Repeat this process to retrieve
-         * the entire list of Private Endpoint's. By default, the page limit is set to 25 Private
-         * Endpoint's per page, but you can specify a value from 1 to 1000. For more details about
-         * how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For paginating a list of PEs.
+         * In the GET request, set the limit to the number of Private Endpoint items that you want returned in the response.
+         * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
+         * Private Endpoint's to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
+         * next batch of PEs. Repeat this process to retrieve the entire list of Private Endpoint's.
+         * By default, the page limit is set to 25 Private Endpoint's per page, but you can specify a value from 1 to 1000.
+         * For more details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For paginating a list of PEs. In the GET request, set the limit to the number of Private
-         * Endpoint items that you want returned in the response. If the {@code opc-next-page}
-         * header appears in the response, then this is a partial list and there are additional
-         * Private Endpoint's to get. Include the header's value as the {@code page} parameter in
-         * the subsequent GET request to get the next batch of PEs. Repeat this process to retrieve
-         * the entire list of Private Endpoint's. By default, the page limit is set to 25 Private
-         * Endpoint's per page, but you can specify a value from 1 to 1000. For more details about
-         * how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For paginating a list of PEs.
+         * In the GET request, set the limit to the number of Private Endpoint items that you want returned in the response.
+         * If the {@code opc-next-page} header appears in the response, then this is a partial list and there are additional
+         * Private Endpoint's to get. Include the header's value as the {@code page} parameter in the subsequent GET request to get the
+         * next batch of PEs. Repeat this process to retrieve the entire list of Private Endpoint's.
+         * By default, the page limit is set to 25 Private Endpoint's per page, but you can specify a value from 1 to 1000.
+         * For more details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -189,13 +179,12 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * A list of {@code com.oracle.bmc.objectstorage.model.PrivateEndpointSummary} instances.
+         * A list of com.oracle.bmc.objectstorage.model.PrivateEndpointSummary instances.
          */
         private java.util.List<com.oracle.bmc.objectstorage.model.PrivateEndpointSummary> items;
 
         /**
-         * A list of {@code com.oracle.bmc.objectstorage.model.PrivateEndpointSummary} instances.
-         *
+         * A list of com.oracle.bmc.objectstorage.model.PrivateEndpointSummary instances.
          * @param items the value to set
          * @return this builder
          */
@@ -207,10 +196,8 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListPrivateEndpointsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -224,10 +211,8 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListPrivateEndpointsResponse build() {
             return new ListPrivateEndpointsResponse(
                     __httpStatusCode__,
@@ -241,7 +226,6 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

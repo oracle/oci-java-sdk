@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.psql.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+public enum OperationType {
     CreatePostgresqlDbSystem("CREATE_POSTGRESQL_DB_SYSTEM"),
     UpdatePostgresqlDbSystem("UPDATE_POSTGRESQL_DB_SYSTEM"),
     DeletePostgresqlDbSystem("DELETE_POSTGRESQL_DB_SYSTEM"),

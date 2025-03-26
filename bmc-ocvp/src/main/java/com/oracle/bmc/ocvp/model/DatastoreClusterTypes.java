@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/** Possible datastore cluster types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public enum DatastoreClusterTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible datastore cluster types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public enum DatastoreClusterTypes {
     Management("MANAGEMENT"),
     Workload("WORKLOAD"),
     ;

@@ -5,23 +5,21 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Tracked object in a video. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Tracked object in a video.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VideoTrackedObject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VideoTrackedObject
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VideoTrackedObject.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VideoTrackedObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "objectId", "properties", "segments"})
     public VideoTrackedObject(
@@ -38,31 +36,33 @@ public final class VideoTrackedObject
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the object category label. */
+        /**
+         * Name of the object category label.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the object category label.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Unique identifier for the object. */
+        /**
+         * Unique identifier for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectId")
         private Integer objectId;
 
         /**
          * Unique identifier for the object.
-         *
          * @param objectId the value to set
          * @return this builder
-         */
+         **/
         public Builder objectId(Integer objectId) {
             this.objectId = objectId;
             this.__explicitlySet__.add("objectId");
@@ -77,16 +77,17 @@ public final class VideoTrackedObject
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** Segments for the tracked object. */
+        /**
+         * Segments for the tracked object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("segments")
         private java.util.List<VideoTrackedObjectSegment> segments;
 
         /**
          * Segments for the tracked object.
-         *
          * @param segments the value to set
          * @return this builder
-         */
+         **/
         public Builder segments(java.util.List<VideoTrackedObjectSegment> segments) {
             this.segments = segments;
             this.__explicitlySet__.add("segments");
@@ -124,7 +125,9 @@ public final class VideoTrackedObject
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,28 +136,30 @@ public final class VideoTrackedObject
         return new Builder().copy(this);
     }
 
-    /** Name of the object category label. */
+    /**
+     * Name of the object category label.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the object category label.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Unique identifier for the object. */
+    /**
+     * Unique identifier for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectId")
     private final Integer objectId;
 
     /**
      * Unique identifier for the object.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectId() {
         return objectId;
     }
@@ -166,15 +171,16 @@ public final class VideoTrackedObject
         return properties;
     }
 
-    /** Segments for the tracked object. */
+    /**
+     * Segments for the tracked object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("segments")
     private final java.util.List<VideoTrackedObjectSegment> segments;
 
     /**
      * Segments for the tracked object.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VideoTrackedObjectSegment> getSegments() {
         return segments;
     }
@@ -186,7 +192,6 @@ public final class VideoTrackedObject
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

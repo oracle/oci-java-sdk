@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field to sort AnnouncementSummary. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum AnnouncementSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field to sort AnnouncementSummary.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum AnnouncementSortBy {
     TimeReleased("timeReleased"),
     Summary("summary"),
     ;

@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details for SQL collection creation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Details for SQL collection creation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateSqlCollectionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateSqlCollectionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateSqlCollectionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -59,167 +58,160 @@ public final class CreateSqlCollectionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the SQL collection. The name does not have to be unique, and it is
-         * changeable.
-         */
+         * The display name of the SQL collection. The name does not have to be unique, and it is changeable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the SQL collection. The name does not have to be unique, and it is
-         * changeable.
-         *
+         * The display name of the SQL collection. The name does not have to be unique, and it is changeable.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of the SQL collection. */
+        /**
+         * The description of the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the SQL collection.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the compartment containing the SQL collection. */
+        /**
+         * The OCID of the compartment containing the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the SQL collection.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the target corresponding to the security policy deployment. */
+        /**
+         * The OCID of the target corresponding to the security policy deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target corresponding to the security policy deployment.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
         /**
-         * Specifies if the SqlCollection has to be started after creation. Enabled indicates that
-         * the SqlCollection will be started after creation.
-         */
+         * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Specifies if the SqlCollection has to be started after creation. Enabled indicates that
-         * the SqlCollection will be started after creation.
-         *
+         * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The database user name. */
+        /**
+         * The database user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private String dbUserName;
 
         /**
          * The database user name.
-         *
          * @param dbUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUserName(String dbUserName) {
             this.dbUserName = dbUserName;
             this.__explicitlySet__.add("dbUserName");
             return this;
         }
         /**
-         * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-         * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued
-         * inside PL/SQL units.
-         */
+         * Specifies the level of SQL that will be collected.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
         private SqlLevel sqlLevel;
 
         /**
-         * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-         * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued
-         * inside PL/SQL units.
+         * Specifies the level of SQL that will be collected.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
          *
          * @param sqlLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlLevel(SqlLevel sqlLevel) {
             this.sqlLevel = sqlLevel;
             this.__explicitlySet__.add("sqlLevel");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -281,7 +273,9 @@ public final class CreateSqlCollectionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -291,66 +285,65 @@ public final class CreateSqlCollectionDetails
     }
 
     /**
-     * The display name of the SQL collection. The name does not have to be unique, and it is
-     * changeable.
-     */
+     * The display name of the SQL collection. The name does not have to be unique, and it is changeable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the SQL collection. The name does not have to be unique, and it is
-     * changeable.
-     *
+     * The display name of the SQL collection. The name does not have to be unique, and it is changeable.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description of the SQL collection. */
+    /**
+     * The description of the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The OCID of the compartment containing the SQL collection. */
+    /**
+     * The OCID of the compartment containing the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the target corresponding to the security policy deployment. */
+    /**
+     * The OCID of the target corresponding to the security policy deployment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target corresponding to the security policy deployment.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
     /**
-     * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the
-     * SqlCollection will be started after creation.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
+     **/
+    public enum Status {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         ;
@@ -383,41 +376,40 @@ public final class CreateSqlCollectionDetails
         }
     };
     /**
-     * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the
-     * SqlCollection will be started after creation.
-     */
+     * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the
-     * SqlCollection will be started after creation.
-     *
+     * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The database user name. */
+    /**
+     * The database user name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final String dbUserName;
 
     /**
      * The database user name.
-     *
      * @return the value
-     */
+     **/
     public String getDbUserName() {
         return dbUserName;
     }
 
     /**
-     * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-     * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside
-     * PL/SQL units.
-     */
-    public enum SqlLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the level of SQL that will be collected.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
+    public enum SqlLevel {
         UserIssuedSql("USER_ISSUED_SQL"),
         AllSql("ALL_SQL"),
         ;
@@ -450,64 +442,59 @@ public final class CreateSqlCollectionDetails
         }
     };
     /**
-     * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-     * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside
-     * PL/SQL units.
-     */
+     * Specifies the level of SQL that will be collected.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
     private final SqlLevel sqlLevel;
 
     /**
-     * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-     * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside
-     * PL/SQL units.
+     * Specifies the level of SQL that will be collected.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      *
      * @return the value
-     */
+     **/
     public SqlLevel getSqlLevel() {
         return sqlLevel;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -519,7 +506,6 @@ public final class CreateSqlCollectionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

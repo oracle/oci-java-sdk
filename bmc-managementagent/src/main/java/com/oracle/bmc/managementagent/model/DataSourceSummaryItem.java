@@ -5,34 +5,34 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * The information about the dataSources that agent is associated to. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * The information about the dataSources that agent is associated to.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = DataSourceSummaryItem.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = DataSourceSummaryItem.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PrometheusEmitterDataSourceSummaryItem.class,
-            name = "PROMETHEUS_EMITTER"),
+        value = PrometheusEmitterDataSourceSummaryItem.class,
+        name = "PROMETHEUS_EMITTER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = KubernetesClusterDataSourceSummaryItem.class,
-            name = "KUBERNETES_CLUSTER")
+        value = KubernetesClusterDataSourceSummaryItem.class,
+        name = "KUBERNETES_CLUSTER"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DataSourceSummaryItem
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class DataSourceSummaryItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "name"})
     protected DataSourceSummaryItem(String key, String name) {
@@ -41,28 +41,30 @@ public class DataSourceSummaryItem
         this.name = name;
     }
 
-    /** Data source type and name identifier. */
+    /**
+     * Data source type and name identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Data source type and name identifier.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Unique name of the dataSource. */
+    /**
+     * Unique name of the dataSource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Unique name of the dataSource.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -74,7 +76,6 @@ public class DataSourceSummaryItem
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

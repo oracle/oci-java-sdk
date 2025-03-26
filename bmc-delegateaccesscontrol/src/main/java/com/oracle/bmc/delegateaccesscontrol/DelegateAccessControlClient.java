@@ -4,18 +4,17 @@
  */
 package com.oracle.bmc.delegateaccesscontrol;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.delegateaccesscontrol.internal.http.*;
 import com.oracle.bmc.delegateaccesscontrol.requests.*;
 import com.oracle.bmc.delegateaccesscontrol.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements DelegateAccessControl {
-    /** Service instance for DelegateAccessControl. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public class DelegateAccessControlClient implements DelegateAccessControl {
+    /**
+     * Service instance for DelegateAccessControl.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DELEGATEACCESSCONTROL")
@@ -23,22 +22,319 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
                     .serviceEndpointTemplate(
                             "https://delegate-access-control.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DelegateAccessControlClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final DelegateAccessControlWaiters waiters;
 
     private final DelegateAccessControlPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    DelegateAccessControlClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public DelegateAccessControlClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected DelegateAccessControlClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -60,11 +356,29 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
         this.waiters = new DelegateAccessControlWaiters(executorService, this);
 
         this.paginators = new DelegateAccessControlPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -72,8 +386,8 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -82,8 +396,6 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "delegateaccesscontrol";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -91,7 +403,6 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -102,991 +413,1206 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public DelegateAccessControlClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DelegateAccessControlClient(
-                    this, authenticationDetailsProvider, executorService);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public ApproveDelegatedResourceAccessRequestResponse approveDelegatedResourceAccessRequest(
             ApproveDelegatedResourceAccessRequestRequest request) {
+        LOG.trace("Called approveDelegatedResourceAccessRequest");
+        final ApproveDelegatedResourceAccessRequestRequest interceptedRequest =
+                ApproveDelegatedResourceAccessRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ApproveDelegatedResourceAccessRequestConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getApproveDelegatedResourceAccessRequestDetails(),
-                "approveDelegatedResourceAccessRequestDetails is required");
-
-        return clientCall(request, ApproveDelegatedResourceAccessRequestResponse::builder)
-                .logger(LOG, "approveDelegatedResourceAccessRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ApproveDelegatedResourceAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ApproveDelegatedResourceAccessRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ApproveDelegatedResourceAccessRequestRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("approve")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ApproveDelegatedResourceAccessRequestResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ApproveDelegatedResourceAccessRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ApproveDelegatedResourceAccessRequest");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ApproveDelegatedResourceAccessRequestResponse>
+                transformer =
+                        ApproveDelegatedResourceAccessRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getApproveDelegatedResourceAccessRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeDelegationControlCompartmentResponse changeDelegationControlCompartment(
             ChangeDelegationControlCompartmentRequest request) {
+        LOG.trace("Called changeDelegationControlCompartment");
+        final ChangeDelegationControlCompartmentRequest interceptedRequest =
+                ChangeDelegationControlCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDelegationControlCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationControlId(), "delegationControlId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeDelegationControlCompartmentDetails(),
-                "changeDelegationControlCompartmentDetails is required");
-
-        return clientCall(request, ChangeDelegationControlCompartmentResponse::builder)
-                .logger(LOG, "changeDelegationControlCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ChangeDelegationControlCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ChangeDelegationControlCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeDelegationControlCompartmentRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationControls")
-                .appendPathParam(request.getDelegationControlId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeDelegationControlCompartmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeDelegationControlCompartmentResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ChangeDelegationControlCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDelegationControlCompartmentResponse>
+                transformer =
+                        ChangeDelegationControlCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDelegationControlCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeDelegationSubscriptionCompartmentResponse changeDelegationSubscriptionCompartment(
             ChangeDelegationSubscriptionCompartmentRequest request) {
+        LOG.trace("Called changeDelegationSubscriptionCompartment");
+        final ChangeDelegationSubscriptionCompartmentRequest interceptedRequest =
+                ChangeDelegationSubscriptionCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDelegationSubscriptionCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationSubscriptionId(),
-                "delegationSubscriptionId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeDelegationSubscriptionCompartmentDetails(),
-                "changeDelegationSubscriptionCompartmentDetails is required");
-
-        return clientCall(request, ChangeDelegationSubscriptionCompartmentResponse::builder)
-                .logger(LOG, "changeDelegationSubscriptionCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ChangeDelegationSubscriptionCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ChangeDelegationSubscriptionCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeDelegationSubscriptionCompartmentRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationSubscriptions")
-                .appendPathParam(request.getDelegationSubscriptionId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeDelegationSubscriptionCompartmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeDelegationSubscriptionCompartmentResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ChangeDelegationSubscriptionCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDelegationSubscriptionCompartmentResponse>
+                transformer =
+                        ChangeDelegationSubscriptionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDelegationSubscriptionCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDelegationControlResponse createDelegationControl(
             CreateDelegationControlRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDelegationControlDetails(),
-                "createDelegationControlDetails is required");
+        LOG.trace("Called createDelegationControl");
+        final CreateDelegationControlRequest interceptedRequest =
+                CreateDelegationControlConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDelegationControlConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDelegationControlResponse::builder)
-                .logger(LOG, "createDelegationControl")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "CreateDelegationControl",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/CreateDelegationControl")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDelegationControlRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationControls")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.DelegationControl.class,
-                        CreateDelegationControlResponse.Builder::delegationControl)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDelegationControlResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDelegationControlResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateDelegationControlResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location",
-                        CreateDelegationControlResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", CreateDelegationControlResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/CreateDelegationControl");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDelegationControlResponse>
+                transformer =
+                        CreateDelegationControlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDelegationControlDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDelegationSubscriptionResponse createDelegationSubscription(
             CreateDelegationSubscriptionRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDelegationSubscriptionDetails(),
-                "createDelegationSubscriptionDetails is required");
+        LOG.trace("Called createDelegationSubscription");
+        final CreateDelegationSubscriptionRequest interceptedRequest =
+                CreateDelegationSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDelegationSubscriptionConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDelegationSubscriptionResponse::builder)
-                .logger(LOG, "createDelegationSubscription")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "CreateDelegationSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/CreateDelegationSubscription")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDelegationSubscriptionRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationSubscriptions")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription.class,
-                        CreateDelegationSubscriptionResponse.Builder::delegationSubscription)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDelegationSubscriptionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateDelegationSubscriptionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateDelegationSubscriptionResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location",
-                        CreateDelegationSubscriptionResponse.Builder::contentLocation)
-                .handleResponseHeaderString(
-                        "etag", CreateDelegationSubscriptionResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/CreateDelegationSubscription");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDelegationSubscriptionResponse>
+                transformer =
+                        CreateDelegationSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateDelegationSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDelegationControlResponse deleteDelegationControl(
             DeleteDelegationControlRequest request) {
+        LOG.trace("Called deleteDelegationControl");
+        final DeleteDelegationControlRequest interceptedRequest =
+                DeleteDelegationControlConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDelegationControlConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationControlId(), "delegationControlId must not be blank");
-
-        return clientCall(request, DeleteDelegationControlResponse::builder)
-                .logger(LOG, "deleteDelegationControl")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "DeleteDelegationControl",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/DeleteDelegationControl")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDelegationControlRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationControls")
-                .appendPathParam(request.getDelegationControlId())
-                .appendQueryParam("description", request.getDescription())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDelegationControlResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDelegationControlResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/DeleteDelegationControl");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDelegationControlResponse>
+                transformer =
+                        DeleteDelegationControlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDelegationSubscriptionResponse deleteDelegationSubscription(
             DeleteDelegationSubscriptionRequest request) {
+        LOG.trace("Called deleteDelegationSubscription");
+        final DeleteDelegationSubscriptionRequest interceptedRequest =
+                DeleteDelegationSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDelegationSubscriptionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationSubscriptionId(),
-                "delegationSubscriptionId must not be blank");
-
-        return clientCall(request, DeleteDelegationSubscriptionResponse::builder)
-                .logger(LOG, "deleteDelegationSubscription")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "DeleteDelegationSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/DeleteDelegationSubscription")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDelegationSubscriptionRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationSubscriptions")
-                .appendPathParam(request.getDelegationSubscriptionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDelegationSubscriptionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteDelegationSubscriptionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/DeleteDelegationSubscription");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDelegationSubscriptionResponse>
+                transformer =
+                        DeleteDelegationSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDelegatedResourceAccessRequestResponse getDelegatedResourceAccessRequest(
             GetDelegatedResourceAccessRequestRequest request) {
+        LOG.trace("Called getDelegatedResourceAccessRequest");
+        final GetDelegatedResourceAccessRequestRequest interceptedRequest =
+                GetDelegatedResourceAccessRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDelegatedResourceAccessRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-
-        return clientCall(request, GetDelegatedResourceAccessRequestResponse::builder)
-                .logger(LOG, "getDelegatedResourceAccessRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "GetDelegatedResourceAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/GetDelegatedResourceAccessRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDelegatedResourceAccessRequestRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest
-                                .class,
-                        GetDelegatedResourceAccessRequestResponse.Builder
-                                ::delegatedResourceAccessRequest)
-                .handleResponseHeaderString(
-                        "etag", GetDelegatedResourceAccessRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetDelegatedResourceAccessRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/GetDelegatedResourceAccessRequest");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDelegatedResourceAccessRequestResponse>
+                transformer =
+                        GetDelegatedResourceAccessRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDelegatedResourceAccessRequestAuditLogReportResponse
             getDelegatedResourceAccessRequestAuditLogReport(
                     GetDelegatedResourceAccessRequestAuditLogReportRequest request) {
+        LOG.trace("Called getDelegatedResourceAccessRequestAuditLogReport");
+        final GetDelegatedResourceAccessRequestAuditLogReportRequest interceptedRequest =
+                GetDelegatedResourceAccessRequestAuditLogReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDelegatedResourceAccessRequestAuditLogReportConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-
-        return clientCall(request, GetDelegatedResourceAccessRequestAuditLogReportResponse::builder)
-                .logger(LOG, "getDelegatedResourceAccessRequestAuditLogReport")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "GetDelegatedResourceAccessRequestAuditLogReport",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequestAuditLogReport/GetDelegatedResourceAccessRequestAuditLogReport")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDelegatedResourceAccessRequestAuditLogReportRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .appendPathParam("delegatedResourceAccessRequestAuditLogReport")
-                .appendQueryParam("isProcessTreeEnabled", request.getIsProcessTreeEnabled())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .DelegatedResourceAccessRequestAuditLogReport.class,
-                        GetDelegatedResourceAccessRequestAuditLogReportResponse.Builder
-                                ::delegatedResourceAccessRequestAuditLogReport)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetDelegatedResourceAccessRequestAuditLogReportResponse.Builder
-                                ::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequestAuditLogReport/GetDelegatedResourceAccessRequestAuditLogReport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetDelegatedResourceAccessRequestAuditLogReportResponse>
+                transformer =
+                        GetDelegatedResourceAccessRequestAuditLogReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDelegationControlResponse getDelegationControl(GetDelegationControlRequest request) {
+        LOG.trace("Called getDelegationControl");
+        final GetDelegationControlRequest interceptedRequest =
+                GetDelegationControlConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDelegationControlConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationControlId(), "delegationControlId must not be blank");
-
-        return clientCall(request, GetDelegationControlResponse::builder)
-                .logger(LOG, "getDelegationControl")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "GetDelegationControl",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/GetDelegationControl")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDelegationControlRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationControls")
-                .appendPathParam(request.getDelegationControlId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.DelegationControl.class,
-                        GetDelegationControlResponse.Builder::delegationControl)
-                .handleResponseHeaderString("etag", GetDelegationControlResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDelegationControlResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/GetDelegationControl");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDelegationControlResponse>
+                transformer =
+                        GetDelegationControlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDelegationSubscriptionResponse getDelegationSubscription(
             GetDelegationSubscriptionRequest request) {
+        LOG.trace("Called getDelegationSubscription");
+        final GetDelegationSubscriptionRequest interceptedRequest =
+                GetDelegationSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDelegationSubscriptionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationSubscriptionId(),
-                "delegationSubscriptionId must not be blank");
-
-        return clientCall(request, GetDelegationSubscriptionResponse::builder)
-                .logger(LOG, "getDelegationSubscription")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "GetDelegationSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/GetDelegationSubscription")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDelegationSubscriptionRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationSubscriptions")
-                .appendPathParam(request.getDelegationSubscriptionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription.class,
-                        GetDelegationSubscriptionResponse.Builder::delegationSubscription)
-                .handleResponseHeaderString("etag", GetDelegationSubscriptionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDelegationSubscriptionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/GetDelegationSubscription");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDelegationSubscriptionResponse>
+                transformer =
+                        GetDelegationSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetServiceProviderResponse getServiceProvider(GetServiceProviderRequest request) {
+        LOG.trace("Called getServiceProvider");
+        final GetServiceProviderRequest interceptedRequest =
+                GetServiceProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceProviderConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getServiceProviderId(), "serviceProviderId must not be blank");
-
-        return clientCall(request, GetServiceProviderResponse::builder)
-                .logger(LOG, "getServiceProvider")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "GetServiceProvider",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/GetServiceProvider")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetServiceProviderRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("serviceProviders")
-                .appendPathParam(request.getServiceProviderId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.ServiceProvider.class,
-                        GetServiceProviderResponse.Builder::serviceProvider)
-                .handleResponseHeaderString("etag", GetServiceProviderResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetServiceProviderResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/GetServiceProvider");
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceProviderResponse>
+                transformer =
+                        GetServiceProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetServiceProviderActionResponse getServiceProviderAction(
             GetServiceProviderActionRequest request) {
+        LOG.trace("Called getServiceProviderAction");
+        final GetServiceProviderActionRequest interceptedRequest =
+                GetServiceProviderActionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceProviderActionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getServiceProviderActionId(), "serviceProviderActionId must not be blank");
-
-        return clientCall(request, GetServiceProviderActionResponse::builder)
-                .logger(LOG, "getServiceProviderAction")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "GetServiceProviderAction",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/GetServiceProviderAction")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetServiceProviderActionRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("serviceProviderActions")
-                .appendPathParam(request.getServiceProviderActionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderAction.class,
-                        GetServiceProviderActionResponse.Builder::serviceProviderAction)
-                .handleResponseHeaderString("etag", GetServiceProviderActionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetServiceProviderActionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/GetServiceProviderAction");
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceProviderActionResponse>
+                transformer =
+                        GetServiceProviderActionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDelegatedResourceAccessRequestHistoriesResponse
             listDelegatedResourceAccessRequestHistories(
                     ListDelegatedResourceAccessRequestHistoriesRequest request) {
+        LOG.trace("Called listDelegatedResourceAccessRequestHistories");
+        final ListDelegatedResourceAccessRequestHistoriesRequest interceptedRequest =
+                ListDelegatedResourceAccessRequestHistoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDelegatedResourceAccessRequestHistoriesConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-
-        return clientCall(request, ListDelegatedResourceAccessRequestHistoriesResponse::builder)
-                .logger(LOG, "listDelegatedResourceAccessRequestHistories")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListDelegatedResourceAccessRequestHistories",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequestHistories")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDelegatedResourceAccessRequestHistoriesRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .appendPathParam("history")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .DelegatedResourceAccessRequestHistoryCollection.class,
-                        ListDelegatedResourceAccessRequestHistoriesResponse.Builder
-                                ::delegatedResourceAccessRequestHistoryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListDelegatedResourceAccessRequestHistoriesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListDelegatedResourceAccessRequestHistoriesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequestHistories");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListDelegatedResourceAccessRequestHistoriesResponse>
+                transformer =
+                        ListDelegatedResourceAccessRequestHistoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDelegatedResourceAccessRequestsResponse listDelegatedResourceAccessRequests(
             ListDelegatedResourceAccessRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listDelegatedResourceAccessRequests");
+        final ListDelegatedResourceAccessRequestsRequest interceptedRequest =
+                ListDelegatedResourceAccessRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDelegatedResourceAccessRequestsConverter.fromRequest(
+                        client, interceptedRequest);
 
-        return clientCall(request, ListDelegatedResourceAccessRequestsResponse::builder)
-                .logger(LOG, "listDelegatedResourceAccessRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListDelegatedResourceAccessRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDelegatedResourceAccessRequestsRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("delegationControlId", request.getDelegationControlId())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("requestStatus", request.getRequestStatus())
-                .appendQueryParam("timeStart", request.getTimeStart())
-                .appendQueryParam("timeEnd", request.getTimeEnd())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .DelegatedResourceAccessRequestSummaryCollection.class,
-                        ListDelegatedResourceAccessRequestsResponse.Builder
-                                ::delegatedResourceAccessRequestSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListDelegatedResourceAccessRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListDelegatedResourceAccessRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequests");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDelegatedResourceAccessRequestsResponse>
+                transformer =
+                        ListDelegatedResourceAccessRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDelegationControlResourcesResponse listDelegationControlResources(
             ListDelegationControlResourcesRequest request) {
+        LOG.trace("Called listDelegationControlResources");
+        final ListDelegationControlResourcesRequest interceptedRequest =
+                ListDelegationControlResourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDelegationControlResourcesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationControlId(), "delegationControlId must not be blank");
-
-        return clientCall(request, ListDelegationControlResourcesResponse::builder)
-                .logger(LOG, "listDelegationControlResources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListDelegationControlResources",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControlResources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDelegationControlResourcesRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationControls")
-                .appendPathParam(request.getDelegationControlId())
-                .appendPathParam("resources")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .DelegationControlResourceCollection.class,
-                        ListDelegationControlResourcesResponse.Builder
-                                ::delegationControlResourceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListDelegationControlResourcesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListDelegationControlResourcesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControlResources");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDelegationControlResourcesResponse>
+                transformer =
+                        ListDelegationControlResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDelegationControlsResponse listDelegationControls(
             ListDelegationControlsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listDelegationControls");
+        final ListDelegationControlsRequest interceptedRequest =
+                ListDelegationControlsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDelegationControlsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDelegationControlsResponse::builder)
-                .logger(LOG, "listDelegationControls")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListDelegationControls",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControls")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDelegationControlsRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationControls")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("resourceType", request.getResourceType())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .DelegationControlSummaryCollection.class,
-                        ListDelegationControlsResponse.Builder::delegationControlSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDelegationControlsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDelegationControlsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControls");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDelegationControlsResponse>
+                transformer =
+                        ListDelegationControlsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDelegationSubscriptionsResponse listDelegationSubscriptions(
             ListDelegationSubscriptionsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listDelegationSubscriptions");
+        final ListDelegationSubscriptionsRequest interceptedRequest =
+                ListDelegationSubscriptionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDelegationSubscriptionsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDelegationSubscriptionsResponse::builder)
-                .logger(LOG, "listDelegationSubscriptions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListDelegationSubscriptions",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ListDelegationSubscriptions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDelegationSubscriptionsRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationSubscriptions")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .DelegationSubscriptionSummaryCollection.class,
-                        ListDelegationSubscriptionsResponse.Builder
-                                ::delegationSubscriptionSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDelegationSubscriptionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDelegationSubscriptionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ListDelegationSubscriptions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDelegationSubscriptionsResponse>
+                transformer =
+                        ListDelegationSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListServiceProviderActionsResponse listServiceProviderActions(
             ListServiceProviderActionsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listServiceProviderActions");
+        final ListServiceProviderActionsRequest interceptedRequest =
+                ListServiceProviderActionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServiceProviderActionsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListServiceProviderActionsResponse::builder)
-                .logger(LOG, "listServiceProviderActions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListServiceProviderActions",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/ListServiceProviderActions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListServiceProviderActionsRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("serviceProviderActions")
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("resourceType", request.getResourceType())
-                .appendListQueryParam(
-                        "serviceProviderServiceType",
-                        request.getServiceProviderServiceType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .ServiceProviderActionSummaryCollection.class,
-                        ListServiceProviderActionsResponse.Builder
-                                ::serviceProviderActionSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListServiceProviderActionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListServiceProviderActionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/ListServiceProviderActions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListServiceProviderActionsResponse>
+                transformer =
+                        ListServiceProviderActionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListServiceProviderInteractionsResponse listServiceProviderInteractions(
             ListServiceProviderInteractionsRequest request) {
+        LOG.trace("Called listServiceProviderInteractions");
+        final ListServiceProviderInteractionsRequest interceptedRequest =
+                ListServiceProviderInteractionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServiceProviderInteractionsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-
-        return clientCall(request, ListServiceProviderInteractionsResponse::builder)
-                .logger(LOG, "listServiceProviderInteractions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListServiceProviderInteractions",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListServiceProviderInteractions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListServiceProviderInteractionsRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .appendPathParam("serviceProviderInteractions")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model
-                                .ServiceProviderInteractionCollection.class,
-                        ListServiceProviderInteractionsResponse.Builder
-                                ::serviceProviderInteractionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListServiceProviderInteractionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListServiceProviderInteractionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListServiceProviderInteractions");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListServiceProviderInteractionsResponse>
+                transformer =
+                        ListServiceProviderInteractionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListServiceProvidersResponse listServiceProviders(ListServiceProvidersRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listServiceProviders");
+        final ListServiceProvidersRequest interceptedRequest =
+                ListServiceProvidersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServiceProvidersConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListServiceProvidersResponse::builder)
-                .logger(LOG, "listServiceProviders")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ListServiceProviders",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/ListServiceProviders")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListServiceProvidersRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("serviceProviders")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("supportedResourceType", request.getSupportedResourceType())
-                .appendEnumQueryParam("serviceProviderType", request.getServiceProviderType())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderSummaryCollection
-                                .class,
-                        ListServiceProvidersResponse.Builder::serviceProviderSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListServiceProvidersResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListServiceProvidersResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/ListServiceProviders");
+        java.util.function.Function<javax.ws.rs.core.Response, ListServiceProvidersResponse>
+                transformer =
+                        ListServiceProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RejectDelegatedResourceAccessRequestResponse rejectDelegatedResourceAccessRequest(
             RejectDelegatedResourceAccessRequestRequest request) {
+        LOG.trace("Called rejectDelegatedResourceAccessRequest");
+        final RejectDelegatedResourceAccessRequestRequest interceptedRequest =
+                RejectDelegatedResourceAccessRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RejectDelegatedResourceAccessRequestConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getRejectDelegatedResourceAccessRequestDetails(),
-                "rejectDelegatedResourceAccessRequestDetails is required");
-
-        return clientCall(request, RejectDelegatedResourceAccessRequestResponse::builder)
-                .logger(LOG, "rejectDelegatedResourceAccessRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "RejectDelegatedResourceAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RejectDelegatedResourceAccessRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RejectDelegatedResourceAccessRequestRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("reject")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RejectDelegatedResourceAccessRequestResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RejectDelegatedResourceAccessRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RejectDelegatedResourceAccessRequest");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RejectDelegatedResourceAccessRequestResponse>
+                transformer =
+                        RejectDelegatedResourceAccessRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRejectDelegatedResourceAccessRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RevokeDelegatedResourceAccessRequestResponse revokeDelegatedResourceAccessRequest(
             RevokeDelegatedResourceAccessRequestRequest request) {
+        LOG.trace("Called revokeDelegatedResourceAccessRequest");
+        final RevokeDelegatedResourceAccessRequestRequest interceptedRequest =
+                RevokeDelegatedResourceAccessRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RevokeDelegatedResourceAccessRequestConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getRevokeDelegatedResourceAccessRequestDetails(),
-                "revokeDelegatedResourceAccessRequestDetails is required");
-
-        return clientCall(request, RevokeDelegatedResourceAccessRequestResponse::builder)
-                .logger(LOG, "revokeDelegatedResourceAccessRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "RevokeDelegatedResourceAccessRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RevokeDelegatedResourceAccessRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RevokeDelegatedResourceAccessRequestRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("revoke")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RevokeDelegatedResourceAccessRequestResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RevokeDelegatedResourceAccessRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RevokeDelegatedResourceAccessRequest");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RevokeDelegatedResourceAccessRequestResponse>
+                transformer =
+                        RevokeDelegatedResourceAccessRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRevokeDelegatedResourceAccessRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ServiceProviderInteractionRequestResponse serviceProviderInteractionRequest(
             ServiceProviderInteractionRequestRequest request) {
+        LOG.trace("Called serviceProviderInteractionRequest");
+        final ServiceProviderInteractionRequestRequest interceptedRequest =
+                ServiceProviderInteractionRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ServiceProviderInteractionRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegatedResourceAccessRequestId(),
-                "delegatedResourceAccessRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getServiceProviderInteractionRequestDetails(),
-                "serviceProviderInteractionRequestDetails is required");
-
-        return clientCall(request, ServiceProviderInteractionRequestResponse::builder)
-                .logger(LOG, "serviceProviderInteractionRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "ServiceProviderInteractionRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ServiceProviderInteractionRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ServiceProviderInteractionRequestRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegatedResourceAccessRequests")
-                .appendPathParam(request.getDelegatedResourceAccessRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("serviceProviderInteractionRequest")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ServiceProviderInteractionRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ServiceProviderInteractionRequest");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ServiceProviderInteractionRequestResponse>
+                transformer =
+                        ServiceProviderInteractionRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getServiceProviderInteractionRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDelegationControlResponse updateDelegationControl(
             UpdateDelegationControlRequest request) {
+        LOG.trace("Called updateDelegationControl");
+        final UpdateDelegationControlRequest interceptedRequest =
+                UpdateDelegationControlConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDelegationControlConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationControlId(), "delegationControlId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDelegationControlDetails(),
-                "updateDelegationControlDetails is required");
-
-        return clientCall(request, UpdateDelegationControlResponse::builder)
-                .logger(LOG, "updateDelegationControl")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "UpdateDelegationControl",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/UpdateDelegationControl")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDelegationControlRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationControls")
-                .appendPathParam(request.getDelegationControlId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.DelegationControl.class,
-                        UpdateDelegationControlResponse.Builder::delegationControl)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDelegationControlResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDelegationControlResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "content-location",
-                        UpdateDelegationControlResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", UpdateDelegationControlResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/UpdateDelegationControl");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDelegationControlResponse>
+                transformer =
+                        UpdateDelegationControlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDelegationControlDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDelegationSubscriptionResponse updateDelegationSubscription(
             UpdateDelegationSubscriptionRequest request) {
+        LOG.trace("Called updateDelegationSubscription");
+        final UpdateDelegationSubscriptionRequest interceptedRequest =
+                UpdateDelegationSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDelegationSubscriptionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDelegationSubscriptionId(),
-                "delegationSubscriptionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDelegationSubscriptionDetails(),
-                "updateDelegationSubscriptionDetails is required");
-
-        return clientCall(request, UpdateDelegationSubscriptionResponse::builder)
-                .logger(LOG, "updateDelegationSubscription")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "DelegateAccessControl",
                         "UpdateDelegationSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/UpdateDelegationSubscription")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDelegationSubscriptionRequest::builder)
-                .basePath("/20230801")
-                .appendPathParam("delegationSubscriptions")
-                .appendPathParam(request.getDelegationSubscriptionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription.class,
-                        UpdateDelegationSubscriptionResponse.Builder::delegationSubscription)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateDelegationSubscriptionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDelegationSubscriptionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "content-location",
-                        UpdateDelegationSubscriptionResponse.Builder::contentLocation)
-                .handleResponseHeaderString(
-                        "etag", UpdateDelegationSubscriptionResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/UpdateDelegationSubscription");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDelegationSubscriptionResponse>
+                transformer =
+                        UpdateDelegationSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDelegationSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -1097,209 +1623,5 @@ public class DelegateAccessControlClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public DelegateAccessControlPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DelegateAccessControlClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

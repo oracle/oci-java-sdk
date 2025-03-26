@@ -5,22 +5,19 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the Key that you wish to import. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * The details of the Key that you wish to import.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImportKeyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ImportKeyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ImportKeyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isAutoRotationEnabled",
@@ -57,16 +54,17 @@ public final class ImportKeyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A parameter specifying whether the auto key rotation is enabled or not. */
+        /**
+         * A parameter specifying whether the auto key rotation is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
         private Boolean isAutoRotationEnabled;
 
         /**
          * A parameter specifying whether the auto key rotation is enabled or not.
-         *
          * @param isAutoRotationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
             this.isAutoRotationEnabled = isAutoRotationEnabled;
             this.__explicitlySet__.add("isAutoRotationEnabled");
@@ -81,35 +79,37 @@ public final class ImportKeyDetails
             this.__explicitlySet__.add("autoKeyRotationDetails");
             return this;
         }
-        /** The OCID of the compartment that contains this key. */
+        /**
+         * The OCID of the compartment that contains this key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains this key.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "foo-value"}}}
-         */
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "foo-value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "foo-value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "foo-value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -119,7 +119,8 @@ public final class ImportKeyDetails
         /**
          * A user-friendly name for the key. It does not have to be unique, and it is changeable.
          * Avoid entering confidential information.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -129,26 +130,29 @@ public final class ImportKeyDetails
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -173,33 +177,26 @@ public final class ImportKeyDetails
             return this;
         }
         /**
-         * The key's protection mode indicates how the key persists and where cryptographic
-         * operations that use the key are performed. A protection mode of {@code HSM} means that
-         * the key persists on a hardware security module (HSM) and all cryptographic operations are
-         * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key
-         * persists on the server, protected by the vault's RSA wrapping key which persists on the
-         * HSM. All cryptographic operations that use a key with a protection mode of {@code
-         * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
-         * {@code HSM}. You can't change a key's protection mode after the key is created or
-         * imported.
-         */
+         * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+         * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+         * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+         * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+         * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
         /**
-         * The key's protection mode indicates how the key persists and where cryptographic
-         * operations that use the key are performed. A protection mode of {@code HSM} means that
-         * the key persists on a hardware security module (HSM) and all cryptographic operations are
-         * performed inside the HSM. A protection mode of {@code SOFTWARE} means that the key
-         * persists on the server, protected by the vault's RSA wrapping key which persists on the
-         * HSM. All cryptographic operations that use a key with a protection mode of {@code
-         * SOFTWARE} are performed on the server. By default, a key's protection mode is set to
-         * {@code HSM}. You can't change a key's protection mode after the key is created or
-         * imported.
+         * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+         * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+         * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+         * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+         * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
          *
          * @param protectionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
@@ -260,7 +257,9 @@ public final class ImportKeyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -269,15 +268,16 @@ public final class ImportKeyDetails
         return new Builder().copy(this);
     }
 
-    /** A parameter specifying whether the auto key rotation is enabled or not. */
+    /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
     private final Boolean isAutoRotationEnabled;
 
     /**
      * A parameter specifying whether the auto key rotation is enabled or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoRotationEnabled() {
         return isAutoRotationEnabled;
     }
@@ -289,66 +289,72 @@ public final class ImportKeyDetails
         return autoKeyRotationDetails;
     }
 
-    /** The OCID of the compartment that contains this key. */
+    /**
+     * The OCID of the compartment that contains this key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains this key.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "foo-value"}}}
-     */
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "foo-value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "foo-value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "foo-value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid
-     * entering confidential information.
-     */
+     * A user-friendly name for the key. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name for the key. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -368,16 +374,14 @@ public final class ImportKeyDetails
     }
 
     /**
-     * The key's protection mode indicates how the key persists and where cryptographic operations
-     * that use the key are performed. A protection mode of {@code HSM} means that the key persists
-     * on a hardware security module (HSM) and all cryptographic operations are performed inside the
-     * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
-     * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
-     * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
-     * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
-     */
-    public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+     *
+     **/
+    public enum ProtectionMode {
         Hsm("HSM"),
         Software("SOFTWARE"),
         ;
@@ -410,30 +414,25 @@ public final class ImportKeyDetails
         }
     };
     /**
-     * The key's protection mode indicates how the key persists and where cryptographic operations
-     * that use the key are performed. A protection mode of {@code HSM} means that the key persists
-     * on a hardware security module (HSM) and all cryptographic operations are performed inside the
-     * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
-     * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
-     * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
-     * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
-     */
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
     /**
-     * The key's protection mode indicates how the key persists and where cryptographic operations
-     * that use the key are performed. A protection mode of {@code HSM} means that the key persists
-     * on a hardware security module (HSM) and all cryptographic operations are performed inside the
-     * HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server,
-     * protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic
-     * operations that use a key with a protection mode of {@code SOFTWARE} are performed on the
-     * server. By default, a key's protection mode is set to {@code HSM}. You can't change a key's
-     * protection mode after the key is created or imported.
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
+     * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
      *
      * @return the value
-     */
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
@@ -445,7 +444,6 @@ public final class ImportKeyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

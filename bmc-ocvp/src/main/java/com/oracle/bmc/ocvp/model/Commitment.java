@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/** Commitment offerings */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public enum Commitment implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Commitment offerings
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public enum Commitment {
     Hour("HOUR"),
     Month("MONTH"),
     OneYear("ONE_YEAR"),

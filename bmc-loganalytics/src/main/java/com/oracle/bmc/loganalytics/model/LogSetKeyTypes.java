@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Allowed values for logSetKey. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum LogSetKeyTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Allowed values for logSetKey.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum LogSetKeyTypes {
     ObjectPath("OBJECT_PATH"),
 
     /**

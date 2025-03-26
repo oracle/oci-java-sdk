@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the Exadata Database Storage Vault. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of the Exadata Database Storage Vault.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExascaleDbStorageVault.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExascaleDbStorageVault.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExascaleDbStorageVault
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -89,184 +89,175 @@ public final class ExascaleDbStorageVault
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Database Storage Vault.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Database Storage Vault.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The name of the availability domain in which the Exadata Database Storage Vault is
-         * located.
-         */
+         * The name of the availability domain in which the Exadata Database Storage Vault is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The name of the availability domain in which the Exadata Database Storage Vault is
-         * located.
-         *
+         * The name of the availability domain in which the Exadata Database Storage Vault is located.
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The current state of the Exadata Database Storage Vault. */
+        /**
+         * The current state of the Exadata Database Storage Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Exadata Database Storage Vault.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The user-friendly name for the Exadata Database Storage Vault. The name does not need to
-         * be unique.
-         */
+         * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Exadata Database Storage Vault. The name does not need to
-         * be unique.
-         *
+         * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Exadata Database Storage Vault description. */
+        /**
+         * Exadata Database Storage Vault description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Exadata Database Storage Vault description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The date and time that the Exadata Database Storage Vault was created. */
+        /**
+         * The date and time that the Exadata Database Storage Vault was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time that the Exadata Database Storage Vault was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Additional information about the current lifecycle state. */
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The time zone that you want to use for the Exadata Database Storage Vault. For details,
-         * see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
-         */
+         * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
-         * The time zone that you want to use for the Exadata Database Storage Vault. For details,
-         * see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
             return this;
         }
         /**
-         * The List of Exadata VM cluster on Exascale Infrastructure
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:**
-         * If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
-         * Infrastructure, this list is empty.
-         */
+         * The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
         private java.util.List<String> vmClusterIds;
 
         /**
-         * The List of Exadata VM cluster on Exascale Infrastructure
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:**
-         * If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
-         * Infrastructure, this list is empty.
+         * The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
          *
          * @param vmClusterIds the value to set
          * @return this builder
-         */
+         **/
         public Builder vmClusterIds(java.util.List<String> vmClusterIds) {
             this.vmClusterIds = vmClusterIds;
             this.__explicitlySet__.add("vmClusterIds");
             return this;
         }
-        /** The number of Exadata VM clusters used the Exadata Database Storage Vault. */
+        /**
+         * The number of Exadata VM clusters used the Exadata Database Storage Vault.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterCount")
         private Integer vmClusterCount;
 
@@ -275,53 +266,51 @@ public final class ExascaleDbStorageVault
          *
          * @param vmClusterCount the value to set
          * @return this builder
-         */
+         **/
         public Builder vmClusterCount(Integer vmClusterCount) {
             this.vmClusterCount = vmClusterCount;
             this.__explicitlySet__.add("vmClusterCount");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -329,40 +318,36 @@ public final class ExascaleDbStorageVault
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          * @param exadataInfrastructureId the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = exadataInfrastructureId;
             this.__explicitlySet__.add("exadataInfrastructureId");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -378,7 +363,10 @@ public final class ExascaleDbStorageVault
             this.__explicitlySet__.add("highCapacityDatabaseStorage");
             return this;
         }
-        /** The size of additional Flash Cache in percentage of High Capacity database storage. */
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalFlashCacheInPercent")
         private Integer additionalFlashCacheInPercent;
 
@@ -387,45 +375,39 @@ public final class ExascaleDbStorageVault
          *
          * @param additionalFlashCacheInPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalFlashCacheInPercent(Integer additionalFlashCacheInPercent) {
             this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
             this.__explicitlySet__.add("additionalFlashCacheInPercent");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cluster placement group of the Exadata Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cluster placement group of the Exadata Infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
          * @param clusterPlacementGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             this.clusterPlacementGroupId = clusterPlacementGroupId;
             this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription with which resource needs to be associated with.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription with which resource needs to be associated with.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
          * @param subscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
@@ -526,7 +508,9 @@ public final class ExascaleDbStorageVault
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -536,56 +520,51 @@ public final class ExascaleDbStorageVault
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Database Storage Vault.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Database Storage Vault.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The current state of the Exadata Database Storage Vault. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Exadata Database Storage Vault.
+     **/
+    public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Updating("UPDATING"),
@@ -594,8 +573,8 @@ public final class ExascaleDbStorageVault
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -634,114 +613,114 @@ public final class ExascaleDbStorageVault
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Exadata Database Storage Vault. */
+    /**
+     * The current state of the Exadata Database Storage Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Exadata Database Storage Vault.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be
-     * unique.
-     */
+     * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be
-     * unique.
-     *
+     * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Exadata Database Storage Vault description. */
+    /**
+     * Exadata Database Storage Vault description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Exadata Database Storage Vault description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The date and time that the Exadata Database Storage Vault was created. */
+    /**
+     * The date and time that the Exadata Database Storage Vault was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time that the Exadata Database Storage Vault was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Additional information about the current lifecycle state. */
+    /**
+     * Additional information about the current lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The time zone that you want to use for the Exadata Database Storage Vault. For details, see
-     * [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
-     */
+     * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
-     * The time zone that you want to use for the Exadata Database Storage Vault. For details, see
-     * [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
-     */
+     **/
     public String getTimeZone() {
         return timeZone;
     }
 
     /**
-     * The List of Exadata VM cluster on Exascale Infrastructure
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If
-     * Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
-     * Infrastructure, this list is empty.
-     */
+     * The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
     private final java.util.List<String> vmClusterIds;
 
     /**
-     * The List of Exadata VM cluster on Exascale Infrastructure
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If
-     * Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
-     * Infrastructure, this list is empty.
+     * The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getVmClusterIds() {
         return vmClusterIds;
     }
 
-    /** The number of Exadata VM clusters used the Exadata Database Storage Vault. */
+    /**
+     * The number of Exadata VM clusters used the Exadata Database Storage Vault.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterCount")
     private final Integer vmClusterCount;
 
@@ -749,85 +728,79 @@ public final class ExascaleDbStorageVault
      * The number of Exadata VM clusters used the Exadata Database Storage Vault.
      *
      * @return the value
-     */
+     **/
     public Integer getVmClusterCount() {
         return vmClusterCount;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * @return the value
-     */
+     **/
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -839,7 +812,10 @@ public final class ExascaleDbStorageVault
         return highCapacityDatabaseStorage;
     }
 
-    /** The size of additional Flash Cache in percentage of High Capacity database storage. */
+    /**
+     * The size of additional Flash Cache in percentage of High Capacity database storage.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalFlashCacheInPercent")
     private final Integer additionalFlashCacheInPercent;
 
@@ -847,41 +823,35 @@ public final class ExascaleDbStorageVault
      * The size of additional Flash Cache in percentage of High Capacity database storage.
      *
      * @return the value
-     */
+     **/
     public Integer getAdditionalFlashCacheInPercent() {
         return additionalFlashCacheInPercent;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cluster placement group of the Exadata Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cluster placement group of the Exadata Infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
      * @return the value
-     */
+     **/
     public String getClusterPlacementGroupId() {
         return clusterPlacementGroupId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription with which resource needs to be associated with.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription with which resource needs to be associated with.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      * @return the value
-     */
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -893,7 +863,6 @@ public final class ExascaleDbStorageVault
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

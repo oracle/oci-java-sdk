@@ -5,26 +5,24 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * One or more isolated, fault-tolerant Oracle data centers that host cloud resources such as
- * instances, volumes, and subnets. A region contains several Availability Domains. For more
- * information, see [Regions and Availability
- * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * One or more isolated, fault-tolerant Oracle data centers that host cloud resources such as instances, volumes,
+ * and subnets. A region contains several Availability Domains. For more information, see
+ * [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AvailabilityDomain.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AvailabilityDomain
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AvailabilityDomain.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AvailabilityDomain extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "id", "compartmentId"})
     public AvailabilityDomain(String name, String id, String compartmentId) {
@@ -36,46 +34,49 @@ public final class AvailabilityDomain
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the Availability Domain. */
+        /**
+         * The name of the Availability Domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Availability Domain.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The OCID of the Availability Domain. */
+        /**
+         * The OCID of the Availability Domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the Availability Domain.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the tenancy. */
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the tenancy.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -109,7 +110,9 @@ public final class AvailabilityDomain
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,41 +121,44 @@ public final class AvailabilityDomain
         return new Builder().copy(this);
     }
 
-    /** The name of the Availability Domain. */
+    /**
+     * The name of the Availability Domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Availability Domain.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The OCID of the Availability Domain. */
+    /**
+     * The OCID of the Availability Domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the Availability Domain.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the tenancy. */
+    /**
+     * The OCID of the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -164,7 +170,6 @@ public final class AvailabilityDomain
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

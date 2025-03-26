@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Change record for AWR database parameter <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Change record for AWR database parameter
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddmDbParameterChangeAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddmDbParameterChangeAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddmDbParameterChangeAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -53,109 +52,112 @@ public final class AddmDbParameterChangeAggregation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database insight.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database insight.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Begin time of interval which includes change */
+        /**
+         * Begin time of interval which includes change
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
         private java.util.Date timeBegin;
 
         /**
          * Begin time of interval which includes change
-         *
          * @param timeBegin the value to set
          * @return this builder
-         */
+         **/
         public Builder timeBegin(java.util.Date timeBegin) {
             this.timeBegin = timeBegin;
             this.__explicitlySet__.add("timeBegin");
             return this;
         }
-        /** End time of interval which includes change */
+        /**
+         * End time of interval which includes change
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
          * End time of interval which includes change
-         *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** Instance number */
+        /**
+         * Instance number
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instNum")
         private Integer instNum;
 
         /**
          * Instance number
-         *
          * @param instNum the value to set
          * @return this builder
-         */
+         **/
         public Builder instNum(Integer instNum) {
             this.instNum = instNum;
             this.__explicitlySet__.add("instNum");
             return this;
         }
-        /** Previous value */
+        /**
+         * Previous value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousValue")
         private String previousValue;
 
         /**
          * Previous value
-         *
          * @param previousValue the value to set
          * @return this builder
-         */
+         **/
         public Builder previousValue(String previousValue) {
             this.previousValue = previousValue;
             this.__explicitlySet__.add("previousValue");
             return this;
         }
-        /** Current value */
+        /**
+         * Current value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Current value
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** AWR snapshot id which includes the parameter value change */
+        /**
+         * AWR snapshot id which includes the parameter value change
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotId")
         private Integer snapshotId;
 
         /**
          * AWR snapshot id which includes the parameter value change
-         *
          * @param snapshotId the value to set
          * @return this builder
-         */
+         **/
         public Builder snapshotId(Integer snapshotId) {
             this.snapshotId = snapshotId;
             this.__explicitlySet__.add("snapshotId");
@@ -208,7 +210,9 @@ public final class AddmDbParameterChangeAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,96 +222,99 @@ public final class AddmDbParameterChangeAggregation
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database insight.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database insight.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Begin time of interval which includes change */
+    /**
+     * Begin time of interval which includes change
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBegin")
     private final java.util.Date timeBegin;
 
     /**
      * Begin time of interval which includes change
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeBegin() {
         return timeBegin;
     }
 
-    /** End time of interval which includes change */
+    /**
+     * End time of interval which includes change
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
      * End time of interval which includes change
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** Instance number */
+    /**
+     * Instance number
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instNum")
     private final Integer instNum;
 
     /**
      * Instance number
-     *
      * @return the value
-     */
+     **/
     public Integer getInstNum() {
         return instNum;
     }
 
-    /** Previous value */
+    /**
+     * Previous value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousValue")
     private final String previousValue;
 
     /**
      * Previous value
-     *
      * @return the value
-     */
+     **/
     public String getPreviousValue() {
         return previousValue;
     }
 
-    /** Current value */
+    /**
+     * Current value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Current value
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** AWR snapshot id which includes the parameter value change */
+    /**
+     * AWR snapshot id which includes the parameter value change
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotId")
     private final Integer snapshotId;
 
     /**
      * AWR snapshot id which includes the parameter value change
-     *
      * @return the value
-     */
+     **/
     public Integer getSnapshotId() {
         return snapshotId;
     }
@@ -319,7 +326,6 @@ public final class AddmDbParameterChangeAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

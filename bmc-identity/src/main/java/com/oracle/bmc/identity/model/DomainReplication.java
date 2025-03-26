@@ -5,23 +5,21 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * (For tenancies that support identity domains) Identity domain replication states. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * (For tenancies that support identity domains) Identity domain replication states.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DomainReplication.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DomainReplication
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DomainReplication.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DomainReplication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"opcWaterMark", "txnSeqNumber", "domainReplicationStates"})
     public DomainReplication(
@@ -37,49 +35,48 @@ public final class DomainReplication
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The version number indicating the value of kievTxnId, starting from which the identity
-         * domain replication events need to be returned.
-         */
+         * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opcWaterMark")
         private java.math.BigDecimal opcWaterMark;
 
         /**
-         * The version number indicating the value of kievTxnId, starting from which the identity
-         * domain replication events need to be returned.
-         *
+         * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
          * @param opcWaterMark the value to set
          * @return this builder
-         */
+         **/
         public Builder opcWaterMark(java.math.BigDecimal opcWaterMark) {
             this.opcWaterMark = opcWaterMark;
             this.__explicitlySet__.add("opcWaterMark");
             return this;
         }
-        /** A custom value defining the order of records with the same kievTxnId. */
+        /**
+         * A custom value defining the order of records with the same kievTxnId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("txnSeqNumber")
         private java.math.BigDecimal txnSeqNumber;
 
         /**
          * A custom value defining the order of records with the same kievTxnId.
-         *
          * @param txnSeqNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder txnSeqNumber(java.math.BigDecimal txnSeqNumber) {
             this.txnSeqNumber = txnSeqNumber;
             this.__explicitlySet__.add("txnSeqNumber");
             return this;
         }
-        /** The identity domain's replication state. */
+        /**
+         * The identity domain's replication state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainReplicationStates")
         private java.util.List<DomainReplicationStates> domainReplicationStates;
 
         /**
          * The identity domain's replication state.
-         *
          * @param domainReplicationStates the value to set
          * @return this builder
-         */
+         **/
         public Builder domainReplicationStates(
                 java.util.List<DomainReplicationStates> domainReplicationStates) {
             this.domainReplicationStates = domainReplicationStates;
@@ -115,7 +112,9 @@ public final class DomainReplication
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,44 +124,43 @@ public final class DomainReplication
     }
 
     /**
-     * The version number indicating the value of kievTxnId, starting from which the identity domain
-     * replication events need to be returned.
-     */
+     * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opcWaterMark")
     private final java.math.BigDecimal opcWaterMark;
 
     /**
-     * The version number indicating the value of kievTxnId, starting from which the identity domain
-     * replication events need to be returned.
-     *
+     * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getOpcWaterMark() {
         return opcWaterMark;
     }
 
-    /** A custom value defining the order of records with the same kievTxnId. */
+    /**
+     * A custom value defining the order of records with the same kievTxnId.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("txnSeqNumber")
     private final java.math.BigDecimal txnSeqNumber;
 
     /**
      * A custom value defining the order of records with the same kievTxnId.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getTxnSeqNumber() {
         return txnSeqNumber;
     }
 
-    /** The identity domain's replication state. */
+    /**
+     * The identity domain's replication state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainReplicationStates")
     private final java.util.List<DomainReplicationStates> domainReplicationStates;
 
     /**
      * The identity domain's replication state.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DomainReplicationStates> getDomainReplicationStates() {
         return domainReplicationStates;
     }
@@ -174,7 +172,6 @@ public final class DomainReplication
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,27 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A {@code CompositeType} represents a type that is composed of a list of sub-types, for example an
- * {@code Address} type. The sub-types can be simple {@code DataType} or other {@code CompositeType}
- * objects. Typically, a {@code CompositeType} may represent an arbitrarily deep hierarchy of types.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * A {@code CompositeType} represents a type that is composed of a list of sub-types, for example an {@code Address} type.   The sub-types can be simple {@code DataType} or other {@code CompositeType} objects. Typically, a {@code CompositeType} may represent an arbitrarily deep hierarchy of types.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CompositeType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CompositeType extends BaseType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -91,16 +87,17 @@ public final class CompositeType extends BaseType {
             this.__explicitlySet__.add("parentType");
             return this;
         }
-        /** An array of elements. */
+        /**
+         * An array of elements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("elements")
         private java.util.List<TypedObject> elements;
 
         /**
          * An array of elements.
-         *
          * @param elements the value to set
          * @return this builder
-         */
+         **/
         public Builder elements(java.util.List<TypedObject> elements) {
             this.elements = elements;
             this.__explicitlySet__.add("elements");
@@ -170,7 +167,9 @@ public final class CompositeType extends BaseType {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -203,15 +202,16 @@ public final class CompositeType extends BaseType {
         return parentType;
     }
 
-    /** An array of elements. */
+    /**
+     * An array of elements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("elements")
     private final java.util.List<TypedObject> elements;
 
     /**
      * An array of elements.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TypedObject> getElements() {
         return elements;
     }
@@ -230,7 +230,6 @@ public final class CompositeType extends BaseType {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

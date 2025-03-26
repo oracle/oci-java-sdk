@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/** The operation related to a work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum WorkRequestOperation implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The operation related to a work request.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+public enum WorkRequestOperation {
     CreatePrivateEndpoint("CREATE_PRIVATE_ENDPOINT"),
     UpdatePrivateEndpoint("UPDATE_PRIVATE_ENDPOINT"),
     DeletePrivateEndpoint("DELETE_PRIVATE_ENDPOINT"),

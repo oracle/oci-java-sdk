@@ -5,21 +5,19 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * Metric error content. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * Metric error content.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetricError.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MetricError extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MetricError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeGenerated",
@@ -47,91 +45,97 @@ public final class MetricError extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Time the error record was generated */
+        /**
+         * Time the error record was generated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
         private java.util.Date timeGenerated;
 
         /**
          * Time the error record was generated
-         *
          * @param timeGenerated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeGenerated(java.util.Date timeGenerated) {
             this.timeGenerated = timeGenerated;
             this.__explicitlySet__.add("timeGenerated");
             return this;
         }
-        /** Error type */
+        /**
+         * Error type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorType")
         private String errorType;
 
         /**
          * Error type
-         *
          * @param errorType the value to set
          * @return this builder
-         */
+         **/
         public Builder errorType(String errorType) {
             this.errorType = errorType;
             this.__explicitlySet__.add("errorType");
             return this;
         }
-        /** Content type */
+        /**
+         * Content type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private String contentType;
 
         /**
          * Content type
-         *
          * @param contentType the value to set
          * @return this builder
-         */
+         **/
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             this.__explicitlySet__.add("contentType");
             return this;
         }
-        /** Data */
+        /**
+         * Data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private String data;
 
         /**
          * Data
-         *
          * @param data the value to set
          * @return this builder
-         */
+         **/
         public Builder data(String data) {
             this.data = data;
             this.__explicitlySet__.add("data");
             return this;
         }
-        /** Subject */
+        /**
+         * Subject
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subject")
         private String subject;
 
         /**
          * Subject
-         *
          * @param subject the value to set
          * @return this builder
-         */
+         **/
         public Builder subject(String subject) {
             this.subject = subject;
             this.__explicitlySet__.add("subject");
             return this;
         }
-        /** Level */
+        /**
+         * Level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private String level;
 
         /**
          * Level
-         *
          * @param level the value to set
          * @return this builder
-         */
+         **/
         public Builder level(String level) {
             this.level = level;
             this.__explicitlySet__.add("level");
@@ -180,7 +184,9 @@ public final class MetricError extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,80 +195,86 @@ public final class MetricError extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Time the error record was generated */
+    /**
+     * Time the error record was generated
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
     private final java.util.Date timeGenerated;
 
     /**
      * Time the error record was generated
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeGenerated() {
         return timeGenerated;
     }
 
-    /** Error type */
+    /**
+     * Error type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorType")
     private final String errorType;
 
     /**
      * Error type
-     *
      * @return the value
-     */
+     **/
     public String getErrorType() {
         return errorType;
     }
 
-    /** Content type */
+    /**
+     * Content type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     private final String contentType;
 
     /**
      * Content type
-     *
      * @return the value
-     */
+     **/
     public String getContentType() {
         return contentType;
     }
 
-    /** Data */
+    /**
+     * Data
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     private final String data;
 
     /**
      * Data
-     *
      * @return the value
-     */
+     **/
     public String getData() {
         return data;
     }
 
-    /** Subject */
+    /**
+     * Subject
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
     private final String subject;
 
     /**
      * Subject
-     *
      * @return the value
-     */
+     **/
     public String getSubject() {
         return subject;
     }
 
-    /** Level */
+    /**
+     * Level
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final String level;
 
     /**
      * Level
-     *
      * @return the value
-     */
+     **/
     public String getLevel() {
         return level;
     }
@@ -274,7 +286,6 @@ public final class MetricError extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

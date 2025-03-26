@@ -5,12 +5,14 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The type of the database. Allowed values are - DATABASE_CLOUD_SERVICE - Represents Oracle
- * Database Cloud Services. - AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases. -
- * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The type of the database. Allowed values are
+ *   - DATABASE_CLOUD_SERVICE - Represents Oracle Database Cloud Services.
+ *   - AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases.
+ *   - INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum DatabaseType {
     DatabaseCloudService("DATABASE_CLOUD_SERVICE"),
     AutonomousDatabase("AUTONOMOUS_DATABASE"),
     InstalledDatabase("INSTALLED_DATABASE"),

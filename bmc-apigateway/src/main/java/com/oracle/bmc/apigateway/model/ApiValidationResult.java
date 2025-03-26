@@ -5,23 +5,21 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * The result of single validation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * The result of single validation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApiValidationResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ApiValidationResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ApiValidationResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ApiValidationResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "result"})
     public ApiValidationResult(String name, Result result) {
@@ -32,31 +30,33 @@ public final class ApiValidationResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the validation. */
+        /**
+         * Name of the validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the validation.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Result of the validation. */
+        /**
+         * Result of the validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("result")
         private Result result;
 
         /**
          * Result of the validation.
-         *
          * @param result the value to set
          * @return this builder
-         */
+         **/
         public Builder result(Result result) {
             this.result = result;
             this.__explicitlySet__.add("result");
@@ -86,7 +86,9 @@ public final class ApiValidationResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,29 +97,32 @@ public final class ApiValidationResult
         return new Builder().copy(this);
     }
 
-    /** Name of the validation. */
+    /**
+     * Name of the validation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the validation.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Result of the validation. */
-    public enum Result implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Result of the validation.
+     **/
+    public enum Result {
         Error("ERROR"),
         Warning("WARNING"),
         Ok("OK"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -155,15 +160,16 @@ public final class ApiValidationResult
             return UnknownEnumValue;
         }
     };
-    /** Result of the validation. */
+    /**
+     * Result of the validation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("result")
     private final Result result;
 
     /**
      * Result of the validation.
-     *
      * @return the value
-     */
+     **/
     public Result getResult() {
         return result;
     }
@@ -175,7 +181,6 @@ public final class ApiValidationResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

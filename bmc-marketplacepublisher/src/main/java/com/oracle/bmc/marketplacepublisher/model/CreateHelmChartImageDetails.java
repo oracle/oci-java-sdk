@@ -5,23 +5,22 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * Helmchart image details required to create an helmchart artifact. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Helmchart image details required to create an helmchart artifact.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateHelmChartImageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateHelmChartImageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateHelmChartImageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceRegistryId",
@@ -40,46 +39,49 @@ public final class CreateHelmChartImageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source registry OCID of the container image. */
+        /**
+         * The source registry OCID of the container image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
         private String sourceRegistryId;
 
         /**
          * The source registry OCID of the container image.
-         *
          * @param sourceRegistryId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryId(String sourceRegistryId) {
             this.sourceRegistryId = sourceRegistryId;
             this.__explicitlySet__.add("sourceRegistryId");
             return this;
         }
-        /** The source registry url of the helmchart image. */
+        /**
+         * The source registry url of the helmchart image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
         private String sourceRegistryUrl;
 
         /**
          * The source registry url of the helmchart image.
-         *
          * @param sourceRegistryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryUrl(String sourceRegistryUrl) {
             this.sourceRegistryUrl = sourceRegistryUrl;
             this.__explicitlySet__.add("sourceRegistryUrl");
             return this;
         }
-        /** The Supported Versions of Kubernetes */
+        /**
+         * The Supported Versions of Kubernetes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedKubernetesVersions")
         private java.util.List<String> supportedKubernetesVersions;
 
         /**
          * The Supported Versions of Kubernetes
-         *
          * @param supportedKubernetesVersions the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedKubernetesVersions(
                 java.util.List<String> supportedKubernetesVersions) {
             this.supportedKubernetesVersions = supportedKubernetesVersions;
@@ -117,7 +119,9 @@ public final class CreateHelmChartImageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,41 +130,44 @@ public final class CreateHelmChartImageDetails
         return new Builder().copy(this);
     }
 
-    /** The source registry OCID of the container image. */
+    /**
+     * The source registry OCID of the container image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
     private final String sourceRegistryId;
 
     /**
      * The source registry OCID of the container image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryId() {
         return sourceRegistryId;
     }
 
-    /** The source registry url of the helmchart image. */
+    /**
+     * The source registry url of the helmchart image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
     private final String sourceRegistryUrl;
 
     /**
      * The source registry url of the helmchart image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryUrl() {
         return sourceRegistryUrl;
     }
 
-    /** The Supported Versions of Kubernetes */
+    /**
+     * The Supported Versions of Kubernetes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedKubernetesVersions")
     private final java.util.List<String> supportedKubernetesVersions;
 
     /**
      * The Supported Versions of Kubernetes
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSupportedKubernetesVersions() {
         return supportedKubernetesVersions;
     }
@@ -172,7 +179,6 @@ public final class CreateHelmChartImageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

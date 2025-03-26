@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the Exadata storage server. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the Exadata storage server.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalExadataStorageServer.Builder.class)
+    builder = ExternalExadataStorageServer.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "resourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "resourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalExadataStorageServer extends DbmResource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -117,158 +117,160 @@ public final class ExternalExadataStorageServer extends DbmResource {
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          * @param exadataInfrastructureId the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = exadataInfrastructureId;
             this.__explicitlySet__.add("exadataInfrastructureId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata storage server grid.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageGridId")
         private String storageGridId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata storage server grid.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
          * @param storageGridId the value to set
          * @return this builder
-         */
+         **/
         public Builder storageGridId(String storageGridId) {
             this.storageGridId = storageGridId;
             this.__explicitlySet__.add("storageGridId");
             return this;
         }
-        /** The make model of the Exadata storage server. */
+        /**
+         * The make model of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
         private String makeModel;
 
         /**
          * The make model of the Exadata storage server.
-         *
          * @param makeModel the value to set
          * @return this builder
-         */
+         **/
         public Builder makeModel(String makeModel) {
             this.makeModel = makeModel;
             this.__explicitlySet__.add("makeModel");
             return this;
         }
-        /** The IP address of the Exadata storage server. */
+        /**
+         * The IP address of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * The IP address of the Exadata storage server.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The CPU count of the Exadata storage server. */
+        /**
+         * The CPU count of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private java.math.BigDecimal cpuCount;
 
         /**
          * The CPU count of the Exadata storage server.
-         *
          * @param cpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCount(java.math.BigDecimal cpuCount) {
             this.cpuCount = cpuCount;
             this.__explicitlySet__.add("cpuCount");
             return this;
         }
-        /** The Exadata storage server memory size in GB. */
+        /**
+         * The Exadata storage server memory size in GB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
         private Double memoryGB;
 
         /**
          * The Exadata storage server memory size in GB.
-         *
          * @param memoryGB the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryGB(Double memoryGB) {
             this.memoryGB = memoryGB;
             this.__explicitlySet__.add("memoryGB");
             return this;
         }
-        /** The maximum hard disk IO operations per second of the Exadata storage server. */
+        /**
+         * The maximum hard disk IO operations per second of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskIOPS")
         private Integer maxHardDiskIOPS;
 
         /**
          * The maximum hard disk IO operations per second of the Exadata storage server.
-         *
          * @param maxHardDiskIOPS the value to set
          * @return this builder
-         */
+         **/
         public Builder maxHardDiskIOPS(Integer maxHardDiskIOPS) {
             this.maxHardDiskIOPS = maxHardDiskIOPS;
             this.__explicitlySet__.add("maxHardDiskIOPS");
             return this;
         }
-        /** The maximum hard disk IO throughput in MB/s of the Exadata storage server. */
+        /**
+         * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskThroughput")
         private Integer maxHardDiskThroughput;
 
         /**
          * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
-         *
          * @param maxHardDiskThroughput the value to set
          * @return this builder
-         */
+         **/
         public Builder maxHardDiskThroughput(Integer maxHardDiskThroughput) {
             this.maxHardDiskThroughput = maxHardDiskThroughput;
             this.__explicitlySet__.add("maxHardDiskThroughput");
             return this;
         }
-        /** The maximum flash disk IO operations per second of the Exadata storage server. */
+        /**
+         * The maximum flash disk IO operations per second of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskIOPS")
         private Integer maxFlashDiskIOPS;
 
         /**
          * The maximum flash disk IO operations per second of the Exadata storage server.
-         *
          * @param maxFlashDiskIOPS the value to set
          * @return this builder
-         */
+         **/
         public Builder maxFlashDiskIOPS(Integer maxFlashDiskIOPS) {
             this.maxFlashDiskIOPS = maxFlashDiskIOPS;
             this.__explicitlySet__.add("maxFlashDiskIOPS");
             return this;
         }
-        /** The maximum flash disk IO throughput in MB/s of the Exadata storage server. */
+        /**
+         * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskThroughput")
         private Integer maxFlashDiskThroughput;
 
         /**
          * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
-         *
          * @param maxFlashDiskThroughput the value to set
          * @return this builder
-         */
+         **/
         public Builder maxFlashDiskThroughput(Integer maxFlashDiskThroughput) {
             this.maxFlashDiskThroughput = maxFlashDiskThroughput;
             this.__explicitlySet__.add("maxFlashDiskThroughput");
@@ -284,46 +286,44 @@ public final class ExternalExadataStorageServer extends DbmResource {
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -331,27 +331,26 @@ public final class ExternalExadataStorageServer extends DbmResource {
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -472,7 +471,9 @@ public final class ExternalExadataStorageServer extends DbmResource {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -535,139 +536,141 @@ public final class ExternalExadataStorageServer extends DbmResource {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * @return the value
-     */
+     **/
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata storage server grid.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageGridId")
     private final String storageGridId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata storage server grid.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
      * @return the value
-     */
+     **/
     public String getStorageGridId() {
         return storageGridId;
     }
 
-    /** The make model of the Exadata storage server. */
+    /**
+     * The make model of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
     private final String makeModel;
 
     /**
      * The make model of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public String getMakeModel() {
         return makeModel;
     }
 
-    /** The IP address of the Exadata storage server. */
+    /**
+     * The IP address of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * The IP address of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** The CPU count of the Exadata storage server. */
+    /**
+     * The CPU count of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     private final java.math.BigDecimal cpuCount;
 
     /**
      * The CPU count of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getCpuCount() {
         return cpuCount;
     }
 
-    /** The Exadata storage server memory size in GB. */
+    /**
+     * The Exadata storage server memory size in GB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
     private final Double memoryGB;
 
     /**
      * The Exadata storage server memory size in GB.
-     *
      * @return the value
-     */
+     **/
     public Double getMemoryGB() {
         return memoryGB;
     }
 
-    /** The maximum hard disk IO operations per second of the Exadata storage server. */
+    /**
+     * The maximum hard disk IO operations per second of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskIOPS")
     private final Integer maxHardDiskIOPS;
 
     /**
      * The maximum hard disk IO operations per second of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxHardDiskIOPS() {
         return maxHardDiskIOPS;
     }
 
-    /** The maximum hard disk IO throughput in MB/s of the Exadata storage server. */
+    /**
+     * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskThroughput")
     private final Integer maxHardDiskThroughput;
 
     /**
      * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxHardDiskThroughput() {
         return maxHardDiskThroughput;
     }
 
-    /** The maximum flash disk IO operations per second of the Exadata storage server. */
+    /**
+     * The maximum flash disk IO operations per second of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskIOPS")
     private final Integer maxFlashDiskIOPS;
 
     /**
      * The maximum flash disk IO operations per second of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxFlashDiskIOPS() {
         return maxFlashDiskIOPS;
     }
 
-    /** The maximum flash disk IO throughput in MB/s of the Exadata storage server. */
+    /**
+     * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskThroughput")
     private final Integer maxFlashDiskThroughput;
 
     /**
      * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxFlashDiskThroughput() {
         return maxFlashDiskThroughput;
     }
@@ -680,68 +683,65 @@ public final class ExternalExadataStorageServer extends DbmResource {
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -753,7 +753,6 @@ public final class ExternalExadataStorageServer extends DbmResource {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,18 +6,19 @@ package com.oracle.bmc.databasemanagement.responses;
 
 import com.oracle.bmc.databasemanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListOptimizerStatisticsAdvisorExecutionsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +26,14 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
         return opcRequestId;
     }
 
-    /** The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance. */
+    /**
+     * The returned OptimizerStatisticsAdvisorExecutionsCollection instance.
+     */
     private com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecutionsCollection
             optimizerStatisticsAdvisorExecutionsCollection;
 
     /**
-     * The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance.
-     *
+     * The returned OptimizerStatisticsAdvisorExecutionsCollection instance.
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecutionsCollection
@@ -47,7 +49,7 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
     })
     private ListOptimizerStatisticsAdvisorExecutionsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecutionsCollection
                     optimizerStatisticsAdvisorExecutionsCollection) {
@@ -57,34 +59,31 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
                 optimizerStatisticsAdvisorExecutionsCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListOptimizerStatisticsAdvisorExecutionsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -94,14 +93,15 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
             return this;
         }
 
-        /** The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance. */
+        /**
+         * The returned OptimizerStatisticsAdvisorExecutionsCollection instance.
+         */
         private com.oracle.bmc.databasemanagement.model
                         .OptimizerStatisticsAdvisorExecutionsCollection
                 optimizerStatisticsAdvisorExecutionsCollection;
 
         /**
-         * The returned {@code OptimizerStatisticsAdvisorExecutionsCollection} instance.
-         *
+         * The returned OptimizerStatisticsAdvisorExecutionsCollection instance.
          * @param optimizerStatisticsAdvisorExecutionsCollection the value to set
          * @return this builder
          */
@@ -116,10 +116,8 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListOptimizerStatisticsAdvisorExecutionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -132,10 +130,8 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListOptimizerStatisticsAdvisorExecutionsResponse build() {
             return new ListOptimizerStatisticsAdvisorExecutionsResponse(
                     __httpStatusCode__,
@@ -147,7 +143,6 @@ public class ListOptimizerStatisticsAdvisorExecutionsResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

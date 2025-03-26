@@ -23,29 +23,24 @@ import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import com.oracle.bmc.waiter.MaxTimeTerminationStrategy;
 
 /**
- * This class provides a basic example of how to launch a DB system with Exadata shape using the
- * Java SDK. This will cover:
- *
- * <p>
- *
+ * This class provides a basic example of how to launch a DB system with Exadata shape using the Java SDK. This will cover:
+ * <p></p>
  * <ul>
- *   <li>Create a VCN and subnets needed for the DB system and its related resources
- *   <li>Launch a DB system with Exadata shape. See: <a
- *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a>
- *       and <a
- *       href="https://docs.oracle.com/iaas/Content/Database/Tasks/exalaunchingDB.htm">managing DB
- *       systems</a> for more information
+ *   <li>Create a VCN and subnets needed for the DB system and its related resources</li>
+ *   <li>
+ *     Launch a DB system with Exadata shape. See:
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a> and
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Tasks/exalaunchingDB.htm">managing DB systems</a>
+ *       for more information
  * </ul>
- *
- * <p>Resources created by this class will be removed when this example is done.
- *
- * <p>This class also makes assumptions on the following database parameters:
- *
- * <p>
- *
+ * <p></p>
+ * Resources created by this class will be removed when this example is done.
+ * <p></p>
+ * This class also makes assumptions on the following database parameters:
+ * <p></p>
  * <ul>
- *   <li>OCID of the compartment
- *   <li>Availability Domain
+ *   <li>OCID of the compartment</li>
+ *   <li>Availability Domain</li>
  * </ul>
  */
 public class LaunchAutonomousExadataInfrastructureExample {
@@ -57,10 +52,10 @@ public class LaunchAutonomousExadataInfrastructureExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment
-     *       <li>The availability domain where the DB system will be launched
-     *     </ul>
+     *             <ul>
+     *             <li>The OCID of the compartment</li>
+     *             <li>The availability domain where the DB system will be launched</li>
+     *             </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -71,19 +66,16 @@ public class LaunchAutonomousExadataInfrastructureExample {
         final String compartmentId = args[0];
         final String availabilityDomain = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
-        final VirtualNetworkClient virtualNetworkClient =
-                VirtualNetworkClient.builder().build(provider);
+        final DatabaseClient databaseClient = new DatabaseClient(provider);
+        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

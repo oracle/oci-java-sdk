@@ -6,9 +6,12 @@ package com.oracle.bmc.recovery.responses;
 
 import com.oracle.bmc.recovery.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Relative URL of the newly created resource. */
+    /**
+     * Relative URL of the newly created resource.
+     *
+     */
     private String location;
 
     /**
@@ -20,7 +23,10 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
         return location;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -32,7 +38,10 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
         return etag;
     }
 
-    /** Unique Oracle-assigned identifier of the work request. */
+    /**
+     * Unique Oracle-assigned identifier of the work request.
+     *
+     */
     private String opcWorkRequestId;
 
     /**
@@ -45,14 +54,15 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -60,12 +70,13 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned {@code RecoveryServiceSubnet} instance. */
+    /**
+     * The returned RecoveryServiceSubnet instance.
+     */
     private com.oracle.bmc.recovery.model.RecoveryServiceSubnet recoveryServiceSubnet;
 
     /**
-     * The returned {@code RecoveryServiceSubnet} instance.
-     *
+     * The returned RecoveryServiceSubnet instance.
      * @return the value
      */
     public com.oracle.bmc.recovery.model.RecoveryServiceSubnet getRecoveryServiceSubnet() {
@@ -83,7 +94,7 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
     })
     private CreateRecoveryServiceSubnetResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcWorkRequestId,
@@ -97,26 +108,25 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
         this.recoveryServiceSubnet = recoveryServiceSubnet;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateRecoveryServiceSubnetResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Relative URL of the newly created resource. */
+        /**
+         * Relative URL of the newly created resource.
+         *
+         */
         private String location;
 
         /**
@@ -130,7 +140,10 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -144,7 +157,10 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** Unique Oracle-assigned identifier of the work request. */
+        /**
+         * Unique Oracle-assigned identifier of the work request.
+         *
+         */
         private String opcWorkRequestId;
 
         /**
@@ -159,14 +175,15 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -176,12 +193,13 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code RecoveryServiceSubnet} instance. */
+        /**
+         * The returned RecoveryServiceSubnet instance.
+         */
         private com.oracle.bmc.recovery.model.RecoveryServiceSubnet recoveryServiceSubnet;
 
         /**
-         * The returned {@code RecoveryServiceSubnet} instance.
-         *
+         * The returned RecoveryServiceSubnet instance.
          * @param recoveryServiceSubnet the value to set
          * @return this builder
          */
@@ -193,10 +211,8 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateRecoveryServiceSubnetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -211,10 +227,8 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateRecoveryServiceSubnetResponse build() {
             return new CreateRecoveryServiceSubnetResponse(
                     __httpStatusCode__,
@@ -229,7 +243,6 @@ public class CreateRecoveryServiceSubnetResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

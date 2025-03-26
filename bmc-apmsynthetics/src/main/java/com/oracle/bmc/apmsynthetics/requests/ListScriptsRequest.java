@@ -6,99 +6,123 @@ package com.oracle.bmc.apmsynthetics.requests;
 
 import com.oracle.bmc.apmsynthetics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListScriptsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScriptsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListScriptsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScriptsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     private String apmDomainId;
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only the resources that match the entire display name. */
+    /**
+     * A filter to return only the resources that match the entire display name.
+     */
     private String displayName;
 
-    /** A filter to return only the resources that match the entire display name. */
+    /**
+     * A filter to return only the resources that match the entire display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only resources that match the content type given. */
+    /**
+     * A filter to return only resources that match the content type given.
+     */
     private String contentType;
 
-    /** A filter to return only resources that match the content type given. */
+    /**
+     * A filter to return only resources that match the content type given.
+     */
     public String getContentType() {
         return contentType;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The maximum number of results per page, or items to return in a paginated "List" call. For
-     * information on how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The maximum number of results per page, or items to return in a paginated
+     * "List" call. For information on how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     private String page;
 
     /**
-     * The maximum number of results per page, or items to return in a paginated "List" call. For
-     * information on how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The maximum number of results per page, or items to return in a paginated
+     * "List" call. For information on how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     public String getPage() {
         return page;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default
-     * sort order is ascending.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
+     *
      */
     private com.oracle.bmc.apmsynthetics.model.SortOrders sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default
-     * sort order is ascending.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
+     *
      */
     public com.oracle.bmc.apmsynthetics.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order of displayName and
-     * contentType is ascending. Default order of timeCreated and timeUpdated is descending. The
-     * displayName sort by is case insensitive.
+     * The field to sort by. Only one sort order may be provided.
+     * Default order of displayName and contentType is ascending.
+     * Default order of timeCreated and timeUpdated is descending.
+     * The displayName sort by is case insensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order of displayName and
-     * contentType is ascending. Default order of timeCreated and timeUpdated is descending. The
-     * displayName sort by is case insensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided.
+     * Default order of displayName and contentType is ascending.
+     * Default order of timeCreated and timeUpdated is descending.
+     * The displayName sort by is case insensitive.
+     *
+     **/
+    public enum SortBy {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
@@ -134,9 +158,11 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order of displayName and
-     * contentType is ascending. Default order of timeCreated and timeUpdated is descending. The
-     * displayName sort by is case insensitive.
+     * The field to sort by. Only one sort order may be provided.
+     * Default order of displayName and contentType is ascending.
+     * Default order of timeCreated and timeUpdated is descending.
+     * The displayName sort by is case insensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -145,10 +171,14 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListScriptsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM domain ID the request is intended for. */
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
@@ -163,14 +193,15 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -180,12 +211,13 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only the resources that match the entire display name. */
+        /**
+         * A filter to return only the resources that match the entire display name.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only the resources that match the entire display name.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -194,12 +226,13 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that match the content type given. */
+        /**
+         * A filter to return only resources that match the content type given.
+         */
         private String contentType = null;
 
         /**
          * A filter to return only resources that match the content type given.
-         *
          * @param contentType the value to set
          * @return this builder instance
          */
@@ -208,12 +241,13 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -223,20 +257,21 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The maximum number of results per page, or items to return in a paginated "List" call.
-         * For information on how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The maximum number of results per page, or items to return in a paginated
+         * "List" call. For information on how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
-         * <p>Example: {@code 50}
          */
         private String page = null;
 
         /**
-         * The maximum number of results per page, or items to return in a paginated "List" call.
-         * For information on how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 50}
+         * The maximum number of results per page, or items to return in a paginated
+         * "List" call. For information on how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
          * @param page the value to set
          * @return this builder instance
@@ -247,14 +282,13 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         * Default sort order is ascending.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
+         *
          */
         private com.oracle.bmc.apmsynthetics.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         * Default sort order is ascending.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -265,15 +299,18 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order of displayName
-         * and contentType is ascending. Default order of timeCreated and timeUpdated is descending.
+         * The field to sort by. Only one sort order may be provided.
+         * Default order of displayName and contentType is ascending.
+         * Default order of timeCreated and timeUpdated is descending.
          * The displayName sort by is case insensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order of displayName
-         * and contentType is ascending. Default order of timeCreated and timeUpdated is descending.
+         * The field to sort by. Only one sort order may be provided.
+         * Default order of displayName and contentType is ascending.
+         * Default order of timeCreated and timeUpdated is descending.
          * The displayName sort by is case insensitive.
          *
          * @param sortBy the value to set
@@ -286,19 +323,18 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -310,7 +346,6 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListScriptsRequest o) {
@@ -330,11 +365,10 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListScriptsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListScriptsRequest
          */
@@ -348,8 +382,7 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListScriptsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListScriptsRequest
@@ -365,14 +398,12 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListScriptsRequest(apmDomainId, opcRequestId, displayName, contentType, limit,
-            // page, sortOrder, sortBy);
+            // new ListScriptsRequest(apmDomainId, opcRequestId, displayName, contentType, limit, page, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -389,7 +420,6 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

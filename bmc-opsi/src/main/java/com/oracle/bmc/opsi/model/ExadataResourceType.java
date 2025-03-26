@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** OCI Exadata Resource Type */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ExadataResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * OCI Exadata Resource Type
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ExadataResourceType {
     CloudExadataInfrastructure("cloudExadataInfrastructure"),
     ExadataInfrastructure("exadataInfrastructure"),
 

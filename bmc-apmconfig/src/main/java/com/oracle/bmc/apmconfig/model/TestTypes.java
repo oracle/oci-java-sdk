@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmconfig.model;
 
-/** Type of test to run. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-public enum TestTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of test to run.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+public enum TestTypes {
     SpanEnrichment("SPAN_ENRICHMENT"),
 
     /**

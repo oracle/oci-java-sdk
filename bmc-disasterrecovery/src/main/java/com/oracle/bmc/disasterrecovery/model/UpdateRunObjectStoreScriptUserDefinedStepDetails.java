@@ -5,57 +5,57 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a Run Object Store Script step. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details for updating a Run Object Store Script step.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateRunObjectStoreScriptUserDefinedStepDetails.Builder.class)
+    builder = UpdateRunObjectStoreScriptUserDefinedStepDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "stepType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "stepType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateRunObjectStoreScriptUserDefinedStepDetails
         extends UpdateDrPlanUserDefinedStepDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
          * The OCID of the instance on which this script or command should be executed.
+         * <p>
+         **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+         * instance is currently present.
+         * <p>
+         **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+         * <p>
+         * Example: {@code ocid1.instance.oc1..uniqueID}
          *
-         * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the
-         * region where the instance is currently present.
-         *
-         * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-         * instance.
-         *
-         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
         private String runOnInstanceId;
 
         /**
          * The OCID of the instance on which this script or command should be executed.
-         *
-         * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the
-         * region where the instance is currently present.
-         *
-         * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-         * instance.
-         *
-         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
+         * <p>
+         **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+         * instance is currently present.
+         * <p>
+         **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+         * <p>
+         * Example: {@code ocid1.instance.oc1..uniqueID}
          *
          * @param runOnInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder runOnInstanceId(String runOnInstanceId) {
             this.runOnInstanceId = runOnInstanceId;
             this.__explicitlySet__.add("runOnInstanceId");
@@ -97,7 +97,9 @@ public final class UpdateRunObjectStoreScriptUserDefinedStepDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,31 +119,30 @@ public final class UpdateRunObjectStoreScriptUserDefinedStepDetails
 
     /**
      * The OCID of the instance on which this script or command should be executed.
+     * <p>
+     **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+     * instance is currently present.
+     * <p>
+     **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+     * <p>
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
-     * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region
-     * where the instance is currently present.
-     *
-     * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-     * instance.
-     *
-     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
     private final String runOnInstanceId;
 
     /**
      * The OCID of the instance on which this script or command should be executed.
-     *
-     * <p>*For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region
-     * where the instance is currently present.
-     *
-     * <p>*For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving
-     * instance.
-     *
-     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
+     * <p>
+     **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+     * instance is currently present.
+     * <p>
+     **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+     * <p>
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getRunOnInstanceId() {
         return runOnInstanceId;
     }
@@ -160,7 +161,6 @@ public final class UpdateRunObjectStoreScriptUserDefinedStepDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

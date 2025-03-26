@@ -5,23 +5,23 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * List of Data Science private endpoints. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * List of Data Science private endpoints.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataSciencePrivateEndpointSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DataSciencePrivateEndpointSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataSciencePrivateEndpointSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -77,40 +77,36 @@ public final class DataSciencePrivateEndpointSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where you want to create private Endpoint.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private Endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where you want to create private Endpoint.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private Endpoint.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -118,67 +114,67 @@ public final class DataSciencePrivateEndpointSummary
             return this;
         }
         /**
-         * A user friendly name. It doesn't have to be unique. Avoid entering confidential
-         * information.
-         */
+         * A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user friendly name. It doesn't have to be unique. Avoid entering confidential
-         * information.
+         * A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The OCID of a private endpoint. */
+        /**
+         * The OCID of a private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -187,58 +183,64 @@ public final class DataSciencePrivateEndpointSummary
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** State of a private endpoint. */
+        /**
+         * State of a private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DataSciencePrivateEndpointLifecycleState lifecycleState;
 
         /**
          * State of a private endpoint.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(DataSciencePrivateEndpointLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Details of the state of a private endpoint. */
+        /**
+         * Details of the state of a private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details of the state of a private endpoint.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Data Science resource type. */
+        /**
+         * Data Science resource type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataScienceResourceType")
         private DataScienceResourceType dataScienceResourceType;
 
         /**
          * Data Science resource type.
-         *
          * @param dataScienceResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataScienceResourceType(DataScienceResourceType dataScienceResourceType) {
             this.dataScienceResourceType = dataScienceResourceType;
             this.__explicitlySet__.add("dataScienceResourceType");
             return this;
         }
-        /** An array of network security group OCIDs. */
+        /**
+         * An array of network security group OCIDs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
@@ -247,32 +249,32 @@ public final class DataSciencePrivateEndpointSummary
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * user that created the private endpoint.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * user that created the private endpoint.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** The OCID of a subnet. */
+        /**
+         * The OCID of a subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -281,13 +283,16 @@ public final class DataSciencePrivateEndpointSummary
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** Accesing Data Science resource using FQDN. */
+        /**
+         * Accesing Data Science resource using FQDN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
 
@@ -296,49 +301,47 @@ public final class DataSciencePrivateEndpointSummary
          *
          * @param fqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder fqdn(String fqdn) {
             this.fqdn = fqdn;
             this.__explicitlySet__.add("fqdn");
             return this;
         }
         /**
-         * The date and time that the Data Science private endpoint was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2018-04-03T21:10:29.600Z}
-         */
+         * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time that the Data Science private endpoint was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2018-04-03T21:10:29.600Z}
+         * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time that the Data Science private endpoint was updated expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2018-04-03T21:10:29.600Z}
-         */
+         * The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time that the Data Science private endpoint was updated expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2018-04-03T21:10:29.600Z}
+         * The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -423,7 +426,9 @@ public final class DataSciencePrivateEndpointSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -433,44 +438,41 @@ public final class DataSciencePrivateEndpointSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where you want to create private Endpoint.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private Endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where you want to create private Endpoint.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private Endpoint.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -478,50 +480,51 @@ public final class DataSciencePrivateEndpointSummary
      * A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** The OCID of a private endpoint. */
+    /**
+     * The OCID of a private endpoint.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -529,51 +532,57 @@ public final class DataSciencePrivateEndpointSummary
      * The OCID of a private endpoint.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** State of a private endpoint. */
+    /**
+     * State of a private endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DataSciencePrivateEndpointLifecycleState lifecycleState;
 
     /**
      * State of a private endpoint.
-     *
      * @return the value
-     */
+     **/
     public DataSciencePrivateEndpointLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Details of the state of a private endpoint. */
+    /**
+     * Details of the state of a private endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details of the state of a private endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** Data Science resource type. */
+    /**
+     * Data Science resource type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataScienceResourceType")
     private final DataScienceResourceType dataScienceResourceType;
 
     /**
      * Data Science resource type.
-     *
      * @return the value
-     */
+     **/
     public DataScienceResourceType getDataScienceResourceType() {
         return dataScienceResourceType;
     }
 
-    /** An array of network security group OCIDs. */
+    /**
+     * An array of network security group OCIDs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
@@ -581,29 +590,29 @@ public final class DataSciencePrivateEndpointSummary
      * An array of network security group OCIDs.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-     * that created the private endpoint.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-     * that created the private endpoint.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** The OCID of a subnet. */
+    /**
+     * The OCID of a subnet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
@@ -611,12 +620,15 @@ public final class DataSciencePrivateEndpointSummary
      * The OCID of a subnet.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** Accesing Data Science resource using FQDN. */
+    /**
+     * Accesing Data Science resource using FQDN.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
 
@@ -624,45 +636,43 @@ public final class DataSciencePrivateEndpointSummary
      * Accesing Data Science resource using FQDN.
      *
      * @return the value
-     */
+     **/
     public String getFqdn() {
         return fqdn;
     }
 
     /**
-     * The date and time that the Data Science private endpoint was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2018-04-03T21:10:29.600Z}
-     */
+     * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time that the Data Science private endpoint was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2018-04-03T21:10:29.600Z}
+     * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time that the Data Science private endpoint was updated expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2018-04-03T21:10:29.600Z}
-     */
+     * The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time that the Data Science private endpoint was updated expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2018-04-03T21:10:29.600Z}
+     * The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -674,7 +684,6 @@ public final class DataSciencePrivateEndpointSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

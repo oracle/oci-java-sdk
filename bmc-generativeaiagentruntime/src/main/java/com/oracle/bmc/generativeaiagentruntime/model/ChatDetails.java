@@ -5,75 +5,122 @@
 package com.oracle.bmc.generativeaiagentruntime.model;
 
 /**
- * Chat details for managing user interactions and tool executions. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * Chat details for managing user interactions and tool executions.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChatDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ChatDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ChatDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"userMessage", "shouldStream", "sessionId"})
-    public ChatDetails(String userMessage, Boolean shouldStream, String sessionId) {
+    @java.beans.ConstructorProperties({
+        "userMessage",
+        "shouldStream",
+        "sessionId",
+        "toolParameters",
+        "performedActions"
+    })
+    public ChatDetails(
+            String userMessage,
+            Boolean shouldStream,
+            String sessionId,
+            java.util.Map<String, String> toolParameters,
+            java.util.List<PerformedAction> performedActions) {
         super();
         this.userMessage = userMessage;
         this.shouldStream = shouldStream;
         this.sessionId = sessionId;
+        this.toolParameters = toolParameters;
+        this.performedActions = performedActions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The input user message content for the chat. */
+        /**
+         * The input user message content for the chat.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userMessage")
         private String userMessage;
 
         /**
          * The input user message content for the chat.
-         *
          * @param userMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder userMessage(String userMessage) {
             this.userMessage = userMessage;
             this.__explicitlySet__.add("userMessage");
             return this;
         }
-        /** Whether to stream the response. */
+        /**
+         * Whether to stream the response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldStream")
         private Boolean shouldStream;
 
         /**
          * Whether to stream the response.
-         *
          * @param shouldStream the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldStream(Boolean shouldStream) {
             this.shouldStream = shouldStream;
             this.__explicitlySet__.add("shouldStream");
             return this;
         }
-        /** Optional sessionId. If not provided, will chat without any prior context. */
+        /**
+         * Optional sessionId. If not provided, will chat without any prior context.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionId")
         private String sessionId;
 
         /**
          * Optional sessionId. If not provided, will chat without any prior context.
-         *
          * @param sessionId the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionId(String sessionId) {
             this.sessionId = sessionId;
             this.__explicitlySet__.add("sessionId");
+            return this;
+        }
+        /**
+         * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("toolParameters")
+        private java.util.Map<String, String> toolParameters;
+
+        /**
+         * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+         * @param toolParameters the value to set
+         * @return this builder
+         **/
+        public Builder toolParameters(java.util.Map<String, String> toolParameters) {
+            this.toolParameters = toolParameters;
+            this.__explicitlySet__.add("toolParameters");
+            return this;
+        }
+        /**
+         * A list of actions that have been performed based on prior required actions.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("performedActions")
+        private java.util.List<PerformedAction> performedActions;
+
+        /**
+         * A list of actions that have been performed based on prior required actions.
+         * @param performedActions the value to set
+         * @return this builder
+         **/
+        public Builder performedActions(java.util.List<PerformedAction> performedActions) {
+            this.performedActions = performedActions;
+            this.__explicitlySet__.add("performedActions");
             return this;
         }
 
@@ -82,7 +129,12 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
 
         public ChatDetails build() {
             ChatDetails model =
-                    new ChatDetails(this.userMessage, this.shouldStream, this.sessionId);
+                    new ChatDetails(
+                            this.userMessage,
+                            this.shouldStream,
+                            this.sessionId,
+                            this.toolParameters,
+                            this.performedActions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -100,11 +152,19 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("sessionId")) {
                 this.sessionId(model.getSessionId());
             }
+            if (model.wasPropertyExplicitlySet("toolParameters")) {
+                this.toolParameters(model.getToolParameters());
+            }
+            if (model.wasPropertyExplicitlySet("performedActions")) {
+                this.performedActions(model.getPerformedActions());
+            }
             return this;
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,43 +173,74 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The input user message content for the chat. */
+    /**
+     * The input user message content for the chat.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userMessage")
     private final String userMessage;
 
     /**
      * The input user message content for the chat.
-     *
      * @return the value
-     */
+     **/
     public String getUserMessage() {
         return userMessage;
     }
 
-    /** Whether to stream the response. */
+    /**
+     * Whether to stream the response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldStream")
     private final Boolean shouldStream;
 
     /**
      * Whether to stream the response.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldStream() {
         return shouldStream;
     }
 
-    /** Optional sessionId. If not provided, will chat without any prior context. */
+    /**
+     * Optional sessionId. If not provided, will chat without any prior context.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionId")
     private final String sessionId;
 
     /**
      * Optional sessionId. If not provided, will chat without any prior context.
-     *
      * @return the value
-     */
+     **/
     public String getSessionId() {
         return sessionId;
+    }
+
+    /**
+     * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("toolParameters")
+    private final java.util.Map<String, String> toolParameters;
+
+    /**
+     * A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getToolParameters() {
+        return toolParameters;
+    }
+
+    /**
+     * A list of actions that have been performed based on prior required actions.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("performedActions")
+    private final java.util.List<PerformedAction> performedActions;
+
+    /**
+     * A list of actions that have been performed based on prior required actions.
+     * @return the value
+     **/
+    public java.util.List<PerformedAction> getPerformedActions() {
+        return performedActions;
     }
 
     @Override
@@ -159,7 +250,6 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -170,6 +260,8 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
         sb.append("userMessage=").append(String.valueOf(this.userMessage));
         sb.append(", shouldStream=").append(String.valueOf(this.shouldStream));
         sb.append(", sessionId=").append(String.valueOf(this.sessionId));
+        sb.append(", toolParameters=").append(String.valueOf(this.toolParameters));
+        sb.append(", performedActions=").append(String.valueOf(this.performedActions));
         sb.append(")");
         return sb.toString();
     }
@@ -187,6 +279,8 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
         return java.util.Objects.equals(this.userMessage, other.userMessage)
                 && java.util.Objects.equals(this.shouldStream, other.shouldStream)
                 && java.util.Objects.equals(this.sessionId, other.sessionId)
+                && java.util.Objects.equals(this.toolParameters, other.toolParameters)
+                && java.util.Objects.equals(this.performedActions, other.performedActions)
                 && super.equals(other);
     }
 
@@ -197,6 +291,12 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.userMessage == null ? 43 : this.userMessage.hashCode());
         result = (result * PRIME) + (this.shouldStream == null ? 43 : this.shouldStream.hashCode());
         result = (result * PRIME) + (this.sessionId == null ? 43 : this.sessionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.toolParameters == null ? 43 : this.toolParameters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.performedActions == null ? 43 : this.performedActions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

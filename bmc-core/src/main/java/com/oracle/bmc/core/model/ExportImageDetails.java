@@ -6,41 +6,42 @@ package com.oracle.bmc.core.model;
 
 /**
  * The destination details for the image export.
+ * <p>
+ * Set {@code destinationType} to {@code objectStorageTuple}
+ * and use {@link #exportImageViaObjectStorageTupleDetails(ExportImageViaObjectStorageTupleDetailsRequest) exportImageViaObjectStorageTupleDetails}
+ * when specifying the namespace, bucket name, and object name.
+ * <p>
+ * Set {@code destinationType} to {@code objectStorageUri} and
+ * use {@link #exportImageViaObjectStorageUriDetails(ExportImageViaObjectStorageUriDetailsRequest) exportImageViaObjectStorageUriDetails}
+ * when specifying the Object Storage URL.
  *
- * <p>Set {@code destinationType} to {@code objectStorageTuple} and use {@link
- * #exportImageViaObjectStorageTupleDetails(ExportImageViaObjectStorageTupleDetailsRequest)
- * exportImageViaObjectStorageTupleDetails} when specifying the namespace, bucket name, and object
- * name.
- *
- * <p>Set {@code destinationType} to {@code objectStorageUri} and use {@link
- * #exportImageViaObjectStorageUriDetails(ExportImageViaObjectStorageUriDetailsRequest)
- * exportImageViaObjectStorageUriDetails} when specifying the Object Storage URL. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "destinationType",
-        defaultImpl = ExportImageDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "destinationType",
+    defaultImpl = ExportImageDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExportImageViaObjectStorageUriDetails.class,
-            name = "objectStorageUri"),
+        value = ExportImageViaObjectStorageUriDetails.class,
+        name = "objectStorageUri"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExportImageViaObjectStorageTupleDetails.class,
-            name = "objectStorageTuple")
+        value = ExportImageViaObjectStorageTupleDetails.class,
+        name = "objectStorageTuple"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ExportImageDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ExportImageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"exportFormat"})
     protected ExportImageDetails(ExportFormat exportFormat) {
@@ -50,16 +51,18 @@ public class ExportImageDetails extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * The format to export the image to. The default value is {@code OCI}.
+     * <p>
+     * The following image formats are available:
+     * <p>
+     * - {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+     * Use this format to export a custom image that you want to import into other tenancies or regions.
+     * - {@code QCOW2} - QEMU Copy On Write (.qcow2)
+     * - {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+     * - {@code VHD} - Virtual Hard Disk (.vhd) for Hyper-V
+     * - {@code VMDK} - Virtual Machine Disk (.vmdk)
      *
-     * <p>The following image formats are available:
-     *
-     * <p>- {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud
-     * Infrastructure metadata (.oci). Use this format to export a custom image that you want to
-     * import into other tenancies or regions. - {@code QCOW2} - QEMU Copy On Write (.qcow2) -
-     * {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox - {@code VHD} - Virtual Hard
-     * Disk (.vhd) for Hyper-V - {@code VMDK} - Virtual Machine Disk (.vmdk)
-     */
-    public enum ExportFormat implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum ExportFormat {
         Qcow2("QCOW2"),
         Vmdk("VMDK"),
         Oci("OCI"),
@@ -96,31 +99,34 @@ public class ExportImageDetails extends com.oracle.bmc.http.client.internal.Expl
     };
     /**
      * The format to export the image to. The default value is {@code OCI}.
+     * <p>
+     * The following image formats are available:
+     * <p>
+     * - {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+     * Use this format to export a custom image that you want to import into other tenancies or regions.
+     * - {@code QCOW2} - QEMU Copy On Write (.qcow2)
+     * - {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+     * - {@code VHD} - Virtual Hard Disk (.vhd) for Hyper-V
+     * - {@code VMDK} - Virtual Machine Disk (.vmdk)
      *
-     * <p>The following image formats are available:
-     *
-     * <p>- {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud
-     * Infrastructure metadata (.oci). Use this format to export a custom image that you want to
-     * import into other tenancies or regions. - {@code QCOW2} - QEMU Copy On Write (.qcow2) -
-     * {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox - {@code VHD} - Virtual Hard
-     * Disk (.vhd) for Hyper-V - {@code VMDK} - Virtual Machine Disk (.vmdk)
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
     private final ExportFormat exportFormat;
 
     /**
      * The format to export the image to. The default value is {@code OCI}.
-     *
-     * <p>The following image formats are available:
-     *
-     * <p>- {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud
-     * Infrastructure metadata (.oci). Use this format to export a custom image that you want to
-     * import into other tenancies or regions. - {@code QCOW2} - QEMU Copy On Write (.qcow2) -
-     * {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox - {@code VHD} - Virtual Hard
-     * Disk (.vhd) for Hyper-V - {@code VMDK} - Virtual Machine Disk (.vmdk)
+     * <p>
+     * The following image formats are available:
+     * <p>
+     * - {@code OCI} - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+     * Use this format to export a custom image that you want to import into other tenancies or regions.
+     * - {@code QCOW2} - QEMU Copy On Write (.qcow2)
+     * - {@code VDI} - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+     * - {@code VHD} - Virtual Hard Disk (.vhd) for Hyper-V
+     * - {@code VMDK} - Virtual Machine Disk (.vmdk)
      *
      * @return the value
-     */
+     **/
     public ExportFormat getExportFormat() {
         return exportFormat;
     }
@@ -132,7 +138,6 @@ public class ExportImageDetails extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

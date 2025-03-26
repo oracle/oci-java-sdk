@@ -5,24 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * List of password policy rules that have values set. This map of stringKey:stringValue pairs can
- * be used to aid users while setting/resetting password <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PasswordPolicyConfiguredPasswordPolicyRules.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PasswordPolicyConfiguredPasswordPolicyRules.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PasswordPolicyConfiguredPasswordPolicyRules
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "value"})
     public PasswordPolicyConfiguredPasswordPolicyRules(String key, String value) {
@@ -35,22 +33,33 @@ public final class PasswordPolicyConfiguredPasswordPolicyRules
     public static class Builder {
         /**
          * The specific password policy rule
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: true - returned: always - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The specific password policy rule
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: true - returned: always - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -58,22 +67,33 @@ public final class PasswordPolicyConfiguredPasswordPolicyRules
         }
         /**
          * User-friendly text that describes a specific password policy rule
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: true - returned: always - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * User-friendly text that describes a specific password policy rule
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: true - returned: always - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -104,7 +124,9 @@ public final class PasswordPolicyConfiguredPasswordPolicyRules
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,42 +137,64 @@ public final class PasswordPolicyConfiguredPasswordPolicyRules
 
     /**
      * The specific password policy rule
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: true - returned: always - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The specific password policy rule
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: true - returned: always - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
      * User-friendly text that describes a specific password policy rule
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: true - returned: always - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * User-friendly text that describes a specific password policy rule
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: true - returned: always - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
@@ -162,7 +206,6 @@ public final class PasswordPolicyConfiguredPasswordPolicyRules
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

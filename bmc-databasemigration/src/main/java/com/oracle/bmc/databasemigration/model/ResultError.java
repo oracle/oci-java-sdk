@@ -5,21 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Error Information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Error Information.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResultError.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResultError extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResultError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "message", "issue", "action"})
     public ResultError(String code, String message, String issue, String action) {
@@ -32,7 +31,10 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A short error code that defines the error, meant for programmatic parsing. */
+        /**
+         * A short error code that defines the error, meant for programmatic parsing.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
@@ -41,13 +43,16 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param code the value to set
          * @return this builder
-         */
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** A human-readable error string. */
+        /**
+         * A human-readable error string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
@@ -56,13 +61,16 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The text describing the root cause of the reported issue */
+        /**
+         * The text describing the root cause of the reported issue
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issue")
         private String issue;
 
@@ -71,13 +79,16 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param issue the value to set
          * @return this builder
-         */
+         **/
         public Builder issue(String issue) {
             this.issue = issue;
             this.__explicitlySet__.add("issue");
             return this;
         }
-        /** The text describing the action required to fix the issue */
+        /**
+         * The text describing the action required to fix the issue
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private String action;
 
@@ -86,7 +97,7 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(String action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -122,7 +133,9 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,7 +144,10 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** A short error code that defines the error, meant for programmatic parsing. */
+    /**
+     * A short error code that defines the error, meant for programmatic parsing.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
@@ -139,12 +155,15 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
      * A short error code that defines the error, meant for programmatic parsing.
      *
      * @return the value
-     */
+     **/
     public String getCode() {
         return code;
     }
 
-    /** A human-readable error string. */
+    /**
+     * A human-readable error string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
@@ -152,12 +171,15 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
      * A human-readable error string.
      *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
-    /** The text describing the root cause of the reported issue */
+    /**
+     * The text describing the root cause of the reported issue
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("issue")
     private final String issue;
 
@@ -165,12 +187,15 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
      * The text describing the root cause of the reported issue
      *
      * @return the value
-     */
+     **/
     public String getIssue() {
         return issue;
     }
 
-    /** The text describing the action required to fix the issue */
+    /**
+     * The text describing the action required to fix the issue
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final String action;
 
@@ -178,7 +203,7 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
      * The text describing the action required to fix the issue
      *
      * @return the value
-     */
+     **/
     public String getAction() {
         return action;
     }
@@ -190,7 +215,6 @@ public final class ResultError extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

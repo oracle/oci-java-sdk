@@ -8,21 +8,22 @@ import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.*;
 import com.oracle.bmc.util.internal.StringUtils;
-import org.apache.http.conn.ConnectTimeoutException;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.nio.charset.StandardCharsets;
 
 /**
- * This class contains examples for encrypting/decrypting Text or Strings on the client side using
- * KMS service.
+ * This class contains examples for encrypting/decrypting Text or Strings
+ * on the client side using KMS service.
  *
- * <p>Instructions: As a pre-requisite for this example you must have a vault created in KMS with at
- * least one master key. OCI KMS has APIs that allow creating master keys or importing a previously
- * generated key, either will work. You can refer to the example at examples/kms_example.py for an
- * example of how to create a master key. Update the values for VAULT_ID and MASTER_KEY_ID below
- * with the values for your vault and key and then run the example.
+ * Instructions:
+ * As a pre-requisite for this example you must have a vault created in KMS with at least one master key.
+ * OCI KMS has APIs that allow creating master keys or importing a previously generated key, either will work.
+ * You can refer to the example at examples/kms_example.py for an example of how to create a master key.
+ * Update the values for VAULT_ID and MASTER_KEY_ID below with the values for your vault and key and then run
+ * the example.
+ *
  */
 public class ClientSideEncryptionWithSignerExample {
 
@@ -51,8 +52,7 @@ public class ClientSideEncryptionWithSignerExample {
             provider = InstancePrincipalsAuthenticationDetailsProvider.builder().build();
         } catch (Exception e) {
             if (e.getCause() instanceof SocketTimeoutException
-                    || e.getCause() instanceof ConnectException
-                    || e.getCause() instanceof ConnectTimeoutException) {
+                    || e.getCause() instanceof ConnectException) {
                 System.out.println(
                         "This sample only works when running on an OCI instance. Are you sure you’re running on an OCI instance? For more info see: https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm");
                 return;

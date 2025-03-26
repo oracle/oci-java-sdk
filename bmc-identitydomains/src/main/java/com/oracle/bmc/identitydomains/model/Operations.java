@@ -5,23 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Each patch operation object MUST have exactly one "op" member, whose value indicates the
- * operation to perform and MAY be one of "add", "remove", or "replace". See [Section
- * 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Each patch operation object MUST have exactly one "op" member, whose value indicates the operation to perform and MAY be one of "add", "remove", or "replace". See [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Operations.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Operations extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Operations extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"op", "path", "value"})
     public Operations(Op op, String path, Object value) {
@@ -34,61 +30,48 @@ public final class Operations extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Defines the operation to be performed for this Patch. If op=remove, value is not
-         * required.
-         */
+         * Defines the operation to be performed for this Patch. If op=remove, value is not required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("op")
         private Op op;
 
         /**
-         * Defines the operation to be performed for this Patch. If op=remove, value is not
-         * required.
-         *
+         * Defines the operation to be performed for this Patch. If op=remove, value is not required.
          * @param op the value to set
          * @return this builder
-         */
+         **/
         public Builder op(Op op) {
             this.op = op;
             this.__explicitlySet__.add("op");
             return this;
         }
         /**
-         * String containing an attribute path describing the target of the operation. The "path"
-         * attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations.
-         * See [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for
-         * details
-         */
+         * String containing an attribute path describing the target of the operation. The "path" attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations. See [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
-         * String containing an attribute path describing the target of the operation. The "path"
-         * attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations.
-         * See [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for
-         * details
-         *
+         * String containing an attribute path describing the target of the operation. The "path" attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations. See [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
         /**
-         * The value could be either a simple value attribute e.g. string or number OR complex like
-         * map of the attributes to be added or replaced OR multivalues complex attributes.q1
-         */
+         * The value could be either a simple value attribute e.g. string or number OR complex like map of the attributes to be added or replaced OR multivalues complex attributes.q1
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Object value;
 
         /**
-         * The value could be either a simple value attribute e.g. string or number OR complex like
-         * map of the attributes to be added or replaced OR multivalues complex attributes.q1
-         *
+         * The value could be either a simple value attribute e.g. string or number OR complex like map of the attributes to be added or replaced OR multivalues complex attributes.q1
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(Object value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -121,7 +104,9 @@ public final class Operations extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,8 +117,8 @@ public final class Operations extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Defines the operation to be performed for this Patch. If op=remove, value is not required.
-     */
-    public enum Op implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Op {
         Add("ADD"),
         Remove("REMOVE"),
         Replace("REPLACE"),
@@ -168,51 +153,42 @@ public final class Operations extends com.oracle.bmc.http.client.internal.Explic
     };
     /**
      * Defines the operation to be performed for this Patch. If op=remove, value is not required.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("op")
     private final Op op;
 
     /**
      * Defines the operation to be performed for this Patch. If op=remove, value is not required.
-     *
      * @return the value
-     */
+     **/
     public Op getOp() {
         return op;
     }
 
     /**
-     * String containing an attribute path describing the target of the operation. The "path"
-     * attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations. See
-     * [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details
-     */
+     * String containing an attribute path describing the target of the operation. The "path" attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations. See [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
-     * String containing an attribute path describing the target of the operation. The "path"
-     * attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations. See
-     * [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details
-     *
+     * String containing an attribute path describing the target of the operation. The "path" attribute is OPTIONAL for "add" and "replace" and is REQUIRED for "remove" operations. See [Section 3.5.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.5.2) for details
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
     /**
-     * The value could be either a simple value attribute e.g. string or number OR complex like map
-     * of the attributes to be added or replaced OR multivalues complex attributes.q1
-     */
+     * The value could be either a simple value attribute e.g. string or number OR complex like map of the attributes to be added or replaced OR multivalues complex attributes.q1
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Object value;
 
     /**
-     * The value could be either a simple value attribute e.g. string or number OR complex like map
-     * of the attributes to be added or replaced OR multivalues complex attributes.q1
-     *
+     * The value could be either a simple value attribute e.g. string or number OR complex like map of the attributes to be added or replaced OR multivalues complex attributes.q1
      * @return the value
-     */
+     **/
     public Object getValue() {
         return value;
     }
@@ -224,7 +200,6 @@ public final class Operations extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

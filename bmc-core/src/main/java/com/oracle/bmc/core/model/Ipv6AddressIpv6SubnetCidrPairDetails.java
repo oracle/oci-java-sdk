@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details to assign an IPv6 subnet prefix and IPv6 address on VNIC creation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details to assign an IPv6 subnet prefix and IPv6 address on VNIC creation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = Ipv6AddressIpv6SubnetCidrPairDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = Ipv6AddressIpv6SubnetCidrPairDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Ipv6AddressIpv6SubnetCidrPairDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipv6SubnetCidr", "ipv6Address"})
     public Ipv6AddressIpv6SubnetCidrPairDetails(String ipv6SubnetCidr, String ipv6Address) {
@@ -32,7 +32,10 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The IPv6 prefix allocated to the subnet. */
+        /**
+         * The IPv6 prefix allocated to the subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
         private String ipv6SubnetCidr;
 
@@ -41,32 +44,31 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
          *
          * @param ipv6SubnetCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
             this.ipv6SubnetCidr = ipv6SubnetCidr;
             this.__explicitlySet__.add("ipv6SubnetCidr");
             return this;
         }
         /**
-         * An IPv6 address of your choice. Must be an available IPv6 address within the subnet's
-         * prefix. If an IPv6 address is not provided: - Oracle will automatically assign an IPv6
-         * address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the
-         * subnet. - Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle
-         * GUA prefix if it exists on the subnet.
-         */
+         * An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+         * If an IPv6 address is not provided:
+         * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+         * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
         private String ipv6Address;
 
         /**
-         * An IPv6 address of your choice. Must be an available IPv6 address within the subnet's
-         * prefix. If an IPv6 address is not provided: - Oracle will automatically assign an IPv6
-         * address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the
-         * subnet. - Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle
-         * GUA prefix if it exists on the subnet.
+         * An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+         * If an IPv6 address is not provided:
+         * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+         * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
          *
          * @param ipv6Address the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6Address(String ipv6Address) {
             this.ipv6Address = ipv6Address;
             this.__explicitlySet__.add("ipv6Address");
@@ -97,7 +99,9 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,7 +110,10 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
         return new Builder().copy(this);
     }
 
-    /** The IPv6 prefix allocated to the subnet. */
+    /**
+     * The IPv6 prefix allocated to the subnet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
     private final String ipv6SubnetCidr;
 
@@ -114,30 +121,29 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
      * The IPv6 prefix allocated to the subnet.
      *
      * @return the value
-     */
+     **/
     public String getIpv6SubnetCidr() {
         return ipv6SubnetCidr;
     }
 
     /**
      * An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
-     * If an IPv6 address is not provided: - Oracle will automatically assign an IPv6 address from
-     * the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet. - Oracle
-     * will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it
-     * exists on the subnet.
-     */
+     * If an IPv6 address is not provided:
+     * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+     * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
     private final String ipv6Address;
 
     /**
      * An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
-     * If an IPv6 address is not provided: - Oracle will automatically assign an IPv6 address from
-     * the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet. - Oracle
-     * will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it
-     * exists on the subnet.
+     * If an IPv6 address is not provided:
+     * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+     * - Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
      *
      * @return the value
-     */
+     **/
     public String getIpv6Address() {
         return ipv6Address;
     }
@@ -149,7 +155,6 @@ public final class Ipv6AddressIpv6SubnetCidrPairDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

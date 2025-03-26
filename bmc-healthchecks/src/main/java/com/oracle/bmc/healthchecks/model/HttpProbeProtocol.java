@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.healthchecks.model;
 
-/** The supported protocols available for HTTP probes. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
-public enum HttpProbeProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The supported protocols available for HTTP probes.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+public enum HttpProbeProtocol {
     Http("HTTP"),
     Https("HTTPS"),
 

@@ -5,34 +5,35 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The credential to connect to the database to perform tablespace administration tasks. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The credential to connect to the database to perform tablespace administration tasks.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "tablespaceAdminCredentialType",
-        defaultImpl = TablespaceAdminCredentialDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "tablespaceAdminCredentialType",
+    defaultImpl = TablespaceAdminCredentialDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TablespaceAdminPasswordCredentialDetails.class,
-            name = "PASSWORD"),
+        value = TablespaceAdminPasswordCredentialDetails.class,
+        name = "PASSWORD"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TablespaceAdminSecretCredentialDetails.class,
-            name = "SECRET")
+        value = TablespaceAdminSecretCredentialDetails.class,
+        name = "SECRET"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class TablespaceAdminCredentialDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"username", "role"})
     protected TablespaceAdminCredentialDetails(String username, Role role) {
@@ -41,21 +42,24 @@ public class TablespaceAdminCredentialDetails
         this.role = role;
     }
 
-    /** The user to connect to the database. */
+    /**
+     * The user to connect to the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The user to connect to the database.
-     *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
-    /** The role of the database user. */
-    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The role of the database user.
+     **/
+    public enum Role {
         Normal("NORMAL"),
         Sysdba("SYSDBA"),
         ;
@@ -87,15 +91,16 @@ public class TablespaceAdminCredentialDetails
             throw new IllegalArgumentException("Invalid Role: " + key);
         }
     };
-    /** The role of the database user. */
+    /**
+     * The role of the database user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
      * The role of the database user.
-     *
      * @return the value
-     */
+     **/
     public Role getRole() {
         return role;
     }
@@ -107,7 +112,6 @@ public class TablespaceAdminCredentialDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -146,8 +150,10 @@ public class TablespaceAdminCredentialDetails
         return result;
     }
 
-    /** The type of the credential for tablespace administration tasks. */
-    public enum TablespaceAdminCredentialType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the credential for tablespace administration tasks.
+     **/
+    public enum TablespaceAdminCredentialType {
         Secret("SECRET"),
         Password("PASSWORD"),
         ;

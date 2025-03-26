@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The details for configuring the ORDS certificates on Cloud Autonomous VM Cluster <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The details for configuring the ORDS certificates on Cloud Autonomous VM Cluster
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RotateCloudAutonomousVmClusterOrdsCertsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RotateCloudAutonomousVmClusterOrdsCertsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RotateCloudAutonomousVmClusterOrdsCertsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certificateGenerationType",
@@ -44,19 +44,16 @@ public final class RotateCloudAutonomousVmClusterOrdsCertsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring
-         * your own certificate.
-         */
+         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
         private CertificateGenerationType certificateGenerationType;
 
         /**
-         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring
-         * your own certificate.
-         *
+         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
          * @param certificateGenerationType the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateGenerationType(
                 CertificateGenerationType certificateGenerationType) {
             this.certificateGenerationType = certificateGenerationType;
@@ -64,57 +61,54 @@ public final class RotateCloudAutonomousVmClusterOrdsCertsDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * certificate to use.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * certificate to use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use.
          *
          * @param certificateId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * certificate authority.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
         private String certificateAuthorityId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * certificate authority.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
          *
          * @param certificateAuthorityId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateAuthorityId(String certificateAuthorityId) {
             this.certificateAuthorityId = certificateAuthorityId;
             this.__explicitlySet__.add("certificateAuthorityId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * certificate bundle.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
         private String caBundleId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * certificate bundle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
          *
          * @param caBundleId the value to set
          * @return this builder
-         */
+         **/
         public Builder caBundleId(String caBundleId) {
             this.caBundleId = caBundleId;
             this.__explicitlySet__.add("caBundleId");
@@ -155,7 +149,9 @@ public final class RotateCloudAutonomousVmClusterOrdsCertsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,10 +161,9 @@ public final class RotateCloudAutonomousVmClusterOrdsCertsDetails
     }
 
     /**
-     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your
-     * own certificate.
-     */
-    public enum CertificateGenerationType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
+     **/
+    public enum CertificateGenerationType {
         System("SYSTEM"),
         Byoc("BYOC"),
         ;
@@ -201,69 +196,63 @@ public final class RotateCloudAutonomousVmClusterOrdsCertsDetails
         }
     };
     /**
-     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your
-     * own certificate.
-     */
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
     private final CertificateGenerationType certificateGenerationType;
 
     /**
-     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your
-     * own certificate.
-     *
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
      * @return the value
-     */
+     **/
     public CertificateGenerationType getCertificateGenerationType() {
         return certificateGenerationType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * certificate to use.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * certificate to use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use.
      *
      * @return the value
-     */
+     **/
     public String getCertificateId() {
         return certificateId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * certificate authority.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
     private final String certificateAuthorityId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * certificate authority.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      *
      * @return the value
-     */
+     **/
     public String getCertificateAuthorityId() {
         return certificateAuthorityId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * certificate bundle.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
     private final String caBundleId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * certificate bundle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
      *
      * @return the value
-     */
+     **/
     public String getCaBundleId() {
         return caBundleId;
     }
@@ -275,7 +264,6 @@ public final class RotateCloudAutonomousVmClusterOrdsCertsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

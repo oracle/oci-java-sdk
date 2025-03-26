@@ -6,47 +6,60 @@ package com.oracle.bmc.desktops.requests;
 
 import com.oracle.bmc.desktops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/UpdateDesktopPoolExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDesktopPoolRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/UpdateDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDesktopPoolRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class UpdateDesktopPoolRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.desktops.model.UpdateDesktopPoolDetails> {
 
-    /** The OCID of the desktop pool. */
+    /**
+     * The OCID of the desktop pool.
+     */
     private String desktopPoolId;
 
-    /** The OCID of the desktop pool. */
+    /**
+     * The OCID of the desktop pool.
+     */
     public String getDesktopPoolId() {
         return desktopPoolId;
     }
-    /** The details of the update. */
+    /**
+     * The details of the update.
+     */
     private com.oracle.bmc.desktops.model.UpdateDesktopPoolDetails updateDesktopPoolDetails;
 
-    /** The details of the update. */
+    /**
+     * The details of the update.
+     */
     public com.oracle.bmc.desktops.model.UpdateDesktopPoolDetails getUpdateDesktopPoolDetails() {
         return updateDesktopPoolDetails;
     }
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** For optimistic concurrency control. */
+    /**
+     * For optimistic concurrency control.
+     */
     private String ifMatch;
 
-    /** For optimistic concurrency control. */
+    /**
+     * For optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -59,15 +72,17 @@ public class UpdateDesktopPoolRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDesktopPoolRequest,
                     com.oracle.bmc.desktops.model.UpdateDesktopPoolDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the desktop pool. */
+        /**
+         * The OCID of the desktop pool.
+         */
         private String desktopPoolId = null;
 
         /**
          * The OCID of the desktop pool.
-         *
          * @param desktopPoolId the value to set
          * @return this builder instance
          */
@@ -76,13 +91,14 @@ public class UpdateDesktopPoolRequest
             return this;
         }
 
-        /** The details of the update. */
+        /**
+         * The details of the update.
+         */
         private com.oracle.bmc.desktops.model.UpdateDesktopPoolDetails updateDesktopPoolDetails =
                 null;
 
         /**
          * The details of the update.
-         *
          * @param updateDesktopPoolDetails the value to set
          * @return this builder instance
          */
@@ -92,12 +108,13 @@ public class UpdateDesktopPoolRequest
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -106,12 +123,13 @@ public class UpdateDesktopPoolRequest
             return this;
         }
 
-        /** For optimistic concurrency control. */
+        /**
+         * For optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control.
-         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -122,19 +140,18 @@ public class UpdateDesktopPoolRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -146,7 +163,6 @@ public class UpdateDesktopPoolRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateDesktopPoolRequest o) {
@@ -162,11 +178,10 @@ public class UpdateDesktopPoolRequest
         /**
          * Build the instance of UpdateDesktopPoolRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateDesktopPoolRequest
          */
@@ -179,7 +194,6 @@ public class UpdateDesktopPoolRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -192,8 +206,7 @@ public class UpdateDesktopPoolRequest
         /**
          * Build the instance of UpdateDesktopPoolRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateDesktopPoolRequest
@@ -205,14 +218,12 @@ public class UpdateDesktopPoolRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateDesktopPoolRequest(desktopPoolId, updateDesktopPoolDetails, opcRequestId,
-            // ifMatch);
+            // new UpdateDesktopPoolRequest(desktopPoolId, updateDesktopPoolDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -225,7 +236,6 @@ public class UpdateDesktopPoolRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

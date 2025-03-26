@@ -7,29 +7,51 @@ package com.oracle.bmc.http.signing;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.http.signing.internal.Constants;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/** Enum for the various signing strategies used by OCI. */
+/**
+ * Enum for the various signing strategies used by OCI.
+ */
 @InternalSdk
 public enum SigningStrategy {
-    /** Standard signing strategy. */
-    STANDARD(Constants.REQUIRED_SIGNING_HEADERS_MAP, Constants.OPTIONAL_SIGNING_HEADERS_MAP, false),
+    /**
+     * Standard signing strategy.
+     */
+    STANDARD(Constants.REQUIRED_SIGNING_HEADERS, Constants.OPTIONAL_SIGNING_HEADERS, false),
 
-    /** A strategy that does not sign the body. */
+    @Deprecated
+    /**
+     * Modified strategy specific to Object Storage.
+     * @deprecated use EXCLUDE_BODY instead; Object Storage has migrated to using STANDARD, with EXCLUDE_BODY as a per-operation override.  We therefore do not want to maintain a service-specific signing strategy.
+     */
+    OBJECT_STORAGE(
+            Constants.REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS,
+            Constants.OPTIONAL_SIGNING_HEADERS,
+            true),
+
+    /**
+     * A strategy that does not sign the body.
+     */
     EXCLUDE_BODY(
-            Constants.REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP,
-            Constants.OPTIONAL_SIGNING_HEADERS_MAP,
+            Constants.REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS,
+            Constants.OPTIONAL_SIGNING_HEADERS,
             true);
 
-    /** The Map of headers (by HTTP method) to sign. */
+    /**
+     * The Map of headers (by HTTP method) to sign.
+     */
     private final Map<String, List<String>> headersToSign;
 
-    /** The Map of headers (by HTTP method) to sign, if they are set. */
+    /**
+     * The Map of headers (by HTTP method) to sign, if they are set.
+     */
     private final Map<String, List<String>> optionalHeadersToSign;
 
-    /** Flag to indicate whether a PUT requests require content-* headers to be signed. */
+    /**
+     * Flag to indicate whether a PUT requests require content-* headers
+     * to be signed.
+     */
     private final boolean skipContentHeadersForStreamingPutRequests;
 
     @java.beans.ConstructorProperties({
@@ -46,17 +68,30 @@ public enum SigningStrategy {
         this.skipContentHeadersForStreamingPutRequests = skipContentHeadersForStreamingPutRequests;
     }
 
-    /** The Map of headers (by HTTP method) to sign. */
-    public Map<String, List<String>> getHeadersToSign() {
-        return Collections.unmodifiableMap(this.headersToSign);
+    /**
+     * The Map of headers (by HTTP method) to sign.
+     */
+    public com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            getHeadersToSign() {
+        return com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                this.headersToSign);
     }
 
-    /** The Map of headers (by HTTP method) to sign, if they are set. */
-    public Map<String, List<String>> getOptionalHeadersToSign() {
-        return Collections.unmodifiableMap(this.optionalHeadersToSign);
+    /**
+     * The Map of headers (by HTTP method) to sign, if they are set.
+     */
+    public com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            getOptionalHeadersToSign() {
+        return com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                this.optionalHeadersToSign);
     }
 
-    /** Flag to indicate whether a PUT requests require content-* headers to be signed. */
+    /**
+     * Flag to indicate whether a PUT requests require content-* headers
+     * to be signed.
+     */
     public boolean isSkipContentHeadersForStreamingPutRequests() {
         return this.skipContentHeadersForStreamingPutRequests;
     }

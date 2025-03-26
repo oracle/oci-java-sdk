@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Sort orders. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Sort orders.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),
     ;

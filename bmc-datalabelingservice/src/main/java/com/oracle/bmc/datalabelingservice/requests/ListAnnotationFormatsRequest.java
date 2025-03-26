@@ -6,53 +6,64 @@ package com.oracle.bmc.datalabelingservice.requests;
 
 import com.oracle.bmc.datalabelingservice.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListAnnotationFormatsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListAnnotationFormatsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListAnnotationFormatsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAnnotationFormatsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class ListAnnotationFormatsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.datalabelingservice.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.datalabelingservice.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -60,15 +71,17 @@ public class ListAnnotationFormatsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAnnotationFormatsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -77,12 +90,13 @@ public class ListAnnotationFormatsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -92,15 +106,12 @@ public class ListAnnotationFormatsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -109,12 +120,13 @@ public class ListAnnotationFormatsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.datalabelingservice.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -123,12 +135,13 @@ public class ListAnnotationFormatsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -139,19 +152,18 @@ public class ListAnnotationFormatsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -163,7 +175,6 @@ public class ListAnnotationFormatsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAnnotationFormatsRequest o) {
@@ -180,11 +191,10 @@ public class ListAnnotationFormatsRequest
         /**
          * Build the instance of ListAnnotationFormatsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAnnotationFormatsRequest
          */
@@ -198,8 +208,7 @@ public class ListAnnotationFormatsRequest
         /**
          * Build the instance of ListAnnotationFormatsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAnnotationFormatsRequest
@@ -212,14 +221,12 @@ public class ListAnnotationFormatsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAnnotationFormatsRequest(compartmentId, limit, page, sortOrder,
-            // opcRequestId);
+            // new ListAnnotationFormatsRequest(compartmentId, limit, page, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -233,7 +240,6 @@ public class ListAnnotationFormatsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

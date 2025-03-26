@@ -6,17 +6,18 @@ package com.oracle.bmc.dataintegration.responses;
 
 import com.oracle.bmc.dataintegration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,14 +26,13 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -40,12 +40,13 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned {@code TaskSchedule} instance. */
+    /**
+     * The returned TaskSchedule instance.
+     */
     private com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule;
 
     /**
-     * The returned {@code TaskSchedule} instance.
-     *
+     * The returned TaskSchedule instance.
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.TaskSchedule getTaskSchedule() {
@@ -61,7 +62,7 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
     })
     private UpdateTaskScheduleResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule) {
@@ -71,33 +72,31 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
         this.taskSchedule = taskSchedule;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateTaskScheduleResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -108,14 +107,13 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -125,12 +123,13 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code TaskSchedule} instance. */
+        /**
+         * The returned TaskSchedule instance.
+         */
         private com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule;
 
         /**
-         * The returned {@code TaskSchedule} instance.
-         *
+         * The returned TaskSchedule instance.
          * @param taskSchedule the value to set
          * @return this builder
          */
@@ -142,10 +141,8 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateTaskScheduleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -158,10 +155,8 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateTaskScheduleResponse build() {
             return new UpdateTaskScheduleResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, taskSchedule);
@@ -170,7 +165,6 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -24,15 +24,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * This class provides an example of CRUD(Create, read, update, delete) operations on
- * BackupDestination using the Java SDK.
- *
- * <p>
- *
+ * This class provides an example of CRUD(Create, read, update, delete) operations on BackupDestination using the Java SDK.
+ * <p></p>
  * <ul>
- *   <li>For general documentation refer to :- <a
- *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> for
- *       more information
+ *   <li>
+ *     For general documentation refer to :-
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a>
+ *       for more information</li>
  * </ul>
  */
 public class BackupDestinationExample {
@@ -44,7 +42,9 @@ public class BackupDestinationExample {
     private static final Map<String, Opts> mappings =
             Arrays.stream(Opts.values()).collect(Collectors.toMap(Opts::getArgName, o -> o));
 
-    /** Defines the arguments for this example. */
+    /**
+     * Defines the arguments for this example.
+     */
     private enum Opts {
         COMPARTMENT_OCID("--compartmentOcid", "The OCID of compartment.", true),
         BACKUP_DESTINATION_TYPE("--backupDestinationType", "Type of backup destination", true),
@@ -83,8 +83,8 @@ public class BackupDestinationExample {
      * A helper method for parsing command line arguments.
      *
      * @param argv the arguments as passed
-     * @return a mapping of argument to its value. Arguments may be missing from the map if they
-     *     were not supplied by the user and not required.
+     * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
+     * the user and not required.
      */
     private static Map<Opts, String> parseOpts(String[] argv) {
         if (argv == null) {
@@ -123,9 +123,9 @@ public class BackupDestinationExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>Compartment OCID
-     *     </ul>
+     *             <ul>
+     *             <li>Compartment OCID</li>
+     *             </ul>
      */
     public static void main(String[] args) throws Exception {
         final Map<Opts, String> argumentMap = parseOpts(args);
@@ -136,22 +136,20 @@ public class BackupDestinationExample {
         final String vpcUser = argumentMap.getOrDefault(Opts.VPC_USER, null);
         final String connectionString = argumentMap.getOrDefault(Opts.CONNECTION_STRING, null);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = DatabaseClient.builder().build(provider);
+        databaseClient = new DatabaseClient(provider);
 
         List<String> vpcusers = new ArrayList<>();
         vpcusers.add(vpcUser);
 
-        // Create Backup Destination
+        //Create Backup Destination
         CreateBackupDestinationDetails backupDestinationDetails =
                 createBackupDestinationDetails(
                         compartmentId,
@@ -169,7 +167,7 @@ public class BackupDestinationExample {
         com.oracle.bmc.database.model.BackupDestination backupDestination =
                 createBackupDestinationResponse.getBackupDestination();
 
-        // Get Backup Destination
+        //Get Backup Destination
         backupDestination =
                 databaseClient
                         .getBackupDestination(
@@ -180,7 +178,7 @@ public class BackupDestinationExample {
 
         System.out.println("GET request returned :" + backupDestination);
 
-        // Update
+        //Update
         UpdateBackupDestinationDetails updateBackupDestinationDetails =
                 updateBackupDestinationDetails(backupdestinationType, vpcusers);
         UpdateBackupDestinationResponse updateResponse =
@@ -192,7 +190,7 @@ public class BackupDestinationExample {
 
         backupDestination = updateResponse.getBackupDestination();
 
-        // Delete
+        //Delete
         DeleteBackupDestinationResponse deleteResponse =
                 databaseClient.deleteBackupDestination(
                         DeleteBackupDestinationRequest.builder()

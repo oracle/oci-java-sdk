@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of the report schedule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The details of the report schedule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScheduleReportDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ScheduleReportDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScheduleReportDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -46,16 +45,17 @@ public final class ScheduleReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the report to be scheduled */
+        /**
+         * The name of the report to be scheduled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the report to be scheduled
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -64,69 +64,78 @@ public final class ScheduleReportDetails
         /**
          * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
+         * <p>
+         * Allowed version strings - "v1"
+         * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+         * Each of the above fields potentially introduce constraints. A workrequest is created only
+         * when clock time satisfies all the constraints. Constraints introduced:
+         * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+         * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+         * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+         * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+         * No constraint introduced when it is '*'. When not, day of week must equal the given value
+         * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+         * No constraint introduced when it is '*'. When not, day of month must equal the given value
          *
-         * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
-         * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints.
-         * A workrequest is created only when clock time satisfies all the constraints. Constraints
-         * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes =
-         * <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range
-         * for <hh> is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number
-         * between 1(Monday) and 7(Sunday)) No constraint introduced when it is '*'. When not, day
-         * of week must equal the given value 5. <day-of-month> can be either '*' (without quotes or
-         * a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
-         * month must equal the given value
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedule")
         private String schedule;
 
         /**
          * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
-         *
-         * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
-         * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints.
-         * A workrequest is created only when clock time satisfies all the constraints. Constraints
-         * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes =
-         * <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range
-         * for <hh> is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number
-         * between 1(Monday) and 7(Sunday)) No constraint introduced when it is '*'. When not, day
-         * of week must equal the given value 5. <day-of-month> can be either '*' (without quotes or
-         * a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
-         * month must equal the given value
+         * <p>
+         * Allowed version strings - "v1"
+         * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+         * Each of the above fields potentially introduce constraints. A workrequest is created only
+         * when clock time satisfies all the constraints. Constraints introduced:
+         * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+         * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+         * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+         * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+         * No constraint introduced when it is '*'. When not, day of week must equal the given value
+         * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+         * No constraint introduced when it is '*'. When not, day of month must equal the given value
          *
          * @param schedule the value to set
          * @return this builder
-         */
+         **/
         public Builder schedule(String schedule) {
             this.schedule = schedule;
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Specifies if the report will be in .xls or .pdf or .json format */
+        /**
+         * Specifies if the report will be in .xls or .pdf or .json format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
          * Specifies if the report will be in .xls or .pdf or .json format
-         *
          * @param mimeType the value to set
          * @return this builder
-         */
+         **/
         public Builder mimeType(MimeType mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
             return this;
         }
-        /** The OCID of the compartment in which the resource should be created. */
+        /**
+         * The OCID of the compartment
+         * in which the resource should be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment in which the resource should be created.
+         * The OCID of the compartment
+         * in which the resource should be created.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -180,7 +189,9 @@ public final class ScheduleReportDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,15 +200,16 @@ public final class ScheduleReportDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the report to be scheduled */
+    /**
+     * The name of the report to be scheduled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the report to be scheduled
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -205,42 +217,49 @@ public final class ScheduleReportDetails
     /**
      * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
-     *
-     * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
-     * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A
-     * workrequest is created only when clock time satisfies all the constraints. Constraints
-     * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm>
-     * (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh>
-     * is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday)
-     * and 7(Sunday)) No constraint introduced when it is '*'. When not, day of week must equal the
-     * given value 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+     * <p>
+     * Allowed version strings - "v1"
+     * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+     * Each of the above fields potentially introduce constraints. A workrequest is created only
+     * when clock time satisfies all the constraints. Constraints introduced:
+     * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+     * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+     * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+     * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+     * No constraint introduced when it is '*'. When not, day of week must equal the given value
+     * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
      * No constraint introduced when it is '*'. When not, day of month must equal the given value
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedule")
     private final String schedule;
 
     /**
      * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
-     *
-     * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
-     * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A
-     * workrequest is created only when clock time satisfies all the constraints. Constraints
-     * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm>
-     * (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh>
-     * is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday)
-     * and 7(Sunday)) No constraint introduced when it is '*'. When not, day of week must equal the
-     * given value 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+     * <p>
+     * Allowed version strings - "v1"
+     * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+     * Each of the above fields potentially introduce constraints. A workrequest is created only
+     * when clock time satisfies all the constraints. Constraints introduced:
+     * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+     * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+     * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+     * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+     * No constraint introduced when it is '*'. When not, day of week must equal the given value
+     * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
      * No constraint introduced when it is '*'. When not, day of month must equal the given value
      *
      * @return the value
-     */
+     **/
     public String getSchedule() {
         return schedule;
     }
 
-    /** Specifies if the report will be in .xls or .pdf or .json format */
-    public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies if the report will be in .xls or .pdf or .json format
+     **/
+    public enum MimeType {
         Pdf("PDF"),
         Xls("XLS"),
         Json("JSON"),
@@ -273,28 +292,34 @@ public final class ScheduleReportDetails
             throw new IllegalArgumentException("Invalid MimeType: " + key);
         }
     };
-    /** Specifies if the report will be in .xls or .pdf or .json format */
+    /**
+     * Specifies if the report will be in .xls or .pdf or .json format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
      * Specifies if the report will be in .xls or .pdf or .json format
-     *
      * @return the value
-     */
+     **/
     public MimeType getMimeType() {
         return mimeType;
     }
 
-    /** The OCID of the compartment in which the resource should be created. */
+    /**
+     * The OCID of the compartment
+     * in which the resource should be created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment in which the resource should be created.
+     * The OCID of the compartment
+     * in which the resource should be created.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -313,7 +338,6 @@ public final class ScheduleReportDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

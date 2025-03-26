@@ -5,25 +5,26 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Backend which when called triggers OAuth2 logout. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * Backend which when called triggers OAuth2 logout.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OAuth2LogoutBackend.Builder.class)
+    builder = OAuth2LogoutBackend.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,7 +37,10 @@ public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
             this.__explicitlySet__.add("allowedPostLogoutUris");
             return this;
         }
-        /** Defines a state that should be shared on redirecting to postLogout URL. */
+        /**
+         * Defines a state that should be shared on redirecting to postLogout URL.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("postLogoutState")
         private String postLogoutState;
 
@@ -45,7 +49,7 @@ public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
          *
          * @param postLogoutState the value to set
          * @return this builder
-         */
+         **/
         public Builder postLogoutState(String postLogoutState) {
             this.postLogoutState = postLogoutState;
             this.__explicitlySet__.add("postLogoutState");
@@ -76,7 +80,9 @@ public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,7 +106,10 @@ public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
         return allowedPostLogoutUris;
     }
 
-    /** Defines a state that should be shared on redirecting to postLogout URL. */
+    /**
+     * Defines a state that should be shared on redirecting to postLogout URL.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("postLogoutState")
     private final String postLogoutState;
 
@@ -108,7 +117,7 @@ public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
      * Defines a state that should be shared on redirecting to postLogout URL.
      *
      * @return the value
-     */
+     **/
     public String getPostLogoutState() {
         return postLogoutState;
     }
@@ -120,7 +129,6 @@ public final class OAuth2LogoutBackend extends ApiSpecificationRouteBackend {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

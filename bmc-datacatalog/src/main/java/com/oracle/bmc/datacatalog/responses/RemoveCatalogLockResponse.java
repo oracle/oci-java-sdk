@@ -6,17 +6,18 @@ package com.oracle.bmc.datacatalog.responses;
 
 import com.oracle.bmc.datacatalog.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** etag for the returned Catalog resource. */
+    /**
+     * etag for the returned Catalog resource.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The returned {@code Catalog} instance. */
+    /**
+     * The returned Catalog instance.
+     */
     private com.oracle.bmc.datacatalog.model.Catalog catalog;
 
     /**
-     * The returned {@code Catalog} instance.
-     *
+     * The returned Catalog instance.
      * @return the value
      */
     public com.oracle.bmc.datacatalog.model.Catalog getCatalog() {
@@ -57,7 +62,7 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private RemoveCatalogLockResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.datacatalog.model.Catalog catalog) {
@@ -67,33 +72,31 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
         this.catalog = catalog;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<RemoveCatalogLockResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +106,10 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** etag for the returned Catalog resource. */
+        /**
+         * etag for the returned Catalog resource.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code Catalog} instance. */
+        /**
+         * The returned Catalog instance.
+         */
         private com.oracle.bmc.datacatalog.model.Catalog catalog;
 
         /**
-         * The returned {@code Catalog} instance.
-         *
+         * The returned Catalog instance.
          * @param catalog the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RemoveCatalogLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RemoveCatalogLockResponse build() {
             return new RemoveCatalogLockResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, catalog);
@@ -161,7 +164,6 @@ public class RemoveCatalogLockResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

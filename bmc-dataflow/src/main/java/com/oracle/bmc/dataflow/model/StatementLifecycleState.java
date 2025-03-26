@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/** The lifecycle state of a statement. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum StatementLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The lifecycle state of a statement.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+public enum StatementLifecycleState {
     Accepted("ACCEPTED"),
     Cancelling("CANCELLING"),
     Cancelled("CANCELLED"),

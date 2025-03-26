@@ -5,21 +5,19 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Represents a log object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Represents a log object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Log.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Log extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -71,120 +69,125 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the tenancy. */
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * The OCID of the tenancy.
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** Log group OCID. */
+        /**
+         * Log group OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
          * Log group OCID.
-         *
          * @param logGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
         /**
-         * The user-friendly display name. This must be unique within the enclosing resource, and
-         * it's changeable. Avoid entering confidential information.
-         */
+         * The user-friendly display name. This must be unique within the enclosing resource,
+         * and it's changeable. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly display name. This must be unique within the enclosing resource, and
-         * it's changeable. Avoid entering confidential information.
+         * The user-friendly display name. This must be unique within the enclosing resource,
+         * and it's changeable. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The logType that the log object is for, whether custom or service. */
+        /**
+         * The logType that the log object is for, whether custom or service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logType")
         private LogType logType;
 
         /**
          * The logType that the log object is for, whether custom or service.
-         *
          * @param logType the value to set
          * @return this builder
-         */
+         **/
         public Builder logType(LogType logType) {
             this.logType = logType;
             this.__explicitlySet__.add("logType");
             return this;
         }
-        /** Whether or not this resource is currently enabled. */
+        /**
+         * Whether or not this resource is currently enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Whether or not this resource is currently enabled.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -192,23 +195,22 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -223,76 +225,81 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("configuration");
             return this;
         }
-        /** The pipeline state. */
+        /**
+         * The pipeline state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LogLifecycleState lifecycleState;
 
         /**
          * The pipeline state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LogLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Time the resource was created. */
+        /**
+         * Time the resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Time the resource was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Time the resource was last modified. */
+        /**
+         * Time the resource was last modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
         /**
          * Time the resource was last modified.
-         *
          * @param timeLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
             return this;
         }
-        /** Log retention duration in 30-day increments (30, 60, 90 and so on until 180). */
+        /**
+         * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionDuration")
         private Integer retentionDuration;
 
         /**
          * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-         *
          * @param retentionDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionDuration(Integer retentionDuration) {
             this.retentionDuration = retentionDuration;
             this.__explicitlySet__.add("retentionDuration");
             return this;
         }
-        /** The OCID of the compartment that the resource belongs to. */
+        /**
+         * The OCID of the compartment that the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that the resource belongs to.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -373,7 +380,9 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -382,70 +391,76 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the tenancy. */
+    /**
+     * The OCID of the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * The OCID of the tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /** Log group OCID. */
+    /**
+     * Log group OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
      * Log group OCID.
-     *
      * @return the value
-     */
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
 
     /**
-     * The user-friendly display name. This must be unique within the enclosing resource, and it's
-     * changeable. Avoid entering confidential information.
-     */
+     * The user-friendly display name. This must be unique within the enclosing resource,
+     * and it's changeable. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly display name. This must be unique within the enclosing resource, and it's
-     * changeable. Avoid entering confidential information.
+     * The user-friendly display name. This must be unique within the enclosing resource,
+     * and it's changeable. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The logType that the log object is for, whether custom or service. */
-    public enum LogType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The logType that the log object is for, whether custom or service.
+     **/
+    public enum LogType {
         Custom("CUSTOM"),
         Service("SERVICE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -484,72 +499,72 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /** The logType that the log object is for, whether custom or service. */
+    /**
+     * The logType that the log object is for, whether custom or service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logType")
     private final LogType logType;
 
     /**
      * The logType that the log object is for, whether custom or service.
-     *
      * @return the value
-     */
+     **/
     public LogType getLogType() {
         return logType;
     }
 
-    /** Whether or not this resource is currently enabled. */
+    /**
+     * Whether or not this resource is currently enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Whether or not this resource is currently enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -561,67 +576,72 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return configuration;
     }
 
-    /** The pipeline state. */
+    /**
+     * The pipeline state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LogLifecycleState lifecycleState;
 
     /**
      * The pipeline state.
-     *
      * @return the value
-     */
+     **/
     public LogLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Time the resource was created. */
+    /**
+     * Time the resource was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Time the resource was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Time the resource was last modified. */
+    /**
+     * Time the resource was last modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
     /**
      * Time the resource was last modified.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }
 
-    /** Log retention duration in 30-day increments (30, 60, 90 and so on until 180). */
+    /**
+     * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionDuration")
     private final Integer retentionDuration;
 
     /**
      * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionDuration() {
         return retentionDuration;
     }
 
-    /** The OCID of the compartment that the resource belongs to. */
+    /**
+     * The OCID of the compartment that the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -633,7 +653,6 @@ public final class Log extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

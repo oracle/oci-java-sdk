@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of a Snowflake Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of a Snowflake Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SnowflakeConnection.Builder.class)
+    builder = SnowflakeConnection.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SnowflakeConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,41 +199,46 @@ public final class SnowflakeConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Snowflake technology type. */
+        /**
+         * The Snowflake technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Snowflake technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * JDBC connection URL. e.g.:
-         * 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-         */
+         * JDBC connection URL.
+         * e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
         private String connectionUrl;
 
         /**
-         * JDBC connection URL. e.g.:
-         * 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+         * JDBC connection URL.
+         * e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
          *
          * @param connectionUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionUrl(String connectionUrl) {
             this.connectionUrl = connectionUrl;
             this.__explicitlySet__.add("connectionUrl");
             return this;
         }
-        /** Used authentication mechanism to access Snowflake. */
+        /**
+         * Used authentication mechanism to access Snowflake.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AuthenticationType authenticationType;
 
@@ -241,97 +247,95 @@ public final class SnowflakeConnection extends Connection {
          *
          * @param authenticationType the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationType(AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect to Snowflake. This username must already
-         * exist and be available by Snowflake platform to be connected to.
-         */
+         * The username Oracle GoldenGate uses to connect to Snowflake.
+         * This username must already exist and be available by Snowflake platform to be connected to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect to Snowflake. This username must already
-         * exist and be available by Snowflake platform to be connected to.
+         * The username Oracle GoldenGate uses to connect to Snowflake.
+         * This username must already exist and be available by Snowflake platform to be connected to.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the private key file (PEM file) corresponding to the
-         * API key of the fingerprint. See documentation:
-         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
-         * When provided, 'privateKeyFile' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Note: When provided, 'privateKeyFile' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
         private String privateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the private key file (PEM file) corresponding to the
-         * API key of the fingerprint. See documentation:
-         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
-         * When provided, 'privateKeyFile' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Note: When provided, 'privateKeyFile' field must not be provided.
          *
          * @param privateKeyFileSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyFileSecretId(String privateKeyFileSecretId) {
             this.privateKeyFileSecretId = privateKeyFileSecretId;
             this.__explicitlySet__.add("privateKeyFileSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password for the private key file. Note: When provided,
-         * 'privateKeyPassphrase' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+         * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
         private String privateKeyPassphraseSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password for the private key file. Note: When provided,
-         * 'privateKeyPassphrase' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+         * Note: When provided, 'privateKeyPassphrase' field must not be provided.
          *
          * @param privateKeyPassphraseSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyPassphraseSecretId(String privateKeyPassphraseSecretId) {
             this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             this.__explicitlySet__.add("privateKeyPassphraseSecretId");
@@ -460,7 +464,9 @@ public final class SnowflakeConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -526,13 +532,15 @@ public final class SnowflakeConnection extends Connection {
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
     }
 
-    /** The Snowflake technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Snowflake technology type.
+     **/
+    public enum TechnologyType {
         Snowflake("SNOWFLAKE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -571,44 +579,49 @@ public final class SnowflakeConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Snowflake technology type. */
+    /**
+     * The Snowflake technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Snowflake technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
     /**
-     * JDBC connection URL. e.g.:
-     * 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-     */
+     * JDBC connection URL.
+     * e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
     private final String connectionUrl;
 
     /**
-     * JDBC connection URL. e.g.:
-     * 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     * JDBC connection URL.
+     * e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
      *
      * @return the value
-     */
+     **/
     public String getConnectionUrl() {
         return connectionUrl;
     }
 
-    /** Used authentication mechanism to access Snowflake. */
-    public enum AuthenticationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Used authentication mechanism to access Snowflake.
+     *
+     **/
+    public enum AuthenticationType {
         Basic("BASIC"),
         KeyPair("KEY_PAIR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -647,7 +660,10 @@ public final class SnowflakeConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** Used authentication mechanism to access Snowflake. */
+    /**
+     * Used authentication mechanism to access Snowflake.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AuthenticationType authenticationType;
 
@@ -655,89 +671,87 @@ public final class SnowflakeConnection extends Connection {
      * Used authentication mechanism to access Snowflake.
      *
      * @return the value
-     */
+     **/
     public AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect to Snowflake. This username must already exist
-     * and be available by Snowflake platform to be connected to.
-     */
+     * The username Oracle GoldenGate uses to connect to Snowflake.
+     * This username must already exist and be available by Snowflake platform to be connected to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect to Snowflake. This username must already exist
-     * and be available by Snowflake platform to be connected to.
+     * The username Oracle GoldenGate uses to connect to Snowflake.
+     * This username must already exist and be available by Snowflake platform to be connected to.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the private key file (PEM file) corresponding to the API
-     * key of the fingerprint. See documentation:
-     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
-     * provided, 'privateKeyFile' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Note: When provided, 'privateKeyFile' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
     private final String privateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the private key file (PEM file) corresponding to the API
-     * key of the fingerprint. See documentation:
-     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
-     * provided, 'privateKeyFile' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Note: When provided, 'privateKeyFile' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPrivateKeyFileSecretId() {
         return privateKeyFileSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password for the private key file. Note: When provided,
-     * 'privateKeyPassphrase' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+     * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
     private final String privateKeyPassphraseSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password for the private key file. Note: When provided,
-     * 'privateKeyPassphrase' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+     * Note: When provided, 'privateKeyPassphrase' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPrivateKeyPassphraseSecretId() {
         return privateKeyPassphraseSecretId;
     }
@@ -749,7 +763,6 @@ public final class SnowflakeConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

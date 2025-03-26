@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/** Possible asynchronous operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible asynchronous operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public enum OperationTypes {
     CreateSddc("CREATE_SDDC"),
     DeleteSddc("DELETE_SDDC"),
     CreateCluster("CREATE_CLUSTER"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * Details required to change Management Agent install key. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * Details required to change Management Agent install key.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateManagementAgentInstallKeyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateManagementAgentInstallKeyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateManagementAgentInstallKeyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isKeyActive", "displayName"})
     public UpdateManagementAgentInstallKeyDetails(Boolean isKeyActive, String displayName) {
@@ -32,31 +31,33 @@ public final class UpdateManagementAgentInstallKeyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** if set to true the install key state would be set to Active and if false to Inactive */
+        /**
+         * if set to true the install key state would be set to Active and if false to Inactive
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKeyActive")
         private Boolean isKeyActive;
 
         /**
          * if set to true the install key state would be set to Active and if false to Inactive
-         *
          * @param isKeyActive the value to set
          * @return this builder
-         */
+         **/
         public Builder isKeyActive(Boolean isKeyActive) {
             this.isKeyActive = isKeyActive;
             this.__explicitlySet__.add("isKeyActive");
             return this;
         }
-        /** New displayName of Agent install key. */
+        /**
+         * New displayName of Agent install key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * New displayName of Agent install key.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -87,7 +88,9 @@ public final class UpdateManagementAgentInstallKeyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class UpdateManagementAgentInstallKeyDetails
         return new Builder().copy(this);
     }
 
-    /** if set to true the install key state would be set to Active and if false to Inactive */
+    /**
+     * if set to true the install key state would be set to Active and if false to Inactive
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKeyActive")
     private final Boolean isKeyActive;
 
     /**
      * if set to true the install key state would be set to Active and if false to Inactive
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsKeyActive() {
         return isKeyActive;
     }
 
-    /** New displayName of Agent install key. */
+    /**
+     * New displayName of Agent install key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * New displayName of Agent install key.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -129,7 +134,6 @@ public final class UpdateManagementAgentInstallKeyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

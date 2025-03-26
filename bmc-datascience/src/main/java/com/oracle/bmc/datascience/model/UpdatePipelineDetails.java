@@ -5,23 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The information of pipeline to be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The information of pipeline to be updated.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdatePipelineDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdatePipelineDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdatePipelineDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -58,31 +57,33 @@ public final class UpdatePipelineDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A user-friendly display name for the resource. */
+        /**
+         * A user-friendly display name for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly display name for the resource.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A short description for the resource. */
+        /**
+         * A short description for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A short description for the resource.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -117,17 +118,18 @@ public final class UpdatePipelineDetails
             this.__explicitlySet__.add("logConfigurationDetails");
             return this;
         }
-        /** The storage mount details to mount to the instance running the pipeline step. */
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
         private java.util.List<StorageMountConfigurationDetails>
                 storageMountConfigurationDetailsList;
 
         /**
          * The storage mount details to mount to the instance running the pipeline step.
-         *
          * @param storageMountConfigurationDetailsList the value to set
          * @return this builder
-         */
+         **/
         public Builder storageMountConfigurationDetailsList(
                 java.util.List<StorageMountConfigurationDetails>
                         storageMountConfigurationDetailsList) {
@@ -136,63 +138,56 @@ public final class UpdatePipelineDetails
             return this;
         }
         /**
-         * Array of update details for each step. Only step configurations and step infrastructure
-         * configurations are allowed to be updated.
-         */
+         * Array of update details for each step. Only step configurations and step infrastructure configurations are allowed to be updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
         private java.util.List<PipelineStepUpdateDetails> stepDetails;
 
         /**
-         * Array of update details for each step. Only step configurations and step infrastructure
-         * configurations are allowed to be updated.
-         *
+         * Array of update details for each step. Only step configurations and step infrastructure configurations are allowed to be updated.
          * @param stepDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder stepDetails(java.util.List<PipelineStepUpdateDetails> stepDetails) {
             this.stepDetails = stepDetails;
             this.__explicitlySet__.add("stepDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -256,7 +251,9 @@ public final class UpdatePipelineDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -265,28 +262,30 @@ public final class UpdatePipelineDetails
         return new Builder().copy(this);
     }
 
-    /** A user-friendly display name for the resource. */
+    /**
+     * A user-friendly display name for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly display name for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A short description for the resource. */
+    /**
+     * A short description for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -312,74 +311,68 @@ public final class UpdatePipelineDetails
         return logConfigurationDetails;
     }
 
-    /** The storage mount details to mount to the instance running the pipeline step. */
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
     private final java.util.List<StorageMountConfigurationDetails>
             storageMountConfigurationDetailsList;
 
     /**
      * The storage mount details to mount to the instance running the pipeline step.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<StorageMountConfigurationDetails>
             getStorageMountConfigurationDetailsList() {
         return storageMountConfigurationDetailsList;
     }
 
     /**
-     * Array of update details for each step. Only step configurations and step infrastructure
-     * configurations are allowed to be updated.
-     */
+     * Array of update details for each step. Only step configurations and step infrastructure configurations are allowed to be updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
     private final java.util.List<PipelineStepUpdateDetails> stepDetails;
 
     /**
-     * Array of update details for each step. Only step configurations and step infrastructure
-     * configurations are allowed to be updated.
-     *
+     * Array of update details for each step. Only step configurations and step infrastructure configurations are allowed to be updated.
      * @return the value
-     */
+     **/
     public java.util.List<PipelineStepUpdateDetails> getStepDetails() {
         return stepDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -391,7 +384,6 @@ public final class UpdatePipelineDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

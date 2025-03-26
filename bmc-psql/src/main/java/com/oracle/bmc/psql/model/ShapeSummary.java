@@ -5,21 +5,19 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Summary of the database system shape. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Summary of the database system shape.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ShapeSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ShapeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -50,76 +48,85 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A unique identifier for the shape. */
+        /**
+         * A unique identifier for the shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * A unique identifier for the shape.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex} */
+        /**
+         * The name of the Compute VM shape.
+         * Example: {@code VM.Standard.E4.Flex}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex}
+         * The name of the Compute VM shape.
+         * Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** Indicates if the shape is a flex shape. */
+        /**
+         * Indicates if the shape is a flex shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
         private Boolean isFlexible;
 
         /**
          * Indicates if the shape is a flex shape.
-         *
          * @param isFlexible the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlexible(Boolean isFlexible) {
             this.isFlexible = isFlexible;
             this.__explicitlySet__.add("isFlexible");
             return this;
         }
-        /** The number of OCPUs. */
+        /**
+         * The number of OCPUs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Integer ocpuCount;
 
         /**
          * The number of OCPUs.
-         *
          * @param ocpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpuCount(Integer ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
-        /** The amount of memory in gigabytes. */
+        /**
+         * The amount of memory in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
         /**
          * The amount of memory in gigabytes.
-         *
          * @param memorySizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
@@ -190,7 +197,9 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -199,67 +208,76 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** A unique identifier for the shape. */
+    /**
+     * A unique identifier for the shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * A unique identifier for the shape.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex} */
+    /**
+     * The name of the Compute VM shape.
+     * Example: {@code VM.Standard.E4.Flex}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The name of the Compute VM shape. Example: {@code VM.Standard.E4.Flex}
+     * The name of the Compute VM shape.
+     * Example: {@code VM.Standard.E4.Flex}
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** Indicates if the shape is a flex shape. */
+    /**
+     * Indicates if the shape is a flex shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
     private final Boolean isFlexible;
 
     /**
      * Indicates if the shape is a flex shape.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFlexible() {
         return isFlexible;
     }
 
-    /** The number of OCPUs. */
+    /**
+     * The number of OCPUs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Integer ocpuCount;
 
     /**
      * The number of OCPUs.
-     *
      * @return the value
-     */
+     **/
     public Integer getOcpuCount() {
         return ocpuCount;
     }
 
-    /** The amount of memory in gigabytes. */
+    /**
+     * The amount of memory in gigabytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
     /**
      * The amount of memory in gigabytes.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
@@ -285,7 +303,6 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** Type of Result. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum ResultType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of Result.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum ResultType {
     Succeeded("SUCCEEDED"),
     Failed("FAILED"),
     TimedOut("TIMED_OUT"),

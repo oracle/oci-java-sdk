@@ -6,46 +6,58 @@ package com.oracle.bmc.blockchain.requests;
 
 import com.oracle.bmc.blockchain.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetOsnExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOsnRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetOsnExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOsnRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique service identifier. */
+    /**
+     * Unique service identifier.
+     */
     private String blockchainPlatformId;
 
-    /** Unique service identifier. */
+    /**
+     * Unique service identifier.
+     */
     public String getBlockchainPlatformId() {
         return blockchainPlatformId;
     }
-    /** OSN identifier. */
+    /**
+     * OSN identifier.
+     */
     private String osnId;
 
-    /** OSN identifier. */
+    /**
+     * OSN identifier.
+     */
     public String getOsnId() {
         return osnId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetOsnRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique service identifier. */
+        /**
+         * Unique service identifier.
+         */
         private String blockchainPlatformId = null;
 
         /**
          * Unique service identifier.
-         *
          * @param blockchainPlatformId the value to set
          * @return this builder instance
          */
@@ -54,12 +66,13 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
-        /** OSN identifier. */
+        /**
+         * OSN identifier.
+         */
         private String osnId = null;
 
         /**
          * OSN identifier.
-         *
          * @param osnId the value to set
          * @return this builder instance
          */
@@ -68,12 +81,13 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -84,19 +98,18 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -108,7 +121,6 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetOsnRequest o) {
@@ -123,11 +135,10 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         /**
          * Build the instance of GetOsnRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetOsnRequest
          */
@@ -141,8 +152,7 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         /**
          * Build the instance of GetOsnRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetOsnRequest
@@ -159,7 +169,6 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -171,7 +180,6 @@ public class GetOsnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

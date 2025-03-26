@@ -5,25 +5,26 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * Kubernetes HelmChart Image artifact details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Kubernetes HelmChart Image artifact details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KubernetesImageArtifact.Builder.class)
+    builder = KubernetesImageArtifact.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "artifactType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "artifactType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KubernetesImageArtifact extends Artifact {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -144,16 +145,17 @@ public final class KubernetesImageArtifact extends Artifact {
             this.__explicitlySet__.add("helmChart");
             return this;
         }
-        /** List of container image artifact unique identifiers included in the helm chart. */
+        /**
+         * List of container image artifact unique identifiers included in the helm chart.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerImageArtifactIds")
         private java.util.List<String> containerImageArtifactIds;
 
         /**
          * List of container image artifact unique identifiers included in the helm chart.
-         *
          * @param containerImageArtifactIds the value to set
          * @return this builder
-         */
+         **/
         public Builder containerImageArtifactIds(java.util.List<String> containerImageArtifactIds) {
             this.containerImageArtifactIds = containerImageArtifactIds;
             this.__explicitlySet__.add("containerImageArtifactIds");
@@ -234,7 +236,9 @@ public final class KubernetesImageArtifact extends Artifact {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -283,15 +287,16 @@ public final class KubernetesImageArtifact extends Artifact {
         return helmChart;
     }
 
-    /** List of container image artifact unique identifiers included in the helm chart. */
+    /**
+     * List of container image artifact unique identifiers included in the helm chart.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerImageArtifactIds")
     private final java.util.List<String> containerImageArtifactIds;
 
     /**
      * List of container image artifact unique identifiers included in the helm chart.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getContainerImageArtifactIds() {
         return containerImageArtifactIds;
     }
@@ -303,7 +308,6 @@ public final class KubernetesImageArtifact extends Artifact {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

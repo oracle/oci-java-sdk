@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The general information regarding the SQL Tuning Advisor task. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The general information regarding the SQL Tuning Advisor task.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlTuningAdvisorTaskSummaryReportTaskInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlTuningAdvisorTaskSummaryReportTaskInfo.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -56,68 +55,64 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The ID of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
-         * The ID of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the SQL Tuning Advisor task. */
+        /**
+         * The name of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the SQL Tuning Advisor task.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning
-         * tasks.
-         */
+         * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning
-         * tasks.
-         *
+         * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The owner of the SQL Tuning Advisor task. */
+        /**
+         * The owner of the SQL Tuning Advisor task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * The owner of the SQL Tuning Advisor task.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
@@ -125,61 +120,63 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
         }
         /**
          * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private SqlTuningTaskStatusTypes status;
 
         /**
          * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(SqlTuningTaskStatusTypes status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The start time of the task execution. */
+        /**
+         * The start time of the task execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The start time of the task execution.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The end time of the task execution. */
+        /**
+         * The end time of the task execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The end time of the task execution.
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** The total running time in seconds. This is not defined for Auto SQL Tuning tasks. */
+        /**
+         * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runningTime")
         private Integer runningTime;
 
         /**
          * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
-         *
          * @param runningTime the value to set
          * @return this builder
-         */
+         **/
         public Builder runningTime(Integer runningTime) {
             this.runningTime = runningTime;
             this.__explicitlySet__.add("runningTime");
@@ -236,7 +233,9 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -246,113 +245,113 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
     }
 
     /**
-     * The ID of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
-     * The ID of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public Long getId() {
         return id;
     }
 
-    /** The name of the SQL Tuning Advisor task. */
+    /**
+     * The name of the SQL Tuning Advisor task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the SQL Tuning Advisor task.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning
-     * tasks.
-     */
+     * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning
-     * tasks.
-     *
+     * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The owner of the SQL Tuning Advisor task. */
+    /**
+     * The owner of the SQL Tuning Advisor task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * The owner of the SQL Tuning Advisor task.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks. */
+    /**
+     * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final SqlTuningTaskStatusTypes status;
 
     /**
      * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
-     *
      * @return the value
-     */
+     **/
     public SqlTuningTaskStatusTypes getStatus() {
         return status;
     }
 
-    /** The start time of the task execution. */
+    /**
+     * The start time of the task execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The start time of the task execution.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The end time of the task execution. */
+    /**
+     * The end time of the task execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The end time of the task execution.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** The total running time in seconds. This is not defined for Auto SQL Tuning tasks. */
+    /**
+     * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runningTime")
     private final Integer runningTime;
 
     /**
      * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
-     *
      * @return the value
-     */
+     **/
     public Integer getRunningTime() {
         return runningTime;
     }
@@ -364,7 +363,6 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

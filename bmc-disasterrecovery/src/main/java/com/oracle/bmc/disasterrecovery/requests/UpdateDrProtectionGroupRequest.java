@@ -6,68 +6,80 @@ package com.oracle.bmc.disasterrecovery.requests;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/UpdateDrProtectionGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateDrProtectionGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/UpdateDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDrProtectionGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class UpdateDrProtectionGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails> {
 
-    /** Details for updating the the DR protection group. */
+    /**
+     * Details for updating the the DR protection group.
+     */
     private com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails
             updateDrProtectionGroupDetails;
 
-    /** Details for updating the the DR protection group. */
+    /**
+     * Details for updating the the DR protection group.
+     */
     public com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails
             getUpdateDrProtectionGroupDetails() {
         return updateDrProtectionGroupDetails;
     }
     /**
      * The OCID of the DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
      * The OCID of the DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -80,16 +92,18 @@ public class UpdateDrProtectionGroupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDrProtectionGroupRequest,
                     com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for updating the the DR protection group. */
+        /**
+         * Details for updating the the DR protection group.
+         */
         private com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupDetails
                 updateDrProtectionGroupDetails = null;
 
         /**
          * Details for updating the the DR protection group.
-         *
          * @param updateDrProtectionGroupDetails the value to set
          * @return this builder instance
          */
@@ -102,15 +116,16 @@ public class UpdateDrProtectionGroupRequest
 
         /**
          * The OCID of the DR protection group.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
          * The OCID of the DR protection group.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance
@@ -121,18 +136,21 @@ public class UpdateDrProtectionGroupRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -142,7 +160,10 @@ public class UpdateDrProtectionGroupRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -158,19 +179,18 @@ public class UpdateDrProtectionGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -182,7 +202,6 @@ public class UpdateDrProtectionGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateDrProtectionGroupRequest o) {
@@ -198,11 +217,10 @@ public class UpdateDrProtectionGroupRequest
         /**
          * Build the instance of UpdateDrProtectionGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateDrProtectionGroupRequest
          */
@@ -215,7 +233,6 @@ public class UpdateDrProtectionGroupRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -229,8 +246,7 @@ public class UpdateDrProtectionGroupRequest
         /**
          * Build the instance of UpdateDrProtectionGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateDrProtectionGroupRequest
@@ -242,14 +258,12 @@ public class UpdateDrProtectionGroupRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateDrProtectionGroupRequest(updateDrProtectionGroupDetails,
-            // drProtectionGroupId, ifMatch, opcRequestId);
+            // new UpdateDrProtectionGroupRequest(updateDrProtectionGroupDetails, drProtectionGroupId, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -262,7 +276,6 @@ public class UpdateDrProtectionGroupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -9,31 +9,23 @@ import com.oracle.bmc.databasemanagement.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of ManagedMySqlDatabases where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of ManagedMySqlDatabases where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ManagedMySqlDatabasesPaginators {
     private final ManagedMySqlDatabases client;
 
@@ -42,13 +34,11 @@ public class ManagedMySqlDatabasesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listManagedMySqlDatabaseConfigurationData operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listManagedMySqlDatabaseConfigurationData operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListManagedMySqlDatabaseConfigurationDataResponse>
             listManagedMySqlDatabaseConfigurationDataResponseIterator(
@@ -104,15 +94,13 @@ public class ManagedMySqlDatabasesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.databasemanagement.model.MySqlConfigurationDataSummary} objects contained in
-     * responses from the listManagedMySqlDatabaseConfigurationData operation. This iterable will
-     * fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.MySqlConfigurationDataSummary} objects
+     * contained in responses from the listManagedMySqlDatabaseConfigurationData operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.databasemanagement.model.MySqlConfigurationDataSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.MySqlConfigurationDataSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.databasemanagement.model.MySqlConfigurationDataSummary>
             listManagedMySqlDatabaseConfigurationDataRecordIterator(
@@ -182,21 +170,18 @@ public class ManagedMySqlDatabasesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listManagedMySqlDatabaseSqlData operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listManagedMySqlDatabaseSqlData operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListManagedMySqlDatabaseSqlDataResponse>
             listManagedMySqlDatabaseSqlDataResponseIterator(
                     final ListManagedMySqlDatabaseSqlDataRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListManagedMySqlDatabaseSqlDataRequest.Builder,
-                ListManagedMySqlDatabaseSqlDataRequest,
-                ListManagedMySqlDatabaseSqlDataResponse>(
+                ListManagedMySqlDatabaseSqlDataRequest, ListManagedMySqlDatabaseSqlDataResponse>(
                 new java.util.function.Supplier<ListManagedMySqlDatabaseSqlDataRequest.Builder>() {
                     @Override
                     public ListManagedMySqlDatabaseSqlDataRequest.Builder get() {
@@ -239,23 +224,20 @@ public class ManagedMySqlDatabasesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.databasemanagement.model.MySqlDataSummary} objects contained in responses from
-     * the listManagedMySqlDatabaseSqlData operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.MySqlDataSummary} objects
+     * contained in responses from the listManagedMySqlDatabaseSqlData operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.databasemanagement.model.MySqlDataSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.MySqlDataSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.databasemanagement.model.MySqlDataSummary>
             listManagedMySqlDatabaseSqlDataRecordIterator(
                     final ListManagedMySqlDatabaseSqlDataRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListManagedMySqlDatabaseSqlDataRequest.Builder,
-                ListManagedMySqlDatabaseSqlDataRequest,
-                ListManagedMySqlDatabaseSqlDataResponse,
+                ListManagedMySqlDatabaseSqlDataRequest, ListManagedMySqlDatabaseSqlDataResponse,
                 com.oracle.bmc.databasemanagement.model.MySqlDataSummary>(
                 new java.util.function.Supplier<ListManagedMySqlDatabaseSqlDataRequest.Builder>() {
                     @Override
@@ -309,19 +291,16 @@ public class ManagedMySqlDatabasesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listManagedMySqlDatabases operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listManagedMySqlDatabases operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListManagedMySqlDatabasesResponse> listManagedMySqlDatabasesResponseIterator(
             final ListManagedMySqlDatabasesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListManagedMySqlDatabasesRequest.Builder,
-                ListManagedMySqlDatabasesRequest,
+                ListManagedMySqlDatabasesRequest.Builder, ListManagedMySqlDatabasesRequest,
                 ListManagedMySqlDatabasesResponse>(
                 new java.util.function.Supplier<ListManagedMySqlDatabasesRequest.Builder>() {
                     @Override
@@ -364,22 +343,19 @@ public class ManagedMySqlDatabasesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseSummary} objects contained in
-     * responses from the listManagedMySqlDatabases operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseSummary} objects
+     * contained in responses from the listManagedMySqlDatabases operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseSummary>
             listManagedMySqlDatabasesRecordIterator(
                     final ListManagedMySqlDatabasesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListManagedMySqlDatabasesRequest.Builder,
-                ListManagedMySqlDatabasesRequest,
+                ListManagedMySqlDatabasesRequest.Builder, ListManagedMySqlDatabasesRequest,
                 ListManagedMySqlDatabasesResponse,
                 com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseSummary>(
                 new java.util.function.Supplier<ListManagedMySqlDatabasesRequest.Builder>() {

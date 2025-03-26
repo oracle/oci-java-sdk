@@ -27,10 +27,8 @@ public class ListAuditEventsExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -38,7 +36,8 @@ public class ListAuditEventsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        Audit auditService = AuditClient.builder().region(region).build(provider);
+        Audit auditService = new AuditClient(provider);
+        auditService.setRegion(region);
 
         /*
          * Below we demonstrate getting audit events using three different strategies:

@@ -4,380 +4,141 @@
  */
 package com.oracle.bmc.osmanagementhub;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.osmanagementhub.internal.http.*;
 import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements ReportingManagedInstance {
-    /** Service instance for ReportingManagedInstance. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public class ReportingManagedInstanceClient implements ReportingManagedInstance {
+    /**
+     * Service instance for ReportingManagedInstance.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("REPORTINGMANAGEDINSTANCE")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ReportingManagedInstanceClient.class);
 
-    ReportingManagedInstanceClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        this(builder, authenticationDetailsProvider, true);
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
     }
 
-    ReportingManagedInstanceClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            boolean isStreamWarningEnabled) {
-        super(
-                builder,
-                authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
-
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
-                            "ReportingManagedInstanceClient",
-                            "getManagedInstanceAnalyticContent,getManagedInstanceContent"));
-        }
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, ReportingManagedInstanceClient> {
-        private boolean isStreamWarningEnabled = true;
-
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "osmanagementhub";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public ReportingManagedInstanceClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new ReportingManagedInstanceClient(
-                    this, authenticationDetailsProvider, isStreamWarningEnabled);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public GetManagedInstanceAnalyticContentResponse getManagedInstanceAnalyticContent(
-            GetManagedInstanceAnalyticContentRequest request) {
-
-        return clientCall(request, GetManagedInstanceAnalyticContentResponse::builder)
-                .logger(LOG, "getManagedInstanceAnalyticContent")
-                .serviceDetails(
-                        "ReportingManagedInstance",
-                        "GetManagedInstanceAnalyticContent",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstanceAnalyticContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetManagedInstanceAnalyticContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceAnalytics")
-                .appendPathParam("content")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("managedInstanceGroupId", request.getManagedInstanceGroupId())
-                .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
-                .appendQueryParam("lifecycleStageId", request.getLifecycleStageId())
-                .appendListQueryParam(
-                        "status",
-                        request.getStatus(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam(
-                        "securityUpdatesAvailableEqualsTo",
-                        request.getSecurityUpdatesAvailableEqualsTo())
-                .appendQueryParam(
-                        "bugUpdatesAvailableEqualsTo", request.getBugUpdatesAvailableEqualsTo())
-                .appendQueryParam(
-                        "securityUpdatesAvailableGreaterThan",
-                        request.getSecurityUpdatesAvailableGreaterThan())
-                .appendQueryParam(
-                        "bugUpdatesAvailableGreaterThan",
-                        request.getBugUpdatesAvailableGreaterThan())
-                .appendListQueryParam(
-                        "location",
-                        request.getLocation(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "locationNotEqualTo",
-                        request.getLocationNotEqualTo(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "osFamily",
-                        request.getOsFamily(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam(
-                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
-                .appendEnumQueryParam("reportFormat", request.getReportFormat())
-                .appendEnumQueryParam("reportType", request.getReportType())
-                .accept("application/x-yaml")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetManagedInstanceAnalyticContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "etag", GetManagedInstanceAnalyticContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetManagedInstanceAnalyticContentResponse.Builder::opcRequestId)
-                .callSync();
-    }
-
-    @Override
-    public GetManagedInstanceContentResponse getManagedInstanceContent(
-            GetManagedInstanceContentRequest request) {
-
-        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
-        Objects.requireNonNull(request.getVulnerabilityType(), "vulnerabilityType is required");
-
-        return clientCall(request, GetManagedInstanceContentResponse::builder)
-                .logger(LOG, "getManagedInstanceContent")
-                .serviceDetails(
-                        "ReportingManagedInstance",
-                        "GetManagedInstanceContent",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstanceContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetManagedInstanceContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstances")
-                .appendPathParam(request.getManagedInstanceId())
-                .appendPathParam("content")
-                .appendListQueryParam(
-                        "advisoryName",
-                        request.getAdvisoryName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("advisoryNameContains", request.getAdvisoryNameContains())
-                .appendListQueryParam(
-                        "advisoryType",
-                        request.getAdvisoryType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "vulnerabilityName",
-                        request.getVulnerabilityName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam(
-                        "vulnerabilityNameContains", request.getVulnerabilityNameContains())
-                .appendListQueryParam(
-                        "vulnerabilityType",
-                        request.getVulnerabilityType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendEnumQueryParam("reportFormat", request.getReportFormat())
-                .accept("application/x-yaml")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetManagedInstanceContentResponse.Builder::inputStream)
-                .handleResponseHeaderString("etag", GetManagedInstanceContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetManagedInstanceContentResponse.Builder::opcRequestId)
-                .callSync();
-    }
-
-    @Override
-    public SummarizeManagedInstanceAnalyticsResponse summarizeManagedInstanceAnalytics(
-            SummarizeManagedInstanceAnalyticsRequest request) {
-        Objects.requireNonNull(request.getMetricNames(), "metricNames is required");
-
-        return clientCall(request, SummarizeManagedInstanceAnalyticsResponse::builder)
-                .logger(LOG, "summarizeManagedInstanceAnalytics")
-                .serviceDetails(
-                        "ReportingManagedInstance",
-                        "SummarizeManagedInstanceAnalytics",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceAnalyticCollection/SummarizeManagedInstanceAnalytics")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(SummarizeManagedInstanceAnalyticsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("managedInstanceAnalytics")
-                .appendListQueryParam(
-                        "metricNames",
-                        request.getMetricNames(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("managedInstanceGroupId", request.getManagedInstanceGroupId())
-                .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
-                .appendQueryParam("lifecycleStageId", request.getLifecycleStageId())
-                .appendListQueryParam(
-                        "status",
-                        request.getStatus(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "location",
-                        request.getLocation(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "locationNotEqualTo",
-                        request.getLocationNotEqualTo(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "osFamily",
-                        request.getOsFamily(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam(
-                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ManagedInstanceAnalyticCollection
-                                .class,
-                        SummarizeManagedInstanceAnalyticsResponse.Builder
-                                ::managedInstanceAnalyticCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SummarizeManagedInstanceAnalyticsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        SummarizeManagedInstanceAnalyticsResponse.Builder::opcNextPage)
-                .callSync();
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public ReportingManagedInstanceClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public ReportingManagedInstanceClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public ReportingManagedInstanceClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public ReportingManagedInstanceClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public ReportingManagedInstanceClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -385,26 +146,26 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ReportingManagedInstanceClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -413,29 +174,29 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ReportingManagedInstanceClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -448,14 +209,387 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected ReportingManagedInstanceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "ReportingManagedInstanceClient",
+                            "getManagedInstanceAnalyticContent,getManagedInstanceContent"));
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, ReportingManagedInstanceClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public ReportingManagedInstanceClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new ReportingManagedInstanceClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    restClientFactoryBuilder);
+        }
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public GetManagedInstanceAnalyticContentResponse getManagedInstanceAnalyticContent(
+            GetManagedInstanceAnalyticContentRequest request) {
+        LOG.trace("Called getManagedInstanceAnalyticContent");
+        final GetManagedInstanceAnalyticContentRequest interceptedRequest =
+                GetManagedInstanceAnalyticContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetManagedInstanceAnalyticContentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ReportingManagedInstance",
+                        "GetManagedInstanceAnalyticContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstanceAnalyticContent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetManagedInstanceAnalyticContentResponse>
+                transformer =
+                        GetManagedInstanceAnalyticContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetManagedInstanceContentResponse getManagedInstanceContent(
+            GetManagedInstanceContentRequest request) {
+        LOG.trace("Called getManagedInstanceContent");
+        final GetManagedInstanceContentRequest interceptedRequest =
+                GetManagedInstanceContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetManagedInstanceContentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ReportingManagedInstance",
+                        "GetManagedInstanceContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstanceContent");
+        java.util.function.Function<javax.ws.rs.core.Response, GetManagedInstanceContentResponse>
+                transformer =
+                        GetManagedInstanceContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeManagedInstanceAnalyticsResponse summarizeManagedInstanceAnalytics(
+            SummarizeManagedInstanceAnalyticsRequest request) {
+        LOG.trace("Called summarizeManagedInstanceAnalytics");
+        final SummarizeManagedInstanceAnalyticsRequest interceptedRequest =
+                SummarizeManagedInstanceAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagedInstanceAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ReportingManagedInstance",
+                        "SummarizeManagedInstanceAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceAnalyticCollection/SummarizeManagedInstanceAnalytics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeManagedInstanceAnalyticsResponse>
+                transformer =
+                        SummarizeManagedInstanceAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 }

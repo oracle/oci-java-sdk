@@ -4,10 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The environment of Model Deployment. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ModelDeploymentEnvironmentConfigurationType
-        implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The environment of Model Deployment.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ModelDeploymentEnvironmentConfigurationType {
     Default("DEFAULT"),
     OcirContainer("OCIR_CONTAINER"),
 

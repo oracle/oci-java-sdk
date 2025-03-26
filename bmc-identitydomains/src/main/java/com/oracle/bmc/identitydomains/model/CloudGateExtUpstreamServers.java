@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of upstream servers <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * A list of upstream servers
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CloudGateExtUpstreamServers.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CloudGateExtUpstreamServers.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CloudGateExtUpstreamServers
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "value",
@@ -54,28 +53,39 @@ public final class CloudGateExtUpstreamServers
     public static class Builder {
         /**
          * ID of the upstream server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * ID of the upstream server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -83,59 +93,79 @@ public final class CloudGateExtUpstreamServers
         }
         /**
          * URI of the upstream server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: reference -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
 
         /**
          * URI of the upstream server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: reference -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param ref the value to set
          * @return this builder
-         */
+         **/
         public Builder ref(String ref) {
             this.ref = ref;
             this.__explicitlySet__.add("ref");
             return this;
         }
         /**
-         * Any incoming request to cloud gate is finally sent to this host, if selected during load
-         * balancing
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Any incoming request to cloud gate is finally sent to this host, if selected during load balancing
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
-         * Any incoming request to cloud gate is finally sent to this host, if selected during load
-         * balancing
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Any incoming request to cloud gate is finally sent to this host, if selected during load balancing
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
@@ -143,28 +173,39 @@ public final class CloudGateExtUpstreamServers
         }
         /**
          * Port for the Upstream Server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: integer -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Port for the Upstream Server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: integer -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -172,59 +213,79 @@ public final class CloudGateExtUpstreamServers
         }
         /**
          * Any additional settings for this upstream server in nginx configuration form
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nginxSettings")
         private String nginxSettings;
 
         /**
          * Any additional settings for this upstream server in nginx configuration form
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param nginxSettings the value to set
          * @return this builder
-         */
+         **/
         public Builder nginxSettings(String nginxSettings) {
             this.nginxSettings = nginxSettings;
             this.__explicitlySet__.add("nginxSettings");
             return this;
         }
         /**
-         * Upstream Server Group instance for the upstream server. This is one of the
-         * upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Upstream Server Group instance for the upstream server. This is one of the upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         /**
-         * Upstream Server Group instance for the upstream server. This is one of the
-         * upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Upstream Server Group instance for the upstream server. This is one of the upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param groupId the value to set
          * @return this builder
-         */
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
@@ -232,28 +293,39 @@ public final class CloudGateExtUpstreamServers
         }
         /**
          * Display name of upstream server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of upstream server
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -306,7 +378,9 @@ public final class CloudGateExtUpstreamServers
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -317,181 +391,266 @@ public final class CloudGateExtUpstreamServers
 
     /**
      * ID of the upstream server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * ID of the upstream server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * URI of the upstream server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
 
     /**
      * URI of the upstream server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: reference - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRef() {
         return ref;
     }
 
     /**
-     * Any incoming request to cloud gate is finally sent to this host, if selected during load
-     * balancing
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Any incoming request to cloud gate is finally sent to this host, if selected during load balancing
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * Any incoming request to cloud gate is finally sent to this host, if selected during load
-     * balancing
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Any incoming request to cloud gate is finally sent to this host, if selected during load balancing
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
     /**
      * Port for the Upstream Server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Port for the Upstream Server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
     /**
      * Any additional settings for this upstream server in nginx configuration form
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nginxSettings")
     private final String nginxSettings;
 
     /**
      * Any additional settings for this upstream server in nginx configuration form
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getNginxSettings() {
         return nginxSettings;
     }
 
     /**
-     * Upstream Server Group instance for the upstream server. This is one of the
-     * upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Upstream Server Group instance for the upstream server. This is one of the upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
     /**
-     * Upstream Server Group instance for the upstream server. This is one of the
-     * upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Upstream Server Group instance for the upstream server. This is one of the upstreamServerGroup IDs(upstream blocks) from the associated Cloud Gate list
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getGroupId() {
         return groupId;
     }
 
     /**
      * Display name of upstream server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of upstream server
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -503,7 +662,6 @@ public final class CloudGateExtUpstreamServers
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

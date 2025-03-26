@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.vnmonitoring.model;
 
-/** Type of encryption cipher suite to use for the MACsec connection. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum MacsecEncryptionCipher implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of encryption cipher suite to use for the MACsec connection.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum MacsecEncryptionCipher {
     Aes128Gcm("AES128_GCM"),
     Aes128GcmXpn("AES128_GCM_XPN"),
     Aes256Gcm("AES256_GCM"),

@@ -5,25 +5,23 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * A network configuration defines the required network characteristics for an ADM remediation
- * recipe. A network configuration is required if the build service is one of: GitHub Actions,
- * GitLab Pipeline, or Jenkins Pipeline. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+ * A network configuration defines the required network characteristics for an ADM remediation recipe.
+ * A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NetworkConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NetworkConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = NetworkConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NetworkConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subnetId", "nsgIds"})
     public NetworkConfiguration(String subnetId, java.util.List<String> nsgIds) {
@@ -35,42 +33,32 @@ public final class NetworkConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * subnet.
-         */
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * subnet.
-         *
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The list of Oracle Cloud Identifiers
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-         * corresponding to Network Security Groups.
-         */
+         * The list of Oracle Cloud Identifiers ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of Oracle Cloud Identifiers
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-         * corresponding to Network Security Groups.
-         *
+         * The list of Oracle Cloud Identifiers ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -100,7 +88,9 @@ public final class NetworkConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,39 +100,29 @@ public final class NetworkConfiguration
     }
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * subnet.
-     */
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * subnet.
-     *
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The list of Oracle Cloud Identifiers
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding
-     * to Network Security Groups.
-     */
+     * The list of Oracle Cloud Identifiers ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of Oracle Cloud Identifiers
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding
-     * to Network Security Groups.
-     *
+     * The list of Oracle Cloud Identifiers ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -154,7 +134,6 @@ public final class NetworkConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

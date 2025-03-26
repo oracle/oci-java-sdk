@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of operations performed to convert a non-container database to pluggable database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of operations performed to convert a non-container database to pluggable database.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PdbConversionHistoryEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PdbConversionHistoryEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PdbConversionHistoryEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -65,157 +65,126 @@ public final class PdbConversionHistoryEntry
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database conversion history.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database conversion history.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The operations used to convert a non-container database to a pluggable database. - Use
-         * {@code PRECHECK} to run a pre-check operation on non-container database prior to
-         * converting it into a pluggable database. - Use {@code CONVERT} to convert a non-container
-         * database into a pluggable database. - Use {@code SYNC} if the non-container database was
-         * manually converted into a pluggable database using the dbcli command-line utility.
-         * Databases may need to be converted manually if the CONVERT action fails when converting a
-         * non-container database using the API. - Use {@code SYNC_ROLLBACK} if the conversion of a
-         * non-container database into a pluggable database was manually rolled back using the dbcli
-         * command line utility. Conversions may need to be manually rolled back if the CONVERT
-         * action fails when converting a non-container database using the API.
-         */
+         * The operations used to convert a non-container database to a pluggable database.
+         * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+         * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+         * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+         * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
-         * The operations used to convert a non-container database to a pluggable database. - Use
-         * {@code PRECHECK} to run a pre-check operation on non-container database prior to
-         * converting it into a pluggable database. - Use {@code CONVERT} to convert a non-container
-         * database into a pluggable database. - Use {@code SYNC} if the non-container database was
-         * manually converted into a pluggable database using the dbcli command-line utility.
-         * Databases may need to be converted manually if the CONVERT action fails when converting a
-         * non-container database using the API. - Use {@code SYNC_ROLLBACK} if the conversion of a
-         * non-container database into a pluggable database was manually rolled back using the dbcli
-         * command line utility. Conversions may need to be manually rolled back if the CONVERT
-         * action fails when converting a non-container database using the API.
+         * The operations used to convert a non-container database to a pluggable database.
+         * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+         * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+         * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+         * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
          *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * The target container database of the pluggable database created by the database
-         * conversion operation. Currently, the database conversion operation only supports creating
-         * the pluggable database in a new container database. - Use {@code NEW_DATABASE} to specify
-         * that the pluggable database be created within a new container database in the same
-         * database home.
-         */
+         * The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+         *  - Use {@code NEW_DATABASE} to specify that the pluggable database be created within a new container database in the same database home.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private Target target;
 
         /**
-         * The target container database of the pluggable database created by the database
-         * conversion operation. Currently, the database conversion operation only supports creating
-         * the pluggable database in a new container database. - Use {@code NEW_DATABASE} to specify
-         * that the pluggable database be created within a new container database in the same
-         * database home.
+         * The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+         *  - Use {@code NEW_DATABASE} to specify that the pluggable database be created within a new container database in the same database home.
          *
          * @param target the value to set
          * @return this builder
-         */
+         **/
         public Builder target(Target target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseId")
         private String sourceDatabaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          * @param sourceDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceDatabaseId(String sourceDatabaseId) {
             this.sourceDatabaseId = sourceDatabaseId;
             this.__explicitlySet__.add("sourceDatabaseId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseId")
         private String targetDatabaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          * @param targetDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = targetDatabaseId;
             this.__explicitlySet__.add("targetDatabaseId");
             return this;
         }
         /**
-         * The database name. The name must begin with an alphabetic character and can contain a
-         * maximum of 8 alphanumeric characters. Special characters are not permitted. The database
-         * name must be unique in the tenancy.
-         */
+         * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
         private String cdbName;
 
         /**
-         * The database name. The name must begin with an alphabetic character and can contain a
-         * maximum of 8 alphanumeric characters. Special characters are not permitted. The database
-         * name must be unique in the tenancy.
-         *
+         * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
          * @param cdbName the value to set
          * @return this builder
-         */
+         **/
         public Builder cdbName(String cdbName) {
             this.cdbName = cdbName;
             this.__explicitlySet__.add("cdbName");
             return this;
         }
         /**
-         * Status of an operation performed during the conversion of a non-container database to a
-         * pluggable database.
-         */
+         * Status of an operation performed during the conversion of a non-container database to a pluggable database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Status of an operation performed during the conversion of a non-container database to a
-         * pluggable database.
-         *
+         * Status of an operation performed during the conversion of a non-container database to a pluggable database.
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -223,52 +192,56 @@ public final class PdbConversionHistoryEntry
         }
         /**
          * Additional information about the current lifecycle state for the conversion operation.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state for the conversion operation.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The date and time when the database conversion operation started. */
+        /**
+         * The date and time when the database conversion operation started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time when the database conversion operation started.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The date and time when the database conversion operation ended. */
+        /**
+         * The date and time when the database conversion operation ended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The date and time when the database conversion operation ended.
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** Additional container database parameter. */
+        /**
+         * Additional container database parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalCdbParams")
         private String additionalCdbParams;
 
@@ -277,7 +250,7 @@ public final class PdbConversionHistoryEntry
          *
          * @param additionalCdbParams the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalCdbParams(String additionalCdbParams) {
             this.additionalCdbParams = additionalCdbParams;
             this.__explicitlySet__.add("additionalCdbParams");
@@ -346,7 +319,9 @@ public final class PdbConversionHistoryEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -356,43 +331,36 @@ public final class PdbConversionHistoryEntry
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database conversion history.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database conversion history.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The operations used to convert a non-container database to a pluggable database. - Use {@code
-     * PRECHECK} to run a pre-check operation on non-container database prior to converting it into
-     * a pluggable database. - Use {@code CONVERT} to convert a non-container database into a
-     * pluggable database. - Use {@code SYNC} if the non-container database was manually converted
-     * into a pluggable database using the dbcli command-line utility. Databases may need to be
-     * converted manually if the CONVERT action fails when converting a non-container database using
-     * the API. - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a
-     * pluggable database was manually rolled back using the dbcli command line utility. Conversions
-     * may need to be manually rolled back if the CONVERT action fails when converting a
-     * non-container database using the API.
-     */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+     * The operations used to convert a non-container database to a pluggable database.
+     * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+     * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+     * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+     * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+     *
+     **/
+    public enum Action {
         Precheck("PRECHECK"),
         Convert("CONVERT"),
         Sync("SYNC"),
         SyncRollback("SYNC_ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -431,50 +399,40 @@ public final class PdbConversionHistoryEntry
         }
     };
     /**
-     * The operations used to convert a non-container database to a pluggable database. - Use {@code
-     * PRECHECK} to run a pre-check operation on non-container database prior to converting it into
-     * a pluggable database. - Use {@code CONVERT} to convert a non-container database into a
-     * pluggable database. - Use {@code SYNC} if the non-container database was manually converted
-     * into a pluggable database using the dbcli command-line utility. Databases may need to be
-     * converted manually if the CONVERT action fails when converting a non-container database using
-     * the API. - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a
-     * pluggable database was manually rolled back using the dbcli command line utility. Conversions
-     * may need to be manually rolled back if the CONVERT action fails when converting a
-     * non-container database using the API.
-     */
+     * The operations used to convert a non-container database to a pluggable database.
+     * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+     * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+     * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+     * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
-     * The operations used to convert a non-container database to a pluggable database. - Use {@code
-     * PRECHECK} to run a pre-check operation on non-container database prior to converting it into
-     * a pluggable database. - Use {@code CONVERT} to convert a non-container database into a
-     * pluggable database. - Use {@code SYNC} if the non-container database was manually converted
-     * into a pluggable database using the dbcli command-line utility. Databases may need to be
-     * converted manually if the CONVERT action fails when converting a non-container database using
-     * the API. - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a
-     * pluggable database was manually rolled back using the dbcli command line utility. Conversions
-     * may need to be manually rolled back if the CONVERT action fails when converting a
-     * non-container database using the API.
+     * The operations used to convert a non-container database to a pluggable database.
+     * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+     * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+     * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+     * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
      *
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
 
     /**
-     * The target container database of the pluggable database created by the database conversion
-     * operation. Currently, the database conversion operation only supports creating the pluggable
-     * database in a new container database. - Use {@code NEW_DATABASE} to specify that the
-     * pluggable database be created within a new container database in the same database home.
-     */
-    public enum Target implements com.oracle.bmc.http.internal.BmcEnum {
+     * The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+     *  - Use {@code NEW_DATABASE} to specify that the pluggable database be created within a new container database in the same database home.
+     *
+     **/
+    public enum Target {
         NewDatabase("NEW_DATABASE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -513,91 +471,76 @@ public final class PdbConversionHistoryEntry
         }
     };
     /**
-     * The target container database of the pluggable database created by the database conversion
-     * operation. Currently, the database conversion operation only supports creating the pluggable
-     * database in a new container database. - Use {@code NEW_DATABASE} to specify that the
-     * pluggable database be created within a new container database in the same database home.
-     */
+     * The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+     *  - Use {@code NEW_DATABASE} to specify that the pluggable database be created within a new container database in the same database home.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final Target target;
 
     /**
-     * The target container database of the pluggable database created by the database conversion
-     * operation. Currently, the database conversion operation only supports creating the pluggable
-     * database in a new container database. - Use {@code NEW_DATABASE} to specify that the
-     * pluggable database be created within a new container database in the same database home.
+     * The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
+     *  - Use {@code NEW_DATABASE} to specify that the pluggable database be created within a new container database in the same database home.
      *
      * @return the value
-     */
+     **/
     public Target getTarget() {
         return target;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseId")
     private final String sourceDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * @return the value
-     */
+     **/
     public String getSourceDatabaseId() {
         return sourceDatabaseId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseId")
     private final String targetDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * @return the value
-     */
+     **/
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
 
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum
-     * of 8 alphanumeric characters. Special characters are not permitted. The database name must be
-     * unique in the tenancy.
-     */
+     * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
     private final String cdbName;
 
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum
-     * of 8 alphanumeric characters. Special characters are not permitted. The database name must be
-     * unique in the tenancy.
-     *
+     * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      * @return the value
-     */
+     **/
     public String getCdbName() {
         return cdbName;
     }
 
     /**
-     * Status of an operation performed during the conversion of a non-container database to a
-     * pluggable database.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * Status of an operation performed during the conversion of a non-container database to a pluggable database.
+     **/
+    public enum LifecycleState {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
         InProgress("IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -637,62 +580,65 @@ public final class PdbConversionHistoryEntry
         }
     };
     /**
-     * Status of an operation performed during the conversion of a non-container database to a
-     * pluggable database.
-     */
+     * Status of an operation performed during the conversion of a non-container database to a pluggable database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Status of an operation performed during the conversion of a non-container database to a
-     * pluggable database.
-     *
+     * Status of an operation performed during the conversion of a non-container database to a pluggable database.
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional information about the current lifecycle state for the conversion operation. */
+    /**
+     * Additional information about the current lifecycle state for the conversion operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state for the conversion operation.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The date and time when the database conversion operation started. */
+    /**
+     * The date and time when the database conversion operation started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time when the database conversion operation started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The date and time when the database conversion operation ended. */
+    /**
+     * The date and time when the database conversion operation ended.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The date and time when the database conversion operation ended.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** Additional container database parameter. */
+    /**
+     * Additional container database parameter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalCdbParams")
     private final String additionalCdbParams;
 
@@ -700,7 +646,7 @@ public final class PdbConversionHistoryEntry
      * Additional container database parameter.
      *
      * @return the value
-     */
+     **/
     public String getAdditionalCdbParams() {
         return additionalCdbParams;
     }
@@ -712,7 +658,6 @@ public final class PdbConversionHistoryEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

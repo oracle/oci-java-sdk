@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information to update a the Google Cloud Storage Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information to update a the Google Cloud Storage Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateGoogleCloudStorageConnectionDetails.Builder.class)
+    builder = UpdateGoogleCloudStorageConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -118,44 +119,44 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * The base64 encoded content of the service account key file containing the credentials
-         * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced
-         * by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
-         */
+         * The base64 encoded content of the service account key file containing
+         * the credentials required to use Google Cloud Storage.
+         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
         private String serviceAccountKeyFile;
 
         /**
-         * The base64 encoded content of the service account key file containing the credentials
-         * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced
-         * by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         * The base64 encoded content of the service account key file containing
+         * the credentials required to use Google Cloud Storage.
+         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
          *
          * @param serviceAccountKeyFile the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
             this.serviceAccountKeyFile = serviceAccountKeyFile;
             this.__explicitlySet__.add("serviceAccountKeyFile");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the service account key file is stored, which containing the
-         * credentials required to use Google Cloud Storage. Note: When provided,
-         * 'serviceAccountKeyFile' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+         * which containing the credentials required to use Google Cloud Storage.
+         * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
         private String serviceAccountKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the service account key file is stored, which containing the
-         * credentials required to use Google Cloud Storage. Note: When provided,
-         * 'serviceAccountKeyFile' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+         * which containing the credentials required to use Google Cloud Storage.
+         * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
          *
          * @param serviceAccountKeyFileSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceAccountKeyFileSecretId(String serviceAccountKeyFileSecretId) {
             this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             this.__explicitlySet__.add("serviceAccountKeyFileSecretId");
@@ -228,7 +229,9 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -267,41 +270,41 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
     }
 
     /**
-     * The base64 encoded content of the service account key file containing the credentials
-     * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by
-     * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
-     */
+     * The base64 encoded content of the service account key file containing
+     * the credentials required to use Google Cloud Storage.
+     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
     private final String serviceAccountKeyFile;
 
     /**
-     * The base64 encoded content of the service account key file containing the credentials
-     * required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by
-     * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+     * The base64 encoded content of the service account key file containing
+     * the credentials required to use Google Cloud Storage.
+     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getServiceAccountKeyFile() {
         return serviceAccountKeyFile;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the service account key file is stored, which containing the
-     * credentials required to use Google Cloud Storage. Note: When provided,
-     * 'serviceAccountKeyFile' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+     * which containing the credentials required to use Google Cloud Storage.
+     * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
     private final String serviceAccountKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the service account key file is stored, which containing the
-     * credentials required to use Google Cloud Storage. Note: When provided,
-     * 'serviceAccountKeyFile' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+     * which containing the credentials required to use Google Cloud Storage.
+     * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getServiceAccountKeyFileSecretId() {
         return serviceAccountKeyFileSecretId;
     }
@@ -313,7 +316,6 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

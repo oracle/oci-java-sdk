@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Requester types */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum DelegatedResourceAccessRequesterType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Requester types
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum DelegatedResourceAccessRequesterType {
     Operator("OPERATOR"),
     Customer("CUSTOMER"),
     System("SYSTEM"),

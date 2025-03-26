@@ -5,24 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the information used to apply filters to a vendor software source to create or update a
- * custom software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the information used to apply filters to a vendor software source to create or update a custom software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomSoftwareSourceFilter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CustomSoftwareSourceFilter.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CustomSoftwareSourceFilter
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "packageFilters",
@@ -41,47 +39,50 @@ public final class CustomSoftwareSourceFilter
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of package filters. */
+        /**
+         * The list of package filters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageFilters")
         private java.util.List<PackageFilter> packageFilters;
 
         /**
          * The list of package filters.
-         *
          * @param packageFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder packageFilters(java.util.List<PackageFilter> packageFilters) {
             this.packageFilters = packageFilters;
             this.__explicitlySet__.add("packageFilters");
             return this;
         }
-        /** The list of module stream/profile filters. */
+        /**
+         * The list of module stream/profile filters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleStreamProfileFilters")
         private java.util.List<ModuleStreamProfileFilter> moduleStreamProfileFilters;
 
         /**
          * The list of module stream/profile filters.
-         *
          * @param moduleStreamProfileFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder moduleStreamProfileFilters(
                 java.util.List<ModuleStreamProfileFilter> moduleStreamProfileFilters) {
             this.moduleStreamProfileFilters = moduleStreamProfileFilters;
             this.__explicitlySet__.add("moduleStreamProfileFilters");
             return this;
         }
-        /** The list of group filters. */
+        /**
+         * The list of group filters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageGroupFilters")
         private java.util.List<PackageGroupFilter> packageGroupFilters;
 
         /**
          * The list of group filters.
-         *
          * @param packageGroupFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder packageGroupFilters(java.util.List<PackageGroupFilter> packageGroupFilters) {
             this.packageGroupFilters = packageGroupFilters;
             this.__explicitlySet__.add("packageGroupFilters");
@@ -118,7 +119,9 @@ public final class CustomSoftwareSourceFilter
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,41 +130,44 @@ public final class CustomSoftwareSourceFilter
         return new Builder().copy(this);
     }
 
-    /** The list of package filters. */
+    /**
+     * The list of package filters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageFilters")
     private final java.util.List<PackageFilter> packageFilters;
 
     /**
      * The list of package filters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PackageFilter> getPackageFilters() {
         return packageFilters;
     }
 
-    /** The list of module stream/profile filters. */
+    /**
+     * The list of module stream/profile filters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleStreamProfileFilters")
     private final java.util.List<ModuleStreamProfileFilter> moduleStreamProfileFilters;
 
     /**
      * The list of module stream/profile filters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModuleStreamProfileFilter> getModuleStreamProfileFilters() {
         return moduleStreamProfileFilters;
     }
 
-    /** The list of group filters. */
+    /**
+     * The list of group filters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageGroupFilters")
     private final java.util.List<PackageGroupFilter> packageGroupFilters;
 
     /**
      * The list of group filters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PackageGroupFilter> getPackageGroupFilters() {
         return packageGroupFilters;
     }
@@ -173,7 +179,6 @@ public final class CustomSoftwareSourceFilter
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

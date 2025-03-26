@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.marketplacepublisher;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.marketplacepublisher.internal.http.*;
 import com.oracle.bmc.marketplacepublisher.requests.*;
 import com.oracle.bmc.marketplacepublisher.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for MarketplacePublisher service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for MarketplacePublisher service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public class MarketplacePublisherAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements MarketplacePublisherAsync {
-    /** Service instance for MarketplacePublisher. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsync {
+    /**
+     * Service instance for MarketplacePublisher.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MARKETPLACEPUBLISHER")
@@ -40,2610 +37,112 @@ public class MarketplacePublisherAsyncClient extends com.oracle.bmc.http.interna
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(MarketplacePublisherAsyncClient.class);
 
-    MarketplacePublisherAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, MarketplacePublisherAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "marketplacepublisher";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public MarketplacePublisherAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new MarketplacePublisherAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ActivateTermVersionResponse> activateTermVersion(
-            ActivateTermVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ActivateTermVersionRequest, ActivateTermVersionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-
-        return clientCall(request, ActivateTermVersionResponse::builder)
-                .logger(LOG, "activateTermVersion")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ActivateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/ActivateTermVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ActivateTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .appendPathParam("actions")
-                .appendPathParam("Activate")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        ActivateTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", ActivateTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ActivateTermVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
-            CancelWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelWorkRequestRequest, CancelWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, CancelWorkRequestResponse::builder)
-                .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/CancelWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(CancelWorkRequestRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CascadingDeleteListingResponse> cascadingDeleteListing(
-            CascadingDeleteListingRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CascadingDeleteListingRequest, CascadingDeleteListingResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-
-        return clientCall(request, CascadingDeleteListingResponse::builder)
-                .logger(LOG, "cascadingDeleteListing")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CascadingDeleteListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CascadingDeleteListing")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CascadingDeleteListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .appendPathParam("actions")
-                .appendPathParam("cascadingDelete")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CascadingDeleteListingResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CascadingDeleteListingResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CascadingDeleteListingRevisionResponse>
-            cascadingDeleteListingRevision(
-                    CascadingDeleteListingRevisionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CascadingDeleteListingRevisionRequest,
-                                    CascadingDeleteListingRevisionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, CascadingDeleteListingRevisionResponse::builder)
-                .logger(LOG, "cascadingDeleteListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CascadingDeleteListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CascadingDeleteListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CascadingDeleteListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("cascadingDelete")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CascadingDeleteListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CascadingDeleteListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeArtifactCompartmentResponse> changeArtifactCompartment(
-            ChangeArtifactCompartmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ChangeArtifactCompartmentRequest, ChangeArtifactCompartmentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeArtifactCompartmentDetails(),
-                "changeArtifactCompartmentDetails is required");
-
-        return clientCall(request, ChangeArtifactCompartmentResponse::builder)
-                .logger(LOG, "changeArtifactCompartment")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ChangeArtifactCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ChangeArtifactCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeArtifactCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeArtifactCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeListingCompartmentResponse> changeListingCompartment(
-            ChangeListingCompartmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ChangeListingCompartmentRequest, ChangeListingCompartmentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeListingCompartmentDetails(),
-                "changeListingCompartmentDetails is required");
-
-        return clientCall(request, ChangeListingCompartmentResponse::builder)
-                .logger(LOG, "changeListingCompartment")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ChangeListingCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/ChangeListingCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeListingCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeListingCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeListingRevisionToNewStatusResponse>
-            changeListingRevisionToNewStatus(
-                    ChangeListingRevisionToNewStatusRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeListingRevisionToNewStatusRequest,
-                                    ChangeListingRevisionToNewStatusResponse>
-                            handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, ChangeListingRevisionToNewStatusResponse::builder)
-                .logger(LOG, "changeListingRevisionToNewStatus")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ChangeListingRevisionToNewStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/ChangeListingRevisionToNewStatus")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeListingRevisionToNewStatusRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("changeToNewStatus")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        ChangeListingRevisionToNewStatusResponse.Builder::listingRevision)
-                .handleResponseHeaderString(
-                        "etag", ChangeListingRevisionToNewStatusResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeListingRevisionToNewStatusResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeTermCompartmentResponse> changeTermCompartment(
-            ChangeTermCompartmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ChangeTermCompartmentRequest, ChangeTermCompartmentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeTermCompartmentDetails(),
-                "changeTermCompartmentDetails is required");
-
-        return clientCall(request, ChangeTermCompartmentResponse::builder)
-                .logger(LOG, "changeTermCompartment")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ChangeTermCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/ChangeTermCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeTermCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeTermCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CloneListingRevisionResponse> cloneListingRevision(
-            CloneListingRevisionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CloneListingRevisionRequest, CloneListingRevisionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, CloneListingRevisionResponse::builder)
-                .logger(LOG, "cloneListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CloneListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CloneListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CloneListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("clone")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CloneListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CloneListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateArtifactResponse> createArtifact(
-            CreateArtifactRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateArtifactRequest, CreateArtifactResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateArtifactDetails(), "createArtifactDetails is required");
-
-        return clientCall(request, CreateArtifactResponse::builder)
-                .logger(LOG, "createArtifact")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/CreateArtifact")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateArtifactResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateListingResponse> createListing(
-            CreateListingRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<CreateListingRequest, CreateListingResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateListingDetails(), "createListingDetails is required");
-
-        return clientCall(request, CreateListingResponse::builder)
-                .logger(LOG, "createListing")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CreateListing")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Listing.class,
-                        CreateListingResponse.Builder::listing)
-                .handleResponseHeaderString("etag", CreateListingResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateListingResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateListingRevisionResponse> createListingRevision(
-            CreateListingRevisionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateListingRevisionRequest, CreateListingRevisionResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionDetails(),
-                "createListingRevisionDetails is required");
-
-        return clientCall(request, CreateListingRevisionResponse::builder)
-                .logger(LOG, "createListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CreateListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        CreateListingRevisionResponse.Builder::listingRevision)
-                .handleResponseHeaderString("etag", CreateListingRevisionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateListingRevisionAttachmentResponse>
-            createListingRevisionAttachment(
-                    CreateListingRevisionAttachmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateListingRevisionAttachmentRequest,
-                                    CreateListingRevisionAttachmentResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionAttachmentDetails(),
-                "createListingRevisionAttachmentDetails is required");
-
-        return clientCall(request, CreateListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "createListingRevisionAttachment")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/CreateListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        CreateListingRevisionAttachmentResponse.Builder::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateListingRevisionAttachmentResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateListingRevisionNoteResponse> createListingRevisionNote(
-            CreateListingRevisionNoteRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateListingRevisionNoteRequest, CreateListingRevisionNoteResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionNoteDetails(),
-                "createListingRevisionNoteDetails is required");
-
-        return clientCall(request, CreateListingRevisionNoteResponse::builder)
-                .logger(LOG, "createListingRevisionNote")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/CreateListingRevisionNote")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote.class,
-                        CreateListingRevisionNoteResponse.Builder::listingRevisionNote)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateListingRevisionNoteResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateListingRevisionNoteResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateListingRevisionPackageResponse>
-            createListingRevisionPackage(
-                    CreateListingRevisionPackageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateListingRevisionPackageRequest,
-                                    CreateListingRevisionPackageResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateListingRevisionPackageDetails(),
-                "createListingRevisionPackageDetails is required");
-
-        return clientCall(request, CreateListingRevisionPackageResponse::builder)
-                .logger(LOG, "createListingRevisionPackage")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/CreateListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
-                        CreateListingRevisionPackageResponse.Builder::listingRevisionPackage)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateListingRevisionPackageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateListingRevisionPackageResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateTermResponse> createTerm(
-            CreateTermRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<CreateTermRequest, CreateTermResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCreateTermDetails(), "createTermDetails is required");
-
-        return clientCall(request, CreateTermResponse::builder)
-                .logger(LOG, "createTerm")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/CreateTerm")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Term.class,
-                        CreateTermResponse.Builder::term)
-                .handleResponseHeaderString("etag", CreateTermResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTermResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateTermVersionResponse> createTermVersion(
-            CreateTermVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateTermVersionRequest, CreateTermVersionResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateTermVersionContent(), "createTermVersionContent is required");
-
-        Objects.requireNonNull(request.getTermId(), "termId is required");
-
-        return clientCall(request, CreateTermVersionResponse::builder)
-                .logger(LOG, "createTermVersion")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "CreateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/CreateTermVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("display-name", request.getDisplayName())
-                .appendHeader("term-id", request.getTermId())
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        CreateTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", CreateTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTermVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteArtifactResponse> deleteArtifact(
-            DeleteArtifactRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteArtifactRequest, DeleteArtifactResponse>
-                    handler) {
-
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-
-        return clientCall(request, DeleteArtifactResponse::builder)
-                .logger(LOG, "deleteArtifact")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/DeleteArtifact")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteArtifactResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteListingResponse> deleteListing(
-            DeleteListingRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeleteListingRequest, DeleteListingResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-
-        return clientCall(request, DeleteListingResponse::builder)
-                .logger(LOG, "deleteListing")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/DeleteListing")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteListingResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteListingRevisionResponse> deleteListingRevision(
-            DeleteListingRevisionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteListingRevisionRequest, DeleteListingRevisionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionResponse::builder)
-                .logger(LOG, "deleteListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/DeleteListingRevision")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteListingRevisionAttachmentResponse>
-            deleteListingRevisionAttachment(
-                    DeleteListingRevisionAttachmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteListingRevisionAttachmentRequest,
-                                    DeleteListingRevisionAttachmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "deleteListingRevisionAttachment")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/DeleteListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteListingRevisionNoteResponse> deleteListingRevisionNote(
-            DeleteListingRevisionNoteRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteListingRevisionNoteRequest, DeleteListingRevisionNoteResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionNoteId(), "listingRevisionNoteId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionNoteResponse::builder)
-                .logger(LOG, "deleteListingRevisionNote")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/DeleteListingRevisionNote")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .appendPathParam(request.getListingRevisionNoteId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteListingRevisionNoteResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteListingRevisionPackageResponse>
-            deleteListingRevisionPackage(
-                    DeleteListingRevisionPackageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteListingRevisionPackageRequest,
-                                    DeleteListingRevisionPackageResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, DeleteListingRevisionPackageResponse::builder)
-                .logger(LOG, "deleteListingRevisionPackage")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/DeleteListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteListingRevisionPackageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteTermResponse> deleteTerm(
-            DeleteTermRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeleteTermRequest, DeleteTermResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-
-        return clientCall(request, DeleteTermResponse::builder)
-                .logger(LOG, "deleteTerm")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/DeleteTerm")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTermResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteTermVersionResponse> deleteTermVersion(
-            DeleteTermVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteTermVersionRequest, DeleteTermVersionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-
-        return clientCall(request, DeleteTermVersionResponse::builder)
-                .logger(LOG, "deleteTermVersion")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "DeleteTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/DeleteTermVersion")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTermVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetArtifactResponse> getArtifact(
-            GetArtifactRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetArtifactRequest, GetArtifactResponse>
-                    handler) {
-
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-
-        return clientCall(request, GetArtifactResponse::builder)
-                .logger(LOG, "getArtifact")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/GetArtifact")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Artifact.class,
-                        GetArtifactResponse.Builder::artifact)
-                .handleResponseHeaderString("etag", GetArtifactResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetArtifactResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCategoryResponse> getCategory(
-            GetCategoryRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetCategoryRequest, GetCategoryResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCategoryCode(), "categoryCode must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetCategoryResponse::builder)
-                .logger(LOG, "getCategory")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetCategory",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Category/GetCategory")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCategoryRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("categories")
-                .appendPathParam(request.getCategoryCode())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Category.class,
-                        GetCategoryResponse.Builder::category)
-                .handleResponseHeaderString("etag", GetCategoryResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCategoryResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetListingResponse> getListing(
-            GetListingRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetListingRequest, GetListingResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-
-        return clientCall(request, GetListingResponse::builder)
-                .logger(LOG, "getListing")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/GetListing")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Listing.class,
-                        GetListingResponse.Builder::listing)
-                .handleResponseHeaderString("etag", GetListingResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetListingRevisionResponse> getListingRevision(
-            GetListingRevisionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetListingRevisionRequest, GetListingRevisionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, GetListingRevisionResponse::builder)
-                .logger(LOG, "getListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/GetListingRevision")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        GetListingRevisionResponse.Builder::listingRevision)
-                .handleResponseHeaderString("etag", GetListingRevisionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetListingRevisionAttachmentResponse>
-            getListingRevisionAttachment(
-                    GetListingRevisionAttachmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetListingRevisionAttachmentRequest,
-                                    GetListingRevisionAttachmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-
-        return clientCall(request, GetListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "getListingRevisionAttachment")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/GetListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        GetListingRevisionAttachmentResponse.Builder::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", GetListingRevisionAttachmentResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetListingRevisionNoteResponse> getListingRevisionNote(
-            GetListingRevisionNoteRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetListingRevisionNoteRequest, GetListingRevisionNoteResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionNoteId(), "listingRevisionNoteId must not be blank");
-
-        return clientCall(request, GetListingRevisionNoteResponse::builder)
-                .logger(LOG, "getListingRevisionNote")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetListingRevisionNote",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/GetListingRevisionNote")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionNoteRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .appendPathParam(request.getListingRevisionNoteId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote.class,
-                        GetListingRevisionNoteResponse.Builder::listingRevisionNote)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingRevisionNoteResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetListingRevisionNoteResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetListingRevisionPackageResponse> getListingRevisionPackage(
-            GetListingRevisionPackageRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetListingRevisionPackageRequest, GetListingRevisionPackageResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, GetListingRevisionPackageResponse::builder)
-                .logger(LOG, "getListingRevisionPackage")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/GetListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
-                        GetListingRevisionPackageResponse.Builder::listingRevisionPackage)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetListingRevisionPackageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetListingRevisionPackageResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMarketResponse> getMarket(
-            GetMarketRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetMarketRequest, GetMarketResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMarketCode(), "marketCode must not be blank");
-
-        return clientCall(request, GetMarketResponse::builder)
-                .logger(LOG, "getMarket")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetMarket",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Market/GetMarket")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMarketRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("markets")
-                .appendPathParam(request.getMarketCode())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Market.class,
-                        GetMarketResponse.Builder::market)
-                .handleResponseHeaderString("etag", GetMarketResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMarketResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetProductResponse> getProduct(
-            GetProductRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetProductRequest, GetProductResponse>
-                    handler) {
-
-        Validate.notBlank(request.getProductCode(), "productCode must not be blank");
-
-        return clientCall(request, GetProductResponse::builder)
-                .logger(LOG, "getProduct")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetProduct",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Product/GetProduct")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetProductRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("products")
-                .appendPathParam(request.getProductCode())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Product.class,
-                        GetProductResponse.Builder::product)
-                .handleResponseHeaderString("etag", GetProductResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetProductResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetPublisherResponse> getPublisher(
-            GetPublisherRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetPublisherRequest, GetPublisherResponse>
-                    handler) {
-
-        Validate.notBlank(request.getPublisherId(), "publisherId must not be blank");
-
-        return clientCall(request, GetPublisherResponse::builder)
-                .logger(LOG, "getPublisher")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetPublisher",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Publisher/GetPublisher")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPublisherRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("publishers")
-                .appendPathParam(request.getPublisherId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Publisher.class,
-                        GetPublisherResponse.Builder::publisher)
-                .handleResponseHeaderString("etag", GetPublisherResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPublisherResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTermResponse> getTerm(
-            GetTermRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetTermRequest, GetTermResponse> handler) {
-
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-
-        return clientCall(request, GetTermResponse::builder)
-                .logger(LOG, "getTerm")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/GetTerm")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Term.class,
-                        GetTermResponse.Builder::term)
-                .handleResponseHeaderString("etag", GetTermResponse.Builder::etag)
-                .handleResponseHeaderString("opc-request-id", GetTermResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTermVersionResponse> getTermVersion(
-            GetTermVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetTermVersionRequest, GetTermVersionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-
-        return clientCall(request, GetTermVersionResponse::builder)
-                .logger(LOG, "getTermVersion")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/GetTermVersion")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        GetTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", GetTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTermVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
-            GetWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWorkRequestRequest, GetWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListArtifactsResponse> listArtifacts(
-            ListArtifactsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListArtifactsRequest, ListArtifactsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListArtifactsResponse::builder)
-                .logger(LOG, "listArtifacts")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListArtifacts",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ArtifactCollection/ListArtifacts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListArtifactsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ArtifactCollection.class,
-                        ListArtifactsResponse.Builder::artifactCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListArtifactsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListArtifactsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCategoriesResponse> listCategories(
-            ListCategoriesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListCategoriesRequest, ListCategoriesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListCategoriesResponse::builder)
-                .logger(LOG, "listCategories")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/CategoryCollection/ListCategories")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCategoriesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("categories")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("productCode", request.getProductCode())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.CategoryCollection.class,
-                        ListCategoriesResponse.Builder::categoryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCategoriesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCategoriesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListListingRevisionAttachmentsResponse>
-            listListingRevisionAttachments(
-                    ListListingRevisionAttachmentsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListListingRevisionAttachmentsRequest,
-                                    ListListingRevisionAttachmentsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getListingRevisionId(), "listingRevisionId is required");
-
-        return clientCall(request, ListListingRevisionAttachmentsResponse::builder)
-                .logger(LOG, "listListingRevisionAttachments")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListListingRevisionAttachments",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachmentCollection/ListListingRevisionAttachments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionAttachmentsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendQueryParam("listingRevisionId", request.getListingRevisionId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model
-                                .ListingRevisionAttachmentCollection.class,
-                        ListListingRevisionAttachmentsResponse.Builder
-                                ::listingRevisionAttachmentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListListingRevisionAttachmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListListingRevisionAttachmentsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListListingRevisionNotesResponse> listListingRevisionNotes(
-            ListListingRevisionNotesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListListingRevisionNotesRequest, ListListingRevisionNotesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getListingRevisionId(), "listingRevisionId is required");
-
-        return clientCall(request, ListListingRevisionNotesResponse::builder)
-                .logger(LOG, "listListingRevisionNotes")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListListingRevisionNotes",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNoteCollection/ListListingRevisionNotes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionNotesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionNotes")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("listingRevisionId", request.getListingRevisionId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteCollection
-                                .class,
-                        ListListingRevisionNotesResponse.Builder::listingRevisionNoteCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingRevisionNotesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingRevisionNotesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListListingRevisionPackagesResponse>
-            listListingRevisionPackages(
-                    ListListingRevisionPackagesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListListingRevisionPackagesRequest,
-                                    ListListingRevisionPackagesResponse>
-                            handler) {
-        Objects.requireNonNull(request.getListingRevisionId(), "listingRevisionId is required");
-
-        return clientCall(request, ListListingRevisionPackagesResponse::builder)
-                .logger(LOG, "listListingRevisionPackages")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListListingRevisionPackages",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackageCollection/ListListingRevisionPackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionPackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("listingRevisionId", request.getListingRevisionId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageCollection
-                                .class,
-                        ListListingRevisionPackagesResponse.Builder
-                                ::listingRevisionPackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingRevisionPackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingRevisionPackagesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListListingRevisionsResponse> listListingRevisions(
-            ListListingRevisionsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListListingRevisionsRequest, ListListingRevisionsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getListingId(), "listingId is required");
-
-        return clientCall(request, ListListingRevisionsResponse::builder)
-                .logger(LOG, "listListingRevisions")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListListingRevisions",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionCollection/ListListingRevisions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingRevisionsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendQueryParam("listingId", request.getListingId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("listingRevisionStatus", request.getListingRevisionStatus())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionCollection.class,
-                        ListListingRevisionsResponse.Builder::listingRevisionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingRevisionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingRevisionsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListListingsResponse> listListings(
-            ListListingsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListListingsRequest, ListListingsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListListingsResponse::builder)
-                .logger(LOG, "listListings")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListListings",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingCollection/ListListings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListListingsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingCollection.class,
-                        ListListingsResponse.Builder::listingCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListListingsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListListingsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListMarketsResponse> listMarkets(
-            ListMarketsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListMarketsRequest, ListMarketsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListMarketsResponse::builder)
-                .logger(LOG, "listMarkets")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListMarkets",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/MarketCollection/ListMarkets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMarketsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("markets")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.MarketCollection.class,
-                        ListMarketsResponse.Builder::marketCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMarketsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMarketsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListProductsResponse> listProducts(
-            ListProductsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListProductsRequest, ListProductsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListProductsResponse::builder)
-                .logger(LOG, "listProducts")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListProducts",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ProductCollection/ListProducts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListProductsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("products")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ProductCollection.class,
-                        ListProductsResponse.Builder::productCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListProductsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListProductsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListPublishersResponse> listPublishers(
-            ListPublishersRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListPublishersRequest, ListPublishersResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListPublishersResponse::builder)
-                .logger(LOG, "listPublishers")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListPublishers",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/PublisherCollection/ListPublishers")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPublishersRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("publishers")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.PublisherCollection.class,
-                        ListPublishersResponse.Builder::publisherCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPublishersResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPublishersResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTermVersionsResponse> listTermVersions(
-            ListTermVersionsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListTermVersionsRequest, ListTermVersionsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getTermId(), "termId is required");
-
-        return clientCall(request, ListTermVersionsResponse::builder)
-                .logger(LOG, "listTermVersions")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListTermVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersionCollection/ListTermVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTermVersionsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendQueryParam("termId", request.getTermId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersionCollection.class,
-                        ListTermVersionsResponse.Builder::termVersionCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTermVersionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTermVersionsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTermsResponse> listTerms(
-            ListTermsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListTermsRequest, ListTermsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListTermsResponse::builder)
-                .logger(LOG, "listTerms")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListTerms",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermCollection/ListTerms")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTermsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermCollection.class,
-                        ListTermsResponse.Builder::termCollection)
-                .handleResponseHeaderString("opc-next-page", ListTermsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTermsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
-            ListWorkRequestErrorsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
-            ListWorkRequestLogsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntryCollection
-                                .class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
-            ListWorkRequestsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestsRequest, ListWorkRequestsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.WorkRequestSummaryCollection
-                                .class,
-                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<MarkListingRevisionPackageAsDefaultResponse>
-            markListingRevisionPackageAsDefault(
-                    MarkListingRevisionPackageAsDefaultRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    MarkListingRevisionPackageAsDefaultRequest,
-                                    MarkListingRevisionPackageAsDefaultResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, MarkListingRevisionPackageAsDefaultResponse::builder)
-                .logger(LOG, "markListingRevisionPackageAsDefault")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "MarkListingRevisionPackageAsDefault",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/MarkListingRevisionPackageAsDefault")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(MarkListingRevisionPackageAsDefaultRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .appendPathParam("actions")
-                .appendPathParam("markAsDefault")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        MarkListingRevisionPackageAsDefaultResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        MarkListingRevisionPackageAsDefaultResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PublishListingRevisionResponse> publishListingRevision(
-            PublishListingRevisionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            PublishListingRevisionRequest, PublishListingRevisionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, PublishListingRevisionResponse::builder)
-                .logger(LOG, "publishListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "PublishListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("publish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PublishListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", PublishListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PublishListingRevisionAsPrivateResponse>
-            publishListingRevisionAsPrivate(
-                    PublishListingRevisionAsPrivateRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    PublishListingRevisionAsPrivateRequest,
-                                    PublishListingRevisionAsPrivateResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getPublishListingRevisionAsPrivateDetails(),
-                "publishListingRevisionAsPrivateDetails is required");
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, PublishListingRevisionAsPrivateResponse::builder)
-                .logger(LOG, "publishListingRevisionAsPrivate")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "PublishListingRevisionAsPrivate",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevisionAsPrivate")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishListingRevisionAsPrivateRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("publishAsPrivate")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PublishListingRevisionAsPrivateResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PublishListingRevisionAsPrivateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PublishListingRevisionPackageResponse>
-            publishListingRevisionPackage(
-                    PublishListingRevisionPackageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    PublishListingRevisionPackageRequest,
-                                    PublishListingRevisionPackageResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, PublishListingRevisionPackageResponse::builder)
-                .logger(LOG, "publishListingRevisionPackage")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "PublishListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/PublishListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .appendPathParam("actions")
-                .appendPathParam("publish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PublishListingRevisionPackageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PublishListingRevisionPackageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SubmitListingRevisionForReviewResponse>
-            submitListingRevisionForReview(
-                    SubmitListingRevisionForReviewRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    SubmitListingRevisionForReviewRequest,
-                                    SubmitListingRevisionForReviewResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getSubmitListingRevisionForReviewDetails(),
-                "submitListingRevisionForReviewDetails is required");
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, SubmitListingRevisionForReviewResponse::builder)
-                .logger(LOG, "submitListingRevisionForReview")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "SubmitListingRevisionForReview",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/SubmitListingRevisionForReview")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SubmitListingRevisionForReviewRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("submitForReview")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        SubmitListingRevisionForReviewResponse.Builder::listingRevision)
-                .handleResponseHeaderString(
-                        "etag", SubmitListingRevisionForReviewResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SubmitListingRevisionForReviewResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnPublishListingRevisionPackageResponse>
-            unPublishListingRevisionPackage(
-                    UnPublishListingRevisionPackageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UnPublishListingRevisionPackageRequest,
-                                    UnPublishListingRevisionPackageResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-
-        return clientCall(request, UnPublishListingRevisionPackageResponse::builder)
-                .logger(LOG, "unPublishListingRevisionPackage")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UnPublishListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UnPublishListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UnPublishListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .appendPathParam("actions")
-                .appendPathParam("unPublish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UnPublishListingRevisionPackageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UnPublishListingRevisionPackageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateArtifactResponse> updateArtifact(
-            UpdateArtifactRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateArtifactRequest, UpdateArtifactResponse>
-                    handler) {
-
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateArtifactDetails(), "updateArtifactDetails is required");
-
-        return clientCall(request, UpdateArtifactResponse::builder)
-                .logger(LOG, "updateArtifact")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/UpdateArtifact")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateArtifactResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateListingResponse> updateListing(
-            UpdateListingRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateListingRequest, UpdateListingResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingId(), "listingId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingDetails(), "updateListingDetails is required");
-
-        return clientCall(request, UpdateListingResponse::builder)
-                .logger(LOG, "updateListing")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListing",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/UpdateListing")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listings")
-                .appendPathParam(request.getListingId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Listing.class,
-                        UpdateListingResponse.Builder::listing)
-                .handleResponseHeaderString("etag", UpdateListingResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateListingResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateListingRevisionResponse> updateListingRevision(
-            UpdateListingRevisionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateListingRevisionRequest, UpdateListingRevisionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionDetails(),
-                "updateListingRevisionDetails is required");
-
-        return clientCall(request, UpdateListingRevisionResponse::builder)
-                .logger(LOG, "updateListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevision")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        UpdateListingRevisionResponse.Builder::listingRevision)
-                .handleResponseHeaderString("etag", UpdateListingRevisionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateListingRevisionAttachmentResponse>
-            updateListingRevisionAttachment(
-                    UpdateListingRevisionAttachmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateListingRevisionAttachmentRequest,
-                                    UpdateListingRevisionAttachmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionAttachmentDetails(),
-                "updateListingRevisionAttachmentDetails is required");
-
-        return clientCall(request, UpdateListingRevisionAttachmentResponse::builder)
-                .logger(LOG, "updateListingRevisionAttachment")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListingRevisionAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachment")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionAttachmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        UpdateListingRevisionAttachmentResponse.Builder::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionAttachmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionAttachmentResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateListingRevisionAttachmentContentResponse>
-            updateListingRevisionAttachmentContent(
-                    UpdateListingRevisionAttachmentContentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateListingRevisionAttachmentContentRequest,
-                                    UpdateListingRevisionAttachmentContentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionAttachmentId(),
-                "listingRevisionAttachmentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionAttachmentContent(),
-                "updateListingRevisionAttachmentContent is required");
-
-        return clientCall(request, UpdateListingRevisionAttachmentContentResponse::builder)
-                .logger(LOG, "updateListingRevisionAttachmentContent")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListingRevisionAttachmentContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionAttachmentContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionAttachments")
-                .appendPathParam(request.getListingRevisionAttachmentId())
-                .appendPathParam("content")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment.class,
-                        UpdateListingRevisionAttachmentContentResponse.Builder
-                                ::listingRevisionAttachment)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionAttachmentContentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionAttachmentContentResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateListingRevisionIconContentResponse>
-            updateListingRevisionIconContent(
-                    UpdateListingRevisionIconContentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateListingRevisionIconContentRequest,
-                                    UpdateListingRevisionIconContentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionIconContent(),
-                "updateListingRevisionIconContent is required");
-
-        return clientCall(request, UpdateListingRevisionIconContentResponse::builder)
-                .logger(LOG, "updateListingRevisionIconContent")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListingRevisionIconContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevisionIconContent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionIconContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("icon")
-                .appendPathParam("content")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
-                        UpdateListingRevisionIconContentResponse.Builder::listingRevision)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionIconContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionIconContentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateListingRevisionPackageResponse>
-            updateListingRevisionPackage(
-                    UpdateListingRevisionPackageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateListingRevisionPackageRequest,
-                                    UpdateListingRevisionPackageResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getListingRevisionPackageId(),
-                "listingRevisionPackageId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateListingRevisionPackageDetails(),
-                "updateListingRevisionPackageDetails is required");
-
-        return clientCall(request, UpdateListingRevisionPackageResponse::builder)
-                .logger(LOG, "updateListingRevisionPackage")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateListingRevisionPackage",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UpdateListingRevisionPackage")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateListingRevisionPackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisionPackages")
-                .appendPathParam(request.getListingRevisionPackageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.class,
-                        UpdateListingRevisionPackageResponse.Builder::listingRevisionPackage)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateListingRevisionPackageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateListingRevisionPackageResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateTermResponse> updateTerm(
-            UpdateTermRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateTermRequest, UpdateTermResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermId(), "termId must not be blank");
-        Objects.requireNonNull(request.getUpdateTermDetails(), "updateTermDetails is required");
-
-        return clientCall(request, UpdateTermResponse::builder)
-                .logger(LOG, "updateTerm")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateTerm",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/UpdateTerm")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTermRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("terms")
-                .appendPathParam(request.getTermId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.Term.class,
-                        UpdateTermResponse.Builder::term)
-                .handleResponseHeaderString("etag", UpdateTermResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTermResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateTermVersionResponse> updateTermVersion(
-            UpdateTermVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateTermVersionRequest, UpdateTermVersionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTermVersionDetails(), "updateTermVersionDetails is required");
-
-        return clientCall(request, UpdateTermVersionResponse::builder)
-                .logger(LOG, "updateTermVersion")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateTermVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersion")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTermVersionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        UpdateTermVersionResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", UpdateTermVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTermVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateTermVersionContentResponse> updateTermVersionContent(
-            UpdateTermVersionContentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateTermVersionContentRequest, UpdateTermVersionContentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getTermVersionId(), "termVersionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTermVersionContent(), "updateTermVersionContent is required");
-
-        return clientCall(request, UpdateTermVersionContentResponse::builder)
-                .logger(LOG, "updateTermVersionContent")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "UpdateTermVersionContent",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersionContent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTermVersionContentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("termVersions")
-                .appendPathParam(request.getTermVersionId())
-                .appendPathParam("content")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("display-name", request.getDisplayName())
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.marketplacepublisher.model.TermVersion.class,
-                        UpdateTermVersionContentResponse.Builder::termVersion)
-                .handleResponseHeaderString("etag", UpdateTermVersionContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTermVersionContentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ValidateAndPublishArtifactResponse>
-            validateAndPublishArtifact(
-                    ValidateAndPublishArtifactRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ValidateAndPublishArtifactRequest,
-                                    ValidateAndPublishArtifactResponse>
-                            handler) {
-
-        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
-
-        return clientCall(request, ValidateAndPublishArtifactResponse::builder)
-                .logger(LOG, "validateAndPublishArtifact")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "ValidateAndPublishArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ValidateAndPublishArtifact")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateAndPublishArtifactRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("artifacts")
-                .appendPathParam(request.getArtifactId())
-                .appendPathParam("actions")
-                .appendPathParam("validateAndPublish")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ValidateAndPublishArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateAndPublishArtifactResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<WithdrawListingRevisionResponse> withdrawListingRevision(
-            WithdrawListingRevisionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            WithdrawListingRevisionRequest, WithdrawListingRevisionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
-
-        return clientCall(request, WithdrawListingRevisionResponse::builder)
-                .logger(LOG, "withdrawListingRevision")
-                .serviceDetails(
-                        "MarketplacePublisher",
-                        "WithdrawListingRevision",
-                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/WithdrawListingRevision")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(WithdrawListingRevisionRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("listingRevisions")
-                .appendPathParam(request.getListingRevisionId())
-                .appendPathParam("actions")
-                .appendPathParam("withdraw")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        WithdrawListingRevisionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", WithdrawListingRevisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public MarketplacePublisherAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public MarketplacePublisherAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public MarketplacePublisherAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public MarketplacePublisherAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public MarketplacePublisherAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -2651,26 +150,26 @@ public class MarketplacePublisherAsyncClient extends com.oracle.bmc.http.interna
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public MarketplacePublisherAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -2679,29 +178,29 @@ public class MarketplacePublisherAsyncClient extends com.oracle.bmc.http.interna
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public MarketplacePublisherAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -2714,14 +213,3795 @@ public class MarketplacePublisherAsyncClient extends com.oracle.bmc.http.interna
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public MarketplacePublisherAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, MarketplacePublisherAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public MarketplacePublisherAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new MarketplacePublisherAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateTermVersionResponse> activateTermVersion(
+            ActivateTermVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ActivateTermVersionRequest, ActivateTermVersionResponse>
+                    handler) {
+        LOG.trace("Called async activateTermVersion");
+        final ActivateTermVersionRequest interceptedRequest =
+                ActivateTermVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateTermVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ActivateTermVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/ActivateTermVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, ActivateTermVersionResponse>
+                transformer =
+                        ActivateTermVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ActivateTermVersionRequest, ActivateTermVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ActivateTermVersionRequest, ActivateTermVersionResponse>,
+                        java.util.concurrent.Future<ActivateTermVersionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ActivateTermVersionRequest, ActivateTermVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
+            CancelWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelWorkRequestRequest, CancelWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async cancelWorkRequest");
+        final CancelWorkRequestRequest interceptedRequest =
+                CancelWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/CancelWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                transformer =
+                        CancelWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelWorkRequestRequest, CancelWorkRequestResponse>,
+                        java.util.concurrent.Future<CancelWorkRequestResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelWorkRequestRequest, CancelWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CascadingDeleteListingResponse> cascadingDeleteListing(
+            CascadingDeleteListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CascadingDeleteListingRequest, CascadingDeleteListingResponse>
+                    handler) {
+        LOG.trace("Called async cascadingDeleteListing");
+        final CascadingDeleteListingRequest interceptedRequest =
+                CascadingDeleteListingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteListingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CascadingDeleteListing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CascadingDeleteListing");
+        final java.util.function.Function<javax.ws.rs.core.Response, CascadingDeleteListingResponse>
+                transformer =
+                        CascadingDeleteListingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CascadingDeleteListingRequest, CascadingDeleteListingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CascadingDeleteListingRequest, CascadingDeleteListingResponse>,
+                        java.util.concurrent.Future<CascadingDeleteListingResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CascadingDeleteListingRequest, CascadingDeleteListingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CascadingDeleteListingRevisionResponse>
+            cascadingDeleteListingRevision(
+                    CascadingDeleteListingRevisionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteListingRevisionRequest,
+                                    CascadingDeleteListingRevisionResponse>
+                            handler) {
+        LOG.trace("Called async cascadingDeleteListingRevision");
+        final CascadingDeleteListingRevisionRequest interceptedRequest =
+                CascadingDeleteListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CascadingDeleteListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CascadingDeleteListingRevision");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CascadingDeleteListingRevisionResponse>
+                transformer =
+                        CascadingDeleteListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CascadingDeleteListingRevisionRequest,
+                        CascadingDeleteListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CascadingDeleteListingRevisionRequest,
+                                CascadingDeleteListingRevisionResponse>,
+                        java.util.concurrent.Future<CascadingDeleteListingRevisionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CascadingDeleteListingRevisionRequest, CascadingDeleteListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeArtifactCompartmentResponse> changeArtifactCompartment(
+            ChangeArtifactCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeArtifactCompartmentRequest, ChangeArtifactCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeArtifactCompartment");
+        final ChangeArtifactCompartmentRequest interceptedRequest =
+                ChangeArtifactCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeArtifactCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ChangeArtifactCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ChangeArtifactCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeArtifactCompartmentResponse>
+                transformer =
+                        ChangeArtifactCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeArtifactCompartmentRequest, ChangeArtifactCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeArtifactCompartmentRequest,
+                                ChangeArtifactCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeArtifactCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeArtifactCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeArtifactCompartmentRequest, ChangeArtifactCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeListingCompartmentResponse> changeListingCompartment(
+            ChangeListingCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeListingCompartmentRequest, ChangeListingCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeListingCompartment");
+        final ChangeListingCompartmentRequest interceptedRequest =
+                ChangeListingCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeListingCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ChangeListingCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/ChangeListingCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeListingCompartmentResponse>
+                transformer =
+                        ChangeListingCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeListingCompartmentRequest, ChangeListingCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeListingCompartmentRequest, ChangeListingCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeListingCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeListingCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeListingCompartmentRequest, ChangeListingCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeListingRevisionToNewStatusResponse>
+            changeListingRevisionToNewStatus(
+                    ChangeListingRevisionToNewStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeListingRevisionToNewStatusRequest,
+                                    ChangeListingRevisionToNewStatusResponse>
+                            handler) {
+        LOG.trace("Called async changeListingRevisionToNewStatus");
+        final ChangeListingRevisionToNewStatusRequest interceptedRequest =
+                ChangeListingRevisionToNewStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeListingRevisionToNewStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ChangeListingRevisionToNewStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/ChangeListingRevisionToNewStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeListingRevisionToNewStatusResponse>
+                transformer =
+                        ChangeListingRevisionToNewStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeListingRevisionToNewStatusRequest,
+                        ChangeListingRevisionToNewStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeListingRevisionToNewStatusRequest,
+                                ChangeListingRevisionToNewStatusResponse>,
+                        java.util.concurrent.Future<ChangeListingRevisionToNewStatusResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeListingRevisionToNewStatusRequest,
+                    ChangeListingRevisionToNewStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeTermCompartmentResponse> changeTermCompartment(
+            ChangeTermCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeTermCompartmentRequest, ChangeTermCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeTermCompartment");
+        final ChangeTermCompartmentRequest interceptedRequest =
+                ChangeTermCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTermCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ChangeTermCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/ChangeTermCompartment");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeTermCompartmentResponse>
+                transformer =
+                        ChangeTermCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeTermCompartmentRequest, ChangeTermCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeTermCompartmentRequest, ChangeTermCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeTermCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeTermCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeTermCompartmentRequest, ChangeTermCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CloneListingRevisionResponse> cloneListingRevision(
+            CloneListingRevisionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CloneListingRevisionRequest, CloneListingRevisionResponse>
+                    handler) {
+        LOG.trace("Called async cloneListingRevision");
+        final CloneListingRevisionRequest interceptedRequest =
+                CloneListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CloneListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CloneListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CloneListingRevision");
+        final java.util.function.Function<javax.ws.rs.core.Response, CloneListingRevisionResponse>
+                transformer =
+                        CloneListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CloneListingRevisionRequest, CloneListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CloneListingRevisionRequest, CloneListingRevisionResponse>,
+                        java.util.concurrent.Future<CloneListingRevisionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CloneListingRevisionRequest, CloneListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateArtifactResponse> createArtifact(
+            CreateArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateArtifactRequest, CreateArtifactResponse>
+                    handler) {
+        LOG.trace("Called async createArtifact");
+        final CreateArtifactRequest interceptedRequest =
+                CreateArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/CreateArtifact");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateArtifactResponse>
+                transformer =
+                        CreateArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateArtifactRequest, CreateArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateArtifactRequest, CreateArtifactResponse>,
+                        java.util.concurrent.Future<CreateArtifactResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateArtifactDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateArtifactRequest, CreateArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateListingResponse> createListing(
+            CreateListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateListingRequest, CreateListingResponse>
+                    handler) {
+        LOG.trace("Called async createListing");
+        final CreateListingRequest interceptedRequest =
+                CreateListingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateListing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/CreateListing");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateListingResponse>
+                transformer =
+                        CreateListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateListingRequest, CreateListingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateListingRequest, CreateListingResponse>,
+                        java.util.concurrent.Future<CreateListingResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateListingDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateListingRequest, CreateListingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateListingRevisionResponse> createListingRevision(
+            CreateListingRevisionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateListingRevisionRequest, CreateListingRevisionResponse>
+                    handler) {
+        LOG.trace("Called async createListingRevision");
+        final CreateListingRevisionRequest interceptedRequest =
+                CreateListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/CreateListingRevision");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateListingRevisionResponse>
+                transformer =
+                        CreateListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateListingRevisionRequest, CreateListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateListingRevisionRequest, CreateListingRevisionResponse>,
+                        java.util.concurrent.Future<CreateListingRevisionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateListingRevisionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateListingRevisionRequest, CreateListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateListingRevisionAttachmentResponse>
+            createListingRevisionAttachment(
+                    CreateListingRevisionAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateListingRevisionAttachmentRequest,
+                                    CreateListingRevisionAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async createListingRevisionAttachment");
+        final CreateListingRevisionAttachmentRequest interceptedRequest =
+                CreateListingRevisionAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateListingRevisionAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/CreateListingRevisionAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateListingRevisionAttachmentResponse>
+                transformer =
+                        CreateListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateListingRevisionAttachmentRequest,
+                        CreateListingRevisionAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateListingRevisionAttachmentRequest,
+                                CreateListingRevisionAttachmentResponse>,
+                        java.util.concurrent.Future<CreateListingRevisionAttachmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateListingRevisionAttachmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateListingRevisionAttachmentRequest,
+                    CreateListingRevisionAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateListingRevisionNoteResponse> createListingRevisionNote(
+            CreateListingRevisionNoteRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateListingRevisionNoteRequest, CreateListingRevisionNoteResponse>
+                    handler) {
+        LOG.trace("Called async createListingRevisionNote");
+        final CreateListingRevisionNoteRequest interceptedRequest =
+                CreateListingRevisionNoteConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionNoteConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateListingRevisionNote",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/CreateListingRevisionNote");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateListingRevisionNoteResponse>
+                transformer =
+                        CreateListingRevisionNoteConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateListingRevisionNoteRequest, CreateListingRevisionNoteResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateListingRevisionNoteRequest,
+                                CreateListingRevisionNoteResponse>,
+                        java.util.concurrent.Future<CreateListingRevisionNoteResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateListingRevisionNoteDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateListingRevisionNoteRequest, CreateListingRevisionNoteResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateListingRevisionPackageResponse>
+            createListingRevisionPackage(
+                    CreateListingRevisionPackageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateListingRevisionPackageRequest,
+                                    CreateListingRevisionPackageResponse>
+                            handler) {
+        LOG.trace("Called async createListingRevisionPackage");
+        final CreateListingRevisionPackageRequest interceptedRequest =
+                CreateListingRevisionPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateListingRevisionPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/CreateListingRevisionPackage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateListingRevisionPackageResponse>
+                transformer =
+                        CreateListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateListingRevisionPackageRequest, CreateListingRevisionPackageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateListingRevisionPackageRequest,
+                                CreateListingRevisionPackageResponse>,
+                        java.util.concurrent.Future<CreateListingRevisionPackageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateListingRevisionPackageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateListingRevisionPackageRequest, CreateListingRevisionPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTermResponse> createTerm(
+            CreateTermRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateTermRequest, CreateTermResponse>
+                    handler) {
+        LOG.trace("Called async createTerm");
+        final CreateTermRequest interceptedRequest = CreateTermConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTermConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateTerm",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/CreateTerm");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTermResponse>
+                transformer =
+                        CreateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateTermRequest, CreateTermResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTermRequest, CreateTermResponse>,
+                        java.util.concurrent.Future<CreateTermResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTermDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTermRequest, CreateTermResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTermVersionResponse> createTermVersion(
+            CreateTermVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateTermVersionRequest, CreateTermVersionResponse>
+                    handler) {
+        LOG.trace("Called async createTermVersion");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, CreateTermVersionRequest.builder());
+        }
+        final CreateTermVersionRequest interceptedRequest =
+                CreateTermVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTermVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreateTermVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/CreateTermVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateTermVersionResponse>
+                transformer =
+                        CreateTermVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateTermVersionRequest, CreateTermVersionResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTermVersionRequest, CreateTermVersionResponse>,
+                        java.util.concurrent.Future<CreateTermVersionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTermVersionContent(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTermVersionRequest, CreateTermVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getCreateTermVersionContent(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteArtifactResponse> deleteArtifact(
+            DeleteArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteArtifactRequest, DeleteArtifactResponse>
+                    handler) {
+        LOG.trace("Called async deleteArtifact");
+        final DeleteArtifactRequest interceptedRequest =
+                DeleteArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/DeleteArtifact");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteArtifactResponse>
+                transformer =
+                        DeleteArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteArtifactRequest, DeleteArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteArtifactRequest, DeleteArtifactResponse>,
+                        java.util.concurrent.Future<DeleteArtifactResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteArtifactRequest, DeleteArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteListingResponse> deleteListing(
+            DeleteListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteListingRequest, DeleteListingResponse>
+                    handler) {
+        LOG.trace("Called async deleteListing");
+        final DeleteListingRequest interceptedRequest =
+                DeleteListingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteListing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/DeleteListing");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteListingResponse>
+                transformer =
+                        DeleteListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteListingRequest, DeleteListingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteListingRequest, DeleteListingResponse>,
+                        java.util.concurrent.Future<DeleteListingResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteListingRequest, DeleteListingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteListingRevisionResponse> deleteListingRevision(
+            DeleteListingRevisionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteListingRevisionRequest, DeleteListingRevisionResponse>
+                    handler) {
+        LOG.trace("Called async deleteListingRevision");
+        final DeleteListingRevisionRequest interceptedRequest =
+                DeleteListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/DeleteListingRevision");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteListingRevisionResponse>
+                transformer =
+                        DeleteListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteListingRevisionRequest, DeleteListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteListingRevisionRequest, DeleteListingRevisionResponse>,
+                        java.util.concurrent.Future<DeleteListingRevisionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteListingRevisionRequest, DeleteListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteListingRevisionAttachmentResponse>
+            deleteListingRevisionAttachment(
+                    DeleteListingRevisionAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteListingRevisionAttachmentRequest,
+                                    DeleteListingRevisionAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async deleteListingRevisionAttachment");
+        final DeleteListingRevisionAttachmentRequest interceptedRequest =
+                DeleteListingRevisionAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteListingRevisionAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/DeleteListingRevisionAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteListingRevisionAttachmentResponse>
+                transformer =
+                        DeleteListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteListingRevisionAttachmentRequest,
+                        DeleteListingRevisionAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteListingRevisionAttachmentRequest,
+                                DeleteListingRevisionAttachmentResponse>,
+                        java.util.concurrent.Future<DeleteListingRevisionAttachmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteListingRevisionAttachmentRequest,
+                    DeleteListingRevisionAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteListingRevisionNoteResponse> deleteListingRevisionNote(
+            DeleteListingRevisionNoteRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteListingRevisionNoteRequest, DeleteListingRevisionNoteResponse>
+                    handler) {
+        LOG.trace("Called async deleteListingRevisionNote");
+        final DeleteListingRevisionNoteRequest interceptedRequest =
+                DeleteListingRevisionNoteConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionNoteConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteListingRevisionNote",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/DeleteListingRevisionNote");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteListingRevisionNoteResponse>
+                transformer =
+                        DeleteListingRevisionNoteConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteListingRevisionNoteRequest, DeleteListingRevisionNoteResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteListingRevisionNoteRequest,
+                                DeleteListingRevisionNoteResponse>,
+                        java.util.concurrent.Future<DeleteListingRevisionNoteResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteListingRevisionNoteRequest, DeleteListingRevisionNoteResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteListingRevisionPackageResponse>
+            deleteListingRevisionPackage(
+                    DeleteListingRevisionPackageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteListingRevisionPackageRequest,
+                                    DeleteListingRevisionPackageResponse>
+                            handler) {
+        LOG.trace("Called async deleteListingRevisionPackage");
+        final DeleteListingRevisionPackageRequest interceptedRequest =
+                DeleteListingRevisionPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteListingRevisionPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/DeleteListingRevisionPackage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteListingRevisionPackageResponse>
+                transformer =
+                        DeleteListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteListingRevisionPackageRequest, DeleteListingRevisionPackageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteListingRevisionPackageRequest,
+                                DeleteListingRevisionPackageResponse>,
+                        java.util.concurrent.Future<DeleteListingRevisionPackageResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteListingRevisionPackageRequest, DeleteListingRevisionPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTermResponse> deleteTerm(
+            DeleteTermRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteTermRequest, DeleteTermResponse>
+                    handler) {
+        LOG.trace("Called async deleteTerm");
+        final DeleteTermRequest interceptedRequest = DeleteTermConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTermConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteTerm",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/DeleteTerm");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTermResponse>
+                transformer =
+                        DeleteTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteTermRequest, DeleteTermResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteTermRequest, DeleteTermResponse>,
+                        java.util.concurrent.Future<DeleteTermResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteTermRequest, DeleteTermResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTermVersionResponse> deleteTermVersion(
+            DeleteTermVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTermVersionRequest, DeleteTermVersionResponse>
+                    handler) {
+        LOG.trace("Called async deleteTermVersion");
+        final DeleteTermVersionRequest interceptedRequest =
+                DeleteTermVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTermVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteTermVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/DeleteTermVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteTermVersionResponse>
+                transformer =
+                        DeleteTermVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteTermVersionRequest, DeleteTermVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteTermVersionRequest, DeleteTermVersionResponse>,
+                        java.util.concurrent.Future<DeleteTermVersionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteTermVersionRequest, DeleteTermVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetArtifactResponse> getArtifact(
+            GetArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetArtifactRequest, GetArtifactResponse>
+                    handler) {
+        LOG.trace("Called async getArtifact");
+        final GetArtifactRequest interceptedRequest =
+                GetArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/GetArtifact");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetArtifactResponse>
+                transformer =
+                        GetArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetArtifactRequest, GetArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetArtifactRequest, GetArtifactResponse>,
+                        java.util.concurrent.Future<GetArtifactResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetArtifactRequest, GetArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCategoryResponse> getCategory(
+            GetCategoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetCategoryRequest, GetCategoryResponse>
+                    handler) {
+        LOG.trace("Called async getCategory");
+        final GetCategoryRequest interceptedRequest =
+                GetCategoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCategoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetCategory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Category/GetCategory");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse>
+                transformer =
+                        GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCategoryRequest, GetCategoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCategoryRequest, GetCategoryResponse>,
+                        java.util.concurrent.Future<GetCategoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCategoryRequest, GetCategoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListingResponse> getListing(
+            GetListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetListingRequest, GetListingResponse>
+                    handler) {
+        LOG.trace("Called async getListing");
+        final GetListingRequest interceptedRequest = GetListingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetListing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/GetListing");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetListingResponse>
+                transformer =
+                        GetListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetListingRequest, GetListingResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetListingRequest, GetListingResponse>,
+                        java.util.concurrent.Future<GetListingResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetListingRequest, GetListingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListingRevisionResponse> getListingRevision(
+            GetListingRevisionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetListingRevisionRequest, GetListingRevisionResponse>
+                    handler) {
+        LOG.trace("Called async getListingRevision");
+        final GetListingRevisionRequest interceptedRequest =
+                GetListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/GetListingRevision");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionResponse>
+                transformer =
+                        GetListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetListingRevisionRequest, GetListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetListingRevisionRequest, GetListingRevisionResponse>,
+                        java.util.concurrent.Future<GetListingRevisionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetListingRevisionRequest, GetListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListingRevisionAttachmentResponse>
+            getListingRevisionAttachment(
+                    GetListingRevisionAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetListingRevisionAttachmentRequest,
+                                    GetListingRevisionAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async getListingRevisionAttachment");
+        final GetListingRevisionAttachmentRequest interceptedRequest =
+                GetListingRevisionAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevisionAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/GetListingRevisionAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetListingRevisionAttachmentResponse>
+                transformer =
+                        GetListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetListingRevisionAttachmentRequest, GetListingRevisionAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetListingRevisionAttachmentRequest,
+                                GetListingRevisionAttachmentResponse>,
+                        java.util.concurrent.Future<GetListingRevisionAttachmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetListingRevisionAttachmentRequest, GetListingRevisionAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListingRevisionNoteResponse> getListingRevisionNote(
+            GetListingRevisionNoteRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetListingRevisionNoteRequest, GetListingRevisionNoteResponse>
+                    handler) {
+        LOG.trace("Called async getListingRevisionNote");
+        final GetListingRevisionNoteRequest interceptedRequest =
+                GetListingRevisionNoteConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionNoteConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevisionNote",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNote/GetListingRevisionNote");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetListingRevisionNoteResponse>
+                transformer =
+                        GetListingRevisionNoteConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetListingRevisionNoteRequest, GetListingRevisionNoteResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetListingRevisionNoteRequest, GetListingRevisionNoteResponse>,
+                        java.util.concurrent.Future<GetListingRevisionNoteResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetListingRevisionNoteRequest, GetListingRevisionNoteResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListingRevisionPackageResponse> getListingRevisionPackage(
+            GetListingRevisionPackageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetListingRevisionPackageRequest, GetListingRevisionPackageResponse>
+                    handler) {
+        LOG.trace("Called async getListingRevisionPackage");
+        final GetListingRevisionPackageRequest interceptedRequest =
+                GetListingRevisionPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetListingRevisionPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/GetListingRevisionPackage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetListingRevisionPackageResponse>
+                transformer =
+                        GetListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetListingRevisionPackageRequest, GetListingRevisionPackageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetListingRevisionPackageRequest,
+                                GetListingRevisionPackageResponse>,
+                        java.util.concurrent.Future<GetListingRevisionPackageResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetListingRevisionPackageRequest, GetListingRevisionPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMarketResponse> getMarket(
+            GetMarketRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetMarketRequest, GetMarketResponse>
+                    handler) {
+        LOG.trace("Called async getMarket");
+        final GetMarketRequest interceptedRequest = GetMarketConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMarketConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetMarket",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Market/GetMarket");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMarketResponse>
+                transformer =
+                        GetMarketConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMarketRequest, GetMarketResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetMarketRequest, GetMarketResponse>,
+                        java.util.concurrent.Future<GetMarketResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMarketRequest, GetMarketResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProductResponse> getProduct(
+            GetProductRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetProductRequest, GetProductResponse>
+                    handler) {
+        LOG.trace("Called async getProduct");
+        final GetProductRequest interceptedRequest = GetProductConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProductConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetProduct",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Product/GetProduct");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetProductResponse>
+                transformer =
+                        GetProductConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetProductRequest, GetProductResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetProductRequest, GetProductResponse>,
+                        java.util.concurrent.Future<GetProductResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetProductRequest, GetProductResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublisherResponse> getPublisher(
+            GetPublisherRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetPublisherRequest, GetPublisherResponse>
+                    handler) {
+        LOG.trace("Called async getPublisher");
+        final GetPublisherRequest interceptedRequest =
+                GetPublisherConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublisherConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetPublisher",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Publisher/GetPublisher");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPublisherResponse>
+                transformer =
+                        GetPublisherConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetPublisherRequest, GetPublisherResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPublisherRequest, GetPublisherResponse>,
+                        java.util.concurrent.Future<GetPublisherResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPublisherRequest, GetPublisherResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTermResponse> getTerm(
+            GetTermRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetTermRequest, GetTermResponse> handler) {
+        LOG.trace("Called async getTerm");
+        final GetTermRequest interceptedRequest = GetTermConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTermConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetTerm",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/GetTerm");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTermResponse> transformer =
+                GetTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetTermRequest, GetTermResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetTermRequest, GetTermResponse>,
+                        java.util.concurrent.Future<GetTermResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTermRequest, GetTermResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTermVersionResponse> getTermVersion(
+            GetTermVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTermVersionRequest, GetTermVersionResponse>
+                    handler) {
+        LOG.trace("Called async getTermVersion");
+        final GetTermVersionRequest interceptedRequest =
+                GetTermVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTermVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetTermVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/GetTermVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTermVersionResponse>
+                transformer =
+                        GetTermVersionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetTermVersionRequest, GetTermVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTermVersionRequest, GetTermVersionResponse>,
+                        java.util.concurrent.Future<GetTermVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTermVersionRequest, GetTermVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/GetWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkRequestRequest, GetWorkRequestResponse>,
+                        java.util.concurrent.Future<GetWorkRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArtifactsResponse> listArtifacts(
+            ListArtifactsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListArtifactsRequest, ListArtifactsResponse>
+                    handler) {
+        LOG.trace("Called async listArtifacts");
+        final ListArtifactsRequest interceptedRequest =
+                ListArtifactsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListArtifactsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListArtifacts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ArtifactCollection/ListArtifacts");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListArtifactsResponse>
+                transformer =
+                        ListArtifactsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListArtifactsRequest, ListArtifactsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListArtifactsRequest, ListArtifactsResponse>,
+                        java.util.concurrent.Future<ListArtifactsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListArtifactsRequest, ListArtifactsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCategoriesResponse> listCategories(
+            ListCategoriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCategoriesRequest, ListCategoriesResponse>
+                    handler) {
+        LOG.trace("Called async listCategories");
+        final ListCategoriesRequest interceptedRequest =
+                ListCategoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCategoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListCategories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/CategoryCollection/ListCategories");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
+                transformer =
+                        ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCategoriesRequest, ListCategoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCategoriesRequest, ListCategoriesResponse>,
+                        java.util.concurrent.Future<ListCategoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCategoriesRequest, ListCategoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListListingRevisionAttachmentsResponse>
+            listListingRevisionAttachments(
+                    ListListingRevisionAttachmentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListListingRevisionAttachmentsRequest,
+                                    ListListingRevisionAttachmentsResponse>
+                            handler) {
+        LOG.trace("Called async listListingRevisionAttachments");
+        final ListListingRevisionAttachmentsRequest interceptedRequest =
+                ListListingRevisionAttachmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionAttachmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListListingRevisionAttachments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachmentCollection/ListListingRevisionAttachments");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListListingRevisionAttachmentsResponse>
+                transformer =
+                        ListListingRevisionAttachmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListListingRevisionAttachmentsRequest,
+                        ListListingRevisionAttachmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListListingRevisionAttachmentsRequest,
+                                ListListingRevisionAttachmentsResponse>,
+                        java.util.concurrent.Future<ListListingRevisionAttachmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListListingRevisionAttachmentsRequest, ListListingRevisionAttachmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListListingRevisionNotesResponse> listListingRevisionNotes(
+            ListListingRevisionNotesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListListingRevisionNotesRequest, ListListingRevisionNotesResponse>
+                    handler) {
+        LOG.trace("Called async listListingRevisionNotes");
+        final ListListingRevisionNotesRequest interceptedRequest =
+                ListListingRevisionNotesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionNotesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListListingRevisionNotes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionNoteCollection/ListListingRevisionNotes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListListingRevisionNotesResponse>
+                transformer =
+                        ListListingRevisionNotesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListListingRevisionNotesRequest, ListListingRevisionNotesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListListingRevisionNotesRequest, ListListingRevisionNotesResponse>,
+                        java.util.concurrent.Future<ListListingRevisionNotesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListListingRevisionNotesRequest, ListListingRevisionNotesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListListingRevisionPackagesResponse>
+            listListingRevisionPackages(
+                    ListListingRevisionPackagesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListListingRevisionPackagesRequest,
+                                    ListListingRevisionPackagesResponse>
+                            handler) {
+        LOG.trace("Called async listListingRevisionPackages");
+        final ListListingRevisionPackagesRequest interceptedRequest =
+                ListListingRevisionPackagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionPackagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListListingRevisionPackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackageCollection/ListListingRevisionPackages");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListListingRevisionPackagesResponse>
+                transformer =
+                        ListListingRevisionPackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListListingRevisionPackagesRequest, ListListingRevisionPackagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListListingRevisionPackagesRequest,
+                                ListListingRevisionPackagesResponse>,
+                        java.util.concurrent.Future<ListListingRevisionPackagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListListingRevisionPackagesRequest, ListListingRevisionPackagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListListingRevisionsResponse> listListingRevisions(
+            ListListingRevisionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListListingRevisionsRequest, ListListingRevisionsResponse>
+                    handler) {
+        LOG.trace("Called async listListingRevisions");
+        final ListListingRevisionsRequest interceptedRequest =
+                ListListingRevisionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingRevisionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListListingRevisions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionCollection/ListListingRevisions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListListingRevisionsResponse>
+                transformer =
+                        ListListingRevisionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListListingRevisionsRequest, ListListingRevisionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListListingRevisionsRequest, ListListingRevisionsResponse>,
+                        java.util.concurrent.Future<ListListingRevisionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListListingRevisionsRequest, ListListingRevisionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListListingsResponse> listListings(
+            ListListingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListListingsRequest, ListListingsResponse>
+                    handler) {
+        LOG.trace("Called async listListings");
+        final ListListingsRequest interceptedRequest =
+                ListListingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListListingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListListings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingCollection/ListListings");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListListingsResponse>
+                transformer =
+                        ListListingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListListingsRequest, ListListingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListListingsRequest, ListListingsResponse>,
+                        java.util.concurrent.Future<ListListingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListListingsRequest, ListListingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMarketsResponse> listMarkets(
+            ListMarketsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListMarketsRequest, ListMarketsResponse>
+                    handler) {
+        LOG.trace("Called async listMarkets");
+        final ListMarketsRequest interceptedRequest =
+                ListMarketsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMarketsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListMarkets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/MarketCollection/ListMarkets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMarketsResponse>
+                transformer =
+                        ListMarketsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListMarketsRequest, ListMarketsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMarketsRequest, ListMarketsResponse>,
+                        java.util.concurrent.Future<ListMarketsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMarketsRequest, ListMarketsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProductsResponse> listProducts(
+            ListProductsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListProductsRequest, ListProductsResponse>
+                    handler) {
+        LOG.trace("Called async listProducts");
+        final ListProductsRequest interceptedRequest =
+                ListProductsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProductsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListProducts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ProductCollection/ListProducts");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProductsResponse>
+                transformer =
+                        ListProductsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListProductsRequest, ListProductsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProductsRequest, ListProductsResponse>,
+                        java.util.concurrent.Future<ListProductsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProductsRequest, ListProductsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPublishersResponse> listPublishers(
+            ListPublishersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPublishersRequest, ListPublishersResponse>
+                    handler) {
+        LOG.trace("Called async listPublishers");
+        final ListPublishersRequest interceptedRequest =
+                ListPublishersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublishersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListPublishers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/PublisherCollection/ListPublishers");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPublishersResponse>
+                transformer =
+                        ListPublishersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListPublishersRequest, ListPublishersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPublishersRequest, ListPublishersResponse>,
+                        java.util.concurrent.Future<ListPublishersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPublishersRequest, ListPublishersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTermVersionsResponse> listTermVersions(
+            ListTermVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTermVersionsRequest, ListTermVersionsResponse>
+                    handler) {
+        LOG.trace("Called async listTermVersions");
+        final ListTermVersionsRequest interceptedRequest =
+                ListTermVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTermVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListTermVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersionCollection/ListTermVersions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTermVersionsResponse>
+                transformer =
+                        ListTermVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListTermVersionsRequest, ListTermVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTermVersionsRequest, ListTermVersionsResponse>,
+                        java.util.concurrent.Future<ListTermVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTermVersionsRequest, ListTermVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTermsResponse> listTerms(
+            ListTermsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListTermsRequest, ListTermsResponse>
+                    handler) {
+        LOG.trace("Called async listTerms");
+        final ListTermsRequest interceptedRequest = ListTermsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTermsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListTerms",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermCollection/ListTerms");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTermsResponse>
+                transformer =
+                        ListTermsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListTermsRequest, ListTermsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListTermsRequest, ListTermsResponse>,
+                        java.util.concurrent.Future<ListTermsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTermsRequest, ListTermsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestError/ListWorkRequestErrors");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequestLogEntry/ListWorkRequestLogs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/WorkRequest/ListWorkRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<MarkListingRevisionPackageAsDefaultResponse>
+            markListingRevisionPackageAsDefault(
+                    MarkListingRevisionPackageAsDefaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    MarkListingRevisionPackageAsDefaultRequest,
+                                    MarkListingRevisionPackageAsDefaultResponse>
+                            handler) {
+        LOG.trace("Called async markListingRevisionPackageAsDefault");
+        final MarkListingRevisionPackageAsDefaultRequest interceptedRequest =
+                MarkListingRevisionPackageAsDefaultConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MarkListingRevisionPackageAsDefaultConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "MarkListingRevisionPackageAsDefault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/MarkListingRevisionPackageAsDefault");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, MarkListingRevisionPackageAsDefaultResponse>
+                transformer =
+                        MarkListingRevisionPackageAsDefaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        MarkListingRevisionPackageAsDefaultRequest,
+                        MarkListingRevisionPackageAsDefaultResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                MarkListingRevisionPackageAsDefaultRequest,
+                                MarkListingRevisionPackageAsDefaultResponse>,
+                        java.util.concurrent.Future<MarkListingRevisionPackageAsDefaultResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    MarkListingRevisionPackageAsDefaultRequest,
+                    MarkListingRevisionPackageAsDefaultResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishListingRevisionResponse> publishListingRevision(
+            PublishListingRevisionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PublishListingRevisionRequest, PublishListingRevisionResponse>
+                    handler) {
+        LOG.trace("Called async publishListingRevision");
+        final PublishListingRevisionRequest interceptedRequest =
+                PublishListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "PublishListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevision");
+        final java.util.function.Function<javax.ws.rs.core.Response, PublishListingRevisionResponse>
+                transformer =
+                        PublishListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PublishListingRevisionRequest, PublishListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PublishListingRevisionRequest, PublishListingRevisionResponse>,
+                        java.util.concurrent.Future<PublishListingRevisionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PublishListingRevisionRequest, PublishListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishListingRevisionAsPrivateResponse>
+            publishListingRevisionAsPrivate(
+                    PublishListingRevisionAsPrivateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PublishListingRevisionAsPrivateRequest,
+                                    PublishListingRevisionAsPrivateResponse>
+                            handler) {
+        LOG.trace("Called async publishListingRevisionAsPrivate");
+        final PublishListingRevisionAsPrivateRequest interceptedRequest =
+                PublishListingRevisionAsPrivateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishListingRevisionAsPrivateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "PublishListingRevisionAsPrivate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/PublishListingRevisionAsPrivate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PublishListingRevisionAsPrivateResponse>
+                transformer =
+                        PublishListingRevisionAsPrivateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PublishListingRevisionAsPrivateRequest,
+                        PublishListingRevisionAsPrivateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PublishListingRevisionAsPrivateRequest,
+                                PublishListingRevisionAsPrivateResponse>,
+                        java.util.concurrent.Future<PublishListingRevisionAsPrivateResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPublishListingRevisionAsPrivateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PublishListingRevisionAsPrivateRequest,
+                    PublishListingRevisionAsPrivateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishListingRevisionPackageResponse>
+            publishListingRevisionPackage(
+                    PublishListingRevisionPackageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PublishListingRevisionPackageRequest,
+                                    PublishListingRevisionPackageResponse>
+                            handler) {
+        LOG.trace("Called async publishListingRevisionPackage");
+        final PublishListingRevisionPackageRequest interceptedRequest =
+                PublishListingRevisionPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "PublishListingRevisionPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/PublishListingRevisionPackage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PublishListingRevisionPackageResponse>
+                transformer =
+                        PublishListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PublishListingRevisionPackageRequest, PublishListingRevisionPackageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PublishListingRevisionPackageRequest,
+                                PublishListingRevisionPackageResponse>,
+                        java.util.concurrent.Future<PublishListingRevisionPackageResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PublishListingRevisionPackageRequest, PublishListingRevisionPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitListingRevisionForReviewResponse>
+            submitListingRevisionForReview(
+                    SubmitListingRevisionForReviewRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SubmitListingRevisionForReviewRequest,
+                                    SubmitListingRevisionForReviewResponse>
+                            handler) {
+        LOG.trace("Called async submitListingRevisionForReview");
+        final SubmitListingRevisionForReviewRequest interceptedRequest =
+                SubmitListingRevisionForReviewConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SubmitListingRevisionForReviewConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "SubmitListingRevisionForReview",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/SubmitListingRevisionForReview");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SubmitListingRevisionForReviewResponse>
+                transformer =
+                        SubmitListingRevisionForReviewConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SubmitListingRevisionForReviewRequest,
+                        SubmitListingRevisionForReviewResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SubmitListingRevisionForReviewRequest,
+                                SubmitListingRevisionForReviewResponse>,
+                        java.util.concurrent.Future<SubmitListingRevisionForReviewResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSubmitListingRevisionForReviewDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SubmitListingRevisionForReviewRequest, SubmitListingRevisionForReviewResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnPublishListingRevisionPackageResponse>
+            unPublishListingRevisionPackage(
+                    UnPublishListingRevisionPackageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UnPublishListingRevisionPackageRequest,
+                                    UnPublishListingRevisionPackageResponse>
+                            handler) {
+        LOG.trace("Called async unPublishListingRevisionPackage");
+        final UnPublishListingRevisionPackageRequest interceptedRequest =
+                UnPublishListingRevisionPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnPublishListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UnPublishListingRevisionPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UnPublishListingRevisionPackage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UnPublishListingRevisionPackageResponse>
+                transformer =
+                        UnPublishListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UnPublishListingRevisionPackageRequest,
+                        UnPublishListingRevisionPackageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UnPublishListingRevisionPackageRequest,
+                                UnPublishListingRevisionPackageResponse>,
+                        java.util.concurrent.Future<UnPublishListingRevisionPackageResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UnPublishListingRevisionPackageRequest,
+                    UnPublishListingRevisionPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateArtifactResponse> updateArtifact(
+            UpdateArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateArtifactRequest, UpdateArtifactResponse>
+                    handler) {
+        LOG.trace("Called async updateArtifact");
+        final UpdateArtifactRequest interceptedRequest =
+                UpdateArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/UpdateArtifact");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateArtifactResponse>
+                transformer =
+                        UpdateArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateArtifactRequest, UpdateArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateArtifactRequest, UpdateArtifactResponse>,
+                        java.util.concurrent.Future<UpdateArtifactResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateArtifactDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateArtifactRequest, UpdateArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListingResponse> updateListing(
+            UpdateListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateListingRequest, UpdateListingResponse>
+                    handler) {
+        LOG.trace("Called async updateListing");
+        final UpdateListingRequest interceptedRequest =
+                UpdateListingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Listing/UpdateListing");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateListingResponse>
+                transformer =
+                        UpdateListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateListingRequest, UpdateListingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRequest, UpdateListingResponse>,
+                        java.util.concurrent.Future<UpdateListingResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRequest, UpdateListingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListingRevisionResponse> updateListingRevision(
+            UpdateListingRevisionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateListingRevisionRequest, UpdateListingRevisionResponse>
+                    handler) {
+        LOG.trace("Called async updateListingRevision");
+        final UpdateListingRevisionRequest interceptedRequest =
+                UpdateListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevision");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateListingRevisionResponse>
+                transformer =
+                        UpdateListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateListingRevisionRequest, UpdateListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRevisionRequest, UpdateListingRevisionResponse>,
+                        java.util.concurrent.Future<UpdateListingRevisionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingRevisionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRevisionRequest, UpdateListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListingRevisionAttachmentResponse>
+            updateListingRevisionAttachment(
+                    UpdateListingRevisionAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateListingRevisionAttachmentRequest,
+                                    UpdateListingRevisionAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async updateListingRevisionAttachment");
+        final UpdateListingRevisionAttachmentRequest interceptedRequest =
+                UpdateListingRevisionAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateListingRevisionAttachmentResponse>
+                transformer =
+                        UpdateListingRevisionAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateListingRevisionAttachmentRequest,
+                        UpdateListingRevisionAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRevisionAttachmentRequest,
+                                UpdateListingRevisionAttachmentResponse>,
+                        java.util.concurrent.Future<UpdateListingRevisionAttachmentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingRevisionAttachmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRevisionAttachmentRequest,
+                    UpdateListingRevisionAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListingRevisionAttachmentContentResponse>
+            updateListingRevisionAttachmentContent(
+                    UpdateListingRevisionAttachmentContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateListingRevisionAttachmentContentRequest,
+                                    UpdateListingRevisionAttachmentContentResponse>
+                            handler) {
+        LOG.trace("Called async updateListingRevisionAttachmentContent");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, UpdateListingRevisionAttachmentContentRequest.builder());
+        }
+        final UpdateListingRevisionAttachmentContentRequest interceptedRequest =
+                UpdateListingRevisionAttachmentContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionAttachmentContentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionAttachmentContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionAttachment/UpdateListingRevisionAttachmentContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateListingRevisionAttachmentContentResponse>
+                transformer =
+                        UpdateListingRevisionAttachmentContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateListingRevisionAttachmentContentRequest,
+                        UpdateListingRevisionAttachmentContentResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRevisionAttachmentContentRequest,
+                                UpdateListingRevisionAttachmentContentResponse>,
+                        java.util.concurrent.Future<UpdateListingRevisionAttachmentContentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingRevisionAttachmentContent(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRevisionAttachmentContentRequest,
+                    UpdateListingRevisionAttachmentContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getUpdateListingRevisionAttachmentContent(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListingRevisionIconContentResponse>
+            updateListingRevisionIconContent(
+                    UpdateListingRevisionIconContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateListingRevisionIconContentRequest,
+                                    UpdateListingRevisionIconContentResponse>
+                            handler) {
+        LOG.trace("Called async updateListingRevisionIconContent");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, UpdateListingRevisionIconContentRequest.builder());
+        }
+        final UpdateListingRevisionIconContentRequest interceptedRequest =
+                UpdateListingRevisionIconContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionIconContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionIconContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/UpdateListingRevisionIconContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateListingRevisionIconContentResponse>
+                transformer =
+                        UpdateListingRevisionIconContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateListingRevisionIconContentRequest,
+                        UpdateListingRevisionIconContentResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRevisionIconContentRequest,
+                                UpdateListingRevisionIconContentResponse>,
+                        java.util.concurrent.Future<UpdateListingRevisionIconContentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingRevisionIconContent(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRevisionIconContentRequest,
+                    UpdateListingRevisionIconContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getUpdateListingRevisionIconContent(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListingRevisionPackageResponse>
+            updateListingRevisionPackage(
+                    UpdateListingRevisionPackageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateListingRevisionPackageRequest,
+                                    UpdateListingRevisionPackageResponse>
+                            handler) {
+        LOG.trace("Called async updateListingRevisionPackage");
+        final UpdateListingRevisionPackageRequest interceptedRequest =
+                UpdateListingRevisionPackageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionPackageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionPackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevisionPackage/UpdateListingRevisionPackage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateListingRevisionPackageResponse>
+                transformer =
+                        UpdateListingRevisionPackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateListingRevisionPackageRequest, UpdateListingRevisionPackageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRevisionPackageRequest,
+                                UpdateListingRevisionPackageResponse>,
+                        java.util.concurrent.Future<UpdateListingRevisionPackageResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingRevisionPackageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRevisionPackageRequest, UpdateListingRevisionPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTermResponse> updateTerm(
+            UpdateTermRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateTermRequest, UpdateTermResponse>
+                    handler) {
+        LOG.trace("Called async updateTerm");
+        final UpdateTermRequest interceptedRequest = UpdateTermConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTermConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateTerm",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Term/UpdateTerm");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTermResponse>
+                transformer =
+                        UpdateTermConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateTermRequest, UpdateTermResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTermRequest, UpdateTermResponse>,
+                        java.util.concurrent.Future<UpdateTermResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTermDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTermRequest, UpdateTermResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTermVersionResponse> updateTermVersion(
+            UpdateTermVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTermVersionRequest, UpdateTermVersionResponse>
+                    handler) {
+        LOG.trace("Called async updateTermVersion");
+        final UpdateTermVersionRequest interceptedRequest =
+                UpdateTermVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTermVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateTermVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTermVersionResponse>
+                transformer =
+                        UpdateTermVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateTermVersionRequest, UpdateTermVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTermVersionRequest, UpdateTermVersionResponse>,
+                        java.util.concurrent.Future<UpdateTermVersionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTermVersionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTermVersionRequest, UpdateTermVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTermVersionContentResponse> updateTermVersionContent(
+            UpdateTermVersionContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTermVersionContentRequest, UpdateTermVersionContentResponse>
+                    handler) {
+        LOG.trace("Called async updateTermVersionContent");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, UpdateTermVersionContentRequest.builder());
+        }
+        final UpdateTermVersionContentRequest interceptedRequest =
+                UpdateTermVersionContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTermVersionContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateTermVersionContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/TermVersion/UpdateTermVersionContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateTermVersionContentResponse>
+                transformer =
+                        UpdateTermVersionContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateTermVersionContentRequest, UpdateTermVersionContentResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTermVersionContentRequest, UpdateTermVersionContentResponse>,
+                        java.util.concurrent.Future<UpdateTermVersionContentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTermVersionContent(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTermVersionContentRequest, UpdateTermVersionContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getUpdateTermVersionContent(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateAndPublishArtifactResponse>
+            validateAndPublishArtifact(
+                    ValidateAndPublishArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateAndPublishArtifactRequest,
+                                    ValidateAndPublishArtifactResponse>
+                            handler) {
+        LOG.trace("Called async validateAndPublishArtifact");
+        final ValidateAndPublishArtifactRequest interceptedRequest =
+                ValidateAndPublishArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateAndPublishArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ValidateAndPublishArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/Artifact/ValidateAndPublishArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateAndPublishArtifactResponse>
+                transformer =
+                        ValidateAndPublishArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateAndPublishArtifactRequest, ValidateAndPublishArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateAndPublishArtifactRequest,
+                                ValidateAndPublishArtifactResponse>,
+                        java.util.concurrent.Future<ValidateAndPublishArtifactResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateAndPublishArtifactRequest, ValidateAndPublishArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<WithdrawListingRevisionResponse> withdrawListingRevision(
+            WithdrawListingRevisionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            WithdrawListingRevisionRequest, WithdrawListingRevisionResponse>
+                    handler) {
+        LOG.trace("Called async withdrawListingRevision");
+        final WithdrawListingRevisionRequest interceptedRequest =
+                WithdrawListingRevisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                WithdrawListingRevisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "WithdrawListingRevision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20220901/ListingRevision/WithdrawListingRevision");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, WithdrawListingRevisionResponse>
+                transformer =
+                        WithdrawListingRevisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        WithdrawListingRevisionRequest, WithdrawListingRevisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                WithdrawListingRevisionRequest, WithdrawListingRevisionResponse>,
+                        java.util.concurrent.Future<WithdrawListingRevisionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    WithdrawListingRevisionRequest, WithdrawListingRevisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

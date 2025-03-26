@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Data Guard reinstate parameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The Data Guard reinstate parameters.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ReinstateDataGuardDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ReinstateDataGuardDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ReinstateDataGuardDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"databaseAdminPassword", "sourceDatabaseId"})
     public ReinstateDataGuardDetails(String databaseAdminPassword, String sourceDatabaseId) {
@@ -34,39 +34,37 @@ public final class ReinstateDataGuardDetails
     public static class Builder {
         /**
          * The administrator password of the primary database in this Data Guard association.
+         * <p>
+         **The password MUST be the same as the primary admin password.**
          *
-         * <p>*The password MUST be the same as the primary admin password.**
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
         /**
          * The administrator password of the primary database in this Data Guard association.
-         *
-         * <p>*The password MUST be the same as the primary admin password.**
+         * <p>
+         **The password MUST be the same as the primary admin password.**
          *
          * @param databaseAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseAdminPassword(String databaseAdminPassword) {
             this.databaseAdminPassword = databaseAdminPassword;
             this.__explicitlySet__.add("databaseAdminPassword");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source (primary) database in the Data Guard group.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source (primary) database in the Data Guard group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseId")
         private String sourceDatabaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source (primary) database in the Data Guard group.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source (primary) database in the Data Guard group.
          * @param sourceDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceDatabaseId(String sourceDatabaseId) {
             this.sourceDatabaseId = sourceDatabaseId;
             this.__explicitlySet__.add("sourceDatabaseId");
@@ -98,7 +96,9 @@ public final class ReinstateDataGuardDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,36 +109,34 @@ public final class ReinstateDataGuardDetails
 
     /**
      * The administrator password of the primary database in this Data Guard association.
+     * <p>
+     **The password MUST be the same as the primary admin password.**
      *
-     * <p>*The password MUST be the same as the primary admin password.**
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
     private final String databaseAdminPassword;
 
     /**
      * The administrator password of the primary database in this Data Guard association.
-     *
-     * <p>*The password MUST be the same as the primary admin password.**
+     * <p>
+     **The password MUST be the same as the primary admin password.**
      *
      * @return the value
-     */
+     **/
     public String getDatabaseAdminPassword() {
         return databaseAdminPassword;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source (primary) database in the Data Guard group.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source (primary) database in the Data Guard group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseId")
     private final String sourceDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source (primary) database in the Data Guard group.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source (primary) database in the Data Guard group.
      * @return the value
-     */
+     **/
     public String getSourceDatabaseId() {
         return sourceDatabaseId;
     }
@@ -150,7 +148,6 @@ public final class ReinstateDataGuardDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

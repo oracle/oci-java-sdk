@@ -6,40 +6,49 @@ package com.oracle.bmc.desktops.requests;
 
 import com.oracle.bmc.desktops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/CreateDesktopPoolExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDesktopPoolRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/CreateDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDesktopPoolRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class CreateDesktopPoolRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.desktops.model.CreateDesktopPoolDetails> {
 
-    /** The details of the desktop pool to create. */
+    /**
+     * The details of the desktop pool to create.
+     */
     private com.oracle.bmc.desktops.model.CreateDesktopPoolDetails createDesktopPoolDetails;
 
-    /** The details of the desktop pool to create. */
+    /**
+     * The details of the desktop pool to create.
+     */
     public com.oracle.bmc.desktops.model.CreateDesktopPoolDetails getCreateDesktopPoolDetails() {
         return createDesktopPoolDetails;
     }
-    /** A token that uniquely identifies a request. */
+    /**
+     * A token that uniquely identifies a request.
+     */
     private String opcRetryToken;
 
-    /** A token that uniquely identifies a request. */
+    /**
+     * A token that uniquely identifies a request.
+     */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -52,16 +61,18 @@ public class CreateDesktopPoolRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateDesktopPoolRequest,
                     com.oracle.bmc.desktops.model.CreateDesktopPoolDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details of the desktop pool to create. */
+        /**
+         * The details of the desktop pool to create.
+         */
         private com.oracle.bmc.desktops.model.CreateDesktopPoolDetails createDesktopPoolDetails =
                 null;
 
         /**
          * The details of the desktop pool to create.
-         *
          * @param createDesktopPoolDetails the value to set
          * @return this builder instance
          */
@@ -71,12 +82,13 @@ public class CreateDesktopPoolRequest
             return this;
         }
 
-        /** A token that uniquely identifies a request. */
+        /**
+         * A token that uniquely identifies a request.
+         */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request.
-         *
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -85,12 +97,13 @@ public class CreateDesktopPoolRequest
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -101,19 +114,18 @@ public class CreateDesktopPoolRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -125,7 +137,6 @@ public class CreateDesktopPoolRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateDesktopPoolRequest o) {
@@ -140,11 +151,10 @@ public class CreateDesktopPoolRequest
         /**
          * Build the instance of CreateDesktopPoolRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateDesktopPoolRequest
          */
@@ -157,7 +167,6 @@ public class CreateDesktopPoolRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -170,8 +179,7 @@ public class CreateDesktopPoolRequest
         /**
          * Build the instance of CreateDesktopPoolRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateDesktopPoolRequest
@@ -188,7 +196,6 @@ public class CreateDesktopPoolRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -200,7 +207,6 @@ public class CreateDesktopPoolRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

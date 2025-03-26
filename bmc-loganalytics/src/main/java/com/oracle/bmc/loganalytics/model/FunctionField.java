@@ -5,24 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Field outlining queryString aggregate function entries. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Field outlining queryString aggregate function entries.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FunctionField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "name")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "name"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FunctionField extends AbstractField {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -115,7 +115,10 @@ public final class FunctionField extends AbstractField {
             this.__explicitlySet__.add("unitType");
             return this;
         }
-        /** Name of the aggregate function. */
+        /**
+         * Name of the aggregate function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("function")
         private String function;
 
@@ -124,13 +127,16 @@ public final class FunctionField extends AbstractField {
          *
          * @param function the value to set
          * @return this builder
-         */
+         **/
         public Builder function(String function) {
             this.function = function;
             this.__explicitlySet__.add("function");
             return this;
         }
-        /** List of function arguments if specified. */
+        /**
+         * List of function arguments if specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<Argument> arguments;
 
@@ -139,7 +145,7 @@ public final class FunctionField extends AbstractField {
          *
          * @param arguments the value to set
          * @return this builder
-         */
+         **/
         public Builder arguments(java.util.List<Argument> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
@@ -212,7 +218,9 @@ public final class FunctionField extends AbstractField {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -250,7 +258,10 @@ public final class FunctionField extends AbstractField {
         this.arguments = arguments;
     }
 
-    /** Name of the aggregate function. */
+    /**
+     * Name of the aggregate function.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("function")
     private final String function;
 
@@ -258,12 +269,15 @@ public final class FunctionField extends AbstractField {
      * Name of the aggregate function.
      *
      * @return the value
-     */
+     **/
     public String getFunction() {
         return function;
     }
 
-    /** List of function arguments if specified. */
+    /**
+     * List of function arguments if specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<Argument> arguments;
 
@@ -271,7 +285,7 @@ public final class FunctionField extends AbstractField {
      * List of function arguments if specified.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Argument> getArguments() {
         return arguments;
     }
@@ -283,7 +297,6 @@ public final class FunctionField extends AbstractField {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

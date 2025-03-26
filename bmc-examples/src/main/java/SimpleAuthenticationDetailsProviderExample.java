@@ -10,7 +10,9 @@ import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.requests.ListRegionsRequest;
 import com.oracle.bmc.identity.responses.ListRegionsResponse;
 
-/** A sample to demonstrate how to use the SimpleAuthenticationDetailsProvider to create a client */
+/**
+ * A sample to demonstrate how to use the SimpleAuthenticationDetailsProvider to create a client
+ */
 public class SimpleAuthenticationDetailsProviderExample {
     public static void main(String[] args) {
         if (args.length != 5) {
@@ -33,10 +35,8 @@ public class SimpleAuthenticationDetailsProviderExample {
                         .passPhrase(passPhrase)
                         .build();
 
-        final IdentityClient identityClient =
-                IdentityClient.builder()
-                        .region(Region.US_PHOENIX_1)
-                        .build(authenticationDetailsProvider);
+        final IdentityClient identityClient = new IdentityClient(authenticationDetailsProvider);
+        identityClient.setRegion(Region.US_PHOENIX_1);
 
         System.out.println("Querying for list of regions via the Identity Client");
         final ListRegionsResponse response =

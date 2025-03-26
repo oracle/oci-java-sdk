@@ -5,21 +5,19 @@
 package com.oracle.bmc.mediaservices.model;
 
 /**
- * Technical metadata for this asset. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+ * Technical metadata for this asset.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Metadata extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metadata"})
     public Metadata(String metadata) {
@@ -29,16 +27,17 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** JSON string containing the technial metadata for the media asset. */
+        /**
+         * JSON string containing the technial metadata for the media asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
         /**
          * JSON string containing the technial metadata for the media asset.
-         *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(String metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -65,7 +64,9 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -74,15 +75,16 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** JSON string containing the technial metadata for the media asset. */
+    /**
+     * JSON string containing the technial metadata for the media asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final String metadata;
 
     /**
      * JSON string containing the technial metadata for the media asset.
-     *
      * @return the value
-     */
+     **/
     public String getMetadata() {
         return metadata;
     }
@@ -94,7 +96,6 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

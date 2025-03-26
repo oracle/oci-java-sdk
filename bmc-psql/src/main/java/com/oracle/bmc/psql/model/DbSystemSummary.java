@@ -5,22 +5,19 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Summary information about a database system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Summary information about a database system.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DbSystemSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DbSystemSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -81,266 +78,265 @@ public final class DbSystemSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A unique identifier for the database system. Immutable on creation. */
+        /**
+         * A unique identifier for the database system. Immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * A unique identifier for the database system. Immutable on creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A user-friendly display name for the database system. Avoid entering confidential
-         * information.
-         */
+         * A user-friendly display name for the database system. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name for the database system. Avoid entering confidential
-         * information.
-         *
+         * A user-friendly display name for the database system. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the database system.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the database system.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The date and time that the database system was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time that the database system was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time that the database system was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time that the database system was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time that the database system was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time that the database system was updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time that the database system was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time that the database system was updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the database system. */
+        /**
+         * The current state of the database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DbSystem.LifecycleState lifecycleState;
 
         /**
          * The current state of the database system.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(DbSystem.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Type of the database system. */
+        /**
+         * Type of the database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemType")
         private DbSystem.SystemType systemType;
 
         /**
          * Type of the database system.
-         *
          * @param systemType the value to set
          * @return this builder
-         */
+         **/
         public Builder systemType(DbSystem.SystemType systemType) {
             this.systemType = systemType;
             this.__explicitlySet__.add("systemType");
             return this;
         }
-        /** Count of database instances, or nodes, in the database system. */
+        /**
+         * Count of database instances, or nodes, in the database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
         private Integer instanceCount;
 
         /**
          * Count of database instances, or nodes, in the database system.
-         *
          * @param instanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceCount(Integer instanceCount) {
             this.instanceCount = instanceCount;
             this.__explicitlySet__.add("instanceCount");
             return this;
         }
         /**
-         * The name of the shape for the database instance node. Example: {@code
-         * VM.Standard.E4.Flex}
-         */
+         * The name of the shape for the database instance node.
+         * Example: {@code VM.Standard.E4.Flex}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The name of the shape for the database instance node. Example: {@code
-         * VM.Standard.E4.Flex}
+         * The name of the shape for the database instance node.
+         * Example: {@code VM.Standard.E4.Flex}
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The total number of OCPUs available to each database instance node. */
+        /**
+         * The total number of OCPUs available to each database instance node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
         private Integer instanceOcpuCount;
 
         /**
          * The total number of OCPUs available to each database instance node.
-         *
          * @param instanceOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceOcpuCount(Integer instanceOcpuCount) {
             this.instanceOcpuCount = instanceOcpuCount;
             this.__explicitlySet__.add("instanceOcpuCount");
             return this;
         }
-        /** The total amount of memory available to each database instance node, in gigabytes. */
+        /**
+         * The total amount of memory available to each database instance node, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
         private Integer instanceMemorySizeInGBs;
 
         /**
          * The total amount of memory available to each database instance node, in gigabytes.
-         *
          * @param instanceMemorySizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceMemorySizeInGBs(Integer instanceMemorySizeInGBs) {
             this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
             this.__explicitlySet__.add("instanceMemorySizeInGBs");
             return this;
         }
-        /** Version of database system software. */
+        /**
+         * Version of database system software.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
          * Version of database system software.
-         *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * configuration associated with the database system.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configId")
         private String configId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * configuration associated with the database system.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
          * @param configId the value to set
          * @return this builder
-         */
+         **/
         public Builder configId(String configId) {
             this.configId = configId;
             this.__explicitlySet__.add("configId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -349,7 +345,8 @@ public final class DbSystemSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -359,7 +356,7 @@ public final class DbSystemSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -367,19 +364,20 @@ public final class DbSystemSummary
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -472,7 +470,9 @@ public final class DbSystemSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -481,269 +481,272 @@ public final class DbSystemSummary
         return new Builder().copy(this);
     }
 
-    /** A unique identifier for the database system. Immutable on creation. */
+    /**
+     * A unique identifier for the database system. Immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * A unique identifier for the database system. Immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly display name for the database system. Avoid entering confidential
-     * information.
-     */
+     * A user-friendly display name for the database system. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name for the database system. Avoid entering confidential
-     * information.
-     *
+     * A user-friendly display name for the database system. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the database system.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the database system.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The date and time that the database system was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time that the database system was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time that the database system was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time that the database system was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time that the database system was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time that the database system was updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time that the database system was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time that the database system was updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the database system. */
+    /**
+     * The current state of the database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DbSystem.LifecycleState lifecycleState;
 
     /**
      * The current state of the database system.
-     *
      * @return the value
-     */
+     **/
     public DbSystem.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** Type of the database system. */
+    /**
+     * Type of the database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemType")
     private final DbSystem.SystemType systemType;
 
     /**
      * Type of the database system.
-     *
      * @return the value
-     */
+     **/
     public DbSystem.SystemType getSystemType() {
         return systemType;
     }
 
-    /** Count of database instances, or nodes, in the database system. */
+    /**
+     * Count of database instances, or nodes, in the database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
     private final Integer instanceCount;
 
     /**
      * Count of database instances, or nodes, in the database system.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstanceCount() {
         return instanceCount;
     }
 
     /**
-     * The name of the shape for the database instance node. Example: {@code VM.Standard.E4.Flex}
-     */
+     * The name of the shape for the database instance node.
+     * Example: {@code VM.Standard.E4.Flex}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The name of the shape for the database instance node. Example: {@code VM.Standard.E4.Flex}
+     * The name of the shape for the database instance node.
+     * Example: {@code VM.Standard.E4.Flex}
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** The total number of OCPUs available to each database instance node. */
+    /**
+     * The total number of OCPUs available to each database instance node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
     private final Integer instanceOcpuCount;
 
     /**
      * The total number of OCPUs available to each database instance node.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstanceOcpuCount() {
         return instanceOcpuCount;
     }
 
-    /** The total amount of memory available to each database instance node, in gigabytes. */
+    /**
+     * The total amount of memory available to each database instance node, in gigabytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
     private final Integer instanceMemorySizeInGBs;
 
     /**
      * The total amount of memory available to each database instance node, in gigabytes.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstanceMemorySizeInGBs() {
         return instanceMemorySizeInGBs;
     }
 
-    /** Version of database system software. */
+    /**
+     * Version of database system software.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
      * Version of database system software.
-     *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * configuration associated with the database system.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configId")
     private final String configId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * configuration associated with the database system.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      * @return the value
-     */
+     **/
     public String getConfigId() {
         return configId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -755,7 +758,6 @@ public final class DbSystemSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

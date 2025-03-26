@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Possible lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible lifecycle states.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum LifecycleState {
     Active("ACTIVE"),
     Creating("CREATING"),
     Deleted("DELETED"),

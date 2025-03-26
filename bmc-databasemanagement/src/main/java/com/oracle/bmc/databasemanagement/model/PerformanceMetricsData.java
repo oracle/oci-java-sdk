@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The list of Data Guard performance metrics for Managed Databases. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The list of Data Guard performance metrics for Managed Databases.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PerformanceMetricsData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PerformanceMetricsData.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PerformanceMetricsData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -62,166 +61,160 @@ public final class PerformanceMetricsData
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the Managed Database resides.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the Managed Database resides.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** The ID of the primary database. */
+        /**
+         * The ID of the primary database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryDbId")
         private String primaryDbId;
 
         /**
          * The ID of the primary database.
-         *
          * @param primaryDbId the value to set
          * @return this builder
-         */
+         **/
         public Builder primaryDbId(String primaryDbId) {
             this.primaryDbId = primaryDbId;
             this.__explicitlySet__.add("primaryDbId");
             return this;
         }
-        /** The primary database unique name of the Managed Database. */
+        /**
+         * The primary database unique name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryDbUniqueName")
         private String primaryDbUniqueName;
 
         /**
          * The primary database unique name of the Managed Database.
-         *
          * @param primaryDbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder primaryDbUniqueName(String primaryDbUniqueName) {
             this.primaryDbUniqueName = primaryDbUniqueName;
             this.__explicitlySet__.add("primaryDbUniqueName");
             return this;
         }
         /**
-         * The database ID of the Managed Database. Every database had its own ID and that value is
-         * captured here.
-         */
+         * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The database ID of the Managed Database. Every database had its own ID and that value is
-         * captured here.
-         *
+         * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** The database unique name of the Managed Database. */
+        /**
+         * The database unique name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
          * The database unique name of the Managed Database.
-         *
          * @param dbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-        /** The deployment type of the Managed Database. */
+        /**
+         * The deployment type of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private String deploymentType;
 
         /**
          * The deployment type of the Managed Database.
-         *
          * @param deploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-        /** The resource name of the Managed Database. */
+        /**
+         * The resource name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The resource name of the Managed Database.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** The database role of the Managed Database. */
+        /**
+         * The database role of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
         private DbRole dbRole;
 
         /**
          * The database role of the Managed Database.
-         *
          * @param dbRole the value to set
          * @return this builder
-         */
+         **/
         public Builder dbRole(DbRole dbRole) {
             this.dbRole = dbRole;
             this.__explicitlySet__.add("dbRole");
             return this;
         }
         /**
-         * The list of Data Guard performance metrics such as ApplyLag, TransportLag and
-         * RedoApplyRate for the Managed Databases.
-         */
+         * The list of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate for the Managed Databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<PerformanceMetrics> metrics;
 
         /**
-         * The list of Data Guard performance metrics such as ApplyLag, TransportLag and
-         * RedoApplyRate for the Managed Databases.
-         *
+         * The list of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate for the Managed Databases.
          * @param metrics the value to set
          * @return this builder
-         */
+         **/
         public Builder metrics(java.util.List<PerformanceMetrics> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -286,7 +279,9 @@ public final class PerformanceMetricsData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -296,147 +291,141 @@ public final class PerformanceMetricsData
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the Managed Database resides.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the Managed Database resides.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** The ID of the primary database. */
+    /**
+     * The ID of the primary database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryDbId")
     private final String primaryDbId;
 
     /**
      * The ID of the primary database.
-     *
      * @return the value
-     */
+     **/
     public String getPrimaryDbId() {
         return primaryDbId;
     }
 
-    /** The primary database unique name of the Managed Database. */
+    /**
+     * The primary database unique name of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryDbUniqueName")
     private final String primaryDbUniqueName;
 
     /**
      * The primary database unique name of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getPrimaryDbUniqueName() {
         return primaryDbUniqueName;
     }
 
     /**
-     * The database ID of the Managed Database. Every database had its own ID and that value is
-     * captured here.
-     */
+     * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The database ID of the Managed Database. Every database had its own ID and that value is
-     * captured here.
-     *
+     * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** The database unique name of the Managed Database. */
+    /**
+     * The database unique name of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
      * The database unique name of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
 
-    /** The deployment type of the Managed Database. */
+    /**
+     * The deployment type of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final String deploymentType;
 
     /**
      * The deployment type of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getDeploymentType() {
         return deploymentType;
     }
 
-    /** The resource name of the Managed Database. */
+    /**
+     * The resource name of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The resource name of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** The database role of the Managed Database. */
+    /**
+     * The database role of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
     private final DbRole dbRole;
 
     /**
      * The database role of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public DbRole getDbRole() {
         return dbRole;
     }
 
     /**
-     * The list of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate
-     * for the Managed Databases.
-     */
+     * The list of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate for the Managed Databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<PerformanceMetrics> metrics;
 
     /**
-     * The list of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate
-     * for the Managed Databases.
-     *
+     * The list of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate for the Managed Databases.
      * @return the value
-     */
+     **/
     public java.util.List<PerformanceMetrics> getMetrics() {
         return metrics;
     }
@@ -448,7 +437,6 @@ public final class PerformanceMetricsData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

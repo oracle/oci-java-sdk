@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the information used to update a scheduled job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the information used to update a scheduled job.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateScheduledJobDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateScheduledJobDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateScheduledJobDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -58,153 +57,161 @@ public final class UpdateScheduledJobDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** User-friendly name for the scheduled job. Avoid entering confidential information. */
+        /**
+         * User-friendly name for the scheduled job. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * User-friendly name for the scheduled job. Avoid entering confidential information.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * User-specified description for the scheduled job. Avoid entering confidential
-         * information.
-         */
+         * User-specified description for the scheduled job. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * User-specified description for the scheduled job. Avoid entering confidential
-         * information.
-         *
+         * User-specified description for the scheduled job. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The type of scheduling frequency for the job. */
+        /**
+         * The type of scheduling frequency for the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
         private ScheduleTypes scheduleType;
 
         /**
          * The type of scheduling frequency for the job.
-         *
          * @param scheduleType the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduleType(ScheduleTypes scheduleType) {
             this.scheduleType = scheduleType;
             this.__explicitlySet__.add("scheduleType");
             return this;
         }
         /**
-         * The time of the next execution of this scheduled job (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
         private java.util.Date timeNextExecution;
 
         /**
-         * The time of the next execution of this scheduled job (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         *
+         * The time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeNextExecution the value to set
          * @return this builder
-         */
+         **/
         public Builder timeNextExecution(java.util.Date timeNextExecution) {
             this.timeNextExecution = timeNextExecution;
             this.__explicitlySet__.add("timeNextExecution");
             return this;
         }
-        /** The frequency schedule for a recurring scheduled job. */
+        /**
+         * The frequency schedule for a recurring scheduled job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
         private String recurringRule;
 
         /**
          * The frequency schedule for a recurring scheduled job.
-         *
          * @param recurringRule the value to set
          * @return this builder
-         */
+         **/
         public Builder recurringRule(String recurringRule) {
             this.recurringRule = recurringRule;
             this.__explicitlySet__.add("recurringRule");
             return this;
         }
         /**
-         * The list of operations this scheduled job needs to perform. A scheduled job supports only
-         * one operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
-         * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
-         * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
-         */
+         * The list of operations this scheduled job needs to perform.
+         * A scheduled job supports only one operation type, unless it is one of the following:
+         * * UPDATE_PACKAGES
+         * * UPDATE_ALL
+         * * UPDATE_SECURITY
+         * * UPDATE_BUGFIX
+         * * UPDATE_ENHANCEMENT
+         * * UPDATE_OTHER
+         * * UPDATE_KSPLICE_USERSPACE
+         * * UPDATE_KSPLICE_KERNEL
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operations")
         private java.util.List<ScheduledJobOperation> operations;
 
         /**
-         * The list of operations this scheduled job needs to perform. A scheduled job supports only
-         * one operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
-         * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
-         * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
+         * The list of operations this scheduled job needs to perform.
+         * A scheduled job supports only one operation type, unless it is one of the following:
+         * * UPDATE_PACKAGES
+         * * UPDATE_ALL
+         * * UPDATE_SECURITY
+         * * UPDATE_BUGFIX
+         * * UPDATE_ENHANCEMENT
+         * * UPDATE_OTHER
+         * * UPDATE_KSPLICE_USERSPACE
+         * * UPDATE_KSPLICE_KERNEL
          *
          * @param operations the value to set
          * @return this builder
-         */
+         **/
         public Builder operations(java.util.List<ScheduledJobOperation> operations) {
             this.operations = operations;
             this.__explicitlySet__.add("operations");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -212,25 +219,24 @@ public final class UpdateScheduledJobDetails
             return this;
         }
         /**
-         * The amount of time in minutes to wait until retrying the scheduled job. If set, the
-         * service will automatically retry a failed scheduled job after the interval. For example,
-         * you could set the interval to [2,5,10]. If the initial execution of the job fails, the
-         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
-         * then retries. If that fails, the service waits 10 minutes and then retries.
-         */
+         * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+         * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+         * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+         * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
         private java.util.List<Integer> retryIntervals;
 
         /**
-         * The amount of time in minutes to wait until retrying the scheduled job. If set, the
-         * service will automatically retry a failed scheduled job after the interval. For example,
-         * you could set the interval to [2,5,10]. If the initial execution of the job fails, the
-         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
-         * then retries. If that fails, the service waits 10 minutes and then retries.
+         * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+         * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+         * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+         * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
          *
          * @param retryIntervals the value to set
          * @return this builder
-         */
+         **/
         public Builder retryIntervals(java.util.List<Integer> retryIntervals) {
             this.retryIntervals = retryIntervals;
             this.__explicitlySet__.add("retryIntervals");
@@ -291,7 +297,9 @@ public final class UpdateScheduledJobDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -300,159 +308,168 @@ public final class UpdateScheduledJobDetails
         return new Builder().copy(this);
     }
 
-    /** User-friendly name for the scheduled job. Avoid entering confidential information. */
+    /**
+     * User-friendly name for the scheduled job. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * User-friendly name for the scheduled job. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * User-specified description for the scheduled job. Avoid entering confidential information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-specified description for the scheduled job. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The type of scheduling frequency for the job. */
+    /**
+     * The type of scheduling frequency for the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final ScheduleTypes scheduleType;
 
     /**
      * The type of scheduling frequency for the job.
-     *
      * @return the value
-     */
+     **/
     public ScheduleTypes getScheduleType() {
         return scheduleType;
     }
 
     /**
-     * The time of the next execution of this scheduled job (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
     private final java.util.Date timeNextExecution;
 
     /**
-     * The time of the next execution of this scheduled job (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
+     * The time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeNextExecution() {
         return timeNextExecution;
     }
 
-    /** The frequency schedule for a recurring scheduled job. */
+    /**
+     * The frequency schedule for a recurring scheduled job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
     private final String recurringRule;
 
     /**
      * The frequency schedule for a recurring scheduled job.
-     *
      * @return the value
-     */
+     **/
     public String getRecurringRule() {
         return recurringRule;
     }
 
     /**
-     * The list of operations this scheduled job needs to perform. A scheduled job supports only one
-     * operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
-     * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
-     * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
-     */
+     * The list of operations this scheduled job needs to perform.
+     * A scheduled job supports only one operation type, unless it is one of the following:
+     * * UPDATE_PACKAGES
+     * * UPDATE_ALL
+     * * UPDATE_SECURITY
+     * * UPDATE_BUGFIX
+     * * UPDATE_ENHANCEMENT
+     * * UPDATE_OTHER
+     * * UPDATE_KSPLICE_USERSPACE
+     * * UPDATE_KSPLICE_KERNEL
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operations")
     private final java.util.List<ScheduledJobOperation> operations;
 
     /**
-     * The list of operations this scheduled job needs to perform. A scheduled job supports only one
-     * operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
-     * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
-     * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
+     * The list of operations this scheduled job needs to perform.
+     * A scheduled job supports only one operation type, unless it is one of the following:
+     * * UPDATE_PACKAGES
+     * * UPDATE_ALL
+     * * UPDATE_SECURITY
+     * * UPDATE_BUGFIX
+     * * UPDATE_ENHANCEMENT
+     * * UPDATE_OTHER
+     * * UPDATE_KSPLICE_USERSPACE
+     * * UPDATE_KSPLICE_KERNEL
      *
      * @return the value
-     */
+     **/
     public java.util.List<ScheduledJobOperation> getOperations() {
         return operations;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service
-     * will automatically retry a failed scheduled job after the interval. For example, you could
-     * set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2
-     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
-     * that fails, the service waits 10 minutes and then retries.
-     */
+     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+     * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+     * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+     * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
     private final java.util.List<Integer> retryIntervals;
 
     /**
-     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service
-     * will automatically retry a failed scheduled job after the interval. For example, you could
-     * set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2
-     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
-     * that fails, the service waits 10 minutes and then retries.
+     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+     * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+     * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+     * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Integer> getRetryIntervals() {
         return retryIntervals;
     }
@@ -464,7 +481,6 @@ public final class UpdateScheduledJobDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

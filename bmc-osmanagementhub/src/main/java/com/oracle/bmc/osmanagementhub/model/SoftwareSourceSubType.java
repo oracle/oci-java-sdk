@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Identifies how a custom software source was created. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum SoftwareSourceSubType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Identifies how a custom software source was created.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum SoftwareSourceSubType {
     Filter("FILTER"),
     Manifest("MANIFEST"),
     Snapshot("SNAPSHOT"),

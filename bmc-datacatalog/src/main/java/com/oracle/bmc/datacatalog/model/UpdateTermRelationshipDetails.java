@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Properties used in term relationship update operations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Properties used in term relationship update operations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateTermRelationshipDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateTermRelationshipDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateTermRelationshipDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "description"})
     public UpdateTermRelationshipDetails(String displayName, String description) {
@@ -33,21 +32,20 @@ public final class UpdateTermRelationshipDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly display name. Is changeable. The combination of 'displayName' and
-         * 'parentTermKey' must be unique. Avoid entering confidential information. This is the same
-         * as 'relationshipType' for 'termRelationship'.
-         */
+         * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+         * must be unique. Avoid entering confidential information. This is the same as 'relationshipType' for 'termRelationship'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Is changeable. The combination of 'displayName' and
-         * 'parentTermKey' must be unique. Avoid entering confidential information. This is the same
-         * as 'relationshipType' for 'termRelationship'.
+         * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+         * must be unique. Avoid entering confidential information. This is the same as 'relationshipType' for 'termRelationship'.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -55,16 +53,15 @@ public final class UpdateTermRelationshipDetails
         }
         /**
          * Detailed description of the term relationship usually defined at the time of creation.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the term relationship usually defined at the time of creation.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -95,7 +92,9 @@ public final class UpdateTermRelationshipDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,33 +104,33 @@ public final class UpdateTermRelationshipDetails
     }
 
     /**
-     * A user-friendly display name. Is changeable. The combination of 'displayName' and
-     * 'parentTermKey' must be unique. Avoid entering confidential information. This is the same as
-     * 'relationshipType' for 'termRelationship'.
-     */
+     * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+     * must be unique. Avoid entering confidential information. This is the same as 'relationshipType' for 'termRelationship'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Is changeable. The combination of 'displayName' and
-     * 'parentTermKey' must be unique. Avoid entering confidential information. This is the same as
-     * 'relationshipType' for 'termRelationship'.
+     * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+     * must be unique. Avoid entering confidential information. This is the same as 'relationshipType' for 'termRelationship'.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Detailed description of the term relationship usually defined at the time of creation. */
+    /**
+     * Detailed description of the term relationship usually defined at the time of creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the term relationship usually defined at the time of creation.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -143,7 +142,6 @@ public final class UpdateTermRelationshipDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

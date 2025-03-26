@@ -5,25 +5,25 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * PayPal Payment related details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+ * PayPal Payment related details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PaypalPaymentOption.Builder.class)
+    builder = PaypalPaymentOption.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "paymentMethod")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "paymentMethod"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PaypalPaymentOption extends PaymentOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,61 +44,65 @@ public final class PaypalPaymentOption extends PaymentOption {
             this.__explicitlySet__.add("walletTransactionId");
             return this;
         }
-        /** The email address of the paypal user. */
+        /**
+         * The email address of the paypal user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
         /**
          * The email address of the paypal user.
-         *
          * @param emailAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = emailAddress;
             this.__explicitlySet__.add("emailAddress");
             return this;
         }
-        /** First name of the paypal user. */
+        /**
+         * First name of the paypal user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
          * First name of the paypal user.
-         *
          * @param firstName the value to set
          * @return this builder
-         */
+         **/
         public Builder firstName(String firstName) {
             this.firstName = firstName;
             this.__explicitlySet__.add("firstName");
             return this;
         }
-        /** Last name of the paypal user. */
+        /**
+         * Last name of the paypal user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
          * Last name of the paypal user.
-         *
          * @param lastName the value to set
          * @return this builder
-         */
+         **/
         public Builder lastName(String lastName) {
             this.lastName = lastName;
             this.__explicitlySet__.add("lastName");
             return this;
         }
-        /** Agreement id for the paypal account. */
+        /**
+         * Agreement id for the paypal account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extBillingAgreementId")
         private String extBillingAgreementId;
 
         /**
          * Agreement id for the paypal account.
-         *
          * @param extBillingAgreementId the value to set
          * @return this builder
-         */
+         **/
         public Builder extBillingAgreementId(String extBillingAgreementId) {
             this.extBillingAgreementId = extBillingAgreementId;
             this.__explicitlySet__.add("extBillingAgreementId");
@@ -147,7 +151,9 @@ public final class PaypalPaymentOption extends PaymentOption {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,54 +177,58 @@ public final class PaypalPaymentOption extends PaymentOption {
         this.extBillingAgreementId = extBillingAgreementId;
     }
 
-    /** The email address of the paypal user. */
+    /**
+     * The email address of the paypal user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     private final String emailAddress;
 
     /**
      * The email address of the paypal user.
-     *
      * @return the value
-     */
+     **/
     public String getEmailAddress() {
         return emailAddress;
     }
 
-    /** First name of the paypal user. */
+    /**
+     * First name of the paypal user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
      * First name of the paypal user.
-     *
      * @return the value
-     */
+     **/
     public String getFirstName() {
         return firstName;
     }
 
-    /** Last name of the paypal user. */
+    /**
+     * Last name of the paypal user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
      * Last name of the paypal user.
-     *
      * @return the value
-     */
+     **/
     public String getLastName() {
         return lastName;
     }
 
-    /** Agreement id for the paypal account. */
+    /**
+     * Agreement id for the paypal account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extBillingAgreementId")
     private final String extBillingAgreementId;
 
     /**
      * Agreement id for the paypal account.
-     *
      * @return the value
-     */
+     **/
     public String getExtBillingAgreementId() {
         return extBillingAgreementId;
     }
@@ -230,7 +240,6 @@ public final class PaypalPaymentOption extends PaymentOption {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

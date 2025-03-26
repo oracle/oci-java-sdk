@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Details about the job which performs an export. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Details about the job which performs an export.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AsynchronousExportGlossaryResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AsynchronousExportGlossaryResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AsynchronousExportGlossaryResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "jobDefinitionName",
@@ -46,76 +45,81 @@ public final class AsynchronousExportGlossaryResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Display name of the export job. */
+        /**
+         * Display name of the export job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
         private String jobDefinitionName;
 
         /**
          * Display name of the export job.
-         *
          * @param jobDefinitionName the value to set
          * @return this builder
-         */
+         **/
         public Builder jobDefinitionName(String jobDefinitionName) {
             this.jobDefinitionName = jobDefinitionName;
             this.__explicitlySet__.add("jobDefinitionName");
             return this;
         }
-        /** Unique key of the export job definition. */
+        /**
+         * Unique key of the export job definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
         private String jobDefinitionKey;
 
         /**
          * Unique key of the export job definition.
-         *
          * @param jobDefinitionKey the value to set
          * @return this builder
-         */
+         **/
         public Builder jobDefinitionKey(String jobDefinitionKey) {
             this.jobDefinitionKey = jobDefinitionKey;
             this.__explicitlySet__.add("jobDefinitionKey");
             return this;
         }
-        /** Unique key of the export job. */
+        /**
+         * Unique key of the export job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobKey")
         private String jobKey;
 
         /**
          * Unique key of the export job.
-         *
          * @param jobKey the value to set
          * @return this builder
-         */
+         **/
         public Builder jobKey(String jobKey) {
             this.jobKey = jobKey;
             this.__explicitlySet__.add("jobKey");
             return this;
         }
-        /** Unique key of the job execution. */
+        /**
+         * Unique key of the job execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
         private String jobExecutionKey;
 
         /**
          * Unique key of the job execution.
-         *
          * @param jobExecutionKey the value to set
          * @return this builder
-         */
+         **/
         public Builder jobExecutionKey(String jobExecutionKey) {
             this.jobExecutionKey = jobExecutionKey;
             this.__explicitlySet__.add("jobExecutionKey");
             return this;
         }
-        /** Unique key of the object being exported. */
+        /**
+         * Unique key of the object being exported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceKey")
         private String sourceKey;
 
         /**
          * Unique key of the object being exported.
-         *
          * @param sourceKey the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceKey(String sourceKey) {
             this.sourceKey = sourceKey;
             this.__explicitlySet__.add("sourceKey");
@@ -160,7 +164,9 @@ public final class AsynchronousExportGlossaryResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +175,72 @@ public final class AsynchronousExportGlossaryResult
         return new Builder().copy(this);
     }
 
-    /** Display name of the export job. */
+    /**
+     * Display name of the export job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
     private final String jobDefinitionName;
 
     /**
      * Display name of the export job.
-     *
      * @return the value
-     */
+     **/
     public String getJobDefinitionName() {
         return jobDefinitionName;
     }
 
-    /** Unique key of the export job definition. */
+    /**
+     * Unique key of the export job definition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
     private final String jobDefinitionKey;
 
     /**
      * Unique key of the export job definition.
-     *
      * @return the value
-     */
+     **/
     public String getJobDefinitionKey() {
         return jobDefinitionKey;
     }
 
-    /** Unique key of the export job. */
+    /**
+     * Unique key of the export job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobKey")
     private final String jobKey;
 
     /**
      * Unique key of the export job.
-     *
      * @return the value
-     */
+     **/
     public String getJobKey() {
         return jobKey;
     }
 
-    /** Unique key of the job execution. */
+    /**
+     * Unique key of the job execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
     private final String jobExecutionKey;
 
     /**
      * Unique key of the job execution.
-     *
      * @return the value
-     */
+     **/
     public String getJobExecutionKey() {
         return jobExecutionKey;
     }
 
-    /** Unique key of the object being exported. */
+    /**
+     * Unique key of the object being exported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceKey")
     private final String sourceKey;
 
     /**
      * Unique key of the object being exported.
-     *
      * @return the value
-     */
+     **/
     public String getSourceKey() {
         return sourceKey;
     }
@@ -241,7 +252,6 @@ public final class AsynchronousExportGlossaryResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

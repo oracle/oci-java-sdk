@@ -6,38 +6,42 @@ package com.oracle.bmc.queue.requests;
 
 import com.oracle.bmc.queue.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/DeleteMessagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteMessagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/DeleteMessagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteMessagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class DeleteMessagesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.queue.model.DeleteMessagesDetails> {
 
-    /** The unique queue identifier. */
+    /**
+     * The unique queue identifier.
+     */
     private String queueId;
 
-    /** The unique queue identifier. */
+    /**
+     * The unique queue identifier.
+     */
     public String getQueueId() {
         return queueId;
     }
-    /** Details for the messages to delete. */
+    /**
+     * Details for the messages to delete.
+     */
     private com.oracle.bmc.queue.model.DeleteMessagesDetails deleteMessagesDetails;
 
-    /** Details for the messages to delete. */
+    /**
+     * Details for the messages to delete.
+     */
     public com.oracle.bmc.queue.model.DeleteMessagesDetails getDeleteMessagesDetails() {
         return deleteMessagesDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -45,7 +49,6 @@ public class DeleteMessagesRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -57,15 +60,17 @@ public class DeleteMessagesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteMessagesRequest, com.oracle.bmc.queue.model.DeleteMessagesDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique queue identifier. */
+        /**
+         * The unique queue identifier.
+         */
         private String queueId = null;
 
         /**
          * The unique queue identifier.
-         *
          * @param queueId the value to set
          * @return this builder instance
          */
@@ -74,12 +79,13 @@ public class DeleteMessagesRequest
             return this;
         }
 
-        /** Details for the messages to delete. */
+        /**
+         * Details for the messages to delete.
+         */
         private com.oracle.bmc.queue.model.DeleteMessagesDetails deleteMessagesDetails = null;
 
         /**
          * Details for the messages to delete.
-         *
          * @param deleteMessagesDetails the value to set
          * @return this builder instance
          */
@@ -90,15 +96,12 @@ public class DeleteMessagesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -109,19 +112,18 @@ public class DeleteMessagesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -133,7 +135,6 @@ public class DeleteMessagesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteMessagesRequest o) {
@@ -148,11 +149,10 @@ public class DeleteMessagesRequest
         /**
          * Build the instance of DeleteMessagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteMessagesRequest
          */
@@ -165,7 +165,6 @@ public class DeleteMessagesRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -178,8 +177,7 @@ public class DeleteMessagesRequest
         /**
          * Build the instance of DeleteMessagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteMessagesRequest
@@ -196,7 +194,6 @@ public class DeleteMessagesRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -208,7 +205,6 @@ public class DeleteMessagesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -2,6 +2,7 @@
  * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.artifacts.ArtifactsClient;
@@ -18,7 +19,6 @@ import com.oracle.bmc.artifacts.responses.GetContainerImageResponse;
 import com.oracle.bmc.artifacts.responses.ListContainerImageSignaturesResponse;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
-import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.keymanagement.KmsCryptoClient;
 import com.oracle.bmc.keymanagement.model.SignDataDetails;
 import com.oracle.bmc.keymanagement.model.SignedData;
@@ -36,27 +36,33 @@ import java.util.Map;
 
 public class ContainerImageSigningExample {
     /**
-     * This sample provides a basic example of how to sign and upload container image signature
-     * metadata Or how to verify container image signature metadata.
+     * This sample provides a basic example of how to sign and upload container image signature metadata
+     * Or how to verify container image signature metadata.
      *
-     * <p>signAndUploadContainerImageSignatureMetadata will: Build kms crypto client Generate
-     * message and encoded the message Sign the encoded message with kms crypto client, get the
-     * signature Upload the signature metadata Return signature
+     * signAndUploadContainerImageSignatureMetadata will:
+     *  Build kms crypto client
+     *  Generate message and encoded the message
+     *  Sign the encoded message with kms crypto client, get the signature
+     *  Upload the signature metadata
+     *  Return signature
      *
-     * <p>getAndVerifyImageSignatureMetadata will: Fetch and list all container image signature
-     * under specific repo path Filter out the signatures which are not signed by the supplied
-     * trusted keys Among those signed by trusted keys, verify the signature whether it is valid or
-     * not. Return true if contains valid signature, otherwise return false.
+     * getAndVerifyImageSignatureMetadata will:
+     *  Fetch and list all container image signature under specific repo path
+     *  Filter out the signatures which are not signed by the supplied trusted keys
+     *  Among those signed by trusted keys, verify the signature whether it is valid or not.
+     *  Return true if contains valid signature, otherwise return false.
      *
-     * <p>The 1st argument is the ocid of the kms key The 2nd argument is the ocid of the kms key
-     * version The 3rd argument is the algorithm to be used for signing The 4th argument is the ocid
-     * of the compartment in which the container repository exists The 5th argument is the ocid of
-     * the container image The 6th argument is an user inputted message The 7th argument is an user
-     * defined information about the container image in JSON format The 8th argument is the
-     * compartmentIdInSubtree, when set to true, the hierarchy of compartments is traversed The 9th
-     * argument is the repository name in which the container image exists The 10th argument is the
-     * sha256 digest of the docker image. The 11th and subsequent argument are the OCIDs of the
-     * kmsKeyId used to sign the container image
+     *  The 1st argument is the ocid of the kms key
+     *  The 2nd argument is the ocid of the kms key version
+     *  The 3rd argument is the algorithm to be used for signing
+     *  The 4th argument is the ocid of the compartment in which the container repository exists
+     *  The 5th argument is the ocid of the container image
+     *  The 6th argument is an user inputted message
+     *  The 7th argument is an user defined information about the container image in JSON format
+     *  The 8th argument is the compartmentIdInSubtree, when set to true, the hierarchy of compartments is traversed
+     *  The 9th argument is the repository name in which the container image exists
+     *  The 10th argument is the sha256 digest of the docker image.
+     *  The 11th and subsequent argument are the OCIDs of the kmsKeyId used to sign the container image
      *
      * @param args
      * @throws Exception
@@ -67,16 +73,14 @@ public class ContainerImageSigningExample {
                     "Invalid number of arguments provided to the script.");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
         ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        ArtifactsClient artifactsClient = ArtifactsClient.builder().build(provider);
+        ArtifactsClient artifactsClient = new ArtifactsClient(provider);
 
         String kmsKeyId = args[0];
         String kmsKeyVersionId = args[1];
@@ -127,23 +131,19 @@ public class ContainerImageSigningExample {
     }
 
     /**
-     * SignAndUploadContainerImageSignatureMetadata calls KMS to sign the message then calls OCIR to
-     * upload the returned signature
+     * SignAndUploadContainerImageSignatureMetadata calls KMS to sign the message then calls OCIR to upload the returned signature
      *
-     * @param kmsKeyId: The OCID of the kmsKeyId used to sign the container image. eg)
-     *     ocid1.key.oc1..exampleuniqueID. Max length: 255, Min length:1
-     * @param kmsKeyVersionId: The OCID of the kmsKeyVersionId used to sign the container image. eg)
-     *     ocid1.keyversion.oc1..exampleuniqueID. Max length: 255, Min length:1
-     * @param signingAlgorithm: The algorithm to be used for signing. These are the only supported
-     *     signing algorithms for container images. eg. - SHA_224_RSA_PKCS_PSS -
-     *     SHA_256_RSA_PKCS_PSS - SHA_384_RSA_PKCS_PSS - SHA_512_RSA_PKCS_PSS
-     * @param compartmentId: The OCID of the compartment in which the container repository exists.
-     *     eg) ocid1.compartment.oc1..exampleuniqueID. Max length: 100, Min length: 1
-     * @param imageId: The OCID of the container image. eg)
-     *     ocid1.containerimage.oc1..exampleuniqueID. Max length: 255, Min length:1
+     * @param kmsKeyId: The OCID of the kmsKeyId used to sign the container image. eg) ocid1.key.oc1..exampleuniqueID. Max length: 255, Min length:1
+     * @param kmsKeyVersionId: The OCID of the kmsKeyVersionId used to sign the container image. eg) ocid1.keyversion.oc1..exampleuniqueID. Max length: 255, Min length:1
+     * @param signingAlgorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+     * eg. - SHA_224_RSA_PKCS_PSS
+     *     - SHA_256_RSA_PKCS_PSS
+     *     - SHA_384_RSA_PKCS_PSS
+     *     - SHA_512_RSA_PKCS_PSS
+     * @param compartmentId: The OCID of the compartment in which the container repository exists. eg) ocid1.compartment.oc1..exampleuniqueID. Max length: 100, Min length: 1
+     * @param imageId: The OCID of the container image. eg) ocid1.containerimage.oc1..exampleuniqueID. Max length: 255, Min length:1
      * @param description: An user inputted message.
-     * @param metadata: An user defined information about the container image in JSON format eg)
-     *     {"buildNumber":"123"}
+     * @param metadata:  An user defined information about the container image in JSON format eg) {"buildNumber":"123"}
      * @return The signed container image signature metadata, type is ContainerImageSignature
      * @throws Exception
      */
@@ -171,7 +171,7 @@ public class ContainerImageSigningExample {
         ContainerImage containerImage = getContainerImageMetadata(artifactsClient, imageId);
 
         // Generate message
-        Serializer objectMapper = Serializer.getDefault();
+        ObjectMapper objectMapper = com.oracle.bmc.http.Serialization.getObjectMapper();
         Map<String, Object> message = new LinkedHashMap<>();
         message.put("description", description);
         message.put("imageDigest", containerImage.getDigest());
@@ -203,11 +203,10 @@ public class ContainerImageSigningExample {
     }
 
     /**
-     * GetAndVerifyImageSignatureMetadata calls OCIR to list all the signatures satisfying the user
-     * provided criterion then calls KMS to verify the returned signatures
+     * GetAndVerifyImageSignatureMetadata calls OCIR to list all the signatures satisfying the user provided criterion then
+     * calls KMS to verify the returned signatures
      *
-     * @param compartmentId: The OCID of the compartment in which the container repository exists.
-     *     eg) ocid1.compartment.oc1..exampleuniqueID. MAX length: 100, MIN length 1
+     * @param compartmentId: The OCID of the compartment in which the container repository exists. eg) ocid1.compartment.oc1..exampleuniqueID. MAX length: 100, MIN length 1
      * @param compartmentIdInSubtree: When set to true, the hierarchy of compartments is traversed
      * @param repoName: : The repository name in which the container image exists eg) busybox
      * @param imageDigest: The sha256 digest of the docker image. eg) sha256:12345

@@ -5,38 +5,39 @@
 package com.oracle.bmc.aidocument.model;
 
 /**
- * The value of a form field. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+ * The value of a form field.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "valueType",
-        defaultImpl = FieldValue.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "valueType",
+    defaultImpl = FieldValue.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ValueTime.class, name = "TIME"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ValueInteger.class,
-            name = "INTEGER"),
+        value = ValueInteger.class,
+        name = "INTEGER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ValueDate.class, name = "DATE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ValueNumber.class, name = "NUMBER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ValueString.class, name = "STRING"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ValuePhoneNumber.class,
-            name = "PHONE_NUMBER"),
+        value = ValuePhoneNumber.class,
+        name = "PHONE_NUMBER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ValueArray.class, name = "ARRAY")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class FieldValue extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"text", "confidence", "boundingPolygon", "wordIndexes"})
     protected FieldValue(
@@ -51,28 +52,30 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.wordIndexes = wordIndexes;
     }
 
-    /** The detected text of a field. */
+    /**
+     * The detected text of a field.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * The detected text of a field.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
-    /** The confidence score between 0 and 1. */
+    /**
+     * The confidence score between 0 and 1.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * The confidence score between 0 and 1.
-     *
      * @return the value
-     */
+     **/
     public Float getConfidence() {
         return confidence;
     }
@@ -84,15 +87,16 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return boundingPolygon;
     }
 
-    /** The indexes of the words in the field value. */
+    /**
+     * The indexes of the words in the field value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     private final java.util.List<Integer> wordIndexes;
 
     /**
      * The indexes of the words in the field value.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Integer> getWordIndexes() {
         return wordIndexes;
     }
@@ -104,7 +108,6 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -151,8 +154,11 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return result;
     }
 
-    /** The type of data detected. */
-    public enum ValueType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of data detected.
+     *
+     **/
+    public enum ValueType {
         String("STRING"),
         Date("DATE"),
         Time("TIME"),
@@ -162,8 +168,8 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         Array("ARRAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

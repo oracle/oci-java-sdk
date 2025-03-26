@@ -26,22 +26,23 @@ import com.oracle.bmc.datalabelingservicedataplane.responses.GetRecordResponse;
 import com.oracle.bmc.datalabelingservicedataplane.responses.UpdateRecordResponse;
 
 /**
- * This class provides an example of how to use Data Labeling Service to create, get, update and
- * delete records in a Dataset.
- *
- * <p>The Data Labeling service queried by this example will be assigned:
- *
+ * This class provides an example of how to use Data Labeling Service to create,
+ * get, update and delete records in a Dataset.
+ * <p>
+ * The Data Labeling service queried by this example will be assigned:
  * <ul>
- *   <li>an endpoint url defined by constant ENDPOINT
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used.
+ * <li>an endpoint url defined by constant ENDPOINT</li>
+ * <li>The configuration file used by service clients will be sourced from the
+ * default location (~/.oci/config) and the DEFAULT profile will be used.</li>
  * </ul>
+ * </p>
  *
- * @param args Arguments to provide to the example. The following arguments are expected:
- *     <ul>
- *       <li>The first argument is the OCID of the compartment.
- *       <li>The second argument is the OCID of the dataset.
- *     </ul>
+ * @param args Arguments to provide to the example. The following arguments are
+ *             expected:
+ *             <ul>
+ *             <li>The first argument is the OCID of the compartment.</li>
+ *             <li>The second argument is the OCID of the dataset.</li>
+ *             </ul>
  */
 public class DataLabelingRecordExample {
 

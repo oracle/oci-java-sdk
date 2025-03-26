@@ -5,82 +5,83 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides information collected for the kernel event. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides information collected for the kernel event.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KernelEventContent.Builder.class)
+    builder = KernelEventContent.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KernelEventContent extends EventContent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Crash content availability status: * 'NOT_AVAILABLE' indicates the content is not
-         * available on the instance nor in the service * 'AVAILABLE_ON_INSTANCE' indicates the
-         * content is only available on the instance. * 'AVAILABLE_ON_SERVICE' indicates the content
-         * is only available on the service. * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the
-         * content is available both on the instance and the service *
-         * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the
-         * instance and its upload to the service is in progress.
-         */
+         * Crash content availability status:
+         *     * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+         *     * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+         *     * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+         *     * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+         *     * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentAvailability")
         private ContentAvailability contentAvailability;
 
         /**
-         * Crash content availability status: * 'NOT_AVAILABLE' indicates the content is not
-         * available on the instance nor in the service * 'AVAILABLE_ON_INSTANCE' indicates the
-         * content is only available on the instance. * 'AVAILABLE_ON_SERVICE' indicates the content
-         * is only available on the service. * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the
-         * content is available both on the instance and the service *
-         * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the
-         * instance and its upload to the service is in progress.
+         * Crash content availability status:
+         *     * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+         *     * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+         *     * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+         *     * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+         *     * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
          *
          * @param contentAvailability the value to set
          * @return this builder
-         */
+         **/
         public Builder contentAvailability(ContentAvailability contentAvailability) {
             this.contentAvailability = contentAvailability;
             this.__explicitlySet__.add("contentAvailability");
             return this;
         }
-        /** Location of the Kernel event content. */
+        /**
+         * Location of the Kernel event content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentLocation")
         private String contentLocation;
 
         /**
          * Location of the Kernel event content.
-         *
          * @param contentLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder contentLocation(String contentLocation) {
             this.contentLocation = contentLocation;
             this.__explicitlySet__.add("contentLocation");
             return this;
         }
-        /** Size of the event content. */
+        /**
+         * Size of the event content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Integer size;
 
         /**
          * Size of the event content.
-         *
          * @param size the value to set
          * @return this builder
-         */
+         **/
         public Builder size(Integer size) {
             this.size = size;
             this.__explicitlySet__.add("size");
@@ -115,7 +116,9 @@ public final class KernelEventContent extends EventContent {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,14 +137,15 @@ public final class KernelEventContent extends EventContent {
     }
 
     /**
-     * Crash content availability status: * 'NOT_AVAILABLE' indicates the content is not available
-     * on the instance nor in the service * 'AVAILABLE_ON_INSTANCE' indicates the content is only
-     * available on the instance. * 'AVAILABLE_ON_SERVICE' indicates the content is only available
-     * on the service. * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both
-     * on the instance and the service * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the
-     * content is available on the instance and its upload to the service is in progress.
-     */
-    public enum ContentAvailability implements com.oracle.bmc.http.internal.BmcEnum {
+     * Crash content availability status:
+     *     * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+     *     * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+     *     * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+     *     * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+     *     * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+     *
+     **/
+    public enum ContentAvailability {
         NotAvailable("NOT_AVAILABLE"),
         AvailableOnInstance("AVAILABLE_ON_INSTANCE"),
         AvailableOnService("AVAILABLE_ON_SERVICE"),
@@ -149,8 +153,8 @@ public final class KernelEventContent extends EventContent {
         AvailableOnInstanceUploadInProgress("AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -190,52 +194,55 @@ public final class KernelEventContent extends EventContent {
         }
     };
     /**
-     * Crash content availability status: * 'NOT_AVAILABLE' indicates the content is not available
-     * on the instance nor in the service * 'AVAILABLE_ON_INSTANCE' indicates the content is only
-     * available on the instance. * 'AVAILABLE_ON_SERVICE' indicates the content is only available
-     * on the service. * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both
-     * on the instance and the service * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the
-     * content is available on the instance and its upload to the service is in progress.
-     */
+     * Crash content availability status:
+     *     * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+     *     * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+     *     * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+     *     * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+     *     * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentAvailability")
     private final ContentAvailability contentAvailability;
 
     /**
-     * Crash content availability status: * 'NOT_AVAILABLE' indicates the content is not available
-     * on the instance nor in the service * 'AVAILABLE_ON_INSTANCE' indicates the content is only
-     * available on the instance. * 'AVAILABLE_ON_SERVICE' indicates the content is only available
-     * on the service. * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both
-     * on the instance and the service * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the
-     * content is available on the instance and its upload to the service is in progress.
+     * Crash content availability status:
+     *     * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+     *     * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+     *     * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+     *     * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+     *     * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
      *
      * @return the value
-     */
+     **/
     public ContentAvailability getContentAvailability() {
         return contentAvailability;
     }
 
-    /** Location of the Kernel event content. */
+    /**
+     * Location of the Kernel event content.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentLocation")
     private final String contentLocation;
 
     /**
      * Location of the Kernel event content.
-     *
      * @return the value
-     */
+     **/
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /** Size of the event content. */
+    /**
+     * Size of the event content.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Integer size;
 
     /**
      * Size of the event content.
-     *
      * @return the value
-     */
+     **/
     public Integer getSize() {
         return size;
     }
@@ -247,7 +254,6 @@ public final class KernelEventContent extends EventContent {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

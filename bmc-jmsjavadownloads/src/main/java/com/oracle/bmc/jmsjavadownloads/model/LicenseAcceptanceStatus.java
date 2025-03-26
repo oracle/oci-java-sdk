@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** Status of license acceptance. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum LicenseAcceptanceStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Status of license acceptance.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum LicenseAcceptanceStatus {
     Accepted("ACCEPTED"),
     Revoked("REVOKED"),
 

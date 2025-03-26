@@ -6,18 +6,19 @@ package com.oracle.bmc.globallydistributeddatabase.responses;
 
 import com.oracle.bmc.globallydistributeddatabase.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 public class FetchShardableCloudAutonomousVmClustersResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +26,14 @@ public class FetchShardableCloudAutonomousVmClustersResponse
         return opcRequestId;
     }
 
-    /** The returned {@code ShardableCloudAutonomousVmClusters} instance. */
+    /**
+     * The returned ShardableCloudAutonomousVmClusters instance.
+     */
     private com.oracle.bmc.globallydistributeddatabase.model.ShardableCloudAutonomousVmClusters
             shardableCloudAutonomousVmClusters;
 
     /**
-     * The returned {@code ShardableCloudAutonomousVmClusters} instance.
-     *
+     * The returned ShardableCloudAutonomousVmClusters instance.
      * @return the value
      */
     public com.oracle.bmc.globallydistributeddatabase.model.ShardableCloudAutonomousVmClusters
@@ -47,7 +49,7 @@ public class FetchShardableCloudAutonomousVmClustersResponse
     })
     private FetchShardableCloudAutonomousVmClustersResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.globallydistributeddatabase.model.ShardableCloudAutonomousVmClusters
                     shardableCloudAutonomousVmClusters) {
@@ -56,34 +58,31 @@ public class FetchShardableCloudAutonomousVmClustersResponse
         this.shardableCloudAutonomousVmClusters = shardableCloudAutonomousVmClusters;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    FetchShardableCloudAutonomousVmClustersResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -93,13 +92,14 @@ public class FetchShardableCloudAutonomousVmClustersResponse
             return this;
         }
 
-        /** The returned {@code ShardableCloudAutonomousVmClusters} instance. */
+        /**
+         * The returned ShardableCloudAutonomousVmClusters instance.
+         */
         private com.oracle.bmc.globallydistributeddatabase.model.ShardableCloudAutonomousVmClusters
                 shardableCloudAutonomousVmClusters;
 
         /**
-         * The returned {@code ShardableCloudAutonomousVmClusters} instance.
-         *
+         * The returned ShardableCloudAutonomousVmClusters instance.
          * @param shardableCloudAutonomousVmClusters the value to set
          * @return this builder
          */
@@ -112,10 +112,8 @@ public class FetchShardableCloudAutonomousVmClustersResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(FetchShardableCloudAutonomousVmClustersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -127,10 +125,8 @@ public class FetchShardableCloudAutonomousVmClustersResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public FetchShardableCloudAutonomousVmClustersResponse build() {
             return new FetchShardableCloudAutonomousVmClustersResponse(
                     __httpStatusCode__, headers, opcRequestId, shardableCloudAutonomousVmClusters);
@@ -139,7 +135,6 @@ public class FetchShardableCloudAutonomousVmClustersResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

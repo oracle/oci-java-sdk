@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.analytics.model;
 
-/** Supported capacity types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum CapacityType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported capacity types.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+public enum CapacityType {
     OlpuCount("OLPU_COUNT"),
     UserCount("USER_COUNT"),
 

@@ -5,24 +5,23 @@
 package com.oracle.bmc.jmsjavadownloads.model;
 
 /**
- * Details about a Java download report in a tenancy. The report is a file in Object Storage. It
- * contains the download records in a specific format. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+ * Details about a Java download report in a tenancy.
+ * The report is a file in Object Storage. It contains the download records in a specific format.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JavaDownloadReport.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JavaDownloadReport
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = JavaDownloadReport.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JavaDownloadReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -84,113 +83,116 @@ public final class JavaDownloadReport
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Java download report.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Java download report.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Display name for the Java download report. */
+        /**
+         * Display name for the Java download report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name for the Java download report.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The file format of the Java download report. */
+        /**
+         * The file format of the Java download report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private JavaDownloadReportFormat format;
 
         /**
          * The file format of the Java download report.
-         *
          * @param format the value to set
          * @return this builder
-         */
+         **/
         public Builder format(JavaDownloadReportFormat format) {
             this.format = format;
             this.__explicitlySet__.add("format");
             return this;
         }
-        /** Approximate size of the Java download report file in bytes. */
+        /**
+         * Approximate size of the Java download report file in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSizeInBytes")
         private Long fileSizeInBytes;
 
         /**
          * Approximate size of the Java download report file in bytes.
-         *
          * @param fileSizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder fileSizeInBytes(Long fileSizeInBytes) {
             this.fileSizeInBytes = fileSizeInBytes;
             this.__explicitlySet__.add("fileSizeInBytes");
             return this;
         }
-        /** The algorithm used for calculating the checksum. */
+        /**
+         * The algorithm used for calculating the checksum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private ChecksumType checksumType;
 
         /**
          * The algorithm used for calculating the checksum.
-         *
          * @param checksumType the value to set
          * @return this builder
-         */
+         **/
         public Builder checksumType(ChecksumType checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
             return this;
         }
-        /** The checksum value of the Java download report file. */
+        /**
+         * The checksum value of the Java download report file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumValue")
         private String checksumValue;
 
         /**
          * The checksum value of the Java download report file.
-         *
          * @param checksumValue the value to set
          * @return this builder
-         */
+         **/
         public Builder checksumValue(String checksumValue) {
             this.checksumValue = checksumValue;
             this.__explicitlySet__.add("checksumValue");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy scoped to the Java download report.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the Java download report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy scoped to the Java download report.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the Java download report.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -206,125 +208,120 @@ public final class JavaDownloadReport
             return this;
         }
         /**
-         * The time the Java download report was created, displayed as an
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-         */
+         * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the Java download report was created, displayed as an
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-         *
+         * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The start time from when the download records are included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * The start time from when the download records are included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
         /**
-         * The end time until when the download records are included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * The end time until when the download records are included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** The property used for sorting the records. */
+        /**
+         * The property used for sorting the records.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private JavaDownloadRecordSortBy sortBy;
 
         /**
          * The property used for sorting the records.
-         *
          * @param sortBy the value to set
          * @return this builder
-         */
+         **/
         public Builder sortBy(JavaDownloadRecordSortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-        /** The sort order for the records. */
+        /**
+         * The sort order for the records.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
          * The sort order for the records.
-         *
          * @param sortOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
             return this;
         }
-        /** The current state of the Java download report. */
+        /**
+         * The current state of the Java download report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Java download report.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
-         * and Tag
-         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-         */
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
-         * and Tag
-         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -332,20 +329,19 @@ public final class JavaDownloadReport
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-         */
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -353,27 +349,26 @@ public final class JavaDownloadReport
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -466,7 +461,9 @@ public final class JavaDownloadReport
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -476,100 +473,103 @@ public final class JavaDownloadReport
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java
-     * download report.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java
-     * download report.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Display name for the Java download report. */
+    /**
+     * Display name for the Java download report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name for the Java download report.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The file format of the Java download report. */
+    /**
+     * The file format of the Java download report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final JavaDownloadReportFormat format;
 
     /**
      * The file format of the Java download report.
-     *
      * @return the value
-     */
+     **/
     public JavaDownloadReportFormat getFormat() {
         return format;
     }
 
-    /** Approximate size of the Java download report file in bytes. */
+    /**
+     * Approximate size of the Java download report file in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSizeInBytes")
     private final Long fileSizeInBytes;
 
     /**
      * Approximate size of the Java download report file in bytes.
-     *
      * @return the value
-     */
+     **/
     public Long getFileSizeInBytes() {
         return fileSizeInBytes;
     }
 
-    /** The algorithm used for calculating the checksum. */
+    /**
+     * The algorithm used for calculating the checksum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final ChecksumType checksumType;
 
     /**
      * The algorithm used for calculating the checksum.
-     *
      * @return the value
-     */
+     **/
     public ChecksumType getChecksumType() {
         return checksumType;
     }
 
-    /** The checksum value of the Java download report file. */
+    /**
+     * The checksum value of the Java download report file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksumValue")
     private final String checksumValue;
 
     /**
      * The checksum value of the Java download report file.
-     *
      * @return the value
-     */
+     **/
     public String getChecksumValue() {
         return checksumValue;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy scoped to the Java download report.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the Java download report.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy scoped to the Java download report.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the Java download report.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -582,154 +582,149 @@ public final class JavaDownloadReport
     }
 
     /**
-     * The time the Java download report was created, displayed as an
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-     */
+     * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Java download report was created, displayed as an
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-     *
+     * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The start time from when the download records are included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * The start time from when the download records are included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
     /**
-     * The end time until when the download records are included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * The end time until when the download records are included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** The property used for sorting the records. */
+    /**
+     * The property used for sorting the records.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final JavaDownloadRecordSortBy sortBy;
 
     /**
      * The property used for sorting the records.
-     *
      * @return the value
-     */
+     **/
     public JavaDownloadRecordSortBy getSortBy() {
         return sortBy;
     }
 
-    /** The sort order for the records. */
+    /**
+     * The sort order for the records.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
      * The sort order for the records.
-     *
      * @return the value
-     */
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }
 
-    /** The current state of the Java download report. */
+    /**
+     * The current state of the Java download report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Java download report.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -741,7 +736,6 @@ public final class JavaDownloadReport
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

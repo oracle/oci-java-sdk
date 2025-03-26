@@ -19,22 +19,6 @@ During javadoc generation, any javadocs with the template '*{{DOC_SERVER_URL}}*'
 
 ## <a id="KnownDevelopmentIssues"></a>Known Development Issues
 
-### Errors may suddenly appear after updating to any of these JDK versions: 8u381, 11.0.20, 17.0.8, and 21.0.0.
-
-The following error message might be encountered:
-```
-java.lang.ClassNotFoundException: com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-```
-This issue is a result of the listed Java versions, which have a default maximum signature file size smaller than some Java SDK JARs.
-
-To resolve this problem, you can run Maven with the following parameter:
-`-Djdk.jar.maxSignatureFileSize=16000000`
-
-If you're compiling with javac, you can use the following command:
-`javac -J-Djdk.jar.maxSignatureFileSize=16000000 example.java`
-
-The low default value in Java will be addressed and resolved in upcoming minor Java version releases.
-
 ### <a id="Java17TestFailures"></a> Java 17 test failures
 If JDK 17 is used to build the OCI Java SDK, then there will be 5 unit tests that fail because of a test dependency that does not work well with more recent Java versions. To workaround this issue, ignore test failures with the `-Dmaven.test.failure.ignore` parameter:
 ```

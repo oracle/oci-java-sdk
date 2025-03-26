@@ -6,96 +6,104 @@ package com.oracle.bmc.datascience.requests;
 
 import com.oracle.bmc.datascience.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateStepArtifactExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateStepArtifactRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateStepArtifactExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateStepArtifactRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class CreateStepArtifactRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
         implements com.oracle.bmc.requests.HasContentLength {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      */
     private String pipelineId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
     }
-    /** Unique Step identifier in a pipeline. */
+    /**
+     * Unique Step identifier in a pipeline.
+     */
     private String stepName;
 
-    /** Unique Step identifier in a pipeline. */
+    /**
+     * Unique Step identifier in a pipeline.
+     */
     public String getStepName() {
         return stepName;
     }
-    /** The content length of the body. */
+    /**
+     * The content length of the body.
+     */
     private Long contentLength;
 
-    /** The content length of the body. */
+    /**
+     * The content length of the body.
+     */
     public Long getContentLength() {
         return contentLength;
     }
-    /** The step artifact to upload. */
+    /**
+     * The step artifact to upload.
+     */
     private java.io.InputStream stepArtifact;
 
-    /** The step artifact to upload. */
+    /**
+     * The step artifact to upload.
+     */
     public java.io.InputStream getStepArtifact() {
         return stepArtifact;
     }
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * This header allows you to specify a filename during upload. This file name is used to dispose
-     * of the file contents while downloading the file. If this optional field is not populated in
-     * the request, then the OCID of the model is used for the file name when downloading. Example:
-     * {@code {"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length":
-     * "2347" "Content-Type": "application/gzip"}}
+     * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+     * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+     * name when downloading.
+     * Example: {@code {"Content-Disposition": "attachment"
+     *            "filename"="model.tar.gz"
+     *            "Content-Length": "2347"
+     *            "Content-Type": "application/gzip"}}
+     *
      */
     private String contentDisposition;
 
     /**
-     * This header allows you to specify a filename during upload. This file name is used to dispose
-     * of the file contents while downloading the file. If this optional field is not populated in
-     * the request, then the OCID of the model is used for the file name when downloading. Example:
-     * {@code {"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length":
-     * "2347" "Content-Type": "application/gzip"}}
+     * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+     * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+     * name when downloading.
+     * Example: {@code {"Content-Disposition": "attachment"
+     *            "filename"="model.tar.gz"
+     *            "Content-Length": "2347"
+     *            "Content-Type": "application/gzip"}}
+     *
      */
     public String getContentDisposition() {
         return contentDisposition;
@@ -103,7 +111,6 @@ public class CreateStepArtifactRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -115,19 +122,17 @@ public class CreateStepArtifactRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateStepArtifactRequest, java.io.InputStream> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
          */
         private String pipelineId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * pipeline.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
          * @param pipelineId the value to set
          * @return this builder instance
          */
@@ -136,12 +141,13 @@ public class CreateStepArtifactRequest
             return this;
         }
 
-        /** Unique Step identifier in a pipeline. */
+        /**
+         * Unique Step identifier in a pipeline.
+         */
         private String stepName = null;
 
         /**
          * Unique Step identifier in a pipeline.
-         *
          * @param stepName the value to set
          * @return this builder instance
          */
@@ -150,12 +156,13 @@ public class CreateStepArtifactRequest
             return this;
         }
 
-        /** The content length of the body. */
+        /**
+         * The content length of the body.
+         */
         private Long contentLength = null;
 
         /**
          * The content length of the body.
-         *
          * @param contentLength the value to set
          * @return this builder instance
          */
@@ -164,12 +171,13 @@ public class CreateStepArtifactRequest
             return this;
         }
 
-        /** The step artifact to upload. */
+        /**
+         * The step artifact to upload.
+         */
         private java.io.InputStream stepArtifact = null;
 
         /**
          * The step artifact to upload.
-         *
          * @param stepArtifact the value to set
          * @return this builder instance
          */
@@ -179,14 +187,13 @@ public class CreateStepArtifactRequest
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -197,20 +204,13 @@ public class CreateStepArtifactRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -221,20 +221,25 @@ public class CreateStepArtifactRequest
         }
 
         /**
-         * This header allows you to specify a filename during upload. This file name is used to
-         * dispose of the file contents while downloading the file. If this optional field is not
-         * populated in the request, then the OCID of the model is used for the file name when
-         * downloading. Example: {@code {"Content-Disposition": "attachment"
-         * "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}}
+         * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+         * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+         * name when downloading.
+         * Example: {@code {"Content-Disposition": "attachment"
+         *            "filename"="model.tar.gz"
+         *            "Content-Length": "2347"
+         *            "Content-Type": "application/gzip"}}
+         *
          */
         private String contentDisposition = null;
 
         /**
-         * This header allows you to specify a filename during upload. This file name is used to
-         * dispose of the file contents while downloading the file. If this optional field is not
-         * populated in the request, then the OCID of the model is used for the file name when
-         * downloading. Example: {@code {"Content-Disposition": "attachment"
-         * "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}}
+         * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+         * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+         * name when downloading.
+         * Example: {@code {"Content-Disposition": "attachment"
+         *            "filename"="model.tar.gz"
+         *            "Content-Length": "2347"
+         *            "Content-Type": "application/gzip"}}
          *
          * @param contentDisposition the value to set
          * @return this builder instance
@@ -246,19 +251,18 @@ public class CreateStepArtifactRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -270,7 +274,6 @@ public class CreateStepArtifactRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateStepArtifactRequest o) {
@@ -289,11 +292,10 @@ public class CreateStepArtifactRequest
         /**
          * Build the instance of CreateStepArtifactRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateStepArtifactRequest
          */
@@ -306,7 +308,6 @@ public class CreateStepArtifactRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -319,8 +320,7 @@ public class CreateStepArtifactRequest
         /**
          * Build the instance of CreateStepArtifactRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateStepArtifactRequest
@@ -335,14 +335,12 @@ public class CreateStepArtifactRequest
             request.opcRetryToken = opcRetryToken;
             request.contentDisposition = contentDisposition;
             return request;
-            // new CreateStepArtifactRequest(pipelineId, stepName, contentLength, stepArtifact,
-            // opcRequestId, opcRetryToken, contentDisposition);
+            // new CreateStepArtifactRequest(pipelineId, stepName, contentLength, stepArtifact, opcRequestId, opcRetryToken, contentDisposition);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -358,7 +356,6 @@ public class CreateStepArtifactRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

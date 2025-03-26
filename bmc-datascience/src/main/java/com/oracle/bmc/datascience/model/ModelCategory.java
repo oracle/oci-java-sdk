@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The category of a model. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ModelCategory implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The category of a model.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ModelCategory {
     User("USER"),
     Service("SERVICE"),
 

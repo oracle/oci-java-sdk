@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details of copy object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details of copy object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateCopyObjectRequestDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateCopyObjectRequestDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateCopyObjectRequestDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceWorkspaceId", "objectKeys", "copyConflictResolution"})
     public CreateCopyObjectRequestDetails(
@@ -36,31 +35,33 @@ public final class CreateCopyObjectRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The workspace id of the source from where we need to copy object. */
+        /**
+         * The workspace id of the source from where we need to copy object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceWorkspaceId")
         private String sourceWorkspaceId;
 
         /**
          * The workspace id of the source from where we need to copy object.
-         *
          * @param sourceWorkspaceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceWorkspaceId(String sourceWorkspaceId) {
             this.sourceWorkspaceId = sourceWorkspaceId;
             this.__explicitlySet__.add("sourceWorkspaceId");
             return this;
         }
-        /** The list of the objects to be copied. */
+        /**
+         * The list of the objects to be copied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectKeys")
         private java.util.List<String> objectKeys;
 
         /**
          * The list of the objects to be copied.
-         *
          * @param objectKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder objectKeys(java.util.List<String> objectKeys) {
             this.objectKeys = objectKeys;
             this.__explicitlySet__.add("objectKeys");
@@ -104,7 +105,9 @@ public final class CreateCopyObjectRequestDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,28 +116,30 @@ public final class CreateCopyObjectRequestDetails
         return new Builder().copy(this);
     }
 
-    /** The workspace id of the source from where we need to copy object. */
+    /**
+     * The workspace id of the source from where we need to copy object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceWorkspaceId")
     private final String sourceWorkspaceId;
 
     /**
      * The workspace id of the source from where we need to copy object.
-     *
      * @return the value
-     */
+     **/
     public String getSourceWorkspaceId() {
         return sourceWorkspaceId;
     }
 
-    /** The list of the objects to be copied. */
+    /**
+     * The list of the objects to be copied.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectKeys")
     private final java.util.List<String> objectKeys;
 
     /**
      * The list of the objects to be copied.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getObjectKeys() {
         return objectKeys;
     }
@@ -153,7 +158,6 @@ public final class CreateCopyObjectRequestDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

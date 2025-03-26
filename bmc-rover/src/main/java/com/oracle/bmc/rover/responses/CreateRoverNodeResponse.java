@@ -6,9 +6,12 @@ package com.oracle.bmc.rover.responses;
 
 import com.oracle.bmc.rover.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned {@code RoverNode} instance. */
+    /**
+     * The returned RoverNode instance.
+     */
     private com.oracle.bmc.rover.model.RoverNode roverNode;
 
     /**
-     * The returned {@code RoverNode} instance.
-     *
+     * The returned RoverNode instance.
      * @return the value
      */
     public com.oracle.bmc.rover.model.RoverNode getRoverNode() {
@@ -57,7 +62,7 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private CreateRoverNodeResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.rover.model.RoverNode roverNode) {
@@ -67,25 +72,25 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
         this.roverNode = roverNode;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateRoverNodeResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +105,15 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned {@code RoverNode} instance. */
+        /**
+         * The returned RoverNode instance.
+         */
         private com.oracle.bmc.rover.model.RoverNode roverNode;
 
         /**
-         * The returned {@code RoverNode} instance.
-         *
+         * The returned RoverNode instance.
          * @param roverNode the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateRoverNodeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateRoverNodeResponse build() {
             return new CreateRoverNodeResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, roverNode);
@@ -161,7 +164,6 @@ public class CreateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

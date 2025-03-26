@@ -5,33 +5,34 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The details of a document to analyze. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details of a document to analyze.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "source",
-        defaultImpl = DocumentDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "source",
+    defaultImpl = DocumentDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ObjectStorageDocumentDetails.class,
-            name = "OBJECT_STORAGE"),
+        value = ObjectStorageDocumentDetails.class,
+        name = "OBJECT_STORAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = InlineDocumentDetails.class,
-            name = "INLINE")
+        value = InlineDocumentDetails.class,
+        name = "INLINE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DocumentDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class DocumentDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected DocumentDetails() {
@@ -45,7 +46,6 @@ public class DocumentDetails extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -79,11 +79,13 @@ public class DocumentDetails extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The location of the document data. The allowed values are: - {@code INLINE}: The data is
-     * included directly in the request payload. - {@code OBJECT_STORAGE}: The document is in OCI
-     * Object Storage.
-     */
-    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
+     * The location of the document data.
+     * The allowed values are:
+     * - {@code INLINE}: The data is included directly in the request payload.
+     * - {@code OBJECT_STORAGE}: The document is in OCI Object Storage.
+     *
+     **/
+    public enum Source {
         Inline("INLINE"),
         ObjectStorage("OBJECT_STORAGE"),
         ;

@@ -5,23 +5,22 @@
 package com.oracle.bmc.limits.model;
 
 /**
- * The metadata specific to a resource limit definition. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+ * The metadata specific to a resource limit definition.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LimitDefinitionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LimitDefinitionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LimitDefinitionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -65,74 +64,77 @@ public final class LimitDefinitionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The resource limit name. To be used for writing policies (in case of quotas) or other
-         * programmatic calls.
-         */
+         * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The resource limit name. To be used for writing policies (in case of quotas) or other
-         * programmatic calls.
+         * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The service name of the limit. */
+        /**
+         * The service name of the limit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The service name of the limit.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** The limit description. */
+        /**
+         * The limit description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The limit description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Reflects the scope of the resource limit, whether Global (across all regions), regional,
-         * or availability domain-specific.
-         */
+         * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopeType")
         private ScopeType scopeType;
 
         /**
-         * Reflects the scope of the resource limit, whether Global (across all regions), regional,
-         * or availability domain-specific.
+         * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
          *
          * @param scopeType the value to set
          * @return this builder
-         */
+         **/
         public Builder scopeType(ScopeType scopeType) {
             this.scopeType = scopeType;
             this.__explicitlySet__.add("scopeType");
             return this;
         }
-        /** If true, quota policies can be created on top of this resource limit. */
+        /**
+         * If true, quota policies can be created on top of this resource limit.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areQuotasSupported")
         private Boolean areQuotasSupported;
 
@@ -141,32 +143,36 @@ public final class LimitDefinitionSummary
          *
          * @param areQuotasSupported the value to set
          * @return this builder
-         */
+         **/
         public Builder areQuotasSupported(Boolean areQuotasSupported) {
             this.areQuotasSupported = areQuotasSupported;
             this.__explicitlySet__.add("areQuotasSupported");
             return this;
         }
         /**
-         * Reflects whether or not the GetResourceAvailability API is supported for this limit. If
-         * not, the API returns an empty JSON response.
-         */
+         * Reflects whether or not the GetResourceAvailability API is supported for this limit.
+         * If not, the API returns an empty JSON response.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isResourceAvailabilitySupported")
         private Boolean isResourceAvailabilitySupported;
 
         /**
-         * Reflects whether or not the GetResourceAvailability API is supported for this limit. If
-         * not, the API returns an empty JSON response.
+         * Reflects whether or not the GetResourceAvailability API is supported for this limit.
+         * If not, the API returns an empty JSON response.
          *
          * @param isResourceAvailabilitySupported the value to set
          * @return this builder
-         */
+         **/
         public Builder isResourceAvailabilitySupported(Boolean isResourceAvailabilitySupported) {
             this.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
             this.__explicitlySet__.add("isResourceAvailabilitySupported");
             return this;
         }
-        /** Indicates if the limit has been deprecated. */
+        /**
+         * Indicates if the limit has been deprecated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
         private Boolean isDeprecated;
 
@@ -175,13 +181,16 @@ public final class LimitDefinitionSummary
          *
          * @param isDeprecated the value to set
          * @return this builder
-         */
+         **/
         public Builder isDeprecated(Boolean isDeprecated) {
             this.isDeprecated = isDeprecated;
             this.__explicitlySet__.add("isDeprecated");
             return this;
         }
-        /** Indicates if the customer can request a limit increase for this resource. */
+        /**
+         * Indicates if the customer can request a limit increase for this resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForLimitIncrease")
         private Boolean isEligibleForLimitIncrease;
 
@@ -190,51 +199,52 @@ public final class LimitDefinitionSummary
          *
          * @param isEligibleForLimitIncrease the value to set
          * @return this builder
-         */
+         **/
         public Builder isEligibleForLimitIncrease(Boolean isEligibleForLimitIncrease) {
             this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
             this.__explicitlySet__.add("isEligibleForLimitIncrease");
             return this;
         }
         /**
-         * The limit for this resource has a dynamic value that is based on consumption across all
-         * OCI services.
-         */
+         * The limit for this resource has a dynamic value that is based on consumption across all OCI services.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDynamic")
         private Boolean isDynamic;
 
         /**
-         * The limit for this resource has a dynamic value that is based on consumption across all
-         * OCI services.
+         * The limit for this resource has a dynamic value that is based on consumption across all OCI services.
          *
          * @param isDynamic the value to set
          * @return this builder
-         */
+         **/
         public Builder isDynamic(Boolean isDynamic) {
             this.isDynamic = isDynamic;
             this.__explicitlySet__.add("isDynamic");
             return this;
         }
         /**
-         * An array of subscription types supported by the limit. e,g The type of subscription, such
-         * as 'SAAS', 'ERP', 'CRM'.
-         */
+         * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
         private java.util.List<String> supportedSubscriptions;
 
         /**
-         * An array of subscription types supported by the limit. e,g The type of subscription, such
-         * as 'SAAS', 'ERP', 'CRM'.
+         * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
          *
          * @param supportedSubscriptions the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedSubscriptions(java.util.List<String> supportedSubscriptions) {
             this.supportedSubscriptions = supportedSubscriptions;
             this.__explicitlySet__.add("supportedSubscriptions");
             return this;
         }
-        /** Supported quota family names for creation of quota policy. */
+        /**
+         * Supported quota family names for creation of quota policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedQuotaFamilies")
         private java.util.List<String> supportedQuotaFamilies;
 
@@ -243,7 +253,7 @@ public final class LimitDefinitionSummary
          *
          * @param supportedQuotaFamilies the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedQuotaFamilies(java.util.List<String> supportedQuotaFamilies) {
             this.supportedQuotaFamilies = supportedQuotaFamilies;
             this.__explicitlySet__.add("supportedQuotaFamilies");
@@ -312,7 +322,9 @@ public final class LimitDefinitionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -322,60 +334,61 @@ public final class LimitDefinitionSummary
     }
 
     /**
-     * The resource limit name. To be used for writing policies (in case of quotas) or other
-     * programmatic calls.
-     */
+     * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The resource limit name. To be used for writing policies (in case of quotas) or other
-     * programmatic calls.
+     * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The service name of the limit. */
+    /**
+     * The service name of the limit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The service name of the limit.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** The limit description. */
+    /**
+     * The limit description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The limit description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or
-     * availability domain-specific.
-     */
-    public enum ScopeType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
+     *
+     **/
+    public enum ScopeType {
         Global("GLOBAL"),
         Region("REGION"),
         Ad("AD"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -415,23 +428,25 @@ public final class LimitDefinitionSummary
         }
     };
     /**
-     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or
-     * availability domain-specific.
-     */
+     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopeType")
     private final ScopeType scopeType;
 
     /**
-     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or
-     * availability domain-specific.
+     * Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
      *
      * @return the value
-     */
+     **/
     public ScopeType getScopeType() {
         return scopeType;
     }
 
-    /** If true, quota policies can be created on top of this resource limit. */
+    /**
+     * If true, quota policies can be created on top of this resource limit.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areQuotasSupported")
     private final Boolean areQuotasSupported;
 
@@ -439,29 +454,33 @@ public final class LimitDefinitionSummary
      * If true, quota policies can be created on top of this resource limit.
      *
      * @return the value
-     */
+     **/
     public Boolean getAreQuotasSupported() {
         return areQuotasSupported;
     }
 
     /**
-     * Reflects whether or not the GetResourceAvailability API is supported for this limit. If not,
-     * the API returns an empty JSON response.
-     */
+     * Reflects whether or not the GetResourceAvailability API is supported for this limit.
+     * If not, the API returns an empty JSON response.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResourceAvailabilitySupported")
     private final Boolean isResourceAvailabilitySupported;
 
     /**
-     * Reflects whether or not the GetResourceAvailability API is supported for this limit. If not,
-     * the API returns an empty JSON response.
+     * Reflects whether or not the GetResourceAvailability API is supported for this limit.
+     * If not, the API returns an empty JSON response.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsResourceAvailabilitySupported() {
         return isResourceAvailabilitySupported;
     }
 
-    /** Indicates if the limit has been deprecated. */
+    /**
+     * Indicates if the limit has been deprecated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeprecated")
     private final Boolean isDeprecated;
 
@@ -469,12 +488,15 @@ public final class LimitDefinitionSummary
      * Indicates if the limit has been deprecated.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDeprecated() {
         return isDeprecated;
     }
 
-    /** Indicates if the customer can request a limit increase for this resource. */
+    /**
+     * Indicates if the customer can request a limit increase for this resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleForLimitIncrease")
     private final Boolean isEligibleForLimitIncrease;
 
@@ -482,46 +504,47 @@ public final class LimitDefinitionSummary
      * Indicates if the customer can request a limit increase for this resource.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEligibleForLimitIncrease() {
         return isEligibleForLimitIncrease;
     }
 
     /**
-     * The limit for this resource has a dynamic value that is based on consumption across all OCI
-     * services.
-     */
+     * The limit for this resource has a dynamic value that is based on consumption across all OCI services.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDynamic")
     private final Boolean isDynamic;
 
     /**
-     * The limit for this resource has a dynamic value that is based on consumption across all OCI
-     * services.
+     * The limit for this resource has a dynamic value that is based on consumption across all OCI services.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDynamic() {
         return isDynamic;
     }
 
     /**
-     * An array of subscription types supported by the limit. e,g The type of subscription, such as
-     * 'SAAS', 'ERP', 'CRM'.
-     */
+     * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
     private final java.util.List<String> supportedSubscriptions;
 
     /**
-     * An array of subscription types supported by the limit. e,g The type of subscription, such as
-     * 'SAAS', 'ERP', 'CRM'.
+     * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSupportedSubscriptions() {
         return supportedSubscriptions;
     }
 
-    /** Supported quota family names for creation of quota policy. */
+    /**
+     * Supported quota family names for creation of quota policy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedQuotaFamilies")
     private final java.util.List<String> supportedQuotaFamilies;
 
@@ -529,7 +552,7 @@ public final class LimitDefinitionSummary
      * Supported quota family names for creation of quota policy.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSupportedQuotaFamilies() {
         return supportedQuotaFamilies;
     }
@@ -541,7 +564,6 @@ public final class LimitDefinitionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

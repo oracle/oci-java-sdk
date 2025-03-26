@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field used to sort the Java migration analysis results. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum JavaMigrationAnalysisResultSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort the Java migration analysis results.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum JavaMigrationAnalysisResultSortBy {
     TimeCreated("timeCreated"),
     ManagedInstanceId("managedInstanceId"),
     WorkRequestId("workRequestId"),

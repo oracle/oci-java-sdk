@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The underlying source of unified audit trail. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AuditTrailSource implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The underlying source of unified audit trail.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum AuditTrailSource {
     Table("TABLE"),
     File("FILE"),
 

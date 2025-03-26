@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of Categories for a Channel. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum ChannelCategory implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of Categories for a Channel.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum ChannelCategory {
     Agent("AGENT"),
     Application("APPLICATION"),
     Bot("BOT"),

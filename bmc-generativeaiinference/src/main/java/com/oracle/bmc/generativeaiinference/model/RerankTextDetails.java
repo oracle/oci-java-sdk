@@ -5,23 +5,21 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Details required for a rerank request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * Details required for a rerank request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RerankTextDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RerankTextDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = RerankTextDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RerankTextDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "input",
@@ -52,31 +50,33 @@ public final class RerankTextDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Input query for search in the documents. */
+        /**
+         * Input query for search in the documents.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("input")
         private String input;
 
         /**
          * Input query for search in the documents.
-         *
          * @param input the value to set
          * @return this builder
-         */
+         **/
         public Builder input(String input) {
             this.input = input;
             this.__explicitlySet__.add("input");
             return this;
         }
-        /** The OCID of the compartment to call into the Generative AI service LLMs. */
+        /**
+         * The OCID of the compartment to call into the Generative AI service LLMs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment to call into the Generative AI service LLMs.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -91,65 +91,65 @@ public final class RerankTextDetails
             this.__explicitlySet__.add("servingMode");
             return this;
         }
-        /** A list of document strings to rerank based on the query asked. */
+        /**
+         * A list of document strings to rerank based on the query asked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<String> documents;
 
         /**
          * A list of document strings to rerank based on the query asked.
-         *
          * @param documents the value to set
          * @return this builder
-         */
+         **/
         public Builder documents(java.util.List<String> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
             return this;
         }
         /**
-         * The number of most relevant documents or indices to return. Defaults to the length of the
-         * documents.
-         */
+         * The number of most relevant documents or indices to return. Defaults to the length of the documents.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topN")
         private Integer topN;
 
         /**
-         * The number of most relevant documents or indices to return. Defaults to the length of the
-         * documents.
-         *
+         * The number of most relevant documents or indices to return. Defaults to the length of the documents.
          * @param topN the value to set
          * @return this builder
-         */
+         **/
         public Builder topN(Integer topN) {
             this.topN = topN;
             this.__explicitlySet__.add("topN");
             return this;
         }
-        /** Whether or not to return the documents in the response. */
+        /**
+         * Whether or not to return the documents in the response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
         private Boolean isEcho;
 
         /**
          * Whether or not to return the documents in the response.
-         *
          * @param isEcho the value to set
          * @return this builder
-         */
+         **/
         public Builder isEcho(Boolean isEcho) {
             this.isEcho = isEcho;
             this.__explicitlySet__.add("isEcho");
             return this;
         }
-        /** The maximum number of chunks to produce internally from a document. */
+        /**
+         * The maximum number of chunks to produce internally from a document.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxChunksPerDocument")
         private Integer maxChunksPerDocument;
 
         /**
          * The maximum number of chunks to produce internally from a document.
-         *
          * @param maxChunksPerDocument the value to set
          * @return this builder
-         */
+         **/
         public Builder maxChunksPerDocument(Integer maxChunksPerDocument) {
             this.maxChunksPerDocument = maxChunksPerDocument;
             this.__explicitlySet__.add("maxChunksPerDocument");
@@ -202,7 +202,9 @@ public final class RerankTextDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,28 +213,30 @@ public final class RerankTextDetails
         return new Builder().copy(this);
     }
 
-    /** Input query for search in the documents. */
+    /**
+     * Input query for search in the documents.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("input")
     private final String input;
 
     /**
      * Input query for search in the documents.
-     *
      * @return the value
-     */
+     **/
     public String getInput() {
         return input;
     }
 
-    /** The OCID of the compartment to call into the Generative AI service LLMs. */
+    /**
+     * The OCID of the compartment to call into the Generative AI service LLMs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment to call into the Generative AI service LLMs.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -244,58 +248,58 @@ public final class RerankTextDetails
         return servingMode;
     }
 
-    /** A list of document strings to rerank based on the query asked. */
+    /**
+     * A list of document strings to rerank based on the query asked.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<String> documents;
 
     /**
      * A list of document strings to rerank based on the query asked.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDocuments() {
         return documents;
     }
 
     /**
-     * The number of most relevant documents or indices to return. Defaults to the length of the
-     * documents.
-     */
+     * The number of most relevant documents or indices to return. Defaults to the length of the documents.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topN")
     private final Integer topN;
 
     /**
-     * The number of most relevant documents or indices to return. Defaults to the length of the
-     * documents.
-     *
+     * The number of most relevant documents or indices to return. Defaults to the length of the documents.
      * @return the value
-     */
+     **/
     public Integer getTopN() {
         return topN;
     }
 
-    /** Whether or not to return the documents in the response. */
+    /**
+     * Whether or not to return the documents in the response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
     private final Boolean isEcho;
 
     /**
      * Whether or not to return the documents in the response.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEcho() {
         return isEcho;
     }
 
-    /** The maximum number of chunks to produce internally from a document. */
+    /**
+     * The maximum number of chunks to produce internally from a document.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxChunksPerDocument")
     private final Integer maxChunksPerDocument;
 
     /**
      * The maximum number of chunks to produce internally from a document.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxChunksPerDocument() {
         return maxChunksPerDocument;
     }
@@ -307,7 +311,6 @@ public final class RerankTextDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

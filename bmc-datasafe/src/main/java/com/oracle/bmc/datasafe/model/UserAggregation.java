@@ -5,24 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The user aggregation provides information about the overall security state of database users. For
- * example, it states how many users have the DBA role and how many users are in the critical
- * category. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The user aggregation provides information about the overall security state of database users.
+ * For example, it states how many users have the DBA role and how many users are in the critical category.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UserAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UserAggregation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public UserAggregation(java.util.List<java.util.Map<String, Object>> items) {
@@ -33,19 +30,20 @@ public final class UserAggregation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
-         * }}
-         */
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<java.util.Map<String, Object>> items;
 
         /**
-         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
-         * }}
+         * List containing maps as values.
+         * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
          *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<java.util.Map<String, Object>> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -72,7 +70,9 @@ public final class UserAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -82,16 +82,19 @@ public final class UserAggregation
     }
 
     /**
-     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
-     */
+     * List containing maps as values.
+     * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<java.util.Map<String, Object>> items;
 
     /**
-     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     * List containing maps as values.
+     * Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
      *
      * @return the value
-     */
+     **/
     public java.util.List<java.util.Map<String, Object>> getItems() {
         return items;
     }
@@ -103,7 +106,6 @@ public final class UserAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

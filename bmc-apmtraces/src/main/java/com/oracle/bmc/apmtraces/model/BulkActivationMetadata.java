@@ -5,27 +5,25 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Metadata about the bulk activation operation. The bulk activation operation is atomic and binary.
- * If the processing of any of the attributes in the bulk activation request results in a processing
- * or validation error, then none of the attributes in the request are activated. The bulk
- * activation request succeeds only when all the attributes in the bulk activation request are
- * processed and they get a successful attributeStatus back. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Metadata about the bulk activation operation.  The bulk activation operation is atomic and binary.  If the processing of any of the attributes in the bulk
+ * activation request results in a processing or validation error, then none of the attributes in the request are activated.  The bulk activation request succeeds
+ * only when all the attributes in the bulk activation request are processed and they get a successful attributeStatus back.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkActivationMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkActivationMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkActivationMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationStatus",
@@ -66,59 +64,49 @@ public final class BulkActivationMetadata
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Operation status of the bulk activation operation. The bulk activation operation could
-         * have either a success or an error status as defined below. The following is a success
-         * status for the bulk activation operation. SUCCESS - The bulk activation operation has
-         * succeeded and all the attributes in the bulk activation request have been activated by
-         * this operation or activated earlier. The following are error statuses for the bulk
-         * activation operation. Note that none of the attributes (string or numeric) in the bulk
-         * request have been activated by this bulk activation operation if any of the below
-         * statuses. EMPTY_ATTRIBUTE_LIST - The bulk activation request object was empty and did not
-         * contain any attributes to be activated. NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of
-         * numeric attributes in the bulk request exceeded the maximum limit (100) of numeric
-         * attributes that could be activated in the APM Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED -
-         * The number of string attributes in the bulk request exceeded the maximum limit (700) of
-         * string attributes that could be activated in the APM Domain. INSUFFICIENT_STRING_SPACE -
-         * There are not enough free slots available in the APM Domain to activate the string
-         * attributes present in the bulk request. INSUFFICIENT_NUMERIC_SPACE - There are not enough
-         * free slots available in the APM Domain to activate the numeric attributes present in the
-         * bulk request. INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or
-         * attribute(s) that resulted in a validation error, or an attribute that resulted in a
-         * processing error.
-         */
+         * Operation status of the bulk activation operation.  The bulk  activation operation could have either a success or an error status as defined below.
+         * The following is a success status for the bulk activation operation.
+         * SUCCESS - The bulk activation operation has succeeded and all the attributes in the bulk activation request have been activated by this operation or activated earlier.
+         * The following are error statuses for the bulk activation operation.  Note that none of the attributes (string or numeric) in the bulk request have been activated by this bulk
+         * activation operation if any of the below statuses.
+         * EMPTY_ATTRIBUTE_LIST - The bulk activation request object was empty and did not contain any attributes to be activated.
+         * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be activated in the APM Domain.
+         * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be activated in the APM Domain.
+         * INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM Domain to activate the string attributes present in the bulk request.
+         * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to activate the numeric attributes present in the bulk request.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
         /**
-         * Operation status of the bulk activation operation. The bulk activation operation could
-         * have either a success or an error status as defined below. The following is a success
-         * status for the bulk activation operation. SUCCESS - The bulk activation operation has
-         * succeeded and all the attributes in the bulk activation request have been activated by
-         * this operation or activated earlier. The following are error statuses for the bulk
-         * activation operation. Note that none of the attributes (string or numeric) in the bulk
-         * request have been activated by this bulk activation operation if any of the below
-         * statuses. EMPTY_ATTRIBUTE_LIST - The bulk activation request object was empty and did not
-         * contain any attributes to be activated. NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of
-         * numeric attributes in the bulk request exceeded the maximum limit (100) of numeric
-         * attributes that could be activated in the APM Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED -
-         * The number of string attributes in the bulk request exceeded the maximum limit (700) of
-         * string attributes that could be activated in the APM Domain. INSUFFICIENT_STRING_SPACE -
-         * There are not enough free slots available in the APM Domain to activate the string
-         * attributes present in the bulk request. INSUFFICIENT_NUMERIC_SPACE - There are not enough
-         * free slots available in the APM Domain to activate the numeric attributes present in the
-         * bulk request. INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or
-         * attribute(s) that resulted in a validation error, or an attribute that resulted in a
-         * processing error.
+         * Operation status of the bulk activation operation.  The bulk  activation operation could have either a success or an error status as defined below.
+         * The following is a success status for the bulk activation operation.
+         * SUCCESS - The bulk activation operation has succeeded and all the attributes in the bulk activation request have been activated by this operation or activated earlier.
+         * The following are error statuses for the bulk activation operation.  Note that none of the attributes (string or numeric) in the bulk request have been activated by this bulk
+         * activation operation if any of the below statuses.
+         * EMPTY_ATTRIBUTE_LIST - The bulk activation request object was empty and did not contain any attributes to be activated.
+         * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be activated in the APM Domain.
+         * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be activated in the APM Domain.
+         * INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM Domain to activate the string attributes present in the bulk request.
+         * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to activate the numeric attributes present in the bulk request.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
          *
          * @param operationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-        /** Type of operation. */
+        /**
+         * Type of operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -127,13 +115,16 @@ public final class BulkActivationMetadata
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Total number of string attributes in TRACES namespace that were activated. */
+        /**
+         * Total number of string attributes in TRACES namespace that were activated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stringAttributesActivated")
         private Integer stringAttributesActivated;
 
@@ -142,13 +133,16 @@ public final class BulkActivationMetadata
          *
          * @param stringAttributesActivated the value to set
          * @return this builder
-         */
+         **/
         public Builder stringAttributesActivated(Integer stringAttributesActivated) {
             this.stringAttributesActivated = stringAttributesActivated;
             this.__explicitlySet__.add("stringAttributesActivated");
             return this;
         }
-        /** Total number of numeric attributes in TRACES namespace that were activated. */
+        /**
+         * Total number of numeric attributes in TRACES namespace that were activated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numericAttributesActivated")
         private Integer numericAttributesActivated;
 
@@ -157,13 +151,16 @@ public final class BulkActivationMetadata
          *
          * @param numericAttributesActivated the value to set
          * @return this builder
-         */
+         **/
         public Builder numericAttributesActivated(Integer numericAttributesActivated) {
             this.numericAttributesActivated = numericAttributesActivated;
             this.__explicitlySet__.add("numericAttributesActivated");
             return this;
         }
-        /** Total number of string attributes in SYNTHETIC namespace that were activated. */
+        /**
+         * Total number of string attributes in SYNTHETIC namespace that were activated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntheticStringAttributesActivated")
         private Integer syntheticStringAttributesActivated;
 
@@ -172,14 +169,17 @@ public final class BulkActivationMetadata
          *
          * @param syntheticStringAttributesActivated the value to set
          * @return this builder
-         */
+         **/
         public Builder syntheticStringAttributesActivated(
                 Integer syntheticStringAttributesActivated) {
             this.syntheticStringAttributesActivated = syntheticStringAttributesActivated;
             this.__explicitlySet__.add("syntheticStringAttributesActivated");
             return this;
         }
-        /** Total number of numeric attributes in SYNTHETIC namespace that were activated. */
+        /**
+         * Total number of numeric attributes in SYNTHETIC namespace that were activated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntheticNumericAttributesActivated")
         private Integer syntheticNumericAttributesActivated;
 
@@ -188,7 +188,7 @@ public final class BulkActivationMetadata
          *
          * @param syntheticNumericAttributesActivated the value to set
          * @return this builder
-         */
+         **/
         public Builder syntheticNumericAttributesActivated(
                 Integer syntheticNumericAttributesActivated) {
             this.syntheticNumericAttributesActivated = syntheticNumericAttributesActivated;
@@ -196,69 +196,60 @@ public final class BulkActivationMetadata
             return this;
         }
         /**
-         * Total number of free slots available to activate string attributes in the TRACES
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free slots available for activation of additional string
-         * attributes in the TRACES namespace in the APM Domain.
-         */
+         * Total number of free slots available to activate string attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free slots available for activation of additional string attributes in the TRACES namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableStringAttributes")
         private Integer availableStringAttributes;
 
         /**
-         * Total number of free slots available to activate string attributes in the TRACES
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free slots available for activation of additional string
-         * attributes in the TRACES namespace in the APM Domain.
+         * Total number of free slots available to activate string attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free slots available for activation of additional string attributes in the TRACES namespace in the APM Domain.
          *
          * @param availableStringAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableStringAttributes(Integer availableStringAttributes) {
             this.availableStringAttributes = availableStringAttributes;
             this.__explicitlySet__.add("availableStringAttributes");
             return this;
         }
         /**
-         * Total number of free slots available to activate numeric attributes in the TRACES
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free slots available for activation of additional numeric
-         * attributes in the TRACES namespace in the APM Domain.
-         */
+         * Total number of free slots available to activate numeric attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free slots available for activation of additional numeric attributes in the TRACES namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableNumericAttributes")
         private Integer availableNumericAttributes;
 
         /**
-         * Total number of free slots available to activate numeric attributes in the TRACES
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free slots available for activation of additional numeric
-         * attributes in the TRACES namespace in the APM Domain.
+         * Total number of free slots available to activate numeric attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free slots available for activation of additional numeric attributes in the TRACES namespace in the APM Domain.
          *
          * @param availableNumericAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableNumericAttributes(Integer availableNumericAttributes) {
             this.availableNumericAttributes = availableNumericAttributes;
             this.__explicitlySet__.add("availableNumericAttributes");
             return this;
         }
         /**
-         * Total number of free slots available to activate string attributes in the SYNTHETIC
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free synthetic slots available for activation of additional
-         * string attributes in the SYNTHETIC namespace in the APM Domain.
-         */
+         * Total number of free slots available to activate string attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free synthetic slots available for activation of additional string attributes in the SYNTHETIC namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticStringAttributes")
         private Integer availableSyntheticStringAttributes;
 
         /**
-         * Total number of free slots available to activate string attributes in the SYNTHETIC
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free synthetic slots available for activation of additional
-         * string attributes in the SYNTHETIC namespace in the APM Domain.
+         * Total number of free slots available to activate string attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free synthetic slots available for activation of additional string attributes in the SYNTHETIC namespace in the APM Domain.
          *
          * @param availableSyntheticStringAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableSyntheticStringAttributes(
                 Integer availableSyntheticStringAttributes) {
             this.availableSyntheticStringAttributes = availableSyntheticStringAttributes;
@@ -266,23 +257,20 @@ public final class BulkActivationMetadata
             return this;
         }
         /**
-         * Total number of free slots available to activate numeric attributes in the SYNTHETIC
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free synthetic slots available for activation of additional
-         * numeric attributes in the SYNTHETIC namespace in the APM Domain.
-         */
+         * Total number of free slots available to activate numeric attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free synthetic slots available for activation of additional numeric attributes in the SYNTHETIC namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticNumericAttributes")
         private Integer availableSyntheticNumericAttributes;
 
         /**
-         * Total number of free slots available to activate numeric attributes in the SYNTHETIC
-         * namespace in the APM Domain. Note that if a bulk request has succeeded, this number
-         * reflects the total number of free synthetic slots available for activation of additional
-         * numeric attributes in the SYNTHETIC namespace in the APM Domain.
+         * Total number of free slots available to activate numeric attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+         * number reflects the total number of free synthetic slots available for activation of additional numeric attributes in the SYNTHETIC namespace in the APM Domain.
          *
          * @param availableSyntheticNumericAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableSyntheticNumericAttributes(
                 Integer availableSyntheticNumericAttributes) {
             this.availableSyntheticNumericAttributes = availableSyntheticNumericAttributes;
@@ -352,7 +340,9 @@ public final class BulkActivationMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -362,26 +352,21 @@ public final class BulkActivationMetadata
     }
 
     /**
-     * Operation status of the bulk activation operation. The bulk activation operation could have
-     * either a success or an error status as defined below. The following is a success status for
-     * the bulk activation operation. SUCCESS - The bulk activation operation has succeeded and all
-     * the attributes in the bulk activation request have been activated by this operation or
-     * activated earlier. The following are error statuses for the bulk activation operation. Note
-     * that none of the attributes (string or numeric) in the bulk request have been activated by
-     * this bulk activation operation if any of the below statuses. EMPTY_ATTRIBUTE_LIST - The bulk
-     * activation request object was empty and did not contain any attributes to be activated.
-     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request
-     * exceeded the maximum limit (100) of numeric attributes that could be activated in the APM
-     * Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request
-     * exceeded the maximum limit (700) of string attributes that could be activated in the APM
-     * Domain. INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM
-     * Domain to activate the string attributes present in the bulk request.
-     * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to
-     * activate the numeric attributes present in the bulk request. INVALID_BULK_REQUEST - The bulk
-     * request contains invalid attribute(s), or attribute(s) that resulted in a validation error,
-     * or an attribute that resulted in a processing error.
-     */
-    public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * Operation status of the bulk activation operation.  The bulk  activation operation could have either a success or an error status as defined below.
+     * The following is a success status for the bulk activation operation.
+     * SUCCESS - The bulk activation operation has succeeded and all the attributes in the bulk activation request have been activated by this operation or activated earlier.
+     * The following are error statuses for the bulk activation operation.  Note that none of the attributes (string or numeric) in the bulk request have been activated by this bulk
+     * activation operation if any of the below statuses.
+     * EMPTY_ATTRIBUTE_LIST - The bulk activation request object was empty and did not contain any attributes to be activated.
+     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be activated in the APM Domain.
+     * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be activated in the APM Domain.
+     * INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM Domain to activate the string attributes present in the bulk request.
+     * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to activate the numeric attributes present in the bulk request.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
+    public enum OperationStatus {
         Success("SUCCESS"),
         EmptyAttributeList("EMPTY_ATTRIBUTE_LIST"),
         NumericAttributeLimitExceeded("NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED"),
@@ -391,8 +376,8 @@ public final class BulkActivationMetadata
         InvalidBulkRequest("INVALID_BULK_REQUEST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -432,61 +417,53 @@ public final class BulkActivationMetadata
         }
     };
     /**
-     * Operation status of the bulk activation operation. The bulk activation operation could have
-     * either a success or an error status as defined below. The following is a success status for
-     * the bulk activation operation. SUCCESS - The bulk activation operation has succeeded and all
-     * the attributes in the bulk activation request have been activated by this operation or
-     * activated earlier. The following are error statuses for the bulk activation operation. Note
-     * that none of the attributes (string or numeric) in the bulk request have been activated by
-     * this bulk activation operation if any of the below statuses. EMPTY_ATTRIBUTE_LIST - The bulk
-     * activation request object was empty and did not contain any attributes to be activated.
-     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request
-     * exceeded the maximum limit (100) of numeric attributes that could be activated in the APM
-     * Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request
-     * exceeded the maximum limit (700) of string attributes that could be activated in the APM
-     * Domain. INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM
-     * Domain to activate the string attributes present in the bulk request.
-     * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to
-     * activate the numeric attributes present in the bulk request. INVALID_BULK_REQUEST - The bulk
-     * request contains invalid attribute(s), or attribute(s) that resulted in a validation error,
-     * or an attribute that resulted in a processing error.
-     */
+     * Operation status of the bulk activation operation.  The bulk  activation operation could have either a success or an error status as defined below.
+     * The following is a success status for the bulk activation operation.
+     * SUCCESS - The bulk activation operation has succeeded and all the attributes in the bulk activation request have been activated by this operation or activated earlier.
+     * The following are error statuses for the bulk activation operation.  Note that none of the attributes (string or numeric) in the bulk request have been activated by this bulk
+     * activation operation if any of the below statuses.
+     * EMPTY_ATTRIBUTE_LIST - The bulk activation request object was empty and did not contain any attributes to be activated.
+     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be activated in the APM Domain.
+     * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be activated in the APM Domain.
+     * INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM Domain to activate the string attributes present in the bulk request.
+     * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to activate the numeric attributes present in the bulk request.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
     /**
-     * Operation status of the bulk activation operation. The bulk activation operation could have
-     * either a success or an error status as defined below. The following is a success status for
-     * the bulk activation operation. SUCCESS - The bulk activation operation has succeeded and all
-     * the attributes in the bulk activation request have been activated by this operation or
-     * activated earlier. The following are error statuses for the bulk activation operation. Note
-     * that none of the attributes (string or numeric) in the bulk request have been activated by
-     * this bulk activation operation if any of the below statuses. EMPTY_ATTRIBUTE_LIST - The bulk
-     * activation request object was empty and did not contain any attributes to be activated.
-     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request
-     * exceeded the maximum limit (100) of numeric attributes that could be activated in the APM
-     * Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request
-     * exceeded the maximum limit (700) of string attributes that could be activated in the APM
-     * Domain. INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM
-     * Domain to activate the string attributes present in the bulk request.
-     * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to
-     * activate the numeric attributes present in the bulk request. INVALID_BULK_REQUEST - The bulk
-     * request contains invalid attribute(s), or attribute(s) that resulted in a validation error,
-     * or an attribute that resulted in a processing error.
+     * Operation status of the bulk activation operation.  The bulk  activation operation could have either a success or an error status as defined below.
+     * The following is a success status for the bulk activation operation.
+     * SUCCESS - The bulk activation operation has succeeded and all the attributes in the bulk activation request have been activated by this operation or activated earlier.
+     * The following are error statuses for the bulk activation operation.  Note that none of the attributes (string or numeric) in the bulk request have been activated by this bulk
+     * activation operation if any of the below statuses.
+     * EMPTY_ATTRIBUTE_LIST - The bulk activation request object was empty and did not contain any attributes to be activated.
+     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be activated in the APM Domain.
+     * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be activated in the APM Domain.
+     * INSUFFICIENT_STRING_SPACE - There are not enough free slots available in the APM Domain to activate the string attributes present in the bulk request.
+     * INSUFFICIENT_NUMERIC_SPACE - There are not enough free slots available in the APM Domain to activate the numeric attributes present in the bulk request.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
      *
      * @return the value
-     */
+     **/
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
 
-    /** Type of operation. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation.
+     *
+     **/
+    public enum OperationType {
         Activate("ACTIVATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -525,7 +502,10 @@ public final class BulkActivationMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type of operation. */
+    /**
+     * Type of operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -533,12 +513,15 @@ public final class BulkActivationMetadata
      * Type of operation.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /** Total number of string attributes in TRACES namespace that were activated. */
+    /**
+     * Total number of string attributes in TRACES namespace that were activated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stringAttributesActivated")
     private final Integer stringAttributesActivated;
 
@@ -546,12 +529,15 @@ public final class BulkActivationMetadata
      * Total number of string attributes in TRACES namespace that were activated.
      *
      * @return the value
-     */
+     **/
     public Integer getStringAttributesActivated() {
         return stringAttributesActivated;
     }
 
-    /** Total number of numeric attributes in TRACES namespace that were activated. */
+    /**
+     * Total number of numeric attributes in TRACES namespace that were activated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numericAttributesActivated")
     private final Integer numericAttributesActivated;
 
@@ -559,12 +545,15 @@ public final class BulkActivationMetadata
      * Total number of numeric attributes in TRACES namespace that were activated.
      *
      * @return the value
-     */
+     **/
     public Integer getNumericAttributesActivated() {
         return numericAttributesActivated;
     }
 
-    /** Total number of string attributes in SYNTHETIC namespace that were activated. */
+    /**
+     * Total number of string attributes in SYNTHETIC namespace that were activated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntheticStringAttributesActivated")
     private final Integer syntheticStringAttributesActivated;
 
@@ -572,12 +561,15 @@ public final class BulkActivationMetadata
      * Total number of string attributes in SYNTHETIC namespace that were activated.
      *
      * @return the value
-     */
+     **/
     public Integer getSyntheticStringAttributesActivated() {
         return syntheticStringAttributesActivated;
     }
 
-    /** Total number of numeric attributes in SYNTHETIC namespace that were activated. */
+    /**
+     * Total number of numeric attributes in SYNTHETIC namespace that were activated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntheticNumericAttributesActivated")
     private final Integer syntheticNumericAttributesActivated;
 
@@ -585,91 +577,79 @@ public final class BulkActivationMetadata
      * Total number of numeric attributes in SYNTHETIC namespace that were activated.
      *
      * @return the value
-     */
+     **/
     public Integer getSyntheticNumericAttributesActivated() {
         return syntheticNumericAttributesActivated;
     }
 
     /**
-     * Total number of free slots available to activate string attributes in the TRACES namespace in
-     * the APM Domain. Note that if a bulk request has succeeded, this number reflects the total
-     * number of free slots available for activation of additional string attributes in the TRACES
-     * namespace in the APM Domain.
-     */
+     * Total number of free slots available to activate string attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free slots available for activation of additional string attributes in the TRACES namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableStringAttributes")
     private final Integer availableStringAttributes;
 
     /**
-     * Total number of free slots available to activate string attributes in the TRACES namespace in
-     * the APM Domain. Note that if a bulk request has succeeded, this number reflects the total
-     * number of free slots available for activation of additional string attributes in the TRACES
-     * namespace in the APM Domain.
+     * Total number of free slots available to activate string attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free slots available for activation of additional string attributes in the TRACES namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableStringAttributes() {
         return availableStringAttributes;
     }
 
     /**
-     * Total number of free slots available to activate numeric attributes in the TRACES namespace
-     * in the APM Domain. Note that if a bulk request has succeeded, this number reflects the total
-     * number of free slots available for activation of additional numeric attributes in the TRACES
-     * namespace in the APM Domain.
-     */
+     * Total number of free slots available to activate numeric attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free slots available for activation of additional numeric attributes in the TRACES namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableNumericAttributes")
     private final Integer availableNumericAttributes;
 
     /**
-     * Total number of free slots available to activate numeric attributes in the TRACES namespace
-     * in the APM Domain. Note that if a bulk request has succeeded, this number reflects the total
-     * number of free slots available for activation of additional numeric attributes in the TRACES
-     * namespace in the APM Domain.
+     * Total number of free slots available to activate numeric attributes in the TRACES namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free slots available for activation of additional numeric attributes in the TRACES namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableNumericAttributes() {
         return availableNumericAttributes;
     }
 
     /**
-     * Total number of free slots available to activate string attributes in the SYNTHETIC namespace
-     * in the APM Domain. Note that if a bulk request has succeeded, this number reflects the total
-     * number of free synthetic slots available for activation of additional string attributes in
-     * the SYNTHETIC namespace in the APM Domain.
-     */
+     * Total number of free slots available to activate string attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free synthetic slots available for activation of additional string attributes in the SYNTHETIC namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticStringAttributes")
     private final Integer availableSyntheticStringAttributes;
 
     /**
-     * Total number of free slots available to activate string attributes in the SYNTHETIC namespace
-     * in the APM Domain. Note that if a bulk request has succeeded, this number reflects the total
-     * number of free synthetic slots available for activation of additional string attributes in
-     * the SYNTHETIC namespace in the APM Domain.
+     * Total number of free slots available to activate string attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free synthetic slots available for activation of additional string attributes in the SYNTHETIC namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableSyntheticStringAttributes() {
         return availableSyntheticStringAttributes;
     }
 
     /**
-     * Total number of free slots available to activate numeric attributes in the SYNTHETIC
-     * namespace in the APM Domain. Note that if a bulk request has succeeded, this number reflects
-     * the total number of free synthetic slots available for activation of additional numeric
-     * attributes in the SYNTHETIC namespace in the APM Domain.
-     */
+     * Total number of free slots available to activate numeric attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free synthetic slots available for activation of additional numeric attributes in the SYNTHETIC namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticNumericAttributes")
     private final Integer availableSyntheticNumericAttributes;
 
     /**
-     * Total number of free slots available to activate numeric attributes in the SYNTHETIC
-     * namespace in the APM Domain. Note that if a bulk request has succeeded, this number reflects
-     * the total number of free synthetic slots available for activation of additional numeric
-     * attributes in the SYNTHETIC namespace in the APM Domain.
+     * Total number of free slots available to activate numeric attributes in the SYNTHETIC namespace in the APM Domain.  Note that if a bulk request has succeeded, this
+     * number reflects the total number of free synthetic slots available for activation of additional numeric attributes in the SYNTHETIC namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableSyntheticNumericAttributes() {
         return availableSyntheticNumericAttributes;
     }
@@ -681,7 +661,6 @@ public final class BulkActivationMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

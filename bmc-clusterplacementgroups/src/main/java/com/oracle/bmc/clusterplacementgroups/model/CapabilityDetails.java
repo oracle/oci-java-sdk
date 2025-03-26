@@ -5,23 +5,21 @@
 package com.oracle.bmc.clusterplacementgroups.model;
 
 /**
- * Details about the supported type of resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+ * Details about the supported type of resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CapabilityDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CapabilityDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CapabilityDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CapabilityDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"service", "name"})
     public CapabilityDetails(String service, String name) {
@@ -32,31 +30,33 @@ public final class CapabilityDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The service that the resource is part of. */
+        /**
+         * The service that the resource is part of.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
          * The service that the resource is part of.
-         *
          * @param service the value to set
          * @return this builder
-         */
+         **/
         public Builder service(String service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /** The type of resource. */
+        /**
+         * The type of resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The type of resource.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -86,7 +86,9 @@ public final class CapabilityDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +97,30 @@ public final class CapabilityDetails
         return new Builder().copy(this);
     }
 
-    /** The service that the resource is part of. */
+    /**
+     * The service that the resource is part of.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
      * The service that the resource is part of.
-     *
      * @return the value
-     */
+     **/
     public String getService() {
         return service;
     }
 
-    /** The type of resource. */
+    /**
+     * The type of resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The type of resource.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -128,7 +132,6 @@ public final class CapabilityDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

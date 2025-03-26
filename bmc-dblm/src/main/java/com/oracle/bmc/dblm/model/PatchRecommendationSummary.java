@@ -5,23 +5,22 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * Total count summary of patch recommendations for databases. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * Total count summary of patch recommendations for databases.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PatchRecommendationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PatchRecommendationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PatchRecommendationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"total", "upToDate", "patchAvailable"})
     public PatchRecommendationSummary(Integer total, Integer upToDate, Integer patchAvailable) {
@@ -33,46 +32,49 @@ public final class PatchRecommendationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total number of databases pending to be updated and/or with latest patches. */
+        /**
+         * Total number of databases pending to be updated and/or with latest patches.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("total")
         private Integer total;
 
         /**
          * Total number of databases pending to be updated and/or with latest patches.
-         *
          * @param total the value to set
          * @return this builder
-         */
+         **/
         public Builder total(Integer total) {
             this.total = total;
             this.__explicitlySet__.add("total");
             return this;
         }
-        /** Number of databases with latest patches. */
+        /**
+         * Number of databases with latest patches.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upToDate")
         private Integer upToDate;
 
         /**
          * Number of databases with latest patches.
-         *
          * @param upToDate the value to set
          * @return this builder
-         */
+         **/
         public Builder upToDate(Integer upToDate) {
             this.upToDate = upToDate;
             this.__explicitlySet__.add("upToDate");
             return this;
         }
-        /** Number of databases pending to be updated. */
+        /**
+         * Number of databases pending to be updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchAvailable")
         private Integer patchAvailable;
 
         /**
          * Number of databases pending to be updated.
-         *
          * @param patchAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder patchAvailable(Integer patchAvailable) {
             this.patchAvailable = patchAvailable;
             this.__explicitlySet__.add("patchAvailable");
@@ -106,7 +108,9 @@ public final class PatchRecommendationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +119,44 @@ public final class PatchRecommendationSummary
         return new Builder().copy(this);
     }
 
-    /** Total number of databases pending to be updated and/or with latest patches. */
+    /**
+     * Total number of databases pending to be updated and/or with latest patches.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("total")
     private final Integer total;
 
     /**
      * Total number of databases pending to be updated and/or with latest patches.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotal() {
         return total;
     }
 
-    /** Number of databases with latest patches. */
+    /**
+     * Number of databases with latest patches.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upToDate")
     private final Integer upToDate;
 
     /**
      * Number of databases with latest patches.
-     *
      * @return the value
-     */
+     **/
     public Integer getUpToDate() {
         return upToDate;
     }
 
-    /** Number of databases pending to be updated. */
+    /**
+     * Number of databases pending to be updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchAvailable")
     private final Integer patchAvailable;
 
     /**
      * Number of databases pending to be updated.
-     *
      * @return the value
-     */
+     **/
     public Integer getPatchAvailable() {
         return patchAvailable;
     }
@@ -161,7 +168,6 @@ public final class PatchRecommendationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,56 +6,68 @@ package com.oracle.bmc.optimizer.requests;
 
 import com.oracle.bmc.optimizer.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateRecommendationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateRecommendationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateRecommendationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateRecommendationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class UpdateRecommendationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.optimizer.model.UpdateRecommendationDetails> {
 
-    /** The unique OCID associated with the recommendation. */
+    /**
+     * The unique OCID associated with the recommendation.
+     */
     private String recommendationId;
 
-    /** The unique OCID associated with the recommendation. */
+    /**
+     * The unique OCID associated with the recommendation.
+     */
     public String getRecommendationId() {
         return recommendationId;
     }
-    /** The request object for updating the recommendation details. */
+    /**
+     * The request object for updating the recommendation details.
+     */
     private com.oracle.bmc.optimizer.model.UpdateRecommendationDetails updateRecommendationDetails;
 
-    /** The request object for updating the recommendation details. */
+    /**
+     * The request object for updating the recommendation details.
+     */
     public com.oracle.bmc.optimizer.model.UpdateRecommendationDetails
             getUpdateRecommendationDetails() {
         return updateRecommendationDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -63,7 +75,6 @@ public class UpdateRecommendationRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -76,15 +87,17 @@ public class UpdateRecommendationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateRecommendationRequest,
                     com.oracle.bmc.optimizer.model.UpdateRecommendationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique OCID associated with the recommendation. */
+        /**
+         * The unique OCID associated with the recommendation.
+         */
         private String recommendationId = null;
 
         /**
          * The unique OCID associated with the recommendation.
-         *
          * @param recommendationId the value to set
          * @return this builder instance
          */
@@ -93,13 +106,14 @@ public class UpdateRecommendationRequest
             return this;
         }
 
-        /** The request object for updating the recommendation details. */
+        /**
+         * The request object for updating the recommendation details.
+         */
         private com.oracle.bmc.optimizer.model.UpdateRecommendationDetails
                 updateRecommendationDetails = null;
 
         /**
          * The request object for updating the recommendation details.
-         *
          * @param updateRecommendationDetails the value to set
          * @return this builder instance
          */
@@ -111,14 +125,15 @@ public class UpdateRecommendationRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -129,18 +144,21 @@ public class UpdateRecommendationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -152,19 +170,18 @@ public class UpdateRecommendationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -176,7 +193,6 @@ public class UpdateRecommendationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateRecommendationRequest o) {
@@ -192,11 +208,10 @@ public class UpdateRecommendationRequest
         /**
          * Build the instance of UpdateRecommendationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateRecommendationRequest
          */
@@ -209,7 +224,6 @@ public class UpdateRecommendationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -222,8 +236,7 @@ public class UpdateRecommendationRequest
         /**
          * Build the instance of UpdateRecommendationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateRecommendationRequest
@@ -235,14 +248,12 @@ public class UpdateRecommendationRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateRecommendationRequest(recommendationId, updateRecommendationDetails,
-            // opcRequestId, ifMatch);
+            // new UpdateRecommendationRequest(recommendationId, updateRecommendationDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -255,7 +266,6 @@ public class UpdateRecommendationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

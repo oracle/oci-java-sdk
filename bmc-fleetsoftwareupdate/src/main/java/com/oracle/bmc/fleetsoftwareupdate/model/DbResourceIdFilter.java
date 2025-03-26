@@ -5,25 +5,26 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Related resource Ids to include in the discovery. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Related resource Ids to include in the discovery.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DbResourceIdFilter.Builder.class)
+    builder = DbResourceIdFilter.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,7 +36,10 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
             this.__explicitlySet__.add("mode");
             return this;
         }
-        /** Type of resource to match in the discovery. */
+        /**
+         * Type of resource to match in the discovery.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
@@ -44,32 +48,36 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
          *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(EntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
         /**
-         * Related resource Ids to include in the discovery. All must match the specified
-         * entityType.
-         */
+         * Related resource Ids to include in the discovery.
+         * All must match the specified entityType.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifiers")
         private java.util.List<String> identifiers;
 
         /**
-         * Related resource Ids to include in the discovery. All must match the specified
-         * entityType.
+         * Related resource Ids to include in the discovery.
+         * All must match the specified entityType.
          *
          * @param identifiers the value to set
          * @return this builder
-         */
+         **/
         public Builder identifiers(java.util.List<String> identifiers) {
             this.identifiers = identifiers;
             this.__explicitlySet__.add("identifiers");
             return this;
         }
-        /** Type of join for each element in this filter. */
+        /**
+         * Type of join for each element in this filter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private FleetDiscoveryOperators operator;
 
@@ -78,7 +86,7 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
          *
          * @param operator the value to set
          * @return this builder
-         */
+         **/
         public Builder operator(FleetDiscoveryOperators operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
@@ -116,7 +124,9 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,8 +147,11 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
         this.operator = operator;
     }
 
-    /** Type of resource to match in the discovery. */
-    public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of resource to match in the discovery.
+     *
+     **/
+    public enum EntityType {
         Databasesoftwareimage("DATABASESOFTWAREIMAGE"),
         Dbhome("DBHOME"),
         Exadatainfrastructure("EXADATAINFRASTRUCTURE"),
@@ -148,8 +161,8 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
         Fsucollection("FSUCOLLECTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -188,7 +201,10 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
             return UnknownEnumValue;
         }
     };
-    /** Type of resource to match in the discovery. */
+    /**
+     * Type of resource to match in the discovery.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
@@ -196,27 +212,33 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
      * Type of resource to match in the discovery.
      *
      * @return the value
-     */
+     **/
     public EntityType getEntityType() {
         return entityType;
     }
 
     /**
-     * Related resource Ids to include in the discovery. All must match the specified entityType.
-     */
+     * Related resource Ids to include in the discovery.
+     * All must match the specified entityType.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifiers")
     private final java.util.List<String> identifiers;
 
     /**
-     * Related resource Ids to include in the discovery. All must match the specified entityType.
+     * Related resource Ids to include in the discovery.
+     * All must match the specified entityType.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getIdentifiers() {
         return identifiers;
     }
 
-    /** Type of join for each element in this filter. */
+    /**
+     * Type of join for each element in this filter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final FleetDiscoveryOperators operator;
 
@@ -224,7 +246,7 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
      * Type of join for each element in this filter.
      *
      * @return the value
-     */
+     **/
     public FleetDiscoveryOperators getOperator() {
         return operator;
     }
@@ -236,7 +258,6 @@ public final class DbResourceIdFilter extends DbFleetDiscoveryFilter {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

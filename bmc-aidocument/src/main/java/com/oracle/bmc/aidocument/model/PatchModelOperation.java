@@ -5,23 +5,21 @@
 package com.oracle.bmc.aidocument.model;
 
 /**
- * The metadata which can be edited after model creation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+ * The metadata which can be edited after model creation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PatchModelOperation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PatchModelOperation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PatchModelOperation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PatchModelOperation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"path", "value", "operation"})
     public PatchModelOperation(String path, String value, Operation operation) {
@@ -33,46 +31,49 @@ public final class PatchModelOperation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The parameter of the resource to be changed. */
+        /**
+         * The parameter of the resource to be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * The parameter of the resource to be changed.
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** The value of the parameter to be updated. */
+        /**
+         * The value of the parameter to be updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value of the parameter to be updated.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** The value of the parameter to be updated. */
+        /**
+         * The value of the parameter to be updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
         /**
          * The value of the parameter to be updated.
-         *
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
@@ -106,7 +107,9 @@ public final class PatchModelOperation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,34 +118,38 @@ public final class PatchModelOperation
         return new Builder().copy(this);
     }
 
-    /** The parameter of the resource to be changed. */
+    /**
+     * The parameter of the resource to be changed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * The parameter of the resource to be changed.
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** The value of the parameter to be updated. */
+    /**
+     * The value of the parameter to be updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value of the parameter to be updated.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** The value of the parameter to be updated. */
-    public enum Operation implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The value of the parameter to be updated.
+     **/
+    public enum Operation {
         Delete("DELETE"),
         Add("ADD"),
         Replace("REPLACE"),
@@ -175,15 +182,16 @@ public final class PatchModelOperation
             throw new IllegalArgumentException("Invalid Operation: " + key);
         }
     };
-    /** The value of the parameter to be updated. */
+    /**
+     * The value of the parameter to be updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Operation operation;
 
     /**
      * The value of the parameter to be updated.
-     *
      * @return the value
-     */
+     **/
     public Operation getOperation() {
         return operation;
     }
@@ -195,7 +203,6 @@ public final class PatchModelOperation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

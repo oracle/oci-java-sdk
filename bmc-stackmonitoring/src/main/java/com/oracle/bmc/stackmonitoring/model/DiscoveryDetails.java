@@ -5,22 +5,19 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The request of DiscoveryJob Resource details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The request of DiscoveryJob Resource details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiscoveryDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DiscoveryDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DiscoveryDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "agentId",
@@ -51,61 +48,65 @@ public final class DiscoveryDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of Management Agent */
+        /**
+         * The OCID of Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
          * The OCID of Management Agent
-         *
          * @param agentId the value to set
          * @return this builder
-         */
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /** Resource Type. */
+        /**
+         * Resource Type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceType resourceType;
 
         /**
          * Resource Type.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(ResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The Name of resource type */
+        /**
+         * The Name of resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The Name of resource type
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** License edition of the monitored resource. */
+        /**
+         * License edition of the monitored resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("license")
         private LicenseType license;
 
         /**
          * License edition of the monitored resource.
-         *
          * @param license the value to set
          * @return this builder
-         */
+         **/
         public Builder license(LicenseType license) {
             this.license = license;
             this.__explicitlySet__.add("license");
@@ -185,7 +186,9 @@ public final class DiscoveryDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -194,21 +197,24 @@ public final class DiscoveryDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of Management Agent */
+    /**
+     * The OCID of Management Agent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * The OCID of Management Agent
-     *
      * @return the value
-     */
+     **/
     public String getAgentId() {
         return agentId;
     }
 
-    /** Resource Type. */
-    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Resource Type.
+     **/
+    public enum ResourceType {
         WeblogicDomain("WEBLOGIC_DOMAIN"),
         EbsInstance("EBS_INSTANCE"),
         SqlServer("SQL_SERVER"),
@@ -231,8 +237,8 @@ public final class DiscoveryDetails
         OracleJvm("ORACLE_JVM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -271,41 +277,44 @@ public final class DiscoveryDetails
             return UnknownEnumValue;
         }
     };
-    /** Resource Type. */
+    /**
+     * Resource Type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceType resourceType;
 
     /**
      * Resource Type.
-     *
      * @return the value
-     */
+     **/
     public ResourceType getResourceType() {
         return resourceType;
     }
 
-    /** The Name of resource type */
+    /**
+     * The Name of resource type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The Name of resource type
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** License edition of the monitored resource. */
+    /**
+     * License edition of the monitored resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("license")
     private final LicenseType license;
 
     /**
      * License edition of the monitored resource.
-     *
      * @return the value
-     */
+     **/
     public LicenseType getLicense() {
         return license;
     }
@@ -338,7 +347,6 @@ public final class DiscoveryDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

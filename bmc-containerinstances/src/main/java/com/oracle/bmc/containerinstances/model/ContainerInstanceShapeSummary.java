@@ -5,23 +5,23 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Details about a shape for a container instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+ * Details about a shape for a container instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ContainerInstanceShapeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ContainerInstanceShapeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ContainerInstanceShapeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -46,7 +46,10 @@ public final class ContainerInstanceShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name identifying the shape. */
+        /**
+         * The name identifying the shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -55,13 +58,16 @@ public final class ContainerInstanceShapeSummary
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A short description of the container instance's processor (CPU). */
+        /**
+         * A short description of the container instance's processor (CPU).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
@@ -70,7 +76,7 @@ public final class ContainerInstanceShapeSummary
          *
          * @param processorDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder processorDescription(String processorDescription) {
             this.processorDescription = processorDescription;
             this.__explicitlySet__.add("processorDescription");
@@ -143,7 +149,9 @@ public final class ContainerInstanceShapeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,7 +160,10 @@ public final class ContainerInstanceShapeSummary
         return new Builder().copy(this);
     }
 
-    /** The name identifying the shape. */
+    /**
+     * The name identifying the shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -160,12 +171,15 @@ public final class ContainerInstanceShapeSummary
      * The name identifying the shape.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** A short description of the container instance's processor (CPU). */
+    /**
+     * A short description of the container instance's processor (CPU).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
@@ -173,7 +187,7 @@ public final class ContainerInstanceShapeSummary
      * A short description of the container instance's processor (CPU).
      *
      * @return the value
-     */
+     **/
     public String getProcessorDescription() {
         return processorDescription;
     }
@@ -206,7 +220,6 @@ public final class ContainerInstanceShapeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Provider of the feed (Oracle/Customer). */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum FeedProviderType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Provider of the feed (Oracle/Customer).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum FeedProviderType {
     Customer("CUSTOMER"),
     Oracle("ORACLE"),
 

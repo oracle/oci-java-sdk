@@ -6,73 +6,91 @@ package com.oracle.bmc.databasemigration.requests;
 
 import com.oracle.bmc.databasemigration.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListJobsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJobsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListJobsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJobsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the migration in which to list resources. */
+    /**
+     * The ID of the migration in which to list resources.
+     *
+     */
     private String migrationId;
 
-    /** The ID of the migration in which to list resources. */
+    /**
+     * The ID of the migration in which to list resources.
+     *
+     */
     public String getMigrationId() {
         return migrationId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -106,34 +124,50 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     private com.oracle.bmc.databasemigration.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.databasemigration.model.SortOrders getSortOrder() {
         return sortOrder;
     }
-    /** The lifecycle state of the Migration Job. */
+    /**
+     * The lifecycle state of the Migration Job.
+     *
+     */
     private com.oracle.bmc.databasemigration.model.JobLifecycleStates lifecycleState;
 
-    /** The lifecycle state of the Migration Job. */
+    /**
+     * The lifecycle state of the Migration Job.
+     *
+     */
     public com.oracle.bmc.databasemigration.model.JobLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListJobsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the migration in which to list resources. */
+        /**
+         * The ID of the migration in which to list resources.
+         *
+         */
         private String migrationId = null;
 
         /**
@@ -150,6 +184,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -165,7 +200,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -179,7 +217,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -194,14 +235,13 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -212,16 +252,15 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         * Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         * Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -231,7 +270,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.databasemigration.model.SortOrders sortOrder = null;
 
         /**
@@ -245,7 +287,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The lifecycle state of the Migration Job. */
+        /**
+         * The lifecycle state of the Migration Job.
+         *
+         */
         private com.oracle.bmc.databasemigration.model.JobLifecycleStates lifecycleState = null;
 
         /**
@@ -262,19 +307,18 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -286,7 +330,6 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListJobsRequest o) {
@@ -306,11 +349,10 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListJobsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListJobsRequest
          */
@@ -324,8 +366,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListJobsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListJobsRequest
@@ -341,14 +382,12 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListJobsRequest(migrationId, opcRequestId, displayName, limit, page, sortBy,
-            // sortOrder, lifecycleState);
+            // new ListJobsRequest(migrationId, opcRequestId, displayName, limit, page, sortBy, sortOrder, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -365,7 +404,6 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

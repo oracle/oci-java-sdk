@@ -5,53 +5,55 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The view entity data entity details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The view entity data entity details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataEntityFromDataStoreEntityDetails.Builder.class)
+    builder = DataEntityFromDataStoreEntityDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The object key. */
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The object's model version. */
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The object's model version.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -67,66 +69,64 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Detailed description for the object. */
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The version of the object that is used to track changes in the object instance. */
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
-         *
          * @param objectVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-        /** The external key for the object */
+        /**
+         * The external key for the object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
          * The external key for the object
-         *
          * @param externalKey the value to set
          * @return this builder
-         */
+         **/
         public Builder externalKey(String externalKey) {
             this.externalKey = externalKey;
             this.__explicitlySet__.add("externalKey");
@@ -141,16 +141,17 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The shape ID. */
+        /**
+         * The shape ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
         private String shapeId;
 
         /**
          * The shape ID.
-         *
          * @param shapeId the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeId(String shapeId) {
             this.shapeId = shapeId;
             this.__explicitlySet__.add("shapeId");
@@ -165,189 +166,193 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             this.__explicitlySet__.add("types");
             return this;
         }
-        /** The entity type. */
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
         /**
          * The entity type.
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(EntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-        /** Specifies other type labels. */
+        /**
+         * Specifies other type labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
         private String otherTypeLabel;
 
         /**
          * Specifies other type labels.
-         *
          * @param otherTypeLabel the value to set
          * @return this builder
-         */
+         **/
         public Builder otherTypeLabel(String otherTypeLabel) {
             this.otherTypeLabel = otherTypeLabel;
             this.__explicitlySet__.add("otherTypeLabel");
             return this;
         }
-        /** An array of unique keys. */
+        /**
+         * An array of unique keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
         private java.util.List<UniqueKey> uniqueKeys;
 
         /**
          * An array of unique keys.
-         *
          * @param uniqueKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder uniqueKeys(java.util.List<UniqueKey> uniqueKeys) {
             this.uniqueKeys = uniqueKeys;
             this.__explicitlySet__.add("uniqueKeys");
             return this;
         }
-        /** An array of foreign keys. */
+        /**
+         * An array of foreign keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
         private java.util.List<ForeignKey> foreignKeys;
 
         /**
          * An array of foreign keys.
-         *
          * @param foreignKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder foreignKeys(java.util.List<ForeignKey> foreignKeys) {
             this.foreignKeys = foreignKeys;
             this.__explicitlySet__.add("foreignKeys");
             return this;
         }
-        /** The resource name. */
+        /**
+         * The resource name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The resource name.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         */
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         *
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** Filters present in the Datastore. It can be Null. */
+        /**
+         * Filters present in the Datastore. It can be Null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private String filters;
 
         /**
          * Filters present in the Datastore. It can be Null.
-         *
          * @param filters the value to set
          * @return this builder
-         */
+         **/
         public Builder filters(String filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
             return this;
         }
-        /** It shows whether or not effective date is disabled */
+        /**
+         * It shows whether or not effective date is disabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
         private Boolean isEffectiveDateDisabled;
 
         /**
          * It shows whether or not effective date is disabled
-         *
          * @param isEffectiveDateDisabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEffectiveDateDisabled(Boolean isEffectiveDateDisabled) {
             this.isEffectiveDateDisabled = isEffectiveDateDisabled;
             this.__explicitlySet__.add("isEffectiveDateDisabled");
             return this;
         }
-        /** It shows whether the datastore is of flex type */
+        /**
+         * It shows whether the datastore is of flex type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
         private Boolean isFlexDataStore;
 
         /**
          * It shows whether the datastore is of flex type
-         *
          * @param isFlexDataStore the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlexDataStore(Boolean isFlexDataStore) {
             this.isFlexDataStore = isFlexDataStore;
             this.__explicitlySet__.add("isFlexDataStore");
             return this;
         }
-        /** It shows whether the extraction of this datastore will stop on error */
+        /**
+         * It shows whether the extraction of this datastore will stop on error
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
         private Boolean isSilentError;
 
         /**
          * It shows whether the extraction of this datastore will stop on error
-         *
          * @param isSilentError the value to set
          * @return this builder
-         */
+         **/
         public Builder isSilentError(Boolean isSilentError) {
             this.isSilentError = isSilentError;
             this.__explicitlySet__.add("isSilentError");
             return this;
         }
-        /** It shows whether the datastore supports Incremental Extract or not. */
+        /**
+         * It shows whether the datastore supports Incremental Extract or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
         private Boolean supportsIncremental;
 
         /**
          * It shows whether the datastore supports Incremental Extract or not.
-         *
          * @param supportsIncremental the value to set
          * @return this builder
-         */
+         **/
         public Builder supportsIncremental(Boolean supportsIncremental) {
             this.supportsIncremental = supportsIncremental;
             this.__explicitlySet__.add("supportsIncremental");
@@ -460,7 +465,9 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -518,28 +525,30 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
         this.supportsIncremental = supportsIncremental;
     }
 
-    /** The object key. */
+    /**
+     * The object key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The object's model version. */
+    /**
+     * The object's model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The object's model version.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -552,57 +561,57 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Detailed description for the object. */
+    /**
+     * Detailed description for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The version of the object that is used to track changes in the object instance. */
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
-    /** The external key for the object */
+    /**
+     * The external key for the object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
      * The external key for the object
-     *
      * @return the value
-     */
+     **/
     public String getExternalKey() {
         return externalKey;
     }
@@ -614,15 +623,16 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
         return shape;
     }
 
-    /** The shape ID. */
+    /**
+     * The shape ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
     private final String shapeId;
 
     /**
      * The shape ID.
-     *
      * @return the value
-     */
+     **/
     public String getShapeId() {
         return shapeId;
     }
@@ -634,8 +644,10 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
         return types;
     }
 
-    /** The entity type. */
-    public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The entity type.
+     **/
+    public enum EntityType {
         Table("TABLE"),
         View("VIEW"),
         File("FILE"),
@@ -672,166 +684,170 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             throw new IllegalArgumentException("Invalid EntityType: " + key);
         }
     };
-    /** The entity type. */
+    /**
+     * The entity type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
     /**
      * The entity type.
-     *
      * @return the value
-     */
+     **/
     public EntityType getEntityType() {
         return entityType;
     }
 
-    /** Specifies other type labels. */
+    /**
+     * Specifies other type labels.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
     private final String otherTypeLabel;
 
     /**
      * Specifies other type labels.
-     *
      * @return the value
-     */
+     **/
     public String getOtherTypeLabel() {
         return otherTypeLabel;
     }
 
-    /** An array of unique keys. */
+    /**
+     * An array of unique keys.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
     private final java.util.List<UniqueKey> uniqueKeys;
 
     /**
      * An array of unique keys.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UniqueKey> getUniqueKeys() {
         return uniqueKeys;
     }
 
-    /** An array of foreign keys. */
+    /**
+     * An array of foreign keys.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
     private final java.util.List<ForeignKey> foreignKeys;
 
     /**
      * An array of foreign keys.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ForeignKey> getForeignKeys() {
         return foreignKeys;
     }
 
-    /** The resource name. */
+    /**
+     * The resource name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The resource name.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper
-     * case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper
-     * case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** Filters present in the Datastore. It can be Null. */
+    /**
+     * Filters present in the Datastore. It can be Null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final String filters;
 
     /**
      * Filters present in the Datastore. It can be Null.
-     *
      * @return the value
-     */
+     **/
     public String getFilters() {
         return filters;
     }
 
-    /** It shows whether or not effective date is disabled */
+    /**
+     * It shows whether or not effective date is disabled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
     private final Boolean isEffectiveDateDisabled;
 
     /**
      * It shows whether or not effective date is disabled
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEffectiveDateDisabled() {
         return isEffectiveDateDisabled;
     }
 
-    /** It shows whether the datastore is of flex type */
+    /**
+     * It shows whether the datastore is of flex type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
     private final Boolean isFlexDataStore;
 
     /**
      * It shows whether the datastore is of flex type
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFlexDataStore() {
         return isFlexDataStore;
     }
 
-    /** It shows whether the extraction of this datastore will stop on error */
+    /**
+     * It shows whether the extraction of this datastore will stop on error
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
     private final Boolean isSilentError;
 
     /**
      * It shows whether the extraction of this datastore will stop on error
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSilentError() {
         return isSilentError;
     }
 
-    /** It shows whether the datastore supports Incremental Extract or not. */
+    /**
+     * It shows whether the datastore supports Incremental Extract or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
     private final Boolean supportsIncremental;
 
     /**
      * It shows whether the datastore supports Incremental Extract or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getSupportsIncremental() {
         return supportsIncremental;
     }
@@ -843,7 +859,6 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

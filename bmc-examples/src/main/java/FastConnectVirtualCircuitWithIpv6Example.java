@@ -19,18 +19,18 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Sample to demonstrate setting up FastConnect Virtual Circuit with Ipv6
+ * <p>
  *
- * <p>Oracle Cloud Infrastructure FastConnect provides an easy way to create a dedicated, private
- * connection between your data center and Oracle Cloud Infrastructure.
  *
- * <p>FastConnect provides higher-bandwidth options, and a more reliable and consistent networking
- * experience compared to internet-based connections.
+ *  Oracle Cloud Infrastructure FastConnect provides an easy way to create a dedicated,
+ *  private connection between your data center and Oracle Cloud Infrastructure.
  *
- * <p>Details information on FastConnect:
- * https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+ *  FastConnect provides higher-bandwidth options, and a more reliable and consistent
+ *  networking experience compared to internet-based connections.
  *
- * <p>Details virtual circuit API:
- * https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit
+ *  Details information on FastConnect: https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+ *
+ *  Details virtual circuit API: https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit
  */
 public class FastConnectVirtualCircuitWithIpv6Example {
     // Set this with your own compartment ID
@@ -60,10 +60,8 @@ public class FastConnectVirtualCircuitWithIpv6Example {
             throw new IllegalStateException("A compartment ID must be defined");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -71,11 +69,13 @@ public class FastConnectVirtualCircuitWithIpv6Example {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient phxVirtualNetworkClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
-        final FastConnectCrossConnectExample example =
-                new FastConnectCrossConnectExample(phxVirtualNetworkClient, Region.US_PHOENIX_1);
-        final IdentityClient identityClient = IdentityClient.builder().build(authProvider);
+        final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
+        phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);
+
+        final FastConnectVirtualCircuitWithIpv6Example example =
+                new FastConnectVirtualCircuitWithIpv6Example(
+                        phxVirtualNetworkClient, Region.US_PHOENIX_1);
+        final IdentityClient identityClient = new IdentityClient(authProvider);
 
         example.run(identityClient);
     }
@@ -102,8 +102,7 @@ public class FastConnectVirtualCircuitWithIpv6Example {
                 }
             }
 
-            // Gets the list of available virtual circuit bandwidth levels for the above provider.
-            // Example: 1 Gbps
+            //Gets the list of available virtual circuit bandwidth levels for the above provider. Example: 1 Gbps
             List<VirtualCircuitBandwidthShape> vcBandwidthShapes =
                     FastConnectVirtualCircuitExample
                             .getFastConnectProviderVirtualCircuitBandwidthShapes(

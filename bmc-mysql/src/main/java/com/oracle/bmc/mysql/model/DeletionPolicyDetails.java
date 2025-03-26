@@ -5,23 +5,22 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The Deletion policy for the DB System. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * The Deletion policy for the DB System.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeletionPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeletionPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeletionPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "automaticBackupRetention",
@@ -41,19 +40,18 @@ public final class DeletionPolicyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specifies if any automatic backups created for a DB System should be retained or deleted
-         * when the DB System is deleted.
-         */
+         * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("automaticBackupRetention")
         private AutomaticBackupRetention automaticBackupRetention;
 
         /**
-         * Specifies if any automatic backups created for a DB System should be retained or deleted
-         * when the DB System is deleted.
+         * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
          *
          * @param automaticBackupRetention the value to set
          * @return this builder
-         */
+         **/
         public Builder automaticBackupRetention(AutomaticBackupRetention automaticBackupRetention) {
             this.automaticBackupRetention = automaticBackupRetention;
             this.__explicitlySet__.add("automaticBackupRetention");
@@ -61,39 +59,39 @@ public final class DeletionPolicyDetails
         }
         /**
          * Specifies whether or not a backup is taken when the DB System is deleted.
-         * REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a
-         * backup is not taken if the DB System is deleted.
-         */
+         *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+         *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("finalBackup")
         private FinalBackup finalBackup;
 
         /**
          * Specifies whether or not a backup is taken when the DB System is deleted.
-         * REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a
-         * backup is not taken if the DB System is deleted.
+         *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+         *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
          *
          * @param finalBackup the value to set
          * @return this builder
-         */
+         **/
         public Builder finalBackup(FinalBackup finalBackup) {
             this.finalBackup = finalBackup;
             this.__explicitlySet__.add("finalBackup");
             return this;
         }
         /**
-         * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false
-         * (default) to allow.
-         */
+         * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtected")
         private Boolean isDeleteProtected;
 
         /**
-         * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false
-         * (default) to allow.
+         * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
          *
          * @param isDeleteProtected the value to set
          * @return this builder
-         */
+         **/
         public Builder isDeleteProtected(Boolean isDeleteProtected) {
             this.isDeleteProtected = isDeleteProtected;
             this.__explicitlySet__.add("isDeleteProtected");
@@ -130,7 +128,9 @@ public final class DeletionPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,16 +140,16 @@ public final class DeletionPolicyDetails
     }
 
     /**
-     * Specifies if any automatic backups created for a DB System should be retained or deleted when
-     * the DB System is deleted.
-     */
-    public enum AutomaticBackupRetention implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+     *
+     **/
+    public enum AutomaticBackupRetention {
         Delete("DELETE"),
         Retain("RETAIN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -189,34 +189,34 @@ public final class DeletionPolicyDetails
         }
     };
     /**
-     * Specifies if any automatic backups created for a DB System should be retained or deleted when
-     * the DB System is deleted.
-     */
+     * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("automaticBackupRetention")
     private final AutomaticBackupRetention automaticBackupRetention;
 
     /**
-     * Specifies if any automatic backups created for a DB System should be retained or deleted when
-     * the DB System is deleted.
+     * Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
      *
      * @return the value
-     */
+     **/
     public AutomaticBackupRetention getAutomaticBackupRetention() {
         return automaticBackupRetention;
     }
 
     /**
      * Specifies whether or not a backup is taken when the DB System is deleted.
-     * REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a
-     * backup is not taken if the DB System is deleted.
-     */
-    public enum FinalBackup implements com.oracle.bmc.http.internal.BmcEnum {
+     *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+     *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+     *
+     **/
+    public enum FinalBackup {
         SkipFinalBackup("SKIP_FINAL_BACKUP"),
         RequireFinalBackup("REQUIRE_FINAL_BACKUP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -257,36 +257,36 @@ public final class DeletionPolicyDetails
     };
     /**
      * Specifies whether or not a backup is taken when the DB System is deleted.
-     * REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a
-     * backup is not taken if the DB System is deleted.
-     */
+     *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+     *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("finalBackup")
     private final FinalBackup finalBackup;
 
     /**
      * Specifies whether or not a backup is taken when the DB System is deleted.
-     * REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a
-     * backup is not taken if the DB System is deleted.
+     *   REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted.
+     *   SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
      *
      * @return the value
-     */
+     **/
     public FinalBackup getFinalBackup() {
         return finalBackup;
     }
 
     /**
-     * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false
-     * (default) to allow.
-     */
+     * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtected")
     private final Boolean isDeleteProtected;
 
     /**
-     * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false
-     * (default) to allow.
+     * Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDeleteProtected() {
         return isDeleteProtected;
     }
@@ -298,7 +298,6 @@ public final class DeletionPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

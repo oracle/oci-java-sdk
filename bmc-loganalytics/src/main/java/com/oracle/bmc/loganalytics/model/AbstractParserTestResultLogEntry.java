@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * AbstractParserTestResultLogEntry <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * AbstractParserTestResultLogEntry
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AbstractParserTestResultLogEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AbstractParserTestResultLogEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AbstractParserTestResultLogEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "extraInfoAttributes",
@@ -55,121 +54,129 @@ public final class AbstractParserTestResultLogEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Extra information attributes. */
+        /**
+         * Extra information attributes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extraInfoAttributes")
         private java.util.Map<String, String> extraInfoAttributes;
 
         /**
          * Extra information attributes.
-         *
          * @param extraInfoAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder extraInfoAttributes(java.util.Map<String, String> extraInfoAttributes) {
             this.extraInfoAttributes = extraInfoAttributes;
             this.__explicitlySet__.add("extraInfoAttributes");
             return this;
         }
-        /** The field map. */
+        /**
+         * The field map.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldMap")
         private java.util.Map<String, String> fieldMap;
 
         /**
          * The field map.
-         *
          * @param fieldMap the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldMap(java.util.Map<String, String> fieldMap) {
             this.fieldMap = fieldMap;
             this.__explicitlySet__.add("fieldMap");
             return this;
         }
-        /** The field name value map. */
+        /**
+         * The field name value map.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNameValueMap")
         private java.util.Map<String, String> fieldNameValueMap;
 
         /**
          * The field name value map.
-         *
          * @param fieldNameValueMap the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldNameValueMap(java.util.Map<String, String> fieldNameValueMap) {
             this.fieldNameValueMap = fieldNameValueMap;
             this.__explicitlySet__.add("fieldNameValueMap");
             return this;
         }
-        /** The field position value map. */
+        /**
+         * The field position value map.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldPositionValueMap")
         private java.util.Map<String, String> fieldPositionValueMap;
 
         /**
          * The field position value map.
-         *
          * @param fieldPositionValueMap the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldPositionValueMap(java.util.Map<String, String> fieldPositionValueMap) {
             this.fieldPositionValueMap = fieldPositionValueMap;
             this.__explicitlySet__.add("fieldPositionValueMap");
             return this;
         }
-        /** The parser fields. */
+        /**
+         * The parser fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.Map<String, String> fields;
 
         /**
          * The parser fields.
-         *
          * @param fields the value to set
          * @return this builder
-         */
+         **/
         public Builder fields(java.util.Map<String, String> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-        /** The log entry. */
+        /**
+         * The log entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logEntry")
         private String logEntry;
 
         /**
          * The log entry.
-         *
          * @param logEntry the value to set
          * @return this builder
-         */
+         **/
         public Builder logEntry(String logEntry) {
             this.logEntry = logEntry;
             this.__explicitlySet__.add("logEntry");
             return this;
         }
-        /** The match status. */
+        /**
+         * The match status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
         private String matchStatus;
 
         /**
          * The match status.
-         *
          * @param matchStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder matchStatus(String matchStatus) {
             this.matchStatus = matchStatus;
             this.__explicitlySet__.add("matchStatus");
             return this;
         }
-        /** The match status description. */
+        /**
+         * The match status description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchStatusDescription")
         private String matchStatusDescription;
 
         /**
          * The match status description.
-         *
          * @param matchStatusDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder matchStatusDescription(String matchStatusDescription) {
             this.matchStatusDescription = matchStatusDescription;
             this.__explicitlySet__.add("matchStatusDescription");
@@ -226,7 +233,9 @@ public final class AbstractParserTestResultLogEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -235,106 +244,114 @@ public final class AbstractParserTestResultLogEntry
         return new Builder().copy(this);
     }
 
-    /** Extra information attributes. */
+    /**
+     * Extra information attributes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extraInfoAttributes")
     private final java.util.Map<String, String> extraInfoAttributes;
 
     /**
      * Extra information attributes.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getExtraInfoAttributes() {
         return extraInfoAttributes;
     }
 
-    /** The field map. */
+    /**
+     * The field map.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldMap")
     private final java.util.Map<String, String> fieldMap;
 
     /**
      * The field map.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFieldMap() {
         return fieldMap;
     }
 
-    /** The field name value map. */
+    /**
+     * The field name value map.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNameValueMap")
     private final java.util.Map<String, String> fieldNameValueMap;
 
     /**
      * The field name value map.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFieldNameValueMap() {
         return fieldNameValueMap;
     }
 
-    /** The field position value map. */
+    /**
+     * The field position value map.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldPositionValueMap")
     private final java.util.Map<String, String> fieldPositionValueMap;
 
     /**
      * The field position value map.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFieldPositionValueMap() {
         return fieldPositionValueMap;
     }
 
-    /** The parser fields. */
+    /**
+     * The parser fields.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.Map<String, String> fields;
 
     /**
      * The parser fields.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFields() {
         return fields;
     }
 
-    /** The log entry. */
+    /**
+     * The log entry.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logEntry")
     private final String logEntry;
 
     /**
      * The log entry.
-     *
      * @return the value
-     */
+     **/
     public String getLogEntry() {
         return logEntry;
     }
 
-    /** The match status. */
+    /**
+     * The match status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
     private final String matchStatus;
 
     /**
      * The match status.
-     *
      * @return the value
-     */
+     **/
     public String getMatchStatus() {
         return matchStatus;
     }
 
-    /** The match status description. */
+    /**
+     * The match status description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatusDescription")
     private final String matchStatusDescription;
 
     /**
      * The match status description.
-     *
      * @return the value
-     */
+     **/
     public String getMatchStatusDescription() {
         return matchStatusDescription;
     }
@@ -346,7 +363,6 @@ public final class AbstractParserTestResultLogEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

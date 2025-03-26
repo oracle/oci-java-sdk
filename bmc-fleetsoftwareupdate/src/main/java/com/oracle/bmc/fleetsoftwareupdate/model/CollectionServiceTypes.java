@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible Cloud service types for the targets. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum CollectionServiceTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Cloud service types for the targets.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum CollectionServiceTypes {
     Exacs("EXACS"),
     Exacc("EXACC"),
 

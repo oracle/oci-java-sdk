@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.auth;
 
-import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.internal.DefaultRptPathProvider;
@@ -17,7 +16,9 @@ import com.oracle.bmc.auth.internal.KeyPairAuthenticationDetailProvider;
 import com.oracle.bmc.auth.internal.ResourcePrincipalV2FederationClient;
 import com.oracle.bmc.auth.internal.ResourcePrincipalsFederationClient;
 import com.oracle.bmc.auth.internal.RptPathProvider;
+import com.oracle.bmc.auth.internal.SupplierBasedResourcePrincipalFederationClient;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import com.oracle.bmc.util.internal.NameUtils;
 import com.oracle.bmc.util.internal.StringUtils;
@@ -36,105 +37,129 @@ import java.time.Duration;
 import java.util.Optional;
 
 /**
- * This constructs a default implementation of the {@link
- * ResourcePrincipalAuthenticationDetailsProvider}, constructed in accordance with the following
- * environment variable settings:
- *
+ * This constructs a default implementation of the {@link ResourcePrincipalAuthenticationDetailsProvider}, constructed
+ * in accordance with the following environment variable settings:
  * <ul>
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_VERSION}:
- *       <p>This is required. Permitted values are "1.1", "2.1", "2.1.1", "2.1.2", "2.2" and "3.0"
- *       <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "1.1"</b>
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}:
- *       <p>This is required. The endpoint for retrieving the Resource Principal Token.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}:
- *       <p>If set, the value from environment variable is used.
- *       <p>Otherwise, it uses the default resource principal token path provider.
- *       <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.1"</b>
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}
- *       <p>This is required. The endpoint for retrieving the Resource Principal Token.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}
- *       <p>This is required. The endpoint for retrieving the Resource Principal Session Token.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RESOURCE_ID}
- *       <p>This is required. The RPv2.1 resource id.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}
- *       <p>This is required. If this points to existing file path, then the filesystem-supplied
- *       private key will be retrieved from that location.
- *       <p>Otherwise, the value is interpreted as the direct injection of a private key.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}
- *       <p>This is optional. The passphrase for the private key.
- *       <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.1.1"</b>
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}
- *       <p>This is required. The endpoint for retrieving the Resource Principal Token.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}
- *       <p>This is required. The endpoint for retrieving the Resource Principal Session Token.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RESOURCE_ID}
- *       <p>This is required. The RPv2.1.1 resource id.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_TENANCY_ID}
- *       <p>This is required. The RPv2.1.1 tenancy id.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}
- *       <p>This is required. If this points to existing file path, then the filesystem-supplied
- *       private key will be retrieved from that location.
- *       <p>Otherwise, the value is interpreted as the direct injection of a private key.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}
- *       <p>This is optional. The passphrase for the private key.
- *       <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.1.2"</b>
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}
- *       <p>This is required. The endpoint for retrieving the Resource Principal Token.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}
- *       <p>This is required. The endpoint for retrieving the Resource Principal Session Token.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RESOURCE_ID}
- *       <p>This is required. The RPv2.1.2 resource id.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_TENANCY_ID}
- *       <p>This is required. The RPv2.1.2 tenancy id.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_SECURITY_CONTEXT}
- *       <p>Security context is a must for RPv2.1.2. If set via the environment variable, the value
- *       of RPv2.1.2 security context from environment variable is used.
- *       <p>If set via the builder, security context provided via the builder overrides the value
- *       provided via the environment variable.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_PATH}
- *       <p>If set, the value from environment variable is used.
- *       <p>Otherwise, it uses the default resource principal token path {@code
- *       DEFAULT_OCI_RESOURCE_PRINCIPAL_RPT_PATH_FORV212}.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}
- *       <p>This is required. If this points to existing file path, then the filesystem-supplied
- *       private key will be retrieved from that location.
- *       <p>Otherwise, the value is interpreted as the direct injection of a private key.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}
- *       <p>This is optional. The passphrase for the private key.
- *       <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.2"</b>
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_RPST}:
- *       <p>If this points to an existing file path, then the filesystem-supplied resource principal
- *       session token will be retrieved from that location. This mode supports token refresh (if
- *       the environment replaces the RPST in the filesystem).
- *       <p>Otherwise, the environment variable is taken to hold the raw value of an RPST. Under
- *       these circumstances, the RPST cannot be refreshed; consequently, this mode is only usable
- *       for short-lived executables.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}:
- *       <p>If this points to an existing file path, then the filesystem-supplied private key will
- *       be retrieved from that location. As with the OCI_RESOURCE_PRINCIPAL_RPST, this mode
- *       supports token refresh if the environment can update the file contents.
- *       <p>Otherwise, the value is interpreted as the direct injection of a private key. The same
- *       considerations as to the lifetime of this value apply when directly injecting a key.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}:
- *       <p>This is optional. If set, it contains either the location (as an existing file path) or
- *       the value of the passphrase associated with the private key.
- *   <li>{@code OCI_RESOURCE_PRINCIPAL_REGION}:
- *       <p>If set, this holds the canonical form of the local region. This is intended to enable
- *       executables to locate their "local" OCI service endpoints.
+ *
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_VERSION}:
+ * <p>This is required. Permitted values are "1.1", "2.1", "2.1.1", "2.1.2", "2.2" and "3.0"</p>
+ * </li>
+ *
+ * <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "1.1"</b></p>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}:
+ * <p>This is required. The endpoint for retrieving the Resource Principal Token.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}:
+ * <p>If set, the value from environment variable is used.</p>
+ * <p>Otherwise, it uses the default resource principal token path provider.</p>
+ * </li>
+ *
+ * <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.1"</b></p>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}
+ * <p>This is required. The endpoint for retrieving the Resource Principal Token.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}
+ * <p>This is required. The endpoint for retrieving the Resource Principal Session Token.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RESOURCE_ID}
+ * <p>This is required. The RPv2.1 resource id.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}
+ * <p>This is required. If this points to existing file path, then the filesystem-supplied private key will be retrieved from that location.</p>
+ * <p>Otherwise, the value is interpreted as the direct injection of a private key.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}
+ * <p>This is optional. The passphrase for the private key.</p>
+ * </li>
+ *
+ * <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.1.1"</b></p>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}
+ * <p>This is required. The endpoint for retrieving the Resource Principal Token.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}
+ * <p>This is required. The endpoint for retrieving the Resource Principal Session Token.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RESOURCE_ID}
+ * <p>This is required. The RPv2.1.1 resource id.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_TENANCY_ID}
+ * <p>This is required. The RPv2.1.1 tenancy id.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}
+ * <p>This is required. If this points to existing file path, then the filesystem-supplied private key will be retrieved from that location.</p>
+ * <p>Otherwise, the value is interpreted as the direct injection of a private key.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}
+ * <p>This is optional. The passphrase for the private key.</p>
+ * </li>
+ *
+ * <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.1.2"</b></p>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT}
+ * <p>This is required. The endpoint for retrieving the Resource Principal Token.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT}
+ * <p>This is required. The endpoint for retrieving the Resource Principal Session Token.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RESOURCE_ID}
+ * <p>This is required. The RPv2.1.2 resource id.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_TENANCY_ID}
+ * <p>This is required. The RPv2.1.2 tenancy id.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_SECURITY_CONTEXT}
+ * <p>Security context is a must for RPv2.1.2. If set via the environment variable, the value of RPv2.1.2 security context from environment variable is used.</p>
+ * <p>If set via the builder, security context provided via the builder overrides the value provided via the environment variable.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPT_PATH}
+ * <p>If set, the value from environment variable is used.</p>
+ * <p>Otherwise, it uses the default resource principal token path {@code DEFAULT_OCI_RESOURCE_PRINCIPAL_RPT_PATH_FORV212}.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}
+ * <p>This is required. If this points to existing file path, then the filesystem-supplied private key will be retrieved from that location.</p>
+ * <p>Otherwise, the value is interpreted as the direct injection of a private key. </p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}
+ * <p>This is optional. The passphrase for the private key.</p>
+ * </li>
+ *
+ * <p><b>For OCI_RESOURCE_PRINCIPAL_VERSION = "2.2"</b></p>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_RPST}:
+ * <p>If this points to an existing file path, then the filesystem-supplied resource principal session token will be retrieved from
+ *   that location. This mode supports token refresh (if the environment replaces the RPST in the filesystem).</p>
+ * <p>Otherwise, the environment variable is taken to hold the raw value of an RPST.
+ *   Under these circumstances, the RPST cannot be refreshed; consequently, this mode is only usable for short-lived
+ *   executables.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM}:
+ * <p>If this points to existing file path, then the filesystem-supplied private key will be retrieved from that location. As
+ *   with the OCI_RESOURCE_PRINCIPAL_RPST, this mode supports token refresh if the environment can update the file
+ *   contents.</p>
+ * <p>Otherwise, the value is interpreted as the direct injection of a private key. The same considerations as to the
+ *   lifetime of this value apply when directly injecting a key.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE}:
+ * <p>This is optional. If set, it contains either the location (as an existing file path) or the value of the passphrase
+ *   associated with the private key.</p>
+ * </li>
+ * <li>{@code OCI_RESOURCE_PRINCIPAL_REGION}:
+ * <p>If set, this holds the canonical form of the local region. This is intended to enable executables to locate their
+ *   "local" OCI service endpoints.</p>
+ * </li>
+ *
  * </ul>
  */
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class ResourcePrincipalAuthenticationDetailsProvider
         extends AbstractRequestingAuthenticationDetailsProvider
-        implements RegionProvider,
-                RefreshableOnNotAuthenticatedProvider<String>,
+        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String>,
                 ConfigurableRefreshOnNotAuthenticatedProvider<String> {
 
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ResourcePrincipalAuthenticationDetailsProvider.class);
-    static final String OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION";
-    static final String RP_VERSION_2_2 = "2.2";
+    protected final static String OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION";
     static final String OCI_RESOURCE_PRINCIPAL_RPST = "OCI_RESOURCE_PRINCIPAL_RPST";
+    static final String OCI_RESOURCE_PRINCIPAL_RPST_SUPPLIER =
+            "OCI_RESOURCE_PRINCIPAL_RPST_SUPPLIER";
     private static final String OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT =
             "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT";
     private static final String OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT =
@@ -151,10 +176,11 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             "OCI_RESOURCE_PRINCIPAL_TENANCY_ID";
     private static final String OCI_RESOURCE_PRINCIPAL_SECURITY_CONTEXT =
             "OCI_RESOURCE_PRINCIPAL_SECURITY_CONTEXT";
-    private static final String RP_VERSION_1_1 = "1.1";
+    protected static final String RP_VERSION_1_1 = "1.1";
     protected static final String RP_VERSION_2_1 = "2.1";
     protected static final String RP_VERSION_2_1_1 = "2.1.1";
     protected static final String RP_VERSION_2_1_2 = "2.1.2";
+    protected static final String RP_VERSION_2_2 = "2.2";
     protected static final String RP_VERSION_3_0 = "3.0";
 
     private static final String DEFAULT_OCI_RESOURCE_PRINCIPAL_RPT_PATH_FORV212 =
@@ -192,16 +218,16 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
     public static class ClaimKeys {
         /**
-         * COMPARTMENT_ID is the claim name that the RPST holds for the resource compartment. This
-         * can be passed to {@link #getStringClaim} to retrieve the resource's compartment OCID.
+         * COMPARTMENT_ID is the claim name that the RPST holds for the resource compartment.
+         * This can be passed to {@link #getStringClaim} to retrieve the resource's compartment OCID.
          */
-        public static final String COMPARTMENT_ID_CLAIM_KEY = "res_compartment";
+        public final static String COMPARTMENT_ID_CLAIM_KEY = "res_compartment";
 
         /**
-         * TENANT_ID_CLAIM_KEY is the claim name that the RPST holds for the resource tenancy. This
-         * can be passed to {@link #getStringClaim} to retrieve the resource's tenancy OCID.
+         * TENANT_ID_CLAIM_KEY is the claim name that the RPST holds for the resource tenancy.
+         * This can be passed to {@link #getStringClaim} to retrieve the resource's tenancy OCID.
          */
-        public static final String TENANT_ID_CLAIM_KEY = "res_tenant";
+        public final static String TENANT_ID_CLAIM_KEY = "res_tenant";
     }
 
     public static ResourcePrincipalAuthenticationDetailsProviderBuilder builder() {
@@ -209,10 +235,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
     }
 
     /**
-     * Session tokens carry JWT-like claims. Permit the retrieval of the value of those claims from
-     * the token. At the least, the token should carry claims for {@link
-     * ClaimKeys#COMPARTMENT_ID_CLAIM_KEY} and {@link ClaimKeys#TENANT_ID_CLAIM_KEY}
-     *
+     * Session tokens carry JWT-like claims. Permit the retrieval of the value of those
+     * claims from the token.
+     * At the least, the token should carry claims for {@link ClaimKeys#COMPARTMENT_ID_CLAIM_KEY} and {@link ClaimKeys#TENANT_ID_CLAIM_KEY}
      * @param key the name of a claim in the session token
      * @return the claim value.
      */
@@ -230,11 +255,6 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         return federationClient.refreshAndGetSecurityToken();
     }
 
-    /**
-     * Refreshes the authentication data used by the provider
-     *
-     * @return the refreshed authentication data
-     */
     @Override
     public String refreshIfExpiringWithin(Duration time) {
         return refreshIfExpiringWithin(time, true);
@@ -255,8 +275,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
     }
 
     /**
-     * Builder for ResourcePrincipalAuthenticationDetailsProvider that understands the V2.2
-     * configuration
+     * Builder for ResourcePrincipalAuthenticationDetailsProvider that understands the V2.2 configuration
      */
     public static class ResourcePrincipalAuthenticationDetailsProviderBuilder
             extends AbstractFederationClientAuthenticationDetailsProviderBuilder<
@@ -269,24 +288,30 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         /**
          * The endpoint that can provide the resource principal token.
          *
-         * <p>Required.
+         * Required.
          */
         protected String resourcePrincipalTokenEndpoint;
 
         /**
          * The path provider for the resource principal token.
          *
-         * <p>Defaults to DefaultRptPathProvider if null
+         * Defaults to DefaultRptPathProvider if null
          */
         protected RptPathProvider resourcePrincipalTokenPathProvider;
 
-        /** The configuration for the circuit breaker. */
+        /**
+         * The configuration for the circuit breaker.
+         */
         protected CircuitBreakerConfiguration circuitBreakerConfig;
 
-        /** The configuration for the security context. */
+        /**
+         * The configuration for the security context.
+         */
         protected String securityContext;
 
-        /** Configures the resourcePrincipalTokenPathProvider to use. */
+        /**
+         * Configures the resourcePrincipalTokenPathProvider to use.
+         */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder
                 resourcePrincipalTokenPathProvider(
                         RptPathProvider resourcePrincipalTokenPathProvider) {
@@ -294,37 +319,44 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             return this;
         }
 
-        /** Configures the resourcePrincipalTokenEndpoint to use. */
+        /**
+         * Configures the resourcePrincipalTokenEndpoint to use.
+         */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder resourcePrincipalTokenEndpoint(
                 String resourcePrincipalTokenEndpoint) {
             this.resourcePrincipalTokenEndpoint = resourcePrincipalTokenEndpoint;
             return this;
         }
 
-        /** Set value for the CircuitBreaker Configuration. */
+        /**
+         * Set value for the CircuitBreaker Configuration.
+         */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder circuitBreakerConfig(
                 CircuitBreakerConfiguration circuitBreakerConfig) {
             this.circuitBreakerConfig = circuitBreakerConfig;
             return this;
         }
 
-        /** Set value for the security context to use. */
+        /**
+         * Set value for the security context to use.
+         */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder securityContext(
                 String securityContext) {
             this.securityContext = securityContext;
             return this;
         }
 
-        /** Configures the resourcePrincipalTokenEndpoint to use. */
+        /**
+         * Configures the resourcePrincipalTokenEndpoint to use.
+         */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder resourcePrincipalTokenEndpoint(
                 Service service, Region region) {
-            Optional<String> endpoint = region.getEndpoint(service);
+            Optional<String> endpoint = GuavaUtils.adaptFromGuava(region.getEndpoint(service));
             return resourcePrincipalTokenEndpoint(endpoint.orElse(null));
         }
 
         /**
          * Configures the resourcePrincipalSessionTokenEndpoint to use.
-         *
          * @deprecated use {@link #federationEndpoint(String)}
          */
         @Deprecated
@@ -334,7 +366,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             return super.federationEndpoint(resourcePrincipalSessionTokenEndpoint);
         }
 
-        /** Configures the custom leafCertificateSupplier to use. */
+        /**
+         * Configures the custom leafCertificateSupplier to use.
+         */
         public ResourcePrincipalAuthenticationDetailsProviderBuilder leafCertificateSupplier(
                 X509CertificateSupplier leafCertificateSupplier) {
             // do not remove this method.  due to compile time resolution, older generated
@@ -343,8 +377,8 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         }
 
         /**
-         * Examine the environment of the running process; construct a {@link
-         * ResourcePrincipalAuthenticationDetailsProvider} accordingly.
+         * Examine the environment of the running process; construct a {@link ResourcePrincipalAuthenticationDetailsProvider}
+         * accordingly.
          */
         public ResourcePrincipalAuthenticationDetailsProvider build() {
             final String ociResourcePrincipalVersion =
@@ -441,7 +475,6 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
         /**
          * Helper method that interprets the runtime environment to build a v3.0-configured client
-         *
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
         public ResourcePrincipalAuthenticationDetailsProvider build_3_0() {
@@ -450,7 +483,6 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
         /**
          * Helper method that interprets the runtime environment to build a v2.2-configured client
-         *
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
         public static ResourcePrincipalAuthenticationDetailsProvider build_2_2(
@@ -479,8 +511,39 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         }
 
         /**
+         * Helper method that builds a v2.2-configured client based on a resource principal supplier function
+         * @return ResourcePrincipalAuthenticationDetailsProvider
+         */
+        public static <T> ResourcePrincipalAuthenticationDetailsProvider build_2_2(
+                String ociResourcePrincipalPrivateKey,
+                String ociResourcePrincipalPassphrase,
+                java.util.function.Function<T, String> ociResourcePrincipalRpstSupplier,
+                T resourcePrincipalCreationConfig,
+                String ociResourcePrincipalRegion,
+                String inputType) {
+
+            final SessionKeySupplier sessionKeySupplier =
+                    getSessionKeySupplierFromPemAndPassphrase(
+                            ociResourcePrincipalPrivateKey,
+                            ociResourcePrincipalPassphrase,
+                            inputType);
+
+            final FederationClient federationClient =
+                    getFederationClientFromRpstSupplier(
+                            ociResourcePrincipalRpstSupplier,
+                            resourcePrincipalCreationConfig,
+                            sessionKeySupplier);
+
+            final Region region =
+                    ResourcePrincipalAuthenticationDetailsProvider.getRegion(
+                            ociResourcePrincipalRegion, inputType);
+
+            return new ResourcePrincipalAuthenticationDetailsProvider(
+                    federationClient, sessionKeySupplier, region);
+        }
+
+        /**
          * Helper method that interprets the runtime environment to build a v2.1.2-configured client
-         *
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
         public ResourcePrincipalAuthenticationDetailsProvider build_2_1_2(
@@ -558,9 +621,7 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         }
 
         /**
-         * Helper method that interprets the runtime environment to build a v2.1 or 2.1.1-configured
-         * client
-         *
+         * Helper method that interprets the runtime environment to build a v2.1. or 2.1.1-configured client
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
         public ResourcePrincipalAuthenticationDetailsProvider build_2_1_or_2_1_1(
@@ -626,10 +687,8 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
         /**
          * Helper method that interprets the runtime environment to build a v1.1-configured client
-         *
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
-        @InternalSdk
         public ResourcePrincipalAuthenticationDetailsProvider build_1_1(
                 String ociResourcePrincipalRptEndpoint, String ociResourcePrincipalRpstEndpoint) {
             resourcePrincipalTokenEndpoint = ociResourcePrincipalRptEndpoint;
@@ -668,9 +727,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                 try {
                     privateKeyStream = new FileInputStream(ociResourcePrincipalPrivateKey);
                     Path passphrasePath =
-                            (ociResourcePrincipalPassphrase != null)
+                            (ociResourcePrincipalPassphrase != null
                                     ? new File(ociResourcePrincipalPassphrase).toPath()
-                                    : null;
+                                    : null);
                     if (passphrasePath != null) {
                         passphrase = new String(Files.readAllBytes(passphrasePath));
                     } else passphrase = null;
@@ -697,7 +756,6 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         @Override
         protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
             createRptPathProvider();
-
             InstancePrincipalsAuthenticationDetailsProvider provider =
                     InstancePrincipalsAuthenticationDetailsProvider.builder()
                             .metadataBaseUrl(getMetadataBaseUrl())
@@ -709,13 +767,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                                             ? circuitBreakerConfig
                                             : CircuitBreakerUtils
                                                     .getDefaultCircuitBreakerConfiguration())
-                            .federationClientConfigurator(federationClientConfigurator)
-                            // InstancePrincipalsAuthenticationDetailsProvider and
-                            // ResourcePrincipalsFederationClient's
-                            // sessionKeysSupplier must be different. BTW
-                            // ResourcePrincipalsFederationClient and
-                            // ResourcePrincipalAuthenticationDetailsProvider's sessionKeysSupplier
-                            // must be same.
+                            // InstancePrincipalsAuthenticationDetailsProvider and ResourcePrincipalsFederationClient's
+                            // sessionKeysSupplier must be different. BTW ResourcePrincipalsFederationClient and
+                            // ResourcePrincipalAuthenticationDetailsProvider's sessionKeysSupplier must be same.
                             .build();
 
             return new ResourcePrincipalsFederationClient(
@@ -785,6 +839,24 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                             ociResourcePrincipalRpst, sessionKeySupplier);
         }
         return federationClient;
+    }
+
+    private static <T> FederationClient getFederationClientFromRpstSupplier(
+            java.util.function.Function<T, String> ociResourcePrincipalRpstSupplier,
+            T resourcePrincipalCreationConfig,
+            SessionKeySupplier sessionKeySupplier) {
+
+        if (ociResourcePrincipalRpstSupplier == null) {
+            throw new IllegalArgumentException(
+                    OCI_RESOURCE_PRINCIPAL_RPST_SUPPLIER + " missing." + RP_DEBUG_INFORMATION_LOG);
+        }
+
+        LOG.debug(
+                "Loading RPST from supplier provided. Creating instance of SupplierBasedResourcePrincipalFederationClient");
+        return new SupplierBasedResourcePrincipalFederationClient<>(
+                ociResourcePrincipalRpstSupplier,
+                resourcePrincipalCreationConfig,
+                sessionKeySupplier);
     }
 
     protected static SessionKeySupplier getSessionKeySupplierFromPemAndPassphrase(

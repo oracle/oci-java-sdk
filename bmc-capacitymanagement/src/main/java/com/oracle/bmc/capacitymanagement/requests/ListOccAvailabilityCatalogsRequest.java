@@ -6,115 +6,128 @@ package com.oracle.bmc.capacitymanagement.requests;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilityCatalogsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListOccAvailabilityCatalogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilityCatalogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOccAvailabilityCatalogsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class ListOccAvailabilityCatalogsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be
-     * used for authorization purposes.
+     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     private String compartmentId;
 
     /**
-     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be
-     * used for authorization purposes.
+     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The namespace by which we would filter the list. */
+    /**
+     * The namespace by which we would filter the list.
+     */
     private com.oracle.bmc.capacitymanagement.model.Namespace namespace;
 
-    /** The namespace by which we would filter the list. */
+    /**
+     * The namespace by which we would filter the list.
+     */
     public com.oracle.bmc.capacitymanagement.model.Namespace getNamespace() {
         return namespace;
     }
-    /** The OCID of the availability catalog to filter the list of availability catalogs. */
+    /**
+     * The OCID of the availability catalog to filter the list of availability catalogs.
+     */
     private String id;
 
-    /** The OCID of the availability catalog to filter the list of availability catalogs. */
+    /**
+     * The OCID of the availability catalog to filter the list of availability catalogs.
+     */
     public String getId() {
         return id;
     }
     /**
-     * A filter to return only the resources that match the entire display name. The match is not
-     * case sensitive.
+     * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
     private String displayName;
 
     /**
-     * A filter to return only the resources that match the entire display name. The match is not
-     * case sensitive.
+     * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
     public String getDisplayName() {
         return displayName;
     }
-    /** Filter the list of availability catalogs based on the catalog state. */
+    /**
+     * Filter the list of availability catalogs based on the catalog state.
+     */
     private com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.CatalogState
             catalogState;
 
-    /** Filter the list of availability catalogs based on the catalog state. */
+    /**
+     * Filter the list of availability catalogs based on the catalog state.
+     */
     public com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.CatalogState
             getCatalogState() {
         return catalogState;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.capacitymanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for displayName
-     * is ascending. The default order for timeCreated is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for displayName is ascending. The default order for timeCreated is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for displayName
-     * is ascending. The default order for timeCreated is descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. The default order for displayName is ascending. The default order for timeCreated is descending.
+     *
+     **/
+    public enum SortBy {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         ;
@@ -148,8 +161,8 @@ public class ListOccAvailabilityCatalogsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for displayName
-     * is ascending. The default order for timeCreated is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for displayName is ascending. The default order for timeCreated is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -158,19 +171,17 @@ public class ListOccAvailabilityCatalogsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOccAvailabilityCatalogsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ocid of the compartment or tenancy in which resources are to be listed. This will
-         * also be used for authorization purposes.
+         * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
          */
         private String compartmentId = null;
 
         /**
-         * The ocid of the compartment or tenancy in which resources are to be listed. This will
-         * also be used for authorization purposes.
-         *
+         * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -179,12 +190,13 @@ public class ListOccAvailabilityCatalogsRequest
             return this;
         }
 
-        /** The namespace by which we would filter the list. */
+        /**
+         * The namespace by which we would filter the list.
+         */
         private com.oracle.bmc.capacitymanagement.model.Namespace namespace = null;
 
         /**
          * The namespace by which we would filter the list.
-         *
          * @param namespace the value to set
          * @return this builder instance
          */
@@ -193,12 +205,13 @@ public class ListOccAvailabilityCatalogsRequest
             return this;
         }
 
-        /** The OCID of the availability catalog to filter the list of availability catalogs. */
+        /**
+         * The OCID of the availability catalog to filter the list of availability catalogs.
+         */
         private String id = null;
 
         /**
          * The OCID of the availability catalog to filter the list of availability catalogs.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -208,15 +221,12 @@ public class ListOccAvailabilityCatalogsRequest
         }
 
         /**
-         * A filter to return only the resources that match the entire display name. The match is
-         * not case sensitive.
+         * A filter to return only the resources that match the entire display name. The match is not case sensitive.
          */
         private String displayName = null;
 
         /**
-         * A filter to return only the resources that match the entire display name. The match is
-         * not case sensitive.
-         *
+         * A filter to return only the resources that match the entire display name. The match is not case sensitive.
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -225,13 +235,14 @@ public class ListOccAvailabilityCatalogsRequest
             return this;
         }
 
-        /** Filter the list of availability catalogs based on the catalog state. */
+        /**
+         * Filter the list of availability catalogs based on the catalog state.
+         */
         private com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.CatalogState
                 catalogState = null;
 
         /**
          * Filter the list of availability catalogs based on the catalog state.
-         *
          * @param catalogState the value to set
          * @return this builder instance
          */
@@ -242,12 +253,13 @@ public class ListOccAvailabilityCatalogsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -257,15 +269,12 @@ public class ListOccAvailabilityCatalogsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -275,14 +284,15 @@ public class ListOccAvailabilityCatalogsRequest
         }
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -292,12 +302,13 @@ public class ListOccAvailabilityCatalogsRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -307,14 +318,13 @@ public class ListOccAvailabilityCatalogsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * displayName is ascending. The default order for timeCreated is descending.
+         * The field to sort by. Only one sort order may be provided. The default order for displayName is ascending. The default order for timeCreated is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * displayName is ascending. The default order for timeCreated is descending.
+         * The field to sort by. Only one sort order may be provided. The default order for displayName is ascending. The default order for timeCreated is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -326,19 +336,18 @@ public class ListOccAvailabilityCatalogsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -350,7 +359,6 @@ public class ListOccAvailabilityCatalogsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListOccAvailabilityCatalogsRequest o) {
@@ -372,11 +380,10 @@ public class ListOccAvailabilityCatalogsRequest
         /**
          * Build the instance of ListOccAvailabilityCatalogsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListOccAvailabilityCatalogsRequest
          */
@@ -390,8 +397,7 @@ public class ListOccAvailabilityCatalogsRequest
         /**
          * Build the instance of ListOccAvailabilityCatalogsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListOccAvailabilityCatalogsRequest
@@ -409,14 +415,12 @@ public class ListOccAvailabilityCatalogsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListOccAvailabilityCatalogsRequest(compartmentId, namespace, id, displayName,
-            // catalogState, limit, page, opcRequestId, sortOrder, sortBy);
+            // new ListOccAvailabilityCatalogsRequest(compartmentId, namespace, id, displayName, catalogState, limit, page, opcRequestId, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -435,7 +439,6 @@ public class ListOccAvailabilityCatalogsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

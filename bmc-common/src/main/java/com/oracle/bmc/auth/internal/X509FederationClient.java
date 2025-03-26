@@ -4,61 +4,67 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import java.net.URI;
+import java.security.KeyPair;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.security.interfaces.RSAPublicKey;
+import java.util.HashSet;
+import java.time.Duration;
+import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
+
+import javax.annotation.concurrent.Immutable;
+import javax.security.auth.RefreshFailedException;
+import javax.security.auth.Refreshable;
+import javax.ws.rs.client.Invocation.Builder;
+import javax.ws.rs.client.WebTarget;
+import com.oracle.bmc.retrier.DefaultRetryCondition;
+import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
+import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+import javax.ws.rs.core.Response;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.Priorities;
-import com.oracle.bmc.http.client.HttpClient;
-import com.oracle.bmc.http.client.HttpProvider;
-import com.oracle.bmc.http.client.Method;
-import com.oracle.bmc.http.client.StandardClientProperties;
-import com.oracle.bmc.http.internal.AuthnClientFilter;
-import com.oracle.bmc.http.internal.CircuitBreakerHelper;
-import com.oracle.bmc.http.internal.ClientCall;
-import com.oracle.bmc.http.internal.ClientIdFilter;
-import com.oracle.bmc.http.internal.LogHeadersFilter;
-import com.oracle.bmc.http.signing.SigningStrategy;
-import com.oracle.bmc.http.signing.internal.KeySupplier;
-import com.oracle.bmc.http.signing.internal.RequestSignerImpl;
+import com.oracle.bmc.http.internal.ResponseConversionFunctionFactory;
+import com.oracle.bmc.http.internal.RestClient;
+import com.oracle.bmc.http.internal.WithHeaders;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
-import com.oracle.bmc.responses.BmcResponse;
-import com.oracle.bmc.retrier.DefaultRetryCondition;
-import com.oracle.bmc.retrier.RetryConfiguration;
-import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.Validate;
-import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
-import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
-import org.slf4j.Logger;
 
-import jakarta.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
+import javax.annotation.Nonnull;
 import javax.security.auth.RefreshFailedException;
 import javax.security.auth.Refreshable;
+import javax.ws.rs.client.Invocation.Builder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.security.KeyPair;
-import java.security.PrivateKey;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.time.Duration;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.function.Supplier;
+
+import org.slf4j.Logger;
 
 /**
- * This class gets a security token from the auth service by signing the request with a PKI issued
- * leaf certificate, passing along a temporary public key that is bounded to the the security token,
- * and the leaf certificate.
+ * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
+ * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
 public class X509FederationClient implements FederationClient, ProvidesConfigurableRefresh {
     private static final RetryConfiguration RETRY_CONFIGURATION =
@@ -78,6 +84,8 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                                 }
                             })
                     .build();
+    private static final Function<Response, WithHeaders<SecurityToken>> SECURITY_TOKEN_FN =
+            new ResponseConversionFunctionFactory().create(SecurityToken.class);
     private static final String DEFAULT_PURPOSE = "DEFAULT";
     private static final String DEFAULT_FINGERPRINT = "SHA256";
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(X509FederationClient.class);
@@ -88,19 +96,15 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
     private final SessionKeySupplier sessionKeySupplier;
     private final String purpose;
 
-    private final HttpClient httpClient;
-    private final ClientConfigurator clientConfigurator;
-    private final List<ClientConfigurator> additionalClientConfigurators;
-    private final OciCircuitBreaker circuitBreaker;
+    private final RestClient federationHttpClient;
 
     // needs to be volatile to make double-checked locking work
     // see https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
 
     /**
-     * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier,
-     * SessionKeySupplier, Set, ClientConfigurator, List, String)} but with 'purpose' set to {@link
-     * #DEFAULT_PURPOSE}.
+     * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier, SessionKeySupplier, Set, ClientConfigurator, List, String)}
+     * but with 'purpose' set to {@link #DEFAULT_PURPOSE}.
      */
     public X509FederationClient(
             String federationEndpoint,
@@ -125,18 +129,13 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
 
     /**
      * The constructor.
-     *
      * @param federationEndpoint the auth service endpoint.
      * @param tenancyId the tenancy id, to construct the key id
      * @param leafCertificateSupplier the leaf certificate, used to identify the caller
-     * @param sessionKeySupplier the temporary public key, whose corresponding private key will be
-     *     used to sign actual API calls
-     * @param intermediateCertificateSuppliers intermediate certificates, if there are any (else
-     *     null)
-     * @param clientConfigurator client configurator used to configure the federation rest client,
-     *     if any (else null)
-     * @param additionalClientConfigurators Additional client configurators to be run after the
-     *     primary configurator.
+     * @param sessionKeySupplier the temporary public key, whose corresponding private key will be used to sign actual API calls
+     * @param intermediateCertificateSuppliers intermediate certificates, if there are any (else null)
+     * @param clientConfigurator client configurator used to configure the federation rest client, if any (else null)
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param purpose The purpose that will be configured for each request.
      */
     public X509FederationClient(
@@ -156,74 +155,22 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                 Validate.notNull(sessionKeySupplier, "sessionKeySupplier must not be null");
         this.intermediateCertificateSuppliers = intermediateCertificateSuppliers;
         this.tenancyId = Validate.notNull(tenancyId, "tenancyId must not be null");
+        this.federationHttpClient =
+                RestClientUtils.createRestClient(
+                        federationEndpoint,
+                        clientConfigurator,
+                        additionalClientConfigurators,
+                        this,
+                        circuitBreakerConfig);
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
         this.purpose = Validate.notNull(purpose, "purpose must not be null");
-        this.clientConfigurator = clientConfigurator;
-        this.additionalClientConfigurators = additionalClientConfigurators;
-
-        // load the leaf certificate details dynamically on each invocation in case it has changed,
-        // ex, rotated.
-        // NOTE: because the signer calls both of these independently, there is an edge case where
-        // the certificate
-        // has been rotated and the private key and keyId won't match -- that should be taken care
-        // of by a retry
-        // of the service call.
-        KeySupplier<RSAPrivateKey> keySupplier =
-                new KeySupplier<RSAPrivateKey>() {
-                    @Nonnull
-                    @Override
-                    public Optional<RSAPrivateKey> supplyKey(@Nonnull String keyId) {
-                        PrivateKey privateKey =
-                                leafCertificateSupplier.getCertificateAndKeyPair().getPrivateKey();
-                        if (privateKey instanceof RSAPrivateKey) {
-                            return Optional.of((RSAPrivateKey) privateKey);
-                        } else {
-                            throw new IllegalArgumentException(
-                                    "Private key was not an RSA private key: "
-                                            + privateKey.getClass().getSimpleName());
-                        }
-                    }
-                };
-
-        Supplier<String> keyIdSupplier =
-                new Supplier<String>() {
-                    @Override
-                    public String get() {
-                        return keyIdForX509Request(
-                                tenancyId,
-                                leafCertificateSupplier
-                                        .getCertificateAndKeyPair()
-                                        .getCertificate());
-                    }
-                };
-
-        this.httpClient =
-                HttpProvider.getDefault()
-                        .newBuilder()
-                        .baseUri(URI.create(federationEndpoint))
-                        .property(StandardClientProperties.ASYNC_POOL_SIZE, 1)
-                        .registerRequestInterceptor(
-                                Priorities.AUTHENTICATION,
-                                new AuthnClientFilter(
-                                        new RequestSignerImpl(
-                                                keySupplier,
-                                                SigningStrategy.STANDARD,
-                                                keyIdSupplier),
-                                        Collections.emptyMap()))
-                        .registerRequestInterceptor(
-                                Priorities.HEADER_DECORATOR, new ClientIdFilter())
-                        .registerRequestInterceptor(Priorities.USER, new LogHeadersFilter())
-                        .build();
-        this.circuitBreaker =
-                CircuitBreakerHelper.makeCircuitBreaker(this.httpClient, circuitBreakerConfig);
     }
 
     /**
-     * Gets a security token. If there is already a valid token cached, it will be returned. Else
-     * this will make a call to the auth service to get a new token, using the provided suppliers.
+     * Gets a security token. If there is already a valid token cached, it will be returned. Else this will make a call
+     * to the auth service to get a new token, using the provided suppliers.
      *
-     * <p>This method is thread-safe.
-     *
+     * This method is thread-safe.
      * @return the security token
      * @throws BmcException If there is any issue with getting a token from the auth server
      * @throws IllegalArgumentException if there is a problem with the key/certificate suppliers
@@ -239,7 +186,6 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
 
     /**
      * Return a claim embedded in the security token
-     *
      * @param key the name of the claim
      * @return the value of the claim
      */
@@ -256,12 +202,9 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
 
     private String refreshAndGetSecurityTokenInner(
             final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
-        // Since this client will be used in a multi-threaded environment (from within a service
-        // API),
-        // this needs to be synchronized to make sure multiple calls are not updating the security
-        // token at the same time.
-        // This should not be a blocking/dead-locked call. The worst I can see at this point is that
-        // the auth service does
+        // Since this client will be used in a multi-threaded environment (from within a service API),
+        // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
+        // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
         // not respond and this call times out, throwing exception
         synchronized (this) {
             // Check again to see if the JWT is still invalid, unless we want to skip that check
@@ -269,12 +212,10 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                     || (time.isPresent()
                             ? (!securityTokenAdapter.isValid(time))
                             : (!securityTokenAdapter.isValid()))) {
-
                 if (refreshKeys) {
                     LOG.info("Refreshing session keys.");
                     sessionKeySupplier.refreshKeys();
                 }
-
                 if (leafCertificateSupplier instanceof Refreshable) {
                     try {
                         ((Refreshable) leafCertificateSupplier).refresh();
@@ -282,8 +223,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                         throw new BmcException(
                                 false, "Can't refresh the leaf certification!", ex, null);
                     }
-                    // When using default purpose (ex, instance principals), the token request
-                    // should always be signed with the same tenant id as the certificate.
+                    // When using default purpose (ex, instance principals), the token request should always be signed with the same tenant id as the certificate.
                     // For other purposes, the tenant id can be different.
                     if (this.purpose.equals(DEFAULT_PURPOSE)) {
                         String newTenancyId =
@@ -312,7 +252,6 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                         }
                     }
                 }
-
                 securityTokenAdapter = getSecurityTokenFromServer();
                 return securityTokenAdapter.getSecurityToken();
             }
@@ -323,7 +262,6 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
 
     /**
      * Gets a security token from the federation server
-     *
      * @return the security token, which is basically a JWT token string
      */
     private SecurityTokenAdapter getSecurityTokenFromServer() {
@@ -383,8 +321,14 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                             purpose,
                             DEFAULT_FINGERPRINT);
 
-            FederationResponseWrapper resp = makeCall(federationRequest);
-            return new SecurityTokenAdapter(resp.token.getToken(), sessionKeySupplier);
+            WebTarget target = federationHttpClient.getBaseTarget().path("v1").path("x509");
+            Builder ib = target.request();
+            URI requestUri = target.getUri();
+
+            // Make a call and get back the security token
+            Response response = makeCall(ib, requestUri, federationRequest);
+            SecurityToken securityToken = SECURITY_TOKEN_FN.apply(response).getItem();
+            return new SecurityTokenAdapter(securityToken.getToken(), sessionKeySupplier);
         } catch (BmcException e) {
             throw e;
         } catch (CertificateException e) {
@@ -394,27 +338,21 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
     }
 
     @VisibleForTesting
-    FederationResponseWrapper makeCall(X509FederationRequest federationRequest) {
-        return ClientCall.builder(
-                        httpClient,
-                        new FederationRequestWrapper(federationRequest),
-                        FederationResponseWrapper.Builder::new)
-                .method(Method.POST)
-                .logger(LOG, "X509FederationClient")
-                .appendPathPart("v1")
-                .appendPathPart("x509")
-                .handleBody(SecurityToken.class, (builder, token) -> builder.token = token)
-                .retryConfiguration(RETRY_CONFIGURATION)
-                .clientConfigurator(clientConfigurator)
-                .circuitBreaker(circuitBreaker)
-                .accept("*/*")
-                .hasBody()
-                .callSync();
+    Response makeCall(Builder ib, URI requestUri, X509FederationRequest federationRequest) {
+        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib, requestUri);
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(RETRY_CONFIGURATION, null);
+        return retrier.execute(
+                federationRequest,
+                retryRequest -> {
+                    return federationHttpClient.post(
+                            wrappedIb, federationRequest, new BmcRequest());
+                });
     }
 
     @Override
     public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {
-        return refreshAndGetSecurityTokenInner(true, Optional.of(time), true);
+        return refreshAndGetSecurityTokenIfExpiringWithin(time, true);
     }
 
     @Override
@@ -430,7 +368,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         return this.tenancyId;
     }
 
-    /** Class is immutable. @Immutable */
+    @Immutable
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class X509FederationRequest {
         private final Set<String> intermediateCertificates;
@@ -544,70 +482,5 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         public String getToken() {
             return token;
         }
-    }
-
-    private static class FederationRequestWrapper extends BmcRequest<X509FederationRequest> {
-        private final X509FederationRequest request;
-
-        FederationRequestWrapper(X509FederationRequest request) {
-            this.request = request;
-        }
-
-        @Override
-        public X509FederationRequest getBody$() {
-            return request;
-        }
-    }
-
-    static class FederationResponseWrapper extends BmcResponse {
-        final SecurityToken token;
-
-        FederationResponseWrapper(int status, SecurityToken token) {
-            super(status);
-            this.token = token;
-        }
-
-        static class Builder implements BmcResponse.Builder<FederationResponseWrapper> {
-            private int status;
-            private Map<String, List<String>> headers;
-            SecurityToken token;
-
-            Builder() {}
-
-            private Builder(FederationResponseWrapper b) {
-                this.status = b.get__httpStatusCode__();
-                this.token = b.token;
-            }
-
-            @Override
-            public BmcResponse.Builder<FederationResponseWrapper> __httpStatusCode__(
-                    int __httpStatusCode__) {
-                this.status = __httpStatusCode__;
-                return this;
-            }
-
-            @Override
-            public BmcResponse.Builder<FederationResponseWrapper> headers(
-                    Map<String, List<String>> headers) {
-                this.headers = headers;
-                return this;
-            }
-
-            @Override
-            public BmcResponse.Builder<FederationResponseWrapper> copy(
-                    FederationResponseWrapper o) {
-                return new Builder(o);
-            }
-
-            @Override
-            public FederationResponseWrapper build() {
-                return new FederationResponseWrapper(status, token);
-            }
-        }
-    }
-
-    private static String keyIdForX509Request(String tenancyId, X509Certificate certificate) {
-        return String.format(
-                "%s/fed-x509-sha256/%s", tenancyId, AuthUtils.getFingerPrint(certificate));
     }
 }

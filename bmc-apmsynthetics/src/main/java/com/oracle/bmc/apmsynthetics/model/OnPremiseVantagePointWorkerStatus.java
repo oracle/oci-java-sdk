@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** On-premise VP worker status. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OnPremiseVantagePointWorkerStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * On-premise VP worker status.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OnPremiseVantagePointWorkerStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

@@ -5,23 +5,21 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Argument of an entity action <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Argument of an entity action
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EntityActionArgument.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EntityActionArgument
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = EntityActionArgument.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EntityActionArgument extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -49,46 +47,49 @@ public final class EntityActionArgument
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of an entity action argument */
+        /**
+         * Name of an entity action argument
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of an entity action argument
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of an entity action argument */
+        /**
+         * Type of an entity action argument
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private EntityAttributeType type;
 
         /**
          * Type of an entity action argument
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(EntityAttributeType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Metatype of an entity action argument */
+        /**
+         * Metatype of an entity action argument
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metaType")
         private String metaType;
 
         /**
          * Metatype of an entity action argument
-         *
          * @param metaType the value to set
          * @return this builder
-         */
+         **/
         public Builder metaType(String metaType) {
             this.metaType = metaType;
             this.__explicitlySet__.add("metaType");
@@ -104,31 +105,33 @@ public final class EntityActionArgument
             this.__explicitlySet__.add("naturalLanguageMapping");
             return this;
         }
-        /** Is the entity action argument multi-value */
+        /**
+         * Is the entity action argument multi-value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValue")
         private Boolean isMultiValue;
 
         /**
          * Is the entity action argument multi-value
-         *
          * @param isMultiValue the value to set
          * @return this builder
-         */
+         **/
         public Builder isMultiValue(Boolean isMultiValue) {
             this.isMultiValue = isMultiValue;
             this.__explicitlySet__.add("isMultiValue");
             return this;
         }
-        /** Name of referenced entity. */
+        /**
+         * Name of referenced entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * Name of referenced entity.
-         *
          * @param entityName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
@@ -177,7 +180,9 @@ public final class EntityActionArgument
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -186,41 +191,44 @@ public final class EntityActionArgument
         return new Builder().copy(this);
     }
 
-    /** Name of an entity action argument */
+    /**
+     * Name of an entity action argument
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of an entity action argument
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of an entity action argument */
+    /**
+     * Type of an entity action argument
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final EntityAttributeType type;
 
     /**
      * Type of an entity action argument
-     *
      * @return the value
-     */
+     **/
     public EntityAttributeType getType() {
         return type;
     }
 
-    /** Metatype of an entity action argument */
+    /**
+     * Metatype of an entity action argument
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metaType")
     private final String metaType;
 
     /**
      * Metatype of an entity action argument
-     *
      * @return the value
-     */
+     **/
     public String getMetaType() {
         return metaType;
     }
@@ -232,28 +240,30 @@ public final class EntityActionArgument
         return naturalLanguageMapping;
     }
 
-    /** Is the entity action argument multi-value */
+    /**
+     * Is the entity action argument multi-value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValue")
     private final Boolean isMultiValue;
 
     /**
      * Is the entity action argument multi-value
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMultiValue() {
         return isMultiValue;
     }
 
-    /** Name of referenced entity. */
+    /**
+     * Name of referenced entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * Name of referenced entity.
-     *
      * @return the value
-     */
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -265,7 +275,6 @@ public final class EntityActionArgument
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

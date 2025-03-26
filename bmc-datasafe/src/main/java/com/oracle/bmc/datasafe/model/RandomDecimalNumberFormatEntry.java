@@ -5,28 +5,29 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The Random Decimal Number masking format generates random and unique decimal numbers within a
- * range. The range is defined by the startValue and endValue attributes. The start value must be
- * less than or equal to the end value. To learn more, check Random Decimal Number in the Data Safe
- * documentation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The Random Decimal Number masking format generates random and unique decimal
+ * numbers within a range. The range is defined by the startValue and endValue
+ * attributes. The start value must be less than or equal to the end value. To
+ * learn more, check Random Decimal Number in the Data Safe documentation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RandomDecimalNumberFormatEntry.Builder.class)
+    builder = RandomDecimalNumberFormatEntry.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RandomDecimalNumberFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -39,38 +40,44 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
             return this;
         }
         /**
-         * The lower bound of the range within which random decimal numbers should be generated. It
-         * must be less than or equal to the end value. It supports input of double type.
-         */
+         * The lower bound of the range within which random decimal numbers should
+         * be generated. It must be less than or equal to the end value. It supports
+         * input of double type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startValue")
         private Double startValue;
 
         /**
-         * The lower bound of the range within which random decimal numbers should be generated. It
-         * must be less than or equal to the end value. It supports input of double type.
+         * The lower bound of the range within which random decimal numbers should
+         * be generated. It must be less than or equal to the end value. It supports
+         * input of double type.
          *
          * @param startValue the value to set
          * @return this builder
-         */
+         **/
         public Builder startValue(Double startValue) {
             this.startValue = startValue;
             this.__explicitlySet__.add("startValue");
             return this;
         }
         /**
-         * The upper bound of the range within which random decimal numbers should be generated. It
-         * must be greater than or equal to the start value. It supports input of double type.
-         */
+         * The upper bound of the range within which random decimal numbers should be
+         * generated. It must be greater than or equal to the start value. It supports
+         * input of double type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endValue")
         private Double endValue;
 
         /**
-         * The upper bound of the range within which random decimal numbers should be generated. It
-         * must be greater than or equal to the start value. It supports input of double type.
+         * The upper bound of the range within which random decimal numbers should be
+         * generated. It must be greater than or equal to the start value. It supports
+         * input of double type.
          *
          * @param endValue the value to set
          * @return this builder
-         */
+         **/
         public Builder endValue(Double endValue) {
             this.endValue = endValue;
             this.__explicitlySet__.add("endValue");
@@ -105,7 +112,9 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,35 +131,41 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
     }
 
     /**
-     * The lower bound of the range within which random decimal numbers should be generated. It must
-     * be less than or equal to the end value. It supports input of double type.
-     */
+     * The lower bound of the range within which random decimal numbers should
+     * be generated. It must be less than or equal to the end value. It supports
+     * input of double type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startValue")
     private final Double startValue;
 
     /**
-     * The lower bound of the range within which random decimal numbers should be generated. It must
-     * be less than or equal to the end value. It supports input of double type.
+     * The lower bound of the range within which random decimal numbers should
+     * be generated. It must be less than or equal to the end value. It supports
+     * input of double type.
      *
      * @return the value
-     */
+     **/
     public Double getStartValue() {
         return startValue;
     }
 
     /**
-     * The upper bound of the range within which random decimal numbers should be generated. It must
-     * be greater than or equal to the start value. It supports input of double type.
-     */
+     * The upper bound of the range within which random decimal numbers should be
+     * generated. It must be greater than or equal to the start value. It supports
+     * input of double type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endValue")
     private final Double endValue;
 
     /**
-     * The upper bound of the range within which random decimal numbers should be generated. It must
-     * be greater than or equal to the start value. It supports input of double type.
+     * The upper bound of the range within which random decimal numbers should be
+     * generated. It must be greater than or equal to the start value. It supports
+     * input of double type.
      *
      * @return the value
-     */
+     **/
     public Double getEndValue() {
         return endValue;
     }
@@ -162,7 +177,6 @@ public final class RandomDecimalNumberFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

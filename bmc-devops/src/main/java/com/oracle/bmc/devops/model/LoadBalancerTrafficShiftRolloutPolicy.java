@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Description of rollout policy for load balancer traffic shift stage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Description of rollout policy for load balancer traffic shift stage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LoadBalancerTrafficShiftRolloutPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LoadBalancerTrafficShiftRolloutPolicy.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LoadBalancerTrafficShiftRolloutPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"batchCount", "batchDelayInSeconds", "rampLimitPercent"})
     public LoadBalancerTrafficShiftRolloutPolicy(
@@ -34,46 +33,49 @@ public final class LoadBalancerTrafficShiftRolloutPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Specifies number of batches for this stage. */
+        /**
+         * Specifies number of batches for this stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
         private Integer batchCount;
 
         /**
          * Specifies number of batches for this stage.
-         *
          * @param batchCount the value to set
          * @return this builder
-         */
+         **/
         public Builder batchCount(Integer batchCount) {
             this.batchCount = batchCount;
             this.__explicitlySet__.add("batchCount");
             return this;
         }
-        /** Specifies delay in seconds between batches. The default delay is 1 minute. */
+        /**
+         * Specifies delay in seconds between batches. The default delay is 1 minute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
         private Integer batchDelayInSeconds;
 
         /**
          * Specifies delay in seconds between batches. The default delay is 1 minute.
-         *
          * @param batchDelayInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder batchDelayInSeconds(Integer batchDelayInSeconds) {
             this.batchDelayInSeconds = batchDelayInSeconds;
             this.__explicitlySet__.add("batchDelayInSeconds");
             return this;
         }
-        /** Indicates the criteria to stop. */
+        /**
+         * Indicates the criteria to stop.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rampLimitPercent")
         private Float rampLimitPercent;
 
         /**
          * Indicates the criteria to stop.
-         *
          * @param rampLimitPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder rampLimitPercent(Float rampLimitPercent) {
             this.rampLimitPercent = rampLimitPercent;
             this.__explicitlySet__.add("rampLimitPercent");
@@ -108,7 +110,9 @@ public final class LoadBalancerTrafficShiftRolloutPolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +121,44 @@ public final class LoadBalancerTrafficShiftRolloutPolicy
         return new Builder().copy(this);
     }
 
-    /** Specifies number of batches for this stage. */
+    /**
+     * Specifies number of batches for this stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchCount")
     private final Integer batchCount;
 
     /**
      * Specifies number of batches for this stage.
-     *
      * @return the value
-     */
+     **/
     public Integer getBatchCount() {
         return batchCount;
     }
 
-    /** Specifies delay in seconds between batches. The default delay is 1 minute. */
+    /**
+     * Specifies delay in seconds between batches. The default delay is 1 minute.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
     private final Integer batchDelayInSeconds;
 
     /**
      * Specifies delay in seconds between batches. The default delay is 1 minute.
-     *
      * @return the value
-     */
+     **/
     public Integer getBatchDelayInSeconds() {
         return batchDelayInSeconds;
     }
 
-    /** Indicates the criteria to stop. */
+    /**
+     * Indicates the criteria to stop.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rampLimitPercent")
     private final Float rampLimitPercent;
 
     /**
      * Indicates the criteria to stop.
-     *
      * @return the value
-     */
+     **/
     public Float getRampLimitPercent() {
         return rampLimitPercent;
     }
@@ -163,7 +170,6 @@ public final class LoadBalancerTrafficShiftRolloutPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

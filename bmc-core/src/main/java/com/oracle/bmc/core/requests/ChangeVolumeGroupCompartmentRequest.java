@@ -6,41 +6,48 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeVolumeGroupCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeVolumeGroupCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ChangeVolumeGroupCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails> {
 
-    /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group. */
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+     */
     private String volumeGroupId;
 
-    /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group. */
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+     */
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
-    /** Request to change the compartment of given volume group. */
+    /**
+     * Request to change the compartment of given volume group.
+     */
     private com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails
             changeVolumeGroupCompartmentDetails;
 
-    /** Request to change the compartment of given volume group. */
+    /**
+     * Request to change the compartment of given volume group.
+     */
     public com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails
             getChangeVolumeGroupCompartmentDetails() {
         return changeVolumeGroupCompartmentDetails;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -48,7 +55,6 @@ public class ChangeVolumeGroupCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -61,15 +67,17 @@ public class ChangeVolumeGroupCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeVolumeGroupCompartmentRequest,
                     com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group. */
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+         */
         private String volumeGroupId = null;
 
         /**
          * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
-         *
          * @param volumeGroupId the value to set
          * @return this builder instance
          */
@@ -78,13 +86,14 @@ public class ChangeVolumeGroupCompartmentRequest
             return this;
         }
 
-        /** Request to change the compartment of given volume group. */
+        /**
+         * Request to change the compartment of given volume group.
+         */
         private com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails
                 changeVolumeGroupCompartmentDetails = null;
 
         /**
          * Request to change the compartment of given volume group.
-         *
          * @param changeVolumeGroupCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -96,14 +105,15 @@ public class ChangeVolumeGroupCompartmentRequest
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -115,19 +125,18 @@ public class ChangeVolumeGroupCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -139,7 +148,6 @@ public class ChangeVolumeGroupCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeVolumeGroupCompartmentRequest o) {
@@ -154,11 +162,10 @@ public class ChangeVolumeGroupCompartmentRequest
         /**
          * Build the instance of ChangeVolumeGroupCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeVolumeGroupCompartmentRequest
          */
@@ -171,7 +178,6 @@ public class ChangeVolumeGroupCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -184,8 +190,7 @@ public class ChangeVolumeGroupCompartmentRequest
         /**
          * Build the instance of ChangeVolumeGroupCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeVolumeGroupCompartmentRequest
@@ -196,14 +201,12 @@ public class ChangeVolumeGroupCompartmentRequest
             request.changeVolumeGroupCompartmentDetails = changeVolumeGroupCompartmentDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ChangeVolumeGroupCompartmentRequest(volumeGroupId,
-            // changeVolumeGroupCompartmentDetails, opcRequestId);
+            // new ChangeVolumeGroupCompartmentRequest(volumeGroupId, changeVolumeGroupCompartmentDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -215,7 +218,6 @@ public class ChangeVolumeGroupCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

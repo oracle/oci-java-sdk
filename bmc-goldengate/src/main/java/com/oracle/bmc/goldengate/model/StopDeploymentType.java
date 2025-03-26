@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The deployment stop type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum StopDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The deployment stop type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum StopDeploymentType {
     Default("DEFAULT"),
     ;
 

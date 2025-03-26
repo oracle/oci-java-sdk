@@ -5,21 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * An expression node. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * An expression node.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Expression.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Expression extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Expression extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -50,46 +48,49 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The object key. */
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The object type. */
+        /**
+         * The object type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The object type.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** The object's model version. */
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The object's model version.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -104,16 +105,17 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-        /** The expression string for the object. */
+        /**
+         * The expression string for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exprString")
         private String exprString;
 
         /**
          * The expression string for the object.
-         *
          * @param exprString the value to set
          * @return this builder
-         */
+         **/
         public Builder exprString(String exprString) {
             this.exprString = exprString;
             this.__explicitlySet__.add("exprString");
@@ -129,19 +131,16 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -194,7 +193,9 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -203,41 +204,44 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The object key. */
+    /**
+     * The object key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The object type. */
+    /**
+     * The object type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The object type.
-     *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** The object's model version. */
+    /**
+     * The object's model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The object's model version.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -249,15 +253,16 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
         return parentRef;
     }
 
-    /** The expression string for the object. */
+    /**
+     * The expression string for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exprString")
     private final String exprString;
 
     /**
      * The expression string for the object.
-     *
      * @return the value
-     */
+     **/
     public String getExprString() {
         return exprString;
     }
@@ -270,18 +275,15 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -293,7 +295,6 @@ public final class Expression extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

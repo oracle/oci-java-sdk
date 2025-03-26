@@ -6,23 +6,23 @@ package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
  * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information
- * cannot be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * cannot be updated.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CccUpgradeInformation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CccUpgradeInformation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CccUpgradeInformation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "currentVersion",
@@ -46,7 +46,8 @@ public final class CccUpgradeInformation
     public static class Builder {
         /**
          * The current version of software installed on the Compute Cloud@Customer infrastructure.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentVersion")
         private String currentVersion;
 
@@ -55,7 +56,7 @@ public final class CccUpgradeInformation
          *
          * @param currentVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder currentVersion(String currentVersion) {
             this.currentVersion = currentVersion;
             this.__explicitlySet__.add("currentVersion");
@@ -64,7 +65,8 @@ public final class CccUpgradeInformation
         /**
          * Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance
          * impacts during this time.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfScheduledUpgrade")
         private java.util.Date timeOfScheduledUpgrade;
 
@@ -74,7 +76,7 @@ public final class CccUpgradeInformation
          *
          * @param timeOfScheduledUpgrade the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfScheduledUpgrade(java.util.Date timeOfScheduledUpgrade) {
             this.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
             this.__explicitlySet__.add("timeOfScheduledUpgrade");
@@ -82,39 +84,41 @@ public final class CccUpgradeInformation
         }
         /**
          * Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual
-         * upgrade time might be longer or shorter than this duration depending on rack activity,
-         * this is only an estimate.
-         */
+         * upgrade time might be longer or shorter than this duration depending on rack activity, this
+         * is only an estimate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledUpgradeDuration")
         private String scheduledUpgradeDuration;
 
         /**
          * Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual
-         * upgrade time might be longer or shorter than this duration depending on rack activity,
-         * this is only an estimate.
+         * upgrade time might be longer or shorter than this duration depending on rack activity, this
+         * is only an estimate.
          *
          * @param scheduledUpgradeDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledUpgradeDuration(String scheduledUpgradeDuration) {
             this.scheduledUpgradeDuration = scheduledUpgradeDuration;
             this.__explicitlySet__.add("scheduledUpgradeDuration");
             return this;
         }
         /**
-         * Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade
-         * or an upgrade activity (such as preloading upgrade images).
-         */
+         * Indication that the Compute Cloud@Customer infrastructure is in the process of
+         * an upgrade or an upgrade activity (such as preloading upgrade images).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isActive")
         private Boolean isActive;
 
         /**
-         * Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade
-         * or an upgrade activity (such as preloading upgrade images).
+         * Indication that the Compute Cloud@Customer infrastructure is in the process of
+         * an upgrade or an upgrade activity (such as preloading upgrade images).
          *
          * @param isActive the value to set
          * @return this builder
-         */
+         **/
         public Builder isActive(Boolean isActive) {
             this.isActive = isActive;
             this.__explicitlySet__.add("isActive");
@@ -155,7 +159,9 @@ public final class CccUpgradeInformation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -164,7 +170,10 @@ public final class CccUpgradeInformation
         return new Builder().copy(this);
     }
 
-    /** The current version of software installed on the Compute Cloud@Customer infrastructure. */
+    /**
+     * The current version of software installed on the Compute Cloud@Customer infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentVersion")
     private final String currentVersion;
 
@@ -172,7 +181,7 @@ public final class CccUpgradeInformation
      * The current version of software installed on the Compute Cloud@Customer infrastructure.
      *
      * @return the value
-     */
+     **/
     public String getCurrentVersion() {
         return currentVersion;
     }
@@ -180,7 +189,8 @@ public final class CccUpgradeInformation
     /**
      * Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance
      * impacts during this time.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfScheduledUpgrade")
     private final java.util.Date timeOfScheduledUpgrade;
 
@@ -189,7 +199,7 @@ public final class CccUpgradeInformation
      * impacts during this time.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfScheduledUpgrade() {
         return timeOfScheduledUpgrade;
     }
@@ -198,7 +208,8 @@ public final class CccUpgradeInformation
      * Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual
      * upgrade time might be longer or shorter than this duration depending on rack activity, this
      * is only an estimate.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledUpgradeDuration")
     private final String scheduledUpgradeDuration;
 
@@ -208,24 +219,25 @@ public final class CccUpgradeInformation
      * is only an estimate.
      *
      * @return the value
-     */
+     **/
     public String getScheduledUpgradeDuration() {
         return scheduledUpgradeDuration;
     }
 
     /**
-     * Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or
-     * an upgrade activity (such as preloading upgrade images).
-     */
+     * Indication that the Compute Cloud@Customer infrastructure is in the process of
+     * an upgrade or an upgrade activity (such as preloading upgrade images).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     private final Boolean isActive;
 
     /**
-     * Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or
-     * an upgrade activity (such as preloading upgrade images).
+     * Indication that the Compute Cloud@Customer infrastructure is in the process of
+     * an upgrade or an upgrade activity (such as preloading upgrade images).
      *
      * @return the value
-     */
+     **/
     public Boolean getIsActive() {
         return isActive;
     }
@@ -237,7 +249,6 @@ public final class CccUpgradeInformation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,26 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * GPU configuration metrics <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * GPU configuration metrics
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HostGpuConfiguration.Builder.class)
+    builder = HostGpuConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostGpuConfiguration extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,211 +36,225 @@ public final class HostGpuConfiguration extends HostConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** GPU Identifier */
+        /**
+         * GPU Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpuId")
         private Integer gpuId;
 
         /**
          * GPU Identifier
-         *
          * @param gpuId the value to set
          * @return this builder
-         */
+         **/
         public Builder gpuId(Integer gpuId) {
             this.gpuId = gpuId;
             this.__explicitlySet__.add("gpuId");
             return this;
         }
-        /** GPU Product Name */
+        /**
+         * GPU Product Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
          * GPU Product Name
-         *
          * @param productName the value to set
          * @return this builder
-         */
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-        /** GPU Vendor */
+        /**
+         * GPU Vendor
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
         /**
          * GPU Vendor
-         *
          * @param vendor the value to set
          * @return this builder
-         */
+         **/
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-        /** Bus Identifier */
+        /**
+         * Bus Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("busId")
         private String busId;
 
         /**
          * Bus Identifier
-         *
          * @param busId the value to set
          * @return this builder
-         */
+         **/
         public Builder busId(String busId) {
             this.busId = busId;
             this.__explicitlySet__.add("busId");
             return this;
         }
-        /** Bus Width */
+        /**
+         * Bus Width
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("busWidth")
         private Integer busWidth;
 
         /**
          * Bus Width
-         *
          * @param busWidth the value to set
          * @return this builder
-         */
+         **/
         public Builder busWidth(Integer busWidth) {
             this.busWidth = busWidth;
             this.__explicitlySet__.add("busWidth");
             return this;
         }
-        /** GPU Capabilities */
+        /**
+         * GPU Capabilities
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpuCapabilities")
         private String gpuCapabilities;
 
         /**
          * GPU Capabilities
-         *
          * @param gpuCapabilities the value to set
          * @return this builder
-         */
+         **/
         public Builder gpuCapabilities(String gpuCapabilities) {
             this.gpuCapabilities = gpuCapabilities;
             this.__explicitlySet__.add("gpuCapabilities");
             return this;
         }
-        /** Power Capacity */
+        /**
+         * Power Capacity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalPower")
         private Double totalPower;
 
         /**
          * Power Capacity
-         *
          * @param totalPower the value to set
          * @return this builder
-         */
+         **/
         public Builder totalPower(Double totalPower) {
             this.totalPower = totalPower;
             this.__explicitlySet__.add("totalPower");
             return this;
         }
-        /** Total Memory Allocated to GPU */
+        /**
+         * Total Memory Allocated to GPU
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMemory")
         private Double totalMemory;
 
         /**
          * Total Memory Allocated to GPU
-         *
          * @param totalMemory the value to set
          * @return this builder
-         */
+         **/
         public Builder totalMemory(Double totalMemory) {
             this.totalMemory = totalMemory;
             this.__explicitlySet__.add("totalMemory");
             return this;
         }
-        /** Max Video Clock Speed */
+        /**
+         * Max Video Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalVideoClockSpeed")
         private Double totalVideoClockSpeed;
 
         /**
          * Max Video Clock Speed
-         *
          * @param totalVideoClockSpeed the value to set
          * @return this builder
-         */
+         **/
         public Builder totalVideoClockSpeed(Double totalVideoClockSpeed) {
             this.totalVideoClockSpeed = totalVideoClockSpeed;
             this.__explicitlySet__.add("totalVideoClockSpeed");
             return this;
         }
-        /** Max SM (Streaming Multiprocessor) Clock Speed */
+        /**
+         * Max SM (Streaming Multiprocessor) Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSmClockSpeed")
         private Double totalSmClockSpeed;
 
         /**
          * Max SM (Streaming Multiprocessor) Clock Speed
-         *
          * @param totalSmClockSpeed the value to set
          * @return this builder
-         */
+         **/
         public Builder totalSmClockSpeed(Double totalSmClockSpeed) {
             this.totalSmClockSpeed = totalSmClockSpeed;
             this.__explicitlySet__.add("totalSmClockSpeed");
             return this;
         }
-        /** Max Graphics Clock Speed */
+        /**
+         * Max Graphics Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalGraphicsClockSpeed")
         private Double totalGraphicsClockSpeed;
 
         /**
          * Max Graphics Clock Speed
-         *
          * @param totalGraphicsClockSpeed the value to set
          * @return this builder
-         */
+         **/
         public Builder totalGraphicsClockSpeed(Double totalGraphicsClockSpeed) {
             this.totalGraphicsClockSpeed = totalGraphicsClockSpeed;
             this.__explicitlySet__.add("totalGraphicsClockSpeed");
             return this;
         }
-        /** Max Memory Clock Speed */
+        /**
+         * Max Memory Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryClockSpeed")
         private Double totalMemoryClockSpeed;
 
         /**
          * Max Memory Clock Speed
-         *
          * @param totalMemoryClockSpeed the value to set
          * @return this builder
-         */
+         **/
         public Builder totalMemoryClockSpeed(Double totalMemoryClockSpeed) {
             this.totalMemoryClockSpeed = totalMemoryClockSpeed;
             this.__explicitlySet__.add("totalMemoryClockSpeed");
             return this;
         }
-        /** CUDA library version */
+        /**
+         * CUDA library version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cudaVersion")
         private String cudaVersion;
 
         /**
          * CUDA library version
-         *
          * @param cudaVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder cudaVersion(String cudaVersion) {
             this.cudaVersion = cudaVersion;
             this.__explicitlySet__.add("cudaVersion");
             return this;
         }
-        /** GPU Driver version */
+        /**
+         * GPU Driver version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverVersion")
         private String driverVersion;
 
         /**
          * GPU Driver version
-         *
          * @param driverVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder driverVersion(String driverVersion) {
             this.driverVersion = driverVersion;
             this.__explicitlySet__.add("driverVersion");
@@ -324,7 +339,9 @@ public final class HostGpuConfiguration extends HostConfigurationMetricGroup {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -367,184 +384,198 @@ public final class HostGpuConfiguration extends HostConfigurationMetricGroup {
         this.driverVersion = driverVersion;
     }
 
-    /** GPU Identifier */
+    /**
+     * GPU Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuId")
     private final Integer gpuId;
 
     /**
      * GPU Identifier
-     *
      * @return the value
-     */
+     **/
     public Integer getGpuId() {
         return gpuId;
     }
 
-    /** GPU Product Name */
+    /**
+     * GPU Product Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
      * GPU Product Name
-     *
      * @return the value
-     */
+     **/
     public String getProductName() {
         return productName;
     }
 
-    /** GPU Vendor */
+    /**
+     * GPU Vendor
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
     /**
      * GPU Vendor
-     *
      * @return the value
-     */
+     **/
     public String getVendor() {
         return vendor;
     }
 
-    /** Bus Identifier */
+    /**
+     * Bus Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("busId")
     private final String busId;
 
     /**
      * Bus Identifier
-     *
      * @return the value
-     */
+     **/
     public String getBusId() {
         return busId;
     }
 
-    /** Bus Width */
+    /**
+     * Bus Width
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("busWidth")
     private final Integer busWidth;
 
     /**
      * Bus Width
-     *
      * @return the value
-     */
+     **/
     public Integer getBusWidth() {
         return busWidth;
     }
 
-    /** GPU Capabilities */
+    /**
+     * GPU Capabilities
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuCapabilities")
     private final String gpuCapabilities;
 
     /**
      * GPU Capabilities
-     *
      * @return the value
-     */
+     **/
     public String getGpuCapabilities() {
         return gpuCapabilities;
     }
 
-    /** Power Capacity */
+    /**
+     * Power Capacity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalPower")
     private final Double totalPower;
 
     /**
      * Power Capacity
-     *
      * @return the value
-     */
+     **/
     public Double getTotalPower() {
         return totalPower;
     }
 
-    /** Total Memory Allocated to GPU */
+    /**
+     * Total Memory Allocated to GPU
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemory")
     private final Double totalMemory;
 
     /**
      * Total Memory Allocated to GPU
-     *
      * @return the value
-     */
+     **/
     public Double getTotalMemory() {
         return totalMemory;
     }
 
-    /** Max Video Clock Speed */
+    /**
+     * Max Video Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalVideoClockSpeed")
     private final Double totalVideoClockSpeed;
 
     /**
      * Max Video Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getTotalVideoClockSpeed() {
         return totalVideoClockSpeed;
     }
 
-    /** Max SM (Streaming Multiprocessor) Clock Speed */
+    /**
+     * Max SM (Streaming Multiprocessor) Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSmClockSpeed")
     private final Double totalSmClockSpeed;
 
     /**
      * Max SM (Streaming Multiprocessor) Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getTotalSmClockSpeed() {
         return totalSmClockSpeed;
     }
 
-    /** Max Graphics Clock Speed */
+    /**
+     * Max Graphics Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalGraphicsClockSpeed")
     private final Double totalGraphicsClockSpeed;
 
     /**
      * Max Graphics Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getTotalGraphicsClockSpeed() {
         return totalGraphicsClockSpeed;
     }
 
-    /** Max Memory Clock Speed */
+    /**
+     * Max Memory Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryClockSpeed")
     private final Double totalMemoryClockSpeed;
 
     /**
      * Max Memory Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getTotalMemoryClockSpeed() {
         return totalMemoryClockSpeed;
     }
 
-    /** CUDA library version */
+    /**
+     * CUDA library version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cudaVersion")
     private final String cudaVersion;
 
     /**
      * CUDA library version
-     *
      * @return the value
-     */
+     **/
     public String getCudaVersion() {
         return cudaVersion;
     }
 
-    /** GPU Driver version */
+    /**
+     * GPU Driver version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverVersion")
     private final String driverVersion;
 
     /**
      * GPU Driver version
-     *
      * @return the value
-     */
+     **/
     public String getDriverVersion() {
         return driverVersion;
     }
@@ -556,7 +587,6 @@ public final class HostGpuConfiguration extends HostConfigurationMetricGroup {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

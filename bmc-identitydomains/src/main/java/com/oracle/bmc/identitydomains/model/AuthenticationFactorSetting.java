@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Multi Factor Authentication Settings for Tenant <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Multi Factor Authentication Settings for Tenant
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AuthenticationFactorSetting.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AuthenticationFactorSetting.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticationFactorSetting
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -150,37 +149,36 @@ public final class AuthenticationFactorSetting
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         */
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         *
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -188,61 +186,71 @@ public final class AuthenticationFactorSetting
         }
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocid")
         private String ocid;
 
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
          * @param ocid the value to set
          * @return this builder
-         */
+         **/
         public Builder ocid(String ocid) {
             this.ocid = ocid;
             this.__explicitlySet__.add("ocid");
             return this;
         }
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemas")
         private java.util.List<String> schemas;
 
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param schemas the value to set
          * @return this builder
-         */
+         **/
         public Builder schemas(java.util.List<String> schemas) {
             this.schemas = schemas;
             this.__explicitlySet__.add("schemas");
@@ -276,25 +284,34 @@ public final class AuthenticationFactorSetting
             return this;
         }
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         */
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
         private java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         *
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsPreventedOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsPreventedOperations(
                 java.util.List<IdcsPreventedOperations> idcsPreventedOperations) {
             this.idcsPreventedOperations = idcsPreventedOperations;
@@ -303,51 +320,71 @@ public final class AuthenticationFactorSetting
         }
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tags> tags;
 
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tags> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
         private Boolean deleteInProgress;
 
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param deleteInProgress the value to set
          * @return this builder
-         */
+         **/
         public Builder deleteInProgress(Boolean deleteInProgress) {
             this.deleteInProgress = deleteInProgress;
             this.__explicitlySet__.add("deleteInProgress");
@@ -355,24 +392,35 @@ public final class AuthenticationFactorSetting
         }
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
         private String idcsLastUpgradedInRelease;
 
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsLastUpgradedInRelease the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
             this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             this.__explicitlySet__.add("idcsLastUpgradedInRelease");
@@ -380,24 +428,35 @@ public final class AuthenticationFactorSetting
         }
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
         private String domainOcid;
 
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param domainOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder domainOcid(String domainOcid) {
             this.domainOcid = domainOcid;
             this.__explicitlySet__.add("domainOcid");
@@ -405,24 +464,35 @@ public final class AuthenticationFactorSetting
         }
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
         private String compartmentOcid;
 
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param compartmentOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentOcid(String compartmentOcid) {
             this.compartmentOcid = compartmentOcid;
             this.__explicitlySet__.add("compartmentOcid");
@@ -430,24 +500,35 @@ public final class AuthenticationFactorSetting
         }
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
         private String tenancyOcid;
 
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param tenancyOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyOcid(String tenancyOcid) {
             this.tenancyOcid = tenancyOcid;
             this.__explicitlySet__.add("tenancyOcid");
@@ -455,51 +536,71 @@ public final class AuthenticationFactorSetting
         }
         /**
          * If true, indicates that the EMAIL channel is enabled for authentication
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailEnabled")
         private Boolean emailEnabled;
 
         /**
          * If true, indicates that the EMAIL channel is enabled for authentication
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param emailEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder emailEnabled(Boolean emailEnabled) {
             this.emailEnabled = emailEnabled;
             this.__explicitlySet__.add("emailEnabled");
             return this;
         }
         /**
-         * If true, indicates that the Short Message Service (SMS) channel is enabled for
-         * authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("smsEnabled")
         private Boolean smsEnabled;
 
         /**
-         * If true, indicates that the Short Message Service (SMS) channel is enabled for
-         * authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param smsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder smsEnabled(Boolean smsEnabled) {
             this.smsEnabled = smsEnabled;
             this.__explicitlySet__.add("smsEnabled");
@@ -507,76 +608,105 @@ public final class AuthenticationFactorSetting
         }
         /**
          * If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phoneCallEnabled")
         private Boolean phoneCallEnabled;
 
         /**
          * If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param phoneCallEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder phoneCallEnabled(Boolean phoneCallEnabled) {
             this.phoneCallEnabled = phoneCallEnabled;
             this.__explicitlySet__.add("phoneCallEnabled");
             return this;
         }
         /**
-         * If true, indicates that the Mobile App One Time Passcode channel is enabled for
-         * authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totpEnabled")
         private Boolean totpEnabled;
 
         /**
-         * If true, indicates that the Mobile App One Time Passcode channel is enabled for
-         * authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param totpEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder totpEnabled(Boolean totpEnabled) {
             this.totpEnabled = totpEnabled;
             this.__explicitlySet__.add("totpEnabled");
             return this;
         }
         /**
-         * If true, indicates that the Mobile App Push Notification channel is enabled for
-         * authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pushEnabled")
         private Boolean pushEnabled;
 
         /**
-         * If true, indicates that the Mobile App Push Notification channel is enabled for
-         * authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param pushEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder pushEnabled(Boolean pushEnabled) {
             this.pushEnabled = pushEnabled;
             this.__explicitlySet__.add("pushEnabled");
@@ -584,22 +714,33 @@ public final class AuthenticationFactorSetting
         }
         /**
          * If true, indicates that Bypass Code is enabled for authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bypassCodeEnabled")
         private Boolean bypassCodeEnabled;
 
         /**
          * If true, indicates that Bypass Code is enabled for authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param bypassCodeEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder bypassCodeEnabled(Boolean bypassCodeEnabled) {
             this.bypassCodeEnabled = bypassCodeEnabled;
             this.__explicitlySet__.add("bypassCodeEnabled");
@@ -607,22 +748,33 @@ public final class AuthenticationFactorSetting
         }
         /**
          * If true, indicates that Security Questions are enabled for authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityQuestionsEnabled")
         private Boolean securityQuestionsEnabled;
 
         /**
          * If true, indicates that Security Questions are enabled for authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param securityQuestionsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder securityQuestionsEnabled(Boolean securityQuestionsEnabled) {
             this.securityQuestionsEnabled = securityQuestionsEnabled;
             this.__explicitlySet__.add("securityQuestionsEnabled");
@@ -630,26 +782,37 @@ public final class AuthenticationFactorSetting
         }
         /**
          * If true, indicates that the Fido Authenticator channels are enabled for authentication
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fidoAuthenticatorEnabled")
         private Boolean fidoAuthenticatorEnabled;
 
         /**
          * If true, indicates that the Fido Authenticator channels are enabled for authentication
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param fidoAuthenticatorEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder fidoAuthenticatorEnabled(Boolean fidoAuthenticatorEnabled) {
             this.fidoAuthenticatorEnabled = fidoAuthenticatorEnabled;
             this.__explicitlySet__.add("fidoAuthenticatorEnabled");
@@ -657,26 +820,37 @@ public final class AuthenticationFactorSetting
         }
         /**
          * If true, indicates that the Yubico OTP is enabled for authentication
-         *
-         * <p>*Added In:** 2109090424
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2109090424
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("yubicoOtpEnabled")
         private Boolean yubicoOtpEnabled;
 
         /**
          * If true, indicates that the Yubico OTP is enabled for authentication
-         *
-         * <p>*Added In:** 2109090424
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2109090424
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param yubicoOtpEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder yubicoOtpEnabled(Boolean yubicoOtpEnabled) {
             this.yubicoOtpEnabled = yubicoOtpEnabled;
             this.__explicitlySet__.add("yubicoOtpEnabled");
@@ -684,121 +858,155 @@ public final class AuthenticationFactorSetting
         }
         /**
          * Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
-         *
-         * <p>*Deprecated Since: 18.1.2**
-         *
-         * <p>*SCIM++ Properties:** - idcsCanonicalValueSourceFilter: attrName eq
-         * "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)" -
-         * idcsCanonicalValueSourceResourceType: AllowedValue - idcsSearchable: false - multiValued:
-         * false - mutability: readWrite - required: true - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Deprecated Since: 18.1.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+         *  - idcsCanonicalValueSourceResourceType: AllowedValue
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mfaEnrollmentType")
         private String mfaEnrollmentType;
 
         /**
          * Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
-         *
-         * <p>*Deprecated Since: 18.1.2**
-         *
-         * <p>*SCIM++ Properties:** - idcsCanonicalValueSourceFilter: attrName eq
-         * "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)" -
-         * idcsCanonicalValueSourceResourceType: AllowedValue - idcsSearchable: false - multiValued:
-         * false - mutability: readWrite - required: true - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Deprecated Since: 18.1.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+         *  - idcsCanonicalValueSourceResourceType: AllowedValue
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mfaEnrollmentType the value to set
          * @return this builder
-         */
+         **/
         public Builder mfaEnrollmentType(String mfaEnrollmentType) {
             this.mfaEnrollmentType = mfaEnrollmentType;
             this.__explicitlySet__.add("mfaEnrollmentType");
             return this;
         }
         /**
-         * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is
-         * a readOnly attribute which reflects the value of mfaEnabledCategory attribute in
-         * SsoSettings
-         *
-         * <p>*Deprecated Since: 18.1.2**
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+         * <p>
+         **Deprecated Since: 18.1.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mfaEnabledCategory")
         private String mfaEnabledCategory;
 
         /**
-         * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is
-         * a readOnly attribute which reflects the value of mfaEnabledCategory attribute in
-         * SsoSettings
-         *
-         * <p>*Deprecated Since: 18.1.2**
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+         * <p>
+         **Deprecated Since: 18.1.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mfaEnabledCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder mfaEnabledCategory(String mfaEnabledCategory) {
             this.mfaEnabledCategory = mfaEnabledCategory;
             this.__explicitlySet__.add("mfaEnabledCategory");
             return this;
         }
         /**
-         * If true, indicates that 'Show backup factor(s)' button will be hidden during
-         * authentication
-         *
-         * <p>*Added In:** 19.3.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+         * <p>
+         **Added In:** 19.3.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hideBackupFactorEnabled")
         private Boolean hideBackupFactorEnabled;
 
         /**
-         * If true, indicates that 'Show backup factor(s)' button will be hidden during
-         * authentication
-         *
-         * <p>*Added In:** 19.3.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+         * <p>
+         **Added In:** 19.3.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param hideBackupFactorEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder hideBackupFactorEnabled(Boolean hideBackupFactorEnabled) {
             this.hideBackupFactorEnabled = hideBackupFactorEnabled;
             this.__explicitlySet__.add("hideBackupFactorEnabled");
             return this;
         }
         /**
-         * If true, indicates that email will not be enrolled as a MFA factor automatically if it a
-         * account recovery factor
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoEnrollEmailFactorDisabled")
         private Boolean autoEnrollEmailFactorDisabled;
 
         /**
-         * If true, indicates that email will not be enrolled as a MFA factor automatically if it a
-         * account recovery factor
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param autoEnrollEmailFactorDisabled the value to set
          * @return this builder
-         */
+         **/
         public Builder autoEnrollEmailFactorDisabled(Boolean autoEnrollEmailFactorDisabled) {
             this.autoEnrollEmailFactorDisabled = autoEnrollEmailFactorDisabled;
             this.__explicitlySet__.add("autoEnrollEmailFactorDisabled");
@@ -806,26 +1014,37 @@ public final class AuthenticationFactorSetting
         }
         /**
          * Factors for which enrollment should be blocked for End User
-         *
-         * <p>*Added In:** 2012271618
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2012271618
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userEnrollmentDisabledFactors")
         private java.util.List<UserEnrollmentDisabledFactors> userEnrollmentDisabledFactors;
 
         /**
          * Factors for which enrollment should be blocked for End User
-         *
-         * <p>*Added In:** 2012271618
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2012271618
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param userEnrollmentDisabledFactors the value to set
          * @return this builder
-         */
+         **/
         public Builder userEnrollmentDisabledFactors(
                 java.util.List<UserEnrollmentDisabledFactors> userEnrollmentDisabledFactors) {
             this.userEnrollmentDisabledFactors = userEnrollmentDisabledFactors;
@@ -903,24 +1122,35 @@ public final class AuthenticationFactorSetting
         }
         /**
          * Compliance Policy that defines actions to be taken when a condition is violated
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: true - returned: default - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicy")
         private java.util.List<AuthenticationFactorSettingsCompliancePolicy> compliancePolicy;
 
         /**
          * Compliance Policy that defines actions to be taken when a condition is violated
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: true - returned: default - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param compliancePolicy the value to set
          * @return this builder
-         */
+         **/
         public Builder compliancePolicy(
                 java.util.List<AuthenticationFactorSettingsCompliancePolicy> compliancePolicy) {
             this.compliancePolicy = compliancePolicy;
@@ -1010,10 +1240,8 @@ public final class AuthenticationFactorSetting
                             this.endpointRestrictions,
                             this.compliancePolicy,
                             this.totpSettings,
-                            this
-                                    .urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings,
-                            this
-                                    .urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings);
+                            this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings,
+                            this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1147,7 +1375,9 @@ public final class AuthenticationFactorSetting
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -1157,90 +1387,103 @@ public final class AuthenticationFactorSetting
     }
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     */
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     *
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocid")
     private final String ocid;
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getOcid() {
         return ocid;
     }
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemas")
     private final java.util.List<String> schemas;
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getSchemas() {
         return schemas;
     }
@@ -1267,477 +1510,696 @@ public final class AuthenticationFactorSetting
     }
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
     private final java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<IdcsPreventedOperations> getIdcsPreventedOperations() {
         return idcsPreventedOperations;
     }
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tags> tags;
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<Tags> getTags() {
         return tags;
     }
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
     private final Boolean deleteInProgress;
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getDeleteInProgress() {
         return deleteInProgress;
     }
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
     private final String idcsLastUpgradedInRelease;
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsLastUpgradedInRelease() {
         return idcsLastUpgradedInRelease;
     }
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
     private final String domainOcid;
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDomainOcid() {
         return domainOcid;
     }
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
     private final String compartmentOcid;
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCompartmentOcid() {
         return compartmentOcid;
     }
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
     private final String tenancyOcid;
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTenancyOcid() {
         return tenancyOcid;
     }
 
     /**
      * If true, indicates that the EMAIL channel is enabled for authentication
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailEnabled")
     private final Boolean emailEnabled;
 
     /**
      * If true, indicates that the EMAIL channel is enabled for authentication
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getEmailEnabled() {
         return emailEnabled;
     }
 
     /**
      * If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("smsEnabled")
     private final Boolean smsEnabled;
 
     /**
      * If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getSmsEnabled() {
         return smsEnabled;
     }
 
     /**
      * If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneCallEnabled")
     private final Boolean phoneCallEnabled;
 
     /**
      * If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getPhoneCallEnabled() {
         return phoneCallEnabled;
     }
 
     /**
-     * If true, indicates that the Mobile App One Time Passcode channel is enabled for
-     * authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totpEnabled")
     private final Boolean totpEnabled;
 
     /**
-     * If true, indicates that the Mobile App One Time Passcode channel is enabled for
-     * authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getTotpEnabled() {
         return totpEnabled;
     }
 
     /**
-     * If true, indicates that the Mobile App Push Notification channel is enabled for
-     * authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pushEnabled")
     private final Boolean pushEnabled;
 
     /**
-     * If true, indicates that the Mobile App Push Notification channel is enabled for
-     * authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getPushEnabled() {
         return pushEnabled;
     }
 
     /**
      * If true, indicates that Bypass Code is enabled for authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bypassCodeEnabled")
     private final Boolean bypassCodeEnabled;
 
     /**
      * If true, indicates that Bypass Code is enabled for authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getBypassCodeEnabled() {
         return bypassCodeEnabled;
     }
 
     /**
      * If true, indicates that Security Questions are enabled for authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityQuestionsEnabled")
     private final Boolean securityQuestionsEnabled;
 
     /**
      * If true, indicates that Security Questions are enabled for authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getSecurityQuestionsEnabled() {
         return securityQuestionsEnabled;
     }
 
     /**
      * If true, indicates that the Fido Authenticator channels are enabled for authentication
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fidoAuthenticatorEnabled")
     private final Boolean fidoAuthenticatorEnabled;
 
     /**
      * If true, indicates that the Fido Authenticator channels are enabled for authentication
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getFidoAuthenticatorEnabled() {
         return fidoAuthenticatorEnabled;
     }
 
     /**
      * If true, indicates that the Yubico OTP is enabled for authentication
-     *
-     * <p>*Added In:** 2109090424
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2109090424
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("yubicoOtpEnabled")
     private final Boolean yubicoOtpEnabled;
 
     /**
      * If true, indicates that the Yubico OTP is enabled for authentication
-     *
-     * <p>*Added In:** 2109090424
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2109090424
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getYubicoOtpEnabled() {
         return yubicoOtpEnabled;
     }
 
     /**
      * Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
-     *
-     * <p>*Deprecated Since: 18.1.2**
-     *
-     * <p>*SCIM++ Properties:** - idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType"
-     * and attrValues.value eq "$(mfaEnrollmentType)" - idcsCanonicalValueSourceResourceType:
-     * AllowedValue - idcsSearchable: false - multiValued: false - mutability: readWrite - required:
-     * true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Deprecated Since: 18.1.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+     *  - idcsCanonicalValueSourceResourceType: AllowedValue
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mfaEnrollmentType")
     private final String mfaEnrollmentType;
 
     /**
      * Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
-     *
-     * <p>*Deprecated Since: 18.1.2**
-     *
-     * <p>*SCIM++ Properties:** - idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType"
-     * and attrValues.value eq "$(mfaEnrollmentType)" - idcsCanonicalValueSourceResourceType:
-     * AllowedValue - idcsSearchable: false - multiValued: false - mutability: readWrite - required:
-     * true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Deprecated Since: 18.1.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+     *  - idcsCanonicalValueSourceResourceType: AllowedValue
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMfaEnrollmentType() {
         return mfaEnrollmentType;
     }
 
     /**
-     * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a
-     * readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
-     *
-     * <p>*Deprecated Since: 18.1.2**
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+     * <p>
+     **Deprecated Since: 18.1.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mfaEnabledCategory")
     private final String mfaEnabledCategory;
 
     /**
-     * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a
-     * readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
-     *
-     * <p>*Deprecated Since: 18.1.2**
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+     * <p>
+     **Deprecated Since: 18.1.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMfaEnabledCategory() {
         return mfaEnabledCategory;
     }
 
     /**
      * If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
-     *
-     * <p>*Added In:** 19.3.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.3.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hideBackupFactorEnabled")
     private final Boolean hideBackupFactorEnabled;
 
     /**
      * If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
-     *
-     * <p>*Added In:** 19.3.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.3.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getHideBackupFactorEnabled() {
         return hideBackupFactorEnabled;
     }
 
     /**
-     * If true, indicates that email will not be enrolled as a MFA factor automatically if it a
-     * account recovery factor
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoEnrollEmailFactorDisabled")
     private final Boolean autoEnrollEmailFactorDisabled;
 
     /**
-     * If true, indicates that email will not be enrolled as a MFA factor automatically if it a
-     * account recovery factor
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAutoEnrollEmailFactorDisabled() {
         return autoEnrollEmailFactorDisabled;
     }
 
-    /** */
-    public enum UserEnrollmentDisabledFactors implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum UserEnrollmentDisabledFactors {
         Email("EMAIL"),
         Sms("SMS"),
         Totp("TOTP"),
@@ -1750,8 +2212,8 @@ public final class AuthenticationFactorSetting
         YubicoOtp("YUBICO_OTP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1792,25 +2254,36 @@ public final class AuthenticationFactorSetting
     };
     /**
      * Factors for which enrollment should be blocked for End User
-     *
-     * <p>*Added In:** 2012271618
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2012271618
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userEnrollmentDisabledFactors")
     private final java.util.List<UserEnrollmentDisabledFactors> userEnrollmentDisabledFactors;
 
     /**
      * Factors for which enrollment should be blocked for End User
-     *
-     * <p>*Added In:** 2012271618
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2012271618
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserEnrollmentDisabledFactors> getUserEnrollmentDisabledFactors() {
         return userEnrollmentDisabledFactors;
     }
@@ -1866,23 +2339,34 @@ public final class AuthenticationFactorSetting
 
     /**
      * Compliance Policy that defines actions to be taken when a condition is violated
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: true - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicy")
     private final java.util.List<AuthenticationFactorSettingsCompliancePolicy> compliancePolicy;
 
     /**
      * Compliance Policy that defines actions to be taken when a condition is violated
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: true - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AuthenticationFactorSettingsCompliancePolicy> getCompliancePolicy() {
         return compliancePolicy;
     }
@@ -1921,7 +2405,6 @@ public final class AuthenticationFactorSetting
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -1976,13 +2459,11 @@ public final class AuthenticationFactorSetting
                         ", urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings));
         sb.append(")");
         return sb.toString();
     }
@@ -2041,12 +2522,10 @@ public final class AuthenticationFactorSetting
                 && java.util.Objects.equals(this.compliancePolicy, other.compliancePolicy)
                 && java.util.Objects.equals(this.totpSettings, other.totpSettings)
                 && java.util.Objects.equals(
-                        this
-                                .urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings,
+                        this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings,
                         other.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings)
                 && java.util.Objects.equals(
-                        this
-                                .urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings,
+                        this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings,
                         other.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings)
                 && super.equals(other);
     }
@@ -2167,8 +2646,7 @@ public final class AuthenticationFactorSetting
         result = (result * PRIME) + (this.totpSettings == null ? 43 : this.totpSettings.hashCode());
         result =
                 (result * PRIME)
-                        + (this
-                                                .urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings
+                        + (this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings
                                         == null
                                 ? 43
                                 : this
@@ -2176,8 +2654,7 @@ public final class AuthenticationFactorSetting
                                         .hashCode());
         result =
                 (result * PRIME)
-                        + (this
-                                                .urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings
+                        + (this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings
                                         == null
                                 ? 43
                                 : this

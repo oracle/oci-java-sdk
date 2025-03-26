@@ -5,23 +5,23 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * record section of openmetrics parser. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * record section of openmetrics parser.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentOpenmetricsParserRecord.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UnifiedAgentOpenmetricsParserRecord.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentOpenmetricsParserRecord
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"namespace", "resourceGroup", "dimensions"})
     public UnifiedAgentOpenmetricsParserRecord(
@@ -34,46 +34,49 @@ public final class UnifiedAgentOpenmetricsParserRecord
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Namespace to emit metrics. */
+        /**
+         * Namespace to emit metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * Namespace to emit metrics.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** Resource group to emit metrics. */
+        /**
+         * Resource group to emit metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
         /**
          * Resource group to emit metrics.
-         *
          * @param resourceGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
-        /** Dimensions to be added for metrics. */
+        /**
+         * Dimensions to be added for metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
          * Dimensions to be added for metrics.
-         *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -108,7 +111,9 @@ public final class UnifiedAgentOpenmetricsParserRecord
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +122,44 @@ public final class UnifiedAgentOpenmetricsParserRecord
         return new Builder().copy(this);
     }
 
-    /** Namespace to emit metrics. */
+    /**
+     * Namespace to emit metrics.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * Namespace to emit metrics.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** Resource group to emit metrics. */
+    /**
+     * Resource group to emit metrics.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
     /**
      * Resource group to emit metrics.
-     *
      * @return the value
-     */
+     **/
     public String getResourceGroup() {
         return resourceGroup;
     }
 
-    /** Dimensions to be added for metrics. */
+    /**
+     * Dimensions to be added for metrics.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
      * Dimensions to be added for metrics.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
@@ -163,7 +171,6 @@ public final class UnifiedAgentOpenmetricsParserRecord
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

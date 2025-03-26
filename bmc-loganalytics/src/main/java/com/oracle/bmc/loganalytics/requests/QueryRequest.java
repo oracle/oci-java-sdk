@@ -6,57 +6,65 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/QueryExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use QueryRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/QueryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use QueryRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class QueryRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.loganalytics.model.QueryDetails> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** Query to be executed. */
+    /**
+     * Query to be executed.
+     */
     private com.oracle.bmc.loganalytics.model.QueryDetails queryDetails;
 
-    /** Query to be executed. */
+    /**
+     * Query to be executed.
+     */
     public com.oracle.bmc.loganalytics.model.QueryDetails getQueryDetails() {
         return queryDetails;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Maximum number of results to return in this request. Note a limit=-1 returns all results from
-     * pageId onwards up to maxtotalCount.
+     * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
      */
     private Integer limit;
 
     /**
-     * Maximum number of results to return in this request. Note a limit=-1 returns all results from
-     * pageId onwards up to maxtotalCount.
+     * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
      */
     public Integer getLimit() {
         return limit;
@@ -64,7 +72,6 @@ public class QueryRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -81,10 +88,14 @@ public class QueryRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     QueryRequest, com.oracle.bmc.loganalytics.model.QueryDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -98,12 +109,13 @@ public class QueryRequest
             return this;
         }
 
-        /** Query to be executed. */
+        /**
+         * Query to be executed.
+         */
         private com.oracle.bmc.loganalytics.model.QueryDetails queryDetails = null;
 
         /**
          * Query to be executed.
-         *
          * @param queryDetails the value to set
          * @return this builder instance
          */
@@ -113,15 +125,12 @@ public class QueryRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -130,12 +139,13 @@ public class QueryRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -145,15 +155,12 @@ public class QueryRequest
         }
 
         /**
-         * Maximum number of results to return in this request. Note a limit=-1 returns all results
-         * from pageId onwards up to maxtotalCount.
+         * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
          */
         private Integer limit = null;
 
         /**
-         * Maximum number of results to return in this request. Note a limit=-1 returns all results
-         * from pageId onwards up to maxtotalCount.
-         *
+         * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
          * @param limit the value to set
          * @return this builder instance
          */
@@ -164,19 +171,18 @@ public class QueryRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -188,7 +194,6 @@ public class QueryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(QueryRequest o) {
@@ -205,11 +210,10 @@ public class QueryRequest
         /**
          * Build the instance of QueryRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of QueryRequest
          */
@@ -222,7 +226,6 @@ public class QueryRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -235,8 +238,7 @@ public class QueryRequest
         /**
          * Build the instance of QueryRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of QueryRequest
@@ -255,7 +257,6 @@ public class QueryRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -269,7 +270,6 @@ public class QueryRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

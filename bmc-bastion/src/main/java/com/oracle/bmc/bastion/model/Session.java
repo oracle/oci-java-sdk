@@ -5,22 +5,19 @@
 package com.oracle.bmc.bastion.model;
 
 /**
- * A bastion session resource. A bastion session lets authorized users connect to a target resource
- * using a Secure Shell (SSH) for a predetermined amount of time. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+ * A bastion session resource. A bastion session lets authorized users connect to a target resource using a Secure Shell (SSH) for a predetermined amount of time.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Session.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Session extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Session extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,76 +72,81 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier (OCID) of the session, which can't be changed after creation. */
+        /**
+         * The unique identifier (OCID) of the session, which can't be changed after creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier (OCID) of the session, which can't be changed after creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the session. */
+        /**
+         * The name of the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the session.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The unique identifier (OCID) of the bastion that is hosting this session. */
+        /**
+         * The unique identifier (OCID) of the bastion that is hosting this session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
         private String bastionId;
 
         /**
          * The unique identifier (OCID) of the bastion that is hosting this session.
-         *
          * @param bastionId the value to set
          * @return this builder
-         */
+         **/
         public Builder bastionId(String bastionId) {
             this.bastionId = bastionId;
             this.__explicitlySet__.add("bastionId");
             return this;
         }
-        /** The name of the bastion that is hosting this session. */
+        /**
+         * The name of the bastion that is hosting this session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionName")
         private String bastionName;
 
         /**
          * The name of the bastion that is hosting this session.
-         *
          * @param bastionName the value to set
          * @return this builder
-         */
+         **/
         public Builder bastionName(String bastionName) {
             this.bastionName = bastionName;
             this.__explicitlySet__.add("bastionName");
             return this;
         }
-        /** The username that the session uses to connect to the target resource. */
+        /**
+         * The username that the session uses to connect to the target resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionUserName")
         private String bastionUserName;
 
         /**
          * The username that the session uses to connect to the target resource.
-         *
          * @param bastionUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder bastionUserName(String bastionUserName) {
             this.bastionUserName = bastionUserName;
             this.__explicitlySet__.add("bastionUserName");
@@ -159,35 +161,33 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("targetResourceDetails");
             return this;
         }
-        /** The connection message for the session. */
+        /**
+         * The connection message for the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshMetadata")
         private java.util.Map<String, String> sshMetadata;
 
         /**
          * The connection message for the session.
-         *
          * @param sshMetadata the value to set
          * @return this builder
-         */
+         **/
         public Builder sshMetadata(java.util.Map<String, String> sshMetadata) {
             this.sshMetadata = sshMetadata;
             this.__explicitlySet__.add("sshMetadata");
             return this;
         }
         /**
-         * The type of the key used to connect to the session. PUB is a standard public key in
-         * OpenSSH format.
-         */
+         * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyType")
         private KeyType keyType;
 
         /**
-         * The type of the key used to connect to the session. PUB is a standard public key in
-         * OpenSSH format.
-         *
+         * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
          * @param keyType the value to set
          * @return this builder
-         */
+         **/
         public Builder keyType(KeyType keyType) {
             this.keyType = keyType;
             this.__explicitlySet__.add("keyType");
@@ -203,102 +203,104 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
-         * The public key of the bastion host. You can use this to verify that you're connecting to
-         * the correct bastion.
-         */
+         * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionPublicHostKeyInfo")
         private String bastionPublicHostKeyInfo;
 
         /**
-         * The public key of the bastion host. You can use this to verify that you're connecting to
-         * the correct bastion.
-         *
+         * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
          * @param bastionPublicHostKeyInfo the value to set
          * @return this builder
-         */
+         **/
         public Builder bastionPublicHostKeyInfo(String bastionPublicHostKeyInfo) {
             this.bastionPublicHostKeyInfo = bastionPublicHostKeyInfo;
             this.__explicitlySet__.add("bastionPublicHostKeyInfo");
             return this;
         }
         /**
-         * The time the session was created. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-         */
+         * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the session was created. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the session was updated. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-         */
+         * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the session was updated. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the session. */
+        /**
+         * The current state of the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SessionLifecycleState lifecycleState;
 
         /**
          * The current state of the session.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(SessionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message describing the current session state in more detail. */
+        /**
+         * A message describing the current session state in more detail.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * A message describing the current session state in more detail.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The amount of time the session can remain active. */
+        /**
+         * The amount of time the session can remain active.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
         private Integer sessionTtlInSeconds;
 
         /**
          * The amount of time the session can remain active.
-         *
          * @param sessionTtlInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionTtlInSeconds(Integer sessionTtlInSeconds) {
             this.sessionTtlInSeconds = sessionTtlInSeconds;
             this.__explicitlySet__.add("sessionTtlInSeconds");
@@ -383,7 +385,9 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -392,67 +396,72 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** The unique identifier (OCID) of the session, which can't be changed after creation. */
+    /**
+     * The unique identifier (OCID) of the session, which can't be changed after creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier (OCID) of the session, which can't be changed after creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the session. */
+    /**
+     * The name of the session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the session.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The unique identifier (OCID) of the bastion that is hosting this session. */
+    /**
+     * The unique identifier (OCID) of the bastion that is hosting this session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
     private final String bastionId;
 
     /**
      * The unique identifier (OCID) of the bastion that is hosting this session.
-     *
      * @return the value
-     */
+     **/
     public String getBastionId() {
         return bastionId;
     }
 
-    /** The name of the bastion that is hosting this session. */
+    /**
+     * The name of the bastion that is hosting this session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionName")
     private final String bastionName;
 
     /**
      * The name of the bastion that is hosting this session.
-     *
      * @return the value
-     */
+     **/
     public String getBastionName() {
         return bastionName;
     }
 
-    /** The username that the session uses to connect to the target resource. */
+    /**
+     * The username that the session uses to connect to the target resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionUserName")
     private final String bastionUserName;
 
     /**
      * The username that the session uses to connect to the target resource.
-     *
      * @return the value
-     */
+     **/
     public String getBastionUserName() {
         return bastionUserName;
     }
@@ -464,29 +473,29 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
         return targetResourceDetails;
     }
 
-    /** The connection message for the session. */
+    /**
+     * The connection message for the session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshMetadata")
     private final java.util.Map<String, String> sshMetadata;
 
     /**
      * The connection message for the session.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getSshMetadata() {
         return sshMetadata;
     }
 
     /**
-     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH
-     * format.
-     */
-    public enum KeyType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+     **/
+    public enum KeyType {
         Pub("PUB"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -526,18 +535,15 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
         }
     };
     /**
-     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH
-     * format.
-     */
+     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyType")
     private final KeyType keyType;
 
     /**
-     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH
-     * format.
-     *
+     * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      * @return the value
-     */
+     **/
     public KeyType getKeyType() {
         return keyType;
     }
@@ -550,91 +556,93 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * The public key of the bastion host. You can use this to verify that you're connecting to the
-     * correct bastion.
-     */
+     * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionPublicHostKeyInfo")
     private final String bastionPublicHostKeyInfo;
 
     /**
-     * The public key of the bastion host. You can use this to verify that you're connecting to the
-     * correct bastion.
-     *
+     * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
      * @return the value
-     */
+     **/
     public String getBastionPublicHostKeyInfo() {
         return bastionPublicHostKeyInfo;
     }
 
     /**
-     * The time the session was created. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-     */
+     * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the session was created. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the session was updated. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-     */
+     * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the session was updated. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the session. */
+    /**
+     * The current state of the session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SessionLifecycleState lifecycleState;
 
     /**
      * The current state of the session.
-     *
      * @return the value
-     */
+     **/
     public SessionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the current session state in more detail. */
+    /**
+     * A message describing the current session state in more detail.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * A message describing the current session state in more detail.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The amount of time the session can remain active. */
+    /**
+     * The amount of time the session can remain active.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
     private final Integer sessionTtlInSeconds;
 
     /**
      * The amount of time the session can remain active.
-     *
      * @return the value
-     */
+     **/
     public Integer getSessionTtlInSeconds() {
         return sessionTtlInSeconds;
     }
@@ -646,7 +654,6 @@ public final class Session extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

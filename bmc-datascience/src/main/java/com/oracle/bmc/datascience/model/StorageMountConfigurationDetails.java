@@ -5,34 +5,36 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The storage mount configuration details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The storage mount configuration details
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "storageType",
-        defaultImpl = StorageMountConfigurationDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "storageType",
+    defaultImpl = StorageMountConfigurationDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = FileStorageMountConfigurationDetails.class,
-            name = "FILE_STORAGE"),
+        value = FileStorageMountConfigurationDetails.class,
+        name = "FILE_STORAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ObjectStorageMountConfigurationDetails.class,
-            name = "OBJECT_STORAGE")
+        value = ObjectStorageMountConfigurationDetails.class,
+        name = "OBJECT_STORAGE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class StorageMountConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"destinationDirectoryName", "destinationPath"})
     protected StorageMountConfigurationDetails(
@@ -42,28 +44,30 @@ public class StorageMountConfigurationDetails
         this.destinationPath = destinationPath;
     }
 
-    /** The local directory name to be mounted */
+    /**
+     * The local directory name to be mounted
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationDirectoryName")
     private final String destinationDirectoryName;
 
     /**
      * The local directory name to be mounted
-     *
      * @return the value
-     */
+     **/
     public String getDestinationDirectoryName() {
         return destinationDirectoryName;
     }
 
-    /** The local path of the mounted directory, excluding directory name. */
+    /**
+     * The local path of the mounted directory, excluding directory name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationPath")
     private final String destinationPath;
 
     /**
      * The local path of the mounted directory, excluding directory name.
-     *
      * @return the value
-     */
+     **/
     public String getDestinationPath() {
         return destinationPath;
     }
@@ -75,7 +79,6 @@ public class StorageMountConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -122,14 +125,16 @@ public class StorageMountConfigurationDetails
         return result;
     }
 
-    /** The type of storage. */
-    public enum StorageType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of storage.
+     **/
+    public enum StorageType {
         FileStorage("FILE_STORAGE"),
         ObjectStorage("OBJECT_STORAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

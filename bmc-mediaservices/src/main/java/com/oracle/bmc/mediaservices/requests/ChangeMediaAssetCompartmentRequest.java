@@ -6,86 +6,104 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaAssetCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeMediaAssetCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaAssetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeMediaAssetCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class ChangeMediaAssetCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mediaservices.model.ChangeMediaAssetCompartmentDetails> {
 
-    /** Unique MediaAsset identifier */
+    /**
+     * Unique MediaAsset identifier
+     */
     private String mediaAssetId;
 
-    /** Unique MediaAsset identifier */
+    /**
+     * Unique MediaAsset identifier
+     */
     public String getMediaAssetId() {
         return mediaAssetId;
     }
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     private com.oracle.bmc.mediaservices.model.ChangeMediaAssetCompartmentDetails
             changeMediaAssetCompartmentDetails;
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.mediaservices.model.ChangeMediaAssetCompartmentDetails
             getChangeMediaAssetCompartmentDetails() {
         return changeMediaAssetCompartmentDetails;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -98,15 +116,17 @@ public class ChangeMediaAssetCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeMediaAssetCompartmentRequest,
                     com.oracle.bmc.mediaservices.model.ChangeMediaAssetCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique MediaAsset identifier */
+        /**
+         * Unique MediaAsset identifier
+         */
         private String mediaAssetId = null;
 
         /**
          * Unique MediaAsset identifier
-         *
          * @param mediaAssetId the value to set
          * @return this builder instance
          */
@@ -115,13 +135,14 @@ public class ChangeMediaAssetCompartmentRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.mediaservices.model.ChangeMediaAssetCompartmentDetails
                 changeMediaAssetCompartmentDetails = null;
 
         /**
          * The information to be updated.
-         *
          * @param changeMediaAssetCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -132,12 +153,13 @@ public class ChangeMediaAssetCompartmentRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -148,19 +170,20 @@ public class ChangeMediaAssetCompartmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -171,18 +194,21 @@ public class ChangeMediaAssetCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -192,12 +218,13 @@ public class ChangeMediaAssetCompartmentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -208,19 +235,18 @@ public class ChangeMediaAssetCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -232,7 +258,6 @@ public class ChangeMediaAssetCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeMediaAssetCompartmentRequest o) {
@@ -250,11 +275,10 @@ public class ChangeMediaAssetCompartmentRequest
         /**
          * Build the instance of ChangeMediaAssetCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeMediaAssetCompartmentRequest
          */
@@ -267,7 +291,6 @@ public class ChangeMediaAssetCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -281,8 +304,7 @@ public class ChangeMediaAssetCompartmentRequest
         /**
          * Build the instance of ChangeMediaAssetCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeMediaAssetCompartmentRequest
@@ -296,15 +318,12 @@ public class ChangeMediaAssetCompartmentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ChangeMediaAssetCompartmentRequest(mediaAssetId,
-            // changeMediaAssetCompartmentDetails, isLockOverride, opcRetryToken, ifMatch,
-            // opcRequestId);
+            // new ChangeMediaAssetCompartmentRequest(mediaAssetId, changeMediaAssetCompartmentDetails, isLockOverride, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -319,7 +338,6 @@ public class ChangeMediaAssetCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

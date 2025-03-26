@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/** Possible recommendation statuses. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible recommendation statuses.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+public enum Status {
     Pending("PENDING"),
     Dismissed("DISMISSED"),
     Postponed("POSTPONED"),

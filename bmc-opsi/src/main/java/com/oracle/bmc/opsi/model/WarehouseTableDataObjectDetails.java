@@ -5,38 +5,39 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Details of a TABLE type data object in a Warehouse. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of a TABLE type data object in a Warehouse.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WarehouseTableDataObjectDetails.Builder.class)
+    builder = WarehouseTableDataObjectDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "dataObjectType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "dataObjectType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class WarehouseTableDataObjectDetails extends WarehouseDataObjectDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Metadata of columns in the data object. */
+        /**
+         * Metadata of columns in the data object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnsMetadata")
         private java.util.List<DataObjectColumnMetadata> columnsMetadata;
 
         /**
          * Metadata of columns in the data object.
-         *
          * @param columnsMetadata the value to set
          * @return this builder
-         */
+         **/
         public Builder columnsMetadata(java.util.List<DataObjectColumnMetadata> columnsMetadata) {
             this.columnsMetadata = columnsMetadata;
             this.__explicitlySet__.add("columnsMetadata");
@@ -64,7 +65,9 @@ public final class WarehouseTableDataObjectDetails extends WarehouseDataObjectDe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,15 +83,16 @@ public final class WarehouseTableDataObjectDetails extends WarehouseDataObjectDe
         this.columnsMetadata = columnsMetadata;
     }
 
-    /** Metadata of columns in the data object. */
+    /**
+     * Metadata of columns in the data object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnsMetadata")
     private final java.util.List<DataObjectColumnMetadata> columnsMetadata;
 
     /**
      * Metadata of columns in the data object.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DataObjectColumnMetadata> getColumnsMetadata() {
         return columnsMetadata;
     }
@@ -100,7 +104,6 @@ public final class WarehouseTableDataObjectDetails extends WarehouseDataObjectDe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

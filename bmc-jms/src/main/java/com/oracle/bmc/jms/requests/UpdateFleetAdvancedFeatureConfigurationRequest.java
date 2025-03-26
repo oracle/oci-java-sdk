@@ -6,34 +6,33 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetAdvancedFeatureConfigurationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateFleetAdvancedFeatureConfigurationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateFleetAdvancedFeatureConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFleetAdvancedFeatureConfigurationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class UpdateFleetAdvancedFeatureConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /** Update advanced feature configurations with new fields. */
+    /**
+     * Update advanced feature configurations with new fields.
+     */
     private com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails
             updateFleetAdvancedFeatureConfigurationDetails;
 
-    /** Update advanced feature configurations with new fields. */
+    /**
+     * Update advanced feature configurations with new fields.
+     */
     public com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails
             getUpdateFleetAdvancedFeatureConfigurationDetails() {
         return updateFleetAdvancedFeatureConfigurationDetails;
@@ -41,50 +40,59 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the ETag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the ETag you provide matches the
-     * resource's current ETag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * ETag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the ETag you
+     * provide matches the resource's current ETag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the ETag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the ETag you provide matches the
-     * resource's current ETag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * ETag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the ETag you
+     * provide matches the resource's current ETag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -97,19 +105,17 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateFleetAdvancedFeatureConfigurationRequest,
                     com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -118,13 +124,14 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
             return this;
         }
 
-        /** Update advanced feature configurations with new fields. */
+        /**
+         * Update advanced feature configurations with new fields.
+         */
         private com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails
                 updateFleetAdvancedFeatureConfigurationDetails = null;
 
         /**
          * Update advanced feature configurations with new fields.
-         *
          * @param updateFleetAdvancedFeatureConfigurationDetails the value to set
          * @return this builder instance
          */
@@ -138,19 +145,20 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -161,18 +169,21 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the ETag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the ETag you provide
-         * matches the resource's current ETag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * ETag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the ETag you
+         * provide matches the resource's current ETag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the ETag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the ETag you provide
-         * matches the resource's current ETag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * ETag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the ETag you
+         * provide matches the resource's current ETag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -182,12 +193,13 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -198,19 +210,18 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -222,7 +233,6 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateFleetAdvancedFeatureConfigurationRequest o) {
@@ -238,14 +248,12 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
         }
 
         /**
-         * Build the instance of UpdateFleetAdvancedFeatureConfigurationRequest as configured by
-         * this builder
+         * Build the instance of UpdateFleetAdvancedFeatureConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateFleetAdvancedFeatureConfigurationRequest
          */
@@ -259,7 +267,6 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -271,11 +278,9 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
         }
 
         /**
-         * Build the instance of UpdateFleetAdvancedFeatureConfigurationRequest as configured by
-         * this builder
+         * Build the instance of UpdateFleetAdvancedFeatureConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateFleetAdvancedFeatureConfigurationRequest
@@ -290,15 +295,12 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateFleetAdvancedFeatureConfigurationRequest(fleetId,
-            // updateFleetAdvancedFeatureConfigurationDetails, opcRetryToken, ifMatch,
-            // opcRequestId);
+            // new UpdateFleetAdvancedFeatureConfigurationRequest(fleetId, updateFleetAdvancedFeatureConfigurationDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -313,7 +315,6 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

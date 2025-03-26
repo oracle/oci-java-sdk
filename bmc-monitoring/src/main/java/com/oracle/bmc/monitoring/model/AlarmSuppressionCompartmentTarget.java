@@ -5,67 +5,69 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The compartment target of the alarm suppression. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * The compartment target of the alarm suppression.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AlarmSuppressionCompartmentTarget.Builder.class)
+    builder = AlarmSuppressionCompartmentTarget.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "targetType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "targetType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AlarmSuppressionCompartmentTarget extends AlarmSuppressionTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment or tenancy that is the target of the alarm suppression. Example: {@code
-         * ocid1.compartment.oc1..exampleuniqueID}
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the
+         * target of the alarm suppression.
+         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment or tenancy that is the target of the alarm suppression. Example: {@code
-         * ocid1.compartment.oc1..exampleuniqueID}
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the
+         * target of the alarm suppression.
+         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * When true, the alarm suppression targets all alarms under all compartments and
-         * subcompartments of the tenancy specified. The parameter can only be set to true when
-         * compartmentId is the tenancy OCID (the tenancy is the root compartment). When false, the
-         * alarm suppression targets only the alarms under the specified compartment.
-         */
+         * When true, the alarm suppression targets all alarms under all compartments and subcompartments of
+         * the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID
+         * (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under
+         * the specified compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
         /**
-         * When true, the alarm suppression targets all alarms under all compartments and
-         * subcompartments of the tenancy specified. The parameter can only be set to true when
-         * compartmentId is the tenancy OCID (the tenancy is the root compartment). When false, the
-         * alarm suppression targets only the alarms under the specified compartment.
+         * When true, the alarm suppression targets all alarms under all compartments and subcompartments of
+         * the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID
+         * (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under
+         * the specified compartment.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
@@ -97,7 +99,9 @@ public final class AlarmSuppressionCompartmentTarget extends AlarmSuppressionTar
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,41 +118,43 @@ public final class AlarmSuppressionCompartmentTarget extends AlarmSuppressionTar
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment or tenancy that is the target of the alarm suppression. Example: {@code
-     * ocid1.compartment.oc1..exampleuniqueID}
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the
+     * target of the alarm suppression.
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment or tenancy that is the target of the alarm suppression. Example: {@code
-     * ocid1.compartment.oc1..exampleuniqueID}
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the
+     * target of the alarm suppression.
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * When true, the alarm suppression targets all alarms under all compartments and
-     * subcompartments of the tenancy specified. The parameter can only be set to true when
-     * compartmentId is the tenancy OCID (the tenancy is the root compartment). When false, the
-     * alarm suppression targets only the alarms under the specified compartment.
-     */
+     * When true, the alarm suppression targets all alarms under all compartments and subcompartments of
+     * the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID
+     * (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under
+     * the specified compartment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
     /**
-     * When true, the alarm suppression targets all alarms under all compartments and
-     * subcompartments of the tenancy specified. The parameter can only be set to true when
-     * compartmentId is the tenancy OCID (the tenancy is the root compartment). When false, the
-     * alarm suppression targets only the alarms under the specified compartment.
+     * When true, the alarm suppression targets all alarms under all compartments and subcompartments of
+     * the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID
+     * (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under
+     * the specified compartment.
      *
      * @return the value
-     */
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -160,7 +166,6 @@ public final class AlarmSuppressionCompartmentTarget extends AlarmSuppressionTar
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

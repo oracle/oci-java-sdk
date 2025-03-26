@@ -10,11 +10,10 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of FleetAppsManagementAdmin.
- *
- * <p>The default configuration used is defined by {@link
- * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ * <p>
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class FleetAppsManagementAdminWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final FleetAppsManagementAdmin client;
@@ -29,8 +28,7 @@ public class FleetAppsManagementAdminWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetCompliancePolicyRequest, GetCompliancePolicyResponse>
@@ -78,8 +76,7 @@ public class FleetAppsManagementAdminWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetCompliancePolicyRequest, GetCompliancePolicyResponse>
@@ -105,8 +102,8 @@ public class FleetAppsManagementAdminWaiters {
             forCompliancePolicy(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetCompliancePolicyRequest request,
-                    final com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy.LifecycleState
-                                    ...
+                    final com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy.LifecycleState>
@@ -141,8 +138,7 @@ public class FleetAppsManagementAdminWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -192,8 +188,7 @@ public class FleetAppsManagementAdminWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -222,8 +217,7 @@ public class FleetAppsManagementAdminWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetCompliancePolicyRuleRequest request,
                     final com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule
@@ -259,8 +253,7 @@ public class FleetAppsManagementAdminWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetOnboardingRequest, GetOnboardingResponse> forOnboarding(
@@ -304,8 +297,7 @@ public class FleetAppsManagementAdminWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetOnboardingRequest, GetOnboardingResponse> forOnboarding(
@@ -361,8 +353,7 @@ public class FleetAppsManagementAdminWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -412,8 +403,7 @@ public class FleetAppsManagementAdminWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -442,8 +432,7 @@ public class FleetAppsManagementAdminWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetPlatformConfigurationRequest request,
                     final com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration
@@ -480,8 +469,7 @@ public class FleetAppsManagementAdminWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetPropertyRequest, GetPropertyResponse> forProperty(
@@ -525,8 +513,7 @@ public class FleetAppsManagementAdminWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetPropertyRequest, GetPropertyResponse> forProperty(

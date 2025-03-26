@@ -5,22 +5,20 @@
 package com.oracle.bmc.email.model;
 
 /**
- * The properties that define a Email Return Path <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+ * The properties that define a Email Return Path
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EmailReturnPath.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EmailReturnPath
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EmailReturnPath extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -74,260 +72,265 @@ public final class EmailReturnPath
     public static class Builder {
         /**
          * The email return path domain in the Internet Domain Name System (DNS).
+         * <p>
+         * Example: {@code iad1.rp.example.com}
          *
-         * <p>Example: {@code iad1.rp.example.com}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The email return path domain in the Internet Domain Name System (DNS).
-         *
-         * <p>Example: {@code iad1.rp.example.com}
+         * <p>
+         * Example: {@code iad1.rp.example.com}
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * email return path.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email return path.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email return path.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * EmailDomain that this email return path belongs to.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain
+         * that this email return path belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
         private String parentResourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * EmailDomain that this email return path belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain
+         * that this email return path belongs to.
          *
          * @param parentResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains this email return path.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains this email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The current state of the email return path. */
+        /**
+         * The current state of the email return path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the email return path.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in 'Failed' state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a
+         * resource in 'Failed' state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in 'Failed' state.
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a
+         * resource in 'Failed' state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The description of the email return path. Avoid entering confidential information. */
+        /**
+         * The description of the email return path. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the email return path. Avoid entering confidential information.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The name of the DNS subdomain that must be provisioned to enable email recipients to
-         * verify Email Return Path. It is usually created with a CNAME record set to the
-         * cnameRecordValue.
-         */
+         * The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path.
+         * It is usually created with a CNAME record set to the cnameRecordValue.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsSubdomainName")
         private String dnsSubdomainName;
 
         /**
-         * The name of the DNS subdomain that must be provisioned to enable email recipients to
-         * verify Email Return Path. It is usually created with a CNAME record set to the
-         * cnameRecordValue.
+         * The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path.
+         * It is usually created with a CNAME record set to the cnameRecordValue.
          *
          * @param dnsSubdomainName the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsSubdomainName(String dnsSubdomainName) {
             this.dnsSubdomainName = dnsSubdomainName;
             this.__explicitlySet__.add("dnsSubdomainName");
             return this;
         }
         /**
-         * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the
-         * CNAME method for Email Return Path setup (preferred).
-         */
+         * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cnameRecordValue")
         private String cnameRecordValue;
 
         /**
-         * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the
-         * CNAME method for Email Return Path setup (preferred).
+         * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
          *
          * @param cnameRecordValue the value to set
          * @return this builder
-         */
+         **/
         public Builder cnameRecordValue(String cnameRecordValue) {
             this.cnameRecordValue = cnameRecordValue;
             this.__explicitlySet__.add("cnameRecordValue");
             return this;
         }
         /**
-         * The time the email return path was created. Times are expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+         * The time the email return path was created.
+         * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format, "YYYY-MM-ddThh:mmZ".
+         * <p>
+         * Example: {@code 2021-02-12T22:47:12.613Z}
          *
-         * <p>Example: {@code 2021-02-12T22:47:12.613Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the email return path was created. Times are expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-         *
-         * <p>Example: {@code 2021-02-12T22:47:12.613Z}
+         * The time the email return path was created.
+         * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format, "YYYY-MM-ddThh:mmZ".
+         * <p>
+         * Example: {@code 2021-02-12T22:47:12.613Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time of the last change to the Email Return Path configuration, due to a state change
-         * or an update operation. Times are expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-         */
+         * The time of the last change to the Email Return Path configuration, due to a state change or
+         * an update operation.
+         * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format, "YYYY-MM-ddThh:mmZ".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time of the last change to the Email Return Path configuration, due to a state change
-         * or an update operation. Times are expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+         * The time of the last change to the Email Return Path configuration, due to a state change or
+         * an update operation.
+         * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format, "YYYY-MM-ddThh:mmZ".
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -335,19 +338,20 @@ public final class EmailReturnPath
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -428,7 +432,9 @@ public final class EmailReturnPath
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -439,76 +445,78 @@ public final class EmailReturnPath
 
     /**
      * The email return path domain in the Internet Domain Name System (DNS).
+     * <p>
+     * Example: {@code iad1.rp.example.com}
      *
-     * <p>Example: {@code iad1.rp.example.com}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The email return path domain in the Internet Domain Name System (DNS).
-     *
-     * <p>Example: {@code iad1.rp.example.com}
+     * <p>
+     * Example: {@code iad1.rp.example.com}
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * email return path.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email return path.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email return path.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * EmailDomain that this email return path belongs to.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain
+     * that this email return path belongs to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
     private final String parentResourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * EmailDomain that this email return path belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain
+     * that this email return path belongs to.
      *
      * @return the value
-     */
+     **/
     public String getParentResourceId() {
         return parentResourceId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains this email return path.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains this email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The current state of the email return path. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the email return path.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleting("DELETING"),
@@ -518,8 +526,8 @@ public final class EmailReturnPath
         Updating("UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -558,182 +566,190 @@ public final class EmailReturnPath
             return UnknownEnumValue;
         }
     };
-    /** The current state of the email return path. */
+    /**
+     * The current state of the email return path.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the email return path.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in 'Failed' state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a
+     * resource in 'Failed' state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in 'Failed' state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a
+     * resource in 'Failed' state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The description of the email return path. Avoid entering confidential information. */
+    /**
+     * The description of the email return path. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the email return path. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify
-     * Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
-     */
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path.
+     * It is usually created with a CNAME record set to the cnameRecordValue.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsSubdomainName")
     private final String dnsSubdomainName;
 
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify
-     * Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path.
+     * It is usually created with a CNAME record set to the cnameRecordValue.
      *
      * @return the value
-     */
+     **/
     public String getDnsSubdomainName() {
         return dnsSubdomainName;
     }
 
     /**
-     * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the
-     * CNAME method for Email Return Path setup (preferred).
-     */
+     * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cnameRecordValue")
     private final String cnameRecordValue;
 
     /**
-     * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the
-     * CNAME method for Email Return Path setup (preferred).
+     * The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
      *
      * @return the value
-     */
+     **/
     public String getCnameRecordValue() {
         return cnameRecordValue;
     }
 
     /**
-     * The time the email return path was created. Times are expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+     * The time the email return path was created.
+     * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format, "YYYY-MM-ddThh:mmZ".
+     * <p>
+     * Example: {@code 2021-02-12T22:47:12.613Z}
      *
-     * <p>Example: {@code 2021-02-12T22:47:12.613Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the email return path was created. Times are expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-     *
-     * <p>Example: {@code 2021-02-12T22:47:12.613Z}
+     * The time the email return path was created.
+     * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format, "YYYY-MM-ddThh:mmZ".
+     * <p>
+     * Example: {@code 2021-02-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * The time of the last change to the Email Return Path configuration, due to a state change or
-     * an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * an update operation.
+     * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format, "YYYY-MM-ddThh:mmZ".
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time of the last change to the Email Return Path configuration, due to a state change or
-     * an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * an update operation.
+     * Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
      * timestamp format, "YYYY-MM-ddThh:mmZ".
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -745,7 +761,6 @@ public final class EmailReturnPath
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

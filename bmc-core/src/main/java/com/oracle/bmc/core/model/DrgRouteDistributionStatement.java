@@ -5,24 +5,24 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A single statement within a route distribution. All match criteria in a statement must be met for
- * the action to take place. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * A single statement within a route distribution. All match criteria in a statement must be met
+ * for the action to take place.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DrgRouteDistributionStatement.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DrgRouteDistributionStatement.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DrgRouteDistributionStatement
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchCriteria", "action", "priority", "id"})
     public DrgRouteDistributionStatement(
@@ -40,26 +40,30 @@ public final class DrgRouteDistributionStatement
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The action is applied only if all of the match criteria is met. If there are no match
-         * criteria in a statement, any input is considered a match and the action is applied.
-         */
+         * The action is applied only if all of the match criteria is met.
+         * If there are no match criteria in a statement, any input is considered a match and the action is applied.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
         private java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
         /**
-         * The action is applied only if all of the match criteria is met. If there are no match
-         * criteria in a statement, any input is considered a match and the action is applied.
+         * The action is applied only if all of the match criteria is met.
+         * If there are no match criteria in a statement, any input is considered a match and the action is applied.
          *
          * @param matchCriteria the value to set
          * @return this builder
-         */
+         **/
         public Builder matchCriteria(
                 java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria) {
             this.matchCriteria = matchCriteria;
             this.__explicitlySet__.add("matchCriteria");
             return this;
         }
-        /** {@code ACCEPT} indicates the route should be imported or exported as-is. */
+        /**
+         * {@code ACCEPT} indicates the route should be imported or exported as-is.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
@@ -68,38 +72,44 @@ public final class DrgRouteDistributionStatement
          *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * This field specifies the priority of each statement in a route distribution. Priorities
-         * must be unique within a particular route distribution. The priority will be represented
-         * as a number between 0 and 65535 where a lower number indicates a higher priority. When a
-         * route is processed, statements are applied in the order defined by their priority. The
-         * first matching rule dictates the action that will be taken on the route.
-         */
+         * This field specifies the priority of each statement in a route distribution.
+         * Priorities must be unique within a particular route distribution.
+         * The priority will be represented as a number between 0 and 65535 where a lower number
+         * indicates a higher priority. When a route is processed, statements are applied in the order
+         * defined by their priority. The first matching rule dictates the action that will be taken
+         * on the route.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
         /**
-         * This field specifies the priority of each statement in a route distribution. Priorities
-         * must be unique within a particular route distribution. The priority will be represented
-         * as a number between 0 and 65535 where a lower number indicates a higher priority. When a
-         * route is processed, statements are applied in the order defined by their priority. The
-         * first matching rule dictates the action that will be taken on the route.
+         * This field specifies the priority of each statement in a route distribution.
+         * Priorities must be unique within a particular route distribution.
+         * The priority will be represented as a number between 0 and 65535 where a lower number
+         * indicates a higher priority. When a route is processed, statements are applied in the order
+         * defined by their priority. The first matching rule dictates the action that will be taken
+         * on the route.
          *
          * @param priority the value to set
          * @return this builder
-         */
+         **/
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
-        /** The Oracle-assigned ID of the route distribution statement. */
+        /**
+         * The Oracle-assigned ID of the route distribution statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -108,7 +118,7 @@ public final class DrgRouteDistributionStatement
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -146,7 +156,9 @@ public final class DrgRouteDistributionStatement
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,29 +168,33 @@ public final class DrgRouteDistributionStatement
     }
 
     /**
-     * The action is applied only if all of the match criteria is met. If there are no match
-     * criteria in a statement, any input is considered a match and the action is applied.
-     */
+     * The action is applied only if all of the match criteria is met.
+     * If there are no match criteria in a statement, any input is considered a match and the action is applied.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchCriteria")
     private final java.util.List<DrgRouteDistributionMatchCriteria> matchCriteria;
 
     /**
-     * The action is applied only if all of the match criteria is met. If there are no match
-     * criteria in a statement, any input is considered a match and the action is applied.
+     * The action is applied only if all of the match criteria is met.
+     * If there are no match criteria in a statement, any input is considered a match and the action is applied.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DrgRouteDistributionMatchCriteria> getMatchCriteria() {
         return matchCriteria;
     }
 
-    /** {@code ACCEPT} indicates the route should be imported or exported as-is. */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * {@code ACCEPT} indicates the route should be imported or exported as-is.
+     *
+     **/
+    public enum Action {
         Accept("ACCEPT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -216,7 +232,10 @@ public final class DrgRouteDistributionStatement
             return UnknownEnumValue;
         }
     };
-    /** {@code ACCEPT} indicates the route should be imported or exported as-is. */
+    /**
+     * {@code ACCEPT} indicates the route should be imported or exported as-is.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
@@ -224,35 +243,41 @@ public final class DrgRouteDistributionStatement
      * {@code ACCEPT} indicates the route should be imported or exported as-is.
      *
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
 
     /**
-     * This field specifies the priority of each statement in a route distribution. Priorities must
-     * be unique within a particular route distribution. The priority will be represented as a
-     * number between 0 and 65535 where a lower number indicates a higher priority. When a route is
-     * processed, statements are applied in the order defined by their priority. The first matching
-     * rule dictates the action that will be taken on the route.
-     */
+     * This field specifies the priority of each statement in a route distribution.
+     * Priorities must be unique within a particular route distribution.
+     * The priority will be represented as a number between 0 and 65535 where a lower number
+     * indicates a higher priority. When a route is processed, statements are applied in the order
+     * defined by their priority. The first matching rule dictates the action that will be taken
+     * on the route.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
     /**
-     * This field specifies the priority of each statement in a route distribution. Priorities must
-     * be unique within a particular route distribution. The priority will be represented as a
-     * number between 0 and 65535 where a lower number indicates a higher priority. When a route is
-     * processed, statements are applied in the order defined by their priority. The first matching
-     * rule dictates the action that will be taken on the route.
+     * This field specifies the priority of each statement in a route distribution.
+     * Priorities must be unique within a particular route distribution.
+     * The priority will be represented as a number between 0 and 65535 where a lower number
+     * indicates a higher priority. When a route is processed, statements are applied in the order
+     * defined by their priority. The first matching rule dictates the action that will be taken
+     * on the route.
      *
      * @return the value
-     */
+     **/
     public Integer getPriority() {
         return priority;
     }
 
-    /** The Oracle-assigned ID of the route distribution statement. */
+    /**
+     * The Oracle-assigned ID of the route distribution statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -260,7 +285,7 @@ public final class DrgRouteDistributionStatement
      * The Oracle-assigned ID of the route distribution statement.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
@@ -272,7 +297,6 @@ public final class DrgRouteDistributionStatement
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

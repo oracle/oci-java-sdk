@@ -5,27 +5,31 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Settings related to the bypass code, such as bypass code length, bypass code expiry, max active
- * bypass codes, and so on
- *
- * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite -
- * required: true - returned: default - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsSearchable: false
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: true
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AuthenticationFactorSettingsBypassCodeSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AuthenticationFactorSettingsBypassCodeSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticationFactorSettingsBypassCodeSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "selfServiceGenerationEnabled",
@@ -55,22 +59,33 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
     public static class Builder {
         /**
          * If true, indicates that self-service bypass code generation is enabled
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selfServiceGenerationEnabled")
         private Boolean selfServiceGenerationEnabled;
 
         /**
          * If true, indicates that self-service bypass code generation is enabled
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param selfServiceGenerationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder selfServiceGenerationEnabled(Boolean selfServiceGenerationEnabled) {
             this.selfServiceGenerationEnabled = selfServiceGenerationEnabled;
             this.__explicitlySet__.add("selfServiceGenerationEnabled");
@@ -78,22 +93,33 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
         }
         /**
          * If true, indicates that help desk bypass code generation is enabled
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("helpDeskGenerationEnabled")
         private Boolean helpDeskGenerationEnabled;
 
         /**
          * If true, indicates that help desk bypass code generation is enabled
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param helpDeskGenerationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder helpDeskGenerationEnabled(Boolean helpDeskGenerationEnabled) {
             this.helpDeskGenerationEnabled = helpDeskGenerationEnabled;
             this.__explicitlySet__.add("helpDeskGenerationEnabled");
@@ -101,24 +127,37 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
         }
         /**
          * Exact length of the bypass code to be generated
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 8 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 8
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
         /**
          * Exact length of the bypass code to be generated
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 8 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 8
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
@@ -126,24 +165,37 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
         }
         /**
          * The maximum number of bypass codes that can be issued to any user
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 6 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 6
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxActive")
         private Integer maxActive;
 
         /**
          * The maximum number of bypass codes that can be issued to any user
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 6 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 6
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxActive the value to set
          * @return this builder
-         */
+         **/
         public Builder maxActive(Integer maxActive) {
             this.maxActive = maxActive;
             this.__explicitlySet__.add("maxActive");
@@ -151,51 +203,75 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
         }
         /**
          * Expiry (in minutes) of any bypass code that is generated by the help desk
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 9999999 - idcsMinValue: 1 - idcsSearchable:
-         * false - multiValued: false - mutability: readWrite - required: true - returned: default -
-         * type: integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 9999999
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("helpDeskCodeExpiryInMins")
         private Integer helpDeskCodeExpiryInMins;
 
         /**
          * Expiry (in minutes) of any bypass code that is generated by the help desk
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 9999999 - idcsMinValue: 1 - idcsSearchable:
-         * false - multiValued: false - mutability: readWrite - required: true - returned: default -
-         * type: integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 9999999
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param helpDeskCodeExpiryInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder helpDeskCodeExpiryInMins(Integer helpDeskCodeExpiryInMins) {
             this.helpDeskCodeExpiryInMins = helpDeskCodeExpiryInMins;
             this.__explicitlySet__.add("helpDeskCodeExpiryInMins");
             return this;
         }
         /**
-         * The maximum number of times that any bypass code that is generated by the help desk can
-         * be used
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * The maximum number of times that any bypass code that is generated by the help desk can be used
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 999
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("helpDeskMaxUsage")
         private Integer helpDeskMaxUsage;
 
         /**
-         * The maximum number of times that any bypass code that is generated by the help desk can
-         * be used
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * The maximum number of times that any bypass code that is generated by the help desk can be used
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 999
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param helpDeskMaxUsage the value to set
          * @return this builder
-         */
+         **/
         public Builder helpDeskMaxUsage(Integer helpDeskMaxUsage) {
             this.helpDeskMaxUsage = helpDeskMaxUsage;
             this.__explicitlySet__.add("helpDeskMaxUsage");
@@ -244,7 +320,9 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -255,136 +333,208 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
 
     /**
      * If true, indicates that self-service bypass code generation is enabled
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selfServiceGenerationEnabled")
     private final Boolean selfServiceGenerationEnabled;
 
     /**
      * If true, indicates that self-service bypass code generation is enabled
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getSelfServiceGenerationEnabled() {
         return selfServiceGenerationEnabled;
     }
 
     /**
      * If true, indicates that help desk bypass code generation is enabled
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("helpDeskGenerationEnabled")
     private final Boolean helpDeskGenerationEnabled;
 
     /**
      * If true, indicates that help desk bypass code generation is enabled
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getHelpDeskGenerationEnabled() {
         return helpDeskGenerationEnabled;
     }
 
     /**
      * Exact length of the bypass code to be generated
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 8 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 8
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
     /**
      * Exact length of the bypass code to be generated
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 8 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 8
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getLength() {
         return length;
     }
 
     /**
      * The maximum number of bypass codes that can be issued to any user
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 6 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 6
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxActive")
     private final Integer maxActive;
 
     /**
      * The maximum number of bypass codes that can be issued to any user
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 6 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 6
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxActive() {
         return maxActive;
     }
 
     /**
      * Expiry (in minutes) of any bypass code that is generated by the help desk
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 9999999 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 9999999
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("helpDeskCodeExpiryInMins")
     private final Integer helpDeskCodeExpiryInMins;
 
     /**
      * Expiry (in minutes) of any bypass code that is generated by the help desk
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 9999999 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 9999999
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getHelpDeskCodeExpiryInMins() {
         return helpDeskCodeExpiryInMins;
     }
 
     /**
-     * The maximum number of times that any bypass code that is generated by the help desk can be
-     * used
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * The maximum number of times that any bypass code that is generated by the help desk can be used
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 999
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("helpDeskMaxUsage")
     private final Integer helpDeskMaxUsage;
 
     /**
-     * The maximum number of times that any bypass code that is generated by the help desk can be
-     * used
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * The maximum number of times that any bypass code that is generated by the help desk can be used
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 999
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getHelpDeskMaxUsage() {
         return helpDeskMaxUsage;
     }
@@ -396,7 +546,6 @@ public final class AuthenticationFactorSettingsBypassCodeSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

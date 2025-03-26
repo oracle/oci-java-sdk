@@ -5,23 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The {@code ScopeReference} class is a base class for any model object that wraps a scope
- * reference to a TypedObject. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The {@code ScopeReference} class is a base class for any model object that wraps a scope reference to a TypedObject.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScopeReference.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ScopeReference
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ScopeReference extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"referenceObject", "referenceType", "refObjectName"})
     public ScopeReference(
@@ -35,65 +31,48 @@ public final class ScopeReference
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A key or shallow reference to an object. For direct reference, it points to the actual
-         * scope object. For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source
-         * or target operator. For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points
-         * to the OCI Function object.
-         */
+         * A key or shallow reference to an object.  For direct reference, it points to the actual scope object.  For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source or target operator.   For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points to the OCI Function object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceObject")
         private String referenceObject;
 
         /**
-         * A key or shallow reference to an object. For direct reference, it points to the actual
-         * scope object. For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source
-         * or target operator. For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points
-         * to the OCI Function object.
-         *
+         * A key or shallow reference to an object.  For direct reference, it points to the actual scope object.  For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source or target operator.   For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points to the OCI Function object.
          * @param referenceObject the value to set
          * @return this builder
-         */
+         **/
         public Builder referenceObject(String referenceObject) {
             this.referenceObject = referenceObject;
             this.__explicitlySet__.add("referenceObject");
             return this;
         }
         /**
-         * The reference type for this reference. Set to null for a direct reference, for indirect
-         * references set to a type of association such as "BOUND_ENTITY_SHAPE". Current known
-         * reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD",
-         * "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
-         */
+         * The reference type for this reference.  Set to null for a direct reference, for indirect references set to a type of association such as "BOUND_ENTITY_SHAPE".   Current known reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceType")
         private ReferenceType referenceType;
 
         /**
-         * The reference type for this reference. Set to null for a direct reference, for indirect
-         * references set to a type of association such as "BOUND_ENTITY_SHAPE". Current known
-         * reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD",
-         * "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
-         *
+         * The reference type for this reference.  Set to null for a direct reference, for indirect references set to a type of association such as "BOUND_ENTITY_SHAPE".   Current known reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
          * @param referenceType the value to set
          * @return this builder
-         */
+         **/
         public Builder referenceType(ReferenceType referenceType) {
             this.referenceType = referenceType;
             this.__explicitlySet__.add("referenceType");
             return this;
         }
         /**
-         * The referenced object name for this reference. Set to the field name if the referenceType
-         * is BOUND_ENTITY_SHAPE_FIELD, else set to null.
-         */
+         * The referenced object name for this reference.  Set to the field name if the referenceType is BOUND_ENTITY_SHAPE_FIELD, else set to null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refObjectName")
         private String refObjectName;
 
         /**
-         * The referenced object name for this reference. Set to the field name if the referenceType
-         * is BOUND_ENTITY_SHAPE_FIELD, else set to null.
-         *
+         * The referenced object name for this reference.  Set to the field name if the referenceType is BOUND_ENTITY_SHAPE_FIELD, else set to null.
          * @param refObjectName the value to set
          * @return this builder
-         */
+         **/
         public Builder refObjectName(String refObjectName) {
             this.refObjectName = refObjectName;
             this.__explicitlySet__.add("refObjectName");
@@ -128,7 +107,9 @@ public final class ScopeReference
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,33 +119,23 @@ public final class ScopeReference
     }
 
     /**
-     * A key or shallow reference to an object. For direct reference, it points to the actual scope
-     * object. For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source or target
-     * operator. For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points to the OCI
-     * Function object.
-     */
+     * A key or shallow reference to an object.  For direct reference, it points to the actual scope object.  For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source or target operator.   For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points to the OCI Function object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceObject")
     private final String referenceObject;
 
     /**
-     * A key or shallow reference to an object. For direct reference, it points to the actual scope
-     * object. For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source or target
-     * operator. For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points to the OCI
-     * Function object.
-     *
+     * A key or shallow reference to an object.  For direct reference, it points to the actual scope object.  For BOUND_ENTITY_SHAPE or BOUND_ENTITY_SHAPE_FIELD, it points to the source or target operator.   For OCI_FUNCTION_INPUT_SHAPE or OCI_FUNCTION_OUTPUT_SHAPE, it points to the OCI Function object.
      * @return the value
-     */
+     **/
     public String getReferenceObject() {
         return referenceObject;
     }
 
     /**
-     * The reference type for this reference. Set to null for a direct reference, for indirect
-     * references set to a type of association such as "BOUND_ENTITY_SHAPE". Current known reference
-     * type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE",
-     * "OCI_FUNCTION_OUTPUT_SHAPE"
-     */
-    public enum ReferenceType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The reference type for this reference.  Set to null for a direct reference, for indirect references set to a type of association such as "BOUND_ENTITY_SHAPE".   Current known reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
+     **/
+    public enum ReferenceType {
         DirectRef("DIRECT_REF"),
         BoundEntityShape("BOUND_ENTITY_SHAPE"),
         BoundEntityShapeField("BOUND_ENTITY_SHAPE_FIELD"),
@@ -172,8 +143,8 @@ public final class ScopeReference
         OciFunctionOutputShape("OCI_FUNCTION_OUTPUT_SHAPE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -213,39 +184,29 @@ public final class ScopeReference
         }
     };
     /**
-     * The reference type for this reference. Set to null for a direct reference, for indirect
-     * references set to a type of association such as "BOUND_ENTITY_SHAPE". Current known reference
-     * type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE",
-     * "OCI_FUNCTION_OUTPUT_SHAPE"
-     */
+     * The reference type for this reference.  Set to null for a direct reference, for indirect references set to a type of association such as "BOUND_ENTITY_SHAPE".   Current known reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceType")
     private final ReferenceType referenceType;
 
     /**
-     * The reference type for this reference. Set to null for a direct reference, for indirect
-     * references set to a type of association such as "BOUND_ENTITY_SHAPE". Current known reference
-     * type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE",
-     * "OCI_FUNCTION_OUTPUT_SHAPE"
-     *
+     * The reference type for this reference.  Set to null for a direct reference, for indirect references set to a type of association such as "BOUND_ENTITY_SHAPE".   Current known reference type values are "BOUND_ENTITY_SHAPE", "BOUND_ENTITY_SHAPE_FIELD", "OCI_FUNCTION_INPUT_SHAPE", "OCI_FUNCTION_OUTPUT_SHAPE"
      * @return the value
-     */
+     **/
     public ReferenceType getReferenceType() {
         return referenceType;
     }
 
     /**
-     * The referenced object name for this reference. Set to the field name if the referenceType is
-     * BOUND_ENTITY_SHAPE_FIELD, else set to null.
-     */
+     * The referenced object name for this reference.  Set to the field name if the referenceType is BOUND_ENTITY_SHAPE_FIELD, else set to null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("refObjectName")
     private final String refObjectName;
 
     /**
-     * The referenced object name for this reference. Set to the field name if the referenceType is
-     * BOUND_ENTITY_SHAPE_FIELD, else set to null.
-     *
+     * The referenced object name for this reference.  Set to the field name if the referenceType is BOUND_ENTITY_SHAPE_FIELD, else set to null.
      * @return the value
-     */
+     **/
     public String getRefObjectName() {
         return refObjectName;
     }
@@ -257,7 +218,6 @@ public final class ScopeReference
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

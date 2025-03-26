@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsConfigWorkRequestPayload <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * LogAnalyticsConfigWorkRequestPayload
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsConfigWorkRequestPayload.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsConfigWorkRequestPayload.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsConfigWorkRequestPayload
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceName",
@@ -43,61 +42,65 @@ public final class LogAnalyticsConfigWorkRequestPayload
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source name. */
+        /**
+         * The source name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
         /**
          * The source name.
-         *
          * @param sourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /** The entity unique identifier. */
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * The entity unique identifier.
-         *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /** The lookup reference as an integer. */
+        /**
+         * The lookup reference as an integer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
         private Long lookupReference;
 
         /**
          * The lookup reference as an integer.
-         *
          * @param lookupReference the value to set
          * @return this builder
-         */
+         **/
         public Builder lookupReference(Long lookupReference) {
             this.lookupReference = lookupReference;
             this.__explicitlySet__.add("lookupReference");
             return this;
         }
-        /** lookupReference */
+        /**
+         * lookupReference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
         private String lookupReferenceString;
 
         /**
          * lookupReference
-         *
          * @param lookupReferenceString the value to set
          * @return this builder
-         */
+         **/
         public Builder lookupReferenceString(String lookupReferenceString) {
             this.lookupReferenceString = lookupReferenceString;
             this.__explicitlySet__.add("lookupReferenceString");
@@ -138,7 +141,9 @@ public final class LogAnalyticsConfigWorkRequestPayload
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +152,58 @@ public final class LogAnalyticsConfigWorkRequestPayload
         return new Builder().copy(this);
     }
 
-    /** The source name. */
+    /**
+     * The source name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
     /**
      * The source name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceName() {
         return sourceName;
     }
 
-    /** The entity unique identifier. */
+    /**
+     * The entity unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * The entity unique identifier.
-     *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
-    /** The lookup reference as an integer. */
+    /**
+     * The lookup reference as an integer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
     private final Long lookupReference;
 
     /**
      * The lookup reference as an integer.
-     *
      * @return the value
-     */
+     **/
     public Long getLookupReference() {
         return lookupReference;
     }
 
-    /** lookupReference */
+    /**
+     * lookupReference
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
     private final String lookupReferenceString;
 
     /**
      * lookupReference
-     *
      * @return the value
-     */
+     **/
     public String getLookupReferenceString() {
         return lookupReferenceString;
     }
@@ -206,7 +215,6 @@ public final class LogAnalyticsConfigWorkRequestPayload
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

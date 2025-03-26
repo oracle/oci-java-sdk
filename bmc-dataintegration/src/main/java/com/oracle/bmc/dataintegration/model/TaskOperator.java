@@ -5,24 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * An operator for task <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * An operator for task
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskOperator.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TaskOperator extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -133,91 +132,97 @@ public final class TaskOperator extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-        /** The number of retry attempts. */
+        /**
+         * The number of retry attempts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryAttempts")
         private Integer retryAttempts;
 
         /**
          * The number of retry attempts.
-         *
          * @param retryAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder retryAttempts(Integer retryAttempts) {
             this.retryAttempts = retryAttempts;
             this.__explicitlySet__.add("retryAttempts");
             return this;
         }
-        /** The unit for the retry delay. */
+        /**
+         * The unit for the retry delay.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryDelayUnit")
         private RetryDelayUnit retryDelayUnit;
 
         /**
          * The unit for the retry delay.
-         *
          * @param retryDelayUnit the value to set
          * @return this builder
-         */
+         **/
         public Builder retryDelayUnit(RetryDelayUnit retryDelayUnit) {
             this.retryDelayUnit = retryDelayUnit;
             this.__explicitlySet__.add("retryDelayUnit");
             return this;
         }
-        /** The retry delay, the unit for measurement is in the property retry delay unit. */
+        /**
+         * The retry delay, the unit for measurement is in the property retry delay unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryDelay")
         private Double retryDelay;
 
         /**
          * The retry delay, the unit for measurement is in the property retry delay unit.
-         *
          * @param retryDelay the value to set
          * @return this builder
-         */
+         **/
         public Builder retryDelay(Double retryDelay) {
             this.retryDelay = retryDelay;
             this.__explicitlySet__.add("retryDelay");
             return this;
         }
-        /** The expected duration for the task run. */
+        /**
+         * The expected duration for the task run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
         private Double expectedDuration;
 
         /**
          * The expected duration for the task run.
-         *
          * @param expectedDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder expectedDuration(Double expectedDuration) {
             this.expectedDuration = expectedDuration;
             this.__explicitlySet__.add("expectedDuration");
             return this;
         }
-        /** The expected duration unit of measure. */
+        /**
+         * The expected duration unit of measure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
         private ExpectedDurationUnit expectedDurationUnit;
 
         /**
          * The expected duration unit of measure.
-         *
          * @param expectedDurationUnit the value to set
          * @return this builder
-         */
+         **/
         public Builder expectedDurationUnit(ExpectedDurationUnit expectedDurationUnit) {
             this.expectedDurationUnit = expectedDurationUnit;
             this.__explicitlySet__.add("expectedDurationUnit");
             return this;
         }
-        /** The type of the task referenced in the task property. */
+        /**
+         * The type of the task referenced in the task property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskType")
         private TaskType taskType;
 
         /**
          * The type of the task referenced in the task property.
-         *
          * @param taskType the value to set
          * @return this builder
-         */
+         **/
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
@@ -233,23 +238,24 @@ public final class TaskOperator extends Operator {
             return this;
         }
         /**
-         * The merge condition. The conditions are ALL_SUCCESS - All the preceeding operators need
-         * to be successful. ALL_FAILED - All the preceeding operators should have failed.
-         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed
-         * successfully or failed.
-         */
+         * The merge condition. The conditions are
+         * ALL_SUCCESS - All the preceeding operators need to be successful.
+         * ALL_FAILED - All the preceeding operators should have failed.
+         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerRule")
         private TriggerRule triggerRule;
 
         /**
-         * The merge condition. The conditions are ALL_SUCCESS - All the preceeding operators need
-         * to be successful. ALL_FAILED - All the preceeding operators should have failed.
-         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed
-         * successfully or failed.
+         * The merge condition. The conditions are
+         * ALL_SUCCESS - All the preceeding operators need to be successful.
+         * ALL_FAILED - All the preceeding operators should have failed.
+         * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
          *
          * @param triggerRule the value to set
          * @return this builder
-         */
+         **/
         public Builder triggerRule(TriggerRule triggerRule) {
             this.triggerRule = triggerRule;
             this.__explicitlySet__.add("triggerRule");
@@ -367,7 +373,9 @@ public final class TaskOperator extends Operator {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -423,29 +431,32 @@ public final class TaskOperator extends Operator {
         this.configProviderDelegate = configProviderDelegate;
     }
 
-    /** The number of retry attempts. */
+    /**
+     * The number of retry attempts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryAttempts")
     private final Integer retryAttempts;
 
     /**
      * The number of retry attempts.
-     *
      * @return the value
-     */
+     **/
     public Integer getRetryAttempts() {
         return retryAttempts;
     }
 
-    /** The unit for the retry delay. */
-    public enum RetryDelayUnit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The unit for the retry delay.
+     **/
+    public enum RetryDelayUnit {
         Seconds("SECONDS"),
         Minutes("MINUTES"),
         Hours("HOURS"),
         Days("DAYS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -484,55 +495,60 @@ public final class TaskOperator extends Operator {
             return UnknownEnumValue;
         }
     };
-    /** The unit for the retry delay. */
+    /**
+     * The unit for the retry delay.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelayUnit")
     private final RetryDelayUnit retryDelayUnit;
 
     /**
      * The unit for the retry delay.
-     *
      * @return the value
-     */
+     **/
     public RetryDelayUnit getRetryDelayUnit() {
         return retryDelayUnit;
     }
 
-    /** The retry delay, the unit for measurement is in the property retry delay unit. */
+    /**
+     * The retry delay, the unit for measurement is in the property retry delay unit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelay")
     private final Double retryDelay;
 
     /**
      * The retry delay, the unit for measurement is in the property retry delay unit.
-     *
      * @return the value
-     */
+     **/
     public Double getRetryDelay() {
         return retryDelay;
     }
 
-    /** The expected duration for the task run. */
+    /**
+     * The expected duration for the task run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
     private final Double expectedDuration;
 
     /**
      * The expected duration for the task run.
-     *
      * @return the value
-     */
+     **/
     public Double getExpectedDuration() {
         return expectedDuration;
     }
 
-    /** The expected duration unit of measure. */
-    public enum ExpectedDurationUnit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The expected duration unit of measure.
+     **/
+    public enum ExpectedDurationUnit {
         Seconds("SECONDS"),
         Minutes("MINUTES"),
         Hours("HOURS"),
         Days("DAYS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -571,21 +587,24 @@ public final class TaskOperator extends Operator {
             return UnknownEnumValue;
         }
     };
-    /** The expected duration unit of measure. */
+    /**
+     * The expected duration unit of measure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
     private final ExpectedDurationUnit expectedDurationUnit;
 
     /**
      * The expected duration unit of measure.
-     *
      * @return the value
-     */
+     **/
     public ExpectedDurationUnit getExpectedDurationUnit() {
         return expectedDurationUnit;
     }
 
-    /** The type of the task referenced in the task property. */
-    public enum TaskType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the task referenced in the task property.
+     **/
+    public enum TaskType {
         PipelineTask("PIPELINE_TASK"),
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
@@ -594,8 +613,8 @@ public final class TaskOperator extends Operator {
         RestTask("REST_TASK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -634,15 +653,16 @@ public final class TaskOperator extends Operator {
             return UnknownEnumValue;
         }
     };
-    /** The type of the task referenced in the task property. */
+    /**
+     * The type of the task referenced in the task property.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final TaskType taskType;
 
     /**
      * The type of the task referenced in the task property.
-     *
      * @return the value
-     */
+     **/
     public TaskType getTaskType() {
         return taskType;
     }
@@ -655,19 +675,20 @@ public final class TaskOperator extends Operator {
     }
 
     /**
-     * The merge condition. The conditions are ALL_SUCCESS - All the preceeding operators need to be
-     * successful. ALL_FAILED - All the preceeding operators should have failed. ALL_COMPLETE - All
-     * the preceeding operators should have completed. It could have executed successfully or
-     * failed.
-     */
-    public enum TriggerRule implements com.oracle.bmc.http.internal.BmcEnum {
+     * The merge condition. The conditions are
+     * ALL_SUCCESS - All the preceeding operators need to be successful.
+     * ALL_FAILED - All the preceeding operators should have failed.
+     * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+     *
+     **/
+    public enum TriggerRule {
         AllSuccess("ALL_SUCCESS"),
         AllFailed("ALL_FAILED"),
         AllComplete("ALL_COMPLETE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -707,22 +728,23 @@ public final class TaskOperator extends Operator {
         }
     };
     /**
-     * The merge condition. The conditions are ALL_SUCCESS - All the preceeding operators need to be
-     * successful. ALL_FAILED - All the preceeding operators should have failed. ALL_COMPLETE - All
-     * the preceeding operators should have completed. It could have executed successfully or
-     * failed.
-     */
+     * The merge condition. The conditions are
+     * ALL_SUCCESS - All the preceeding operators need to be successful.
+     * ALL_FAILED - All the preceeding operators should have failed.
+     * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerRule")
     private final TriggerRule triggerRule;
 
     /**
-     * The merge condition. The conditions are ALL_SUCCESS - All the preceeding operators need to be
-     * successful. ALL_FAILED - All the preceeding operators should have failed. ALL_COMPLETE - All
-     * the preceeding operators should have completed. It could have executed successfully or
-     * failed.
+     * The merge condition. The conditions are
+     * ALL_SUCCESS - All the preceeding operators need to be successful.
+     * ALL_FAILED - All the preceeding operators should have failed.
+     * ALL_COMPLETE - All the preceeding operators should have completed. It could have executed successfully or failed.
      *
      * @return the value
-     */
+     **/
     public TriggerRule getTriggerRule() {
         return triggerRule;
     }
@@ -741,7 +763,6 @@ public final class TaskOperator extends Operator {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

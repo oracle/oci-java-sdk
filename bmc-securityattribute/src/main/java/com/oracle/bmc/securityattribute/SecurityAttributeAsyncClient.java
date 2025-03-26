@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.securityattribute;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.securityattribute.internal.http.*;
 import com.oracle.bmc.securityattribute.requests.*;
 import com.oracle.bmc.securityattribute.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for SecurityAttribute service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for SecurityAttribute service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
-public class SecurityAttributeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements SecurityAttributeAsync {
-    /** Service instance for SecurityAttribute. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
+    /**
+     * Service instance for SecurityAttribute.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SECURITYATTRIBUTE")
@@ -40,842 +37,112 @@ public class SecurityAttributeAsyncClient extends com.oracle.bmc.http.internal.B
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SecurityAttributeAsyncClient.class);
 
-    SecurityAttributeAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, SecurityAttributeAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "securityattribute";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public SecurityAttributeAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new SecurityAttributeAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkDeleteSecurityAttributesResponse>
-            bulkDeleteSecurityAttributes(
-                    BulkDeleteSecurityAttributesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    BulkDeleteSecurityAttributesRequest,
-                                    BulkDeleteSecurityAttributesResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getBulkDeleteSecurityAttributesDetails(),
-                "bulkDeleteSecurityAttributesDetails is required");
-
-        return clientCall(request, BulkDeleteSecurityAttributesResponse::builder)
-                .logger(LOG, "bulkDeleteSecurityAttributes")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "BulkDeleteSecurityAttributes",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkDeleteSecurityAttributes")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkDeleteSecurityAttributesRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributes")
-                .appendPathParam("actions")
-                .appendPathParam("bulkDelete")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        BulkDeleteSecurityAttributesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        BulkDeleteSecurityAttributesResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkEditSecurityAttributesResponse>
-            bulkEditSecurityAttributes(
-                    BulkEditSecurityAttributesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    BulkEditSecurityAttributesRequest,
-                                    BulkEditSecurityAttributesResponse>
-                            handler) {
-
-        return clientCall(request, BulkEditSecurityAttributesResponse::builder)
-                .logger(LOG, "bulkEditSecurityAttributes")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "BulkEditSecurityAttributes",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkEditSecurityAttributes")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkEditSecurityAttributesRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributes")
-                .appendPathParam("actions")
-                .appendPathParam("bulkEdit")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", BulkEditSecurityAttributesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        BulkEditSecurityAttributesResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CascadingDeleteSecurityAttributeNamespaceResponse>
-            cascadingDeleteSecurityAttributeNamespace(
-                    CascadingDeleteSecurityAttributeNamespaceRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CascadingDeleteSecurityAttributeNamespaceRequest,
-                                    CascadingDeleteSecurityAttributeNamespaceResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-
-        return clientCall(request, CascadingDeleteSecurityAttributeNamespaceResponse::builder)
-                .logger(LOG, "cascadingDeleteSecurityAttributeNamespace")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "CascadingDeleteSecurityAttributeNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CascadingDeleteSecurityAttributeNamespace")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CascadingDeleteSecurityAttributeNamespaceRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .appendPathParam("actions")
-                .appendPathParam("cascadeDelete")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CascadingDeleteSecurityAttributeNamespaceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CascadingDeleteSecurityAttributeNamespaceResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeSecurityAttributeNamespaceCompartmentResponse>
-            changeSecurityAttributeNamespaceCompartment(
-                    ChangeSecurityAttributeNamespaceCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeSecurityAttributeNamespaceCompartmentRequest,
-                                    ChangeSecurityAttributeNamespaceCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeSecurityAttributeNamespaceCompartmentDetails(),
-                "changeSecurityAttributeNamespaceCompartmentDetails is required");
-
-        return clientCall(request, ChangeSecurityAttributeNamespaceCompartmentResponse::builder)
-                .logger(LOG, "changeSecurityAttributeNamespaceCompartment")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "ChangeSecurityAttributeNamespaceCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/ChangeSecurityAttributeNamespaceCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeSecurityAttributeNamespaceCompartmentRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeSecurityAttributeNamespaceCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateSecurityAttributeResponse> createSecurityAttribute(
-            CreateSecurityAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateSecurityAttributeRequest, CreateSecurityAttributeResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-        Objects.requireNonNull(
-                request.getCreateSecurityAttributeDetails(),
-                "createSecurityAttributeDetails is required");
-
-        return clientCall(request, CreateSecurityAttributeResponse::builder)
-                .logger(LOG, "createSecurityAttribute")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "CreateSecurityAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/CreateSecurityAttribute")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateSecurityAttributeRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .appendPathParam("securityAttributes")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.securityattribute.model.SecurityAttribute.class,
-                        CreateSecurityAttributeResponse.Builder::securityAttribute)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateSecurityAttributeResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateSecurityAttributeResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateSecurityAttributeNamespaceResponse>
-            createSecurityAttributeNamespace(
-                    CreateSecurityAttributeNamespaceRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateSecurityAttributeNamespaceRequest,
-                                    CreateSecurityAttributeNamespaceResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateSecurityAttributeNamespaceDetails(),
-                "createSecurityAttributeNamespaceDetails is required");
-
-        return clientCall(request, CreateSecurityAttributeNamespaceResponse::builder)
-                .logger(LOG, "createSecurityAttributeNamespace")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "CreateSecurityAttributeNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CreateSecurityAttributeNamespace")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateSecurityAttributeNamespaceRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.securityattribute.model.SecurityAttributeNamespace.class,
-                        CreateSecurityAttributeNamespaceResponse.Builder
-                                ::securityAttributeNamespace)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateSecurityAttributeNamespaceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateSecurityAttributeNamespaceResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteSecurityAttributeResponse> deleteSecurityAttribute(
-            DeleteSecurityAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteSecurityAttributeRequest, DeleteSecurityAttributeResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-
-        Validate.notBlank(
-                request.getSecurityAttributeName(), "securityAttributeName must not be blank");
-
-        return clientCall(request, DeleteSecurityAttributeResponse::builder)
-                .logger(LOG, "deleteSecurityAttribute")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "DeleteSecurityAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/DeleteSecurityAttribute")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteSecurityAttributeRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .appendPathParam("securityAttributes")
-                .appendPathParam(request.getSecurityAttributeName())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteSecurityAttributeResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteSecurityAttributeResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteSecurityAttributeNamespaceResponse>
-            deleteSecurityAttributeNamespace(
-                    DeleteSecurityAttributeNamespaceRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteSecurityAttributeNamespaceRequest,
-                                    DeleteSecurityAttributeNamespaceResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-
-        return clientCall(request, DeleteSecurityAttributeNamespaceResponse::builder)
-                .logger(LOG, "deleteSecurityAttributeNamespace")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "DeleteSecurityAttributeNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/DeleteSecurityAttributeNamespace")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteSecurityAttributeNamespaceRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteSecurityAttributeNamespaceResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSecurityAttributeResponse> getSecurityAttribute(
-            GetSecurityAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetSecurityAttributeRequest, GetSecurityAttributeResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-
-        Validate.notBlank(
-                request.getSecurityAttributeName(), "securityAttributeName must not be blank");
-
-        return clientCall(request, GetSecurityAttributeResponse::builder)
-                .logger(LOG, "getSecurityAttribute")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "GetSecurityAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/GetSecurityAttribute")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSecurityAttributeRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .appendPathParam("securityAttributes")
-                .appendPathParam(request.getSecurityAttributeName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.securityattribute.model.SecurityAttribute.class,
-                        GetSecurityAttributeResponse.Builder::securityAttribute)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSecurityAttributeResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetSecurityAttributeResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSecurityAttributeNamespaceResponse>
-            getSecurityAttributeNamespace(
-                    GetSecurityAttributeNamespaceRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetSecurityAttributeNamespaceRequest,
-                                    GetSecurityAttributeNamespaceResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-
-        return clientCall(request, GetSecurityAttributeNamespaceResponse::builder)
-                .logger(LOG, "getSecurityAttributeNamespace")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "GetSecurityAttributeNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/GetSecurityAttributeNamespace")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSecurityAttributeNamespaceRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.securityattribute.model.SecurityAttributeNamespace.class,
-                        GetSecurityAttributeNamespaceResponse.Builder::securityAttributeNamespace)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetSecurityAttributeNamespaceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", GetSecurityAttributeNamespaceResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSecurityAttributeWorkRequestResponse>
-            getSecurityAttributeWorkRequest(
-                    GetSecurityAttributeWorkRequestRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetSecurityAttributeWorkRequestRequest,
-                                    GetSecurityAttributeWorkRequestResponse>
-                            handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetSecurityAttributeWorkRequestResponse::builder)
-                .logger(LOG, "getSecurityAttributeWorkRequest")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "GetSecurityAttributeWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequest/GetSecurityAttributeWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSecurityAttributeWorkRequestRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequest.class,
-                        GetSecurityAttributeWorkRequestResponse.Builder
-                                ::securityAttributeWorkRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetSecurityAttributeWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetSecurityAttributeWorkRequestResponse.Builder::retryAfter)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSecurityAttributeNamespacesResponse>
-            listSecurityAttributeNamespaces(
-                    ListSecurityAttributeNamespacesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListSecurityAttributeNamespacesRequest,
-                                    ListSecurityAttributeNamespacesResponse>
-                            handler) {
-
-        return clientCall(request, ListSecurityAttributeNamespacesResponse::builder)
-                .logger(LOG, "listSecurityAttributeNamespaces")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "ListSecurityAttributeNamespaces",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespaceSummary/ListSecurityAttributeNamespaces")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSecurityAttributeNamespacesRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.securityattribute.model.SecurityAttributeNamespaceSummary
-                                .class,
-                        ListSecurityAttributeNamespacesResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSecurityAttributeNamespacesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSecurityAttributeNamespacesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSecurityAttributeWorkRequestErrorsResponse>
-            listSecurityAttributeWorkRequestErrors(
-                    ListSecurityAttributeWorkRequestErrorsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListSecurityAttributeWorkRequestErrorsRequest,
-                                    ListSecurityAttributeWorkRequestErrorsResponse>
-                            handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListSecurityAttributeWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listSecurityAttributeWorkRequestErrors")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "ListSecurityAttributeWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestErrorSummary/ListSecurityAttributeWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSecurityAttributeWorkRequestErrorsRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.securityattribute.model
-                                .SecurityAttributeWorkRequestErrorSummary.class,
-                        ListSecurityAttributeWorkRequestErrorsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSecurityAttributeWorkRequestErrorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after",
-                        ListSecurityAttributeWorkRequestErrorsResponse.Builder::retryAfter)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSecurityAttributeWorkRequestErrorsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSecurityAttributeWorkRequestLogsResponse>
-            listSecurityAttributeWorkRequestLogs(
-                    ListSecurityAttributeWorkRequestLogsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListSecurityAttributeWorkRequestLogsRequest,
-                                    ListSecurityAttributeWorkRequestLogsResponse>
-                            handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListSecurityAttributeWorkRequestLogsResponse::builder)
-                .logger(LOG, "listSecurityAttributeWorkRequestLogs")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "ListSecurityAttributeWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestLogSummary/ListSecurityAttributeWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSecurityAttributeWorkRequestLogsRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeWorkRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.securityattribute.model
-                                .SecurityAttributeWorkRequestLogSummary.class,
-                        ListSecurityAttributeWorkRequestLogsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSecurityAttributeWorkRequestLogsResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after",
-                        ListSecurityAttributeWorkRequestLogsResponse.Builder::retryAfter)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSecurityAttributeWorkRequestLogsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSecurityAttributeWorkRequestsResponse>
-            listSecurityAttributeWorkRequests(
-                    ListSecurityAttributeWorkRequestsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListSecurityAttributeWorkRequestsRequest,
-                                    ListSecurityAttributeWorkRequestsResponse>
-                            handler) {
-
-        return clientCall(request, ListSecurityAttributeWorkRequestsResponse::builder)
-                .logger(LOG, "listSecurityAttributeWorkRequests")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "ListSecurityAttributeWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestSummary/ListSecurityAttributeWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSecurityAttributeWorkRequestsRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeWorkRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("resourceIdentifier", request.getResourceIdentifier())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestSummary
-                                .class,
-                        ListSecurityAttributeWorkRequestsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSecurityAttributeWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSecurityAttributeWorkRequestsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSecurityAttributesResponse> listSecurityAttributes(
-            ListSecurityAttributesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSecurityAttributesRequest, ListSecurityAttributesResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-
-        return clientCall(request, ListSecurityAttributesResponse::builder)
-                .logger(LOG, "listSecurityAttributes")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "ListSecurityAttributes",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeSummary/ListSecurityAttributes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSecurityAttributesRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .appendPathParam("securityAttributes")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.securityattribute.model.SecurityAttributeSummary.class,
-                        ListSecurityAttributesResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSecurityAttributesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSecurityAttributesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateSecurityAttributeResponse> updateSecurityAttribute(
-            UpdateSecurityAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateSecurityAttributeRequest, UpdateSecurityAttributeResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-
-        Validate.notBlank(
-                request.getSecurityAttributeName(), "securityAttributeName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateSecurityAttributeDetails(),
-                "updateSecurityAttributeDetails is required");
-
-        return clientCall(request, UpdateSecurityAttributeResponse::builder)
-                .logger(LOG, "updateSecurityAttribute")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "UpdateSecurityAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/UpdateSecurityAttribute")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateSecurityAttributeRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .appendPathParam("securityAttributes")
-                .appendPathParam(request.getSecurityAttributeName())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.securityattribute.model.SecurityAttribute.class,
-                        UpdateSecurityAttributeResponse.Builder::securityAttribute)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateSecurityAttributeResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateSecurityAttributeResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateSecurityAttributeNamespaceResponse>
-            updateSecurityAttributeNamespace(
-                    UpdateSecurityAttributeNamespaceRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateSecurityAttributeNamespaceRequest,
-                                    UpdateSecurityAttributeNamespaceResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getSecurityAttributeNamespaceId(),
-                "securityAttributeNamespaceId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateSecurityAttributeNamespaceDetails(),
-                "updateSecurityAttributeNamespaceDetails is required");
-
-        return clientCall(request, UpdateSecurityAttributeNamespaceResponse::builder)
-                .logger(LOG, "updateSecurityAttributeNamespace")
-                .serviceDetails(
-                        "SecurityAttribute",
-                        "UpdateSecurityAttributeNamespace",
-                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/UpdateSecurityAttributeNamespace")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateSecurityAttributeNamespaceRequest::builder)
-                .basePath("/20240815")
-                .appendPathParam("securityAttributeNamespaces")
-                .appendPathParam(request.getSecurityAttributeNamespaceId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.securityattribute.model.SecurityAttributeNamespace.class,
-                        UpdateSecurityAttributeNamespaceResponse.Builder
-                                ::securityAttributeNamespace)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateSecurityAttributeNamespaceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateSecurityAttributeNamespaceResponse.Builder::etag)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public SecurityAttributeAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public SecurityAttributeAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public SecurityAttributeAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public SecurityAttributeAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public SecurityAttributeAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -883,26 +150,26 @@ public class SecurityAttributeAsyncClient extends com.oracle.bmc.http.internal.B
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public SecurityAttributeAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -911,29 +178,29 @@ public class SecurityAttributeAsyncClient extends com.oracle.bmc.http.internal.B
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public SecurityAttributeAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -946,14 +213,1224 @@ public class SecurityAttributeAsyncClient extends com.oracle.bmc.http.internal.B
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public SecurityAttributeAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, SecurityAttributeAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public SecurityAttributeAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new SecurityAttributeAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkDeleteSecurityAttributesResponse>
+            bulkDeleteSecurityAttributes(
+                    BulkDeleteSecurityAttributesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BulkDeleteSecurityAttributesRequest,
+                                    BulkDeleteSecurityAttributesResponse>
+                            handler) {
+        LOG.trace("Called async bulkDeleteSecurityAttributes");
+        final BulkDeleteSecurityAttributesRequest interceptedRequest =
+                BulkDeleteSecurityAttributesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDeleteSecurityAttributesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "BulkDeleteSecurityAttributes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkDeleteSecurityAttributes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkDeleteSecurityAttributesResponse>
+                transformer =
+                        BulkDeleteSecurityAttributesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkDeleteSecurityAttributesRequest, BulkDeleteSecurityAttributesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkDeleteSecurityAttributesRequest,
+                                BulkDeleteSecurityAttributesResponse>,
+                        java.util.concurrent.Future<BulkDeleteSecurityAttributesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDeleteSecurityAttributesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkDeleteSecurityAttributesRequest, BulkDeleteSecurityAttributesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkEditSecurityAttributesResponse>
+            bulkEditSecurityAttributes(
+                    BulkEditSecurityAttributesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BulkEditSecurityAttributesRequest,
+                                    BulkEditSecurityAttributesResponse>
+                            handler) {
+        LOG.trace("Called async bulkEditSecurityAttributes");
+        final BulkEditSecurityAttributesRequest interceptedRequest =
+                BulkEditSecurityAttributesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkEditSecurityAttributesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "BulkEditSecurityAttributes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkEditSecurityAttributes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkEditSecurityAttributesResponse>
+                transformer =
+                        BulkEditSecurityAttributesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkEditSecurityAttributesRequest, BulkEditSecurityAttributesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkEditSecurityAttributesRequest,
+                                BulkEditSecurityAttributesResponse>,
+                        java.util.concurrent.Future<BulkEditSecurityAttributesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkEditSecurityAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkEditSecurityAttributesRequest, BulkEditSecurityAttributesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CascadingDeleteSecurityAttributeNamespaceResponse>
+            cascadingDeleteSecurityAttributeNamespace(
+                    CascadingDeleteSecurityAttributeNamespaceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteSecurityAttributeNamespaceRequest,
+                                    CascadingDeleteSecurityAttributeNamespaceResponse>
+                            handler) {
+        LOG.trace("Called async cascadingDeleteSecurityAttributeNamespace");
+        final CascadingDeleteSecurityAttributeNamespaceRequest interceptedRequest =
+                CascadingDeleteSecurityAttributeNamespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteSecurityAttributeNamespaceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "CascadingDeleteSecurityAttributeNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CascadingDeleteSecurityAttributeNamespace");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CascadingDeleteSecurityAttributeNamespaceResponse>
+                transformer =
+                        CascadingDeleteSecurityAttributeNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CascadingDeleteSecurityAttributeNamespaceRequest,
+                        CascadingDeleteSecurityAttributeNamespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CascadingDeleteSecurityAttributeNamespaceRequest,
+                                CascadingDeleteSecurityAttributeNamespaceResponse>,
+                        java.util.concurrent.Future<
+                                CascadingDeleteSecurityAttributeNamespaceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CascadingDeleteSecurityAttributeNamespaceRequest,
+                    CascadingDeleteSecurityAttributeNamespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSecurityAttributeNamespaceCompartmentResponse>
+            changeSecurityAttributeNamespaceCompartment(
+                    ChangeSecurityAttributeNamespaceCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityAttributeNamespaceCompartmentRequest,
+                                    ChangeSecurityAttributeNamespaceCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSecurityAttributeNamespaceCompartment");
+        final ChangeSecurityAttributeNamespaceCompartmentRequest interceptedRequest =
+                ChangeSecurityAttributeNamespaceCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityAttributeNamespaceCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "ChangeSecurityAttributeNamespaceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/ChangeSecurityAttributeNamespaceCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeSecurityAttributeNamespaceCompartmentResponse>
+                transformer =
+                        ChangeSecurityAttributeNamespaceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSecurityAttributeNamespaceCompartmentRequest,
+                        ChangeSecurityAttributeNamespaceCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSecurityAttributeNamespaceCompartmentRequest,
+                                ChangeSecurityAttributeNamespaceCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeSecurityAttributeNamespaceCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeSecurityAttributeNamespaceCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSecurityAttributeNamespaceCompartmentRequest,
+                    ChangeSecurityAttributeNamespaceCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSecurityAttributeResponse> createSecurityAttribute(
+            CreateSecurityAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityAttributeRequest, CreateSecurityAttributeResponse>
+                    handler) {
+        LOG.trace("Called async createSecurityAttribute");
+        final CreateSecurityAttributeRequest interceptedRequest =
+                CreateSecurityAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "CreateSecurityAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/CreateSecurityAttribute");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateSecurityAttributeResponse>
+                transformer =
+                        CreateSecurityAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSecurityAttributeRequest, CreateSecurityAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSecurityAttributeRequest, CreateSecurityAttributeResponse>,
+                        java.util.concurrent.Future<CreateSecurityAttributeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecurityAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSecurityAttributeRequest, CreateSecurityAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSecurityAttributeNamespaceResponse>
+            createSecurityAttributeNamespace(
+                    CreateSecurityAttributeNamespaceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSecurityAttributeNamespaceRequest,
+                                    CreateSecurityAttributeNamespaceResponse>
+                            handler) {
+        LOG.trace("Called async createSecurityAttributeNamespace");
+        final CreateSecurityAttributeNamespaceRequest interceptedRequest =
+                CreateSecurityAttributeNamespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityAttributeNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "CreateSecurityAttributeNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CreateSecurityAttributeNamespace");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateSecurityAttributeNamespaceResponse>
+                transformer =
+                        CreateSecurityAttributeNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSecurityAttributeNamespaceRequest,
+                        CreateSecurityAttributeNamespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSecurityAttributeNamespaceRequest,
+                                CreateSecurityAttributeNamespaceResponse>,
+                        java.util.concurrent.Future<CreateSecurityAttributeNamespaceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecurityAttributeNamespaceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSecurityAttributeNamespaceRequest,
+                    CreateSecurityAttributeNamespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSecurityAttributeResponse> deleteSecurityAttribute(
+            DeleteSecurityAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityAttributeRequest, DeleteSecurityAttributeResponse>
+                    handler) {
+        LOG.trace("Called async deleteSecurityAttribute");
+        final DeleteSecurityAttributeRequest interceptedRequest =
+                DeleteSecurityAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "DeleteSecurityAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/DeleteSecurityAttribute");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteSecurityAttributeResponse>
+                transformer =
+                        DeleteSecurityAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSecurityAttributeRequest, DeleteSecurityAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSecurityAttributeRequest, DeleteSecurityAttributeResponse>,
+                        java.util.concurrent.Future<DeleteSecurityAttributeResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSecurityAttributeRequest, DeleteSecurityAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSecurityAttributeNamespaceResponse>
+            deleteSecurityAttributeNamespace(
+                    DeleteSecurityAttributeNamespaceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSecurityAttributeNamespaceRequest,
+                                    DeleteSecurityAttributeNamespaceResponse>
+                            handler) {
+        LOG.trace("Called async deleteSecurityAttributeNamespace");
+        final DeleteSecurityAttributeNamespaceRequest interceptedRequest =
+                DeleteSecurityAttributeNamespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityAttributeNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "DeleteSecurityAttributeNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/DeleteSecurityAttributeNamespace");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteSecurityAttributeNamespaceResponse>
+                transformer =
+                        DeleteSecurityAttributeNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSecurityAttributeNamespaceRequest,
+                        DeleteSecurityAttributeNamespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSecurityAttributeNamespaceRequest,
+                                DeleteSecurityAttributeNamespaceResponse>,
+                        java.util.concurrent.Future<DeleteSecurityAttributeNamespaceResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSecurityAttributeNamespaceRequest,
+                    DeleteSecurityAttributeNamespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityAttributeResponse> getSecurityAttribute(
+            GetSecurityAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityAttributeRequest, GetSecurityAttributeResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityAttribute");
+        final GetSecurityAttributeRequest interceptedRequest =
+                GetSecurityAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "GetSecurityAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/GetSecurityAttribute");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityAttributeResponse>
+                transformer =
+                        GetSecurityAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityAttributeRequest, GetSecurityAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityAttributeRequest, GetSecurityAttributeResponse>,
+                        java.util.concurrent.Future<GetSecurityAttributeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityAttributeRequest, GetSecurityAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityAttributeNamespaceResponse>
+            getSecurityAttributeNamespace(
+                    GetSecurityAttributeNamespaceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSecurityAttributeNamespaceRequest,
+                                    GetSecurityAttributeNamespaceResponse>
+                            handler) {
+        LOG.trace("Called async getSecurityAttributeNamespace");
+        final GetSecurityAttributeNamespaceRequest interceptedRequest =
+                GetSecurityAttributeNamespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityAttributeNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "GetSecurityAttributeNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/GetSecurityAttributeNamespace");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSecurityAttributeNamespaceResponse>
+                transformer =
+                        GetSecurityAttributeNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityAttributeNamespaceRequest, GetSecurityAttributeNamespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityAttributeNamespaceRequest,
+                                GetSecurityAttributeNamespaceResponse>,
+                        java.util.concurrent.Future<GetSecurityAttributeNamespaceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityAttributeNamespaceRequest, GetSecurityAttributeNamespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityAttributeWorkRequestResponse>
+            getSecurityAttributeWorkRequest(
+                    GetSecurityAttributeWorkRequestRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSecurityAttributeWorkRequestRequest,
+                                    GetSecurityAttributeWorkRequestResponse>
+                            handler) {
+        LOG.trace("Called async getSecurityAttributeWorkRequest");
+        final GetSecurityAttributeWorkRequestRequest interceptedRequest =
+                GetSecurityAttributeWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityAttributeWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "GetSecurityAttributeWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequest/GetSecurityAttributeWorkRequest");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSecurityAttributeWorkRequestResponse>
+                transformer =
+                        GetSecurityAttributeWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityAttributeWorkRequestRequest,
+                        GetSecurityAttributeWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityAttributeWorkRequestRequest,
+                                GetSecurityAttributeWorkRequestResponse>,
+                        java.util.concurrent.Future<GetSecurityAttributeWorkRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityAttributeWorkRequestRequest,
+                    GetSecurityAttributeWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityAttributeNamespacesResponse>
+            listSecurityAttributeNamespaces(
+                    ListSecurityAttributeNamespacesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityAttributeNamespacesRequest,
+                                    ListSecurityAttributeNamespacesResponse>
+                            handler) {
+        LOG.trace("Called async listSecurityAttributeNamespaces");
+        final ListSecurityAttributeNamespacesRequest interceptedRequest =
+                ListSecurityAttributeNamespacesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityAttributeNamespacesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeNamespaces",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespaceSummary/ListSecurityAttributeNamespaces");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityAttributeNamespacesResponse>
+                transformer =
+                        ListSecurityAttributeNamespacesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityAttributeNamespacesRequest,
+                        ListSecurityAttributeNamespacesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityAttributeNamespacesRequest,
+                                ListSecurityAttributeNamespacesResponse>,
+                        java.util.concurrent.Future<ListSecurityAttributeNamespacesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityAttributeNamespacesRequest,
+                    ListSecurityAttributeNamespacesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityAttributeWorkRequestErrorsResponse>
+            listSecurityAttributeWorkRequestErrors(
+                    ListSecurityAttributeWorkRequestErrorsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityAttributeWorkRequestErrorsRequest,
+                                    ListSecurityAttributeWorkRequestErrorsResponse>
+                            handler) {
+        LOG.trace("Called async listSecurityAttributeWorkRequestErrors");
+        final ListSecurityAttributeWorkRequestErrorsRequest interceptedRequest =
+                ListSecurityAttributeWorkRequestErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityAttributeWorkRequestErrorsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestErrorSummary/ListSecurityAttributeWorkRequestErrors");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityAttributeWorkRequestErrorsResponse>
+                transformer =
+                        ListSecurityAttributeWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityAttributeWorkRequestErrorsRequest,
+                        ListSecurityAttributeWorkRequestErrorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityAttributeWorkRequestErrorsRequest,
+                                ListSecurityAttributeWorkRequestErrorsResponse>,
+                        java.util.concurrent.Future<ListSecurityAttributeWorkRequestErrorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityAttributeWorkRequestErrorsRequest,
+                    ListSecurityAttributeWorkRequestErrorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityAttributeWorkRequestLogsResponse>
+            listSecurityAttributeWorkRequestLogs(
+                    ListSecurityAttributeWorkRequestLogsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityAttributeWorkRequestLogsRequest,
+                                    ListSecurityAttributeWorkRequestLogsResponse>
+                            handler) {
+        LOG.trace("Called async listSecurityAttributeWorkRequestLogs");
+        final ListSecurityAttributeWorkRequestLogsRequest interceptedRequest =
+                ListSecurityAttributeWorkRequestLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityAttributeWorkRequestLogsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestLogSummary/ListSecurityAttributeWorkRequestLogs");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityAttributeWorkRequestLogsResponse>
+                transformer =
+                        ListSecurityAttributeWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityAttributeWorkRequestLogsRequest,
+                        ListSecurityAttributeWorkRequestLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityAttributeWorkRequestLogsRequest,
+                                ListSecurityAttributeWorkRequestLogsResponse>,
+                        java.util.concurrent.Future<ListSecurityAttributeWorkRequestLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityAttributeWorkRequestLogsRequest,
+                    ListSecurityAttributeWorkRequestLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityAttributeWorkRequestsResponse>
+            listSecurityAttributeWorkRequests(
+                    ListSecurityAttributeWorkRequestsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityAttributeWorkRequestsRequest,
+                                    ListSecurityAttributeWorkRequestsResponse>
+                            handler) {
+        LOG.trace("Called async listSecurityAttributeWorkRequests");
+        final ListSecurityAttributeWorkRequestsRequest interceptedRequest =
+                ListSecurityAttributeWorkRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityAttributeWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestSummary/ListSecurityAttributeWorkRequests");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityAttributeWorkRequestsResponse>
+                transformer =
+                        ListSecurityAttributeWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityAttributeWorkRequestsRequest,
+                        ListSecurityAttributeWorkRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityAttributeWorkRequestsRequest,
+                                ListSecurityAttributeWorkRequestsResponse>,
+                        java.util.concurrent.Future<ListSecurityAttributeWorkRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityAttributeWorkRequestsRequest,
+                    ListSecurityAttributeWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityAttributesResponse> listSecurityAttributes(
+            ListSecurityAttributesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityAttributesRequest, ListSecurityAttributesResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityAttributes");
+        final ListSecurityAttributesRequest interceptedRequest =
+                ListSecurityAttributesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityAttributesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeSummary/ListSecurityAttributes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityAttributesResponse>
+                transformer =
+                        ListSecurityAttributesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityAttributesRequest, ListSecurityAttributesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityAttributesRequest, ListSecurityAttributesResponse>,
+                        java.util.concurrent.Future<ListSecurityAttributesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityAttributesRequest, ListSecurityAttributesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityAttributeResponse> updateSecurityAttribute(
+            UpdateSecurityAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityAttributeRequest, UpdateSecurityAttributeResponse>
+                    handler) {
+        LOG.trace("Called async updateSecurityAttribute");
+        final UpdateSecurityAttributeRequest interceptedRequest =
+                UpdateSecurityAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "UpdateSecurityAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/UpdateSecurityAttribute");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateSecurityAttributeResponse>
+                transformer =
+                        UpdateSecurityAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSecurityAttributeRequest, UpdateSecurityAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityAttributeRequest, UpdateSecurityAttributeResponse>,
+                        java.util.concurrent.Future<UpdateSecurityAttributeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityAttributeRequest, UpdateSecurityAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityAttributeNamespaceResponse>
+            updateSecurityAttributeNamespace(
+                    UpdateSecurityAttributeNamespaceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateSecurityAttributeNamespaceRequest,
+                                    UpdateSecurityAttributeNamespaceResponse>
+                            handler) {
+        LOG.trace("Called async updateSecurityAttributeNamespace");
+        final UpdateSecurityAttributeNamespaceRequest interceptedRequest =
+                UpdateSecurityAttributeNamespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityAttributeNamespaceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SecurityAttribute",
+                        "UpdateSecurityAttributeNamespace",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/UpdateSecurityAttributeNamespace");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateSecurityAttributeNamespaceResponse>
+                transformer =
+                        UpdateSecurityAttributeNamespaceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSecurityAttributeNamespaceRequest,
+                        UpdateSecurityAttributeNamespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityAttributeNamespaceRequest,
+                                UpdateSecurityAttributeNamespaceResponse>,
+                        java.util.concurrent.Future<UpdateSecurityAttributeNamespaceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityAttributeNamespaceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityAttributeNamespaceRequest,
+                    UpdateSecurityAttributeNamespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

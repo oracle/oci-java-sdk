@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** The field used to sort the JavaDownloadReport. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum JavaDownloadReportSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort the JavaDownloadReport.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum JavaDownloadReportSortBy {
     TimeCreated("timeCreated"),
     DisplayName("displayName"),
     ;

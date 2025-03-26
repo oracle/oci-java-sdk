@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The deployment upgrade type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum UpgradeDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The deployment upgrade type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum UpgradeDeploymentType {
     CurrentRelease("CURRENT_RELEASE"),
     SpecificRelease("SPECIFIC_RELEASE"),
     ;

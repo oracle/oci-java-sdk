@@ -5,23 +5,25 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Type of job as described below. HARVEST - Harvest jobs are metadata crawlers that extract schema
- * from data assets. PROFILING - Profiling jobs are data profilers that extract metrics about data
- * like histograms, distribution, min, max, avg and so on. SAMPLING - Sampling jobs extract a small
- * subset of data for profiling and viewing. PREVIEW - Preview jobs are metadata crawlers but allow
- * users to filter and view metadata entities in data assets. IMPORT - Import jobs import metadata
- * in data catalog repository from a data catalog exported file. EXPORT - Export jobs export data
- * catalog metadata for imports into other data catalog repositories. IMPORT_GLOSSARY - Job type to
- * import glossary metadata from a file. EXPORT_GLOSSARY - Job type to export glossary metadata to a
- * file. ASYNC_DELETE - Job type for asynchronous bulk delete on data assets, folders and data
- * entities. PURGE - Job type for cleaning up schedules, executions and logs of a Job.
- * IMPORT_DATA_ASSET - Job type to import technical objects to a data asset. CREATE_SCAN_PROXY - Job
- * type to create scan proxy resource for RAC enabled data asset. ASYNC_EXPORT_GLOSSARY - Job type
- * to export glossary metadata to a file asynchronously. ASYNC_EXPORT_DATA_ASSET - Job type to
- * export data assets metadata to a file asynchronously.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum JobType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Type of job as described below.
+ * HARVEST - Harvest jobs are metadata crawlers that extract schema from data assets.
+ * PROFILING - Profiling jobs are data profilers that extract metrics about data like histograms, distribution, min, max, avg and so on.
+ * SAMPLING - Sampling jobs extract a small subset of data for profiling and viewing.
+ * PREVIEW  - Preview jobs are metadata crawlers but allow users to filter and view metadata entities in data assets.
+ * IMPORT - Import jobs import metadata in data catalog repository from a data catalog exported file.
+ * EXPORT - Export jobs export data catalog metadata for imports into other data catalog repositories.
+ * IMPORT_GLOSSARY - Job type to import glossary metadata from a file.
+ * EXPORT_GLOSSARY - Job type to export glossary metadata to a file.
+ * ASYNC_DELETE - Job type for asynchronous bulk delete on data assets, folders and data entities.
+ * PURGE - Job type for cleaning up schedules, executions and logs of a Job.
+ * IMPORT_DATA_ASSET - Job type to import technical objects to a data asset.
+ * CREATE_SCAN_PROXY - Job type to create scan proxy resource for RAC enabled data asset.
+ * ASYNC_EXPORT_GLOSSARY - Job type to export glossary metadata to a file asynchronously.
+ * ASYNC_EXPORT_DATA_ASSET - Job type to export data assets metadata to a file asynchronously.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum JobType {
     Harvest("HARVEST"),
     Profiling("PROFILING"),
     Sampling("SAMPLING"),

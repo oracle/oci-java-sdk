@@ -6,42 +6,41 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code UserPasswordResetter} instance. */
+    /**
+     * The returned UserPasswordResetter instance.
+     */
     private com.oracle.bmc.identitydomains.model.UserPasswordResetter userPasswordResetter;
 
     /**
-     * The returned {@code UserPasswordResetter} instance.
-     *
+     * The returned UserPasswordResetter instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.UserPasswordResetter getUserPasswordResetter() {
@@ -57,7 +56,7 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
     })
     private PutUserPasswordResetterResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identitydomains.model.UserPasswordResetter userPasswordResetter) {
@@ -67,35 +66,28 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
         this.userPasswordResetter = userPasswordResetter;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    PutUserPasswordResetterResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -104,12 +96,13 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -118,12 +111,13 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code UserPasswordResetter} instance. */
+        /**
+         * The returned UserPasswordResetter instance.
+         */
         private com.oracle.bmc.identitydomains.model.UserPasswordResetter userPasswordResetter;
 
         /**
-         * The returned {@code UserPasswordResetter} instance.
-         *
+         * The returned UserPasswordResetter instance.
          * @param userPasswordResetter the value to set
          * @return this builder
          */
@@ -135,10 +129,8 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(PutUserPasswordResetterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +143,8 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public PutUserPasswordResetterResponse build() {
             return new PutUserPasswordResetterResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, userPasswordResetter);
@@ -163,7 +153,6 @@ public class PutUserPasswordResetterResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

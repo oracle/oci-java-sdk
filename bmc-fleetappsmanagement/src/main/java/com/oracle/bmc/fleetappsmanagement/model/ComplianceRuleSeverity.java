@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** Possible Compliance Rule severities. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum ComplianceRuleSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Compliance Rule severities.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum ComplianceRuleSeverity {
     Critical("CRITICAL"),
     High("HIGH"),
     Medium("MEDIUM"),

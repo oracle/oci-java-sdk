@@ -6,17 +6,16 @@ package com.oracle.bmc.dataintegration.responses;
 
 import com.oracle.bmc.dataintegration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -25,14 +24,15 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,12 +40,13 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned {@code PipelineValidation} instance. */
+    /**
+     * The returned PipelineValidation instance.
+     */
     private com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation;
 
     /**
-     * The returned {@code PipelineValidation} instance.
-     *
+     * The returned PipelineValidation instance.
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.PipelineValidation getPipelineValidation() {
@@ -61,7 +62,7 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetPipelineValidationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation) {
@@ -71,33 +72,29 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
         this.pipelineValidation = pipelineValidation;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetPipelineValidationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -108,14 +105,15 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -125,12 +123,13 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code PipelineValidation} instance. */
+        /**
+         * The returned PipelineValidation instance.
+         */
         private com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation;
 
         /**
-         * The returned {@code PipelineValidation} instance.
-         *
+         * The returned PipelineValidation instance.
          * @param pipelineValidation the value to set
          * @return this builder
          */
@@ -142,10 +141,8 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetPipelineValidationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -158,10 +155,8 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetPipelineValidationResponse build() {
             return new GetPipelineValidationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, pipelineValidation);
@@ -170,7 +165,6 @@ public class GetPipelineValidationResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

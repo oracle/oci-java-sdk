@@ -5,23 +5,21 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * DB System shutdown parameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * DB System shutdown parameters.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = StopDbSystemDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class StopDbSystemDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = StopDbSystemDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class StopDbSystemDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shutdownType"})
     public StopDbSystemDetails(InnoDbShutdownMode shutdownType) {
@@ -34,7 +32,8 @@ public final class StopDbSystemDetails
         /**
          * The InnoDB shutdown mode to use, following the option
          * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shutdownType")
         private InnoDbShutdownMode shutdownType;
 
@@ -44,7 +43,7 @@ public final class StopDbSystemDetails
          *
          * @param shutdownType the value to set
          * @return this builder
-         */
+         **/
         public Builder shutdownType(InnoDbShutdownMode shutdownType) {
             this.shutdownType = shutdownType;
             this.__explicitlySet__.add("shutdownType");
@@ -71,7 +70,9 @@ public final class StopDbSystemDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -83,7 +84,8 @@ public final class StopDbSystemDetails
     /**
      * The InnoDB shutdown mode to use, following the option
      * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shutdownType")
     private final InnoDbShutdownMode shutdownType;
 
@@ -92,7 +94,7 @@ public final class StopDbSystemDetails
      * "[innodb_fast_shutdown](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_fast_shutdown)".
      *
      * @return the value
-     */
+     **/
     public InnoDbShutdownMode getShutdownType() {
         return shutdownType;
     }
@@ -104,7 +106,6 @@ public final class StopDbSystemDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

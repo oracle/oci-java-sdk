@@ -5,23 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The model deployment instance configuration <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The model deployment instance configuration
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceShapeName",
@@ -43,16 +42,17 @@ public final class InstanceConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The shape used to launch the model deployment instances. */
+        /**
+         * The shape used to launch the model deployment instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
         private String instanceShapeName;
 
         /**
          * The shape used to launch the model deployment instances.
-         *
          * @param instanceShapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceShapeName(String instanceShapeName) {
             this.instanceShapeName = instanceShapeName;
             this.__explicitlySet__.add("instanceShapeName");
@@ -71,29 +71,27 @@ public final class InstanceConfiguration
             return this;
         }
         /**
-         * A model deployment instance is provided with a VNIC for network access. This specifies
-         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for
-         * egress.
-         */
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * A model deployment instance is provided with a VNIC for network access. This specifies
-         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for
-         * egress.
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The OCID of a Data Science private endpoint. */
+        /**
+         * The OCID of a Data Science private endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
@@ -102,7 +100,7 @@ public final class InstanceConfiguration
          *
          * @param privateEndpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
@@ -144,7 +142,9 @@ public final class InstanceConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,15 +153,16 @@ public final class InstanceConfiguration
         return new Builder().copy(this);
     }
 
-    /** The shape used to launch the model deployment instances. */
+    /**
+     * The shape used to launch the model deployment instances.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShapeName")
     private final String instanceShapeName;
 
     /**
      * The shape used to launch the model deployment instances.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceShapeName() {
         return instanceShapeName;
     }
@@ -176,25 +177,25 @@ public final class InstanceConfiguration
     }
 
     /**
-     * A model deployment instance is provided with a VNIC for network access. This specifies the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet
-     * to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
-     */
+     * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * A model deployment instance is provided with a VNIC for network access. This specifies the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet
-     * to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** The OCID of a Data Science private endpoint. */
+    /**
+     * The OCID of a Data Science private endpoint.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
@@ -202,7 +203,7 @@ public final class InstanceConfiguration
      * The OCID of a Data Science private endpoint.
      *
      * @return the value
-     */
+     **/
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -214,7 +215,6 @@ public final class InstanceConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

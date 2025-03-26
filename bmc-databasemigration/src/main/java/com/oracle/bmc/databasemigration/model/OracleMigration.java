@@ -5,24 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Oracle Migration resource <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Oracle Migration resource
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OracleMigration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "databaseCombination")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "databaseCombination"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleMigration extends Migration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -225,32 +224,34 @@ public final class OracleMigration extends Migration {
             this.__explicitlySet__.add("ggsDetails");
             return this;
         }
-        /** The OCID of the resource being referenced. */
+        /**
+         * The OCID of the resource being referenced.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
         private String sourceContainerDatabaseConnectionId;
 
         /**
          * The OCID of the resource being referenced.
-         *
          * @param sourceContainerDatabaseConnectionId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceContainerDatabaseConnectionId(
                 String sourceContainerDatabaseConnectionId) {
             this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
             this.__explicitlySet__.add("sourceContainerDatabaseConnectionId");
             return this;
         }
-        /** List of Migration Parameter objects. */
+        /**
+         * List of Migration Parameter objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
         private java.util.List<MigrationParameterDetails> advancedParameters;
 
         /**
          * List of Migration Parameter objects.
-         *
          * @param advancedParameters the value to set
          * @return this builder
-         */
+         **/
         public Builder advancedParameters(
                 java.util.List<MigrationParameterDetails> advancedParameters) {
             this.advancedParameters = advancedParameters;
@@ -373,7 +374,9 @@ public final class OracleMigration extends Migration {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -470,28 +473,30 @@ public final class OracleMigration extends Migration {
         return ggsDetails;
     }
 
-    /** The OCID of the resource being referenced. */
+    /**
+     * The OCID of the resource being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
     private final String sourceContainerDatabaseConnectionId;
 
     /**
      * The OCID of the resource being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getSourceContainerDatabaseConnectionId() {
         return sourceContainerDatabaseConnectionId;
     }
 
-    /** List of Migration Parameter objects. */
+    /**
+     * List of Migration Parameter objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
     private final java.util.List<MigrationParameterDetails> advancedParameters;
 
     /**
      * List of Migration Parameter objects.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MigrationParameterDetails> getAdvancedParameters() {
         return advancedParameters;
     }
@@ -503,7 +508,6 @@ public final class OracleMigration extends Migration {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

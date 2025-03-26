@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible configuration list item types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ConfigurationListItemType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible configuration list item types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum ConfigurationListItemType {
     Managed("MANAGED"),
     Custom("CUSTOM"),
 

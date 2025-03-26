@@ -5,23 +5,22 @@
 package com.oracle.bmc.mediaservices.model;
 
 /**
- * Information about the new session token. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+ * Information about the new session token.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GenerateSessionTokenDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GenerateSessionTokenDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GenerateSessionTokenDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeExpires", "scopes", "packagingConfigId", "assetIds"})
     public GenerateSessionTokenDetails(
@@ -38,61 +37,65 @@ public final class GenerateSessionTokenDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Token expiry time. An RFC3339 formatted datetime string. */
+        /**
+         * Token expiry time. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
          * Token expiry time. An RFC3339 formatted datetime string.
-         *
          * @param timeExpires the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
-        /** Array of scopes the token can act upon. */
+        /**
+         * Array of scopes the token can act upon.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private java.util.List<Scopes> scopes;
 
         /**
          * Array of scopes the token can act upon.
-         *
          * @param scopes the value to set
          * @return this builder
-         */
+         **/
         public Builder scopes(java.util.List<Scopes> scopes) {
             this.scopes = scopes;
             this.__explicitlySet__.add("scopes");
             return this;
         }
-        /** The packaging config resource identifier used to limit the scope of the token. */
+        /**
+         * The packaging config resource identifier used to limit the scope of the token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packagingConfigId")
         private String packagingConfigId;
 
         /**
          * The packaging config resource identifier used to limit the scope of the token.
-         *
          * @param packagingConfigId the value to set
          * @return this builder
-         */
+         **/
         public Builder packagingConfigId(String packagingConfigId) {
             this.packagingConfigId = packagingConfigId;
             this.__explicitlySet__.add("packagingConfigId");
             return this;
         }
-        /** Array of asset resource IDs used to limit the scope of the token. */
+        /**
+         * Array of asset resource IDs used to limit the scope of the token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assetIds")
         private java.util.List<String> assetIds;
 
         /**
          * Array of asset resource IDs used to limit the scope of the token.
-         *
          * @param assetIds the value to set
          * @return this builder
-         */
+         **/
         public Builder assetIds(java.util.List<String> assetIds) {
             this.assetIds = assetIds;
             this.__explicitlySet__.add("assetIds");
@@ -130,7 +133,9 @@ public final class GenerateSessionTokenDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,21 +144,23 @@ public final class GenerateSessionTokenDetails
         return new Builder().copy(this);
     }
 
-    /** Token expiry time. An RFC3339 formatted datetime string. */
+    /**
+     * Token expiry time. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
      * Token expiry time. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
 
-    /** */
-    public enum Scopes implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum Scopes {
         Playlist("PLAYLIST"),
         Edge("EDGE"),
         ;
@@ -185,41 +192,44 @@ public final class GenerateSessionTokenDetails
             throw new IllegalArgumentException("Invalid Scopes: " + key);
         }
     };
-    /** Array of scopes the token can act upon. */
+    /**
+     * Array of scopes the token can act upon.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
     private final java.util.List<Scopes> scopes;
 
     /**
      * Array of scopes the token can act upon.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Scopes> getScopes() {
         return scopes;
     }
 
-    /** The packaging config resource identifier used to limit the scope of the token. */
+    /**
+     * The packaging config resource identifier used to limit the scope of the token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packagingConfigId")
     private final String packagingConfigId;
 
     /**
      * The packaging config resource identifier used to limit the scope of the token.
-     *
      * @return the value
-     */
+     **/
     public String getPackagingConfigId() {
         return packagingConfigId;
     }
 
-    /** Array of asset resource IDs used to limit the scope of the token. */
+    /**
+     * Array of asset resource IDs used to limit the scope of the token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetIds")
     private final java.util.List<String> assetIds;
 
     /**
      * Array of asset resource IDs used to limit the scope of the token.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAssetIds() {
         return assetIds;
     }
@@ -231,7 +241,6 @@ public final class GenerateSessionTokenDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

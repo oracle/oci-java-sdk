@@ -17,8 +17,8 @@ import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 
 /**
- * MultiPartTransferManager handles the job submission, cancellation, and completion of parts to the
- * manifest.
+ * MultiPartTransferManager handles the job submission, cancellation, and completion
+ * of parts to the manifest.
  */
 public class MultipartTransferManager {
     private static final org.slf4j.Logger LOG =
@@ -44,8 +44,7 @@ public class MultipartTransferManager {
                             @Override
                             public Void call() throws Exception {
                                 try {
-                                    // Use a random sleep before each part begins upload.  Too many
-                                    // concurrent requests
+                                    // Use a random sleep before each part begins upload.  Too many concurrent requests
                                     // starting around the same time leads to 409 conflicts.
                                     Thread.sleep(
                                             random.nextInt(

@@ -5,21 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Sort key contains a set of sort key rules defining sorting algorithm. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Sort key contains a set of sort key rules defining sorting algorithm.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SortKey.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SortKey extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SortKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sortRules"})
     public SortKey(java.util.List<SortKeyRule> sortRules) {
@@ -29,16 +27,17 @@ public final class SortKey extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of sort key rules. */
+        /**
+         * The list of sort key rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortRules")
         private java.util.List<SortKeyRule> sortRules;
 
         /**
          * The list of sort key rules.
-         *
          * @param sortRules the value to set
          * @return this builder
-         */
+         **/
         public Builder sortRules(java.util.List<SortKeyRule> sortRules) {
             this.sortRules = sortRules;
             this.__explicitlySet__.add("sortRules");
@@ -65,7 +64,9 @@ public final class SortKey extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -74,15 +75,16 @@ public final class SortKey extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** The list of sort key rules. */
+    /**
+     * The list of sort key rules.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortRules")
     private final java.util.List<SortKeyRule> sortRules;
 
     /**
      * The list of sort key rules.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SortKeyRule> getSortRules() {
         return sortRules;
     }
@@ -94,7 +96,6 @@ public final class SortKey extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

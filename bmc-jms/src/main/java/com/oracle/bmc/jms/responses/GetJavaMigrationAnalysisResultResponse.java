@@ -6,9 +6,12 @@ package com.oracle.bmc.jms.responses;
 
 import com.oracle.bmc.jms.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /** The returned {@code JavaMigrationAnalysisResult} instance. */
+    /**
+     * The returned JavaMigrationAnalysisResult instance.
+     */
     private com.oracle.bmc.jms.model.JavaMigrationAnalysisResult javaMigrationAnalysisResult;
 
     /**
-     * The returned {@code JavaMigrationAnalysisResult} instance.
-     *
+     * The returned JavaMigrationAnalysisResult instance.
      * @return the value
      */
     public com.oracle.bmc.jms.model.JavaMigrationAnalysisResult getJavaMigrationAnalysisResult() {
@@ -57,7 +62,7 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
     })
     private GetJavaMigrationAnalysisResultResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.jms.model.JavaMigrationAnalysisResult javaMigrationAnalysisResult) {
@@ -67,26 +72,25 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
         this.javaMigrationAnalysisResult = javaMigrationAnalysisResult;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetJavaMigrationAnalysisResultResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -101,14 +105,15 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,12 +123,13 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned {@code JavaMigrationAnalysisResult} instance. */
+        /**
+         * The returned JavaMigrationAnalysisResult instance.
+         */
         private com.oracle.bmc.jms.model.JavaMigrationAnalysisResult javaMigrationAnalysisResult;
 
         /**
-         * The returned {@code JavaMigrationAnalysisResult} instance.
-         *
+         * The returned JavaMigrationAnalysisResult instance.
          * @param javaMigrationAnalysisResult the value to set
          * @return this builder
          */
@@ -135,10 +141,8 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetJavaMigrationAnalysisResultResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +155,8 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetJavaMigrationAnalysisResultResponse build() {
             return new GetJavaMigrationAnalysisResultResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, javaMigrationAnalysisResult);
@@ -163,7 +165,6 @@ public class GetJavaMigrationAnalysisResultResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

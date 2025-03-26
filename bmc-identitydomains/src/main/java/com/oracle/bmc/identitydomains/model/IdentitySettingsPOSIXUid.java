@@ -6,27 +6,30 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * A list of Posix Uid settings.
- *
- * <p>*Added In:** 17.4.6
- *
- * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - required: false - type:
- * complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **Added In:** 17.4.6
+ * <p>
+ **SCIM++ Properties:**
+ *  - caseExact: false
+ *  - multiValued: false
+ *  - required: false
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IdentitySettingsPOSIXUid.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IdentitySettingsPOSIXUid.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IdentitySettingsPOSIXUid
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"manualAssignmentStartsFrom", "manualAssignmentEndsAt"})
     public IdentitySettingsPOSIXUid(
@@ -40,26 +43,37 @@ public final class IdentitySettingsPOSIXUid
     public static class Builder {
         /**
          * The number from which the Posix Uid Manual assignment starts.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manualAssignmentStartsFrom")
         private Integer manualAssignmentStartsFrom;
 
         /**
          * The number from which the Posix Uid Manual assignment starts.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param manualAssignmentStartsFrom the value to set
          * @return this builder
-         */
+         **/
         public Builder manualAssignmentStartsFrom(Integer manualAssignmentStartsFrom) {
             this.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
             this.__explicitlySet__.add("manualAssignmentStartsFrom");
@@ -67,26 +81,37 @@ public final class IdentitySettingsPOSIXUid
         }
         /**
          * The number at which the Posix Uid Manual assignment ends.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("manualAssignmentEndsAt")
         private Integer manualAssignmentEndsAt;
 
         /**
          * The number at which the Posix Uid Manual assignment ends.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param manualAssignmentEndsAt the value to set
          * @return this builder
-         */
+         **/
         public Builder manualAssignmentEndsAt(Integer manualAssignmentEndsAt) {
             this.manualAssignmentEndsAt = manualAssignmentEndsAt;
             this.__explicitlySet__.add("manualAssignmentEndsAt");
@@ -118,7 +143,9 @@ public final class IdentitySettingsPOSIXUid
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,50 +156,72 @@ public final class IdentitySettingsPOSIXUid
 
     /**
      * The number from which the Posix Uid Manual assignment starts.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("manualAssignmentStartsFrom")
     private final Integer manualAssignmentStartsFrom;
 
     /**
      * The number from which the Posix Uid Manual assignment starts.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getManualAssignmentStartsFrom() {
         return manualAssignmentStartsFrom;
     }
 
     /**
      * The number at which the Posix Uid Manual assignment ends.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("manualAssignmentEndsAt")
     private final Integer manualAssignmentEndsAt;
 
     /**
      * The number at which the Posix Uid Manual assignment ends.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getManualAssignmentEndsAt() {
         return manualAssignmentEndsAt;
     }
@@ -184,7 +233,6 @@ public final class IdentitySettingsPOSIXUid
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

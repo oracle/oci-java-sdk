@@ -5,22 +5,20 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Information collected from user context during ticket creation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+ * Information collected from user context during ticket creation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ContextualData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ContextualData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ContextualData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clientId", "schemaName", "schemaVersion", "payload"})
     public ContextualData(
@@ -34,61 +32,65 @@ public final class ContextualData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier for the client. */
+        /**
+         * The unique identifier for the client.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
          * The unique identifier for the client.
-         *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
-        /** The name assigned to the schema. */
+        /**
+         * The name assigned to the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
          * The name assigned to the schema.
-         *
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The version of the schema. */
+        /**
+         * The version of the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
         private String schemaVersion;
 
         /**
          * The version of the schema.
-         *
          * @param schemaVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaVersion(String schemaVersion) {
             this.schemaVersion = schemaVersion;
             this.__explicitlySet__.add("schemaVersion");
             return this;
         }
-        /** The payload for the contextual data. */
+        /**
+         * The payload for the contextual data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("payload")
         private String payload;
 
         /**
          * The payload for the contextual data.
-         *
          * @param payload the value to set
          * @return this builder
-         */
+         **/
         public Builder payload(String payload) {
             this.payload = payload;
             this.__explicitlySet__.add("payload");
@@ -126,7 +128,9 @@ public final class ContextualData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,54 +139,58 @@ public final class ContextualData
         return new Builder().copy(this);
     }
 
-    /** The unique identifier for the client. */
+    /**
+     * The unique identifier for the client.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
      * The unique identifier for the client.
-     *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
-    /** The name assigned to the schema. */
+    /**
+     * The name assigned to the schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
      * The name assigned to the schema.
-     *
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** The version of the schema. */
+    /**
+     * The version of the schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
     private final String schemaVersion;
 
     /**
      * The version of the schema.
-     *
      * @return the value
-     */
+     **/
     public String getSchemaVersion() {
         return schemaVersion;
     }
 
-    /** The payload for the contextual data. */
+    /**
+     * The payload for the contextual data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     private final String payload;
 
     /**
      * The payload for the contextual data.
-     *
      * @return the value
-     */
+     **/
     public String getPayload() {
         return payload;
     }
@@ -194,7 +202,6 @@ public final class ContextualData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,42 +6,47 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDiscoveryAnalyticsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDiscoveryAnalyticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDiscoveryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDiscoveryAnalyticsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListDiscoveryAnalyticsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
-    /** Attribute by which the discovery analytics data should be grouped. */
+    /**
+     * Attribute by which the discovery analytics data should be grouped.
+     */
     private GroupBy groupBy;
 
-    /** Attribute by which the discovery analytics data should be grouped. */
-    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Attribute by which the discovery analytics data should be grouped.
+     **/
+    public enum GroupBy {
         TargetId("targetId"),
         SensitiveDataModelId("sensitiveDataModelId"),
         SensitiveTypeId("sensitiveTypeId"),
@@ -78,79 +83,89 @@ public class ListDiscoveryAnalyticsRequest
         }
     };
 
-    /** Attribute by which the discovery analytics data should be grouped. */
+    /**
+     * Attribute by which the discovery analytics data should be grouped.
+     */
     public GroupBy getGroupBy() {
         return groupBy;
     }
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     private String targetId;
 
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
-    /** A filter to return only the resources that match the specified sensitive data model OCID. */
+    /**
+     * A filter to return only the resources that match the specified sensitive data model OCID.
+     */
     private String sensitiveDataModelId;
 
-    /** A filter to return only the resources that match the specified sensitive data model OCID. */
+    /**
+     * A filter to return only the resources that match the specified sensitive data model OCID.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
-    /** A filter to return only items related to a specific sensitive type OCID. */
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
     private String sensitiveTypeId;
 
-    /** A filter to return only items related to a specific sensitive type OCID. */
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A filter to return only the common sensitive type resources. Common sensitive types belong to
      * library sensitive types which are frequently used to perform sensitive data discovery.
+     *
      */
     private Boolean isCommon;
 
     /**
      * A filter to return only the common sensitive type resources. Common sensitive types belong to
      * library sensitive types which are frequently used to perform sensitive data discovery.
+     *
      */
     public Boolean getIsCommon() {
         return isCommon;
@@ -159,15 +174,17 @@ public class ListDiscoveryAnalyticsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDiscoveryAnalyticsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -177,16 +194,15 @@ public class ListDiscoveryAnalyticsRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -196,12 +212,13 @@ public class ListDiscoveryAnalyticsRequest
             return this;
         }
 
-        /** Attribute by which the discovery analytics data should be grouped. */
+        /**
+         * Attribute by which the discovery analytics data should be grouped.
+         */
         private GroupBy groupBy = null;
 
         /**
          * Attribute by which the discovery analytics data should be grouped.
-         *
          * @param groupBy the value to set
          * @return this builder instance
          */
@@ -210,12 +227,13 @@ public class ListDiscoveryAnalyticsRequest
             return this;
         }
 
-        /** A filter to return only items related to a specific target OCID. */
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -231,7 +249,6 @@ public class ListDiscoveryAnalyticsRequest
 
         /**
          * A filter to return only the resources that match the specified sensitive data model OCID.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
@@ -240,12 +257,13 @@ public class ListDiscoveryAnalyticsRequest
             return this;
         }
 
-        /** A filter to return only items related to a specific sensitive type OCID. */
+        /**
+         * A filter to return only items related to a specific sensitive type OCID.
+         */
         private String sensitiveTypeId = null;
 
         /**
          * A filter to return only items related to a specific sensitive type OCID.
-         *
          * @param sensitiveTypeId the value to set
          * @return this builder instance
          */
@@ -255,17 +273,12 @@ public class ListDiscoveryAnalyticsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -275,19 +288,12 @@ public class ListDiscoveryAnalyticsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -296,12 +302,13 @@ public class ListDiscoveryAnalyticsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -311,16 +318,15 @@ public class ListDiscoveryAnalyticsRequest
         }
 
         /**
-         * A filter to return only the common sensitive type resources. Common sensitive types
-         * belong to library sensitive types which are frequently used to perform sensitive data
-         * discovery.
+         * A filter to return only the common sensitive type resources. Common sensitive types belong to
+         * library sensitive types which are frequently used to perform sensitive data discovery.
+         *
          */
         private Boolean isCommon = null;
 
         /**
-         * A filter to return only the common sensitive type resources. Common sensitive types
-         * belong to library sensitive types which are frequently used to perform sensitive data
-         * discovery.
+         * A filter to return only the common sensitive type resources. Common sensitive types belong to
+         * library sensitive types which are frequently used to perform sensitive data discovery.
          *
          * @param isCommon the value to set
          * @return this builder instance
@@ -332,19 +338,18 @@ public class ListDiscoveryAnalyticsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -356,7 +361,6 @@ public class ListDiscoveryAnalyticsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDiscoveryAnalyticsRequest o) {
@@ -378,11 +382,10 @@ public class ListDiscoveryAnalyticsRequest
         /**
          * Build the instance of ListDiscoveryAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDiscoveryAnalyticsRequest
          */
@@ -396,8 +399,7 @@ public class ListDiscoveryAnalyticsRequest
         /**
          * Build the instance of ListDiscoveryAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDiscoveryAnalyticsRequest
@@ -415,15 +417,12 @@ public class ListDiscoveryAnalyticsRequest
             request.opcRequestId = opcRequestId;
             request.isCommon = isCommon;
             return request;
-            // new ListDiscoveryAnalyticsRequest(compartmentId, compartmentIdInSubtree, groupBy,
-            // targetId, sensitiveDataModelId, sensitiveTypeId, limit, page, opcRequestId,
-            // isCommon);
+            // new ListDiscoveryAnalyticsRequest(compartmentId, compartmentIdInSubtree, groupBy, targetId, sensitiveDataModelId, sensitiveTypeId, limit, page, opcRequestId, isCommon);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -442,7 +441,6 @@ public class ListDiscoveryAnalyticsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

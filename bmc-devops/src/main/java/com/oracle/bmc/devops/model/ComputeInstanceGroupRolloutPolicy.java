@@ -5,34 +5,35 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the rollout policy for compute instance group stages. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies the rollout policy for compute instance group stages.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "policyType",
-        defaultImpl = ComputeInstanceGroupRolloutPolicy.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "policyType",
+    defaultImpl = ComputeInstanceGroupRolloutPolicy.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupLinearRolloutPolicyByPercentage.class,
-            name = "COMPUTE_INSTANCE_GROUP_LINEAR_ROLLOUT_POLICY_BY_PERCENTAGE"),
+        value = ComputeInstanceGroupLinearRolloutPolicyByPercentage.class,
+        name = "COMPUTE_INSTANCE_GROUP_LINEAR_ROLLOUT_POLICY_BY_PERCENTAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupLinearRolloutPolicyByCount.class,
-            name = "COMPUTE_INSTANCE_GROUP_LINEAR_ROLLOUT_POLICY_BY_COUNT")
+        value = ComputeInstanceGroupLinearRolloutPolicyByCount.class,
+        name = "COMPUTE_INSTANCE_GROUP_LINEAR_ROLLOUT_POLICY_BY_COUNT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ComputeInstanceGroupRolloutPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"batchDelayInSeconds"})
     protected ComputeInstanceGroupRolloutPolicy(Integer batchDelayInSeconds) {
@@ -40,15 +41,16 @@ public class ComputeInstanceGroupRolloutPolicy
         this.batchDelayInSeconds = batchDelayInSeconds;
     }
 
-    /** The duration of delay between batch rollout. The default delay is 1 minute. */
+    /**
+     * The duration of delay between batch rollout. The default delay is 1 minute.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchDelayInSeconds")
     private final Integer batchDelayInSeconds;
 
     /**
      * The duration of delay between batch rollout. The default delay is 1 minute.
-     *
      * @return the value
-     */
+     **/
     public Integer getBatchDelayInSeconds() {
         return batchDelayInSeconds;
     }
@@ -60,7 +62,6 @@ public class ComputeInstanceGroupRolloutPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -100,16 +101,18 @@ public class ComputeInstanceGroupRolloutPolicy
         return result;
     }
 
-    /** The type of policy used for rolling out a deployment stage. */
-    public enum PolicyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of policy used for rolling out a deployment stage.
+     **/
+    public enum PolicyType {
         ComputeInstanceGroupLinearRolloutPolicyByCount(
                 "COMPUTE_INSTANCE_GROUP_LINEAR_ROLLOUT_POLICY_BY_COUNT"),
         ComputeInstanceGroupLinearRolloutPolicyByPercentage(
                 "COMPUTE_INSTANCE_GROUP_LINEAR_ROLLOUT_POLICY_BY_PERCENTAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

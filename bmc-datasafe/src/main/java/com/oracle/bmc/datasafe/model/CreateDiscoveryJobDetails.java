@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details to create a new data discovery job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Details to create a new data discovery job.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDiscoveryJobDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDiscoveryJobDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDiscoveryJobDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "discoveryType",
@@ -74,139 +73,134 @@ public final class CreateDiscoveryJobDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive
-         * columns in the target database that are not in the sensitive data model. DELETED
-         * identifies columns that are present in the sensitive data model but have been deleted
-         * from the target database. MODIFIED identifies columns that are present in the target
-         * database as well as the sensitive data model but some of their attributes have been
-         * modified. ALL covers all the above three scenarios and reports new, deleted and modified
-         * columns.
-         */
+         * The type of the discovery job. It defines the job's scope.
+         * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
+         * DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database.
+         * MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified.
+         * ALL covers all the above three scenarios and reports new, deleted and modified columns.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
         private DiscoveryJob.DiscoveryType discoveryType;
 
         /**
-         * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive
-         * columns in the target database that are not in the sensitive data model. DELETED
-         * identifies columns that are present in the sensitive data model but have been deleted
-         * from the target database. MODIFIED identifies columns that are present in the target
-         * database as well as the sensitive data model but some of their attributes have been
-         * modified. ALL covers all the above three scenarios and reports new, deleted and modified
-         * columns.
+         * The type of the discovery job. It defines the job's scope.
+         * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
+         * DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database.
+         * MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified.
+         * ALL covers all the above three scenarios and reports new, deleted and modified columns.
          *
          * @param discoveryType the value to set
          * @return this builder
-         */
+         **/
         public Builder discoveryType(DiscoveryJob.DiscoveryType discoveryType) {
             this.discoveryType = discoveryType;
             this.__explicitlySet__.add("discoveryType");
             return this;
         }
-        /** The OCID of the sensitive data model. */
+        /**
+         * The OCID of the sensitive data model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
         private String sensitiveDataModelId;
 
         /**
          * The OCID of the sensitive data model.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             this.__explicitlySet__.add("sensitiveDataModelId");
             return this;
         }
-        /** The OCID of the compartment where the discovery job resource should be created. */
+        /**
+         * The OCID of the compartment where the discovery job resource should be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where the discovery job resource should be created.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name for the discovery job. Does not have to be unique, and it is
-         * changeable. Avoid entering confidential information.
-         */
+         * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the discovery job. Does not have to be unique, and it is
-         * changeable. Avoid entering confidential information.
-         *
+         * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery
-         * attribute of the sensitive data model is used to get the list of schemas.
-         */
+         * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive
+         * data model is used to get the list of schemas.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
         private java.util.List<String> schemasForDiscovery;
 
         /**
-         * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery
-         * attribute of the sensitive data model is used to get the list of schemas.
+         * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive
+         * data model is used to get the list of schemas.
          *
          * @param schemasForDiscovery the value to set
          * @return this builder
-         */
+         **/
         public Builder schemasForDiscovery(java.util.List<String> schemasForDiscovery) {
             this.schemasForDiscovery = schemasForDiscovery;
             this.__explicitlySet__.add("schemasForDiscovery");
             return this;
         }
         /**
-         * The data discovery jobs will scan the tables specified here, including both schemas and
-         * tables. In the absence of explicit input, the list of tables is obtained from the
-         * tablesForDiscovery attribute of the sensitive data model.
-         */
+         * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence
+         * of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablesForDiscovery")
         private java.util.List<TablesForDiscovery> tablesForDiscovery;
 
         /**
-         * The data discovery jobs will scan the tables specified here, including both schemas and
-         * tables. In the absence of explicit input, the list of tables is obtained from the
-         * tablesForDiscovery attribute of the sensitive data model.
+         * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence
+         * of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
          *
          * @param tablesForDiscovery the value to set
          * @return this builder
-         */
+         **/
         public Builder tablesForDiscovery(java.util.List<TablesForDiscovery> tablesForDiscovery) {
             this.tablesForDiscovery = tablesForDiscovery;
             this.__explicitlySet__.add("tablesForDiscovery");
             return this;
         }
         /**
-         * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the
-         * sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the
-         * list of sensitive types.
-         */
+         * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery
+         * attribute of the sensitive data model is used to get the list of sensitive types.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
         private java.util.List<String> sensitiveTypeIdsForDiscovery;
 
         /**
-         * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the
-         * sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the
-         * list of sensitive types.
+         * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery
+         * attribute of the sensitive data model is used to get the list of sensitive types.
          *
          * @param sensitiveTypeIdsForDiscovery the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveTypeIdsForDiscovery(
                 java.util.List<String> sensitiveTypeIdsForDiscovery) {
             this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
@@ -214,19 +208,20 @@ public final class CreateDiscoveryJobDetails
             return this;
         }
         /**
-         * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive
-         * types present in sensitive type group will be used for discovery.
-         */
+         * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in
+         * sensitive type group will be used for discovery.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeGroupIdsForDiscovery")
         private java.util.List<String> sensitiveTypeGroupIdsForDiscovery;
 
         /**
-         * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive
-         * types present in sensitive type group will be used for discovery.
+         * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in
+         * sensitive type group will be used for discovery.
          *
          * @param sensitiveTypeGroupIdsForDiscovery the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveTypeGroupIdsForDiscovery(
                 java.util.List<String> sensitiveTypeGroupIdsForDiscovery) {
             this.sensitiveTypeGroupIdsForDiscovery = sensitiveTypeGroupIdsForDiscovery;
@@ -234,56 +229,54 @@ public final class CreateDiscoveryJobDetails
             return this;
         }
         /**
-         * Indicates if the discovery job should collect and store sample data values for the
-         * discovered columns. Sample data helps review the discovered columns and ensure that they
-         * actually contain sensitive data. As it collects original data from the target database,
-         * it's disabled by default and should be used only if it's acceptable to store sample data
-         * in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected
-         * for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-         */
+         * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data
+         * helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original
+         * data from the target database, it's disabled by default and should be used only if it's acceptable to store sample
+         * data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the
+         * following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
         private Boolean isSampleDataCollectionEnabled;
 
         /**
-         * Indicates if the discovery job should collect and store sample data values for the
-         * discovered columns. Sample data helps review the discovered columns and ensure that they
-         * actually contain sensitive data. As it collects original data from the target database,
-         * it's disabled by default and should be used only if it's acceptable to store sample data
-         * in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected
-         * for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+         * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data
+         * helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original
+         * data from the target database, it's disabled by default and should be used only if it's acceptable to store sample
+         * data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the
+         * following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
          *
          * @param isSampleDataCollectionEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isSampleDataCollectionEnabled(Boolean isSampleDataCollectionEnabled) {
             this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
             this.__explicitlySet__.add("isSampleDataCollectionEnabled");
             return this;
         }
         /**
-         * Indicates if the discovery job should identify potential application-level
-         * (non-dictionary) referential relationships between columns. Note that data discovery
-         * automatically identifies and adds database-level (dictionary-defined) relationships. This
-         * option helps identify application-level relationships that are not defined in the
-         * database dictionary, which in turn, helps identify additional sensitive columns and
-         * preserve referential integrity during data masking. It's disabled by default and should
-         * be used only if there is a need to identify application-level relationships.
-         */
+         * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships
+         * between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined)
+         * relationships. This option helps identify application-level relationships that are not defined in the database
+         * dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during
+         * data masking. It's disabled by default and should be used only if there is a need to identify application-level
+         * relationships.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
         private Boolean isAppDefinedRelationDiscoveryEnabled;
 
         /**
-         * Indicates if the discovery job should identify potential application-level
-         * (non-dictionary) referential relationships between columns. Note that data discovery
-         * automatically identifies and adds database-level (dictionary-defined) relationships. This
-         * option helps identify application-level relationships that are not defined in the
-         * database dictionary, which in turn, helps identify additional sensitive columns and
-         * preserve referential integrity during data masking. It's disabled by default and should
-         * be used only if there is a need to identify application-level relationships.
+         * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships
+         * between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined)
+         * relationships. This option helps identify application-level relationships that are not defined in the database
+         * dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during
+         * data masking. It's disabled by default and should be used only if there is a need to identify application-level
+         * relationships.
          *
          * @param isAppDefinedRelationDiscoveryEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAppDefinedRelationDiscoveryEnabled(
                 Boolean isAppDefinedRelationDiscoveryEnabled) {
             this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
@@ -291,94 +284,86 @@ public final class CreateDiscoveryJobDetails
             return this;
         }
         /**
-         * Indicates if all the schemas should be scanned by the discovery job. If it is set to
-         * true, sensitive data is discovered in all schemas (except for schemas maintained by
-         * Oracle). If both attributes are not provided, the configuration from the sensitive data
-         * model is used.
-         */
+         * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+         * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
+         * from the sensitive data model is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
         private Boolean isIncludeAllSchemas;
 
         /**
-         * Indicates if all the schemas should be scanned by the discovery job. If it is set to
-         * true, sensitive data is discovered in all schemas (except for schemas maintained by
-         * Oracle). If both attributes are not provided, the configuration from the sensitive data
-         * model is used.
+         * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+         * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
+         * from the sensitive data model is used.
          *
          * @param isIncludeAllSchemas the value to set
          * @return this builder
-         */
+         **/
         public Builder isIncludeAllSchemas(Boolean isIncludeAllSchemas) {
             this.isIncludeAllSchemas = isIncludeAllSchemas;
             this.__explicitlySet__.add("isIncludeAllSchemas");
             return this;
         }
         /**
-         * Indicates if all the existing sensitive types should be used by the discovery job. If
-         * it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive
-         * types are used for data discovery. If both attributes are not provided, the configuration
-         * from the sensitive data model is used.
-         */
+         * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the
+         * sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both
+         * attributes are not provided, the configuration from the sensitive data model is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSensitiveTypes")
         private Boolean isIncludeAllSensitiveTypes;
 
         /**
-         * Indicates if all the existing sensitive types should be used by the discovery job. If
-         * it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive
-         * types are used for data discovery. If both attributes are not provided, the configuration
-         * from the sensitive data model is used.
+         * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the
+         * sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both
+         * attributes are not provided, the configuration from the sensitive data model is used.
          *
          * @param isIncludeAllSensitiveTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder isIncludeAllSensitiveTypes(Boolean isIncludeAllSensitiveTypes) {
             this.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
             this.__explicitlySet__.add("isIncludeAllSensitiveTypes");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -462,7 +447,9 @@ public final class CreateDiscoveryJobDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -472,277 +459,267 @@ public final class CreateDiscoveryJobDetails
     }
 
     /**
-     * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive
-     * columns in the target database that are not in the sensitive data model. DELETED identifies
-     * columns that are present in the sensitive data model but have been deleted from the target
-     * database. MODIFIED identifies columns that are present in the target database as well as the
-     * sensitive data model but some of their attributes have been modified. ALL covers all the
-     * above three scenarios and reports new, deleted and modified columns.
-     */
+     * The type of the discovery job. It defines the job's scope.
+     * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
+     * DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database.
+     * MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified.
+     * ALL covers all the above three scenarios and reports new, deleted and modified columns.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
     private final DiscoveryJob.DiscoveryType discoveryType;
 
     /**
-     * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive
-     * columns in the target database that are not in the sensitive data model. DELETED identifies
-     * columns that are present in the sensitive data model but have been deleted from the target
-     * database. MODIFIED identifies columns that are present in the target database as well as the
-     * sensitive data model but some of their attributes have been modified. ALL covers all the
-     * above three scenarios and reports new, deleted and modified columns.
+     * The type of the discovery job. It defines the job's scope.
+     * NEW identifies new sensitive columns in the target database that are not in the sensitive data model.
+     * DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database.
+     * MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified.
+     * ALL covers all the above three scenarios and reports new, deleted and modified columns.
      *
      * @return the value
-     */
+     **/
     public DiscoveryJob.DiscoveryType getDiscoveryType() {
         return discoveryType;
     }
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
     private final String sensitiveDataModelId;
 
     /**
      * The OCID of the sensitive data model.
-     *
      * @return the value
-     */
+     **/
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
 
-    /** The OCID of the compartment where the discovery job resource should be created. */
+    /**
+     * The OCID of the compartment where the discovery job resource should be created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the discovery job resource should be created.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable.
-     * Avoid entering confidential information.
-     */
+     * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable.
-     * Avoid entering confidential information.
-     *
+     * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery
-     * attribute of the sensitive data model is used to get the list of schemas.
-     */
+     * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive
+     * data model is used to get the list of schemas.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemasForDiscovery")
     private final java.util.List<String> schemasForDiscovery;
 
     /**
-     * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery
-     * attribute of the sensitive data model is used to get the list of schemas.
+     * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive
+     * data model is used to get the list of schemas.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSchemasForDiscovery() {
         return schemasForDiscovery;
     }
 
     /**
-     * The data discovery jobs will scan the tables specified here, including both schemas and
-     * tables. In the absence of explicit input, the list of tables is obtained from the
-     * tablesForDiscovery attribute of the sensitive data model.
-     */
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence
+     * of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablesForDiscovery")
     private final java.util.List<TablesForDiscovery> tablesForDiscovery;
 
     /**
-     * The data discovery jobs will scan the tables specified here, including both schemas and
-     * tables. In the absence of explicit input, the list of tables is obtained from the
-     * tablesForDiscovery attribute of the sensitive data model.
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence
+     * of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
      *
      * @return the value
-     */
+     **/
     public java.util.List<TablesForDiscovery> getTablesForDiscovery() {
         return tablesForDiscovery;
     }
 
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the
-     * sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of
-     * sensitive types.
-     */
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery
+     * attribute of the sensitive data model is used to get the list of sensitive types.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeIdsForDiscovery")
     private final java.util.List<String> sensitiveTypeIdsForDiscovery;
 
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the
-     * sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of
-     * sensitive types.
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery
+     * attribute of the sensitive data model is used to get the list of sensitive types.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSensitiveTypeIdsForDiscovery() {
         return sensitiveTypeIdsForDiscovery;
     }
 
     /**
-     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive
-     * types present in sensitive type group will be used for discovery.
-     */
+     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in
+     * sensitive type group will be used for discovery.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeGroupIdsForDiscovery")
     private final java.util.List<String> sensitiveTypeGroupIdsForDiscovery;
 
     /**
-     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive
-     * types present in sensitive type group will be used for discovery.
+     * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in
+     * sensitive type group will be used for discovery.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSensitiveTypeGroupIdsForDiscovery() {
         return sensitiveTypeGroupIdsForDiscovery;
     }
 
     /**
-     * Indicates if the discovery job should collect and store sample data values for the discovered
-     * columns. Sample data helps review the discovered columns and ensure that they actually
-     * contain sensitive data. As it collects original data from the target database, it's disabled
-     * by default and should be used only if it's acceptable to store sample data in Data Safe's
-     * repository in Oracle Cloud. Note that sample data values are not collected for columns with
-     * the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-     */
+     * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data
+     * helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original
+     * data from the target database, it's disabled by default and should be used only if it's acceptable to store sample
+     * data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the
+     * following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataCollectionEnabled")
     private final Boolean isSampleDataCollectionEnabled;
 
     /**
-     * Indicates if the discovery job should collect and store sample data values for the discovered
-     * columns. Sample data helps review the discovered columns and ensure that they actually
-     * contain sensitive data. As it collects original data from the target database, it's disabled
-     * by default and should be used only if it's acceptable to store sample data in Data Safe's
-     * repository in Oracle Cloud. Note that sample data values are not collected for columns with
-     * the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
+     * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data
+     * helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original
+     * data from the target database, it's disabled by default and should be used only if it's acceptable to store sample
+     * data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the
+     * following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSampleDataCollectionEnabled() {
         return isSampleDataCollectionEnabled;
     }
 
     /**
-     * Indicates if the discovery job should identify potential application-level (non-dictionary)
-     * referential relationships between columns. Note that data discovery automatically identifies
-     * and adds database-level (dictionary-defined) relationships. This option helps identify
-     * application-level relationships that are not defined in the database dictionary, which in
-     * turn, helps identify additional sensitive columns and preserve referential integrity during
-     * data masking. It's disabled by default and should be used only if there is a need to identify
-     * application-level relationships.
-     */
+     * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships
+     * between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined)
+     * relationships. This option helps identify application-level relationships that are not defined in the database
+     * dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during
+     * data masking. It's disabled by default and should be used only if there is a need to identify application-level
+     * relationships.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAppDefinedRelationDiscoveryEnabled")
     private final Boolean isAppDefinedRelationDiscoveryEnabled;
 
     /**
-     * Indicates if the discovery job should identify potential application-level (non-dictionary)
-     * referential relationships between columns. Note that data discovery automatically identifies
-     * and adds database-level (dictionary-defined) relationships. This option helps identify
-     * application-level relationships that are not defined in the database dictionary, which in
-     * turn, helps identify additional sensitive columns and preserve referential integrity during
-     * data masking. It's disabled by default and should be used only if there is a need to identify
-     * application-level relationships.
+     * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships
+     * between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined)
+     * relationships. This option helps identify application-level relationships that are not defined in the database
+     * dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during
+     * data masking. It's disabled by default and should be used only if there is a need to identify application-level
+     * relationships.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAppDefinedRelationDiscoveryEnabled() {
         return isAppDefinedRelationDiscoveryEnabled;
     }
 
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true,
-     * sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If
-     * both attributes are not provided, the configuration from the sensitive data model is used.
-     */
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+     * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
+     * from the sensitive data model is used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSchemas")
     private final Boolean isIncludeAllSchemas;
 
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true,
-     * sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If
-     * both attributes are not provided, the configuration from the sensitive data model is used.
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+     * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
+     * from the sensitive data model is used.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsIncludeAllSchemas() {
         return isIncludeAllSchemas;
     }
 
     /**
-     * Indicates if all the existing sensitive types should be used by the discovery job. If it's
-     * set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types
-     * are used for data discovery. If both attributes are not provided, the configuration from the
-     * sensitive data model is used.
-     */
+     * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the
+     * sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both
+     * attributes are not provided, the configuration from the sensitive data model is used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeAllSensitiveTypes")
     private final Boolean isIncludeAllSensitiveTypes;
 
     /**
-     * Indicates if all the existing sensitive types should be used by the discovery job. If it's
-     * set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types
-     * are used for data discovery. If both attributes are not provided, the configuration from the
-     * sensitive data model is used.
+     * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the
+     * sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both
+     * attributes are not provided, the configuration from the sensitive data model is used.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsIncludeAllSensitiveTypes() {
         return isIncludeAllSensitiveTypes;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -754,7 +731,6 @@ public final class CreateDiscoveryJobDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

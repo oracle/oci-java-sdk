@@ -5,22 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Details of a dependency an object or feature defines on another. For example, a source may depend
- * on a parser either directly or indirectly. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Details of a dependency an object or feature defines on another. For
+ * example, a source may depend on a parser either directly or indirectly.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Dependency.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Dependency extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Dependency extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "referenceType", "referenceId"})
     public Dependency(String type, String referenceType, Long referenceId) {
@@ -32,46 +31,49 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The dependency type. */
+        /**
+         * The dependency type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The dependency type.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The type of reference that defines the dependency. */
+        /**
+         * The type of reference that defines the dependency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceType")
         private String referenceType;
 
         /**
          * The type of reference that defines the dependency.
-         *
          * @param referenceType the value to set
          * @return this builder
-         */
+         **/
         public Builder referenceType(String referenceType) {
             this.referenceType = referenceType;
             this.__explicitlySet__.add("referenceType");
             return this;
         }
-        /** The unique identifier of the reference, if available. */
+        /**
+         * The unique identifier of the reference, if available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceId")
         private Long referenceId;
 
         /**
          * The unique identifier of the reference, if available.
-         *
          * @param referenceId the value to set
          * @return this builder
-         */
+         **/
         public Builder referenceId(Long referenceId) {
             this.referenceId = referenceId;
             this.__explicitlySet__.add("referenceId");
@@ -104,7 +106,9 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +117,44 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The dependency type. */
+    /**
+     * The dependency type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The dependency type.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** The type of reference that defines the dependency. */
+    /**
+     * The type of reference that defines the dependency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceType")
     private final String referenceType;
 
     /**
      * The type of reference that defines the dependency.
-     *
      * @return the value
-     */
+     **/
     public String getReferenceType() {
         return referenceType;
     }
 
-    /** The unique identifier of the reference, if available. */
+    /**
+     * The unique identifier of the reference, if available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceId")
     private final Long referenceId;
 
     /**
      * The unique identifier of the reference, if available.
-     *
      * @return the value
-     */
+     **/
     public Long getReferenceId() {
         return referenceId;
     }
@@ -159,7 +166,6 @@ public final class Dependency extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

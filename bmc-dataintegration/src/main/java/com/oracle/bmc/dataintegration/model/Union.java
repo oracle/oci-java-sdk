@@ -5,24 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about a union object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The information about a union object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Union.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Union extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -133,31 +132,33 @@ public final class Union extends Operator {
             this.__explicitlySet__.add("opConfigValues");
             return this;
         }
-        /** unionType */
+        /**
+         * unionType
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unionType")
         private UnionType unionType;
 
         /**
          * unionType
-         *
          * @param unionType the value to set
          * @return this builder
-         */
+         **/
         public Builder unionType(UnionType unionType) {
             this.unionType = unionType;
             this.__explicitlySet__.add("unionType");
             return this;
         }
-        /** The information about the union all. */
+        /**
+         * The information about the union all.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAll")
         private Boolean isAll;
 
         /**
          * The information about the union all.
-         *
          * @param isAll the value to set
          * @return this builder
-         */
+         **/
         public Builder isAll(Boolean isAll) {
             this.isAll = isAll;
             this.__explicitlySet__.add("isAll");
@@ -238,7 +239,9 @@ public final class Union extends Operator {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -280,14 +283,16 @@ public final class Union extends Operator {
         this.isAll = isAll;
     }
 
-    /** unionType */
-    public enum UnionType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * unionType
+     **/
+    public enum UnionType {
         Name("NAME"),
         Position("POSITION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -326,28 +331,30 @@ public final class Union extends Operator {
             return UnknownEnumValue;
         }
     };
-    /** unionType */
+    /**
+     * unionType
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unionType")
     private final UnionType unionType;
 
     /**
      * unionType
-     *
      * @return the value
-     */
+     **/
     public UnionType getUnionType() {
         return unionType;
     }
 
-    /** The information about the union all. */
+    /**
+     * The information about the union all.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAll")
     private final Boolean isAll;
 
     /**
      * The information about the union all.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAll() {
         return isAll;
     }
@@ -359,7 +366,6 @@ public final class Union extends Operator {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

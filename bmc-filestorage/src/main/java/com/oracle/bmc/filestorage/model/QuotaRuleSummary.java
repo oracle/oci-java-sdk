@@ -5,22 +5,20 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Summary information for a principal's usage and quota rule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Summary information for a principal's usage and quota rule.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QuotaRuleSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class QuotaRuleSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class QuotaRuleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -64,44 +62,41 @@ public final class QuotaRuleSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the quota rule. It is the base64 encoded string of the tuple
-         * <principalId, principalType, isHardQuota>.
-         */
+         * The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The identifier of the quota rule. It is the base64 encoded string of the tuple
-         * <principalId, principalType, isHardQuota>.
-         *
+         * The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * file system.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * file system.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
          * @param fileSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = fileSystemId;
             this.__explicitlySet__.add("fileSystemId");
             return this;
         }
-        /** The type of the owner of this quota rule and usage. */
+        /**
+         * The type of the owner of this quota rule and usage.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalType")
         private PrincipalType principalType;
 
@@ -110,76 +105,82 @@ public final class QuotaRuleSummary
          *
          * @param principalType the value to set
          * @return this builder
-         */
+         **/
         public Builder principalType(PrincipalType principalType) {
             this.principalType = principalType;
             this.__explicitlySet__.add("principalType");
             return this;
         }
         /**
-         * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-         * operating systems use this integer value to identify a user or group to manage access
-         * control.
-         */
+         * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+         * identify a user or group to manage access control.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalId")
         private Integer principalId;
 
         /**
-         * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-         * operating systems use this integer value to identify a user or group to manage access
-         * control.
+         * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+         * identify a user or group to manage access control.
          *
          * @param principalId the value to set
          * @return this builder
-         */
+         **/
         public Builder principalId(Integer principalId) {
             this.principalId = principalId;
             this.__explicitlySet__.add("principalId");
             return this;
         }
         /**
-         * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule
-         * is enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-         * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-         * quota rule is violated.
-         */
+         * Whether the quota rule will be enforced.
+         * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+         * exceeds the hard quota limit.
+         * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHardQuota")
         private Boolean isHardQuota;
 
         /**
-         * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule
-         * is enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-         * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-         * quota rule is violated.
+         * Whether the quota rule will be enforced.
+         * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+         * exceeds the hard quota limit.
+         * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
          *
          * @param isHardQuota the value to set
          * @return this builder
-         */
+         **/
         public Builder isHardQuota(Boolean isHardQuota) {
             this.isHardQuota = isHardQuota;
             this.__explicitlySet__.add("isHardQuota");
             return this;
         }
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-         * confidential information. Example: {@code UserXYZ's quota}
-         */
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * Example: {@code UserXYZ's quota}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-         * confidential information. Example: {@code UserXYZ's quota}
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * Example: {@code UserXYZ's quota}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The usage value corresponding to this principal in bytes. */
+        /**
+         * The usage value corresponding to this principal in bytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageInBytes")
         private Long usageInBytes;
 
@@ -188,13 +189,16 @@ public final class QuotaRuleSummary
          *
          * @param usageInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder usageInBytes(Long usageInBytes) {
             this.usageInBytes = usageInBytes;
             this.__explicitlySet__.add("usageInBytes");
             return this;
         }
-        /** The value of the quota rule in gigabytes. */
+        /**
+         * The value of the quota rule in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quotaLimitInGigabytes")
         private Integer quotaLimitInGigabytes;
 
@@ -203,76 +207,79 @@ public final class QuotaRuleSummary
          *
          * @param quotaLimitInGigabytes the value to set
          * @return this builder
-         */
+         **/
         public Builder quotaLimitInGigabytes(Integer quotaLimitInGigabytes) {
             this.quotaLimitInGigabytes = quotaLimitInGigabytes;
             this.__explicitlySet__.add("quotaLimitInGigabytes");
             return this;
         }
         /**
-         * The date and time the quota rule was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time the quota rule was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the quota rule was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the quota rule was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the quota rule was last updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time the quota rule was last updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the quota rule was last updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the quota rule was last updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * An option to display only the users or groups that violate their quota rules. If {@code
-         * areViolatorsOnly} is false, results report all the quota and usage. If {@code
-         * areViolatorsOnly} is true, results only report the quota and usage for the users or
-         * groups that violate their quota rules.
-         */
+         * An option to display only the users or groups that violate their quota rules.
+         * If {@code areViolatorsOnly} is false, results report all the quota and usage.
+         * If {@code areViolatorsOnly} is true, results only report the quota and usage for
+         * the users or groups that violate their quota rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areViolatorsOnly")
         private Boolean areViolatorsOnly;
 
         /**
-         * An option to display only the users or groups that violate their quota rules. If {@code
-         * areViolatorsOnly} is false, results report all the quota and usage. If {@code
-         * areViolatorsOnly} is true, results only report the quota and usage for the users or
-         * groups that violate their quota rules.
+         * An option to display only the users or groups that violate their quota rules.
+         * If {@code areViolatorsOnly} is false, results report all the quota and usage.
+         * If {@code areViolatorsOnly} is true, results only report the quota and usage for
+         * the users or groups that violate their quota rules.
          *
          * @param areViolatorsOnly the value to set
          * @return this builder
-         */
+         **/
         public Builder areViolatorsOnly(Boolean areViolatorsOnly) {
             this.areViolatorsOnly = areViolatorsOnly;
             this.__explicitlySet__.add("areViolatorsOnly");
@@ -341,7 +348,9 @@ public final class QuotaRuleSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -351,41 +360,38 @@ public final class QuotaRuleSummary
     }
 
     /**
-     * The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId,
-     * principalType, isHardQuota>.
-     */
+     * The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId,
-     * principalType, isHardQuota>.
-     *
+     * The identifier of the quota rule. It is the base64 encoded string of the tuple <principalId, principalType, isHardQuota>.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
-     * system.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
-     * system.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * @return the value
-     */
+     **/
     public String getFileSystemId() {
         return fileSystemId;
     }
 
-    /** The type of the owner of this quota rule and usage. */
-    public enum PrincipalType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the owner of this quota rule and usage.
+     *
+     **/
+    public enum PrincipalType {
         FileSystemLevel("FILE_SYSTEM_LEVEL"),
         DefaultGroup("DEFAULT_GROUP"),
         DefaultUser("DEFAULT_USER"),
@@ -393,8 +399,8 @@ public final class QuotaRuleSummary
         IndividualUser("INDIVIDUAL_USER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -433,7 +439,10 @@ public final class QuotaRuleSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of the owner of this quota rule and usage. */
+    /**
+     * The type of the owner of this quota rule and usage.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalType")
     private final PrincipalType principalType;
 
@@ -441,69 +450,75 @@ public final class QuotaRuleSummary
      * The type of the owner of this quota rule and usage.
      *
      * @return the value
-     */
+     **/
     public PrincipalType getPrincipalType() {
         return principalType;
     }
 
     /**
-     * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-     * operating systems use this integer value to identify a user or group to manage access
-     * control.
-     */
+     * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+     * identify a user or group to manage access control.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalId")
     private final Integer principalId;
 
     /**
-     * An identifier for the user or the group associated with quota rule and usage. UNIX-like
-     * operating systems use this integer value to identify a user or group to manage access
-     * control.
+     * An identifier for the user or the group associated with quota rule and usage. UNIX-like operating systems use this integer value to
+     * identify a user or group to manage access control.
      *
      * @return the value
-     */
+     **/
     public Integer getPrincipalId() {
         return principalId;
     }
 
     /**
-     * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule is
-     * enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-     * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-     * quota rule is violated.
-     */
+     * Whether the quota rule will be enforced.
+     * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+     * exceeds the hard quota limit.
+     * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHardQuota")
     private final Boolean isHardQuota;
 
     /**
-     * Whether the quota rule will be enforced. If {@code isHardQuota} is true, the quota rule is
-     * enforced so that the write is blocked if usage exceeds the hard quota limit. If {@code
-     * isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the
-     * quota rule is violated.
+     * Whether the quota rule will be enforced.
+     * If {@code isHardQuota} is true, the quota rule is enforced so that the write is blocked if usage
+     * exceeds the hard quota limit.
+     * If {@code isHardQuota} is false, writes succeed even if usage exceeds the soft quota limit, but the quota rule is violated.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHardQuota() {
         return isHardQuota;
     }
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-     * confidential information. Example: {@code UserXYZ's quota}
-     */
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * Example: {@code UserXYZ's quota}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-     * confidential information. Example: {@code UserXYZ's quota}
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * Example: {@code UserXYZ's quota}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The usage value corresponding to this principal in bytes. */
+    /**
+     * The usage value corresponding to this principal in bytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageInBytes")
     private final Long usageInBytes;
 
@@ -511,12 +526,15 @@ public final class QuotaRuleSummary
      * The usage value corresponding to this principal in bytes.
      *
      * @return the value
-     */
+     **/
     public Long getUsageInBytes() {
         return usageInBytes;
     }
 
-    /** The value of the quota rule in gigabytes. */
+    /**
+     * The value of the quota rule in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quotaLimitInGigabytes")
     private final Integer quotaLimitInGigabytes;
 
@@ -524,70 +542,73 @@ public final class QuotaRuleSummary
      * The value of the quota rule in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Integer getQuotaLimitInGigabytes() {
         return quotaLimitInGigabytes;
     }
 
     /**
-     * The date and time the quota rule was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time the quota rule was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the quota rule was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the quota rule was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the quota rule was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time the quota rule was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the quota rule was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the quota rule was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * An option to display only the users or groups that violate their quota rules. If {@code
-     * areViolatorsOnly} is false, results report all the quota and usage. If {@code
-     * areViolatorsOnly} is true, results only report the quota and usage for the users or groups
-     * that violate their quota rules.
-     */
+     * An option to display only the users or groups that violate their quota rules.
+     * If {@code areViolatorsOnly} is false, results report all the quota and usage.
+     * If {@code areViolatorsOnly} is true, results only report the quota and usage for
+     * the users or groups that violate their quota rules.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areViolatorsOnly")
     private final Boolean areViolatorsOnly;
 
     /**
-     * An option to display only the users or groups that violate their quota rules. If {@code
-     * areViolatorsOnly} is false, results report all the quota and usage. If {@code
-     * areViolatorsOnly} is true, results only report the quota and usage for the users or groups
-     * that violate their quota rules.
+     * An option to display only the users or groups that violate their quota rules.
+     * If {@code areViolatorsOnly} is false, results report all the quota and usage.
+     * If {@code areViolatorsOnly} is true, results only report the quota and usage for
+     * the users or groups that violate their quota rules.
      *
      * @return the value
-     */
+     **/
     public Boolean getAreViolatorsOnly() {
         return areViolatorsOnly;
     }
@@ -599,7 +620,6 @@ public final class QuotaRuleSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

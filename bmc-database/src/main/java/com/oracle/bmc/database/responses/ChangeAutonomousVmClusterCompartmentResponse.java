@@ -6,15 +6,16 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ChangeAutonomousVmClusterCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** Unique Oracle-assigned identifier of the work request. */
+    /**
+     * Unique Oracle-assigned identifier of the work request.
+     */
     private String opcWorkRequestId;
 
     /**
      * Unique Oracle-assigned identifier of the work request.
-     *
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -22,14 +23,15 @@ public class ChangeAutonomousVmClusterCompartmentResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -45,7 +47,7 @@ public class ChangeAutonomousVmClusterCompartmentResponse
     })
     private ChangeAutonomousVmClusterCompartmentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
@@ -53,31 +55,28 @@ public class ChangeAutonomousVmClusterCompartmentResponse
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ChangeAutonomousVmClusterCompartmentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Unique Oracle-assigned identifier of the work request. */
+        /**
+         * Unique Oracle-assigned identifier of the work request.
+         */
         private String opcWorkRequestId;
 
         /**
          * Unique Oracle-assigned identifier of the work request.
-         *
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -87,14 +86,15 @@ public class ChangeAutonomousVmClusterCompartmentResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,10 +106,8 @@ public class ChangeAutonomousVmClusterCompartmentResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ChangeAutonomousVmClusterCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -121,10 +119,8 @@ public class ChangeAutonomousVmClusterCompartmentResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ChangeAutonomousVmClusterCompartmentResponse build() {
             return new ChangeAutonomousVmClusterCompartmentResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
@@ -133,7 +129,6 @@ public class ChangeAutonomousVmClusterCompartmentResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,26 +6,23 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudExadataInfrastructureExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateCloudExadataInfrastructureRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateCloudExadataInfrastructureRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateCloudExadataInfrastructureRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails> {
 
     /**
-     * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-     * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
+     * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
+     *
      */
     private com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails
             createCloudExadataInfrastructureDetails;
 
     /**
-     * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-     * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
+     * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
+     *
      */
     public com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails
             getCreateCloudExadataInfrastructureDetails() {
@@ -34,33 +31,40 @@ public class CreateCloudExadataInfrastructureRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -73,21 +77,19 @@ public class CreateCloudExadataInfrastructureRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateCloudExadataInfrastructureRequest,
                     com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-         * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm)
-         * instance.
+         * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
+         *
          */
         private com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails
                 createCloudExadataInfrastructureDetails = null;
 
         /**
-         * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-         * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm)
-         * instance.
+         * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
          *
          * @param createCloudExadataInfrastructureDetails the value to set
          * @return this builder instance
@@ -101,19 +103,20 @@ public class CreateCloudExadataInfrastructureRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -123,7 +126,10 @@ public class CreateCloudExadataInfrastructureRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -139,19 +145,18 @@ public class CreateCloudExadataInfrastructureRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -163,7 +168,6 @@ public class CreateCloudExadataInfrastructureRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateCloudExadataInfrastructureRequest o) {
@@ -176,14 +180,12 @@ public class CreateCloudExadataInfrastructureRequest
         }
 
         /**
-         * Build the instance of CreateCloudExadataInfrastructureRequest as configured by this
-         * builder
+         * Build the instance of CreateCloudExadataInfrastructureRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateCloudExadataInfrastructureRequest
          */
@@ -196,7 +198,6 @@ public class CreateCloudExadataInfrastructureRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -208,11 +209,9 @@ public class CreateCloudExadataInfrastructureRequest
         }
 
         /**
-         * Build the instance of CreateCloudExadataInfrastructureRequest as configured by this
-         * builder
+         * Build the instance of CreateCloudExadataInfrastructureRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateCloudExadataInfrastructureRequest
@@ -225,14 +224,12 @@ public class CreateCloudExadataInfrastructureRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateCloudExadataInfrastructureRequest(createCloudExadataInfrastructureDetails,
-            // opcRetryToken, opcRequestId);
+            // new CreateCloudExadataInfrastructureRequest(createCloudExadataInfrastructureDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -244,7 +241,6 @@ public class CreateCloudExadataInfrastructureRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

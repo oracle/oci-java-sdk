@@ -5,23 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * High level view of plugin error aggregations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * High level view of plugin error aggregations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PluginErrorAggregationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PluginErrorAggregationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PluginErrorAggregationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"healthyPluginCount", "pluginErrorAggregations"})
     public PluginErrorAggregationSummary(
@@ -34,31 +33,33 @@ public final class PluginErrorAggregationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Count of plugins with no problems. */
+        /**
+         * Count of plugins with no problems.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthyPluginCount")
         private Integer healthyPluginCount;
 
         /**
          * Count of plugins with no problems.
-         *
          * @param healthyPluginCount the value to set
          * @return this builder
-         */
+         **/
         public Builder healthyPluginCount(Integer healthyPluginCount) {
             this.healthyPluginCount = healthyPluginCount;
             this.__explicitlySet__.add("healthyPluginCount");
             return this;
         }
-        /** List of plugin aggregation errors. */
+        /**
+         * List of plugin aggregation errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginErrorAggregations")
         private java.util.List<PluginErrorAggregation> pluginErrorAggregations;
 
         /**
          * List of plugin aggregation errors.
-         *
          * @param pluginErrorAggregations the value to set
          * @return this builder
-         */
+         **/
         public Builder pluginErrorAggregations(
                 java.util.List<PluginErrorAggregation> pluginErrorAggregations) {
             this.pluginErrorAggregations = pluginErrorAggregations;
@@ -91,7 +92,9 @@ public final class PluginErrorAggregationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,28 +103,30 @@ public final class PluginErrorAggregationSummary
         return new Builder().copy(this);
     }
 
-    /** Count of plugins with no problems. */
+    /**
+     * Count of plugins with no problems.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthyPluginCount")
     private final Integer healthyPluginCount;
 
     /**
      * Count of plugins with no problems.
-     *
      * @return the value
-     */
+     **/
     public Integer getHealthyPluginCount() {
         return healthyPluginCount;
     }
 
-    /** List of plugin aggregation errors. */
+    /**
+     * List of plugin aggregation errors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginErrorAggregations")
     private final java.util.List<PluginErrorAggregation> pluginErrorAggregations;
 
     /**
      * List of plugin aggregation errors.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PluginErrorAggregation> getPluginErrorAggregations() {
         return pluginErrorAggregations;
     }
@@ -133,7 +138,6 @@ public final class PluginErrorAggregationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

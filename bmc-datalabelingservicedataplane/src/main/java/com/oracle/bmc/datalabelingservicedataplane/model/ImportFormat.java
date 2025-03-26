@@ -5,21 +5,19 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * File format details used for importing dataset <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * File format details used for importing dataset
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImportFormat.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ImportFormat extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ImportFormat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "version"})
     public ImportFormat(Name name, Version version) {
@@ -30,31 +28,33 @@ public final class ImportFormat extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of import format */
+        /**
+         * Name of import format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
         /**
          * Name of import format
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Version of import format */
+        /**
+         * Version of import format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Version version;
 
         /**
          * Version of import format
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(Version version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -84,7 +84,9 @@ public final class ImportFormat extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,8 +95,10 @@ public final class ImportFormat extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Name of import format */
-    public enum Name implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Name of import format
+     **/
+    public enum Name {
         JsonlConsolidated("JSONL_CONSOLIDATED"),
         JsonlCompactPlusContent("JSONL_COMPACT_PLUS_CONTENT"),
         Conll("CONLL"),
@@ -104,8 +108,8 @@ public final class ImportFormat extends com.oracle.bmc.http.client.internal.Expl
         PascalVoc("PASCAL_VOC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -142,27 +146,30 @@ public final class ImportFormat extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Name of import format */
+    /**
+     * Name of import format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
     /**
      * Name of import format
-     *
      * @return the value
-     */
+     **/
     public Name getName() {
         return name;
     }
 
-    /** Version of import format */
-    public enum Version implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Version of import format
+     **/
+    public enum Version {
         V2003("V2003"),
         V5("V5"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -201,15 +208,16 @@ public final class ImportFormat extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Version of import format */
+    /**
+     * Version of import format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Version version;
 
     /**
      * Version of import format
-     *
      * @return the value
-     */
+     **/
     public Version getVersion() {
         return version;
     }
@@ -221,7 +229,6 @@ public final class ImportFormat extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

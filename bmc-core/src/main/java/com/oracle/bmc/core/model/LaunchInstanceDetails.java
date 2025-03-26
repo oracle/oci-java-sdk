@@ -5,24 +5,24 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Instance launch details. Use the {@code sourceDetails} parameter to specify whether a boot volume
- * or an image should be used to launch a new instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Instance launch details.
+ * Use the {@code sourceDetails} parameter to specify whether a boot volume or an image should be used to launch a new instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LaunchInstanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LaunchInstanceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LaunchInstanceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -127,58 +127,59 @@ public final class LaunchInstanceDetails
     public static class Builder {
         /**
          * The availability domain of the instance.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain of the instance.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The OCID of the compute capacity reservation this instance is launched under. You can opt
-         * out of all default reservations by specifying an empty string as input for this field.
-         * For more information, see [Capacity
-         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-         */
+         * The OCID of the compute capacity reservation this instance is launched under.
+         * You can opt out of all default reservations by specifying an empty string as input for this field.
+         * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
         /**
-         * The OCID of the compute capacity reservation this instance is launched under. You can opt
-         * out of all default reservations by specifying an empty string as input for this field.
-         * For more information, see [Capacity
-         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * The OCID of the compute capacity reservation this instance is launched under.
+         * You can opt out of all default reservations by specifying an empty string as input for this field.
+         * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          * @param capacityReservationId the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -193,7 +194,10 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("createVnicDetails");
             return this;
         }
-        /** The OCID of the dedicated virtual machine host to place the instance on. */
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
         private String dedicatedVmHostId;
 
@@ -202,32 +206,31 @@ public final class LaunchInstanceDetails
          *
          * @param dedicatedVmHostId the value to set
          * @return this builder
-         */
+         **/
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
             this.dedicatedVmHostId = dedicatedVmHostId;
             this.__explicitlySet__.add("dedicatedVmHostId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -235,31 +238,26 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * [Security
-         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-         * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
-         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-         * {"value":"42","mode":"audit"}}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
-         * [Security
-         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-         * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
-         *
-         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-         * {"value":"42","mode":"audit"}}}}
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributes(
                 java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
             this.securityAttributes = securityAttributes;
@@ -267,19 +265,20 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -288,110 +287,114 @@ public final class LaunchInstanceDetails
         /**
          * Additional metadata key/value pairs that you provide. They serve the same purpose and
          * functionality as fields in the {@code metadata} object.
+         * <p>
+         * They are distinguished from {@code metadata} fields in that these can be nested JSON objects
+         * (whereas {@code metadata} fields are string/string maps only).
+         * <p>
+         * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of
+         * 32,000 bytes.
          *
-         * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
-         * objects (whereas {@code metadata} fields are string/string maps only).
-         *
-         * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be
-         * a maximum of 32,000 bytes.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
         private java.util.Map<String, Object> extendedMetadata;
 
         /**
          * Additional metadata key/value pairs that you provide. They serve the same purpose and
          * functionality as fields in the {@code metadata} object.
-         *
-         * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
-         * objects (whereas {@code metadata} fields are string/string maps only).
-         *
-         * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be
-         * a maximum of 32,000 bytes.
+         * <p>
+         * They are distinguished from {@code metadata} fields in that these can be nested JSON objects
+         * (whereas {@code metadata} fields are string/string maps only).
+         * <p>
+         * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of
+         * 32,000 bytes.
          *
          * @param extendedMetadata the value to set
          * @return this builder
-         */
+         **/
         public Builder extendedMetadata(java.util.Map<String, Object> extendedMetadata) {
             this.extendedMetadata = extendedMetadata;
             this.__explicitlySet__.add("extendedMetadata");
             return this;
         }
         /**
-         * A fault domain is a grouping of hardware and infrastructure within an availability
-         * domain. Each availability domain contains three fault domains. Fault domains let you
-         * distribute your instances so that they are not on the same physical hardware within a
-         * single availability domain. A hardware failure or Compute hardware maintenance that
-         * affects one fault domain does not affect instances in other fault domains.
+         * A fault domain is a grouping of hardware and infrastructure within an availability domain.
+         * Each availability domain contains three fault domains. Fault domains let you distribute your
+         * instances so that they are not on the same physical hardware within a single availability domain.
+         * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+         * instances in other fault domains.
+         * <p>
+         * If you do not specify the fault domain, the system selects one for you.
+         * <p>
          *
-         * <p>If you do not specify the fault domain, the system selects one for you.
+         * To get a list of fault domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+         * Identity and Access Management Service API.
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
          *
-         * <p>To get a list of fault domains, use the {@link
-         * #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the Identity
-         * and Access Management Service API.
-         *
-         * <p>Example: {@code FAULT-DOMAIN-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * A fault domain is a grouping of hardware and infrastructure within an availability
-         * domain. Each availability domain contains three fault domains. Fault domains let you
-         * distribute your instances so that they are not on the same physical hardware within a
-         * single availability domain. A hardware failure or Compute hardware maintenance that
-         * affects one fault domain does not affect instances in other fault domains.
+         * A fault domain is a grouping of hardware and infrastructure within an availability domain.
+         * Each availability domain contains three fault domains. Fault domains let you distribute your
+         * instances so that they are not on the same physical hardware within a single availability domain.
+         * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+         * instances in other fault domains.
+         * <p>
+         * If you do not specify the fault domain, the system selects one for you.
+         * <p>
          *
-         * <p>If you do not specify the fault domain, the system selects one for you.
-         *
-         * <p>To get a list of fault domains, use the {@link
-         * #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the Identity
-         * and Access Management Service API.
-         *
-         * <p>Example: {@code FAULT-DOMAIN-1}
+         * To get a list of fault domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+         * Identity and Access Management Service API.
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
          *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The OCID of the cluster placement group of the instance. */
+        /**
+         * The OCID of the cluster placement group of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
          * The OCID of the cluster placement group of the instance.
-         *
          * @param clusterPlacementGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             this.clusterPlacementGroupId = clusterPlacementGroupId;
             this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -399,64 +402,61 @@ public final class LaunchInstanceDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * [compute
-         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
-         * the instance will be created in.
-         */
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
         private String computeClusterId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * [compute
-         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
-         * the instance will be created in.
+         * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
          *
          * @param computeClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder computeClusterId(String computeClusterId) {
             this.computeClusterId = computeClusterId;
             this.__explicitlySet__.add("computeClusterId");
             return this;
         }
         /**
-         * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you
-         * provide both, the values must match.
-         */
+         * Deprecated. Instead use {@code hostnameLabel} in
+         * {@link CreateVnicDetails}.
+         * If you provide both, the values must match.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
         /**
-         * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you
-         * provide both, the values must match.
+         * Deprecated. Instead use {@code hostnameLabel} in
+         * {@link CreateVnicDetails}.
+         * If you provide both, the values must match.
          *
          * @param hostnameLabel the value to set
          * @return this builder
-         */
+         **/
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
             return this;
         }
         /**
-         * Deprecated. Use {@code sourceDetails} with {@link
-         * #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest)
-         * instanceSourceViaImageDetails} source type instead. If you specify values for both, the
-         * values must match.
-         */
+         * Deprecated. Use {@code sourceDetails} with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
+         * source type instead. If you specify values for both, the values must match.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
-         * Deprecated. Use {@code sourceDetails} with {@link
-         * #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest)
-         * instanceSourceViaImageDetails} source type instead. If you specify values for both, the
-         * values must match.
+         * Deprecated. Use {@code sourceDetails} with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
+         * source type instead. If you specify values for both, the values must match.
          *
          * @param imageId the value to set
          * @return this builder
-         */
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -464,66 +464,75 @@ public final class LaunchInstanceDetails
         }
         /**
          * This is an advanced option.
-         *
-         * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on
-         * the instance is configured to run an iPXE script to continue the boot process.
-         *
-         * <p>If you want more control over the boot process, you can provide your own custom iPXE
-         * script that will run when the instance boots. Be aware that the same iPXE script will run
-         * every time an instance boots, not only after the initial LaunchInstance call.
-         *
-         * <p>The default iPXE script connects to the instance's local boot volume over iSCSI and
-         * performs a network boot. If you use a custom iPXE script and want to network-boot from
-         * the instance's local boot volume over iSCSI the same way as the default iPXE script, use
-         * the following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+         * <p>
+         * When a bare metal or virtual machine
+         * instance boots, the iPXE firmware that runs on the instance is
+         * configured to run an iPXE script to continue the boot process.
+         * <p>
+         * If you want more control over the boot process, you can provide
+         * your own custom iPXE script that will run when the instance boots.
+         * Be aware that the same iPXE script will run
+         * every time an instance boots, not only after the initial
+         * LaunchInstance call.
+         * <p>
+         * The default iPXE script connects to the instance's local boot
+         * volume over iSCSI and performs a network boot. If you use a custom iPXE
+         * script and want to network-boot from the instance's local boot volume
+         * over iSCSI the same way as the default iPXE script, use the
+         * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
+         * <p>
+         * If your instance boot volume attachment type is paravirtualized,
+         * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+         * If your instance boot volume attachment type is paravirtualized
+         * and you use custom iPXE to network boot into your instance,
+         * the primary boot volume is attached as a data volume through virtio-scsi drive.
+         * <p>
+         * For more information about the Bring Your Own Image feature of
+         * Oracle Cloud Infrastructure, see
+         * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * <p>
+         * For more information about iPXE, see http://ipxe.org.
          *
-         * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
-         * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
-         * boot volume attachment type is paravirtualized and you use custom iPXE to network boot
-         * into your instance, the primary boot volume is attached as a data volume through
-         * virtio-scsi drive.
-         *
-         * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-         * Infrastructure, see [Bring Your Own
-         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-         *
-         * <p>For more information about iPXE, see http://ipxe.org.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
         private String ipxeScript;
 
         /**
          * This is an advanced option.
-         *
-         * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on
-         * the instance is configured to run an iPXE script to continue the boot process.
-         *
-         * <p>If you want more control over the boot process, you can provide your own custom iPXE
-         * script that will run when the instance boots. Be aware that the same iPXE script will run
-         * every time an instance boots, not only after the initial LaunchInstance call.
-         *
-         * <p>The default iPXE script connects to the instance's local boot volume over iSCSI and
-         * performs a network boot. If you use a custom iPXE script and want to network-boot from
-         * the instance's local boot volume over iSCSI the same way as the default iPXE script, use
-         * the following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+         * <p>
+         * When a bare metal or virtual machine
+         * instance boots, the iPXE firmware that runs on the instance is
+         * configured to run an iPXE script to continue the boot process.
+         * <p>
+         * If you want more control over the boot process, you can provide
+         * your own custom iPXE script that will run when the instance boots.
+         * Be aware that the same iPXE script will run
+         * every time an instance boots, not only after the initial
+         * LaunchInstance call.
+         * <p>
+         * The default iPXE script connects to the instance's local boot
+         * volume over iSCSI and performs a network boot. If you use a custom iPXE
+         * script and want to network-boot from the instance's local boot volume
+         * over iSCSI the same way as the default iPXE script, use the
+         * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
-         *
-         * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
-         * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
-         * boot volume attachment type is paravirtualized and you use custom iPXE to network boot
-         * into your instance, the primary boot volume is attached as a data volume through
-         * virtio-scsi drive.
-         *
-         * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-         * Infrastructure, see [Bring Your Own
-         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-         *
-         * <p>For more information about iPXE, see http://ipxe.org.
+         * <p>
+         * If your instance boot volume attachment type is paravirtualized,
+         * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+         * If your instance boot volume attachment type is paravirtualized
+         * and you use custom iPXE to network boot into your instance,
+         * the primary boot volume is attached as a data volume through virtio-scsi drive.
+         * <p>
+         * For more information about the Bring Your Own Image feature of
+         * Oracle Cloud Infrastructure, see
+         * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * <p>
+         * For more information about iPXE, see http://ipxe.org.
          *
          * @param ipxeScript the value to set
          * @return this builder
-         */
+         **/
         public Builder ipxeScript(String ipxeScript) {
             this.ipxeScript = ipxeScript;
             this.__explicitlySet__.add("ipxeScript");
@@ -568,107 +577,112 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * Custom metadata key/value pairs that you provide, such as the SSH public key required to
-         * connect to the instance.
+         * Custom metadata key/value pairs that you provide, such as the SSH public key
+         * required to connect to the instance.
+         * <p>
+         * A metadata service runs on every launched instance. The service is an HTTP
+         * endpoint listening on 169.254.169.254. You can use the service to:
+         * <p>
+         * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)
+         *   to be used for various system initialization tasks.
+         * <p>
+         * Get information about the instance, including the custom metadata that you
+         *   provide when you launch the instance.
+         * <p>
+         **Providing Cloud-Init Metadata**
+         * <p>
+         * You can use the following metadata key names to provide information to
+         *  Cloud-Init:
+         * <p>
+         **"ssh_authorized_keys"** - Provide one or more public SSH keys to be
+         *  included in the {@code ~/.ssh/authorized_keys} file for the default user on the
+         *  instance. Use a newline character to separate multiple keys. The SSH
+         *  keys must be in the format necessary for the {@code authorized_keys} file, as shown
+         *  in the example below.
+         * <p>
+         **"user_data"** - Provide your own base64-encoded data to be used by
+         *  Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
+         *  information about how to take advantage of user data, see the
+         *  [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         * <p>
+         **Metadata Example**
+         * <p>
+         * "metadata" : {
+         *          "quake_bot_level" : "Severe",
+         *          "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227",
+         *          "user_data" : "<your_public_SSH_key>=="
+         *       }
+         *  **Getting Metadata on the Instance**
+         * <p>
+         * To get information about your instance, connect to the instance using SSH and issue any of the
+         *  following GET requests:
+         * <p>
+         * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+         *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+         *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+         * <p>
+         * You'll get back a response that includes all the instance information; only the metadata information; or
+         *  the metadata information for the specified key name, respectively.
+         * <p>
+         * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of 32,000 bytes.
          *
-         * <p>A metadata service runs on every launched instance. The service is an HTTP endpoint
-         * listening on 169.254.169.254. You can use the service to:
-         *
-         * <p>Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to
-         * be used for various system initialization tasks.
-         *
-         * <p>Get information about the instance, including the custom metadata that you provide
-         * when you launch the instance.
-         *
-         * <p>*Providing Cloud-Init Metadata**
-         *
-         * <p>You can use the following metadata key names to provide information to Cloud-Init:
-         *
-         * <p>*"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the
-         * {@code ~/.ssh/authorized_keys} file for the default user on the instance. Use a newline
-         * character to separate multiple keys. The SSH keys must be in the format necessary for the
-         * {@code authorized_keys} file, as shown in the example below.
-         *
-         * <p>*"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run
-         * custom scripts or provide custom Cloud-Init configuration. For information about how to
-         * take advantage of user data, see the [Cloud-Init
-         * Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-         *
-         * <p>*Metadata Example**
-         *
-         * <p>"metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa
-         * <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
-         * **Getting Metadata on the Instance**
-         *
-         * <p>To get information about your instance, connect to the instance using SSH and issue
-         * any of the following GET requests:
-         *
-         * <p>curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H
-         * "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H
-         * "Authorization: Bearer Oracle"
-         * http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-         *
-         * <p>You'll get back a response that includes all the instance information; only the
-         * metadata information; or the metadata information for the specified key name,
-         * respectively.
-         *
-         * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be
-         * a maximum of 32,000 bytes.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
-         * Custom metadata key/value pairs that you provide, such as the SSH public key required to
-         * connect to the instance.
-         *
-         * <p>A metadata service runs on every launched instance. The service is an HTTP endpoint
-         * listening on 169.254.169.254. You can use the service to:
-         *
-         * <p>Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to
-         * be used for various system initialization tasks.
-         *
-         * <p>Get information about the instance, including the custom metadata that you provide
-         * when you launch the instance.
-         *
-         * <p>*Providing Cloud-Init Metadata**
-         *
-         * <p>You can use the following metadata key names to provide information to Cloud-Init:
-         *
-         * <p>*"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the
-         * {@code ~/.ssh/authorized_keys} file for the default user on the instance. Use a newline
-         * character to separate multiple keys. The SSH keys must be in the format necessary for the
-         * {@code authorized_keys} file, as shown in the example below.
-         *
-         * <p>*"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run
-         * custom scripts or provide custom Cloud-Init configuration. For information about how to
-         * take advantage of user data, see the [Cloud-Init
-         * Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-         *
-         * <p>*Metadata Example**
-         *
-         * <p>"metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa
-         * <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
-         * **Getting Metadata on the Instance**
-         *
-         * <p>To get information about your instance, connect to the instance using SSH and issue
-         * any of the following GET requests:
-         *
-         * <p>curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H
-         * "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H
-         * "Authorization: Bearer Oracle"
-         * http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-         *
-         * <p>You'll get back a response that includes all the instance information; only the
-         * metadata information; or the metadata information for the specified key name,
-         * respectively.
-         *
-         * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be
-         * a maximum of 32,000 bytes.
+         * Custom metadata key/value pairs that you provide, such as the SSH public key
+         * required to connect to the instance.
+         * <p>
+         * A metadata service runs on every launched instance. The service is an HTTP
+         * endpoint listening on 169.254.169.254. You can use the service to:
+         * <p>
+         * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)
+         *   to be used for various system initialization tasks.
+         * <p>
+         * Get information about the instance, including the custom metadata that you
+         *   provide when you launch the instance.
+         * <p>
+         **Providing Cloud-Init Metadata**
+         * <p>
+         * You can use the following metadata key names to provide information to
+         *  Cloud-Init:
+         * <p>
+         **"ssh_authorized_keys"** - Provide one or more public SSH keys to be
+         *  included in the {@code ~/.ssh/authorized_keys} file for the default user on the
+         *  instance. Use a newline character to separate multiple keys. The SSH
+         *  keys must be in the format necessary for the {@code authorized_keys} file, as shown
+         *  in the example below.
+         * <p>
+         **"user_data"** - Provide your own base64-encoded data to be used by
+         *  Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
+         *  information about how to take advantage of user data, see the
+         *  [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         * <p>
+         **Metadata Example**
+         * <p>
+         * "metadata" : {
+         *          "quake_bot_level" : "Severe",
+         *          "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227",
+         *          "user_data" : "<your_public_SSH_key>=="
+         *       }
+         *  **Getting Metadata on the Instance**
+         * <p>
+         * To get information about your instance, connect to the instance using SSH and issue any of the
+         *  following GET requests:
+         * <p>
+         * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+         *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+         *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+         * <p>
+         * You'll get back a response that includes all the instance information; only the metadata information; or
+         *  the metadata information for the specified key name, respectively.
+         * <p>
+         * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of 32,000 bytes.
          *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -684,25 +698,24 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-         * other resources allocated to the instance.
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * <p>
+         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
          *
-         * <p>You can enumerate all available shapes by calling {@link
-         * #listShapes(ListShapesRequest) listShapes}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-         * other resources allocated to the instance.
-         *
-         * <p>You can enumerate all available shapes by calling {@link
-         * #listShapes(ListShapesRequest) listShapes}.
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * <p>
+         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -727,34 +740,38 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * Deprecated. Instead use {@code subnetId} in {@link CreateVnicDetails}. At least one of
-         * them is required; if you provide both, the values must match.
-         */
+         * Deprecated. Instead use {@code subnetId} in
+         * {@link CreateVnicDetails}.
+         * At least one of them is required; if you provide both, the values must match.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * Deprecated. Instead use {@code subnetId} in {@link CreateVnicDetails}. At least one of
-         * them is required; if you provide both, the values must match.
+         * Deprecated. Instead use {@code subnetId} in
+         * {@link CreateVnicDetails}.
+         * At least one of them is required; if you provide both, the values must match.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** Volume attachments to create as part of the launch instance operation. */
+        /**
+         * Volume attachments to create as part of the launch instance operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
         private java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
 
         /**
          * Volume attachments to create as part of the launch instance operation.
-         *
          * @param launchVolumeAttachments the value to set
          * @return this builder
-         */
+         **/
         public Builder launchVolumeAttachments(
                 java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments) {
             this.launchVolumeAttachments = launchVolumeAttachments;
@@ -762,19 +779,16 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-         * This field applies to both block volumes and boot volumes. The default value is false.
-         */
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
         /**
-         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-         * This field applies to both block volumes and boot volumes. The default value is false.
-         *
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
          * @param isPvEncryptionInTransitEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
@@ -790,36 +804,32 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * The OCID of the Instance Configuration containing instance launch details. Any other
-         * fields supplied in this instance launch request will override the details stored in the
-         * Instance Configuration for this instance launch.
-         */
+         * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
         private String instanceConfigurationId;
 
         /**
-         * The OCID of the Instance Configuration containing instance launch details. Any other
-         * fields supplied in this instance launch request will override the details stored in the
-         * Instance Configuration for this instance launch.
-         *
+         * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
          * @param instanceConfigurationId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = instanceConfigurationId;
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
-        /** List of licensing configurations associated with target launch values. */
+        /**
+         * List of licensing configurations associated with target launch values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
         private java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
 
         /**
          * List of licensing configurations associated with target launch values.
-         *
          * @param licensingConfigs the value to set
          * @return this builder
-         */
+         **/
         public Builder licensingConfigs(
                 java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
             this.licensingConfigs = licensingConfigs;
@@ -969,7 +979,9 @@ public final class LaunchInstanceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -980,53 +992,54 @@ public final class LaunchInstanceDetails
 
     /**
      * The availability domain of the instance.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain of the instance.
-     *
-     * <p>Example: {@code Uocm:PHX-AD-1}
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The OCID of the compute capacity reservation this instance is launched under. You can opt out
-     * of all default reservations by specifying an empty string as input for this field. For more
-     * information, see [Capacity
-     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-     */
+     * The OCID of the compute capacity reservation this instance is launched under.
+     * You can opt out of all default reservations by specifying an empty string as input for this field.
+     * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
     /**
-     * The OCID of the compute capacity reservation this instance is launched under. You can opt out
-     * of all default reservations by specifying an empty string as input for this field. For more
-     * information, see [Capacity
-     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * The OCID of the compute capacity reservation this instance is launched under.
+     * You can opt out of all default reservations by specifying an empty string as input for this field.
+     * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * @return the value
-     */
+     **/
     public String getCapacityReservationId() {
         return capacityReservationId;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -1038,7 +1051,10 @@ public final class LaunchInstanceDetails
         return createVnicDetails;
     }
 
-    /** The OCID of the dedicated virtual machine host to place the instance on. */
+    /**
+     * The OCID of the dedicated virtual machine host to place the instance on.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
     private final String dedicatedVmHostId;
 
@@ -1046,76 +1062,71 @@ public final class LaunchInstanceDetails
      * The OCID of the dedicated virtual machine host to place the instance on.
      *
      * @return the value
-     */
+     **/
     public String getDedicatedVmHostId() {
         return dedicatedVmHostId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * [Security
-     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-     * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
-     * policy to control access to ZPR-supported resources.
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
-     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-     * {"value":"42","mode":"audit"}}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * [Security
-     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-     * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
-     * policy to control access to ZPR-supported resources.
-     *
-     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-     * {"value":"42","mode":"audit"}}}}
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
         return securityAttributes;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -1123,28 +1134,29 @@ public final class LaunchInstanceDetails
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and
      * functionality as fields in the {@code metadata} object.
+     * <p>
+     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects
+     * (whereas {@code metadata} fields are string/string maps only).
+     * <p>
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of
+     * 32,000 bytes.
      *
-     * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
-     * objects (whereas {@code metadata} fields are string/string maps only).
-     *
-     * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a
-     * maximum of 32,000 bytes.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     private final java.util.Map<String, Object> extendedMetadata;
 
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and
      * functionality as fields in the {@code metadata} object.
-     *
-     * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
-     * objects (whereas {@code metadata} fields are string/string maps only).
-     *
-     * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a
-     * maximum of 32,000 bytes.
+     * <p>
+     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects
+     * (whereas {@code metadata} fields are string/string maps only).
+     * <p>
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of
+     * 32,000 bytes.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Object> getExtendedMetadata() {
         return extendedMetadata;
     }
@@ -1152,192 +1164,207 @@ public final class LaunchInstanceDetails
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.
      * Each availability domain contains three fault domains. Fault domains let you distribute your
-     * instances so that they are not on the same physical hardware within a single availability
-     * domain. A hardware failure or Compute hardware maintenance that affects one fault domain does
-     * not affect instances in other fault domains.
+     * instances so that they are not on the same physical hardware within a single availability domain.
+     * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+     * instances in other fault domains.
+     * <p>
+     * If you do not specify the fault domain, the system selects one for you.
+     * <p>
      *
-     * <p>If you do not specify the fault domain, the system selects one for you.
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
      *
-     * <p>To get a list of fault domains, use the {@link #listFaultDomains(ListFaultDomainsRequest)
-     * listFaultDomains} operation in the Identity and Access Management Service API.
-     *
-     * <p>Example: {@code FAULT-DOMAIN-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.
      * Each availability domain contains three fault domains. Fault domains let you distribute your
-     * instances so that they are not on the same physical hardware within a single availability
-     * domain. A hardware failure or Compute hardware maintenance that affects one fault domain does
-     * not affect instances in other fault domains.
+     * instances so that they are not on the same physical hardware within a single availability domain.
+     * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+     * instances in other fault domains.
+     * <p>
+     * If you do not specify the fault domain, the system selects one for you.
+     * <p>
      *
-     * <p>If you do not specify the fault domain, the system selects one for you.
-     *
-     * <p>To get a list of fault domains, use the {@link #listFaultDomains(ListFaultDomainsRequest)
-     * listFaultDomains} operation in the Identity and Access Management Service API.
-     *
-     * <p>Example: {@code FAULT-DOMAIN-1}
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
      *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
-    /** The OCID of the cluster placement group of the instance. */
+    /**
+     * The OCID of the cluster placement group of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
      * The OCID of the cluster placement group of the instance.
-     *
      * @return the value
-     */
+     **/
     public String getClusterPlacementGroupId() {
         return clusterPlacementGroupId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-     * that the instance will be created in.
-     */
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
     private final String computeClusterId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-     * that the instance will be created in.
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      *
      * @return the value
-     */
+     **/
     public String getComputeClusterId() {
         return computeClusterId;
     }
 
     /**
-     * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you provide
-     * both, the values must match.
-     */
+     * Deprecated. Instead use {@code hostnameLabel} in
+     * {@link CreateVnicDetails}.
+     * If you provide both, the values must match.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
     /**
-     * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you provide
-     * both, the values must match.
+     * Deprecated. Instead use {@code hostnameLabel} in
+     * {@link CreateVnicDetails}.
+     * If you provide both, the values must match.
      *
      * @return the value
-     */
+     **/
     public String getHostnameLabel() {
         return hostnameLabel;
     }
 
     /**
-     * Deprecated. Use {@code sourceDetails} with {@link
-     * #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest)
-     * instanceSourceViaImageDetails} source type instead. If you specify values for both, the
-     * values must match.
-     */
+     * Deprecated. Use {@code sourceDetails} with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
+     * source type instead. If you specify values for both, the values must match.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
-     * Deprecated. Use {@code sourceDetails} with {@link
-     * #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest)
-     * instanceSourceViaImageDetails} source type instead. If you specify values for both, the
-     * values must match.
+     * Deprecated. Use {@code sourceDetails} with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
+     * source type instead. If you specify values for both, the values must match.
      *
      * @return the value
-     */
+     **/
     public String getImageId() {
         return imageId;
     }
 
     /**
      * This is an advanced option.
+     * <p>
+     * When a bare metal or virtual machine
+     * instance boots, the iPXE firmware that runs on the instance is
+     * configured to run an iPXE script to continue the boot process.
+     * <p>
+     * If you want more control over the boot process, you can provide
+     * your own custom iPXE script that will run when the instance boots.
+     * Be aware that the same iPXE script will run
+     * every time an instance boots, not only after the initial
+     * LaunchInstance call.
+     * <p>
+     * The default iPXE script connects to the instance's local boot
+     * volume over iSCSI and performs a network boot. If you use a custom iPXE
+     * script and want to network-boot from the instance's local boot volume
+     * over iSCSI the same way as the default iPXE script, use the
+     * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+     * iqn.2015-02.oracle.boot.
+     * <p>
+     * If your instance boot volume attachment type is paravirtualized,
+     * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+     * If your instance boot volume attachment type is paravirtualized
+     * and you use custom iPXE to network boot into your instance,
+     * the primary boot volume is attached as a data volume through virtio-scsi drive.
+     * <p>
+     * For more information about the Bring Your Own Image feature of
+     * Oracle Cloud Infrastructure, see
+     * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * <p>
+     * For more information about iPXE, see http://ipxe.org.
      *
-     * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the
-     * instance is configured to run an iPXE script to continue the boot process.
-     *
-     * <p>If you want more control over the boot process, you can provide your own custom iPXE
-     * script that will run when the instance boots. Be aware that the same iPXE script will run
-     * every time an instance boots, not only after the initial LaunchInstance call.
-     *
-     * <p>The default iPXE script connects to the instance's local boot volume over iSCSI and
-     * performs a network boot. If you use a custom iPXE script and want to network-boot from the
-     * instance's local boot volume over iSCSI the same way as the default iPXE script, use the
-     * following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     *
-     * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
-     * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
-     * boot volume attachment type is paravirtualized and you use custom iPXE to network boot into
-     * your instance, the primary boot volume is attached as a data volume through virtio-scsi
-     * drive.
-     *
-     * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-     * Infrastructure, see [Bring Your Own
-     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     *
-     * <p>For more information about iPXE, see http://ipxe.org.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
     private final String ipxeScript;
 
     /**
      * This is an advanced option.
-     *
-     * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the
-     * instance is configured to run an iPXE script to continue the boot process.
-     *
-     * <p>If you want more control over the boot process, you can provide your own custom iPXE
-     * script that will run when the instance boots. Be aware that the same iPXE script will run
-     * every time an instance boots, not only after the initial LaunchInstance call.
-     *
-     * <p>The default iPXE script connects to the instance's local boot volume over iSCSI and
-     * performs a network boot. If you use a custom iPXE script and want to network-boot from the
-     * instance's local boot volume over iSCSI the same way as the default iPXE script, use the
-     * following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     *
-     * <p>If your instance boot volume attachment type is paravirtualized, the boot volume is
-     * attached to the instance through virtio-scsi and no iPXE script is used. If your instance
-     * boot volume attachment type is paravirtualized and you use custom iPXE to network boot into
-     * your instance, the primary boot volume is attached as a data volume through virtio-scsi
-     * drive.
-     *
-     * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-     * Infrastructure, see [Bring Your Own
-     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     *
-     * <p>For more information about iPXE, see http://ipxe.org.
+     * <p>
+     * When a bare metal or virtual machine
+     * instance boots, the iPXE firmware that runs on the instance is
+     * configured to run an iPXE script to continue the boot process.
+     * <p>
+     * If you want more control over the boot process, you can provide
+     * your own custom iPXE script that will run when the instance boots.
+     * Be aware that the same iPXE script will run
+     * every time an instance boots, not only after the initial
+     * LaunchInstance call.
+     * <p>
+     * The default iPXE script connects to the instance's local boot
+     * volume over iSCSI and performs a network boot. If you use a custom iPXE
+     * script and want to network-boot from the instance's local boot volume
+     * over iSCSI the same way as the default iPXE script, use the
+     * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+     * iqn.2015-02.oracle.boot.
+     * <p>
+     * If your instance boot volume attachment type is paravirtualized,
+     * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+     * If your instance boot volume attachment type is paravirtualized
+     * and you use custom iPXE to network boot into your instance,
+     * the primary boot volume is attached as a data volume through virtio-scsi drive.
+     * <p>
+     * For more information about the Bring Your Own Image feature of
+     * Oracle Cloud Infrastructure, see
+     * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * <p>
+     * For more information about iPXE, see http://ipxe.org.
      *
      * @return the value
-     */
+     **/
     public String getIpxeScript() {
         return ipxeScript;
     }
@@ -1371,102 +1398,111 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * Custom metadata key/value pairs that you provide, such as the SSH public key required to
-     * connect to the instance.
+     * Custom metadata key/value pairs that you provide, such as the SSH public key
+     * required to connect to the instance.
+     * <p>
+     * A metadata service runs on every launched instance. The service is an HTTP
+     * endpoint listening on 169.254.169.254. You can use the service to:
+     * <p>
+     * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)
+     *   to be used for various system initialization tasks.
+     * <p>
+     * Get information about the instance, including the custom metadata that you
+     *   provide when you launch the instance.
+     * <p>
+     **Providing Cloud-Init Metadata**
+     * <p>
+     * You can use the following metadata key names to provide information to
+     *  Cloud-Init:
+     * <p>
+     **"ssh_authorized_keys"** - Provide one or more public SSH keys to be
+     *  included in the {@code ~/.ssh/authorized_keys} file for the default user on the
+     *  instance. Use a newline character to separate multiple keys. The SSH
+     *  keys must be in the format necessary for the {@code authorized_keys} file, as shown
+     *  in the example below.
+     * <p>
+     **"user_data"** - Provide your own base64-encoded data to be used by
+     *  Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
+     *  information about how to take advantage of user data, see the
+     *  [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * <p>
+     **Metadata Example**
+     * <p>
+     * "metadata" : {
+     *          "quake_bot_level" : "Severe",
+     *          "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227",
+     *          "user_data" : "<your_public_SSH_key>=="
+     *       }
+     *  **Getting Metadata on the Instance**
+     * <p>
+     * To get information about your instance, connect to the instance using SSH and issue any of the
+     *  following GET requests:
+     * <p>
+     * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+     *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+     *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+     * <p>
+     * You'll get back a response that includes all the instance information; only the metadata information; or
+     *  the metadata information for the specified key name, respectively.
+     * <p>
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of 32,000 bytes.
      *
-     * <p>A metadata service runs on every launched instance. The service is an HTTP endpoint
-     * listening on 169.254.169.254. You can use the service to:
-     *
-     * <p>Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be
-     * used for various system initialization tasks.
-     *
-     * <p>Get information about the instance, including the custom metadata that you provide when
-     * you launch the instance.
-     *
-     * <p>*Providing Cloud-Init Metadata**
-     *
-     * <p>You can use the following metadata key names to provide information to Cloud-Init:
-     *
-     * <p>*"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the
-     * {@code ~/.ssh/authorized_keys} file for the default user on the instance. Use a newline
-     * character to separate multiple keys. The SSH keys must be in the format necessary for the
-     * {@code authorized_keys} file, as shown in the example below.
-     *
-     * <p>*"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run
-     * custom scripts or provide custom Cloud-Init configuration. For information about how to take
-     * advantage of user data, see the [Cloud-Init
-     * Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-     *
-     * <p>*Metadata Example**
-     *
-     * <p>"metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa
-     * <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
-     * **Getting Metadata on the Instance**
-     *
-     * <p>To get information about your instance, connect to the instance using SSH and issue any of
-     * the following GET requests:
-     *
-     * <p>curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H
-     * "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H
-     * "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-     *
-     * <p>You'll get back a response that includes all the instance information; only the metadata
-     * information; or the metadata information for the specified key name, respectively.
-     *
-     * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a
-     * maximum of 32,000 bytes.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
-     * Custom metadata key/value pairs that you provide, such as the SSH public key required to
-     * connect to the instance.
-     *
-     * <p>A metadata service runs on every launched instance. The service is an HTTP endpoint
-     * listening on 169.254.169.254. You can use the service to:
-     *
-     * <p>Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be
-     * used for various system initialization tasks.
-     *
-     * <p>Get information about the instance, including the custom metadata that you provide when
-     * you launch the instance.
-     *
-     * <p>*Providing Cloud-Init Metadata**
-     *
-     * <p>You can use the following metadata key names to provide information to Cloud-Init:
-     *
-     * <p>*"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the
-     * {@code ~/.ssh/authorized_keys} file for the default user on the instance. Use a newline
-     * character to separate multiple keys. The SSH keys must be in the format necessary for the
-     * {@code authorized_keys} file, as shown in the example below.
-     *
-     * <p>*"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run
-     * custom scripts or provide custom Cloud-Init configuration. For information about how to take
-     * advantage of user data, see the [Cloud-Init
-     * Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-     *
-     * <p>*Metadata Example**
-     *
-     * <p>"metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa
-     * <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
-     * **Getting Metadata on the Instance**
-     *
-     * <p>To get information about your instance, connect to the instance using SSH and issue any of
-     * the following GET requests:
-     *
-     * <p>curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H
-     * "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H
-     * "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-     *
-     * <p>You'll get back a response that includes all the instance information; only the metadata
-     * information; or the metadata information for the specified key name, respectively.
-     *
-     * <p>The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a
-     * maximum of 32,000 bytes.
+     * Custom metadata key/value pairs that you provide, such as the SSH public key
+     * required to connect to the instance.
+     * <p>
+     * A metadata service runs on every launched instance. The service is an HTTP
+     * endpoint listening on 169.254.169.254. You can use the service to:
+     * <p>
+     * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/)
+     *   to be used for various system initialization tasks.
+     * <p>
+     * Get information about the instance, including the custom metadata that you
+     *   provide when you launch the instance.
+     * <p>
+     **Providing Cloud-Init Metadata**
+     * <p>
+     * You can use the following metadata key names to provide information to
+     *  Cloud-Init:
+     * <p>
+     **"ssh_authorized_keys"** - Provide one or more public SSH keys to be
+     *  included in the {@code ~/.ssh/authorized_keys} file for the default user on the
+     *  instance. Use a newline character to separate multiple keys. The SSH
+     *  keys must be in the format necessary for the {@code authorized_keys} file, as shown
+     *  in the example below.
+     * <p>
+     **"user_data"** - Provide your own base64-encoded data to be used by
+     *  Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
+     *  information about how to take advantage of user data, see the
+     *  [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * <p>
+     **Metadata Example**
+     * <p>
+     * "metadata" : {
+     *          "quake_bot_level" : "Severe",
+     *          "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227",
+     *          "user_data" : "<your_public_SSH_key>=="
+     *       }
+     *  **Getting Metadata on the Instance**
+     * <p>
+     * To get information about your instance, connect to the instance using SSH and issue any of the
+     *  following GET requests:
+     * <p>
+     * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+     *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+     *      curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+     * <p>
+     * You'll get back a response that includes all the instance information; only the metadata information; or
+     *  the metadata information for the specified key name, respectively.
+     * <p>
+     * The combined size of the {@code metadata} and {@code extendedMetadata} objects can be a maximum of 32,000 bytes.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
@@ -1479,24 +1515,23 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-     * other resources allocated to the instance.
+     * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
+     * <p>
+     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      *
-     * <p>You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest)
-     * listShapes}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-     * other resources allocated to the instance.
-     *
-     * <p>You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest)
-     * listShapes}.
+     * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
+     * <p>
+     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
@@ -1516,48 +1551,49 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * Deprecated. Instead use {@code subnetId} in {@link CreateVnicDetails}. At least one of them
-     * is required; if you provide both, the values must match.
-     */
+     * Deprecated. Instead use {@code subnetId} in
+     * {@link CreateVnicDetails}.
+     * At least one of them is required; if you provide both, the values must match.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * Deprecated. Instead use {@code subnetId} in {@link CreateVnicDetails}. At least one of them
-     * is required; if you provide both, the values must match.
+     * Deprecated. Instead use {@code subnetId} in
+     * {@link CreateVnicDetails}.
+     * At least one of them is required; if you provide both, the values must match.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** Volume attachments to create as part of the launch instance operation. */
+    /**
+     * Volume attachments to create as part of the launch instance operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
     private final java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
 
     /**
      * Volume attachments to create as part of the launch instance operation.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LaunchAttachVolumeDetails> getLaunchVolumeAttachments() {
         return launchVolumeAttachments;
     }
 
     /**
-     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-     * This field applies to both block volumes and boot volumes. The default value is false.
-     */
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-     * This field applies to both block volumes and boot volumes. The default value is false.
-     *
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      * @return the value
-     */
+     **/
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }
@@ -1570,33 +1606,29 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * The OCID of the Instance Configuration containing instance launch details. Any other fields
-     * supplied in this instance launch request will override the details stored in the Instance
-     * Configuration for this instance launch.
-     */
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     private final String instanceConfigurationId;
 
     /**
-     * The OCID of the Instance Configuration containing instance launch details. Any other fields
-     * supplied in this instance launch request will override the details stored in the Instance
-     * Configuration for this instance launch.
-     *
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
      * @return the value
-     */
+     **/
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
     }
 
-    /** List of licensing configurations associated with target launch values. */
+    /**
+     * List of licensing configurations associated with target launch values.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
     private final java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
 
     /**
      * List of licensing configurations associated with target launch values.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LaunchInstanceLicensingConfig> getLicensingConfigs() {
         return licensingConfigs;
     }
@@ -1608,7 +1640,6 @@ public final class LaunchInstanceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

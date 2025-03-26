@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the summary of a storage work request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * This is the summary of a storage work request.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = StorageWorkRequestSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = StorageWorkRequestSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class StorageWorkRequestSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -109,7 +109,10 @@ public final class StorageWorkRequestSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the OCID of the storage work Request. */
+        /**
+         * This is the OCID of the storage work Request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -118,47 +121,48 @@ public final class StorageWorkRequestSummary
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** When the work request started. */
+        /**
+         * When the work request started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * When the work request started.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** When the work request was accepted. Should match timeStarted in all cases. */
+        /**
+         * When the work request was accepted. Should match timeStarted in all cases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
@@ -167,43 +171,48 @@ public final class StorageWorkRequestSummary
          *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** When the work request finished execution. */
+        /**
+         * When the work request finished execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * When the work request finished execution.
-         *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** When the work request will expire. */
+        /**
+         * When the work request will expire.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
          * When the work request will expire.
-         *
          * @param timeExpires the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
-        /** Percentage progress completion of the work request. */
+        /**
+         * Percentage progress completion of the work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
@@ -212,13 +221,16 @@ public final class StorageWorkRequestSummary
          *
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-        /** This is the work request status. */
+        /**
+         * This is the work request status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkRequestStatus status;
 
@@ -227,163 +239,176 @@ public final class StorageWorkRequestSummary
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(WorkRequestStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** This is the start of the time interval */
+        /**
+         * This is the start of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
         /**
          * This is the start of the time interval
-         *
          * @param timeDataStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-        /** This is the end of the time interval */
+        /**
+         * This is the end of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
         /**
          * This is the end of the time interval
-         *
          * @param timeDataEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-        /** This is the solr query used to filter data for purge, '*' means all */
+        /**
+         * This is the solr query used to filter data for purge, '*' means all
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
         private String purgeQueryString;
 
         /**
          * This is the solr query used to filter data for purge, '*' means all
-         *
          * @param purgeQueryString the value to set
          * @return this builder
-         */
+         **/
         public Builder purgeQueryString(String purgeQueryString) {
             this.purgeQueryString = purgeQueryString;
             this.__explicitlySet__.add("purgeQueryString");
             return this;
         }
-        /** Thie is the type of data to be purged */
+        /**
+         * Thie is the type of data to be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private StorageDataType dataType;
 
         /**
          * Thie is the type of data to be purged
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(StorageDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /** This provides more detailed status if applicable */
+        /**
+         * This provides more detailed status if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private String statusDetails;
 
         /**
          * This provides more detailed status if applicable
-         *
          * @param statusDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDetails(String statusDetails) {
             this.statusDetails = statusDetails;
             this.__explicitlySet__.add("statusDetails");
             return this;
         }
-        /** This provides more detailed info about the work request if applicable */
+        /**
+         * This provides more detailed info about the work request if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationDetails")
         private String operationDetails;
 
         /**
          * This provides more detailed info about the work request if applicable
-         *
          * @param operationDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder operationDetails(String operationDetails) {
             this.operationDetails = operationDetails;
             this.__explicitlySet__.add("operationDetails");
             return this;
         }
-        /** This is the policy name if applicable (e.g. purge policy) */
+        /**
+         * This is the policy name if applicable (e.g. purge policy)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyName")
         private String policyName;
 
         /**
          * This is the policy name if applicable (e.g. purge policy)
-         *
          * @param policyName the value to set
          * @return this builder
-         */
+         **/
         public Builder policyName(String policyName) {
             this.policyName = policyName;
             this.__explicitlySet__.add("policyName");
             return this;
         }
-        /** This is the purge policy ID if applicable */
+        /**
+         * This is the purge policy ID if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
         /**
          * This is the purge policy ID if applicable
-         *
          * @param policyId the value to set
          * @return this builder
-         */
+         **/
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
             return this;
         }
-        /** This is the data usage in bytes if applicable */
+        /**
+         * This is the data usage in bytes if applicable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
         private Long storageUsageInBytes;
 
         /**
          * This is the data usage in bytes if applicable
-         *
          * @param storageUsageInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder storageUsageInBytes(Long storageUsageInBytes) {
             this.storageUsageInBytes = storageUsageInBytes;
             this.__explicitlySet__.add("storageUsageInBytes");
             return this;
         }
-        /** If true, purge child compartments data, only applicable to purge request */
+        /**
+         * If true, purge child compartments data, only applicable to purge request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
         /**
          * If true, purge child compartments data, only applicable to purge request
-         *
          * @param compartmentIdInSubtree the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
-        /** This is the type of the work request. */
+        /**
+         * This is the type of the work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private StorageOperationType operationType;
 
@@ -392,28 +417,32 @@ public final class StorageWorkRequestSummary
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(StorageOperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** This is the key ID for encryption key. */
+        /**
+         * This is the key ID for encryption key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
          * This is the key ID for encryption key.
-         *
          * @param keyId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-        /** The type of customer encryption key. It can be archival, active or all. */
+        /**
+         * The type of customer encryption key. It can be archival, active or all.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyType")
         private EncryptionKeyType keyType;
 
@@ -422,82 +451,87 @@ public final class StorageWorkRequestSummary
          *
          * @param keyType the value to set
          * @return this builder
-         */
+         **/
         public Builder keyType(EncryptionKeyType keyType) {
             this.keyType = keyType;
             this.__explicitlySet__.add("keyType");
             return this;
         }
-        /** This is a list of logsets associated with this work request */
+        /**
+         * This is a list of logsets associated with this work request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logSets")
         private String logSets;
 
         /**
          * This is a list of logsets associated with this work request
-         *
          * @param logSets the value to set
          * @return this builder
-         */
+         **/
         public Builder logSets(String logSets) {
             this.logSets = logSets;
             this.__explicitlySet__.add("logSets");
             return this;
         }
-        /** This is the purpose of the operation associated with this work request */
+        /**
+         * This is the purpose of the operation associated with this work request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purpose")
         private String purpose;
 
         /**
          * This is the purpose of the operation associated with this work request
-         *
          * @param purpose the value to set
          * @return this builder
-         */
+         **/
         public Builder purpose(String purpose) {
             this.purpose = purpose;
             this.__explicitlySet__.add("purpose");
             return this;
         }
-        /** This is the query string applied on the operation associated with this work request */
+        /**
+         * This is the query string applied on the operation associated with this work request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
          * This is the query string applied on the operation associated with this work request
-         *
          * @param query the value to set
          * @return this builder
-         */
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
             return this;
         }
-        /** This is the flag to indicate if only new data has to be recalled in this work request */
+        /**
+         * This is the flag to indicate if only new data has to be recalled in this work request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
         private Boolean isRecallNewDataOnly;
 
         /**
          * This is the flag to indicate if only new data has to be recalled in this work request
-         *
          * @param isRecallNewDataOnly the value to set
          * @return this builder
-         */
+         **/
         public Builder isRecallNewDataOnly(Boolean isRecallNewDataOnly) {
             this.isRecallNewDataOnly = isRecallNewDataOnly;
             this.__explicitlySet__.add("isRecallNewDataOnly");
             return this;
         }
-        /** This indicates if user checked system recommended time range */
+        /**
+         * This indicates if user checked system recommended time range
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
         private Boolean isUseRecommendedDataSet;
 
         /**
          * This indicates if user checked system recommended time range
-         *
          * @param isUseRecommendedDataSet the value to set
          * @return this builder
-         */
+         **/
         public Builder isUseRecommendedDataSet(Boolean isUseRecommendedDataSet) {
             this.isUseRecommendedDataSet = isUseRecommendedDataSet;
             this.__explicitlySet__.add("isUseRecommendedDataSet");
@@ -626,7 +660,9 @@ public final class StorageWorkRequestSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -635,7 +671,10 @@ public final class StorageWorkRequestSummary
         return new Builder().copy(this);
     }
 
-    /** This is the OCID of the storage work Request. */
+    /**
+     * This is the OCID of the storage work Request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -643,42 +682,43 @@ public final class StorageWorkRequestSummary
      * This is the OCID of the storage work Request.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** When the work request started. */
+    /**
+     * When the work request started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * When the work request started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** When the work request was accepted. Should match timeStarted in all cases. */
+    /**
+     * When the work request was accepted. Should match timeStarted in all cases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
@@ -686,38 +726,43 @@ public final class StorageWorkRequestSummary
      * When the work request was accepted. Should match timeStarted in all cases.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** When the work request finished execution. */
+    /**
+     * When the work request finished execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * When the work request finished execution.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** When the work request will expire. */
+    /**
+     * When the work request will expire.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
      * When the work request will expire.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
 
-    /** Percentage progress completion of the work request. */
+    /**
+     * Percentage progress completion of the work request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
@@ -725,12 +770,15 @@ public final class StorageWorkRequestSummary
      * Percentage progress completion of the work request.
      *
      * @return the value
-     */
+     **/
     public Integer getPercentComplete() {
         return percentComplete;
     }
 
-    /** This is the work request status. */
+    /**
+     * This is the work request status.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkRequestStatus status;
 
@@ -738,142 +786,155 @@ public final class StorageWorkRequestSummary
      * This is the work request status.
      *
      * @return the value
-     */
+     **/
     public WorkRequestStatus getStatus() {
         return status;
     }
 
-    /** This is the start of the time interval */
+    /**
+     * This is the start of the time interval
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
     /**
      * This is the start of the time interval
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
 
-    /** This is the end of the time interval */
+    /**
+     * This is the end of the time interval
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
     /**
      * This is the end of the time interval
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
 
-    /** This is the solr query used to filter data for purge, '*' means all */
+    /**
+     * This is the solr query used to filter data for purge, '*' means all
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
     private final String purgeQueryString;
 
     /**
      * This is the solr query used to filter data for purge, '*' means all
-     *
      * @return the value
-     */
+     **/
     public String getPurgeQueryString() {
         return purgeQueryString;
     }
 
-    /** Thie is the type of data to be purged */
+    /**
+     * Thie is the type of data to be purged
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final StorageDataType dataType;
 
     /**
      * Thie is the type of data to be purged
-     *
      * @return the value
-     */
+     **/
     public StorageDataType getDataType() {
         return dataType;
     }
 
-    /** This provides more detailed status if applicable */
+    /**
+     * This provides more detailed status if applicable
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final String statusDetails;
 
     /**
      * This provides more detailed status if applicable
-     *
      * @return the value
-     */
+     **/
     public String getStatusDetails() {
         return statusDetails;
     }
 
-    /** This provides more detailed info about the work request if applicable */
+    /**
+     * This provides more detailed info about the work request if applicable
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationDetails")
     private final String operationDetails;
 
     /**
      * This provides more detailed info about the work request if applicable
-     *
      * @return the value
-     */
+     **/
     public String getOperationDetails() {
         return operationDetails;
     }
 
-    /** This is the policy name if applicable (e.g. purge policy) */
+    /**
+     * This is the policy name if applicable (e.g. purge policy)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
     private final String policyName;
 
     /**
      * This is the policy name if applicable (e.g. purge policy)
-     *
      * @return the value
-     */
+     **/
     public String getPolicyName() {
         return policyName;
     }
 
-    /** This is the purge policy ID if applicable */
+    /**
+     * This is the purge policy ID if applicable
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
     /**
      * This is the purge policy ID if applicable
-     *
      * @return the value
-     */
+     **/
     public String getPolicyId() {
         return policyId;
     }
 
-    /** This is the data usage in bytes if applicable */
+    /**
+     * This is the data usage in bytes if applicable
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
     private final Long storageUsageInBytes;
 
     /**
      * This is the data usage in bytes if applicable
-     *
      * @return the value
-     */
+     **/
     public Long getStorageUsageInBytes() {
         return storageUsageInBytes;
     }
 
-    /** If true, purge child compartments data, only applicable to purge request */
+    /**
+     * If true, purge child compartments data, only applicable to purge request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
     /**
      * If true, purge child compartments data, only applicable to purge request
-     *
      * @return the value
-     */
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
 
-    /** This is the type of the work request. */
+    /**
+     * This is the type of the work request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final StorageOperationType operationType;
 
@@ -881,25 +942,29 @@ public final class StorageWorkRequestSummary
      * This is the type of the work request.
      *
      * @return the value
-     */
+     **/
     public StorageOperationType getOperationType() {
         return operationType;
     }
 
-    /** This is the key ID for encryption key. */
+    /**
+     * This is the key ID for encryption key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
      * This is the key ID for encryption key.
-     *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
-    /** The type of customer encryption key. It can be archival, active or all. */
+    /**
+     * The type of customer encryption key. It can be archival, active or all.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyType")
     private final EncryptionKeyType keyType;
 
@@ -907,72 +972,77 @@ public final class StorageWorkRequestSummary
      * The type of customer encryption key. It can be archival, active or all.
      *
      * @return the value
-     */
+     **/
     public EncryptionKeyType getKeyType() {
         return keyType;
     }
 
-    /** This is a list of logsets associated with this work request */
+    /**
+     * This is a list of logsets associated with this work request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSets")
     private final String logSets;
 
     /**
      * This is a list of logsets associated with this work request
-     *
      * @return the value
-     */
+     **/
     public String getLogSets() {
         return logSets;
     }
 
-    /** This is the purpose of the operation associated with this work request */
+    /**
+     * This is the purpose of the operation associated with this work request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("purpose")
     private final String purpose;
 
     /**
      * This is the purpose of the operation associated with this work request
-     *
      * @return the value
-     */
+     **/
     public String getPurpose() {
         return purpose;
     }
 
-    /** This is the query string applied on the operation associated with this work request */
+    /**
+     * This is the query string applied on the operation associated with this work request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
      * This is the query string applied on the operation associated with this work request
-     *
      * @return the value
-     */
+     **/
     public String getQuery() {
         return query;
     }
 
-    /** This is the flag to indicate if only new data has to be recalled in this work request */
+    /**
+     * This is the flag to indicate if only new data has to be recalled in this work request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
     private final Boolean isRecallNewDataOnly;
 
     /**
      * This is the flag to indicate if only new data has to be recalled in this work request
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRecallNewDataOnly() {
         return isRecallNewDataOnly;
     }
 
-    /** This indicates if user checked system recommended time range */
+    /**
+     * This indicates if user checked system recommended time range
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
     private final Boolean isUseRecommendedDataSet;
 
     /**
      * This indicates if user checked system recommended time range
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUseRecommendedDataSet() {
         return isUseRecommendedDataSet;
     }
@@ -984,7 +1054,6 @@ public final class StorageWorkRequestSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

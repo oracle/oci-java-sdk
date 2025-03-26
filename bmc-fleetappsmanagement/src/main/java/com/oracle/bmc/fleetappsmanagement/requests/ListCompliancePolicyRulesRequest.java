@@ -6,109 +6,128 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePolicyRulesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListCompliancePolicyRulesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePolicyRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCompliancePolicyRulesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListCompliancePolicyRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to return only resources that match the given lifecycle state. The
+     * state value is case-insensitive.
+     *
      */
     private com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule.LifecycleState
             lifecycleState;
 
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to return only resources that match the given lifecycle state. The
+     * state value is case-insensitive.
+     *
      */
     public com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * A filter to return only resources that match the patch selection against the given patch
-     * name.
+     * A filter to return only resources that match the patch selection against the given patch name.
      */
     private String patchName;
 
     /**
-     * A filter to return only resources that match the patch selection against the given patch
-     * name.
+     * A filter to return only resources that match the patch selection against the given patch name.
      */
     public String getPatchName() {
         return patchName;
     }
-    /** unique CompliancePolicy identifier. */
+    /**
+     * unique CompliancePolicy identifier.
+     */
     private String compliancePolicyId;
 
-    /** unique CompliancePolicy identifier. */
+    /**
+     * unique CompliancePolicy identifier.
+     */
     public String getCompliancePolicyId() {
         return compliancePolicyId;
     }
-    /** unique CompliancePolicyRule identifier. */
+    /**
+     * unique CompliancePolicyRule identifier.
+     */
     private String id;
 
-    /** unique CompliancePolicyRule identifier. */
+    /**
+     * unique CompliancePolicyRule identifier.
+     */
     public String getId() {
         return id;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -142,16 +161,20 @@ public class ListCompliancePolicyRulesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -159,15 +182,17 @@ public class ListCompliancePolicyRulesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListCompliancePolicyRulesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -176,12 +201,13 @@ public class ListCompliancePolicyRulesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -191,15 +217,16 @@ public class ListCompliancePolicyRulesRequest
         }
 
         /**
-         * A filter to return only resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to return only resources that match the given lifecycle state. The
+         * state value is case-insensitive.
+         *
          */
         private com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to return only resources that match the given lifecycle state. The
+         * state value is case-insensitive.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -212,15 +239,12 @@ public class ListCompliancePolicyRulesRequest
         }
 
         /**
-         * A filter to return only resources that match the patch selection against the given patch
-         * name.
+         * A filter to return only resources that match the patch selection against the given patch name.
          */
         private String patchName = null;
 
         /**
-         * A filter to return only resources that match the patch selection against the given patch
-         * name.
-         *
+         * A filter to return only resources that match the patch selection against the given patch name.
          * @param patchName the value to set
          * @return this builder instance
          */
@@ -229,12 +253,13 @@ public class ListCompliancePolicyRulesRequest
             return this;
         }
 
-        /** unique CompliancePolicy identifier. */
+        /**
+         * unique CompliancePolicy identifier.
+         */
         private String compliancePolicyId = null;
 
         /**
          * unique CompliancePolicy identifier.
-         *
          * @param compliancePolicyId the value to set
          * @return this builder instance
          */
@@ -243,12 +268,13 @@ public class ListCompliancePolicyRulesRequest
             return this;
         }
 
-        /** unique CompliancePolicyRule identifier. */
+        /**
+         * unique CompliancePolicyRule identifier.
+         */
         private String id = null;
 
         /**
          * unique CompliancePolicyRule identifier.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -257,12 +283,13 @@ public class ListCompliancePolicyRulesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -272,15 +299,12 @@ public class ListCompliancePolicyRulesRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -289,12 +313,13 @@ public class ListCompliancePolicyRulesRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -304,14 +329,13 @@ public class ListCompliancePolicyRulesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -321,12 +345,13 @@ public class ListCompliancePolicyRulesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -337,19 +362,18 @@ public class ListCompliancePolicyRulesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -361,7 +385,6 @@ public class ListCompliancePolicyRulesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListCompliancePolicyRulesRequest o) {
@@ -384,11 +407,10 @@ public class ListCompliancePolicyRulesRequest
         /**
          * Build the instance of ListCompliancePolicyRulesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListCompliancePolicyRulesRequest
          */
@@ -402,8 +424,7 @@ public class ListCompliancePolicyRulesRequest
         /**
          * Build the instance of ListCompliancePolicyRulesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListCompliancePolicyRulesRequest
@@ -422,14 +443,12 @@ public class ListCompliancePolicyRulesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListCompliancePolicyRulesRequest(compartmentId, displayName, lifecycleState,
-            // patchName, compliancePolicyId, id, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListCompliancePolicyRulesRequest(compartmentId, displayName, lifecycleState, patchName, compliancePolicyId, id, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -449,7 +468,6 @@ public class ListCompliancePolicyRulesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

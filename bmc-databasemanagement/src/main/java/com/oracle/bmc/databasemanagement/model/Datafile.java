@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of a data file. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of a data file.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Datafile.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Datafile extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Datafile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -74,244 +72,241 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The filename (including the path) of the data file or temp file. */
+        /**
+         * The filename (including the path) of the data file or temp file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The filename (including the path) of the data file or temp file.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The status of the file. INVALID status is used when the file number is not in use, for
-         * example, a file in a tablespace that was removed.
-         */
+         * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The status of the file. INVALID status is used when the file number is not in use, for
-         * example, a file in a tablespace that was removed.
-         *
+         * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The online status of the file. */
+        /**
+         * The online status of the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onlineStatus")
         private OnlineStatus onlineStatus;
 
         /**
          * The online status of the file.
-         *
          * @param onlineStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder onlineStatus(OnlineStatus onlineStatus) {
             this.onlineStatus = onlineStatus;
             this.__explicitlySet__.add("onlineStatus");
             return this;
         }
-        /** Indicates whether the data file is auto-extensible. */
+        /**
+         * Indicates whether the data file is auto-extensible.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
         private Boolean isAutoExtensible;
 
         /**
          * Indicates whether the data file is auto-extensible.
-         *
          * @param isAutoExtensible the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoExtensible(Boolean isAutoExtensible) {
             this.isAutoExtensible = isAutoExtensible;
             this.__explicitlySet__.add("isAutoExtensible");
             return this;
         }
-        /** The lost write protection status of the file. */
+        /**
+         * The lost write protection status of the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lostWriteProtect")
         private LostWriteProtect lostWriteProtect;
 
         /**
          * The lost write protection status of the file.
-         *
          * @param lostWriteProtect the value to set
          * @return this builder
-         */
+         **/
         public Builder lostWriteProtect(LostWriteProtect lostWriteProtect) {
             this.lostWriteProtect = lostWriteProtect;
             this.__explicitlySet__.add("lostWriteProtect");
             return this;
         }
         /**
-         * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local
-         * temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for
-         * all instance types.
-         */
+         * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all instance types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shared")
         private Shared shared;
 
         /**
-         * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local
-         * temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for
-         * all instance types.
-         *
+         * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all instance types.
          * @param shared the value to set
          * @return this builder
-         */
+         **/
         public Builder shared(Shared shared) {
             this.shared = shared;
             this.__explicitlySet__.add("shared");
             return this;
         }
         /**
-         * Instance ID of the instance to which the temp file belongs. This column has a NULL value
-         * for temp files that belong to shared tablespaces.
-         */
+         * Instance ID of the instance to which the temp file belongs. This column has a NULL value for temp files that belong to shared tablespaces.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private java.math.BigDecimal instanceId;
 
         /**
-         * Instance ID of the instance to which the temp file belongs. This column has a NULL value
-         * for temp files that belong to shared tablespaces.
-         *
+         * Instance ID of the instance to which the temp file belongs. This column has a NULL value for temp files that belong to shared tablespaces.
          * @param instanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceId(java.math.BigDecimal instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /** The maximum file size in KB. */
+        /**
+         * The maximum file size in KB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSizeKB")
         private java.math.BigDecimal maxSizeKB;
 
         /**
          * The maximum file size in KB.
-         *
          * @param maxSizeKB the value to set
          * @return this builder
-         */
+         **/
         public Builder maxSizeKB(java.math.BigDecimal maxSizeKB) {
             this.maxSizeKB = maxSizeKB;
             this.__explicitlySet__.add("maxSizeKB");
             return this;
         }
-        /** The allocated file size in KB. */
+        /**
+         * The allocated file size in KB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allocatedSizeKB")
         private java.math.BigDecimal allocatedSizeKB;
 
         /**
          * The allocated file size in KB.
-         *
          * @param allocatedSizeKB the value to set
          * @return this builder
-         */
+         **/
         public Builder allocatedSizeKB(java.math.BigDecimal allocatedSizeKB) {
             this.allocatedSizeKB = allocatedSizeKB;
             this.__explicitlySet__.add("allocatedSizeKB");
             return this;
         }
         /**
-         * The size of the file available for user data in KB. The actual size of the file minus the
-         * USER_BYTES value is used to store file-related metadata.
-         */
+         * The size of the file available for user data in KB. The actual size of the file minus the USER_BYTES value is used to store file-related metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userSizeKB")
         private java.math.BigDecimal userSizeKB;
 
         /**
-         * The size of the file available for user data in KB. The actual size of the file minus the
-         * USER_BYTES value is used to store file-related metadata.
-         *
+         * The size of the file available for user data in KB. The actual size of the file minus the USER_BYTES value is used to store file-related metadata.
          * @param userSizeKB the value to set
          * @return this builder
-         */
+         **/
         public Builder userSizeKB(java.math.BigDecimal userSizeKB) {
             this.userSizeKB = userSizeKB;
             this.__explicitlySet__.add("userSizeKB");
             return this;
         }
-        /** The number of blocks used as auto-extension increment. */
+        /**
+         * The number of blocks used as auto-extension increment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("incrementBy")
         private java.math.BigDecimal incrementBy;
 
         /**
          * The number of blocks used as auto-extension increment.
-         *
          * @param incrementBy the value to set
          * @return this builder
-         */
+         **/
         public Builder incrementBy(java.math.BigDecimal incrementBy) {
             this.incrementBy = incrementBy;
             this.__explicitlySet__.add("incrementBy");
             return this;
         }
-        /** The free space available in the data file in KB. */
+        /**
+         * The free space available in the data file in KB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
         private java.math.BigDecimal freeSpaceKB;
 
         /**
          * The free space available in the data file in KB.
-         *
          * @param freeSpaceKB the value to set
          * @return this builder
-         */
+         **/
         public Builder freeSpaceKB(java.math.BigDecimal freeSpaceKB) {
             this.freeSpaceKB = freeSpaceKB;
             this.__explicitlySet__.add("freeSpaceKB");
             return this;
         }
-        /** The total space used in the data file in KB. */
+        /**
+         * The total space used in the data file in KB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedSpaceKB")
         private java.math.BigDecimal usedSpaceKB;
 
         /**
          * The total space used in the data file in KB.
-         *
          * @param usedSpaceKB the value to set
          * @return this builder
-         */
+         **/
         public Builder usedSpaceKB(java.math.BigDecimal usedSpaceKB) {
             this.usedSpaceKB = usedSpaceKB;
             this.__explicitlySet__.add("usedSpaceKB");
             return this;
         }
-        /** The percentage of used space out of the maximum available space in the file. */
+        /**
+         * The percentage of used space out of the maximum available space in the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAvailable")
         private Double usedPercentAvailable;
 
         /**
          * The percentage of used space out of the maximum available space in the file.
-         *
          * @param usedPercentAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder usedPercentAvailable(Double usedPercentAvailable) {
             this.usedPercentAvailable = usedPercentAvailable;
             this.__explicitlySet__.add("usedPercentAvailable");
             return this;
         }
-        /** The percentage of used space out of the total allocated space in the file. */
+        /**
+         * The percentage of used space out of the total allocated space in the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
         private Double usedPercentAllocated;
 
         /**
          * The percentage of used space out of the total allocated space in the file.
-         *
          * @param usedPercentAllocated the value to set
          * @return this builder
-         */
+         **/
         public Builder usedPercentAllocated(Double usedPercentAllocated) {
             this.usedPercentAllocated = usedPercentAllocated;
             this.__explicitlySet__.add("usedPercentAllocated");
@@ -396,7 +391,9 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -405,24 +402,24 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The filename (including the path) of the data file or temp file. */
+    /**
+     * The filename (including the path) of the data file or temp file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The filename (including the path) of the data file or temp file.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The status of the file. INVALID status is used when the file number is not in use, for
-     * example, a file in a tablespace that was removed.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
+     **/
+    public enum Status {
         Available("AVAILABLE"),
         Invalid("INVALID"),
         Offline("OFFLINE"),
@@ -430,8 +427,8 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -470,24 +467,23 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
         }
     };
     /**
-     * The status of the file. INVALID status is used when the file number is not in use, for
-     * example, a file in a tablespace that was removed.
-     */
+     * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The status of the file. INVALID status is used when the file number is not in use, for
-     * example, a file in a tablespace that was removed.
-     *
+     * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The online status of the file. */
-    public enum OnlineStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The online status of the file.
+     **/
+    public enum OnlineStatus {
         Sysoff("SYSOFF"),
         System("SYSTEM"),
         Offline("OFFLINE"),
@@ -495,8 +491,8 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
         Recover("RECOVER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -535,41 +531,45 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The online status of the file. */
+    /**
+     * The online status of the file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onlineStatus")
     private final OnlineStatus onlineStatus;
 
     /**
      * The online status of the file.
-     *
      * @return the value
-     */
+     **/
     public OnlineStatus getOnlineStatus() {
         return onlineStatus;
     }
 
-    /** Indicates whether the data file is auto-extensible. */
+    /**
+     * Indicates whether the data file is auto-extensible.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
     private final Boolean isAutoExtensible;
 
     /**
      * Indicates whether the data file is auto-extensible.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoExtensible() {
         return isAutoExtensible;
     }
 
-    /** The lost write protection status of the file. */
-    public enum LostWriteProtect implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The lost write protection status of the file.
+     **/
+    public enum LostWriteProtect {
         Enabled("ENABLED"),
         ProtectOff("PROTECT_OFF"),
         Suspend("SUSPEND"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -608,32 +608,31 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The lost write protection status of the file. */
+    /**
+     * The lost write protection status of the file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lostWriteProtect")
     private final LostWriteProtect lostWriteProtect;
 
     /**
      * The lost write protection status of the file.
-     *
      * @return the value
-     */
+     **/
     public LostWriteProtect getLostWriteProtect() {
         return lostWriteProtect;
     }
 
     /**
-     * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local
-     * temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all
-     * instance types.
-     */
-    public enum Shared implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all instance types.
+     **/
+    public enum Shared {
         Shared("SHARED"),
         LocalForRim("LOCAL_FOR_RIM"),
         LocalForAll("LOCAL_FOR_ALL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -672,145 +671,141 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
         }
     };
     /**
-     * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local
-     * temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all
-     * instance types.
-     */
+     * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all instance types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shared")
     private final Shared shared;
 
     /**
-     * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local
-     * temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all
-     * instance types.
-     *
+     * Type of tablespace this file belongs to. If it's for a shared tablespace, for a local temporary tablespace for RIM (read-only) instances, or for local temporary tablespace for all instance types.
      * @return the value
-     */
+     **/
     public Shared getShared() {
         return shared;
     }
 
     /**
-     * Instance ID of the instance to which the temp file belongs. This column has a NULL value for
-     * temp files that belong to shared tablespaces.
-     */
+     * Instance ID of the instance to which the temp file belongs. This column has a NULL value for temp files that belong to shared tablespaces.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final java.math.BigDecimal instanceId;
 
     /**
-     * Instance ID of the instance to which the temp file belongs. This column has a NULL value for
-     * temp files that belong to shared tablespaces.
-     *
+     * Instance ID of the instance to which the temp file belongs. This column has a NULL value for temp files that belong to shared tablespaces.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getInstanceId() {
         return instanceId;
     }
 
-    /** The maximum file size in KB. */
+    /**
+     * The maximum file size in KB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSizeKB")
     private final java.math.BigDecimal maxSizeKB;
 
     /**
      * The maximum file size in KB.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getMaxSizeKB() {
         return maxSizeKB;
     }
 
-    /** The allocated file size in KB. */
+    /**
+     * The allocated file size in KB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allocatedSizeKB")
     private final java.math.BigDecimal allocatedSizeKB;
 
     /**
      * The allocated file size in KB.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getAllocatedSizeKB() {
         return allocatedSizeKB;
     }
 
     /**
-     * The size of the file available for user data in KB. The actual size of the file minus the
-     * USER_BYTES value is used to store file-related metadata.
-     */
+     * The size of the file available for user data in KB. The actual size of the file minus the USER_BYTES value is used to store file-related metadata.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userSizeKB")
     private final java.math.BigDecimal userSizeKB;
 
     /**
-     * The size of the file available for user data in KB. The actual size of the file minus the
-     * USER_BYTES value is used to store file-related metadata.
-     *
+     * The size of the file available for user data in KB. The actual size of the file minus the USER_BYTES value is used to store file-related metadata.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getUserSizeKB() {
         return userSizeKB;
     }
 
-    /** The number of blocks used as auto-extension increment. */
+    /**
+     * The number of blocks used as auto-extension increment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("incrementBy")
     private final java.math.BigDecimal incrementBy;
 
     /**
      * The number of blocks used as auto-extension increment.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getIncrementBy() {
         return incrementBy;
     }
 
-    /** The free space available in the data file in KB. */
+    /**
+     * The free space available in the data file in KB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
     private final java.math.BigDecimal freeSpaceKB;
 
     /**
      * The free space available in the data file in KB.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getFreeSpaceKB() {
         return freeSpaceKB;
     }
 
-    /** The total space used in the data file in KB. */
+    /**
+     * The total space used in the data file in KB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedSpaceKB")
     private final java.math.BigDecimal usedSpaceKB;
 
     /**
      * The total space used in the data file in KB.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getUsedSpaceKB() {
         return usedSpaceKB;
     }
 
-    /** The percentage of used space out of the maximum available space in the file. */
+    /**
+     * The percentage of used space out of the maximum available space in the file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAvailable")
     private final Double usedPercentAvailable;
 
     /**
      * The percentage of used space out of the maximum available space in the file.
-     *
      * @return the value
-     */
+     **/
     public Double getUsedPercentAvailable() {
         return usedPercentAvailable;
     }
 
-    /** The percentage of used space out of the total allocated space in the file. */
+    /**
+     * The percentage of used space out of the total allocated space in the file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
     private final Double usedPercentAllocated;
 
     /**
      * The percentage of used space out of the total allocated space in the file.
-     *
      * @return the value
-     */
+     **/
     public Double getUsedPercentAllocated() {
         return usedPercentAllocated;
     }
@@ -822,7 +817,6 @@ public final class Datafile extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

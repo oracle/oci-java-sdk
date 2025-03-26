@@ -5,24 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is
- * working or else the status is 'FAILED'. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is working or else the status is 'FAILED'.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TestNamedCredentialStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TestNamedCredentialStatus.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TestNamedCredentialStatus
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "errorCode", "errorMessage"})
     public TestNamedCredentialStatus(Status status, String errorCode, String errorMessage) {
@@ -35,57 +33,52 @@ public final class TestNamedCredentialStatus
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The status of the named credential test. The status is 'SUCCEEDED' if the named
-         * credential is working or else the status is 'FAILED'.
-         */
+         * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is working or else the status is 'FAILED'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The status of the named credential test. The status is 'SUCCEEDED' if the named
-         * credential is working or else the status is 'FAILED'.
-         *
+         * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is working or else the status is 'FAILED'.
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * An error code that defines the failure of the named credential test. The response is
-         * 'null' if the named credential test was successful.
-         */
+         * An error code that defines the failure of the named credential test. The response is 'null' if the named credential test was successful.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private String errorCode;
 
         /**
-         * An error code that defines the failure of the named credential test. The response is
-         * 'null' if the named credential test was successful.
+         * An error code that defines the failure of the named credential test. The response is 'null' if the named credential test was successful.
          *
          * @param errorCode the value to set
          * @return this builder
-         */
+         **/
         public Builder errorCode(String errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
         /**
-         * The error message that indicates the reason for the failure of the named credential test.
-         * The response is 'null' if the named credential test was successful.
-         */
+         * The error message that indicates the reason for the failure of the named credential test. The response is 'null' if the named credential test was successful.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * The error message that indicates the reason for the failure of the named credential test.
-         * The response is 'null' if the named credential test was successful.
+         * The error message that indicates the reason for the failure of the named credential test. The response is 'null' if the named credential test was successful.
          *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -119,7 +112,9 @@ public final class TestNamedCredentialStatus
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,16 +124,15 @@ public final class TestNamedCredentialStatus
     }
 
     /**
-     * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is
-     * working or else the status is 'FAILED'.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is working or else the status is 'FAILED'.
+     **/
+    public enum Status {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -177,52 +171,47 @@ public final class TestNamedCredentialStatus
         }
     };
     /**
-     * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is
-     * working or else the status is 'FAILED'.
-     */
+     * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is working or else the status is 'FAILED'.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is
-     * working or else the status is 'FAILED'.
-     *
+     * The status of the named credential test. The status is 'SUCCEEDED' if the named credential is working or else the status is 'FAILED'.
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
-     * An error code that defines the failure of the named credential test. The response is 'null'
-     * if the named credential test was successful.
-     */
+     * An error code that defines the failure of the named credential test. The response is 'null' if the named credential test was successful.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final String errorCode;
 
     /**
-     * An error code that defines the failure of the named credential test. The response is 'null'
-     * if the named credential test was successful.
+     * An error code that defines the failure of the named credential test. The response is 'null' if the named credential test was successful.
      *
      * @return the value
-     */
+     **/
     public String getErrorCode() {
         return errorCode;
     }
 
     /**
-     * The error message that indicates the reason for the failure of the named credential test. The
-     * response is 'null' if the named credential test was successful.
-     */
+     * The error message that indicates the reason for the failure of the named credential test. The response is 'null' if the named credential test was successful.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * The error message that indicates the reason for the failure of the named credential test. The
-     * response is 'null' if the named credential test was successful.
+     * The error message that indicates the reason for the failure of the named credential test. The response is 'null' if the named credential test was successful.
      *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -234,7 +223,6 @@ public final class TestNamedCredentialStatus
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

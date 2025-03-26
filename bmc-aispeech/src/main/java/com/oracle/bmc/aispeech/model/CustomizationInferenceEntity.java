@@ -5,23 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Entity Object for customization inference payload <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Entity Object for customization inference payload
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomizationInferenceEntity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CustomizationInferenceEntity.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CustomizationInferenceEntity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entityType", "customizationId", "customizationAlias"})
     public CustomizationInferenceEntity(
@@ -34,50 +33,49 @@ public final class CustomizationInferenceEntity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Entity type */
+        /**
+         * Entity type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * Entity type
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * customization to use.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customization to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customizationId")
         private String customizationId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * customization to use.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customization to use.
          * @param customizationId the value to set
          * @return this builder
-         */
+         **/
         public Builder customizationId(String customizationId) {
             this.customizationId = customizationId;
             this.__explicitlySet__.add("customizationId");
             return this;
         }
-        /** Alias of the customization */
+        /**
+         * Alias of the customization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customizationAlias")
         private String customizationAlias;
 
         /**
          * Alias of the customization
-         *
          * @param customizationAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder customizationAlias(String customizationAlias) {
             this.customizationAlias = customizationAlias;
             this.__explicitlySet__.add("customizationAlias");
@@ -112,7 +110,9 @@ public final class CustomizationInferenceEntity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,45 +121,44 @@ public final class CustomizationInferenceEntity
         return new Builder().copy(this);
     }
 
-    /** Entity type */
+    /**
+     * Entity type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * Entity type
-     *
      * @return the value
-     */
+     **/
     public String getEntityType() {
         return entityType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * customization to use.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customization to use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customizationId")
     private final String customizationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * customization to use.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customization to use.
      * @return the value
-     */
+     **/
     public String getCustomizationId() {
         return customizationId;
     }
 
-    /** Alias of the customization */
+    /**
+     * Alias of the customization
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customizationAlias")
     private final String customizationAlias;
 
     /**
      * Alias of the customization
-     *
      * @return the value
-     */
+     **/
     public String getCustomizationAlias() {
         return customizationAlias;
     }
@@ -171,7 +170,6 @@ public final class CustomizationInferenceEntity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,31 +9,23 @@ import com.oracle.bmc.licensemanager.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of LicenseManager where multiple pages of data may be fetched. Two styles
- * of iteration are supported:
+ * to any list operations of LicenseManager where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class LicenseManagerPaginators {
     private final LicenseManager client;
 
@@ -42,18 +34,16 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLicenseRecords operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listLicenseRecords operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLicenseRecordsResponse> listLicenseRecordsResponseIterator(
             final ListLicenseRecordsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListLicenseRecordsRequest.Builder,
-                ListLicenseRecordsRequest,
+                ListLicenseRecordsRequest.Builder, ListLicenseRecordsRequest,
                 ListLicenseRecordsResponse>(
                 new java.util.function.Supplier<ListLicenseRecordsRequest.Builder>() {
                     @Override
@@ -95,21 +85,18 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.licensemanager.model.LicenseRecordSummary} objects contained in responses from
-     * the listLicenseRecords operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.licensemanager.model.LicenseRecordSummary} objects
+     * contained in responses from the listLicenseRecords operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.licensemanager.model.LicenseRecordSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.licensemanager.model.LicenseRecordSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.licensemanager.model.LicenseRecordSummary>
             listLicenseRecordsRecordIterator(final ListLicenseRecordsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListLicenseRecordsRequest.Builder,
-                ListLicenseRecordsRequest,
+                ListLicenseRecordsRequest.Builder, ListLicenseRecordsRequest,
                 ListLicenseRecordsResponse,
                 com.oracle.bmc.licensemanager.model.LicenseRecordSummary>(
                 new java.util.function.Supplier<ListLicenseRecordsRequest.Builder>() {
@@ -162,20 +149,17 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listProductLicenseConsumers operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listProductLicenseConsumers operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProductLicenseConsumersResponse>
             listProductLicenseConsumersResponseIterator(
                     final ListProductLicenseConsumersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProductLicenseConsumersRequest.Builder,
-                ListProductLicenseConsumersRequest,
+                ListProductLicenseConsumersRequest.Builder, ListProductLicenseConsumersRequest,
                 ListProductLicenseConsumersResponse>(
                 new java.util.function.Supplier<ListProductLicenseConsumersRequest.Builder>() {
                     @Override
@@ -218,22 +202,19 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.licensemanager.model.ProductLicenseConsumerSummary} objects contained in
-     * responses from the listProductLicenseConsumers operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.licensemanager.model.ProductLicenseConsumerSummary} objects
+     * contained in responses from the listProductLicenseConsumers operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.licensemanager.model.ProductLicenseConsumerSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.licensemanager.model.ProductLicenseConsumerSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.licensemanager.model.ProductLicenseConsumerSummary>
             listProductLicenseConsumersRecordIterator(
                     final ListProductLicenseConsumersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProductLicenseConsumersRequest.Builder,
-                ListProductLicenseConsumersRequest,
+                ListProductLicenseConsumersRequest.Builder, ListProductLicenseConsumersRequest,
                 ListProductLicenseConsumersResponse,
                 com.oracle.bmc.licensemanager.model.ProductLicenseConsumerSummary>(
                 new java.util.function.Supplier<ListProductLicenseConsumersRequest.Builder>() {
@@ -290,18 +271,16 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listProductLicenses operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProductLicenses operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProductLicensesResponse> listProductLicensesResponseIterator(
             final ListProductLicensesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProductLicensesRequest.Builder,
-                ListProductLicensesRequest,
+                ListProductLicensesRequest.Builder, ListProductLicensesRequest,
                 ListProductLicensesResponse>(
                 new java.util.function.Supplier<ListProductLicensesRequest.Builder>() {
                     @Override
@@ -343,21 +322,18 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.licensemanager.model.ProductLicenseSummary} objects contained in responses
-     * from the listProductLicenses operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.licensemanager.model.ProductLicenseSummary} objects
+     * contained in responses from the listProductLicenses operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.licensemanager.model.ProductLicenseSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.licensemanager.model.ProductLicenseSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.licensemanager.model.ProductLicenseSummary>
             listProductLicensesRecordIterator(final ListProductLicensesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProductLicensesRequest.Builder,
-                ListProductLicensesRequest,
+                ListProductLicensesRequest.Builder, ListProductLicensesRequest,
                 ListProductLicensesResponse,
                 com.oracle.bmc.licensemanager.model.ProductLicenseSummary>(
                 new java.util.function.Supplier<ListProductLicensesRequest.Builder>() {
@@ -410,21 +386,18 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTopUtilizedProductLicenses operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTopUtilizedProductLicenses operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTopUtilizedProductLicensesResponse>
             listTopUtilizedProductLicensesResponseIterator(
                     final ListTopUtilizedProductLicensesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListTopUtilizedProductLicensesRequest.Builder,
-                ListTopUtilizedProductLicensesRequest,
-                ListTopUtilizedProductLicensesResponse>(
+                ListTopUtilizedProductLicensesRequest, ListTopUtilizedProductLicensesResponse>(
                 new java.util.function.Supplier<ListTopUtilizedProductLicensesRequest.Builder>() {
                     @Override
                     public ListTopUtilizedProductLicensesRequest.Builder get() {
@@ -467,23 +440,20 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseSummary} objects contained in
-     * responses from the listTopUtilizedProductLicenses operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseSummary} objects
+     * contained in responses from the listTopUtilizedProductLicenses operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseSummary>
             listTopUtilizedProductLicensesRecordIterator(
                     final ListTopUtilizedProductLicensesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTopUtilizedProductLicensesRequest.Builder,
-                ListTopUtilizedProductLicensesRequest,
-                ListTopUtilizedProductLicensesResponse,
+                ListTopUtilizedProductLicensesRequest, ListTopUtilizedProductLicensesResponse,
                 com.oracle.bmc.licensemanager.model.TopUtilizedProductLicenseSummary>(
                 new java.util.function.Supplier<ListTopUtilizedProductLicensesRequest.Builder>() {
                     @Override
@@ -540,19 +510,16 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTopUtilizedResources operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listTopUtilizedResources operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTopUtilizedResourcesResponse> listTopUtilizedResourcesResponseIterator(
             final ListTopUtilizedResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTopUtilizedResourcesRequest.Builder,
-                ListTopUtilizedResourcesRequest,
+                ListTopUtilizedResourcesRequest.Builder, ListTopUtilizedResourcesRequest,
                 ListTopUtilizedResourcesResponse>(
                 new java.util.function.Supplier<ListTopUtilizedResourcesRequest.Builder>() {
                     @Override
@@ -595,21 +562,18 @@ public class LicenseManagerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary} objects contained in
-     * responses from the listTopUtilizedResources operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary} objects
+     * contained in responses from the listTopUtilizedResources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary>
             listTopUtilizedResourcesRecordIterator(final ListTopUtilizedResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTopUtilizedResourcesRequest.Builder,
-                ListTopUtilizedResourcesRequest,
+                ListTopUtilizedResourcesRequest.Builder, ListTopUtilizedResourcesRequest,
                 ListTopUtilizedResourcesResponse,
                 com.oracle.bmc.licensemanager.model.TopUtilizedResourceSummary>(
                 new java.util.function.Supplier<ListTopUtilizedResourcesRequest.Builder>() {

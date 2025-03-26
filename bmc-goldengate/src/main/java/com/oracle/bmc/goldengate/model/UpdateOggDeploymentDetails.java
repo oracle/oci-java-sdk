@@ -5,23 +5,23 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Deployment Details for updating an OggDeployment <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Deployment Details for updating an OggDeployment
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateOggDeploymentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateOggDeploymentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateOggDeploymentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialStore",
@@ -55,7 +55,10 @@ public final class UpdateOggDeploymentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of credential store for OGG. */
+        /**
+         * The type of credential store for OGG.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
         private CredentialStore credentialStore;
 
@@ -64,51 +67,52 @@ public final class UpdateOggDeploymentDetails
          *
          * @param credentialStore the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialStore(CredentialStore credentialStore) {
             this.credentialStore = credentialStore;
             this.__explicitlySet__.add("credentialStore");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Identity Domain when IAM credential store is used.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
         private String identityDomainId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Identity Domain when IAM credential store is used.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
          *
          * @param identityDomainId the value to set
          * @return this builder
-         */
+         **/
         public Builder identityDomainId(String identityDomainId) {
             this.identityDomainId = identityDomainId;
             this.__explicitlySet__.add("identityDomainId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the deployment password is stored.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the deployment password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-        /** The GoldenGate deployment console username. */
+        /**
+         * The GoldenGate deployment console username.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
@@ -117,36 +121,40 @@ public final class UpdateOggDeploymentDetails
          *
          * @param adminUsername the value to set
          * @return this builder
-         */
+         **/
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = adminUsername;
             this.__explicitlySet__.add("adminUsername");
             return this;
         }
         /**
-         * The password associated with the GoldenGate deployment console username. The password
-         * must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1
-         * numeric, and 1 special character. Special characters such as '$', '^', or '?' are not
-         * allowed. This field will be deprecated and replaced by "passwordSecretId".
-         */
+         * The password associated with the GoldenGate deployment console username.
+         * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+         * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+         * This field will be deprecated and replaced by "passwordSecretId".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
         /**
-         * The password associated with the GoldenGate deployment console username. The password
-         * must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1
-         * numeric, and 1 special character. Special characters such as '$', '^', or '?' are not
-         * allowed. This field will be deprecated and replaced by "passwordSecretId".
+         * The password associated with the GoldenGate deployment console username.
+         * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+         * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+         * This field will be deprecated and replaced by "passwordSecretId".
          *
          * @param adminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-        /** The base64 encoded content of the PEM file containing the SSL certificate. */
+        /**
+         * The base64 encoded content of the PEM file containing the SSL certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
@@ -155,13 +163,16 @@ public final class UpdateOggDeploymentDetails
          *
          * @param certificate the value to set
          * @return this builder
-         */
+         **/
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
             return this;
         }
-        /** The base64 encoded content of the PEM file containing the private key. */
+        /**
+         * The base64 encoded content of the PEM file containing the private key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -170,7 +181,7 @@ public final class UpdateOggDeploymentDetails
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -236,7 +247,9 @@ public final class UpdateOggDeploymentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -245,7 +258,10 @@ public final class UpdateOggDeploymentDetails
         return new Builder().copy(this);
     }
 
-    /** The type of credential store for OGG. */
+    /**
+     * The type of credential store for OGG.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
     private final CredentialStore credentialStore;
 
@@ -253,46 +269,47 @@ public final class UpdateOggDeploymentDetails
      * The type of credential store for OGG.
      *
      * @return the value
-     */
+     **/
     public CredentialStore getCredentialStore() {
         return credentialStore;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Identity Domain when IAM credential store is used.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
     private final String identityDomainId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Identity Domain when IAM credential store is used.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      *
      * @return the value
-     */
+     **/
     public String getIdentityDomainId() {
         return identityDomainId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the deployment password is stored.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the deployment password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
-    /** The GoldenGate deployment console username. */
+    /**
+     * The GoldenGate deployment console username.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
@@ -300,33 +317,37 @@ public final class UpdateOggDeploymentDetails
      * The GoldenGate deployment console username.
      *
      * @return the value
-     */
+     **/
     public String getAdminUsername() {
         return adminUsername;
     }
 
     /**
-     * The password associated with the GoldenGate deployment console username. The password must be
-     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
-     * special character. Special characters such as '$', '^', or '?' are not allowed. This field
-     * will be deprecated and replaced by "passwordSecretId".
-     */
+     * The password associated with the GoldenGate deployment console username.
+     * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+     * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+     * This field will be deprecated and replaced by "passwordSecretId".
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
     /**
-     * The password associated with the GoldenGate deployment console username. The password must be
-     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
-     * special character. Special characters such as '$', '^', or '?' are not allowed. This field
-     * will be deprecated and replaced by "passwordSecretId".
+     * The password associated with the GoldenGate deployment console username.
+     * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+     * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+     * This field will be deprecated and replaced by "passwordSecretId".
      *
      * @return the value
-     */
+     **/
     public String getAdminPassword() {
         return adminPassword;
     }
 
-    /** The base64 encoded content of the PEM file containing the SSL certificate. */
+    /**
+     * The base64 encoded content of the PEM file containing the SSL certificate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
@@ -334,12 +355,15 @@ public final class UpdateOggDeploymentDetails
      * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
-     */
+     **/
     public String getCertificate() {
         return certificate;
     }
 
-    /** The base64 encoded content of the PEM file containing the private key. */
+    /**
+     * The base64 encoded content of the PEM file containing the private key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -347,7 +371,7 @@ public final class UpdateOggDeploymentDetails
      * The base64 encoded content of the PEM file containing the private key.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
@@ -366,7 +390,6 @@ public final class UpdateOggDeploymentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

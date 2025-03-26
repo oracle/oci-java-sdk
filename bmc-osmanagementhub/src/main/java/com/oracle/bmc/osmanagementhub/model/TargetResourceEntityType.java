@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** The type of resources that a work request can act on. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum TargetResourceEntityType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of resources that a work request can act on.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum TargetResourceEntityType {
     Instance("INSTANCE"),
     Group("GROUP"),
     Compartment("COMPARTMENT"),

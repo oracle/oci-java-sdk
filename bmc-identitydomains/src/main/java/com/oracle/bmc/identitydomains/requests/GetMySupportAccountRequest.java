@@ -6,63 +6,51 @@ package com.oracle.bmc.identitydomains.requests;
 
 import com.oracle.bmc.identitydomains.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetMySupportAccountExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMySupportAccountRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetMySupportAccountExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMySupportAccountRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     private String mySupportAccountId;
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     public String getMySupportAccountId() {
         return mySupportAccountId;
     }
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     private String authorization;
 
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     public String getAuthorization() {
         return authorization;
     }
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     private String resourceTypeSchemaVersion;
 
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     public String getResourceTypeSchemaVersion() {
         return resourceTypeSchemaVersion;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -71,15 +59,17 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetMySupportAccountRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the resource */
+        /**
+         * ID of the resource
+         */
         private String mySupportAccountId = null;
 
         /**
          * ID of the resource
-         *
          * @param mySupportAccountId the value to set
          * @return this builder instance
          */
@@ -89,15 +79,12 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          */
         private String authorization = null;
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
-         *
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          * @param authorization the value to set
          * @return this builder instance
          */
@@ -107,23 +94,12 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          */
         private String resourceTypeSchemaVersion = null;
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
-         *
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          * @param resourceTypeSchemaVersion the value to set
          * @return this builder instance
          */
@@ -133,15 +109,12 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
-         *
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -152,19 +125,18 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -176,7 +148,6 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetMySupportAccountRequest o) {
@@ -192,11 +163,10 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of GetMySupportAccountRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetMySupportAccountRequest
          */
@@ -210,8 +180,7 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of GetMySupportAccountRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetMySupportAccountRequest
@@ -223,14 +192,12 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
             request.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new GetMySupportAccountRequest(mySupportAccountId, authorization,
-            // resourceTypeSchemaVersion, opcRetryToken);
+            // new GetMySupportAccountRequest(mySupportAccountId, authorization, resourceTypeSchemaVersion, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -243,7 +210,6 @@ public class GetMySupportAccountRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

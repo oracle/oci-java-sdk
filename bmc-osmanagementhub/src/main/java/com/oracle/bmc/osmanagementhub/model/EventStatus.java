@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Status of the event. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum EventStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Status of the event.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum EventStatus {
     Succeeded("SUCCEEDED"),
     Failed("FAILED"),
 

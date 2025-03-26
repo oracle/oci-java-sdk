@@ -6,109 +6,123 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPrivateIpsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPrivateIpsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPrivateIpsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPrivateIpsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: {@code
-     * 10.0.3.3}
+     * An IP address. This could be either IPv4 or IPv6, depending on the resource.
+     * Example: {@code 10.0.3.3}
+     *
      */
     private String ipAddress;
 
     /**
-     * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: {@code
-     * 10.0.3.3}
+     * An IP address. This could be either IPv4 or IPv6, depending on the resource.
+     * Example: {@code 10.0.3.3}
+     *
      */
     public String getIpAddress() {
         return ipAddress;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     private String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
     }
-    /** The OCID of the VNIC. */
+    /**
+     * The OCID of the VNIC.
+     */
     private String vnicId;
 
-    /** The OCID of the VNIC. */
+    /**
+     * The OCID of the VNIC.
+     */
     public String getVnicId() {
         return vnicId;
     }
     /**
-     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
-     * AVAILABLE
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
      */
     private String ipState;
 
     /**
-     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
-     * AVAILABLE
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
      */
     public String getIpState() {
         return ipState;
     }
-    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+    /**
+     * Lifetime of the IP address.
+     * There are two types of IPs:
+     *  - Ephemeral
+     *  - Reserved
+     *
+     */
     private String lifetime;
 
-    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+    /**
+     * Lifetime of the IP address.
+     * There are two types of IPs:
+     *  - Ephemeral
+     *  - Reserved
+     *
+     */
     public String getLifetime() {
         return lifetime;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      */
     private String vlanId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      */
     public String getVlanId() {
         return vlanId;
@@ -117,24 +131,26 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPrivateIpsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
-         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -145,16 +161,17 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -165,14 +182,15 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example:
-         * {@code 10.0.3.3}
+         * An IP address. This could be either IPv4 or IPv6, depending on the resource.
+         * Example: {@code 10.0.3.3}
+         *
          */
         private String ipAddress = null;
 
         /**
-         * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example:
-         * {@code 10.0.3.3}
+         * An IP address. This could be either IPv4 or IPv6, depending on the resource.
+         * Example: {@code 10.0.3.3}
          *
          * @param ipAddress the value to set
          * @return this builder instance
@@ -183,15 +201,12 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          */
         private String subnetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          * @param subnetId the value to set
          * @return this builder instance
          */
@@ -200,12 +215,13 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The OCID of the VNIC. */
+        /**
+         * The OCID of the VNIC.
+         */
         private String vnicId = null;
 
         /**
          * The OCID of the VNIC.
-         *
          * @param vnicId the value to set
          * @return this builder instance
          */
@@ -215,15 +231,12 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
-         * AVAILABLE
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
          */
         private String ipState = null;
 
         /**
-         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
-         * AVAILABLE
-         *
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
          * @param ipState the value to set
          * @return this builder instance
          */
@@ -232,11 +245,20 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+        /**
+         * Lifetime of the IP address.
+         * There are two types of IPs:
+         *  - Ephemeral
+         *  - Reserved
+         *
+         */
         private String lifetime = null;
 
         /**
-         * Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved
+         * Lifetime of the IP address.
+         * There are two types of IPs:
+         *  - Ephemeral
+         *  - Reserved
          *
          * @param lifetime the value to set
          * @return this builder instance
@@ -247,15 +269,12 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VLAN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
          */
         private String vlanId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VLAN.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
          * @param vlanId the value to set
          * @return this builder instance
          */
@@ -266,19 +285,18 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -290,7 +308,6 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPrivateIpsRequest o) {
@@ -310,11 +327,10 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListPrivateIpsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPrivateIpsRequest
          */
@@ -328,8 +344,7 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListPrivateIpsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPrivateIpsRequest
@@ -345,14 +360,12 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.lifetime = lifetime;
             request.vlanId = vlanId;
             return request;
-            // new ListPrivateIpsRequest(limit, page, ipAddress, subnetId, vnicId, ipState,
-            // lifetime, vlanId);
+            // new ListPrivateIpsRequest(limit, page, ipAddress, subnetId, vnicId, ipState, lifetime, vlanId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -369,7 +382,6 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

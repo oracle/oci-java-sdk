@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/** Possible work request resource actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum WorkRequestActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible work request resource actions.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+public enum WorkRequestActionType {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

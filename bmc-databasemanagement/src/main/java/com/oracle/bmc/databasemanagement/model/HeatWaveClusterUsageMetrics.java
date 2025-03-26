@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The list of aggregated metrics for a HeatWave cluster in the fleet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The list of aggregated metrics for a HeatWave cluster in the fleet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HeatWaveClusterUsageMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = HeatWaveClusterUsageMetrics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HeatWaveClusterUsageMetrics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "status",
@@ -59,139 +58,144 @@ public final class HeatWaveClusterUsageMetrics
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP,
-         * DOWN, or UNKNOWN at the current time.
-         */
+         * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP, DOWN, or UNKNOWN at the current time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private HeatWaveClusterStatus status;
 
         /**
-         * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP,
-         * DOWN, or UNKNOWN at the current time.
-         *
+         * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP, DOWN, or UNKNOWN at the current time.
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(HeatWaveClusterStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The OCID of the MySQL Database System associated with the HeatWave cluster. */
+        /**
+         * The OCID of the MySQL Database System associated with the HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
          * The OCID of the MySQL Database System associated with the HeatWave cluster.
-         *
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-        /** The name of the MySQL Database System associated with the HeatWave cluster. */
+        /**
+         * The name of the MySQL Database System associated with the HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemName")
         private String dbSystemName;
 
         /**
          * The name of the MySQL Database System associated with the HeatWave cluster.
-         *
          * @param dbSystemName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemName(String dbSystemName) {
             this.dbSystemName = dbSystemName;
             this.__explicitlySet__.add("dbSystemName");
             return this;
         }
-        /** The name of the HeatWave cluster. */
+        /**
+         * The name of the HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
         private String heatWaveClusterDisplayName;
 
         /**
          * The name of the HeatWave cluster.
-         *
          * @param heatWaveClusterDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveClusterDisplayName(String heatWaveClusterDisplayName) {
             this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
             this.__explicitlySet__.add("heatWaveClusterDisplayName");
             return this;
         }
-        /** The number of nodes in the HeatWave cluster. */
+        /**
+         * The number of nodes in the HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
          * The number of nodes in the HeatWave cluster.
-         *
          * @param nodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** Indicates whether Lakehouse is enabled for the HeatWave cluster or not. */
+        /**
+         * Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
         private Boolean isLakehouseEnabled;
 
         /**
          * Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
-         *
          * @param isLakehouseEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
             this.isLakehouseEnabled = isLakehouseEnabled;
             this.__explicitlySet__.add("isLakehouseEnabled");
             return this;
         }
-        /** The shape of the nodes in the HeatWave cluster. */
+        /**
+         * The shape of the nodes in the HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
         private String heatWaveNodeShape;
 
         /**
          * The shape of the nodes in the HeatWave cluster.
-         *
          * @param heatWaveNodeShape the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveNodeShape(String heatWaveNodeShape) {
             this.heatWaveNodeShape = heatWaveNodeShape;
             this.__explicitlySet__.add("heatWaveNodeShape");
             return this;
         }
-        /** The total memory belonging to the HeatWave cluster in GBs. */
+        /**
+         * The total memory belonging to the HeatWave cluster in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySize")
         private Integer memorySize;
 
         /**
          * The total memory belonging to the HeatWave cluster in GBs.
-         *
          * @param memorySize the value to set
          * @return this builder
-         */
+         **/
         public Builder memorySize(Integer memorySize) {
             this.memorySize = memorySize;
             this.__explicitlySet__.add("memorySize");
             return this;
         }
-        /** A list of the HeatWave cluster health metrics like CPU and Memory. */
+        /**
+         * A list of the HeatWave cluster health metrics like CPU and Memory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<HeatWaveFleetMetricDefinition> metrics;
 
         /**
          * A list of the HeatWave cluster health metrics like CPU and Memory.
-         *
          * @param metrics the value to set
          * @return this builder
-         */
+         **/
         public Builder metrics(java.util.List<HeatWaveFleetMetricDefinition> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -252,7 +256,9 @@ public final class HeatWaveClusterUsageMetrics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -262,122 +268,127 @@ public final class HeatWaveClusterUsageMetrics
     }
 
     /**
-     * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP, DOWN,
-     * or UNKNOWN at the current time.
-     */
+     * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP, DOWN, or UNKNOWN at the current time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final HeatWaveClusterStatus status;
 
     /**
-     * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP, DOWN,
-     * or UNKNOWN at the current time.
-     *
+     * The status of the HeatWave cluster. Indicates whether the status of the cluster is UP, DOWN, or UNKNOWN at the current time.
      * @return the value
-     */
+     **/
     public HeatWaveClusterStatus getStatus() {
         return status;
     }
 
-    /** The OCID of the MySQL Database System associated with the HeatWave cluster. */
+    /**
+     * The OCID of the MySQL Database System associated with the HeatWave cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
      * The OCID of the MySQL Database System associated with the HeatWave cluster.
-     *
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
 
-    /** The name of the MySQL Database System associated with the HeatWave cluster. */
+    /**
+     * The name of the MySQL Database System associated with the HeatWave cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemName")
     private final String dbSystemName;
 
     /**
      * The name of the MySQL Database System associated with the HeatWave cluster.
-     *
      * @return the value
-     */
+     **/
     public String getDbSystemName() {
         return dbSystemName;
     }
 
-    /** The name of the HeatWave cluster. */
+    /**
+     * The name of the HeatWave cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
     private final String heatWaveClusterDisplayName;
 
     /**
      * The name of the HeatWave cluster.
-     *
      * @return the value
-     */
+     **/
     public String getHeatWaveClusterDisplayName() {
         return heatWaveClusterDisplayName;
     }
 
-    /** The number of nodes in the HeatWave cluster. */
+    /**
+     * The number of nodes in the HeatWave cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
      * The number of nodes in the HeatWave cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getNodeCount() {
         return nodeCount;
     }
 
-    /** Indicates whether Lakehouse is enabled for the HeatWave cluster or not. */
+    /**
+     * Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
     private final Boolean isLakehouseEnabled;
 
     /**
      * Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLakehouseEnabled() {
         return isLakehouseEnabled;
     }
 
-    /** The shape of the nodes in the HeatWave cluster. */
+    /**
+     * The shape of the nodes in the HeatWave cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
     private final String heatWaveNodeShape;
 
     /**
      * The shape of the nodes in the HeatWave cluster.
-     *
      * @return the value
-     */
+     **/
     public String getHeatWaveNodeShape() {
         return heatWaveNodeShape;
     }
 
-    /** The total memory belonging to the HeatWave cluster in GBs. */
+    /**
+     * The total memory belonging to the HeatWave cluster in GBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySize")
     private final Integer memorySize;
 
     /**
      * The total memory belonging to the HeatWave cluster in GBs.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemorySize() {
         return memorySize;
     }
 
-    /** A list of the HeatWave cluster health metrics like CPU and Memory. */
+    /**
+     * A list of the HeatWave cluster health metrics like CPU and Memory.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<HeatWaveFleetMetricDefinition> metrics;
 
     /**
      * A list of the HeatWave cluster health metrics like CPU and Memory.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HeatWaveFleetMetricDefinition> getMetrics() {
         return metrics;
     }
@@ -389,7 +400,6 @@ public final class HeatWaveClusterUsageMetrics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,18 @@ package com.oracle.bmc.networkloadbalancer.responses;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request identifier.
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request identifier.
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /** The returned {@code BackendSetHealth} instance. */
+    /**
+     * The returned BackendSetHealth instance.
+     */
     private com.oracle.bmc.networkloadbalancer.model.BackendSetHealth backendSetHealth;
 
     /**
-     * The returned {@code BackendSetHealth} instance.
-     *
+     * The returned BackendSetHealth instance.
      * @return the value
      */
     public com.oracle.bmc.networkloadbalancer.model.BackendSetHealth getBackendSetHealth() {
@@ -57,7 +62,7 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
     })
     private GetBackendSetHealthResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.networkloadbalancer.model.BackendSetHealth backendSetHealth) {
@@ -67,33 +72,31 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
         this.backendSetHealth = backendSetHealth;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetBackendSetHealthResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request identifier.
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request identifier.
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +106,10 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code BackendSetHealth} instance. */
+        /**
+         * The returned BackendSetHealth instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.BackendSetHealth backendSetHealth;
 
         /**
-         * The returned {@code BackendSetHealth} instance.
-         *
+         * The returned BackendSetHealth instance.
          * @param backendSetHealth the value to set
          * @return this builder
          */
@@ -134,10 +141,8 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetBackendSetHealthResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +155,8 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetBackendSetHealthResponse build() {
             return new GetBackendSetHealthResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, backendSetHealth);
@@ -162,7 +165,6 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

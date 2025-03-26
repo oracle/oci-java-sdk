@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The request body info about configure certificate service list. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The request body info about configure certificate service list.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EnableCertificateDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EnableCertificateDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EnableCertificateDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
@@ -46,86 +45,81 @@ public final class EnableCertificateDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Base-64 encoded password for the cluster admin user. */
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
-         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
-        /** List of services for which certificate needs to be enabled. */
+        /**
+         * List of services for which certificate needs to be enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<Service> services;
 
         /**
          * List of services for which certificate needs to be enabled.
-         *
          * @param services the value to set
          * @return this builder
-         */
+         **/
         public Builder services(java.util.List<Service> services) {
             this.services = services;
             this.__explicitlySet__.add("services");
             return this;
         }
         /**
-         * Plain text certificate/s in order, separated by new line character. If not provided in
-         * request a self-signed root certificate is generated inside the cluster. In case
-         * hostCertDetails is provided, root certificate is mandatory.
-         */
+         * Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootCertificate")
         private String rootCertificate;
 
         /**
-         * Plain text certificate/s in order, separated by new line character. If not provided in
-         * request a self-signed root certificate is generated inside the cluster. In case
-         * hostCertDetails is provided, root certificate is mandatory.
-         *
+         * Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
          * @param rootCertificate the value to set
          * @return this builder
-         */
+         **/
         public Builder rootCertificate(String rootCertificate) {
             this.rootCertificate = rootCertificate;
             this.__explicitlySet__.add("rootCertificate");
             return this;
         }
         /**
-         * List of leaf certificates to use for services on each host. If custom host certificate is
-         * provided the root certificate becomes required.
-         */
+         * List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostCertDetails")
         private java.util.List<HostCertDetails> hostCertDetails;
 
         /**
-         * List of leaf certificates to use for services on each host. If custom host certificate is
-         * provided the root certificate becomes required.
-         *
+         * List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
          * @param hostCertDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder hostCertDetails(java.util.List<HostCertDetails> hostCertDetails) {
             this.hostCertDetails = hostCertDetails;
             this.__explicitlySet__.add("hostCertDetails");
             return this;
         }
-        /** Base-64 encoded password for CA certificate's private key. This value can be empty. */
+        /**
+         * Base-64 encoded password for CA certificate's private key. This value can be empty.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serverKeyPassword")
         private String serverKeyPassword;
 
         /**
          * Base-64 encoded password for CA certificate's private key. This value can be empty.
-         *
          * @param serverKeyPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder serverKeyPassword(String serverKeyPassword) {
             this.serverKeyPassword = serverKeyPassword;
             this.__explicitlySet__.add("serverKeyPassword");
@@ -170,7 +164,9 @@ public final class EnableCertificateDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,77 +175,72 @@ public final class EnableCertificateDetails
         return new Builder().copy(this);
     }
 
-    /** Base-64 encoded password for the cluster admin user. */
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded password for the cluster admin user.
-     *
      * @return the value
-     */
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
 
-    /** List of services for which certificate needs to be enabled. */
+    /**
+     * List of services for which certificate needs to be enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<Service> services;
 
     /**
      * List of services for which certificate needs to be enabled.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Service> getServices() {
         return services;
     }
 
     /**
-     * Plain text certificate/s in order, separated by new line character. If not provided in
-     * request a self-signed root certificate is generated inside the cluster. In case
-     * hostCertDetails is provided, root certificate is mandatory.
-     */
+     * Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootCertificate")
     private final String rootCertificate;
 
     /**
-     * Plain text certificate/s in order, separated by new line character. If not provided in
-     * request a self-signed root certificate is generated inside the cluster. In case
-     * hostCertDetails is provided, root certificate is mandatory.
-     *
+     * Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
      * @return the value
-     */
+     **/
     public String getRootCertificate() {
         return rootCertificate;
     }
 
     /**
-     * List of leaf certificates to use for services on each host. If custom host certificate is
-     * provided the root certificate becomes required.
-     */
+     * List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostCertDetails")
     private final java.util.List<HostCertDetails> hostCertDetails;
 
     /**
-     * List of leaf certificates to use for services on each host. If custom host certificate is
-     * provided the root certificate becomes required.
-     *
+     * List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
      * @return the value
-     */
+     **/
     public java.util.List<HostCertDetails> getHostCertDetails() {
         return hostCertDetails;
     }
 
-    /** Base-64 encoded password for CA certificate's private key. This value can be empty. */
+    /**
+     * Base-64 encoded password for CA certificate's private key. This value can be empty.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverKeyPassword")
     private final String serverKeyPassword;
 
     /**
      * Base-64 encoded password for CA certificate's private key. This value can be empty.
-     *
      * @return the value
-     */
+     **/
     public String getServerKeyPassword() {
         return serverKeyPassword;
     }
@@ -261,7 +252,6 @@ public final class EnableCertificateDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

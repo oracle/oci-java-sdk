@@ -5,38 +5,39 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Compute Instance Configuration instance details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Compute Instance Configuration instance details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComputeInstanceDetails.Builder.class)
+    builder = ComputeInstanceDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "instanceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "instanceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComputeInstanceDetails extends InstanceConfigurationInstanceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Block volume parameters. */
+        /**
+         * Block volume parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumes")
         private java.util.List<InstanceConfigurationBlockVolumeDetails> blockVolumes;
 
         /**
          * Block volume parameters.
-         *
          * @param blockVolumes the value to set
          * @return this builder
-         */
+         **/
         public Builder blockVolumes(
                 java.util.List<InstanceConfigurationBlockVolumeDetails> blockVolumes) {
             this.blockVolumes = blockVolumes;
@@ -52,16 +53,17 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
             this.__explicitlySet__.add("launchDetails");
             return this;
         }
-        /** Secondary VNIC parameters. */
+        /**
+         * Secondary VNIC parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnics")
         private java.util.List<InstanceConfigurationAttachVnicDetails> secondaryVnics;
 
         /**
          * Secondary VNIC parameters.
-         *
          * @param secondaryVnics the value to set
          * @return this builder
-         */
+         **/
         public Builder secondaryVnics(
                 java.util.List<InstanceConfigurationAttachVnicDetails> secondaryVnics) {
             this.secondaryVnics = secondaryVnics;
@@ -97,7 +99,9 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,15 +121,16 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         this.secondaryVnics = secondaryVnics;
     }
 
-    /** Block volume parameters. */
+    /**
+     * Block volume parameters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumes")
     private final java.util.List<InstanceConfigurationBlockVolumeDetails> blockVolumes;
 
     /**
      * Block volume parameters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<InstanceConfigurationBlockVolumeDetails> getBlockVolumes() {
         return blockVolumes;
     }
@@ -137,15 +142,16 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         return launchDetails;
     }
 
-    /** Secondary VNIC parameters. */
+    /**
+     * Secondary VNIC parameters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnics")
     private final java.util.List<InstanceConfigurationAttachVnicDetails> secondaryVnics;
 
     /**
      * Secondary VNIC parameters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<InstanceConfigurationAttachVnicDetails> getSecondaryVnics() {
         return secondaryVnics;
     }
@@ -157,7 +163,6 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

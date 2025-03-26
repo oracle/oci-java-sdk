@@ -5,11 +5,10 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Member Reference types of Monitoring template like RESOURCE_INSTANCE or RESOURCE_TYPE or
- * RESOURCE_GROUP
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MemberReferenceType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Member Reference types of Monitoring template like RESOURCE_INSTANCE or RESOURCE_TYPE or RESOURCE_GROUP
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MemberReferenceType {
     ResourceInstance("RESOURCE_INSTANCE"),
     ResourceType("RESOURCE_TYPE"),
     ResourceGroup("RESOURCE_GROUP"),

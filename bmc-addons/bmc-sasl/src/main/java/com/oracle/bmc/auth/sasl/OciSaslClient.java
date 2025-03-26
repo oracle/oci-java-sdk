@@ -38,10 +38,10 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Implementation of a {@link SaslClient} for the OCI SASL mechanism. That class shouldn't be
- * instanciated manually but registered using the {@link OciSaslClientProvider} and calling {@link
- * javax.security.sasl.Sasl#createSaslClient(String[], String, String, String, Map,
- * CallbackHandler)} using the proper mechanism.
+ * Implementation of a {@link SaslClient} for the OCI SASL mechanism.
+ * That class shouldn't be instanciated manually but registered using the {@link OciSaslClientProvider}
+ * and calling {@link javax.security.sasl.Sasl#createSaslClient(String[], String, String, String, Map, CallbackHandler)}
+ * using the proper mechanism.
  */
 public class OciSaslClient implements SaslClient {
 

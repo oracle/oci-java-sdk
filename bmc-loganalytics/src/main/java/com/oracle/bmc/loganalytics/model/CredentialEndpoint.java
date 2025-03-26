@@ -5,23 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The endpoint from where to fetch a credential, for example, the OAuth 2.0 token. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * The endpoint from where to fetch a credential, for example, the OAuth 2.0 token.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CredentialEndpoint.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CredentialEndpoint
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CredentialEndpoint.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CredentialEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -52,61 +50,65 @@ public final class CredentialEndpoint
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The credential endpoint name. */
+        /**
+         * The credential endpoint name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The credential endpoint name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The credential endpoint description. */
+        /**
+         * The credential endpoint description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The credential endpoint description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The credential endpoint model. */
+        /**
+         * The credential endpoint model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("model")
         private String model;
 
         /**
          * The credential endpoint model.
-         *
          * @param model the value to set
          * @return this builder
-         */
+         **/
         public Builder model(String model) {
             this.model = model;
             this.__explicitlySet__.add("model");
             return this;
         }
-        /** The endpoint unique identifier. */
+        /**
+         * The endpoint unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private Long endpointId;
 
         /**
          * The endpoint unique identifier.
-         *
          * @param endpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointId(Long endpointId) {
             this.endpointId = endpointId;
             this.__explicitlySet__.add("endpointId");
@@ -186,7 +188,9 @@ public final class CredentialEndpoint
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,54 +199,58 @@ public final class CredentialEndpoint
         return new Builder().copy(this);
     }
 
-    /** The credential endpoint name. */
+    /**
+     * The credential endpoint name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The credential endpoint name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The credential endpoint description. */
+    /**
+     * The credential endpoint description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The credential endpoint description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The credential endpoint model. */
+    /**
+     * The credential endpoint model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("model")
     private final String model;
 
     /**
      * The credential endpoint model.
-     *
      * @return the value
-     */
+     **/
     public String getModel() {
         return model;
     }
 
-    /** The endpoint unique identifier. */
+    /**
+     * The endpoint unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
     private final Long endpointId;
 
     /**
      * The endpoint unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getEndpointId() {
         return endpointId;
     }
@@ -275,7 +283,6 @@ public final class CredentialEndpoint
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

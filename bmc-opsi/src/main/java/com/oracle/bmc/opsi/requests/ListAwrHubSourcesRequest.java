@@ -6,127 +6,155 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrHubSourcesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAwrHubSourcesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrHubSourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAwrHubSourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Awr Hub identifier */
+    /**
+     * Unique Awr Hub identifier
+     */
     private String awrHubId;
 
-    /** Unique Awr Hub identifier */
+    /**
+     * Unique Awr Hub identifier
+     */
     public String getAwrHubId() {
         return awrHubId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Awr Hub source identifier */
+    /**
+     * Awr Hub source identifier
+     */
     private String awrHubSourceId;
 
-    /** Awr Hub source identifier */
+    /**
+     * Awr Hub source identifier
+     */
     public String getAwrHubSourceId() {
         return awrHubSourceId;
     }
     /**
-     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-     * EXTERNAL-PDB, EXTERNAL-NONCDB.
+     * Filter by one or more database type.
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+     *
      */
     private java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceType> sourceType;
 
     /**
-     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-     * EXTERNAL-PDB, EXTERNAL-NONCDB.
+     * Filter by one or more database type.
+     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+     *
      */
     public java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceType> getSourceType() {
         return sourceType;
     }
-    /** Awr Hub source database name */
+    /**
+     * Awr Hub source database name
+     */
     private String name;
 
-    /** Awr Hub source database name */
+    /**
+     * Awr Hub source database name
+     */
     public String getName() {
         return name;
     }
-    /** Resource Status */
+    /**
+     * Resource Status
+     */
     private java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceStatus> status;
 
-    /** Resource Status */
+    /**
+     * Resource Status
+     */
     public java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceStatus> getStatus() {
         return status;
     }
-    /** Lifecycle states */
+    /**
+     * Lifecycle states
+     */
     private java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceLifecycleState> lifecycleState;
 
-    /** Lifecycle states */
+    /**
+     * Lifecycle states
+     */
     public java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceLifecycleState>
             getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -160,22 +188,23 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -184,15 +213,17 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAwrHubSourcesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Awr Hub identifier */
+        /**
+         * Unique Awr Hub identifier
+         */
         private String awrHubId = null;
 
         /**
          * Unique Awr Hub identifier
-         *
          * @param awrHubId the value to set
          * @return this builder instance
          */
@@ -202,15 +233,12 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -219,12 +247,13 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Awr Hub source identifier */
+        /**
+         * Awr Hub source identifier
+         */
         private String awrHubSourceId = null;
 
         /**
          * Awr Hub source identifier
-         *
          * @param awrHubSourceId the value to set
          * @return this builder instance
          */
@@ -234,14 +263,15 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-         * EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         *
          */
         private java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceType> sourceType = null;
 
         /**
-         * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
-         * EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
          * @param sourceType the value to set
          * @return this builder instance
@@ -253,8 +283,8 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Singular setter. Filter by one or more database type. Possible values are ADW-S, ATP-S,
-         * ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Singular setter. Filter by one or more database type.
+         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -263,12 +293,13 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
             return this.sourceType(java.util.Arrays.asList(singularValue));
         }
 
-        /** Awr Hub source database name */
+        /**
+         * Awr Hub source database name
+         */
         private String name = null;
 
         /**
          * Awr Hub source database name
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -277,12 +308,13 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Resource Status */
+        /**
+         * Resource Status
+         */
         private java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceStatus> status = null;
 
         /**
          * Resource Status
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -293,7 +325,6 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Resource Status
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -301,13 +332,14 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
             return this.status(java.util.Arrays.asList(singularValue));
         }
 
-        /** Lifecycle states */
+        /**
+         * Lifecycle states
+         */
         private java.util.List<com.oracle.bmc.opsi.model.AwrHubSourceLifecycleState>
                 lifecycleState = null;
 
         /**
          * Lifecycle states
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -320,7 +352,6 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Singular setter. Lifecycle states
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -329,17 +360,20 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -351,16 +385,17 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -370,7 +405,10 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -385,16 +423,13 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -405,14 +440,15 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -424,19 +460,18 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -448,7 +483,6 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAwrHubSourcesRequest o) {
@@ -472,11 +506,10 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListAwrHubSourcesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAwrHubSourcesRequest
          */
@@ -490,8 +523,7 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListAwrHubSourcesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAwrHubSourcesRequest
@@ -511,14 +543,12 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAwrHubSourcesRequest(awrHubId, compartmentId, awrHubSourceId, sourceType,
-            // name, status, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListAwrHubSourcesRequest(awrHubId, compartmentId, awrHubSourceId, sourceType, name, status, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -539,7 +569,6 @@ public class ListAwrHubSourcesRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -6,60 +6,72 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateDataSafePrivateEndpointExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateDataSafePrivateEndpointRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateDataSafePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDataSafePrivateEndpointRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateDataSafePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails> {
 
-    /** The OCID of the private endpoint. */
+    /**
+     * The OCID of the private endpoint.
+     */
     private String dataSafePrivateEndpointId;
 
-    /** The OCID of the private endpoint. */
+    /**
+     * The OCID of the private endpoint.
+     */
     public String getDataSafePrivateEndpointId() {
         return dataSafePrivateEndpointId;
     }
-    /** The details used to update a Data Safe private endpoint. */
+    /**
+     * The details used to update a Data Safe private endpoint.
+     */
     private com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails
             updateDataSafePrivateEndpointDetails;
 
-    /** The details used to update a Data Safe private endpoint. */
+    /**
+     * The details used to update a Data Safe private endpoint.
+     */
     public com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails
             getUpdateDataSafePrivateEndpointDetails() {
         return updateDataSafePrivateEndpointDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +84,17 @@ public class UpdateDataSafePrivateEndpointRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDataSafePrivateEndpointRequest,
                     com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the private endpoint. */
+        /**
+         * The OCID of the private endpoint.
+         */
         private String dataSafePrivateEndpointId = null;
 
         /**
          * The OCID of the private endpoint.
-         *
          * @param dataSafePrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -89,13 +103,14 @@ public class UpdateDataSafePrivateEndpointRequest
             return this;
         }
 
-        /** The details used to update a Data Safe private endpoint. */
+        /**
+         * The details used to update a Data Safe private endpoint.
+         */
         private com.oracle.bmc.datasafe.model.UpdateDataSafePrivateEndpointDetails
                 updateDataSafePrivateEndpointDetails = null;
 
         /**
          * The details used to update a Data Safe private endpoint.
-         *
          * @param updateDataSafePrivateEndpointDetails the value to set
          * @return this builder instance
          */
@@ -107,18 +122,21 @@ public class UpdateDataSafePrivateEndpointRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -128,12 +146,13 @@ public class UpdateDataSafePrivateEndpointRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -144,19 +163,18 @@ public class UpdateDataSafePrivateEndpointRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,7 +186,6 @@ public class UpdateDataSafePrivateEndpointRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateDataSafePrivateEndpointRequest o) {
@@ -184,11 +201,10 @@ public class UpdateDataSafePrivateEndpointRequest
         /**
          * Build the instance of UpdateDataSafePrivateEndpointRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateDataSafePrivateEndpointRequest
          */
@@ -201,7 +217,6 @@ public class UpdateDataSafePrivateEndpointRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -215,8 +230,7 @@ public class UpdateDataSafePrivateEndpointRequest
         /**
          * Build the instance of UpdateDataSafePrivateEndpointRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateDataSafePrivateEndpointRequest
@@ -229,14 +243,12 @@ public class UpdateDataSafePrivateEndpointRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateDataSafePrivateEndpointRequest(dataSafePrivateEndpointId,
-            // updateDataSafePrivateEndpointDetails, ifMatch, opcRequestId);
+            // new UpdateDataSafePrivateEndpointRequest(dataSafePrivateEndpointId, updateDataSafePrivateEndpointDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -249,7 +261,6 @@ public class UpdateDataSafePrivateEndpointRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

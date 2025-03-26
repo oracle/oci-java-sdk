@@ -6,72 +6,88 @@ package com.oracle.bmc.psql.requests;
 
 import com.oracle.bmc.psql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListShapesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListShapesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListShapesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListShapesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return the feature by the shape name. */
+    /**
+     * A filter to return the feature by the shape name.
+     */
     private String id;
 
-    /** A filter to return the feature by the shape name. */
+    /**
+     * A filter to return the feature by the shape name.
+     */
     public String getId() {
         return id;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.psql.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.psql.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -105,8 +121,8 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -115,15 +131,17 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListShapesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -132,12 +150,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return the feature by the shape name. */
+        /**
+         * A filter to return the feature by the shape name.
+         */
         private String id = null;
 
         /**
          * A filter to return the feature by the shape name.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -146,12 +165,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -160,12 +180,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -175,15 +196,12 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -192,12 +210,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.psql.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -207,14 +226,13 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -226,19 +244,18 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -250,7 +267,6 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListShapesRequest o) {
@@ -269,11 +285,10 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListShapesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListShapesRequest
          */
@@ -287,8 +302,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListShapesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListShapesRequest
@@ -303,14 +317,12 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListShapesRequest(compartmentId, id, opcRequestId, limit, page, sortOrder,
-            // sortBy);
+            // new ListShapesRequest(compartmentId, id, opcRequestId, limit, page, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -326,7 +338,6 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

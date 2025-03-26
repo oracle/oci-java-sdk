@@ -5,24 +5,23 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * See ValidAuthenticateUserResult, BadUserStateAuthenticateUserResult,
- * UserNotFoundAuthenticateUserResult, TenantNotFoundAuthenticateUserResult <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * See ValidAuthenticateUserResult, BadUserStateAuthenticateUserResult, UserNotFoundAuthenticateUserResult, TenantNotFoundAuthenticateUserResult
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AuthenticateUserResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AuthenticateUserResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticateUserResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tenantInput", "userInput"})
     public AuthenticateUserResult(String tenantInput, String userInput) {
@@ -33,31 +32,33 @@ public final class AuthenticateUserResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The tenant name. */
+        /**
+         * The tenant name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
         private String tenantInput;
 
         /**
          * The tenant name.
-         *
          * @param tenantInput the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantInput(String tenantInput) {
             this.tenantInput = tenantInput;
             this.__explicitlySet__.add("tenantInput");
             return this;
         }
-        /** The user name. */
+        /**
+         * The user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userInput")
         private String userInput;
 
         /**
          * The user name.
-         *
          * @param userInput the value to set
          * @return this builder
-         */
+         **/
         public Builder userInput(String userInput) {
             this.userInput = userInput;
             this.__explicitlySet__.add("userInput");
@@ -88,7 +89,9 @@ public final class AuthenticateUserResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class AuthenticateUserResult
         return new Builder().copy(this);
     }
 
-    /** The tenant name. */
+    /**
+     * The tenant name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantInput")
     private final String tenantInput;
 
     /**
      * The tenant name.
-     *
      * @return the value
-     */
+     **/
     public String getTenantInput() {
         return tenantInput;
     }
 
-    /** The user name. */
+    /**
+     * The user name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userInput")
     private final String userInput;
 
     /**
      * The user name.
-     *
      * @return the value
-     */
+     **/
     public String getUserInput() {
         return userInput;
     }
@@ -130,7 +135,6 @@ public final class AuthenticateUserResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

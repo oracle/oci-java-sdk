@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Activity details including status corresponding to an Action Group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Activity details including status corresponding to an Action Group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobActivity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobActivity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -54,53 +52,52 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique activity id at the action group level. In most cases, this would be a generated
-         * ActionGroupId.
-         */
+         * Unique activity id at the action group level.
+         * In most cases, this would be a generated ActionGroupId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique activity id at the action group level. In most cases, this would be a generated
-         * ActionGroupId.
+         * Unique activity id at the action group level.
+         * In most cases, this would be a generated ActionGroupId.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Status of the Job at Action Group Level. */
+        /**
+         * Status of the Job at Action Group Level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
          * Status of the Job at Action Group Level.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(JobStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * The time the execution for the Action Group started. An RFC3339 formatted datetime
-         * string.
-         */
+         * The time the execution for the Action Group started. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The time the execution for the Action Group started. An RFC3339 formatted datetime
-         * string.
-         *
+         * The time the execution for the Action Group started. An RFC3339 formatted datetime string.
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -108,80 +105,83 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The time the execution for the Action Group ended. An RFC3339 formatted datetime string
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The time the execution for the Action Group ended. An RFC3339 formatted datetime string
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** OCID of the runbook associated with the Action Group. */
+        /**
+         * OCID of the runbook associated with the Action Group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
         private String runbookId;
 
         /**
          * OCID of the runbook associated with the Action Group.
-         *
          * @param runbookId the value to set
          * @return this builder
-         */
+         **/
         public Builder runbookId(String runbookId) {
             this.runbookId = runbookId;
             this.__explicitlySet__.add("runbookId");
             return this;
         }
-        /** Name of the runbook associated with the Action Group. */
+        /**
+         * Name of the runbook associated with the Action Group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runbookName")
         private String runbookName;
 
         /**
          * Name of the runbook associated with the Action Group.
-         *
          * @param runbookName the value to set
          * @return this builder
-         */
+         **/
         public Builder runbookName(String runbookName) {
             this.runbookName = runbookName;
             this.__explicitlySet__.add("runbookName");
             return this;
         }
         /**
-         * A description of the Job Activity status. If there are any errors, this can also include
-         * a short error message.
-         */
+         * A description of the Job Activity status.
+         * If there are any errors, this can also include a short error message.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A description of the Job Activity status. If there are any errors, this can also include
-         * a short error message.
+         * A description of the Job Activity status.
+         * If there are any errors, this can also include a short error message.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** List of Resource executions associated with the Action Group. */
+        /**
+         * List of Resource executions associated with the Action Group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLevelExecutions")
         private java.util.List<EntityExecutionDetails> resourceLevelExecutions;
 
         /**
          * List of Resource executions associated with the Action Group.
-         *
          * @param resourceLevelExecutions the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceLevelExecutions(
                 java.util.List<EntityExecutionDetails> resourceLevelExecutions) {
             this.resourceLevelExecutions = resourceLevelExecutions;
@@ -239,7 +239,9 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -249,115 +251,121 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * Unique activity id at the action group level. In most cases, this would be a generated
-     * ActionGroupId.
-     */
+     * Unique activity id at the action group level.
+     * In most cases, this would be a generated ActionGroupId.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique activity id at the action group level. In most cases, this would be a generated
-     * ActionGroupId.
+     * Unique activity id at the action group level.
+     * In most cases, this would be a generated ActionGroupId.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Status of the Job at Action Group Level. */
+    /**
+     * Status of the Job at Action Group Level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
      * Status of the Job at Action Group Level.
-     *
      * @return the value
-     */
+     **/
     public JobStatus getStatus() {
         return status;
     }
 
     /**
      * The time the execution for the Action Group started. An RFC3339 formatted datetime string.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time the execution for the Action Group started. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time the execution for the Action Group ended. An RFC3339 formatted datetime string */
+    /**
+     * The time the execution for the Action Group ended. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The time the execution for the Action Group ended. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** OCID of the runbook associated with the Action Group. */
+    /**
+     * OCID of the runbook associated with the Action Group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
     private final String runbookId;
 
     /**
      * OCID of the runbook associated with the Action Group.
-     *
      * @return the value
-     */
+     **/
     public String getRunbookId() {
         return runbookId;
     }
 
-    /** Name of the runbook associated with the Action Group. */
+    /**
+     * Name of the runbook associated with the Action Group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runbookName")
     private final String runbookName;
 
     /**
      * Name of the runbook associated with the Action Group.
-     *
      * @return the value
-     */
+     **/
     public String getRunbookName() {
         return runbookName;
     }
 
     /**
-     * A description of the Job Activity status. If there are any errors, this can also include a
-     * short error message.
-     */
+     * A description of the Job Activity status.
+     * If there are any errors, this can also include a short error message.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A description of the Job Activity status. If there are any errors, this can also include a
-     * short error message.
+     * A description of the Job Activity status.
+     * If there are any errors, this can also include a short error message.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** List of Resource executions associated with the Action Group. */
+    /**
+     * List of Resource executions associated with the Action Group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceLevelExecutions")
     private final java.util.List<EntityExecutionDetails> resourceLevelExecutions;
 
     /**
      * List of Resource executions associated with the Action Group.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityExecutionDetails> getResourceLevelExecutions() {
         return resourceLevelExecutions;
     }
@@ -369,7 +377,6 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

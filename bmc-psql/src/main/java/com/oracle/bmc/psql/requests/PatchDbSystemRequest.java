@@ -6,56 +6,63 @@ package com.oracle.bmc.psql.requests;
 
 import com.oracle.bmc.psql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/PatchDbSystemExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use PatchDbSystemRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/PatchDbSystemExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PatchDbSystemRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class PatchDbSystemRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.psql.model.PatchDbSystemDetails> {
 
-    /** A unique identifier for the database system. */
+    /**
+     * A unique identifier for the database system.
+     */
     private String dbSystemId;
 
-    /** A unique identifier for the database system. */
+    /**
+     * A unique identifier for the database system.
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
-    /** The information to be modified. */
+    /**
+     * The information to be modified.
+     */
     private com.oracle.bmc.psql.model.PatchDbSystemDetails patchDbSystemDetails;
 
-    /** The information to be modified. */
+    /**
+     * The information to be modified.
+     */
     public com.oracle.bmc.psql.model.PatchDbSystemDetails getPatchDbSystemDetails() {
         return patchDbSystemDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -67,15 +74,17 @@ public class PatchDbSystemRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PatchDbSystemRequest, com.oracle.bmc.psql.model.PatchDbSystemDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique identifier for the database system. */
+        /**
+         * A unique identifier for the database system.
+         */
         private String dbSystemId = null;
 
         /**
          * A unique identifier for the database system.
-         *
          * @param dbSystemId the value to set
          * @return this builder instance
          */
@@ -84,12 +93,13 @@ public class PatchDbSystemRequest
             return this;
         }
 
-        /** The information to be modified. */
+        /**
+         * The information to be modified.
+         */
         private com.oracle.bmc.psql.model.PatchDbSystemDetails patchDbSystemDetails = null;
 
         /**
          * The information to be modified.
-         *
          * @param patchDbSystemDetails the value to set
          * @return this builder instance
          */
@@ -100,18 +110,15 @@ public class PatchDbSystemRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -121,12 +128,13 @@ public class PatchDbSystemRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -137,19 +145,18 @@ public class PatchDbSystemRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -161,7 +168,6 @@ public class PatchDbSystemRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PatchDbSystemRequest o) {
@@ -177,11 +183,10 @@ public class PatchDbSystemRequest
         /**
          * Build the instance of PatchDbSystemRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PatchDbSystemRequest
          */
@@ -194,7 +199,6 @@ public class PatchDbSystemRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -207,8 +211,7 @@ public class PatchDbSystemRequest
         /**
          * Build the instance of PatchDbSystemRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PatchDbSystemRequest
@@ -226,7 +229,6 @@ public class PatchDbSystemRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -239,7 +241,6 @@ public class PatchDbSystemRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

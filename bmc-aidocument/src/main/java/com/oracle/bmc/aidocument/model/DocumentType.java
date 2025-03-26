@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.aidocument.model;
 
-/** The type of document. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
-public enum DocumentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of document.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+public enum DocumentType {
     Invoice("INVOICE"),
     Receipt("RECEIPT"),
     Resume("RESUME"),

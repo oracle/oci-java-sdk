@@ -6,25 +6,23 @@ package com.oracle.bmc.core.model;
 
 /**
  * For a flexible shape, the amount of memory available for instances that use this shape.
+ * <p>
+ * If this field is null, then this shape has a fixed amount of memory equivalent to {@code memoryInGBs}.
  *
- * <p>If this field is null, then this shape has a fixed amount of memory equivalent to {@code
- * memoryInGBs}. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ShapeMemoryOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ShapeMemoryOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ShapeMemoryOptions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "minInGBs",
@@ -52,7 +50,10 @@ public final class ShapeMemoryOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The minimum amount of memory, in gigabytes. */
+        /**
+         * The minimum amount of memory, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
         private Float minInGBs;
 
@@ -61,13 +62,16 @@ public final class ShapeMemoryOptions
          *
          * @param minInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder minInGBs(Float minInGBs) {
             this.minInGBs = minInGBs;
             this.__explicitlySet__.add("minInGBs");
             return this;
         }
-        /** The maximum amount of memory, in gigabytes. */
+        /**
+         * The maximum amount of memory, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
         private Float maxInGBs;
 
@@ -76,13 +80,16 @@ public final class ShapeMemoryOptions
          *
          * @param maxInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxInGBs(Float maxInGBs) {
             this.maxInGBs = maxInGBs;
             this.__explicitlySet__.add("maxInGBs");
             return this;
         }
-        /** The default amount of memory per OCPU available for this shape, in gigabytes. */
+        /**
+         * The default amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
         private Float defaultPerOcpuInGBs;
 
@@ -91,13 +98,16 @@ public final class ShapeMemoryOptions
          *
          * @param defaultPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultPerOcpuInGBs(Float defaultPerOcpuInGBs) {
             this.defaultPerOcpuInGBs = defaultPerOcpuInGBs;
             this.__explicitlySet__.add("defaultPerOcpuInGBs");
             return this;
         }
-        /** The minimum amount of memory per OCPU available for this shape, in gigabytes. */
+        /**
+         * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
         private Float minPerOcpuInGBs;
 
@@ -106,13 +116,16 @@ public final class ShapeMemoryOptions
          *
          * @param minPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder minPerOcpuInGBs(Float minPerOcpuInGBs) {
             this.minPerOcpuInGBs = minPerOcpuInGBs;
             this.__explicitlySet__.add("minPerOcpuInGBs");
             return this;
         }
-        /** The maximum amount of memory per OCPU available for this shape, in gigabytes. */
+        /**
+         * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
         private Float maxPerOcpuInGBs;
 
@@ -121,13 +134,16 @@ public final class ShapeMemoryOptions
          *
          * @param maxPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxPerOcpuInGBs(Float maxPerOcpuInGBs) {
             this.maxPerOcpuInGBs = maxPerOcpuInGBs;
             this.__explicitlySet__.add("maxPerOcpuInGBs");
             return this;
         }
-        /** The maximum amount of memory per NUMA node, in gigabytes. */
+        /**
+         * The maximum amount of memory per NUMA node, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPerNumaNodeInGBs")
         private Float maxPerNumaNodeInGBs;
 
@@ -136,7 +152,7 @@ public final class ShapeMemoryOptions
          *
          * @param maxPerNumaNodeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxPerNumaNodeInGBs(Float maxPerNumaNodeInGBs) {
             this.maxPerNumaNodeInGBs = maxPerNumaNodeInGBs;
             this.__explicitlySet__.add("maxPerNumaNodeInGBs");
@@ -185,7 +201,9 @@ public final class ShapeMemoryOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -194,7 +212,10 @@ public final class ShapeMemoryOptions
         return new Builder().copy(this);
     }
 
-    /** The minimum amount of memory, in gigabytes. */
+    /**
+     * The minimum amount of memory, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
     private final Float minInGBs;
 
@@ -202,12 +223,15 @@ public final class ShapeMemoryOptions
      * The minimum amount of memory, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMinInGBs() {
         return minInGBs;
     }
 
-    /** The maximum amount of memory, in gigabytes. */
+    /**
+     * The maximum amount of memory, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
     private final Float maxInGBs;
 
@@ -215,12 +239,15 @@ public final class ShapeMemoryOptions
      * The maximum amount of memory, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMaxInGBs() {
         return maxInGBs;
     }
 
-    /** The default amount of memory per OCPU available for this shape, in gigabytes. */
+    /**
+     * The default amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
     private final Float defaultPerOcpuInGBs;
 
@@ -228,12 +255,15 @@ public final class ShapeMemoryOptions
      * The default amount of memory per OCPU available for this shape, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getDefaultPerOcpuInGBs() {
         return defaultPerOcpuInGBs;
     }
 
-    /** The minimum amount of memory per OCPU available for this shape, in gigabytes. */
+    /**
+     * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
     private final Float minPerOcpuInGBs;
 
@@ -241,12 +271,15 @@ public final class ShapeMemoryOptions
      * The minimum amount of memory per OCPU available for this shape, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMinPerOcpuInGBs() {
         return minPerOcpuInGBs;
     }
 
-    /** The maximum amount of memory per OCPU available for this shape, in gigabytes. */
+    /**
+     * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
     private final Float maxPerOcpuInGBs;
 
@@ -254,12 +287,15 @@ public final class ShapeMemoryOptions
      * The maximum amount of memory per OCPU available for this shape, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMaxPerOcpuInGBs() {
         return maxPerOcpuInGBs;
     }
 
-    /** The maximum amount of memory per NUMA node, in gigabytes. */
+    /**
+     * The maximum amount of memory per NUMA node, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPerNumaNodeInGBs")
     private final Float maxPerNumaNodeInGBs;
 
@@ -267,7 +303,7 @@ public final class ShapeMemoryOptions
      * The maximum amount of memory per NUMA node, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMaxPerNumaNodeInGBs() {
         return maxPerNumaNodeInGBs;
     }
@@ -279,7 +315,6 @@ public final class ShapeMemoryOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

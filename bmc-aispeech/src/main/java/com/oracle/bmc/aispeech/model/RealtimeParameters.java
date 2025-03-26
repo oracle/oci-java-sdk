@@ -5,23 +5,21 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Parameters to be sent to the realtime speech service over a websocket connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Parameters to be sent to the realtime speech service over a websocket connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RealtimeParameters.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RealtimeParameters
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = RealtimeParameters.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RealtimeParameters extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "encoding",
@@ -62,187 +60,205 @@ public final class RealtimeParameters
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Audio encoding to use - audio/raw;rate=16000 - audio/raw;rate=8000 -
-         * audio/raw;rate=8000;codec=mulaw - audio/raw;rate=8000;codec=alaw
-         */
+         * Audio encoding to use
+         * - audio/raw;rate=16000
+         * - audio/raw;rate=8000
+         * - audio/raw;rate=8000;codec=mulaw
+         * - audio/raw;rate=8000;codec=alaw
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encoding")
         private String encoding;
 
         /**
-         * Audio encoding to use - audio/raw;rate=16000 - audio/raw;rate=8000 -
-         * audio/raw;rate=8000;codec=mulaw - audio/raw;rate=8000;codec=alaw
+         * Audio encoding to use
+         * - audio/raw;rate=16000
+         * - audio/raw;rate=8000
+         * - audio/raw;rate=8000;codec=mulaw
+         * - audio/raw;rate=8000;codec=alaw
          *
          * @param encoding the value to set
          * @return this builder
-         */
+         **/
         public Builder encoding(String encoding) {
             this.encoding = encoding;
             this.__explicitlySet__.add("encoding");
             return this;
         }
-        /** Toggle for ack messages. */
+        /**
+         * Toggle for ack messages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAckEnabled")
         private Boolean isAckEnabled;
 
         /**
          * Toggle for ack messages.
-         *
          * @param isAckEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAckEnabled(Boolean isAckEnabled) {
             this.isAckEnabled = isAckEnabled;
             this.__explicitlySet__.add("isAckEnabled");
             return this;
         }
-        /** Silence threshold for Realtime Speech partial results in milliseconds. */
+        /**
+         * Silence threshold for Realtime Speech partial results in milliseconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partialSilenceThresholdInMs")
         private Integer partialSilenceThresholdInMs;
 
         /**
          * Silence threshold for Realtime Speech partial results in milliseconds.
-         *
          * @param partialSilenceThresholdInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder partialSilenceThresholdInMs(Integer partialSilenceThresholdInMs) {
             this.partialSilenceThresholdInMs = partialSilenceThresholdInMs;
             this.__explicitlySet__.add("partialSilenceThresholdInMs");
             return this;
         }
-        /** Silence threshold for Realtime Speech final results in milliseconds. */
+        /**
+         * Silence threshold for Realtime Speech final results in milliseconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("finalSilenceThresholdInMs")
         private Integer finalSilenceThresholdInMs;
 
         /**
          * Silence threshold for Realtime Speech final results in milliseconds.
-         *
          * @param finalSilenceThresholdInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder finalSilenceThresholdInMs(Integer finalSilenceThresholdInMs) {
             this.finalSilenceThresholdInMs = finalSilenceThresholdInMs;
             this.__explicitlySet__.add("finalSilenceThresholdInMs");
             return this;
         }
         /**
-         * When enabled sets the amount of confidence required for latest tokens before returning
-         * them as part of a new partial result
-         */
+         * When enabled sets the amount of confidence required for latest tokens before returning them as part of a new partial result
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stabilizePartialResults")
         private StabilizePartialResults stabilizePartialResults;
 
         /**
-         * When enabled sets the amount of confidence required for latest tokens before returning
-         * them as part of a new partial result
-         *
+         * When enabled sets the amount of confidence required for latest tokens before returning them as part of a new partial result
          * @param stabilizePartialResults the value to set
          * @return this builder
-         */
+         **/
         public Builder stabilizePartialResults(StabilizePartialResults stabilizePartialResults) {
             this.stabilizePartialResults = stabilizePartialResults;
             this.__explicitlySet__.add("stabilizePartialResults");
             return this;
         }
-        /** Model Domain. */
+        /**
+         * Model Domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelDomain")
         private ModelDomain modelDomain;
 
         /**
          * Model Domain.
-         *
          * @param modelDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder modelDomain(ModelDomain modelDomain) {
             this.modelDomain = modelDomain;
             this.__explicitlySet__.add("modelDomain");
             return this;
         }
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
-         */
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         * - en-US: English - United States
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         * - en-US: English - United States
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
          *
          * @param languageCode the value to set
          * @return this builder
-         */
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
         /**
-         * If set to true, the service will not fail connection attempt if it encounters any issues
-         * that prevent the loading of all specified user customizations. Any invalid customizations
-         * will simply be ignored and connection will continue being established with the default
-         * base model and any remaining valid customizations. If set to false, if the service is
-         * unable to load any of the specified customizations, an error detailing why will be
-         * returned and the session will end.
-         */
+         * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
+         * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreInvalidCustomizations")
         private Boolean shouldIgnoreInvalidCustomizations;
 
         /**
-         * If set to true, the service will not fail connection attempt if it encounters any issues
-         * that prevent the loading of all specified user customizations. Any invalid customizations
-         * will simply be ignored and connection will continue being established with the default
-         * base model and any remaining valid customizations. If set to false, if the service is
-         * unable to load any of the specified customizations, an error detailing why will be
-         * returned and the session will end.
+         * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
+         * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
          *
          * @param shouldIgnoreInvalidCustomizations the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldIgnoreInvalidCustomizations(
                 Boolean shouldIgnoreInvalidCustomizations) {
             this.shouldIgnoreInvalidCustomizations = shouldIgnoreInvalidCustomizations;
             this.__explicitlySet__.add("shouldIgnoreInvalidCustomizations");
             return this;
         }
-        /** Array of customization objects. */
+        /**
+         * Array of customization objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customizations")
         private java.util.List<CustomizationInference> customizations;
 
         /**
          * Array of customization objects.
-         *
          * @param customizations the value to set
          * @return this builder
-         */
+         **/
         public Builder customizations(java.util.List<CustomizationInference> customizations) {
             this.customizations = customizations;
             this.__explicitlySet__.add("customizations");
             return this;
         }
         /**
-         * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
-         * punctuation in the transcription response - SPOKEN: Punctuations in response only when
-         * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-         * disabled
-         */
+         * Configure punctuations in the generated transcriptions. Disabled by default.
+         * - NONE: No punctuation in the transcription response
+         * - SPOKEN: Punctuations in response only when verbally spoken
+         * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
         private Punctuation punctuation;
 
         /**
-         * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
-         * punctuation in the transcription response - SPOKEN: Punctuations in response only when
-         * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-         * disabled
+         * Configure punctuations in the generated transcriptions. Disabled by default.
+         * - NONE: No punctuation in the transcription response
+         * - SPOKEN: Punctuations in response only when verbally spoken
+         * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
          *
          * @param punctuation the value to set
          * @return this builder
-         */
+         **/
         public Builder punctuation(Punctuation punctuation) {
             this.punctuation = punctuation;
             this.__explicitlySet__.add("punctuation");
@@ -308,7 +324,9 @@ public final class RealtimeParameters
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -318,66 +336,75 @@ public final class RealtimeParameters
     }
 
     /**
-     * Audio encoding to use - audio/raw;rate=16000 - audio/raw;rate=8000 -
-     * audio/raw;rate=8000;codec=mulaw - audio/raw;rate=8000;codec=alaw
-     */
+     * Audio encoding to use
+     * - audio/raw;rate=16000
+     * - audio/raw;rate=8000
+     * - audio/raw;rate=8000;codec=mulaw
+     * - audio/raw;rate=8000;codec=alaw
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     private final String encoding;
 
     /**
-     * Audio encoding to use - audio/raw;rate=16000 - audio/raw;rate=8000 -
-     * audio/raw;rate=8000;codec=mulaw - audio/raw;rate=8000;codec=alaw
+     * Audio encoding to use
+     * - audio/raw;rate=16000
+     * - audio/raw;rate=8000
+     * - audio/raw;rate=8000;codec=mulaw
+     * - audio/raw;rate=8000;codec=alaw
      *
      * @return the value
-     */
+     **/
     public String getEncoding() {
         return encoding;
     }
 
-    /** Toggle for ack messages. */
+    /**
+     * Toggle for ack messages.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAckEnabled")
     private final Boolean isAckEnabled;
 
     /**
      * Toggle for ack messages.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAckEnabled() {
         return isAckEnabled;
     }
 
-    /** Silence threshold for Realtime Speech partial results in milliseconds. */
+    /**
+     * Silence threshold for Realtime Speech partial results in milliseconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partialSilenceThresholdInMs")
     private final Integer partialSilenceThresholdInMs;
 
     /**
      * Silence threshold for Realtime Speech partial results in milliseconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getPartialSilenceThresholdInMs() {
         return partialSilenceThresholdInMs;
     }
 
-    /** Silence threshold for Realtime Speech final results in milliseconds. */
+    /**
+     * Silence threshold for Realtime Speech final results in milliseconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("finalSilenceThresholdInMs")
     private final Integer finalSilenceThresholdInMs;
 
     /**
      * Silence threshold for Realtime Speech final results in milliseconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getFinalSilenceThresholdInMs() {
         return finalSilenceThresholdInMs;
     }
 
     /**
-     * When enabled sets the amount of confidence required for latest tokens before returning them
-     * as part of a new partial result
-     */
-    public enum StabilizePartialResults implements com.oracle.bmc.http.internal.BmcEnum {
+     * When enabled sets the amount of confidence required for latest tokens before returning them as part of a new partial result
+     **/
+    public enum StabilizePartialResults {
         None("NONE"),
         Low("LOW"),
         Medium("MEDIUM"),
@@ -412,24 +439,23 @@ public final class RealtimeParameters
         }
     };
     /**
-     * When enabled sets the amount of confidence required for latest tokens before returning them
-     * as part of a new partial result
-     */
+     * When enabled sets the amount of confidence required for latest tokens before returning them as part of a new partial result
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stabilizePartialResults")
     private final StabilizePartialResults stabilizePartialResults;
 
     /**
-     * When enabled sets the amount of confidence required for latest tokens before returning them
-     * as part of a new partial result
-     *
+     * When enabled sets the amount of confidence required for latest tokens before returning them as part of a new partial result
      * @return the value
-     */
+     **/
     public StabilizePartialResults getStabilizePartialResults() {
         return stabilizePartialResults;
     }
 
-    /** Model Domain. */
-    public enum ModelDomain implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Model Domain.
+     **/
+    public enum ModelDomain {
         Generic("GENERIC"),
         Medical("MEDICAL"),
         ;
@@ -461,85 +487,96 @@ public final class RealtimeParameters
             throw new IllegalArgumentException("Invalid ModelDomain: " + key);
         }
     };
-    /** Model Domain. */
+    /**
+     * Model Domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelDomain")
     private final ModelDomain modelDomain;
 
     /**
      * Model Domain.
-     *
      * @return the value
-     */
+     **/
     public ModelDomain getModelDomain() {
         return modelDomain;
     }
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
-     */
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * - en-US: English - United States
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * - en-US: English - United States
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
      *
      * @return the value
-     */
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
 
     /**
-     * If set to true, the service will not fail connection attempt if it encounters any issues that
-     * prevent the loading of all specified user customizations. Any invalid customizations will
-     * simply be ignored and connection will continue being established with the default base model
-     * and any remaining valid customizations. If set to false, if the service is unable to load any
-     * of the specified customizations, an error detailing why will be returned and the session will
-     * end.
-     */
+     * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
+     * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreInvalidCustomizations")
     private final Boolean shouldIgnoreInvalidCustomizations;
 
     /**
-     * If set to true, the service will not fail connection attempt if it encounters any issues that
-     * prevent the loading of all specified user customizations. Any invalid customizations will
-     * simply be ignored and connection will continue being established with the default base model
-     * and any remaining valid customizations. If set to false, if the service is unable to load any
-     * of the specified customizations, an error detailing why will be returned and the session will
-     * end.
+     * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
+     * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
      *
      * @return the value
-     */
+     **/
     public Boolean getShouldIgnoreInvalidCustomizations() {
         return shouldIgnoreInvalidCustomizations;
     }
 
-    /** Array of customization objects. */
+    /**
+     * Array of customization objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customizations")
     private final java.util.List<CustomizationInference> customizations;
 
     /**
      * Array of customization objects.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CustomizationInference> getCustomizations() {
         return customizations;
     }
 
     /**
-     * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
-     * punctuation in the transcription response - SPOKEN: Punctuations in response only when
-     * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-     * disabled
-     */
-    public enum Punctuation implements com.oracle.bmc.http.internal.BmcEnum {
+     * Configure punctuations in the generated transcriptions. Disabled by default.
+     * - NONE: No punctuation in the transcription response
+     * - SPOKEN: Punctuations in response only when verbally spoken
+     * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+     *
+     **/
+    public enum Punctuation {
         None("NONE"),
         Spoken("SPOKEN"),
         Auto("AUTO"),
@@ -573,22 +610,23 @@ public final class RealtimeParameters
         }
     };
     /**
-     * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
-     * punctuation in the transcription response - SPOKEN: Punctuations in response only when
-     * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-     * disabled
-     */
+     * Configure punctuations in the generated transcriptions. Disabled by default.
+     * - NONE: No punctuation in the transcription response
+     * - SPOKEN: Punctuations in response only when verbally spoken
+     * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
     private final Punctuation punctuation;
 
     /**
-     * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
-     * punctuation in the transcription response - SPOKEN: Punctuations in response only when
-     * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
-     * disabled
+     * Configure punctuations in the generated transcriptions. Disabled by default.
+     * - NONE: No punctuation in the transcription response
+     * - SPOKEN: Punctuations in response only when verbally spoken
+     * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
      *
      * @return the value
-     */
+     **/
     public Punctuation getPunctuation() {
         return punctuation;
     }
@@ -600,7 +638,6 @@ public final class RealtimeParameters
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

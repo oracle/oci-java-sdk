@@ -6,59 +6,64 @@ package com.oracle.bmc.managementagent.requests;
 
 import com.oracle.bmc.managementagent.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/SummarizeManagementAgentPluginCountsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeManagementAgentPluginCountsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/SummarizeManagementAgentPluginCountsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeManagementAgentPluginCountsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class SummarizeManagementAgentPluginCountsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment to which a request will be scoped. */
+    /**
+     * The OCID of the compartment to which a request will be scoped.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment to which a request will be scoped. */
+    /**
+     * The OCID of the compartment to which a request will be scoped.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The field by which to group Management Agent Plugins */
+    /**
+     * The field by which to group Management Agent Plugins
+     */
     private com.oracle.bmc.managementagent.model.ManagementAgentPluginGroupBy groupBy;
 
-    /** The field by which to group Management Agent Plugins */
+    /**
+     * The field by which to group Management Agent Plugins
+     */
     public com.oracle.bmc.managementagent.model.ManagementAgentPluginGroupBy getGroupBy() {
         return groupBy;
     }
     /**
-     * if set to true then it fetches resources for all compartments where user has access to else
-     * only on the compartment specified.
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * if set to true then it fetches resources for all compartments where user has access to else
-     * only on the compartment specified.
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -66,15 +71,17 @@ public class SummarizeManagementAgentPluginCountsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeManagementAgentPluginCountsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment to which a request will be scoped. */
+        /**
+         * The OCID of the compartment to which a request will be scoped.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment to which a request will be scoped.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -83,12 +90,13 @@ public class SummarizeManagementAgentPluginCountsRequest
             return this;
         }
 
-        /** The field by which to group Management Agent Plugins */
+        /**
+         * The field by which to group Management Agent Plugins
+         */
         private com.oracle.bmc.managementagent.model.ManagementAgentPluginGroupBy groupBy = null;
 
         /**
          * The field by which to group Management Agent Plugins
-         *
          * @param groupBy the value to set
          * @return this builder instance
          */
@@ -99,15 +107,12 @@ public class SummarizeManagementAgentPluginCountsRequest
         }
 
         /**
-         * if set to true then it fetches resources for all compartments where user has access to
-         * else only on the compartment specified.
+         * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * if set to true then it fetches resources for all compartments where user has access to
-         * else only on the compartment specified.
-         *
+         * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
@@ -117,15 +122,12 @@ public class SummarizeManagementAgentPluginCountsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -134,12 +136,13 @@ public class SummarizeManagementAgentPluginCountsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -150,19 +153,18 @@ public class SummarizeManagementAgentPluginCountsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -174,7 +176,6 @@ public class SummarizeManagementAgentPluginCountsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeManagementAgentPluginCountsRequest o) {
@@ -189,14 +190,12 @@ public class SummarizeManagementAgentPluginCountsRequest
         }
 
         /**
-         * Build the instance of SummarizeManagementAgentPluginCountsRequest as configured by this
-         * builder
+         * Build the instance of SummarizeManagementAgentPluginCountsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeManagementAgentPluginCountsRequest
          */
@@ -208,11 +207,9 @@ public class SummarizeManagementAgentPluginCountsRequest
         }
 
         /**
-         * Build the instance of SummarizeManagementAgentPluginCountsRequest as configured by this
-         * builder
+         * Build the instance of SummarizeManagementAgentPluginCountsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeManagementAgentPluginCountsRequest
@@ -226,14 +223,12 @@ public class SummarizeManagementAgentPluginCountsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeManagementAgentPluginCountsRequest(compartmentId, groupBy,
-            // compartmentIdInSubtree, page, opcRequestId);
+            // new SummarizeManagementAgentPluginCountsRequest(compartmentId, groupBy, compartmentIdInSubtree, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -247,7 +242,6 @@ public class SummarizeManagementAgentPluginCountsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

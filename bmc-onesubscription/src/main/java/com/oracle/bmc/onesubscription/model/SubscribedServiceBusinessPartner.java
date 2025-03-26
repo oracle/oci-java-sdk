@@ -5,23 +5,23 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Business partner. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * Business partner.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SubscribedServiceBusinessPartner.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SubscribedServiceBusinessPartner.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SubscribedServiceBusinessPartner
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -58,7 +58,10 @@ public final class SubscribedServiceBusinessPartner
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Commercial name also called customer name. */
+        /**
+         * Commercial name also called customer name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -67,13 +70,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Phonetic name. */
+        /**
+         * Phonetic name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namePhonetic")
         private String namePhonetic;
 
@@ -82,13 +88,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param namePhonetic the value to set
          * @return this builder
-         */
+         **/
         public Builder namePhonetic(String namePhonetic) {
             this.namePhonetic = namePhonetic;
             this.__explicitlySet__.add("namePhonetic");
             return this;
         }
-        /** TCA customer account number. */
+        /**
+         * TCA customer account number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAccountNumber")
         private String tcaCustAccountNumber;
 
@@ -97,13 +106,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param tcaCustAccountNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder tcaCustAccountNumber(String tcaCustAccountNumber) {
             this.tcaCustAccountNumber = tcaCustAccountNumber;
             this.__explicitlySet__.add("tcaCustAccountNumber");
             return this;
         }
-        /** The business partner is part of the public sector or not. */
+        /**
+         * The business partner is part of the public sector or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublicSector")
         private Boolean isPublicSector;
 
@@ -112,13 +124,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param isPublicSector the value to set
          * @return this builder
-         */
+         **/
         public Builder isPublicSector(Boolean isPublicSector) {
             this.isPublicSector = isPublicSector;
             this.__explicitlySet__.add("isPublicSector");
             return this;
         }
-        /** The business partner is chain customer or not. */
+        /**
+         * The business partner is chain customer or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isChainCustomer")
         private Boolean isChainCustomer;
 
@@ -127,13 +142,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param isChainCustomer the value to set
          * @return this builder
-         */
+         **/
         public Builder isChainCustomer(Boolean isChainCustomer) {
             this.isChainCustomer = isChainCustomer;
             this.__explicitlySet__.add("isChainCustomer");
             return this;
         }
-        /** Customer chain type. */
+        /**
+         * Customer chain type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerChainType")
         private String customerChainType;
 
@@ -142,13 +160,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param customerChainType the value to set
          * @return this builder
-         */
+         **/
         public Builder customerChainType(String customerChainType) {
             this.customerChainType = customerChainType;
             this.__explicitlySet__.add("customerChainType");
             return this;
         }
-        /** TCA party number. */
+        /**
+         * TCA party number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tcaPartyNumber")
         private String tcaPartyNumber;
 
@@ -157,13 +178,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param tcaPartyNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder tcaPartyNumber(String tcaPartyNumber) {
             this.tcaPartyNumber = tcaPartyNumber;
             this.__explicitlySet__.add("tcaPartyNumber");
             return this;
         }
-        /** TCA party ID. */
+        /**
+         * TCA party ID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tcaPartyId")
         private Long tcaPartyId;
 
@@ -172,13 +196,16 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param tcaPartyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tcaPartyId(Long tcaPartyId) {
             this.tcaPartyId = tcaPartyId;
             this.__explicitlySet__.add("tcaPartyId");
             return this;
         }
-        /** TCA customer account ID. */
+        /**
+         * TCA customer account ID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tcaCustomerAccountId")
         private Long tcaCustomerAccountId;
 
@@ -187,7 +214,7 @@ public final class SubscribedServiceBusinessPartner
          *
          * @param tcaCustomerAccountId the value to set
          * @return this builder
-         */
+         **/
         public Builder tcaCustomerAccountId(Long tcaCustomerAccountId) {
             this.tcaCustomerAccountId = tcaCustomerAccountId;
             this.__explicitlySet__.add("tcaCustomerAccountId");
@@ -248,7 +275,9 @@ public final class SubscribedServiceBusinessPartner
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -257,7 +286,10 @@ public final class SubscribedServiceBusinessPartner
         return new Builder().copy(this);
     }
 
-    /** Commercial name also called customer name. */
+    /**
+     * Commercial name also called customer name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -265,12 +297,15 @@ public final class SubscribedServiceBusinessPartner
      * Commercial name also called customer name.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Phonetic name. */
+    /**
+     * Phonetic name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namePhonetic")
     private final String namePhonetic;
 
@@ -278,12 +313,15 @@ public final class SubscribedServiceBusinessPartner
      * Phonetic name.
      *
      * @return the value
-     */
+     **/
     public String getNamePhonetic() {
         return namePhonetic;
     }
 
-    /** TCA customer account number. */
+    /**
+     * TCA customer account number.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAccountNumber")
     private final String tcaCustAccountNumber;
 
@@ -291,12 +329,15 @@ public final class SubscribedServiceBusinessPartner
      * TCA customer account number.
      *
      * @return the value
-     */
+     **/
     public String getTcaCustAccountNumber() {
         return tcaCustAccountNumber;
     }
 
-    /** The business partner is part of the public sector or not. */
+    /**
+     * The business partner is part of the public sector or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublicSector")
     private final Boolean isPublicSector;
 
@@ -304,12 +345,15 @@ public final class SubscribedServiceBusinessPartner
      * The business partner is part of the public sector or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPublicSector() {
         return isPublicSector;
     }
 
-    /** The business partner is chain customer or not. */
+    /**
+     * The business partner is chain customer or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isChainCustomer")
     private final Boolean isChainCustomer;
 
@@ -317,12 +361,15 @@ public final class SubscribedServiceBusinessPartner
      * The business partner is chain customer or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsChainCustomer() {
         return isChainCustomer;
     }
 
-    /** Customer chain type. */
+    /**
+     * Customer chain type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerChainType")
     private final String customerChainType;
 
@@ -330,12 +377,15 @@ public final class SubscribedServiceBusinessPartner
      * Customer chain type.
      *
      * @return the value
-     */
+     **/
     public String getCustomerChainType() {
         return customerChainType;
     }
 
-    /** TCA party number. */
+    /**
+     * TCA party number.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tcaPartyNumber")
     private final String tcaPartyNumber;
 
@@ -343,12 +393,15 @@ public final class SubscribedServiceBusinessPartner
      * TCA party number.
      *
      * @return the value
-     */
+     **/
     public String getTcaPartyNumber() {
         return tcaPartyNumber;
     }
 
-    /** TCA party ID. */
+    /**
+     * TCA party ID.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tcaPartyId")
     private final Long tcaPartyId;
 
@@ -356,12 +409,15 @@ public final class SubscribedServiceBusinessPartner
      * TCA party ID.
      *
      * @return the value
-     */
+     **/
     public Long getTcaPartyId() {
         return tcaPartyId;
     }
 
-    /** TCA customer account ID. */
+    /**
+     * TCA customer account ID.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tcaCustomerAccountId")
     private final Long tcaCustomerAccountId;
 
@@ -369,7 +425,7 @@ public final class SubscribedServiceBusinessPartner
      * TCA customer account ID.
      *
      * @return the value
-     */
+     **/
     public Long getTcaCustomerAccountId() {
         return tcaCustomerAccountId;
     }
@@ -381,7 +437,6 @@ public final class SubscribedServiceBusinessPartner
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

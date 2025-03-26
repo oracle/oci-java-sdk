@@ -5,21 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Job phase status details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Job phase status details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PhaseStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PhaseStatus extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -62,7 +61,10 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Phase name */
+        /**
+         * Phase name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private OdmsJobPhases name;
 
@@ -71,13 +73,16 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(OdmsJobPhases name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Phase status */
+        /**
+         * Phase status
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobPhaseStatus status;
 
@@ -86,13 +91,16 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(JobPhaseStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Duration of the phase in milliseconds */
+        /**
+         * Duration of the phase in milliseconds
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
         private Integer durationInMs;
 
@@ -101,32 +109,34 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param durationInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder durationInMs(Integer durationInMs) {
             this.durationInMs = durationInMs;
             this.__explicitlySet__.add("durationInMs");
             return this;
         }
         /**
-         * True if a Pre-Migration Advisor report is available for this phase. False or null if no
-         * report is available.
-         */
+         * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
         private Boolean isAdvisorReportAvailable;
 
         /**
-         * True if a Pre-Migration Advisor report is available for this phase. False or null if no
-         * report is available.
+         * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
          *
          * @param isAdvisorReportAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder isAdvisorReportAvailable(Boolean isAdvisorReportAvailable) {
             this.isAdvisorReportAvailable = isAdvisorReportAvailable;
             this.__explicitlySet__.add("isAdvisorReportAvailable");
             return this;
         }
-        /** The text describing the root cause of the reported issue */
+        /**
+         * The text describing the root cause of the reported issue
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issue")
         private String issue;
 
@@ -135,13 +145,16 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param issue the value to set
          * @return this builder
-         */
+         **/
         public Builder issue(String issue) {
             this.issue = issue;
             this.__explicitlySet__.add("issue");
             return this;
         }
-        /** The text describing the action required to fix the issue */
+        /**
+         * The text describing the action required to fix the issue
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private String action;
 
@@ -150,13 +163,16 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(String action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-        /** Summary of phase status results. */
+        /**
+         * Summary of phase status results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extract")
         private java.util.List<PhaseExtractEntry> extract;
 
@@ -165,7 +181,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param extract the value to set
          * @return this builder
-         */
+         **/
         public Builder extract(java.util.List<PhaseExtractEntry> extract) {
             this.extract = extract;
             this.__explicitlySet__.add("extract");
@@ -180,7 +196,10 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("logLocation");
             return this;
         }
-        /** Percent progress of job phase. */
+        /**
+         * Percent progress of job phase.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("progress")
         private Integer progress;
 
@@ -189,13 +208,16 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param progress the value to set
          * @return this builder
-         */
+         **/
         public Builder progress(Integer progress) {
             this.progress = progress;
             this.__explicitlySet__.add("progress");
             return this;
         }
-        /** This is returned as true if the current phase can be suspended. */
+        /**
+         * This is returned as true if the current phase can be suspended.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSuspendAvailable")
         private Boolean isSuspendAvailable;
 
@@ -204,26 +226,25 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param isSuspendAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder isSuspendAvailable(Boolean isSuspendAvailable) {
             this.isSuspendAvailable = isSuspendAvailable;
             this.__explicitlySet__.add("isSuspendAvailable");
             return this;
         }
         /**
-         * Attribute that returns an array of names and types of GoldenGate configuration files that
-         * are available for read or update.
-         */
+         * Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editableParameterFiles")
         private java.util.List<JobParameterFileVersionKind> editableParameterFiles;
 
         /**
-         * Attribute that returns an array of names and types of GoldenGate configuration files that
-         * are available for read or update.
+         * Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
          *
          * @param editableParameterFiles the value to set
          * @return this builder
-         */
+         **/
         public Builder editableParameterFiles(
                 java.util.List<JobParameterFileVersionKind> editableParameterFiles) {
             this.editableParameterFiles = editableParameterFiles;
@@ -293,7 +314,9 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,7 +325,10 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Phase name */
+    /**
+     * Phase name
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final OdmsJobPhases name;
 
@@ -310,12 +336,15 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * Phase name
      *
      * @return the value
-     */
+     **/
     public OdmsJobPhases getName() {
         return name;
     }
 
-    /** Phase status */
+    /**
+     * Phase status
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobPhaseStatus status;
 
@@ -323,12 +352,15 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * Phase status
      *
      * @return the value
-     */
+     **/
     public JobPhaseStatus getStatus() {
         return status;
     }
 
-    /** Duration of the phase in milliseconds */
+    /**
+     * Duration of the phase in milliseconds
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
     private final Integer durationInMs;
 
@@ -336,29 +368,31 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * Duration of the phase in milliseconds
      *
      * @return the value
-     */
+     **/
     public Integer getDurationInMs() {
         return durationInMs;
     }
 
     /**
-     * True if a Pre-Migration Advisor report is available for this phase. False or null if no
-     * report is available.
-     */
+     * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
     private final Boolean isAdvisorReportAvailable;
 
     /**
-     * True if a Pre-Migration Advisor report is available for this phase. False or null if no
-     * report is available.
+     * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAdvisorReportAvailable() {
         return isAdvisorReportAvailable;
     }
 
-    /** The text describing the root cause of the reported issue */
+    /**
+     * The text describing the root cause of the reported issue
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("issue")
     private final String issue;
 
@@ -366,12 +400,15 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * The text describing the root cause of the reported issue
      *
      * @return the value
-     */
+     **/
     public String getIssue() {
         return issue;
     }
 
-    /** The text describing the action required to fix the issue */
+    /**
+     * The text describing the action required to fix the issue
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final String action;
 
@@ -379,12 +416,15 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * The text describing the action required to fix the issue
      *
      * @return the value
-     */
+     **/
     public String getAction() {
         return action;
     }
 
-    /** Summary of phase status results. */
+    /**
+     * Summary of phase status results.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extract")
     private final java.util.List<PhaseExtractEntry> extract;
 
@@ -392,7 +432,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * Summary of phase status results.
      *
      * @return the value
-     */
+     **/
     public java.util.List<PhaseExtractEntry> getExtract() {
         return extract;
     }
@@ -404,7 +444,10 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         return logLocation;
     }
 
-    /** Percent progress of job phase. */
+    /**
+     * Percent progress of job phase.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("progress")
     private final Integer progress;
 
@@ -412,12 +455,15 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * Percent progress of job phase.
      *
      * @return the value
-     */
+     **/
     public Integer getProgress() {
         return progress;
     }
 
-    /** This is returned as true if the current phase can be suspended. */
+    /**
+     * This is returned as true if the current phase can be suspended.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSuspendAvailable")
     private final Boolean isSuspendAvailable;
 
@@ -425,24 +471,23 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
      * This is returned as true if the current phase can be suspended.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSuspendAvailable() {
         return isSuspendAvailable;
     }
 
     /**
-     * Attribute that returns an array of names and types of GoldenGate configuration files that are
-     * available for read or update.
-     */
+     * Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("editableParameterFiles")
     private final java.util.List<JobParameterFileVersionKind> editableParameterFiles;
 
     /**
-     * Attribute that returns an array of names and types of GoldenGate configuration files that are
-     * available for read or update.
+     * Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
      *
      * @return the value
-     */
+     **/
     public java.util.List<JobParameterFileVersionKind> getEditableParameterFiles() {
         return editableParameterFiles;
     }
@@ -454,7 +499,6 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

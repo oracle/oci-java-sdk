@@ -6,9 +6,12 @@ package com.oracle.bmc.cloudbridge.responses;
 
 import com.oracle.bmc.cloudbridge.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,14 +41,13 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      * @return the value
      */
@@ -52,24 +55,26 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
         return opcWorkRequestId;
     }
 
-    /** URL of the newly asynchronously created resource. You can use this to query its status. */
+    /**
+     * URL of the newly asynchronously created resource. You can use this to query its status.
+     */
     private String location;
 
     /**
      * URL of the newly asynchronously created resource. You can use this to query its status.
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** The returned {@code AssetSource} instance. */
+    /**
+     * The returned AssetSource instance.
+     */
     private com.oracle.bmc.cloudbridge.model.AssetSource assetSource;
 
     /**
-     * The returned {@code AssetSource} instance.
-     *
+     * The returned AssetSource instance.
      * @return the value
      */
     public com.oracle.bmc.cloudbridge.model.AssetSource getAssetSource() {
@@ -87,7 +92,7 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private CreateAssetSourceResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -101,25 +106,25 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
         this.assetSource = assetSource;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateAssetSourceResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -134,14 +139,15 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -152,14 +158,13 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -176,7 +181,6 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * URL of the newly asynchronously created resource. You can use this to query its status.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -185,12 +189,13 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code AssetSource} instance. */
+        /**
+         * The returned AssetSource instance.
+         */
         private com.oracle.bmc.cloudbridge.model.AssetSource assetSource;
 
         /**
-         * The returned {@code AssetSource} instance.
-         *
+         * The returned AssetSource instance.
          * @param assetSource the value to set
          * @return this builder
          */
@@ -201,10 +206,8 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateAssetSourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -219,10 +222,8 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateAssetSourceResponse build() {
             return new CreateAssetSourceResponse(
                     __httpStatusCode__,
@@ -237,7 +238,6 @@ public class CreateAssetSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

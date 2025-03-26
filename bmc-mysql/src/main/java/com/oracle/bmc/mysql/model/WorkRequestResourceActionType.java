@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.mysql.model;
 
-/** Possible action types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public enum WorkRequestResourceActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible action types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+public enum WorkRequestResourceActionType {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

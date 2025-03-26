@@ -6,65 +6,66 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestCommentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdatePullRequestCommentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdatePullRequestCommentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class UpdatePullRequestCommentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.devops.model.UpdatePullRequestCommentDetails> {
 
-    /** unique PullRequest identifier */
+    /**
+     * unique PullRequest identifier
+     */
     private String pullRequestId;
 
-    /** unique PullRequest identifier */
+    /**
+     * unique PullRequest identifier
+     */
     public String getPullRequestId() {
         return pullRequestId;
     }
-    /** unique PullRequest Comment identifier */
+    /**
+     * unique PullRequest Comment identifier
+     */
     private String commentId;
 
-    /** unique PullRequest Comment identifier */
+    /**
+     * unique PullRequest Comment identifier
+     */
     public String getCommentId() {
         return commentId;
     }
-    /** The new comment content to be updated. */
+    /**
+     * The new comment content to be updated.
+     */
     private com.oracle.bmc.devops.model.UpdatePullRequestCommentDetails
             updatePullRequestCommentDetails;
 
-    /** The new comment content to be updated. */
+    /**
+     * The new comment content to be updated.
+     */
     public com.oracle.bmc.devops.model.UpdatePullRequestCommentDetails
             getUpdatePullRequestCommentDetails() {
         return updatePullRequestCommentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -72,7 +73,6 @@ public class UpdatePullRequestCommentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -85,15 +85,17 @@ public class UpdatePullRequestCommentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdatePullRequestCommentRequest,
                     com.oracle.bmc.devops.model.UpdatePullRequestCommentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique PullRequest identifier */
+        /**
+         * unique PullRequest identifier
+         */
         private String pullRequestId = null;
 
         /**
          * unique PullRequest identifier
-         *
          * @param pullRequestId the value to set
          * @return this builder instance
          */
@@ -102,12 +104,13 @@ public class UpdatePullRequestCommentRequest
             return this;
         }
 
-        /** unique PullRequest Comment identifier */
+        /**
+         * unique PullRequest Comment identifier
+         */
         private String commentId = null;
 
         /**
          * unique PullRequest Comment identifier
-         *
          * @param commentId the value to set
          * @return this builder instance
          */
@@ -116,13 +119,14 @@ public class UpdatePullRequestCommentRequest
             return this;
         }
 
-        /** The new comment content to be updated. */
+        /**
+         * The new comment content to be updated.
+         */
         private com.oracle.bmc.devops.model.UpdatePullRequestCommentDetails
                 updatePullRequestCommentDetails = null;
 
         /**
          * The new comment content to be updated.
-         *
          * @param updatePullRequestCommentDetails the value to set
          * @return this builder instance
          */
@@ -134,19 +138,12 @@ public class UpdatePullRequestCommentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -156,15 +153,12 @@ public class UpdatePullRequestCommentRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -175,19 +169,18 @@ public class UpdatePullRequestCommentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -199,7 +192,6 @@ public class UpdatePullRequestCommentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdatePullRequestCommentRequest o) {
@@ -216,11 +208,10 @@ public class UpdatePullRequestCommentRequest
         /**
          * Build the instance of UpdatePullRequestCommentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdatePullRequestCommentRequest
          */
@@ -233,7 +224,6 @@ public class UpdatePullRequestCommentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -246,8 +236,7 @@ public class UpdatePullRequestCommentRequest
         /**
          * Build the instance of UpdatePullRequestCommentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdatePullRequestCommentRequest
@@ -260,14 +249,12 @@ public class UpdatePullRequestCommentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdatePullRequestCommentRequest(pullRequestId, commentId,
-            // updatePullRequestCommentDetails, ifMatch, opcRequestId);
+            // new UpdatePullRequestCommentRequest(pullRequestId, commentId, updatePullRequestCommentDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -281,7 +268,6 @@ public class UpdatePullRequestCommentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

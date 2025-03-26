@@ -5,23 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Attributes to generate agent deploy script for a Fleet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Attributes to generate agent deploy script for a Fleet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GenerateAgentDeployScriptDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GenerateAgentDeployScriptDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GenerateAgentDeployScriptDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"installKeyId", "osFamily", "isUserNameEnabled"})
     public GenerateAgentDeployScriptDetails(
@@ -35,53 +34,48 @@ public final class GenerateAgentDeployScriptDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * install key for which to generate the script.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the install key for which to generate the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
         private String installKeyId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * install key for which to generate the script.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the install key for which to generate the script.
          * @param installKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder installKeyId(String installKeyId) {
             this.installKeyId = installKeyId;
             this.__explicitlySet__.add("installKeyId");
             return this;
         }
         /**
-         * The operating system type for the script. Currently only 'LINUX' and 'WINDOWS' are
-         * supported.
-         */
+         * The operating system type for the script. Currently only 'LINUX' and 'WINDOWS' are supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
-         * The operating system type for the script. Currently only 'LINUX' and 'WINDOWS' are
-         * supported.
-         *
+         * The operating system type for the script. Currently only 'LINUX' and 'WINDOWS' are supported.
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(OsFamily osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** Enable/disable user name collection on agent. */
+        /**
+         * Enable/disable user name collection on agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserNameEnabled")
         private Boolean isUserNameEnabled;
 
         /**
          * Enable/disable user name collection on agent.
-         *
          * @param isUserNameEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isUserNameEnabled(Boolean isUserNameEnabled) {
             this.isUserNameEnabled = isUserNameEnabled;
             this.__explicitlySet__.add("isUserNameEnabled");
@@ -116,7 +110,9 @@ public final class GenerateAgentDeployScriptDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,46 +122,43 @@ public final class GenerateAgentDeployScriptDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * install key for which to generate the script.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the install key for which to generate the script.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
     private final String installKeyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * install key for which to generate the script.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the install key for which to generate the script.
      * @return the value
-     */
+     **/
     public String getInstallKeyId() {
         return installKeyId;
     }
 
     /**
      * The operating system type for the script. Currently only 'LINUX' and 'WINDOWS' are supported.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * The operating system type for the script. Currently only 'LINUX' and 'WINDOWS' are supported.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** Enable/disable user name collection on agent. */
+    /**
+     * Enable/disable user name collection on agent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserNameEnabled")
     private final Boolean isUserNameEnabled;
 
     /**
      * Enable/disable user name collection on agent.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUserNameEnabled() {
         return isUserNameEnabled;
     }
@@ -177,7 +170,6 @@ public final class GenerateAgentDeployScriptDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

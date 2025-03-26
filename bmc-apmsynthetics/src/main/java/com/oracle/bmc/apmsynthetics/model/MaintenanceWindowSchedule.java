@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details required to schedule maintenance window. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details required to schedule maintenance window.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaintenanceWindowSchedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MaintenanceWindowSchedule.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaintenanceWindowSchedule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeStarted", "timeEnded"})
     public MaintenanceWindowSchedule(java.util.Date timeStarted, java.util.Date timeEnded) {
@@ -33,42 +32,40 @@ public final class MaintenanceWindowSchedule
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Start time of the maintenance window, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
-         */
+         * Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * Start time of the maintenance window, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
+         * Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * End time of the maintenance window, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
-         */
+         * End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * End time of the maintenance window, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
+         * End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
          *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -99,7 +96,9 @@ public final class MaintenanceWindowSchedule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,39 +108,37 @@ public final class MaintenanceWindowSchedule
     }
 
     /**
-     * Start time of the maintenance window, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
-     */
+     * Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * Start time of the maintenance window, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
+     * Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * End time of the maintenance window, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
-     */
+     * End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
-     * End time of the maintenance window, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
+     * End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -153,7 +150,6 @@ public final class MaintenanceWindowSchedule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,61 +6,66 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeRepositoryAnalyticsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeRepositoryAnalyticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeRepositoryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeRepositoryAnalyticsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class SummarizeRepositoryAnalyticsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.devops.model.SummarizeRepositoryAnalyticsDetails> {
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     private String repositoryId;
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
-    /** Details to fetch the repository analytics. */
+    /**
+     * Details to fetch the repository analytics.
+     */
     private com.oracle.bmc.devops.model.SummarizeRepositoryAnalyticsDetails
             summarizeRepositoryAnalyticsDetails;
 
-    /** Details to fetch the repository analytics. */
+    /**
+     * Details to fetch the repository analytics.
+     */
     public com.oracle.bmc.devops.model.SummarizeRepositoryAnalyticsDetails
             getSummarizeRepositoryAnalyticsDetails() {
         return summarizeRepositoryAnalyticsDetails;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -68,7 +73,6 @@ public class SummarizeRepositoryAnalyticsRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -81,15 +85,17 @@ public class SummarizeRepositoryAnalyticsRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeRepositoryAnalyticsRequest,
                     com.oracle.bmc.devops.model.SummarizeRepositoryAnalyticsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique repository identifier. */
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
-         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -98,13 +104,14 @@ public class SummarizeRepositoryAnalyticsRequest
             return this;
         }
 
-        /** Details to fetch the repository analytics. */
+        /**
+         * Details to fetch the repository analytics.
+         */
         private com.oracle.bmc.devops.model.SummarizeRepositoryAnalyticsDetails
                 summarizeRepositoryAnalyticsDetails = null;
 
         /**
          * Details to fetch the repository analytics.
-         *
          * @param summarizeRepositoryAnalyticsDetails the value to set
          * @return this builder instance
          */
@@ -115,12 +122,13 @@ public class SummarizeRepositoryAnalyticsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -130,15 +138,12 @@ public class SummarizeRepositoryAnalyticsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -148,15 +153,12 @@ public class SummarizeRepositoryAnalyticsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -167,19 +169,18 @@ public class SummarizeRepositoryAnalyticsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -191,7 +192,6 @@ public class SummarizeRepositoryAnalyticsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeRepositoryAnalyticsRequest o) {
@@ -208,11 +208,10 @@ public class SummarizeRepositoryAnalyticsRequest
         /**
          * Build the instance of SummarizeRepositoryAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeRepositoryAnalyticsRequest
          */
@@ -225,7 +224,6 @@ public class SummarizeRepositoryAnalyticsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -238,8 +236,7 @@ public class SummarizeRepositoryAnalyticsRequest
         /**
          * Build the instance of SummarizeRepositoryAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeRepositoryAnalyticsRequest
@@ -252,14 +249,12 @@ public class SummarizeRepositoryAnalyticsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeRepositoryAnalyticsRequest(repositoryId,
-            // summarizeRepositoryAnalyticsDetails, limit, page, opcRequestId);
+            // new SummarizeRepositoryAnalyticsRequest(repositoryId, summarizeRepositoryAnalyticsDetails, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -273,7 +268,6 @@ public class SummarizeRepositoryAnalyticsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

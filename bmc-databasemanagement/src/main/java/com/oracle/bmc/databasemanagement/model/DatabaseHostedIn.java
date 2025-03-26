@@ -6,9 +6,9 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * Indicates whether the database is a cloud database (CLOUD) or an external database (EXTERNAL).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum DatabaseHostedIn implements com.oracle.bmc.http.internal.BmcEnum {
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum DatabaseHostedIn {
     Cloud("CLOUD"),
     External("EXTERNAL"),
     ;

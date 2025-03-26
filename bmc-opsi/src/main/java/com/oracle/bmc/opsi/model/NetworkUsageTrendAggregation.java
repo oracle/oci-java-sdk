@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Usage data per network interface. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Usage data per network interface.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NetworkUsageTrendAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NetworkUsageTrendAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NetworkUsageTrendAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"interfaceName", "ipAddress", "macAddress", "usageData"})
     public NetworkUsageTrendAggregation(
@@ -38,65 +37,65 @@ public final class NetworkUsageTrendAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of interface. */
+        /**
+         * Name of interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
         private String interfaceName;
 
         /**
          * Name of interface.
-         *
          * @param interfaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder interfaceName(String interfaceName) {
             this.interfaceName = interfaceName;
             this.__explicitlySet__.add("interfaceName");
             return this;
         }
         /**
-         * Address that is connected to a computer network that uses the Internet Protocol for
-         * communication.
-         */
+         * Address that is connected to a computer network that uses the Internet Protocol for communication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * Address that is connected to a computer network that uses the Internet Protocol for
-         * communication.
-         *
+         * Address that is connected to a computer network that uses the Internet Protocol for communication.
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** Unique identifier assigned to a network interface. */
+        /**
+         * Unique identifier assigned to a network interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
         private String macAddress;
 
         /**
          * Unique identifier assigned to a network interface.
-         *
          * @param macAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder macAddress(String macAddress) {
             this.macAddress = macAddress;
             this.__explicitlySet__.add("macAddress");
             return this;
         }
-        /** List of usage data samples for a network interface. */
+        /**
+         * List of usage data samples for a network interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageData")
         private java.util.List<NetworkUsageTrend> usageData;
 
         /**
          * List of usage data samples for a network interface.
-         *
          * @param usageData the value to set
          * @return this builder
-         */
+         **/
         public Builder usageData(java.util.List<NetworkUsageTrend> usageData) {
             this.usageData = usageData;
             this.__explicitlySet__.add("usageData");
@@ -134,7 +133,9 @@ public final class NetworkUsageTrendAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,58 +144,58 @@ public final class NetworkUsageTrendAggregation
         return new Builder().copy(this);
     }
 
-    /** Name of interface. */
+    /**
+     * Name of interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
     private final String interfaceName;
 
     /**
      * Name of interface.
-     *
      * @return the value
-     */
+     **/
     public String getInterfaceName() {
         return interfaceName;
     }
 
     /**
-     * Address that is connected to a computer network that uses the Internet Protocol for
-     * communication.
-     */
+     * Address that is connected to a computer network that uses the Internet Protocol for communication.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * Address that is connected to a computer network that uses the Internet Protocol for
-     * communication.
-     *
+     * Address that is connected to a computer network that uses the Internet Protocol for communication.
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** Unique identifier assigned to a network interface. */
+    /**
+     * Unique identifier assigned to a network interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
     private final String macAddress;
 
     /**
      * Unique identifier assigned to a network interface.
-     *
      * @return the value
-     */
+     **/
     public String getMacAddress() {
         return macAddress;
     }
 
-    /** List of usage data samples for a network interface. */
+    /**
+     * List of usage data samples for a network interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
     private final java.util.List<NetworkUsageTrend> usageData;
 
     /**
      * List of usage data samples for a network interface.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NetworkUsageTrend> getUsageData() {
         return usageData;
     }
@@ -206,7 +207,6 @@ public final class NetworkUsageTrendAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

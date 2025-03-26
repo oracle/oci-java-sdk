@@ -5,23 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Defines the rules or criteria based on which the scope for job definition is circumscribed. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Defines the rules or criteria based on which the scope for job definition is circumscribed.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JobDefinitionScope.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobDefinitionScope
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = JobDefinitionScope.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobDefinitionScope extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "folderName",
@@ -49,31 +47,33 @@ public final class JobDefinitionScope
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the folder or schema for this metadata harvest. */
+        /**
+         * Name of the folder or schema for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderName")
         private String folderName;
 
         /**
          * Name of the folder or schema for this metadata harvest.
-         *
          * @param folderName the value to set
          * @return this builder
-         */
+         **/
         public Builder folderName(String folderName) {
             this.folderName = folderName;
             this.__explicitlySet__.add("folderName");
             return this;
         }
-        /** Name of the entity for this metadata harvest. */
+        /**
+         * Name of the entity for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * Name of the entity for this metadata harvest.
-         *
          * @param entityName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
@@ -81,16 +81,15 @@ public final class JobDefinitionScope
         }
         /**
          * Filter rules with regular expression to specify folder names for this metadata harvest.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("folderNameFilter")
         private String folderNameFilter;
 
         /**
          * Filter rules with regular expression to specify folder names for this metadata harvest.
-         *
          * @param folderNameFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder folderNameFilter(String folderNameFilter) {
             this.folderNameFilter = folderNameFilter;
             this.__explicitlySet__.add("folderNameFilter");
@@ -98,50 +97,47 @@ public final class JobDefinitionScope
         }
         /**
          * Filter rules with regular expression to specify entity names for this metadata harvest.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityNameFilter")
         private String entityNameFilter;
 
         /**
          * Filter rules with regular expression to specify entity names for this metadata harvest.
-         *
          * @param entityNameFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder entityNameFilter(String entityNameFilter) {
             this.entityNameFilter = entityNameFilter;
             this.__explicitlySet__.add("entityNameFilter");
             return this;
         }
-        /** Specify if sample data to be extracted as part of this harvest. */
+        /**
+         * Specify if sample data to be extracted as part of this harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataExtracted")
         private Boolean isSampleDataExtracted;
 
         /**
          * Specify if sample data to be extracted as part of this harvest.
-         *
          * @param isSampleDataExtracted the value to set
          * @return this builder
-         */
+         **/
         public Builder isSampleDataExtracted(Boolean isSampleDataExtracted) {
             this.isSampleDataExtracted = isSampleDataExtracted;
             this.__explicitlySet__.add("isSampleDataExtracted");
             return this;
         }
         /**
-         * Specify the sample data size in MB, specified as number of rows, for this metadata
-         * harvest.
-         */
+         * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
         private Integer sampleDataSizeInMBs;
 
         /**
-         * Specify the sample data size in MB, specified as number of rows, for this metadata
-         * harvest.
-         *
+         * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
          * @param sampleDataSizeInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder sampleDataSizeInMBs(Integer sampleDataSizeInMBs) {
             this.sampleDataSizeInMBs = sampleDataSizeInMBs;
             this.__explicitlySet__.add("sampleDataSizeInMBs");
@@ -190,7 +186,9 @@ public final class JobDefinitionScope
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -199,82 +197,86 @@ public final class JobDefinitionScope
         return new Builder().copy(this);
     }
 
-    /** Name of the folder or schema for this metadata harvest. */
+    /**
+     * Name of the folder or schema for this metadata harvest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("folderName")
     private final String folderName;
 
     /**
      * Name of the folder or schema for this metadata harvest.
-     *
      * @return the value
-     */
+     **/
     public String getFolderName() {
         return folderName;
     }
 
-    /** Name of the entity for this metadata harvest. */
+    /**
+     * Name of the entity for this metadata harvest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * Name of the entity for this metadata harvest.
-     *
      * @return the value
-     */
+     **/
     public String getEntityName() {
         return entityName;
     }
 
-    /** Filter rules with regular expression to specify folder names for this metadata harvest. */
+    /**
+     * Filter rules with regular expression to specify folder names for this metadata harvest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("folderNameFilter")
     private final String folderNameFilter;
 
     /**
      * Filter rules with regular expression to specify folder names for this metadata harvest.
-     *
      * @return the value
-     */
+     **/
     public String getFolderNameFilter() {
         return folderNameFilter;
     }
 
-    /** Filter rules with regular expression to specify entity names for this metadata harvest. */
+    /**
+     * Filter rules with regular expression to specify entity names for this metadata harvest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityNameFilter")
     private final String entityNameFilter;
 
     /**
      * Filter rules with regular expression to specify entity names for this metadata harvest.
-     *
      * @return the value
-     */
+     **/
     public String getEntityNameFilter() {
         return entityNameFilter;
     }
 
-    /** Specify if sample data to be extracted as part of this harvest. */
+    /**
+     * Specify if sample data to be extracted as part of this harvest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSampleDataExtracted")
     private final Boolean isSampleDataExtracted;
 
     /**
      * Specify if sample data to be extracted as part of this harvest.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSampleDataExtracted() {
         return isSampleDataExtracted;
     }
 
     /**
      * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
     private final Integer sampleDataSizeInMBs;
 
     /**
      * Specify the sample data size in MB, specified as number of rows, for this metadata harvest.
-     *
      * @return the value
-     */
+     **/
     public Integer getSampleDataSizeInMBs() {
         return sampleDataSizeInMBs;
     }
@@ -286,7 +288,6 @@ public final class JobDefinitionScope
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

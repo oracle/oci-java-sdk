@@ -5,67 +5,69 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Collection of metadata related to image record. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * Collection of metadata related to image record.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "recordType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "recordType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ImageMetadata extends RecordMetadata {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Height of the image record. */
+        /**
+         * Height of the image record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("height")
         private Integer height;
 
         /**
          * Height of the image record.
-         *
          * @param height the value to set
          * @return this builder
-         */
+         **/
         public Builder height(Integer height) {
             this.height = height;
             this.__explicitlySet__.add("height");
             return this;
         }
-        /** Width of the image record. */
+        /**
+         * Width of the image record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("width")
         private Integer width;
 
         /**
          * Width of the image record.
-         *
          * @param width the value to set
          * @return this builder
-         */
+         **/
         public Builder width(Integer width) {
             this.width = width;
             this.__explicitlySet__.add("width");
             return this;
         }
-        /** Depth of the image record. */
+        /**
+         * Depth of the image record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("depth")
         private Integer depth;
 
         /**
          * Depth of the image record.
-         *
          * @param depth the value to set
          * @return this builder
-         */
+         **/
         public Builder depth(Integer depth) {
             this.depth = depth;
             this.__explicitlySet__.add("depth");
@@ -98,7 +100,9 @@ public final class ImageMetadata extends RecordMetadata {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +119,44 @@ public final class ImageMetadata extends RecordMetadata {
         this.depth = depth;
     }
 
-    /** Height of the image record. */
+    /**
+     * Height of the image record.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("height")
     private final Integer height;
 
     /**
      * Height of the image record.
-     *
      * @return the value
-     */
+     **/
     public Integer getHeight() {
         return height;
     }
 
-    /** Width of the image record. */
+    /**
+     * Width of the image record.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("width")
     private final Integer width;
 
     /**
      * Width of the image record.
-     *
      * @return the value
-     */
+     **/
     public Integer getWidth() {
         return width;
     }
 
-    /** Depth of the image record. */
+    /**
+     * Depth of the image record.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("depth")
     private final Integer depth;
 
     /**
      * Depth of the image record.
-     *
      * @return the value
-     */
+     **/
     public Integer getDepth() {
         return depth;
     }
@@ -161,7 +168,6 @@ public final class ImageMetadata extends RecordMetadata {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

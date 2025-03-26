@@ -5,24 +5,23 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Object that contains the details about a single attribute in the bulk request for which notes are
- * to be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Object that contains the details about a single attribute in the bulk request for which notes are to be updated.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkUpdateAttributeNotesDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkUpdateAttributeNotesDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkUpdateAttributeNotesDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"attributeName", "notes", "attributeNameSpace"})
     public BulkUpdateAttributeNotesDetail(
@@ -35,7 +34,10 @@ public final class BulkUpdateAttributeNotesDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the attribute for which notes are to be updated. */
+        /**
+         * Name of the attribute for which notes are to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
         private String attributeName;
 
@@ -44,41 +46,45 @@ public final class BulkUpdateAttributeNotesDetail
          *
          * @param attributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeName(String attributeName) {
             this.attributeName = attributeName;
             this.__explicitlySet__.add("attributeName");
             return this;
         }
-        /** Notes to be updated. The size of notes cannot exceed 1000 chars. */
+        /**
+         * Notes to be updated.  The size of notes cannot exceed 1000 chars.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notes")
         private String notes;
 
         /**
-         * Notes to be updated. The size of notes cannot exceed 1000 chars.
+         * Notes to be updated.  The size of notes cannot exceed 1000 chars.
          *
          * @param notes the value to set
          * @return this builder
-         */
+         **/
         public Builder notes(String notes) {
             this.notes = notes;
             this.__explicitlySet__.add("notes");
             return this;
         }
         /**
-         * Namespace of the attribute for which the notes are to be updated. The attributeNameSpace
-         * will default to TRACES if it is not passed in.
-         */
+         * Namespace of the attribute for which the notes are to be updated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
         private AttributeNameSpace attributeNameSpace;
 
         /**
-         * Namespace of the attribute for which the notes are to be updated. The attributeNameSpace
-         * will default to TRACES if it is not passed in.
+         * Namespace of the attribute for which the notes are to be updated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
          *
          * @param attributeNameSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeNameSpace(AttributeNameSpace attributeNameSpace) {
             this.attributeNameSpace = attributeNameSpace;
             this.__explicitlySet__.add("attributeNameSpace");
@@ -113,7 +119,9 @@ public final class BulkUpdateAttributeNotesDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,7 +130,10 @@ public final class BulkUpdateAttributeNotesDetail
         return new Builder().copy(this);
     }
 
-    /** Name of the attribute for which notes are to be updated. */
+    /**
+     * Name of the attribute for which notes are to be updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
     private final String attributeName;
 
@@ -130,29 +141,33 @@ public final class BulkUpdateAttributeNotesDetail
      * Name of the attribute for which notes are to be updated.
      *
      * @return the value
-     */
+     **/
     public String getAttributeName() {
         return attributeName;
     }
 
-    /** Notes to be updated. The size of notes cannot exceed 1000 chars. */
+    /**
+     * Notes to be updated.  The size of notes cannot exceed 1000 chars.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notes")
     private final String notes;
 
     /**
-     * Notes to be updated. The size of notes cannot exceed 1000 chars.
+     * Notes to be updated.  The size of notes cannot exceed 1000 chars.
      *
      * @return the value
-     */
+     **/
     public String getNotes() {
         return notes;
     }
 
     /**
-     * Namespace of the attribute for which the notes are to be updated. The attributeNameSpace will
-     * default to TRACES if it is not passed in.
-     */
-    public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
+     * Namespace of the attribute for which the notes are to be updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
+    public enum AttributeNameSpace {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
         ;
@@ -185,18 +200,19 @@ public final class BulkUpdateAttributeNotesDetail
         }
     };
     /**
-     * Namespace of the attribute for which the notes are to be updated. The attributeNameSpace will
-     * default to TRACES if it is not passed in.
-     */
+     * Namespace of the attribute for which the notes are to be updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
     private final AttributeNameSpace attributeNameSpace;
 
     /**
-     * Namespace of the attribute for which the notes are to be updated. The attributeNameSpace will
-     * default to TRACES if it is not passed in.
+     * Namespace of the attribute for which the notes are to be updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
      *
      * @return the value
-     */
+     **/
     public AttributeNameSpace getAttributeNameSpace() {
         return attributeNameSpace;
     }
@@ -208,7 +224,6 @@ public final class BulkUpdateAttributeNotesDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

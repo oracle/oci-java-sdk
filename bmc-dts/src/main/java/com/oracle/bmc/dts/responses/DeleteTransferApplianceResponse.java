@@ -6,12 +6,17 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class DeleteTransferApplianceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -19,35 +24,34 @@ public class DeleteTransferApplianceResponse extends com.oracle.bmc.responses.Bm
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private DeleteTransferApplianceResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    DeleteTransferApplianceResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -58,10 +62,8 @@ public class DeleteTransferApplianceResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DeleteTransferApplianceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -72,10 +74,8 @@ public class DeleteTransferApplianceResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DeleteTransferApplianceResponse build() {
             return new DeleteTransferApplianceResponse(__httpStatusCode__, headers, opcRequestId);
         }
@@ -83,7 +83,6 @@ public class DeleteTransferApplianceResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

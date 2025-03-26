@@ -5,25 +5,23 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The resource represents SQL collection for a specific database user in a target. SqlCollection
- * encapsulates the SQL commands issued in the user\u2019s database sessions, and its execution
- * context. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The resource represents SQL collection for a specific database user in a target.
+ * SqlCollection encapsulates the SQL commands issued in the user\u2019s database sessions, and its execution context.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlCollectionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlCollectionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SqlCollectionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlCollectionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -81,184 +79,183 @@ public final class SqlCollectionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SQL collection. */
+        /**
+         * The OCID of the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the SQL collection.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment containing the SQL collection. */
+        /**
+         * The OCID of the compartment containing the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the SQL collection.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The display name of the SQL collection. */
+        /**
+         * The display name of the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the SQL collection.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of the SQL collection. */
+        /**
+         * The description of the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the SQL collection.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the target corresponding to the security policy deployment. */
+        /**
+         * The OCID of the target corresponding to the security policy deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target corresponding to the security policy deployment.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
         /**
-         * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in
-         * progress.
-         */
+         * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in
-         * progress.
-         *
+         * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The database user name. */
+        /**
+         * The database user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private String dbUserName;
 
         /**
          * The database user name.
-         *
          * @param dbUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUserName(String dbUserName) {
             this.dbUserName = dbUserName;
             this.__explicitlySet__.add("dbUserName");
             return this;
         }
         /**
-         * The timestamp of the most recent SqlCollection start operation, in the format defined by
-         * RFC3339.
-         */
+         * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastStarted")
         private java.util.Date timeLastStarted;
 
         /**
-         * The timestamp of the most recent SqlCollection start operation, in the format defined by
-         * RFC3339.
-         *
+         * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
          * @param timeLastStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastStarted(java.util.Date timeLastStarted) {
             this.timeLastStarted = timeLastStarted;
             this.__explicitlySet__.add("timeLastStarted");
             return this;
         }
         /**
-         * The timestamp of the most recent SqlCollection stop operation, in the format defined by
-         * RFC3339.
-         */
+         * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastStopped")
         private java.util.Date timeLastStopped;
 
         /**
-         * The timestamp of the most recent SqlCollection stop operation, in the format defined by
-         * RFC3339.
-         *
+         * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
          * @param timeLastStopped the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastStopped(java.util.Date timeLastStopped) {
             this.timeLastStopped = timeLastStopped;
             this.__explicitlySet__.add("timeLastStopped");
             return this;
         }
         /**
-         * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-         * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued
-         * inside PL/SQL units.
-         */
+         * Specifies the level of SQL that will be collected.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
         private SqlLevel sqlLevel;
 
         /**
-         * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-         * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued
-         * inside PL/SQL units.
+         * Specifies the level of SQL that will be collected.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
          *
          * @param sqlLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlLevel(SqlLevel sqlLevel) {
             this.sqlLevel = sqlLevel;
             this.__explicitlySet__.add("sqlLevel");
             return this;
         }
-        /** The time that the SQL collection was created, in the format defined by RFC3339. */
+        /**
+         * The time that the SQL collection was created, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time that the SQL collection was created, in the format defined by RFC3339.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -266,94 +263,89 @@ public final class SqlCollectionSummary
         }
         /**
          * The last date and time the SQL collection was updated, in the format defined by RFC3339.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The last date and time the SQL collection was updated, in the format defined by RFC3339.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the SQL collection. */
+        /**
+         * The current state of the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SqlCollectionLifecycleState lifecycleState;
 
         /**
          * The current state of the SQL collection.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(SqlCollectionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Details about the current state of the SQL collection in Data Safe. */
+        /**
+         * Details about the current state of the SQL collection in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details about the current state of the SQL collection in Data Safe.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -443,7 +435,9 @@ public final class SqlCollectionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -452,82 +446,86 @@ public final class SqlCollectionSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SQL collection. */
+    /**
+     * The OCID of the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment containing the SQL collection. */
+    /**
+     * The OCID of the compartment containing the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The display name of the SQL collection. */
+    /**
+     * The display name of the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description of the SQL collection. */
+    /**
+     * The description of the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The OCID of the target corresponding to the security policy deployment. */
+    /**
+     * The OCID of the target corresponding to the security policy deployment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target corresponding to the security policy deployment.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
     /**
-     * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in
-     * progress.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
+     **/
+    public enum Status {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -566,81 +564,74 @@ public final class SqlCollectionSummary
         }
     };
     /**
-     * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in
-     * progress.
-     */
+     * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in
-     * progress.
-     *
+     * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The database user name. */
+    /**
+     * The database user name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final String dbUserName;
 
     /**
      * The database user name.
-     *
      * @return the value
-     */
+     **/
     public String getDbUserName() {
         return dbUserName;
     }
 
     /**
-     * The timestamp of the most recent SqlCollection start operation, in the format defined by
-     * RFC3339.
-     */
+     * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastStarted")
     private final java.util.Date timeLastStarted;
 
     /**
-     * The timestamp of the most recent SqlCollection start operation, in the format defined by
-     * RFC3339.
-     *
+     * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastStarted() {
         return timeLastStarted;
     }
 
     /**
-     * The timestamp of the most recent SqlCollection stop operation, in the format defined by
-     * RFC3339.
-     */
+     * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastStopped")
     private final java.util.Date timeLastStopped;
 
     /**
-     * The timestamp of the most recent SqlCollection stop operation, in the format defined by
-     * RFC3339.
-     *
+     * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastStopped() {
         return timeLastStopped;
     }
 
     /**
-     * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-     * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside
-     * PL/SQL units.
-     */
-    public enum SqlLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the level of SQL that will be collected.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
+    public enum SqlLevel {
         UserIssuedSql("USER_ISSUED_SQL"),
         AllSql("ALL_SQL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -680,116 +671,115 @@ public final class SqlCollectionSummary
         }
     };
     /**
-     * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-     * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside
-     * PL/SQL units.
-     */
+     * Specifies the level of SQL that will be collected.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
     private final SqlLevel sqlLevel;
 
     /**
-     * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL
-     * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside
-     * PL/SQL units.
+     * Specifies the level of SQL that will be collected.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      *
      * @return the value
-     */
+     **/
     public SqlLevel getSqlLevel() {
         return sqlLevel;
     }
 
-    /** The time that the SQL collection was created, in the format defined by RFC3339. */
+    /**
+     * The time that the SQL collection was created, in the format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time that the SQL collection was created, in the format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The last date and time the SQL collection was updated, in the format defined by RFC3339. */
+    /**
+     * The last date and time the SQL collection was updated, in the format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The last date and time the SQL collection was updated, in the format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the SQL collection. */
+    /**
+     * The current state of the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SqlCollectionLifecycleState lifecycleState;
 
     /**
      * The current state of the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public SqlCollectionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Details about the current state of the SQL collection in Data Safe. */
+    /**
+     * Details about the current state of the SQL collection in Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details about the current state of the SQL collection in Data Safe.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -801,7 +791,6 @@ public final class SqlCollectionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

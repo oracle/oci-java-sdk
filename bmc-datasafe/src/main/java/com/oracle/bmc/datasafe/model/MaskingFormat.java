@@ -6,28 +6,27 @@ package com.oracle.bmc.datasafe.model;
 
 /**
  * A masking format defines the logic to mask data in a database column. The condition attribute
- * defines the condition that must be true for applying the masking format. It enables you to do <a
- * href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional
- * masking</a> so that you can mask the column data values differently using different masking
- * formats and the associated conditions. A masking format can have one or more format entries. A
- * format entry can be a basic masking format such as Random Number, or it can be a library masking
- * format.The combined output of all the format entries is used for masking. It provides the
- * flexibility to define a masking format that can generate different parts of a data value
- * separately and then combine them to get the final data value for masking. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * defines the condition that must be true for applying the masking format. It enables you to do
+ * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+ * so that you can mask the column data values differently using different masking formats and
+ * the associated conditions. A masking format can have one or more format entries. A format entry
+ * can be a basic masking format such as Random Number, or it can be a library masking format.The
+ * combined output of all the format entries is used for masking. It provides the flexibility to
+ * define a masking format that can generate different parts of a data value separately and then
+ * combine them to get the final data value for masking.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MaskingFormat.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MaskingFormat extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MaskingFormat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"condition", "description", "formatEntries"})
     public MaskingFormat(
@@ -41,59 +40,62 @@ public final class MaskingFormat extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A condition that must be true for applying the masking format. It can be any valid SQL
-         * construct that can be used in a SQL predicate. It enables you to do <a
-         * href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional
-         * masking</a> so that you can mask the column data values differently using different
-         * masking formats and the associated conditions.
-         */
+         * A condition that must be true for applying the masking format. It can be any valid
+         * SQL construct that can be used in a SQL predicate. It enables you to do
+         * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+         * so that you can mask the column data values differently using different masking
+         * formats and the associated conditions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
         /**
-         * A condition that must be true for applying the masking format. It can be any valid SQL
-         * construct that can be used in a SQL predicate. It enables you to do <a
-         * href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional
-         * masking</a> so that you can mask the column data values differently using different
-         * masking formats and the associated conditions.
+         * A condition that must be true for applying the masking format. It can be any valid
+         * SQL construct that can be used in a SQL predicate. It enables you to do
+         * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+         * so that you can mask the column data values differently using different masking
+         * formats and the associated conditions.
          *
          * @param condition the value to set
          * @return this builder
-         */
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-        /** The description of the masking format. */
+        /**
+         * The description of the masking format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the masking format.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * An array of format entries. The combined output of all the format entries is used for
-         * masking the column data values.
-         */
+         * An array of format entries. The combined output of all the format entries is
+         * used for masking the column data values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formatEntries")
         private java.util.List<FormatEntry> formatEntries;
 
         /**
-         * An array of format entries. The combined output of all the format entries is used for
-         * masking the column data values.
+         * An array of format entries. The combined output of all the format entries is
+         * used for masking the column data values.
          *
          * @param formatEntries the value to set
          * @return this builder
-         */
+         **/
         public Builder formatEntries(java.util.List<FormatEntry> formatEntries) {
             this.formatEntries = formatEntries;
             this.__explicitlySet__.add("formatEntries");
@@ -127,7 +129,9 @@ public final class MaskingFormat extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,54 +141,57 @@ public final class MaskingFormat extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * A condition that must be true for applying the masking format. It can be any valid SQL
-     * construct that can be used in a SQL predicate. It enables you to do <a
-     * href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional
-     * masking</a> so that you can mask the column data values differently using different masking
+     * A condition that must be true for applying the masking format. It can be any valid
+     * SQL construct that can be used in a SQL predicate. It enables you to do
+     * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+     * so that you can mask the column data values differently using different masking
      * formats and the associated conditions.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
     /**
-     * A condition that must be true for applying the masking format. It can be any valid SQL
-     * construct that can be used in a SQL predicate. It enables you to do <a
-     * href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional
-     * masking</a> so that you can mask the column data values differently using different masking
+     * A condition that must be true for applying the masking format. It can be any valid
+     * SQL construct that can be used in a SQL predicate. It enables you to do
+     * <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
+     * so that you can mask the column data values differently using different masking
      * formats and the associated conditions.
      *
      * @return the value
-     */
+     **/
     public String getCondition() {
         return condition;
     }
 
-    /** The description of the masking format. */
+    /**
+     * The description of the masking format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the masking format.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * An array of format entries. The combined output of all the format entries is used for masking
-     * the column data values.
-     */
+     * An array of format entries. The combined output of all the format entries is
+     * used for masking the column data values.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formatEntries")
     private final java.util.List<FormatEntry> formatEntries;
 
     /**
-     * An array of format entries. The combined output of all the format entries is used for masking
-     * the column data values.
+     * An array of format entries. The combined output of all the format entries is
+     * used for masking the column data values.
      *
      * @return the value
-     */
+     **/
     public java.util.List<FormatEntry> getFormatEntries() {
         return formatEntries;
     }
@@ -196,7 +203,6 @@ public final class MaskingFormat extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -33,10 +33,11 @@ import java.util.UUID;
 /**
  * This class provides an example of how to use the Cloud Guard service in the Java SDK.
  *
- * <p>Accept the compartment id, display name of the target, Cloud Guard reporting region Check if
- * CG is enabled for this tenancy (using the values from the config) Enable CG if it is not already
- * enabled Create a target using the display name provided in the main args Fetch the list of
- * problems that belong to the compartment and its subtree with accessLevel=accessible
+ * Accept the compartment id, display name of the target, Cloud Guard reporting region
+ * Check if CG is enabled for this tenancy (using the values from the config)
+ * Enable CG if it is not already enabled
+ * Create a target using the display name provided in the main args
+ * Fetch the list of problems that belong to the compartment and its subtree with accessLevel=accessible
  */
 public class CloudGuardExample {
 

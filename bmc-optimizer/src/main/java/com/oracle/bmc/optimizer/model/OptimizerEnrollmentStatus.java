@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/** Possible enrollment statuses. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum OptimizerEnrollmentStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible enrollment statuses.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+public enum OptimizerEnrollmentStatus {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
 

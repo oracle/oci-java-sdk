@@ -5,21 +5,19 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Subscription information for compartmentId. Only root compartments are allowed. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * Subscription information for compartmentId. Only root compartments are allowed.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subscription.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Subscription extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -47,91 +45,97 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the subscription details for particular root compartment or tenancy. */
+        /**
+         * OCID of the subscription details for particular root compartment or tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID of the subscription details for particular root compartment or tenancy.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Subscription id. */
+        /**
+         * Subscription id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
         private String classicSubscriptionId;
 
         /**
          * Subscription id.
-         *
          * @param classicSubscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder classicSubscriptionId(String classicSubscriptionId) {
             this.classicSubscriptionId = classicSubscriptionId;
             this.__explicitlySet__.add("classicSubscriptionId");
             return this;
         }
-        /** The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc. */
+        /**
+         * The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** Lifecycle state of the subscription. */
+        /**
+         * Lifecycle state of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the subscription.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Subscription resource intermediate states. */
+        /**
+         * Subscription resource intermediate states.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
         /**
          * Subscription resource intermediate states.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Stock keeping unit. */
+        /**
+         * Stock keeping unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skus")
         private java.util.List<SubscriptionSku> skus;
 
         /**
          * Stock keeping unit.
-         *
          * @param skus the value to set
          * @return this builder
-         */
+         **/
         public Builder skus(java.util.List<SubscriptionSku> skus) {
             this.skus = skus;
             this.__explicitlySet__.add("skus");
@@ -180,7 +184,9 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,47 +195,52 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** OCID of the subscription details for particular root compartment or tenancy. */
+    /**
+     * OCID of the subscription details for particular root compartment or tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID of the subscription details for particular root compartment or tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Subscription id. */
+    /**
+     * Subscription id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
     private final String classicSubscriptionId;
 
     /**
      * Subscription id.
-     *
      * @return the value
-     */
+     **/
     public String getClassicSubscriptionId() {
         return classicSubscriptionId;
     }
 
-    /** The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc. */
+    /**
+     * The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** Lifecycle state of the subscription. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifecycle state of the subscription.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -240,8 +251,8 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         NeedsAttention("NEEDS_ATTENTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -280,21 +291,24 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Lifecycle state of the subscription. */
+    /**
+     * Lifecycle state of the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the subscription.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Subscription resource intermediate states. */
-    public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Subscription resource intermediate states.
+     **/
+    public enum LifecycleDetails {
         Active("ACTIVE"),
         Purged("PURGED"),
         Canceled("CANCELED"),
@@ -323,8 +337,8 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         Expired("EXPIRED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -363,28 +377,30 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Subscription resource intermediate states. */
+    /**
+     * Subscription resource intermediate states.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
     /**
      * Subscription resource intermediate states.
-     *
      * @return the value
-     */
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** Stock keeping unit. */
+    /**
+     * Stock keeping unit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skus")
     private final java.util.List<SubscriptionSku> skus;
 
     /**
      * Stock keeping unit.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SubscriptionSku> getSkus() {
         return skus;
     }
@@ -396,7 +412,6 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

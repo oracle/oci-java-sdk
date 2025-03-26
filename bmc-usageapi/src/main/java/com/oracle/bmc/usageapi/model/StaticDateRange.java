@@ -5,52 +5,53 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The saved static date range (required when the dynamic date range is missing). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+ * The saved static date range (required when the dynamic date range is missing).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StaticDateRange.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "dateRangeType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "dateRangeType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class StaticDateRange extends DateRange {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The usage start time. */
+        /**
+         * The usage start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
         private java.util.Date timeUsageStarted;
 
         /**
          * The usage start time.
-         *
          * @param timeUsageStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageStarted(java.util.Date timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             this.__explicitlySet__.add("timeUsageStarted");
             return this;
         }
-        /** The usage end time. */
+        /**
+         * The usage end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
         private java.util.Date timeUsageEnded;
 
         /**
          * The usage end time.
-         *
          * @param timeUsageEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageEnded(java.util.Date timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             this.__explicitlySet__.add("timeUsageEnded");
@@ -80,7 +81,9 @@ public final class StaticDateRange extends DateRange {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class StaticDateRange extends DateRange {
         this.timeUsageEnded = timeUsageEnded;
     }
 
-    /** The usage start time. */
+    /**
+     * The usage start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     private final java.util.Date timeUsageStarted;
 
     /**
      * The usage start time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageStarted() {
         return timeUsageStarted;
     }
 
-    /** The usage end time. */
+    /**
+     * The usage end time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     private final java.util.Date timeUsageEnded;
 
     /**
      * The usage end time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageEnded() {
         return timeUsageEnded;
     }
@@ -129,7 +134,6 @@ public final class StaticDateRange extends DateRange {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

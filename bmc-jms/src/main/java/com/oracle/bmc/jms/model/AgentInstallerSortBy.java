@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field used to sort the installer summary. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum AgentInstallerSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort the installer summary.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum AgentInstallerSortBy {
     AgentInstallerId("agentInstallerId"),
     OsFamily("osFamily"),
     PlatformArchitecture("platformArchitecture"),

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Type of database connection. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum DatabaseConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of database connection.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum DatabaseConnectionType {
     CloudWallet("CLOUD_WALLET"),
     CustomJdbc("CUSTOM_JDBC"),
 

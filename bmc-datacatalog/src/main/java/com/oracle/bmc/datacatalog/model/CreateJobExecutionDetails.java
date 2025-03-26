@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Properties for creating a new job execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Properties for creating a new job execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateJobExecutionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateJobExecutionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateJobExecutionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "subType",
@@ -73,196 +72,196 @@ public final class CreateJobExecutionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Sub-type of this job execution. */
+        /**
+         * Sub-type of this job execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
 
         /**
          * Sub-type of this job execution.
-         *
          * @param subType the value to set
          * @return this builder
-         */
+         **/
         public Builder subType(String subType) {
             this.subType = subType;
             this.__explicitlySet__.add("subType");
             return this;
         }
-        /** Type of the job execution. */
+        /**
+         * Type of the job execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobType")
         private JobType jobType;
 
         /**
          * Type of the job execution.
-         *
          * @param jobType the value to set
          * @return this builder
-         */
+         **/
         public Builder jobType(JobType jobType) {
             this.jobType = jobType;
             this.__explicitlySet__.add("jobType");
             return this;
         }
-        /** The unique key of the parent execution or null if this job execution has no parent. */
+        /**
+         * The unique key of the parent execution or null if this job execution has no parent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
         private String parentKey;
 
         /**
          * The unique key of the parent execution or null if this job execution has no parent.
-         *
          * @param parentKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentKey(String parentKey) {
             this.parentKey = parentKey;
             this.__explicitlySet__.add("parentKey");
             return this;
         }
         /**
-         * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         */
+         * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         *
+         * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * Time that the job execution ended or null if it hasn't yet completed. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         */
+         * Time that the job execution ended or null if it hasn't yet completed.
+         * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * Time that the job execution ended or null if it hasn't yet completed. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * Time that the job execution ended or null if it hasn't yet completed.
+         * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** Status of the job execution, such as running, paused, or completed. */
+        /**
+         * Status of the job execution, such as running, paused, or completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JobExecutionState lifecycleState;
 
         /**
          * Status of the job execution, such as running, paused, or completed.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(JobExecutionState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Error code returned from the job execution or null if job is still running or didn't
-         * return an error.
-         */
+         * Error code returned from the job execution or null if job is still running or didn't return an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private String errorCode;
 
         /**
-         * Error code returned from the job execution or null if job is still running or didn't
-         * return an error.
+         * Error code returned from the job execution or null if job is still running or didn't return an error.
          *
          * @param errorCode the value to set
          * @return this builder
-         */
+         **/
         public Builder errorCode(String errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
         /**
-         * Error message returned from the job execution or null if job is still running or didn't
-         * return an error.
-         */
+         * Error message returned from the job execution or null if job is still running or didn't return an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * Error message returned from the job execution or null if job is still running or didn't
-         * return an error.
+         * Error message returned from the job execution or null if job is still running or didn't return an error.
          *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
         /**
-         * The unique key of the triggering external scheduler resource or null if this job
-         * execution is not externally triggered.
-         */
+         * The unique key of the triggering external scheduler resource or null if this job execution is not externally triggered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleInstanceKey")
         private String scheduleInstanceKey;
 
         /**
-         * The unique key of the triggering external scheduler resource or null if this job
-         * execution is not externally triggered.
-         *
+         * The unique key of the triggering external scheduler resource or null if this job execution is not externally triggered.
          * @param scheduleInstanceKey the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduleInstanceKey(String scheduleInstanceKey) {
             this.scheduleInstanceKey = scheduleInstanceKey;
             this.__explicitlySet__.add("scheduleInstanceKey");
             return this;
         }
-        /** Process identifier related to the job execution if the job is an external job. */
+        /**
+         * Process identifier related to the job execution if the job is an external job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processKey")
         private String processKey;
 
         /**
          * Process identifier related to the job execution if the job is an external job.
-         *
          * @param processKey the value to set
          * @return this builder
-         */
+         **/
         public Builder processKey(String processKey) {
             this.processKey = processKey;
             this.__explicitlySet__.add("processKey");
             return this;
         }
         /**
-         * If the job is an external process, then a URL of the job for accessing this resource and
-         * its status.
-         */
+         * If the job is an external process, then a URL of the job for accessing this resource and its status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalUrl")
         private String externalUrl;
 
         /**
-         * If the job is an external process, then a URL of the job for accessing this resource and
-         * its status.
+         * If the job is an external process, then a URL of the job for accessing this resource and its status.
          *
          * @param externalUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder externalUrl(String externalUrl) {
             this.externalUrl = externalUrl;
             this.__explicitlySet__.add("externalUrl");
             return this;
         }
-        /** An identifier used for log message correlation. */
+        /**
+         * An identifier used for log message correlation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventKey")
         private String eventKey;
 
@@ -271,49 +270,49 @@ public final class CreateJobExecutionDetails
          *
          * @param eventKey the value to set
          * @return this builder
-         */
+         **/
         public Builder eventKey(String eventKey) {
             this.eventKey = eventKey;
             this.__explicitlySet__.add("eventKey");
             return this;
         }
-        /** The key of the associated data entity resource. */
+        /**
+         * The key of the associated data entity resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataEntityKey")
         private String dataEntityKey;
 
         /**
          * The key of the associated data entity resource.
-         *
          * @param dataEntityKey the value to set
          * @return this builder
-         */
+         **/
         public Builder dataEntityKey(String dataEntityKey) {
             this.dataEntityKey = dataEntityKey;
             this.__explicitlySet__.add("dataEntityKey");
             return this;
         }
         /**
-         * A map of maps that contains the execution context properties which are specific to a job
-         * execution. Each job execution may define it's set of required and optional properties.
-         * The map keys are category names and the values are maps of property name to property
-         * value. Every property is contained inside of a category. Most job executions have
-         * required properties within the "default" category. Example: {@code {"properties": {
-         * "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
-         */
+         * A map of maps that contains the execution context properties which are specific to a job execution. Each job
+         * execution may define it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * job executions have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
         /**
-         * A map of maps that contains the execution context properties which are specific to a job
-         * execution. Each job execution may define it's set of required and optional properties.
-         * The map keys are category names and the values are maps of property name to property
-         * value. Every property is contained inside of a category. Most job executions have
-         * required properties within the "default" category. Example: {@code {"properties": {
-         * "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+         * A map of maps that contains the execution context properties which are specific to a job execution. Each job
+         * execution may define it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * job executions have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
          *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -394,7 +393,9 @@ public final class CreateJobExecutionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -403,174 +404,174 @@ public final class CreateJobExecutionDetails
         return new Builder().copy(this);
     }
 
-    /** Sub-type of this job execution. */
+    /**
+     * Sub-type of this job execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
     private final String subType;
 
     /**
      * Sub-type of this job execution.
-     *
      * @return the value
-     */
+     **/
     public String getSubType() {
         return subType;
     }
 
-    /** Type of the job execution. */
+    /**
+     * Type of the job execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     private final JobType jobType;
 
     /**
      * Type of the job execution.
-     *
      * @return the value
-     */
+     **/
     public JobType getJobType() {
         return jobType;
     }
 
-    /** The unique key of the parent execution or null if this job execution has no parent. */
+    /**
+     * The unique key of the parent execution or null if this job execution has no parent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
     private final String parentKey;
 
     /**
      * The unique key of the parent execution or null if this job execution has no parent.
-     *
      * @return the value
-     */
+     **/
     public String getParentKey() {
         return parentKey;
     }
 
     /**
-     * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted
-     * datetime string.
-     */
+     * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted
-     * datetime string.
-     *
+     * Time that job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * Time that the job execution ended or null if it hasn't yet completed. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     */
+     * Time that the job execution ended or null if it hasn't yet completed.
+     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
-     * Time that the job execution ended or null if it hasn't yet completed. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * Time that the job execution ended or null if it hasn't yet completed.
+     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** Status of the job execution, such as running, paused, or completed. */
+    /**
+     * Status of the job execution, such as running, paused, or completed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobExecutionState lifecycleState;
 
     /**
      * Status of the job execution, such as running, paused, or completed.
-     *
      * @return the value
-     */
+     **/
     public JobExecutionState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Error code returned from the job execution or null if job is still running or didn't return
-     * an error.
-     */
+     * Error code returned from the job execution or null if job is still running or didn't return an error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final String errorCode;
 
     /**
-     * Error code returned from the job execution or null if job is still running or didn't return
-     * an error.
+     * Error code returned from the job execution or null if job is still running or didn't return an error.
      *
      * @return the value
-     */
+     **/
     public String getErrorCode() {
         return errorCode;
     }
 
     /**
-     * Error message returned from the job execution or null if job is still running or didn't
-     * return an error.
-     */
+     * Error message returned from the job execution or null if job is still running or didn't return an error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * Error message returned from the job execution or null if job is still running or didn't
-     * return an error.
+     * Error message returned from the job execution or null if job is still running or didn't return an error.
      *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
 
     /**
-     * The unique key of the triggering external scheduler resource or null if this job execution is
-     * not externally triggered.
-     */
+     * The unique key of the triggering external scheduler resource or null if this job execution is not externally triggered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleInstanceKey")
     private final String scheduleInstanceKey;
 
     /**
-     * The unique key of the triggering external scheduler resource or null if this job execution is
-     * not externally triggered.
-     *
+     * The unique key of the triggering external scheduler resource or null if this job execution is not externally triggered.
      * @return the value
-     */
+     **/
     public String getScheduleInstanceKey() {
         return scheduleInstanceKey;
     }
 
-    /** Process identifier related to the job execution if the job is an external job. */
+    /**
+     * Process identifier related to the job execution if the job is an external job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processKey")
     private final String processKey;
 
     /**
      * Process identifier related to the job execution if the job is an external job.
-     *
      * @return the value
-     */
+     **/
     public String getProcessKey() {
         return processKey;
     }
 
     /**
-     * If the job is an external process, then a URL of the job for accessing this resource and its
-     * status.
-     */
+     * If the job is an external process, then a URL of the job for accessing this resource and its status.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalUrl")
     private final String externalUrl;
 
     /**
-     * If the job is an external process, then a URL of the job for accessing this resource and its
-     * status.
+     * If the job is an external process, then a URL of the job for accessing this resource and its status.
      *
      * @return the value
-     */
+     **/
     public String getExternalUrl() {
         return externalUrl;
     }
 
-    /** An identifier used for log message correlation. */
+    /**
+     * An identifier used for log message correlation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventKey")
     private final String eventKey;
 
@@ -578,45 +579,45 @@ public final class CreateJobExecutionDetails
      * An identifier used for log message correlation.
      *
      * @return the value
-     */
+     **/
     public String getEventKey() {
         return eventKey;
     }
 
-    /** The key of the associated data entity resource. */
+    /**
+     * The key of the associated data entity resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataEntityKey")
     private final String dataEntityKey;
 
     /**
      * The key of the associated data entity resource.
-     *
      * @return the value
-     */
+     **/
     public String getDataEntityKey() {
         return dataEntityKey;
     }
 
     /**
-     * A map of maps that contains the execution context properties which are specific to a job
-     * execution. Each job execution may define it's set of required and optional properties. The
-     * map keys are category names and the values are maps of property name to property value. Every
-     * property is contained inside of a category. Most job executions have required properties
-     * within the "default" category. Example: {@code {"properties": { "default": { "host": "host1",
-     * "port": "1521", "database": "orcl"}}}}
-     */
+     * A map of maps that contains the execution context properties which are specific to a job execution. Each job
+     * execution may define it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * job executions have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
     /**
-     * A map of maps that contains the execution context properties which are specific to a job
-     * execution. Each job execution may define it's set of required and optional properties. The
-     * map keys are category names and the values are maps of property name to property value. Every
-     * property is contained inside of a category. Most job executions have required properties
-     * within the "default" category. Example: {@code {"properties": { "default": { "host": "host1",
-     * "port": "1521", "database": "orcl"}}}}
+     * A map of maps that contains the execution context properties which are specific to a job execution. Each job
+     * execution may define it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * job executions have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }
@@ -628,7 +629,6 @@ public final class CreateJobExecutionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

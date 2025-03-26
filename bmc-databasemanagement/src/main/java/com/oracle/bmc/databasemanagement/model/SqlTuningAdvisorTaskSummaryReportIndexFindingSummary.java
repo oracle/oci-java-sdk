@@ -5,24 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary for all the index findings in a SQL Tuning Advisor task. Includes the index's hash
- * value, table name, schema, index name, reference count and index columns <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A summary for all the index findings in a SQL Tuning Advisor task. Includes the index's hash value, table name, schema, index name, reference count and index columns
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlTuningAdvisorTaskSummaryReportIndexFindingSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlTuningAdvisorTaskSummaryReportIndexFindingSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "indexHashValue",
@@ -50,61 +48,65 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Numerical representation of the index. */
+        /**
+         * Numerical representation of the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexHashValue")
         private Long indexHashValue;
 
         /**
          * Numerical representation of the index.
-         *
          * @param indexHashValue the value to set
          * @return this builder
-         */
+         **/
         public Builder indexHashValue(Long indexHashValue) {
             this.indexHashValue = indexHashValue;
             this.__explicitlySet__.add("indexHashValue");
             return this;
         }
-        /** Name of the index. */
+        /**
+         * Name of the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexName")
         private String indexName;
 
         /**
          * Name of the index.
-         *
          * @param indexName the value to set
          * @return this builder
-         */
+         **/
         public Builder indexName(String indexName) {
             this.indexName = indexName;
             this.__explicitlySet__.add("indexName");
             return this;
         }
-        /** Table's name related to the index. */
+        /**
+         * Table's name related to the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
         /**
          * Table's name related to the index.
-         *
          * @param tableName the value to set
          * @return this builder
-         */
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-        /** Schema related to the index. */
+        /**
+         * Schema related to the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private String schema;
 
         /**
          * Schema related to the index.
-         *
          * @param schema the value to set
          * @return this builder
-         */
+         **/
         public Builder schema(String schema) {
             this.schema = schema;
             this.__explicitlySet__.add("schema");
@@ -112,31 +114,31 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary
         }
         /**
          * The number of times the index is referenced within the SQL Tuning advisor task findings.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
         private Integer referenceCount;
 
         /**
          * The number of times the index is referenced within the SQL Tuning advisor task findings.
-         *
          * @param referenceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder referenceCount(Integer referenceCount) {
             this.referenceCount = referenceCount;
             this.__explicitlySet__.add("referenceCount");
             return this;
         }
-        /** Columns of the index. */
+        /**
+         * Columns of the index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("indexColumns")
         private java.util.List<String> indexColumns;
 
         /**
          * Columns of the index.
-         *
          * @param indexColumns the value to set
          * @return this builder
-         */
+         **/
         public Builder indexColumns(java.util.List<String> indexColumns) {
             this.indexColumns = indexColumns;
             this.__explicitlySet__.add("indexColumns");
@@ -185,7 +187,9 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -194,80 +198,86 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary
         return new Builder().copy(this);
     }
 
-    /** Numerical representation of the index. */
+    /**
+     * Numerical representation of the index.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexHashValue")
     private final Long indexHashValue;
 
     /**
      * Numerical representation of the index.
-     *
      * @return the value
-     */
+     **/
     public Long getIndexHashValue() {
         return indexHashValue;
     }
 
-    /** Name of the index. */
+    /**
+     * Name of the index.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexName")
     private final String indexName;
 
     /**
      * Name of the index.
-     *
      * @return the value
-     */
+     **/
     public String getIndexName() {
         return indexName;
     }
 
-    /** Table's name related to the index. */
+    /**
+     * Table's name related to the index.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
     /**
      * Table's name related to the index.
-     *
      * @return the value
-     */
+     **/
     public String getTableName() {
         return tableName;
     }
 
-    /** Schema related to the index. */
+    /**
+     * Schema related to the index.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     private final String schema;
 
     /**
      * Schema related to the index.
-     *
      * @return the value
-     */
+     **/
     public String getSchema() {
         return schema;
     }
 
-    /** The number of times the index is referenced within the SQL Tuning advisor task findings. */
+    /**
+     * The number of times the index is referenced within the SQL Tuning advisor task findings.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
     private final Integer referenceCount;
 
     /**
      * The number of times the index is referenced within the SQL Tuning advisor task findings.
-     *
      * @return the value
-     */
+     **/
     public Integer getReferenceCount() {
         return referenceCount;
     }
 
-    /** Columns of the index. */
+    /**
+     * Columns of the index.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("indexColumns")
     private final java.util.List<String> indexColumns;
 
     /**
      * Columns of the index.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getIndexColumns() {
         return indexColumns;
     }
@@ -279,7 +289,6 @@ public final class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

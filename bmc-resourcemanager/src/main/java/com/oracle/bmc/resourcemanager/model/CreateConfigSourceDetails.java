@@ -5,52 +5,59 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Creation details for a configuration source used with the stack. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Creation details for a configuration source used with the stack.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configSourceType",
-        defaultImpl = CreateConfigSourceDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configSourceType",
+    defaultImpl = CreateConfigSourceDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDevOpsConfigSourceDetails.class,
-            name = "DEVOPS_CONFIG_SOURCE"),
+        value = CreateDevOpsConfigSourceDetails.class,
+        name = "DEVOPS_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateBitbucketCloudConfigSourceDetails.class,
-            name = "BITBUCKET_CLOUD_CONFIG_SOURCE"),
+        value = CreateBitbucketCloudConfigSourceDetails.class,
+        name = "BITBUCKET_CLOUD_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateZipUploadConfigSourceDetails.class,
-            name = "ZIP_UPLOAD"),
+        value = CreateZipUploadConfigSourceDetails.class,
+        name = "ZIP_UPLOAD"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateBitbucketServerConfigSourceDetails.class,
-            name = "BITBUCKET_SERVER_CONFIG_SOURCE"),
+        value = CreateBitbucketServerConfigSourceDetails.class,
+        name = "BITBUCKET_SERVER_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateGitConfigSourceDetails.class,
-            name = "GIT_CONFIG_SOURCE"),
+        value = CreateGitConfigSourceDetails.class,
+        name = "GIT_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateObjectStorageConfigSourceDetails.class,
-            name = "OBJECT_STORAGE_CONFIG_SOURCE"),
+        value = CreateObjectStorageConfigSourceDetails.class,
+        name = "OBJECT_STORAGE_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateCompartmentConfigSourceDetails.class,
-            name = "COMPARTMENT_CONFIG_SOURCE"),
+        value = CreateCompartmentConfigSourceDetails.class,
+        name = "COMPARTMENT_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateStackTemplateConfigSourceDetails.class,
-            name = "TEMPLATE_CONFIG_SOURCE")
+        value = CreateStackTemplateConfigSourceDetails.class,
+        name = "TEMPLATE_CONFIG_SOURCE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class CreateConfigSourceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class CreateConfigSourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workingDirectory"})
     protected CreateConfigSourceDetails(String workingDirectory) {
@@ -59,26 +66,27 @@ public class CreateConfigSourceDetails
     }
 
     /**
-     * File path to the directory to use for running Terraform. If not specified, the root directory
-     * is used. Required when using a zip Terraform configuration ({@code configSourceType} value of
-     * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
-     * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
-     * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
-     */
+     * File path to the directory to use for running Terraform.
+     * If not specified, the root directory is used.
+     * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+     * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+     * For more information about required and recommended file structure, see
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     private final String workingDirectory;
 
     /**
-     * File path to the directory to use for running Terraform. If not specified, the root directory
-     * is used. Required when using a zip Terraform configuration ({@code configSourceType} value of
-     * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
-     * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
-     * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     * File path to the directory to use for running Terraform.
+     * If not specified, the root directory is used.
+     * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+     * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+     * For more information about required and recommended file structure, see
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
      *
      * @return the value
-     */
+     **/
     public String getWorkingDirectory() {
         return workingDirectory;
     }
@@ -90,7 +98,6 @@ public class CreateConfigSourceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.databasemanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.databasemanagement.internal.http.*;
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for SqlTuning service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for SqlTuning service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements SqlTuningAsync {
-    /** Service instance for SqlTuning. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public class SqlTuningAsyncClient implements SqlTuningAsync {
+    /**
+     * Service instance for SqlTuning.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SQLTUNING")
@@ -39,831 +36,112 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SqlTuningAsyncClient.class);
 
-    SqlTuningAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, SqlTuningAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "databasemanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public SqlTuningAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new SqlTuningAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CloneSqlTuningTaskResponse> cloneSqlTuningTask(
-            CloneSqlTuningTaskRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CloneSqlTuningTaskRequest, CloneSqlTuningTaskResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-        Objects.requireNonNull(
-                request.getCloneSqlTuningTaskDetails(), "cloneSqlTuningTaskDetails is required");
-
-        return clientCall(request, CloneSqlTuningTaskResponse::builder)
-                .logger(LOG, "cloneSqlTuningTask")
-                .serviceDetails(
-                        "SqlTuning",
-                        "CloneSqlTuningTask",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/CloneSqlTuningTask")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CloneSqlTuningTaskRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("cloneSqlTuningTask")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn.class,
-                        CloneSqlTuningTaskResponse.Builder::sqlTuningTaskReturn)
-                .handleResponseHeaderString(
-                        "opc-request-id", CloneSqlTuningTaskResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateSqlTuningSetResponse> createSqlTuningSet(
-            CreateSqlTuningSetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateSqlTuningSetRequest, CreateSqlTuningSetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-        Objects.requireNonNull(
-                request.getCreateSqlTuningSetDetails(), "createSqlTuningSetDetails is required");
-
-        return clientCall(request, CreateSqlTuningSetResponse::builder)
-                .logger(LOG, "createSqlTuningSet")
-                .serviceDetails(
-                        "SqlTuning",
-                        "CreateSqlTuningSet",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/CreateSqlTuningSet")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateSqlTuningSetRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSet.class,
-                        CreateSqlTuningSetResponse.Builder::sqlTuningSet)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateSqlTuningSetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DropSqlTuningSetResponse> dropSqlTuningSet(
-            DropSqlTuningSetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DropSqlTuningSetRequest, DropSqlTuningSetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(
-                request.getDropSqlTuningSetDetails(), "dropSqlTuningSetDetails is required");
-
-        return clientCall(request, DropSqlTuningSetResponse::builder)
-                .logger(LOG, "dropSqlTuningSet")
-                .serviceDetails(
-                        "SqlTuning",
-                        "DropSqlTuningSet",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlTuningSet")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DropSqlTuningSetRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .appendPathParam(request.getSqlTuningSetId())
-                .appendPathParam("actions")
-                .appendPathParam("dropSqlTuningSet")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
-                        DropSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", DropSqlTuningSetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DropSqlTuningTaskResponse> dropSqlTuningTask(
-            DropSqlTuningTaskRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DropSqlTuningTaskRequest, DropSqlTuningTaskResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-        Objects.requireNonNull(
-                request.getDropSqlTuningTaskDetails(), "dropSqlTuningTaskDetails is required");
-
-        return clientCall(request, DropSqlTuningTaskResponse::builder)
-                .logger(LOG, "dropSqlTuningTask")
-                .serviceDetails(
-                        "SqlTuning",
-                        "DropSqlTuningTask",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DropSqlTuningTask")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DropSqlTuningTaskRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("dropSqlTuningTask")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", DropSqlTuningTaskResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DropSqlsInSqlTuningSetResponse> dropSqlsInSqlTuningSet(
-            DropSqlsInSqlTuningSetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DropSqlsInSqlTuningSetRequest, DropSqlsInSqlTuningSetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(
-                request.getDropSqlsInSqlTuningSetDetails(),
-                "dropSqlsInSqlTuningSetDetails is required");
-
-        return clientCall(request, DropSqlsInSqlTuningSetResponse::builder)
-                .logger(LOG, "dropSqlsInSqlTuningSet")
-                .serviceDetails(
-                        "SqlTuning",
-                        "DropSqlsInSqlTuningSet",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlsInSqlTuningSet")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DropSqlsInSqlTuningSetRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .appendPathParam(request.getSqlTuningSetId())
-                .appendPathParam("actions")
-                .appendPathParam("dropSqlsInSqlTuningSet")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
-                        DropSqlsInSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", DropSqlsInSqlTuningSetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<FetchSqlTuningSetResponse> fetchSqlTuningSet(
-            FetchSqlTuningSetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            FetchSqlTuningSetRequest, FetchSqlTuningSetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(
-                request.getFetchSqlTuningSetDetails(), "fetchSqlTuningSetDetails is required");
-
-        return clientCall(request, FetchSqlTuningSetResponse::builder)
-                .logger(LOG, "fetchSqlTuningSet")
-                .serviceDetails(
-                        "SqlTuning",
-                        "FetchSqlTuningSet",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/FetchSqlTuningSet")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(FetchSqlTuningSetRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .appendPathParam(request.getSqlTuningSetId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSet.class,
-                        FetchSqlTuningSetResponse.Builder::sqlTuningSet)
-                .handleResponseHeaderString(
-                        "opc-request-id", FetchSqlTuningSetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetExecutionPlanStatsComparisionResponse>
-            getExecutionPlanStatsComparision(
-                    GetExecutionPlanStatsComparisionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetExecutionPlanStatsComparisionRequest,
-                                    GetExecutionPlanStatsComparisionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(request.getSqlObjectId(), "sqlObjectId is required");
-
-        Objects.requireNonNull(request.getExecutionId(), "executionId is required");
-
-        return clientCall(request, GetExecutionPlanStatsComparisionResponse::builder)
-                .logger(LOG, "getExecutionPlanStatsComparision")
-                .serviceDetails(
-                        "SqlTuning",
-                        "GetExecutionPlanStatsComparision",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetExecutionPlanStatsComparision")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetExecutionPlanStatsComparisionRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningAdvisorTasks")
-                .appendPathParam(request.getSqlTuningAdvisorTaskId())
-                .appendPathParam("executionPlanStatsComparision")
-                .appendQueryParam("sqlObjectId", request.getSqlObjectId())
-                .appendQueryParam("executionId", request.getExecutionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision.class,
-                        GetExecutionPlanStatsComparisionResponse.Builder
-                                ::executionPlanStatsComparision)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetExecutionPlanStatsComparisionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSqlExecutionPlanResponse> getSqlExecutionPlan(
-            GetSqlExecutionPlanRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetSqlExecutionPlanRequest, GetSqlExecutionPlanResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(request.getSqlObjectId(), "sqlObjectId is required");
-
-        Objects.requireNonNull(request.getAttribute(), "attribute is required");
-
-        return clientCall(request, GetSqlExecutionPlanResponse::builder)
-                .logger(LOG, "getSqlExecutionPlan")
-                .serviceDetails(
-                        "SqlTuning",
-                        "GetSqlExecutionPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlExecutionPlan")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSqlExecutionPlanRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningAdvisorTasks")
-                .appendPathParam(request.getSqlTuningAdvisorTaskId())
-                .appendPathParam("sqlExecutionPlan")
-                .appendQueryParam("sqlObjectId", request.getSqlObjectId())
-                .appendEnumQueryParam("attribute", request.getAttribute())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSqlExecutionPlan
-                                .class,
-                        GetSqlExecutionPlanResponse.Builder::sqlTuningAdvisorTaskSqlExecutionPlan)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSqlExecutionPlanResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSqlTuningAdvisorTaskSummaryReportResponse>
-            getSqlTuningAdvisorTaskSummaryReport(
-                    GetSqlTuningAdvisorTaskSummaryReportRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetSqlTuningAdvisorTaskSummaryReportRequest,
-                                    GetSqlTuningAdvisorTaskSummaryReportResponse>
-                            handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        return clientCall(request, GetSqlTuningAdvisorTaskSummaryReportResponse::builder)
-                .logger(LOG, "getSqlTuningAdvisorTaskSummaryReport")
-                .serviceDetails(
-                        "SqlTuning",
-                        "GetSqlTuningAdvisorTaskSummaryReport",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlTuningAdvisorTaskSummaryReport")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSqlTuningAdvisorTaskSummaryReportRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningAdvisorTasks")
-                .appendPathParam(request.getSqlTuningAdvisorTaskId())
-                .appendPathParam("summaryReport")
-                .appendEnumQueryParam("searchPeriod", request.getSearchPeriod())
-                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
-                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
-                .appendQueryParam(
-                        "beginExecIdGreaterThanOrEqualTo",
-                        request.getBeginExecIdGreaterThanOrEqualTo())
-                .appendQueryParam(
-                        "endExecIdLessThanOrEqualTo", request.getEndExecIdLessThanOrEqualTo())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
-                                .class,
-                        GetSqlTuningAdvisorTaskSummaryReportResponse.Builder
-                                ::sqlTuningAdvisorTaskSummaryReport)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetSqlTuningAdvisorTaskSummaryReportResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSqlTuningAdvisorTaskFindingsResponse>
-            listSqlTuningAdvisorTaskFindings(
-                    ListSqlTuningAdvisorTaskFindingsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListSqlTuningAdvisorTaskFindingsRequest,
-                                    ListSqlTuningAdvisorTaskFindingsResponse>
-                            handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        return clientCall(request, ListSqlTuningAdvisorTaskFindingsResponse::builder)
-                .logger(LOG, "listSqlTuningAdvisorTaskFindings")
-                .serviceDetails(
-                        "SqlTuning",
-                        "ListSqlTuningAdvisorTaskFindings",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskFindings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSqlTuningAdvisorTaskFindingsRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningAdvisorTasks")
-                .appendPathParam(request.getSqlTuningAdvisorTaskId())
-                .appendPathParam("findings")
-                .appendQueryParam("beginExecId", request.getBeginExecId())
-                .appendQueryParam("endExecId", request.getEndExecId())
-                .appendEnumQueryParam("searchPeriod", request.getSearchPeriod())
-                .appendEnumQueryParam("findingFilter", request.getFindingFilter())
-                .appendQueryParam("statsHashFilter", request.getStatsHashFilter())
-                .appendQueryParam("indexHashFilter", request.getIndexHashFilter())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model
-                                .SqlTuningAdvisorTaskFindingCollection.class,
-                        ListSqlTuningAdvisorTaskFindingsResponse.Builder
-                                ::sqlTuningAdvisorTaskFindingCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSqlTuningAdvisorTaskFindingsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSqlTuningAdvisorTaskFindingsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSqlTuningAdvisorTaskRecommendationsResponse>
-            listSqlTuningAdvisorTaskRecommendations(
-                    ListSqlTuningAdvisorTaskRecommendationsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListSqlTuningAdvisorTaskRecommendationsRequest,
-                                    ListSqlTuningAdvisorTaskRecommendationsResponse>
-                            handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(request.getSqlObjectId(), "sqlObjectId is required");
-
-        Objects.requireNonNull(request.getExecutionId(), "executionId is required");
-
-        return clientCall(request, ListSqlTuningAdvisorTaskRecommendationsResponse::builder)
-                .logger(LOG, "listSqlTuningAdvisorTaskRecommendations")
-                .serviceDetails(
-                        "SqlTuning",
-                        "ListSqlTuningAdvisorTaskRecommendations",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskRecommendations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSqlTuningAdvisorTaskRecommendationsRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningAdvisorTasks")
-                .appendPathParam(request.getSqlTuningAdvisorTaskId())
-                .appendPathParam("recommendations")
-                .appendQueryParam("sqlObjectId", request.getSqlObjectId())
-                .appendQueryParam("executionId", request.getExecutionId())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model
-                                .SqlTuningAdvisorTaskRecommendationCollection.class,
-                        ListSqlTuningAdvisorTaskRecommendationsResponse.Builder
-                                ::sqlTuningAdvisorTaskRecommendationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSqlTuningAdvisorTaskRecommendationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSqlTuningAdvisorTaskRecommendationsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSqlTuningAdvisorTasksResponse> listSqlTuningAdvisorTasks(
-            ListSqlTuningAdvisorTasksRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSqlTuningAdvisorTasksRequest, ListSqlTuningAdvisorTasksResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        return clientCall(request, ListSqlTuningAdvisorTasksResponse::builder)
-                .logger(LOG, "listSqlTuningAdvisorTasks")
-                .serviceDetails(
-                        "SqlTuning",
-                        "ListSqlTuningAdvisorTasks",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTasks")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSqlTuningAdvisorTasksRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningAdvisorTasks")
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
-                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskCollection
-                                .class,
-                        ListSqlTuningAdvisorTasksResponse.Builder::sqlTuningAdvisorTaskCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSqlTuningAdvisorTasksResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSqlTuningAdvisorTasksResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSqlTuningSetsResponse> listSqlTuningSets(
-            ListSqlTuningSetsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        return clientCall(request, ListSqlTuningSetsResponse::builder)
-                .logger(LOG, "listSqlTuningSets")
-                .serviceDetails(
-                        "SqlTuning",
-                        "ListSqlTuningSets",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningSets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSqlTuningSetsRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .appendQueryParam("owner", request.getOwner())
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSetCollection.class,
-                        ListSqlTuningSetsResponse.Builder::sqlTuningSetCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSqlTuningSetsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSqlTuningSetsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<LoadSqlTuningSetResponse> loadSqlTuningSet(
-            LoadSqlTuningSetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            LoadSqlTuningSetRequest, LoadSqlTuningSetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(
-                request.getLoadSqlTuningSetDetails(), "loadSqlTuningSetDetails is required");
-
-        return clientCall(request, LoadSqlTuningSetResponse::builder)
-                .logger(LOG, "loadSqlTuningSet")
-                .serviceDetails(
-                        "SqlTuning",
-                        "LoadSqlTuningSet",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/LoadSqlTuningSet")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(LoadSqlTuningSetRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .appendPathParam(request.getSqlTuningSetId())
-                .appendPathParam("actions")
-                .appendPathParam("loadSqlTuningSet")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
-                        LoadSqlTuningSetResponse.Builder::sqlTuningSetAdminActionStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", LoadSqlTuningSetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SaveSqlTuningSetAsResponse> saveSqlTuningSetAs(
-            SaveSqlTuningSetAsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            SaveSqlTuningSetAsRequest, SaveSqlTuningSetAsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(
-                request.getSaveSqlTuningSetAsDetails(), "saveSqlTuningSetAsDetails is required");
-
-        return clientCall(request, SaveSqlTuningSetAsResponse::builder)
-                .logger(LOG, "saveSqlTuningSetAs")
-                .serviceDetails(
-                        "SqlTuning",
-                        "SaveSqlTuningSetAs",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/SaveSqlTuningSetAs")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SaveSqlTuningSetAsRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .appendPathParam(request.getSqlTuningSetId())
-                .appendPathParam("actions")
-                .appendPathParam("saveAs")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
-                        SaveSqlTuningSetAsResponse.Builder::sqlTuningSetAdminActionStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", SaveSqlTuningSetAsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StartSqlTuningTaskResponse> startSqlTuningTask(
-            StartSqlTuningTaskRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            StartSqlTuningTaskRequest, StartSqlTuningTaskResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-        Objects.requireNonNull(
-                request.getStartSqlTuningTaskDetails(), "startSqlTuningTaskDetails is required");
-
-        return clientCall(request, StartSqlTuningTaskResponse::builder)
-                .logger(LOG, "startSqlTuningTask")
-                .serviceDetails(
-                        "SqlTuning",
-                        "StartSqlTuningTask",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/StartSqlTuningTask")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(StartSqlTuningTaskRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("startSqlTuningTask")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn.class,
-                        StartSqlTuningTaskResponse.Builder::sqlTuningTaskReturn)
-                .handleResponseHeaderString(
-                        "opc-request-id", StartSqlTuningTaskResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ValidateBasicFilterResponse> validateBasicFilter(
-            ValidateBasicFilterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ValidateBasicFilterRequest, ValidateBasicFilterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
-
-        Objects.requireNonNull(
-                request.getValidateBasicFilterDetails(), "validateBasicFilterDetails is required");
-
-        return clientCall(request, ValidateBasicFilterResponse::builder)
-                .logger(LOG, "validateBasicFilter")
-                .serviceDetails(
-                        "SqlTuning",
-                        "ValidateBasicFilter",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/ValidateBasicFilter")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateBasicFilterRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedDatabases")
-                .appendPathParam(request.getManagedDatabaseId())
-                .appendPathParam("sqlTuningSets")
-                .appendPathParam(request.getSqlTuningSetId())
-                .appendPathParam("actions")
-                .appendPathParam("validateBasicFilter")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.SqlTuningSetAdminActionStatus.class,
-                        ValidateBasicFilterResponse.Builder::sqlTuningSetAdminActionStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateBasicFilterResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public SqlTuningAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public SqlTuningAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public SqlTuningAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public SqlTuningAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public SqlTuningAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -871,26 +149,26 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public SqlTuningAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -899,29 +177,29 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public SqlTuningAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -934,14 +212,1127 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public SqlTuningAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, SqlTuningAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public SqlTuningAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new SqlTuningAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CloneSqlTuningTaskResponse> cloneSqlTuningTask(
+            CloneSqlTuningTaskRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CloneSqlTuningTaskRequest, CloneSqlTuningTaskResponse>
+                    handler) {
+        LOG.trace("Called async cloneSqlTuningTask");
+        final CloneSqlTuningTaskRequest interceptedRequest =
+                CloneSqlTuningTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CloneSqlTuningTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "CloneSqlTuningTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/CloneSqlTuningTask");
+        final java.util.function.Function<javax.ws.rs.core.Response, CloneSqlTuningTaskResponse>
+                transformer =
+                        CloneSqlTuningTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CloneSqlTuningTaskRequest, CloneSqlTuningTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CloneSqlTuningTaskRequest, CloneSqlTuningTaskResponse>,
+                        java.util.concurrent.Future<CloneSqlTuningTaskResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCloneSqlTuningTaskDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CloneSqlTuningTaskRequest, CloneSqlTuningTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSqlTuningSetResponse> createSqlTuningSet(
+            CreateSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSqlTuningSetRequest, CreateSqlTuningSetResponse>
+                    handler) {
+        LOG.trace("Called async createSqlTuningSet");
+        final CreateSqlTuningSetRequest interceptedRequest =
+                CreateSqlTuningSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "CreateSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/CreateSqlTuningSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSqlTuningSetResponse>
+                transformer =
+                        CreateSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateSqlTuningSetRequest, CreateSqlTuningSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSqlTuningSetRequest, CreateSqlTuningSetResponse>,
+                        java.util.concurrent.Future<CreateSqlTuningSetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSqlTuningSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSqlTuningSetRequest, CreateSqlTuningSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DropSqlTuningSetResponse> dropSqlTuningSet(
+            DropSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlTuningSetRequest, DropSqlTuningSetResponse>
+                    handler) {
+        LOG.trace("Called async dropSqlTuningSet");
+        final DropSqlTuningSetRequest interceptedRequest =
+                DropSqlTuningSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DropSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "DropSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlTuningSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, DropSqlTuningSetResponse>
+                transformer =
+                        DropSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DropSqlTuningSetRequest, DropSqlTuningSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DropSqlTuningSetRequest, DropSqlTuningSetResponse>,
+                        java.util.concurrent.Future<DropSqlTuningSetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDropSqlTuningSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DropSqlTuningSetRequest, DropSqlTuningSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DropSqlTuningTaskResponse> dropSqlTuningTask(
+            DropSqlTuningTaskRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlTuningTaskRequest, DropSqlTuningTaskResponse>
+                    handler) {
+        LOG.trace("Called async dropSqlTuningTask");
+        final DropSqlTuningTaskRequest interceptedRequest =
+                DropSqlTuningTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DropSqlTuningTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "DropSqlTuningTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DropSqlTuningTask");
+        final java.util.function.Function<javax.ws.rs.core.Response, DropSqlTuningTaskResponse>
+                transformer =
+                        DropSqlTuningTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DropSqlTuningTaskRequest, DropSqlTuningTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DropSqlTuningTaskRequest, DropSqlTuningTaskResponse>,
+                        java.util.concurrent.Future<DropSqlTuningTaskResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDropSqlTuningTaskDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DropSqlTuningTaskRequest, DropSqlTuningTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DropSqlsInSqlTuningSetResponse> dropSqlsInSqlTuningSet(
+            DropSqlsInSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlsInSqlTuningSetRequest, DropSqlsInSqlTuningSetResponse>
+                    handler) {
+        LOG.trace("Called async dropSqlsInSqlTuningSet");
+        final DropSqlsInSqlTuningSetRequest interceptedRequest =
+                DropSqlsInSqlTuningSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DropSqlsInSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "DropSqlsInSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlsInSqlTuningSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, DropSqlsInSqlTuningSetResponse>
+                transformer =
+                        DropSqlsInSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DropSqlsInSqlTuningSetRequest, DropSqlsInSqlTuningSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DropSqlsInSqlTuningSetRequest, DropSqlsInSqlTuningSetResponse>,
+                        java.util.concurrent.Future<DropSqlsInSqlTuningSetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDropSqlsInSqlTuningSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DropSqlsInSqlTuningSetRequest, DropSqlsInSqlTuningSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<FetchSqlTuningSetResponse> fetchSqlTuningSet(
+            FetchSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            FetchSqlTuningSetRequest, FetchSqlTuningSetResponse>
+                    handler) {
+        LOG.trace("Called async fetchSqlTuningSet");
+        final FetchSqlTuningSetRequest interceptedRequest =
+                FetchSqlTuningSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FetchSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "FetchSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/FetchSqlTuningSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, FetchSqlTuningSetResponse>
+                transformer =
+                        FetchSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<FetchSqlTuningSetRequest, FetchSqlTuningSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                FetchSqlTuningSetRequest, FetchSqlTuningSetResponse>,
+                        java.util.concurrent.Future<FetchSqlTuningSetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getFetchSqlTuningSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    FetchSqlTuningSetRequest, FetchSqlTuningSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExecutionPlanStatsComparisionResponse>
+            getExecutionPlanStatsComparision(
+                    GetExecutionPlanStatsComparisionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExecutionPlanStatsComparisionRequest,
+                                    GetExecutionPlanStatsComparisionResponse>
+                            handler) {
+        LOG.trace("Called async getExecutionPlanStatsComparision");
+        final GetExecutionPlanStatsComparisionRequest interceptedRequest =
+                GetExecutionPlanStatsComparisionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExecutionPlanStatsComparisionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "GetExecutionPlanStatsComparision",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetExecutionPlanStatsComparision");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExecutionPlanStatsComparisionResponse>
+                transformer =
+                        GetExecutionPlanStatsComparisionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExecutionPlanStatsComparisionRequest,
+                        GetExecutionPlanStatsComparisionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExecutionPlanStatsComparisionRequest,
+                                GetExecutionPlanStatsComparisionResponse>,
+                        java.util.concurrent.Future<GetExecutionPlanStatsComparisionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExecutionPlanStatsComparisionRequest,
+                    GetExecutionPlanStatsComparisionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSqlExecutionPlanResponse> getSqlExecutionPlan(
+            GetSqlExecutionPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlExecutionPlanRequest, GetSqlExecutionPlanResponse>
+                    handler) {
+        LOG.trace("Called async getSqlExecutionPlan");
+        final GetSqlExecutionPlanRequest interceptedRequest =
+                GetSqlExecutionPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlExecutionPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "GetSqlExecutionPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlExecutionPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSqlExecutionPlanResponse>
+                transformer =
+                        GetSqlExecutionPlanConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSqlExecutionPlanRequest, GetSqlExecutionPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSqlExecutionPlanRequest, GetSqlExecutionPlanResponse>,
+                        java.util.concurrent.Future<GetSqlExecutionPlanResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSqlExecutionPlanRequest, GetSqlExecutionPlanResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSqlTuningAdvisorTaskSummaryReportResponse>
+            getSqlTuningAdvisorTaskSummaryReport(
+                    GetSqlTuningAdvisorTaskSummaryReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSqlTuningAdvisorTaskSummaryReportRequest,
+                                    GetSqlTuningAdvisorTaskSummaryReportResponse>
+                            handler) {
+        LOG.trace("Called async getSqlTuningAdvisorTaskSummaryReport");
+        final GetSqlTuningAdvisorTaskSummaryReportRequest interceptedRequest =
+                GetSqlTuningAdvisorTaskSummaryReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlTuningAdvisorTaskSummaryReportConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "GetSqlTuningAdvisorTaskSummaryReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlTuningAdvisorTaskSummaryReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSqlTuningAdvisorTaskSummaryReportResponse>
+                transformer =
+                        GetSqlTuningAdvisorTaskSummaryReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSqlTuningAdvisorTaskSummaryReportRequest,
+                        GetSqlTuningAdvisorTaskSummaryReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSqlTuningAdvisorTaskSummaryReportRequest,
+                                GetSqlTuningAdvisorTaskSummaryReportResponse>,
+                        java.util.concurrent.Future<GetSqlTuningAdvisorTaskSummaryReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSqlTuningAdvisorTaskSummaryReportRequest,
+                    GetSqlTuningAdvisorTaskSummaryReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlTuningAdvisorTaskFindingsResponse>
+            listSqlTuningAdvisorTaskFindings(
+                    ListSqlTuningAdvisorTaskFindingsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlTuningAdvisorTaskFindingsRequest,
+                                    ListSqlTuningAdvisorTaskFindingsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlTuningAdvisorTaskFindings");
+        final ListSqlTuningAdvisorTaskFindingsRequest interceptedRequest =
+                ListSqlTuningAdvisorTaskFindingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlTuningAdvisorTaskFindingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "ListSqlTuningAdvisorTaskFindings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskFindings");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlTuningAdvisorTaskFindingsResponse>
+                transformer =
+                        ListSqlTuningAdvisorTaskFindingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlTuningAdvisorTaskFindingsRequest,
+                        ListSqlTuningAdvisorTaskFindingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlTuningAdvisorTaskFindingsRequest,
+                                ListSqlTuningAdvisorTaskFindingsResponse>,
+                        java.util.concurrent.Future<ListSqlTuningAdvisorTaskFindingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlTuningAdvisorTaskFindingsRequest,
+                    ListSqlTuningAdvisorTaskFindingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlTuningAdvisorTaskRecommendationsResponse>
+            listSqlTuningAdvisorTaskRecommendations(
+                    ListSqlTuningAdvisorTaskRecommendationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlTuningAdvisorTaskRecommendationsRequest,
+                                    ListSqlTuningAdvisorTaskRecommendationsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlTuningAdvisorTaskRecommendations");
+        final ListSqlTuningAdvisorTaskRecommendationsRequest interceptedRequest =
+                ListSqlTuningAdvisorTaskRecommendationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlTuningAdvisorTaskRecommendationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "ListSqlTuningAdvisorTaskRecommendations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskRecommendations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlTuningAdvisorTaskRecommendationsResponse>
+                transformer =
+                        ListSqlTuningAdvisorTaskRecommendationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlTuningAdvisorTaskRecommendationsRequest,
+                        ListSqlTuningAdvisorTaskRecommendationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlTuningAdvisorTaskRecommendationsRequest,
+                                ListSqlTuningAdvisorTaskRecommendationsResponse>,
+                        java.util.concurrent.Future<
+                                ListSqlTuningAdvisorTaskRecommendationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlTuningAdvisorTaskRecommendationsRequest,
+                    ListSqlTuningAdvisorTaskRecommendationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlTuningAdvisorTasksResponse> listSqlTuningAdvisorTasks(
+            ListSqlTuningAdvisorTasksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlTuningAdvisorTasksRequest, ListSqlTuningAdvisorTasksResponse>
+                    handler) {
+        LOG.trace("Called async listSqlTuningAdvisorTasks");
+        final ListSqlTuningAdvisorTasksRequest interceptedRequest =
+                ListSqlTuningAdvisorTasksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlTuningAdvisorTasksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "ListSqlTuningAdvisorTasks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTasks");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlTuningAdvisorTasksResponse>
+                transformer =
+                        ListSqlTuningAdvisorTasksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlTuningAdvisorTasksRequest, ListSqlTuningAdvisorTasksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlTuningAdvisorTasksRequest,
+                                ListSqlTuningAdvisorTasksResponse>,
+                        java.util.concurrent.Future<ListSqlTuningAdvisorTasksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlTuningAdvisorTasksRequest, ListSqlTuningAdvisorTasksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlTuningSetsResponse> listSqlTuningSets(
+            ListSqlTuningSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>
+                    handler) {
+        LOG.trace("Called async listSqlTuningSets");
+        final ListSqlTuningSetsRequest interceptedRequest =
+                ListSqlTuningSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlTuningSetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "ListSqlTuningSets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningSets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSqlTuningSetsResponse>
+                transformer =
+                        ListSqlTuningSetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>,
+                        java.util.concurrent.Future<ListSqlTuningSetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlTuningSetsRequest, ListSqlTuningSetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<LoadSqlTuningSetResponse> loadSqlTuningSet(
+            LoadSqlTuningSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            LoadSqlTuningSetRequest, LoadSqlTuningSetResponse>
+                    handler) {
+        LOG.trace("Called async loadSqlTuningSet");
+        final LoadSqlTuningSetRequest interceptedRequest =
+                LoadSqlTuningSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                LoadSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "LoadSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/LoadSqlTuningSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, LoadSqlTuningSetResponse>
+                transformer =
+                        LoadSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<LoadSqlTuningSetRequest, LoadSqlTuningSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                LoadSqlTuningSetRequest, LoadSqlTuningSetResponse>,
+                        java.util.concurrent.Future<LoadSqlTuningSetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getLoadSqlTuningSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    LoadSqlTuningSetRequest, LoadSqlTuningSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SaveSqlTuningSetAsResponse> saveSqlTuningSetAs(
+            SaveSqlTuningSetAsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SaveSqlTuningSetAsRequest, SaveSqlTuningSetAsResponse>
+                    handler) {
+        LOG.trace("Called async saveSqlTuningSetAs");
+        final SaveSqlTuningSetAsRequest interceptedRequest =
+                SaveSqlTuningSetAsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SaveSqlTuningSetAsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "SaveSqlTuningSetAs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/SaveSqlTuningSetAs");
+        final java.util.function.Function<javax.ws.rs.core.Response, SaveSqlTuningSetAsResponse>
+                transformer =
+                        SaveSqlTuningSetAsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SaveSqlTuningSetAsRequest, SaveSqlTuningSetAsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SaveSqlTuningSetAsRequest, SaveSqlTuningSetAsResponse>,
+                        java.util.concurrent.Future<SaveSqlTuningSetAsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSaveSqlTuningSetAsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SaveSqlTuningSetAsRequest, SaveSqlTuningSetAsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSqlTuningTaskResponse> startSqlTuningTask(
+            StartSqlTuningTaskRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartSqlTuningTaskRequest, StartSqlTuningTaskResponse>
+                    handler) {
+        LOG.trace("Called async startSqlTuningTask");
+        final StartSqlTuningTaskRequest interceptedRequest =
+                StartSqlTuningTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartSqlTuningTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "StartSqlTuningTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/StartSqlTuningTask");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartSqlTuningTaskResponse>
+                transformer =
+                        StartSqlTuningTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartSqlTuningTaskRequest, StartSqlTuningTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartSqlTuningTaskRequest, StartSqlTuningTaskResponse>,
+                        java.util.concurrent.Future<StartSqlTuningTaskResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStartSqlTuningTaskDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartSqlTuningTaskRequest, StartSqlTuningTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateBasicFilterResponse> validateBasicFilter(
+            ValidateBasicFilterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ValidateBasicFilterRequest, ValidateBasicFilterResponse>
+                    handler) {
+        LOG.trace("Called async validateBasicFilter");
+        final ValidateBasicFilterRequest interceptedRequest =
+                ValidateBasicFilterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateBasicFilterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "ValidateBasicFilter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/ValidateBasicFilter");
+        final java.util.function.Function<javax.ws.rs.core.Response, ValidateBasicFilterResponse>
+                transformer =
+                        ValidateBasicFilterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateBasicFilterRequest, ValidateBasicFilterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateBasicFilterRequest, ValidateBasicFilterResponse>,
+                        java.util.concurrent.Future<ValidateBasicFilterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getValidateBasicFilterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateBasicFilterRequest, ValidateBasicFilterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

@@ -6,27 +6,32 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * User's third-party authentication factor details
- *
- * <p>*Added In:** 19.2.1
- *
- * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable -
- * required: false - returned: default - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **Added In:** 19.2.1
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsSearchable: false
+ *  - multiValued: false
+ *  - mutability: immutable
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MyDeviceThirdPartyFactor.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MyDeviceThirdPartyFactor.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MyDeviceThirdPartyFactor
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "thirdPartyVendorName",
@@ -47,30 +52,41 @@ public final class MyDeviceThirdPartyFactor
     public static class Builder {
         /**
          * The vendor name of the third party factor
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
         private String thirdPartyVendorName;
 
         /**
          * The vendor name of the third party factor
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param thirdPartyVendorName the value to set
          * @return this builder
-         */
+         **/
         public Builder thirdPartyVendorName(String thirdPartyVendorName) {
             this.thirdPartyVendorName = thirdPartyVendorName;
             this.__explicitlySet__.add("thirdPartyVendorName");
@@ -78,30 +94,41 @@ public final class MyDeviceThirdPartyFactor
         }
         /**
          * Type of the third party authentication factor
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyFactorType")
         private String thirdPartyFactorType;
 
         /**
          * Type of the third party authentication factor
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: string - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param thirdPartyFactorType the value to set
          * @return this builder
-         */
+         **/
         public Builder thirdPartyFactorType(String thirdPartyFactorType) {
             this.thirdPartyFactorType = thirdPartyFactorType;
             this.__explicitlySet__.add("thirdPartyFactorType");
@@ -109,30 +136,41 @@ public final class MyDeviceThirdPartyFactor
         }
         /**
          * The identifier of third party device
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The identifier of third party device
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: string - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -140,30 +178,41 @@ public final class MyDeviceThirdPartyFactor
         }
         /**
          * The URI that corresponds to the third party device resource
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
 
         /**
          * The URI that corresponds to the third party device resource
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none -
-         * idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param ref the value to set
          * @return this builder
-         */
+         **/
         public Builder ref(String ref) {
             this.ref = ref;
             this.__explicitlySet__.add("ref");
@@ -204,7 +253,9 @@ public final class MyDeviceThirdPartyFactor
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -215,116 +266,160 @@ public final class MyDeviceThirdPartyFactor
 
     /**
      * The vendor name of the third party factor
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
     private final String thirdPartyVendorName;
 
     /**
      * The vendor name of the third party factor
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
-     */
+     **/
     public String getThirdPartyVendorName() {
         return thirdPartyVendorName;
     }
 
     /**
      * Type of the third party authentication factor
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyFactorType")
     private final String thirdPartyFactorType;
 
     /**
      * Type of the third party authentication factor
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: string - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
-     */
+     **/
     public String getThirdPartyFactorType() {
         return thirdPartyFactorType;
     }
 
     /**
      * The identifier of third party device
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The identifier of third party device
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: string - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * The URI that corresponds to the third party device resource
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
 
     /**
      * The URI that corresponds to the third party device resource
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none -
-     * idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
-     */
+     **/
     public String getRef() {
         return ref;
     }
@@ -336,7 +431,6 @@ public final class MyDeviceThirdPartyFactor
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

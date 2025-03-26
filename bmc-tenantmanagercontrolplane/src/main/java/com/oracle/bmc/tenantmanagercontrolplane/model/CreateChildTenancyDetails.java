@@ -5,23 +5,22 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The parameters for creating a child tenancy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * The parameters for creating a child tenancy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateChildTenancyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateChildTenancyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateChildTenancyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -52,114 +51,113 @@ public final class CreateChildTenancyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The tenancy ID of the parent tenancy. */
+        /**
+         * The tenancy ID of the parent tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The tenancy ID of the parent tenancy.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The tenancy name to use for the child tenancy. */
+        /**
+         * The tenancy name to use for the child tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
         private String tenancyName;
 
         /**
          * The tenancy name to use for the child tenancy.
-         *
          * @param tenancyName the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyName(String tenancyName) {
             this.tenancyName = tenancyName;
             this.__explicitlySet__.add("tenancyName");
             return this;
         }
         /**
-         * The home region to use for the child tenancy. This must be a region where the parent
-         * tenancy is subscribed.
-         */
+         * The home region to use for the child tenancy. This must be a region where the parent tenancy is subscribed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
         private String homeRegion;
 
         /**
-         * The home region to use for the child tenancy. This must be a region where the parent
-         * tenancy is subscribed.
-         *
+         * The home region to use for the child tenancy. This must be a region where the parent tenancy is subscribed.
          * @param homeRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder homeRegion(String homeRegion) {
             this.homeRegion = homeRegion;
             this.__explicitlySet__.add("homeRegion");
             return this;
         }
-        /** Email address of the child tenancy administrator. */
+        /**
+         * Email address of the child tenancy administrator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
         private String adminEmail;
 
         /**
          * Email address of the child tenancy administrator.
-         *
          * @param adminEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder adminEmail(String adminEmail) {
             this.adminEmail = adminEmail;
             this.__explicitlySet__.add("adminEmail");
             return this;
         }
         /**
-         * The name to use for the administrator policy in the child tenancy. Must contain only
-         * letters and underscores.
-         */
+         * The name to use for the administrator policy in the child tenancy. Must contain only letters and underscores.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyName")
         private String policyName;
 
         /**
-         * The name to use for the administrator policy in the child tenancy. Must contain only
-         * letters and underscores.
-         *
+         * The name to use for the administrator policy in the child tenancy. Must contain only letters and underscores.
          * @param policyName the value to set
          * @return this builder
-         */
+         **/
         public Builder policyName(String policyName) {
             this.policyName = policyName;
             this.__explicitlySet__.add("policyName");
             return this;
         }
-        /** The governance status of the child tenancy. */
+        /**
+         * The governance status of the child tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
         private GovernanceStatus governanceStatus;
 
         /**
          * The governance status of the child tenancy.
-         *
          * @param governanceStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder governanceStatus(GovernanceStatus governanceStatus) {
             this.governanceStatus = governanceStatus;
             this.__explicitlySet__.add("governanceStatus");
             return this;
         }
-        /** OCID of the subscription that needs to be assigned to the child tenancy. */
+        /**
+         * OCID of the subscription that needs to be assigned to the child tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
          * OCID of the subscription that needs to be assigned to the child tenancy.
-         *
          * @param subscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
@@ -212,7 +210,9 @@ public final class CreateChildTenancyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,101 +221,100 @@ public final class CreateChildTenancyDetails
         return new Builder().copy(this);
     }
 
-    /** The tenancy ID of the parent tenancy. */
+    /**
+     * The tenancy ID of the parent tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The tenancy ID of the parent tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The tenancy name to use for the child tenancy. */
+    /**
+     * The tenancy name to use for the child tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     private final String tenancyName;
 
     /**
      * The tenancy name to use for the child tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyName() {
         return tenancyName;
     }
 
     /**
-     * The home region to use for the child tenancy. This must be a region where the parent tenancy
-     * is subscribed.
-     */
+     * The home region to use for the child tenancy. This must be a region where the parent tenancy is subscribed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
     private final String homeRegion;
 
     /**
-     * The home region to use for the child tenancy. This must be a region where the parent tenancy
-     * is subscribed.
-     *
+     * The home region to use for the child tenancy. This must be a region where the parent tenancy is subscribed.
      * @return the value
-     */
+     **/
     public String getHomeRegion() {
         return homeRegion;
     }
 
-    /** Email address of the child tenancy administrator. */
+    /**
+     * Email address of the child tenancy administrator.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     private final String adminEmail;
 
     /**
      * Email address of the child tenancy administrator.
-     *
      * @return the value
-     */
+     **/
     public String getAdminEmail() {
         return adminEmail;
     }
 
     /**
-     * The name to use for the administrator policy in the child tenancy. Must contain only letters
-     * and underscores.
-     */
+     * The name to use for the administrator policy in the child tenancy. Must contain only letters and underscores.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
     private final String policyName;
 
     /**
-     * The name to use for the administrator policy in the child tenancy. Must contain only letters
-     * and underscores.
-     *
+     * The name to use for the administrator policy in the child tenancy. Must contain only letters and underscores.
      * @return the value
-     */
+     **/
     public String getPolicyName() {
         return policyName;
     }
 
-    /** The governance status of the child tenancy. */
+    /**
+     * The governance status of the child tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
     private final GovernanceStatus governanceStatus;
 
     /**
      * The governance status of the child tenancy.
-     *
      * @return the value
-     */
+     **/
     public GovernanceStatus getGovernanceStatus() {
         return governanceStatus;
     }
 
-    /** OCID of the subscription that needs to be assigned to the child tenancy. */
+    /**
+     * OCID of the subscription that needs to be assigned to the child tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
      * OCID of the subscription that needs to be assigned to the child tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -327,7 +326,6 @@ public final class CreateChildTenancyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

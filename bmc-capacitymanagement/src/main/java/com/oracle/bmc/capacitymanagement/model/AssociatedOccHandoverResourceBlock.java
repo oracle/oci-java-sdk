@@ -5,23 +5,23 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * Details about the resource block that was handed over. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * Details about the resource block that was handed over.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedOccHandoverResourceBlock.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssociatedOccHandoverResourceBlock.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociatedOccHandoverResourceBlock
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"occHandoverResourceBlockId", "handoverQuantity"})
     public AssociatedOccHandoverResourceBlock(
@@ -33,7 +33,10 @@ public final class AssociatedOccHandoverResourceBlock
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the handed over resource block. */
+        /**
+         * The OCID of the handed over resource block.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("occHandoverResourceBlockId")
         private String occHandoverResourceBlockId;
 
@@ -42,26 +45,25 @@ public final class AssociatedOccHandoverResourceBlock
          *
          * @param occHandoverResourceBlockId the value to set
          * @return this builder
-         */
+         **/
         public Builder occHandoverResourceBlockId(String occHandoverResourceBlockId) {
             this.occHandoverResourceBlockId = occHandoverResourceBlockId;
             this.__explicitlySet__.add("occHandoverResourceBlockId");
             return this;
         }
         /**
-         * The total quantity of the resource that was made available to the customer as part of
-         * this resource block
-         */
+         * The total quantity of the resource that was made available to the customer as part of this resource block
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("handoverQuantity")
         private Long handoverQuantity;
 
         /**
-         * The total quantity of the resource that was made available to the customer as part of
-         * this resource block
+         * The total quantity of the resource that was made available to the customer as part of this resource block
          *
          * @param handoverQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder handoverQuantity(Long handoverQuantity) {
             this.handoverQuantity = handoverQuantity;
             this.__explicitlySet__.add("handoverQuantity");
@@ -93,7 +95,9 @@ public final class AssociatedOccHandoverResourceBlock
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,7 +106,10 @@ public final class AssociatedOccHandoverResourceBlock
         return new Builder().copy(this);
     }
 
-    /** The OCID of the handed over resource block. */
+    /**
+     * The OCID of the handed over resource block.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("occHandoverResourceBlockId")
     private final String occHandoverResourceBlockId;
 
@@ -110,24 +117,23 @@ public final class AssociatedOccHandoverResourceBlock
      * The OCID of the handed over resource block.
      *
      * @return the value
-     */
+     **/
     public String getOccHandoverResourceBlockId() {
         return occHandoverResourceBlockId;
     }
 
     /**
-     * The total quantity of the resource that was made available to the customer as part of this
-     * resource block
-     */
+     * The total quantity of the resource that was made available to the customer as part of this resource block
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("handoverQuantity")
     private final Long handoverQuantity;
 
     /**
-     * The total quantity of the resource that was made available to the customer as part of this
-     * resource block
+     * The total quantity of the resource that was made available to the customer as part of this resource block
      *
      * @return the value
-     */
+     **/
     public Long getHandoverQuantity() {
         return handoverQuantity;
     }
@@ -139,7 +145,6 @@ public final class AssociatedOccHandoverResourceBlock
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

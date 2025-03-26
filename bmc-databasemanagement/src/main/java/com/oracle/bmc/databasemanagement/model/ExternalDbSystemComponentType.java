@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The external DB system component type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum ExternalDbSystemComponentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The external DB system component type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum ExternalDbSystemComponentType {
     Asm("ASM"),
     AsmInstance("ASM_INSTANCE"),
     Cluster("CLUSTER"),

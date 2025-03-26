@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.rover.model;
 
-/** Possible types of actions on roverCluster resource. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-public enum WorkRequestResourceActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible types of actions on roverCluster resource.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+public enum WorkRequestResourceActionType {
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),
     Created("CREATED"),

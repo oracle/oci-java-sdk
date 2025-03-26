@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to schedule Maintenance Run with Latest Release Update along TimeZone File Update for the
- * specified resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details to schedule Maintenance Run with Latest Release Update along TimeZone File Update for the specified resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMaintenanceRunDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMaintenanceRunDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMaintenanceRunDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetResourceId",
@@ -53,87 +52,80 @@ public final class CreateMaintenanceRunDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the target resource for which the maintenance run should be created. */
+        /**
+         * The ID of the target resource for which the maintenance run should be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
         /**
          * The ID of the target resource for which the maintenance run should be created.
-         *
          * @param targetResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
         /**
-         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous
-         * Container Database. If enabled along with Release Update, patching will be done in a
-         * Non-Rolling manner.
-         */
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
         private Boolean isDstFileUpdateEnabled;
 
         /**
-         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous
-         * Container Database. If enabled along with Release Update, patching will be done in a
-         * Non-Rolling manner.
-         *
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
          * @param isDstFileUpdateEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
             this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             this.__explicitlySet__.add("isDstFileUpdateEnabled");
             return this;
         }
-        /** The date and time that update should be scheduled. */
+        /**
+         * The date and time that update should be scheduled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
          * The date and time that update should be scheduled.
-         *
          * @param timeScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
             return this;
         }
         /**
-         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING".
-         * Default value is ROLLING.
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         * <p>
+         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          *
-         * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-         * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-         * for more information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
         private PatchingMode patchingMode;
 
         /**
-         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING".
-         * Default value is ROLLING.
-         *
-         * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-         * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-         * for more information.
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         * <p>
+         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          *
          * @param patchingMode the value to set
          * @return this builder
-         */
+         **/
         public Builder patchingMode(PatchingMode patchingMode) {
             this.patchingMode = patchingMode;
             this.__explicitlySet__.add("patchingMode");
             return this;
         }
-        /** Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE". */
+        /**
+         * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchType")
         private PatchType patchType;
 
@@ -142,45 +134,39 @@ public final class CreateMaintenanceRunDetails
          *
          * @param patchType the value to set
          * @return this builder
-         */
+         **/
         public Builder patchType(PatchType patchType) {
             this.patchType = patchType;
             this.__explicitlySet__.add("patchType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the Maintenance Run.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the Maintenance Run.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The Autonomous Database Software Image
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         */
+         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
-         * The Autonomous Database Software Image
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         *
+         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param databaseSoftwareImageId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
@@ -233,7 +219,9 @@ public final class CreateMaintenanceRunDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -242,61 +230,55 @@ public final class CreateMaintenanceRunDetails
         return new Builder().copy(this);
     }
 
-    /** The ID of the target resource for which the maintenance run should be created. */
+    /**
+     * The ID of the target resource for which the maintenance run should be created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
     /**
      * The ID of the target resource for which the maintenance run should be created.
-     *
      * @return the value
-     */
+     **/
     public String getTargetResourceId() {
         return targetResourceId;
     }
 
     /**
-     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container
-     * Database. If enabled along with Release Update, patching will be done in a Non-Rolling
-     * manner.
-     */
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
     private final Boolean isDstFileUpdateEnabled;
 
     /**
-     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container
-     * Database. If enabled along with Release Update, patching will be done in a Non-Rolling
-     * manner.
-     *
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * @return the value
-     */
+     **/
     public Boolean getIsDstFileUpdateEnabled() {
         return isDstFileUpdateEnabled;
     }
 
-    /** The date and time that update should be scheduled. */
+    /**
+     * The date and time that update should be scheduled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
      * The date and time that update should be scheduled.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
 
     /**
-     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default
-     * value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
-     * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-     * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-     * for more information.
-     */
-    public enum PatchingMode implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum PatchingMode {
         Rolling("ROLLING"),
         Nonrolling("NONROLLING"),
         ;
@@ -329,34 +311,30 @@ public final class CreateMaintenanceRunDetails
         }
     };
     /**
-     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default
-     * value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
-     * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-     * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-     * for more information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
     private final PatchingMode patchingMode;
 
     /**
-     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default
-     * value is ROLLING.
-     *
-     * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-     * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-     * for more information.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
      * @return the value
-     */
+     **/
     public PatchingMode getPatchingMode() {
         return patchingMode;
     }
 
-    /** Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE". */
-    public enum PatchType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
+     *
+     **/
+    public enum PatchType {
         Quarterly("QUARTERLY"),
         Timezone("TIMEZONE"),
         CustomDatabaseSoftwareImage("CUSTOM_DATABASE_SOFTWARE_IMAGE"),
@@ -389,7 +367,10 @@ public final class CreateMaintenanceRunDetails
             throw new IllegalArgumentException("Invalid PatchType: " + key);
         }
     };
-    /** Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE". */
+    /**
+     * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
     private final PatchType patchType;
 
@@ -397,41 +378,35 @@ public final class CreateMaintenanceRunDetails
      * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
      *
      * @return the value
-     */
+     **/
     public PatchType getPatchType() {
         return patchType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the Maintenance Run.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the Maintenance Run.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The Autonomous Database Software Image
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     */
+     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     *
+     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
-     */
+     **/
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }
@@ -443,7 +418,6 @@ public final class CreateMaintenanceRunDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

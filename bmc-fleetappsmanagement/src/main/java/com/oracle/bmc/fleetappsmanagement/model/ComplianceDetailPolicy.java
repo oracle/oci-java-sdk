@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Policy associated <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details of the Policy associated
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComplianceDetailPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComplianceDetailPolicy.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComplianceDetailPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compliancePolicyId",
@@ -49,76 +48,81 @@ public final class ComplianceDetailPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Compliance Policy Id */
+        /**
+         * Compliance Policy Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyId")
         private String compliancePolicyId;
 
         /**
          * Compliance Policy Id
-         *
          * @param compliancePolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder compliancePolicyId(String compliancePolicyId) {
             this.compliancePolicyId = compliancePolicyId;
             this.__explicitlySet__.add("compliancePolicyId");
             return this;
         }
-        /** Compliane Policy DisplayName */
+        /**
+         * Compliane Policy DisplayName
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyDisplayName")
         private String compliancePolicyDisplayName;
 
         /**
          * Compliane Policy DisplayName
-         *
          * @param compliancePolicyDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder compliancePolicyDisplayName(String compliancePolicyDisplayName) {
             this.compliancePolicyDisplayName = compliancePolicyDisplayName;
             this.__explicitlySet__.add("compliancePolicyDisplayName");
             return this;
         }
-        /** Compliane Policy Rule Id */
+        /**
+         * Compliane Policy Rule Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyRuleId")
         private String compliancePolicyRuleId;
 
         /**
          * Compliane Policy Rule Id
-         *
          * @param compliancePolicyRuleId the value to set
          * @return this builder
-         */
+         **/
         public Builder compliancePolicyRuleId(String compliancePolicyRuleId) {
             this.compliancePolicyRuleId = compliancePolicyRuleId;
             this.__explicitlySet__.add("compliancePolicyRuleId");
             return this;
         }
-        /** Product Name */
+        /**
+         * Product Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyRuleDisplayName")
         private String compliancePolicyRuleDisplayName;
 
         /**
          * Product Name
-         *
          * @param compliancePolicyRuleDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder compliancePolicyRuleDisplayName(String compliancePolicyRuleDisplayName) {
             this.compliancePolicyRuleDisplayName = compliancePolicyRuleDisplayName;
             this.__explicitlySet__.add("compliancePolicyRuleDisplayName");
             return this;
         }
-        /** Grace period in days,weeks,months or years the exemption is applicable for the rule. */
+        /**
+         * Grace period in days,weeks,months or years the exemption is applicable for the rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
         private String gracePeriod;
 
         /**
          * Grace period in days,weeks,months or years the exemption is applicable for the rule.
-         *
          * @param gracePeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder gracePeriod(String gracePeriod) {
             this.gracePeriod = gracePeriod;
             this.__explicitlySet__.add("gracePeriod");
@@ -176,7 +180,9 @@ public final class ComplianceDetailPolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,67 +191,72 @@ public final class ComplianceDetailPolicy
         return new Builder().copy(this);
     }
 
-    /** Compliance Policy Id */
+    /**
+     * Compliance Policy Id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyId")
     private final String compliancePolicyId;
 
     /**
      * Compliance Policy Id
-     *
      * @return the value
-     */
+     **/
     public String getCompliancePolicyId() {
         return compliancePolicyId;
     }
 
-    /** Compliane Policy DisplayName */
+    /**
+     * Compliane Policy DisplayName
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyDisplayName")
     private final String compliancePolicyDisplayName;
 
     /**
      * Compliane Policy DisplayName
-     *
      * @return the value
-     */
+     **/
     public String getCompliancePolicyDisplayName() {
         return compliancePolicyDisplayName;
     }
 
-    /** Compliane Policy Rule Id */
+    /**
+     * Compliane Policy Rule Id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyRuleId")
     private final String compliancePolicyRuleId;
 
     /**
      * Compliane Policy Rule Id
-     *
      * @return the value
-     */
+     **/
     public String getCompliancePolicyRuleId() {
         return compliancePolicyRuleId;
     }
 
-    /** Product Name */
+    /**
+     * Product Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compliancePolicyRuleDisplayName")
     private final String compliancePolicyRuleDisplayName;
 
     /**
      * Product Name
-     *
      * @return the value
-     */
+     **/
     public String getCompliancePolicyRuleDisplayName() {
         return compliancePolicyRuleDisplayName;
     }
 
-    /** Grace period in days,weeks,months or years the exemption is applicable for the rule. */
+    /**
+     * Grace period in days,weeks,months or years the exemption is applicable for the rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
     private final String gracePeriod;
 
     /**
      * Grace period in days,weeks,months or years the exemption is applicable for the rule.
-     *
      * @return the value
-     */
+     **/
     public String getGracePeriod() {
         return gracePeriod;
     }
@@ -264,7 +275,6 @@ public final class ComplianceDetailPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

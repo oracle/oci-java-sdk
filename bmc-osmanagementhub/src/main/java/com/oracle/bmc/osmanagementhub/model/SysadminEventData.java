@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Data related to the sysadmin event. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Data related to the sysadmin event.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SysadminEventData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SysadminEventData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SysadminEventData.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SysadminEventData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "errorCause",
@@ -49,76 +47,81 @@ public final class SysadminEventData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The commands executed by the agent that caused the error. */
+        /**
+         * The commands executed by the agent that caused the error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCause")
         private String errorCause;
 
         /**
          * The commands executed by the agent that caused the error.
-         *
          * @param errorCause the value to set
          * @return this builder
-         */
+         **/
         public Builder errorCause(String errorCause) {
             this.errorCause = errorCause;
             this.__explicitlySet__.add("errorCause");
             return this;
         }
-        /** The output log of the error. */
+        /**
+         * The output log of the error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorLog")
         private String errorLog;
 
         /**
          * The output log of the error.
-         *
          * @param errorLog the value to set
          * @return this builder
-         */
+         **/
         public Builder errorLog(String errorLog) {
             this.errorLog = errorLog;
             this.__explicitlySet__.add("errorLog");
             return this;
         }
-        /** The actions used to attempt fixing the error. */
+        /**
+         * The actions used to attempt fixing the error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attemptedResolutions")
         private java.util.List<String> attemptedResolutions;
 
         /**
          * The actions used to attempt fixing the error.
-         *
          * @param attemptedResolutions the value to set
          * @return this builder
-         */
+         **/
         public Builder attemptedResolutions(java.util.List<String> attemptedResolutions) {
             this.attemptedResolutions = attemptedResolutions;
             this.__explicitlySet__.add("attemptedResolutions");
             return this;
         }
-        /** Indicates if the event succeeded. */
+        /**
+         * Indicates if the event succeeded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolutionStatus")
         private EventStatus resolutionStatus;
 
         /**
          * Indicates if the event succeeded.
-         *
          * @param resolutionStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder resolutionStatus(EventStatus resolutionStatus) {
             this.resolutionStatus = resolutionStatus;
             this.__explicitlySet__.add("resolutionStatus");
             return this;
         }
-        /** The log output after the resolutions. */
+        /**
+         * The log output after the resolutions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolutionLog")
         private String resolutionLog;
 
         /**
          * The log output after the resolutions.
-         *
          * @param resolutionLog the value to set
          * @return this builder
-         */
+         **/
         public Builder resolutionLog(String resolutionLog) {
             this.resolutionLog = resolutionLog;
             this.__explicitlySet__.add("resolutionLog");
@@ -176,7 +179,9 @@ public final class SysadminEventData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,67 +190,72 @@ public final class SysadminEventData
         return new Builder().copy(this);
     }
 
-    /** The commands executed by the agent that caused the error. */
+    /**
+     * The commands executed by the agent that caused the error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCause")
     private final String errorCause;
 
     /**
      * The commands executed by the agent that caused the error.
-     *
      * @return the value
-     */
+     **/
     public String getErrorCause() {
         return errorCause;
     }
 
-    /** The output log of the error. */
+    /**
+     * The output log of the error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorLog")
     private final String errorLog;
 
     /**
      * The output log of the error.
-     *
      * @return the value
-     */
+     **/
     public String getErrorLog() {
         return errorLog;
     }
 
-    /** The actions used to attempt fixing the error. */
+    /**
+     * The actions used to attempt fixing the error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attemptedResolutions")
     private final java.util.List<String> attemptedResolutions;
 
     /**
      * The actions used to attempt fixing the error.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAttemptedResolutions() {
         return attemptedResolutions;
     }
 
-    /** Indicates if the event succeeded. */
+    /**
+     * Indicates if the event succeeded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolutionStatus")
     private final EventStatus resolutionStatus;
 
     /**
      * Indicates if the event succeeded.
-     *
      * @return the value
-     */
+     **/
     public EventStatus getResolutionStatus() {
         return resolutionStatus;
     }
 
-    /** The log output after the resolutions. */
+    /**
+     * The log output after the resolutions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolutionLog")
     private final String resolutionLog;
 
     /**
      * The log output after the resolutions.
-     *
      * @return the value
-     */
+     **/
     public String getResolutionLog() {
         return resolutionLog;
     }
@@ -264,7 +274,6 @@ public final class SysadminEventData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

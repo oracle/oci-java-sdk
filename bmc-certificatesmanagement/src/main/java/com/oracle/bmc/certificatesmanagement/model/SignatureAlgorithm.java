@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.certificatesmanagement.model;
 
-/** The algorithm used to sign the public key certificate. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public enum SignatureAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The algorithm used to sign the public key certificate.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+public enum SignatureAlgorithm {
     Sha256WithRsa("SHA256_WITH_RSA"),
     Sha384WithRsa("SHA384_WITH_RSA"),
     Sha512WithRsa("SHA512_WITH_RSA"),

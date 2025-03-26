@@ -5,23 +5,20 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service
- * on Exascale Infrastructure only. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of the Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExadbVmCluster.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExadbVmCluster
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExadbVmCluster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "iormConfigCache",
@@ -185,214 +182,183 @@ public final class ExadbVmCluster
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata VM cluster on Exascale Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata VM cluster on Exascale Infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The name of the availability domain in which the Exadata VM cluster on Exascale
-         * Infrastructure is located.
-         */
+         * The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The name of the availability domain in which the Exadata VM cluster on Exascale
-         * Infrastructure is located.
+         * The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
         private String backupSubnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
          *
          * @param backupSubnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder backupSubnetId(String backupSubnetId) {
             this.backupSubnetId = backupSubnetId;
             this.__explicitlySet__.add("backupSubnetId");
             return this;
         }
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
-         * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
-         * with private access. The nsgIds list can be empty.
-         */
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
-         * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
-         * with private access. The nsgIds list can be empty.
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * A list of the
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network security groups (NSGs) that the backup network of this DB system belongs to.
-         * Setting this to an empty array after the list is created removes the resource from all
-         * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         * Applicable only to Exadata systems.
-         */
+         * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
         private java.util.List<String> backupNetworkNsgIds;
 
         /**
-         * A list of the
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network security groups (NSGs) that the backup network of this DB system belongs to.
-         * Setting this to an empty array after the list is created removes the resource from all
-         * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         * Applicable only to Exadata systems.
+         * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
             this.backupNetworkNsgIds = backupNetworkNsgIds;
             this.__explicitlySet__.add("backupNetworkNsgIds");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * last maintenance update history entry. This value is updated when a maintenance update
-         * starts.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateHistoryEntryId")
         private String lastUpdateHistoryEntryId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * last maintenance update history entry. This value is updated when a maintenance update
-         * starts.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
          * @param lastUpdateHistoryEntryId the value to set
          * @return this builder
-         */
+         **/
         public Builder lastUpdateHistoryEntryId(String lastUpdateHistoryEntryId) {
             this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             this.__explicitlySet__.add("lastUpdateHistoryEntryId");
             return this;
         }
         /**
-         * The port number configured for the listener on the Exadata VM cluster on Exascale
-         * Infrastructure.
-         */
+         * The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
         private Long listenerPort;
 
         /**
-         * The port number configured for the listener on the Exadata VM cluster on Exascale
-         * Infrastructure.
-         *
+         * The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
          * @param listenerPort the value to set
          * @return this builder
-         */
+         **/
         public Builder listenerPort(Long listenerPort) {
             this.listenerPort = listenerPort;
             this.__explicitlySet__.add("listenerPort");
             return this;
         }
-        /** The current state of the Exadata VM cluster on Exascale Infrastructure. */
+        /**
+         * The current state of the Exadata VM cluster on Exascale Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Exadata VM cluster on Exascale Infrastructure.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The number of nodes in the Exadata VM cluster on Exascale Infrastructure. */
+        /**
+         * The number of nodes in the Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
@@ -401,13 +367,16 @@ public final class ExadbVmCluster
          *
          * @param nodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** The shape of the Exadata VM cluster on Exascale Infrastructure resource */
+        /**
+         * The shape of the Exadata VM cluster on Exascale Infrastructure resource
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -416,169 +385,161 @@ public final class ExadbVmCluster
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name
-         * does not need to be unique.
-         */
+         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name
-         * does not need to be unique.
-         *
+         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The date and time that the Exadata VM cluster on Exascale Infrastructure was created. */
+        /**
+         * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Additional information about the current lifecycle state. */
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details,
-         * see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
-         */
+         * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
-         * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details,
-         * see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
             return this;
         }
         /**
-         * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must
-         * begin with an alphabetic character, and can contain alphanumeric characters and hyphens
-         * (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+         * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and
+         * can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+         * <p>
+         * The maximum length of the combined hostname and domain is 63 characters.
+         * <p>
+         **Note:** The hostname must be unique within the subnet. If it is not unique,
+         * then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
          *
-         * <p>The maximum length of the combined hostname and domain is 63 characters.
-         *
-         * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, then the
-         * Exadata VM cluster on Exascale Infrastructure will fail to provision.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must
-         * begin with an alphabetic character, and can contain alphanumeric characters and hyphens
-         * (-). For Exadata systems, the maximum length of the hostname is 12 characters.
-         *
-         * <p>The maximum length of the combined hostname and domain is 63 characters.
-         *
-         * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, then the
-         * Exadata VM cluster on Exascale Infrastructure will fail to provision.
+         * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and
+         * can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+         * <p>
+         * The maximum length of the combined hostname and domain is 63 characters.
+         * <p>
+         **Note:** The hostname must be unique within the subnet. If it is not unique,
+         * then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
          *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
         /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the
-         * Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the
-         * domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS
-         * domain name. Hyphens (-) are not permitted. Applies to Exadata Database Service on
-         * Exascale Infrastructure only.
-         */
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN
+         * resolver is enabled for the specified subnet, then the domain name for the subnet is used
+         * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         * Applies to Exadata Database Service on Exascale Infrastructure only.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
         /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the
-         * Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the
-         * domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS
-         * domain name. Hyphens (-) are not permitted. Applies to Exadata Database Service on
-         * Exascale Infrastructure only.
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN
+         * resolver is enabled for the specified subnet, then the domain name for the subnet is used
+         * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         * Applies to Exadata Database Service on Exascale Infrastructure only.
          *
          * @param domain the value to set
          * @return this builder
-         */
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
         /**
-         * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must
-         * begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not
-         * permitted. The cluster name can be no longer than 11 characters and is not case
-         * sensitive.
-         */
+         * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
         private String clusterName;
 
         /**
-         * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must
-         * begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not
-         * permitted. The cluster name can be no longer than 11 characters and is not case
-         * sensitive.
+         * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
          *
          * @param clusterName the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterName(String clusterName) {
             this.clusterName = clusterName;
             this.__explicitlySet__.add("clusterName");
             return this;
         }
-        /** A valid Oracle Grid Infrastructure (GI) software version. */
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
         private String giVersion;
 
         /**
          * A valid Oracle Grid Infrastructure (GI) software version.
-         *
          * @param giVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder giVersion(String giVersion) {
             this.giVersion = giVersion;
             this.__explicitlySet__.add("giVersion");
@@ -586,217 +547,199 @@ public final class ExadbVmCluster
         }
         /**
          * Grid Setup will be done using this grid image id.
+         * <p>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
-         * <p>The grid image ID can be obtained using the API
-         * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-         * name>. The list of supported major versions can be obtained using the API
-         * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD
-         * name>
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
         private String gridImageId;
 
         /**
          * Grid Setup will be done using this grid image id.
-         *
-         * <p>The grid image ID can be obtained using the API
-         * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-         * name>. The list of supported major versions can be obtained using the API
-         * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD
-         * name>
+         * <p>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
          * @param gridImageId the value to set
          * @return this builder
-         */
+         **/
         public Builder gridImageId(String gridImageId) {
             this.gridImageId = gridImageId;
             this.__explicitlySet__.add("gridImageId");
             return this;
         }
-        /** The type of Grid Image */
+        /**
+         * The type of Grid Image
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridImageType")
         private GridImageType gridImageType;
 
         /**
          * The type of Grid Image
-         *
          * @param gridImageType the value to set
          * @return this builder
-         */
+         **/
         public Builder gridImageType(GridImageType gridImageType) {
             this.gridImageType = gridImageType;
             this.__explicitlySet__.add("gridImageType");
             return this;
         }
-        /** Operating system version of the image. */
+        /**
+         * Operating system version of the image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
         private String systemVersion;
 
         /**
          * Operating system version of the image.
-         *
          * @param systemVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder systemVersion(String systemVersion) {
             this.systemVersion = systemVersion;
             this.__explicitlySet__.add("systemVersion");
             return this;
         }
         /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM
-         * cluster on Exascale Infrastructure.
-         */
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
         /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM
-         * cluster on Exascale Infrastructure.
-         *
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
          * @param sshPublicKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
             return this;
         }
         /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale
-         * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale
-         * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
          *
          * @param licenseModel the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on
-         * Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are
-         * not assigned to any interface. Oracle Clusterware directs the requests to the appropriate
-         * nodes in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+         * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         * <p>
+         **Note:** For a single-node DB system, this list is empty.
          *
-         * <p>*Note:** For a single-node DB system, this list is empty.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
         private java.util.List<String> scanIpIds;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on
-         * Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are
-         * not assigned to any interface. Oracle Clusterware directs the requests to the appropriate
-         * nodes in the cluster.
-         *
-         * <p>*Note:** For a single-node DB system, this list is empty.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+         * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         * <p>
+         **Note:** For a single-node DB system, this list is empty.
          *
          * @param scanIpIds the value to set
          * @return this builder
-         */
+         **/
         public Builder scanIpIds(java.util.List<String> scanIpIds) {
             this.scanIpIds = scanIpIds;
             this.__explicitlySet__.add("scanIpIds");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale
-         * Infrastructure. The Cluster Ready Services (CRS) creates and maintains one VIP address
-         * for each node in the Exadata Cloud Service instance to enable failover. If one node
-         * fails, then the VIP is reassigned to another active node in the cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+         * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+         * enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vipIds")
         private java.util.List<String> vipIds;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale
-         * Infrastructure. The Cluster Ready Services (CRS) creates and maintains one VIP address
-         * for each node in the Exadata Cloud Service instance to enable failover. If one node
-         * fails, then the VIP is reassigned to another active node in the cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+         * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+         * enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
          *
          * @param vipIds the value to set
          * @return this builder
-         */
+         **/
         public Builder vipIds(java.util.List<String> vipIds) {
             this.vipIds = vipIds;
             this.__explicitlySet__.add("vipIds");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on
-         * Exascale Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
         private String scanDnsRecordId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on
-         * Exascale Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
          *
          * @param scanDnsRecordId the value to set
          * @return this builder
-         */
+         **/
         public Builder scanDnsRecordId(String scanDnsRecordId) {
             this.scanDnsRecordId = scanDnsRecordId;
             this.__explicitlySet__.add("scanDnsRecordId");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -805,22 +748,21 @@ public final class ExadbVmCluster
         }
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
-         */
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributes(
                 java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
             this.securityAttributes = securityAttributes;
@@ -828,99 +770,99 @@ public final class ExadbVmCluster
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
-         * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata
-         * VM cluster on Exascale Infrastructure.
-         */
+         * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
         private String scanDnsName;
 
         /**
-         * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata
-         * VM cluster on Exascale Infrastructure.
+         * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
          *
          * @param scanDnsName the value to set
          * @return this builder
-         */
+         **/
         public Builder scanDnsName(String scanDnsName) {
             this.scanDnsName = scanDnsName;
             this.__explicitlySet__.add("scanDnsName");
             return this;
         }
         /**
-         * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is
-         * associated.
-         */
+         * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
         private String zoneId;
 
         /**
-         * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is
-         * associated.
+         * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
          *
          * @param zoneId the value to set
          * @return this builder
-         */
+         **/
         public Builder zoneId(String zoneId) {
             this.zoneId = zoneId;
             this.__explicitlySet__.add("zoneId");
             return this;
         }
-        /** The TCP Single Client Access Name (SCAN) port. The default port is 1521. */
+        /**
+         * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
         private Integer scanListenerPortTcp;
 
         /**
          * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-         *
          * @param scanListenerPortTcp the value to set
          * @return this builder
-         */
+         **/
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
             this.scanListenerPortTcp = scanListenerPortTcp;
             this.__explicitlySet__.add("scanListenerPortTcp");
             return this;
         }
         /**
-         * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The
-         * default port is 2484.
-         */
+         * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
         private Integer scanListenerPortTcpSsl;
 
         /**
-         * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The
-         * default port is 2484.
+         * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
          *
          * @param scanListenerPortTcpSsl the value to set
          * @return this builder
-         */
+         **/
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             this.__explicitlySet__.add("scanListenerPortTcpSsl");
             return this;
         }
-        /** The private zone ID in which you want DNS records to be created. */
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateZoneId")
         private String privateZoneId;
 
@@ -929,7 +871,7 @@ public final class ExadbVmCluster
          *
          * @param privateZoneId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateZoneId(String privateZoneId) {
             this.privateZoneId = privateZoneId;
             this.__explicitlySet__.add("privateZoneId");
@@ -944,7 +886,10 @@ public final class ExadbVmCluster
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
-        /** The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure. */
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalECpuCount")
         private Integer totalECpuCount;
 
@@ -953,13 +898,16 @@ public final class ExadbVmCluster
          *
          * @param totalECpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalECpuCount(Integer totalECpuCount) {
             this.totalECpuCount = totalECpuCount;
             this.__explicitlySet__.add("totalECpuCount");
             return this;
         }
-        /** The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure. */
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabledECpuCount")
         private Integer enabledECpuCount;
 
@@ -968,7 +916,7 @@ public final class ExadbVmCluster
          *
          * @param enabledECpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder enabledECpuCount(Integer enabledECpuCount) {
             this.enabledECpuCount = enabledECpuCount;
             this.__explicitlySet__.add("enabledECpuCount");
@@ -1003,76 +951,66 @@ public final class ExadbVmCluster
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Database Storage Vault.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
         private String exascaleDbStorageVaultId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Database Storage Vault.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
          * @param exascaleDbStorageVaultId the value to set
          * @return this builder
-         */
+         **/
         public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
             this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
             this.__explicitlySet__.add("exascaleDbStorageVaultId");
             return this;
         }
         /**
-         * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per
-         * VM core reserved.
-         */
+         * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per VM core reserved.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
         /**
-         * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per
-         * VM core reserved.
+         * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per VM core reserved.
          *
          * @param memorySizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cluster placement group of the Exadata Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cluster placement group of the Exadata Infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
          * @param clusterPlacementGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             this.clusterPlacementGroupId = clusterPlacementGroupId;
             this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription with which resource needs to be associated with.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subscription with which resource needs to be associated with.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
          * @param subscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
@@ -1289,7 +1227,9 @@ public final class ExadbVmCluster
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -1306,176 +1246,149 @@ public final class ExadbVmCluster
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata VM cluster on Exascale Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata VM cluster on Exascale Infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The name of the availability domain in which the Exadata VM cluster on Exascale
-     * Infrastructure is located.
-     */
+     * The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The name of the availability domain in which the Exadata VM cluster on Exascale
-     * Infrastructure is located.
+     * The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
     private final String backupSubnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public String getBackupSubnetId() {
         return backupSubnetId;
     }
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
-     * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-     * Databases with private access. The nsgIds list can be empty.
-     */
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
-     * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-     * Databases with private access. The nsgIds list can be empty.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
-     * Setting this to an empty array after the list is created removes the resource from all NSGs.
-     * For more information about NSGs, see [Security
-     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
-     * only to Exadata systems.
-     */
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
-     * Setting this to an empty array after the list is created removes the resource from all NSGs.
-     * For more information about NSGs, see [Security
-     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
-     * only to Exadata systems.
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getBackupNetworkNsgIds() {
         return backupNetworkNsgIds;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
-     * maintenance update history entry. This value is updated when a maintenance update starts.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateHistoryEntryId")
     private final String lastUpdateHistoryEntryId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
-     * maintenance update history entry. This value is updated when a maintenance update starts.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * @return the value
-     */
+     **/
     public String getLastUpdateHistoryEntryId() {
         return lastUpdateHistoryEntryId;
     }
 
     /**
-     * The port number configured for the listener on the Exadata VM cluster on Exascale
-     * Infrastructure.
-     */
+     * The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
     private final Long listenerPort;
 
     /**
-     * The port number configured for the listener on the Exadata VM cluster on Exascale
-     * Infrastructure.
-     *
+     * The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
      * @return the value
-     */
+     **/
     public Long getListenerPort() {
         return listenerPort;
     }
 
-    /** The current state of the Exadata VM cluster on Exascale Infrastructure. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Exadata VM cluster on Exascale Infrastructure.
+     **/
+    public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Updating("UPDATING"),
@@ -1485,8 +1398,8 @@ public final class ExadbVmCluster
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1525,20 +1438,24 @@ public final class ExadbVmCluster
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Exadata VM cluster on Exascale Infrastructure. */
+    /**
+     * The current state of the Exadata VM cluster on Exascale Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Exadata VM cluster on Exascale Infrastructure.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The number of nodes in the Exadata VM cluster on Exascale Infrastructure. */
+    /**
+     * The number of nodes in the Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
@@ -1546,12 +1463,15 @@ public final class ExadbVmCluster
      * The number of nodes in the Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public Integer getNodeCount() {
         return nodeCount;
     }
 
-    /** The shape of the Exadata VM cluster on Exascale Infrastructure resource */
+    /**
+     * The shape of the Exadata VM cluster on Exascale Infrastructure resource
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
@@ -1559,188 +1479,181 @@ public final class ExadbVmCluster
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
     /**
-     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does
-     * not need to be unique.
-     */
+     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does
-     * not need to be unique.
-     *
+     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The date and time that the Exadata VM cluster on Exascale Infrastructure was created. */
+    /**
+     * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Additional information about the current lifecycle state. */
+    /**
+     * Additional information about the current lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see
-     * [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
-     */
+     * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
-     * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see
-     * [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
-     */
+     **/
     public String getTimeZone() {
         return timeZone;
     }
 
     /**
-     * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin
-     * with an alphabetic character, and can contain alphanumeric characters and hyphens (-). For
-     * Exadata systems, the maximum length of the hostname is 12 characters.
+     * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and
+     * can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+     * <p>
+     * The maximum length of the combined hostname and domain is 63 characters.
+     * <p>
+     **Note:** The hostname must be unique within the subnet. If it is not unique,
+     * then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
      *
-     * <p>The maximum length of the combined hostname and domain is 63 characters.
-     *
-     * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, then the
-     * Exadata VM cluster on Exascale Infrastructure will fail to provision.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin
-     * with an alphabetic character, and can contain alphanumeric characters and hyphens (-). For
-     * Exadata systems, the maximum length of the hostname is 12 characters.
-     *
-     * <p>The maximum length of the combined hostname and domain is 63 characters.
-     *
-     * <p>*Note:** The hostname must be unique within the subnet. If it is not unique, then the
-     * Exadata VM cluster on Exascale Infrastructure will fail to provision.
+     * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and
+     * can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+     * <p>
+     * The maximum length of the combined hostname and domain is 63 characters.
+     * <p>
+     **Note:** The hostname must be unique within the subnet. If it is not unique,
+     * then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
      *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
 
     /**
-     * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the
-     * Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the
-     * domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS
-     * domain name. Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale
-     * Infrastructure only.
-     */
+     * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN
+     * resolver is enabled for the specified subnet, then the domain name for the subnet is used
+     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     * Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
     /**
-     * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the
-     * Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the
-     * domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS
-     * domain name. Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale
-     * Infrastructure only.
+     * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN
+     * resolver is enabled for the specified subnet, then the domain name for the subnet is used
+     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     * Applies to Exadata Database Service on Exascale Infrastructure only.
      *
      * @return the value
-     */
+     **/
     public String getDomain() {
         return domain;
     }
 
     /**
-     * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must
-     * begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not
-     * permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-     */
+     * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
     private final String clusterName;
 
     /**
-     * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must
-     * begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not
-     * permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      *
      * @return the value
-     */
+     **/
     public String getClusterName() {
         return clusterName;
     }
 
-    /** A valid Oracle Grid Infrastructure (GI) software version. */
+    /**
+     * A valid Oracle Grid Infrastructure (GI) software version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
     private final String giVersion;
 
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
-     *
      * @return the value
-     */
+     **/
     public String getGiVersion() {
         return giVersion;
     }
 
     /**
      * Grid Setup will be done using this grid image id.
+     * <p>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
-     * <p>The grid image ID can be obtained using the API
-     * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-     * name>. The list of supported major versions can be obtained using the API
-     * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
     private final String gridImageId;
 
     /**
      * Grid Setup will be done using this grid image id.
-     *
-     * <p>The grid image ID can be obtained using the API
-     * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-     * name>. The list of supported major versions can be obtained using the API
-     * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
+     * <p>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
      * @return the value
-     */
+     **/
     public String getGridImageId() {
         return gridImageId;
     }
 
-    /** The type of Grid Image */
-    public enum GridImageType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of Grid Image
+     **/
+    public enum GridImageType {
         ReleaseUpdate("RELEASE_UPDATE"),
         CustomImage("CUSTOM_IMAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1779,60 +1692,59 @@ public final class ExadbVmCluster
             return UnknownEnumValue;
         }
     };
-    /** The type of Grid Image */
+    /**
+     * The type of Grid Image
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridImageType")
     private final GridImageType gridImageType;
 
     /**
      * The type of Grid Image
-     *
      * @return the value
-     */
+     **/
     public GridImageType getGridImageType() {
         return gridImageType;
     }
 
-    /** Operating system version of the image. */
+    /**
+     * Operating system version of the image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
     private final String systemVersion;
 
     /**
      * Operating system version of the image.
-     *
      * @return the value
-     */
+     **/
     public String getSystemVersion() {
         return systemVersion;
     }
 
     /**
-     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster
-     * on Exascale Infrastructure.
-     */
+     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     private final java.util.List<String> sshPublicKeys;
 
     /**
-     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster
-     * on Exascale Infrastructure.
-     *
+     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      * @return the value
-     */
+     **/
     public java.util.List<String> getSshPublicKeys() {
         return sshPublicKeys;
     }
 
     /**
-     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure.
-     * The default is BRING_YOUR_OWN_LICENSE.
-     */
-    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
+     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     **/
+    public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1872,238 +1784,225 @@ public final class ExadbVmCluster
         }
     };
     /**
-     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure.
-     * The default is BRING_YOUR_OWN_LICENSE.
-     */
+     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure.
-     * The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      *
      * @return the value
-     */
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on
-     * Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not
-     * assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes
-     * in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+     * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
      *
-     * <p>*Note:** For a single-node DB system, this list is empty.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
     private final java.util.List<String> scanIpIds;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on
-     * Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not
-     * assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes
-     * in the cluster.
-     *
-     * <p>*Note:** For a single-node DB system, this list is empty.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+     * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getScanIpIds() {
         return scanIpIds;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.
-     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the
-     * Exadata Cloud Service instance to enable failover. If one node fails, then the VIP is
-     * reassigned to another active node in the cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+     * enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vipIds")
     private final java.util.List<String> vipIds;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.
-     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the
-     * Exadata Cloud Service instance to enable failover. If one node fails, then the VIP is
-     * reassigned to another active node in the cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+     * enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getVipIds() {
         return vipIds;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
-     * record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale
-     * Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
     private final String scanDnsRecordId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
-     * record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale
-     * Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public String getScanDnsRecordId() {
         return scanDnsRecordId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
-     */
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
         return securityAttributes;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
     /**
-     * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM
-     * cluster on Exascale Infrastructure.
-     */
+     * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsName")
     private final String scanDnsName;
 
     /**
-     * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM
-     * cluster on Exascale Infrastructure.
+     * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public String getScanDnsName() {
         return scanDnsName;
     }
 
     /**
-     * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is
-     * associated.
-     */
+     * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
     private final String zoneId;
 
     /**
-     * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is
-     * associated.
+     * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
      *
      * @return the value
-     */
+     **/
     public String getZoneId() {
         return zoneId;
     }
 
-    /** The TCP Single Client Access Name (SCAN) port. The default port is 1521. */
+    /**
+     * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
     private final Integer scanListenerPortTcp;
 
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-     *
      * @return the value
-     */
+     **/
     public Integer getScanListenerPortTcp() {
         return scanListenerPortTcp;
     }
 
     /**
-     * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default
-     * port is 2484.
-     */
+     * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
     private final Integer scanListenerPortTcpSsl;
 
     /**
-     * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default
-     * port is 2484.
+     * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
      *
      * @return the value
-     */
+     **/
     public Integer getScanListenerPortTcpSsl() {
         return scanListenerPortTcpSsl;
     }
 
-    /** The private zone ID in which you want DNS records to be created. */
+    /**
+     * The private zone ID in which you want DNS records to be created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateZoneId")
     private final String privateZoneId;
 
@@ -2111,7 +2010,7 @@ public final class ExadbVmCluster
      * The private zone ID in which you want DNS records to be created.
      *
      * @return the value
-     */
+     **/
     public String getPrivateZoneId() {
         return privateZoneId;
     }
@@ -2123,7 +2022,10 @@ public final class ExadbVmCluster
         return dataCollectionOptions;
     }
 
-    /** The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure. */
+    /**
+     * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalECpuCount")
     private final Integer totalECpuCount;
 
@@ -2131,12 +2033,15 @@ public final class ExadbVmCluster
      * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public Integer getTotalECpuCount() {
         return totalECpuCount;
     }
 
-    /** The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure. */
+    /**
+     * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabledECpuCount")
     private final Integer enabledECpuCount;
 
@@ -2144,7 +2049,7 @@ public final class ExadbVmCluster
      * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public Integer getEnabledECpuCount() {
         return enabledECpuCount;
     }
@@ -2171,69 +2076,59 @@ public final class ExadbVmCluster
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Database Storage Vault.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
     private final String exascaleDbStorageVaultId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Database Storage Vault.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      * @return the value
-     */
+     **/
     public String getExascaleDbStorageVaultId() {
         return exascaleDbStorageVaultId;
     }
 
     /**
-     * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per VM
-     * core reserved.
-     */
+     * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per VM core reserved.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
     /**
-     * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per VM
-     * core reserved.
+     * The memory that you want to be allocated in GBs. Memory is calculated based on 11 GB per VM core reserved.
      *
      * @return the value
-     */
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cluster placement group of the Exadata Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cluster placement group of the Exadata Infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
      * @return the value
-     */
+     **/
     public String getClusterPlacementGroupId() {
         return clusterPlacementGroupId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription with which resource needs to be associated with.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subscription with which resource needs to be associated with.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      * @return the value
-     */
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -2245,7 +2140,6 @@ public final class ExadbVmCluster
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

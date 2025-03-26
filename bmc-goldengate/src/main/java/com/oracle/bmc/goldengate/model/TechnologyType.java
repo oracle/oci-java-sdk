@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The technology type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The technology type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum TechnologyType {
     Goldengate("GOLDENGATE"),
     Generic("GENERIC"),
     OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),

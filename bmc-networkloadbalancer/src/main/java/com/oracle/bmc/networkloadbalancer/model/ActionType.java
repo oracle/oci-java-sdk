@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Possible actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible actions.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum ActionType {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

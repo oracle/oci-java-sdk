@@ -5,23 +5,22 @@
 package com.oracle.bmc.securityattribute.model;
 
 /**
- * The resource entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+ * The resource entity.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WorkRequestResource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkRequestResource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = WorkRequestResource.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"identifier", "entityType", "actionType", "entityUri"})
     public WorkRequestResource(
@@ -35,61 +34,65 @@ public final class WorkRequestResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The resource identifier the work request affects. */
+        /**
+         * The resource identifier the work request affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
          * The resource identifier the work request affects.
-         *
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** The resource type the work request is affects. */
+        /**
+         * The resource type the work request is affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The resource type the work request is affects.
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-        /** The way in which this resource was affected by the work tracked by the work request. */
+        /**
+         * The way in which this resource was affected by the work tracked by the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
 
         /**
          * The way in which this resource was affected by the work tracked by the work request.
-         *
          * @param actionType the value to set
          * @return this builder
-         */
+         **/
         public Builder actionType(ActionType actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
-        /** The URI path that the user can do a GET on to access the resource metadata. */
+        /**
+         * The URI path that the user can do a GET on to access the resource metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
         /**
          * The URI path that the user can do a GET on to access the resource metadata.
-         *
          * @param entityUri the value to set
          * @return this builder
-         */
+         **/
         public Builder entityUri(String entityUri) {
             this.entityUri = entityUri;
             this.__explicitlySet__.add("entityUri");
@@ -127,7 +130,9 @@ public final class WorkRequestResource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,34 +141,38 @@ public final class WorkRequestResource
         return new Builder().copy(this);
     }
 
-    /** The resource identifier the work request affects. */
+    /**
+     * The resource identifier the work request affects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
      * The resource identifier the work request affects.
-     *
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** The resource type the work request is affects. */
+    /**
+     * The resource type the work request is affects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The resource type the work request is affects.
-     *
      * @return the value
-     */
+     **/
     public String getEntityType() {
         return entityType;
     }
 
-    /** The way in which this resource was affected by the work tracked by the work request. */
-    public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The way in which this resource was affected by the work tracked by the work request.
+     **/
+    public enum ActionType {
         Created("CREATED"),
         Updated("UPDATED"),
         Deleted("DELETED"),
@@ -172,8 +181,8 @@ public final class WorkRequestResource
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -212,28 +221,30 @@ public final class WorkRequestResource
             return UnknownEnumValue;
         }
     };
-    /** The way in which this resource was affected by the work tracked by the work request. */
+    /**
+     * The way in which this resource was affected by the work tracked by the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
     /**
      * The way in which this resource was affected by the work tracked by the work request.
-     *
      * @return the value
-     */
+     **/
     public ActionType getActionType() {
         return actionType;
     }
 
-    /** The URI path that the user can do a GET on to access the resource metadata. */
+    /**
+     * The URI path that the user can do a GET on to access the resource metadata.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
     /**
      * The URI path that the user can do a GET on to access the resource metadata.
-     *
      * @return the value
-     */
+     **/
     public String getEntityUri() {
         return entityUri;
     }
@@ -245,7 +256,6 @@ public final class WorkRequestResource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

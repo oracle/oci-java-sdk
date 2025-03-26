@@ -5,23 +5,22 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Pull request properties from recommend stage of the remediation run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+ * Pull request properties from recommend stage of the remediation run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PullRequestProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PullRequestProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PullRequestProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pullRequestIdentifier", "pullRequestUrl"})
     public PullRequestProperties(String pullRequestIdentifier, String pullRequestUrl) {
@@ -32,31 +31,33 @@ public final class PullRequestProperties
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the pull or merge request created in the recommend stage. */
+        /**
+         * Unique identifier for the pull or merge request created in the recommend stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pullRequestIdentifier")
         private String pullRequestIdentifier;
 
         /**
          * Unique identifier for the pull or merge request created in the recommend stage.
-         *
          * @param pullRequestIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder pullRequestIdentifier(String pullRequestIdentifier) {
             this.pullRequestIdentifier = pullRequestIdentifier;
             this.__explicitlySet__.add("pullRequestIdentifier");
             return this;
         }
-        /** The web link to the pull or merge request created in the recommend stage. */
+        /**
+         * The web link to the pull or merge request created in the recommend stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pullRequestUrl")
         private String pullRequestUrl;
 
         /**
          * The web link to the pull or merge request created in the recommend stage.
-         *
          * @param pullRequestUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder pullRequestUrl(String pullRequestUrl) {
             this.pullRequestUrl = pullRequestUrl;
             this.__explicitlySet__.add("pullRequestUrl");
@@ -87,7 +88,9 @@ public final class PullRequestProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class PullRequestProperties
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the pull or merge request created in the recommend stage. */
+    /**
+     * Unique identifier for the pull or merge request created in the recommend stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pullRequestIdentifier")
     private final String pullRequestIdentifier;
 
     /**
      * Unique identifier for the pull or merge request created in the recommend stage.
-     *
      * @return the value
-     */
+     **/
     public String getPullRequestIdentifier() {
         return pullRequestIdentifier;
     }
 
-    /** The web link to the pull or merge request created in the recommend stage. */
+    /**
+     * The web link to the pull or merge request created in the recommend stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pullRequestUrl")
     private final String pullRequestUrl;
 
     /**
      * The web link to the pull or merge request created in the recommend stage.
-     *
      * @return the value
-     */
+     **/
     public String getPullRequestUrl() {
         return pullRequestUrl;
     }
@@ -129,7 +134,6 @@ public final class PullRequestProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

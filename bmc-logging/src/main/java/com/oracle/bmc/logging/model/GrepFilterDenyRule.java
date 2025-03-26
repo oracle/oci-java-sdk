@@ -5,23 +5,21 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Specifies the filtering rule to reject logs <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Specifies the filtering rule to reject logs
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GrepFilterDenyRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class GrepFilterDenyRule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = GrepFilterDenyRule.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class GrepFilterDenyRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "pattern"})
     public GrepFilterDenyRule(String key, String pattern) {
@@ -32,31 +30,33 @@ public final class GrepFilterDenyRule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The field name to which the regular expression is applied */
+        /**
+         * The field name to which the regular expression is applied
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The field name to which the regular expression is applied
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The regular expression */
+        /**
+         * The regular expression
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
         /**
          * The regular expression
-         *
          * @param pattern the value to set
          * @return this builder
-         */
+         **/
         public Builder pattern(String pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
@@ -86,7 +86,9 @@ public final class GrepFilterDenyRule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +97,30 @@ public final class GrepFilterDenyRule
         return new Builder().copy(this);
     }
 
-    /** The field name to which the regular expression is applied */
+    /**
+     * The field name to which the regular expression is applied
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The field name to which the regular expression is applied
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The regular expression */
+    /**
+     * The regular expression
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
     /**
      * The regular expression
-     *
      * @return the value
-     */
+     **/
     public String getPattern() {
         return pattern;
     }
@@ -128,7 +132,6 @@ public final class GrepFilterDenyRule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

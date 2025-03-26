@@ -6,23 +6,21 @@ package com.oracle.bmc.jms.model;
 
 /**
  * Result of the Java migration analysis. The analysis result is stored in an Object Storage bucket.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JavaMigrationAnalysisResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = JavaMigrationAnalysisResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JavaMigrationAnalysisResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -83,280 +81,273 @@ public final class JavaMigrationAnalysisResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the migration analysis report. */
+        /**
+         * The OCID of the migration analysis report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the migration analysis report.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the work request of this analysis. */
+        /**
+         * The OCID of the work request of this analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * The OCID of the work request of this analysis.
-         *
          * @param workRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
-        /** The fleet OCID. */
+        /**
+         * The fleet OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
          * The fleet OCID.
-         *
          * @param fleetId the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-        /** The unique key that identifies the application. */
+        /**
+         * The unique key that identifies the application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
         private String applicationKey;
 
         /**
          * The unique key that identifies the application.
-         *
          * @param applicationKey the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationKey(String applicationKey) {
             this.applicationKey = applicationKey;
             this.__explicitlySet__.add("applicationKey");
             return this;
         }
-        /** The name of the application for which the Java migration analysis was performed. */
+        /**
+         * The name of the application for which the Java migration analysis was performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
         private String applicationName;
 
         /**
          * The name of the application for which the Java migration analysis was performed.
-         *
          * @param applicationName the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationName(String applicationName) {
             this.applicationName = applicationName;
             this.__explicitlySet__.add("applicationName");
             return this;
         }
         /**
-         * The installation path of the application for which the Java migration analysis was
-         * performed.
-         */
+         * The installation path of the application for which the Java migration analysis was performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationPath")
         private String applicationPath;
 
         /**
-         * The installation path of the application for which the Java migration analysis was
-         * performed.
-         *
+         * The installation path of the application for which the Java migration analysis was performed.
          * @param applicationPath the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationPath(String applicationPath) {
             this.applicationPath = applicationPath;
             this.__explicitlySet__.add("applicationPath");
             return this;
         }
         /**
-         * Execution type of the application for an application type, such as WAR and EAR, that is
-         * deployed or installed.
-         */
+         * Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationExecutionType")
         private ApplicationExecutionType applicationExecutionType;
 
         /**
-         * Execution type of the application for an application type, such as WAR and EAR, that is
-         * deployed or installed.
-         *
+         * Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
          * @param applicationExecutionType the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationExecutionType(ApplicationExecutionType applicationExecutionType) {
             this.applicationExecutionType = applicationExecutionType;
             this.__explicitlySet__.add("applicationExecutionType");
             return this;
         }
-        /** The source JDK version of the application that's currently running. */
+        /**
+         * The source JDK version of the application that's currently running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceJdkVersion")
         private String sourceJdkVersion;
 
         /**
          * The source JDK version of the application that's currently running.
-         *
          * @param sourceJdkVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceJdkVersion(String sourceJdkVersion) {
             this.sourceJdkVersion = sourceJdkVersion;
             this.__explicitlySet__.add("sourceJdkVersion");
             return this;
         }
-        /** The target JDK version of the application to be migrated. */
+        /**
+         * The target JDK version of the application to be migrated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetJdkVersion")
         private String targetJdkVersion;
 
         /**
          * The target JDK version of the application to be migrated.
-         *
          * @param targetJdkVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder targetJdkVersion(String targetJdkVersion) {
             this.targetJdkVersion = targetJdkVersion;
             this.__explicitlySet__.add("targetJdkVersion");
             return this;
         }
-        /** The managed instance OCID. */
+        /**
+         * The managed instance OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
          * The managed instance OCID.
-         *
          * @param managedInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
         /**
-         * The hostname of the managed instance that hosts the application for which the Java
-         * migration analysis was performed.
-         */
+         * The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
-         * The hostname of the managed instance that hosts the application for which the Java
-         * migration analysis was performed.
-         *
+         * The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** The time the result is compiled. */
+        /**
+         * The time the result is compiled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the result is compiled.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The object storage namespace that contains the results of the migration analysis. */
+        /**
+         * The object storage namespace that contains the results of the migration analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The object storage namespace that contains the results of the migration analysis.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * The name of the object storage bucket that contains the results of the migration
-         * analysis.
-         */
+         * The name of the object storage bucket that contains the results of the migration analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
-         * The name of the object storage bucket that contains the results of the migration
-         * analysis.
-         *
+         * The name of the object storage bucket that contains the results of the migration analysis.
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
         /**
-         * The directory path of the object storage bucket that contains the results of the
-         * migration analysis.
-         */
+         * The directory path of the object storage bucket that contains the results of the migration analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUploadDirPath")
         private String objectStorageUploadDirPath;
 
         /**
-         * The directory path of the object storage bucket that contains the results of the
-         * migration analysis.
-         *
+         * The directory path of the object storage bucket that contains the results of the migration analysis.
          * @param objectStorageUploadDirPath the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStorageUploadDirPath(String objectStorageUploadDirPath) {
             this.objectStorageUploadDirPath = objectStorageUploadDirPath;
             this.__explicitlySet__.add("objectStorageUploadDirPath");
             return this;
         }
         /**
-         * The names of the object storage objects that contain the results of the migration
-         * analysis.
-         */
+         * The names of the object storage objects that contain the results of the migration analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectList")
         private java.util.List<String> objectList;
 
         /**
-         * The names of the object storage objects that contain the results of the migration
-         * analysis.
-         *
+         * The names of the object storage objects that contain the results of the migration analysis.
          * @param objectList the value to set
          * @return this builder
-         */
+         **/
         public Builder objectList(java.util.List<String> objectList) {
             this.objectList = objectList;
             this.__explicitlySet__.add("objectList");
             return this;
         }
-        /** Additional info reserved for future use. */
+        /**
+         * Additional info reserved for future use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
         /**
          * Additional info reserved for future use.
-         *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(String metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -449,7 +440,9 @@ public final class JavaMigrationAnalysisResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -458,241 +451,240 @@ public final class JavaMigrationAnalysisResult
         return new Builder().copy(this);
     }
 
-    /** The OCID of the migration analysis report. */
+    /**
+     * The OCID of the migration analysis report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the migration analysis report.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the work request of this analysis. */
+    /**
+     * The OCID of the work request of this analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * The OCID of the work request of this analysis.
-     *
      * @return the value
-     */
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
 
-    /** The fleet OCID. */
+    /**
+     * The fleet OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
      * The fleet OCID.
-     *
      * @return the value
-     */
+     **/
     public String getFleetId() {
         return fleetId;
     }
 
-    /** The unique key that identifies the application. */
+    /**
+     * The unique key that identifies the application.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
     private final String applicationKey;
 
     /**
      * The unique key that identifies the application.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationKey() {
         return applicationKey;
     }
 
-    /** The name of the application for which the Java migration analysis was performed. */
+    /**
+     * The name of the application for which the Java migration analysis was performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
     private final String applicationName;
 
     /**
      * The name of the application for which the Java migration analysis was performed.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationName() {
         return applicationName;
     }
 
     /**
      * The installation path of the application for which the Java migration analysis was performed.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationPath")
     private final String applicationPath;
 
     /**
      * The installation path of the application for which the Java migration analysis was performed.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationPath() {
         return applicationPath;
     }
 
     /**
-     * Execution type of the application for an application type, such as WAR and EAR, that is
-     * deployed or installed.
-     */
+     * Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationExecutionType")
     private final ApplicationExecutionType applicationExecutionType;
 
     /**
-     * Execution type of the application for an application type, such as WAR and EAR, that is
-     * deployed or installed.
-     *
+     * Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
      * @return the value
-     */
+     **/
     public ApplicationExecutionType getApplicationExecutionType() {
         return applicationExecutionType;
     }
 
-    /** The source JDK version of the application that's currently running. */
+    /**
+     * The source JDK version of the application that's currently running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceJdkVersion")
     private final String sourceJdkVersion;
 
     /**
      * The source JDK version of the application that's currently running.
-     *
      * @return the value
-     */
+     **/
     public String getSourceJdkVersion() {
         return sourceJdkVersion;
     }
 
-    /** The target JDK version of the application to be migrated. */
+    /**
+     * The target JDK version of the application to be migrated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetJdkVersion")
     private final String targetJdkVersion;
 
     /**
      * The target JDK version of the application to be migrated.
-     *
      * @return the value
-     */
+     **/
     public String getTargetJdkVersion() {
         return targetJdkVersion;
     }
 
-    /** The managed instance OCID. */
+    /**
+     * The managed instance OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
      * The managed instance OCID.
-     *
      * @return the value
-     */
+     **/
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
 
     /**
-     * The hostname of the managed instance that hosts the application for which the Java migration
-     * analysis was performed.
-     */
+     * The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * The hostname of the managed instance that hosts the application for which the Java migration
-     * analysis was performed.
-     *
+     * The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** The time the result is compiled. */
+    /**
+     * The time the result is compiled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the result is compiled.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The object storage namespace that contains the results of the migration analysis. */
+    /**
+     * The object storage namespace that contains the results of the migration analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The object storage namespace that contains the results of the migration analysis.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
     /**
      * The name of the object storage bucket that contains the results of the migration analysis.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The name of the object storage bucket that contains the results of the migration analysis.
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
     /**
-     * The directory path of the object storage bucket that contains the results of the migration
-     * analysis.
-     */
+     * The directory path of the object storage bucket that contains the results of the migration analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUploadDirPath")
     private final String objectStorageUploadDirPath;
 
     /**
-     * The directory path of the object storage bucket that contains the results of the migration
-     * analysis.
-     *
+     * The directory path of the object storage bucket that contains the results of the migration analysis.
      * @return the value
-     */
+     **/
     public String getObjectStorageUploadDirPath() {
         return objectStorageUploadDirPath;
     }
 
     /**
      * The names of the object storage objects that contain the results of the migration analysis.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectList")
     private final java.util.List<String> objectList;
 
     /**
      * The names of the object storage objects that contain the results of the migration analysis.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getObjectList() {
         return objectList;
     }
 
-    /** Additional info reserved for future use. */
+    /**
+     * Additional info reserved for future use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final String metadata;
 
     /**
      * Additional info reserved for future use.
-     *
      * @return the value
-     */
+     **/
     public String getMetadata() {
         return metadata;
     }
@@ -704,7 +696,6 @@ public final class JavaMigrationAnalysisResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

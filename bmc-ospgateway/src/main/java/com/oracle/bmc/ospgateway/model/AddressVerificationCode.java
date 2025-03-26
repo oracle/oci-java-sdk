@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ospgateway.model;
 
-/** Address verification code */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-public enum AddressVerificationCode implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Address verification code
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+public enum AddressVerificationCode {
     Verified("VERIFIED"),
     PartiallyVerified("PARTIALLY_VERIFIED"),
     Ambiguous("AMBIGUOUS"),

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/** The possible network types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum NetworkType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The possible network types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+public enum NetworkType {
     Vcn("VCN"),
     SecureAccess("SECURE_ACCESS"),
 

@@ -6,17 +6,18 @@ package com.oracle.bmc.stackmonitoring.responses;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -37,27 +41,25 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      * @return the value
      */
     public Integer getRetryAfter() {
         return retryAfter;
     }
 
-    /** The returned {@code BaselineableMetric} instance. */
+    /**
+     * The returned BaselineableMetric instance.
+     */
     private com.oracle.bmc.stackmonitoring.model.BaselineableMetric baselineableMetric;
 
     /**
-     * The returned {@code BaselineableMetric} instance.
-     *
+     * The returned BaselineableMetric instance.
      * @return the value
      */
     public com.oracle.bmc.stackmonitoring.model.BaselineableMetric getBaselineableMetric() {
@@ -74,7 +76,7 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
     })
     private CreateBaselineableMetricResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             Integer retryAfter,
@@ -86,34 +88,31 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
         this.baselineableMetric = baselineableMetric;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateBaselineableMetricResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,7 +122,10 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -138,15 +140,12 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          */
         private Integer retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -155,12 +154,13 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned {@code BaselineableMetric} instance. */
+        /**
+         * The returned BaselineableMetric instance.
+         */
         private com.oracle.bmc.stackmonitoring.model.BaselineableMetric baselineableMetric;
 
         /**
-         * The returned {@code BaselineableMetric} instance.
-         *
+         * The returned BaselineableMetric instance.
          * @param baselineableMetric the value to set
          * @return this builder
          */
@@ -172,10 +172,8 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateBaselineableMetricResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -189,10 +187,8 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateBaselineableMetricResponse build() {
             return new CreateBaselineableMetricResponse(
                     __httpStatusCode__,
@@ -206,7 +202,6 @@ public class CreateBaselineableMetricResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Describes the re-order parameters for the Scheduled Action resources. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Describes the re-order parameters for the Scheduled Action resources.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ReorderScheduledActionsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ReorderScheduledActionsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ReorderScheduledActionsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"schedulingWindowId", "scheduledActionIdOrders"})
     public ReorderScheduledActionsDetails(
@@ -34,38 +34,36 @@ public final class ReorderScheduledActionsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Scheduling Window.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedulingWindowId")
         private String schedulingWindowId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Scheduling Window.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
          * @param schedulingWindowId the value to set
          * @return this builder
-         */
+         **/
         public Builder schedulingWindowId(String schedulingWindowId) {
             this.schedulingWindowId = schedulingWindowId;
             this.__explicitlySet__.add("schedulingWindowId");
             return this;
         }
         /**
-         * List of action resources in a specific order. Example: [{actionOrder: 1,
-         * actionResourceId: "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
-         */
+         * List of action resources in a specific order.
+         * Example: [{actionOrder: 1, actionResourceId: "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledActionIdOrders")
         private java.util.List<ActionOrderDetails> scheduledActionIdOrders;
 
         /**
-         * List of action resources in a specific order. Example: [{actionOrder: 1,
-         * actionResourceId: "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
+         * List of action resources in a specific order.
+         * Example: [{actionOrder: 1, actionResourceId: "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
          *
          * @param scheduledActionIdOrders the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledActionIdOrders(
                 java.util.List<ActionOrderDetails> scheduledActionIdOrders) {
             this.scheduledActionIdOrders = scheduledActionIdOrders;
@@ -98,7 +96,9 @@ public final class ReorderScheduledActionsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -108,35 +108,33 @@ public final class ReorderScheduledActionsDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Scheduling Window.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedulingWindowId")
     private final String schedulingWindowId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Scheduling Window.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
      * @return the value
-     */
+     **/
     public String getSchedulingWindowId() {
         return schedulingWindowId;
     }
 
     /**
-     * List of action resources in a specific order. Example: [{actionOrder: 1, actionResourceId:
-     * "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
-     */
+     * List of action resources in a specific order.
+     * Example: [{actionOrder: 1, actionResourceId: "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledActionIdOrders")
     private final java.util.List<ActionOrderDetails> scheduledActionIdOrders;
 
     /**
-     * List of action resources in a specific order. Example: [{actionOrder: 1, actionResourceId:
-     * "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
+     * List of action resources in a specific order.
+     * Example: [{actionOrder: 1, actionResourceId: "resourceId1"}, {actionOrder: 2, actionResourceId: "resourceId2"}]
      *
      * @return the value
-     */
+     **/
     public java.util.List<ActionOrderDetails> getScheduledActionIdOrders() {
         return scheduledActionIdOrders;
     }
@@ -148,7 +146,6 @@ public final class ReorderScheduledActionsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

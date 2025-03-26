@@ -7,55 +7,54 @@ package com.oracle.bmc.stackmonitoring;
 import com.oracle.bmc.stackmonitoring.requests.*;
 import com.oracle.bmc.stackmonitoring.responses.*;
 
-/** Stack Monitoring API. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+/**
+ * Stack Monitoring API.
+ */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public interface StackMonitoringAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
@@ -64,10 +63,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ApplyMonitoringTemplateResponse> applyMonitoringTemplate(
             ApplyMonitoringTemplateRequest request,
@@ -76,16 +75,17 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create an association between two monitored resources. Associations can be created between
-     * resources from different compartments as long they are in same tenancy. User should have
-     * required access in both the compartments.
+     * Create an association between two monitored resources. Associations can be created
+     * between resources from different compartments as long they are in same tenancy.
+     * User should have required access in both the compartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AssociateMonitoredResourcesResponse> associateMonitoredResources(
             AssociateMonitoredResourcesRequest request,
@@ -94,25 +94,25 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the configuration item to another compartment. Basically, this will disable any
-     * configuration for this configuration type in thie compartment, and will enable it in the new
-     * one.
+     * Moves the configuration item to another compartment.
+     * Basically, this will disable any configuration for this configuration type in thie compartment,
+     * and will enable it in the new one.
+     * <p>
+     * For example, if for a HOST resource type, the configuration with AUTO_PROMOTE in the configuration type
+     * and TRUE as value is moved, automatic discovery will not take place in this compartment any more, but in the new one.
+     * <p>
+     * So this operation will have the same effect as deleting the configuration item in the old compartment and
+     * recreating it in another compartment.
+     * <p>
+     * When provided, If-Match is checked against ETag values of the resource.
      *
-     * <p>For example, if for a HOST resource type, the configuration with AUTO_PROMOTE in the
-     * configuration type and TRUE as value is moved, automatic discovery will not take place in
-     * this compartment any more, but in the new one.
-     *
-     * <p>So this operation will have the same effect as deleting the configuration item in the old
-     * compartment and recreating it in another compartment.
-     *
-     * <p>When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeConfigCompartmentResponse> changeConfigCompartment(
             ChangeConfigCompartmentRequest request,
@@ -121,15 +121,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a Metric Extension resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a Metric Extension resource from one compartment identifier to another.
+     * When provided, If-Match is checked against ETag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeMetricExtensionCompartmentResponse>
             changeMetricExtensionCompartment(
@@ -140,15 +141,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a monitored resource from one compartment to another. When provided, If-Match is
-     * checked against ETag values of the resource.
+     * Moves a monitored resource from one compartment to another.
+     * When provided, If-Match is checked against ETag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeMonitoredResourceCompartmentResponse>
             changeMonitoredResourceCompartment(
@@ -161,12 +163,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Moves a stack monitoring resource task from one compartment to another.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeMonitoredResourceTaskCompartmentResponse>
             changeMonitoredResourceTaskCompartment(
@@ -177,15 +180,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a ProcessSet resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a ProcessSet resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeProcessSetCompartmentResponse> changeProcessSetCompartment(
             ChangeProcessSetCompartmentRequest request,
@@ -198,10 +201,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAlarmConditionResponse> createAlarmCondition(
             CreateAlarmConditionRequest request,
@@ -214,10 +217,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateBaselineableMetricResponse> createBaselineableMetric(
             CreateBaselineableMetricRequest request,
@@ -226,19 +229,21 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a configuration item, for example to define whether resources of a specific type
-     * should be discovered automatically.
+     * Creates a configuration item, for example to define
+     * whether resources of a specific type should be discovered automatically.
+     * <p>
+     * For example, when a new Management Agent gets registered in a certain compartment,
+     * this Management Agent can potentially get promoted to a HOST resource.
+     * The configuration item will determine if HOST resources in the selected compartment will be
+     * discovered automatically.
      *
-     * <p>For example, when a new Management Agent gets registered in a certain compartment, this
-     * Management Agent can potentially get promoted to a HOST resource. The configuration item will
-     * determine if HOST resources in the selected compartment will be discovered automatically.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateConfigResponse> createConfig(
             CreateConfigRequest request,
@@ -248,12 +253,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * API to create discovery Job and submit discovery Details to agent.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDiscoveryJobResponse> createDiscoveryJob(
             CreateDiscoveryJobRequest request,
@@ -262,15 +268,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Maintenance Window for the given resources. It will create also the Alarms
-     * Suppression for each alarm that the resource migth trigger.
+     * Creates a new Maintenance Window for the given resources. It will create also the
+     * Alarms Suppression for each alarm that the resource migth trigger.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateMaintenanceWindowResponse> createMaintenanceWindow(
             CreateMaintenanceWindowRequest request,
@@ -281,12 +288,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Creates a new metric extension resource for a given compartment
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateMetricExtensionResponse> createMetricExtension(
             CreateMetricExtensionRequest request,
@@ -295,16 +303,17 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new monitored resource for the given resource type with the details and submits a
-     * work request for promoting the resource to agent. Once the resource is successfully added to
-     * agent, resource state will be marked active.
+     * Creates a new monitored resource for the given resource type with the details and submits
+     * a work request for promoting the resource to agent. Once the resource is successfully
+     * added to agent, resource state will be marked active.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateMonitoredResourceResponse> createMonitoredResource(
             CreateMonitoredResourceRequest request,
@@ -317,10 +326,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateMonitoredResourceTaskResponse> createMonitoredResourceTask(
             CreateMonitoredResourceTaskRequest request,
@@ -333,10 +342,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateMonitoredResourceTypeResponse> createMonitoredResourceType(
             CreateMonitoredResourceTypeRequest request,
@@ -349,10 +358,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateMonitoringTemplateResponse> createMonitoringTemplate(
             CreateMonitoringTemplateRequest request,
@@ -365,10 +374,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateProcessSetResponse> createProcessSet(
             CreateProcessSetRequest request,
@@ -380,10 +389,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAlarmConditionResponse> deleteAlarmCondition(
             DeleteAlarmConditionRequest request,
@@ -396,10 +405,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteBaselineableMetricResponse> deleteBaselineableMetric(
             DeleteBaselineableMetricRequest request,
@@ -412,10 +421,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteConfigResponse> deleteConfig(
             DeleteConfigRequest request,
@@ -427,10 +436,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDiscoveryJobResponse> deleteDiscoveryJob(
             DeleteDiscoveryJobRequest request,
@@ -441,12 +450,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Deletes a maintenance window by identifier
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteMaintenanceWindowResponse> deleteMaintenanceWindow(
             DeleteMaintenanceWindowRequest request,
@@ -459,10 +469,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteMetricExtensionResponse> deleteMetricExtension(
             DeleteMetricExtensionRequest request,
@@ -471,18 +481,18 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete monitored resource by the given identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). By default,
-     * only the specified resource is deleted. If the parameter 'isDeleteMembers' is set to true,
-     * then the member resources will be deleted too. If the operation fails partially, the deleted
-     * entries will not be rolled back.
+     * Delete monitored resource by the given identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * By default, only the specified resource is deleted. If the parameter 'isDeleteMembers' is set to true,
+     * then the member resources will be deleted too. If the operation fails partially, the deleted entries
+     * will not be rolled back.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteMonitoredResourceResponse> deleteMonitoredResource(
             DeleteMonitoredResourceRequest request,
@@ -491,15 +501,14 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a monitored resource type by identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Deletes a monitored resource type by identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteMonitoredResourceTypeResponse> deleteMonitoredResourceType(
             DeleteMonitoredResourceTypeRequest request,
@@ -512,10 +521,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteMonitoringTemplateResponse> deleteMonitoringTemplate(
             DeleteMonitoringTemplateRequest request,
@@ -528,10 +537,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteProcessSetResponse> deleteProcessSet(
             DeleteProcessSetRequest request,
@@ -539,15 +548,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Disable external database resource monitoring. All the references in DBaaS, DBM and resource
-     * service will be deleted as part of this operation.
+     * Disable external database resource monitoring. All the references in DBaaS,
+     * DBM and resource service will be deleted as part of this operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableExternalDatabaseResponse> disableExternalDatabase(
             DisableExternalDatabaseRequest request,
@@ -558,12 +568,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Submits a request to disable matching metric extension Id for the given Resource IDs
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableMetricExtensionResponse> disableMetricExtension(
             DisableMetricExtensionRequest request,
@@ -576,10 +587,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisassociateMonitoredResourcesResponse>
             disassociateMonitoredResources(
@@ -592,12 +603,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Submits a request to enable matching metric extension Id for the given Resource IDs
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableMetricExtensionResponse> enableMetricExtension(
             EnableMetricExtensionRequest request,
@@ -610,10 +622,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EvaluateBaselineableMetricResponse> evaluateBaselineableMetric(
             EvaluateBaselineableMetricRequest request,
@@ -622,16 +634,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Export generates a template used to create new metric extension resources similar to matching
-     * metric extension id. Response is a file that contains metric extension definition with
-     * placeholders for fields to be changed.
+     * Export generates a template used to create new metric extension resources similar to matching metric extension id.
+     * Response is a file that contains metric extension definition with placeholders for fields to be changed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ExportMetricExtensionResponse> exportMetricExtension(
             ExportMetricExtensionRequest request,
@@ -644,10 +656,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ExportMonitoringTemplateResponse> exportMonitoringTemplate(
             ExportMonitoringTemplateRequest request,
@@ -660,10 +672,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAlarmConditionResponse> getAlarmCondition(
             GetAlarmConditionRequest request,
@@ -676,10 +688,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetBaselineableMetricResponse> getBaselineableMetric(
             GetBaselineableMetricRequest request,
@@ -692,10 +704,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetConfigResponse> getConfig(
             GetConfigRequest request,
@@ -704,12 +716,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * API to get the details of discovery Job by identifier.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDiscoveryJobResponse> getDiscoveryJob(
             GetDiscoveryJobRequest request,
@@ -717,15 +730,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get maintenance window for the given identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Get maintenance window for the given identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetMaintenanceWindowResponse> getMaintenanceWindow(
             GetMaintenanceWindowRequest request,
@@ -738,10 +751,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetMetricExtensionResponse> getMetricExtension(
             GetMetricExtensionRequest request,
@@ -750,15 +763,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get monitored resource for the given identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Get monitored resource for the given identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetMonitoredResourceResponse> getMonitoredResource(
             GetMonitoredResourceRequest request,
@@ -767,15 +780,14 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets stack monitoring resource task details by identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets stack monitoring resource task details by identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetMonitoredResourceTaskResponse> getMonitoredResourceTask(
             GetMonitoredResourceTaskRequest request,
@@ -784,15 +796,14 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a monitored resource type by identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets a monitored resource type by identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetMonitoredResourceTypeResponse> getMonitoredResourceType(
             GetMonitoredResourceTypeRequest request,
@@ -805,10 +816,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetMonitoringTemplateResponse> getMonitoringTemplate(
             GetMonitoringTemplateRequest request,
@@ -821,10 +832,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetProcessSetResponse> getProcessSet(
             GetProcessSetRequest request,
@@ -836,10 +847,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -851,10 +862,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAlarmConditionsResponse> listAlarmConditions(
             ListAlarmConditionsRequest request,
@@ -867,10 +878,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListBaselineableMetricsResponse> listBaselineableMetrics(
             ListBaselineableMetricsRequest request,
@@ -881,12 +892,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Get a list of configurations in a compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListConfigsResponse> listConfigs(
             ListConfigsRequest request,
@@ -897,10 +909,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDefinedMonitoringTemplatesResponse>
             listDefinedMonitoringTemplates(
@@ -913,12 +925,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * API to get all the logs of a Discovery Job.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDiscoveryJobLogsResponse> listDiscoveryJobLogs(
             ListDiscoveryJobLogsRequest request,
@@ -929,12 +942,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * API to get the details of all Discovery Jobs.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDiscoveryJobsResponse> listDiscoveryJobs(
             ListDiscoveryJobsRequest request,
@@ -947,10 +961,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMaintenanceWindowsResponse> listMaintenanceWindows(
             ListMaintenanceWindowsRequest request,
@@ -963,10 +977,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMetricExtensionsResponse> listMetricExtensions(
             ListMetricExtensionsRequest request,
@@ -977,12 +991,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Returns a list of stack monitoring resource tasks in the compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMonitoredResourceTasksResponse> listMonitoredResourceTasks(
             ListMonitoredResourceTasksRequest request,
@@ -991,18 +1006,20 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns list of resource types accessible to the customer. There are two types of resource
-     * types - System resource types and User resource types. System resource types are available
-     * out of the box in the stack monitoring resource service and are accessible to all the tenant
-     * users. User resource types are created in the context of a tenancy and are visible only for
-     * the tenancy. By default, both System resource types and User resource types are returned.
+     * Returns list of resource types accessible to the customer.
+     * There are two types of resource types - System resource types and User resource types.
+     * System resource types are available out of the box in the stack monitoring resource service
+     * and are accessible to all the tenant users. User resource types are created in the context
+     * of a tenancy and are visible only for the tenancy. By default, both System resource types
+     * and User resource types are returned.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMonitoredResourceTypesResponse> listMonitoredResourceTypes(
             ListMonitoredResourceTypesRequest request,
@@ -1015,10 +1032,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMonitoredResourcesResponse> listMonitoredResources(
             ListMonitoredResourcesRequest request,
@@ -1031,10 +1048,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMonitoringTemplatesResponse> listMonitoringTemplates(
             ListMonitoringTemplatesRequest request,
@@ -1047,10 +1064,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListProcessSetsResponse> listProcessSets(
             ListProcessSetsRequest request,
@@ -1060,12 +1077,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Return a (paginated) list of errors for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -1076,12 +1094,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Return a (paginated) list of logs for a given work request.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -1092,12 +1111,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Lists the work requests in a compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -1105,17 +1125,19 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Each resource is assigned a license based on which features are enabled for it. User is
-     * charged differently based on license. Specify the license type to be updated for the parent
-     * resource in the topology. The license type value is propagated to the member resources as
-     * well. Member resource is a resource which has \"contains\" association with the resource.
+     * Each resource is assigned a license based on which features are enabled for it.
+     * User is charged differently based on license.
+     * Specify the license type to be updated for the parent resource in the topology.
+     * The license type value is propagated to the member resources as well.
+     * Member resource is a resource which has \"contains\" association with the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ManageLicenseResponse> manageLicense(
             ManageLicenseRequest request,
@@ -1127,10 +1149,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<PublishMetricExtensionResponse> publishMetricExtension(
             PublishMetricExtensionRequest request,
@@ -1141,12 +1163,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Gets resource count based on the aggregation criteria specified using \"groupBy\" parameter.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestMonitoredResourcesSummarizedCountResponse>
             requestMonitoredResourcesSummarizedCount(
@@ -1157,16 +1180,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets metric extension metrics count based on the aggregation criteria specified using request
-     * body. Either metricExtensionId or compartmentId must be passed even when no other filter
-     * property is passed.
+     * Gets metric extension metrics count based on the aggregation criteria specified using request body.
+     * Either metricExtensionId or compartmentId must be passed even when no other filter property is passed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedMetricExtensionsMetricsResponse>
             requestSummarizedMetricExtensionsMetrics(
@@ -1177,16 +1200,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets metric extension resources count based on the aggregation criteria specified using
-     * request body. Either metricExtensionId or compartmentId should be passed, if no other
-     * property is passed.
+     * Gets metric extension resources count based on the aggregation criteria specified using request body.
+     * Either metricExtensionId or compartmentId should be passed, if no other property is passed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedMetricExtensionsResourcesResponse>
             requestSummarizedMetricExtensionsResources(
@@ -1197,15 +1220,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Retry the last failed operation. The operation failed will be the most recent one. It won't
-     * apply for previous failed operations.
+     * Retry the last failed operation. The operation failed will be the most recent one. It won't apply for previous failed operations.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RetryFailedMaintenanceWindowOperationResponse>
             retryFailedMaintenanceWindowOperation(
@@ -1216,15 +1239,16 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * List all associated resources recursively up-to a specified level, for the monitored
-     * resources of type specified.
+     * List all associated resources recursively up-to a specified level,
+     * for the monitored resources of type specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SearchAssociatedResourcesResponse> searchAssociatedResources(
             SearchAssociatedResourcesRequest request,
@@ -1235,12 +1259,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Search associations in the given compartment based on the search criteria.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SearchMonitoredResourceAssociationsResponse>
             searchMonitoredResourceAssociations(
@@ -1251,15 +1276,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * List the member resources for the given monitored resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * List the member resources for the given monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SearchMonitoredResourceMembersResponse>
             searchMonitoredResourceMembers(
@@ -1272,12 +1297,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Gets a list of all monitored resources in a compartment for the given search criteria.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SearchMonitoredResourcesResponse> searchMonitoredResources(
             SearchMonitoredResourcesRequest request,
@@ -1288,12 +1314,13 @@ public interface StackMonitoringAsync extends AutoCloseable {
     /**
      * Stop a maintenance window before the end time is reached.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<StopMaintenanceWindowResponse> stopMaintenanceWindow(
             StopMaintenanceWindowRequest request,
@@ -1306,10 +1333,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<TestMetricExtensionResponse> testMetricExtension(
             TestMetricExtensionRequest request,
@@ -1322,10 +1349,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UnapplyMonitoringTemplateResponse> unapplyMonitoringTemplate(
             UnapplyMonitoringTemplateRequest request,
@@ -1338,10 +1365,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAlarmConditionResponse> updateAlarmCondition(
             UpdateAlarmConditionRequest request,
@@ -1350,18 +1377,18 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Provided tags will be added or updated in the existing list of tags for the affected
-     * resources. Resources to be updated are identified based on association types specified. If
-     * association types not specified, then tags will be updated only for the resource identified
-     * by the given monitored resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Provided tags will be added or updated in the existing list of tags for the affected resources.
+     * Resources to be updated are identified based on association types specified.
+     * If association types not specified, then tags will be updated only for the resource identified by
+     * the given monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAndPropagateTagsResponse> updateAndPropagateTags(
             UpdateAndPropagateTagsRequest request,
@@ -1374,10 +1401,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateBaselineableMetricResponse> updateBaselineableMetric(
             UpdateBaselineableMetricRequest request,
@@ -1390,10 +1417,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
             UpdateConfigRequest request,
@@ -1401,15 +1428,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update maintenance window by the given identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Update maintenance window by the given identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMaintenanceWindowResponse> updateMaintenanceWindow(
             UpdateMaintenanceWindowRequest request,
@@ -1422,10 +1449,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMetricExtensionResponse> updateMetricExtension(
             UpdateMetricExtensionRequest request,
@@ -1434,17 +1461,17 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update monitored resource by the given identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Note that
-     * \"properties\" object, if specified, will entirely replace the existing object, as part this
-     * operation.
+     * Update monitored resource by the given identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Note that \"properties\" object, if specified, will entirely replace the existing object,
+     * as part this operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMonitoredResourceResponse> updateMonitoredResource(
             UpdateMonitoredResourceRequest request,
@@ -1453,15 +1480,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update stack monitoring resource task by the given identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Update stack monitoring resource task by the given identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMonitoredResourceTaskResponse> updateMonitoredResourceTask(
             UpdateMonitoredResourceTaskRequest request,
@@ -1470,15 +1497,15 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the Monitored Resource Type identified by the identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Update the Monitored Resource Type identified by the identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMonitoredResourceTypeResponse> updateMonitoredResourceType(
             UpdateMonitoredResourceTypeRequest request,
@@ -1491,10 +1518,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateMonitoringTemplateResponse> updateMonitoringTemplate(
             UpdateMonitoringTemplateRequest request,
@@ -1507,10 +1534,10 @@ public interface StackMonitoringAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateProcessSetResponse> updateProcessSet(
             UpdateProcessSetRequest request,

@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ThickAuthorizationResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ThickAuthorizationResponse.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ThickAuthorizationResponse
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "policy",
@@ -46,84 +45,89 @@ public final class ThickAuthorizationResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The policy string related to the request */
+        /**
+         * The policy string related to the request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
         /**
          * The policy string related to the request
-         *
          * @param policy the value to set
          * @return this builder
-         */
+         **/
         public Builder policy(String policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
         /**
-         * The duration of how long this policy should be cached. Note that the type is of type
-         * java.time.Duration, not string.
-         */
+         * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
+         * string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyCacheDuration")
         private String policyCacheDuration;
 
         /**
-         * The duration of how long this policy should be cached. Note that the type is of type
-         * java.time.Duration, not string.
+         * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
+         * string.
          *
          * @param policyCacheDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder policyCacheDuration(String policyCacheDuration) {
             this.policyCacheDuration = policyCacheDuration;
             this.__explicitlySet__.add("policyCacheDuration");
             return this;
         }
-        /** The policy string related to the request. */
+        /**
+         * The policy string related to the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groups")
         private java.util.List<String> groups;
 
         /**
          * The policy string related to the request.
-         *
          * @param groups the value to set
          * @return this builder
-         */
+         **/
         public Builder groups(java.util.List<String> groups) {
             this.groups = groups;
             this.__explicitlySet__.add("groups");
             return this;
         }
         /**
-         * The duration of how long the user's group membership should be cached. Note that the type
-         * is of type java.time.Duration, not string.
-         */
+         * The duration of how long the user's group membership should be cached. Note that the type is of type
+         * java.time.Duration, not string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipCacheDuration")
         private String groupMembershipCacheDuration;
 
         /**
-         * The duration of how long the user's group membership should be cached. Note that the type
-         * is of type java.time.Duration, not string.
+         * The duration of how long the user's group membership should be cached. Note that the type is of type
+         * java.time.Duration, not string.
          *
          * @param groupMembershipCacheDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder groupMembershipCacheDuration(String groupMembershipCacheDuration) {
             this.groupMembershipCacheDuration = groupMembershipCacheDuration;
             this.__explicitlySet__.add("groupMembershipCacheDuration");
             return this;
         }
-        /** If set to true, the SDK should clear the caches. */
+        /**
+         * If set to true, the SDK should clear the caches.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flushAllCaches")
         private Boolean flushAllCaches;
 
         /**
          * If set to true, the SDK should clear the caches.
-         *
          * @param flushAllCaches the value to set
          * @return this builder
-         */
+         **/
         public Builder flushAllCaches(Boolean flushAllCaches) {
             this.flushAllCaches = flushAllCaches;
             this.__explicitlySet__.add("flushAllCaches");
@@ -168,7 +172,9 @@ public final class ThickAuthorizationResponse
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,75 +183,80 @@ public final class ThickAuthorizationResponse
         return new Builder().copy(this);
     }
 
-    /** The policy string related to the request */
+    /**
+     * The policy string related to the request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final String policy;
 
     /**
      * The policy string related to the request
-     *
      * @return the value
-     */
+     **/
     public String getPolicy() {
         return policy;
     }
 
     /**
-     * The duration of how long this policy should be cached. Note that the type is of type
-     * java.time.Duration, not string.
-     */
+     * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
+     * string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyCacheDuration")
     private final String policyCacheDuration;
 
     /**
-     * The duration of how long this policy should be cached. Note that the type is of type
-     * java.time.Duration, not string.
+     * The duration of how long this policy should be cached. Note that the type is of type java.time.Duration, not
+     * string.
      *
      * @return the value
-     */
+     **/
     public String getPolicyCacheDuration() {
         return policyCacheDuration;
     }
 
-    /** The policy string related to the request. */
+    /**
+     * The policy string related to the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groups")
     private final java.util.List<String> groups;
 
     /**
      * The policy string related to the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getGroups() {
         return groups;
     }
 
     /**
-     * The duration of how long the user's group membership should be cached. Note that the type is
-     * of type java.time.Duration, not string.
-     */
+     * The duration of how long the user's group membership should be cached. Note that the type is of type
+     * java.time.Duration, not string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipCacheDuration")
     private final String groupMembershipCacheDuration;
 
     /**
-     * The duration of how long the user's group membership should be cached. Note that the type is
-     * of type java.time.Duration, not string.
+     * The duration of how long the user's group membership should be cached. Note that the type is of type
+     * java.time.Duration, not string.
      *
      * @return the value
-     */
+     **/
     public String getGroupMembershipCacheDuration() {
         return groupMembershipCacheDuration;
     }
 
-    /** If set to true, the SDK should clear the caches. */
+    /**
+     * If set to true, the SDK should clear the caches.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flushAllCaches")
     private final Boolean flushAllCaches;
 
     /**
      * If set to true, the SDK should clear the caches.
-     *
      * @return the value
-     */
+     **/
     public Boolean getFlushAllCaches() {
         return flushAllCaches;
     }
@@ -257,7 +268,6 @@ public final class ThickAuthorizationResponse
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

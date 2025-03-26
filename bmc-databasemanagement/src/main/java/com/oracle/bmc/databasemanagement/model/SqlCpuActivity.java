@@ -5,22 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The SQL CPU activity from the Exadata storage server. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The SQL CPU activity from the Exadata storage server.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlCpuActivity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlCpuActivity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlCpuActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"databaseName", "sqlId", "cpuActivity"})
     public SqlCpuActivity(String databaseName, String sqlId, Float cpuActivity) {
@@ -32,46 +29,49 @@ public final class SqlCpuActivity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The database name. */
+        /**
+         * The database name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
         /**
          * The database name.
-         *
          * @param databaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-        /** The SQL ID. */
+        /**
+         * The SQL ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
         private String sqlId;
 
         /**
          * The SQL ID.
-         *
          * @param sqlId the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlId(String sqlId) {
             this.sqlId = sqlId;
             this.__explicitlySet__.add("sqlId");
             return this;
         }
-        /** The CPU activity percentage. */
+        /**
+         * The CPU activity percentage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuActivity")
         private Float cpuActivity;
 
         /**
          * The CPU activity percentage.
-         *
          * @param cpuActivity the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuActivity(Float cpuActivity) {
             this.cpuActivity = cpuActivity;
             this.__explicitlySet__.add("cpuActivity");
@@ -105,7 +105,9 @@ public final class SqlCpuActivity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,41 +116,44 @@ public final class SqlCpuActivity
         return new Builder().copy(this);
     }
 
-    /** The database name. */
+    /**
+     * The database name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
     /**
      * The database name.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
 
-    /** The SQL ID. */
+    /**
+     * The SQL ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
     private final String sqlId;
 
     /**
      * The SQL ID.
-     *
      * @return the value
-     */
+     **/
     public String getSqlId() {
         return sqlId;
     }
 
-    /** The CPU activity percentage. */
+    /**
+     * The CPU activity percentage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuActivity")
     private final Float cpuActivity;
 
     /**
      * The CPU activity percentage.
-     *
      * @return the value
-     */
+     **/
     public Float getCpuActivity() {
         return cpuActivity;
     }
@@ -160,7 +165,6 @@ public final class SqlCpuActivity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,31 +5,35 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Details for a threshold-based autoscaling policy to enable on the model deployment. In a
- * threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric
- * meets or exceeds a threshold. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Details for a threshold-based autoscaling policy to enable on the model deployment.
+ * In a threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric meets
+ * or exceeds a threshold.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ThresholdBasedAutoScalingPolicyDetails.Builder.class)
+    builder = ThresholdBasedAutoScalingPolicyDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "autoScalingPolicyType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "autoScalingPolicyType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ThresholdBasedAutoScalingPolicyDetails extends AutoScalingPolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of autoscaling policy rules. */
+        /**
+         * The list of autoscaling policy rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<MetricExpressionRule> rules;
 
@@ -38,70 +42,71 @@ public final class ThresholdBasedAutoScalingPolicyDetails extends AutoScalingPol
          *
          * @param rules the value to set
          * @return this builder
-         */
+         **/
         public Builder rules(java.util.List<MetricExpressionRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
             return this;
         }
         /**
-         * For a threshold-based autoscaling policy, this value is the maximum number of instances
-         * the model deployment is allowed to increase to (scale out).
-         */
+         * For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed
+         * to increase to (scale out).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumInstanceCount")
         private Integer maximumInstanceCount;
 
         /**
-         * For a threshold-based autoscaling policy, this value is the maximum number of instances
-         * the model deployment is allowed to increase to (scale out).
+         * For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed
+         * to increase to (scale out).
          *
          * @param maximumInstanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maximumInstanceCount(Integer maximumInstanceCount) {
             this.maximumInstanceCount = maximumInstanceCount;
             this.__explicitlySet__.add("maximumInstanceCount");
             return this;
         }
         /**
-         * For a threshold-based autoscaling policy, this value is the minimum number of instances
-         * the model deployment is allowed to decrease to (scale in).
-         */
+         * For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed
+         * to decrease to (scale in).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumInstanceCount")
         private Integer minimumInstanceCount;
 
         /**
-         * For a threshold-based autoscaling policy, this value is the minimum number of instances
-         * the model deployment is allowed to decrease to (scale in).
+         * For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed
+         * to decrease to (scale in).
          *
          * @param minimumInstanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minimumInstanceCount(Integer minimumInstanceCount) {
             this.minimumInstanceCount = minimumInstanceCount;
             this.__explicitlySet__.add("minimumInstanceCount");
             return this;
         }
         /**
-         * For a threshold-based autoscaling policy, this value is the initial number of instances
-         * to launch in the model deployment immediately after autoscaling is enabled. Note that
-         * anytime this value is updated, the number of instances will be reset to this value. After
-         * autoscaling retrieves performance metrics, the number of instances is automatically
-         * adjusted from this initial number to a number that is based on the limits that you set.
-         */
+         * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment
+         * immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset
+         * to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from
+         * this initial number to a number that is based on the limits that you set.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialInstanceCount")
         private Integer initialInstanceCount;
 
         /**
-         * For a threshold-based autoscaling policy, this value is the initial number of instances
-         * to launch in the model deployment immediately after autoscaling is enabled. Note that
-         * anytime this value is updated, the number of instances will be reset to this value. After
-         * autoscaling retrieves performance metrics, the number of instances is automatically
-         * adjusted from this initial number to a number that is based on the limits that you set.
+         * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment
+         * immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset
+         * to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from
+         * this initial number to a number that is based on the limits that you set.
          *
          * @param initialInstanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder initialInstanceCount(Integer initialInstanceCount) {
             this.initialInstanceCount = initialInstanceCount;
             this.__explicitlySet__.add("initialInstanceCount");
@@ -142,7 +147,9 @@ public final class ThresholdBasedAutoScalingPolicyDetails extends AutoScalingPol
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -164,7 +171,10 @@ public final class ThresholdBasedAutoScalingPolicyDetails extends AutoScalingPol
         this.initialInstanceCount = initialInstanceCount;
     }
 
-    /** The list of autoscaling policy rules. */
+    /**
+     * The list of autoscaling policy rules.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<MetricExpressionRule> rules;
 
@@ -172,64 +182,65 @@ public final class ThresholdBasedAutoScalingPolicyDetails extends AutoScalingPol
      * The list of autoscaling policy rules.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MetricExpressionRule> getRules() {
         return rules;
     }
 
     /**
-     * For a threshold-based autoscaling policy, this value is the maximum number of instances the
-     * model deployment is allowed to increase to (scale out).
-     */
+     * For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed
+     * to increase to (scale out).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumInstanceCount")
     private final Integer maximumInstanceCount;
 
     /**
-     * For a threshold-based autoscaling policy, this value is the maximum number of instances the
-     * model deployment is allowed to increase to (scale out).
+     * For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed
+     * to increase to (scale out).
      *
      * @return the value
-     */
+     **/
     public Integer getMaximumInstanceCount() {
         return maximumInstanceCount;
     }
 
     /**
-     * For a threshold-based autoscaling policy, this value is the minimum number of instances the
-     * model deployment is allowed to decrease to (scale in).
-     */
+     * For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed
+     * to decrease to (scale in).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumInstanceCount")
     private final Integer minimumInstanceCount;
 
     /**
-     * For a threshold-based autoscaling policy, this value is the minimum number of instances the
-     * model deployment is allowed to decrease to (scale in).
+     * For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed
+     * to decrease to (scale in).
      *
      * @return the value
-     */
+     **/
     public Integer getMinimumInstanceCount() {
         return minimumInstanceCount;
     }
 
     /**
-     * For a threshold-based autoscaling policy, this value is the initial number of instances to
-     * launch in the model deployment immediately after autoscaling is enabled. Note that anytime
-     * this value is updated, the number of instances will be reset to this value. After autoscaling
-     * retrieves performance metrics, the number of instances is automatically adjusted from this
-     * initial number to a number that is based on the limits that you set.
-     */
+     * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment
+     * immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset
+     * to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from
+     * this initial number to a number that is based on the limits that you set.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialInstanceCount")
     private final Integer initialInstanceCount;
 
     /**
-     * For a threshold-based autoscaling policy, this value is the initial number of instances to
-     * launch in the model deployment immediately after autoscaling is enabled. Note that anytime
-     * this value is updated, the number of instances will be reset to this value. After autoscaling
-     * retrieves performance metrics, the number of instances is automatically adjusted from this
-     * initial number to a number that is based on the limits that you set.
+     * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment
+     * immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset
+     * to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from
+     * this initial number to a number that is based on the limits that you set.
      *
      * @return the value
-     */
+     **/
     public Integer getInitialInstanceCount() {
         return initialInstanceCount;
     }
@@ -241,7 +252,6 @@ public final class ThresholdBasedAutoScalingPolicyDetails extends AutoScalingPol
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

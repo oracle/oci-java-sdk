@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.certificatesmanagement.model;
 
-/** The current reason for the certificate's revocation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public enum RevocationReason implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current reason for the certificate's revocation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+public enum RevocationReason {
     Unspecified("UNSPECIFIED"),
     KeyCompromise("KEY_COMPROMISE"),
     CaCompromise("CA_COMPROMISE"),

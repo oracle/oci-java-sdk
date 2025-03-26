@@ -6,95 +6,112 @@ package com.oracle.bmc.datascience.requests;
 
 import com.oracle.bmc.datascience.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelCustomMetadatumArtifactExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateModelCustomMetadatumArtifactRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelCustomMetadatumArtifactExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateModelCustomMetadatumArtifactRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class UpdateModelCustomMetadatumArtifactRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
         implements com.oracle.bmc.requests.HasContentLength {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
     private String modelId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
     public String getModelId() {
         return modelId;
     }
-    /** The name of the model metadatum in the metadata. */
+    /**
+     * The name of the model metadatum in the metadata.
+     */
     private String metadatumKeyName;
 
-    /** The name of the model metadatum in the metadata. */
+    /**
+     * The name of the model metadatum in the metadata.
+     */
     public String getMetadatumKeyName() {
         return metadatumKeyName;
     }
-    /** The content length of the body. */
+    /**
+     * The content length of the body.
+     */
     private Long contentLength;
 
-    /** The content length of the body. */
+    /**
+     * The content length of the body.
+     */
     public Long getContentLength() {
         return contentLength;
     }
-    /** The model custom metadata artifact to upload. */
+    /**
+     * The model custom metadata artifact to upload.
+     */
     private java.io.InputStream modelCustomMetadatumArtifact;
 
-    /** The model custom metadata artifact to upload. */
+    /**
+     * The model custom metadata artifact to upload.
+     */
     public java.io.InputStream getModelCustomMetadatumArtifact() {
         return modelCustomMetadatumArtifact;
     }
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * This header allows you to specify a filename during upload. This file name is used to dispose
-     * of the file contents while downloading the file. If this optional field is not populated in
-     * the request, then the OCID of the model is used for the file name when downloading. Example:
-     * {@code {"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length":
-     * "2347" "Content-Type": "application/gzip"}}
+     * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+     * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+     * name when downloading.
+     * Example: {@code {"Content-Disposition": "attachment"
+     *            "filename"="model.tar.gz"
+     *            "Content-Length": "2347"
+     *            "Content-Type": "application/gzip"}}
+     *
      */
     private String contentDisposition;
 
     /**
-     * This header allows you to specify a filename during upload. This file name is used to dispose
-     * of the file contents while downloading the file. If this optional field is not populated in
-     * the request, then the OCID of the model is used for the file name when downloading. Example:
-     * {@code {"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length":
-     * "2347" "Content-Type": "application/gzip"}}
+     * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+     * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+     * name when downloading.
+     * Example: {@code {"Content-Disposition": "attachment"
+     *            "filename"="model.tar.gz"
+     *            "Content-Length": "2347"
+     *            "Content-Type": "application/gzip"}}
+     *
      */
     public String getContentDisposition() {
         return contentDisposition;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the {@code etag} you provide matches the
-     * resource's current {@code etag} value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the {@code etag} you provide matches the
-     * resource's current {@code etag} value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -102,7 +119,6 @@ public class UpdateModelCustomMetadatumArtifactRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -114,19 +130,17 @@ public class UpdateModelCustomMetadatumArtifactRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateModelCustomMetadatumArtifactRequest, java.io.InputStream> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
          */
         private String modelId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * model.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
          * @param modelId the value to set
          * @return this builder instance
          */
@@ -135,12 +149,13 @@ public class UpdateModelCustomMetadatumArtifactRequest
             return this;
         }
 
-        /** The name of the model metadatum in the metadata. */
+        /**
+         * The name of the model metadatum in the metadata.
+         */
         private String metadatumKeyName = null;
 
         /**
          * The name of the model metadatum in the metadata.
-         *
          * @param metadatumKeyName the value to set
          * @return this builder instance
          */
@@ -149,12 +164,13 @@ public class UpdateModelCustomMetadatumArtifactRequest
             return this;
         }
 
-        /** The content length of the body. */
+        /**
+         * The content length of the body.
+         */
         private Long contentLength = null;
 
         /**
          * The content length of the body.
-         *
          * @param contentLength the value to set
          * @return this builder instance
          */
@@ -163,12 +179,13 @@ public class UpdateModelCustomMetadatumArtifactRequest
             return this;
         }
 
-        /** The model custom metadata artifact to upload. */
+        /**
+         * The model custom metadata artifact to upload.
+         */
         private java.io.InputStream modelCustomMetadatumArtifact = null;
 
         /**
          * The model custom metadata artifact to upload.
-         *
          * @param modelCustomMetadatumArtifact the value to set
          * @return this builder instance
          */
@@ -179,14 +196,13 @@ public class UpdateModelCustomMetadatumArtifactRequest
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -197,20 +213,25 @@ public class UpdateModelCustomMetadatumArtifactRequest
         }
 
         /**
-         * This header allows you to specify a filename during upload. This file name is used to
-         * dispose of the file contents while downloading the file. If this optional field is not
-         * populated in the request, then the OCID of the model is used for the file name when
-         * downloading. Example: {@code {"Content-Disposition": "attachment"
-         * "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}}
+         * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+         * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+         * name when downloading.
+         * Example: {@code {"Content-Disposition": "attachment"
+         *            "filename"="model.tar.gz"
+         *            "Content-Length": "2347"
+         *            "Content-Type": "application/gzip"}}
+         *
          */
         private String contentDisposition = null;
 
         /**
-         * This header allows you to specify a filename during upload. This file name is used to
-         * dispose of the file contents while downloading the file. If this optional field is not
-         * populated in the request, then the OCID of the model is used for the file name when
-         * downloading. Example: {@code {"Content-Disposition": "attachment"
-         * "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}}
+         * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+         * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+         * name when downloading.
+         * Example: {@code {"Content-Disposition": "attachment"
+         *            "filename"="model.tar.gz"
+         *            "Content-Length": "2347"
+         *            "Content-Type": "application/gzip"}}
          *
          * @param contentDisposition the value to set
          * @return this builder instance
@@ -221,17 +242,20 @@ public class UpdateModelCustomMetadatumArtifactRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the {@code etag} you
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the {@code etag} you
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
          * @param ifMatch the value to set
@@ -244,19 +268,18 @@ public class UpdateModelCustomMetadatumArtifactRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -268,7 +291,6 @@ public class UpdateModelCustomMetadatumArtifactRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateModelCustomMetadatumArtifactRequest o) {
@@ -285,14 +307,12 @@ public class UpdateModelCustomMetadatumArtifactRequest
         }
 
         /**
-         * Build the instance of UpdateModelCustomMetadatumArtifactRequest as configured by this
-         * builder
+         * Build the instance of UpdateModelCustomMetadatumArtifactRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateModelCustomMetadatumArtifactRequest
          */
@@ -305,7 +325,6 @@ public class UpdateModelCustomMetadatumArtifactRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -316,11 +335,9 @@ public class UpdateModelCustomMetadatumArtifactRequest
         }
 
         /**
-         * Build the instance of UpdateModelCustomMetadatumArtifactRequest as configured by this
-         * builder
+         * Build the instance of UpdateModelCustomMetadatumArtifactRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateModelCustomMetadatumArtifactRequest
@@ -336,15 +353,12 @@ public class UpdateModelCustomMetadatumArtifactRequest
             request.contentDisposition = contentDisposition;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateModelCustomMetadatumArtifactRequest(modelId, metadatumKeyName,
-            // contentLength, modelCustomMetadatumArtifact, opcRequestId, contentDisposition,
-            // ifMatch);
+            // new UpdateModelCustomMetadatumArtifactRequest(modelId, metadatumKeyName, contentLength, modelCustomMetadatumArtifact, opcRequestId, contentDisposition, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -360,7 +374,6 @@ public class UpdateModelCustomMetadatumArtifactRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

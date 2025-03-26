@@ -5,23 +5,20 @@
 package com.oracle.bmc.core.model;
 
 /**
- * These configuration details are used for dead peer detection (DPD). DPD periodically checks the
- * stability of the connection to the customer premises (CPE), and may be used to detect that the
- * link to the CPE has gone down. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * These configuration details are used for dead peer detection (DPD). DPD periodically checks the stability of the connection to the customer premises (CPE), and may be used to detect that the link to the CPE has gone down.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DpdConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DpdConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DpdConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dpdMode", "dpdTimeoutInSec"})
     public DpdConfig(DpdMode dpdMode, Integer dpdTimeoutInSec) {
@@ -34,7 +31,8 @@ public final class DpdConfig extends com.oracle.bmc.http.client.internal.Explici
     public static class Builder {
         /**
          * This option defines whether DPD can be initiated from the Oracle side of the connection.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
         private DpdMode dpdMode;
 
@@ -43,28 +41,25 @@ public final class DpdConfig extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param dpdMode the value to set
          * @return this builder
-         */
+         **/
         public Builder dpdMode(DpdMode dpdMode) {
             this.dpdMode = dpdMode;
             this.__explicitlySet__.add("dpdMode");
             return this;
         }
         /**
-         * DPD timeout in seconds. This sets the longest interval between CPE device health messages
-         * before the IPSec connection indicates it has lost contact with the CPE. The default is 20
-         * seconds.
-         */
+         * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
         private Integer dpdTimeoutInSec;
 
         /**
-         * DPD timeout in seconds. This sets the longest interval between CPE device health messages
-         * before the IPSec connection indicates it has lost contact with the CPE. The default is 20
-         * seconds.
+         * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
          *
          * @param dpdTimeoutInSec the value to set
          * @return this builder
-         */
+         **/
         public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
             this.dpdTimeoutInSec = dpdTimeoutInSec;
             this.__explicitlySet__.add("dpdTimeoutInSec");
@@ -94,7 +89,9 @@ public final class DpdConfig extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,8 +100,11 @@ public final class DpdConfig extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** This option defines whether DPD can be initiated from the Oracle side of the connection. */
-    public enum DpdMode implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * This option defines whether DPD can be initiated from the Oracle side of the connection.
+     *
+     **/
+    public enum DpdMode {
         InitiateAndRespond("INITIATE_AND_RESPOND"),
         RespondOnly("RESPOND_ONLY"),
         ;
@@ -136,7 +136,10 @@ public final class DpdConfig extends com.oracle.bmc.http.client.internal.Explici
             throw new IllegalArgumentException("Invalid DpdMode: " + key);
         }
     };
-    /** This option defines whether DPD can be initiated from the Oracle side of the connection. */
+    /**
+     * This option defines whether DPD can be initiated from the Oracle side of the connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
     private final DpdMode dpdMode;
 
@@ -144,26 +147,23 @@ public final class DpdConfig extends com.oracle.bmc.http.client.internal.Explici
      * This option defines whether DPD can be initiated from the Oracle side of the connection.
      *
      * @return the value
-     */
+     **/
     public DpdMode getDpdMode() {
         return dpdMode;
     }
 
     /**
-     * DPD timeout in seconds. This sets the longest interval between CPE device health messages
-     * before the IPSec connection indicates it has lost contact with the CPE. The default is 20
-     * seconds.
-     */
+     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
     private final Integer dpdTimeoutInSec;
 
     /**
-     * DPD timeout in seconds. This sets the longest interval between CPE device health messages
-     * before the IPSec connection indicates it has lost contact with the CPE. The default is 20
-     * seconds.
+     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
      *
      * @return the value
-     */
+     **/
     public Integer getDpdTimeoutInSec() {
         return dpdTimeoutInSec;
     }
@@ -175,7 +175,6 @@ public final class DpdConfig extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

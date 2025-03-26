@@ -5,22 +5,19 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The run progress details of a build run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The run progress details of a build run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BuildRunProgress.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BuildRunProgress
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BuildRunProgress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeStarted",
@@ -40,53 +37,48 @@ public final class BuildRunProgress
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The time the build run started. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
+         * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The time the build run started. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * The time the build run finished. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
+         * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The time the build run finished. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** Map of stage OCIDs to build pipeline stage run progress model. */
+        /**
+         * Map of stage OCIDs to build pipeline stage run progress model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStageRunProgress")
         private java.util.Map<String, BuildPipelineStageRunProgress> buildPipelineStageRunProgress;
 
         /**
          * Map of stage OCIDs to build pipeline stage run progress model.
-         *
          * @param buildPipelineStageRunProgress the value to set
          * @return this builder
-         */
+         **/
         public Builder buildPipelineStageRunProgress(
                 java.util.Map<String, BuildPipelineStageRunProgress>
                         buildPipelineStageRunProgress) {
@@ -125,7 +117,9 @@ public final class BuildRunProgress
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,49 +129,44 @@ public final class BuildRunProgress
     }
 
     /**
-     * The time the build run started. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The time the build run started. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * The time the build run finished. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The time the build run finished. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** Map of stage OCIDs to build pipeline stage run progress model. */
+    /**
+     * Map of stage OCIDs to build pipeline stage run progress model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStageRunProgress")
     private final java.util.Map<String, BuildPipelineStageRunProgress>
             buildPipelineStageRunProgress;
 
     /**
      * Map of stage OCIDs to build pipeline stage run progress model.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, BuildPipelineStageRunProgress> getBuildPipelineStageRunProgress() {
         return buildPipelineStageRunProgress;
     }
@@ -189,7 +178,6 @@ public final class BuildRunProgress
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

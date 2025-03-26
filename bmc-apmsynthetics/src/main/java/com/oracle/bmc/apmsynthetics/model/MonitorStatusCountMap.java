@@ -5,24 +5,24 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the monitor count per state. Example: {@code { "total" : 5, "enabled" : 3 , "disabled"
- * : 2, "invalid" : 0 }} <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the monitor count per state.
+ * Example: {@code { "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }}
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MonitorStatusCountMap.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MonitorStatusCountMap.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MonitorStatusCountMap
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"total", "enabled", "disabled", "invalid"})
     public MonitorStatusCountMap(
@@ -36,61 +36,65 @@ public final class MonitorStatusCountMap
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total number of monitors using the script. */
+        /**
+         * Total number of monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("total")
         private Integer total;
 
         /**
          * Total number of monitors using the script.
-         *
          * @param total the value to set
          * @return this builder
-         */
+         **/
         public Builder total(Integer total) {
             this.total = total;
             this.__explicitlySet__.add("total");
             return this;
         }
-        /** Number of enabled monitors using the script. */
+        /**
+         * Number of enabled monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabled")
         private Integer enabled;
 
         /**
          * Number of enabled monitors using the script.
-         *
          * @param enabled the value to set
          * @return this builder
-         */
+         **/
         public Builder enabled(Integer enabled) {
             this.enabled = enabled;
             this.__explicitlySet__.add("enabled");
             return this;
         }
-        /** Number of disabled monitors using the script. */
+        /**
+         * Number of disabled monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disabled")
         private Integer disabled;
 
         /**
          * Number of disabled monitors using the script.
-         *
          * @param disabled the value to set
          * @return this builder
-         */
+         **/
         public Builder disabled(Integer disabled) {
             this.disabled = disabled;
             this.__explicitlySet__.add("disabled");
             return this;
         }
-        /** Number of invalid monitors using the script. */
+        /**
+         * Number of invalid monitors using the script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invalid")
         private Integer invalid;
 
         /**
          * Number of invalid monitors using the script.
-         *
          * @param invalid the value to set
          * @return this builder
-         */
+         **/
         public Builder invalid(Integer invalid) {
             this.invalid = invalid;
             this.__explicitlySet__.add("invalid");
@@ -128,7 +132,9 @@ public final class MonitorStatusCountMap
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,54 +143,58 @@ public final class MonitorStatusCountMap
         return new Builder().copy(this);
     }
 
-    /** Total number of monitors using the script. */
+    /**
+     * Total number of monitors using the script.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("total")
     private final Integer total;
 
     /**
      * Total number of monitors using the script.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotal() {
         return total;
     }
 
-    /** Number of enabled monitors using the script. */
+    /**
+     * Number of enabled monitors using the script.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabled")
     private final Integer enabled;
 
     /**
      * Number of enabled monitors using the script.
-     *
      * @return the value
-     */
+     **/
     public Integer getEnabled() {
         return enabled;
     }
 
-    /** Number of disabled monitors using the script. */
+    /**
+     * Number of disabled monitors using the script.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("disabled")
     private final Integer disabled;
 
     /**
      * Number of disabled monitors using the script.
-     *
      * @return the value
-     */
+     **/
     public Integer getDisabled() {
         return disabled;
     }
 
-    /** Number of invalid monitors using the script. */
+    /**
+     * Number of invalid monitors using the script.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("invalid")
     private final Integer invalid;
 
     /**
      * Number of invalid monitors using the script.
-     *
      * @return the value
-     */
+     **/
     public Integer getInvalid() {
         return invalid;
     }
@@ -196,7 +206,6 @@ public final class MonitorStatusCountMap
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

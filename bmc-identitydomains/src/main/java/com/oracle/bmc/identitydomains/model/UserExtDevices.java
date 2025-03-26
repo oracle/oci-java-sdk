@@ -6,26 +6,29 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * A list of devices enrolled by the user.
- *
- * <p>*Added In:** 18.3.6
- *
- * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability: readOnly -
- * required: false - returned: request - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **Added In:** 18.3.6
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsCompositeKey: [value]
+ *  - multiValued: true
+ *  - mutability: readOnly
+ *  - required: false
+ *  - returned: request
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserExtDevices.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UserExtDevices
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UserExtDevices extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "value",
@@ -64,28 +67,39 @@ public final class UserExtDevices
     public static class Builder {
         /**
          * The user's device identifier.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: true - returned: always - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The user's device identifier.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: true - returned: always - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -93,26 +107,37 @@ public final class UserExtDevices
         }
         /**
          * The URI of the corresponding Device resource which belongs to user.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
 
         /**
          * The URI of the corresponding Device resource which belongs to user.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param ref the value to set
          * @return this builder
-         */
+         **/
         public Builder ref(String ref) {
             this.ref = ref;
             this.__explicitlySet__.add("ref");
@@ -120,26 +145,37 @@ public final class UserExtDevices
         }
         /**
          * A human readable name, primarily used for display purposes. READ-ONLY.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("display")
         private String display;
 
         /**
          * A human readable name, primarily used for display purposes. READ-ONLY.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param display the value to set
          * @return this builder
-         */
+         **/
         public Builder display(String display) {
             this.display = display;
             this.__explicitlySet__.add("display");
@@ -147,26 +183,37 @@ public final class UserExtDevices
         }
         /**
          * The device's status.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The device's status.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -174,26 +221,37 @@ public final class UserExtDevices
         }
         /**
          * The last sync time for device.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastSyncTime")
         private String lastSyncTime;
 
         /**
          * The last sync time for device.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param lastSyncTime the value to set
          * @return this builder
-         */
+         **/
         public Builder lastSyncTime(String lastSyncTime) {
             this.lastSyncTime = lastSyncTime;
             this.__explicitlySet__.add("lastSyncTime");
@@ -201,26 +259,37 @@ public final class UserExtDevices
         }
         /**
          * The device authentication factor type.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("factorType")
         private String factorType;
 
         /**
          * The device authentication factor type.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param factorType the value to set
          * @return this builder
-         */
+         **/
         public Builder factorType(String factorType) {
             this.factorType = factorType;
             this.__explicitlySet__.add("factorType");
@@ -228,26 +297,37 @@ public final class UserExtDevices
         }
         /**
          * The device authentication factor status.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("factorStatus")
         private String factorStatus;
 
         /**
          * The device authentication factor status.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param factorStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder factorStatus(String factorStatus) {
             this.factorStatus = factorStatus;
             this.__explicitlySet__.add("factorStatus");
@@ -255,26 +335,37 @@ public final class UserExtDevices
         }
         /**
          * The authentication method.
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationMethod")
         private String authenticationMethod;
 
         /**
          * The authentication method.
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param authenticationMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationMethod(String authenticationMethod) {
             this.authenticationMethod = authenticationMethod;
             this.__explicitlySet__.add("authenticationMethod");
@@ -282,26 +373,37 @@ public final class UserExtDevices
         }
         /**
          * The third-party factor vendor name.
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
         private String thirdPartyVendorName;
 
         /**
          * The third-party factor vendor name.
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param thirdPartyVendorName the value to set
          * @return this builder
-         */
+         **/
         public Builder thirdPartyVendorName(String thirdPartyVendorName) {
             this.thirdPartyVendorName = thirdPartyVendorName;
             this.__explicitlySet__.add("thirdPartyVendorName");
@@ -362,7 +464,9 @@ public final class UserExtDevices
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -373,225 +477,326 @@ public final class UserExtDevices
 
     /**
      * The user's device identifier.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: true - returned: always - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The user's device identifier.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: true - returned: always - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * The URI of the corresponding Device resource which belongs to user.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
 
     /**
      * The URI of the corresponding Device resource which belongs to user.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRef() {
         return ref;
     }
 
     /**
      * A human readable name, primarily used for display purposes. READ-ONLY.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("display")
     private final String display;
 
     /**
      * A human readable name, primarily used for display purposes. READ-ONLY.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDisplay() {
         return display;
     }
 
     /**
      * The device's status.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The device's status.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
     /**
      * The last sync time for device.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastSyncTime")
     private final String lastSyncTime;
 
     /**
      * The last sync time for device.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLastSyncTime() {
         return lastSyncTime;
     }
 
     /**
      * The device authentication factor type.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("factorType")
     private final String factorType;
 
     /**
      * The device authentication factor type.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getFactorType() {
         return factorType;
     }
 
     /**
      * The device authentication factor status.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("factorStatus")
     private final String factorStatus;
 
     /**
      * The device authentication factor status.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getFactorStatus() {
         return factorStatus;
     }
 
     /**
      * The authentication method.
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationMethod")
     private final String authenticationMethod;
 
     /**
      * The authentication method.
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAuthenticationMethod() {
         return authenticationMethod;
     }
 
     /**
      * The third-party factor vendor name.
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
     private final String thirdPartyVendorName;
 
     /**
      * The third-party factor vendor name.
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getThirdPartyVendorName() {
         return thirdPartyVendorName;
     }
@@ -603,7 +808,6 @@ public final class UserExtDevices
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

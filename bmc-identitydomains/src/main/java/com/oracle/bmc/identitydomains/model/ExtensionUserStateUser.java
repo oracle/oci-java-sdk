@@ -5,25 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines the attributes used to manage account passwords within a service provider.
- * The extension is typically applied to a User resource, but MAY be applied to other resources that
- * use passwords. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionUserStateUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionUserStateUser.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionUserStateUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lastSuccessfulLoginDate",
@@ -62,24 +59,37 @@ public final class ExtensionUserStateUser
     public static class Builder {
         /**
          * The last successful login date.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-         * required: false - returned: request - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - idcsAllowUpdatesInReadOnlyMode: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginDate")
         private String lastSuccessfulLoginDate;
 
         /**
          * The last successful login date.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-         * required: false - returned: request - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - idcsAllowUpdatesInReadOnlyMode: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param lastSuccessfulLoginDate the value to set
          * @return this builder
-         */
+         **/
         public Builder lastSuccessfulLoginDate(String lastSuccessfulLoginDate) {
             this.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
             this.__explicitlySet__.add("lastSuccessfulLoginDate");
@@ -87,24 +97,37 @@ public final class ExtensionUserStateUser
         }
         /**
          * The previous successful login date.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: request - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginDate")
         private String previousSuccessfulLoginDate;
 
         /**
          * The previous successful login date.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: request - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param previousSuccessfulLoginDate the value to set
          * @return this builder
-         */
+         **/
         public Builder previousSuccessfulLoginDate(String previousSuccessfulLoginDate) {
             this.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
             this.__explicitlySet__.add("previousSuccessfulLoginDate");
@@ -112,24 +135,37 @@ public final class ExtensionUserStateUser
         }
         /**
          * The last failed login date.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-         * required: false - returned: request - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsAllowUpdatesInReadOnlyMode: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastFailedLoginDate")
         private String lastFailedLoginDate;
 
         /**
          * The last failed login date.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-         * required: false - returned: request - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsAllowUpdatesInReadOnlyMode: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param lastFailedLoginDate the value to set
          * @return this builder
-         */
+         **/
         public Builder lastFailedLoginDate(String lastFailedLoginDate) {
             this.lastFailedLoginDate = lastFailedLoginDate;
             this.__explicitlySet__.add("lastFailedLoginDate");
@@ -137,26 +173,39 @@ public final class ExtensionUserStateUser
         }
         /**
          * The number of failed login attempts. The value is reset to 0 after a successful login.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
-         * request - type: integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsAllowUpdatesInReadOnlyMode: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
         private Integer loginAttempts;
 
         /**
          * The number of failed login attempts. The value is reset to 0 after a successful login.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-         * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
-         * request - type: integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsAllowUpdatesInReadOnlyMode: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param loginAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder loginAttempts(Integer loginAttempts) {
             this.loginAttempts = loginAttempts;
             this.__explicitlySet__.add("loginAttempts");
@@ -164,28 +213,39 @@ public final class ExtensionUserStateUser
         }
         /**
          * The number of failed recovery attempts. The value is reset to 0 after a successful login.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
-         * type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryAttempts")
         private Integer recoveryAttempts;
 
         /**
          * The number of failed recovery attempts. The value is reset to 0 after a successful login.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
-         * type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param recoveryAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder recoveryAttempts(Integer recoveryAttempts) {
             this.recoveryAttempts = recoveryAttempts;
             this.__explicitlySet__.add("recoveryAttempts");
@@ -193,26 +253,37 @@ public final class ExtensionUserStateUser
         }
         /**
          * The number of failed account recovery enrollment attempts.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryEnrollAttempts")
         private Integer recoveryEnrollAttempts;
 
         /**
          * The number of failed account recovery enrollment attempts.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param recoveryEnrollAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder recoveryEnrollAttempts(Integer recoveryEnrollAttempts) {
             this.recoveryEnrollAttempts = recoveryEnrollAttempts;
             this.__explicitlySet__.add("recoveryEnrollAttempts");
@@ -220,28 +291,41 @@ public final class ExtensionUserStateUser
         }
         /**
          * The maximum number of concurrent sessions for a user.
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsMaxValue: 999 - idcsMinValue: 1 -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsMaxValue: 999
+         *  - idcsMinValue: 1
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxConcurrentSessions")
         private Integer maxConcurrentSessions;
 
         /**
          * The maximum number of concurrent sessions for a user.
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsMaxValue: 999 - idcsMinValue: 1 -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsMaxValue: 999
+         *  - idcsMinValue: 1
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxConcurrentSessions the value to set
          * @return this builder
-         */
+         **/
         public Builder maxConcurrentSessions(Integer maxConcurrentSessions) {
             this.maxConcurrentSessions = maxConcurrentSessions;
             this.__explicitlySet__.add("maxConcurrentSessions");
@@ -320,7 +404,9 @@ public final class ExtensionUserStateUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -331,173 +417,260 @@ public final class ExtensionUserStateUser
 
     /**
      * The last successful login date.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
-     * false - returned: request - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - idcsAllowUpdatesInReadOnlyMode: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginDate")
     private final String lastSuccessfulLoginDate;
 
     /**
      * The last successful login date.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
-     * false - returned: request - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - idcsAllowUpdatesInReadOnlyMode: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLastSuccessfulLoginDate() {
         return lastSuccessfulLoginDate;
     }
 
     /**
      * The previous successful login date.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * request - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginDate")
     private final String previousSuccessfulLoginDate;
 
     /**
      * The previous successful login date.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * request - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPreviousSuccessfulLoginDate() {
         return previousSuccessfulLoginDate;
     }
 
     /**
      * The last failed login date.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
-     * false - returned: request - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsAllowUpdatesInReadOnlyMode: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastFailedLoginDate")
     private final String lastFailedLoginDate;
 
     /**
      * The last failed login date.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required:
-     * false - returned: request - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsAllowUpdatesInReadOnlyMode: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLastFailedLoginDate() {
         return lastFailedLoginDate;
     }
 
     /**
      * The number of failed login attempts. The value is reset to 0 after a successful login.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: request
-     * - type: integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsAllowUpdatesInReadOnlyMode: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
     private final Integer loginAttempts;
 
     /**
      * The number of failed login attempts. The value is reset to 0 after a successful login.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsAllowUpdatesInReadOnlyMode: true -
-     * multiValued: false - mutability: readOnly - idcsRequiresWriteForAccessFlows: true -
-     * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned: request
-     * - type: integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsAllowUpdatesInReadOnlyMode: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getLoginAttempts() {
         return loginAttempts;
     }
 
     /**
      * The number of failed recovery attempts. The value is reset to 0 after a successful login.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: integer
-     * - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryAttempts")
     private final Integer recoveryAttempts;
 
     /**
      * The number of failed recovery attempts. The value is reset to 0 after a successful login.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: integer
-     * - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getRecoveryAttempts() {
         return recoveryAttempts;
     }
 
     /**
      * The number of failed account recovery enrollment attempts.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryEnrollAttempts")
     private final Integer recoveryEnrollAttempts;
 
     /**
      * The number of failed account recovery enrollment attempts.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getRecoveryEnrollAttempts() {
         return recoveryEnrollAttempts;
     }
 
     /**
      * The maximum number of concurrent sessions for a user.
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsMaxValue: 999 - idcsMinValue: 1 -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsMaxValue: 999
+     *  - idcsMinValue: 1
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxConcurrentSessions")
     private final Integer maxConcurrentSessions;
 
     /**
      * The maximum number of concurrent sessions for a user.
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsMaxValue: 999 - idcsMinValue: 1 -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsMaxValue: 999
+     *  - idcsMinValue: 1
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxConcurrentSessions() {
         return maxConcurrentSessions;
     }
@@ -523,7 +696,6 @@ public final class ExtensionUserStateUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

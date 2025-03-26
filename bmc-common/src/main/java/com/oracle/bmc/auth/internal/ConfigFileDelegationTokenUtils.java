@@ -16,7 +16,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-/** This class allows users to load delegation token from the config file */
+/**
+ * This class allows users to load delegation token from the config file
+ */
 public class ConfigFileDelegationTokenUtils {
 
     private static final String OCI_DELEGATION_TOKEN_FILE_KEY = "delegation_token_file";
@@ -30,8 +32,8 @@ public class ConfigFileDelegationTokenUtils {
     }
 
     /**
-     * parses the config file and retrieves token file and returns the delegation token from the
-     * file
+     * parses the config file and retrieves token file and returns
+     * the delegation token from the file
      */
     public static String parseAndGetToken(ConfigFileReader.ConfigFile effectiveConfigFile)
             throws IOException {

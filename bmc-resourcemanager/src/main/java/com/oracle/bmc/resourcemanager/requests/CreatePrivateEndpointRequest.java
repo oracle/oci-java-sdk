@@ -6,21 +6,22 @@ package com.oracle.bmc.resourcemanager.requests;
 
 import com.oracle.bmc.resourcemanager.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreatePrivateEndpointExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreatePrivateEndpointRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreatePrivateEndpointRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class CreatePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails> {
 
-    /** Creation details for a private endpoint. */
+    /**
+     * Creation details for a private endpoint.
+     */
     private com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails
             createPrivateEndpointDetails;
 
-    /** Creation details for a private endpoint. */
+    /**
+     * Creation details for a private endpoint.
+     */
     public com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails
             getCreatePrivateEndpointDetails() {
         return createPrivateEndpointDetails;
@@ -28,31 +29,35 @@ public class CreatePrivateEndpointRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of retrying the same action. Retry tokens expire after 24 hours,
-     * but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected.
+     * server error without risk of retrying the same action. Retry tokens expire after
+     * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+     * if a resource has been deleted and purged from the system, then a retry of the original
+     * creation request may be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of retrying the same action. Retry tokens expire after 24 hours,
-     * but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected.
+     * server error without risk of retrying the same action. Retry tokens expire after
+     * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+     * if a resource has been deleted and purged from the system, then a retry of the original
+     * creation request may be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -60,7 +65,6 @@ public class CreatePrivateEndpointRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -73,16 +77,18 @@ public class CreatePrivateEndpointRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreatePrivateEndpointRequest,
                     com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Creation details for a private endpoint. */
+        /**
+         * Creation details for a private endpoint.
+         */
         private com.oracle.bmc.resourcemanager.model.CreatePrivateEndpointDetails
                 createPrivateEndpointDetails = null;
 
         /**
          * Creation details for a private endpoint.
-         *
          * @param createPrivateEndpointDetails the value to set
          * @return this builder instance
          */
@@ -96,6 +102,7 @@ public class CreatePrivateEndpointRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -113,18 +120,19 @@ public class CreatePrivateEndpointRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of retrying the same action. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if
-         * a resource has been deleted and purged from the system, then a retry of the original
+         * server error without risk of retrying the same action. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request may be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of retrying the same action. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if
-         * a resource has been deleted and purged from the system, then a retry of the original
+         * server error without risk of retrying the same action. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
          * creation request may be rejected.
          *
          * @param opcRetryToken the value to set
@@ -137,19 +145,18 @@ public class CreatePrivateEndpointRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -161,7 +168,6 @@ public class CreatePrivateEndpointRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreatePrivateEndpointRequest o) {
@@ -176,11 +182,10 @@ public class CreatePrivateEndpointRequest
         /**
          * Build the instance of CreatePrivateEndpointRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreatePrivateEndpointRequest
          */
@@ -193,7 +198,6 @@ public class CreatePrivateEndpointRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -207,8 +211,7 @@ public class CreatePrivateEndpointRequest
         /**
          * Build the instance of CreatePrivateEndpointRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreatePrivateEndpointRequest
@@ -219,14 +222,12 @@ public class CreatePrivateEndpointRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreatePrivateEndpointRequest(createPrivateEndpointDetails, opcRequestId,
-            // opcRetryToken);
+            // new CreatePrivateEndpointRequest(createPrivateEndpointDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -238,7 +239,6 @@ public class CreatePrivateEndpointRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

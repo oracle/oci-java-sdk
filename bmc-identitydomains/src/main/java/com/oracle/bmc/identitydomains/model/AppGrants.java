@@ -5,21 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Grants assigned to the app <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Grants assigned to the app
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AppGrants.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AppGrants extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AppGrants extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "value",
@@ -46,24 +44,35 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
     public static class Builder {
         /**
          * Grant identifier
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Grant identifier
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -71,22 +80,33 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Grant URI
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
 
         /**
          * Grant URI
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param ref the value to set
          * @return this builder
-         */
+         **/
         public Builder ref(String ref) {
             this.ref = ref;
             this.__explicitlySet__.add("ref");
@@ -94,24 +114,35 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Grantee identifier
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("granteeId")
         private String granteeId;
 
         /**
          * Grantee identifier
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param granteeId the value to set
          * @return this builder
-         */
+         **/
         public Builder granteeId(String granteeId) {
             this.granteeId = granteeId;
             this.__explicitlySet__.add("granteeId");
@@ -119,61 +150,79 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Grantee resource type. Allowed values are User and Group.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("granteeType")
         private GranteeType granteeType;
 
         /**
          * Grantee resource type. Allowed values are User and Group.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param granteeType the value to set
          * @return this builder
-         */
+         **/
         public Builder granteeType(GranteeType granteeType) {
             this.granteeType = granteeType;
             this.__explicitlySet__.add("granteeType");
             return this;
         }
         /**
-         * Each value of grantMechanism indicates how (or by what component) some App (or
-         * App-Entitlement) was granted. A customer or the UI should use only grantMechanism values
-         * that start with 'ADMINISTRATOR': - 'ADMINISTRATOR_TO_USER' is for a direct grant to a
-         * specific User. - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which
-         * results in indirect grants to Users who are members of that Group. -
-         * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App. The grantee (client) App gains
-         * access to the granted (server) App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+         * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+         *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+         *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+         *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantMechanism")
         private GrantMechanism grantMechanism;
 
         /**
-         * Each value of grantMechanism indicates how (or by what component) some App (or
-         * App-Entitlement) was granted. A customer or the UI should use only grantMechanism values
-         * that start with 'ADMINISTRATOR': - 'ADMINISTRATOR_TO_USER' is for a direct grant to a
-         * specific User. - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which
-         * results in indirect grants to Users who are members of that Group. -
-         * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App. The grantee (client) App gains
-         * access to the granted (server) App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+         * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+         *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+         *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+         *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param grantMechanism the value to set
          * @return this builder
-         */
+         **/
         public Builder grantMechanism(GrantMechanism grantMechanism) {
             this.grantMechanism = grantMechanism;
             this.__explicitlySet__.add("grantMechanism");
@@ -218,7 +267,9 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -229,80 +280,124 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Grant identifier
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Grant identifier
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * Grant URI
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
 
     /**
      * Grant URI
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRef() {
         return ref;
     }
 
     /**
      * Grantee identifier
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("granteeId")
     private final String granteeId;
 
     /**
      * Grantee identifier
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getGranteeId() {
         return granteeId;
     }
 
     /**
      * Grantee resource type. Allowed values are User and Group.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum GranteeType implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum GranteeType {
         User("User"),
         Group("Group"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -343,37 +438,56 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
     };
     /**
      * Grantee resource type. Allowed values are User and Group.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("granteeType")
     private final GranteeType granteeType;
 
     /**
      * Grantee resource type. Allowed values are User and Group.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public GranteeType getGranteeType() {
         return granteeType;
     }
 
     /**
-     * Each value of grantMechanism indicates how (or by what component) some App (or
-     * App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that
-     * start with 'ADMINISTRATOR': - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific
-     * User. - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in
-     * indirect grants to Users who are members of that Group. - 'ADMINISTRATOR_TO_APP' is for a
-     * grant to a specific App. The grantee (client) App gains access to the granted (server) App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum GrantMechanism implements com.oracle.bmc.http.internal.BmcEnum {
+     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+     *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+     *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum GrantMechanism {
         ImportApproleMembers("IMPORT_APPROLE_MEMBERS"),
         AdministratorToUser("ADMINISTRATOR_TO_USER"),
         AdministratorToGroup("ADMINISTRATOR_TO_GROUP"),
@@ -384,8 +498,8 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
         GroupMembership("GROUP_MEMBERSHIP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -425,32 +539,43 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
         }
     };
     /**
-     * Each value of grantMechanism indicates how (or by what component) some App (or
-     * App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that
-     * start with 'ADMINISTRATOR': - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific
-     * User. - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in
-     * indirect grants to Users who are members of that Group. - 'ADMINISTRATOR_TO_APP' is for a
-     * grant to a specific App. The grantee (client) App gains access to the granted (server) App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+     *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+     *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantMechanism")
     private final GrantMechanism grantMechanism;
 
     /**
-     * Each value of grantMechanism indicates how (or by what component) some App (or
-     * App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that
-     * start with 'ADMINISTRATOR': - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific
-     * User. - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in
-     * indirect grants to Users who are members of that Group. - 'ADMINISTRATOR_TO_APP' is for a
-     * grant to a specific App. The grantee (client) App gains access to the granted (server) App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+     *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+     *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public GrantMechanism getGrantMechanism() {
         return grantMechanism;
     }
@@ -462,7 +587,6 @@ public final class AppGrants extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

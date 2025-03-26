@@ -6,104 +6,129 @@ package com.oracle.bmc.jmsjavadownloads.requests;
 
 import com.oracle.bmc.jmsjavadownloads.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaLicenseAcceptanceRecordsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListJavaLicenseAcceptanceRecordsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaLicenseAcceptanceRecordsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJavaLicenseAcceptanceRecordsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 public class ListJavaLicenseAcceptanceRecordsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * A filter to return only resources that match the user principal detail. The search string can
-     * be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
-     * This object is used as a response datatype for the {@code createdBy} and {@code
-     * lastUpdatedBy} fields in applicable resource.
+     * A filter to return only resources that match the user principal detail.
+     * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
+     * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
+     *
      */
     private String searchByUser;
 
     /**
-     * A filter to return only resources that match the user principal detail. The search string can
-     * be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
-     * This object is used as a response datatype for the {@code createdBy} and {@code
-     * lastUpdatedBy} fields in applicable resource.
+     * A filter to return only resources that match the user principal detail.
+     * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
+     * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
+     *
      */
     public String getSearchByUser() {
         return searchByUser;
     }
-    /** Unique Java license acceptance record identifier. */
+    /**
+     * Unique Java license acceptance record identifier.
+     */
     private String id;
 
-    /** Unique Java license acceptance record identifier. */
+    /**
+     * Unique Java license acceptance record identifier.
+     */
     public String getId() {
         return id;
     }
-    /** Unique Java license type. */
+    /**
+     * Unique Java license type.
+     */
     private com.oracle.bmc.jmsjavadownloads.model.LicenseType licenseType;
 
-    /** Unique Java license type. */
+    /**
+     * Unique Java license type.
+     */
     public com.oracle.bmc.jmsjavadownloads.model.LicenseType getLicenseType() {
         return licenseType;
     }
-    /** The status of license acceptance. */
+    /**
+     * The status of license acceptance.
+     */
     private com.oracle.bmc.jmsjavadownloads.model.LicenseAcceptanceStatus status;
 
-    /** The status of license acceptance. */
+    /**
+     * The status of license acceptance.
+     */
     public com.oracle.bmc.jmsjavadownloads.model.LicenseAcceptanceStatus getStatus() {
         return status;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.jmsjavadownloads.model.SortOrder sortOrder;
 
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jmsjavadownloads.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. If no value is specified, _timeAccepted_ is the default. */
+    /**
+     * The field to sort by. If no value is specified, _timeAccepted_ is the default.
+     *
+     */
     private com.oracle.bmc.jmsjavadownloads.model.LicenseAcceptanceSortBy sortBy;
 
-    /** The field to sort by. If no value is specified, _timeAccepted_ is the default. */
+    /**
+     * The field to sort by. If no value is specified, _timeAccepted_ is the default.
+     *
+     */
     public com.oracle.bmc.jmsjavadownloads.model.LicenseAcceptanceSortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -111,18 +136,18 @@ public class ListJavaLicenseAcceptanceRecordsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListJavaLicenseAcceptanceRecordsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -133,18 +158,17 @@ public class ListJavaLicenseAcceptanceRecordsRequest
         }
 
         /**
-         * A filter to return only resources that match the user principal detail. The search string
-         * can be any of the property values from the {@link #principal(PrincipalRequest) principal}
-         * object. This object is used as a response datatype for the {@code createdBy} and {@code
-         * lastUpdatedBy} fields in applicable resource.
+         * A filter to return only resources that match the user principal detail.
+         * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
+         * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
+         *
          */
         private String searchByUser = null;
 
         /**
-         * A filter to return only resources that match the user principal detail. The search string
-         * can be any of the property values from the {@link #principal(PrincipalRequest) principal}
-         * object. This object is used as a response datatype for the {@code createdBy} and {@code
-         * lastUpdatedBy} fields in applicable resource.
+         * A filter to return only resources that match the user principal detail.
+         * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
+         * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
          *
          * @param searchByUser the value to set
          * @return this builder instance
@@ -154,12 +178,13 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             return this;
         }
 
-        /** Unique Java license acceptance record identifier. */
+        /**
+         * Unique Java license acceptance record identifier.
+         */
         private String id = null;
 
         /**
          * Unique Java license acceptance record identifier.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -168,12 +193,13 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             return this;
         }
 
-        /** Unique Java license type. */
+        /**
+         * Unique Java license type.
+         */
         private com.oracle.bmc.jmsjavadownloads.model.LicenseType licenseType = null;
 
         /**
          * Unique Java license type.
-         *
          * @param licenseType the value to set
          * @return this builder instance
          */
@@ -182,12 +208,13 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             return this;
         }
 
-        /** The status of license acceptance. */
+        /**
+         * The status of license acceptance.
+         */
         private com.oracle.bmc.jmsjavadownloads.model.LicenseAcceptanceStatus status = null;
 
         /**
          * The status of license acceptance.
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -197,12 +224,13 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -212,15 +240,12 @@ public class ListJavaLicenseAcceptanceRecordsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -229,12 +254,13 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             return this;
         }
 
-        /** The sort order, either 'asc' or 'desc'. */
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jmsjavadownloads.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -243,7 +269,10 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             return this;
         }
 
-        /** The field to sort by. If no value is specified, _timeAccepted_ is the default. */
+        /**
+         * The field to sort by. If no value is specified, _timeAccepted_ is the default.
+         *
+         */
         private com.oracle.bmc.jmsjavadownloads.model.LicenseAcceptanceSortBy sortBy = null;
 
         /**
@@ -258,12 +287,13 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -274,19 +304,18 @@ public class ListJavaLicenseAcceptanceRecordsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -298,7 +327,6 @@ public class ListJavaLicenseAcceptanceRecordsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListJavaLicenseAcceptanceRecordsRequest o) {
@@ -318,14 +346,12 @@ public class ListJavaLicenseAcceptanceRecordsRequest
         }
 
         /**
-         * Build the instance of ListJavaLicenseAcceptanceRecordsRequest as configured by this
-         * builder
+         * Build the instance of ListJavaLicenseAcceptanceRecordsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListJavaLicenseAcceptanceRecordsRequest
          */
@@ -337,11 +363,9 @@ public class ListJavaLicenseAcceptanceRecordsRequest
         }
 
         /**
-         * Build the instance of ListJavaLicenseAcceptanceRecordsRequest as configured by this
-         * builder
+         * Build the instance of ListJavaLicenseAcceptanceRecordsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListJavaLicenseAcceptanceRecordsRequest
@@ -360,14 +384,12 @@ public class ListJavaLicenseAcceptanceRecordsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJavaLicenseAcceptanceRecordsRequest(compartmentId, searchByUser, id,
-            // licenseType, status, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListJavaLicenseAcceptanceRecordsRequest(compartmentId, searchByUser, id, licenseType, status, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -386,7 +408,6 @@ public class ListJavaLicenseAcceptanceRecordsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

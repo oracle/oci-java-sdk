@@ -6,9 +6,12 @@ package com.oracle.bmc.psql.responses;
 
 import com.oracle.bmc.psql.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For pagination of a list of items. */
+    /**
+     * For pagination of a list of items.
+     *
+     */
     private String opcNextPage;
 
     /**
@@ -21,14 +24,15 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned {@code WorkRequestLogEntryCollection} instance. */
+    /**
+     * The returned WorkRequestLogEntryCollection instance.
+     */
     private com.oracle.bmc.psql.model.WorkRequestLogEntryCollection workRequestLogEntryCollection;
 
     /**
-     * The returned {@code WorkRequestLogEntryCollection} instance.
-     *
+     * The returned WorkRequestLogEntryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.psql.model.WorkRequestLogEntryCollection
@@ -58,7 +63,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListWorkRequestLogsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.psql.model.WorkRequestLogEntryCollection workRequestLogEntryCollection) {
@@ -68,25 +73,25 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         this.workRequestLogEntryCollection = workRequestLogEntryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListWorkRequestLogsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For pagination of a list of items. */
+        /**
+         * For pagination of a list of items.
+         *
+         */
         private String opcNextPage;
 
         /**
@@ -101,14 +106,15 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,13 +124,14 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code WorkRequestLogEntryCollection} instance. */
+        /**
+         * The returned WorkRequestLogEntryCollection instance.
+         */
         private com.oracle.bmc.psql.model.WorkRequestLogEntryCollection
                 workRequestLogEntryCollection;
 
         /**
-         * The returned {@code WorkRequestLogEntryCollection} instance.
-         *
+         * The returned WorkRequestLogEntryCollection instance.
          * @param workRequestLogEntryCollection the value to set
          * @return this builder
          */
@@ -137,10 +144,8 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListWorkRequestLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -153,10 +158,8 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListWorkRequestLogsResponse build() {
             return new ListWorkRequestLogsResponse(
                     __httpStatusCode__,
@@ -169,7 +172,6 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

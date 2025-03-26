@@ -5,40 +5,43 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Object that defines the registration profile. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Object that defines the registration profile.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "profileType",
-        defaultImpl = Profile.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "profileType",
+    defaultImpl = Profile.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = WindowsStandaloneProfile.class,
-            name = "WINDOWS_STANDALONE"),
+        value = WindowsStandaloneProfile.class,
+        name = "WINDOWS_STANDALONE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LifecycleProfile.class,
-            name = "LIFECYCLE"),
+        value = LifecycleProfile.class,
+        name = "LIFECYCLE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = SoftwareSourceProfile.class,
-            name = "SOFTWARESOURCE"),
+        value = SoftwareSourceProfile.class,
+        name = "SOFTWARESOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GroupProfile.class, name = "GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = StationProfile.class,
-            name = "STATION")
+        value = StationProfile.class,
+        name = "STATION"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -101,176 +104,167 @@ public class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * registration profile.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * registration profile.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the registration profile.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the registration profile.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** A user-friendly name for the profile. */
+    /**
+     * A user-friendly name for the profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name for the profile.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description of the registration profile. */
+    /**
+     * The description of the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the registration profile.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * management station to associate with an instance once registered. Management stations are
-     * only used by non-OCI instances.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+     * instance once registered. Management stations are only used by non-OCI instances.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * management station to associate with an instance once registered. Management stations are
-     * only used by non-OCI instances.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+     * instance once registered. Management stations are only used by non-OCI instances.
      *
      * @return the value
-     */
+     **/
     public String getManagementStationId() {
         return managementStationId;
     }
 
-    /** The vendor of the operating system for the instance. */
+    /**
+     * The vendor of the operating system for the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
      * The vendor of the operating system for the instance.
-     *
      * @return the value
-     */
+     **/
     public VendorName getVendorName() {
         return vendorName;
     }
 
-    /** The operating system family. */
+    /**
+     * The operating system family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * The operating system family.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** The architecture type. */
+    /**
+     * The architecture type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchType archType;
 
     /**
      * The architecture type.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchType() {
         return archType;
     }
 
     /**
-     * The time the registration profile was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the registration profile was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the registration profile was last modified (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The time the registration profile was last modified (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
 
     /**
-     * The version of the profile. The version is automatically incremented each time the profiled
-     * is edited.
-     */
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
     private final String profileVersion;
 
     /**
-     * The version of the profile. The version is automatically incremented each time the profiled
-     * is edited.
-     *
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
      * @return the value
-     */
+     **/
     public String getProfileVersion() {
         return profileVersion;
     }
 
-    /** The current state of the registration profile. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the registration profile.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -280,8 +274,8 @@ public class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -320,29 +314,32 @@ public class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /** The current state of the registration profile. */
+    /**
+     * The current state of the registration profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the registration profile.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The type of instance to register. */
-    public enum RegistrationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of instance to register.
+     **/
+    public enum RegistrationType {
         OciLinux("OCI_LINUX"),
         NonOciLinux("NON_OCI_LINUX"),
         OciWindows("OCI_WINDOWS"),
         AutonomousLinux("AUTONOMOUS_LINUX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -381,112 +378,106 @@ public class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /** The type of instance to register. */
+    /**
+     * The type of instance to register.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
     private final RegistrationType registrationType;
 
     /**
      * The type of instance to register.
-     *
      * @return the value
-     */
+     **/
     public RegistrationType getRegistrationType() {
         return registrationType;
     }
 
     /**
-     * Indicates if the profile is set as the default. There is exactly one default profile for a
-     * specified architecture, OS family, registration type, and vendor. When registering an
-     * instance with the corresonding characteristics, the default profile is used, unless another
-     * profile is specified.
-     */
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
     private final Boolean isDefaultProfile;
 
     /**
-     * Indicates if the profile is set as the default. There is exactly one default profile for a
-     * specified architecture, OS family, registration type, and vendor. When registering an
-     * instance with the corresonding characteristics, the default profile is used, unless another
-     * profile is specified.
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDefaultProfile() {
         return isDefaultProfile;
     }
 
     /**
-     * Indicates if the profile was created by the service. OS Management Hub provides a limited set
-     * of standardized profiles that can be used to register Autonomous Linux or Windows instances.
-     */
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isServiceProvidedProfile")
     private final Boolean isServiceProvidedProfile;
 
     /**
-     * Indicates if the profile was created by the service. OS Management Hub provides a limited set
-     * of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsServiceProvidedProfile() {
         return isServiceProvidedProfile;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -498,7 +489,6 @@ public class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

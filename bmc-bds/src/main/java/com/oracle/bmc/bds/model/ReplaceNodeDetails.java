@@ -5,23 +5,21 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the node to be replaced. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The information about the node to be replaced.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ReplaceNodeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ReplaceNodeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ReplaceNodeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ReplaceNodeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "nodeHostName",
@@ -42,65 +40,63 @@ public final class ReplaceNodeDetails
     public static class Builder {
         /**
          * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeHostName")
         private String nodeHostName;
 
         /**
          * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
-         *
          * @param nodeHostName the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeHostName(String nodeHostName) {
             this.nodeHostName = nodeHostName;
             this.__explicitlySet__.add("nodeHostName");
             return this;
         }
-        /** The id of the nodeBackup to use for replacing the node. */
+        /**
+         * The id of the nodeBackup to use for replacing the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
         private String nodeBackupId;
 
         /**
          * The id of the nodeBackup to use for replacing the node.
-         *
          * @param nodeBackupId the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeBackupId(String nodeBackupId) {
             this.nodeBackupId = nodeBackupId;
             this.__explicitlySet__.add("nodeBackupId");
             return this;
         }
-        /** Base-64 encoded password for the cluster admin user. */
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
-         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
         /**
-         * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace
-         * the node with the shape of current node.
-         */
+         * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace
-         * the node with the shape of current node.
-         *
+         * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -141,7 +137,9 @@ public final class ReplaceNodeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,58 +148,58 @@ public final class ReplaceNodeDetails
         return new Builder().copy(this);
     }
 
-    /** Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types */
+    /**
+     * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeHostName")
     private final String nodeHostName;
 
     /**
      * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
-     *
      * @return the value
-     */
+     **/
     public String getNodeHostName() {
         return nodeHostName;
     }
 
-    /** The id of the nodeBackup to use for replacing the node. */
+    /**
+     * The id of the nodeBackup to use for replacing the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
     private final String nodeBackupId;
 
     /**
      * The id of the nodeBackup to use for replacing the node.
-     *
      * @return the value
-     */
+     **/
     public String getNodeBackupId() {
         return nodeBackupId;
     }
 
-    /** Base-64 encoded password for the cluster admin user. */
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded password for the cluster admin user.
-     *
      * @return the value
-     */
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
 
     /**
-     * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the
-     * node with the shape of current node.
-     */
+     * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the
-     * node with the shape of current node.
-     *
+     * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
@@ -213,7 +211,6 @@ public final class ReplaceNodeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

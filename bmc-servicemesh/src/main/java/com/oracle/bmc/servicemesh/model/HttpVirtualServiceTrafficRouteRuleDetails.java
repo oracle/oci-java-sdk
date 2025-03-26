@@ -5,25 +5,25 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Rule for routing incoming Virtual Service traffic with HTTP protocol <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * Rule for routing incoming Virtual Service traffic with HTTP protocol
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HttpVirtualServiceTrafficRouteRuleDetails.Builder.class)
+    builder = HttpVirtualServiceTrafficRouteRuleDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HttpVirtualServiceTrafficRouteRuleDetails
         extends VirtualServiceTrafficRouteRuleDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -37,75 +37,77 @@ public final class HttpVirtualServiceTrafficRouteRuleDetails
             this.__explicitlySet__.add("destinations");
             return this;
         }
-        /** Route to match */
+        /**
+         * Route to match
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Route to match
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** Match type for the route */
+        /**
+         * Match type for the route
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathType")
         private PathType pathType;
 
         /**
          * Match type for the route
-         *
          * @param pathType the value to set
          * @return this builder
-         */
+         **/
         public Builder pathType(PathType pathType) {
             this.pathType = pathType;
             this.__explicitlySet__.add("pathType");
             return this;
         }
         /**
-         * If true, the rule will check that the content-type header has a application/grpc or one
-         * of the various application/grpc+ values.
-         */
+         * If true, the rule will check that the content-type header has a application/grpc
+         * or one of the various application/grpc+ values.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGrpc")
         private Boolean isGrpc;
 
         /**
-         * If true, the rule will check that the content-type header has a application/grpc or one
-         * of the various application/grpc+ values.
+         * If true, the rule will check that the content-type header has a application/grpc
+         * or one of the various application/grpc+ values.
          *
          * @param isGrpc the value to set
          * @return this builder
-         */
+         **/
         public Builder isGrpc(Boolean isGrpc) {
             this.isGrpc = isGrpc;
             this.__explicitlySet__.add("isGrpc");
             return this;
         }
         /**
-         * The maximum duration in milliseconds for the target service to respond to a request. If
-         * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP
-         * based route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero)
-         * indicates that the timeout is disabled. For streaming responses from the target service,
-         * consider either keeping the timeout disabled or set a sufficiently high value.
-         */
+         * The maximum duration in milliseconds for the target service to respond to a request.
+         * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+         * The value 0 (zero) indicates that the timeout is disabled.
+         * For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestTimeoutInMs")
         private Long requestTimeoutInMs;
 
         /**
-         * The maximum duration in milliseconds for the target service to respond to a request. If
-         * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP
-         * based route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero)
-         * indicates that the timeout is disabled. For streaming responses from the target service,
-         * consider either keeping the timeout disabled or set a sufficiently high value.
+         * The maximum duration in milliseconds for the target service to respond to a request.
+         * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+         * The value 0 (zero) indicates that the timeout is disabled.
+         * For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
          *
          * @param requestTimeoutInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder requestTimeoutInMs(Long requestTimeoutInMs) {
             this.requestTimeoutInMs = requestTimeoutInMs;
             this.__explicitlySet__.add("requestTimeoutInMs");
@@ -150,7 +152,9 @@ public final class HttpVirtualServiceTrafficRouteRuleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,21 +177,24 @@ public final class HttpVirtualServiceTrafficRouteRuleDetails
         this.requestTimeoutInMs = requestTimeoutInMs;
     }
 
-    /** Route to match */
+    /**
+     * Route to match
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Route to match
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** Match type for the route */
-    public enum PathType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Match type for the route
+     **/
+    public enum PathType {
         Prefix("PREFIX"),
         ;
 
@@ -218,55 +225,56 @@ public final class HttpVirtualServiceTrafficRouteRuleDetails
             throw new IllegalArgumentException("Invalid PathType: " + key);
         }
     };
-    /** Match type for the route */
+    /**
+     * Match type for the route
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathType")
     private final PathType pathType;
 
     /**
      * Match type for the route
-     *
      * @return the value
-     */
+     **/
     public PathType getPathType() {
         return pathType;
     }
 
     /**
-     * If true, the rule will check that the content-type header has a application/grpc or one of
-     * the various application/grpc+ values.
-     */
+     * If true, the rule will check that the content-type header has a application/grpc
+     * or one of the various application/grpc+ values.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGrpc")
     private final Boolean isGrpc;
 
     /**
-     * If true, the rule will check that the content-type header has a application/grpc or one of
-     * the various application/grpc+ values.
+     * If true, the rule will check that the content-type header has a application/grpc
+     * or one of the various application/grpc+ values.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsGrpc() {
         return isGrpc;
     }
 
     /**
-     * The maximum duration in milliseconds for the target service to respond to a request. If
-     * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based
-     * route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero) indicates
-     * that the timeout is disabled. For streaming responses from the target service, consider
-     * either keeping the timeout disabled or set a sufficiently high value.
-     */
+     * The maximum duration in milliseconds for the target service to respond to a request.
+     * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+     * The value 0 (zero) indicates that the timeout is disabled.
+     * For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestTimeoutInMs")
     private final Long requestTimeoutInMs;
 
     /**
-     * The maximum duration in milliseconds for the target service to respond to a request. If
-     * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based
-     * route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero) indicates
-     * that the timeout is disabled. For streaming responses from the target service, consider
-     * either keeping the timeout disabled or set a sufficiently high value.
+     * The maximum duration in milliseconds for the target service to respond to a request.
+     * If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+     * The value 0 (zero) indicates that the timeout is disabled.
+     * For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
      *
      * @return the value
-     */
+     **/
     public Long getRequestTimeoutInMs() {
         return requestTimeoutInMs;
     }
@@ -278,7 +286,6 @@ public final class HttpVirtualServiceTrafficRouteRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,9 +6,12 @@ package com.oracle.bmc.operatoraccesscontrol.responses;
 
 import com.oracle.bmc.operatoraccesscontrol.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,13 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      * @return the value
      */
@@ -37,14 +39,15 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -52,13 +55,14 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned {@code OperatorControlAssignment} instance. */
+    /**
+     * The returned OperatorControlAssignment instance.
+     */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
             operatorControlAssignment;
 
     /**
-     * The returned {@code OperatorControlAssignment} instance.
-     *
+     * The returned OperatorControlAssignment instance.
      * @return the value
      */
     public com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
@@ -76,7 +80,7 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
     })
     private CreateOperatorControlAssignmentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -89,26 +93,25 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
         this.operatorControlAssignment = operatorControlAssignment;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateOperatorControlAssignmentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -123,14 +126,13 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -141,14 +143,15 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -158,13 +161,14 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned {@code OperatorControlAssignment} instance. */
+        /**
+         * The returned OperatorControlAssignment instance.
+         */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
                 operatorControlAssignment;
 
         /**
-         * The returned {@code OperatorControlAssignment} instance.
-         *
+         * The returned OperatorControlAssignment instance.
          * @param operatorControlAssignment the value to set
          * @return this builder
          */
@@ -177,10 +181,8 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateOperatorControlAssignmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -194,10 +196,8 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateOperatorControlAssignmentResponse build() {
             return new CreateOperatorControlAssignmentResponse(
                     __httpStatusCode__,
@@ -211,7 +211,6 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

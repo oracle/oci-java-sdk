@@ -6,34 +6,47 @@ package com.oracle.bmc.onesubscription.requests;
 
 import com.oracle.bmc.onesubscription.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListInvoicelineComputedUsagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListInvoicelineComputedUsagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListInvoicelineComputedUsagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInvoicelineComputedUsagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListInvoicelineComputedUsagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Invoice Line Identifier - Primary Key SPM */
+    /**
+     * Invoice Line Identifier - Primary Key SPM
+     *
+     */
     private String invoiceLineId;
 
-    /** Invoice Line Identifier - Primary Key SPM */
+    /**
+     * Invoice Line Identifier - Primary Key SPM
+     *
+     */
     public String getInvoiceLineId() {
         return invoiceLineId;
     }
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -66,21 +79,24 @@ public class ListInvoicelineComputedUsagesRequest
         }
     };
 
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
-     * sortOrder}).
+     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code sortOrder}).
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
-     * sortOrder}).
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code sortOrder}).
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         MeteredOnDate("meteredOnDate"),
         ;
@@ -114,58 +130,70 @@ public class ListInvoicelineComputedUsagesRequest
     };
 
     /**
-     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
-     * sortOrder}).
+     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code sortOrder}).
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: '500'
      *
-     * <p>Example: '500'
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: '500'
      *
-     * <p>Example: '500'
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the 'opc-next-page' response header from the previous "List" call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the 'opc-next-page' response header from the previous "List" call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs to return only the information
+     * (fields) required by the client. This parameter is used to control what fields to
+     * return.
+     *
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs to return only the information
+     * (fields) required by the client. This parameter is used to control what fields to
+     * return.
+     *
      */
     public java.util.List<String> getFields() {
         return fields;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -174,15 +202,17 @@ public class ListInvoicelineComputedUsagesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListInvoicelineComputedUsagesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the root compartment. */
+        /**
+         * The OCID of the root compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -191,7 +221,10 @@ public class ListInvoicelineComputedUsagesRequest
             return this;
         }
 
-        /** Invoice Line Identifier - Primary Key SPM */
+        /**
+         * Invoice Line Identifier - Primary Key SPM
+         *
+         */
         private String invoiceLineId = null;
 
         /**
@@ -205,7 +238,10 @@ public class ListInvoicelineComputedUsagesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+        /**
+         * The sort order to use, either ascending ('ASC') or descending ('DESC').
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -220,14 +256,13 @@ public class ListInvoicelineComputedUsagesRequest
         }
 
         /**
-         * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
-         * sortOrder}).
+         * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code sortOrder}).
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
-         * sortOrder}).
+         * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code sortOrder}).
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -239,15 +274,16 @@ public class ListInvoicelineComputedUsagesRequest
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+         * <p>
+         * Example: '500'
          *
-         * <p>Example: '500'
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         *
-         * <p>Example: '500'
+         * <p>
+         * Example: '500'
          *
          * @param limit the value to set
          * @return this builder instance
@@ -257,7 +293,10 @@ public class ListInvoicelineComputedUsagesRequest
             return this;
         }
 
-        /** The value of the 'opc-next-page' response header from the previous "List" call. */
+        /**
+         * The value of the 'opc-next-page' response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -272,16 +311,19 @@ public class ListInvoicelineComputedUsagesRequest
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
+         *
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -292,9 +334,10 @@ public class ListInvoicelineComputedUsagesRequest
         }
 
         /**
-         * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs to return only the information (fields) required by the client. This
-         * parameter is used to control what fields to return.
+         * Singular setter. Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -304,14 +347,13 @@ public class ListInvoicelineComputedUsagesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -323,19 +365,18 @@ public class ListInvoicelineComputedUsagesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -347,7 +388,6 @@ public class ListInvoicelineComputedUsagesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListInvoicelineComputedUsagesRequest o) {
@@ -367,11 +407,10 @@ public class ListInvoicelineComputedUsagesRequest
         /**
          * Build the instance of ListInvoicelineComputedUsagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListInvoicelineComputedUsagesRequest
          */
@@ -385,8 +424,7 @@ public class ListInvoicelineComputedUsagesRequest
         /**
          * Build the instance of ListInvoicelineComputedUsagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListInvoicelineComputedUsagesRequest
@@ -403,14 +441,12 @@ public class ListInvoicelineComputedUsagesRequest
             request.fields = fields;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListInvoicelineComputedUsagesRequest(compartmentId, invoiceLineId, sortOrder,
-            // sortBy, limit, page, fields, opcRequestId);
+            // new ListInvoicelineComputedUsagesRequest(compartmentId, invoiceLineId, sortOrder, sortBy, limit, page, fields, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -427,7 +463,6 @@ public class ListInvoicelineComputedUsagesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

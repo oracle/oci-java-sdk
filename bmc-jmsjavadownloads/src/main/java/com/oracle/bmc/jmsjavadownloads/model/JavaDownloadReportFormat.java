@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** The format of the Java download report. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum JavaDownloadReportFormat implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The format of the Java download report.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum JavaDownloadReportFormat {
     Csv("CSV"),
 
     /**

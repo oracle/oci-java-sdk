@@ -5,23 +5,22 @@
 package com.oracle.bmc.jmsjavadownloads.model;
 
 /**
- * Attributes to summarize the Java download counts in a tenancy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+ * Attributes to summarize the Java download counts in a tenancy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RequestSummarizedJavaDownloadCountsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RequestSummarizedJavaDownloadCountsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RequestSummarizedJavaDownloadCountsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -62,168 +61,168 @@ public final class RequestSummarizedJavaDownloadCountsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should
-         * be the tenancy OCID.
-         */
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should
-         * be the tenancy OCID.
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The property that specifies the aggregation type for the download counts. */
+        /**
+         * The property that specifies the aggregation type for the download counts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupAs")
         private JavaDownloadCountAggregationType groupAs;
 
         /**
          * The property that specifies the aggregation type for the download counts.
-         *
          * @param groupAs the value to set
          * @return this builder
-         */
+         **/
         public Builder groupAs(JavaDownloadCountAggregationType groupAs) {
             this.groupAs = groupAs;
             this.__explicitlySet__.add("groupAs");
             return this;
         }
-        /** Unique Java family version identifier. */
+        /**
+         * Unique Java family version identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
         private String familyVersion;
 
         /**
          * Unique Java family version identifier.
-         *
          * @param familyVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder familyVersion(String familyVersion) {
             this.familyVersion = familyVersion;
             this.__explicitlySet__.add("familyVersion");
             return this;
         }
-        /** Unique Java release version identifier. */
+        /**
+         * Unique Java release version identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
         private String releaseVersion;
 
         /**
          * Unique Java release version identifier.
-         *
          * @param releaseVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseVersion(String releaseVersion) {
             this.releaseVersion = releaseVersion;
             this.__explicitlySet__.add("releaseVersion");
             return this;
         }
         /**
-         * The start time from when download data has to be included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The start time from when download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * The start time from when download data has to be included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start time from when download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
         /**
-         * The end time until when the download data has to be included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The end time until when the download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * The end time until when the download data has to be included (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end time until when the download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** The property to be used for sorting the aggregated report. */
+        /**
+         * The property to be used for sorting the aggregated report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private AggregationSortBy sortBy;
 
         /**
          * The property to be used for sorting the aggregated report.
-         *
          * @param sortBy the value to set
          * @return this builder
-         */
+         **/
         public Builder sortBy(AggregationSortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-        /** The sort order for the aggregated report. */
+        /**
+         * The sort order for the aggregated report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
          * The sort order for the aggregated report.
-         *
          * @param sortOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
             return this;
         }
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private Integer limit;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder
-         */
+         **/
         public Builder limit(Integer limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
             return this;
         }
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous call.
-         */
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous call.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("page")
         private String page;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous call.
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous call.
          *
          * @param page the value to set
          * @return this builder
-         */
+         **/
         public Builder page(String page) {
             this.page = page;
             this.__explicitlySet__.add("page");
@@ -288,7 +287,9 @@ public final class RequestSummarizedJavaDownloadCountsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -298,147 +299,149 @@ public final class RequestSummarizedJavaDownloadCountsDetails
     }
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * here should be the tenancy OCID.
-     */
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * here should be the tenancy OCID.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The property that specifies the aggregation type for the download counts. */
+    /**
+     * The property that specifies the aggregation type for the download counts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupAs")
     private final JavaDownloadCountAggregationType groupAs;
 
     /**
      * The property that specifies the aggregation type for the download counts.
-     *
      * @return the value
-     */
+     **/
     public JavaDownloadCountAggregationType getGroupAs() {
         return groupAs;
     }
 
-    /** Unique Java family version identifier. */
+    /**
+     * Unique Java family version identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
     private final String familyVersion;
 
     /**
      * Unique Java family version identifier.
-     *
      * @return the value
-     */
+     **/
     public String getFamilyVersion() {
         return familyVersion;
     }
 
-    /** Unique Java release version identifier. */
+    /**
+     * Unique Java release version identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
     private final String releaseVersion;
 
     /**
      * Unique Java release version identifier.
-     *
      * @return the value
-     */
+     **/
     public String getReleaseVersion() {
         return releaseVersion;
     }
 
     /**
-     * The start time from when download data has to be included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The start time from when download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * The start time from when download data has to be included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start time from when download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
     /**
-     * The end time until when the download data has to be included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The end time until when the download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * The end time until when the download data has to be included (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end time until when the download data has to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** The property to be used for sorting the aggregated report. */
+    /**
+     * The property to be used for sorting the aggregated report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final AggregationSortBy sortBy;
 
     /**
      * The property to be used for sorting the aggregated report.
-     *
      * @return the value
-     */
+     **/
     public AggregationSortBy getSortBy() {
         return sortBy;
     }
 
-    /** The sort order for the aggregated report. */
+    /**
+     * The sort order for the aggregated report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
      * The sort order for the aggregated report.
-     *
      * @return the value
-     */
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final Integer limit;
 
     /**
      * The maximum number of items to return.
-     *
      * @return the value
-     */
+     **/
     public Integer getLimit() {
         return limit;
     }
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous call.
-     */
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous call.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("page")
     private final String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous call.
      *
      * @return the value
-     */
+     **/
     public String getPage() {
         return page;
     }
@@ -450,7 +453,6 @@ public final class RequestSummarizedJavaDownloadCountsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

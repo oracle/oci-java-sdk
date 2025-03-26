@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AttachBootVolumeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AttachBootVolumeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AttachBootVolumeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bootVolumeId",
@@ -43,65 +42,73 @@ public final class AttachBootVolumeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the boot volume. */
+        /**
+         * The OCID of the  boot volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
         private String bootVolumeId;
 
         /**
-         * The OCID of the boot volume.
-         *
+         * The OCID of the  boot volume.
          * @param bootVolumeId the value to set
          * @return this builder
-         */
+         **/
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = bootVolumeId;
             this.__explicitlySet__.add("bootVolumeId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the instance. */
+        /**
+         * The OCID of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the instance.
-         *
          * @param instanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
         private EncryptionInTransitType encryptionInTransitType;
 
         /**
-         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
          *
          * @param encryptionInTransitType the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
             this.encryptionInTransitType = encryptionInTransitType;
             this.__explicitlySet__.add("encryptionInTransitType");
@@ -142,7 +149,9 @@ public final class AttachBootVolumeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,58 +160,66 @@ public final class AttachBootVolumeDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the boot volume. */
+    /**
+     * The OCID of the  boot volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeId")
     private final String bootVolumeId;
 
     /**
-     * The OCID of the boot volume.
-     *
+     * The OCID of the  boot volume.
      * @return the value
-     */
+     **/
     public String getBootVolumeId() {
         return bootVolumeId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the instance. */
+    /**
+     * The OCID of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceId() {
         return instanceId;
     }
 
-    /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     private final EncryptionInTransitType encryptionInTransitType;
 
     /**
-     * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
      *
      * @return the value
-     */
+     **/
     public EncryptionInTransitType getEncryptionInTransitType() {
         return encryptionInTransitType;
     }
@@ -214,7 +231,6 @@ public final class AttachBootVolumeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

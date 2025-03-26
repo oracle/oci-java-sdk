@@ -5,23 +5,22 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Summary of the PbfListingVersion. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Summary of the PbfListingVersion.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PbfListingVersionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PbfListingVersionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PbfListingVersionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -70,65 +69,67 @@ public final class PbfListingVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the PbfListing this resource version belongs to. */
+        /**
+         * The OCID of the PbfListing this resource version belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pbfListingId")
         private String pbfListingId;
 
         /**
          * The OCID of the PbfListing this resource version belongs to.
-         *
          * @param pbfListingId the value to set
          * @return this builder
-         */
+         **/
         public Builder pbfListingId(String pbfListingId) {
             this.pbfListingId = pbfListingId;
             this.__explicitlySet__.add("pbfListingId");
             return this;
         }
-        /** Semantic version */
+        /**
+         * Semantic version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Semantic version
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Details about the required and optional Function configurations needed for proper
-         * performance of the PBF.
-         */
+         * Details about the required and optional Function configurations needed for proper performance of the PBF.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private java.util.List<ConfigDetails> config;
 
         /**
-         * Details about the required and optional Function configurations needed for proper
-         * performance of the PBF.
+         * Details about the required and optional Function configurations needed for proper performance of the PBF.
          *
          * @param config the value to set
          * @return this builder
-         */
+         **/
         public Builder config(java.util.List<ConfigDetails> config) {
             this.config = config;
             this.__explicitlySet__.add("config");
@@ -143,46 +144,49 @@ public final class PbfListingVersionSummary
             this.__explicitlySet__.add("requirements");
             return this;
         }
-        /** Details changes are included in this version. */
+        /**
+         * Details changes are included in this version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeSummary")
         private String changeSummary;
 
         /**
          * Details changes are included in this version.
-         *
          * @param changeSummary the value to set
          * @return this builder
-         */
+         **/
         public Builder changeSummary(String changeSummary) {
             this.changeSummary = changeSummary;
             this.__explicitlySet__.add("changeSummary");
             return this;
         }
-        /** An array of Trigger. A list of triggers that may activate the PBF. */
+        /**
+         * An array of Trigger. A list of triggers that may activate the PBF.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggers")
         private java.util.List<Trigger> triggers;
 
         /**
          * An array of Trigger. A list of triggers that may activate the PBF.
-         *
          * @param triggers the value to set
          * @return this builder
-         */
+         **/
         public Builder triggers(java.util.List<Trigger> triggers) {
             this.triggers = triggers;
             this.__explicitlySet__.add("triggers");
             return this;
         }
-        /** The time the PbfListingVersion was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -190,50 +194,51 @@ public final class PbfListingVersionSummary
         }
         /**
          * The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the PBF resource. */
+        /**
+         * The current state of the PBF resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private PbfListingVersion.LifecycleState lifecycleState;
 
         /**
          * The current state of the PBF resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(PbfListingVersion.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -242,7 +247,8 @@ public final class PbfListingVersionSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -252,7 +258,7 @@ public final class PbfListingVersionSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -260,19 +266,20 @@ public final class PbfListingVersionSummary
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -349,7 +356,9 @@ public final class PbfListingVersionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -358,58 +367,60 @@ public final class PbfListingVersionSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * Unique identifier that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the PbfListing this resource version belongs to. */
+    /**
+     * The OCID of the PbfListing this resource version belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pbfListingId")
     private final String pbfListingId;
 
     /**
      * The OCID of the PbfListing this resource version belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getPbfListingId() {
         return pbfListingId;
     }
 
-    /** Semantic version */
+    /**
+     * Semantic version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Semantic version
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Details about the required and optional Function configurations needed for proper performance
-     * of the PBF.
-     */
+     * Details about the required and optional Function configurations needed for proper performance of the PBF.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final java.util.List<ConfigDetails> config;
 
     /**
-     * Details about the required and optional Function configurations needed for proper performance
-     * of the PBF.
+     * Details about the required and optional Function configurations needed for proper performance of the PBF.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ConfigDetails> getConfig() {
         return config;
     }
@@ -421,118 +432,126 @@ public final class PbfListingVersionSummary
         return requirements;
     }
 
-    /** Details changes are included in this version. */
+    /**
+     * Details changes are included in this version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeSummary")
     private final String changeSummary;
 
     /**
      * Details changes are included in this version.
-     *
      * @return the value
-     */
+     **/
     public String getChangeSummary() {
         return changeSummary;
     }
 
-    /** An array of Trigger. A list of triggers that may activate the PBF. */
+    /**
+     * An array of Trigger. A list of triggers that may activate the PBF.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggers")
     private final java.util.List<Trigger> triggers;
 
     /**
      * An array of Trigger. A list of triggers that may activate the PBF.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Trigger> getTriggers() {
         return triggers;
     }
 
-    /** The time the PbfListingVersion was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the PBF resource. */
+    /**
+     * The current state of the PBF resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final PbfListingVersion.LifecycleState lifecycleState;
 
     /**
      * The current state of the PBF resource.
-     *
      * @return the value
-     */
+     **/
     public PbfListingVersion.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -544,7 +563,6 @@ public final class PbfListingVersionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

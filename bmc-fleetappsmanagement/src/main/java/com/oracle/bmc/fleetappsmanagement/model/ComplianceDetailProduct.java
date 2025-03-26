@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Product <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details of the Product
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComplianceDetailProduct.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComplianceDetailProduct.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComplianceDetailProduct
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"productStack", "productName", "productVersion"})
     public ComplianceDetailProduct(String productStack, String productName, String productVersion) {
@@ -33,46 +32,49 @@ public final class ComplianceDetailProduct
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Product Stack. */
+        /**
+         * Product Stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productStack")
         private String productStack;
 
         /**
          * Product Stack.
-         *
          * @param productStack the value to set
          * @return this builder
-         */
+         **/
         public Builder productStack(String productStack) {
             this.productStack = productStack;
             this.__explicitlySet__.add("productStack");
             return this;
         }
-        /** Product Name. */
+        /**
+         * Product Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
          * Product Name.
-         *
          * @param productName the value to set
          * @return this builder
-         */
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-        /** Product Version. */
+        /**
+         * Product Version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productVersion")
         private String productVersion;
 
         /**
          * Product Version.
-         *
          * @param productVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder productVersion(String productVersion) {
             this.productVersion = productVersion;
             this.__explicitlySet__.add("productVersion");
@@ -107,7 +109,9 @@ public final class ComplianceDetailProduct
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +120,44 @@ public final class ComplianceDetailProduct
         return new Builder().copy(this);
     }
 
-    /** Product Stack. */
+    /**
+     * Product Stack.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productStack")
     private final String productStack;
 
     /**
      * Product Stack.
-     *
      * @return the value
-     */
+     **/
     public String getProductStack() {
         return productStack;
     }
 
-    /** Product Name. */
+    /**
+     * Product Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
      * Product Name.
-     *
      * @return the value
-     */
+     **/
     public String getProductName() {
         return productName;
     }
 
-    /** Product Version. */
+    /**
+     * Product Version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productVersion")
     private final String productVersion;
 
     /**
      * Product Version.
-     *
      * @return the value
-     */
+     **/
     public String getProductVersion() {
         return productVersion;
     }
@@ -162,7 +169,6 @@ public final class ComplianceDetailProduct
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,112 +6,135 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListConnectionAssignmentsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListConnectionAssignmentsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListConnectionAssignmentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConnectionAssignmentsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListConnectionAssignmentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request concerns
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used.
+     * The OCID of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request concerns
+     * multiple resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used.
+     *
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request concerns
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used.
+     * The OCID of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request concerns
+     * multiple resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+     *
      */
     private String deploymentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+     *
      */
     public String getDeploymentId() {
         return deploymentId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+     *
      */
     private String connectionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+     *
      */
     public String getConnectionId() {
         return connectionId;
     }
-    /** The name of the connection in the assignment (aliasName). */
+    /**
+     * The name of the connection in the assignment (aliasName).
+     */
     private String name;
 
-    /** The name of the connection in the assignment (aliasName). */
+    /**
+     * The name of the connection in the assignment (aliasName).
+     */
     public String getName() {
         return name;
     }
-    /** A filter to return only connection assignments having the 'lifecycleState' given. */
+    /**
+     * A filter to return only connection assignments having the 'lifecycleState' given.
+     */
     private com.oracle.bmc.goldengate.model.ConnectionAssignment.LifecycleState lifecycleState;
 
-    /** A filter to return only connection assignments having the 'lifecycleState' given. */
+    /**
+     * A filter to return only connection assignments having the 'lifecycleState' given.
+     */
     public com.oracle.bmc.goldengate.model.ConnectionAssignment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The page token representing the page at which to start retrieving results. This is usually
      * retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
      * The page token representing the page at which to start retrieving results. This is usually
      * retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     private com.oracle.bmc.goldengate.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.goldengate.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
      * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
-     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
      * timeCreated is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
-     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
      * timeCreated is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -146,16 +169,23 @@ public class ListConnectionAssignmentsRequest
 
     /**
      * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
-     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
      * timeCreated is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -163,24 +193,24 @@ public class ListConnectionAssignmentsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListConnectionAssignmentsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request concerns multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used.
+         * The OCID of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request concerns
+         * multiple resources, and those resources are not in the same compartment, it is up to the service team
+         * to pick the primary resource whose compartment should be used.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request concerns multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used.
+         * The OCID of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request concerns
+         * multiple resources, and those resources are not in the same compartment, it is up to the service team
+         * to pick the primary resource whose compartment should be used.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -191,14 +221,13 @@ public class ListConnectionAssignmentsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+         *
          */
         private String deploymentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
          *
          * @param deploymentId the value to set
          * @return this builder instance
@@ -209,14 +238,13 @@ public class ListConnectionAssignmentsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+         *
          */
         private String connectionId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
          *
          * @param connectionId the value to set
          * @return this builder instance
@@ -226,12 +254,13 @@ public class ListConnectionAssignmentsRequest
             return this;
         }
 
-        /** The name of the connection in the assignment (aliasName). */
+        /**
+         * The name of the connection in the assignment (aliasName).
+         */
         private String name = null;
 
         /**
          * The name of the connection in the assignment (aliasName).
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -240,13 +269,14 @@ public class ListConnectionAssignmentsRequest
             return this;
         }
 
-        /** A filter to return only connection assignments having the 'lifecycleState' given. */
+        /**
+         * A filter to return only connection assignments having the 'lifecycleState' given.
+         */
         private com.oracle.bmc.goldengate.model.ConnectionAssignment.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only connection assignments having the 'lifecycleState' given.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -257,7 +287,10 @@ public class ListConnectionAssignmentsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -272,14 +305,15 @@ public class ListConnectionAssignmentsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -289,7 +323,10 @@ public class ListConnectionAssignmentsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.goldengate.model.SortOrder sortOrder = null;
 
         /**
@@ -304,16 +341,17 @@ public class ListConnectionAssignmentsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for
-         * 'timeCreated' is descending. Default order for 'displayName' is ascending. If no value is
-         * specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for
-         * 'timeCreated' is descending. Default order for 'displayName' is ascending. If no value is
-         * specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -323,7 +361,10 @@ public class ListConnectionAssignmentsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -339,19 +380,18 @@ public class ListConnectionAssignmentsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -363,7 +403,6 @@ public class ListConnectionAssignmentsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListConnectionAssignmentsRequest o) {
@@ -385,11 +424,10 @@ public class ListConnectionAssignmentsRequest
         /**
          * Build the instance of ListConnectionAssignmentsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListConnectionAssignmentsRequest
          */
@@ -403,8 +441,7 @@ public class ListConnectionAssignmentsRequest
         /**
          * Build the instance of ListConnectionAssignmentsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListConnectionAssignmentsRequest
@@ -422,14 +459,12 @@ public class ListConnectionAssignmentsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListConnectionAssignmentsRequest(compartmentId, deploymentId, connectionId, name,
-            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListConnectionAssignmentsRequest(compartmentId, deploymentId, connectionId, name, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -448,7 +483,6 @@ public class ListConnectionAssignmentsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

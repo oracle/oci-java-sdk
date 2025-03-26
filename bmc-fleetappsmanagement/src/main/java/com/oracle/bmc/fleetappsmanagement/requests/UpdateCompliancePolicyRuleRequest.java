@@ -6,60 +6,72 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateCompliancePolicyRuleExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateCompliancePolicyRuleRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCompliancePolicyRuleRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class UpdateCompliancePolicyRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateCompliancePolicyRuleDetails> {
 
-    /** unique CompliancePolicyRule identifier. */
+    /**
+     * unique CompliancePolicyRule identifier.
+     */
     private String compliancePolicyRuleId;
 
-    /** unique CompliancePolicyRule identifier. */
+    /**
+     * unique CompliancePolicyRule identifier.
+     */
     public String getCompliancePolicyRuleId() {
         return compliancePolicyRuleId;
     }
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateCompliancePolicyRuleDetails
             updateCompliancePolicyRuleDetails;
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateCompliancePolicyRuleDetails
             getUpdateCompliancePolicyRuleDetails() {
         return updateCompliancePolicyRuleDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +84,17 @@ public class UpdateCompliancePolicyRuleRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateCompliancePolicyRuleRequest,
                     com.oracle.bmc.fleetappsmanagement.model.UpdateCompliancePolicyRuleDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique CompliancePolicyRule identifier. */
+        /**
+         * unique CompliancePolicyRule identifier.
+         */
         private String compliancePolicyRuleId = null;
 
         /**
          * unique CompliancePolicyRule identifier.
-         *
          * @param compliancePolicyRuleId the value to set
          * @return this builder instance
          */
@@ -89,13 +103,14 @@ public class UpdateCompliancePolicyRuleRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateCompliancePolicyRuleDetails
                 updateCompliancePolicyRuleDetails = null;
 
         /**
          * The information to be updated.
-         *
          * @param updateCompliancePolicyRuleDetails the value to set
          * @return this builder instance
          */
@@ -107,18 +122,21 @@ public class UpdateCompliancePolicyRuleRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -128,12 +146,13 @@ public class UpdateCompliancePolicyRuleRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -144,19 +163,18 @@ public class UpdateCompliancePolicyRuleRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,7 +186,6 @@ public class UpdateCompliancePolicyRuleRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateCompliancePolicyRuleRequest o) {
@@ -184,11 +201,10 @@ public class UpdateCompliancePolicyRuleRequest
         /**
          * Build the instance of UpdateCompliancePolicyRuleRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateCompliancePolicyRuleRequest
          */
@@ -201,7 +217,6 @@ public class UpdateCompliancePolicyRuleRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -215,8 +230,7 @@ public class UpdateCompliancePolicyRuleRequest
         /**
          * Build the instance of UpdateCompliancePolicyRuleRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateCompliancePolicyRuleRequest
@@ -228,14 +242,12 @@ public class UpdateCompliancePolicyRuleRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateCompliancePolicyRuleRequest(compliancePolicyRuleId,
-            // updateCompliancePolicyRuleDetails, ifMatch, opcRequestId);
+            // new UpdateCompliancePolicyRuleRequest(compliancePolicyRuleId, updateCompliancePolicyRuleDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -248,7 +260,6 @@ public class UpdateCompliancePolicyRuleRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

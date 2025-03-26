@@ -5,21 +5,19 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Information on a work request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Information on a work request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkRequest extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationType",
@@ -56,7 +54,10 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the work request. */
+        /**
+         * The type of the work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -65,13 +66,16 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** The status of work request. */
+        /**
+         * The status of work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
@@ -80,7 +84,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(OperationStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -88,55 +92,58 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The OCID of the work request.
+         * <p>
+         * Example: {@code ocid1.drworkrequest.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the work request.
-         *
-         * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drworkrequest.oc1..uniqueID}
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * The OCID of the compartment that contains the work request. Work requests should be scoped to
+         * the same compartment as the resource the work request affects. If the work request affects multiple resources,
+         * and those resources are not in the same compartment, it is up to the service team to pick the primary
+         * resource whose compartment should be used
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used
-         *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         * The OCID of the compartment that contains the work request. Work requests should be scoped to
+         * the same compartment as the resource the work request affects. If the work request affects multiple resources,
+         * and those resources are not in the same compartment, it is up to the service team to pick the primary
+         * resource whose compartment should be used
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The resources affected by this work request. */
+        /**
+         * The resources affected by this work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
@@ -145,7 +152,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param resources the value to set
          * @return this builder
-         */
+         **/
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
@@ -153,20 +160,21 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The percentage of the request completed.
+         * <p>
+         * Example: {@code 75}
          *
-         * <p>Example: {@code 75}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
          * The percentage of the request completed.
-         *
-         * <p>Example: {@code 75}
+         * <p>
+         * Example: {@code 75}
          *
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -174,20 +182,21 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The date and time the request was created. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The date and time the request was created. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
@@ -195,20 +204,21 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The date and time the request was started. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time the request was started. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -216,20 +226,21 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The date and time the request was finished. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The date and time the request was finished. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -290,7 +301,9 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -299,7 +312,10 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The type of the work request. */
+    /**
+     * The type of the work request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -307,12 +323,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
      * The type of the work request.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /** The status of work request. */
+    /**
+     * The status of work request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
@@ -320,56 +339,61 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
      * The status of work request.
      *
      * @return the value
-     */
+     **/
     public OperationStatus getStatus() {
         return status;
     }
 
     /**
      * The OCID of the work request.
+     * <p>
+     * Example: {@code ocid1.drworkrequest.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the work request.
-     *
-     * <p>Example: {@code ocid1.drworkrequest.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.drworkrequest.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * the same compartment as the resource the work request affects. If the work request affects multiple resources,
+     * and those resources are not in the same compartment, it is up to the service team to pick the primary
+     * resource whose compartment should be used
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
-     *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     * the same compartment as the resource the work request affects. If the work request affects multiple resources,
+     * and those resources are not in the same compartment, it is up to the service team to pick the primary
+     * resource whose compartment should be used
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The resources affected by this work request. */
+    /**
+     * The resources affected by this work request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
@@ -377,83 +401,87 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
      * The resources affected by this work request.
      *
      * @return the value
-     */
+     **/
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }
 
     /**
      * The percentage of the request completed.
+     * <p>
+     * Example: {@code 75}
      *
-     * <p>Example: {@code 75}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
      * The percentage of the request completed.
-     *
-     * <p>Example: {@code 75}
+     * <p>
+     * Example: {@code 75}
      *
      * @return the value
-     */
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
 
     /**
      * The date and time the request was created. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The date and time the request was created. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
     /**
      * The date and time the request was started. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time the request was started. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
      * The date and time the request was finished. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The date and time the request was finished. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -465,7 +493,6 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

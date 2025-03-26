@@ -5,21 +5,19 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Filters that are applied to the data at the column level. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Filters that are applied to the data at the column level.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ColumnFilter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ColumnFilter extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ColumnFilter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fieldName",
@@ -44,80 +42,81 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the column on which the filter must be applied. */
+        /**
+         * Name of the column on which the filter must be applied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
          * Name of the column on which the filter must be applied.
-         *
          * @param fieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-        /** Specifies the type of operator that must be applied for example in, eq etc. */
+        /**
+         * Specifies the type of operator that must be applied for example in, eq etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
         /**
          * Specifies the type of operator that must be applied for example in, eq etc.
-         *
          * @param operator the value to set
          * @return this builder
-         */
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
         /**
-         * An array of expressions based on the operator type. A filter may have one or more
-         * expressions.
-         */
+         * An array of expressions based on the operator type. A filter may have one or more expressions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expressions")
         private java.util.List<String> expressions;
 
         /**
-         * An array of expressions based on the operator type. A filter may have one or more
-         * expressions.
-         *
+         * An array of expressions based on the operator type. A filter may have one or more expressions.
          * @param expressions the value to set
          * @return this builder
-         */
+         **/
         public Builder expressions(java.util.List<String> expressions) {
             this.expressions = expressions;
             this.__explicitlySet__.add("expressions");
             return this;
         }
-        /** Indicates whether the filter is enabled. Values can either be 'true' or 'false'. */
+        /**
+         * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** Indicates whether the filter is hidden. Values can either be 'true' or 'false'. */
+        /**
+         * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
         /**
          * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
-         *
          * @param isHidden the value to set
          * @return this builder
-         */
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
@@ -162,7 +161,9 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,21 +172,24 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Name of the column on which the filter must be applied. */
+    /**
+     * Name of the column on which the filter must be applied.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
      * Name of the column on which the filter must be applied.
-     *
      * @return the value
-     */
+     **/
     public String getFieldName() {
         return fieldName;
     }
 
-    /** Specifies the type of operator that must be applied for example in, eq etc. */
-    public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the type of operator that must be applied for example in, eq etc.
+     **/
+    public enum Operator {
         In("IN"),
         Eq("EQ"),
         EqCs("EQ_CS"),
@@ -202,8 +206,8 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
         NotIn("NOT_IN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -242,58 +246,58 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Specifies the type of operator that must be applied for example in, eq etc. */
+    /**
+     * Specifies the type of operator that must be applied for example in, eq etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
     /**
      * Specifies the type of operator that must be applied for example in, eq etc.
-     *
      * @return the value
-     */
+     **/
     public Operator getOperator() {
         return operator;
     }
 
     /**
-     * An array of expressions based on the operator type. A filter may have one or more
-     * expressions.
-     */
+     * An array of expressions based on the operator type. A filter may have one or more expressions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expressions")
     private final java.util.List<String> expressions;
 
     /**
-     * An array of expressions based on the operator type. A filter may have one or more
-     * expressions.
-     *
+     * An array of expressions based on the operator type. A filter may have one or more expressions.
      * @return the value
-     */
+     **/
     public java.util.List<String> getExpressions() {
         return expressions;
     }
 
-    /** Indicates whether the filter is enabled. Values can either be 'true' or 'false'. */
+    /**
+     * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** Indicates whether the filter is hidden. Values can either be 'true' or 'false'. */
+    /**
+     * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
     /**
      * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -305,7 +309,6 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

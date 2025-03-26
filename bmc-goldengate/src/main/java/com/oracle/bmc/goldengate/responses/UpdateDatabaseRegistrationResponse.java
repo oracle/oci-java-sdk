@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
      * status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
@@ -27,6 +28,7 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -40,7 +42,10 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** Deprecation date of this API version. */
+    /**
+     * Deprecation date of this API version.
+     *
+     */
     private String sunset;
 
     /**
@@ -61,7 +66,7 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
     })
     private UpdateDatabaseRegistrationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String sunset) {
@@ -71,34 +76,31 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         this.sunset = sunset;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateDatabaseRegistrationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to
-         * query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to
-         * query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -109,14 +111,15 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -126,7 +129,10 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** Deprecation date of this API version. */
+        /**
+         * Deprecation date of this API version.
+         *
+         */
         private String sunset;
 
         /**
@@ -142,10 +148,8 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateDatabaseRegistrationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -158,10 +162,8 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateDatabaseRegistrationResponse build() {
             return new UpdateDatabaseRegistrationResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, sunset);
@@ -170,7 +172,6 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.identitydomains.model;
 
-/** Enum for idcsPreventedOperations. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-public enum IdcsPreventedOperations implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Enum for idcsPreventedOperations.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+public enum IdcsPreventedOperations {
     Replace("replace"),
     Update("update"),
     Delete("delete"),

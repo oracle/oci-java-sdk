@@ -6,49 +6,59 @@ package com.oracle.bmc.ospgateway.requests;
 
 import com.oracle.bmc.ospgateway.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/DownloadPdfContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DownloadPdfContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/DownloadPdfContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DownloadPdfContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The home region's public name of the logged in user. */
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     private String ospHomeRegion;
 
-    /** The home region's public name of the logged in user. */
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The identifier of the invoice. */
+    /**
+     * The identifier of the invoice.
+     */
     private String internalInvoiceId;
 
-    /** The identifier of the invoice. */
+    /**
+     * The identifier of the invoice.
+     */
     public String getInternalInvoiceId() {
         return internalInvoiceId;
     }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -57,10 +67,14 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DownloadPdfContentRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The home region's public name of the logged in user. */
+        /**
+         * The home region's public name of the logged in user.
+         *
+         */
         private String ospHomeRegion = null;
 
         /**
@@ -75,14 +89,13 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -92,12 +105,13 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The identifier of the invoice. */
+        /**
+         * The identifier of the invoice.
+         */
         private String internalInvoiceId = null;
 
         /**
          * The identifier of the invoice.
-         *
          * @param internalInvoiceId the value to set
          * @return this builder instance
          */
@@ -107,14 +121,15 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -126,19 +141,18 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -150,7 +164,6 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DownloadPdfContentRequest o) {
@@ -166,11 +179,10 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of DownloadPdfContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DownloadPdfContentRequest
          */
@@ -184,8 +196,7 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of DownloadPdfContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DownloadPdfContentRequest
@@ -197,14 +208,12 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
             request.internalInvoiceId = internalInvoiceId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DownloadPdfContentRequest(ospHomeRegion, compartmentId, internalInvoiceId,
-            // opcRequestId);
+            // new DownloadPdfContentRequest(ospHomeRegion, compartmentId, internalInvoiceId, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -217,7 +226,6 @@ public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

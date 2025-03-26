@@ -5,23 +5,21 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Usage data samples. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Usage data samples.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NetworkUsageTrend.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NetworkUsageTrend
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = NetworkUsageTrend.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NetworkUsageTrend extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "endTimestamp",
@@ -43,61 +41,65 @@ public final class NetworkUsageTrend
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The timestamp in which the current sampling period ends in RFC 3339 format. */
+        /**
+         * The timestamp in which the current sampling period ends in RFC 3339 format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
         private java.util.Date endTimestamp;
 
         /**
          * The timestamp in which the current sampling period ends in RFC 3339 format.
-         *
          * @param endTimestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder endTimestamp(java.util.Date endTimestamp) {
             this.endTimestamp = endTimestamp;
             this.__explicitlySet__.add("endTimestamp");
             return this;
         }
-        /** Network read in Mbps. */
+        /**
+         * Network read in Mbps.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkReadInMbps")
         private Double allNetworkReadInMbps;
 
         /**
          * Network read in Mbps.
-         *
          * @param allNetworkReadInMbps the value to set
          * @return this builder
-         */
+         **/
         public Builder allNetworkReadInMbps(Double allNetworkReadInMbps) {
             this.allNetworkReadInMbps = allNetworkReadInMbps;
             this.__explicitlySet__.add("allNetworkReadInMbps");
             return this;
         }
-        /** Network write in Mbps. */
+        /**
+         * Network write in Mbps.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkWriteInMbps")
         private Double allNetworkWriteInMbps;
 
         /**
          * Network write in Mbps.
-         *
          * @param allNetworkWriteInMbps the value to set
          * @return this builder
-         */
+         **/
         public Builder allNetworkWriteInMbps(Double allNetworkWriteInMbps) {
             this.allNetworkWriteInMbps = allNetworkWriteInMbps;
             this.__explicitlySet__.add("allNetworkWriteInMbps");
             return this;
         }
-        /** Network input/output in Mbps. */
+        /**
+         * Network input/output in Mbps.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkIoInMbps")
         private Double allNetworkIoInMbps;
 
         /**
          * Network input/output in Mbps.
-         *
          * @param allNetworkIoInMbps the value to set
          * @return this builder
-         */
+         **/
         public Builder allNetworkIoInMbps(Double allNetworkIoInMbps) {
             this.allNetworkIoInMbps = allNetworkIoInMbps;
             this.__explicitlySet__.add("allNetworkIoInMbps");
@@ -138,7 +140,9 @@ public final class NetworkUsageTrend
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +151,58 @@ public final class NetworkUsageTrend
         return new Builder().copy(this);
     }
 
-    /** The timestamp in which the current sampling period ends in RFC 3339 format. */
+    /**
+     * The timestamp in which the current sampling period ends in RFC 3339 format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
     private final java.util.Date endTimestamp;
 
     /**
      * The timestamp in which the current sampling period ends in RFC 3339 format.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getEndTimestamp() {
         return endTimestamp;
     }
 
-    /** Network read in Mbps. */
+    /**
+     * Network read in Mbps.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkReadInMbps")
     private final Double allNetworkReadInMbps;
 
     /**
      * Network read in Mbps.
-     *
      * @return the value
-     */
+     **/
     public Double getAllNetworkReadInMbps() {
         return allNetworkReadInMbps;
     }
 
-    /** Network write in Mbps. */
+    /**
+     * Network write in Mbps.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkWriteInMbps")
     private final Double allNetworkWriteInMbps;
 
     /**
      * Network write in Mbps.
-     *
      * @return the value
-     */
+     **/
     public Double getAllNetworkWriteInMbps() {
         return allNetworkWriteInMbps;
     }
 
-    /** Network input/output in Mbps. */
+    /**
+     * Network input/output in Mbps.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkIoInMbps")
     private final Double allNetworkIoInMbps;
 
     /**
      * Network input/output in Mbps.
-     *
      * @return the value
-     */
+     **/
     public Double getAllNetworkIoInMbps() {
         return allNetworkIoInMbps;
     }
@@ -206,7 +214,6 @@ public final class NetworkUsageTrend
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

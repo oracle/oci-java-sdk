@@ -5,25 +5,23 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * A subject alternative name for the certificate that binds additional or alternate names to the
- * subject of the certificate. In the certificate, the alternate subject name format is "type:name".
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+ * A subject alternative name for the certificate that binds additional or alternate names to the subject of the certificate. In the certificate, the alternate subject name format is "type:name".
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CertificateSubjectAlternativeName.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CertificateSubjectAlternativeName.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CertificateSubjectAlternativeName
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "value"})
     public CertificateSubjectAlternativeName(Type type, String value) {
@@ -35,34 +33,32 @@ public final class CertificateSubjectAlternativeName
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The subject alternative name type. Currently only DNS domain or host names and IP
-         * addresses are supported.
-         */
+         * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * The subject alternative name type. Currently only DNS domain or host names and IP
-         * addresses are supported.
-         *
+         * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The subject alternative name. */
+        /**
+         * The subject alternative name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The subject alternative name.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -93,7 +89,9 @@ public final class CertificateSubjectAlternativeName
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,16 +101,15 @@ public final class CertificateSubjectAlternativeName
     }
 
     /**
-     * The subject alternative name type. Currently only DNS domain or host names and IP addresses
-     * are supported.
-     */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+     * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+     **/
+    public enum Type {
         Dns("DNS"),
         Ip("IP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -150,31 +147,29 @@ public final class CertificateSubjectAlternativeName
         }
     };
     /**
-     * The subject alternative name type. Currently only DNS domain or host names and IP addresses
-     * are supported.
-     */
+     * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * The subject alternative name type. Currently only DNS domain or host names and IP addresses
-     * are supported.
-     *
+     * The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** The subject alternative name. */
+    /**
+     * The subject alternative name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The subject alternative name.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
@@ -186,7 +181,6 @@ public final class CertificateSubjectAlternativeName
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary information of a SQL tuning set. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary information of a SQL tuning set.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlTuningSetSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlTuningSetSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SqlTuningSetSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlTuningSetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -61,151 +59,161 @@ public final class SqlTuningSetSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the SQL tuning set. */
+        /**
+         * The name of the SQL tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the SQL tuning set.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The owner of the SQL tuning set. */
+        /**
+         * The owner of the SQL tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * The owner of the SQL tuning set.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** The description of the SQL tuning set. */
+        /**
+         * The description of the SQL tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the SQL tuning set.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The number of SQL statements in the SQL tuning set. */
+        /**
+         * The number of SQL statements in the SQL tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statementCounts")
         private Integer statementCounts;
 
         /**
          * The number of SQL statements in the SQL tuning set.
-         *
          * @param statementCounts the value to set
          * @return this builder
-         */
+         **/
         public Builder statementCounts(Integer statementCounts) {
             this.statementCounts = statementCounts;
             this.__explicitlySet__.add("statementCounts");
             return this;
         }
-        /** The unique Sql tuning set identifier. This is not OCID. */
+        /**
+         * The unique Sql tuning set identifier. This is not OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Integer id;
 
         /**
          * The unique Sql tuning set identifier. This is not OCID.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(Integer id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The created time of the Sql tuning set. */
+        /**
+         * The created time of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The created time of the Sql tuning set.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Last modified time of the Sql tuning set. */
+        /**
+         * Last modified time of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
         /**
          * Last modified time of the Sql tuning set.
-         *
          * @param timeLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
             return this;
         }
-        /** Current status of the Sql tuning set. */
+        /**
+         * Current status of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private SqlTuningSetStatusTypes status;
 
         /**
          * Current status of the Sql tuning set.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(SqlTuningSetStatusTypes status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Name of the Sql tuning set scheduler job. */
+        /**
+         * Name of the Sql tuning set scheduler job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobName")
         private String scheduledJobName;
 
         /**
          * Name of the Sql tuning set scheduler job.
-         *
          * @param scheduledJobName the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledJobName(String scheduledJobName) {
             this.scheduledJobName = scheduledJobName;
             this.__explicitlySet__.add("scheduledJobName");
             return this;
         }
-        /** Latest execution error of the plsql that was submitted as a scheduler job. */
+        /**
+         * Latest execution error of the plsql that was submitted as a scheduler job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * Latest execution error of the plsql that was submitted as a scheduler job.
-         *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -270,7 +278,9 @@ public final class SqlTuningSetSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -279,132 +289,142 @@ public final class SqlTuningSetSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the SQL tuning set. */
+    /**
+     * The name of the SQL tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the SQL tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The owner of the SQL tuning set. */
+    /**
+     * The owner of the SQL tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * The owner of the SQL tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** The description of the SQL tuning set. */
+    /**
+     * The description of the SQL tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the SQL tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The number of SQL statements in the SQL tuning set. */
+    /**
+     * The number of SQL statements in the SQL tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statementCounts")
     private final Integer statementCounts;
 
     /**
      * The number of SQL statements in the SQL tuning set.
-     *
      * @return the value
-     */
+     **/
     public Integer getStatementCounts() {
         return statementCounts;
     }
 
-    /** The unique Sql tuning set identifier. This is not OCID. */
+    /**
+     * The unique Sql tuning set identifier. This is not OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Integer id;
 
     /**
      * The unique Sql tuning set identifier. This is not OCID.
-     *
      * @return the value
-     */
+     **/
     public Integer getId() {
         return id;
     }
 
-    /** The created time of the Sql tuning set. */
+    /**
+     * The created time of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The created time of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Last modified time of the Sql tuning set. */
+    /**
+     * Last modified time of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
     /**
      * Last modified time of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }
 
-    /** Current status of the Sql tuning set. */
+    /**
+     * Current status of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final SqlTuningSetStatusTypes status;
 
     /**
      * Current status of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public SqlTuningSetStatusTypes getStatus() {
         return status;
     }
 
-    /** Name of the Sql tuning set scheduler job. */
+    /**
+     * Name of the Sql tuning set scheduler job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobName")
     private final String scheduledJobName;
 
     /**
      * Name of the Sql tuning set scheduler job.
-     *
      * @return the value
-     */
+     **/
     public String getScheduledJobName() {
         return scheduledJobName;
     }
 
-    /** Latest execution error of the plsql that was submitted as a scheduler job. */
+    /**
+     * Latest execution error of the plsql that was submitted as a scheduler job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * Latest execution error of the plsql that was submitted as a scheduler job.
-     *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -416,7 +436,6 @@ public final class SqlTuningSetSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

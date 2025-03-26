@@ -6,45 +6,54 @@ package com.oracle.bmc.stackmonitoring.requests;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateBaselineableMetricExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateBaselineableMetricRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateBaselineableMetricExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBaselineableMetricRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class UpdateBaselineableMetricRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.stackmonitoring.model.UpdateBaselineableMetricDetails> {
 
-    /** Baseline metric */
+    /**
+     * Baseline metric
+     */
     private com.oracle.bmc.stackmonitoring.model.UpdateBaselineableMetricDetails
             updateBaselineableMetricDetails;
 
-    /** Baseline metric */
+    /**
+     * Baseline metric
+     */
     public com.oracle.bmc.stackmonitoring.model.UpdateBaselineableMetricDetails
             getUpdateBaselineableMetricDetails() {
         return updateBaselineableMetricDetails;
     }
-    /** Identifier for the metric */
+    /**
+     * Identifier for the metric
+     */
     private String baselineableMetricId;
 
-    /** Identifier for the metric */
+    /**
+     * Identifier for the metric
+     */
     public String getBaselineableMetricId() {
         return baselineableMetricId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -52,12 +61,14 @@ public class UpdateBaselineableMetricRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -65,7 +76,6 @@ public class UpdateBaselineableMetricRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -78,16 +88,18 @@ public class UpdateBaselineableMetricRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateBaselineableMetricRequest,
                     com.oracle.bmc.stackmonitoring.model.UpdateBaselineableMetricDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Baseline metric */
+        /**
+         * Baseline metric
+         */
         private com.oracle.bmc.stackmonitoring.model.UpdateBaselineableMetricDetails
                 updateBaselineableMetricDetails = null;
 
         /**
          * Baseline metric
-         *
          * @param updateBaselineableMetricDetails the value to set
          * @return this builder instance
          */
@@ -98,12 +110,13 @@ public class UpdateBaselineableMetricRequest
             return this;
         }
 
-        /** Identifier for the metric */
+        /**
+         * Identifier for the metric
+         */
         private String baselineableMetricId = null;
 
         /**
          * Identifier for the metric
-         *
          * @param baselineableMetricId the value to set
          * @return this builder instance
          */
@@ -113,18 +126,21 @@ public class UpdateBaselineableMetricRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -137,6 +153,7 @@ public class UpdateBaselineableMetricRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -154,19 +171,18 @@ public class UpdateBaselineableMetricRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -178,7 +194,6 @@ public class UpdateBaselineableMetricRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateBaselineableMetricRequest o) {
@@ -194,11 +209,10 @@ public class UpdateBaselineableMetricRequest
         /**
          * Build the instance of UpdateBaselineableMetricRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateBaselineableMetricRequest
          */
@@ -211,7 +225,6 @@ public class UpdateBaselineableMetricRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -225,8 +238,7 @@ public class UpdateBaselineableMetricRequest
         /**
          * Build the instance of UpdateBaselineableMetricRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateBaselineableMetricRequest
@@ -238,14 +250,12 @@ public class UpdateBaselineableMetricRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateBaselineableMetricRequest(updateBaselineableMetricDetails,
-            // baselineableMetricId, ifMatch, opcRequestId);
+            // new UpdateBaselineableMetricRequest(updateBaselineableMetricDetails, baselineableMetricId, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -258,7 +268,6 @@ public class UpdateBaselineableMetricRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

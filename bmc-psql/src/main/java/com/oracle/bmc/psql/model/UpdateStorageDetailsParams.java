@@ -5,23 +5,22 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Storage details of the database system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Storage details of the database system.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateStorageDetailsParams.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateStorageDetailsParams.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateStorageDetailsParams
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"iops"})
     public UpdateStorageDetailsParams(Long iops) {
@@ -32,19 +31,20 @@ public final class UpdateStorageDetailsParams
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Guaranteed input/output storage requests per second (IOPS) available to the database
-         * system. Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
-         */
+         * Guaranteed input/output storage requests per second (IOPS) available to the database system.
+         * Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iops")
         private Long iops;
 
         /**
-         * Guaranteed input/output storage requests per second (IOPS) available to the database
-         * system. Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
+         * Guaranteed input/output storage requests per second (IOPS) available to the database system.
+         * Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
          *
          * @param iops the value to set
          * @return this builder
-         */
+         **/
         public Builder iops(Long iops) {
             this.iops = iops;
             this.__explicitlySet__.add("iops");
@@ -71,7 +71,9 @@ public final class UpdateStorageDetailsParams
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -83,7 +85,8 @@ public final class UpdateStorageDetailsParams
     /**
      * Guaranteed input/output storage requests per second (IOPS) available to the database system.
      * Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("iops")
     private final Long iops;
 
@@ -92,7 +95,7 @@ public final class UpdateStorageDetailsParams
      * Only valid for {@code OCI_OPTIMIZED_STORAGE} database system type.
      *
      * @return the value
-     */
+     **/
     public Long getIops() {
         return iops;
     }
@@ -104,7 +107,6 @@ public final class UpdateStorageDetailsParams
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

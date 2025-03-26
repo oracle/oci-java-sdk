@@ -5,76 +5,72 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Specifies the dataset location in object storage. This requires that all records are in this
- * bucket, and under this prefix. We do not support a dataset with objects in arbitrary locations
- * across buckets or prefixes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * Specifies the dataset location in object storage. This requires that all records are in this bucket, and under this prefix. We do not support a dataset with objects in arbitrary locations across buckets or prefixes.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ObjectStorageDatasetSourceDetails.Builder.class)
+    builder = ObjectStorageDatasetSourceDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "sourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "sourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The namespace of the bucket that contains the dataset data source. */
+        /**
+         * The namespace of the bucket that contains the dataset data source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The namespace of the bucket that contains the dataset data source.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The object storage bucket that contains the dataset data source. */
+        /**
+         * The object storage bucket that contains the dataset data source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
         /**
          * The object storage bucket that contains the dataset data source.
-         *
          * @param bucket the value to set
          * @return this builder
-         */
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
             return this;
         }
         /**
-         * A common path prefix shared by the objects that make up the dataset. Except for the CSV
-         * file type, records are not generated for the objects whose names exactly match with the
-         * prefix.
-         */
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
         /**
-         * A common path prefix shared by the objects that make up the dataset. Except for the CSV
-         * file type, records are not generated for the objects whose names exactly match with the
-         * prefix.
-         *
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          * @param prefix the value to set
          * @return this builder
-         */
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
@@ -108,7 +104,9 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,45 +123,44 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
         this.prefix = prefix;
     }
 
-    /** The namespace of the bucket that contains the dataset data source. */
+    /**
+     * The namespace of the bucket that contains the dataset data source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The namespace of the bucket that contains the dataset data source.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The object storage bucket that contains the dataset data source. */
+    /**
+     * The object storage bucket that contains the dataset data source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
     /**
      * The object storage bucket that contains the dataset data source.
-     *
      * @return the value
-     */
+     **/
     public String getBucket() {
         return bucket;
     }
 
     /**
-     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file
-     * type, records are not generated for the objects whose names exactly match with the prefix.
-     */
+     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
     /**
-     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file
-     * type, records are not generated for the objects whose names exactly match with the prefix.
-     *
+     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * @return the value
-     */
+     **/
     public String getPrefix() {
         return prefix;
     }
@@ -175,7 +172,6 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

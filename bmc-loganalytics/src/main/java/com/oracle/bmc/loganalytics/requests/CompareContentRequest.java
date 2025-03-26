@@ -6,40 +6,51 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CompareContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CompareContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CompareContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CompareContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class CompareContentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.CompareContentDetails> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** The two payloads to be compared. */
+    /**
+     * The two payloads to be compared.
+     */
     private com.oracle.bmc.loganalytics.model.CompareContentDetails compareContentDetails;
 
-    /** The two payloads to be compared. */
+    /**
+     * The two payloads to be compared.
+     */
     public com.oracle.bmc.loganalytics.model.CompareContentDetails getCompareContentDetails() {
         return compareContentDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -57,10 +68,14 @@ public class CompareContentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CompareContentRequest,
                     com.oracle.bmc.loganalytics.model.CompareContentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -74,13 +89,14 @@ public class CompareContentRequest
             return this;
         }
 
-        /** The two payloads to be compared. */
+        /**
+         * The two payloads to be compared.
+         */
         private com.oracle.bmc.loganalytics.model.CompareContentDetails compareContentDetails =
                 null;
 
         /**
          * The two payloads to be compared.
-         *
          * @param compareContentDetails the value to set
          * @return this builder instance
          */
@@ -90,12 +106,13 @@ public class CompareContentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -106,19 +123,18 @@ public class CompareContentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -130,7 +146,6 @@ public class CompareContentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CompareContentRequest o) {
@@ -145,11 +160,10 @@ public class CompareContentRequest
         /**
          * Build the instance of CompareContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CompareContentRequest
          */
@@ -162,7 +176,6 @@ public class CompareContentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -175,8 +188,7 @@ public class CompareContentRequest
         /**
          * Build the instance of CompareContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CompareContentRequest
@@ -193,7 +205,6 @@ public class CompareContentRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -205,7 +216,6 @@ public class CompareContentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

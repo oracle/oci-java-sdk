@@ -6,27 +6,24 @@ package com.oracle.bmc.database.model;
 
 /**
  * The Oracle Grid Infrastructure (GI) minor version.
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GiMinorVersionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GiMinorVersionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GiMinorVersionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "gridImageId"})
     public GiMinorVersionSummary(String version, String gridImageId) {
@@ -37,31 +34,33 @@ public final class GiMinorVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A valid Oracle Grid Infrastructure (GI) software version. */
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * A valid Oracle Grid Infrastructure (GI) software version.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Grid Infrastructure Image Id */
+        /**
+         * Grid Infrastructure Image Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
         private String gridImageId;
 
         /**
          * Grid Infrastructure Image Id
-         *
          * @param gridImageId the value to set
          * @return this builder
-         */
+         **/
         public Builder gridImageId(String gridImageId) {
             this.gridImageId = gridImageId;
             this.__explicitlySet__.add("gridImageId");
@@ -91,7 +90,9 @@ public final class GiMinorVersionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,28 +101,30 @@ public final class GiMinorVersionSummary
         return new Builder().copy(this);
     }
 
-    /** A valid Oracle Grid Infrastructure (GI) software version. */
+    /**
+     * A valid Oracle Grid Infrastructure (GI) software version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** Grid Infrastructure Image Id */
+    /**
+     * Grid Infrastructure Image Id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
     private final String gridImageId;
 
     /**
      * Grid Infrastructure Image Id
-     *
      * @return the value
-     */
+     **/
     public String getGridImageId() {
         return gridImageId;
     }
@@ -133,7 +136,6 @@ public final class GiMinorVersionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

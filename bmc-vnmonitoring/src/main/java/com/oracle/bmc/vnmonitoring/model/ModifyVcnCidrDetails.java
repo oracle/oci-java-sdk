@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Details for updating a CIDR block. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details for updating a CIDR block.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ModifyVcnCidrDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ModifyVcnCidrDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ModifyVcnCidrDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ModifyVcnCidrDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"originalCidrBlock", "newCidrBlock"})
     public ModifyVcnCidrDetails(String originalCidrBlock, String newCidrBlock) {
@@ -32,7 +31,10 @@ public final class ModifyVcnCidrDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The CIDR IP address to update. */
+        /**
+         * The CIDR IP address to update.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalCidrBlock")
         private String originalCidrBlock;
 
@@ -41,13 +43,16 @@ public final class ModifyVcnCidrDetails
          *
          * @param originalCidrBlock the value to set
          * @return this builder
-         */
+         **/
         public Builder originalCidrBlock(String originalCidrBlock) {
             this.originalCidrBlock = originalCidrBlock;
             this.__explicitlySet__.add("originalCidrBlock");
             return this;
         }
-        /** The new CIDR IP address. */
+        /**
+         * The new CIDR IP address.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newCidrBlock")
         private String newCidrBlock;
 
@@ -56,7 +61,7 @@ public final class ModifyVcnCidrDetails
          *
          * @param newCidrBlock the value to set
          * @return this builder
-         */
+         **/
         public Builder newCidrBlock(String newCidrBlock) {
             this.newCidrBlock = newCidrBlock;
             this.__explicitlySet__.add("newCidrBlock");
@@ -87,7 +92,9 @@ public final class ModifyVcnCidrDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,7 +103,10 @@ public final class ModifyVcnCidrDetails
         return new Builder().copy(this);
     }
 
-    /** The CIDR IP address to update. */
+    /**
+     * The CIDR IP address to update.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalCidrBlock")
     private final String originalCidrBlock;
 
@@ -104,12 +114,15 @@ public final class ModifyVcnCidrDetails
      * The CIDR IP address to update.
      *
      * @return the value
-     */
+     **/
     public String getOriginalCidrBlock() {
         return originalCidrBlock;
     }
 
-    /** The new CIDR IP address. */
+    /**
+     * The new CIDR IP address.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("newCidrBlock")
     private final String newCidrBlock;
 
@@ -117,7 +130,7 @@ public final class ModifyVcnCidrDetails
      * The new CIDR IP address.
      *
      * @return the value
-     */
+     **/
     public String getNewCidrBlock() {
         return newCidrBlock;
     }
@@ -129,7 +142,6 @@ public final class ModifyVcnCidrDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,24 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * Values to use for an independent evaluation of the alarm. You can specify values for query,
- * severity, body, and pending duration. When an alarm contains overrides, the Monitoring service
- * evaluates each override in order, beginning with the first override in the array (index position
- * {@code 0}), and then evaluates the alarm's base values ({@code ruleName} value of {@code BASE})
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * Values to use for an independent evaluation of the alarm.
+ * You can specify values for query, severity, body, and pending duration.
+ * When an alarm contains overrides, the Monitoring service evaluates each override in order,
+ * beginning with the first override in the array (index position {@code 0}),
+ * and then evaluates the alarm's base values ({@code ruleName} value of {@code BASE})
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AlarmOverride.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AlarmOverride extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AlarmOverride extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pendingDuration", "severity", "body", "ruleName", "query"})
     public AlarmOverride(
@@ -43,45 +42,46 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The period of time that the condition defined in the alarm must persist before the alarm
-         * state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the
-         * alarm must persist in breaching the condition for five minutes before the alarm updates
-         * its state to "FIRING".
-         *
-         * <p>The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten
-         * minutes or {@code PT1H} for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
-         *
-         * <p>Under the default value of PT1M, the first evaluation that breaches the alarm updates
-         * the state to "FIRING".
-         *
-         * <p>The alarm updates its status to "OK" when the breaching condition has been clear for
+         * The period of time that the condition defined in the alarm must persist before the alarm state
+         * changes from "OK" to "FIRING". For example, a value of 5 minutes means that the
+         * alarm must persist in breaching the condition for five minutes before the alarm updates its
+         * state to "FIRING".
+         * <p>
+         * The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+         * for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+         * <p>
+         * Under the default value of PT1M, the first evaluation that breaches the alarm updates the
+         * state to "FIRING".
+         * <p>
+         * The alarm updates its status to "OK" when the breaching condition has been clear for
          * the most recent minute.
+         * <p>
+         * Example: {@code PT5M}
          *
-         * <p>Example: {@code PT5M}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pendingDuration")
         private String pendingDuration;
 
         /**
-         * The period of time that the condition defined in the alarm must persist before the alarm
-         * state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the
-         * alarm must persist in breaching the condition for five minutes before the alarm updates
-         * its state to "FIRING".
-         *
-         * <p>The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten
-         * minutes or {@code PT1H} for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
-         *
-         * <p>Under the default value of PT1M, the first evaluation that breaches the alarm updates
-         * the state to "FIRING".
-         *
-         * <p>The alarm updates its status to "OK" when the breaching condition has been clear for
+         * The period of time that the condition defined in the alarm must persist before the alarm state
+         * changes from "OK" to "FIRING". For example, a value of 5 minutes means that the
+         * alarm must persist in breaching the condition for five minutes before the alarm updates its
+         * state to "FIRING".
+         * <p>
+         * The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+         * for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+         * <p>
+         * Under the default value of PT1M, the first evaluation that breaches the alarm updates the
+         * state to "FIRING".
+         * <p>
+         * The alarm updates its status to "OK" when the breaching condition has been clear for
          * the most recent minute.
-         *
-         * <p>Example: {@code PT5M}
+         * <p>
+         * Example: {@code PT5M}
          *
          * @param pendingDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder pendingDuration(String pendingDuration) {
             this.pendingDuration = pendingDuration;
             this.__explicitlySet__.add("pendingDuration");
@@ -89,165 +89,163 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The perceived severity of the alarm with regard to the affected system.
+         * <p>
+         * Example: {@code CRITICAL}
          *
-         * <p>Example: {@code CRITICAL}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Alarm.Severity severity;
 
         /**
          * The perceived severity of the alarm with regard to the affected system.
-         *
-         * <p>Example: {@code CRITICAL}
+         * <p>
+         * Example: {@code CRITICAL}
          *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(Alarm.Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
         /**
-         * The human-readable content of the delivered alarm notification. Optionally include
-         * [dynamic
-         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-         * Oracle recommends providing guidance to operators for resolving the alarm condition.
-         * Consider adding links to standard runbook practices. Avoid entering confidential
-         * information.
+         * The human-readable content of the delivered alarm notification.
+         * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Oracle recommends providing guidance
+         * to operators for resolving the alarm condition. Consider adding links to standard runbook
+         * practices. Avoid entering confidential information.
+         * <p>
+         * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
-         * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("body")
         private String body;
 
         /**
-         * The human-readable content of the delivered alarm notification. Optionally include
-         * [dynamic
-         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-         * Oracle recommends providing guidance to operators for resolving the alarm condition.
-         * Consider adding links to standard runbook practices. Avoid entering confidential
-         * information.
-         *
-         * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
+         * The human-readable content of the delivered alarm notification.
+         * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Oracle recommends providing guidance
+         * to operators for resolving the alarm condition. Consider adding links to standard runbook
+         * practices. Avoid entering confidential information.
+         * <p>
+         * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
          * @param body the value to set
          * @return this builder
-         */
+         **/
         public Builder body(String body) {
             this.body = body;
             this.__explicitlySet__.add("body");
             return this;
         }
         /**
-         * A user-friendly description for this alarm override. Must be unique across all {@code
-         * ruleName} values for the alarm.
-         */
+         * A user-friendly description for this alarm override. Must be unique across all {@code ruleName} values for the alarm.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
         private String ruleName;
 
         /**
-         * A user-friendly description for this alarm override. Must be unique across all {@code
-         * ruleName} values for the alarm.
+         * A user-friendly description for this alarm override. Must be unique across all {@code ruleName} values for the alarm.
          *
          * @param ruleName the value to set
          * @return this builder
-         */
+         **/
         public Builder ruleName(String ruleName) {
             this.ruleName = ruleName;
             this.__explicitlySet__.add("ruleName");
             return this;
         }
         /**
-         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms
-         * feature of the Monitoring service interprets results for each returned time series as
-         * Boolean values, where zero represents false and a non-zero value represents true. A true
-         * value means that the trigger rule condition has been met. The query must specify a
-         * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
-         * for interval depend on the specified time range. More interval values are supported for
-         * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
-         * you can customize the [absence detection
-         * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
-         * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
-         * about writing MQL expressions, see [Editing the MQL Expression for a
-         * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
-         * details about MQL, see [Monitoring Query Language (MQL)
-         * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-         * available dimensions, review the metric definition for the supported service. See
-         * [Supported
-         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+         * the Monitoring service interprets results for each returned time series as Boolean values,
+         * where zero represents false and a non-zero value represents true. A true value means that the trigger
+         * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+         * rule (threshold or absence). Supported values for interval depend on the specified time range. More
+         * interval values are supported for smaller time ranges. You can optionally
+         * specify dimensions and grouping functions.
+         * Also, you can customize the
+         * [absence detection period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+         * Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * For information about writing MQL expressions, see
+         * [Editing the MQL Expression for a Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see
+         * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+         * For available dimensions, review the metric definition for the supported service. See
+         * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * <p>
+         * Example of threshold alarm:
+         * <p>
+         * -----
+         * <p>
+         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+         * <p>
+         * -----
+         * <p>
+         * Example of absence alarm:
+         * <p>
+         * -----
+         * <p>
+         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         * <p>
+         * -----
+         * Example of absence alarm with custom absence detection period of 20 hours:
+         * <p>
+         * -----
          *
-         * <p>Example of threshold alarm:
+         *     CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
          *
-         * <p>-----
+         *   -----
          *
-         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
-         * > 85
-         *
-         * <p>-----
-         *
-         * <p>Example of absence alarm:
-         *
-         * <p>-----
-         *
-         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-         *
-         * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
-         *
-         * <p>-----
-         *
-         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
-         *
-         * <p>-----
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
-         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms
-         * feature of the Monitoring service interprets results for each returned time series as
-         * Boolean values, where zero represents false and a non-zero value represents true. A true
-         * value means that the trigger rule condition has been met. The query must specify a
-         * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
-         * for interval depend on the specified time range. More interval values are supported for
-         * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
-         * you can customize the [absence detection
-         * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
-         * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
-         * about writing MQL expressions, see [Editing the MQL Expression for a
-         * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
-         * details about MQL, see [Monitoring Query Language (MQL)
-         * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-         * available dimensions, review the metric definition for the supported service. See
-         * [Supported
-         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+         * the Monitoring service interprets results for each returned time series as Boolean values,
+         * where zero represents false and a non-zero value represents true. A true value means that the trigger
+         * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+         * rule (threshold or absence). Supported values for interval depend on the specified time range. More
+         * interval values are supported for smaller time ranges. You can optionally
+         * specify dimensions and grouping functions.
+         * Also, you can customize the
+         * [absence detection period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+         * Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * For information about writing MQL expressions, see
+         * [Editing the MQL Expression for a Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see
+         * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+         * For available dimensions, review the metric definition for the supported service. See
+         * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * <p>
+         * Example of threshold alarm:
+         * <p>
+         * -----
+         * <p>
+         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+         * <p>
+         * -----
+         * <p>
+         * Example of absence alarm:
+         * <p>
+         * -----
+         * <p>
+         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         * <p>
+         * -----
+         * Example of absence alarm with custom absence detection period of 20 hours:
+         * <p>
+         * -----
          *
-         * <p>Example of threshold alarm:
+         *     CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
          *
-         * <p>-----
-         *
-         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
-         * > 85
-         *
-         * <p>-----
-         *
-         * <p>Example of absence alarm:
-         *
-         * <p>-----
-         *
-         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-         *
-         * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
-         *
-         * <p>-----
-         *
-         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
-         *
-         * <p>-----
+         *   -----
          *
          * @param query the value to set
          * @return this builder
-         */
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -292,7 +290,9 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,196 +302,201 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The period of time that the condition defined in the alarm must persist before the alarm
-     * state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm
-     * must persist in breaching the condition for five minutes before the alarm updates its state
-     * to "FIRING".
-     *
-     * <p>The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten minutes or
-     * {@code PT1H} for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
-     *
-     * <p>Under the default value of PT1M, the first evaluation that breaches the alarm updates the
+     * The period of time that the condition defined in the alarm must persist before the alarm state
+     * changes from "OK" to "FIRING". For example, a value of 5 minutes means that the
+     * alarm must persist in breaching the condition for five minutes before the alarm updates its
      * state to "FIRING".
+     * <p>
+     * The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+     * for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+     * <p>
+     * Under the default value of PT1M, the first evaluation that breaches the alarm updates the
+     * state to "FIRING".
+     * <p>
+     * The alarm updates its status to "OK" when the breaching condition has been clear for
+     * the most recent minute.
+     * <p>
+     * Example: {@code PT5M}
      *
-     * <p>The alarm updates its status to "OK" when the breaching condition has been clear for the
-     * most recent minute.
-     *
-     * <p>Example: {@code PT5M}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pendingDuration")
     private final String pendingDuration;
 
     /**
-     * The period of time that the condition defined in the alarm must persist before the alarm
-     * state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm
-     * must persist in breaching the condition for five minutes before the alarm updates its state
-     * to "FIRING".
-     *
-     * <p>The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten minutes or
-     * {@code PT1H} for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
-     *
-     * <p>Under the default value of PT1M, the first evaluation that breaches the alarm updates the
+     * The period of time that the condition defined in the alarm must persist before the alarm state
+     * changes from "OK" to "FIRING". For example, a value of 5 minutes means that the
+     * alarm must persist in breaching the condition for five minutes before the alarm updates its
      * state to "FIRING".
-     *
-     * <p>The alarm updates its status to "OK" when the breaching condition has been clear for the
-     * most recent minute.
-     *
-     * <p>Example: {@code PT5M}
+     * <p>
+     * The duration is specified as a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+     * for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+     * <p>
+     * Under the default value of PT1M, the first evaluation that breaches the alarm updates the
+     * state to "FIRING".
+     * <p>
+     * The alarm updates its status to "OK" when the breaching condition has been clear for
+     * the most recent minute.
+     * <p>
+     * Example: {@code PT5M}
      *
      * @return the value
-     */
+     **/
     public String getPendingDuration() {
         return pendingDuration;
     }
 
     /**
      * The perceived severity of the alarm with regard to the affected system.
+     * <p>
+     * Example: {@code CRITICAL}
      *
-     * <p>Example: {@code CRITICAL}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Alarm.Severity severity;
 
     /**
      * The perceived severity of the alarm with regard to the affected system.
-     *
-     * <p>Example: {@code CRITICAL}
+     * <p>
+     * Example: {@code CRITICAL}
      *
      * @return the value
-     */
+     **/
     public Alarm.Severity getSeverity() {
         return severity;
     }
 
     /**
-     * The human-readable content of the delivered alarm notification. Optionally include [dynamic
-     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-     * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
-     * adding links to standard runbook practices. Avoid entering confidential information.
+     * The human-readable content of the delivered alarm notification.
+     * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Oracle recommends providing guidance
+     * to operators for resolving the alarm condition. Consider adding links to standard runbook
+     * practices. Avoid entering confidential information.
+     * <p>
+     * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
-     * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("body")
     private final String body;
 
     /**
-     * The human-readable content of the delivered alarm notification. Optionally include [dynamic
-     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-     * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
-     * adding links to standard runbook practices. Avoid entering confidential information.
-     *
-     * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
+     * The human-readable content of the delivered alarm notification.
+     * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Oracle recommends providing guidance
+     * to operators for resolving the alarm condition. Consider adding links to standard runbook
+     * practices. Avoid entering confidential information.
+     * <p>
+     * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
      * @return the value
-     */
+     **/
     public String getBody() {
         return body;
     }
 
     /**
-     * A user-friendly description for this alarm override. Must be unique across all {@code
-     * ruleName} values for the alarm.
-     */
+     * A user-friendly description for this alarm override. Must be unique across all {@code ruleName} values for the alarm.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
     private final String ruleName;
 
     /**
-     * A user-friendly description for this alarm override. Must be unique across all {@code
-     * ruleName} values for the alarm.
+     * A user-friendly description for this alarm override. Must be unique across all {@code ruleName} values for the alarm.
      *
      * @return the value
-     */
+     **/
     public String getRuleName() {
         return ruleName;
     }
 
     /**
-     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature
-     * of the Monitoring service interprets results for each returned time series as Boolean values,
-     * where zero represents false and a non-zero value represents true. A true value means that the
-     * trigger rule condition has been met. The query must specify a metric, statistic, interval,
-     * and trigger rule (threshold or absence). Supported values for interval depend on the
-     * specified time range. More interval values are supported for smaller time ranges. You can
-     * optionally specify dimensions and grouping functions. Also, you can customize the [absence
-     * detection
-     * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
-     * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
-     * writing MQL expressions, see [Editing the MQL Expression for a
-     * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
-     * details about MQL, see [Monitoring Query Language (MQL)
-     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
-     * dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+     * the Monitoring service interprets results for each returned time series as Boolean values,
+     * where zero represents false and a non-zero value represents true. A true value means that the trigger
+     * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+     * rule (threshold or absence). Supported values for interval depend on the specified time range. More
+     * interval values are supported for smaller time ranges. You can optionally
+     * specify dimensions and grouping functions.
+     * Also, you can customize the
+     * [absence detection period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+     * For information about writing MQL expressions, see
+     * [Editing the MQL Expression for a Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+     * For details about MQL, see
+     * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * For available dimensions, review the metric definition for the supported service. See
+     * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * <p>
+     * Example of threshold alarm:
+     * <p>
+     * -----
+     * <p>
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+     * <p>
+     * -----
+     * <p>
+     * Example of absence alarm:
+     * <p>
+     * -----
+     * <p>
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     * <p>
+     * -----
+     * Example of absence alarm with custom absence detection period of 20 hours:
+     * <p>
+     * -----
      *
-     * <p>Example of threshold alarm:
+     *     CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
      *
-     * <p>-----
+     *   -----
      *
-     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
-     * > 85
-     *
-     * <p>-----
-     *
-     * <p>Example of absence alarm:
-     *
-     * <p>-----
-     *
-     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-     *
-     * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
-     *
-     * <p>-----
-     *
-     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
-     *
-     * <p>-----
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
-     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature
-     * of the Monitoring service interprets results for each returned time series as Boolean values,
-     * where zero represents false and a non-zero value represents true. A true value means that the
-     * trigger rule condition has been met. The query must specify a metric, statistic, interval,
-     * and trigger rule (threshold or absence). Supported values for interval depend on the
-     * specified time range. More interval values are supported for smaller time ranges. You can
-     * optionally specify dimensions and grouping functions. Also, you can customize the [absence
-     * detection
-     * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
-     * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
-     * writing MQL expressions, see [Editing the MQL Expression for a
-     * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
-     * details about MQL, see [Monitoring Query Language (MQL)
-     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
-     * dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+     * the Monitoring service interprets results for each returned time series as Boolean values,
+     * where zero represents false and a non-zero value represents true. A true value means that the trigger
+     * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+     * rule (threshold or absence). Supported values for interval depend on the specified time range. More
+     * interval values are supported for smaller time ranges. You can optionally
+     * specify dimensions and grouping functions.
+     * Also, you can customize the
+     * [absence detection period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+     * For information about writing MQL expressions, see
+     * [Editing the MQL Expression for a Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+     * For details about MQL, see
+     * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * For available dimensions, review the metric definition for the supported service. See
+     * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * <p>
+     * Example of threshold alarm:
+     * <p>
+     * -----
+     * <p>
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+     * <p>
+     * -----
+     * <p>
+     * Example of absence alarm:
+     * <p>
+     * -----
+     * <p>
+     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     * <p>
+     * -----
+     * Example of absence alarm with custom absence detection period of 20 hours:
+     * <p>
+     * -----
      *
-     * <p>Example of threshold alarm:
+     *     CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
      *
-     * <p>-----
-     *
-     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
-     * > 85
-     *
-     * <p>-----
-     *
-     * <p>Example of absence alarm:
-     *
-     * <p>-----
-     *
-     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-     *
-     * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
-     *
-     * <p>-----
-     *
-     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
-     *
-     * <p>-----
+     *   -----
      *
      * @return the value
-     */
+     **/
     public String getQuery() {
         return query;
     }
@@ -503,7 +508,6 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

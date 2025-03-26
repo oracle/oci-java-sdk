@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cims.model;
 
-/** Information about the current status of the ticket. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Information about the current status of the ticket.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+public enum LifecycleDetails {
     PendingWithOracle("PENDING_WITH_ORACLE"),
     PendingWithCustomer("PENDING_WITH_CUSTOMER"),
     PendingWithSupport("PENDING_WITH_SUPPORT"),

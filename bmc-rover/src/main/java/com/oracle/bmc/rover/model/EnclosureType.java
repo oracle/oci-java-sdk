@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.rover.model;
 
-/** Type of enclosure the node is shipped in. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-public enum EnclosureType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of enclosure the node is shipped in.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+public enum EnclosureType {
     Ruggadized("RUGGADIZED"),
     NonRuggadized("NON_RUGGADIZED"),
 

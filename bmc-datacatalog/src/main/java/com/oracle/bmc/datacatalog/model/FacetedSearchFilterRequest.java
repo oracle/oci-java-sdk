@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Object with details about filter criteria. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Object with details about filter criteria.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FacetedSearchFilterRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FacetedSearchFilterRequest.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FacetedSearchFilterRequest
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"searchDateFilters", "searchStringFilters"})
     public FacetedSearchFilterRequest(
@@ -34,32 +33,34 @@ public final class FacetedSearchFilterRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Object with date filter criteria */
+        /**
+         * Object with date filter criteria
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchDateFilters")
         private java.util.List<FacetedSearchDateFilterRequest> searchDateFilters;
 
         /**
          * Object with date filter criteria
-         *
          * @param searchDateFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder searchDateFilters(
                 java.util.List<FacetedSearchDateFilterRequest> searchDateFilters) {
             this.searchDateFilters = searchDateFilters;
             this.__explicitlySet__.add("searchDateFilters");
             return this;
         }
-        /** Object with string filter criteria */
+        /**
+         * Object with string filter criteria
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchStringFilters")
         private java.util.List<FacetedSearchStringFilterRequest> searchStringFilters;
 
         /**
          * Object with string filter criteria
-         *
          * @param searchStringFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder searchStringFilters(
                 java.util.List<FacetedSearchStringFilterRequest> searchStringFilters) {
             this.searchStringFilters = searchStringFilters;
@@ -92,7 +93,9 @@ public final class FacetedSearchFilterRequest
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,28 +104,30 @@ public final class FacetedSearchFilterRequest
         return new Builder().copy(this);
     }
 
-    /** Object with date filter criteria */
+    /**
+     * Object with date filter criteria
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchDateFilters")
     private final java.util.List<FacetedSearchDateFilterRequest> searchDateFilters;
 
     /**
      * Object with date filter criteria
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FacetedSearchDateFilterRequest> getSearchDateFilters() {
         return searchDateFilters;
     }
 
-    /** Object with string filter criteria */
+    /**
+     * Object with string filter criteria
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchStringFilters")
     private final java.util.List<FacetedSearchStringFilterRequest> searchStringFilters;
 
     /**
      * Object with string filter criteria
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FacetedSearchStringFilterRequest> getSearchStringFilters() {
         return searchStringFilters;
     }
@@ -134,7 +139,6 @@ public final class FacetedSearchFilterRequest
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

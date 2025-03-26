@@ -6,19 +6,21 @@ package com.oracle.bmc.ailanguage.requests;
 
 import com.oracle.bmc.ailanguage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeJobCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeJobCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeJobCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class ChangeJobCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ailanguage.model.ChangeJobCompartmentDetails> {
 
-    /** unique job OCID. */
+    /**
+     * unique job OCID.
+     */
     private String jobId;
 
-    /** unique job OCID. */
+    /**
+     * unique job OCID.
+     */
     public String getJobId() {
         return jobId;
     }
@@ -30,31 +32,33 @@ public class ChangeJobCompartmentRequest
         return changeJobCompartmentDetails;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -62,18 +66,20 @@ public class ChangeJobCompartmentRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -81,7 +87,6 @@ public class ChangeJobCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -94,15 +99,17 @@ public class ChangeJobCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeJobCompartmentRequest,
                     com.oracle.bmc.ailanguage.model.ChangeJobCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique job OCID. */
+        /**
+         * unique job OCID.
+         */
         private String jobId = null;
 
         /**
          * unique job OCID.
-         *
          * @param jobId the value to set
          * @return this builder instance
          */
@@ -115,6 +122,7 @@ public class ChangeJobCompartmentRequest
                 changeJobCompartmentDetails = null;
 
         /**
+         *
          * @param changeJobCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -126,14 +134,15 @@ public class ChangeJobCompartmentRequest
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -144,18 +153,17 @@ public class ChangeJobCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -167,19 +175,20 @@ public class ChangeJobCompartmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -191,19 +200,18 @@ public class ChangeJobCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -215,7 +223,6 @@ public class ChangeJobCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeJobCompartmentRequest o) {
@@ -232,11 +239,10 @@ public class ChangeJobCompartmentRequest
         /**
          * Build the instance of ChangeJobCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeJobCompartmentRequest
          */
@@ -249,7 +255,6 @@ public class ChangeJobCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -262,8 +267,7 @@ public class ChangeJobCompartmentRequest
         /**
          * Build the instance of ChangeJobCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeJobCompartmentRequest
@@ -276,14 +280,12 @@ public class ChangeJobCompartmentRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeJobCompartmentRequest(jobId, changeJobCompartmentDetails, opcRequestId,
-            // ifMatch, opcRetryToken);
+            // new ChangeJobCompartmentRequest(jobId, changeJobCompartmentDetails, opcRequestId, ifMatch, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -297,7 +299,6 @@ public class ChangeJobCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

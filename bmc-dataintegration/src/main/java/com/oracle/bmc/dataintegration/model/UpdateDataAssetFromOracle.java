@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Oracle Database data asset type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details for the Oracle Database data asset type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDataAssetFromOracle.Builder.class)
+    builder = UpdateDataAssetFromOracle.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDataAssetFromOracle extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,91 +116,97 @@ public final class UpdateDataAssetFromOracle extends UpdateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /** The Oracle Database hostname. */
+        /**
+         * The Oracle Database hostname.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * The Oracle Database hostname.
-         *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The Oracle Database port. */
+        /**
+         * The Oracle Database port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
         /**
          * The Oracle Database port.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The Oracle Database service name. */
+        /**
+         * The Oracle Database service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The Oracle Database service name.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** The Oracle Database driver class. */
+        /**
+         * The Oracle Database driver class.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
         /**
          * The Oracle Database driver class.
-         *
          * @param driverClass the value to set
          * @return this builder
-         */
+         **/
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
             return this;
         }
-        /** The Oracle Database SID. */
+        /**
+         * The Oracle Database SID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sid")
         private String sid;
 
         /**
          * The Oracle Database SID.
-         *
          * @param sid the value to set
          * @return this builder
-         */
+         **/
         public Builder sid(String sid) {
             this.sid = sid;
             this.__explicitlySet__.add("sid");
             return this;
         }
-        /** The credential file content from a wallet for the data asset. */
+        /**
+         * The credential file content from a wallet for the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
         private String credentialFileContent;
 
         /**
          * The credential file content from a wallet for the data asset.
-         *
          * @param credentialFileContent the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialFileContent(String credentialFileContent) {
             this.credentialFileContent = credentialFileContent;
             this.__explicitlySet__.add("credentialFileContent");
@@ -328,7 +334,9 @@ public final class UpdateDataAssetFromOracle extends UpdateDataAssetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -380,80 +388,86 @@ public final class UpdateDataAssetFromOracle extends UpdateDataAssetDetails {
         this.defaultConnection = defaultConnection;
     }
 
-    /** The Oracle Database hostname. */
+    /**
+     * The Oracle Database hostname.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * The Oracle Database hostname.
-     *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The Oracle Database port. */
+    /**
+     * The Oracle Database port.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
      * The Oracle Database port.
-     *
      * @return the value
-     */
+     **/
     public String getPort() {
         return port;
     }
 
-    /** The Oracle Database service name. */
+    /**
+     * The Oracle Database service name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The Oracle Database service name.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** The Oracle Database driver class. */
+    /**
+     * The Oracle Database driver class.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
     /**
      * The Oracle Database driver class.
-     *
      * @return the value
-     */
+     **/
     public String getDriverClass() {
         return driverClass;
     }
 
-    /** The Oracle Database SID. */
+    /**
+     * The Oracle Database SID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sid")
     private final String sid;
 
     /**
      * The Oracle Database SID.
-     *
      * @return the value
-     */
+     **/
     public String getSid() {
         return sid;
     }
 
-    /** The credential file content from a wallet for the data asset. */
+    /**
+     * The credential file content from a wallet for the data asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     private final String credentialFileContent;
 
     /**
      * The credential file content from a wallet for the data asset.
-     *
      * @return the value
-     */
+     **/
     public String getCredentialFileContent() {
         return credentialFileContent;
     }
@@ -486,7 +500,6 @@ public final class UpdateDataAssetFromOracle extends UpdateDataAssetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

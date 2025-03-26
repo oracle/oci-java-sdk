@@ -6,31 +6,35 @@ package com.oracle.bmc.limits.requests;
 
 import com.oracle.bmc.limits.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListServicesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListServicesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListServicesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListServicesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the parent compartment (remember that the tenancy is simply the root
-     * compartment).
+     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     *
      */
     private String compartmentId;
 
     /**
-     * The OCID of the parent compartment (remember that the tenancy is simply the root
-     * compartment).
+     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The field to sort by. */
+    /**
+     * The field to sort by.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by.
+     *
+     **/
+    public enum SortBy {
         Name("name"),
         Description("description"),
         ;
@@ -63,15 +67,24 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** The field to sort by. */
+    /**
+     * The field to sort by.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -104,41 +117,64 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the subscription assigned to tenant */
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
     private String subscriptionId;
 
-    /** The OCID of the subscription assigned to tenant */
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -146,18 +182,18 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListServicesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the parent compartment (remember that the tenancy is simply the root
-         * compartment).
+         * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the parent compartment (remember that the tenancy is simply the root
-         * compartment).
+         * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -167,7 +203,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The field to sort by. */
+        /**
+         * The field to sort by.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -181,7 +220,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -195,7 +237,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -209,7 +254,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -226,6 +274,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -241,7 +290,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The OCID of the subscription assigned to tenant */
+        /**
+         * The OCID of the subscription assigned to tenant
+         *
+         */
         private String subscriptionId = null;
 
         /**
@@ -257,19 +309,18 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -281,7 +332,6 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListServicesRequest o) {
@@ -300,11 +350,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListServicesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListServicesRequest
          */
@@ -318,8 +367,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListServicesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListServicesRequest
@@ -334,14 +382,12 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.opcRequestId = opcRequestId;
             request.subscriptionId = subscriptionId;
             return request;
-            // new ListServicesRequest(compartmentId, sortBy, sortOrder, limit, page, opcRequestId,
-            // subscriptionId);
+            // new ListServicesRequest(compartmentId, sortBy, sortOrder, limit, page, opcRequestId, subscriptionId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -357,7 +403,6 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Type of configuration item. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ConfigurationItemType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of configuration item.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ConfigurationItemType {
     Basic("BASIC"),
 
     /**

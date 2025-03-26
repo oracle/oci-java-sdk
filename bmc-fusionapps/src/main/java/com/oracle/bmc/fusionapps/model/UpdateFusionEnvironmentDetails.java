@@ -5,23 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The information to be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * The information to be updated.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateFusionEnvironmentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateFusionEnvironmentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateFusionEnvironmentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -52,31 +51,33 @@ public final class UpdateFusionEnvironmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** FusionEnvironment Identifier, can be renamed */
+        /**
+         * FusionEnvironment Identifier, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * FusionEnvironment Identifier, can be renamed
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** byok kms keyId */
+        /**
+         * byok kms keyId
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
          * byok kms keyId
-         *
          * @param kmsKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
@@ -91,54 +92,53 @@ public final class UpdateFusionEnvironmentDetails
             this.__explicitlySet__.add("maintenancePolicy");
             return this;
         }
-        /** Language packs */
+        /**
+         * Language packs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalLanguagePacks")
         private java.util.List<String> additionalLanguagePacks;
 
         /**
          * Language packs
-         *
          * @param additionalLanguagePacks the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalLanguagePacks(java.util.List<String> additionalLanguagePacks) {
             this.additionalLanguagePacks = additionalLanguagePacks;
             this.__explicitlySet__.add("additionalLanguagePacks");
             return this;
         }
         /**
-         * Network access control rules to limit internet traffic that can access the environment.
-         * For more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
-         */
+         * Network access control rules to limit internet traffic that can access the environment. For more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<Rule> rules;
 
         /**
-         * Network access control rules to limit internet traffic that can access the environment.
-         * For more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
-         *
+         * Network access control rules to limit internet traffic that can access the environment. For more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
          * @param rules the value to set
          * @return this builder
-         */
+         **/
         public Builder rules(java.util.List<Rule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -147,7 +147,8 @@ public final class UpdateFusionEnvironmentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -157,7 +158,7 @@ public final class UpdateFusionEnvironmentDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -211,7 +212,9 @@ public final class UpdateFusionEnvironmentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -220,28 +223,30 @@ public final class UpdateFusionEnvironmentDetails
         return new Builder().copy(this);
     }
 
-    /** FusionEnvironment Identifier, can be renamed */
+    /**
+     * FusionEnvironment Identifier, can be renamed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * FusionEnvironment Identifier, can be renamed
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** byok kms keyId */
+    /**
+     * byok kms keyId
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
      * byok kms keyId
-     *
      * @return the value
-     */
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -253,66 +258,66 @@ public final class UpdateFusionEnvironmentDetails
         return maintenancePolicy;
     }
 
-    /** Language packs */
+    /**
+     * Language packs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalLanguagePacks")
     private final java.util.List<String> additionalLanguagePacks;
 
     /**
      * Language packs
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAdditionalLanguagePacks() {
         return additionalLanguagePacks;
     }
 
     /**
-     * Network access control rules to limit internet traffic that can access the environment. For
-     * more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
-     */
+     * Network access control rules to limit internet traffic that can access the environment. For more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<Rule> rules;
 
     /**
-     * Network access control rules to limit internet traffic that can access the environment. For
-     * more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
-     *
+     * Network access control rules to limit internet traffic that can access the environment. For more information, see {@link #allowRule(AllowRuleRequest) allowRule}.
      * @return the value
-     */
+     **/
     public java.util.List<Rule> getRules() {
         return rules;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -324,7 +329,6 @@ public final class UpdateFusionEnvironmentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,24 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * A response containing a collection of query rows (selected attributes and aggregations) filtered,
- * grouped and sorted by the specified criteria from the query that is run, and the associated
- * summary describing the corresponding query result metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * A response containing a collection of query rows (selected attributes and aggregations) filtered, grouped and
+ * sorted by the specified criteria from the query that is run, and the associated summary describing the corresponding
+ * query result metadata.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = QueryResultResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class QueryResultResponse
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = QueryResultResponse.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class QueryResultResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "queryResultMetadataSummary",
@@ -56,27 +55,31 @@ public final class QueryResultResponse
             return this;
         }
         /**
-         * A collection of objects with each object representing an individual row of the query
-         * result set. The total number of objects returned in this collection correspond to the
-         * total number of rows returned by the actual query that is run against the queried entity.
-         */
+         * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
+         * returned in this collection correspond to the total number of rows returned by the actual query that is run against
+         * the queried entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultRows")
         private java.util.List<QueryResultRow> queryResultRows;
 
         /**
-         * A collection of objects with each object representing an individual row of the query
-         * result set. The total number of objects returned in this collection correspond to the
-         * total number of rows returned by the actual query that is run against the queried entity.
+         * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
+         * returned in this collection correspond to the total number of rows returned by the actual query that is run against
+         * the queried entity.
          *
          * @param queryResultRows the value to set
          * @return this builder
-         */
+         **/
         public Builder queryResultRows(java.util.List<QueryResultRow> queryResultRows) {
             this.queryResultRows = queryResultRows;
             this.__explicitlySet__.add("queryResultRows");
             return this;
         }
-        /** A map containing metadata or additional information. */
+        /**
+         * A map containing metadata or additional information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultMetadata")
         private java.util.Map<String, Object> queryResultMetadata;
 
@@ -85,13 +88,16 @@ public final class QueryResultResponse
          *
          * @param queryResultMetadata the value to set
          * @return this builder
-         */
+         **/
         public Builder queryResultMetadata(java.util.Map<String, Object> queryResultMetadata) {
             this.queryResultMetadata = queryResultMetadata;
             this.__explicitlySet__.add("queryResultMetadata");
             return this;
         }
-        /** A structure that provides warnings, if any, along with the query results. */
+        /**
+         * A structure that provides warnings, if any, along with the query results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultWarnings")
         private java.util.List<QueryResultWarning> queryResultWarnings;
 
@@ -100,7 +106,7 @@ public final class QueryResultResponse
          *
          * @param queryResultWarnings the value to set
          * @return this builder
-         */
+         **/
         public Builder queryResultWarnings(java.util.List<QueryResultWarning> queryResultWarnings) {
             this.queryResultWarnings = queryResultWarnings;
             this.__explicitlySet__.add("queryResultWarnings");
@@ -141,7 +147,9 @@ public final class QueryResultResponse
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -158,25 +166,29 @@ public final class QueryResultResponse
     }
 
     /**
-     * A collection of objects with each object representing an individual row of the query result
-     * set. The total number of objects returned in this collection correspond to the total number
-     * of rows returned by the actual query that is run against the queried entity.
-     */
+     * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
+     * returned in this collection correspond to the total number of rows returned by the actual query that is run against
+     * the queried entity.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRows")
     private final java.util.List<QueryResultRow> queryResultRows;
 
     /**
-     * A collection of objects with each object representing an individual row of the query result
-     * set. The total number of objects returned in this collection correspond to the total number
-     * of rows returned by the actual query that is run against the queried entity.
+     * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
+     * returned in this collection correspond to the total number of rows returned by the actual query that is run against
+     * the queried entity.
      *
      * @return the value
-     */
+     **/
     public java.util.List<QueryResultRow> getQueryResultRows() {
         return queryResultRows;
     }
 
-    /** A map containing metadata or additional information. */
+    /**
+     * A map containing metadata or additional information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultMetadata")
     private final java.util.Map<String, Object> queryResultMetadata;
 
@@ -184,12 +196,15 @@ public final class QueryResultResponse
      * A map containing metadata or additional information.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Object> getQueryResultMetadata() {
         return queryResultMetadata;
     }
 
-    /** A structure that provides warnings, if any, along with the query results. */
+    /**
+     * A structure that provides warnings, if any, along with the query results.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultWarnings")
     private final java.util.List<QueryResultWarning> queryResultWarnings;
 
@@ -197,7 +212,7 @@ public final class QueryResultResponse
      * A structure that provides warnings, if any, along with the query results.
      *
      * @return the value
-     */
+     **/
     public java.util.List<QueryResultWarning> getQueryResultWarnings() {
         return queryResultWarnings;
     }
@@ -209,7 +224,6 @@ public final class QueryResultResponse
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

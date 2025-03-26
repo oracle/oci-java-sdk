@@ -6,17 +6,18 @@ package com.oracle.bmc.usageapi.responses;
 
 import com.oracle.bmc.usageapi.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,17 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -42,13 +44,14 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
         return opcNextPage;
     }
 
-    /** The returned {@code UsageCarbonEmissionAggregation} instance. */
+    /**
+     * The returned UsageCarbonEmissionAggregation instance.
+     */
     private com.oracle.bmc.usageapi.model.UsageCarbonEmissionAggregation
             usageCarbonEmissionAggregation;
 
     /**
-     * The returned {@code UsageCarbonEmissionAggregation} instance.
-     *
+     * The returned UsageCarbonEmissionAggregation instance.
      * @return the value
      */
     public com.oracle.bmc.usageapi.model.UsageCarbonEmissionAggregation
@@ -65,7 +68,7 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
     })
     private RequestUsageCarbonEmissionsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.usageapi.model.UsageCarbonEmissionAggregation
@@ -76,34 +79,31 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
         this.usageCarbonEmissionAggregation = usageCarbonEmissionAggregation;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    RequestUsageCarbonEmissionsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -114,16 +114,17 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -133,13 +134,14 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code UsageCarbonEmissionAggregation} instance. */
+        /**
+         * The returned UsageCarbonEmissionAggregation instance.
+         */
         private com.oracle.bmc.usageapi.model.UsageCarbonEmissionAggregation
                 usageCarbonEmissionAggregation;
 
         /**
-         * The returned {@code UsageCarbonEmissionAggregation} instance.
-         *
+         * The returned UsageCarbonEmissionAggregation instance.
          * @param usageCarbonEmissionAggregation the value to set
          * @return this builder
          */
@@ -152,10 +154,8 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RequestUsageCarbonEmissionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -168,10 +168,8 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RequestUsageCarbonEmissionsResponse build() {
             return new RequestUsageCarbonEmissionsResponse(
                     __httpStatusCode__,
@@ -184,7 +182,6 @@ public class RequestUsageCarbonEmissionsResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

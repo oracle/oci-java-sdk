@@ -6,18 +6,15 @@ package com.oracle.bmc.objectstorage.responses;
 
 import com.oracle.bmc.objectstorage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
-     *
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -25,14 +22,15 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
      *
      * @return the value
      */
@@ -40,12 +38,13 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The base64-encoded MD5 hash of the request body, as computed by the server. */
+    /**
+     * The base64-encoded MD5 hash of the request body, as computed by the server.
+     */
     private String opcContentMd5;
 
     /**
      * The base64-encoded MD5 hash of the request body, as computed by the server.
-     *
      * @return the value
      */
     public String getOpcContentMd5() {
@@ -53,17 +52,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by
-     * the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header
-     * during upload.
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header during upload.
      */
     private String opcContentCrc32c;
 
     /**
-     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by
-     * the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header
-     * during upload.
-     *
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header during upload.
      * @return the value
      */
     public String getOpcContentCrc32c() {
@@ -71,15 +65,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only
-     * if SHA256 was specified in opc-checksum-algorithm request header during upload.
+     * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only if SHA256 was specified in opc-checksum-algorithm request header during upload.
      */
     private String opcContentSha256;
 
     /**
-     * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only
-     * if SHA256 was specified in opc-checksum-algorithm request header during upload.
-     *
+     * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only if SHA256 was specified in opc-checksum-algorithm request header during upload.
      * @return the value
      */
     public String getOpcContentSha256() {
@@ -87,27 +78,25 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only
-     * if SHA384 was specified in opc-checksum-algorithm request header during upload.
+     * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only if SHA384 was specified in opc-checksum-algorithm request header during upload.
      */
     private String opcContentSha384;
 
     /**
-     * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only
-     * if SHA384 was specified in opc-checksum-algorithm request header during upload.
-     *
+     * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only if SHA384 was specified in opc-checksum-algorithm request header during upload.
      * @return the value
      */
     public String getOpcContentSha384() {
         return opcContentSha384;
     }
 
-    /** The entity tag (ETag) for the object. */
+    /**
+     * The entity tag (ETag) for the object.
+     */
     private String eTag;
 
     /**
      * The entity tag (ETag) for the object.
-     *
      * @return the value
      */
     public String getETag() {
@@ -127,7 +116,7 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private UploadPartResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String opcContentMd5,
@@ -145,34 +134,28 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         this.eTag = eTag;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UploadPartResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
-         *
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -182,14 +165,15 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -199,12 +183,13 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The base64-encoded MD5 hash of the request body, as computed by the server. */
+        /**
+         * The base64-encoded MD5 hash of the request body, as computed by the server.
+         */
         private String opcContentMd5;
 
         /**
          * The base64-encoded MD5 hash of the request body, as computed by the server.
-         *
          * @param opcContentMd5 the value to set
          * @return this builder
          */
@@ -214,17 +199,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed
-         * by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request
-         * header during upload.
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header during upload.
          */
         private String opcContentCrc32c;
 
         /**
-         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed
-         * by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request
-         * header during upload.
-         *
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the request body as computed by the server. Applicable only if CRC32C was specified in opc-checksum-algorithm request header during upload.
          * @param opcContentCrc32c the value to set
          * @return this builder
          */
@@ -234,15 +214,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable
-         * only if SHA256 was specified in opc-checksum-algorithm request header during upload.
+         * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only if SHA256 was specified in opc-checksum-algorithm request header during upload.
          */
         private String opcContentSha256;
 
         /**
-         * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable
-         * only if SHA256 was specified in opc-checksum-algorithm request header during upload.
-         *
+         * The base64-encoded SHA256 hash of the request body as computed by the server. Applicable only if SHA256 was specified in opc-checksum-algorithm request header during upload.
          * @param opcContentSha256 the value to set
          * @return this builder
          */
@@ -252,15 +229,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable
-         * only if SHA384 was specified in opc-checksum-algorithm request header during upload.
+         * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only if SHA384 was specified in opc-checksum-algorithm request header during upload.
          */
         private String opcContentSha384;
 
         /**
-         * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable
-         * only if SHA384 was specified in opc-checksum-algorithm request header during upload.
-         *
+         * The base64-encoded SHA384 hash of the request body as computed by the server. Applicable only if SHA384 was specified in opc-checksum-algorithm request header during upload.
          * @param opcContentSha384 the value to set
          * @return this builder
          */
@@ -269,12 +243,13 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The entity tag (ETag) for the object. */
+        /**
+         * The entity tag (ETag) for the object.
+         */
         private String eTag;
 
         /**
          * The entity tag (ETag) for the object.
-         *
          * @param eTag the value to set
          * @return this builder
          */
@@ -285,10 +260,8 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UploadPartResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -305,10 +278,8 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UploadPartResponse build() {
             return new UploadPartResponse(
                     __httpStatusCode__,
@@ -325,7 +296,6 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

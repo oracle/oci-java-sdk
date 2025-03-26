@@ -5,23 +5,21 @@
 package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
- * A period where upgrades may be applied to Compute Cloud@Customer infrastructures associated with
- * the schedule. All upgrade windows may not be used. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * A period where upgrades may be applied to Compute Cloud@Customer infrastructures
+ * associated with the schedule. All upgrade windows may not be used.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CccScheduleEvent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CccScheduleEvent
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CccScheduleEvent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -46,31 +44,33 @@ public final class CccScheduleEvent
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Generated name associated with the event. */
+        /**
+         * Generated name associated with the event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Generated name associated with the event.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A description of the Compute Cloud@Customer upgrade schedule time block. */
+        /**
+         * A description of the Compute Cloud@Customer upgrade schedule time block.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the Compute Cloud@Customer upgrade schedule time block.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -78,60 +78,63 @@ public final class CccScheduleEvent
         }
         /**
          * The date and time when the Compute Cloud@Customer upgrade schedule event starts,
-         * inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this
-         * is the date that a recurrence can start being applied.
-         */
+         * inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences,
+         * this is the date that a recurrence can start being applied.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
          * The date and time when the Compute Cloud@Customer upgrade schedule event starts,
-         * inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this
-         * is the date that a recurrence can start being applied.
+         * inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences,
+         * this is the date that a recurrence can start being applied.
          *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
         /**
-         * The duration of this block of time. The duration must be specified and be of the ISO-8601
-         * format for durations.
-         */
+         * The duration of this block of time. The duration must be specified and be of the
+         * ISO-8601 format for durations.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleEventDuration")
         private String scheduleEventDuration;
 
         /**
-         * The duration of this block of time. The duration must be specified and be of the ISO-8601
-         * format for durations.
+         * The duration of this block of time. The duration must be specified and be of the
+         * ISO-8601 format for durations.
          *
          * @param scheduleEventDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduleEventDuration(String scheduleEventDuration) {
             this.scheduleEventDuration = scheduleEventDuration;
             this.__explicitlySet__.add("scheduleEventDuration");
             return this;
         }
         /**
-         * Frequency of recurrence of schedule block. When this field is not included, the event is
-         * assumed to be a one time occurrence. The frequency field is strictly parsed and must
+         * Frequency of recurrence of schedule block. When this field is not included, the event
+         * is assumed to be a one time occurrence. The frequency field is strictly parsed and must
          * conform to RFC-5545 formatting for recurrences.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleEventRecurrences")
         private String scheduleEventRecurrences;
 
         /**
-         * Frequency of recurrence of schedule block. When this field is not included, the event is
-         * assumed to be a one time occurrence. The frequency field is strictly parsed and must
+         * Frequency of recurrence of schedule block. When this field is not included, the event
+         * is assumed to be a one time occurrence. The frequency field is strictly parsed and must
          * conform to RFC-5545 formatting for recurrences.
          *
          * @param scheduleEventRecurrences the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduleEventRecurrences(String scheduleEventRecurrences) {
             this.scheduleEventRecurrences = scheduleEventRecurrences;
             this.__explicitlySet__.add("scheduleEventRecurrences");
@@ -176,7 +179,9 @@ public final class CccScheduleEvent
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,83 +190,88 @@ public final class CccScheduleEvent
         return new Builder().copy(this);
     }
 
-    /** Generated name associated with the event. */
+    /**
+     * Generated name associated with the event.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Generated name associated with the event.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** A description of the Compute Cloud@Customer upgrade schedule time block. */
+    /**
+     * A description of the Compute Cloud@Customer upgrade schedule time block.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the Compute Cloud@Customer upgrade schedule time block.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive.
-     * An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date
-     * that a recurrence can start being applied.
-     */
+     * The date and time when the Compute Cloud@Customer upgrade schedule event starts,
+     * inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences,
+     * this is the date that a recurrence can start being applied.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive.
-     * An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date
-     * that a recurrence can start being applied.
+     * The date and time when the Compute Cloud@Customer upgrade schedule event starts,
+     * inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences,
+     * this is the date that a recurrence can start being applied.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
     /**
-     * The duration of this block of time. The duration must be specified and be of the ISO-8601
-     * format for durations.
-     */
+     * The duration of this block of time. The duration must be specified and be of the
+     * ISO-8601 format for durations.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleEventDuration")
     private final String scheduleEventDuration;
 
     /**
-     * The duration of this block of time. The duration must be specified and be of the ISO-8601
-     * format for durations.
+     * The duration of this block of time. The duration must be specified and be of the
+     * ISO-8601 format for durations.
      *
      * @return the value
-     */
+     **/
     public String getScheduleEventDuration() {
         return scheduleEventDuration;
     }
 
     /**
-     * Frequency of recurrence of schedule block. When this field is not included, the event is
-     * assumed to be a one time occurrence. The frequency field is strictly parsed and must conform
-     * to RFC-5545 formatting for recurrences.
-     */
+     * Frequency of recurrence of schedule block. When this field is not included, the event
+     * is assumed to be a one time occurrence. The frequency field is strictly parsed and must
+     * conform to RFC-5545 formatting for recurrences.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleEventRecurrences")
     private final String scheduleEventRecurrences;
 
     /**
-     * Frequency of recurrence of schedule block. When this field is not included, the event is
-     * assumed to be a one time occurrence. The frequency field is strictly parsed and must conform
-     * to RFC-5545 formatting for recurrences.
+     * Frequency of recurrence of schedule block. When this field is not included, the event
+     * is assumed to be a one time occurrence. The frequency field is strictly parsed and must
+     * conform to RFC-5545 formatting for recurrences.
      *
      * @return the value
-     */
+     **/
     public String getScheduleEventRecurrences() {
         return scheduleEventRecurrences;
     }
@@ -273,7 +283,6 @@ public final class CccScheduleEvent
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

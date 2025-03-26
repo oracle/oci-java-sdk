@@ -5,23 +5,23 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Summary information for a resource associated with a stack or job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Summary information for a resource associated with a stack or job.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedResourceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssociatedResourceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociatedResourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -52,126 +52,129 @@ public final class AssociatedResourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the resource. */
+        /**
+         * Unique identifier for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * Unique identifier for the resource.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Name of the resource. */
+        /**
+         * Name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * Name of the resource.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
         /**
-         * Resource type. For more information about resource types supported for the Oracle Cloud
-         * Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure
-         * Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
-         */
+         * Resource type. For more information about resource types supported for the Oracle Cloud Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * Resource type. For more information about resource types supported for the Oracle Cloud
-         * Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure
-         * Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
-         *
+         * Resource type. For more information about resource types supported for the Oracle Cloud Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
         /**
-         * Resource attribute values. Each value is represented as a key-value pair. Example: {@code
-         * {"state": "AVAILABLE"}}
-         */
+         * Resource attribute values. Each value is represented as a key-value pair.
+         * Example: {@code {"state": "AVAILABLE"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.Map<String, String> attributes;
 
         /**
-         * Resource attribute values. Each value is represented as a key-value pair. Example: {@code
-         * {"state": "AVAILABLE"}}
+         * Resource attribute values. Each value is represented as a key-value pair.
+         * Example: {@code {"state": "AVAILABLE"}}
          *
          * @param attributes the value to set
          * @return this builder
-         */
+         **/
         public Builder attributes(java.util.Map<String, String> attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
             return this;
         }
         /**
-         * The date and time when the stack was created. Format is defined by RFC3339. Example:
-         * {@code 2022-07-25T21:10:29.600Z}
-         */
+         * The date and time when the stack was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2022-07-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the stack was created. Format is defined by RFC3339. Example:
-         * {@code 2022-07-25T21:10:29.600Z}
+         * The date and time when the stack was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2022-07-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Resource region. For information about regions, see [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
-         * {@code us-phoenix-1}
-         */
+         * Resource region.
+         * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Example: {@code us-phoenix-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * Resource region. For information about regions, see [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
-         * {@code us-phoenix-1}
+         * Resource region.
+         * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Example: {@code us-phoenix-1}
          *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Terraform resource address. */
+        /**
+         * Terraform resource address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAddress")
         private String resourceAddress;
 
         /**
          * Terraform resource address.
-         *
          * @param resourceAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceAddress(String resourceAddress) {
             this.resourceAddress = resourceAddress;
             this.__explicitlySet__.add("resourceAddress");
@@ -224,7 +227,9 @@ public final class AssociatedResourceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -233,113 +238,116 @@ public final class AssociatedResourceSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the resource. */
+    /**
+     * Unique identifier for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * Unique identifier for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Name of the resource. */
+    /**
+     * Name of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * Name of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
     /**
-     * Resource type. For more information about resource types supported for the Oracle Cloud
-     * Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure
-     * Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
-     */
+     * Resource type. For more information about resource types supported for the Oracle Cloud Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * Resource type. For more information about resource types supported for the Oracle Cloud
-     * Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure
-     * Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
-     *
+     * Resource type. For more information about resource types supported for the Oracle Cloud Infrastructure (OCI) provider, see [Oracle Cloud Infrastructure Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs).
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
     /**
-     * Resource attribute values. Each value is represented as a key-value pair. Example: {@code
-     * {"state": "AVAILABLE"}}
-     */
+     * Resource attribute values. Each value is represented as a key-value pair.
+     * Example: {@code {"state": "AVAILABLE"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.Map<String, String> attributes;
 
     /**
-     * Resource attribute values. Each value is represented as a key-value pair. Example: {@code
-     * {"state": "AVAILABLE"}}
+     * Resource attribute values. Each value is represented as a key-value pair.
+     * Example: {@code {"state": "AVAILABLE"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAttributes() {
         return attributes;
     }
 
     /**
-     * The date and time when the stack was created. Format is defined by RFC3339. Example: {@code
-     * 2022-07-25T21:10:29.600Z}
-     */
+     * The date and time when the stack was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2022-07-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the stack was created. Format is defined by RFC3339. Example: {@code
-     * 2022-07-25T21:10:29.600Z}
+     * The date and time when the stack was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2022-07-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Resource region. For information about regions, see [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example: {@code
-     * us-phoenix-1}
-     */
+     * Resource region.
+     * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * Example: {@code us-phoenix-1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * Resource region. For information about regions, see [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example: {@code
-     * us-phoenix-1}
+     * Resource region.
+     * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * Example: {@code us-phoenix-1}
      *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** Terraform resource address. */
+    /**
+     * Terraform resource address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAddress")
     private final String resourceAddress;
 
     /**
      * Terraform resource address.
-     *
      * @return the value
-     */
+     **/
     public String getResourceAddress() {
         return resourceAddress;
     }
@@ -351,7 +359,6 @@ public final class AssociatedResourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The details required to create a pool. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * The details required to create a pool.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreatePoolDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreatePoolDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreatePoolDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreatePoolDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -55,7 +54,10 @@ public final class CreatePoolDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of a compartment. */
+        /**
+         * The OCID of a compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -64,32 +66,34 @@ public final class CreatePoolDetails
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. It does not have to be unique. Avoid entering confidential
-         * information.
-         */
+         * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. It does not have to be unique. Avoid entering confidential
-         * information.
+         * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A user-friendly description. Avoid entering confidential information. */
+        /**
+         * A user-friendly description. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -98,13 +102,16 @@ public final class CreatePoolDetails
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** List of PoolConfig items. */
+        /**
+         * List of PoolConfig items.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<PoolConfig> configurations;
 
@@ -113,13 +120,16 @@ public final class CreatePoolDetails
          *
          * @param configurations the value to set
          * @return this builder
-         */
+         **/
         public Builder configurations(java.util.List<PoolConfig> configurations) {
             this.configurations = configurations;
             this.__explicitlySet__.add("configurations");
             return this;
         }
-        /** A list of schedules for pool to auto start and stop. */
+        /**
+         * A list of schedules for pool to auto start and stop.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedules")
         private java.util.List<PoolSchedule> schedules;
 
@@ -128,74 +138,69 @@ public final class CreatePoolDetails
          *
          * @param schedules the value to set
          * @return this builder
-         */
+         **/
         public Builder schedules(java.util.List<PoolSchedule> schedules) {
             this.schedules = schedules;
             this.__explicitlySet__.add("schedules");
             return this;
         }
         /**
-         * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped
-         * after inactivity for this amount of time period. If value not set, pool will not be auto
-         * stopped auto.
-         */
+         * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period.
+         * If value not set, pool will not be auto stopped auto.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
         private Integer idleTimeoutInMinutes;
 
         /**
-         * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped
-         * after inactivity for this amount of time period. If value not set, pool will not be auto
-         * stopped auto.
+         * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period.
+         * If value not set, pool will not be auto stopped auto.
          *
          * @param idleTimeoutInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder idleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
             this.idleTimeoutInMinutes = idleTimeoutInMinutes;
             this.__explicitlySet__.add("idleTimeoutInMinutes");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -253,7 +258,9 @@ public final class CreatePoolDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -262,7 +269,10 @@ public final class CreatePoolDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of a compartment. */
+    /**
+     * The OCID of a compartment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -270,14 +280,15 @@ public final class CreatePoolDetails
      * The OCID of a compartment.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -285,12 +296,15 @@ public final class CreatePoolDetails
      * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A user-friendly description. Avoid entering confidential information. */
+    /**
+     * A user-friendly description. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -298,12 +312,15 @@ public final class CreatePoolDetails
      * A user-friendly description. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** List of PoolConfig items. */
+    /**
+     * List of PoolConfig items.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<PoolConfig> configurations;
 
@@ -311,12 +328,15 @@ public final class CreatePoolDetails
      * List of PoolConfig items.
      *
      * @return the value
-     */
+     **/
     public java.util.List<PoolConfig> getConfigurations() {
         return configurations;
     }
 
-    /** A list of schedules for pool to auto start and stop. */
+    /**
+     * A list of schedules for pool to auto start and stop.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     private final java.util.List<PoolSchedule> schedules;
 
@@ -324,68 +344,63 @@ public final class CreatePoolDetails
      * A list of schedules for pool to auto start and stop.
      *
      * @return the value
-     */
+     **/
     public java.util.List<PoolSchedule> getSchedules() {
         return schedules;
     }
 
     /**
-     * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after
-     * inactivity for this amount of time period. If value not set, pool will not be auto stopped
-     * auto.
-     */
+     * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period.
+     * If value not set, pool will not be auto stopped auto.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
     private final Integer idleTimeoutInMinutes;
 
     /**
-     * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after
-     * inactivity for this amount of time period. If value not set, pool will not be auto stopped
-     * auto.
+     * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period.
+     * If value not set, pool will not be auto stopped auto.
      *
      * @return the value
-     */
+     **/
     public Integer getIdleTimeoutInMinutes() {
         return idleTimeoutInMinutes;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -397,7 +412,6 @@ public final class CreatePoolDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

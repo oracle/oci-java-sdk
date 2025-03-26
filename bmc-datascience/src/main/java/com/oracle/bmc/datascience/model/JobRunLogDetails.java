@@ -5,22 +5,20 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Customer logging details for job run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Customer logging details for job run.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobRunLogDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobRunLogDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobRunLogDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"logGroupId", "logId"})
     public JobRunLogDetails(String logGroupId, String logId) {
@@ -31,7 +29,10 @@ public final class JobRunLogDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The log group id for where log objects will be for job runs. */
+        /**
+         * The log group id for where log objects will be for job runs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
@@ -40,13 +41,16 @@ public final class JobRunLogDetails
          *
          * @param logGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
-        /** The log id of the log object the job run logs will be shipped to. */
+        /**
+         * The log id of the log object the job run logs will be shipped to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logId")
         private String logId;
 
@@ -55,7 +59,7 @@ public final class JobRunLogDetails
          *
          * @param logId the value to set
          * @return this builder
-         */
+         **/
         public Builder logId(String logId) {
             this.logId = logId;
             this.__explicitlySet__.add("logId");
@@ -85,7 +89,9 @@ public final class JobRunLogDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,7 +100,10 @@ public final class JobRunLogDetails
         return new Builder().copy(this);
     }
 
-    /** The log group id for where log objects will be for job runs. */
+    /**
+     * The log group id for where log objects will be for job runs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
@@ -102,12 +111,15 @@ public final class JobRunLogDetails
      * The log group id for where log objects will be for job runs.
      *
      * @return the value
-     */
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
 
-    /** The log id of the log object the job run logs will be shipped to. */
+    /**
+     * The log id of the log object the job run logs will be shipped to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logId")
     private final String logId;
 
@@ -115,7 +127,7 @@ public final class JobRunLogDetails
      * The log id of the log object the job run logs will be shipped to.
      *
      * @return the value
-     */
+     **/
     public String getLogId() {
         return logId;
     }
@@ -127,7 +139,6 @@ public final class JobRunLogDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

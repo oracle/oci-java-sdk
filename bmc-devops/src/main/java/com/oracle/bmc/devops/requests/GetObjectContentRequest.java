@@ -6,43 +6,51 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetObjectContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetObjectContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetObjectContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetObjectContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     private String repositoryId;
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
-    /** The SHA of a blob or tree. */
+    /**
+     * The SHA of a blob or tree.
+     */
     private String sha;
 
-    /** The SHA of a blob or tree. */
+    /**
+     * The SHA of a blob or tree.
+     */
     public String getSha() {
         return sha;
     }
-    /** A filter to return only commits that affect any of the specified paths. */
+    /**
+     * A filter to return only commits that affect any of the specified paths.
+     */
     private String filePath;
 
-    /** A filter to return only commits that affect any of the specified paths. */
+    /**
+     * A filter to return only commits that affect any of the specified paths.
+     */
     public String getFilePath() {
         return filePath;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -51,15 +59,17 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetObjectContentRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique repository identifier. */
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
-         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -68,12 +78,13 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The SHA of a blob or tree. */
+        /**
+         * The SHA of a blob or tree.
+         */
         private String sha = null;
 
         /**
          * The SHA of a blob or tree.
-         *
          * @param sha the value to set
          * @return this builder instance
          */
@@ -82,12 +93,13 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return only commits that affect any of the specified paths. */
+        /**
+         * A filter to return only commits that affect any of the specified paths.
+         */
         private String filePath = null;
 
         /**
          * A filter to return only commits that affect any of the specified paths.
-         *
          * @param filePath the value to set
          * @return this builder instance
          */
@@ -97,15 +109,12 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -116,19 +125,18 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -140,7 +148,6 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetObjectContentRequest o) {
@@ -156,11 +163,10 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetObjectContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetObjectContentRequest
          */
@@ -174,8 +180,7 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetObjectContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetObjectContentRequest
@@ -193,7 +198,6 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -206,7 +210,6 @@ public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

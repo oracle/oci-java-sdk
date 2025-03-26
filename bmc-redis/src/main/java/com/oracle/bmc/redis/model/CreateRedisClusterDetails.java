@@ -5,25 +5,22 @@
 package com.oracle.bmc.redis.model;
 
 /**
- * The configuration details for a new OCI Cache cluster. An OCI Cache cluster is a memory-based
- * storage solution. For more information, see [OCI
- * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
+ * The configuration details for a new OCI Cache cluster. An OCI Cache cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateRedisClusterDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateRedisClusterDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateRedisClusterDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterMode",
@@ -66,179 +63,171 @@ public final class CreateRedisClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Specifies whether the cluster is sharded or non-sharded. */
+        /**
+         * Specifies whether the cluster is sharded or non-sharded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
         private RedisCluster.ClusterMode clusterMode;
 
         /**
          * Specifies whether the cluster is sharded or non-sharded.
-         *
          * @param clusterMode the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterMode(RedisCluster.ClusterMode clusterMode) {
             this.clusterMode = clusterMode;
             this.__explicitlySet__.add("clusterMode");
             return this;
         }
-        /** The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED. */
+        /**
+         * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
         private Integer shardCount;
 
         /**
          * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
-         *
          * @param shardCount the value to set
          * @return this builder
-         */
+         **/
         public Builder shardCount(Integer shardCount) {
             this.shardCount = shardCount;
             this.__explicitlySet__.add("shardCount");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the compartment that contains the cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the compartment that contains the cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
-         * total number of nodes when clusterMode is NONSHARDED.
-         */
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
-         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
-         * total number of nodes when clusterMode is NONSHARDED.
-         *
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
          * @param nodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** The OCI Cache engine version that the cluster is running. */
+        /**
+         * The OCI Cache engine version that the cluster is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private RedisCluster.SoftwareVersion softwareVersion;
 
         /**
          * The OCI Cache engine version that the cluster is running.
-         *
          * @param softwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareVersion(RedisCluster.SoftwareVersion softwareVersion) {
             this.softwareVersion = softwareVersion;
             this.__explicitlySet__.add("softwareVersion");
             return this;
         }
-        /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
+        /**
+         * The amount of memory allocated to the cluster's nodes, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
         private Float nodeMemoryInGBs;
 
         /**
          * The amount of memory allocated to the cluster's nodes, in gigabytes.
-         *
          * @param nodeMemoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeMemoryInGBs(Float nodeMemoryInGBs) {
             this.nodeMemoryInGBs = nodeMemoryInGBs;
             this.__explicitlySet__.add("nodeMemoryInGBs");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the cluster's subnet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the cluster's subnet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * A list of Network Security Group (NSG)
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with this cluster. For more information, see [Using an NSG for
-         * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
-         */
+         * A list of Network Security Group (NSG) [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this cluster. For more information,
+         * see [Using an NSG for Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * A list of Network Security Group (NSG)
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with this cluster. For more information, see [Using an NSG for
-         * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         * A list of Network Security Group (NSG) [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this cluster. For more information,
+         * see [Using an NSG for Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -247,7 +236,8 @@ public final class CreateRedisClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -257,7 +247,7 @@ public final class CreateRedisClusterDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -327,7 +317,9 @@ public final class CreateRedisClusterDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -336,177 +328,170 @@ public final class CreateRedisClusterDetails
         return new Builder().copy(this);
     }
 
-    /** Specifies whether the cluster is sharded or non-sharded. */
+    /**
+     * Specifies whether the cluster is sharded or non-sharded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
     private final RedisCluster.ClusterMode clusterMode;
 
     /**
      * Specifies whether the cluster is sharded or non-sharded.
-     *
      * @return the value
-     */
+     **/
     public RedisCluster.ClusterMode getClusterMode() {
         return clusterMode;
     }
 
-    /** The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED. */
+    /**
+     * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
     private final Integer shardCount;
 
     /**
      * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
-     *
      * @return the value
-     */
+     **/
     public Integer getShardCount() {
         return shardCount;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the compartment that contains the cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the compartment that contains the cluster.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
-     * number of nodes when clusterMode is NONSHARDED.
-     */
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
-     * number of nodes when clusterMode is NONSHARDED.
-     *
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * @return the value
-     */
+     **/
     public Integer getNodeCount() {
         return nodeCount;
     }
 
-    /** The OCI Cache engine version that the cluster is running. */
+    /**
+     * The OCI Cache engine version that the cluster is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final RedisCluster.SoftwareVersion softwareVersion;
 
     /**
      * The OCI Cache engine version that the cluster is running.
-     *
      * @return the value
-     */
+     **/
     public RedisCluster.SoftwareVersion getSoftwareVersion() {
         return softwareVersion;
     }
 
-    /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
+    /**
+     * The amount of memory allocated to the cluster's nodes, in gigabytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
     private final Float nodeMemoryInGBs;
 
     /**
      * The amount of memory allocated to the cluster's nodes, in gigabytes.
-     *
      * @return the value
-     */
+     **/
     public Float getNodeMemoryInGBs() {
         return nodeMemoryInGBs;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the cluster's subnet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the cluster's subnet.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * A list of Network Security Group (NSG)
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with this cluster. For more information, see [Using an NSG for
-     * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
-     */
+     * A list of Network Security Group (NSG) [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this cluster. For more information,
+     * see [Using an NSG for Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * A list of Network Security Group (NSG)
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with this cluster. For more information, see [Using an NSG for
-     * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     * A list of Network Security Group (NSG) [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this cluster. For more information,
+     * see [Using an NSG for Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -518,7 +503,6 @@ public final class CreateRedisClusterDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

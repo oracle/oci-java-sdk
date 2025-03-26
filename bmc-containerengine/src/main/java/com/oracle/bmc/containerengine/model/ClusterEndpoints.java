@@ -5,22 +5,19 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define endpoints for a cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that define endpoints for a cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterEndpoints.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ClusterEndpoints
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ClusterEndpoints extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "kubernetes",
@@ -45,80 +42,85 @@ public final class ClusterEndpoints
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The non-native networking Kubernetes API server endpoint. */
+        /**
+         * The non-native networking Kubernetes API server endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetes")
         private String kubernetes;
 
         /**
          * The non-native networking Kubernetes API server endpoint.
-         *
          * @param kubernetes the value to set
          * @return this builder
-         */
+         **/
         public Builder kubernetes(String kubernetes) {
             this.kubernetes = kubernetes;
             this.__explicitlySet__.add("kubernetes");
             return this;
         }
-        /** The public native networking Kubernetes API server endpoint, if one was requested. */
+        /**
+         * The public native networking Kubernetes API server endpoint, if one was requested.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
         private String publicEndpoint;
 
         /**
          * The public native networking Kubernetes API server endpoint, if one was requested.
-         *
          * @param publicEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder publicEndpoint(String publicEndpoint) {
             this.publicEndpoint = publicEndpoint;
             this.__explicitlySet__.add("publicEndpoint");
             return this;
         }
-        /** The private native networking Kubernetes API server endpoint. */
+        /**
+         * The private native networking Kubernetes API server endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
         private String privateEndpoint;
 
         /**
          * The private native networking Kubernetes API server endpoint.
-         *
          * @param privateEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder privateEndpoint(String privateEndpoint) {
             this.privateEndpoint = privateEndpoint;
             this.__explicitlySet__.add("privateEndpoint");
             return this;
         }
         /**
-         * The FQDN assigned to the Kubernetes API private endpoint. Example:
-         * 'https://yourVcnHostnameEndpoint'
-         */
+         * The FQDN assigned to the Kubernetes API private endpoint.
+         * Example: 'https://yourVcnHostnameEndpoint'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnHostnameEndpoint")
         private String vcnHostnameEndpoint;
 
         /**
-         * The FQDN assigned to the Kubernetes API private endpoint. Example:
-         * 'https://yourVcnHostnameEndpoint'
+         * The FQDN assigned to the Kubernetes API private endpoint.
+         * Example: 'https://yourVcnHostnameEndpoint'
          *
          * @param vcnHostnameEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnHostnameEndpoint(String vcnHostnameEndpoint) {
             this.vcnHostnameEndpoint = vcnHostnameEndpoint;
             this.__explicitlySet__.add("vcnHostnameEndpoint");
             return this;
         }
-        /** The IPv6 networking Kubernetes API server endpoint. */
+        /**
+         * The IPv6 networking Kubernetes API server endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6Endpoint")
         private String ipv6Endpoint;
 
         /**
          * The IPv6 networking Kubernetes API server endpoint.
-         *
          * @param ipv6Endpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6Endpoint(String ipv6Endpoint) {
             this.ipv6Endpoint = ipv6Endpoint;
             this.__explicitlySet__.add("ipv6Endpoint");
@@ -163,7 +165,9 @@ public final class ClusterEndpoints
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,71 +176,76 @@ public final class ClusterEndpoints
         return new Builder().copy(this);
     }
 
-    /** The non-native networking Kubernetes API server endpoint. */
+    /**
+     * The non-native networking Kubernetes API server endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetes")
     private final String kubernetes;
 
     /**
      * The non-native networking Kubernetes API server endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getKubernetes() {
         return kubernetes;
     }
 
-    /** The public native networking Kubernetes API server endpoint, if one was requested. */
+    /**
+     * The public native networking Kubernetes API server endpoint, if one was requested.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
     private final String publicEndpoint;
 
     /**
      * The public native networking Kubernetes API server endpoint, if one was requested.
-     *
      * @return the value
-     */
+     **/
     public String getPublicEndpoint() {
         return publicEndpoint;
     }
 
-    /** The private native networking Kubernetes API server endpoint. */
+    /**
+     * The private native networking Kubernetes API server endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
     private final String privateEndpoint;
 
     /**
      * The private native networking Kubernetes API server endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateEndpoint() {
         return privateEndpoint;
     }
 
     /**
-     * The FQDN assigned to the Kubernetes API private endpoint. Example:
-     * 'https://yourVcnHostnameEndpoint'
-     */
+     * The FQDN assigned to the Kubernetes API private endpoint.
+     * Example: 'https://yourVcnHostnameEndpoint'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnHostnameEndpoint")
     private final String vcnHostnameEndpoint;
 
     /**
-     * The FQDN assigned to the Kubernetes API private endpoint. Example:
-     * 'https://yourVcnHostnameEndpoint'
+     * The FQDN assigned to the Kubernetes API private endpoint.
+     * Example: 'https://yourVcnHostnameEndpoint'
      *
      * @return the value
-     */
+     **/
     public String getVcnHostnameEndpoint() {
         return vcnHostnameEndpoint;
     }
 
-    /** The IPv6 networking Kubernetes API server endpoint. */
+    /**
+     * The IPv6 networking Kubernetes API server endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6Endpoint")
     private final String ipv6Endpoint;
 
     /**
      * The IPv6 networking Kubernetes API server endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getIpv6Endpoint() {
         return ipv6Endpoint;
     }
@@ -248,7 +257,6 @@ public final class ClusterEndpoints
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

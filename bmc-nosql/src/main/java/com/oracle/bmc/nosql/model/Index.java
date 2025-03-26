@@ -5,21 +5,19 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Information about an index. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+ * Information about an index.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Index.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Index extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -50,97 +48,106 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Index name. */
+        /**
+         * Index name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Index name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of the table to which this index belongs. */
+        /**
+         * The name of the table to which this index belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
         /**
          * The name of the table to which this index belongs.
-         *
          * @param tableName the value to set
          * @return this builder
-         */
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-        /** the OCID of the table to which this index belongs. */
+        /**
+         * the OCID of the table to which this index belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableId")
         private String tableId;
 
         /**
          * the OCID of the table to which this index belongs.
-         *
          * @param tableId the value to set
          * @return this builder
-         */
+         **/
         public Builder tableId(String tableId) {
             this.tableId = tableId;
             this.__explicitlySet__.add("tableId");
             return this;
         }
-        /** A set of keys for a secondary index. */
+        /**
+         * A set of keys for a secondary index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keys")
         private java.util.List<IndexKey> keys;
 
         /**
          * A set of keys for a secondary index.
-         *
          * @param keys the value to set
          * @return this builder
-         */
+         **/
         public Builder keys(java.util.List<IndexKey> keys) {
             this.keys = keys;
             this.__explicitlySet__.add("keys");
             return this;
         }
-        /** The state of an index. */
+        /**
+         * The state of an index.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of an index.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message describing the current state in more detail. */
+        /**
+         * A message describing the current state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -149,7 +156,7 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -202,7 +209,9 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,73 +220,80 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** Index name. */
+    /**
+     * Index name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Index name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of the table to which this index belongs. */
+    /**
+     * The name of the table to which this index belongs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
     /**
      * The name of the table to which this index belongs.
-     *
      * @return the value
-     */
+     **/
     public String getTableName() {
         return tableName;
     }
 
-    /** the OCID of the table to which this index belongs. */
+    /**
+     * the OCID of the table to which this index belongs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableId")
     private final String tableId;
 
     /**
      * the OCID of the table to which this index belongs.
-     *
      * @return the value
-     */
+     **/
     public String getTableId() {
         return tableId;
     }
 
-    /** A set of keys for a secondary index. */
+    /**
+     * A set of keys for a secondary index.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
     private final java.util.List<IndexKey> keys;
 
     /**
      * A set of keys for a secondary index.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<IndexKey> getKeys() {
         return keys;
     }
 
-    /** The state of an index. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of an index.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -286,8 +302,8 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -326,20 +342,24 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** The state of an index. */
+    /**
+     * The state of an index.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of an index.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the current state in more detail. */
+    /**
+     * A message describing the current state in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -347,7 +367,7 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * A message describing the current state in more detail.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -359,7 +379,6 @@ public final class Index extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

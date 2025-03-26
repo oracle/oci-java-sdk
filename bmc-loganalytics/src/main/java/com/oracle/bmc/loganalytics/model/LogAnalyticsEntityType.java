@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Description of log analytics entity type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Description of log analytics entity type.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsEntityType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsEntityType.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsEntityType
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -61,7 +61,10 @@ public final class LogAnalyticsEntityType
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Log analytics entity type name. */
+        /**
+         * Log analytics entity type name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -70,13 +73,16 @@ public final class LogAnalyticsEntityType
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Internal name for the log analytics entity type. */
+        /**
+         * Internal name for the log analytics entity type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalName")
         private String internalName;
 
@@ -85,32 +91,32 @@ public final class LogAnalyticsEntityType
          *
          * @param internalName the value to set
          * @return this builder
-         */
+         **/
         public Builder internalName(String internalName) {
             this.internalName = internalName;
             this.__explicitlySet__.add("internalName");
             return this;
         }
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Log analytics entity type category. Category will be used for grouping and filtering. */
+        /**
+         * Log analytics entity type category. Category will be used for grouping and filtering.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
@@ -119,13 +125,16 @@ public final class LogAnalyticsEntityType
          *
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise. */
+        /**
+         * Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudType")
         private EntityCloudType cloudType;
 
@@ -134,32 +143,34 @@ public final class LogAnalyticsEntityType
          *
          * @param cloudType the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudType(EntityCloudType cloudType) {
             this.cloudType = cloudType;
             this.__explicitlySet__.add("cloudType");
             return this;
         }
         /**
-         * The parameters used in file patterns specified in log sources for this log analytics
-         * entity type.
-         */
+         * The parameters used in file patterns specified in log sources for this log analytics entity type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<EntityTypeProperty> properties;
 
         /**
-         * The parameters used in file patterns specified in log sources for this log analytics
-         * entity type.
+         * The parameters used in file patterns specified in log sources for this log analytics entity type.
          *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.List<EntityTypeProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** The current lifecycle state of the log analytics entity. */
+        /**
+         * The current lifecycle state of the log analytics entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private EntityLifecycleStates lifecycleState;
 
@@ -168,13 +179,16 @@ public final class LogAnalyticsEntityType
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(EntityLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Time the log analytics entity type was created. An RFC3339 formatted datetime string. */
+        /**
+         * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -183,13 +197,16 @@ public final class LogAnalyticsEntityType
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Time the log analytics entity type was updated. An RFC3339 formatted datetime string. */
+        /**
+         * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -198,26 +215,25 @@ public final class LogAnalyticsEntityType
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * This field indicates whether logs for entities of this type can be collected using a
-         * management agent.
-         */
+         * This field indicates whether logs for entities of this type can be collected using a management agent.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentEligibilityStatus")
         private ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
 
         /**
-         * This field indicates whether logs for entities of this type can be collected using a
-         * management agent.
+         * This field indicates whether logs for entities of this type can be collected using a management agent.
          *
          * @param managementAgentEligibilityStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder managementAgentEligibilityStatus(
                 ManagementAgentEligibilityStatus managementAgentEligibilityStatus) {
             this.managementAgentEligibilityStatus = managementAgentEligibilityStatus;
@@ -283,7 +299,9 @@ public final class LogAnalyticsEntityType
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -292,7 +310,10 @@ public final class LogAnalyticsEntityType
         return new Builder().copy(this);
     }
 
-    /** Log analytics entity type name. */
+    /**
+     * Log analytics entity type name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -300,12 +321,15 @@ public final class LogAnalyticsEntityType
      * Log analytics entity type name.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Internal name for the log analytics entity type. */
+    /**
+     * Internal name for the log analytics entity type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
     private final String internalName;
 
@@ -313,29 +337,29 @@ public final class LogAnalyticsEntityType
      * Internal name for the log analytics entity type.
      *
      * @return the value
-     */
+     **/
     public String getInternalName() {
         return internalName;
     }
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Log analytics entity type category. Category will be used for grouping and filtering. */
+    /**
+     * Log analytics entity type category. Category will be used for grouping and filtering.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
@@ -343,12 +367,15 @@ public final class LogAnalyticsEntityType
      * Log analytics entity type category. Category will be used for grouping and filtering.
      *
      * @return the value
-     */
+     **/
     public String getCategory() {
         return category;
     }
 
-    /** Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise. */
+    /**
+     * Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudType")
     private final EntityCloudType cloudType;
 
@@ -356,29 +383,31 @@ public final class LogAnalyticsEntityType
      * Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise.
      *
      * @return the value
-     */
+     **/
     public EntityCloudType getCloudType() {
         return cloudType;
     }
 
     /**
-     * The parameters used in file patterns specified in log sources for this log analytics entity
-     * type.
-     */
+     * The parameters used in file patterns specified in log sources for this log analytics entity type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<EntityTypeProperty> properties;
 
     /**
-     * The parameters used in file patterns specified in log sources for this log analytics entity
-     * type.
+     * The parameters used in file patterns specified in log sources for this log analytics entity type.
      *
      * @return the value
-     */
+     **/
     public java.util.List<EntityTypeProperty> getProperties() {
         return properties;
     }
 
-    /** The current lifecycle state of the log analytics entity. */
+    /**
+     * The current lifecycle state of the log analytics entity.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final EntityLifecycleStates lifecycleState;
 
@@ -386,12 +415,15 @@ public final class LogAnalyticsEntityType
      * The current lifecycle state of the log analytics entity.
      *
      * @return the value
-     */
+     **/
     public EntityLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Time the log analytics entity type was created. An RFC3339 formatted datetime string. */
+    /**
+     * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -399,12 +431,15 @@ public final class LogAnalyticsEntityType
      * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Time the log analytics entity type was updated. An RFC3339 formatted datetime string. */
+    /**
+     * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -412,23 +447,23 @@ public final class LogAnalyticsEntityType
      * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * This field indicates whether logs for entities of this type can be collected using a
-     * management agent.
-     */
-    public enum ManagementAgentEligibilityStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * This field indicates whether logs for entities of this type can be collected using a management agent.
+     *
+     **/
+    public enum ManagementAgentEligibilityStatus {
         Eligible("ELIGIBLE"),
         Ineligible("INELIGIBLE"),
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -468,18 +503,17 @@ public final class LogAnalyticsEntityType
         }
     };
     /**
-     * This field indicates whether logs for entities of this type can be collected using a
-     * management agent.
-     */
+     * This field indicates whether logs for entities of this type can be collected using a management agent.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentEligibilityStatus")
     private final ManagementAgentEligibilityStatus managementAgentEligibilityStatus;
 
     /**
-     * This field indicates whether logs for entities of this type can be collected using a
-     * management agent.
+     * This field indicates whether logs for entities of this type can be collected using a management agent.
      *
      * @return the value
-     */
+     **/
     public ManagementAgentEligibilityStatus getManagementAgentEligibilityStatus() {
         return managementAgentEligibilityStatus;
     }
@@ -491,7 +525,6 @@ public final class LogAnalyticsEntityType
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

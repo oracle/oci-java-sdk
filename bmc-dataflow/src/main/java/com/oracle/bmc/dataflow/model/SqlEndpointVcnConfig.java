@@ -5,98 +5,103 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The VCN configuration for VCN network type selection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * The VCN configuration for VCN network type selection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlEndpointVcnConfig.Builder.class)
+    builder = SqlEndpointVcnConfig.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "networkType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "networkType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlEndpointVcnConfig extends SqlEndpointNetworkConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The VCN OCID. */
+        /**
+         * The VCN OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
          * The VCN OCID.
-         *
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** The VCN Subnet OCID. */
+        /**
+         * The VCN Subnet OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The VCN Subnet OCID.
-         *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The host name prefix. */
+        /**
+         * The host name prefix.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostNamePrefix")
         private String hostNamePrefix;
 
         /**
          * The host name prefix.
-         *
          * @param hostNamePrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder hostNamePrefix(String hostNamePrefix) {
             this.hostNamePrefix = hostNamePrefix;
             this.__explicitlySet__.add("hostNamePrefix");
             return this;
         }
-        /** The OCIDs of Network Security Groups (NSGs). */
+        /**
+         * The OCIDs of Network Security Groups (NSGs).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The OCIDs of Network Security Groups (NSGs).
-         *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-        /** Ip Address of private endpoint */
+        /**
+         * Ip Address of private endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
         /**
          * Ip Address of private endpoint
-         *
          * @param privateEndpointIp the value to set
          * @return this builder
-         */
+         **/
         public Builder privateEndpointIp(String privateEndpointIp) {
             this.privateEndpointIp = privateEndpointIp;
             this.__explicitlySet__.add("privateEndpointIp");
@@ -141,7 +146,9 @@ public final class SqlEndpointVcnConfig extends SqlEndpointNetworkConfiguration 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,67 +172,72 @@ public final class SqlEndpointVcnConfig extends SqlEndpointNetworkConfiguration 
         this.privateEndpointIp = privateEndpointIp;
     }
 
-    /** The VCN OCID. */
+    /**
+     * The VCN OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
      * The VCN OCID.
-     *
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
-    /** The VCN Subnet OCID. */
+    /**
+     * The VCN Subnet OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The VCN Subnet OCID.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** The host name prefix. */
+    /**
+     * The host name prefix.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostNamePrefix")
     private final String hostNamePrefix;
 
     /**
      * The host name prefix.
-     *
      * @return the value
-     */
+     **/
     public String getHostNamePrefix() {
         return hostNamePrefix;
     }
 
-    /** The OCIDs of Network Security Groups (NSGs). */
+    /**
+     * The OCIDs of Network Security Groups (NSGs).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * The OCIDs of Network Security Groups (NSGs).
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
-    /** Ip Address of private endpoint */
+    /**
+     * Ip Address of private endpoint
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
     private final String privateEndpointIp;
 
     /**
      * Ip Address of private endpoint
-     *
      * @return the value
-     */
+     **/
     public String getPrivateEndpointIp() {
         return privateEndpointIp;
     }
@@ -237,7 +249,6 @@ public final class SqlEndpointVcnConfig extends SqlEndpointNetworkConfiguration 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

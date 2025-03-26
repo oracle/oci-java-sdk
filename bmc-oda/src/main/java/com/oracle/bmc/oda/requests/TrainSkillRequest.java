@@ -6,82 +6,98 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/TrainSkillExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use TrainSkillRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/TrainSkillExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use TrainSkillRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class TrainSkillRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.oda.model.TrainSkillDetails> {
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     private String odaInstanceId;
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     private String skillId;
 
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
-    /** Metadata for training a skill. */
+    /**
+     * Metadata for training a skill.
+     */
     private com.oracle.bmc.oda.model.TrainSkillDetails trainSkillDetails;
 
-    /** Metadata for training a skill. */
+    /**
+     * Metadata for training a skill.
+     */
     public com.oracle.bmc.oda.model.TrainSkillDetails getTrainSkillDetails() {
         return trainSkillDetails;
     }
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's a
-     * timeout or server error without the risk of executing that same action again.
-     *
-     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so that you can retry the request if there's a
-     * timeout or server error without the risk of executing that same action again.
-     *
-     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
+     * A token that uniquely identifies a request so that you can retry the request if there's
+     * a timeout or server error without the risk of executing that same action again.
+     * <p>
+     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
      * conflicting operations. For example, if an instance was deleted and purged from the system,
      * then the service might reject a retry of the original creation request.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -89,7 +105,6 @@ public class TrainSkillRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -101,15 +116,17 @@ public class TrainSkillRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     TrainSkillRequest, com.oracle.bmc.oda.model.TrainSkillDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Digital Assistant instance identifier. */
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
-         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -118,12 +135,13 @@ public class TrainSkillRequest
             return this;
         }
 
-        /** Unique Skill identifier. */
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
-         *
          * @param skillId the value to set
          * @return this builder instance
          */
@@ -132,12 +150,13 @@ public class TrainSkillRequest
             return this;
         }
 
-        /** Metadata for training a skill. */
+        /**
+         * Metadata for training a skill.
+         */
         private com.oracle.bmc.oda.model.TrainSkillDetails trainSkillDetails = null;
 
         /**
          * Metadata for training a skill.
-         *
          * @param trainSkillDetails the value to set
          * @return this builder instance
          */
@@ -148,20 +167,23 @@ public class TrainSkillRequest
         }
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -172,15 +194,12 @@ public class TrainSkillRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -190,22 +209,23 @@ public class TrainSkillRequest
         }
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's a
-         * timeout or server error without the risk of executing that same action again.
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
          *
-         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
-         * are conflicting operations. For example, if an instance was deleted and purged from the
-         * system, then the service might reject a retry of the original creation request.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's a
-         * timeout or server error without the risk of executing that same action again.
-         *
-         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
-         * are conflicting operations. For example, if an instance was deleted and purged from the
-         * system, then the service might reject a retry of the original creation request.
+         * A token that uniquely identifies a request so that you can retry the request if there's
+         * a timeout or server error without the risk of executing that same action again.
+         * <p>
+         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
+         * conflicting operations. For example, if an instance was deleted and purged from the system,
+         * then the service might reject a retry of the original creation request.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -217,19 +237,18 @@ public class TrainSkillRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -241,7 +260,6 @@ public class TrainSkillRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(TrainSkillRequest o) {
@@ -259,11 +277,10 @@ public class TrainSkillRequest
         /**
          * Build the instance of TrainSkillRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of TrainSkillRequest
          */
@@ -276,7 +293,6 @@ public class TrainSkillRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -289,8 +305,7 @@ public class TrainSkillRequest
         /**
          * Build the instance of TrainSkillRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of TrainSkillRequest
@@ -304,14 +319,12 @@ public class TrainSkillRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new TrainSkillRequest(odaInstanceId, skillId, trainSkillDetails, ifMatch,
-            // opcRequestId, opcRetryToken);
+            // new TrainSkillRequest(odaInstanceId, skillId, trainSkillDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -326,7 +339,6 @@ public class TrainSkillRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

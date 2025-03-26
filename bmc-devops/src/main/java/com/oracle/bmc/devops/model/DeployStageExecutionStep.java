@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details about each steps in stage execution for a target environment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Details about each steps in stage execution for a target environment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeployStageExecutionStep.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeployStageExecutionStep.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeployStageExecutionStep
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "state", "timeStarted", "timeFinished"})
     public DeployStageExecutionStep(
@@ -35,61 +34,65 @@ public final class DeployStageExecutionStep
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the step. */
+        /**
+         * Name of the step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the step.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** State of the step. */
+        /**
+         * State of the step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
         /**
          * State of the step.
-         *
          * @param state the value to set
          * @return this builder
-         */
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /** Time when the step started. */
+        /**
+         * Time when the step started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * Time when the step started.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** Time when the step finished. */
+        /**
+         * Time when the step finished.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * Time when the step finished.
-         *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -127,7 +130,9 @@ public final class DeployStageExecutionStep
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,21 +141,24 @@ public final class DeployStageExecutionStep
         return new Builder().copy(this);
     }
 
-    /** Name of the step. */
+    /**
+     * Name of the step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the step.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** State of the step. */
-    public enum State implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * State of the step.
+     **/
+    public enum State {
         Waiting("WAITING"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
@@ -158,8 +166,8 @@ public final class DeployStageExecutionStep
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -197,41 +205,44 @@ public final class DeployStageExecutionStep
             return UnknownEnumValue;
         }
     };
-    /** State of the step. */
+    /**
+     * State of the step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
     /**
      * State of the step.
-     *
      * @return the value
-     */
+     **/
     public State getState() {
         return state;
     }
 
-    /** Time when the step started. */
+    /**
+     * Time when the step started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * Time when the step started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** Time when the step finished. */
+    /**
+     * Time when the step finished.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * Time when the step finished.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -243,7 +254,6 @@ public final class DeployStageExecutionStep
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The result of the endpoint configuration validation <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * The result of the endpoint configuration validation
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ValidateEndpointResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ValidateEndpointResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ValidateEndpointResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "statusDescription", "validationResults"})
     public ValidateEndpointResult(
@@ -36,46 +35,49 @@ public final class ValidateEndpointResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The validation status. */
+        /**
+         * The validation status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The validation status.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The validation status description. */
+        /**
+         * The validation status description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
         private String statusDescription;
 
         /**
          * The validation status description.
-         *
          * @param statusDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDescription(String statusDescription) {
             this.statusDescription = statusDescription;
             this.__explicitlySet__.add("statusDescription");
             return this;
         }
-        /** Validation results for each specified endpoint. */
+        /**
+         * Validation results for each specified endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationResults")
         private java.util.List<EndpointResult> validationResults;
 
         /**
          * Validation results for each specified endpoint.
-         *
          * @param validationResults the value to set
          * @return this builder
-         */
+         **/
         public Builder validationResults(java.util.List<EndpointResult> validationResults) {
             this.validationResults = validationResults;
             this.__explicitlySet__.add("validationResults");
@@ -110,7 +112,9 @@ public final class ValidateEndpointResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,41 +123,44 @@ public final class ValidateEndpointResult
         return new Builder().copy(this);
     }
 
-    /** The validation status. */
+    /**
+     * The validation status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The validation status.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** The validation status description. */
+    /**
+     * The validation status description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
     private final String statusDescription;
 
     /**
      * The validation status description.
-     *
      * @return the value
-     */
+     **/
     public String getStatusDescription() {
         return statusDescription;
     }
 
-    /** Validation results for each specified endpoint. */
+    /**
+     * Validation results for each specified endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationResults")
     private final java.util.List<EndpointResult> validationResults;
 
     /**
      * Validation results for each specified endpoint.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EndpointResult> getValidationResults() {
         return validationResults;
     }
@@ -165,7 +172,6 @@ public final class ValidateEndpointResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

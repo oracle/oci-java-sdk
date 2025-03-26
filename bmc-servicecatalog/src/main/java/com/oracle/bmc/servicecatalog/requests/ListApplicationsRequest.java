@@ -6,132 +6,168 @@ package com.oracle.bmc.servicecatalog.requests;
 
 import com.oracle.bmc.servicecatalog.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListApplicationsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApplicationsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApplicationsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique identifier for the compartment. */
+    /**
+     * The unique identifier for the compartment.
+     */
     private String compartmentId;
 
-    /** The unique identifier for the compartment. */
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The unique identifier for the service catalog. */
+    /**
+     * The unique identifier for the service catalog.
+     */
     private String serviceCatalogId;
 
-    /** The unique identifier for the service catalog. */
+    /**
+     * The unique identifier for the service catalog.
+     */
     public String getServiceCatalogId() {
         return serviceCatalogId;
     }
-    /** The type of the application in the service catalog. */
+    /**
+     * The type of the application in the service catalog.
+     */
     private String entityType;
 
-    /** The type of the application in the service catalog. */
+    /**
+     * The type of the application in the service catalog.
+     */
     public String getEntityType() {
         return entityType;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     private Integer limit;
 
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
-    /** Exact match name filter. */
+    /**
+     * Exact match name filter.
+     */
     private String displayName;
 
-    /** Exact match name filter. */
+    /**
+     * Exact match name filter.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The unique identifier of the entity associated with service catalog. */
+    /**
+     * The unique identifier of the entity associated with service catalog.
+     */
     private String entityId;
 
-    /** The unique identifier of the entity associated with service catalog. */
+    /**
+     * The unique identifier of the entity associated with service catalog.
+     */
     public String getEntityId() {
         return entityId;
     }
-    /** Limit results to just this publisher. */
+    /**
+     * Limit results to just this publisher.
+     */
     private java.util.List<String> publisherId;
 
-    /** Limit results to just this publisher. */
+    /**
+     * Limit results to just this publisher.
+     */
     public java.util.List<String> getPublisherId() {
         return publisherId;
     }
     /**
-     * Name of the package type. If multiple package types are provided, then any resource with one
-     * or more matching package types will be returned.
+     * Name of the package type. If multiple package types are provided, then any resource with
+     * one or more matching package types will be returned.
+     *
      */
     private java.util.List<com.oracle.bmc.servicecatalog.model.PackageTypeEnum> packageType;
 
     /**
-     * Name of the package type. If multiple package types are provided, then any resource with one
-     * or more matching package types will be returned.
+     * Name of the package type. If multiple package types are provided, then any resource with
+     * one or more matching package types will be returned.
+     *
      */
     public java.util.List<com.oracle.bmc.servicecatalog.model.PackageTypeEnum> getPackageType() {
         return packageType;
     }
     /**
-     * Name of the pricing type. If multiple pricing types are provided, then any resource with one
-     * or more matching pricing models will be returned.
+     * Name of the pricing type. If multiple pricing types are provided, then any resource with
+     * one or more matching pricing models will be returned.
+     *
      */
     private java.util.List<com.oracle.bmc.servicecatalog.model.PricingTypeEnum> pricing;
 
     /**
-     * Name of the pricing type. If multiple pricing types are provided, then any resource with one
-     * or more matching pricing models will be returned.
+     * Name of the pricing type. If multiple pricing types are provided, then any resource with
+     * one or more matching pricing models will be returned.
+     *
      */
     public java.util.List<com.oracle.bmc.servicecatalog.model.PricingTypeEnum> getPricing() {
         return pricing;
     }
     /**
-     * Indicates whether to show only featured resources. If this is set to {@code false} or is
-     * omitted, then all resources will be returned.
+     * Indicates whether to show only featured resources. If this is set to {@code false} or is omitted, then all resources will be returned.
+     *
      */
     private Boolean isFeatured;
 
     /**
-     * Indicates whether to show only featured resources. If this is set to {@code false} or is
-     * omitted, then all resources will be returned.
+     * Indicates whether to show only featured resources. If this is set to {@code false} or is omitted, then all resources will be returned.
+     *
      */
     public Boolean getIsFeatured() {
         return isFeatured;
     }
-    /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
+    /**
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -164,7 +200,9 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
-    /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
+    /**
+     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -172,15 +210,17 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListApplicationsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier for the compartment. */
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -189,12 +229,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The unique identifier for the service catalog. */
+        /**
+         * The unique identifier for the service catalog.
+         */
         private String serviceCatalogId = null;
 
         /**
          * The unique identifier for the service catalog.
-         *
          * @param serviceCatalogId the value to set
          * @return this builder instance
          */
@@ -203,12 +244,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The type of the application in the service catalog. */
+        /**
+         * The type of the application in the service catalog.
+         */
         private String entityType = null;
 
         /**
          * The type of the application in the service catalog.
-         *
          * @param entityType the value to set
          * @return this builder instance
          */
@@ -218,14 +260,15 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -236,14 +279,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
          */
         private Integer limit = null;
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -253,12 +295,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -267,12 +310,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** Exact match name filter. */
+        /**
+         * Exact match name filter.
+         */
         private String displayName = null;
 
         /**
          * Exact match name filter.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -281,12 +325,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The unique identifier of the entity associated with service catalog. */
+        /**
+         * The unique identifier of the entity associated with service catalog.
+         */
         private String entityId = null;
 
         /**
          * The unique identifier of the entity associated with service catalog.
-         *
          * @param entityId the value to set
          * @return this builder instance
          */
@@ -295,12 +340,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** Limit results to just this publisher. */
+        /**
+         * Limit results to just this publisher.
+         */
         private java.util.List<String> publisherId = null;
 
         /**
          * Limit results to just this publisher.
-         *
          * @param publisherId the value to set
          * @return this builder instance
          */
@@ -311,7 +357,6 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Limit results to just this publisher.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -322,6 +367,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Name of the package type. If multiple package types are provided, then any resource with
          * one or more matching package types will be returned.
+         *
          */
         private java.util.List<com.oracle.bmc.servicecatalog.model.PackageTypeEnum> packageType =
                 null;
@@ -340,8 +386,8 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Singular setter. Name of the package type. If multiple package types are provided, then
-         * any resource with one or more matching package types will be returned.
+         * Singular setter. Name of the package type. If multiple package types are provided, then any resource with
+         * one or more matching package types will be returned.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -353,6 +399,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Name of the pricing type. If multiple pricing types are provided, then any resource with
          * one or more matching pricing models will be returned.
+         *
          */
         private java.util.List<com.oracle.bmc.servicecatalog.model.PricingTypeEnum> pricing = null;
 
@@ -370,8 +417,8 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Singular setter. Name of the pricing type. If multiple pricing types are provided, then
-         * any resource with one or more matching pricing models will be returned.
+         * Singular setter. Name of the pricing type. If multiple pricing types are provided, then any resource with
+         * one or more matching pricing models will be returned.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -381,14 +428,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Indicates whether to show only featured resources. If this is set to {@code false} or is
-         * omitted, then all resources will be returned.
+         * Indicates whether to show only featured resources. If this is set to {@code false} or is omitted, then all resources will be returned.
+         *
          */
         private Boolean isFeatured = null;
 
         /**
-         * Indicates whether to show only featured resources. If this is set to {@code false} or is
-         * omitted, then all resources will be returned.
+         * Indicates whether to show only featured resources. If this is set to {@code false} or is omitted, then all resources will be returned.
          *
          * @param isFeatured the value to set
          * @return this builder instance
@@ -398,12 +444,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
+        /**
+         * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -414,19 +461,18 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -438,7 +484,6 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListApplicationsRequest o) {
@@ -463,11 +508,10 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListApplicationsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListApplicationsRequest
          */
@@ -481,8 +525,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListApplicationsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListApplicationsRequest
@@ -503,15 +546,12 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.isFeatured = isFeatured;
             request.sortOrder = sortOrder;
             return request;
-            // new ListApplicationsRequest(compartmentId, serviceCatalogId, entityType,
-            // opcRequestId, limit, page, displayName, entityId, publisherId, packageType, pricing,
-            // isFeatured, sortOrder);
+            // new ListApplicationsRequest(compartmentId, serviceCatalogId, entityType, opcRequestId, limit, page, displayName, entityId, publisherId, packageType, pricing, isFeatured, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -533,7 +573,6 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

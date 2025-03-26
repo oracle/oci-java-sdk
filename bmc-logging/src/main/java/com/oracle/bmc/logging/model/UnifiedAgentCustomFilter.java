@@ -5,25 +5,25 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Logging custom filter plugin. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Logging custom filter plugin.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentCustomFilter.Builder.class)
+    builder = UnifiedAgentCustomFilter.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "filterType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "filterType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentCustomFilter extends UnifiedAgentLoggingFilter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,46 +35,49 @@ public final class UnifiedAgentCustomFilter extends UnifiedAgentLoggingFilter {
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of the custom filter */
+        /**
+         * Type of the custom filter
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customFilterType")
         private String customFilterType;
 
         /**
          * Type of the custom filter
-         *
          * @param customFilterType the value to set
          * @return this builder
-         */
+         **/
         public Builder customFilterType(String customFilterType) {
             this.customFilterType = customFilterType;
             this.__explicitlySet__.add("customFilterType");
             return this;
         }
-        /** Parameters of the custom filter */
+        /**
+         * Parameters of the custom filter
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("params")
         private java.util.Map<String, String> params;
 
         /**
          * Parameters of the custom filter
-         *
          * @param params the value to set
          * @return this builder
-         */
+         **/
         public Builder params(java.util.Map<String, String> params) {
             this.params = params;
             this.__explicitlySet__.add("params");
             return this;
         }
-        /** List of custom sections in custom filter */
+        /**
+         * List of custom sections in custom filter
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customSections")
         private java.util.List<UnifiedAgentCustomSection> customSections;
 
         /**
          * List of custom sections in custom filter
-         *
          * @param customSections the value to set
          * @return this builder
-         */
+         **/
         public Builder customSections(java.util.List<UnifiedAgentCustomSection> customSections) {
             this.customSections = customSections;
             this.__explicitlySet__.add("customSections");
@@ -112,7 +115,9 @@ public final class UnifiedAgentCustomFilter extends UnifiedAgentLoggingFilter {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,41 +138,44 @@ public final class UnifiedAgentCustomFilter extends UnifiedAgentLoggingFilter {
         this.customSections = customSections;
     }
 
-    /** Type of the custom filter */
+    /**
+     * Type of the custom filter
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customFilterType")
     private final String customFilterType;
 
     /**
      * Type of the custom filter
-     *
      * @return the value
-     */
+     **/
     public String getCustomFilterType() {
         return customFilterType;
     }
 
-    /** Parameters of the custom filter */
+    /**
+     * Parameters of the custom filter
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("params")
     private final java.util.Map<String, String> params;
 
     /**
      * Parameters of the custom filter
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getParams() {
         return params;
     }
 
-    /** List of custom sections in custom filter */
+    /**
+     * List of custom sections in custom filter
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customSections")
     private final java.util.List<UnifiedAgentCustomSection> customSections;
 
     /**
      * List of custom sections in custom filter
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UnifiedAgentCustomSection> getCustomSections() {
         return customSections;
     }
@@ -179,7 +187,6 @@ public final class UnifiedAgentCustomFilter extends UnifiedAgentLoggingFilter {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

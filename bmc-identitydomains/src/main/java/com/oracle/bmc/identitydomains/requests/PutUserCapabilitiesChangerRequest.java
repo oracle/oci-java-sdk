@@ -6,137 +6,102 @@ package com.oracle.bmc.identitydomains.requests;
 
 import com.oracle.bmc.identitydomains.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutUserCapabilitiesChangerExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * PutUserCapabilitiesChangerRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutUserCapabilitiesChangerExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutUserCapabilitiesChangerRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class PutUserCapabilitiesChangerRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identitydomains.model.UserCapabilitiesChanger> {
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     private String userCapabilitiesChangerId;
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     public String getUserCapabilitiesChangerId() {
         return userCapabilitiesChangerId;
     }
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     private String authorization;
 
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     public String getAuthorization() {
         return authorization;
     }
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     private String resourceTypeSchemaVersion;
 
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     public String getResourceTypeSchemaVersion() {
         return resourceTypeSchemaVersion;
     }
     /**
      * Replace the current instance of UserCapabilitiesChanger with provided payload.
+     * <p>
+     * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+     * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+     *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+     *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+     *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+     * <p>
+     * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+     * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+     *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+     *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+     *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
      *
-     * <p>Before you specify an attribute-value in a request to replace a resource, please check the
-     * **'mutability'** property of that attribute in the resource-type schema below. Clicking on an
-     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute. -
-     * Your request to create, update or replace a resource may specify in its payload a value for
-     * any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
-     * *mutability:immutable*: - The SCIM APIs to create a resource will ignore silently any value
-     * that you specify for an attribute that is defined as *mutability:readOnly*. - The SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify a
-     * value for an attribute that is defined as *mutability:readOnly*. - Similarly, the SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify any
-     * value for an attribute that is defined as *mutability:immutable* and that already has a value
-     * in the specified resource.
-     *
-     * <p>Also, before you use the query-parameter attributes to request specific attributes, please
-     * check the **'returned'** property of that attribute in the resource-type schema below: - Your
-     * request to read a resource (or to search a resource-type) can specify as the value of
-     * attributes any attributes that are defined as *returned:default* or *returned:request* or
-     * *returned:always*: - If you request a specific set of attributes, the SCIM APIs to read a
-     * resource (or to search a resource-type) will return in each resource the set of attributes
-     * that you requested, as well as any attribute that is defined as *returned:always*. - If you
-     * do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a
-     * resource-type) will return in each resource the the set of attributes defined as
-     * *returned:default*, as well as any attribute that is defined as *returned:always*. - The SCIM
-     * APIs to read a resource (or to search a resource-type) will ignore silently any request to
-     * return an attribute that is defined as *returned:never*.
      */
     private com.oracle.bmc.identitydomains.model.UserCapabilitiesChanger userCapabilitiesChanger;
 
     /**
      * Replace the current instance of UserCapabilitiesChanger with provided payload.
+     * <p>
+     * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+     * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+     *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+     *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+     *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+     * <p>
+     * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+     * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+     *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+     *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+     *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
      *
-     * <p>Before you specify an attribute-value in a request to replace a resource, please check the
-     * **'mutability'** property of that attribute in the resource-type schema below. Clicking on an
-     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute. -
-     * Your request to create, update or replace a resource may specify in its payload a value for
-     * any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
-     * *mutability:immutable*: - The SCIM APIs to create a resource will ignore silently any value
-     * that you specify for an attribute that is defined as *mutability:readOnly*. - The SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify a
-     * value for an attribute that is defined as *mutability:readOnly*. - Similarly, the SCIM APIs
-     * to update or replace a resource will fail with an error 400 Bad Request if you specify any
-     * value for an attribute that is defined as *mutability:immutable* and that already has a value
-     * in the specified resource.
-     *
-     * <p>Also, before you use the query-parameter attributes to request specific attributes, please
-     * check the **'returned'** property of that attribute in the resource-type schema below: - Your
-     * request to read a resource (or to search a resource-type) can specify as the value of
-     * attributes any attributes that are defined as *returned:default* or *returned:request* or
-     * *returned:always*: - If you request a specific set of attributes, the SCIM APIs to read a
-     * resource (or to search a resource-type) will return in each resource the set of attributes
-     * that you requested, as well as any attribute that is defined as *returned:always*. - If you
-     * do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a
-     * resource-type) will return in each resource the the set of attributes defined as
-     * *returned:default*, as well as any attribute that is defined as *returned:always*. - The SCIM
-     * APIs to read a resource (or to search a resource-type) will ignore silently any request to
-     * return an attribute that is defined as *returned:never*.
      */
     public com.oracle.bmc.identitydomains.model.UserCapabilitiesChanger
             getUserCapabilitiesChanger() {
         return userCapabilitiesChanger;
     }
-    /** Used to make the request conditional on an ETag */
+    /**
+     * Used to make the request conditional on an ETag
+     */
     private String ifMatch;
 
-    /** Used to make the request conditional on an ETag */
+    /**
+     * Used to make the request conditional on an ETag
+     */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -144,7 +109,6 @@ public class PutUserCapabilitiesChangerRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -157,15 +121,17 @@ public class PutUserCapabilitiesChangerRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PutUserCapabilitiesChangerRequest,
                     com.oracle.bmc.identitydomains.model.UserCapabilitiesChanger> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the resource */
+        /**
+         * ID of the resource
+         */
         private String userCapabilitiesChangerId = null;
 
         /**
          * ID of the resource
-         *
          * @param userCapabilitiesChangerId the value to set
          * @return this builder instance
          */
@@ -175,15 +141,12 @@ public class PutUserCapabilitiesChangerRequest
         }
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          */
         private String authorization = null;
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
-         *
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          * @param authorization the value to set
          * @return this builder instance
          */
@@ -193,23 +156,12 @@ public class PutUserCapabilitiesChangerRequest
         }
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          */
         private String resourceTypeSchemaVersion = null;
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
-         *
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          * @param resourceTypeSchemaVersion the value to set
          * @return this builder instance
          */
@@ -220,66 +172,37 @@ public class PutUserCapabilitiesChangerRequest
 
         /**
          * Replace the current instance of UserCapabilitiesChanger with provided payload.
+         * <p>
+         * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+         * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+         *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+         *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+         *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+         * <p>
+         * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+         * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+         *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+         *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+         *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
          *
-         * <p>Before you specify an attribute-value in a request to replace a resource, please check
-         * the **'mutability'** property of that attribute in the resource-type schema below.
-         * Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of
-         * that attribute. - Your request to create, update or replace a resource may specify in its
-         * payload a value for any attribute that is defined as *mutability:readWrite* or
-         * *mutability:writeOnly* or *mutability:immutable*: - The SCIM APIs to create a resource
-         * will ignore silently any value that you specify for an attribute that is defined as
-         * *mutability:readOnly*. - The SCIM APIs to update or replace a resource will fail with an
-         * error 400 Bad Request if you specify a value for an attribute that is defined as
-         * *mutability:readOnly*. - Similarly, the SCIM APIs to update or replace a resource will
-         * fail with an error 400 Bad Request if you specify any value for an attribute that is
-         * defined as *mutability:immutable* and that already has a value in the specified resource.
-         *
-         * <p>Also, before you use the query-parameter attributes to request specific attributes,
-         * please check the **'returned'** property of that attribute in the resource-type schema
-         * below: - Your request to read a resource (or to search a resource-type) can specify as
-         * the value of attributes any attributes that are defined as *returned:default* or
-         * *returned:request* or *returned:always*: - If you request a specific set of attributes,
-         * the SCIM APIs to read a resource (or to search a resource-type) will return in each
-         * resource the set of attributes that you requested, as well as any attribute that is
-         * defined as *returned:always*. - If you do not request a specific set of attributes, the
-         * SCIM APIs to read a resource (or to search a resource-type) will return in each resource
-         * the the set of attributes defined as *returned:default*, as well as any attribute that is
-         * defined as *returned:always*. - The SCIM APIs to read a resource (or to search a
-         * resource-type) will ignore silently any request to return an attribute that is defined as
-         * *returned:never*.
          */
         private com.oracle.bmc.identitydomains.model.UserCapabilitiesChanger
                 userCapabilitiesChanger = null;
 
         /**
          * Replace the current instance of UserCapabilitiesChanger with provided payload.
-         *
-         * <p>Before you specify an attribute-value in a request to replace a resource, please check
-         * the **'mutability'** property of that attribute in the resource-type schema below.
-         * Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of
-         * that attribute. - Your request to create, update or replace a resource may specify in its
-         * payload a value for any attribute that is defined as *mutability:readWrite* or
-         * *mutability:writeOnly* or *mutability:immutable*: - The SCIM APIs to create a resource
-         * will ignore silently any value that you specify for an attribute that is defined as
-         * *mutability:readOnly*. - The SCIM APIs to update or replace a resource will fail with an
-         * error 400 Bad Request if you specify a value for an attribute that is defined as
-         * *mutability:readOnly*. - Similarly, the SCIM APIs to update or replace a resource will
-         * fail with an error 400 Bad Request if you specify any value for an attribute that is
-         * defined as *mutability:immutable* and that already has a value in the specified resource.
-         *
-         * <p>Also, before you use the query-parameter attributes to request specific attributes,
-         * please check the **'returned'** property of that attribute in the resource-type schema
-         * below: - Your request to read a resource (or to search a resource-type) can specify as
-         * the value of attributes any attributes that are defined as *returned:default* or
-         * *returned:request* or *returned:always*: - If you request a specific set of attributes,
-         * the SCIM APIs to read a resource (or to search a resource-type) will return in each
-         * resource the set of attributes that you requested, as well as any attribute that is
-         * defined as *returned:always*. - If you do not request a specific set of attributes, the
-         * SCIM APIs to read a resource (or to search a resource-type) will return in each resource
-         * the the set of attributes defined as *returned:default*, as well as any attribute that is
-         * defined as *returned:always*. - The SCIM APIs to read a resource (or to search a
-         * resource-type) will ignore silently any request to return an attribute that is defined as
-         * *returned:never*.
+         * <p>
+         * Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+         * - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+         *   - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+         *   - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+         *   - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+         * <p>
+         * Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+         * - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+         *   - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+         *   - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+         *   - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
          *
          * @param userCapabilitiesChanger the value to set
          * @return this builder instance
@@ -291,12 +214,13 @@ public class PutUserCapabilitiesChangerRequest
             return this;
         }
 
-        /** Used to make the request conditional on an ETag */
+        /**
+         * Used to make the request conditional on an ETag
+         */
         private String ifMatch = null;
 
         /**
          * Used to make the request conditional on an ETag
-         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -306,15 +230,12 @@ public class PutUserCapabilitiesChangerRequest
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
-         *
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -325,19 +246,18 @@ public class PutUserCapabilitiesChangerRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -349,7 +269,6 @@ public class PutUserCapabilitiesChangerRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PutUserCapabilitiesChangerRequest o) {
@@ -367,11 +286,10 @@ public class PutUserCapabilitiesChangerRequest
         /**
          * Build the instance of PutUserCapabilitiesChangerRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PutUserCapabilitiesChangerRequest
          */
@@ -384,7 +302,6 @@ public class PutUserCapabilitiesChangerRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -397,8 +314,7 @@ public class PutUserCapabilitiesChangerRequest
         /**
          * Build the instance of PutUserCapabilitiesChangerRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PutUserCapabilitiesChangerRequest
@@ -412,14 +328,12 @@ public class PutUserCapabilitiesChangerRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new PutUserCapabilitiesChangerRequest(userCapabilitiesChangerId, authorization,
-            // resourceTypeSchemaVersion, userCapabilitiesChanger, ifMatch, opcRetryToken);
+            // new PutUserCapabilitiesChangerRequest(userCapabilitiesChangerId, authorization, resourceTypeSchemaVersion, userCapabilitiesChanger, ifMatch, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -434,7 +348,6 @@ public class PutUserCapabilitiesChangerRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

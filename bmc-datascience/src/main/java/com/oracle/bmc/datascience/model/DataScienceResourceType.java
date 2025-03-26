@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** Data Science resource type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum DataScienceResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Data Science resource type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum DataScienceResourceType {
     NotebookSession("NOTEBOOK_SESSION"),
     ModelDeployment("MODEL_DEPLOYMENT"),
 

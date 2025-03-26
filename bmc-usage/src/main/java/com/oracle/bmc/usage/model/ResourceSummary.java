@@ -5,22 +5,20 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The details of a resource under a service. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * The details of a resource under a service.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResourceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dailyUnitDisplayName",
@@ -63,166 +61,177 @@ public final class ResourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Units to be used for daily aggregated data. */
+        /**
+         * Units to be used for daily aggregated data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dailyUnitDisplayName")
         private String dailyUnitDisplayName;
 
         /**
          * Units to be used for daily aggregated data.
-         *
          * @param dailyUnitDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder dailyUnitDisplayName(String dailyUnitDisplayName) {
             this.dailyUnitDisplayName = dailyUnitDisplayName;
             this.__explicitlySet__.add("dailyUnitDisplayName");
             return this;
         }
-        /** Units to be used for hourly aggregated data. */
+        /**
+         * Units to be used for hourly aggregated data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hourlyUnitDisplayName")
         private String hourlyUnitDisplayName;
 
         /**
          * Units to be used for hourly aggregated data.
-         *
          * @param hourlyUnitDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder hourlyUnitDisplayName(String hourlyUnitDisplayName) {
             this.hourlyUnitDisplayName = hourlyUnitDisplayName;
             this.__explicitlySet__.add("hourlyUnitDisplayName");
             return this;
         }
-        /** Default units to use when unspecified. */
+        /**
+         * Default units to use when unspecified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rawUnitDisplayName")
         private String rawUnitDisplayName;
 
         /**
          * Default units to use when unspecified.
-         *
          * @param rawUnitDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder rawUnitDisplayName(String rawUnitDisplayName) {
             this.rawUnitDisplayName = rawUnitDisplayName;
             this.__explicitlySet__.add("rawUnitDisplayName");
             return this;
         }
-        /** Usage data type of the resource. */
+        /**
+         * Usage data type of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageDataType")
         private UsageDataType usageDataType;
 
         /**
          * Usage data type of the resource.
-         *
          * @param usageDataType the value to set
          * @return this builder
-         */
+         **/
         public Builder usageDataType(UsageDataType usageDataType) {
             this.usageDataType = usageDataType;
             this.__explicitlySet__.add("usageDataType");
             return this;
         }
-        /** Name of the resource. */
+        /**
+         * Name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the resource.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Name of the service. */
+        /**
+         * Name of the service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servicename")
         private String servicename;
 
         /**
          * Name of the service.
-         *
          * @param servicename the value to set
          * @return this builder
-         */
+         **/
         public Builder servicename(String servicename) {
             this.servicename = servicename;
             this.__explicitlySet__.add("servicename");
             return this;
         }
-        /** Description of the resource. */
+        /**
+         * Description of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the resource.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Instance type for the resource. */
+        /**
+         * Instance type for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
         private String instanceType;
 
         /**
          * Instance type for the resource.
-         *
          * @param instanceType the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceType(String instanceType) {
             this.instanceType = instanceType;
             this.__explicitlySet__.add("instanceType");
             return this;
         }
-        /** Indicates if the SKU was purchased */
+        /**
+         * Indicates if the SKU was purchased
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPurchased")
         private Boolean isPurchased;
 
         /**
          * Indicates if the SKU was purchased
-         *
          * @param isPurchased the value to set
          * @return this builder
-         */
+         **/
         public Builder isPurchased(Boolean isPurchased) {
             this.isPurchased = isPurchased;
             this.__explicitlySet__.add("isPurchased");
             return this;
         }
-        /** The details of any child resources. */
+        /**
+         * The details of any child resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childResources")
         private java.util.List<String> childResources;
 
         /**
          * The details of any child resources.
-         *
          * @param childResources the value to set
          * @return this builder
-         */
+         **/
         public Builder childResources(java.util.List<String> childResources) {
             this.childResources = childResources;
             this.__explicitlySet__.add("childResources");
             return this;
         }
-        /** The details of resource Skus. */
+        /**
+         * The details of resource Skus.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skus")
         private java.util.List<SkuProducts> skus;
 
         /**
          * The details of resource Skus.
-         *
          * @param skus the value to set
          * @return this builder
-         */
+         **/
         public Builder skus(java.util.List<SkuProducts> skus) {
             this.skus = skus;
             this.__explicitlySet__.add("skus");
@@ -291,7 +300,9 @@ public final class ResourceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -300,53 +311,58 @@ public final class ResourceSummary
         return new Builder().copy(this);
     }
 
-    /** Units to be used for daily aggregated data. */
+    /**
+     * Units to be used for daily aggregated data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dailyUnitDisplayName")
     private final String dailyUnitDisplayName;
 
     /**
      * Units to be used for daily aggregated data.
-     *
      * @return the value
-     */
+     **/
     public String getDailyUnitDisplayName() {
         return dailyUnitDisplayName;
     }
 
-    /** Units to be used for hourly aggregated data. */
+    /**
+     * Units to be used for hourly aggregated data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hourlyUnitDisplayName")
     private final String hourlyUnitDisplayName;
 
     /**
      * Units to be used for hourly aggregated data.
-     *
      * @return the value
-     */
+     **/
     public String getHourlyUnitDisplayName() {
         return hourlyUnitDisplayName;
     }
 
-    /** Default units to use when unspecified. */
+    /**
+     * Default units to use when unspecified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rawUnitDisplayName")
     private final String rawUnitDisplayName;
 
     /**
      * Default units to use when unspecified.
-     *
      * @return the value
-     */
+     **/
     public String getRawUnitDisplayName() {
         return rawUnitDisplayName;
     }
 
-    /** Usage data type of the resource. */
-    public enum UsageDataType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Usage data type of the resource.
+     **/
+    public enum UsageDataType {
         Interval("INTERVAL"),
         PointData("POINT_DATA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -385,106 +401,114 @@ public final class ResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** Usage data type of the resource. */
+    /**
+     * Usage data type of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageDataType")
     private final UsageDataType usageDataType;
 
     /**
      * Usage data type of the resource.
-     *
      * @return the value
-     */
+     **/
     public UsageDataType getUsageDataType() {
         return usageDataType;
     }
 
-    /** Name of the resource. */
+    /**
+     * Name of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Name of the service. */
+    /**
+     * Name of the service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicename")
     private final String servicename;
 
     /**
      * Name of the service.
-     *
      * @return the value
-     */
+     **/
     public String getServicename() {
         return servicename;
     }
 
-    /** Description of the resource. */
+    /**
+     * Description of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Instance type for the resource. */
+    /**
+     * Instance type for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     private final String instanceType;
 
     /**
      * Instance type for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceType() {
         return instanceType;
     }
 
-    /** Indicates if the SKU was purchased */
+    /**
+     * Indicates if the SKU was purchased
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPurchased")
     private final Boolean isPurchased;
 
     /**
      * Indicates if the SKU was purchased
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPurchased() {
         return isPurchased;
     }
 
-    /** The details of any child resources. */
+    /**
+     * The details of any child resources.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("childResources")
     private final java.util.List<String> childResources;
 
     /**
      * The details of any child resources.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getChildResources() {
         return childResources;
     }
 
-    /** The details of resource Skus. */
+    /**
+     * The details of resource Skus.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skus")
     private final java.util.List<SkuProducts> skus;
 
     /**
      * The details of resource Skus.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SkuProducts> getSkus() {
         return skus;
     }
@@ -496,7 +520,6 @@ public final class ResourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,109 +6,118 @@ package com.oracle.bmc.filestorage.requests;
 
 import com.oracle.bmc.filestorage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFilesystemSnapshotPoliciesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListFilesystemSnapshotPoliciesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFilesystemSnapshotPoliciesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFilesystemSnapshotPoliciesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ListFilesystemSnapshotPoliciesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
      */
     private String availabilityDomain;
 
     /**
      * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 4096 is the maximum.
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 4096 is the maximum.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 500}
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
-     * <p>Example: {@code 500}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 4096 is the maximum.
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 4096 is the maximum.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 500}
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
-     * <p>Example: {@code 500}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
+     * <p>
+     * Example: {@code My resource}
      *
-     * <p>Example: {@code My resource}
      */
     private String displayName;
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
+     * <p>
+     * Example: {@code My resource}
      *
-     * <p>Example: {@code My resource}
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+     * Filter results by the specified lifecycle state. Must be a valid
+     * state for the resource type.
+     *
      */
     private LifecycleState lifecycleState;
 
     /**
-     * Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * Filter results by the specified lifecycle state. Must be a valid
+     * state for the resource type.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
@@ -146,39 +155,45 @@ public class ListFilesystemSnapshotPoliciesRequest
     };
 
     /**
-     * Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+     * Filter results by the specified lifecycle state. Must be a valid
+     * state for the resource type.
+     *
      */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * Filter results by
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
-     * OCID of the correct type for the resouce type.
+     * Filter results by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
+     * the resouce type.
+     *
      */
     private String id;
 
     /**
-     * Filter results by
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
-     * OCID of the correct type for the resouce type.
+     * Filter results by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
+     * the resouce type.
+     *
      */
     public String getId() {
         return id;
     }
     /**
-     * The field to sort by. You can provide either value, but not both. By default, when you sort
-     * by time created, results are shown in descending order. When you sort by displayName, results
-     * are shown in ascending alphanumeric order.
+     * The field to sort by. You can provide either value, but not both.
+     * By default, when you sort by time created, results are shown
+     * in descending order. When you sort by displayName, results are
+     * shown in ascending alphanumeric order.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide either value, but not both. By default, when you sort
-     * by time created, results are shown in descending order. When you sort by displayName, results
-     * are shown in ascending alphanumeric order.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can provide either value, but not both.
+     * By default, when you sort by time created, results are shown
+     * in descending order. When you sort by displayName, results are
+     * shown in ascending alphanumeric order.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -212,24 +227,30 @@ public class ListFilesystemSnapshotPoliciesRequest
     };
 
     /**
-     * The field to sort by. You can provide either value, but not both. By default, when you sort
-     * by time created, results are shown in descending order. When you sort by displayName, results
-     * are shown in ascending alphanumeric order.
+     * The field to sort by. You can provide either value, but not both.
+     * By default, when you sort by time created, results are shown
+     * in descending order. When you sort by displayName, results are
+     * shown in ascending alphanumeric order.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use, either 'asc' or 'desc', where 'asc' is ascending and 'desc' is
-     * descending. The default order is 'desc' except for numeric values.
+     * The sort order to use, either 'asc' or 'desc', where 'asc' is
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
+     *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc', where 'asc' is ascending and 'desc' is
-     * descending. The default order is 'desc' except for numeric values.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * The sort order to use, either 'asc' or 'desc', where 'asc' is
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -263,21 +284,25 @@ public class ListFilesystemSnapshotPoliciesRequest
     };
 
     /**
-     * The sort order to use, either 'asc' or 'desc', where 'asc' is ascending and 'desc' is
-     * descending. The default order is 'desc' except for numeric values.
+     * The sort order to use, either 'asc' or 'desc', where 'asc' is
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
+     *
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -286,19 +311,17 @@ public class ListFilesystemSnapshotPoliciesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListFilesystemSnapshotPoliciesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -309,15 +332,16 @@ public class ListFilesystemSnapshotPoliciesRequest
 
         /**
          * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
          */
         private String availabilityDomain = null;
 
         /**
          * The name of the availability domain.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder instance
@@ -328,24 +352,27 @@ public class ListFilesystemSnapshotPoliciesRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 4096 is the maximum.
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 4096 is the maximum.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 500}
          *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 500}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 4096 is the maximum.
-         *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 500}
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 4096 is the maximum.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 500}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -356,20 +383,21 @@ public class ListFilesystemSnapshotPoliciesRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call.
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call.
-         *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -381,15 +409,16 @@ public class ListFilesystemSnapshotPoliciesRequest
 
         /**
          * A user-friendly name. It does not have to be unique, and it is changeable.
+         * <p>
+         * Example: {@code My resource}
          *
-         * <p>Example: {@code My resource}
          */
         private String displayName = null;
 
         /**
          * A user-friendly name. It does not have to be unique, and it is changeable.
-         *
-         * <p>Example: {@code My resource}
+         * <p>
+         * Example: {@code My resource}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -400,14 +429,15 @@ public class ListFilesystemSnapshotPoliciesRequest
         }
 
         /**
-         * Filter results by the specified lifecycle state. Must be a valid state for the resource
-         * type.
+         * Filter results by the specified lifecycle state. Must be a valid
+         * state for the resource type.
+         *
          */
         private LifecycleState lifecycleState = null;
 
         /**
-         * Filter results by the specified lifecycle state. Must be a valid state for the resource
-         * type.
+         * Filter results by the specified lifecycle state. Must be a valid
+         * state for the resource type.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -418,16 +448,15 @@ public class ListFilesystemSnapshotPoliciesRequest
         }
 
         /**
-         * Filter results by
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
-         * OCID of the correct type for the resouce type.
+         * Filter results by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
+         * the resouce type.
+         *
          */
         private String id = null;
 
         /**
-         * Filter results by
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
-         * OCID of the correct type for the resouce type.
+         * Filter results by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for
+         * the resouce type.
          *
          * @param id the value to set
          * @return this builder instance
@@ -438,16 +467,19 @@ public class ListFilesystemSnapshotPoliciesRequest
         }
 
         /**
-         * The field to sort by. You can provide either value, but not both. By default, when you
-         * sort by time created, results are shown in descending order. When you sort by
-         * displayName, results are shown in ascending alphanumeric order.
+         * The field to sort by. You can provide either value, but not both.
+         * By default, when you sort by time created, results are shown
+         * in descending order. When you sort by displayName, results are
+         * shown in ascending alphanumeric order.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide either value, but not both. By default, when you
-         * sort by time created, results are shown in descending order. When you sort by
-         * displayName, results are shown in ascending alphanumeric order.
+         * The field to sort by. You can provide either value, but not both.
+         * By default, when you sort by time created, results are shown
+         * in descending order. When you sort by displayName, results are
+         * shown in ascending alphanumeric order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -458,14 +490,17 @@ public class ListFilesystemSnapshotPoliciesRequest
         }
 
         /**
-         * The sort order to use, either 'asc' or 'desc', where 'asc' is ascending and 'desc' is
-         * descending. The default order is 'desc' except for numeric values.
+         * The sort order to use, either 'asc' or 'desc', where 'asc' is
+         * ascending and 'desc' is descending. The default order is 'desc'
+         * except for numeric values.
+         *
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc', where 'asc' is ascending and 'desc' is
-         * descending. The default order is 'desc' except for numeric values.
+         * The sort order to use, either 'asc' or 'desc', where 'asc' is
+         * ascending and 'desc' is descending. The default order is 'desc'
+         * except for numeric values.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -476,14 +511,15 @@ public class ListFilesystemSnapshotPoliciesRequest
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -495,19 +531,18 @@ public class ListFilesystemSnapshotPoliciesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -519,7 +554,6 @@ public class ListFilesystemSnapshotPoliciesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListFilesystemSnapshotPoliciesRequest o) {
@@ -541,11 +575,10 @@ public class ListFilesystemSnapshotPoliciesRequest
         /**
          * Build the instance of ListFilesystemSnapshotPoliciesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListFilesystemSnapshotPoliciesRequest
          */
@@ -559,8 +592,7 @@ public class ListFilesystemSnapshotPoliciesRequest
         /**
          * Build the instance of ListFilesystemSnapshotPoliciesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListFilesystemSnapshotPoliciesRequest
@@ -579,14 +611,12 @@ public class ListFilesystemSnapshotPoliciesRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFilesystemSnapshotPoliciesRequest(compartmentId, availabilityDomain, limit,
-            // page, displayName, lifecycleState, id, sortBy, sortOrder, opcRequestId);
+            // new ListFilesystemSnapshotPoliciesRequest(compartmentId, availabilityDomain, limit, page, displayName, lifecycleState, id, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -605,7 +635,6 @@ public class ListFilesystemSnapshotPoliciesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

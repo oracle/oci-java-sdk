@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The reschedule type of deploymentUpgrade. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum RescheduleDeploymentUpgradeType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The reschedule type of deploymentUpgrade.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum RescheduleDeploymentUpgradeType {
     RescheduleToDate("RESCHEDULE_TO_DATE"),
     ;
 

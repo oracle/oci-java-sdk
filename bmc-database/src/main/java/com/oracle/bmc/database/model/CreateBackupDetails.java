@@ -6,25 +6,23 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details for creating a database backup.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateBackupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateBackupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateBackupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateBackupDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseId",
@@ -47,64 +45,64 @@ public final class CreateBackupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** The user-friendly name for the backup. The name does not have to be unique. */
+        /**
+         * The user-friendly name for the backup. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the backup. The name does not have to be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The retention period of the long term backup in days. */
+        /**
+         * The retention period of the long term backup in days.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
         private Integer retentionPeriodInDays;
 
         /**
          * The retention period of the long term backup in days.
-         *
          * @param retentionPeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
             this.retentionPeriodInDays = retentionPeriodInDays;
             this.__explicitlySet__.add("retentionPeriodInDays");
             return this;
         }
-        /** The retention period of the long term backup in years. */
+        /**
+         * The retention period of the long term backup in years.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInYears")
         private Integer retentionPeriodInYears;
 
         /**
          * The retention period of the long term backup in years.
-         *
          * @param retentionPeriodInYears the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionPeriodInYears(Integer retentionPeriodInYears) {
             this.retentionPeriodInYears = retentionPeriodInYears;
             this.__explicitlySet__.add("retentionPeriodInYears");
@@ -145,7 +143,9 @@ public final class CreateBackupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,57 +155,57 @@ public final class CreateBackupDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** The user-friendly name for the backup. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the backup. The name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The retention period of the long term backup in days. */
+    /**
+     * The retention period of the long term backup in days.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
     private final Integer retentionPeriodInDays;
 
     /**
      * The retention period of the long term backup in days.
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionPeriodInDays() {
         return retentionPeriodInDays;
     }
 
-    /** The retention period of the long term backup in years. */
+    /**
+     * The retention period of the long term backup in years.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInYears")
     private final Integer retentionPeriodInYears;
 
     /**
      * The retention period of the long term backup in years.
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionPeriodInYears() {
         return retentionPeriodInYears;
     }
@@ -217,7 +217,6 @@ public final class CreateBackupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

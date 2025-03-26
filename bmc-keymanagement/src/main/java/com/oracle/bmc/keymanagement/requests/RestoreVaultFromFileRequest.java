@@ -6,104 +6,124 @@ package com.oracle.bmc.keymanagement.requests;
 
 import com.oracle.bmc.keymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromFileExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use RestoreVaultFromFileRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromFileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RestoreVaultFromFileRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class RestoreVaultFromFileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
         implements com.oracle.bmc.requests.HasContentLength {
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The content length of the body. */
+    /**
+     * The content length of the body.
+     */
     private Long contentLength;
 
-    /** The content length of the body. */
+    /**
+     * The content length of the body.
+     */
     public Long getContentLength() {
         return contentLength;
     }
-    /** The encrypted backup file to upload to restore the vault. */
+    /**
+     * The encrypted backup file to upload to restore the vault.
+     */
     private java.io.InputStream restoreVaultFromFileDetails;
 
-    /** The encrypted backup file to upload to restore the vault. */
+    /**
+     * The encrypted backup file to upload to restore the vault.
+     */
     public java.io.InputStream getRestoreVaultFromFileDetails() {
         return restoreVaultFromFileDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code if-match} parameter to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a
+     * resource, set the {@code if-match} parameter to the value of the etag from a
+     * previous GET or POST response for that resource. The resource will be
+     * updated or deleted only if the etag you provide matches the resource's
+     * current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The base64-encoded MD5 hash value of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. If the Content-MD5 header is
-     * present, Key Management performs an integrity check on the body of the HTTP request by
-     * computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-     * If the two hashes don't match, the object is rejected and a response with 400 Unmatched
-     * Content MD5 error is returned, along with the message: "The computed MD5 of the request body
-     * (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)."
+     * The base64-encoded MD5 hash value of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+     * If the Content-MD5 header is present, Key Management performs an integrity check on the body of the HTTP request by computing the MD5
+     * hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes don't match, the object is rejected and
+     * a response with 400 Unmatched Content MD5 error is returned, along with the message: "The computed MD5 of the request body (ACTUAL_MD5)
+     * does not match the Content-MD5 header (HEADER_MD5)."
+     *
      */
     private String contentMd5;
 
     /**
-     * The base64-encoded MD5 hash value of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. If the Content-MD5 header is
-     * present, Key Management performs an integrity check on the body of the HTTP request by
-     * computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-     * If the two hashes don't match, the object is rejected and a response with 400 Unmatched
-     * Content MD5 error is returned, along with the message: "The computed MD5 of the request body
-     * (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)."
+     * The base64-encoded MD5 hash value of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+     * If the Content-MD5 header is present, Key Management performs an integrity check on the body of the HTTP request by computing the MD5
+     * hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes don't match, the object is rejected and
+     * a response with 400 Unmatched Content MD5 error is returned, along with the message: "The computed MD5 of the request body (ACTUAL_MD5)
+     * does not match the Content-MD5 header (HEADER_MD5)."
+     *
      */
     public String getContentMd5() {
         return contentMd5;
     }
     /**
-     * Unique identifier for the request. If provided, the returned request ID will include this
-     * value. Otherwise, a random request ID will be generated by the service.
+     * Unique identifier for the request. If provided, the returned request ID
+     * will include this value. Otherwise, a random request ID will be
+     * generated by the service.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If provided, the returned request ID will include this
-     * value. Otherwise, a random request ID will be generated by the service.
+     * Unique identifier for the request. If provided, the returned request ID
+     * will include this value. Otherwise, a random request ID will be
+     * generated by the service.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated
+     * before then due to conflicting operations (e.g., if a resource has been
+     * deleted and purged from the system, then a retry of the original
+     * creation request may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
+     * A token that uniquely identifies a request so it can be retried in case
+     * of a timeout or server error without risk of executing that same action
+     * again. Retry tokens expire after 24 hours, but can be invalidated
+     * before then due to conflicting operations (e.g., if a resource has been
+     * deleted and purged from the system, then a retry of the original
+     * creation request may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -111,7 +131,6 @@ public class RestoreVaultFromFileRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -123,15 +142,17 @@ public class RestoreVaultFromFileRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RestoreVaultFromFileRequest, java.io.InputStream> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -140,12 +161,13 @@ public class RestoreVaultFromFileRequest
             return this;
         }
 
-        /** The content length of the body. */
+        /**
+         * The content length of the body.
+         */
         private Long contentLength = null;
 
         /**
          * The content length of the body.
-         *
          * @param contentLength the value to set
          * @return this builder instance
          */
@@ -154,12 +176,13 @@ public class RestoreVaultFromFileRequest
             return this;
         }
 
-        /** The encrypted backup file to upload to restore the vault. */
+        /**
+         * The encrypted backup file to upload to restore the vault.
+         */
         private java.io.InputStream restoreVaultFromFileDetails = null;
 
         /**
          * The encrypted backup file to upload to restore the vault.
-         *
          * @param restoreVaultFromFileDetails the value to set
          * @return this builder instance
          */
@@ -170,18 +193,21 @@ public class RestoreVaultFromFileRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a
+         * previous GET or POST response for that resource. The resource will be
+         * updated or deleted only if the etag you provide matches the resource's
+         * current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -192,24 +218,21 @@ public class RestoreVaultFromFileRequest
         }
 
         /**
-         * The base64-encoded MD5 hash value of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. If the Content-MD5 header is
-         * present, Key Management performs an integrity check on the body of the HTTP request by
-         * computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the
-         * header. If the two hashes don't match, the object is rejected and a response with 400
-         * Unmatched Content MD5 error is returned, along with the message: "The computed MD5 of the
-         * request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)."
+         * The base64-encoded MD5 hash value of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+         * If the Content-MD5 header is present, Key Management performs an integrity check on the body of the HTTP request by computing the MD5
+         * hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes don't match, the object is rejected and
+         * a response with 400 Unmatched Content MD5 error is returned, along with the message: "The computed MD5 of the request body (ACTUAL_MD5)
+         * does not match the Content-MD5 header (HEADER_MD5)."
+         *
          */
         private String contentMd5 = null;
 
         /**
-         * The base64-encoded MD5 hash value of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. If the Content-MD5 header is
-         * present, Key Management performs an integrity check on the body of the HTTP request by
-         * computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the
-         * header. If the two hashes don't match, the object is rejected and a response with 400
-         * Unmatched Content MD5 error is returned, along with the message: "The computed MD5 of the
-         * request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)."
+         * The base64-encoded MD5 hash value of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+         * If the Content-MD5 header is present, Key Management performs an integrity check on the body of the HTTP request by computing the MD5
+         * hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes don't match, the object is rejected and
+         * a response with 400 Unmatched Content MD5 error is returned, along with the message: "The computed MD5 of the request body (ACTUAL_MD5)
+         * does not match the Content-MD5 header (HEADER_MD5)."
          *
          * @param contentMd5 the value to set
          * @return this builder instance
@@ -220,14 +243,17 @@ public class RestoreVaultFromFileRequest
         }
 
         /**
-         * Unique identifier for the request. If provided, the returned request ID will include this
-         * value. Otherwise, a random request ID will be generated by the service.
+         * Unique identifier for the request. If provided, the returned request ID
+         * will include this value. Otherwise, a random request ID will be
+         * generated by the service.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If provided, the returned request ID will include this
-         * value. Otherwise, a random request ID will be generated by the service.
+         * Unique identifier for the request. If provided, the returned request ID
+         * will include this value. Otherwise, a random request ID will be
+         * generated by the service.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -238,19 +264,22 @@ public class RestoreVaultFromFileRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated
+         * before then due to conflicting operations (e.g., if a resource has been
+         * deleted and purged from the system, then a retry of the original
          * creation request may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
+         * A token that uniquely identifies a request so it can be retried in case
+         * of a timeout or server error without risk of executing that same action
+         * again. Retry tokens expire after 24 hours, but can be invalidated
+         * before then due to conflicting operations (e.g., if a resource has been
+         * deleted and purged from the system, then a retry of the original
          * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
@@ -263,19 +292,18 @@ public class RestoreVaultFromFileRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -287,7 +315,6 @@ public class RestoreVaultFromFileRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RestoreVaultFromFileRequest o) {
@@ -306,11 +333,10 @@ public class RestoreVaultFromFileRequest
         /**
          * Build the instance of RestoreVaultFromFileRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RestoreVaultFromFileRequest
          */
@@ -323,7 +349,6 @@ public class RestoreVaultFromFileRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -336,8 +361,7 @@ public class RestoreVaultFromFileRequest
         /**
          * Build the instance of RestoreVaultFromFileRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RestoreVaultFromFileRequest
@@ -352,14 +376,12 @@ public class RestoreVaultFromFileRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new RestoreVaultFromFileRequest(compartmentId, contentLength,
-            // restoreVaultFromFileDetails, ifMatch, contentMd5, opcRequestId, opcRetryToken);
+            // new RestoreVaultFromFileRequest(compartmentId, contentLength, restoreVaultFromFileDetails, ifMatch, contentMd5, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -375,7 +397,6 @@ public class RestoreVaultFromFileRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

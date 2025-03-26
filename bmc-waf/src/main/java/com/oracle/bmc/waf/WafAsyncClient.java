@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.waf;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.waf.internal.http.*;
 import com.oracle.bmc.waf.requests.*;
 import com.oracle.bmc.waf.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for Waf service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Waf service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-public class WafAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements WafAsync {
-    /** Service instance for Waf. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+public class WafAsyncClient implements WafAsync {
+    /**
+     * Service instance for Waf.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("WAF")
@@ -39,1040 +36,112 @@ public class WafAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(WafAsyncClient.class);
 
-    WafAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, WafAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "waf";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public WafAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new WafAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeNetworkAddressListCompartmentResponse>
-            changeNetworkAddressListCompartment(
-                    ChangeNetworkAddressListCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeNetworkAddressListCompartmentRequest,
-                                    ChangeNetworkAddressListCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getNetworkAddressListId(), "networkAddressListId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeNetworkAddressListCompartmentDetails(),
-                "changeNetworkAddressListCompartmentDetails is required");
-
-        return clientCall(request, ChangeNetworkAddressListCompartmentResponse::builder)
-                .logger(LOG, "changeNetworkAddressListCompartment")
-                .serviceDetails(
-                        "Waf",
-                        "ChangeNetworkAddressListCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ChangeNetworkAddressListCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeNetworkAddressListCompartmentRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("networkAddressLists")
-                .appendPathParam(request.getNetworkAddressListId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeNetworkAddressListCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeNetworkAddressListCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeWebAppFirewallCompartmentResponse>
-            changeWebAppFirewallCompartment(
-                    ChangeWebAppFirewallCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeWebAppFirewallCompartmentRequest,
-                                    ChangeWebAppFirewallCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getWebAppFirewallId(), "webAppFirewallId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeWebAppFirewallCompartmentDetails(),
-                "changeWebAppFirewallCompartmentDetails is required");
-
-        return clientCall(request, ChangeWebAppFirewallCompartmentResponse::builder)
-                .logger(LOG, "changeWebAppFirewallCompartment")
-                .serviceDetails(
-                        "Waf",
-                        "ChangeWebAppFirewallCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ChangeWebAppFirewallCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeWebAppFirewallCompartmentRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewalls")
-                .appendPathParam(request.getWebAppFirewallId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeWebAppFirewallCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeWebAppFirewallCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeWebAppFirewallPolicyCompartmentResponse>
-            changeWebAppFirewallPolicyCompartment(
-                    ChangeWebAppFirewallPolicyCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeWebAppFirewallPolicyCompartmentRequest,
-                                    ChangeWebAppFirewallPolicyCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppFirewallPolicyId(), "webAppFirewallPolicyId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeWebAppFirewallPolicyCompartmentDetails(),
-                "changeWebAppFirewallPolicyCompartmentDetails is required");
-
-        return clientCall(request, ChangeWebAppFirewallPolicyCompartmentResponse::builder)
-                .logger(LOG, "changeWebAppFirewallPolicyCompartment")
-                .serviceDetails(
-                        "Waf",
-                        "ChangeWebAppFirewallPolicyCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ChangeWebAppFirewallPolicyCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeWebAppFirewallPolicyCompartmentRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewallPolicies")
-                .appendPathParam(request.getWebAppFirewallPolicyId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeWebAppFirewallPolicyCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeWebAppFirewallPolicyCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateNetworkAddressListResponse> createNetworkAddressList(
-            CreateNetworkAddressListRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateNetworkAddressListRequest, CreateNetworkAddressListResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateNetworkAddressListDetails(),
-                "createNetworkAddressListDetails is required");
-
-        return clientCall(request, CreateNetworkAddressListResponse::builder)
-                .logger(LOG, "createNetworkAddressList")
-                .serviceDetails(
-                        "Waf",
-                        "CreateNetworkAddressList",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/CreateNetworkAddressList")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateNetworkAddressListRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("networkAddressLists")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.waf.model.NetworkAddressList.class,
-                        CreateNetworkAddressListResponse.Builder::networkAddressList)
-                .handleResponseHeaderString("etag", CreateNetworkAddressListResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateNetworkAddressListResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateNetworkAddressListResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateNetworkAddressListResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location",
-                        CreateNetworkAddressListResponse.Builder::contentLocation)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateWebAppFirewallResponse> createWebAppFirewall(
-            CreateWebAppFirewallRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateWebAppFirewallRequest, CreateWebAppFirewallResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateWebAppFirewallDetails(),
-                "createWebAppFirewallDetails is required");
-
-        return clientCall(request, CreateWebAppFirewallResponse::builder)
-                .logger(LOG, "createWebAppFirewall")
-                .serviceDetails(
-                        "Waf",
-                        "CreateWebAppFirewall",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/CreateWebAppFirewall")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateWebAppFirewallRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewalls")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.waf.model.WebAppFirewall.class,
-                        CreateWebAppFirewallResponse.Builder::webAppFirewall)
-                .handleResponseHeaderString("etag", CreateWebAppFirewallResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateWebAppFirewallResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateWebAppFirewallResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateWebAppFirewallResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location", CreateWebAppFirewallResponse.Builder::contentLocation)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateWebAppFirewallPolicyResponse>
-            createWebAppFirewallPolicy(
-                    CreateWebAppFirewallPolicyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateWebAppFirewallPolicyRequest,
-                                    CreateWebAppFirewallPolicyResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateWebAppFirewallPolicyDetails(),
-                "createWebAppFirewallPolicyDetails is required");
-
-        return clientCall(request, CreateWebAppFirewallPolicyResponse::builder)
-                .logger(LOG, "createWebAppFirewallPolicy")
-                .serviceDetails(
-                        "Waf",
-                        "CreateWebAppFirewallPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/CreateWebAppFirewallPolicy")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateWebAppFirewallPolicyRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewallPolicies")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.waf.model.WebAppFirewallPolicy.class,
-                        CreateWebAppFirewallPolicyResponse.Builder::webAppFirewallPolicy)
-                .handleResponseHeaderString(
-                        "etag", CreateWebAppFirewallPolicyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateWebAppFirewallPolicyResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateWebAppFirewallPolicyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateWebAppFirewallPolicyResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location",
-                        CreateWebAppFirewallPolicyResponse.Builder::contentLocation)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteNetworkAddressListResponse> deleteNetworkAddressList(
-            DeleteNetworkAddressListRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteNetworkAddressListRequest, DeleteNetworkAddressListResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getNetworkAddressListId(), "networkAddressListId must not be blank");
-
-        return clientCall(request, DeleteNetworkAddressListResponse::builder)
-                .logger(LOG, "deleteNetworkAddressList")
-                .serviceDetails(
-                        "Waf",
-                        "DeleteNetworkAddressList",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/DeleteNetworkAddressList")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteNetworkAddressListRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("networkAddressLists")
-                .appendPathParam(request.getNetworkAddressListId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteNetworkAddressListResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteNetworkAddressListResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteWebAppFirewallResponse> deleteWebAppFirewall(
-            DeleteWebAppFirewallRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteWebAppFirewallRequest, DeleteWebAppFirewallResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWebAppFirewallId(), "webAppFirewallId must not be blank");
-
-        return clientCall(request, DeleteWebAppFirewallResponse::builder)
-                .logger(LOG, "deleteWebAppFirewall")
-                .serviceDetails(
-                        "Waf",
-                        "DeleteWebAppFirewall",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/DeleteWebAppFirewall")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteWebAppFirewallRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewalls")
-                .appendPathParam(request.getWebAppFirewallId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteWebAppFirewallResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteWebAppFirewallResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteWebAppFirewallPolicyResponse>
-            deleteWebAppFirewallPolicy(
-                    DeleteWebAppFirewallPolicyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteWebAppFirewallPolicyRequest,
-                                    DeleteWebAppFirewallPolicyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppFirewallPolicyId(), "webAppFirewallPolicyId must not be blank");
-
-        return clientCall(request, DeleteWebAppFirewallPolicyResponse::builder)
-                .logger(LOG, "deleteWebAppFirewallPolicy")
-                .serviceDetails(
-                        "Waf",
-                        "DeleteWebAppFirewallPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/DeleteWebAppFirewallPolicy")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteWebAppFirewallPolicyRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewallPolicies")
-                .appendPathParam(request.getWebAppFirewallPolicyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteWebAppFirewallPolicyResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteWebAppFirewallPolicyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetNetworkAddressListResponse> getNetworkAddressList(
-            GetNetworkAddressListRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetNetworkAddressListRequest, GetNetworkAddressListResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getNetworkAddressListId(), "networkAddressListId must not be blank");
-
-        return clientCall(request, GetNetworkAddressListResponse::builder)
-                .logger(LOG, "getNetworkAddressList")
-                .serviceDetails(
-                        "Waf",
-                        "GetNetworkAddressList",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/GetNetworkAddressList")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetNetworkAddressListRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("networkAddressLists")
-                .appendPathParam(request.getNetworkAddressListId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.NetworkAddressList.class,
-                        GetNetworkAddressListResponse.Builder::networkAddressList)
-                .handleResponseHeaderString("etag", GetNetworkAddressListResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetNetworkAddressListResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWebAppFirewallResponse> getWebAppFirewall(
-            GetWebAppFirewallRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWebAppFirewallRequest, GetWebAppFirewallResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWebAppFirewallId(), "webAppFirewallId must not be blank");
-
-        return clientCall(request, GetWebAppFirewallResponse::builder)
-                .logger(LOG, "getWebAppFirewall")
-                .serviceDetails(
-                        "Waf",
-                        "GetWebAppFirewall",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/GetWebAppFirewall")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWebAppFirewallRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewalls")
-                .appendPathParam(request.getWebAppFirewallId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WebAppFirewall.class,
-                        GetWebAppFirewallResponse.Builder::webAppFirewall)
-                .handleResponseHeaderString("etag", GetWebAppFirewallResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWebAppFirewallResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWebAppFirewallPolicyResponse> getWebAppFirewallPolicy(
-            GetWebAppFirewallPolicyRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWebAppFirewallPolicyRequest, GetWebAppFirewallPolicyResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getWebAppFirewallPolicyId(), "webAppFirewallPolicyId must not be blank");
-
-        return clientCall(request, GetWebAppFirewallPolicyResponse::builder)
-                .logger(LOG, "getWebAppFirewallPolicy")
-                .serviceDetails(
-                        "Waf",
-                        "GetWebAppFirewallPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/GetWebAppFirewallPolicy")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWebAppFirewallPolicyRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewallPolicies")
-                .appendPathParam(request.getWebAppFirewallPolicyId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WebAppFirewallPolicy.class,
-                        GetWebAppFirewallPolicyResponse.Builder::webAppFirewallPolicy)
-                .handleResponseHeaderString("etag", GetWebAppFirewallPolicyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWebAppFirewallPolicyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
-            GetWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWorkRequestRequest, GetWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "Waf",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListNetworkAddressListsResponse> listNetworkAddressLists(
-            ListNetworkAddressListsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListNetworkAddressListsRequest, ListNetworkAddressListsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListNetworkAddressListsResponse::builder)
-                .logger(LOG, "listNetworkAddressLists")
-                .serviceDetails(
-                        "Waf",
-                        "ListNetworkAddressLists",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ListNetworkAddressLists")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListNetworkAddressListsRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("networkAddressLists")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.NetworkAddressListCollection.class,
-                        ListNetworkAddressListsResponse.Builder::networkAddressListCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListNetworkAddressListsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListNetworkAddressListsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListProtectionCapabilitiesResponse>
-            listProtectionCapabilities(
-                    ListProtectionCapabilitiesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListProtectionCapabilitiesRequest,
-                                    ListProtectionCapabilitiesResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListProtectionCapabilitiesResponse::builder)
-                .logger(LOG, "listProtectionCapabilities")
-                .serviceDetails(
-                        "Waf",
-                        "ListProtectionCapabilities",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListProtectionCapabilitiesRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("protectionCapabilities")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("key", request.getKey())
-                .appendListQueryParam(
-                        "isLatestVersion",
-                        request.getIsLatestVersion(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendEnumQueryParam("type", request.getType())
-                .appendListQueryParam(
-                        "groupTag",
-                        request.getGroupTag(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.ProtectionCapabilityCollection.class,
-                        ListProtectionCapabilitiesResponse.Builder::protectionCapabilityCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListProtectionCapabilitiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListProtectionCapabilitiesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListProtectionCapabilityGroupTagsResponse>
-            listProtectionCapabilityGroupTags(
-                    ListProtectionCapabilityGroupTagsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListProtectionCapabilityGroupTagsRequest,
-                                    ListProtectionCapabilityGroupTagsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListProtectionCapabilityGroupTagsResponse::builder)
-                .logger(LOG, "listProtectionCapabilityGroupTags")
-                .serviceDetails(
-                        "Waf",
-                        "ListProtectionCapabilityGroupTags",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilityGroupTags")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListProtectionCapabilityGroupTagsRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("protectionCapabilities")
-                .appendPathParam("groupTags")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("type", request.getType())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagCollection.class,
-                        ListProtectionCapabilityGroupTagsResponse.Builder
-                                ::protectionCapabilityGroupTagCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListProtectionCapabilityGroupTagsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListProtectionCapabilityGroupTagsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWebAppFirewallPoliciesResponse>
-            listWebAppFirewallPolicies(
-                    ListWebAppFirewallPoliciesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListWebAppFirewallPoliciesRequest,
-                                    ListWebAppFirewallPoliciesResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWebAppFirewallPoliciesResponse::builder)
-                .logger(LOG, "listWebAppFirewallPolicies")
-                .serviceDetails(
-                        "Waf",
-                        "ListWebAppFirewallPolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ListWebAppFirewallPolicies")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWebAppFirewallPoliciesRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewallPolicies")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WebAppFirewallPolicyCollection.class,
-                        ListWebAppFirewallPoliciesResponse.Builder::webAppFirewallPolicyCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWebAppFirewallPoliciesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWebAppFirewallPoliciesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWebAppFirewallsResponse> listWebAppFirewalls(
-            ListWebAppFirewallsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWebAppFirewallsRequest, ListWebAppFirewallsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWebAppFirewallsResponse::builder)
-                .logger(LOG, "listWebAppFirewalls")
-                .serviceDetails(
-                        "Waf",
-                        "ListWebAppFirewalls",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ListWebAppFirewalls")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWebAppFirewallsRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewalls")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("webAppFirewallPolicyId", request.getWebAppFirewallPolicyId())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WebAppFirewallCollection.class,
-                        ListWebAppFirewallsResponse.Builder::webAppFirewallCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWebAppFirewallsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWebAppFirewallsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
-            ListWorkRequestErrorsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "Waf",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
-            ListWorkRequestLogsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "Waf",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WorkRequestLogEntryCollection.class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
-            ListWorkRequestsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestsRequest, ListWorkRequestsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "Waf",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waf.model.WorkRequestCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateNetworkAddressListResponse> updateNetworkAddressList(
-            UpdateNetworkAddressListRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateNetworkAddressListRequest, UpdateNetworkAddressListResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getNetworkAddressListId(), "networkAddressListId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateNetworkAddressListDetails(),
-                "updateNetworkAddressListDetails is required");
-
-        return clientCall(request, UpdateNetworkAddressListResponse::builder)
-                .logger(LOG, "updateNetworkAddressList")
-                .serviceDetails(
-                        "Waf",
-                        "UpdateNetworkAddressList",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/UpdateNetworkAddressList")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateNetworkAddressListRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("networkAddressLists")
-                .appendPathParam(request.getNetworkAddressListId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateNetworkAddressListResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateNetworkAddressListResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateWebAppFirewallResponse> updateWebAppFirewall(
-            UpdateWebAppFirewallRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateWebAppFirewallRequest, UpdateWebAppFirewallResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWebAppFirewallId(), "webAppFirewallId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateWebAppFirewallDetails(),
-                "updateWebAppFirewallDetails is required");
-
-        return clientCall(request, UpdateWebAppFirewallResponse::builder)
-                .logger(LOG, "updateWebAppFirewall")
-                .serviceDetails(
-                        "Waf",
-                        "UpdateWebAppFirewall",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/UpdateWebAppFirewall")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateWebAppFirewallRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewalls")
-                .appendPathParam(request.getWebAppFirewallId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateWebAppFirewallResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateWebAppFirewallResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateWebAppFirewallPolicyResponse>
-            updateWebAppFirewallPolicy(
-                    UpdateWebAppFirewallPolicyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateWebAppFirewallPolicyRequest,
-                                    UpdateWebAppFirewallPolicyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppFirewallPolicyId(), "webAppFirewallPolicyId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateWebAppFirewallPolicyDetails(),
-                "updateWebAppFirewallPolicyDetails is required");
-
-        return clientCall(request, UpdateWebAppFirewallPolicyResponse::builder)
-                .logger(LOG, "updateWebAppFirewallPolicy")
-                .serviceDetails(
-                        "Waf",
-                        "UpdateWebAppFirewallPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/UpdateWebAppFirewallPolicy")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateWebAppFirewallPolicyRequest::builder)
-                .basePath("/20210930")
-                .appendPathParam("webAppFirewallPolicies")
-                .appendPathParam(request.getWebAppFirewallPolicyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateWebAppFirewallPolicyResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateWebAppFirewallPolicyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public WafAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public WafAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public WafAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public WafAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public WafAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1080,26 +149,26 @@ public class WafAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public WafAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1108,29 +177,29 @@ public class WafAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public WafAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1143,14 +212,1472 @@ public class WafAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public WafAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, WafAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public WafAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new WafAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeNetworkAddressListCompartmentResponse>
+            changeNetworkAddressListCompartment(
+                    ChangeNetworkAddressListCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeNetworkAddressListCompartmentRequest,
+                                    ChangeNetworkAddressListCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeNetworkAddressListCompartment");
+        final ChangeNetworkAddressListCompartmentRequest interceptedRequest =
+                ChangeNetworkAddressListCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeNetworkAddressListCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ChangeNetworkAddressListCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ChangeNetworkAddressListCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeNetworkAddressListCompartmentResponse>
+                transformer =
+                        ChangeNetworkAddressListCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeNetworkAddressListCompartmentRequest,
+                        ChangeNetworkAddressListCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeNetworkAddressListCompartmentRequest,
+                                ChangeNetworkAddressListCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeNetworkAddressListCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeNetworkAddressListCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeNetworkAddressListCompartmentRequest,
+                    ChangeNetworkAddressListCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeWebAppFirewallCompartmentResponse>
+            changeWebAppFirewallCompartment(
+                    ChangeWebAppFirewallCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeWebAppFirewallCompartmentRequest,
+                                    ChangeWebAppFirewallCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeWebAppFirewallCompartment");
+        final ChangeWebAppFirewallCompartmentRequest interceptedRequest =
+                ChangeWebAppFirewallCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeWebAppFirewallCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ChangeWebAppFirewallCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ChangeWebAppFirewallCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeWebAppFirewallCompartmentResponse>
+                transformer =
+                        ChangeWebAppFirewallCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeWebAppFirewallCompartmentRequest,
+                        ChangeWebAppFirewallCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeWebAppFirewallCompartmentRequest,
+                                ChangeWebAppFirewallCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeWebAppFirewallCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeWebAppFirewallCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeWebAppFirewallCompartmentRequest,
+                    ChangeWebAppFirewallCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeWebAppFirewallPolicyCompartmentResponse>
+            changeWebAppFirewallPolicyCompartment(
+                    ChangeWebAppFirewallPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeWebAppFirewallPolicyCompartmentRequest,
+                                    ChangeWebAppFirewallPolicyCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeWebAppFirewallPolicyCompartment");
+        final ChangeWebAppFirewallPolicyCompartmentRequest interceptedRequest =
+                ChangeWebAppFirewallPolicyCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeWebAppFirewallPolicyCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ChangeWebAppFirewallPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ChangeWebAppFirewallPolicyCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeWebAppFirewallPolicyCompartmentResponse>
+                transformer =
+                        ChangeWebAppFirewallPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeWebAppFirewallPolicyCompartmentRequest,
+                        ChangeWebAppFirewallPolicyCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeWebAppFirewallPolicyCompartmentRequest,
+                                ChangeWebAppFirewallPolicyCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeWebAppFirewallPolicyCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeWebAppFirewallPolicyCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeWebAppFirewallPolicyCompartmentRequest,
+                    ChangeWebAppFirewallPolicyCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkAddressListResponse> createNetworkAddressList(
+            CreateNetworkAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateNetworkAddressListRequest, CreateNetworkAddressListResponse>
+                    handler) {
+        LOG.trace("Called async createNetworkAddressList");
+        final CreateNetworkAddressListRequest interceptedRequest =
+                CreateNetworkAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateNetworkAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "CreateNetworkAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/CreateNetworkAddressList");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateNetworkAddressListResponse>
+                transformer =
+                        CreateNetworkAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateNetworkAddressListRequest, CreateNetworkAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateNetworkAddressListRequest, CreateNetworkAddressListResponse>,
+                        java.util.concurrent.Future<CreateNetworkAddressListResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateNetworkAddressListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateNetworkAddressListRequest, CreateNetworkAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWebAppFirewallResponse> createWebAppFirewall(
+            CreateWebAppFirewallRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateWebAppFirewallRequest, CreateWebAppFirewallResponse>
+                    handler) {
+        LOG.trace("Called async createWebAppFirewall");
+        final CreateWebAppFirewallRequest interceptedRequest =
+                CreateWebAppFirewallConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateWebAppFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "CreateWebAppFirewall",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/CreateWebAppFirewall");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateWebAppFirewallResponse>
+                transformer =
+                        CreateWebAppFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateWebAppFirewallRequest, CreateWebAppFirewallResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateWebAppFirewallRequest, CreateWebAppFirewallResponse>,
+                        java.util.concurrent.Future<CreateWebAppFirewallResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWebAppFirewallDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateWebAppFirewallRequest, CreateWebAppFirewallResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWebAppFirewallPolicyResponse>
+            createWebAppFirewallPolicy(
+                    CreateWebAppFirewallPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateWebAppFirewallPolicyRequest,
+                                    CreateWebAppFirewallPolicyResponse>
+                            handler) {
+        LOG.trace("Called async createWebAppFirewallPolicy");
+        final CreateWebAppFirewallPolicyRequest interceptedRequest =
+                CreateWebAppFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateWebAppFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "CreateWebAppFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/CreateWebAppFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateWebAppFirewallPolicyResponse>
+                transformer =
+                        CreateWebAppFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateWebAppFirewallPolicyRequest, CreateWebAppFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateWebAppFirewallPolicyRequest,
+                                CreateWebAppFirewallPolicyResponse>,
+                        java.util.concurrent.Future<CreateWebAppFirewallPolicyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWebAppFirewallPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateWebAppFirewallPolicyRequest, CreateWebAppFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkAddressListResponse> deleteNetworkAddressList(
+            DeleteNetworkAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNetworkAddressListRequest, DeleteNetworkAddressListResponse>
+                    handler) {
+        LOG.trace("Called async deleteNetworkAddressList");
+        final DeleteNetworkAddressListRequest interceptedRequest =
+                DeleteNetworkAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteNetworkAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "DeleteNetworkAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/DeleteNetworkAddressList");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteNetworkAddressListResponse>
+                transformer =
+                        DeleteNetworkAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteNetworkAddressListRequest, DeleteNetworkAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteNetworkAddressListRequest, DeleteNetworkAddressListResponse>,
+                        java.util.concurrent.Future<DeleteNetworkAddressListResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteNetworkAddressListRequest, DeleteNetworkAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebAppFirewallResponse> deleteWebAppFirewall(
+            DeleteWebAppFirewallRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWebAppFirewallRequest, DeleteWebAppFirewallResponse>
+                    handler) {
+        LOG.trace("Called async deleteWebAppFirewall");
+        final DeleteWebAppFirewallRequest interceptedRequest =
+                DeleteWebAppFirewallConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWebAppFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "DeleteWebAppFirewall",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/DeleteWebAppFirewall");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWebAppFirewallResponse>
+                transformer =
+                        DeleteWebAppFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteWebAppFirewallRequest, DeleteWebAppFirewallResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWebAppFirewallRequest, DeleteWebAppFirewallResponse>,
+                        java.util.concurrent.Future<DeleteWebAppFirewallResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWebAppFirewallRequest, DeleteWebAppFirewallResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebAppFirewallPolicyResponse>
+            deleteWebAppFirewallPolicy(
+                    DeleteWebAppFirewallPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteWebAppFirewallPolicyRequest,
+                                    DeleteWebAppFirewallPolicyResponse>
+                            handler) {
+        LOG.trace("Called async deleteWebAppFirewallPolicy");
+        final DeleteWebAppFirewallPolicyRequest interceptedRequest =
+                DeleteWebAppFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWebAppFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "DeleteWebAppFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/DeleteWebAppFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteWebAppFirewallPolicyResponse>
+                transformer =
+                        DeleteWebAppFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteWebAppFirewallPolicyRequest, DeleteWebAppFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWebAppFirewallPolicyRequest,
+                                DeleteWebAppFirewallPolicyResponse>,
+                        java.util.concurrent.Future<DeleteWebAppFirewallPolicyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWebAppFirewallPolicyRequest, DeleteWebAppFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkAddressListResponse> getNetworkAddressList(
+            GetNetworkAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetNetworkAddressListRequest, GetNetworkAddressListResponse>
+                    handler) {
+        LOG.trace("Called async getNetworkAddressList");
+        final GetNetworkAddressListRequest interceptedRequest =
+                GetNetworkAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNetworkAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "GetNetworkAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/GetNetworkAddressList");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetNetworkAddressListResponse>
+                transformer =
+                        GetNetworkAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetNetworkAddressListRequest, GetNetworkAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetNetworkAddressListRequest, GetNetworkAddressListResponse>,
+                        java.util.concurrent.Future<GetNetworkAddressListResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetNetworkAddressListRequest, GetNetworkAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWebAppFirewallResponse> getWebAppFirewall(
+            GetWebAppFirewallRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWebAppFirewallRequest, GetWebAppFirewallResponse>
+                    handler) {
+        LOG.trace("Called async getWebAppFirewall");
+        final GetWebAppFirewallRequest interceptedRequest =
+                GetWebAppFirewallConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWebAppFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "GetWebAppFirewall",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/GetWebAppFirewall");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWebAppFirewallResponse>
+                transformer =
+                        GetWebAppFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWebAppFirewallRequest, GetWebAppFirewallResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWebAppFirewallRequest, GetWebAppFirewallResponse>,
+                        java.util.concurrent.Future<GetWebAppFirewallResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWebAppFirewallRequest, GetWebAppFirewallResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWebAppFirewallPolicyResponse> getWebAppFirewallPolicy(
+            GetWebAppFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWebAppFirewallPolicyRequest, GetWebAppFirewallPolicyResponse>
+                    handler) {
+        LOG.trace("Called async getWebAppFirewallPolicy");
+        final GetWebAppFirewallPolicyRequest interceptedRequest =
+                GetWebAppFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWebAppFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "GetWebAppFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/GetWebAppFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetWebAppFirewallPolicyResponse>
+                transformer =
+                        GetWebAppFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetWebAppFirewallPolicyRequest, GetWebAppFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWebAppFirewallPolicyRequest, GetWebAppFirewallPolicyResponse>,
+                        java.util.concurrent.Future<GetWebAppFirewallPolicyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWebAppFirewallPolicyRequest, GetWebAppFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/GetWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkRequestRequest, GetWorkRequestResponse>,
+                        java.util.concurrent.Future<GetWorkRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkAddressListsResponse> listNetworkAddressLists(
+            ListNetworkAddressListsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListNetworkAddressListsRequest, ListNetworkAddressListsResponse>
+                    handler) {
+        LOG.trace("Called async listNetworkAddressLists");
+        final ListNetworkAddressListsRequest interceptedRequest =
+                ListNetworkAddressListsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNetworkAddressListsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListNetworkAddressLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ListNetworkAddressLists");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListNetworkAddressListsResponse>
+                transformer =
+                        ListNetworkAddressListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListNetworkAddressListsRequest, ListNetworkAddressListsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListNetworkAddressListsRequest, ListNetworkAddressListsResponse>,
+                        java.util.concurrent.Future<ListNetworkAddressListsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListNetworkAddressListsRequest, ListNetworkAddressListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtectionCapabilitiesResponse>
+            listProtectionCapabilities(
+                    ListProtectionCapabilitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListProtectionCapabilitiesRequest,
+                                    ListProtectionCapabilitiesResponse>
+                            handler) {
+        LOG.trace("Called async listProtectionCapabilities");
+        final ListProtectionCapabilitiesRequest interceptedRequest =
+                ListProtectionCapabilitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProtectionCapabilitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListProtectionCapabilities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListProtectionCapabilitiesResponse>
+                transformer =
+                        ListProtectionCapabilitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListProtectionCapabilitiesRequest, ListProtectionCapabilitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProtectionCapabilitiesRequest,
+                                ListProtectionCapabilitiesResponse>,
+                        java.util.concurrent.Future<ListProtectionCapabilitiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProtectionCapabilitiesRequest, ListProtectionCapabilitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtectionCapabilityGroupTagsResponse>
+            listProtectionCapabilityGroupTags(
+                    ListProtectionCapabilityGroupTagsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListProtectionCapabilityGroupTagsRequest,
+                                    ListProtectionCapabilityGroupTagsResponse>
+                            handler) {
+        LOG.trace("Called async listProtectionCapabilityGroupTags");
+        final ListProtectionCapabilityGroupTagsRequest interceptedRequest =
+                ListProtectionCapabilityGroupTagsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProtectionCapabilityGroupTagsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListProtectionCapabilityGroupTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilityGroupTags");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListProtectionCapabilityGroupTagsResponse>
+                transformer =
+                        ListProtectionCapabilityGroupTagsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListProtectionCapabilityGroupTagsRequest,
+                        ListProtectionCapabilityGroupTagsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProtectionCapabilityGroupTagsRequest,
+                                ListProtectionCapabilityGroupTagsResponse>,
+                        java.util.concurrent.Future<ListProtectionCapabilityGroupTagsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProtectionCapabilityGroupTagsRequest,
+                    ListProtectionCapabilityGroupTagsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebAppFirewallPoliciesResponse>
+            listWebAppFirewallPolicies(
+                    ListWebAppFirewallPoliciesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListWebAppFirewallPoliciesRequest,
+                                    ListWebAppFirewallPoliciesResponse>
+                            handler) {
+        LOG.trace("Called async listWebAppFirewallPolicies");
+        final ListWebAppFirewallPoliciesRequest interceptedRequest =
+                ListWebAppFirewallPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWebAppFirewallPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListWebAppFirewallPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ListWebAppFirewallPolicies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListWebAppFirewallPoliciesResponse>
+                transformer =
+                        ListWebAppFirewallPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWebAppFirewallPoliciesRequest, ListWebAppFirewallPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWebAppFirewallPoliciesRequest,
+                                ListWebAppFirewallPoliciesResponse>,
+                        java.util.concurrent.Future<ListWebAppFirewallPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWebAppFirewallPoliciesRequest, ListWebAppFirewallPoliciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebAppFirewallsResponse> listWebAppFirewalls(
+            ListWebAppFirewallsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWebAppFirewallsRequest, ListWebAppFirewallsResponse>
+                    handler) {
+        LOG.trace("Called async listWebAppFirewalls");
+        final ListWebAppFirewallsRequest interceptedRequest =
+                ListWebAppFirewallsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWebAppFirewallsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListWebAppFirewalls",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ListWebAppFirewalls");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWebAppFirewallsResponse>
+                transformer =
+                        ListWebAppFirewallsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWebAppFirewallsRequest, ListWebAppFirewallsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWebAppFirewallsRequest, ListWebAppFirewallsResponse>,
+                        java.util.concurrent.Future<ListWebAppFirewallsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWebAppFirewallsRequest, ListWebAppFirewallsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestError/ListWorkRequestErrors");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestLogEntry/ListWorkRequestLogs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/ListWorkRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkAddressListResponse> updateNetworkAddressList(
+            UpdateNetworkAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNetworkAddressListRequest, UpdateNetworkAddressListResponse>
+                    handler) {
+        LOG.trace("Called async updateNetworkAddressList");
+        final UpdateNetworkAddressListRequest interceptedRequest =
+                UpdateNetworkAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNetworkAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "UpdateNetworkAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/UpdateNetworkAddressList");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateNetworkAddressListResponse>
+                transformer =
+                        UpdateNetworkAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateNetworkAddressListRequest, UpdateNetworkAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateNetworkAddressListRequest, UpdateNetworkAddressListResponse>,
+                        java.util.concurrent.Future<UpdateNetworkAddressListResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateNetworkAddressListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateNetworkAddressListRequest, UpdateNetworkAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWebAppFirewallResponse> updateWebAppFirewall(
+            UpdateWebAppFirewallRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWebAppFirewallRequest, UpdateWebAppFirewallResponse>
+                    handler) {
+        LOG.trace("Called async updateWebAppFirewall");
+        final UpdateWebAppFirewallRequest interceptedRequest =
+                UpdateWebAppFirewallConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWebAppFirewallConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "UpdateWebAppFirewall",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/UpdateWebAppFirewall");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateWebAppFirewallResponse>
+                transformer =
+                        UpdateWebAppFirewallConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateWebAppFirewallRequest, UpdateWebAppFirewallResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateWebAppFirewallRequest, UpdateWebAppFirewallResponse>,
+                        java.util.concurrent.Future<UpdateWebAppFirewallResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWebAppFirewallDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateWebAppFirewallRequest, UpdateWebAppFirewallResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWebAppFirewallPolicyResponse>
+            updateWebAppFirewallPolicy(
+                    UpdateWebAppFirewallPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateWebAppFirewallPolicyRequest,
+                                    UpdateWebAppFirewallPolicyResponse>
+                            handler) {
+        LOG.trace("Called async updateWebAppFirewallPolicy");
+        final UpdateWebAppFirewallPolicyRequest interceptedRequest =
+                UpdateWebAppFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWebAppFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waf",
+                        "UpdateWebAppFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/UpdateWebAppFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateWebAppFirewallPolicyResponse>
+                transformer =
+                        UpdateWebAppFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateWebAppFirewallPolicyRequest, UpdateWebAppFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateWebAppFirewallPolicyRequest,
+                                UpdateWebAppFirewallPolicyResponse>,
+                        java.util.concurrent.Future<UpdateWebAppFirewallPolicyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWebAppFirewallPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateWebAppFirewallPolicyRequest, UpdateWebAppFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

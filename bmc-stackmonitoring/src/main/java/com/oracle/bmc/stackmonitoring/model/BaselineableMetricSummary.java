@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Summary for the baseline-able metric <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Summary for the baseline-able metric
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BaselineableMetricSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BaselineableMetricSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BaselineableMetricSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -70,170 +69,181 @@ public final class BaselineableMetricSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the metric */
+        /**
+         * OCID of the metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID of the metric
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The current lifecycle state of the metric extension */
+        /**
+         * The current lifecycle state of the metric extension
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private BaselineableMetricLifeCycleStates lifecycleState;
 
         /**
          * The current lifecycle state of the metric extension
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(BaselineableMetricLifeCycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** OCID of the tenancy */
+        /**
+         * OCID of the tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * OCID of the tenancy
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** OCID of the compartment */
+        /**
+         * OCID of the compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of the compartment
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** name of the metric */
+        /**
+         * name of the metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * name of the metric
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** metric column name */
+        /**
+         * metric column name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("column")
         private String column;
 
         /**
          * metric column name
-         *
          * @param column the value to set
          * @return this builder
-         */
+         **/
         public Builder column(String column) {
             this.column = column;
             this.__explicitlySet__.add("column");
             return this;
         }
-        /** namespace of the metric */
+        /**
+         * namespace of the metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * namespace of the metric
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** Resource group of the metric */
+        /**
+         * Resource group of the metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
         /**
          * Resource group of the metric
-         *
          * @param resourceGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
-        /** Resource type of the metric */
+        /**
+         * Resource type of the metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * Resource type of the metric
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Is the metric created out of box, default false */
+        /**
+         * Is the metric created out of box, default false
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOutOfBox")
         private Boolean isOutOfBox;
 
         /**
          * Is the metric created out of box, default false
-         *
          * @param isOutOfBox the value to set
          * @return this builder
-         */
+         **/
         public Builder isOutOfBox(Boolean isOutOfBox) {
             this.isOutOfBox = isOutOfBox;
             this.__explicitlySet__.add("isOutOfBox");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -242,7 +252,8 @@ public final class BaselineableMetricSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -252,7 +263,7 @@ public final class BaselineableMetricSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -260,19 +271,20 @@ public final class BaselineableMetricSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -349,7 +361,9 @@ public final class BaselineableMetricSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -358,183 +372,196 @@ public final class BaselineableMetricSummary
         return new Builder().copy(this);
     }
 
-    /** OCID of the metric */
+    /**
+     * OCID of the metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID of the metric
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The current lifecycle state of the metric extension */
+    /**
+     * The current lifecycle state of the metric extension
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final BaselineableMetricLifeCycleStates lifecycleState;
 
     /**
      * The current lifecycle state of the metric extension
-     *
      * @return the value
-     */
+     **/
     public BaselineableMetricLifeCycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** OCID of the tenancy */
+    /**
+     * OCID of the tenancy
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * OCID of the tenancy
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /** OCID of the compartment */
+    /**
+     * OCID of the compartment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of the compartment
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** name of the metric */
+    /**
+     * name of the metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * name of the metric
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** metric column name */
+    /**
+     * metric column name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("column")
     private final String column;
 
     /**
      * metric column name
-     *
      * @return the value
-     */
+     **/
     public String getColumn() {
         return column;
     }
 
-    /** namespace of the metric */
+    /**
+     * namespace of the metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * namespace of the metric
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** Resource group of the metric */
+    /**
+     * Resource group of the metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
     /**
      * Resource group of the metric
-     *
      * @return the value
-     */
+     **/
     public String getResourceGroup() {
         return resourceGroup;
     }
 
-    /** Resource type of the metric */
+    /**
+     * Resource type of the metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * Resource type of the metric
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** Is the metric created out of box, default false */
+    /**
+     * Is the metric created out of box, default false
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutOfBox")
     private final Boolean isOutOfBox;
 
     /**
      * Is the metric created out of box, default false
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOutOfBox() {
         return isOutOfBox;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -546,7 +573,6 @@ public final class BaselineableMetricSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

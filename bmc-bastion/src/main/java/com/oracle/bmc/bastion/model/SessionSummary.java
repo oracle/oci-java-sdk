@@ -5,22 +5,19 @@
 package com.oracle.bmc.bastion.model;
 
 /**
- * Summary information for a bastion session resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+ * Summary information for a bastion session resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SessionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SessionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SessionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -60,61 +57,65 @@ public final class SessionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier (OCID) of the session, which can't be changed after creation. */
+        /**
+         * The unique identifier (OCID) of the session, which can't be changed after creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier (OCID) of the session, which can't be changed after creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the session. */
+        /**
+         * The name of the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the session.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The name of the bastion that is hosting this session. */
+        /**
+         * The name of the bastion that is hosting this session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionName")
         private String bastionName;
 
         /**
          * The name of the bastion that is hosting this session.
-         *
          * @param bastionName the value to set
          * @return this builder
-         */
+         **/
         public Builder bastionName(String bastionName) {
             this.bastionName = bastionName;
             this.__explicitlySet__.add("bastionName");
             return this;
         }
-        /** The unique identifier (OCID) of the bastion that is hosting this session. */
+        /**
+         * The unique identifier (OCID) of the bastion that is hosting this session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
         private String bastionId;
 
         /**
          * The unique identifier (OCID) of the bastion that is hosting this session.
-         *
          * @param bastionId the value to set
          * @return this builder
-         */
+         **/
         public Builder bastionId(String bastionId) {
             this.bastionId = bastionId;
             this.__explicitlySet__.add("bastionId");
@@ -130,83 +131,88 @@ public final class SessionSummary
             return this;
         }
         /**
-         * The time the session was created. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-         */
+         * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the session was created. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the session was updated. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-         */
+         * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the session was updated. Format is defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the session. */
+        /**
+         * The current state of the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SessionLifecycleState lifecycleState;
 
         /**
          * The current state of the session.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(SessionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message describing the current session state in more detail. */
+        /**
+         * A message describing the current session state in more detail.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * A message describing the current session state in more detail.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The amount of time the session can remain active. */
+        /**
+         * The amount of time the session can remain active.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
         private Integer sessionTtlInSeconds;
 
         /**
          * The amount of time the session can remain active.
-         *
          * @param sessionTtlInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionTtlInSeconds(Integer sessionTtlInSeconds) {
             this.sessionTtlInSeconds = sessionTtlInSeconds;
             this.__explicitlySet__.add("sessionTtlInSeconds");
@@ -271,7 +277,9 @@ public final class SessionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -280,54 +288,58 @@ public final class SessionSummary
         return new Builder().copy(this);
     }
 
-    /** The unique identifier (OCID) of the session, which can't be changed after creation. */
+    /**
+     * The unique identifier (OCID) of the session, which can't be changed after creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier (OCID) of the session, which can't be changed after creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the session. */
+    /**
+     * The name of the session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the session.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The name of the bastion that is hosting this session. */
+    /**
+     * The name of the bastion that is hosting this session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionName")
     private final String bastionName;
 
     /**
      * The name of the bastion that is hosting this session.
-     *
      * @return the value
-     */
+     **/
     public String getBastionName() {
         return bastionName;
     }
 
-    /** The unique identifier (OCID) of the bastion that is hosting this session. */
+    /**
+     * The unique identifier (OCID) of the bastion that is hosting this session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bastionId")
     private final String bastionId;
 
     /**
      * The unique identifier (OCID) of the bastion that is hosting this session.
-     *
      * @return the value
-     */
+     **/
     public String getBastionId() {
         return bastionId;
     }
@@ -340,74 +352,79 @@ public final class SessionSummary
     }
 
     /**
-     * The time the session was created. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-     */
+     * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the session was created. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the session was updated. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
-     */
+     * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the session was updated. Format is defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the session. */
+    /**
+     * The current state of the session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SessionLifecycleState lifecycleState;
 
     /**
      * The current state of the session.
-     *
      * @return the value
-     */
+     **/
     public SessionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the current session state in more detail. */
+    /**
+     * A message describing the current session state in more detail.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * A message describing the current session state in more detail.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The amount of time the session can remain active. */
+    /**
+     * The amount of time the session can remain active.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTtlInSeconds")
     private final Integer sessionTtlInSeconds;
 
     /**
      * The amount of time the session can remain active.
-     *
      * @return the value
-     */
+     **/
     public Integer getSessionTtlInSeconds() {
         return sessionTtlInSeconds;
     }
@@ -419,7 +436,6 @@ public final class SessionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

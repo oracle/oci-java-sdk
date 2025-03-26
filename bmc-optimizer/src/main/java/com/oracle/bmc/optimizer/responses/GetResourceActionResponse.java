@@ -6,9 +6,12 @@ package com.oracle.bmc.optimizer.responses;
 
 import com.oracle.bmc.optimizer.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned {@code ResourceAction} instance. */
+    /**
+     * The returned ResourceAction instance.
+     */
     private com.oracle.bmc.optimizer.model.ResourceAction resourceAction;
 
     /**
-     * The returned {@code ResourceAction} instance.
-     *
+     * The returned ResourceAction instance.
      * @return the value
      */
     public com.oracle.bmc.optimizer.model.ResourceAction getResourceAction() {
@@ -57,7 +62,7 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private GetResourceActionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.optimizer.model.ResourceAction resourceAction) {
@@ -67,25 +72,25 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
         this.resourceAction = resourceAction;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetResourceActionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +105,15 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code ResourceAction} instance. */
+        /**
+         * The returned ResourceAction instance.
+         */
         private com.oracle.bmc.optimizer.model.ResourceAction resourceAction;
 
         /**
-         * The returned {@code ResourceAction} instance.
-         *
+         * The returned ResourceAction instance.
          * @param resourceAction the value to set
          * @return this builder
          */
@@ -134,10 +141,8 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetResourceActionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +155,8 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetResourceActionResponse build() {
             return new GetResourceActionResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, resourceAction);
@@ -162,7 +165,6 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

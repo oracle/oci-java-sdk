@@ -5,22 +5,20 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The detail for one alert log entry. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The detail for one alert log entry.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AlertLogSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AlertLogSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AlertLogSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "messageLevel",
@@ -48,91 +46,97 @@ public final class AlertLogSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The level of the alert log. */
+        /**
+         * The level of the alert log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageLevel")
         private MessageLevel messageLevel;
 
         /**
          * The level of the alert log.
-         *
          * @param messageLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder messageLevel(MessageLevel messageLevel) {
             this.messageLevel = messageLevel;
             this.__explicitlySet__.add("messageLevel");
             return this;
         }
-        /** The type of alert log message. */
+        /**
+         * The type of alert log message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageType")
         private MessageType messageType;
 
         /**
          * The type of alert log message.
-         *
          * @param messageType the value to set
          * @return this builder
-         */
+         **/
         public Builder messageType(MessageType messageType) {
             this.messageType = messageType;
             this.__explicitlySet__.add("messageType");
             return this;
         }
-        /** The contents of the alert log message. */
+        /**
+         * The contents of the alert log message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageContent")
         private String messageContent;
 
         /**
          * The contents of the alert log message.
-         *
          * @param messageContent the value to set
          * @return this builder
-         */
+         **/
         public Builder messageContent(String messageContent) {
             this.messageContent = messageContent;
             this.__explicitlySet__.add("messageContent");
             return this;
         }
-        /** The date and time the alert log was created. */
+        /**
+         * The date and time the alert log was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The date and time the alert log was created.
-         *
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /** The supplemental details of the alert log. */
+        /**
+         * The supplemental details of the alert log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supplementalDetail")
         private String supplementalDetail;
 
         /**
          * The supplemental details of the alert log.
-         *
          * @param supplementalDetail the value to set
          * @return this builder
-         */
+         **/
         public Builder supplementalDetail(String supplementalDetail) {
             this.supplementalDetail = supplementalDetail;
             this.__explicitlySet__.add("supplementalDetail");
             return this;
         }
-        /** The alert log file location. */
+        /**
+         * The alert log file location.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileLocation")
         private String fileLocation;
 
         /**
          * The alert log file location.
-         *
          * @param fileLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder fileLocation(String fileLocation) {
             this.fileLocation = fileLocation;
             this.__explicitlySet__.add("fileLocation");
@@ -181,7 +185,9 @@ public final class AlertLogSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -190,8 +196,10 @@ public final class AlertLogSummary
         return new Builder().copy(this);
     }
 
-    /** The level of the alert log. */
-    public enum MessageLevel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The level of the alert log.
+     **/
+    public enum MessageLevel {
         Critical("CRITICAL"),
         Severe("SEVERE"),
         Important("IMPORTANT"),
@@ -199,8 +207,8 @@ public final class AlertLogSummary
         Other("OTHER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -239,21 +247,24 @@ public final class AlertLogSummary
             return UnknownEnumValue;
         }
     };
-    /** The level of the alert log. */
+    /**
+     * The level of the alert log.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageLevel")
     private final MessageLevel messageLevel;
 
     /**
      * The level of the alert log.
-     *
      * @return the value
-     */
+     **/
     public MessageLevel getMessageLevel() {
         return messageLevel;
     }
 
-    /** The type of alert log message. */
-    public enum MessageType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of alert log message.
+     **/
+    public enum MessageType {
         Unknown("UNKNOWN"),
         IncidentError("INCIDENT_ERROR"),
         Error("ERROR"),
@@ -263,8 +274,8 @@ public final class AlertLogSummary
         Other("OTHER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -303,67 +314,72 @@ public final class AlertLogSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of alert log message. */
+    /**
+     * The type of alert log message.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageType")
     private final MessageType messageType;
 
     /**
      * The type of alert log message.
-     *
      * @return the value
-     */
+     **/
     public MessageType getMessageType() {
         return messageType;
     }
 
-    /** The contents of the alert log message. */
+    /**
+     * The contents of the alert log message.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageContent")
     private final String messageContent;
 
     /**
      * The contents of the alert log message.
-     *
      * @return the value
-     */
+     **/
     public String getMessageContent() {
         return messageContent;
     }
 
-    /** The date and time the alert log was created. */
+    /**
+     * The date and time the alert log was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The date and time the alert log was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /** The supplemental details of the alert log. */
+    /**
+     * The supplemental details of the alert log.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supplementalDetail")
     private final String supplementalDetail;
 
     /**
      * The supplemental details of the alert log.
-     *
      * @return the value
-     */
+     **/
     public String getSupplementalDetail() {
         return supplementalDetail;
     }
 
-    /** The alert log file location. */
+    /**
+     * The alert log file location.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileLocation")
     private final String fileLocation;
 
     /**
      * The alert log file location.
-     *
      * @return the value
-     */
+     **/
     public String getFileLocation() {
         return fileLocation;
     }
@@ -375,7 +391,6 @@ public final class AlertLogSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

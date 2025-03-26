@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of a maintenance run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of a maintenance run.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaintenanceRunSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MaintenanceRunSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaintenanceRunSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -130,458 +130,445 @@ public final class MaintenanceRunSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the maintenance run. */
+        /**
+         * The OCID of the maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the maintenance run.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The user-friendly name for the maintenance run. */
+        /**
+         * The user-friendly name for the maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the maintenance run.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the maintenance run. */
+        /**
+         * Description of the maintenance run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the maintenance run.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The current state of the maintenance run. For Autonomous Database Serverless instances,
-         * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-         */
+         * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the maintenance run. For Autonomous Database Serverless instances,
-         * valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Additional information about the current lifecycle state. */
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The date and time the maintenance run is scheduled to occur. */
+        /**
+         * The date and time the maintenance run is scheduled to occur.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
          * The date and time the maintenance run is scheduled to occur.
-         *
          * @param timeScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
             return this;
         }
-        /** The date and time the maintenance run starts. */
+        /**
+         * The date and time the maintenance run starts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time the maintenance run starts.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The date and time the maintenance run was completed. */
+        /**
+         * The date and time the maintenance run was completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The date and time the maintenance run was completed.
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** The type of the target resource on which the maintenance run occurs. */
+        /**
+         * The type of the target resource on which the maintenance run occurs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
          * The type of the target resource on which the maintenance run occurs.
-         *
          * @param targetResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder targetResourceType(TargetResourceType targetResourceType) {
             this.targetResourceType = targetResourceType;
             this.__explicitlySet__.add("targetResourceType");
             return this;
         }
-        /** The ID of the target resource on which the maintenance run occurs. */
+        /**
+         * The ID of the target resource on which the maintenance run occurs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
         /**
          * The ID of the target resource on which the maintenance run occurs.
-         *
          * @param targetResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-        /** Maintenance type. */
+        /**
+         * Maintenance type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
         private MaintenanceType maintenanceType;
 
         /**
          * Maintenance type.
-         *
          * @param maintenanceType the value to set
          * @return this builder
-         */
+         **/
         public Builder maintenanceType(MaintenanceType maintenanceType) {
             this.maintenanceType = maintenanceType;
             this.__explicitlySet__.add("maintenanceType");
             return this;
         }
         /**
-         * The unique identifier of the patch. The identifier string includes the patch type, the
-         * Oracle Database version, and the patch creation date (using the format YYMMDD). For
-         * example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for
-         * Oracle Database 19.9.0.0 that was released October 30, 2020.
-         */
+         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
         /**
-         * The unique identifier of the patch. The identifier string includes the patch type, the
-         * Oracle Database version, and the patch creation date (using the format YYMMDD). For
-         * example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for
-         * Oracle Database 19.9.0.0 that was released October 30, 2020.
-         *
+         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
          * @param patchId the value to set
          * @return this builder
-         */
+         **/
         public Builder patchId(String patchId) {
             this.patchId = patchId;
             this.__explicitlySet__.add("patchId");
             return this;
         }
-        /** Maintenance sub-type. */
+        /**
+         * Maintenance sub-type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceSubtype")
         private MaintenanceSubtype maintenanceSubtype;
 
         /**
          * Maintenance sub-type.
-         *
          * @param maintenanceSubtype the value to set
          * @return this builder
-         */
+         **/
         public Builder maintenanceSubtype(MaintenanceSubtype maintenanceSubtype) {
             this.maintenanceSubtype = maintenanceSubtype;
             this.__explicitlySet__.add("maintenanceSubtype");
             return this;
         }
         /**
-         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous
-         * Container Database. If enabled along with Release Update, patching will be done in a
-         * Non-Rolling manner.
-         */
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
         private Boolean isDstFileUpdateEnabled;
 
         /**
-         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous
-         * Container Database. If enabled along with Release Update, patching will be done in a
-         * Non-Rolling manner.
-         *
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
          * @param isDstFileUpdateEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
             this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             this.__explicitlySet__.add("isDstFileUpdateEnabled");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance run for the Autonomous Data Guard association's peer container database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
         private String peerMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance run for the Autonomous Data Guard association's peer container database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
          * @param peerMaintenanceRunId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerMaintenanceRunId(String peerMaintenanceRunId) {
             this.peerMaintenanceRunId = peerMaintenanceRunId;
             this.__explicitlySet__.add("peerMaintenanceRunId");
             return this;
         }
         /**
-         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard
-         * peer container databases.
-         */
+         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunIds")
         private java.util.List<String> peerMaintenanceRunIds;
 
         /**
-         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard
-         * peer container databases.
-         *
+         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
          * @param peerMaintenanceRunIds the value to set
          * @return this builder
-         */
+         **/
         public Builder peerMaintenanceRunIds(java.util.List<String> peerMaintenanceRunIds) {
             this.peerMaintenanceRunIds = peerMaintenanceRunIds;
             this.__explicitlySet__.add("peerMaintenanceRunIds");
             return this;
         }
         /**
-         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING".
-         * Default value is ROLLING.
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         * <p>
+         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          *
-         * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-         * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-         * for more information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
         private PatchingMode patchingMode;
 
         /**
-         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING".
-         * Default value is ROLLING.
-         *
-         * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-         * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-         * for more information.
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         * <p>
+         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          *
          * @param patchingMode the value to set
          * @return this builder
-         */
+         **/
         public Builder patchingMode(PatchingMode patchingMode) {
             this.patchingMode = patchingMode;
             this.__explicitlySet__.add("patchingMode");
             return this;
         }
-        /** Contain the patch failure count. */
+        /**
+         * Contain the patch failure count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchFailureCount")
         private Integer patchFailureCount;
 
         /**
          * Contain the patch failure count.
-         *
          * @param patchFailureCount the value to set
          * @return this builder
-         */
+         **/
         public Builder patchFailureCount(Integer patchFailureCount) {
             this.patchFailureCount = patchFailureCount;
             this.__explicitlySet__.add("patchFailureCount");
             return this;
         }
-        /** The target software version for the database server patching operation. */
+        /**
+         * The target software version for the database server patching operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDbServerVersion")
         private String targetDbServerVersion;
 
         /**
          * The target software version for the database server patching operation.
-         *
          * @param targetDbServerVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder targetDbServerVersion(String targetDbServerVersion) {
             this.targetDbServerVersion = targetDbServerVersion;
             this.__explicitlySet__.add("targetDbServerVersion");
             return this;
         }
-        /** The target Cell version that is to be patched to. */
+        /**
+         * The target Cell version that is to be patched to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetStorageServerVersion")
         private String targetStorageServerVersion;
 
         /**
          * The target Cell version that is to be patched to.
-         *
          * @param targetStorageServerVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder targetStorageServerVersion(String targetStorageServerVersion) {
             this.targetStorageServerVersion = targetStorageServerVersion;
             this.__explicitlySet__.add("targetStorageServerVersion");
             return this;
         }
         /**
-         * If true, enables the configuration of a custom action timeout (waiting period) between
-         * database servers patching operations.
-         */
+         * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
         private Boolean isCustomActionTimeoutEnabled;
 
         /**
-         * If true, enables the configuration of a custom action timeout (waiting period) between
-         * database servers patching operations.
-         *
+         * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
          * @param isCustomActionTimeoutEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
             this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             this.__explicitlySet__.add("isCustomActionTimeoutEnabled");
             return this;
         }
         /**
-         * Determines the amount of time the system will wait before the start of each database
-         * server patching operation. Specify a number of minutes, from 15 to 120.
-         */
+         * Determines the amount of time the system will wait before the start of each database server patching operation.
+         * Specify a number of minutes, from 15 to 120.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
         private Integer customActionTimeoutInMins;
 
         /**
-         * Determines the amount of time the system will wait before the start of each database
-         * server patching operation. Specify a number of minutes, from 15 to 120.
+         * Determines the amount of time the system will wait before the start of each database server patching operation.
+         * Specify a number of minutes, from 15 to 120.
          *
          * @param customActionTimeoutInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
             this.customActionTimeoutInMins = customActionTimeoutInMins;
             this.__explicitlySet__.add("customActionTimeoutInMins");
             return this;
         }
         /**
-         * Extend current custom action timeout between the current database servers during waiting
-         * state, from 0 (zero) to 30 minutes.
-         */
+         * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
         private Integer currentCustomActionTimeoutInMins;
 
         /**
-         * Extend current custom action timeout between the current database servers during waiting
-         * state, from 0 (zero) to 30 minutes.
-         *
+         * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
          * @param currentCustomActionTimeoutInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder currentCustomActionTimeoutInMins(Integer currentCustomActionTimeoutInMins) {
             this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
             this.__explicitlySet__.add("currentCustomActionTimeoutInMins");
             return this;
         }
-        /** The status of the patching operation. */
+        /**
+         * The status of the patching operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
         private PatchingStatus patchingStatus;
 
         /**
          * The status of the patching operation.
-         *
          * @param patchingStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder patchingStatus(PatchingStatus patchingStatus) {
             this.patchingStatus = patchingStatus;
             this.__explicitlySet__.add("patchingStatus");
             return this;
         }
-        /** The time when the patching operation started. */
+        /**
+         * The time when the patching operation started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingStartTime")
         private java.util.Date patchingStartTime;
 
         /**
          * The time when the patching operation started.
-         *
          * @param patchingStartTime the value to set
          * @return this builder
-         */
+         **/
         public Builder patchingStartTime(java.util.Date patchingStartTime) {
             this.patchingStartTime = patchingStartTime;
             this.__explicitlySet__.add("patchingStartTime");
             return this;
         }
-        /** The time when the patching operation ended. */
+        /**
+         * The time when the patching operation ended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingEndTime")
         private java.util.Date patchingEndTime;
 
         /**
          * The time when the patching operation ended.
-         *
          * @param patchingEndTime the value to set
          * @return this builder
-         */
+         **/
         public Builder patchingEndTime(java.util.Date patchingEndTime) {
             this.patchingEndTime = patchingEndTime;
             this.__explicitlySet__.add("patchingEndTime");
@@ -596,81 +583,82 @@ public final class MaintenanceRunSummary
             this.__explicitlySet__.add("estimatedPatchingTime");
             return this;
         }
-        /** The name of the current infrastruture component that is getting patched. */
+        /**
+         * The name of the current infrastruture component that is getting patched.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentPatchingComponent")
         private String currentPatchingComponent;
 
         /**
          * The name of the current infrastruture component that is getting patched.
-         *
          * @param currentPatchingComponent the value to set
          * @return this builder
-         */
+         **/
         public Builder currentPatchingComponent(String currentPatchingComponent) {
             this.currentPatchingComponent = currentPatchingComponent;
             this.__explicitlySet__.add("currentPatchingComponent");
             return this;
         }
-        /** The estimated start time of the next infrastruture component patching operation. */
+        /**
+         * The estimated start time of the next infrastruture component patching operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedComponentPatchingStartTime")
         private java.util.Date estimatedComponentPatchingStartTime;
 
         /**
          * The estimated start time of the next infrastruture component patching operation.
-         *
          * @param estimatedComponentPatchingStartTime the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedComponentPatchingStartTime(
                 java.util.Date estimatedComponentPatchingStartTime) {
             this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
             this.__explicitlySet__.add("estimatedComponentPatchingStartTime");
             return this;
         }
-        /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
+        /**
+         * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
         private Boolean isMaintenanceRunGranular;
 
         /**
          * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
-         *
          * @param isMaintenanceRunGranular the value to set
          * @return this builder
-         */
+         **/
         public Builder isMaintenanceRunGranular(Boolean isMaintenanceRunGranular) {
             this.isMaintenanceRunGranular = isMaintenanceRunGranular;
             this.__explicitlySet__.add("isMaintenanceRunGranular");
             return this;
         }
-        /** The total time taken by corresponding resource activity in minutes. */
+        /**
+         * The total time taken by corresponding resource activity in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
         private Integer totalTimeTakenInMins;
 
         /**
          * The total time taken by corresponding resource activity in minutes.
-         *
          * @param totalTimeTakenInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
             this.totalTimeTakenInMins = totalTimeTakenInMins;
             this.__explicitlySet__.add("totalTimeTakenInMins");
             return this;
         }
         /**
-         * The Autonomous Database Software Image
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         */
+         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
-         * The Autonomous Database Software Image
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         *
+         * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param databaseSoftwareImageId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
@@ -828,7 +816,9 @@ public final class MaintenanceRunSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -837,63 +827,67 @@ public final class MaintenanceRunSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the maintenance run. */
+    /**
+     * The OCID of the maintenance run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the maintenance run.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The user-friendly name for the maintenance run. */
+    /**
+     * The user-friendly name for the maintenance run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the maintenance run.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description of the maintenance run. */
+    /**
+     * Description of the maintenance run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the maintenance run.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
-     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     *
+     **/
+    public enum LifecycleState {
         Scheduled("SCHEDULED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -905,8 +899,8 @@ public final class MaintenanceRunSummary
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -946,76 +940,81 @@ public final class MaintenanceRunSummary
         }
     };
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
-     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
-     */
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid
-     * states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional information about the current lifecycle state. */
+    /**
+     * Additional information about the current lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The date and time the maintenance run is scheduled to occur. */
+    /**
+     * The date and time the maintenance run is scheduled to occur.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
      * The date and time the maintenance run is scheduled to occur.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
 
-    /** The date and time the maintenance run starts. */
+    /**
+     * The date and time the maintenance run starts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time the maintenance run starts.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The date and time the maintenance run was completed. */
+    /**
+     * The date and time the maintenance run was completed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The date and time the maintenance run was completed.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** The type of the target resource on which the maintenance run occurs. */
-    public enum TargetResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the target resource on which the maintenance run occurs.
+     **/
+    public enum TargetResourceType {
         AutonomousExadataInfrastructure("AUTONOMOUS_EXADATA_INFRASTRUCTURE"),
         AutonomousContainerDatabase("AUTONOMOUS_CONTAINER_DATABASE"),
         ExadataDbSystem("EXADATA_DB_SYSTEM"),
@@ -1026,8 +1025,8 @@ public final class MaintenanceRunSummary
         CloudAutonomousVmCluster("CLOUD_AUTONOMOUS_VM_CLUSTER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1066,40 +1065,44 @@ public final class MaintenanceRunSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of the target resource on which the maintenance run occurs. */
+    /**
+     * The type of the target resource on which the maintenance run occurs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
      * The type of the target resource on which the maintenance run occurs.
-     *
      * @return the value
-     */
+     **/
     public TargetResourceType getTargetResourceType() {
         return targetResourceType;
     }
 
-    /** The ID of the target resource on which the maintenance run occurs. */
+    /**
+     * The ID of the target resource on which the maintenance run occurs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
     /**
      * The ID of the target resource on which the maintenance run occurs.
-     *
      * @return the value
-     */
+     **/
     public String getTargetResourceId() {
         return targetResourceId;
     }
 
-    /** Maintenance type. */
-    public enum MaintenanceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Maintenance type.
+     **/
+    public enum MaintenanceType {
         Planned("PLANNED"),
         Unplanned("UNPLANNED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1138,42 +1141,38 @@ public final class MaintenanceRunSummary
             return UnknownEnumValue;
         }
     };
-    /** Maintenance type. */
+    /**
+     * Maintenance type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
     private final MaintenanceType maintenanceType;
 
     /**
      * Maintenance type.
-     *
      * @return the value
-     */
+     **/
     public MaintenanceType getMaintenanceType() {
         return maintenanceType;
     }
 
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle
-     * Database version, and the patch creation date (using the format YYMMDD). For example, the
-     * identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database
-     * 19.9.0.0 that was released October 30, 2020.
-     */
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle
-     * Database version, and the patch creation date (using the format YYMMDD). For example, the
-     * identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database
-     * 19.9.0.0 that was released October 30, 2020.
-     *
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier {@code ru_patch_19.9.0.0_201030} is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      * @return the value
-     */
+     **/
     public String getPatchId() {
         return patchId;
     }
 
-    /** Maintenance sub-type. */
-    public enum MaintenanceSubtype implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Maintenance sub-type.
+     **/
+    public enum MaintenanceSubtype {
         Quarterly("QUARTERLY"),
         Hardware("HARDWARE"),
         Critical("CRITICAL"),
@@ -1185,8 +1184,8 @@ public final class MaintenanceRunSummary
         CustomDatabaseSoftwareImage("CUSTOM_DATABASE_SOFTWARE_IMAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1225,88 +1224,75 @@ public final class MaintenanceRunSummary
             return UnknownEnumValue;
         }
     };
-    /** Maintenance sub-type. */
+    /**
+     * Maintenance sub-type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceSubtype")
     private final MaintenanceSubtype maintenanceSubtype;
 
     /**
      * Maintenance sub-type.
-     *
      * @return the value
-     */
+     **/
     public MaintenanceSubtype getMaintenanceSubtype() {
         return maintenanceSubtype;
     }
 
     /**
-     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container
-     * Database. If enabled along with Release Update, patching will be done in a Non-Rolling
-     * manner.
-     */
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
     private final Boolean isDstFileUpdateEnabled;
 
     /**
-     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container
-     * Database. If enabled along with Release Update, patching will be done in a Non-Rolling
-     * manner.
-     *
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * @return the value
-     */
+     **/
     public Boolean getIsDstFileUpdateEnabled() {
         return isDstFileUpdateEnabled;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance run for the Autonomous Data Guard association's peer container database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
     private final String peerMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance run for the Autonomous Data Guard association's peer container database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
      * @return the value
-     */
+     **/
     public String getPeerMaintenanceRunId() {
         return peerMaintenanceRunId;
     }
 
     /**
-     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer
-     * container databases.
-     */
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunIds")
     private final java.util.List<String> peerMaintenanceRunIds;
 
     /**
-     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer
-     * container databases.
-     *
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
      * @return the value
-     */
+     **/
     public java.util.List<String> getPeerMaintenanceRunIds() {
         return peerMaintenanceRunIds;
     }
 
     /**
-     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default
-     * value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
-     * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-     * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-     * for more information.
-     */
-    public enum PatchingMode implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum PatchingMode {
         Rolling("ROLLING"),
         Nonrolling("NONROLLING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1346,131 +1332,124 @@ public final class MaintenanceRunSummary
         }
     };
     /**
-     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default
-     * value is ROLLING.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
-     * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-     * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-     * for more information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
     private final PatchingMode patchingMode;
 
     /**
-     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default
-     * value is ROLLING.
-     *
-     * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
-     * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
-     * for more information.
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      *
      * @return the value
-     */
+     **/
     public PatchingMode getPatchingMode() {
         return patchingMode;
     }
 
-    /** Contain the patch failure count. */
+    /**
+     * Contain the patch failure count.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchFailureCount")
     private final Integer patchFailureCount;
 
     /**
      * Contain the patch failure count.
-     *
      * @return the value
-     */
+     **/
     public Integer getPatchFailureCount() {
         return patchFailureCount;
     }
 
-    /** The target software version for the database server patching operation. */
+    /**
+     * The target software version for the database server patching operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDbServerVersion")
     private final String targetDbServerVersion;
 
     /**
      * The target software version for the database server patching operation.
-     *
      * @return the value
-     */
+     **/
     public String getTargetDbServerVersion() {
         return targetDbServerVersion;
     }
 
-    /** The target Cell version that is to be patched to. */
+    /**
+     * The target Cell version that is to be patched to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetStorageServerVersion")
     private final String targetStorageServerVersion;
 
     /**
      * The target Cell version that is to be patched to.
-     *
      * @return the value
-     */
+     **/
     public String getTargetStorageServerVersion() {
         return targetStorageServerVersion;
     }
 
     /**
-     * If true, enables the configuration of a custom action timeout (waiting period) between
-     * database servers patching operations.
-     */
+     * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
     private final Boolean isCustomActionTimeoutEnabled;
 
     /**
-     * If true, enables the configuration of a custom action timeout (waiting period) between
-     * database servers patching operations.
-     *
+     * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * @return the value
-     */
+     **/
     public Boolean getIsCustomActionTimeoutEnabled() {
         return isCustomActionTimeoutEnabled;
     }
 
     /**
-     * Determines the amount of time the system will wait before the start of each database server
-     * patching operation. Specify a number of minutes, from 15 to 120.
-     */
+     * Determines the amount of time the system will wait before the start of each database server patching operation.
+     * Specify a number of minutes, from 15 to 120.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
     private final Integer customActionTimeoutInMins;
 
     /**
-     * Determines the amount of time the system will wait before the start of each database server
-     * patching operation. Specify a number of minutes, from 15 to 120.
+     * Determines the amount of time the system will wait before the start of each database server patching operation.
+     * Specify a number of minutes, from 15 to 120.
      *
      * @return the value
-     */
+     **/
     public Integer getCustomActionTimeoutInMins() {
         return customActionTimeoutInMins;
     }
 
     /**
-     * Extend current custom action timeout between the current database servers during waiting
-     * state, from 0 (zero) to 30 minutes.
-     */
+     * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
     private final Integer currentCustomActionTimeoutInMins;
 
     /**
-     * Extend current custom action timeout between the current database servers during waiting
-     * state, from 0 (zero) to 30 minutes.
-     *
+     * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      * @return the value
-     */
+     **/
     public Integer getCurrentCustomActionTimeoutInMins() {
         return currentCustomActionTimeoutInMins;
     }
 
-    /** The status of the patching operation. */
-    public enum PatchingStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the patching operation.
+     **/
+    public enum PatchingStatus {
         Patching("PATCHING"),
         Waiting("WAITING"),
         Scheduled("SCHEDULED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1509,41 +1488,44 @@ public final class MaintenanceRunSummary
             return UnknownEnumValue;
         }
     };
-    /** The status of the patching operation. */
+    /**
+     * The status of the patching operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
     private final PatchingStatus patchingStatus;
 
     /**
      * The status of the patching operation.
-     *
      * @return the value
-     */
+     **/
     public PatchingStatus getPatchingStatus() {
         return patchingStatus;
     }
 
-    /** The time when the patching operation started. */
+    /**
+     * The time when the patching operation started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingStartTime")
     private final java.util.Date patchingStartTime;
 
     /**
      * The time when the patching operation started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getPatchingStartTime() {
         return patchingStartTime;
     }
 
-    /** The time when the patching operation ended. */
+    /**
+     * The time when the patching operation ended.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingEndTime")
     private final java.util.Date patchingEndTime;
 
     /**
      * The time when the patching operation ended.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getPatchingEndTime() {
         return patchingEndTime;
     }
@@ -1555,71 +1537,72 @@ public final class MaintenanceRunSummary
         return estimatedPatchingTime;
     }
 
-    /** The name of the current infrastruture component that is getting patched. */
+    /**
+     * The name of the current infrastruture component that is getting patched.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentPatchingComponent")
     private final String currentPatchingComponent;
 
     /**
      * The name of the current infrastruture component that is getting patched.
-     *
      * @return the value
-     */
+     **/
     public String getCurrentPatchingComponent() {
         return currentPatchingComponent;
     }
 
-    /** The estimated start time of the next infrastruture component patching operation. */
+    /**
+     * The estimated start time of the next infrastruture component patching operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedComponentPatchingStartTime")
     private final java.util.Date estimatedComponentPatchingStartTime;
 
     /**
      * The estimated start time of the next infrastruture component patching operation.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getEstimatedComponentPatchingStartTime() {
         return estimatedComponentPatchingStartTime;
     }
 
-    /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
+    /**
+     * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
     private final Boolean isMaintenanceRunGranular;
 
     /**
      * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMaintenanceRunGranular() {
         return isMaintenanceRunGranular;
     }
 
-    /** The total time taken by corresponding resource activity in minutes. */
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
     private final Integer totalTimeTakenInMins;
 
     /**
      * The total time taken by corresponding resource activity in minutes.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalTimeTakenInMins() {
         return totalTimeTakenInMins;
     }
 
     /**
-     * The Autonomous Database Software Image
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     */
+     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The Autonomous Database Software Image
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     *
+     * The Autonomous Database Software Image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
-     */
+     **/
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }
@@ -1631,7 +1614,6 @@ public final class MaintenanceRunSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

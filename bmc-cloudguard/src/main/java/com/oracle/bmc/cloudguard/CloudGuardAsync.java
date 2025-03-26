@@ -8,78 +8,73 @@ import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
 
 /**
- * Use the Cloud Guard and Security Zones API to automate processes that you would otherwise perform
- * through the Cloud Guard Console or the Security Zones Console. For more information on these
- * services, see the [Cloud Guard](https://docs.oracle.com/iaas/cloud-guard/home.htm) and [Security
- * Zones](https://docs.oracle.com/iaas/security-zone/home.htm) documentation.
+ * Use the Cloud Guard and Security Zones API to automate processes that you would otherwise perform through the Cloud Guard Console or the Security Zones Console. For more information on these services, see the [Cloud Guard](https://docs.oracle.com/iaas/cloud-guard/home.htm) and [Security Zones](https://docs.oracle.com/iaas/security-zone/home.htm) documentation.
  *
- * <p>*Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the
- * reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
+ **Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public interface CloudGuardAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
      * Adds a compartment to an existing security zone (SecurityZone resource), identified by
-     * securityZoneId. Specify parameters in an AddCompartmentDetails resource that you pass. If you
-     * previously removed a subcompartment from a security zone, you can add it back to the same
-     * security zone. The security zone ensures that resources in the subcompartment comply with the
-     * security zone's policies.
+     * securityZoneId. Specify parameters in an AddCompartmentDetails resource that you pass.
+     * If you previously removed a subcompartment from a security zone, you can add it back to the
+     * same security zone. The security zone ensures that resources in the subcompartment comply with
+     * the security zone's policies.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AddCompartmentResponse> addCompartment(
             AddCompartmentRequest request,
@@ -91,10 +86,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
@@ -103,15 +98,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a data source (DataSource resource), identified by parameters passed in a
-     * ChangeDataSourceCompartmentDetails resource, from the current compartment to another.
+     * Moves a data source (DataSource resource), identified by parameters
+     * passed in a ChangeDataSourceCompartmentDetails resource, from the current
+     * compartment to another.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDataSourceCompartmentResponse> changeDataSourceCompartment(
             ChangeDataSourceCompartmentRequest request,
@@ -120,16 +117,18 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the detector recipe (DetectorRecipe resource), identified by detectorRecipeId, from the
-     * current compartment to another compartment. When provided, If-Match is checked against etag
-     * values of the resource.
+     * Moves the detector recipe (DetectorRecipe resource),
+     * identified by detectorRecipeId, from the current compartment to
+     * another compartment. When provided, If-Match is checked against
+     * etag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDetectorRecipeCompartmentResponse>
             changeDetectorRecipeCompartment(
@@ -140,15 +139,14 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the managed list (ManagedList resource), identified by managedListId, from the current
-     * compartment to another compartment.
+     * Moves the managed list (ManagedList resource), identified by managedListId, from the current compartment to another compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeManagedListCompartmentResponse> changeManagedListCompartment(
             ChangeManagedListCompartmentRequest request,
@@ -158,16 +156,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the responder recipe (ResponderRecipe resource), identified by responderRecipeId in a
-     * ChangeResponderRecipeCompartmentDetails resource, from the current compartment to another
-     * compartment. When provided, if-match is checked against etag values of the resource.
+     * Moves the responder recipe (ResponderRecipe resource), identified by responderRecipeId
+     * in a ChangeResponderRecipeCompartmentDetails resource, from the current compartment to another compartment.
+     * When provided, if-match is checked against etag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeResponderRecipeCompartmentResponse>
             changeResponderRecipeCompartment(
@@ -178,15 +177,14 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the SavedQuery resource into a different compartment. When provided, If-Match is
-     * checked against etag values of the resource.
+     * Moves the SavedQuery resource into a different compartment. When provided, If-Match is checked against etag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSavedQueryCompartmentResponse> changeSavedQueryCompartment(
             ChangeSavedQueryCompartmentRequest request,
@@ -195,16 +193,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the security recipe (SecurityRecipe resource), identified by securityRecipeId, from the
-     * current compartment to another compartment. When provided, `if-match` is checked against
-     * `etag` values of the resource.
+     * Moves the security recipe (SecurityRecipe resource), identified by securityRecipeId,
+     * from the current compartment to another compartment. When provided, `if-match` is checked
+     * against `etag` values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSecurityRecipeCompartmentResponse>
             changeSecurityRecipeCompartment(
@@ -215,16 +214,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a security zone, identified by securityZoneId, to a different compartment. Pass
-     * parameters through a ChangeSecurityZoneCompartmentDetails resource. When provided, `if-match`
-     * is checked against `etag` values of the resource.
+     * Moves a security zone, identified by securityZoneId, to a different compartment.
+     * Pass parameters through a ChangeSecurityZoneCompartmentDetails resource.
+     * When provided, `if-match` is checked against `etag` values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSecurityZoneCompartmentResponse>
             changeSecurityZoneCompartment(
@@ -237,12 +237,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Creates a AdhocQuery resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAdhocQueryResponse> createAdhocQuery(
             CreateAdhocQueryRequest request,
@@ -252,12 +253,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Creates a new DataMaskRule resource definition.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataMaskRuleResponse> createDataMaskRule(
             CreateDataMaskRuleRequest request,
@@ -266,15 +268,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a data source (DataSource resource), using parameters passed through a
-     * CreateDataSourceDetails resource.
+     * Creates a data source (DataSource resource), using parameters passed
+     * through a CreateDataSourceDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDataSourceResponse> createDataSource(
             CreateDataSourceRequest request,
@@ -284,12 +287,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Creates a new DetectorRecipe resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDetectorRecipeResponse> createDetectorRecipe(
             CreateDetectorRecipeRequest request,
@@ -302,10 +306,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDetectorRecipeDetectorRuleResponse>
             createDetectorRecipeDetectorRule(
@@ -318,12 +322,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Creates a new ManagedList resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateManagedListResponse> createManagedList(
             CreateManagedListRequest request,
@@ -335,12 +340,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Creates a responder recipe (ResponderRecipe resource), from values passed in a
      * CreateResponderRecipeDetails resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateResponderRecipeResponse> createResponderRecipe(
             CreateResponderRecipeRequest request,
@@ -351,12 +357,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Creates a SavedQuery resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateSavedQueryResponse> createSavedQuery(
             CreateSavedQueryRequest request,
@@ -364,15 +371,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a security zone recipe (SecurityRecipe resource), using parameters passed in a
-     * CreateSecurityRecipeDetails resource.
+     * Creates a security zone recipe (SecurityRecipe resource), using parameters
+     * passed in a CreateSecurityRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateSecurityRecipeResponse> createSecurityRecipe(
             CreateSecurityRecipeRequest request,
@@ -381,15 +389,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters through a
-     * CreateSecurityZoneDetails resource.
+     * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+     * through a CreateSecurityZoneDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateSecurityZoneResponse> createSecurityZone(
             CreateSecurityZoneRequest request,
@@ -398,15 +407,15 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a target (Target resource), using parameters passed in a CreateTargetDetails
-     * resource.
+     * Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateTargetResponse> createTarget(
             CreateTargetRequest request,
@@ -414,16 +423,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Attaches a DetectorRecipe to a target (Target resource) identified by targetId, using
-     * parameters passed in a TargetAttachTargetDetectorRecipeDetails resource. Attach a
-     * DetectorRecipe with the Target
+     * Attaches a DetectorRecipe to a target (Target resource) identified by targetId,
+     * using parameters passed in a TargetAttachTargetDetectorRecipeDetails resource.
+     * Attach a DetectorRecipe with the Target
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateTargetDetectorRecipeResponse> createTargetDetectorRecipe(
             CreateTargetDetectorRecipeRequest request,
@@ -434,12 +444,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Attaches a responder recipe to a target.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateTargetResponderRecipeResponse> createTargetResponderRecipe(
             CreateTargetResponderRecipeRequest request,
@@ -448,14 +459,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates and registers a WLP agent for an on-premise resource.
+     * Creates and registers a WLP agent for an
+     * on-premise resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateWlpAgentResponse> createWlpAgent(
             CreateWlpAgentRequest request,
@@ -467,10 +480,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAdhocQueryResponse> deleteAdhocQuery(
             DeleteAdhocQueryRequest request,
@@ -482,10 +495,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDataMaskRuleResponse> deleteDataMaskRule(
             DeleteDataMaskRuleRequest request,
@@ -498,10 +511,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDataSourceResponse> deleteDataSource(
             DeleteDataSourceRequest request,
@@ -513,10 +526,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDetectorRecipeResponse> deleteDetectorRecipe(
             DeleteDetectorRecipeRequest request,
@@ -529,10 +542,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDetectorRecipeDetectorRuleResponse>
             deleteDetectorRecipeDetectorRule(
@@ -547,10 +560,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDetectorRecipeDetectorRuleDataSourceResponse>
             deleteDetectorRecipeDetectorRuleDataSource(
@@ -565,10 +578,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteManagedListResponse> deleteManagedList(
             DeleteManagedListRequest request,
@@ -581,10 +594,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteResponderRecipeResponse> deleteResponderRecipe(
             DeleteResponderRecipeRequest request,
@@ -597,10 +610,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSavedQueryResponse> deleteSavedQuery(
             DeleteSavedQueryRequest request,
@@ -608,15 +621,14 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a security zone recipe, identified by securityRecipeId. The recipe can't be
-     * associated with an existing security zone.
+     * Deletes a security zone recipe, identified by securityRecipeId. The recipe can't be associated with an existing security zone.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSecurityRecipeResponse> deleteSecurityRecipe(
             DeleteSecurityRecipeRequest request,
@@ -629,10 +641,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSecurityZoneResponse> deleteSecurityZone(
             DeleteSecurityZoneRequest request,
@@ -645,10 +657,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteTargetResponse> deleteTarget(
             DeleteTargetRequest request,
@@ -659,12 +671,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Deletes the target detector recipe (TargetDetectorRecipe resource) identified by
      * targetDetectorRecipeId, from a target (Target resource) identified by targetId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteTargetDetectorRecipeResponse> deleteTargetDetectorRecipe(
             DeleteTargetDetectorRecipeRequest request,
@@ -673,15 +686,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Detaches a target responder recipe (TargetResponderRecipe resource) identified by
-     * targetResponderRecipeId, from a target (Target resource) identified by targetId.
+     * Detaches a target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, from a target (Target resource)
+     * identified by targetId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteTargetResponderRecipeResponse> deleteTargetResponderRecipe(
             DeleteTargetResponderRecipeRequest request,
@@ -690,23 +705,47 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes and unregisters the WLP agent for an on-premise resource. x-obmcs-splat: routing:
-     * strategy: route-to-any-ad serviceList: [ 'cloudguard-cp-SPLAT_ENV' ] resources: wlpAgent:
-     * serviceResourceName: WlpAgent targetCompartmentId:
-     * downstream.getOr404('cloudguard-cp-SPLAT_ENV', 'GetWlpAgent',
-     * request.resourceId).compartmentId actionKind: delete resourceOcid: request.resourceId
-     * reconciliationCanStartAfterSecs: 30 permissions: [ \"WLP_AGENT_DELETE\" ] authorization:
-     * mode: automated check: resources['wlpAgent'].grantedPermissions.contains('WLP_AGENT_DELETE')
-     * allowCrossTenancy: true tagStore: mode: automated maximumAttemptCount: 3 throttling:
-     * perUserLimit: rpsLimit: 15 perTenantLimit: rpsLimit: 30 quotas: mode: automated search: mode:
-     * backfilling operationResourceName: wlpAgent lock: mode: test operationResourceName: wlpAgent
+     * Deletes and unregisters the WLP agent for an on-premise resource.
+     * x-obmcs-splat:
+     * routing:
+     *   strategy: route-to-any-ad
+     * serviceList: [ 'cloudguard-cp-SPLAT_ENV' ]
+     * resources:
+     *   wlpAgent:
+     *     serviceResourceName: WlpAgent
+     *     targetCompartmentId: downstream.getOr404('cloudguard-cp-SPLAT_ENV', 'GetWlpAgent', request.resourceId).compartmentId
+     *     actionKind: delete
+     *     resourceOcid: request.resourceId
+     *     reconciliationCanStartAfterSecs: 30
+     *     permissions: [ \"WLP_AGENT_DELETE\" ]
+     * authorization:
+     *   mode: automated
+     *   check: resources['wlpAgent'].grantedPermissions.contains('WLP_AGENT_DELETE')
+     *   allowCrossTenancy: true
+     * tagStore:
+     *   mode: automated
+     * maximumAttemptCount: 3
+     * throttling:
+     *   perUserLimit:
+     *     rpsLimit: 15
+     *   perTenantLimit:
+     *     rpsLimit: 30
+     * quotas:
+     *   mode: automated
+     * search:
+     *   mode: backfilling
+     *   operationResourceName: wlpAgent
+     * lock:
+     *   mode: test
+     *   operationResourceName: wlpAgent
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteWlpAgentResponse> deleteWlpAgent(
             DeleteWlpAgentRequest request,
@@ -714,15 +753,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Executes the responder execution. When provided, if-match is checked against etag values of
-     * the resource.
+     * Executes the responder execution. When provided, if-match is checked
+     * against etag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ExecuteResponderExecutionResponse> executeResponderExecution(
             ExecuteResponderExecutionRequest request,
@@ -735,10 +775,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAdhocQueryResponse> getAdhocQuery(
             GetAdhocQueryRequest request,
@@ -746,15 +786,14 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Downloads the results for a given adhoc ID (from includes results from all monitoring
-     * regions).
+     * Downloads the results for a given adhoc ID (from includes results from all monitoring regions).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAdhocQueryResultContentResponse> getAdhocQueryResultContent(
             GetAdhocQueryResultContentRequest request,
@@ -765,12 +804,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a ConditionMetatDataType resource with its details.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetConditionMetadataTypeResponse> getConditionMetadataType(
             GetConditionMetadataTypeRequest request,
@@ -779,15 +819,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment
-     * OCID.
+     * Returns the configuration details for a Cloud Guard tenancy,
+     * identified by root compartment OCID.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
             GetConfigurationRequest request,
@@ -799,10 +840,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDataMaskRuleResponse> getDataMaskRule(
             GetDataMaskRuleRequest request,
@@ -814,10 +855,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDataSourceResponse> getDataSource(
             GetDataSourceRequest request,
@@ -827,12 +868,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a Detector resource, identified by detectorId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDetectorResponse> getDetector(
             GetDetectorRequest request,
@@ -843,10 +885,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDetectorRecipeResponse> getDetectorRecipe(
             GetDetectorRecipeRequest request,
@@ -859,10 +901,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDetectorRecipeDetectorRuleResponse>
             getDetectorRecipeDetectorRule(
@@ -875,12 +917,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a detector rule (DetectorRule resource) identified by detectorRuleId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDetectorRuleResponse> getDetectorRule(
             GetDetectorRuleRequest request,
@@ -892,10 +935,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetManagedListResponse> getManagedList(
             GetManagedListRequest request,
@@ -907,10 +950,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetProblemResponse> getProblem(
             GetProblemRequest request,
@@ -921,10 +964,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetResourceResponse> getResource(
             GetResourceRequest request,
@@ -935,10 +978,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetResourceProfileResponse> getResourceProfile(
             GetResourceProfileRequest request,
@@ -951,10 +994,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetResourceVulnerabilityResponse> getResourceVulnerability(
             GetResourceVulnerabilityRequest request,
@@ -965,12 +1008,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a responder execution identified by responderExecutionId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetResponderExecutionResponse> getResponderExecution(
             GetResponderExecutionRequest request,
@@ -983,10 +1027,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetResponderRecipeResponse> getResponderRecipe(
             GetResponderRecipeRequest request,
@@ -999,10 +1043,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetResponderRecipeResponderRuleResponse>
             getResponderRecipeResponderRule(
@@ -1017,10 +1061,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetResponderRuleResponse> getResponderRule(
             GetResponderRuleRequest request,
@@ -1032,10 +1076,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSavedQueryResponse> getSavedQuery(
             GetSavedQueryRequest request,
@@ -1044,15 +1088,16 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
-     * (securityPolicyId). When a policy is enabled in a security zone, then any action in the zone
-     * that attempts to violate that policy is blocked.
+     * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+     * the zone that attempts to violate that policy is blocked.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSecurityPolicyResponse> getSecurityPolicy(
             GetSecurityPolicyRequest request,
@@ -1065,10 +1110,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSecurityRecipeResponse> getSecurityRecipe(
             GetSecurityRecipeRequest request,
@@ -1081,10 +1126,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSecurityZoneResponse> getSecurityZone(
             GetSecurityZoneRequest request,
@@ -1096,10 +1141,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSightingResponse> getSighting(
             GetSightingRequest request,
@@ -1110,25 +1155,24 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetTargetResponse> getTarget(
             GetTargetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetTargetRequest, GetTargetResponse> handler);
 
     /**
-     * Returns a target detector recipe (TargetDetectorRecipe resource) identified by
-     * targetDetectorRecipeId.
+     * Returns a target detector recipe (TargetDetectorRecipe resource) identified by targetDetectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetTargetDetectorRecipeResponse> getTargetDetectorRecipe(
             GetTargetDetectorRecipeRequest request,
@@ -1141,10 +1185,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetTargetDetectorRecipeDetectorRuleResponse>
             getTargetDetectorRecipeDetectorRule(
@@ -1158,12 +1202,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Returns a target responder recipe (TargetResponderRecipe) identified by
      * targetResponderRecipeId for a target (Target resource) identified by targetId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetTargetResponderRecipeResponse> getTargetResponderRecipe(
             GetTargetResponderRecipeRequest request,
@@ -1172,16 +1217,18 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a responder rule (ResponderRule resource) identified by responderRuleId, from a
-     * target responder recipe (TargetResponderRecipe resource) identified by
-     * targetResponderRecipeId, attached to a target (Target resource) identified by targetId.
+     * Returns a responder rule (ResponderRule resource) identified by
+     * responderRuleId, from a target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, attached to a target (Target resource)
+     * identified by targetId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetTargetResponderRecipeResponderRuleResponse>
             getTargetResponderRecipeResponderRule(
@@ -1196,10 +1243,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetWlpAgentResponse> getWlpAgent(
             GetWlpAgentRequest request,
@@ -1210,10 +1257,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
@@ -1221,31 +1268,31 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment identified by
-     * compartmentId. List is returned in a AdhocQueryCollection resource with page of
-     * AdhocQuerySummary resources.
-     *
-     * <p>The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
+     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment
+     * identified by compartmentId. List is returned in a AdhocQueryCollection resource
+     * with page of AdhocQuerySummary resources.
+     * <p>
+     * The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
      * The list does not include any subcompartments of the compartmentId passed.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAdhocQueriesResponse> listAdhocQueries(
             ListAdhocQueriesRequest request,
@@ -1257,10 +1304,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAdhocQueryResultsResponse> listAdhocQueryResults(
             ListAdhocQueryResultsRequest request,
@@ -1271,12 +1318,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of ConditionMetadataType resources.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListConditionMetadataTypesResponse> listConditionMetadataTypes(
             ListConditionMetadataTypesRequest request,
@@ -1285,15 +1333,15 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its
-     * subcompartments.
+     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDataMaskRulesResponse> listDataMaskRules(
             ListDataMaskRulesRequest request,
@@ -1302,15 +1350,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of data source events (DataSourceEventCollection resource) from the data
-     * source (DataSource resource) identified by dataSourceId.
+     * Returns a list of data source events
+     * (DataSourceEventCollection  resource) from the data source
+     * (DataSource resource) identified by dataSourceId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDataSourceEventsResponse> listDataSourceEvents(
             ListDataSourceEventsRequest request,
@@ -1319,31 +1369,31 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all data sources (DataSource resources) for a compartment identified by
-     * compartmentId. List is returned in a DataSourceCollection resource with page of
-     * DataSourceSummary resources.
-     *
-     * <p>The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
+     * Returns a list of all data sources (DataSource resources) for a compartment
+     * identified by compartmentId. List is returned in a DataSourceCollection resource
+     * with page of DataSourceSummary resources.
+     * <p>
+     * The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
      * The list does not include any subcompartments of the compartmentId passed.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDataSourcesResponse> listDataSources(
             ListDataSourcesRequest request,
@@ -1351,15 +1401,15 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of detector rules (DetectorRule resources) for a detector recipe
-     * (DetectorRecipe resource), identified by detectorRecipeId.
+     * Returns a list of detector rules (DetectorRule resources) for a detector recipe (DetectorRecipe resource), identified by detectorRecipeId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDetectorRecipeDetectorRulesResponse>
             listDetectorRecipeDetectorRules(
@@ -1370,30 +1420,29 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment,
-     * identified by compartmentId.
-     *
-     * <p>The ListDetectorRecipes operation returns only the detector recipes in `compartmentId`
-     * passed. The list does not include any subcompartments of the compartmentId passed.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
+     * <p>
+     * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListDetectorRecipes on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListDetectorRecipes on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDetectorRecipesResponse> listDetectorRecipes(
             ListDetectorRecipesRequest request,
@@ -1404,12 +1453,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of detector rules for the DetectorRecipe resource identified by detectorId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDetectorRulesResponse> listDetectorRules(
             ListDetectorRulesRequest request,
@@ -1418,15 +1468,15 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a detector catalog (DetectorCollection resource) with a list of DetectorSummary
-     * resources.
+     * Returns a detector catalog (DetectorCollection resource) with a list of DetectorSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDetectorsResponse> listDetectors(
             ListDetectorsRequest request,
@@ -1436,12 +1486,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of impacted resources for a problem identified by problemId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListImpactedResourcesResponse> listImpactedResources(
             ListImpactedResourcesRequest request,
@@ -1454,10 +1505,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedListTypesResponse> listManagedListTypes(
             ListManagedListTypesRequest request,
@@ -1467,27 +1518,27 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
-     * The ListManagedLists operation returns only the managed lists in `compartmentId` passed. The
-     * list does not include any subcompartments of the compartmentId passed.
+     * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return ManagedLists in only
+     * those compartments for which the requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListManagedLists on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `accessLevel` specifies whether to return ManagedLists in only those
-     * compartments for which the requestor has INSPECT permissions on at least one resource
-     * directly or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return
-     * Not Authorized if Principal doesn't have access to even one of the child compartments. This
-     * is valid only when `compartmentIdInSubtree` is set to `true`.
-     *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListManagedLists on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedListsResponse> listManagedLists(
             ListManagedListsRequest request,
@@ -1495,15 +1546,15 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the list of global policy statements (policy attributes) needed to fully enable Cloud
-     * Guard.
+     * Returns the list of global policy statements (policy attributes) needed to fully enable Cloud Guard.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
             ListPoliciesRequest request,
@@ -1513,12 +1564,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of endpoints associated with a problem, identified by problemId.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListProblemEndpointsResponse> listProblemEndpoints(
             ListProblemEndpointsRequest request,
@@ -1529,12 +1581,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of entities for a problem.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListProblemEntitiesResponse> listProblemEntities(
             ListProblemEntitiesRequest request,
@@ -1545,12 +1598,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of actions taken on a problem.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListProblemHistoriesResponse> listProblemHistories(
             ListProblemHistoriesRequest request,
@@ -1559,30 +1613,29 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all Problems identified by Cloud Guard which are currently in the database
-     * and meet the filtering criteria.
-     *
-     * <p>The ListProblems operation returns only the problems in `compartmentId` passed. The list
-     * does not include any subcompartments of the compartmentId passed.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Returns a list of all Problems identified by Cloud Guard which are currently in the database and meet the filtering criteria.
+     * <p>
+     * The ListProblems operation returns only the problems in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListProblems on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListProblems on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListProblemsResponse> listProblems(
             ListProblemsRequest request,
@@ -1593,12 +1646,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Returns a list of recommendations (RecommendationSummaryCollection resource with a page of
      * RecommendationSummary resources) for a specified compartment OCID.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListRecommendationsResponse> listRecommendations(
             ListRecommendationsRequest request,
@@ -1611,10 +1665,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResourcePortsResponse> listResourcePorts(
             ListResourcePortsRequest request,
@@ -1624,15 +1678,15 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns a list of endpoints (ResourceProfileEndpointCollection resource with a page of
-     * ResourceProfileEndpointSummary resources) for a resource profile identified by
-     * resourceProfileId.
+     * ResourceProfileEndpointSummary resources) for a resource profile identified by resourceProfileId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResourceProfileEndpointsResponse> listResourceProfileEndpoints(
             ListResourceProfileEndpointsRequest request,
@@ -1642,16 +1696,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of impacted resources (ResourceProfileImpactedResourceCollection resource with
-     * a page of ResourceProfileImpactedResourceSummary resources) for a resource profile identified
-     * by resourceProfileId.
+     * Returns a list of impacted resources (ResourceProfileImpactedResourceCollection resource
+     * with a page of ResourceProfileImpactedResourceSummary resources) for a resource profile
+     * identified by resourceProfileId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResourceProfileImpactedResourcesResponse>
             listResourceProfileImpactedResources(
@@ -1662,29 +1717,28 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all resource profile summaries (ResourceProfileCollection resource with a
-     * page of ResourceProfileSummary resources) for a compartment, identified by compartmentId and
-     * filtered as specified.
-     *
-     * <p>The ListResourceProfiles operation returns only the resource profiles in `compartmentId`
-     * passed. The parameter `accessLevel` specifies whether to return only those compartments for
-     * which the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Returns a list of all resource profile summaries (ResourceProfileCollection resource with a page of
+     * ResourceProfileSummary resources) for a compartment, identified by compartmentId and filtered as specified.
+     * <p>
+     * The ListResourceProfiles operation returns only the resource profiles in `compartmentId` passed.
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListResourceProfiles on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListResourceProfiles on
-     * the `compartmentId` passed and when it is set to true, the entire hierarchy of compartments
-     * can be returned. To get a full list of all compartments and subcompartments in the tenancy
-     * (root compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResourceProfilesResponse> listResourceProfiles(
             ListResourceProfilesRequest request,
@@ -1696,12 +1750,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Returns a single ResourceTypeCollection resource, containing a list of resource types,
      * identified by parameters specified.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResourceTypesResponse> listResourceTypes(
             ListResourceTypesRequest request,
@@ -1710,15 +1765,14 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the list of vulnerabilities associated with the resourceId where resource is an
-     * instance
+     * Returns the list of vulnerabilities associated with the resourceId where resource is an instance
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResourceVulnerabilitiesResponse> listResourceVulnerabilities(
             ListResourceVulnerabilitiesRequest request,
@@ -1728,28 +1782,28 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns a list of all resources in a compartment
-     *
-     * <p>The ListResources operation returns only the resources in `compartmentId` passed. The list
-     * does not include any subcompartments of the compartmentId passed.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * <p>
+     * The ListResources operation returns only the resources in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListResources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListResources on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResourcesResponse> listResources(
             ListResourcesRequest request,
@@ -1760,12 +1814,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Returns a list of responder activities for a problem, identified by problemId, in a
      * ResponderActivityCollection resource, with a page of ResponderActivitySummary resources.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResponderActivitiesResponse> listResponderActivities(
             ListResponderActivitiesRequest request,
@@ -1774,15 +1829,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of responder executions. A responder execution is an entity that tracks the
-     * collective execution of multiple responder rule executions for a given problem.
+     * Returns a list of responder executions. A responder execution is an entity that tracks
+     * the collective execution of multiple responder rule executions for a given problem.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResponderExecutionsResponse> listResponderExecutions(
             ListResponderExecutionsRequest request,
@@ -1792,16 +1848,16 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns a list of responder rules (ResponderRule resources in a
-     * responderRecipeResponderRuleCollection resource, with page of ResponderRuleSummary
-     * resources), for a responder recipe (ResponderRecipe resource), identified by
-     * responderRecipeId.
+     * responderRecipeResponderRuleCollection resource, with page of ResponderRuleSummary resources),
+     * for a responder recipe (ResponderRecipe resource), identified by responderRecipeId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResponderRecipeResponderRulesResponse>
             listResponderRecipeResponderRules(
@@ -1812,30 +1868,29 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary
-     * resources) of all responder recipes (RespponderRecipe resources) in a compartment, identified
-     * by compartmentId. The ListResponderRecipe operation returns only the targets in
-     * `compartmentId` passed. The list does not include any subcompartments of the compartmentId
-     * passed.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+     * of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
+     * The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListResponderRecipe on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListResponderRecipe on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResponderRecipesResponse> listResponderRecipes(
             ListResponderRecipesRequest request,
@@ -1844,16 +1899,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of responder rules for the ResponderRecipe resource identified by responderId.
-     * The list is contained in a ResponderRuleCollection resource with a page of
-     * ResponderRuleSummary resources.
+     * Returns a list of responder rules for the ResponderRecipe resource
+     * identified by responderId. The list is contained in a ResponderRuleCollection
+     * resource with a page of ResponderRuleSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListResponderRulesResponse> listResponderRules(
             ListResponderRulesRequest request,
@@ -1864,12 +1920,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of saved queries run in a tenancy.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSavedQueriesResponse> listSavedQueries(
             ListSavedQueriesRequest request,
@@ -1877,15 +1934,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of security zone policies (SecurityPolicySummary resources), identified by
-     * compartmentId.
+     * Returns a list of security zone policies (SecurityPolicySummary resources),
+     * identified by compartmentId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSecurityPoliciesResponse> listSecurityPolicies(
             ListSecurityPoliciesRequest request,
@@ -1894,15 +1952,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a compartment,
-     * identified by compartmentId.
+     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+     * compartment, identified by compartmentId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSecurityRecipesResponse> listSecurityRecipes(
             ListSecurityRecipesRequest request,
@@ -1914,12 +1973,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Returns a list of security zones (SecurityZone resources) in a compartment identified by
      * compartmentId. List is contained in a page of SecurityZoneSummary resources.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSecurityZonesResponse> listSecurityZones(
             ListSecurityZonesRequest request,
@@ -1928,15 +1988,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns sighting endpoints details in a SightingEndpointsCollection resource with a page of
-     * SightingEndpointSummary resources.
+     * Returns sighting endpoints details in a
+     * SightingEndpointsCollection resource
+     * with a page of SightingEndpointSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSightingEndpointsResponse> listSightingEndpoints(
             ListSightingEndpointsRequest request,
@@ -1946,15 +2008,15 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns a list of impacted resources for a sighting, identified by sightingId, in a
-     * SightingImpactedResourceCollection resource with a page of SightingImpactedResourceSummary
-     * resources.
+     * SightingImpactedResourceCollection resource with a page of SightingImpactedResourceSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSightingImpactedResourcesResponse>
             listSightingImpactedResources(
@@ -1965,27 +2027,27 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * For the parameters passed, returns a list of sightings (SightingCollection resource) with a
-     * page of SightingSummary resources.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * For the parameters passed, returns a list of sightings
+     * (SightingCollection resource) with a page of SightingSummary resources.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSightings on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListSightings on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSightingsResponse> listSightings(
             ListSightingsRequest request,
@@ -1997,10 +2059,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTacticsResponse> listTactics(
             ListTacticsRequest request,
@@ -2009,12 +2071,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of DetectorRule associated with DetectorRecipe within a Target.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTargetDetectorRecipeDetectorRulesResponse>
             listTargetDetectorRecipeDetectorRules(
@@ -2025,16 +2088,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all target detector recipes (TargetDetectorRecipe resources) associated
-     * with a target (Target resource), identified by targetId. The list is contained in a
-     * TargetDetectorRecipeCollection resource with page of TargetDetectorRecipeSummary resources.
+     * Returns a list of all target detector recipes (TargetDetectorRecipe resources)
+     * associated with a target (Target resource), identified by targetId. The list is contained
+     * in a TargetDetectorRecipeCollection resource with page of TargetDetectorRecipeSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTargetDetectorRecipesResponse> listTargetDetectorRecipes(
             ListTargetDetectorRecipesRequest request,
@@ -2043,17 +2107,18 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of responder rules (ResponderRule resources) associated with a responder
-     * recipe (ResponderRecipe resource) attached to a Target. List is returned in a
-     * TargetResponderRecipeResponderRuleCollection resource with page of
-     * TargetResponderRecipeResponderRuleSummary resources.
+     * Returns a list of responder rules (ResponderRule resources) associated with a
+     * responder recipe (ResponderRecipe resource) attached to a Target.
+     * List is returned in a TargetResponderRecipeResponderRuleCollection resource
+     * with page of TargetResponderRecipeResponderRuleSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTargetResponderRecipeResponderRulesResponse>
             listTargetResponderRecipeResponderRules(
@@ -2065,16 +2130,16 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns a list of summary information for all responder recipes
-     * (TargetResponderRecipeCollection resource, with a page of TargetResponderRecipeSummary
-     * resources) attached to a target identified by targetId, located in a compartment identified
-     * by compartmentId.
+     * (TargetResponderRecipeCollection resource, with a page of TargetResponderRecipeSummary resources)
+     * attached to a target identified by targetId, located in a compartment identified by compartmentId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTargetResponderRecipesResponse> listTargetResponderRecipes(
             ListTargetResponderRecipesRequest request,
@@ -2083,29 +2148,29 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of targets (TargetCollection resource with page of TargetSummary resources)
-     * for the target identified by compartmentId. By default, only the target associated with the
-     * compartment is returned. Setting compartmentIdInSubtree to true returns the entire hierarchy
-     * of targets in subcompartments.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Returns a list of targets (TargetCollection resource with page of TargetSummary
+     * resources) for the target identified by compartmentId. By default, only the target
+     * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+     * returns the entire hierarchy of targets in subcompartments.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all targets in compartments and subcompartments in the
-     * tenancy (root compartment), set the parameter `compartmentIdInSubtree` to true and
-     * `accessLevel` to ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTargetsResponse> listTargets(
             ListTargetsRequest request,
@@ -2114,12 +2179,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of techniques associated with detector rules.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListTechniquesResponse> listTechniques(
             ListTechniquesRequest request,
@@ -2129,12 +2195,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns a list of WLP agents in a compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWlpAgentsResponse> listWlpAgents(
             ListWlpAgentsRequest request,
@@ -2142,14 +2209,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of errors for a work request identified by workRequestId.
+     * Returns a list of errors for a work request
+     * identified by workRequestId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
@@ -2158,15 +2227,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a paginated list (WorkRequestLogEntryCollection resource) of log entries for a
-     * request, identified by workRequestId.
+     * Returns a paginated list (WorkRequestLogEntryCollection resource)
+     * of log entries for a request, identified by workRequestId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
             ListWorkRequestLogsRequest request,
@@ -2175,15 +2245,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of work requests (WorkRequestSummaryCollection resource), in a compartment
-     * identified by compartmentId.
+     * Returns a list of work requests (WorkRequestSummaryCollection resource),
+     * in a compartment identified by compartmentId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
@@ -2191,18 +2262,18 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes a compartment from a security zone (SecurityZone resource), identified by
-     * securityZoneId. Pass compartmentId of compartment to remove through a
-     * RemoveCompartmentDetails resource. When you remove a subcompartment from a security zone, it
-     * no longer enforces security zone policies on the resources in the subcompartment. You can't
-     * remove the primary compartment that was used to create the security zone.
+     * Removes a compartment from a security zone (SecurityZone resource), identified by securityZoneId.
+     * Pass compartmentId of compartment to remove through a RemoveCompartmentDetails resource. When you remove a
+     * subcompartment from a security zone, it no longer enforces security zone policies on the resources in the
+     * subcompartment. You can't remove the primary compartment that was used to create the security zone.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RemoveCompartmentResponse> removeCompartment(
             RemoveCompartmentRequest request,
@@ -2211,15 +2282,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a page of RiskScoreAggregation resources for a compartment, identified by
-     * compartmentId.
+     * Returns a page of RiskScoreAggregation resources for a compartment,
+     * identified by compartmentId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestRiskScoresResponse> requestRiskScores(
             RequestRiskScoresRequest request,
@@ -2228,15 +2300,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a page of SecurityScoreTrendAggregation resources. These measure the number of
-     * resources examined across all regions and compare it with the number of problems detected.
+     * Returns a page of SecurityScoreTrendAggregation resources. These measure the number
+     * of resources examined across all regions and compare it with the number of problems detected.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSecurityScoreSummarizedTrendResponse>
             requestSecurityScoreSummarizedTrend(
@@ -2247,15 +2320,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a page of SecurityScoreAggregation resources. These measure the number of resources
-     * examined across all regions and compare it with the number of problems detected.
+     * Returns a page of SecurityScoreAggregation resources. These measure the number
+     * of resources examined across all regions and compare it with the number of problems detected.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSecurityScoresResponse> requestSecurityScores(
             RequestSecurityScoresRequest request,
@@ -2264,30 +2338,29 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the summary of problems generated by OCI Activity Detector rules, identified by
-     * parameters specified.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Returns the summary of problems generated by OCI Activity Detector rules, identified by parameters specified.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * <p>
+     * The compartmentId to be passed with `accessLevel` and `compartmentIdInSubtree` params has to be the root
+     * compartment id (tenant-id) only.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
-     *
-     * <p>The compartmentId to be passed with `accessLevel` and `compartmentIdInSubtree` params has
-     * to be the root compartment id (tenant-id) only.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedActivityProblemsResponse>
             requestSummarizedActivityProblems(
@@ -2299,25 +2372,25 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns the number of problems matching the key-value pairs in dimensionMap.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedProblemsResponse> requestSummarizedProblems(
             RequestSummarizedProblemsRequest request,
@@ -2328,27 +2401,24 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * Returns the number of responder executions, identified by parameters specified, in a page of
      * ResponderExecutionAggregation resources.
+     * <p>
+     * Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions,
+     * directly or indirectly (permissions can be on a resource in a subcompartment). \u201CNot Authorized\u201D is returned
+     * if user doesn't have access to at least one of the child compartments. When accessLevel is set to RESTRICTED,
+     * permissions are checked and no partial results are displayed. This is valid only when compartmentIdInSubtree is set to true.
+     * <p>
+     * Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions, directly or
+     * indirectly (permissions can be on a resource in a subcompartment). \u201CNot Authorized\u201D is returned if user doesn't have
+     * access to at least one of the child compartments. When accessLevel is set to RESTRICTED, permissions are checked
+     * and no partial results are displayed. This is valid only when compartmentIdInSubtree is set to true.
      *
-     * <p>Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has
-     * INSPECT permissions, directly or indirectly (permissions can be on a resource in a
-     * subcompartment). \u201CNot Authorized\u201D is returned if user doesn't have access to at
-     * least one of the child compartments. When accessLevel is set to RESTRICTED, permissions are
-     * checked and no partial results are displayed. This is valid only when compartmentIdInSubtree
-     * is set to true.
-     *
-     * <p>Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has
-     * INSPECT permissions, directly or indirectly (permissions can be on a resource in a
-     * subcompartment). \u201CNot Authorized\u201D is returned if user doesn't have access to at
-     * least one of the child compartments. When accessLevel is set to RESTRICTED, permissions are
-     * checked and no partial results are displayed. This is valid only when compartmentIdInSubtree
-     * is set to true.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedResponderExecutionsResponse>
             requestSummarizedResponderExecutions(
@@ -2361,12 +2431,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * DEPRECATED
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedRiskScoresResponse> requestSummarizedRiskScores(
             RequestSummarizedRiskScoresRequest request,
@@ -2377,12 +2448,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * DEPRECATED
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedSecurityScoresResponse>
             requestSummarizedSecurityScores(
@@ -2397,12 +2469,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * (ResourceProfileRiskScoreAggregationSummaryCollection resource with a page of
      * ResourceProfileRiskScoreAggregationSummary resources) for a specified compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedTopTrendResourceProfileRiskScoresResponse>
             requestSummarizedTopTrendResourceProfileRiskScores(
@@ -2413,28 +2486,26 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a ProblemTrendAggregationCollection resource for a compartment, identified by
-     * compartmentId, for the specified time period. The ProblemTrendAggregationCollection resource
-     * contains a list of ProblemTrendAggregation resources.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Returns a ProblemTrendAggregationCollection resource for a compartment, identified by compartmentId, for the specified time period. The ProblemTrendAggregationCollection resource contains a list of ProblemTrendAggregation resources.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedTrendProblemsResponse>
             requestSummarizedTrendProblems(
@@ -2445,16 +2516,17 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a summary of risk score trends in a ResourceRiskScoreAggregationCollection resource,
-     * with a page of ResourceRiskScoreAggregation resources, filtered by parameters that you
-     * specify in a RequestSummarizedTrendResourceRiskScoresDetailsresource.
+     * Returns a summary of risk score trends in a  ResourceRiskScoreAggregationCollection resource,
+     * with a page of ResourceRiskScoreAggregation resources, filtered by parameters that you specify
+     * in a RequestSummarizedTrendResourceRiskScoresDetailsresource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedTrendResourceRiskScoresResponse>
             requestSummarizedTrendResourceRiskScores(
@@ -2466,25 +2538,25 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Returns the number of remediations performed by Responders, for a given time period.
-     *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedTrendResponderExecutionsResponse>
             requestSummarizedTrendResponderExecutions(
@@ -2497,12 +2569,13 @@ public interface CloudGuardAsync extends AutoCloseable {
     /**
      * DEPRECATED
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RequestSummarizedTrendSecurityScoresResponse>
             requestSummarizedTrendSecurityScores(
@@ -2517,10 +2590,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SkipBulkResponderExecutionResponse> skipBulkResponderExecution(
             SkipBulkResponderExecutionRequest request,
@@ -2529,15 +2602,14 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Skips the execution of the responder execution. When provided, If-Match is checked against
-     * etag values of the resource.
+     * Skips the execution of the responder execution. When provided, If-Match is checked against etag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SkipResponderExecutionResponse> skipResponderExecution(
             SkipResponderExecutionRequest request,
@@ -2547,15 +2619,15 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Sends the problem identified by problemId to the responder engine, to be processed by rule
-     * that\u2019s identified by responderRuleId, in the TriggerResponderDetails resource
-     * that\u2019s passed.
+     * that\u2019s identified by responderRuleId, in the TriggerResponderDetails resource that\u2019s passed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<TriggerResponderResponse> triggerResponder(
             TriggerResponderRequest request,
@@ -2563,16 +2635,15 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Changes the status for all problems listed in the problemIds array, passed through the
-     * UpdateBulkProblemStatusDetails resource, from the current status to the status set in
-     * UpdateBulkProblemStatusDetails.
+     * Changes the status for all problems listed in the problemIds array, passed through the UpdateBulkProblemStatusDetails resource, from the current status to the status set in UpdateBulkProblemStatusDetails.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateBulkProblemStatusResponse> updateBulkProblemStatus(
             UpdateBulkProblemStatusRequest request,
@@ -2584,12 +2655,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
      * The reporting region cannot be updated once created.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateConfigurationResponse> updateConfiguration(
             UpdateConfigurationRequest request,
@@ -2602,10 +2674,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDataMaskRuleResponse> updateDataMaskRule(
             UpdateDataMaskRuleRequest request,
@@ -2614,15 +2686,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a data source (DataSource resource) identified by dataSourceId, using values passed
-     * in an UpdateDataSourceDetails resource.
+     * Updates a data source (DataSource resource) identified by dataSourceId,
+     * using values passed in an UpdateDataSourceDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDataSourceResponse> updateDataSource(
             UpdateDataSourceRequest request,
@@ -2634,10 +2707,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDetectorRecipeResponse> updateDetectorRecipe(
             UpdateDetectorRecipeRequest request,
@@ -2650,10 +2723,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDetectorRecipeDetectorRuleResponse>
             updateDetectorRecipeDetectorRule(
@@ -2668,10 +2741,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateManagedListResponse> updateManagedList(
             UpdateManagedListRequest request,
@@ -2680,15 +2753,15 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Changes the current status of the problem, identified by problemId, to the status specified
-     * in the UpdateProblemStatusDetails resource that you pass.
+     * Changes the current status of the problem, identified by problemId, to the status specified in the UpdateProblemStatusDetails resource that you pass.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateProblemStatusResponse> updateProblemStatus(
             UpdateProblemStatusRequest request,
@@ -2697,15 +2770,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a responder recipe (ResponderRecipe resource) identified by responderRecipeId, passed
-     * in an UpdateResponderRecipeDetails resource.
+     * Updates a responder recipe (ResponderRecipe resource) identified by
+     * responderRecipeId, passed in an UpdateResponderRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateResponderRecipeResponse> updateResponderRecipe(
             UpdateResponderRecipeRequest request,
@@ -2714,15 +2788,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a responder rule (ResponderRule resource) identified by responderRuleId, passed in a
-     * UpdateResponderRecipeResponderRuleDetails resource.
+     * Updates a responder rule (ResponderRule resource) identified by responderRuleId,
+     * passed in a UpdateResponderRecipeResponderRuleDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateResponderRecipeResponderRuleResponse>
             updateResponderRecipeResponderRule(
@@ -2737,10 +2812,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSavedQueryResponse> updateSavedQuery(
             UpdateSavedQueryRequest request,
@@ -2751,12 +2826,13 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Updates a security zone recipe (SecurityRecipe resource), identified by securityRecipeId,
      * using parameters passed in an UpdateSecurityRecipeDetails resource.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSecurityRecipeResponse> updateSecurityRecipe(
             UpdateSecurityRecipeRequest request,
@@ -2765,15 +2841,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a security zone (SecurityZone resource) identified by securityZoneId. Pass parameters
-     * through an UpdateSecurityZoneDetails resource.
+     * Updates a security zone (SecurityZone resource) identified by securityZoneId.
+     * Pass parameters through an UpdateSecurityZoneDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSecurityZoneResponse> updateSecurityZone(
             UpdateSecurityZoneRequest request,
@@ -2782,15 +2859,16 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a target (Target resource) identified by targetId, using parameters passed in an
-     * UpdateTargetDetails resource.
+     * Updates a target (Target resource) identified by targetId, using parameters
+     * passed in an UpdateTargetDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTargetResponse> updateTarget(
             UpdateTargetRequest request,
@@ -2799,15 +2877,15 @@ public interface CloudGuardAsync extends AutoCloseable {
 
     /**
      * Updates a target detector recipe (TargtetDetectorRecipe resource) identified by
-     * targetDetectorRecipeId, using parameters passed in an UpdateTargetDetectorRecipeDetails
-     * resource.
+     * targetDetectorRecipeId, using parameters passed in an UpdateTargetDetectorRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTargetDetectorRecipeResponse> updateTargetDetectorRecipe(
             UpdateTargetDetectorRecipeRequest request,
@@ -2820,10 +2898,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTargetDetectorRecipeDetectorRuleResponse>
             updateTargetDetectorRecipeDetectorRule(
@@ -2834,16 +2912,18 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the target responder recipe (TargetResponderRecipe resource) identified by
-     * targetResponderRecipeId, attached to a target identified by targetId. Pass parameters for the
-     * update through an UpdateTargetResponderRecipeDetails resource.
+     * Updates the target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, attached to a target identified
+     * by targetId. Pass parameters for the update through an
+     * UpdateTargetResponderRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTargetResponderRecipeResponse> updateTargetResponderRecipe(
             UpdateTargetResponderRecipeRequest request,
@@ -2852,17 +2932,19 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a responder rule (ResponderRule resource) identified by responderRuleId, for a target
-     * responder recipe (TargetResponderRecipe resource) identified by targetResponderRecipeId, for
-     * a target (Target resource) identified by targetId. Parameters for the update are passed
-     * through an UpdateTargetResponderRecipeResponderRuleDetails resource.
+     * Updates a responder rule (ResponderRule resource) identified by
+     * responderRuleId, for a target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, for a target (Target resource)
+     * identified by targetId. Parameters for the update are passed through an
+     * UpdateTargetResponderRecipeResponderRuleDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateTargetResponderRecipeResponderRuleResponse>
             updateTargetResponderRecipeResponderRule(
@@ -2877,10 +2959,10 @@ public interface CloudGuardAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateWlpAgentResponse> updateWlpAgent(
             UpdateWlpAgentRequest request,

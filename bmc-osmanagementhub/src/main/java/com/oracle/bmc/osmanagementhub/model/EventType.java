@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible event types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum EventType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible event types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum EventType {
     KernelOops("KERNEL_OOPS"),
     KernelCrash("KERNEL_CRASH"),
     ExploitAttempt("EXPLOIT_ATTEMPT"),

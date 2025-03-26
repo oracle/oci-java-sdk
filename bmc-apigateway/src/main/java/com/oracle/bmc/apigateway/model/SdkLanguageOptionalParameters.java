@@ -5,23 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * List of additional applicable parameters for any given target language. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * List of additional applicable parameters for any given target language.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SdkLanguageOptionalParameters.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SdkLanguageOptionalParameters.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SdkLanguageOptionalParameters
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "paramName",
@@ -52,7 +51,10 @@ public final class SdkLanguageOptionalParameters
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the parameter. */
+        /**
+         * Name of the parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paramName")
         private String paramName;
 
@@ -61,13 +63,16 @@ public final class SdkLanguageOptionalParameters
          *
          * @param paramName the value to set
          * @return this builder
-         */
+         **/
         public Builder paramName(String paramName) {
             this.paramName = paramName;
             this.__explicitlySet__.add("paramName");
             return this;
         }
-        /** Display name of the parameter. */
+        /**
+         * Display name of the parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -76,13 +81,16 @@ public final class SdkLanguageOptionalParameters
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description for the parameter. */
+        /**
+         * Description for the parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -91,13 +99,16 @@ public final class SdkLanguageOptionalParameters
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Information on whether the parameter is required or not. */
+        /**
+         * Information on whether the parameter is required or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
@@ -106,13 +117,16 @@ public final class SdkLanguageOptionalParameters
          *
          * @param isRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
-        /** Maximum size as input value for this parameter. */
+        /**
+         * Maximum size as input value for this parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSize")
         private java.math.BigDecimal maxSize;
 
@@ -121,47 +135,53 @@ public final class SdkLanguageOptionalParameters
          *
          * @param maxSize the value to set
          * @return this builder
-         */
+         **/
         public Builder maxSize(java.math.BigDecimal maxSize) {
             this.maxSize = maxSize;
             this.__explicitlySet__.add("maxSize");
             return this;
         }
         /**
-         * The input type for this param. - Input type is ENUM when only specific list of input
-         * strings are allowed. - Input type is EMAIL when input type is an email ID. - Input type
-         * is URI when input type is an URI. - Input type is STRING in all other cases.
-         */
+         * The input type for this param.
+         * - Input type is ENUM when only specific list of input strings are allowed.
+         * - Input type is EMAIL when input type is an email ID.
+         * - Input type is URI when input type is an URI.
+         * - Input type is STRING in all other cases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputType")
         private InputType inputType;
 
         /**
-         * The input type for this param. - Input type is ENUM when only specific list of input
-         * strings are allowed. - Input type is EMAIL when input type is an email ID. - Input type
-         * is URI when input type is an URI. - Input type is STRING in all other cases.
+         * The input type for this param.
+         * - Input type is ENUM when only specific list of input strings are allowed.
+         * - Input type is EMAIL when input type is an email ID.
+         * - Input type is URI when input type is an URI.
+         * - Input type is STRING in all other cases.
          *
          * @param inputType the value to set
          * @return this builder
-         */
+         **/
         public Builder inputType(InputType inputType) {
             this.inputType = inputType;
             this.__explicitlySet__.add("inputType");
             return this;
         }
         /**
-         * List of allowed input values. Example: {@code [{"name": "name1", "description":
-         * "description1"}, ...]}
-         */
+         * List of allowed input values.
+         * Example: {@code [{"name": "name1", "description": "description1"}, ...]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<SdkLanguageOptionalParametersAllowedValue> allowedValues;
 
         /**
-         * List of allowed input values. Example: {@code [{"name": "name1", "description":
-         * "description1"}, ...]}
+         * List of allowed input values.
+         * Example: {@code [{"name": "name1", "description": "description1"}, ...]}
          *
          * @param allowedValues the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedValues(
                 java.util.List<SdkLanguageOptionalParametersAllowedValue> allowedValues) {
             this.allowedValues = allowedValues;
@@ -215,7 +235,9 @@ public final class SdkLanguageOptionalParameters
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -224,7 +246,10 @@ public final class SdkLanguageOptionalParameters
         return new Builder().copy(this);
     }
 
-    /** Name of the parameter. */
+    /**
+     * Name of the parameter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("paramName")
     private final String paramName;
 
@@ -232,12 +257,15 @@ public final class SdkLanguageOptionalParameters
      * Name of the parameter.
      *
      * @return the value
-     */
+     **/
     public String getParamName() {
         return paramName;
     }
 
-    /** Display name of the parameter. */
+    /**
+     * Display name of the parameter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -245,12 +273,15 @@ public final class SdkLanguageOptionalParameters
      * Display name of the parameter.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description for the parameter. */
+    /**
+     * Description for the parameter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -258,12 +289,15 @@ public final class SdkLanguageOptionalParameters
      * Description for the parameter.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Information on whether the parameter is required or not. */
+    /**
+     * Information on whether the parameter is required or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
@@ -271,12 +305,15 @@ public final class SdkLanguageOptionalParameters
      * Information on whether the parameter is required or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
 
-    /** Maximum size as input value for this parameter. */
+    /**
+     * Maximum size as input value for this parameter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSize")
     private final java.math.BigDecimal maxSize;
 
@@ -284,25 +321,28 @@ public final class SdkLanguageOptionalParameters
      * Maximum size as input value for this parameter.
      *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getMaxSize() {
         return maxSize;
     }
 
     /**
-     * The input type for this param. - Input type is ENUM when only specific list of input strings
-     * are allowed. - Input type is EMAIL when input type is an email ID. - Input type is URI when
-     * input type is an URI. - Input type is STRING in all other cases.
-     */
-    public enum InputType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The input type for this param.
+     * - Input type is ENUM when only specific list of input strings are allowed.
+     * - Input type is EMAIL when input type is an email ID.
+     * - Input type is URI when input type is an URI.
+     * - Input type is STRING in all other cases.
+     *
+     **/
+    public enum InputType {
         Enum("ENUM"),
         Email("EMAIL"),
         Uri("URI"),
         String("STRING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -342,37 +382,43 @@ public final class SdkLanguageOptionalParameters
         }
     };
     /**
-     * The input type for this param. - Input type is ENUM when only specific list of input strings
-     * are allowed. - Input type is EMAIL when input type is an email ID. - Input type is URI when
-     * input type is an URI. - Input type is STRING in all other cases.
-     */
+     * The input type for this param.
+     * - Input type is ENUM when only specific list of input strings are allowed.
+     * - Input type is EMAIL when input type is an email ID.
+     * - Input type is URI when input type is an URI.
+     * - Input type is STRING in all other cases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputType")
     private final InputType inputType;
 
     /**
-     * The input type for this param. - Input type is ENUM when only specific list of input strings
-     * are allowed. - Input type is EMAIL when input type is an email ID. - Input type is URI when
-     * input type is an URI. - Input type is STRING in all other cases.
+     * The input type for this param.
+     * - Input type is ENUM when only specific list of input strings are allowed.
+     * - Input type is EMAIL when input type is an email ID.
+     * - Input type is URI when input type is an URI.
+     * - Input type is STRING in all other cases.
      *
      * @return the value
-     */
+     **/
     public InputType getInputType() {
         return inputType;
     }
 
     /**
-     * List of allowed input values. Example: {@code [{"name": "name1", "description":
-     * "description1"}, ...]}
-     */
+     * List of allowed input values.
+     * Example: {@code [{"name": "name1", "description": "description1"}, ...]}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<SdkLanguageOptionalParametersAllowedValue> allowedValues;
 
     /**
-     * List of allowed input values. Example: {@code [{"name": "name1", "description":
-     * "description1"}, ...]}
+     * List of allowed input values.
+     * Example: {@code [{"name": "name1", "description": "description1"}, ...]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<SdkLanguageOptionalParametersAllowedValue> getAllowedValues() {
         return allowedValues;
     }
@@ -384,7 +430,6 @@ public final class SdkLanguageOptionalParameters
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

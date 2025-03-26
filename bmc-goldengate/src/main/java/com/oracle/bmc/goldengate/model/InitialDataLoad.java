@@ -5,23 +5,20 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Options required for the pipeline Initial Data Load. If enabled, copies existing data from source
- * to target before replication. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InitialDataLoad.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InitialDataLoad
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InitialDataLoad extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isInitialLoad", "actionOnExistingTable"})
     public InitialDataLoad(IsInitialLoad isInitialLoad, InitialLoadAction actionOnExistingTable) {
@@ -33,38 +30,36 @@ public final class InitialDataLoad
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * If ENABLED, then existing source data is also synchronized to the target when creating or
-         * updating the pipeline.
-         */
+         * If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInitialLoad")
         private IsInitialLoad isInitialLoad;
 
         /**
-         * If ENABLED, then existing source data is also synchronized to the target when creating or
-         * updating the pipeline.
+         * If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
          *
          * @param isInitialLoad the value to set
          * @return this builder
-         */
+         **/
         public Builder isInitialLoad(IsInitialLoad isInitialLoad) {
             this.isInitialLoad = isInitialLoad;
             this.__explicitlySet__.add("isInitialLoad");
             return this;
         }
         /**
-         * Action upon existing tables in target when initial Data Load is set i.e.,
-         * isInitialLoad=true.
-         */
+         * Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionOnExistingTable")
         private InitialLoadAction actionOnExistingTable;
 
         /**
-         * Action upon existing tables in target when initial Data Load is set i.e.,
-         * isInitialLoad=true.
+         * Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
          *
          * @param actionOnExistingTable the value to set
          * @return this builder
-         */
+         **/
         public Builder actionOnExistingTable(InitialLoadAction actionOnExistingTable) {
             this.actionOnExistingTable = actionOnExistingTable;
             this.__explicitlySet__.add("actionOnExistingTable");
@@ -95,7 +90,9 @@ public final class InitialDataLoad
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,16 +102,16 @@ public final class InitialDataLoad
     }
 
     /**
-     * If ENABLED, then existing source data is also synchronized to the target when creating or
-     * updating the pipeline.
-     */
-    public enum IsInitialLoad implements com.oracle.bmc.http.internal.BmcEnum {
+     * If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+     *
+     **/
+    public enum IsInitialLoad {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -154,25 +151,25 @@ public final class InitialDataLoad
         }
     };
     /**
-     * If ENABLED, then existing source data is also synchronized to the target when creating or
-     * updating the pipeline.
-     */
+     * If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInitialLoad")
     private final IsInitialLoad isInitialLoad;
 
     /**
-     * If ENABLED, then existing source data is also synchronized to the target when creating or
-     * updating the pipeline.
+     * If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
      *
      * @return the value
-     */
+     **/
     public IsInitialLoad getIsInitialLoad() {
         return isInitialLoad;
     }
 
     /**
      * Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionOnExistingTable")
     private final InitialLoadAction actionOnExistingTable;
 
@@ -180,7 +177,7 @@ public final class InitialDataLoad
      * Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
      *
      * @return the value
-     */
+     **/
     public InitialLoadAction getActionOnExistingTable() {
         return actionOnExistingTable;
     }
@@ -192,7 +189,6 @@ public final class InitialDataLoad
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -27,6 +28,7 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
     /**
      * The page token represents the page to start retrieving results. This is usually retrieved
      * from a previous list call.
+     *
      */
     private String opcNextPage;
 
@@ -40,12 +42,13 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
         return opcNextPage;
     }
 
-    /** The returned {@code TrailFileCollection} instance. */
+    /**
+     * The returned TrailFileCollection instance.
+     */
     private com.oracle.bmc.goldengate.model.TrailFileCollection trailFileCollection;
 
     /**
-     * The returned {@code TrailFileCollection} instance.
-     *
+     * The returned TrailFileCollection instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.TrailFileCollection getTrailFileCollection() {
@@ -61,7 +64,7 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private ListTrailFilesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.goldengate.model.TrailFileCollection trailFileCollection) {
@@ -71,33 +74,31 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
         this.trailFileCollection = trailFileCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListTrailFilesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,6 +111,7 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
         /**
          * The page token represents the page to start retrieving results. This is usually retrieved
          * from a previous list call.
+         *
          */
         private String opcNextPage;
 
@@ -125,12 +127,13 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code TrailFileCollection} instance. */
+        /**
+         * The returned TrailFileCollection instance.
+         */
         private com.oracle.bmc.goldengate.model.TrailFileCollection trailFileCollection;
 
         /**
-         * The returned {@code TrailFileCollection} instance.
-         *
+         * The returned TrailFileCollection instance.
          * @param trailFileCollection the value to set
          * @return this builder
          */
@@ -142,10 +145,8 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListTrailFilesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -158,10 +159,8 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListTrailFilesResponse build() {
             return new ListTrailFilesResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, trailFileCollection);
@@ -170,7 +169,6 @@ public class ListTrailFilesResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

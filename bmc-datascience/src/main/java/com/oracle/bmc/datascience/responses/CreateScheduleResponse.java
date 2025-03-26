@@ -6,7 +6,7 @@ package com.oracle.bmc.datascience.responses;
 
 import com.oracle.bmc.datascience.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * URL for the created schedule, the schedule id will be generated after this request is sent.
@@ -15,19 +15,19 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * URL for the created schedule, the schedule id will be generated after this request is sent.
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** Same as location */
+    /**
+     * Same as location
+     */
     private String contentLocation;
 
     /**
      * Same as location
-     *
      * @return the value
      */
     public String getContentLocation() {
@@ -35,14 +35,13 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -51,17 +50,14 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -71,14 +67,15 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
      *
      * @return the value
      */
@@ -86,12 +83,13 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned {@code Schedule} instance. */
+    /**
+     * The returned Schedule instance.
+     */
     private com.oracle.bmc.datascience.model.Schedule schedule;
 
     /**
-     * The returned {@code Schedule} instance.
-     *
+     * The returned Schedule instance.
      * @return the value
      */
     public com.oracle.bmc.datascience.model.Schedule getSchedule() {
@@ -110,7 +108,7 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private CreateScheduleResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String contentLocation,
             String etag,
@@ -126,34 +124,28 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
         this.schedule = schedule;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateScheduleResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * URL for the created schedule, the schedule id will be generated after this request is
-         * sent.
+         * URL for the created schedule, the schedule id will be generated after this request is sent.
          */
         private String location;
 
         /**
-         * URL for the created schedule, the schedule id will be generated after this request is
-         * sent.
-         *
+         * URL for the created schedule, the schedule id will be generated after this request is sent.
          * @param location the value to set
          * @return this builder
          */
@@ -162,12 +154,13 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** Same as location */
+        /**
+         * Same as location
+         */
         private String contentLocation;
 
         /**
          * Same as location
-         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -177,14 +170,13 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -195,17 +187,14 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-         * request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-         * request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
@@ -217,14 +206,15 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -234,12 +224,13 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code Schedule} instance. */
+        /**
+         * The returned Schedule instance.
+         */
         private com.oracle.bmc.datascience.model.Schedule schedule;
 
         /**
-         * The returned {@code Schedule} instance.
-         *
+         * The returned Schedule instance.
          * @param schedule the value to set
          * @return this builder
          */
@@ -250,10 +241,8 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateScheduleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -269,10 +258,8 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateScheduleResponse build() {
             return new CreateScheduleResponse(
                     __httpStatusCode__,
@@ -288,7 +275,6 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

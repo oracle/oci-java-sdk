@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/** The key store type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum KeyStoreTypeMySql implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The key store type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+public enum KeyStoreTypeMySql {
     ClientCertificatePem("CLIENT_CERTIFICATE_PEM"),
     ClientPrivateKeyPem("CLIENT_PRIVATE_KEY_PEM"),
     CaCertificatePem("CA_CERTIFICATE_PEM"),

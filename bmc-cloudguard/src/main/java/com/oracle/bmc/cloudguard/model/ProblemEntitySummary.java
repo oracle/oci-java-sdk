@@ -5,23 +5,21 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary information about problem entities for a data source for a problem. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Summary information about problem entities for a data source for a problem.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProblemEntitySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProblemEntitySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ProblemEntitySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProblemEntitySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "regions",
@@ -49,91 +47,97 @@ public final class ProblemEntitySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Data source problem entities region */
+        /**
+         * Data source problem entities region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
          * Data source problem entities region
-         *
          * @param regions the value to set
          * @return this builder
-         */
+         **/
         public Builder regions(java.util.List<String> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /** Data source problem entities first detected time */
+        /**
+         * Data source problem entities first detected time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
         private java.util.Date timeFirstDetected;
 
         /**
          * Data source problem entities first detected time
-         *
          * @param timeFirstDetected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFirstDetected(java.util.Date timeFirstDetected) {
             this.timeFirstDetected = timeFirstDetected;
             this.__explicitlySet__.add("timeFirstDetected");
             return this;
         }
-        /** Attached problem ID */
+        /**
+         * Attached problem ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
          * Attached problem ID
-         *
          * @param problemId the value to set
          * @return this builder
-         */
+         **/
         public Builder problemId(String problemId) {
             this.problemId = problemId;
             this.__explicitlySet__.add("problemId");
             return this;
         }
-        /** Data source problem entities last detected time */
+        /**
+         * Data source problem entities last detected time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
          * Data source problem entities last detected time
-         *
          * @param timeLastDetected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastDetected(java.util.Date timeLastDetected) {
             this.timeLastDetected = timeLastDetected;
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-        /** Log result query URL for a data source query */
+        /**
+         * Log result query URL for a data source query
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultUrl")
         private String resultUrl;
 
         /**
          * Log result query URL for a data source query
-         *
          * @param resultUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder resultUrl(String resultUrl) {
             this.resultUrl = resultUrl;
             this.__explicitlySet__.add("resultUrl");
             return this;
         }
-        /** List of entity details related to a data source */
+        /**
+         * List of entity details related to a data source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityDetails")
         private java.util.List<EntityDetails> entityDetails;
 
         /**
          * List of entity details related to a data source
-         *
          * @param entityDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder entityDetails(java.util.List<EntityDetails> entityDetails) {
             this.entityDetails = entityDetails;
             this.__explicitlySet__.add("entityDetails");
@@ -182,7 +186,9 @@ public final class ProblemEntitySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +197,86 @@ public final class ProblemEntitySummary
         return new Builder().copy(this);
     }
 
-    /** Data source problem entities region */
+    /**
+     * Data source problem entities region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
      * Data source problem entities region
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRegions() {
         return regions;
     }
 
-    /** Data source problem entities first detected time */
+    /**
+     * Data source problem entities first detected time
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
     private final java.util.Date timeFirstDetected;
 
     /**
      * Data source problem entities first detected time
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFirstDetected() {
         return timeFirstDetected;
     }
 
-    /** Attached problem ID */
+    /**
+     * Attached problem ID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
      * Attached problem ID
-     *
      * @return the value
-     */
+     **/
     public String getProblemId() {
         return problemId;
     }
 
-    /** Data source problem entities last detected time */
+    /**
+     * Data source problem entities last detected time
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
      * Data source problem entities last detected time
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastDetected() {
         return timeLastDetected;
     }
 
-    /** Log result query URL for a data source query */
+    /**
+     * Log result query URL for a data source query
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultUrl")
     private final String resultUrl;
 
     /**
      * Log result query URL for a data source query
-     *
      * @return the value
-     */
+     **/
     public String getResultUrl() {
         return resultUrl;
     }
 
-    /** List of entity details related to a data source */
+    /**
+     * List of entity details related to a data source
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityDetails")
     private final java.util.List<EntityDetails> entityDetails;
 
     /**
      * List of entity details related to a data source
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityDetails> getEntityDetails() {
         return entityDetails;
     }
@@ -276,7 +288,6 @@ public final class ProblemEntitySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

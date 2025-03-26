@@ -5,21 +5,19 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * List of subcomponents under a subcategory. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+ * List of subcomponents under a subcategory.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SubComponents.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SubComponents extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SubComponents extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subCategory", "schema"})
     public SubComponents(java.util.Map<String, String> subCategory, String schema) {
@@ -30,31 +28,33 @@ public final class SubComponents extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Subcategory list. */
+        /**
+         * Subcategory list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subCategory")
         private java.util.Map<String, String> subCategory;
 
         /**
          * Subcategory list.
-         *
          * @param subCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder subCategory(java.util.Map<String, String> subCategory) {
             this.subCategory = subCategory;
             this.__explicitlySet__.add("subCategory");
             return this;
         }
-        /** Schema of a subcategory. */
+        /**
+         * Schema of a subcategory.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private String schema;
 
         /**
          * Schema of a subcategory.
-         *
          * @param schema the value to set
          * @return this builder
-         */
+         **/
         public Builder schema(String schema) {
             this.schema = schema;
             this.__explicitlySet__.add("schema");
@@ -84,7 +84,9 @@ public final class SubComponents extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,28 +95,30 @@ public final class SubComponents extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Subcategory list. */
+    /**
+     * Subcategory list.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subCategory")
     private final java.util.Map<String, String> subCategory;
 
     /**
      * Subcategory list.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getSubCategory() {
         return subCategory;
     }
 
-    /** Schema of a subcategory. */
+    /**
+     * Schema of a subcategory.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     private final String schema;
 
     /**
      * Schema of a subcategory.
-     *
      * @return the value
-     */
+     **/
     public String getSchema() {
         return schema;
     }
@@ -126,7 +130,6 @@ public final class SubComponents extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,11 +5,11 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The action to take when a DDL error occurs during replication. Active only if Replicate schema
- * changes (canReplicateSchemaChange=true) is selected.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum ReplicateDdlErrorAction implements com.oracle.bmc.http.internal.BmcEnum {
+ * The action to take when a DDL error occurs during replication. Active only if Replicate schema changes (canReplicateSchemaChange=true) is selected.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum ReplicateDdlErrorAction {
     Terminate("TERMINATE"),
     Discard("DISCARD"),
     Ignore("IGNORE"),

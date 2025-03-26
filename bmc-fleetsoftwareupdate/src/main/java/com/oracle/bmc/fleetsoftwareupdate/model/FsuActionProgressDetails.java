@@ -5,24 +5,23 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Progress of the Action in execution. If the Exadata Fleet Update Action has not started yet, this
- * will be omitted. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Progress of the Action in execution. If the Exadata Fleet Update Action has not started yet, this will be omitted.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FsuActionProgressDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FsuActionProgressDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FsuActionProgressDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inProgressTargets",
@@ -47,7 +46,10 @@ public final class FsuActionProgressDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Number of targets with jobs in progress. */
+        /**
+         * Number of targets with jobs in progress.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inProgressTargets")
         private Integer inProgressTargets;
 
@@ -56,13 +58,16 @@ public final class FsuActionProgressDetails
          *
          * @param inProgressTargets the value to set
          * @return this builder
-         */
+         **/
         public Builder inProgressTargets(Integer inProgressTargets) {
             this.inProgressTargets = inProgressTargets;
             this.__explicitlySet__.add("inProgressTargets");
             return this;
         }
-        /** Number of targets with completed jobs. */
+        /**
+         * Number of targets with completed jobs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("completedTargets")
         private Integer completedTargets;
 
@@ -71,13 +76,16 @@ public final class FsuActionProgressDetails
          *
          * @param completedTargets the value to set
          * @return this builder
-         */
+         **/
         public Builder completedTargets(Integer completedTargets) {
             this.completedTargets = completedTargets;
             this.__explicitlySet__.add("completedTargets");
             return this;
         }
-        /** Number of targets with failed jobs. */
+        /**
+         * Number of targets with failed jobs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedTargets")
         private Integer failedTargets;
 
@@ -86,13 +94,16 @@ public final class FsuActionProgressDetails
          *
          * @param failedTargets the value to set
          * @return this builder
-         */
+         **/
         public Builder failedTargets(Integer failedTargets) {
             this.failedTargets = failedTargets;
             this.__explicitlySet__.add("failedTargets");
             return this;
         }
-        /** Number of targets with jobs waiting for batch to execute or for user to resume. */
+        /**
+         * Number of targets with jobs waiting for batch to execute or for user to resume.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waitingTargets")
         private Integer waitingTargets;
 
@@ -101,13 +112,16 @@ public final class FsuActionProgressDetails
          *
          * @param waitingTargets the value to set
          * @return this builder
-         */
+         **/
         public Builder waitingTargets(Integer waitingTargets) {
             this.waitingTargets = waitingTargets;
             this.__explicitlySet__.add("waitingTargets");
             return this;
         }
-        /** Total number of targets impacted by Exadata Fleet Update Action. */
+        /**
+         * Total number of targets impacted by Exadata Fleet Update Action.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalTargets")
         private Integer totalTargets;
 
@@ -116,7 +130,7 @@ public final class FsuActionProgressDetails
          *
          * @param totalTargets the value to set
          * @return this builder
-         */
+         **/
         public Builder totalTargets(Integer totalTargets) {
             this.totalTargets = totalTargets;
             this.__explicitlySet__.add("totalTargets");
@@ -161,7 +175,9 @@ public final class FsuActionProgressDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -170,7 +186,10 @@ public final class FsuActionProgressDetails
         return new Builder().copy(this);
     }
 
-    /** Number of targets with jobs in progress. */
+    /**
+     * Number of targets with jobs in progress.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inProgressTargets")
     private final Integer inProgressTargets;
 
@@ -178,12 +197,15 @@ public final class FsuActionProgressDetails
      * Number of targets with jobs in progress.
      *
      * @return the value
-     */
+     **/
     public Integer getInProgressTargets() {
         return inProgressTargets;
     }
 
-    /** Number of targets with completed jobs. */
+    /**
+     * Number of targets with completed jobs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("completedTargets")
     private final Integer completedTargets;
 
@@ -191,12 +213,15 @@ public final class FsuActionProgressDetails
      * Number of targets with completed jobs.
      *
      * @return the value
-     */
+     **/
     public Integer getCompletedTargets() {
         return completedTargets;
     }
 
-    /** Number of targets with failed jobs. */
+    /**
+     * Number of targets with failed jobs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedTargets")
     private final Integer failedTargets;
 
@@ -204,12 +229,15 @@ public final class FsuActionProgressDetails
      * Number of targets with failed jobs.
      *
      * @return the value
-     */
+     **/
     public Integer getFailedTargets() {
         return failedTargets;
     }
 
-    /** Number of targets with jobs waiting for batch to execute or for user to resume. */
+    /**
+     * Number of targets with jobs waiting for batch to execute or for user to resume.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("waitingTargets")
     private final Integer waitingTargets;
 
@@ -217,12 +245,15 @@ public final class FsuActionProgressDetails
      * Number of targets with jobs waiting for batch to execute or for user to resume.
      *
      * @return the value
-     */
+     **/
     public Integer getWaitingTargets() {
         return waitingTargets;
     }
 
-    /** Total number of targets impacted by Exadata Fleet Update Action. */
+    /**
+     * Total number of targets impacted by Exadata Fleet Update Action.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalTargets")
     private final Integer totalTargets;
 
@@ -230,7 +261,7 @@ public final class FsuActionProgressDetails
      * Total number of targets impacted by Exadata Fleet Update Action.
      *
      * @return the value
-     */
+     **/
     public Integer getTotalTargets() {
         return totalTargets;
     }
@@ -242,7 +273,6 @@ public final class FsuActionProgressDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

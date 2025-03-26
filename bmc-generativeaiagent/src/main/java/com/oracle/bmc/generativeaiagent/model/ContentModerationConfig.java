@@ -5,25 +5,22 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * The configuration details about whether to apply the content moderation feature to input and
- * output. Content moderation removes toxic and biased content from responses. It is recommended to
- * use content moderation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ContentModerationConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ContentModerationConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ContentModerationConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shouldEnableOnInput", "shouldEnableOnOutput"})
     public ContentModerationConfig(Boolean shouldEnableOnInput, Boolean shouldEnableOnOutput) {
@@ -34,31 +31,33 @@ public final class ContentModerationConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A flag to enable or disable content moderation on input. */
+        /**
+         * A flag to enable or disable content moderation on input.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableOnInput")
         private Boolean shouldEnableOnInput;
 
         /**
          * A flag to enable or disable content moderation on input.
-         *
          * @param shouldEnableOnInput the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldEnableOnInput(Boolean shouldEnableOnInput) {
             this.shouldEnableOnInput = shouldEnableOnInput;
             this.__explicitlySet__.add("shouldEnableOnInput");
             return this;
         }
-        /** A flag to enable or disable content moderation on output. */
+        /**
+         * A flag to enable or disable content moderation on output.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableOnOutput")
         private Boolean shouldEnableOnOutput;
 
         /**
          * A flag to enable or disable content moderation on output.
-         *
          * @param shouldEnableOnOutput the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldEnableOnOutput(Boolean shouldEnableOnOutput) {
             this.shouldEnableOnOutput = shouldEnableOnOutput;
             this.__explicitlySet__.add("shouldEnableOnOutput");
@@ -90,7 +89,9 @@ public final class ContentModerationConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,28 +100,30 @@ public final class ContentModerationConfig
         return new Builder().copy(this);
     }
 
-    /** A flag to enable or disable content moderation on input. */
+    /**
+     * A flag to enable or disable content moderation on input.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableOnInput")
     private final Boolean shouldEnableOnInput;
 
     /**
      * A flag to enable or disable content moderation on input.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldEnableOnInput() {
         return shouldEnableOnInput;
     }
 
-    /** A flag to enable or disable content moderation on output. */
+    /**
+     * A flag to enable or disable content moderation on output.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableOnOutput")
     private final Boolean shouldEnableOnOutput;
 
     /**
      * A flag to enable or disable content moderation on output.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldEnableOnOutput() {
         return shouldEnableOnOutput;
     }
@@ -132,7 +135,6 @@ public final class ContentModerationConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

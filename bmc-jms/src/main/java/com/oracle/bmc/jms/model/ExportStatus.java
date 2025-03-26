@@ -5,21 +5,19 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Attributes of fleet's export status. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Attributes of fleet's export status.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExportStatus extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExportStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fleetId", "timeLastRun", "timeNextRun", "latestRunStatus"})
     public ExportStatus(
@@ -37,55 +35,59 @@ public final class ExportStatus extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * fleet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
          *
          * @param fleetId the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-        /** The date and time of the last export run. */
+        /**
+         * The date and time of the last export run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastRun")
         private java.util.Date timeLastRun;
 
         /**
          * The date and time of the last export run.
-         *
          * @param timeLastRun the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastRun(java.util.Date timeLastRun) {
             this.timeLastRun = timeLastRun;
             this.__explicitlySet__.add("timeLastRun");
             return this;
         }
-        /** The date and time of the next export run. */
+        /**
+         * The date and time of the next export run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
         private java.util.Date timeNextRun;
 
         /**
          * The date and time of the next export run.
-         *
          * @param timeNextRun the value to set
          * @return this builder
-         */
+         **/
         public Builder timeNextRun(java.util.Date timeNextRun) {
             this.timeNextRun = timeNextRun;
             this.__explicitlySet__.add("timeNextRun");
             return this;
         }
-        /** The status of the latest export run. */
+        /**
+         * The status of the latest export run.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestRunStatus")
         private ExportRunStatus latestRunStatus;
 
@@ -94,7 +96,7 @@ public final class ExportStatus extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param latestRunStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder latestRunStatus(ExportRunStatus latestRunStatus) {
             this.latestRunStatus = latestRunStatus;
             this.__explicitlySet__.add("latestRunStatus");
@@ -132,7 +134,9 @@ public final class ExportStatus extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -142,49 +146,53 @@ public final class ExportStatus extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * fleet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
      *
      * @return the value
-     */
+     **/
     public String getFleetId() {
         return fleetId;
     }
 
-    /** The date and time of the last export run. */
+    /**
+     * The date and time of the last export run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastRun")
     private final java.util.Date timeLastRun;
 
     /**
      * The date and time of the last export run.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastRun() {
         return timeLastRun;
     }
 
-    /** The date and time of the next export run. */
+    /**
+     * The date and time of the next export run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
     private final java.util.Date timeNextRun;
 
     /**
      * The date and time of the next export run.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeNextRun() {
         return timeNextRun;
     }
 
-    /** The status of the latest export run. */
+    /**
+     * The status of the latest export run.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestRunStatus")
     private final ExportRunStatus latestRunStatus;
 
@@ -192,7 +200,7 @@ public final class ExportStatus extends com.oracle.bmc.http.client.internal.Expl
      * The status of the latest export run.
      *
      * @return the value
-     */
+     **/
     public ExportRunStatus getLatestRunStatus() {
         return latestRunStatus;
     }
@@ -204,7 +212,6 @@ public final class ExportStatus extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,37 +5,39 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an external database feature configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an external database feature configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "feature",
-        defaultImpl = DatabaseFeatureConfiguration.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "feature",
+    defaultImpl = DatabaseFeatureConfiguration.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DatabaseDiagnosticsAndManagementFeatureConfiguration.class,
-            name = "DIAGNOSTICS_AND_MANAGEMENT"),
+        value = DatabaseDiagnosticsAndManagementFeatureConfiguration.class,
+        name = "DIAGNOSTICS_AND_MANAGEMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DatabaseLifecycleFeatureConfiguration.class,
-            name = "DB_LIFECYCLE_MANAGEMENT"),
+        value = DatabaseLifecycleFeatureConfiguration.class,
+        name = "DB_LIFECYCLE_MANAGEMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DatabaseSqlWatchFeatureConfiguration.class,
-            name = "SQLWATCH")
+        value = DatabaseSqlWatchFeatureConfiguration.class,
+        name = "SQLWATCH"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DatabaseFeatureConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "featureStatus",
@@ -52,8 +54,11 @@ public class DatabaseFeatureConfiguration
         this.databaseConnectionDetails = databaseConnectionDetails;
     }
 
-    /** The list of statuses for Database Management features. */
-    public enum FeatureStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The list of statuses for Database Management features.
+     *
+     **/
+    public enum FeatureStatus {
         Enabled("ENABLED"),
         NotEnabled("NOT_ENABLED"),
         Unsupported("UNSUPPORTED"),
@@ -66,8 +71,8 @@ public class DatabaseFeatureConfiguration
         Disabling("DISABLING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -106,7 +111,10 @@ public class DatabaseFeatureConfiguration
             return UnknownEnumValue;
         }
     };
-    /** The list of statuses for Database Management features. */
+    /**
+     * The list of statuses for Database Management features.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("featureStatus")
     private final FeatureStatus featureStatus;
 
@@ -114,7 +122,7 @@ public class DatabaseFeatureConfiguration
      * The list of statuses for Database Management features.
      *
      * @return the value
-     */
+     **/
     public FeatureStatus getFeatureStatus() {
         return featureStatus;
     }
@@ -140,7 +148,6 @@ public class DatabaseFeatureConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

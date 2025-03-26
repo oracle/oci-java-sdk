@@ -23,19 +23,20 @@ import java.util.List;
 
 /**
  * Example to get a bucket and its statistics.
+ * <p>
+ * This example first creates a bucket in the compartment corresponding to the compartment OCID passed as the first
+ * argument to this program. The name of the bucket created is same as the second argument to the program. It also
+ * creates an object in this bucket whose name is the third argument.
+ * </p>
+ * It then illustrates how we can get a bucket and its statistics (Estimated Size and Estimated Count).
  *
- * <p>This example first creates a bucket in the compartment corresponding to the compartment OCID
- * passed as the first argument to this program. The name of the bucket created is same as the
- * second argument to the program. It also creates an object in this bucket whose name is the third
- * argument. It then illustrates how we can get a bucket and its statistics (Estimated Size and
- * Estimated Count).
  *
  * @param args Arguments to provide to the example. The following arguments are expected:
- *     <ul>
- *       <li>The first argument is the OCID of the compartment.
- *       <li>The second is the name of bucket to create and later fetch
- *       <li>The third is the name of object to create inside bucket
- *     </ul>
+ *             <ul>
+ *             <li>The first argument is the OCID of the compartment.</li>
+ *             <li>The second is the name of bucket to create and later fetch</li>
+ *             <li>The third is the name of object to create inside bucket</li>
+ *             </ul>
  */
 public class ObjectStorageGetBucketExample {
     public static void main(String[] args) throws Exception {
@@ -51,10 +52,8 @@ public class ObjectStorageGetBucketExample {
         final String bucket = args[1];
         final String object = args[2];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -62,8 +61,8 @@ public class ObjectStorageGetBucketExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage client =
-                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        ObjectStorage client = new ObjectStorageClient(provider);
+        client.setRegion(Region.US_PHOENIX_1);
 
         System.out.println("Getting the namespace.");
         GetNamespaceResponse namespaceResponse =

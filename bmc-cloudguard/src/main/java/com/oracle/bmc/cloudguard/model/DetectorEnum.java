@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible detector types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum DetectorEnum implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible detector types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum DetectorEnum {
     IaasActivityDetector("IAAS_ACTIVITY_DETECTOR"),
     IaasConfigurationDetector("IAAS_CONFIGURATION_DETECTOR"),
     IaasThreatDetector("IAAS_THREAT_DETECTOR"),

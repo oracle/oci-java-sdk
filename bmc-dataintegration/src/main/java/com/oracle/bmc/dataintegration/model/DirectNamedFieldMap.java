@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A named field map. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * A named field map.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DirectNamedFieldMap.Builder.class)
+    builder = DirectNamedFieldMap.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DirectNamedFieldMap extends FieldMap {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,31 +35,33 @@ public final class DirectNamedFieldMap extends FieldMap {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The object key. */
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The object's model version. */
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The object's model version.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -83,31 +85,33 @@ public final class DirectNamedFieldMap extends FieldMap {
             this.__explicitlySet__.add("configValues");
             return this;
         }
-        /** Deprecated - Reference to a typed object. */
+        /**
+         * Deprecated - Reference to a typed object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceTypedObject")
         private String sourceTypedObject;
 
         /**
          * Deprecated - Reference to a typed object.
-         *
          * @param sourceTypedObject the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceTypedObject(String sourceTypedObject) {
             this.sourceTypedObject = sourceTypedObject;
             this.__explicitlySet__.add("sourceTypedObject");
             return this;
         }
-        /** Deprecated - Reference to a typed object */
+        /**
+         * Deprecated - Reference to a typed object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetTypedObject")
         private String targetTypedObject;
 
         /**
          * Deprecated - Reference to a typed object
-         *
          * @param targetTypedObject the value to set
          * @return this builder
-         */
+         **/
         public Builder targetTypedObject(String targetTypedObject) {
             this.targetTypedObject = targetTypedObject;
             this.__explicitlySet__.add("targetTypedObject");
@@ -131,50 +135,49 @@ public final class DirectNamedFieldMap extends FieldMap {
             this.__explicitlySet__.add("targetScopeReference");
             return this;
         }
-        /** The source field name. */
+        /**
+         * The source field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceFieldName")
         private String sourceFieldName;
 
         /**
          * The source field name.
-         *
          * @param sourceFieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceFieldName(String sourceFieldName) {
             this.sourceFieldName = sourceFieldName;
             this.__explicitlySet__.add("sourceFieldName");
             return this;
         }
-        /** The target field name. */
+        /**
+         * The target field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetFieldName")
         private String targetFieldName;
 
         /**
          * The target field name.
-         *
          * @param targetFieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetFieldName(String targetFieldName) {
             this.targetFieldName = targetFieldName;
             this.__explicitlySet__.add("targetFieldName");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -247,7 +250,9 @@ public final class DirectNamedFieldMap extends FieldMap {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -284,28 +289,30 @@ public final class DirectNamedFieldMap extends FieldMap {
         this.objectStatus = objectStatus;
     }
 
-    /** The object key. */
+    /**
+     * The object key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The object's model version. */
+    /**
+     * The object's model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The object's model version.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -324,28 +331,30 @@ public final class DirectNamedFieldMap extends FieldMap {
         return configValues;
     }
 
-    /** Deprecated - Reference to a typed object. */
+    /**
+     * Deprecated - Reference to a typed object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypedObject")
     private final String sourceTypedObject;
 
     /**
      * Deprecated - Reference to a typed object.
-     *
      * @return the value
-     */
+     **/
     public String getSourceTypedObject() {
         return sourceTypedObject;
     }
 
-    /** Deprecated - Reference to a typed object */
+    /**
+     * Deprecated - Reference to a typed object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetTypedObject")
     private final String targetTypedObject;
 
     /**
      * Deprecated - Reference to a typed object
-     *
      * @return the value
-     */
+     **/
     public String getTargetTypedObject() {
         return targetTypedObject;
     }
@@ -364,45 +373,44 @@ public final class DirectNamedFieldMap extends FieldMap {
         return targetScopeReference;
     }
 
-    /** The source field name. */
+    /**
+     * The source field name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceFieldName")
     private final String sourceFieldName;
 
     /**
      * The source field name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceFieldName() {
         return sourceFieldName;
     }
 
-    /** The target field name. */
+    /**
+     * The target field name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetFieldName")
     private final String targetFieldName;
 
     /**
      * The target field name.
-     *
      * @return the value
-     */
+     **/
     public String getTargetFieldName() {
         return targetFieldName;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -414,7 +422,6 @@ public final class DirectNamedFieldMap extends FieldMap {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

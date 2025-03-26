@@ -5,24 +5,24 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Summary for Decryption Rule used in the firewall policy rules. A Decryption Rule is used to
- * define which traffic should be decrypted by the firewall, and how it should do so. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Summary for Decryption Rule used in the firewall policy rules.
+ * A Decryption Rule is used to define which traffic should be decrypted by the firewall, and how it should do so.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DecryptionRuleSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DecryptionRuleSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DecryptionRuleSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -50,16 +50,17 @@ public final class DecryptionRuleSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name for the decryption rule, must be unique within the policy. */
+        /**
+         * Name for the decryption rule, must be unique within the policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name for the decryption rule, must be unique within the policy.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -67,88 +68,87 @@ public final class DecryptionRuleSummary
         }
         /**
          * Action:
+         * <p>
+         * NO_DECRYPT - Matching traffic is not decrypted.
+         * * DECRYPT - Matching traffic is decrypted with the specified {@code secret} according to the specified {@code decryptionProfile}.
          *
-         * <p>NO_DECRYPT - Matching traffic is not decrypted. * DECRYPT - Matching traffic is
-         * decrypted with the specified {@code secret} according to the specified {@code
-         * decryptionProfile}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private DecryptionActionType action;
 
         /**
          * Action:
-         *
-         * <p>NO_DECRYPT - Matching traffic is not decrypted. * DECRYPT - Matching traffic is
-         * decrypted with the specified {@code secret} according to the specified {@code
-         * decryptionProfile}.
+         * <p>
+         * NO_DECRYPT - Matching traffic is not decrypted.
+         * * DECRYPT - Matching traffic is decrypted with the specified {@code secret} according to the specified {@code decryptionProfile}.
          *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(DecryptionActionType action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-        /** The name of the decryption profile to use. */
+        /**
+         * The name of the decryption profile to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("decryptionProfile")
         private String decryptionProfile;
 
         /**
          * The name of the decryption profile to use.
-         *
          * @param decryptionProfile the value to set
          * @return this builder
-         */
+         **/
         public Builder decryptionProfile(String decryptionProfile) {
             this.decryptionProfile = decryptionProfile;
             this.__explicitlySet__.add("decryptionProfile");
             return this;
         }
         /**
-         * The name of a mapped secret. Its {@code type} must match that of the specified decryption
-         * profile.
-         */
+         * The name of a mapped secret. Its {@code type} must match that of the specified decryption profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secret")
         private String secret;
 
         /**
-         * The name of a mapped secret. Its {@code type} must match that of the specified decryption
-         * profile.
-         *
+         * The name of a mapped secret. Its {@code type} must match that of the specified decryption profile.
          * @param secret the value to set
          * @return this builder
-         */
+         **/
         public Builder secret(String secret) {
             this.secret = secret;
             this.__explicitlySet__.add("secret");
             return this;
         }
-        /** The priority order in which this rule should be evaluated. */
+        /**
+         * The priority order in which this rule should be evaluated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priorityOrder")
         private Long priorityOrder;
 
         /**
          * The priority order in which this rule should be evaluated.
-         *
          * @param priorityOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder priorityOrder(Long priorityOrder) {
             this.priorityOrder = priorityOrder;
             this.__explicitlySet__.add("priorityOrder");
             return this;
         }
-        /** OCID of the Network Firewall Policy this application belongs to. */
+        /**
+         * OCID of the Network Firewall Policy this application belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
         private String parentResourceId;
 
         /**
          * OCID of the Network Firewall Policy this application belongs to.
-         *
          * @param parentResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
@@ -197,7 +197,9 @@ public final class DecryptionRuleSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -206,92 +208,94 @@ public final class DecryptionRuleSummary
         return new Builder().copy(this);
     }
 
-    /** Name for the decryption rule, must be unique within the policy. */
+    /**
+     * Name for the decryption rule, must be unique within the policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name for the decryption rule, must be unique within the policy.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * Action:
+     * <p>
+     * NO_DECRYPT - Matching traffic is not decrypted.
+     * * DECRYPT - Matching traffic is decrypted with the specified {@code secret} according to the specified {@code decryptionProfile}.
      *
-     * <p>NO_DECRYPT - Matching traffic is not decrypted. * DECRYPT - Matching traffic is decrypted
-     * with the specified {@code secret} according to the specified {@code decryptionProfile}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final DecryptionActionType action;
 
     /**
      * Action:
-     *
-     * <p>NO_DECRYPT - Matching traffic is not decrypted. * DECRYPT - Matching traffic is decrypted
-     * with the specified {@code secret} according to the specified {@code decryptionProfile}.
+     * <p>
+     * NO_DECRYPT - Matching traffic is not decrypted.
+     * * DECRYPT - Matching traffic is decrypted with the specified {@code secret} according to the specified {@code decryptionProfile}.
      *
      * @return the value
-     */
+     **/
     public DecryptionActionType getAction() {
         return action;
     }
 
-    /** The name of the decryption profile to use. */
+    /**
+     * The name of the decryption profile to use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("decryptionProfile")
     private final String decryptionProfile;
 
     /**
      * The name of the decryption profile to use.
-     *
      * @return the value
-     */
+     **/
     public String getDecryptionProfile() {
         return decryptionProfile;
     }
 
     /**
-     * The name of a mapped secret. Its {@code type} must match that of the specified decryption
-     * profile.
-     */
+     * The name of a mapped secret. Its {@code type} must match that of the specified decryption profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secret")
     private final String secret;
 
     /**
-     * The name of a mapped secret. Its {@code type} must match that of the specified decryption
-     * profile.
-     *
+     * The name of a mapped secret. Its {@code type} must match that of the specified decryption profile.
      * @return the value
-     */
+     **/
     public String getSecret() {
         return secret;
     }
 
-    /** The priority order in which this rule should be evaluated. */
+    /**
+     * The priority order in which this rule should be evaluated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("priorityOrder")
     private final Long priorityOrder;
 
     /**
      * The priority order in which this rule should be evaluated.
-     *
      * @return the value
-     */
+     **/
     public Long getPriorityOrder() {
         return priorityOrder;
     }
 
-    /** OCID of the Network Firewall Policy this application belongs to. */
+    /**
+     * OCID of the Network Firewall Policy this application belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
     private final String parentResourceId;
 
     /**
      * OCID of the Network Firewall Policy this application belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getParentResourceId() {
         return parentResourceId;
     }
@@ -303,7 +307,6 @@ public final class DecryptionRuleSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

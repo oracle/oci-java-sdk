@@ -5,23 +5,21 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Specifications for the new table. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+ * Specifications for the new table.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateTableDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateTableDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateTableDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateTableDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -52,46 +50,49 @@ public final class CreateTableDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Table name. */
+        /**
+         * Table name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Table name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Complete CREATE TABLE DDL statement. */
+        /**
+         * Complete CREATE TABLE DDL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ddlStatement")
         private String ddlStatement;
 
         /**
          * Complete CREATE TABLE DDL statement.
-         *
          * @param ddlStatement the value to set
          * @return this builder
-         */
+         **/
         public Builder ddlStatement(String ddlStatement) {
             this.ddlStatement = ddlStatement;
             this.__explicitlySet__.add("ddlStatement");
@@ -106,54 +107,61 @@ public final class CreateTableDetails
             this.__explicitlySet__.add("tableLimits");
             return this;
         }
-        /** True if table can be reclaimed after an idle period. */
+        /**
+         * True if table can be reclaimed after an idle period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
         private Boolean isAutoReclaimable;
 
         /**
          * True if table can be reclaimed after an idle period.
-         *
          * @param isAutoReclaimable the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
             this.isAutoReclaimable = isAutoReclaimable;
             this.__explicitlySet__.add("isAutoReclaimable");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -207,7 +215,9 @@ public final class CreateTableDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -216,41 +226,44 @@ public final class CreateTableDetails
         return new Builder().copy(this);
     }
 
-    /** Table name. */
+    /**
+     * Table name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Table name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Complete CREATE TABLE DDL statement. */
+    /**
+     * Complete CREATE TABLE DDL statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ddlStatement")
     private final String ddlStatement;
 
     /**
      * Complete CREATE TABLE DDL statement.
-     *
      * @return the value
-     */
+     **/
     public String getDdlStatement() {
         return ddlStatement;
     }
@@ -262,49 +275,56 @@ public final class CreateTableDetails
         return tableLimits;
     }
 
-    /** True if table can be reclaimed after an idle period. */
+    /**
+     * True if table can be reclaimed after an idle period.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
     private final Boolean isAutoReclaimable;
 
     /**
      * True if table can be reclaimed after an idle period.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoReclaimable() {
         return isAutoReclaimable;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined
+     * name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined
+     * name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and
+     * scoped to a namespace.  Example: {@code {"foo-namespace":
+     * {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and
+     * scoped to a namespace.  Example: {@code {"foo-namespace":
+     * {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -316,7 +336,6 @@ public final class CreateTableDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

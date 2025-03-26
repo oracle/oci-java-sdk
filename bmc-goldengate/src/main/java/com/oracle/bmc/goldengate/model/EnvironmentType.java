@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Specifies whether the deployment is used in a production or development/testing environment. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum EnvironmentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Specifies whether the deployment is used in a production or development/testing environment.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum EnvironmentType {
     Production("PRODUCTION"),
     DevelopmentOrTesting("DEVELOPMENT_OR_TESTING"),
 

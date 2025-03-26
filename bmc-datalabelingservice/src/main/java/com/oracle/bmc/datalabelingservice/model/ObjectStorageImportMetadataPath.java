@@ -5,68 +5,71 @@
 package com.oracle.bmc.datalabelingservice.model;
 
 /**
- * Object Storage details for import metadata path. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * Object Storage details for import metadata path.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ObjectStorageImportMetadataPath.Builder.class)
+    builder = ObjectStorageImportMetadataPath.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "sourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "sourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ObjectStorageImportMetadataPath extends ImportMetadataPath {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Bucket namespace name */
+        /**
+         * Bucket namespace name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * Bucket namespace name
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** Bucket name */
+        /**
+         * Bucket name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
         /**
          * Bucket name
-         *
          * @param bucket the value to set
          * @return this builder
-         */
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
             return this;
         }
-        /** Path for the metadata file. */
+        /**
+         * Path for the metadata file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Path for the metadata file.
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
@@ -100,7 +103,9 @@ public final class ObjectStorageImportMetadataPath extends ImportMetadataPath {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +122,44 @@ public final class ObjectStorageImportMetadataPath extends ImportMetadataPath {
         this.path = path;
     }
 
-    /** Bucket namespace name */
+    /**
+     * Bucket namespace name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * Bucket namespace name
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** Bucket name */
+    /**
+     * Bucket name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
     /**
      * Bucket name
-     *
      * @return the value
-     */
+     **/
     public String getBucket() {
         return bucket;
     }
 
-    /** Path for the metadata file. */
+    /**
+     * Path for the metadata file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Path for the metadata file.
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
@@ -163,7 +171,6 @@ public final class ObjectStorageImportMetadataPath extends ImportMetadataPath {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

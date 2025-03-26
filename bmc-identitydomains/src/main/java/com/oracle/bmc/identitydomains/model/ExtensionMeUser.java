@@ -5,22 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Oracle Identity Cloud Service self service schema extension <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Oracle Identity Cloud Service self service schema extension
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExtensionMeUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionMeUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionMeUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"currentPassword"})
     public ExtensionMeUser(String currentPassword) {
@@ -31,31 +28,36 @@ public final class ExtensionMeUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The current password is required if the user attempts to change the values of attributes
-         * that are used in recovering or verifying the user's own identity. If the current password
-         * is specified, it will be used to authenticate the user regardless of any change in these
-         * attribute values
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash - multiValued:
-         * false - mutability: writeOnly - required: false - returned: never - type: string -
-         * uniqueness: none
-         */
+         * The current password is required if the user attempts to change the values of attributes that are used in recovering or verifying the user's own identity.  If the current password is specified, it will be used to authenticate the user regardless of any change in these attribute values
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: hash
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentPassword")
         private String currentPassword;
 
         /**
-         * The current password is required if the user attempts to change the values of attributes
-         * that are used in recovering or verifying the user's own identity. If the current password
-         * is specified, it will be used to authenticate the user regardless of any change in these
-         * attribute values
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash - multiValued:
-         * false - mutability: writeOnly - required: false - returned: never - type: string -
-         * uniqueness: none
-         *
+         * The current password is required if the user attempts to change the values of attributes that are used in recovering or verifying the user's own identity.  If the current password is specified, it will be used to authenticate the user regardless of any change in these attribute values
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: hash
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         *  - uniqueness: none
          * @param currentPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder currentPassword(String currentPassword) {
             this.currentPassword = currentPassword;
             this.__explicitlySet__.add("currentPassword");
@@ -82,7 +84,9 @@ public final class ExtensionMeUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -92,28 +96,35 @@ public final class ExtensionMeUser
     }
 
     /**
-     * The current password is required if the user attempts to change the values of attributes that
-     * are used in recovering or verifying the user's own identity. If the current password is
-     * specified, it will be used to authenticate the user regardless of any change in these
-     * attribute values
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash - multiValued: false -
-     * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none
-     */
+     * The current password is required if the user attempts to change the values of attributes that are used in recovering or verifying the user's own identity.  If the current password is specified, it will be used to authenticate the user regardless of any change in these attribute values
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: hash
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentPassword")
     private final String currentPassword;
 
     /**
-     * The current password is required if the user attempts to change the values of attributes that
-     * are used in recovering or verifying the user's own identity. If the current password is
-     * specified, it will be used to authenticate the user regardless of any change in these
-     * attribute values
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash - multiValued: false -
-     * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none
-     *
+     * The current password is required if the user attempts to change the values of attributes that are used in recovering or verifying the user's own identity.  If the current password is specified, it will be used to authenticate the user regardless of any change in these attribute values
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: hash
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCurrentPassword() {
         return currentPassword;
     }
@@ -125,7 +136,6 @@ public final class ExtensionMeUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

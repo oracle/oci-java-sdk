@@ -5,21 +5,19 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Details about a node. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Details about a node.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Node.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceId",
@@ -104,257 +102,274 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the underlying Oracle Cloud Infrastructure Compute instance. */
+        /**
+         * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
-         *
          * @param instanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /** The name of the node. */
+        /**
+         * The name of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the node.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The state of the node. */
+        /**
+         * The state of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the node.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Cluster node type. */
+        /**
+         * Cluster node type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private NodeType nodeType;
 
         /**
          * Cluster node type.
-         *
          * @param nodeType the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeType(NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
             return this;
         }
-        /** Shape of the node. */
+        /**
+         * Shape of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * Shape of the node.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The list of block volumes attached to a given node. */
+        /**
+         * The list of block volumes attached to a given node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachedBlockVolumes")
         private java.util.List<VolumeAttachmentDetail> attachedBlockVolumes;
 
         /**
          * The list of block volumes attached to a given node.
-         *
          * @param attachedBlockVolumes the value to set
          * @return this builder
-         */
+         **/
         public Builder attachedBlockVolumes(
                 java.util.List<VolumeAttachmentDetail> attachedBlockVolumes) {
             this.attachedBlockVolumes = attachedBlockVolumes;
             this.__explicitlySet__.add("attachedBlockVolumes");
             return this;
         }
-        /** The OCID of the subnet in which the node is to be created. */
+        /**
+         * The OCID of the subnet in which the node is to be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The OCID of the subnet in which the node is to be created.
-         *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** IP address of the node. */
+        /**
+         * IP address of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * IP address of the node.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The fully-qualified hostname (FQDN) of the node. */
+        /**
+         * The fully-qualified hostname (FQDN) of the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * The fully-qualified hostname (FQDN) of the node.
-         *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /** The OCID of the image from which the node was created. */
+        /**
+         * The OCID of the image from which the node was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
          * The OCID of the image from which the node was created.
-         *
          * @param imageId the value to set
          * @return this builder
-         */
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-        /** The fingerprint of the SSH key used for node access. */
+        /**
+         * The fingerprint of the SSH key used for node access.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshFingerprint")
         private String sshFingerprint;
 
         /**
          * The fingerprint of the SSH key used for node access.
-         *
          * @param sshFingerprint the value to set
          * @return this builder
-         */
+         **/
         public Builder sshFingerprint(String sshFingerprint) {
             this.sshFingerprint = sshFingerprint;
             this.__explicitlySet__.add("sshFingerprint");
             return this;
         }
-        /** The name of the availability domain in which the node is running. */
+        /**
+         * The name of the availability domain in which the node is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The name of the availability domain in which the node is running.
-         *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The name of the fault domain in which the node is running. */
+        /**
+         * The name of the fault domain in which the node is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * The name of the fault domain in which the node is running.
-         *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The time the node was created, shown as an RFC 3339 formatted datetime string. */
+        /**
+         * The time the node was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the node was created, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the cluster was updated, shown as an RFC 3339 formatted datetime string. */
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The total number of OCPUs available to the node. */
+        /**
+         * The total number of OCPUs available to the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Integer ocpus;
 
         /**
          * The total number of OCPUs available to the node.
-         *
          * @param ocpus the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpus(Integer ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /** The total amount of memory available to the node, in gigabytes. */
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
         /**
          * The total amount of memory available to the node, in gigabytes.
-         *
          * @param memoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -362,133 +377,127 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
         private Integer nvmes;
 
         /**
          * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-         *
          * @param nvmes the value to set
          * @return this builder
-         */
+         **/
         public Builder nvmes(Integer nvmes) {
             this.nvmes = nvmes;
             this.__explicitlySet__.add("nvmes");
             return this;
         }
         /**
-         * The aggregate size of all local disks, in gigabytes. If the instance does not have any
-         * local disks, this field is null.
-         */
+         * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
         private Double localDisksTotalSizeInGBs;
 
         /**
-         * The aggregate size of all local disks, in gigabytes. If the instance does not have any
-         * local disks, this field is null.
-         *
+         * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
          * @param localDisksTotalSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder localDisksTotalSizeInGBs(Double localDisksTotalSizeInGBs) {
             this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
             this.__explicitlySet__.add("localDisksTotalSizeInGBs");
             return this;
         }
         /**
-         * The date and time the instance is expected to be stopped / started, in the format defined
-         * by RFC3339.
-         */
+         * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
         private java.util.Date timeMaintenanceRebootDue;
 
         /**
-         * The date and time the instance is expected to be stopped / started, in the format defined
-         * by RFC3339.
-         *
+         * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
          * @param timeMaintenanceRebootDue the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMaintenanceRebootDue(java.util.Date timeMaintenanceRebootDue) {
             this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
             this.__explicitlySet__.add("timeMaintenanceRebootDue");
             return this;
         }
-        /** BDS-assigned Operating System version for the node. */
+        /**
+         * BDS-assigned Operating System version for the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
         private String osVersion;
 
         /**
          * BDS-assigned Operating System version for the node.
-         *
          * @param osVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osVersion(String osVersion) {
             this.osVersion = osVersion;
             this.__explicitlySet__.add("osVersion");
             return this;
         }
         /**
-         * Indicates if the node requires a reboot to either reflect the latest os kernel or take
-         * actions for maintenance reboot.
-         */
+         * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
         private Boolean isRebootRequired;
 
         /**
-         * Indicates if the node requires a reboot to either reflect the latest os kernel or take
-         * actions for maintenance reboot.
-         *
+         * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
          * @param isRebootRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRebootRequired(Boolean isRebootRequired) {
             this.isRebootRequired = isRebootRequired;
             this.__explicitlySet__.add("isRebootRequired");
             return this;
         }
-        /** Version of the ODH (Oracle Distribution including Apache Hadoop) for the node. */
+        /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
         private String odhVersion;
 
         /**
          * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-         *
          * @param odhVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder odhVersion(String odhVersion) {
             this.odhVersion = odhVersion;
             this.__explicitlySet__.add("odhVersion");
             return this;
         }
-        /** The date and time the instance was replaced by a new vm with a node backup. */
+        /**
+         * The date and time the instance was replaced by a new vm with a node backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
         private java.util.Date timeReplaced;
 
         /**
          * The date and time the instance was replaced by a new vm with a node backup.
-         *
          * @param timeReplaced the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReplaced(java.util.Date timeReplaced) {
             this.timeReplaced = timeReplaced;
             this.__explicitlySet__.add("timeReplaced");
             return this;
         }
-        /** The node back id that was used for replacing the node. */
+        /**
+         * The node back id that was used for replacing the node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
         private String nodeBackupId;
 
         /**
          * The node back id that was used for replacing the node.
-         *
          * @param nodeBackupId the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeBackupId(String nodeBackupId) {
             this.nodeBackupId = nodeBackupId;
             this.__explicitlySet__.add("nodeBackupId");
@@ -613,7 +622,9 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -622,34 +633,38 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** The OCID of the underlying Oracle Cloud Infrastructure Compute instance. */
+    /**
+     * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceId() {
         return instanceId;
     }
 
-    /** The name of the node. */
+    /**
+     * The name of the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the node.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The state of the node. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the node.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -662,8 +677,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         Starting("STARTING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -702,21 +717,24 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** The state of the node. */
+    /**
+     * The state of the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the node.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Cluster node type. */
-    public enum NodeType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Cluster node type.
+     **/
+    public enum NodeType {
         Master("MASTER"),
         Edge("EDGE"),
         Utility("UTILITY"),
@@ -727,8 +745,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         CloudSql("CLOUD_SQL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -767,300 +785,310 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** Cluster node type. */
+    /**
+     * Cluster node type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final NodeType nodeType;
 
     /**
      * Cluster node type.
-     *
      * @return the value
-     */
+     **/
     public NodeType getNodeType() {
         return nodeType;
     }
 
-    /** Shape of the node. */
+    /**
+     * Shape of the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * Shape of the node.
-     *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** The list of block volumes attached to a given node. */
+    /**
+     * The list of block volumes attached to a given node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachedBlockVolumes")
     private final java.util.List<VolumeAttachmentDetail> attachedBlockVolumes;
 
     /**
      * The list of block volumes attached to a given node.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VolumeAttachmentDetail> getAttachedBlockVolumes() {
         return attachedBlockVolumes;
     }
 
-    /** The OCID of the subnet in which the node is to be created. */
+    /**
+     * The OCID of the subnet in which the node is to be created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The OCID of the subnet in which the node is to be created.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** IP address of the node. */
+    /**
+     * IP address of the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * IP address of the node.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** The fully-qualified hostname (FQDN) of the node. */
+    /**
+     * The fully-qualified hostname (FQDN) of the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * The fully-qualified hostname (FQDN) of the node.
-     *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
 
-    /** The OCID of the image from which the node was created. */
+    /**
+     * The OCID of the image from which the node was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
      * The OCID of the image from which the node was created.
-     *
      * @return the value
-     */
+     **/
     public String getImageId() {
         return imageId;
     }
 
-    /** The fingerprint of the SSH key used for node access. */
+    /**
+     * The fingerprint of the SSH key used for node access.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshFingerprint")
     private final String sshFingerprint;
 
     /**
      * The fingerprint of the SSH key used for node access.
-     *
      * @return the value
-     */
+     **/
     public String getSshFingerprint() {
         return sshFingerprint;
     }
 
-    /** The name of the availability domain in which the node is running. */
+    /**
+     * The name of the availability domain in which the node is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The name of the availability domain in which the node is running.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The name of the fault domain in which the node is running. */
+    /**
+     * The name of the fault domain in which the node is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * The name of the fault domain in which the node is running.
-     *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
-    /** The time the node was created, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * The time the node was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the node was created, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the cluster was updated, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The total number of OCPUs available to the node. */
+    /**
+     * The total number of OCPUs available to the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Integer ocpus;
 
     /**
      * The total number of OCPUs available to the node.
-     *
      * @return the value
-     */
+     **/
     public Integer getOcpus() {
         return ocpus;
     }
 
-    /** The total amount of memory available to the node, in gigabytes. */
+    /**
+     * The total amount of memory available to the node, in gigabytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
     /**
      * The total amount of memory available to the node, in gigabytes.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }
 
-    /** The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. */
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
     private final Integer nvmes;
 
     /**
      * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-     *
      * @return the value
-     */
+     **/
     public Integer getNvmes() {
         return nvmes;
     }
 
     /**
-     * The aggregate size of all local disks, in gigabytes. If the instance does not have any local
-     * disks, this field is null.
-     */
+     * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
     private final Double localDisksTotalSizeInGBs;
 
     /**
-     * The aggregate size of all local disks, in gigabytes. If the instance does not have any local
-     * disks, this field is null.
-     *
+     * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
      * @return the value
-     */
+     **/
     public Double getLocalDisksTotalSizeInGBs() {
         return localDisksTotalSizeInGBs;
     }
 
     /**
-     * The date and time the instance is expected to be stopped / started, in the format defined by
-     * RFC3339.
-     */
+     * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
     private final java.util.Date timeMaintenanceRebootDue;
 
     /**
-     * The date and time the instance is expected to be stopped / started, in the format defined by
-     * RFC3339.
-     *
+     * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMaintenanceRebootDue() {
         return timeMaintenanceRebootDue;
     }
 
-    /** BDS-assigned Operating System version for the node. */
+    /**
+     * BDS-assigned Operating System version for the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
     private final String osVersion;
 
     /**
      * BDS-assigned Operating System version for the node.
-     *
      * @return the value
-     */
+     **/
     public String getOsVersion() {
         return osVersion;
     }
 
     /**
-     * Indicates if the node requires a reboot to either reflect the latest os kernel or take
-     * actions for maintenance reboot.
-     */
+     * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
     private final Boolean isRebootRequired;
 
     /**
-     * Indicates if the node requires a reboot to either reflect the latest os kernel or take
-     * actions for maintenance reboot.
-     *
+     * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
      * @return the value
-     */
+     **/
     public Boolean getIsRebootRequired() {
         return isRebootRequired;
     }
 
-    /** Version of the ODH (Oracle Distribution including Apache Hadoop) for the node. */
+    /**
+     * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
     private final String odhVersion;
 
     /**
      * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-     *
      * @return the value
-     */
+     **/
     public String getOdhVersion() {
         return odhVersion;
     }
 
-    /** The date and time the instance was replaced by a new vm with a node backup. */
+    /**
+     * The date and time the instance was replaced by a new vm with a node backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
     private final java.util.Date timeReplaced;
 
     /**
      * The date and time the instance was replaced by a new vm with a node backup.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReplaced() {
         return timeReplaced;
     }
 
-    /** The node back id that was used for replacing the node. */
+    /**
+     * The node back id that was used for replacing the node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
     private final String nodeBackupId;
 
     /**
      * The node back id that was used for replacing the node.
-     *
      * @return the value
-     */
+     **/
     public String getNodeBackupId() {
         return nodeBackupId;
     }
@@ -1072,7 +1100,6 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

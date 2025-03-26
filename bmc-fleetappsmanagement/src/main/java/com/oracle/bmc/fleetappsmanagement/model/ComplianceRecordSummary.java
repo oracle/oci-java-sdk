@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Summary information about a ComplianceDetail. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Summary information about a ComplianceDetail.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComplianceRecordSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComplianceRecordSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComplianceRecordSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -67,65 +66,65 @@ public final class ComplianceRecordSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the ComplianceRecord. */
+        /**
+         * The OCID of the ComplianceRecord.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the ComplianceRecord.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the entity for which the compliance is calculated.Ex.FleetId */
+        /**
+         * The OCID of the entity for which the compliance is calculated.Ex.FleetId
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * The OCID of the entity for which the compliance is calculated.Ex.FleetId
-         *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
         /**
-         * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for
-         * the Fleet
-         */
+         * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the Fleet
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityDisplayName")
         private String entityDisplayName;
 
         /**
-         * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for
-         * the Fleet
-         *
+         * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the Fleet
          * @param entityDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityDisplayName(String entityDisplayName) {
             this.entityDisplayName = entityDisplayName;
             this.__explicitlySet__.add("entityDisplayName");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -167,77 +166,77 @@ public final class ComplianceRecordSummary
             this.__explicitlySet__.add("patch");
             return this;
         }
-        /** Last known compliance state of target. */
+        /**
+         * Last known compliance state of target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
          * Last known compliance state of target.
-         *
          * @param complianceState the value to set
          * @return this builder
-         */
+         **/
         public Builder complianceState(ComplianceState complianceState) {
             this.complianceState = complianceState;
             this.__explicitlySet__.add("complianceState");
             return this;
         }
         /**
-         * The date and time the ComplianceRecord was created, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the ComplianceRecord was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the ComplianceRecord was created, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the ComplianceRecord was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the ComplianceRecord was updated, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the ComplianceRecord was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the ComplianceRecord was updated, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the ComplianceRecord was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the ComplianceRecord. */
+        /**
+         * The current state of the ComplianceRecord.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ComplianceRecord.LifecycleState lifecycleState;
 
         /**
          * The current state of the ComplianceRecord.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(ComplianceRecord.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -310,7 +309,9 @@ public final class ComplianceRecordSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -319,58 +320,58 @@ public final class ComplianceRecordSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the ComplianceRecord. */
+    /**
+     * The OCID of the ComplianceRecord.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the ComplianceRecord.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the entity for which the compliance is calculated.Ex.FleetId */
+    /**
+     * The OCID of the entity for which the compliance is calculated.Ex.FleetId
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * The OCID of the entity for which the compliance is calculated.Ex.FleetId
-     *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
     /**
-     * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the
-     * Fleet
-     */
+     * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the Fleet
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityDisplayName")
     private final String entityDisplayName;
 
     /**
-     * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the
-     * Fleet
-     *
+     * The displayName of the entity for which the compliance is calculated.Ex.DisplayName for the Fleet
      * @return the value
-     */
+     **/
     public String getEntityDisplayName() {
         return entityDisplayName;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -403,70 +404,70 @@ public final class ComplianceRecordSummary
         return patch;
     }
 
-    /** Last known compliance state of target. */
+    /**
+     * Last known compliance state of target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
      * Last known compliance state of target.
-     *
      * @return the value
-     */
+     **/
     public ComplianceState getComplianceState() {
         return complianceState;
     }
 
     /**
-     * The date and time the ComplianceRecord was created, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the ComplianceRecord was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the ComplianceRecord was created, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the ComplianceRecord was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the ComplianceRecord was updated, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the ComplianceRecord was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the ComplianceRecord was updated, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the ComplianceRecord was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the ComplianceRecord. */
+    /**
+     * The current state of the ComplianceRecord.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ComplianceRecord.LifecycleState lifecycleState;
 
     /**
      * The current state of the ComplianceRecord.
-     *
      * @return the value
-     */
+     **/
     public ComplianceRecord.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -478,7 +479,6 @@ public final class ComplianceRecordSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

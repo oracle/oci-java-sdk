@@ -5,21 +5,19 @@
 package com.oracle.bmc.mngdmac.model;
 
 /**
- * Represents a MacDevice resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
+ * Represents a MacDevice resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodeConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NodeConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NodeConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "serialNumber",
@@ -80,256 +78,273 @@ public final class NodeConfig extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The serial number of the MacDevice. */
+        /**
+         * The serial number of the MacDevice.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
         private String serialNumber;
 
         /**
          * The serial number of the MacDevice.
-         *
          * @param serialNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = serialNumber;
             this.__explicitlySet__.add("serialNumber");
             return this;
         }
-        /** The macAddress. */
+        /**
+         * The macAddress.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
         private String macAddress;
 
         /**
          * The macAddress.
-         *
          * @param macAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder macAddress(String macAddress) {
             this.macAddress = macAddress;
             this.__explicitlySet__.add("macAddress");
             return this;
         }
-        /** The switchHostname. */
+        /**
+         * The switchHostname.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("switchHostname")
         private String switchHostname;
 
         /**
          * The switchHostname.
-         *
          * @param switchHostname the value to set
          * @return this builder
-         */
+         **/
         public Builder switchHostname(String switchHostname) {
             this.switchHostname = switchHostname;
             this.__explicitlySet__.add("switchHostname");
             return this;
         }
-        /** The switchEthPort. */
+        /**
+         * The switchEthPort.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("switchEthPort")
         private String switchEthPort;
 
         /**
          * The switchEthPort.
-         *
          * @param switchEthPort the value to set
          * @return this builder
-         */
+         **/
         public Builder switchEthPort(String switchEthPort) {
             this.switchEthPort = switchEthPort;
             this.__explicitlySet__.add("switchEthPort");
             return this;
         }
-        /** The ipKvmHostname. */
+        /**
+         * The ipKvmHostname.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipKvmHostname")
         private String ipKvmHostname;
 
         /**
          * The ipKvmHostname.
-         *
          * @param ipKvmHostname the value to set
          * @return this builder
-         */
+         **/
         public Builder ipKvmHostname(String ipKvmHostname) {
             this.ipKvmHostname = ipKvmHostname;
             this.__explicitlySet__.add("ipKvmHostname");
             return this;
         }
-        /** The ipKvmPortNumber. */
+        /**
+         * The ipKvmPortNumber.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipKvmPortNumber")
         private Integer ipKvmPortNumber;
 
         /**
          * The ipKvmPortNumber.
-         *
          * @param ipKvmPortNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder ipKvmPortNumber(Integer ipKvmPortNumber) {
             this.ipKvmPortNumber = ipKvmPortNumber;
             this.__explicitlySet__.add("ipKvmPortNumber");
             return this;
         }
-        /** The pduHostname. */
+        /**
+         * The pduHostname.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pduHostname")
         private String pduHostname;
 
         /**
          * The pduHostname.
-         *
          * @param pduHostname the value to set
          * @return this builder
-         */
+         **/
         public Builder pduHostname(String pduHostname) {
             this.pduHostname = pduHostname;
             this.__explicitlySet__.add("pduHostname");
             return this;
         }
-        /** The pduPort. */
+        /**
+         * The pduPort.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pduPort")
         private Integer pduPort;
 
         /**
          * The pduPort.
-         *
          * @param pduPort the value to set
          * @return this builder
-         */
+         **/
         public Builder pduPort(Integer pduPort) {
             this.pduPort = pduPort;
             this.__explicitlySet__.add("pduPort");
             return this;
         }
-        /** The buildVlanId. */
+        /**
+         * The buildVlanId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildVlanId")
         private Integer buildVlanId;
 
         /**
          * The buildVlanId.
-         *
          * @param buildVlanId the value to set
          * @return this builder
-         */
+         **/
         public Builder buildVlanId(Integer buildVlanId) {
             this.buildVlanId = buildVlanId;
             this.__explicitlySet__.add("buildVlanId");
             return this;
         }
-        /** The buildIpAddress. */
+        /**
+         * The buildIpAddress.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildIpAddress")
         private String buildIpAddress;
 
         /**
          * The buildIpAddress.
-         *
          * @param buildIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder buildIpAddress(String buildIpAddress) {
             this.buildIpAddress = buildIpAddress;
             this.__explicitlySet__.add("buildIpAddress");
             return this;
         }
-        /** The prodVlanId. */
+        /**
+         * The prodVlanId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prodVlanId")
         private Integer prodVlanId;
 
         /**
          * The prodVlanId.
-         *
          * @param prodVlanId the value to set
          * @return this builder
-         */
+         **/
         public Builder prodVlanId(Integer prodVlanId) {
             this.prodVlanId = prodVlanId;
             this.__explicitlySet__.add("prodVlanId");
             return this;
         }
-        /** The prodIpAddress. */
+        /**
+         * The prodIpAddress.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prodIpAddress")
         private String prodIpAddress;
 
         /**
          * The prodIpAddress.
-         *
          * @param prodIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder prodIpAddress(String prodIpAddress) {
             this.prodIpAddress = prodIpAddress;
             this.__explicitlySet__.add("prodIpAddress");
             return this;
         }
-        /** The rackLocation. */
+        /**
+         * The rackLocation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rackLocation")
         private String rackLocation;
 
         /**
          * The rackLocation.
-         *
          * @param rackLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder rackLocation(String rackLocation) {
             this.rackLocation = rackLocation;
             this.__explicitlySet__.add("rackLocation");
             return this;
         }
-        /** The chipSetn. */
+        /**
+         * The chipSetn.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chipSet")
         private String chipSet;
 
         /**
          * The chipSetn.
-         *
          * @param chipSet the value to set
          * @return this builder
-         */
+         **/
         public Builder chipSet(String chipSet) {
             this.chipSet = chipSet;
             this.__explicitlySet__.add("chipSet");
             return this;
         }
-        /** The osVersion. */
+        /**
+         * The osVersion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
         private String osVersion;
 
         /**
          * The osVersion.
-         *
          * @param osVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osVersion(String osVersion) {
             this.osVersion = osVersion;
             this.__explicitlySet__.add("osVersion");
             return this;
         }
-        /** The macOrderId. */
+        /**
+         * The macOrderId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macOrderId")
         private String macOrderId;
 
         /**
          * The macOrderId.
-         *
          * @param macOrderId the value to set
          * @return this builder
-         */
+         **/
         public Builder macOrderId(String macOrderId) {
             this.macOrderId = macOrderId;
             this.__explicitlySet__.add("macOrderId");
             return this;
         }
-        /** The tenancyId. */
+        /**
+         * The tenancyId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * The tenancyId.
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
@@ -422,7 +437,9 @@ public final class NodeConfig extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -431,223 +448,240 @@ public final class NodeConfig extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The serial number of the MacDevice. */
+    /**
+     * The serial number of the MacDevice.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     private final String serialNumber;
 
     /**
      * The serial number of the MacDevice.
-     *
      * @return the value
-     */
+     **/
     public String getSerialNumber() {
         return serialNumber;
     }
 
-    /** The macAddress. */
+    /**
+     * The macAddress.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
     private final String macAddress;
 
     /**
      * The macAddress.
-     *
      * @return the value
-     */
+     **/
     public String getMacAddress() {
         return macAddress;
     }
 
-    /** The switchHostname. */
+    /**
+     * The switchHostname.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("switchHostname")
     private final String switchHostname;
 
     /**
      * The switchHostname.
-     *
      * @return the value
-     */
+     **/
     public String getSwitchHostname() {
         return switchHostname;
     }
 
-    /** The switchEthPort. */
+    /**
+     * The switchEthPort.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("switchEthPort")
     private final String switchEthPort;
 
     /**
      * The switchEthPort.
-     *
      * @return the value
-     */
+     **/
     public String getSwitchEthPort() {
         return switchEthPort;
     }
 
-    /** The ipKvmHostname. */
+    /**
+     * The ipKvmHostname.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipKvmHostname")
     private final String ipKvmHostname;
 
     /**
      * The ipKvmHostname.
-     *
      * @return the value
-     */
+     **/
     public String getIpKvmHostname() {
         return ipKvmHostname;
     }
 
-    /** The ipKvmPortNumber. */
+    /**
+     * The ipKvmPortNumber.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipKvmPortNumber")
     private final Integer ipKvmPortNumber;
 
     /**
      * The ipKvmPortNumber.
-     *
      * @return the value
-     */
+     **/
     public Integer getIpKvmPortNumber() {
         return ipKvmPortNumber;
     }
 
-    /** The pduHostname. */
+    /**
+     * The pduHostname.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pduHostname")
     private final String pduHostname;
 
     /**
      * The pduHostname.
-     *
      * @return the value
-     */
+     **/
     public String getPduHostname() {
         return pduHostname;
     }
 
-    /** The pduPort. */
+    /**
+     * The pduPort.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pduPort")
     private final Integer pduPort;
 
     /**
      * The pduPort.
-     *
      * @return the value
-     */
+     **/
     public Integer getPduPort() {
         return pduPort;
     }
 
-    /** The buildVlanId. */
+    /**
+     * The buildVlanId.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildVlanId")
     private final Integer buildVlanId;
 
     /**
      * The buildVlanId.
-     *
      * @return the value
-     */
+     **/
     public Integer getBuildVlanId() {
         return buildVlanId;
     }
 
-    /** The buildIpAddress. */
+    /**
+     * The buildIpAddress.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildIpAddress")
     private final String buildIpAddress;
 
     /**
      * The buildIpAddress.
-     *
      * @return the value
-     */
+     **/
     public String getBuildIpAddress() {
         return buildIpAddress;
     }
 
-    /** The prodVlanId. */
+    /**
+     * The prodVlanId.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prodVlanId")
     private final Integer prodVlanId;
 
     /**
      * The prodVlanId.
-     *
      * @return the value
-     */
+     **/
     public Integer getProdVlanId() {
         return prodVlanId;
     }
 
-    /** The prodIpAddress. */
+    /**
+     * The prodIpAddress.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prodIpAddress")
     private final String prodIpAddress;
 
     /**
      * The prodIpAddress.
-     *
      * @return the value
-     */
+     **/
     public String getProdIpAddress() {
         return prodIpAddress;
     }
 
-    /** The rackLocation. */
+    /**
+     * The rackLocation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rackLocation")
     private final String rackLocation;
 
     /**
      * The rackLocation.
-     *
      * @return the value
-     */
+     **/
     public String getRackLocation() {
         return rackLocation;
     }
 
-    /** The chipSetn. */
+    /**
+     * The chipSetn.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("chipSet")
     private final String chipSet;
 
     /**
      * The chipSetn.
-     *
      * @return the value
-     */
+     **/
     public String getChipSet() {
         return chipSet;
     }
 
-    /** The osVersion. */
+    /**
+     * The osVersion.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
     private final String osVersion;
 
     /**
      * The osVersion.
-     *
      * @return the value
-     */
+     **/
     public String getOsVersion() {
         return osVersion;
     }
 
-    /** The macOrderId. */
+    /**
+     * The macOrderId.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macOrderId")
     private final String macOrderId;
 
     /**
      * The macOrderId.
-     *
      * @return the value
-     */
+     **/
     public String getMacOrderId() {
         return macOrderId;
     }
 
-    /** The tenancyId. */
+    /**
+     * The tenancyId.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * The tenancyId.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -659,7 +693,6 @@ public final class NodeConfig extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

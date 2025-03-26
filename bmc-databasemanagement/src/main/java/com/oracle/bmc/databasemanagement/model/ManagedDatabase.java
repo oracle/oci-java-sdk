@@ -5,22 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of a Managed Database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of a Managed Database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ManagedDatabase.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ManagedDatabase
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ManagedDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -115,431 +112,438 @@ public final class ManagedDatabase
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of the Managed Database. */
+        /**
+         * The name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Managed Database.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The type of Oracle Database installation. */
+        /**
+         * The type of Oracle Database installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
         /**
          * The type of Oracle Database installation.
-         *
          * @param databaseType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseType(DatabaseType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
         /**
-         * The subtype of the Oracle Database. Indicates whether the database is a Container
-         * Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous
-         * Container Database.
-         */
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
         private DatabaseSubType databaseSubType;
 
         /**
-         * The subtype of the Oracle Database. Indicates whether the database is a Container
-         * Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous
-         * Container Database.
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
          *
          * @param databaseSubType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSubType(DatabaseSubType databaseSubType) {
             this.databaseSubType = databaseSubType;
             this.__explicitlySet__.add("databaseSubType");
             return this;
         }
-        /** The infrastructure used to deploy the Oracle Database. */
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
         /**
          * The infrastructure used to deploy the Oracle Database.
-         *
          * @param deploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-        /** The management option used when enabling Database Management. */
+        /**
+         * The management option used when enabling Database Management.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementOption")
         private ManagementOption managementOption;
 
         /**
          * The management option used when enabling Database Management.
-         *
          * @param managementOption the value to set
          * @return this builder
-         */
+         **/
         public Builder managementOption(ManagementOption managementOption) {
             this.managementOption = managementOption;
             this.__explicitlySet__.add("managementOption");
             return this;
         }
-        /** The workload type of the Autonomous Database. */
+        /**
+         * The workload type of the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
         private WorkloadType workloadType;
 
         /**
          * The workload type of the Autonomous Database.
-         *
          * @param workloadType the value to set
          * @return this builder
-         */
+         **/
         public Builder workloadType(WorkloadType workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
             return this;
         }
-        /** Indicates whether the Oracle Database is part of a cluster. */
+        /**
+         * Indicates whether the Oracle Database is part of a cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
         /**
          * Indicates whether the Oracle Database is part of a cluster.
-         *
          * @param isCluster the value to set
          * @return this builder
-         */
+         **/
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = isCluster;
             this.__explicitlySet__.add("isCluster");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent Container Database if Managed Database is a Pluggable Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database
+         * if Managed Database is a Pluggable Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentContainerId")
         private String parentContainerId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent Container Database if Managed Database is a Pluggable Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database
+         * if Managed Database is a Pluggable Database.
          *
          * @param parentContainerId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentContainerId(String parentContainerId) {
             this.parentContainerId = parentContainerId;
             this.__explicitlySet__.add("parentContainerId");
             return this;
         }
-        /** A list of Managed Database Groups that the Managed Database belongs to. */
+        /**
+         * A list of Managed Database Groups that the Managed Database belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroups")
         private java.util.List<ParentGroup> managedDatabaseGroups;
 
         /**
          * A list of Managed Database Groups that the Managed Database belongs to.
-         *
          * @param managedDatabaseGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder managedDatabaseGroups(java.util.List<ParentGroup> managedDatabaseGroups) {
             this.managedDatabaseGroups = managedDatabaseGroups;
             this.__explicitlySet__.add("managedDatabaseGroups");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system that this Managed Database is part of.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external
+         * DB system that this Managed Database is part of.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system that this Managed Database is part of.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external
+         * DB system that this Managed Database is part of.
          *
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * storage DB system.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageSystemId")
         private String storageSystemId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * storage DB system.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
          * @param storageSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder storageSystemId(String storageSystemId) {
             this.storageSystemId = storageSystemId;
             this.__explicitlySet__.add("storageSystemId");
             return this;
         }
-        /** The date and time the Managed Database was created. */
+        /**
+         * The date and time the Managed Database was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the Managed Database was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The Oracle Database version. */
+        /**
+         * The Oracle Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
         /**
          * The Oracle Database version.
-         *
          * @param databaseVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
             return this;
         }
         /**
-         * The status of the Oracle Database. Indicates whether the status of the database is UP,
-         * DOWN, or UNKNOWN at the current time.
-         */
+         * The status of the Oracle Database. Indicates whether the status of the database
+         * is UP, DOWN, or UNKNOWN at the current time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseStatus")
         private DatabaseStatus databaseStatus;
 
         /**
-         * The status of the Oracle Database. Indicates whether the status of the database is UP,
-         * DOWN, or UNKNOWN at the current time.
+         * The status of the Oracle Database. Indicates whether the status of the database
+         * is UP, DOWN, or UNKNOWN at the current time.
          *
          * @param databaseStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseStatus(DatabaseStatus databaseStatus) {
             this.databaseStatus = databaseStatus;
             this.__explicitlySet__.add("databaseStatus");
             return this;
         }
-        /** The name of the parent Container Database. */
+        /**
+         * The name of the parent Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentContainerName")
         private String parentContainerName;
 
         /**
          * The name of the parent Container Database.
-         *
          * @param parentContainerName the value to set
          * @return this builder
-         */
+         **/
         public Builder parentContainerName(String parentContainerName) {
             this.parentContainerName = parentContainerName;
             this.__explicitlySet__.add("parentContainerName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the parent Container Database resides, if the Managed Database is a
-         * Pluggable Database (PDB).
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
+         * in which the parent Container Database resides, if the Managed Database
+         * is a Pluggable Database (PDB).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentContainerCompartmentId")
         private String parentContainerCompartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the parent Container Database resides, if the Managed Database is a
-         * Pluggable Database (PDB).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
+         * in which the parent Container Database resides, if the Managed Database
+         * is a Pluggable Database (PDB).
          *
          * @param parentContainerCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentContainerCompartmentId(String parentContainerCompartmentId) {
             this.parentContainerCompartmentId = parentContainerCompartmentId;
             this.__explicitlySet__.add("parentContainerCompartmentId");
             return this;
         }
-        /** The number of Oracle Real Application Clusters (Oracle RAC) database instances. */
+        /**
+         * The number of Oracle Real Application Clusters (Oracle RAC) database instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
         private Integer instanceCount;
 
         /**
          * The number of Oracle Real Application Clusters (Oracle RAC) database instances.
-         *
          * @param instanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceCount(Integer instanceCount) {
             this.instanceCount = instanceCount;
             this.__explicitlySet__.add("instanceCount");
             return this;
         }
-        /** The details of the Oracle Real Application Clusters (Oracle RAC) database instances. */
+        /**
+         * The details of the Oracle Real Application Clusters (Oracle RAC) database instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceDetails")
         private java.util.List<InstanceDetails> instanceDetails;
 
         /**
          * The details of the Oracle Real Application Clusters (Oracle RAC) database instances.
-         *
          * @param instanceDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceDetails(java.util.List<InstanceDetails> instanceDetails) {
             this.instanceDetails = instanceDetails;
             this.__explicitlySet__.add("instanceDetails");
             return this;
         }
-        /** The number of PDBs in the Container Database. */
+        /**
+         * The number of PDBs in the Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbCount")
         private Integer pdbCount;
 
         /**
          * The number of PDBs in the Container Database.
-         *
          * @param pdbCount the value to set
          * @return this builder
-         */
+         **/
         public Builder pdbCount(Integer pdbCount) {
             this.pdbCount = pdbCount;
             this.__explicitlySet__.add("pdbCount");
             return this;
         }
-        /** The status of the PDB in the Container Database. */
+        /**
+         * The status of the PDB in the Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbStatus")
         private java.util.List<PdbStatusDetails> pdbStatus;
 
         /**
          * The status of the PDB in the Container Database.
-         *
          * @param pdbStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder pdbStatus(java.util.List<PdbStatusDetails> pdbStatus) {
             this.pdbStatus = pdbStatus;
             this.__explicitlySet__.add("pdbStatus");
             return this;
         }
         /**
-         * The additional details specific to a type of database defined in {@code {"key": "value"}}
-         * format. Example: {@code {"bar-key": "value"}}
-         */
+         * The additional details specific to a type of database defined in {@code {"key": "value"}} format.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, String> additionalDetails;
 
         /**
-         * The additional details specific to a type of database defined in {@code {"key": "value"}}
-         * format. Example: {@code {"bar-key": "value"}}
+         * The additional details specific to a type of database defined in {@code {"key": "value"}} format.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param additionalDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalDetails(java.util.Map<String, String> additionalDetails) {
             this.additionalDetails = additionalDetails;
             this.__explicitlySet__.add("additionalDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -547,58 +551,59 @@ public final class ManagedDatabase
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The list of feature configurations */
+        /**
+         * The list of feature configurations
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
         private java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
 
         /**
          * The list of feature configurations
-         *
          * @param dbmgmtFeatureConfigs the value to set
          * @return this builder
-         */
+         **/
         public Builder dbmgmtFeatureConfigs(
                 java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs) {
             this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
             this.__explicitlySet__.add("dbmgmtFeatureConfigs");
             return this;
         }
-        /** The operating system of database. */
+        /**
+         * The operating system of database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
         private String databasePlatformName;
 
         /**
          * The operating system of database.
-         *
          * @param databasePlatformName the value to set
          * @return this builder
-         */
+         **/
         public Builder databasePlatformName(String databasePlatformName) {
             this.databasePlatformName = databasePlatformName;
             this.__explicitlySet__.add("databasePlatformName");
@@ -735,7 +740,9 @@ public final class ManagedDatabase
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -745,433 +752,441 @@ public final class ManagedDatabase
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of the Managed Database. */
+    /**
+     * The name of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The type of Oracle Database installation. */
+    /**
+     * The type of Oracle Database installation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseType databaseType;
 
     /**
      * The type of Oracle Database installation.
-     *
      * @return the value
-     */
+     **/
     public DatabaseType getDatabaseType() {
         return databaseType;
     }
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container
-     * Database.
-     */
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container
-     * Database.
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      *
      * @return the value
-     */
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
 
-    /** The infrastructure used to deploy the Oracle Database. */
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
     /**
      * The infrastructure used to deploy the Oracle Database.
-     *
      * @return the value
-     */
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
 
-    /** The management option used when enabling Database Management. */
+    /**
+     * The management option used when enabling Database Management.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementOption")
     private final ManagementOption managementOption;
 
     /**
      * The management option used when enabling Database Management.
-     *
      * @return the value
-     */
+     **/
     public ManagementOption getManagementOption() {
         return managementOption;
     }
 
-    /** The workload type of the Autonomous Database. */
+    /**
+     * The workload type of the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
     private final WorkloadType workloadType;
 
     /**
      * The workload type of the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public WorkloadType getWorkloadType() {
         return workloadType;
     }
 
-    /** Indicates whether the Oracle Database is part of a cluster. */
+    /**
+     * Indicates whether the Oracle Database is part of a cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     private final Boolean isCluster;
 
     /**
      * Indicates whether the Oracle Database is part of a cluster.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCluster() {
         return isCluster;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent Container Database if Managed Database is a Pluggable Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database
+     * if Managed Database is a Pluggable Database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentContainerId")
     private final String parentContainerId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent Container Database if Managed Database is a Pluggable Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database
+     * if Managed Database is a Pluggable Database.
      *
      * @return the value
-     */
+     **/
     public String getParentContainerId() {
         return parentContainerId;
     }
 
-    /** A list of Managed Database Groups that the Managed Database belongs to. */
+    /**
+     * A list of Managed Database Groups that the Managed Database belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroups")
     private final java.util.List<ParentGroup> managedDatabaseGroups;
 
     /**
      * A list of Managed Database Groups that the Managed Database belongs to.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ParentGroup> getManagedDatabaseGroups() {
         return managedDatabaseGroups;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system that this Managed Database is part of.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external
+     * DB system that this Managed Database is part of.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system that this Managed Database is part of.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external
+     * DB system that this Managed Database is part of.
      *
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * storage DB system.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageSystemId")
     private final String storageSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * storage DB system.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
      * @return the value
-     */
+     **/
     public String getStorageSystemId() {
         return storageSystemId;
     }
 
-    /** The date and time the Managed Database was created. */
+    /**
+     * The date and time the Managed Database was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the Managed Database was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The Oracle Database version. */
+    /**
+     * The Oracle Database version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
     /**
      * The Oracle Database version.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseVersion() {
         return databaseVersion;
     }
 
     /**
-     * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN,
-     * or UNKNOWN at the current time.
-     */
+     * The status of the Oracle Database. Indicates whether the status of the database
+     * is UP, DOWN, or UNKNOWN at the current time.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseStatus")
     private final DatabaseStatus databaseStatus;
 
     /**
-     * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN,
-     * or UNKNOWN at the current time.
+     * The status of the Oracle Database. Indicates whether the status of the database
+     * is UP, DOWN, or UNKNOWN at the current time.
      *
      * @return the value
-     */
+     **/
     public DatabaseStatus getDatabaseStatus() {
         return databaseStatus;
     }
 
-    /** The name of the parent Container Database. */
+    /**
+     * The name of the parent Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentContainerName")
     private final String parentContainerName;
 
     /**
      * The name of the parent Container Database.
-     *
      * @return the value
-     */
+     **/
     public String getParentContainerName() {
         return parentContainerName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the parent Container Database resides, if the Managed Database is a
-     * Pluggable Database (PDB).
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
+     * in which the parent Container Database resides, if the Managed Database
+     * is a Pluggable Database (PDB).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentContainerCompartmentId")
     private final String parentContainerCompartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the parent Container Database resides, if the Managed Database is a
-     * Pluggable Database (PDB).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
+     * in which the parent Container Database resides, if the Managed Database
+     * is a Pluggable Database (PDB).
      *
      * @return the value
-     */
+     **/
     public String getParentContainerCompartmentId() {
         return parentContainerCompartmentId;
     }
 
-    /** The number of Oracle Real Application Clusters (Oracle RAC) database instances. */
+    /**
+     * The number of Oracle Real Application Clusters (Oracle RAC) database instances.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceCount")
     private final Integer instanceCount;
 
     /**
      * The number of Oracle Real Application Clusters (Oracle RAC) database instances.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstanceCount() {
         return instanceCount;
     }
 
-    /** The details of the Oracle Real Application Clusters (Oracle RAC) database instances. */
+    /**
+     * The details of the Oracle Real Application Clusters (Oracle RAC) database instances.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceDetails")
     private final java.util.List<InstanceDetails> instanceDetails;
 
     /**
      * The details of the Oracle Real Application Clusters (Oracle RAC) database instances.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<InstanceDetails> getInstanceDetails() {
         return instanceDetails;
     }
 
-    /** The number of PDBs in the Container Database. */
+    /**
+     * The number of PDBs in the Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbCount")
     private final Integer pdbCount;
 
     /**
      * The number of PDBs in the Container Database.
-     *
      * @return the value
-     */
+     **/
     public Integer getPdbCount() {
         return pdbCount;
     }
 
-    /** The status of the PDB in the Container Database. */
+    /**
+     * The status of the PDB in the Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbStatus")
     private final java.util.List<PdbStatusDetails> pdbStatus;
 
     /**
      * The status of the PDB in the Container Database.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PdbStatusDetails> getPdbStatus() {
         return pdbStatus;
     }
 
     /**
-     * The additional details specific to a type of database defined in {@code {"key": "value"}}
-     * format. Example: {@code {"bar-key": "value"}}
-     */
+     * The additional details specific to a type of database defined in {@code {"key": "value"}} format.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, String> additionalDetails;
 
     /**
-     * The additional details specific to a type of database defined in {@code {"key": "value"}}
-     * format. Example: {@code {"bar-key": "value"}}
+     * The additional details specific to a type of database defined in {@code {"key": "value"}} format.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdditionalDetails() {
         return additionalDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** The list of feature configurations */
+    /**
+     * The list of feature configurations
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
     private final java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
 
     /**
      * The list of feature configurations
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DatabaseFeatureConfiguration> getDbmgmtFeatureConfigs() {
         return dbmgmtFeatureConfigs;
     }
 
-    /** The operating system of database. */
+    /**
+     * The operating system of database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
     private final String databasePlatformName;
 
     /**
      * The operating system of database.
-     *
      * @return the value
-     */
+     **/
     public String getDatabasePlatformName() {
         return databasePlatformName;
     }
@@ -1183,7 +1198,6 @@ public final class ManagedDatabase
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

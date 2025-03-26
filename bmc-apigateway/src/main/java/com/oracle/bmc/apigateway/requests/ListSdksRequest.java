@@ -6,66 +6,74 @@ package com.oracle.bmc.apigateway.requests;
 
 import com.oracle.bmc.apigateway.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListSdksExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSdksRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListSdksExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSdksRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ocid of the SDK. */
+    /**
+     * The ocid of the SDK.
+     */
     private String sdkId;
 
-    /** The ocid of the SDK. */
+    /**
+     * The ocid of the SDK.
+     */
     public String getSdkId() {
         return sdkId;
     }
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
      */
     private String displayName;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
      * A filter to return only resources that match the given lifecycle state.
+     * <p>
+     * Example: {@code ACTIVE} or {@code DELETED}
      *
-     * <p>Example: {@code ACTIVE} or {@code DELETED}
      */
     private com.oracle.bmc.apigateway.model.Sdk.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the given lifecycle state.
+     * <p>
+     * Example: {@code ACTIVE} or {@code DELETED}
      *
-     * <p>Example: {@code ACTIVE} or {@code DELETED}
      */
     public com.oracle.bmc.apigateway.model.Sdk.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
@@ -77,8 +85,8 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -118,18 +126,22 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return sortOrder;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * {@code timeCreated} is descending. Default order for {@code displayName} is ascending. The
-     * {@code displayName} sort order is case sensitive.
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
+     * sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * {@code timeCreated} is descending. Default order for {@code displayName} is ascending. The
-     * {@code displayName} sort order is case sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
+     * sensitive.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -163,39 +175,51 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * {@code timeCreated} is descending. Default order for {@code displayName} is ascending. The
-     * {@code displayName} sort order is case sensitive.
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     * Default order for {@code timeCreated} is descending. Default order for
+     * {@code displayName} is ascending. The {@code displayName} sort order is case
+     * sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The ocid of the API. */
+    /**
+     * The ocid of the API.
+     */
     private String apiId;
 
-    /** The ocid of the API. */
+    /**
+     * The ocid of the API.
+     */
     public String getApiId() {
         return apiId;
     }
-    /** The client request id for tracing. */
+    /**
+     * The client request id for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request id for tracing. */
+    /**
+     * The client request id for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListSdksRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ocid of the SDK. */
+        /**
+         * The ocid of the SDK.
+         */
         private String sdkId = null;
 
         /**
          * The ocid of the SDK.
-         *
          * @param sdkId the value to set
          * @return this builder instance
          */
@@ -206,15 +230,16 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
          */
         private String displayName = null;
 
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -226,15 +251,16 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * A filter to return only resources that match the given lifecycle state.
+         * <p>
+         * Example: {@code ACTIVE} or {@code DELETED}
          *
-         * <p>Example: {@code ACTIVE} or {@code DELETED}
          */
         private com.oracle.bmc.apigateway.model.Sdk.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state.
-         *
-         * <p>Example: {@code ACTIVE} or {@code DELETED}
+         * <p>
+         * Example: {@code ACTIVE} or {@code DELETED}
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -245,12 +271,13 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -260,15 +287,12 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -278,15 +302,12 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy
-         * value.
+         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy
-         * value.
-         *
+         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -296,16 +317,19 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for {@code timeCreated} is descending. Default order for {@code displayName} is
-         * ascending. The {@code displayName} sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         * Default order for {@code timeCreated} is descending. Default order for
+         * {@code displayName} is ascending. The {@code displayName} sort order is case
+         * sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for {@code timeCreated} is descending. Default order for {@code displayName} is
-         * ascending. The {@code displayName} sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         * Default order for {@code timeCreated} is descending. Default order for
+         * {@code displayName} is ascending. The {@code displayName} sort order is case
+         * sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -315,12 +339,13 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The ocid of the API. */
+        /**
+         * The ocid of the API.
+         */
         private String apiId = null;
 
         /**
          * The ocid of the API.
-         *
          * @param apiId the value to set
          * @return this builder instance
          */
@@ -329,12 +354,13 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The client request id for tracing. */
+        /**
+         * The client request id for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -345,19 +371,18 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -369,7 +394,6 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSdksRequest o) {
@@ -390,11 +414,10 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListSdksRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSdksRequest
          */
@@ -408,8 +431,7 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListSdksRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSdksRequest
@@ -426,14 +448,12 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.apiId = apiId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSdksRequest(sdkId, displayName, lifecycleState, limit, page, sortOrder,
-            // sortBy, apiId, opcRequestId);
+            // new ListSdksRequest(sdkId, displayName, lifecycleState, limit, page, sortOrder, sortBy, apiId, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -451,7 +471,6 @@ public class ListSdksRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

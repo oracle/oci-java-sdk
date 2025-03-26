@@ -5,22 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the information used to create a filter for packages from a vendor software source to
- * create or update a custom software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the information used to create a filter for packages from a vendor software source to create or update a custom software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PackageFilter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PackageFilter extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PackageFilter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "packageName",
@@ -42,31 +39,33 @@ public final class PackageFilter extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The package name. */
+        /**
+         * The package name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageName")
         private String packageName;
 
         /**
          * The package name.
-         *
          * @param packageName the value to set
          * @return this builder
-         */
+         **/
         public Builder packageName(String packageName) {
             this.packageName = packageName;
             this.__explicitlySet__.add("packageName");
             return this;
         }
-        /** The package name pattern. */
+        /**
+         * The package name pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageNamePattern")
         private String packageNamePattern;
 
         /**
          * The package name pattern.
-         *
          * @param packageNamePattern the value to set
          * @return this builder
-         */
+         **/
         public Builder packageNamePattern(String packageNamePattern) {
             this.packageNamePattern = packageNamePattern;
             this.__explicitlySet__.add("packageNamePattern");
@@ -74,31 +73,31 @@ public final class PackageFilter extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
         private String packageVersion;
 
         /**
          * The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-         *
          * @param packageVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = packageVersion;
             this.__explicitlySet__.add("packageVersion");
             return this;
         }
-        /** The type of the filter. */
+        /**
+         * The type of the filter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private FilterType filterType;
 
         /**
          * The type of the filter.
-         *
          * @param filterType the value to set
          * @return this builder
-         */
+         **/
         public Builder filterType(FilterType filterType) {
             this.filterType = filterType;
             this.__explicitlySet__.add("filterType");
@@ -139,7 +138,9 @@ public final class PackageFilter extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -148,54 +149,58 @@ public final class PackageFilter extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The package name. */
+    /**
+     * The package name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageName")
     private final String packageName;
 
     /**
      * The package name.
-     *
      * @return the value
-     */
+     **/
     public String getPackageName() {
         return packageName;
     }
 
-    /** The package name pattern. */
+    /**
+     * The package name pattern.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageNamePattern")
     private final String packageNamePattern;
 
     /**
      * The package name pattern.
-     *
      * @return the value
-     */
+     **/
     public String getPackageNamePattern() {
         return packageNamePattern;
     }
 
-    /** The package version, which is denoted by 'version-release', or 'epoch:version-release'. */
+    /**
+     * The package version, which is denoted by 'version-release', or 'epoch:version-release'.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
     /**
      * The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-     *
      * @return the value
-     */
+     **/
     public String getPackageVersion() {
         return packageVersion;
     }
 
-    /** The type of the filter. */
+    /**
+     * The type of the filter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final FilterType filterType;
 
     /**
      * The type of the filter.
-     *
      * @return the value
-     */
+     **/
     public FilterType getFilterType() {
         return filterType;
     }
@@ -207,7 +212,6 @@ public final class PackageFilter extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

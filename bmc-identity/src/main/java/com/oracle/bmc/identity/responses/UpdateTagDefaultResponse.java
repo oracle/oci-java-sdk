@@ -6,11 +6,12 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,24 +25,26 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code TagDefault} instance. */
+    /**
+     * The returned TagDefault instance.
+     */
     private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
     /**
-     * The returned {@code TagDefault} instance.
-     *
+     * The returned TagDefault instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.TagDefault getTagDefault() {
@@ -57,7 +60,7 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private UpdateTagDefaultResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.TagDefault tagDefault) {
@@ -67,20 +70,17 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
         this.tagDefault = tagDefault;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateTagDefaultResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -88,6 +88,7 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -103,12 +104,13 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -117,12 +119,13 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code TagDefault} instance. */
+        /**
+         * The returned TagDefault instance.
+         */
         private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
         /**
-         * The returned {@code TagDefault} instance.
-         *
+         * The returned TagDefault instance.
          * @param tagDefault the value to set
          * @return this builder
          */
@@ -133,10 +136,8 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateTagDefaultResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +150,8 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateTagDefaultResponse build() {
             return new UpdateTagDefaultResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, tagDefault);
@@ -161,7 +160,6 @@ public class UpdateTagDefaultResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

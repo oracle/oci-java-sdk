@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information to update a Microsoft Fabric Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information to update a Microsoft Fabric Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMicrosoftFabricConnectionDetails.Builder.class)
+    builder = UpdateMicrosoftFabricConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -117,90 +118,101 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f */
+        /**
+         * Azure tenant ID of the application.
+         * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+         * Azure tenant ID of the application.
+         * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
          *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d */
+        /**
+         * Azure client ID of the application.
+         * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
-         * Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * Azure client ID of the application.
+         * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
          *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
         /**
-         * Client secret associated with the client id. Deprecated: This field is deprecated and
-         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
-         */
+         * Client secret associated with the client id.
+         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
         private String clientSecret;
 
         /**
-         * Client secret associated with the client id. Deprecated: This field is deprecated and
-         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+         * Client secret associated with the client id.
+         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
          *
          * @param clientSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecret(String clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
-         * not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Note: When provided, 'clientSecret' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
-         * not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Note: When provided, 'clientSecret' field must not be provided.
          *
          * @param clientSecretSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecretSecretId(String clientSecretSecretId) {
             this.clientSecretSecretId = clientSecretSecretId;
             this.__explicitlySet__.add("clientSecretSecretId");
             return this;
         }
         /**
-         * Optional Microsoft Fabric service endpoint. Default value:
-         * https://onelake.dfs.fabric.microsoft.com
-         */
+         * Optional Microsoft Fabric service endpoint.
+         * Default value: https://onelake.dfs.fabric.microsoft.com
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private String endpoint;
 
         /**
-         * Optional Microsoft Fabric service endpoint. Default value:
-         * https://onelake.dfs.fabric.microsoft.com
+         * Optional Microsoft Fabric service endpoint.
+         * Default value: https://onelake.dfs.fabric.microsoft.com
          *
          * @param endpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder endpoint(String endpoint) {
             this.endpoint = endpoint;
             this.__explicitlySet__.add("endpoint");
@@ -285,7 +297,9 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -329,81 +343,92 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
         this.endpoint = endpoint;
     }
 
-    /** Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f */
+    /**
+     * Azure tenant ID of the application.
+     * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     * Azure tenant ID of the application.
+     * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d */
+    /**
+     * Azure client ID of the application.
+     * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
-     * Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * Azure client ID of the application.
+     * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
     /**
-     * Client secret associated with the client id. Deprecated: This field is deprecated and
-     * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
-     */
+     * Client secret associated with the client id.
+     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
     private final String clientSecret;
 
     /**
-     * Client secret associated with the client id. Deprecated: This field is deprecated and
-     * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+     * Client secret associated with the client id.
+     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getClientSecret() {
         return clientSecret;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
-     * be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Note: When provided, 'clientSecret' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
-     * be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Note: When provided, 'clientSecret' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getClientSecretSecretId() {
         return clientSecretSecretId;
     }
 
     /**
-     * Optional Microsoft Fabric service endpoint. Default value:
-     * https://onelake.dfs.fabric.microsoft.com
-     */
+     * Optional Microsoft Fabric service endpoint.
+     * Default value: https://onelake.dfs.fabric.microsoft.com
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final String endpoint;
 
     /**
-     * Optional Microsoft Fabric service endpoint. Default value:
-     * https://onelake.dfs.fabric.microsoft.com
+     * Optional Microsoft Fabric service endpoint.
+     * Default value: https://onelake.dfs.fabric.microsoft.com
      *
      * @return the value
-     */
+     **/
     public String getEndpoint() {
         return endpoint;
     }
@@ -415,7 +440,6 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

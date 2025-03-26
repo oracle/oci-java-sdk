@@ -5,21 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Export metadata object response. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Export metadata object response.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExportRequest extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExportRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -83,279 +81,289 @@ public final class ExportRequest extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Export object request key */
+        /**
+         * Export object request key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Export object request key
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The list of the objects to be exported */
+        /**
+         * The list of the objects to be exported
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectKeys")
         private java.util.List<String> objectKeys;
 
         /**
          * The list of the objects to be exported
-         *
          * @param objectKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder objectKeys(java.util.List<String> objectKeys) {
             this.objectKeys = objectKeys;
             this.__explicitlySet__.add("objectKeys");
             return this;
         }
-        /** The name of the Object Storage Bucket where the objects will be exported to */
+        /**
+         * The name of the Object Storage Bucket where the objects will be exported to
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The name of the Object Storage Bucket where the objects will be exported to
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** Name of the exported zip file. */
+        /**
+         * Name of the exported zip file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileName")
         private String fileName;
 
         /**
          * Name of the exported zip file.
-         *
          * @param fileName the value to set
          * @return this builder
-         */
+         **/
         public Builder fileName(String fileName) {
             this.fileName = fileName;
             this.__explicitlySet__.add("fileName");
             return this;
         }
         /**
-         * Optional parameter to point to object storage tenancy (if using Object Storage of
-         * different tenancy)
-         */
+         * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageTenancyId")
         private String objectStorageTenancyId;
 
         /**
-         * Optional parameter to point to object storage tenancy (if using Object Storage of
-         * different tenancy)
-         *
+         * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
          * @param objectStorageTenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStorageTenancyId(String objectStorageTenancyId) {
             this.objectStorageTenancyId = objectStorageTenancyId;
             this.__explicitlySet__.add("objectStorageTenancyId");
             return this;
         }
-        /** Region of the object storage (if using object storage of different region) */
+        /**
+         * Region of the object storage (if using object storage of different region)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageRegion")
         private String objectStorageRegion;
 
         /**
          * Region of the object storage (if using object storage of different region)
-         *
          * @param objectStorageRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStorageRegion(String objectStorageRegion) {
             this.objectStorageRegion = objectStorageRegion;
             this.__explicitlySet__.add("objectStorageRegion");
             return this;
         }
-        /** Controls if the references will be exported along with the objects */
+        /**
+         * Controls if the references will be exported along with the objects
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areReferencesIncluded")
         private Boolean areReferencesIncluded;
 
         /**
          * Controls if the references will be exported along with the objects
-         *
          * @param areReferencesIncluded the value to set
          * @return this builder
-         */
+         **/
         public Builder areReferencesIncluded(Boolean areReferencesIncluded) {
             this.areReferencesIncluded = areReferencesIncluded;
             this.__explicitlySet__.add("areReferencesIncluded");
             return this;
         }
         /**
-         * Flag to control whether to overwrite the object if it is already present at the provided
-         * object storage location.
-         */
+         * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isObjectOverwriteEnabled")
         private Boolean isObjectOverwriteEnabled;
 
         /**
-         * Flag to control whether to overwrite the object if it is already present at the provided
-         * object storage location.
-         *
+         * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
          * @param isObjectOverwriteEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isObjectOverwriteEnabled(Boolean isObjectOverwriteEnabled) {
             this.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
             this.__explicitlySet__.add("isObjectOverwriteEnabled");
             return this;
         }
-        /** Export multiple objects based on filters. */
+        /**
+         * Export multiple objects based on filters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<String> filters;
 
         /**
          * Export multiple objects based on filters.
-         *
          * @param filters the value to set
          * @return this builder
-         */
+         **/
         public Builder filters(java.util.List<String> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
             return this;
         }
-        /** Export Objects request status. */
+        /**
+         * Export Objects request status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Export Objects request status.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Name of the user who initiated export request. */
+        /**
+         * Name of the user who initiated export request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
          * Name of the user who initiated export request.
-         *
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** Number of objects that are exported. */
+        /**
+         * Number of objects that are exported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalExportedObjectCount")
         private Integer totalExportedObjectCount;
 
         /**
          * Number of objects that are exported.
-         *
          * @param totalExportedObjectCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalExportedObjectCount(Integer totalExportedObjectCount) {
             this.totalExportedObjectCount = totalExportedObjectCount;
             this.__explicitlySet__.add("totalExportedObjectCount");
             return this;
         }
-        /** Time at which the request started getting processed. */
+        /**
+         * Time at which the request started getting processed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStartedInMillis")
         private Long timeStartedInMillis;
 
         /**
          * Time at which the request started getting processed.
-         *
          * @param timeStartedInMillis the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStartedInMillis(Long timeStartedInMillis) {
             this.timeStartedInMillis = timeStartedInMillis;
             this.__explicitlySet__.add("timeStartedInMillis");
             return this;
         }
-        /** Time at which the request was completely processed. */
+        /**
+         * Time at which the request was completely processed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEndedInMillis")
         private Long timeEndedInMillis;
 
         /**
          * Time at which the request was completely processed.
-         *
          * @param timeEndedInMillis the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEndedInMillis(Long timeEndedInMillis) {
             this.timeEndedInMillis = timeEndedInMillis;
             this.__explicitlySet__.add("timeEndedInMillis");
             return this;
         }
-        /** Contains key of the error */
+        /**
+         * Contains key of the error
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessages")
         private java.util.Map<String, String> errorMessages;
 
         /**
          * Contains key of the error
-         *
          * @param errorMessages the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessages(java.util.Map<String, String> errorMessages) {
             this.errorMessages = errorMessages;
             this.__explicitlySet__.add("errorMessages");
             return this;
         }
-        /** The array of exported object details. */
+        /**
+         * The array of exported object details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportedItems")
         private java.util.List<ExportObjectMetadataSummary> exportedItems;
 
         /**
          * The array of exported object details.
-         *
          * @param exportedItems the value to set
          * @return this builder
-         */
+         **/
         public Builder exportedItems(java.util.List<ExportObjectMetadataSummary> exportedItems) {
             this.exportedItems = exportedItems;
             this.__explicitlySet__.add("exportedItems");
             return this;
         }
-        /** The array of exported referenced objects. */
+        /**
+         * The array of exported referenced objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedItems")
         private String referencedItems;
 
         /**
          * The array of exported referenced objects.
-         *
          * @param referencedItems the value to set
          * @return this builder
-         */
+         **/
         public Builder referencedItems(String referencedItems) {
             this.referencedItems = referencedItems;
             this.__explicitlySet__.add("referencedItems");
             return this;
         }
-        /** Name of the export request. */
+        /**
+         * Name of the export request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the export request.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -452,7 +460,9 @@ public final class ExportRequest extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -461,133 +471,136 @@ public final class ExportRequest extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Export object request key */
+    /**
+     * Export object request key
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Export object request key
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The list of the objects to be exported */
+    /**
+     * The list of the objects to be exported
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectKeys")
     private final java.util.List<String> objectKeys;
 
     /**
      * The list of the objects to be exported
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getObjectKeys() {
         return objectKeys;
     }
 
-    /** The name of the Object Storage Bucket where the objects will be exported to */
+    /**
+     * The name of the Object Storage Bucket where the objects will be exported to
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The name of the Object Storage Bucket where the objects will be exported to
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** Name of the exported zip file. */
+    /**
+     * Name of the exported zip file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileName")
     private final String fileName;
 
     /**
      * Name of the exported zip file.
-     *
      * @return the value
-     */
+     **/
     public String getFileName() {
         return fileName;
     }
 
     /**
-     * Optional parameter to point to object storage tenancy (if using Object Storage of different
-     * tenancy)
-     */
+     * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageTenancyId")
     private final String objectStorageTenancyId;
 
     /**
-     * Optional parameter to point to object storage tenancy (if using Object Storage of different
-     * tenancy)
-     *
+     * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * @return the value
-     */
+     **/
     public String getObjectStorageTenancyId() {
         return objectStorageTenancyId;
     }
 
-    /** Region of the object storage (if using object storage of different region) */
+    /**
+     * Region of the object storage (if using object storage of different region)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageRegion")
     private final String objectStorageRegion;
 
     /**
      * Region of the object storage (if using object storage of different region)
-     *
      * @return the value
-     */
+     **/
     public String getObjectStorageRegion() {
         return objectStorageRegion;
     }
 
-    /** Controls if the references will be exported along with the objects */
+    /**
+     * Controls if the references will be exported along with the objects
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areReferencesIncluded")
     private final Boolean areReferencesIncluded;
 
     /**
      * Controls if the references will be exported along with the objects
-     *
      * @return the value
-     */
+     **/
     public Boolean getAreReferencesIncluded() {
         return areReferencesIncluded;
     }
 
     /**
-     * Flag to control whether to overwrite the object if it is already present at the provided
-     * object storage location.
-     */
+     * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isObjectOverwriteEnabled")
     private final Boolean isObjectOverwriteEnabled;
 
     /**
-     * Flag to control whether to overwrite the object if it is already present at the provided
-     * object storage location.
-     *
+     * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      * @return the value
-     */
+     **/
     public Boolean getIsObjectOverwriteEnabled() {
         return isObjectOverwriteEnabled;
     }
 
-    /** Export multiple objects based on filters. */
+    /**
+     * Export multiple objects based on filters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<String> filters;
 
     /**
      * Export multiple objects based on filters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getFilters() {
         return filters;
     }
 
-    /** Export Objects request status. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Export Objects request status.
+     **/
+    public enum Status {
         Successful("SUCCESSFUL"),
         Failed("FAILED"),
         InProgress("IN_PROGRESS"),
@@ -596,8 +609,8 @@ public final class ExportRequest extends com.oracle.bmc.http.client.internal.Exp
         Queued("QUEUED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -635,119 +648,128 @@ public final class ExportRequest extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** Export Objects request status. */
+    /**
+     * Export Objects request status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Export Objects request status.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** Name of the user who initiated export request. */
+    /**
+     * Name of the user who initiated export request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
      * Name of the user who initiated export request.
-     *
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** Number of objects that are exported. */
+    /**
+     * Number of objects that are exported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalExportedObjectCount")
     private final Integer totalExportedObjectCount;
 
     /**
      * Number of objects that are exported.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalExportedObjectCount() {
         return totalExportedObjectCount;
     }
 
-    /** Time at which the request started getting processed. */
+    /**
+     * Time at which the request started getting processed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStartedInMillis")
     private final Long timeStartedInMillis;
 
     /**
      * Time at which the request started getting processed.
-     *
      * @return the value
-     */
+     **/
     public Long getTimeStartedInMillis() {
         return timeStartedInMillis;
     }
 
-    /** Time at which the request was completely processed. */
+    /**
+     * Time at which the request was completely processed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEndedInMillis")
     private final Long timeEndedInMillis;
 
     /**
      * Time at which the request was completely processed.
-     *
      * @return the value
-     */
+     **/
     public Long getTimeEndedInMillis() {
         return timeEndedInMillis;
     }
 
-    /** Contains key of the error */
+    /**
+     * Contains key of the error
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessages")
     private final java.util.Map<String, String> errorMessages;
 
     /**
      * Contains key of the error
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getErrorMessages() {
         return errorMessages;
     }
 
-    /** The array of exported object details. */
+    /**
+     * The array of exported object details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportedItems")
     private final java.util.List<ExportObjectMetadataSummary> exportedItems;
 
     /**
      * The array of exported object details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExportObjectMetadataSummary> getExportedItems() {
         return exportedItems;
     }
 
-    /** The array of exported referenced objects. */
+    /**
+     * The array of exported referenced objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedItems")
     private final String referencedItems;
 
     /**
      * The array of exported referenced objects.
-     *
      * @return the value
-     */
+     **/
     public String getReferencedItems() {
         return referencedItems;
     }
 
-    /** Name of the export request. */
+    /**
+     * Name of the export request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the export request.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -759,7 +781,6 @@ public final class ExportRequest extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

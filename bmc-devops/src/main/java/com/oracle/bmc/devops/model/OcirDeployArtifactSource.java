@@ -5,53 +5,55 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the OCIR details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies the OCIR details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OcirDeployArtifactSource.Builder.class)
+    builder = OcirDeployArtifactSource.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "deployArtifactSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "deployArtifactSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OcirDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Specifies OCIR image path - optionally include tag. */
+        /**
+         * Specifies OCIR image path - optionally include tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageUri")
         private String imageUri;
 
         /**
          * Specifies OCIR image path - optionally include tag.
-         *
          * @param imageUri the value to set
          * @return this builder
-         */
+         **/
         public Builder imageUri(String imageUri) {
             this.imageUri = imageUri;
             this.__explicitlySet__.add("imageUri");
             return this;
         }
-        /** Specifies image digest for the version of the image. */
+        /**
+         * Specifies image digest for the version of the image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
         private String imageDigest;
 
         /**
          * Specifies image digest for the version of the image.
-         *
          * @param imageDigest the value to set
          * @return this builder
-         */
+         **/
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = imageDigest;
             this.__explicitlySet__.add("imageDigest");
@@ -82,7 +84,9 @@ public final class OcirDeployArtifactSource extends DeployArtifactSource {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +102,30 @@ public final class OcirDeployArtifactSource extends DeployArtifactSource {
         this.imageDigest = imageDigest;
     }
 
-    /** Specifies OCIR image path - optionally include tag. */
+    /**
+     * Specifies OCIR image path - optionally include tag.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageUri")
     private final String imageUri;
 
     /**
      * Specifies OCIR image path - optionally include tag.
-     *
      * @return the value
-     */
+     **/
     public String getImageUri() {
         return imageUri;
     }
 
-    /** Specifies image digest for the version of the image. */
+    /**
+     * Specifies image digest for the version of the image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
     private final String imageDigest;
 
     /**
      * Specifies image digest for the version of the image.
-     *
      * @return the value
-     */
+     **/
     public String getImageDigest() {
         return imageDigest;
     }
@@ -131,7 +137,6 @@ public final class OcirDeployArtifactSource extends DeployArtifactSource {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

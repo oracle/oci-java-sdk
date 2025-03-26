@@ -6,32 +6,39 @@ package com.oracle.bmc.autoscaling.requests;
 
 import com.oracle.bmc.autoscaling.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/ListAutoScalingConfigurationsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListAutoScalingConfigurationsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/ListAutoScalingConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAutoScalingConfigurationsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class ListAutoScalingConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the resource. Use tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * resource. Use tenancyId to search in
+     * the root compartment.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the resource. Use tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * resource. Use tenancyId to search in
+     * the root compartment.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources that match the given display name exactly. */
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the given display name exactly. */
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -42,48 +49,50 @@ public class ListAutoScalingConfigurationsRequest
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of items to return in a paginated "List" call. For
-     * important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return in a paginated "List" call. For important details
+     * about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return in a paginated "List" call. For
-     * important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return in a paginated "List" call. For important details
+     * about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+     * details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+     * details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -118,23 +127,26 @@ public class ListAutoScalingConfigurationsRequest
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -168,8 +180,9 @@ public class ListAutoScalingConfigurationsRequest
     };
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -178,18 +191,22 @@ public class ListAutoScalingConfigurationsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAutoScalingConfigurationsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the resource. Use tenancyId to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * resource. Use tenancyId to search in
+         * the root compartment.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the resource. Use tenancyId to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * resource. Use tenancyId to search in
+         * the root compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -199,7 +216,10 @@ public class ListAutoScalingConfigurationsRequest
             return this;
         }
 
-        /** A filter to return only resources that match the given display name exactly. */
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -216,6 +236,7 @@ public class ListAutoScalingConfigurationsRequest
         private String opcRequestId = null;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -225,16 +246,15 @@ public class ListAutoScalingConfigurationsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return in a paginated "List" call. For important details
+         * about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return in a paginated "List" call. For important details
+         * about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -245,16 +265,15 @@ public class ListAutoScalingConfigurationsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+         * details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call. For important
+         * details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -265,16 +284,17 @@ public class ListAutoScalingConfigurationsRequest
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -285,14 +305,15 @@ public class ListAutoScalingConfigurationsRequest
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-         * DISPLAYNAME sort order is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-         * DISPLAYNAME sort order is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -304,19 +325,18 @@ public class ListAutoScalingConfigurationsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -328,7 +348,6 @@ public class ListAutoScalingConfigurationsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAutoScalingConfigurationsRequest o) {
@@ -347,11 +366,10 @@ public class ListAutoScalingConfigurationsRequest
         /**
          * Build the instance of ListAutoScalingConfigurationsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAutoScalingConfigurationsRequest
          */
@@ -365,8 +383,7 @@ public class ListAutoScalingConfigurationsRequest
         /**
          * Build the instance of ListAutoScalingConfigurationsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAutoScalingConfigurationsRequest
@@ -382,14 +399,12 @@ public class ListAutoScalingConfigurationsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListAutoScalingConfigurationsRequest(compartmentId, displayName, opcRequestId,
-            // limit, page, sortBy, sortOrder);
+            // new ListAutoScalingConfigurationsRequest(compartmentId, displayName, opcRequestId, limit, page, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -405,7 +420,6 @@ public class ListAutoScalingConfigurationsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

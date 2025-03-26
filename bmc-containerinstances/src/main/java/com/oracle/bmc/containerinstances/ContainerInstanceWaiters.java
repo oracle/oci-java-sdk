@@ -10,11 +10,10 @@ import com.oracle.bmc.containerinstances.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of ContainerInstance.
- *
- * <p>The default configuration used is defined by {@link
- * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ * <p>
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class ContainerInstanceWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final ContainerInstance client;
@@ -29,8 +28,7 @@ public class ContainerInstanceWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetContainerRequest, GetContainerResponse> forContainer(
@@ -74,8 +72,7 @@ public class ContainerInstanceWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetContainerRequest, GetContainerResponse> forContainer(
@@ -131,8 +128,7 @@ public class ContainerInstanceWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetContainerInstanceRequest, GetContainerInstanceResponse>
@@ -180,8 +176,7 @@ public class ContainerInstanceWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetContainerInstanceRequest, GetContainerInstanceResponse>
@@ -207,8 +202,8 @@ public class ContainerInstanceWaiters {
             forContainerInstance(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetContainerInstanceRequest request,
-                    final com.oracle.bmc.containerinstances.model.ContainerInstance.LifecycleState
-                                    ...
+                    final com.oracle.bmc.containerinstances.model.ContainerInstance
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.containerinstances.model.ContainerInstance.LifecycleState>

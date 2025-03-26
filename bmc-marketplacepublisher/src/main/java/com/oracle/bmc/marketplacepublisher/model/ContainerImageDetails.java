@@ -5,23 +5,22 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * Container Image details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Container Image details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ContainerImageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ContainerImageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ContainerImageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceRegistryId",
@@ -49,91 +48,97 @@ public final class ContainerImageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source registry OCID of the container image. */
+        /**
+         * The source registry OCID of the container image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
         private String sourceRegistryId;
 
         /**
          * The source registry OCID of the container image.
-         *
          * @param sourceRegistryId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryId(String sourceRegistryId) {
             this.sourceRegistryId = sourceRegistryId;
             this.__explicitlySet__.add("sourceRegistryId");
             return this;
         }
-        /** The source registry url of the container image. */
+        /**
+         * The source registry url of the container image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
         private String sourceRegistryUrl;
 
         /**
          * The source registry url of the container image.
-         *
          * @param sourceRegistryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryUrl(String sourceRegistryUrl) {
             this.sourceRegistryUrl = sourceRegistryUrl;
             this.__explicitlySet__.add("sourceRegistryUrl");
             return this;
         }
-        /** image validation status */
+        /**
+         * image validation status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
         private ValidationStatus validationStatus;
 
         /**
          * image validation status
-         *
          * @param validationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder validationStatus(ValidationStatus validationStatus) {
             this.validationStatus = validationStatus;
             this.__explicitlySet__.add("validationStatus");
             return this;
         }
-        /** image validation failure errors */
+        /**
+         * image validation failure errors
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationError")
         private String validationError;
 
         /**
          * image validation failure errors
-         *
          * @param validationError the value to set
          * @return this builder
-         */
+         **/
         public Builder validationError(String validationError) {
             this.validationError = validationError;
             this.__explicitlySet__.add("validationError");
             return this;
         }
-        /** image publication status */
+        /**
+         * image publication status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicationStatus")
         private PublicationStatus publicationStatus;
 
         /**
          * image publication status
-         *
          * @param publicationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder publicationStatus(PublicationStatus publicationStatus) {
             this.publicationStatus = publicationStatus;
             this.__explicitlySet__.add("publicationStatus");
             return this;
         }
-        /** image publication failure errors */
+        /**
+         * image publication failure errors
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicationError")
         private String publicationError;
 
         /**
          * image publication failure errors
-         *
          * @param publicationError the value to set
          * @return this builder
-         */
+         **/
         public Builder publicationError(String publicationError) {
             this.publicationError = publicationError;
             this.__explicitlySet__.add("publicationError");
@@ -182,7 +187,9 @@ public final class ContainerImageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class ContainerImageDetails
         return new Builder().copy(this);
     }
 
-    /** The source registry OCID of the container image. */
+    /**
+     * The source registry OCID of the container image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
     private final String sourceRegistryId;
 
     /**
      * The source registry OCID of the container image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryId() {
         return sourceRegistryId;
     }
 
-    /** The source registry url of the container image. */
+    /**
+     * The source registry url of the container image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
     private final String sourceRegistryUrl;
 
     /**
      * The source registry url of the container image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryUrl() {
         return sourceRegistryUrl;
     }
 
-    /** image validation status */
+    /**
+     * image validation status
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
     private final ValidationStatus validationStatus;
 
     /**
      * image validation status
-     *
      * @return the value
-     */
+     **/
     public ValidationStatus getValidationStatus() {
         return validationStatus;
     }
 
-    /** image validation failure errors */
+    /**
+     * image validation failure errors
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationError")
     private final String validationError;
 
     /**
      * image validation failure errors
-     *
      * @return the value
-     */
+     **/
     public String getValidationError() {
         return validationError;
     }
 
-    /** image publication status */
+    /**
+     * image publication status
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicationStatus")
     private final PublicationStatus publicationStatus;
 
     /**
      * image publication status
-     *
      * @return the value
-     */
+     **/
     public PublicationStatus getPublicationStatus() {
         return publicationStatus;
     }
 
-    /** image publication failure errors */
+    /**
+     * image publication failure errors
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicationError")
     private final String publicationError;
 
     /**
      * image publication failure errors
-     *
      * @return the value
-     */
+     **/
     public String getPublicationError() {
         return publicationError;
     }
@@ -276,7 +289,6 @@ public final class ContainerImageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

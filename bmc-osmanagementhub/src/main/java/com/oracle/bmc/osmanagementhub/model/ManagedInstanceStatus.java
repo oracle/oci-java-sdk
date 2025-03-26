@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Status of the managed instance. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ManagedInstanceStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Status of the managed instance.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ManagedInstanceStatus {
     Normal("NORMAL"),
     Unreachable("UNREACHABLE"),
     Error("ERROR"),

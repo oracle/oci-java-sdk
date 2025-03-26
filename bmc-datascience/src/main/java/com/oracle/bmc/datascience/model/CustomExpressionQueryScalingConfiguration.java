@@ -5,25 +5,26 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The scaling configuration for the custom metric expression rule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The scaling configuration for the custom metric expression rule.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomExpressionQueryScalingConfiguration.Builder.class)
+    builder = CustomExpressionQueryScalingConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "scalingConfigurationType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "scalingConfigurationType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CustomExpressionQueryScalingConfiguration extends ScalingConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -45,49 +46,46 @@ public final class CustomExpressionQueryScalingConfiguration extends ScalingConf
             return this;
         }
         /**
-         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms
-         * feature of the Monitoring service interprets results for each returned time series as
-         * Boolean values, where zero represents false and a non-zero value represents true. A true
-         * value means that the trigger rule condition has been met. The query must specify a
-         * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
-         * for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally specify
-         * dimensions and grouping functions. Supported grouping functions: {@code grouping()},
-         * {@code groupBy()}.
+         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+         * the Monitoring service interprets results for each returned time series as Boolean values,
+         * where zero represents false and a non-zero value represents true. A true value means that the trigger
+         * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+         * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+         * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * <p>
+         * Example of threshold alarm:
+         * <p>
+         * -----
+         * <p>
+         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
+         *     CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+         * <p>
+         * -----
          *
-         * <p>Example of threshold alarm:
-         *
-         * <p>-----
-         *
-         * <p>CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
-         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-         *
-         * <p>-----
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
-         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms
-         * feature of the Monitoring service interprets results for each returned time series as
-         * Boolean values, where zero represents false and a non-zero value represents true. A true
-         * value means that the trigger rule condition has been met. The query must specify a
-         * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
-         * for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally specify
-         * dimensions and grouping functions. Supported grouping functions: {@code grouping()},
-         * {@code groupBy()}.
-         *
-         * <p>Example of threshold alarm:
-         *
-         * <p>-----
-         *
-         * <p>CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
-         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-         *
-         * <p>-----
+         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+         * the Monitoring service interprets results for each returned time series as Boolean values,
+         * where zero represents false and a non-zero value represents true. A true value means that the trigger
+         * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+         * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+         * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * <p>
+         * Example of threshold alarm:
+         * <p>
+         * -----
+         * <p>
+         * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
+         *     CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+         * <p>
+         * -----
          *
          * @param query the value to set
          * @return this builder
-         */
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -122,7 +120,9 @@ public final class CustomExpressionQueryScalingConfiguration extends ScalingConf
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,46 +139,45 @@ public final class CustomExpressionQueryScalingConfiguration extends ScalingConf
     }
 
     /**
-     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature
-     * of the Monitoring service interprets results for each returned time series as Boolean values,
-     * where zero represents false and a non-zero value represents true. A true value means that the
-     * trigger rule condition has been met. The query must specify a metric, statistic, interval,
-     * and trigger rule (threshold or absence). Supported values for interval: {@code 1m}-{@code
-     * 60m} (also {@code 1h}). You can optionally specify dimensions and grouping functions.
-     * Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+     * the Monitoring service interprets results for each returned time series as Boolean values,
+     * where zero represents false and a non-zero value represents true. A true value means that the trigger
+     * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+     * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+     * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+     * <p>
+     * Example of threshold alarm:
+     * <p>
+     * -----
+     * <p>
+     * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
+     *     CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+     * <p>
+     * -----
      *
-     * <p>Example of threshold alarm:
-     *
-     * <p>-----
-     *
-     * <p>CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
-     * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-     *
-     * <p>-----
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
-     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature
-     * of the Monitoring service interprets results for each returned time series as Boolean values,
-     * where zero represents false and a non-zero value represents true. A true value means that the
-     * trigger rule condition has been met. The query must specify a metric, statistic, interval,
-     * and trigger rule (threshold or absence). Supported values for interval: {@code 1m}-{@code
-     * 60m} (also {@code 1h}). You can optionally specify dimensions and grouping functions.
-     * Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-     *
-     * <p>Example of threshold alarm:
-     *
-     * <p>-----
-     *
-     * <p>CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
-     * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
-     *
-     * <p>-----
+     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
+     * the Monitoring service interprets results for each returned time series as Boolean values,
+     * where zero represents false and a non-zero value represents true. A true value means that the trigger
+     * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
+     * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+     * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+     * <p>
+     * Example of threshold alarm:
+     * <p>
+     * -----
+     * <p>
+     * CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25
+     *     CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+     * <p>
+     * -----
      *
      * @return the value
-     */
+     **/
     public String getQuery() {
         return query;
     }
@@ -190,7 +189,6 @@ public final class CustomExpressionQueryScalingConfiguration extends ScalingConf
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

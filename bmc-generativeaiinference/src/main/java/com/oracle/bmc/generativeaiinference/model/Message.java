@@ -5,35 +5,36 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * A message that represents a single chat dialog. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * A message that represents a single chat dialog.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "role",
-        defaultImpl = Message.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "role",
+    defaultImpl = Message.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = SystemMessage.class,
-            name = "SYSTEM"),
+        value = SystemMessage.class,
+        name = "SYSTEM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AssistantMessage.class,
-            name = "ASSISTANT"),
+        value = AssistantMessage.class,
+        name = "ASSISTANT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UserMessage.class, name = "USER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ToolMessage.class, name = "TOOL")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Message extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Message extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"content"})
     protected Message(java.util.List<ChatContent> content) {
@@ -41,15 +42,16 @@ public class Message extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
         this.content = content;
     }
 
-    /** Contents of the chat message. */
+    /**
+     * Contents of the chat message.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final java.util.List<ChatContent> content;
 
     /**
      * Contents of the chat message.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ChatContent> getContent() {
         return content;
     }
@@ -61,7 +63,6 @@ public class Message extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -96,16 +97,18 @@ public class Message extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
         return result;
     }
 
-    /** Indicates who is writing the current chat message. */
-    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates who is writing the current chat message.
+     **/
+    public enum Role {
         System("SYSTEM"),
         User("USER"),
         Assistant("ASSISTANT"),
         Tool("TOOL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

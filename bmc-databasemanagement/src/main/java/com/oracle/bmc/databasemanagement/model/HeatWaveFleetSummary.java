@@ -5,24 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The inventory count of HeatWave clusters in the fleet and a summary of the metrics that provide
- * the aggregated usage of CPU, storage, and so on of all the clusters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The inventory count of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HeatWaveFleetSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HeatWaveFleetSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = HeatWaveFleetSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class HeatWaveFleetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"aggregatedMetrics", "inventory"})
     public HeatWaveFleetSummary(
@@ -35,16 +32,17 @@ public final class HeatWaveFleetSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The usage metrics for the HeatWave clusters in the fleet. */
+        /**
+         * The usage metrics for the HeatWave clusters in the fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedMetrics")
         private java.util.List<HeatWaveFleetMetricSummaryDefinition> aggregatedMetrics;
 
         /**
          * The usage metrics for the HeatWave clusters in the fleet.
-         *
          * @param aggregatedMetrics the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregatedMetrics(
                 java.util.List<HeatWaveFleetMetricSummaryDefinition> aggregatedMetrics) {
             this.aggregatedMetrics = aggregatedMetrics;
@@ -52,19 +50,16 @@ public final class HeatWaveFleetSummary
             return this;
         }
         /**
-         * The number of HeatWave clusters in the fleet, grouped by cluster type or other
-         * properties.
-         */
+         * The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inventory")
         private java.util.List<HeatWaveFleetByCategory> inventory;
 
         /**
-         * The number of HeatWave clusters in the fleet, grouped by cluster type or other
-         * properties.
-         *
+         * The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
          * @param inventory the value to set
          * @return this builder
-         */
+         **/
         public Builder inventory(java.util.List<HeatWaveFleetByCategory> inventory) {
             this.inventory = inventory;
             this.__explicitlySet__.add("inventory");
@@ -95,7 +90,9 @@ public final class HeatWaveFleetSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,30 +101,30 @@ public final class HeatWaveFleetSummary
         return new Builder().copy(this);
     }
 
-    /** The usage metrics for the HeatWave clusters in the fleet. */
+    /**
+     * The usage metrics for the HeatWave clusters in the fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedMetrics")
     private final java.util.List<HeatWaveFleetMetricSummaryDefinition> aggregatedMetrics;
 
     /**
      * The usage metrics for the HeatWave clusters in the fleet.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HeatWaveFleetMetricSummaryDefinition> getAggregatedMetrics() {
         return aggregatedMetrics;
     }
 
     /**
      * The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inventory")
     private final java.util.List<HeatWaveFleetByCategory> inventory;
 
     /**
      * The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HeatWaveFleetByCategory> getInventory() {
         return inventory;
     }
@@ -139,7 +136,6 @@ public final class HeatWaveFleetSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

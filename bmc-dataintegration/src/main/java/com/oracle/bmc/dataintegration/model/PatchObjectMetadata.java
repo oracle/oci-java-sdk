@@ -5,24 +5,21 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A summary type containing information about the object including its key, name and when/who
- * created/updated it. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * A summary type containing information about the object including its key, name and when/who created/updated it.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PatchObjectMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PatchObjectMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PatchObjectMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PatchObjectMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -53,120 +50,113 @@ public final class PatchObjectMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The key of the object. */
+        /**
+         * The key of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key of the object.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The fully qualified path of the published object, which would include its project and
-         * folder.
-         */
+         * The fully qualified path of the published object, which would include its project and folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namePath")
         private String namePath;
 
         /**
-         * The fully qualified path of the published object, which would include its project and
-         * folder.
-         *
+         * The fully qualified path of the published object, which would include its project and folder.
          * @param namePath the value to set
          * @return this builder
-         */
+         **/
         public Builder namePath(String namePath) {
             this.namePath = namePath;
             this.__explicitlySet__.add("namePath");
             return this;
         }
-        /** The type of the object in patch. */
+        /**
+         * The type of the object in patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of the object in patch.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The object version. */
+        /**
+         * The object version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The object version.
-         *
          * @param objectVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         */
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         *
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** The patch action indicating if object was created, updated, or deleted. */
+        /**
+         * The patch action indicating if object was created, updated, or deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
          * The patch action indicating if object was created, updated, or deleted.
-         *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -219,7 +209,9 @@ public final class PatchObjectMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -228,53 +220,52 @@ public final class PatchObjectMetadata
         return new Builder().copy(this);
     }
 
-    /** The key of the object. */
+    /**
+     * The key of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * The fully qualified path of the published object, which would include its project and folder.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namePath")
     private final String namePath;
 
     /**
      * The fully qualified path of the published object, which would include its project and folder.
-     *
      * @return the value
-     */
+     **/
     public String getNamePath() {
         return namePath;
     }
 
-    /** The type of the object in patch. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the object in patch.
+     **/
+    public enum Type {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
         PipelineTask("PIPELINE_TASK"),
@@ -283,8 +274,8 @@ public final class PatchObjectMetadata
         RestTask("REST_TASK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -321,58 +312,59 @@ public final class PatchObjectMetadata
             return UnknownEnumValue;
         }
     };
-    /** The type of the object in patch. */
+    /**
+     * The type of the object in patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of the object in patch.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** The object version. */
+    /**
+     * The object version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The object version.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper
-     * case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper
-     * case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** The patch action indicating if object was created, updated, or deleted. */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The patch action indicating if object was created, updated, or deleted.
+     **/
+    public enum Action {
         Created("CREATED"),
         Deleted("DELETED"),
         Updated("UPDATED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -410,15 +402,16 @@ public final class PatchObjectMetadata
             return UnknownEnumValue;
         }
     };
-    /** The patch action indicating if object was created, updated, or deleted. */
+    /**
+     * The patch action indicating if object was created, updated, or deleted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
      * The patch action indicating if object was created, updated, or deleted.
-     *
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
@@ -430,7 +423,6 @@ public final class PatchObjectMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

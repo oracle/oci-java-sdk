@@ -5,58 +5,68 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Generic column defining all attributes common to all querylanguage columns. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Generic column defining all attributes common to all querylanguage columns.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = AbstractColumn.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = AbstractColumn.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TimeColumn.class,
-            name = "TIME_COLUMN"),
+        value = TimeColumn.class,
+        name = "TIME_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ClassifyColumn.class,
-            name = "CLASSIFY_COLUMN"),
+        value = ClassifyColumn.class,
+        name = "CLASSIFY_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TrendColumn.class,
-            name = "TREND_COLUMN"),
+        value = TrendColumn.class,
+        name = "TREND_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TimeStatsColumn.class,
-            name = "TIME_STATS_COLUMN"),
+        value = TimeStatsColumn.class,
+        name = "TIME_STATS_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TimeClusterColumn.class,
-            name = "TIME_CLUSTER_COLUMN"),
+        value = TimeClusterColumn.class,
+        name = "TIME_CLUSTER_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Column.class, name = "COLUMN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TimeClusterDataColumn.class,
-            name = "TIME_CLUSTER_DATA_COLUMN"),
+        value = TimeClusterDataColumn.class,
+        name = "TIME_CLUSTER_DATA_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TimeStatsDataColumn.class,
-            name = "TIME_STATS_DATA_COLUMN"),
+        value = TimeStatsDataColumn.class,
+        name = "TIME_STATS_DATA_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TableColumn.class,
-            name = "TABLE_COLUMN"),
+        value = TableColumn.class,
+        name = "TABLE_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ChartColumn.class,
-            name = "CHART_COLUMN"),
+        value = ChartColumn.class,
+        name = "CHART_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ChartDataColumn.class,
-            name = "CHART_DATA_COLUMN")
+        value = ChartDataColumn.class,
+        name = "CHART_DATA_COLUMN"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class AbstractColumn extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -100,7 +110,10 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
         this.internalName = internalName;
     }
 
-    /** Column display name - will be alias if column is renamed by queryStrng. */
+    /**
+     * Column display name - will be alias if column is renamed by queryStrng.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -108,12 +121,15 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
      * Column display name - will be alias if column is renamed by queryStrng.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Subsystem column belongs to. */
+    /**
+     * Subsystem column belongs to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
     private final SubSystemName subSystem;
 
@@ -121,29 +137,31 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
      * Subsystem column belongs to.
      *
      * @return the value
-     */
+     **/
     public SubSystemName getSubSystem() {
         return subSystem;
     }
 
     /**
-     * If the column is a 'List of Values' column, this array contains the field values that are
-     * applicable to query results or all if no filters applied.
-     */
+     * If the column is a 'List of Values' column, this array contains the field values that are applicable to query results or all if no filters applied.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<FieldValue> values;
 
     /**
-     * If the column is a 'List of Values' column, this array contains the field values that are
-     * applicable to query results or all if no filters applied.
+     * If the column is a 'List of Values' column, this array contains the field values that are applicable to query results or all if no filters applied.
      *
      * @return the value
-     */
+     **/
     public java.util.List<FieldValue> getValues() {
         return values;
     }
 
-    /** Identifies if all values in this column come from a pre-defined list of values. */
+    /**
+     * Identifies if all values in this column come from a pre-defined list of values.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isListOfValues")
     private final Boolean isListOfValues;
 
@@ -151,12 +169,15 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
      * Identifies if all values in this column come from a pre-defined list of values.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsListOfValues() {
         return isListOfValues;
     }
 
-    /** Identifies if this column allows multiple values to exist in a single row. */
+    /**
+     * Identifies if this column allows multiple values to exist in a single row.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
@@ -164,29 +185,31 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
      * Identifies if this column allows multiple values to exist in a single row.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
 
     /**
-     * A flag indicating whether or not the field is a case sensitive field. Only applies to string
-     * fields.
-     */
+     * A flag indicating whether or not the field is a case sensitive field.  Only applies to string fields.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
     private final Boolean isCaseSensitive;
 
     /**
-     * A flag indicating whether or not the field is a case sensitive field. Only applies to string
-     * fields.
+     * A flag indicating whether or not the field is a case sensitive field.  Only applies to string fields.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCaseSensitive() {
         return isCaseSensitive;
     }
 
-    /** Identifies if this column can be used as a grouping field in any grouping command. */
+    /**
+     * Identifies if this column can be used as a grouping field in any grouping command.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGroupable")
     private final Boolean isGroupable;
 
@@ -194,46 +217,47 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
      * Identifies if this column can be used as a grouping field in any grouping command.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsGroupable() {
         return isGroupable;
     }
 
     /**
-     * Identifies if this column can be used as an expression parameter in any command that accepts
-     * querylanguage expressions.
-     */
+     * Identifies if this column can be used as an expression parameter in any command that accepts querylanguage expressions.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEvaluable")
     private final Boolean isEvaluable;
 
     /**
-     * Identifies if this column can be used as an expression parameter in any command that accepts
-     * querylanguage expressions.
+     * Identifies if this column can be used as an expression parameter in any command that accepts querylanguage expressions.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEvaluable() {
         return isEvaluable;
     }
 
     /**
-     * Identifies if this column should be hidden by default but can be displayed in the UI on
-     * demand.
-     */
+     * Identifies if this column should be hidden by default but can be displayed in the UI on demand.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
     /**
-     * Identifies if this column should be hidden by default but can be displayed in the UI on
-     * demand.
+     * Identifies if this column should be hidden by default but can be displayed in the UI on demand.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
 
-    /** Field denoting column data type. */
+    /**
+     * Field denoting column data type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
@@ -241,29 +265,31 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
      * Field denoting column data type.
      *
      * @return the value
-     */
+     **/
     public ValueType getValueType() {
         return valueType;
     }
 
     /**
-     * Same as displayName unless column renamed in which case this will hold the original display
-     * name for the column.
-     */
+     * Same as displayName unless column renamed in which case this will hold the original display name for the column.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalDisplayName")
     private final String originalDisplayName;
 
     /**
-     * Same as displayName unless column renamed in which case this will hold the original display
-     * name for the column.
+     * Same as displayName unless column renamed in which case this will hold the original display name for the column.
      *
      * @return the value
-     */
+     **/
     public String getOriginalDisplayName() {
         return originalDisplayName;
     }
 
-    /** Internal identifier for the column. */
+    /**
+     * Internal identifier for the column.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
     private final String internalName;
 
@@ -271,7 +297,7 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
      * Internal identifier for the column.
      *
      * @return the value
-     */
+     **/
     public String getInternalName() {
         return internalName;
     }
@@ -283,7 +309,6 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -362,8 +387,11 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
         return result;
     }
 
-    /** Column classification when column requires special designation. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Column classification when column requires special designation.
+     *
+     **/
+    public enum Type {
         Column("COLUMN"),
         ChartColumn("CHART_COLUMN"),
         ChartDataColumn("CHART_DATA_COLUMN"),
@@ -377,8 +405,8 @@ public class AbstractColumn extends com.oracle.bmc.http.client.internal.Explicit
         ClassifyColumn("CLASSIFY_COLUMN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

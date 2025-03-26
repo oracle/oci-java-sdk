@@ -5,21 +5,20 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * Summary of the model. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * Summary of the model.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ModelSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ModelSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -83,16 +82,17 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An ID that uniquely identifies a pretrained or a fine-tuned model. */
+        /**
+         * An ID that uniquely identifies a pretrained or a fine-tuned model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * An ID that uniquely identifies a pretrained or a fine-tuned model.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -100,31 +100,31 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Describes what this model can be used for. */
+        /**
+         * Describes what this model can be used for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
         private java.util.List<ModelCapability> capabilities;
 
         /**
          * Describes what this model can be used for.
-         *
          * @param capabilities the value to set
          * @return this builder
-         */
+         **/
         public Builder capabilities(java.util.List<ModelCapability> capabilities) {
             this.capabilities = capabilities;
             this.__explicitlySet__.add("capabilities");
@@ -132,84 +132,95 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The lifecycle state of the model.
+         * <p>
+         * Allowed values are:
+         * - ACTIVE
+         * - CREATING
+         * - DELETING
+         * - DELETED
+         * - FAILED
          *
-         * <p>Allowed values are: - ACTIVE - CREATING - DELETING - DELETED - FAILED
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Model.LifecycleState lifecycleState;
 
         /**
          * The lifecycle state of the model.
-         *
-         * <p>Allowed values are: - ACTIVE - CREATING - DELETING - DELETED - FAILED
+         * <p>
+         * Allowed values are:
+         * - ACTIVE
+         * - CREATING
+         * - DELETING
+         * - DELETED
+         * - FAILED
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(Model.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state of the model with detail that can provide
-         * actionable information.
-         */
+         * A message describing the current state of the model with detail that can provide actionable information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state of the model with detail that can provide
-         * actionable information.
-         *
+         * A message describing the current state of the model with detail that can provide actionable information.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** A user-friendly name. */
+        /**
+         * A user-friendly name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The provider of the model. */
+        /**
+         * The provider of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
         /**
          * The provider of the model.
-         *
          * @param vendor the value to set
          * @return this builder
-         */
+         **/
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-        /** The version of the model. */
+        /**
+         * The version of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of the model.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -217,58 +228,57 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The date and time that the model was created in the format of an RFC3339 datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time that the model was created in the format of an RFC3339 datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The OCID of the base model that's used for fine-tuning. For pretrained models, the value
-         * is null.
-         */
+         * The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseModelId")
         private String baseModelId;
 
         /**
-         * The OCID of the base model that's used for fine-tuning. For pretrained models, the value
-         * is null.
-         *
+         * The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
          * @param baseModelId the value to set
          * @return this builder
-         */
+         **/
         public Builder baseModelId(String baseModelId) {
             this.baseModelId = baseModelId;
             this.__explicitlySet__.add("baseModelId");
             return this;
         }
         /**
-         * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned
-         * model.
+         * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+         * <p>
+         * Allowed values are:
+         * - BASE
+         * - CUSTOM
          *
-         * <p>Allowed values are: - BASE - CUSTOM
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Model.Type type;
 
         /**
-         * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned
-         * model.
-         *
-         * <p>Allowed values are: - BASE - CUSTOM
+         * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+         * <p>
+         * Allowed values are:
+         * - BASE
+         * - CUSTOM
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Model.Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -292,85 +302,81 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("modelMetrics");
             return this;
         }
-        /** Whether a model is supported long-term. Applies only to base models. */
+        /**
+         * Whether a model is supported long-term. Applies only to base models.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLongTermSupported")
         private Boolean isLongTermSupported;
 
         /**
          * Whether a model is supported long-term. Applies only to base models.
-         *
          * @param isLongTermSupported the value to set
          * @return this builder
-         */
+         **/
         public Builder isLongTermSupported(Boolean isLongTermSupported) {
             this.isLongTermSupported = isLongTermSupported;
             this.__explicitlySet__.add("isLongTermSupported");
             return this;
         }
         /**
-         * Corresponds to the time when the custom model and its associated foundation model will be
-         * deprecated.
-         */
+         * Corresponds to the time when the custom model and its associated foundation model will be deprecated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDeprecated")
         private java.util.Date timeDeprecated;
 
         /**
-         * Corresponds to the time when the custom model and its associated foundation model will be
-         * deprecated.
-         *
+         * Corresponds to the time when the custom model and its associated foundation model will be deprecated.
          * @param timeDeprecated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDeprecated(java.util.Date timeDeprecated) {
             this.timeDeprecated = timeDeprecated;
             this.__explicitlySet__.add("timeDeprecated");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -379,20 +385,21 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -489,7 +496,9 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -498,167 +507,182 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** An ID that uniquely identifies a pretrained or a fine-tuned model. */
+    /**
+     * An ID that uniquely identifies a pretrained or a fine-tuned model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * An ID that uniquely identifies a pretrained or a fine-tuned model.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The compartment OCID for fine-tuned models. For pretrained models, this value is null. */
+    /**
+     * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Describes what this model can be used for. */
+    /**
+     * Describes what this model can be used for.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
     private final java.util.List<ModelCapability> capabilities;
 
     /**
      * Describes what this model can be used for.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModelCapability> getCapabilities() {
         return capabilities;
     }
 
     /**
      * The lifecycle state of the model.
+     * <p>
+     * Allowed values are:
+     * - ACTIVE
+     * - CREATING
+     * - DELETING
+     * - DELETED
+     * - FAILED
      *
-     * <p>Allowed values are: - ACTIVE - CREATING - DELETING - DELETED - FAILED
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Model.LifecycleState lifecycleState;
 
     /**
      * The lifecycle state of the model.
-     *
-     * <p>Allowed values are: - ACTIVE - CREATING - DELETING - DELETED - FAILED
+     * <p>
+     * Allowed values are:
+     * - ACTIVE
+     * - CREATING
+     * - DELETING
+     * - DELETED
+     * - FAILED
      *
      * @return the value
-     */
+     **/
     public Model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state of the model with detail that can provide actionable
-     * information.
-     */
+     * A message describing the current state of the model with detail that can provide actionable information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state of the model with detail that can provide actionable
-     * information.
-     *
+     * A message describing the current state of the model with detail that can provide actionable information.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** A user-friendly name. */
+    /**
+     * A user-friendly name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The provider of the model. */
+    /**
+     * The provider of the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
     /**
      * The provider of the model.
-     *
      * @return the value
-     */
+     **/
     public String getVendor() {
         return vendor;
     }
 
-    /** The version of the model. */
+    /**
+     * The version of the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the model.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The date and time that the model was created in the format of an RFC3339 datetime string. */
+    /**
+     * The date and time that the model was created in the format of an RFC3339 datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time that the model was created in the format of an RFC3339 datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The OCID of the base model that's used for fine-tuning. For pretrained models, the value is
-     * null.
-     */
+     * The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseModelId")
     private final String baseModelId;
 
     /**
-     * The OCID of the base model that's used for fine-tuning. For pretrained models, the value is
-     * null.
-     *
+     * The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
      * @return the value
-     */
+     **/
     public String getBaseModelId() {
         return baseModelId;
     }
 
     /**
-     * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned
-     * model.
+     * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     * <p>
+     * Allowed values are:
+     * - BASE
+     * - CUSTOM
      *
-     * <p>Allowed values are: - BASE - CUSTOM
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Model.Type type;
 
     /**
-     * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned
-     * model.
-     *
-     * <p>Allowed values are: - BASE - CUSTOM
+     * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     * <p>
+     * Allowed values are:
+     * - BASE
+     * - CUSTOM
      *
      * @return the value
-     */
+     **/
     public Model.Type getType() {
         return type;
     }
@@ -677,97 +701,94 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         return modelMetrics;
     }
 
-    /** Whether a model is supported long-term. Applies only to base models. */
+    /**
+     * Whether a model is supported long-term. Applies only to base models.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLongTermSupported")
     private final Boolean isLongTermSupported;
 
     /**
      * Whether a model is supported long-term. Applies only to base models.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLongTermSupported() {
         return isLongTermSupported;
     }
 
     /**
-     * Corresponds to the time when the custom model and its associated foundation model will be
-     * deprecated.
-     */
+     * Corresponds to the time when the custom model and its associated foundation model will be deprecated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeprecated")
     private final java.util.Date timeDeprecated;
 
     /**
-     * Corresponds to the time when the custom model and its associated foundation model will be
-     * deprecated.
-     *
+     * Corresponds to the time when the custom model and its associated foundation model will be deprecated.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDeprecated() {
         return timeDeprecated;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -779,7 +800,6 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

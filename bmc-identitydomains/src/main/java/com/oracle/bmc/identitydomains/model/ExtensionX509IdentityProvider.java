@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * X509 Identity Provider Extension Schema <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * X509 Identity Provider Extension Schema
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionX509IdentityProvider.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionX509IdentityProvider.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionX509IdentityProvider
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certMatchAttribute",
@@ -84,59 +83,79 @@ public final class ExtensionX509IdentityProvider
     public static class Builder {
         /**
          * X509 Certificate Matching Attribute
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certMatchAttribute")
         private String certMatchAttribute;
 
         /**
          * X509 Certificate Matching Attribute
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param certMatchAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder certMatchAttribute(String certMatchAttribute) {
             this.certMatchAttribute = certMatchAttribute;
             this.__explicitlySet__.add("certMatchAttribute");
             return this;
         }
         /**
-         * This property specifies the userstore attribute value that must match the incoming
-         * certificate attribute.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * This property specifies the userstore attribute value that must match the incoming certificate attribute.
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userMatchAttribute")
         private String userMatchAttribute;
 
         /**
-         * This property specifies the userstore attribute value that must match the incoming
-         * certificate attribute.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * This property specifies the userstore attribute value that must match the incoming certificate attribute.
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param userMatchAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder userMatchAttribute(String userMatchAttribute) {
             this.userMatchAttribute = userMatchAttribute;
             this.__explicitlySet__.add("userMatchAttribute");
@@ -144,28 +163,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Check for specific conditions of other certificate attributes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherCertMatchAttribute")
         private String otherCertMatchAttribute;
 
         /**
          * Check for specific conditions of other certificate attributes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param otherCertMatchAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder otherCertMatchAttribute(String otherCertMatchAttribute) {
             this.otherCertMatchAttribute = otherCertMatchAttribute;
             this.__explicitlySet__.add("otherCertMatchAttribute");
@@ -173,28 +203,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Certificate alias list to create a chain for the incoming client certificate
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingCertificateChain")
         private java.util.List<String> signingCertificateChain;
 
         /**
          * Certificate alias list to create a chain for the incoming client certificate
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param signingCertificateChain the value to set
          * @return this builder
-         */
+         **/
         public Builder signingCertificateChain(java.util.List<String> signingCertificateChain) {
             this.signingCertificateChain = signingCertificateChain;
             this.__explicitlySet__.add("signingCertificateChain");
@@ -202,28 +243,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Set to true to enable OCSP Validation
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspEnabled")
         private Boolean ocspEnabled;
 
         /**
          * Set to true to enable OCSP Validation
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param ocspEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspEnabled(Boolean ocspEnabled) {
             this.ocspEnabled = ocspEnabled;
             this.__explicitlySet__.add("ocspEnabled");
@@ -231,28 +283,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * This property specifies the OCSP Server alias name
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspServerName")
         private String ocspServerName;
 
         /**
          * This property specifies the OCSP Server alias name
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param ocspServerName the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspServerName(String ocspServerName) {
             this.ocspServerName = ocspServerName;
             this.__explicitlySet__.add("ocspServerName");
@@ -260,59 +323,79 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * This property specifies OCSP Responder URL.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspResponderURL")
         private String ocspResponderURL;
 
         /**
          * This property specifies OCSP Responder URL.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param ocspResponderURL the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspResponderURL(String ocspResponderURL) {
             this.ocspResponderURL = ocspResponderURL;
             this.__explicitlySet__.add("ocspResponderURL");
             return this;
         }
         /**
-         * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the
-         * timeout duration
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspAllowUnknownResponseStatus")
         private Boolean ocspAllowUnknownResponseStatus;
 
         /**
-         * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the
-         * timeout duration
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param ocspAllowUnknownResponseStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspAllowUnknownResponseStatus(Boolean ocspAllowUnknownResponseStatus) {
             this.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             this.__explicitlySet__.add("ocspAllowUnknownResponseStatus");
@@ -320,28 +403,41 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Revalidate OCSP status for user after X hours
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 24 - idcsMinValue: 0 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 24
+         *  - idcsMinValue: 0
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspRevalidateTime")
         private Integer ocspRevalidateTime;
 
         /**
          * Revalidate OCSP status for user after X hours
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 24 - idcsMinValue: 0 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 24
+         *  - idcsMinValue: 0
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param ocspRevalidateTime the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspRevalidateTime(Integer ocspRevalidateTime) {
             this.ocspRevalidateTime = ocspRevalidateTime;
             this.__explicitlySet__.add("ocspRevalidateTime");
@@ -349,28 +445,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Describes if the OCSP response is signed
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspEnableSignedResponse")
         private Boolean ocspEnableSignedResponse;
 
         /**
          * Describes if the OCSP response is signed
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param ocspEnableSignedResponse the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspEnableSignedResponse(Boolean ocspEnableSignedResponse) {
             this.ocspEnableSignedResponse = ocspEnableSignedResponse;
             this.__explicitlySet__.add("ocspEnableSignedResponse");
@@ -378,28 +485,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * OCSP Trusted Certificate Chain
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspTrustCertChain")
         private java.util.List<String> ocspTrustCertChain;
 
         /**
          * OCSP Trusted Certificate Chain
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param ocspTrustCertChain the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspTrustCertChain(java.util.List<String> ocspTrustCertChain) {
             this.ocspTrustCertChain = ocspTrustCertChain;
             this.__explicitlySet__.add("ocspTrustCertChain");
@@ -407,28 +525,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Set to true to enable CRL Validation
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlEnabled")
         private Boolean crlEnabled;
 
         /**
          * Set to true to enable CRL Validation
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param crlEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder crlEnabled(Boolean crlEnabled) {
             this.crlEnabled = crlEnabled;
             this.__explicitlySet__.add("crlEnabled");
@@ -436,28 +565,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Fallback on CRL Validation if OCSP fails.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlCheckOnOCSPFailureEnabled")
         private Boolean crlCheckOnOCSPFailureEnabled;
 
         /**
          * Fallback on CRL Validation if OCSP fails.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param crlCheckOnOCSPFailureEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder crlCheckOnOCSPFailureEnabled(Boolean crlCheckOnOCSPFailureEnabled) {
             this.crlCheckOnOCSPFailureEnabled = crlCheckOnOCSPFailureEnabled;
             this.__explicitlySet__.add("crlCheckOnOCSPFailureEnabled");
@@ -465,28 +605,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * CRL Location URL
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlLocation")
         private String crlLocation;
 
         /**
          * CRL Location URL
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param crlLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder crlLocation(String crlLocation) {
             this.crlLocation = crlLocation;
             this.__explicitlySet__.add("crlLocation");
@@ -494,26 +645,37 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Fetch the CRL contents every X minutes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlReloadDuration")
         private Integer crlReloadDuration;
 
         /**
          * Fetch the CRL contents every X minutes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param crlReloadDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder crlReloadDuration(Integer crlReloadDuration) {
             this.crlReloadDuration = crlReloadDuration;
             this.__explicitlySet__.add("crlReloadDuration");
@@ -521,28 +683,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * Set to true to enable EKU Validation
-         *
-         * <p>*Added In:** 2304270343
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ekuValidationEnabled")
         private Boolean ekuValidationEnabled;
 
         /**
          * Set to true to enable EKU Validation
-         *
-         * <p>*Added In:** 2304270343
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param ekuValidationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder ekuValidationEnabled(Boolean ekuValidationEnabled) {
             this.ekuValidationEnabled = ekuValidationEnabled;
             this.__explicitlySet__.add("ekuValidationEnabled");
@@ -550,28 +723,39 @@ public final class ExtensionX509IdentityProvider
         }
         /**
          * List of EKU which needs to be validated
-         *
-         * <p>*Added In:** 2304270343
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ekuValues")
         private java.util.List<EkuValues> ekuValues;
 
         /**
          * List of EKU which needs to be validated
-         *
-         * <p>*Added In:** 2304270343
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param ekuValues the value to set
          * @return this builder
-         */
+         **/
         public Builder ekuValues(java.util.List<EkuValues> ekuValues) {
             this.ekuValues = ekuValues;
             this.__explicitlySet__.add("ekuValues");
@@ -664,7 +848,9 @@ public final class ExtensionX509IdentityProvider
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -675,424 +861,615 @@ public final class ExtensionX509IdentityProvider
 
     /**
      * X509 Certificate Matching Attribute
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certMatchAttribute")
     private final String certMatchAttribute;
 
     /**
      * X509 Certificate Matching Attribute
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCertMatchAttribute() {
         return certMatchAttribute;
     }
 
     /**
-     * This property specifies the userstore attribute value that must match the incoming
-     * certificate attribute.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * This property specifies the userstore attribute value that must match the incoming certificate attribute.
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userMatchAttribute")
     private final String userMatchAttribute;
 
     /**
-     * This property specifies the userstore attribute value that must match the incoming
-     * certificate attribute.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * This property specifies the userstore attribute value that must match the incoming certificate attribute.
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getUserMatchAttribute() {
         return userMatchAttribute;
     }
 
     /**
      * Check for specific conditions of other certificate attributes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherCertMatchAttribute")
     private final String otherCertMatchAttribute;
 
     /**
      * Check for specific conditions of other certificate attributes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getOtherCertMatchAttribute() {
         return otherCertMatchAttribute;
     }
 
     /**
      * Certificate alias list to create a chain for the incoming client certificate
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingCertificateChain")
     private final java.util.List<String> signingCertificateChain;
 
     /**
      * Certificate alias list to create a chain for the incoming client certificate
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getSigningCertificateChain() {
         return signingCertificateChain;
     }
 
     /**
      * Set to true to enable OCSP Validation
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspEnabled")
     private final Boolean ocspEnabled;
 
     /**
      * Set to true to enable OCSP Validation
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getOcspEnabled() {
         return ocspEnabled;
     }
 
     /**
      * This property specifies the OCSP Server alias name
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspServerName")
     private final String ocspServerName;
 
     /**
      * This property specifies the OCSP Server alias name
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getOcspServerName() {
         return ocspServerName;
     }
 
     /**
      * This property specifies OCSP Responder URL.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspResponderURL")
     private final String ocspResponderURL;
 
     /**
      * This property specifies OCSP Responder URL.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getOcspResponderURL() {
         return ocspResponderURL;
     }
 
     /**
-     * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the
-     * timeout duration
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspAllowUnknownResponseStatus")
     private final Boolean ocspAllowUnknownResponseStatus;
 
     /**
-     * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the
-     * timeout duration
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getOcspAllowUnknownResponseStatus() {
         return ocspAllowUnknownResponseStatus;
     }
 
     /**
      * Revalidate OCSP status for user after X hours
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 24 - idcsMinValue: 0 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 24
+     *  - idcsMinValue: 0
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspRevalidateTime")
     private final Integer ocspRevalidateTime;
 
     /**
      * Revalidate OCSP status for user after X hours
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 24 - idcsMinValue: 0 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 24
+     *  - idcsMinValue: 0
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getOcspRevalidateTime() {
         return ocspRevalidateTime;
     }
 
     /**
      * Describes if the OCSP response is signed
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspEnableSignedResponse")
     private final Boolean ocspEnableSignedResponse;
 
     /**
      * Describes if the OCSP response is signed
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getOcspEnableSignedResponse() {
         return ocspEnableSignedResponse;
     }
 
     /**
      * OCSP Trusted Certificate Chain
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspTrustCertChain")
     private final java.util.List<String> ocspTrustCertChain;
 
     /**
      * OCSP Trusted Certificate Chain
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getOcspTrustCertChain() {
         return ocspTrustCertChain;
     }
 
     /**
      * Set to true to enable CRL Validation
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlEnabled")
     private final Boolean crlEnabled;
 
     /**
      * Set to true to enable CRL Validation
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCrlEnabled() {
         return crlEnabled;
     }
 
     /**
      * Fallback on CRL Validation if OCSP fails.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlCheckOnOCSPFailureEnabled")
     private final Boolean crlCheckOnOCSPFailureEnabled;
 
     /**
      * Fallback on CRL Validation if OCSP fails.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCrlCheckOnOCSPFailureEnabled() {
         return crlCheckOnOCSPFailureEnabled;
     }
 
     /**
      * CRL Location URL
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlLocation")
     private final String crlLocation;
 
     /**
      * CRL Location URL
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCrlLocation() {
         return crlLocation;
     }
 
     /**
      * Fetch the CRL contents every X minutes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlReloadDuration")
     private final Integer crlReloadDuration;
 
     /**
      * Fetch the CRL contents every X minutes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getCrlReloadDuration() {
         return crlReloadDuration;
     }
 
     /**
      * Set to true to enable EKU Validation
-     *
-     * <p>*Added In:** 2304270343
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ekuValidationEnabled")
     private final Boolean ekuValidationEnabled;
 
     /**
      * Set to true to enable EKU Validation
-     *
-     * <p>*Added In:** 2304270343
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getEkuValidationEnabled() {
         return ekuValidationEnabled;
     }
 
-    /** */
-    public enum EkuValues implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum EkuValues {
         ServerAuth("SERVER_AUTH"),
         ClientAuth("CLIENT_AUTH"),
         CodeSigning("CODE_SIGNING"),
@@ -1101,8 +1478,8 @@ public final class ExtensionX509IdentityProvider
         OcspSigning("OCSP_SIGNING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1143,25 +1520,38 @@ public final class ExtensionX509IdentityProvider
     };
     /**
      * List of EKU which needs to be validated
-     *
-     * <p>*Added In:** 2304270343
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ekuValues")
     private final java.util.List<EkuValues> ekuValues;
 
     /**
      * List of EKU which needs to be validated
-     *
-     * <p>*Added In:** 2304270343
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<EkuValues> getEkuValues() {
         return ekuValues;
     }
@@ -1173,7 +1563,6 @@ public final class ExtensionX509IdentityProvider
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

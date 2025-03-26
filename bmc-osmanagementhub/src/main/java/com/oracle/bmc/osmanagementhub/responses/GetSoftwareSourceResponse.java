@@ -6,9 +6,12 @@ package com.oracle.bmc.osmanagementhub.responses;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,27 +41,25 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      * @return the value
      */
     public Integer getRetryAfter() {
         return retryAfter;
     }
 
-    /** The returned {@code SoftwareSource} instance. */
+    /**
+     * The returned SoftwareSource instance.
+     */
     private com.oracle.bmc.osmanagementhub.model.SoftwareSource softwareSource;
 
     /**
-     * The returned {@code SoftwareSource} instance.
-     *
+     * The returned SoftwareSource instance.
      * @return the value
      */
     public com.oracle.bmc.osmanagementhub.model.SoftwareSource getSoftwareSource() {
@@ -74,7 +76,7 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private GetSoftwareSourceResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Integer retryAfter,
@@ -86,25 +88,25 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
         this.softwareSource = softwareSource;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetSoftwareSourceResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -119,14 +121,15 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -137,15 +140,12 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          */
         private Integer retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -154,12 +154,13 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code SoftwareSource} instance. */
+        /**
+         * The returned SoftwareSource instance.
+         */
         private com.oracle.bmc.osmanagementhub.model.SoftwareSource softwareSource;
 
         /**
-         * The returned {@code SoftwareSource} instance.
-         *
+         * The returned SoftwareSource instance.
          * @param softwareSource the value to set
          * @return this builder
          */
@@ -171,10 +172,8 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetSoftwareSourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -188,10 +187,8 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetSoftwareSourceResponse build() {
             return new GetSoftwareSourceResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, retryAfter, softwareSource);
@@ -200,7 +197,6 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,26 +6,28 @@ package com.oracle.bmc.desktops.responses;
 
 import com.oracle.bmc.desktops.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class DeleteDesktopResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
     /**
      * The unique identifier of the request.
-     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** A unique identifier for an asynchronous request. */
+    /**
+     * A unique identifier for an asynchronous request.
+     */
     private String opcWorkRequestId;
 
     /**
      * A unique identifier for an asynchronous request.
-     *
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -40,7 +42,7 @@ public class DeleteDesktopResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private DeleteDesktopResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
@@ -48,30 +50,28 @@ public class DeleteDesktopResponse extends com.oracle.bmc.responses.BmcResponse 
         this.opcWorkRequestId = opcWorkRequestId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<DeleteDesktopResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -80,12 +80,13 @@ public class DeleteDesktopResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A unique identifier for an asynchronous request. */
+        /**
+         * A unique identifier for an asynchronous request.
+         */
         private String opcWorkRequestId;
 
         /**
          * A unique identifier for an asynchronous request.
-         *
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -96,10 +97,8 @@ public class DeleteDesktopResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DeleteDesktopResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -111,10 +110,8 @@ public class DeleteDesktopResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DeleteDesktopResponse build() {
             return new DeleteDesktopResponse(
                     __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
@@ -123,7 +120,6 @@ public class DeleteDesktopResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

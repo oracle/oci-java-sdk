@@ -6,28 +6,28 @@ package com.oracle.bmc.vnmonitoring.model;
 
 /**
  * A resource to be used only with the Oracle Cloud VMware Solution.
+ * <p>
+ * Conceptually, a virtual LAN (VLAN) is a broadcast domain that is created
+ * by partitioning and isolating a network at the data link layer (a *layer 2 network*).
+ * VLANs work by using IEEE 802.1Q VLAN tags. Layer 2 traffic is forwarded within the
+ * VLAN based on MAC learning.
+ * <p>
+ * In the Networking service, a VLAN is an object within a VCN. You use VLANs to
+ * partition the VCN at the data link layer (layer 2). A VLAN is analagous to a subnet,
+ * which is an object for partitioning the VCN at the IP layer (layer 3).
  *
- * <p>Conceptually, a virtual LAN (VLAN) is a broadcast domain that is created by partitioning and
- * isolating a network at the data link layer (a *layer 2 network*). VLANs work by using IEEE 802.1Q
- * VLAN tags. Layer 2 traffic is forwarded within the VLAN based on MAC learning.
- *
- * <p>In the Networking service, a VLAN is an object within a VCN. You use VLANs to partition the
- * VCN at the data link layer (layer 2). A VLAN is analagous to a subnet, which is an object for
- * partitioning the VCN at the IP layer (layer 3). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vlan.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Vlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -79,63 +79,62 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * The VLAN's availability domain. This attribute will be null if this is a regional VLAN
          * rather than an AD-specific VLAN.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The VLAN's availability domain. This attribute will be null if this is a regional VLAN
          * rather than an AD-specific VLAN.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The range of IPv4 addresses that will be used for layer 3 communication with hosts
-         * outside the VLAN.
+         * The range of IPv4 addresses that will be used for layer 3 communication with
+         * hosts outside the VLAN.
+         * <p>
+         * Example: {@code 192.168.1.0/24}
          *
-         * <p>Example: {@code 192.168.1.0/24}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
         /**
-         * The range of IPv4 addresses that will be used for layer 3 communication with hosts
-         * outside the VLAN.
-         *
-         * <p>Example: {@code 192.168.1.0/24}
+         * The range of IPv4 addresses that will be used for layer 3 communication with
+         * hosts outside the VLAN.
+         * <p>
+         * Example: {@code 192.168.1.0/24}
          *
          * @param cidrBlock the value to set
          * @return this builder
-         */
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the VLAN.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the VLAN.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -144,7 +143,8 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -154,7 +154,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -162,93 +162,96 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The VLAN's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         */
+         * The VLAN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The VLAN's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         *
+         * The VLAN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The VLAN's current state. */
+        /**
+         * The VLAN's current state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The VLAN's current state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All
-         * VNICs in the VLAN belong to these NSGs. For more information about NSGs, see {@link
-         * NetworkSecurityGroup}.
-         */
+         * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN.
+         * All VNICs in the VLAN belong to these NSGs. For more
+         * information about NSGs, see
+         * {@link NetworkSecurityGroup}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All
-         * VNICs in the VLAN belong to these NSGs. For more information about NSGs, see {@link
-         * NetworkSecurityGroup}.
+         * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN.
+         * All VNICs in the VLAN belong to these NSGs. For more
+         * information about NSGs, see
+         * {@link NetworkSecurityGroup}.
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -256,81 +259,75 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * The IEEE 802.1Q VLAN tag of this VLAN.
+         * <p>
+         * Example: {@code 100}
          *
-         * <p>Example: {@code 100}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
         private Integer vlanTag;
 
         /**
          * The IEEE 802.1Q VLAN tag of this VLAN.
-         *
-         * <p>Example: {@code 100}
+         * <p>
+         * Example: {@code 100}
          *
          * @param vlanTag the value to set
          * @return this builder
-         */
+         **/
         public Builder vlanTag(Integer vlanTag) {
             this.vlanTag = vlanTag;
             this.__explicitlySet__.add("vlanTag");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table that the VLAN uses.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table that the VLAN uses.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
          * @param routeTableId the value to set
          * @return this builder
-         */
+         **/
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = routeTableId;
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
         /**
-         * The date and time the VLAN was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the VLAN was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN the VLAN is in.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the VLAN is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN the VLAN is in.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the VLAN is in.
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
@@ -407,7 +404,9 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -417,134 +416,135 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather
-     * than an AD-specific VLAN.
+     * The VLAN's availability domain. This attribute will be null if this is a regional VLAN
+     * rather than an AD-specific VLAN.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather
-     * than an AD-specific VLAN.
-     *
-     * <p>Example: {@code Uocm:PHX-AD-1}
+     * The VLAN's availability domain. This attribute will be null if this is a regional VLAN
+     * rather than an AD-specific VLAN.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The range of IPv4 addresses that will be used for layer 3 communication with hosts outside
-     * the VLAN.
+     * The range of IPv4 addresses that will be used for layer 3 communication with
+     * hosts outside the VLAN.
+     * <p>
+     * Example: {@code 192.168.1.0/24}
      *
-     * <p>Example: {@code 192.168.1.0/24}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
     /**
-     * The range of IPv4 addresses that will be used for layer 3 communication with hosts outside
-     * the VLAN.
-     *
-     * <p>Example: {@code 192.168.1.0/24}
+     * The range of IPv4 addresses that will be used for layer 3 communication with
+     * hosts outside the VLAN.
+     * <p>
+     * Example: {@code 192.168.1.0/24}
      *
      * @return the value
-     */
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the VLAN.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the VLAN.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The VLAN's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     */
+     * The VLAN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The VLAN's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     *
+     * The VLAN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The VLAN's current state. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The VLAN's current state.
+     **/
+    public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
@@ -579,108 +579,106 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /** The VLAN's current state. */
+    /**
+     * The VLAN's current state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The VLAN's current state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All VNICs in
-     * the VLAN belong to these NSGs. For more information about NSGs, see {@link
-     * NetworkSecurityGroup}.
-     */
+     * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN.
+     * All VNICs in the VLAN belong to these NSGs. For more
+     * information about NSGs, see
+     * {@link NetworkSecurityGroup}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All VNICs in
-     * the VLAN belong to these NSGs. For more information about NSGs, see {@link
-     * NetworkSecurityGroup}.
+     * A list of the OCIDs of the network security groups (NSGs) to use with this VLAN.
+     * All VNICs in the VLAN belong to these NSGs. For more
+     * information about NSGs, see
+     * {@link NetworkSecurityGroup}.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
      * The IEEE 802.1Q VLAN tag of this VLAN.
+     * <p>
+     * Example: {@code 100}
      *
-     * <p>Example: {@code 100}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
     private final Integer vlanTag;
 
     /**
      * The IEEE 802.1Q VLAN tag of this VLAN.
-     *
-     * <p>Example: {@code 100}
+     * <p>
+     * Example: {@code 100}
      *
      * @return the value
-     */
+     **/
     public Integer getVlanTag() {
         return vlanTag;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table that the VLAN uses.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table that the VLAN uses.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
      * @return the value
-     */
+     **/
     public String getRouteTableId() {
         return routeTableId;
     }
 
     /**
-     * The date and time the VLAN was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the VLAN was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
-     * the VLAN is in.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the VLAN is in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
-     * the VLAN is in.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the VLAN is in.
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
@@ -692,7 +690,6 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,52 +6,57 @@ package com.oracle.bmc.generativeaiinference.requests;
 
 import com.oracle.bmc.generativeaiinference.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/EmbedTextExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use EmbedTextRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/EmbedTextExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use EmbedTextRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public class EmbedTextRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.generativeaiinference.model.EmbedTextDetails> {
 
-    /** Details for generating the embed response. */
+    /**
+     * Details for generating the embed response.
+     */
     private com.oracle.bmc.generativeaiinference.model.EmbedTextDetails embedTextDetails;
 
-    /** Details for generating the embed response. */
+    /**
+     * Details for generating the embed response.
+     */
     public com.oracle.bmc.generativeaiinference.model.EmbedTextDetails getEmbedTextDetails() {
         return embedTextDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before that, in case of conflicting operations. For example, if
-     * a resource is deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+     * is rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before that, in case of conflicting operations. For example, if
-     * a resource is deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+     * is rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -63,15 +68,17 @@ public class EmbedTextRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     EmbedTextRequest, com.oracle.bmc.generativeaiinference.model.EmbedTextDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for generating the embed response. */
+        /**
+         * Details for generating the embed response.
+         */
         private com.oracle.bmc.generativeaiinference.model.EmbedTextDetails embedTextDetails = null;
 
         /**
          * Details for generating the embed response.
-         *
          * @param embedTextDetails the value to set
          * @return this builder instance
          */
@@ -83,19 +90,18 @@ public class EmbedTextRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before that, in case of conflicting operations. For
-         * example, if a resource is deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+         * is rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before that, in case of conflicting operations. For
-         * example, if a resource is deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+         * is rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -105,12 +111,13 @@ public class EmbedTextRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -121,19 +128,18 @@ public class EmbedTextRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -145,7 +151,6 @@ public class EmbedTextRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(EmbedTextRequest o) {
@@ -160,11 +165,10 @@ public class EmbedTextRequest
         /**
          * Build the instance of EmbedTextRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of EmbedTextRequest
          */
@@ -177,7 +181,6 @@ public class EmbedTextRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -190,8 +193,7 @@ public class EmbedTextRequest
         /**
          * Build the instance of EmbedTextRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of EmbedTextRequest
@@ -208,7 +210,6 @@ public class EmbedTextRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -220,7 +221,6 @@ public class EmbedTextRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

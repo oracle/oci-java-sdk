@@ -6,106 +6,112 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlPlanLinesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use IngestSqlPlanLinesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlPlanLinesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use IngestSqlPlanLinesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class IngestSqlPlanLinesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails> {
 
-    /** Collection of SQL plan line objects for a particular database. */
+    /**
+     * Collection of SQL plan line objects for a particular database.
+     */
     private com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails ingestSqlPlanLinesDetails;
 
-    /** Collection of SQL plan line objects for a particular database. */
+    /**
+     * Collection of SQL plan line objects for a particular database.
+     */
     public com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails getIngestSqlPlanLinesDetails() {
         return ingestSqlPlanLinesDetails;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated DBaaS entity.
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
      */
     private String databaseId;
 
     /**
-     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated DBaaS entity.
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
      */
     public String getDatabaseId() {
         return databaseId;
     }
     /**
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database
-     * insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
      */
     private String id;
 
     /**
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database
-     * insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     *
      */
     public String getId() {
         return id;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * A token that uniquely identifies a request that can be retried in case of a timeout or server
-     * error without risk of executing the same action again. Retry tokens expire after 24 hours.
-     *
-     * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
      * operations, such as a resource being deleted or purged from the system.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request that can be retried in case of a timeout or server
-     * error without risk of executing the same action again. Retry tokens expire after 24 hours.
-     *
-     * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
      * operations, such as a resource being deleted or purged from the system.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -113,7 +119,6 @@ public class IngestSqlPlanLinesRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -126,16 +131,18 @@ public class IngestSqlPlanLinesRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     IngestSqlPlanLinesRequest,
                     com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Collection of SQL plan line objects for a particular database. */
+        /**
+         * Collection of SQL plan line objects for a particular database.
+         */
         private com.oracle.bmc.opsi.model.IngestSqlPlanLinesDetails ingestSqlPlanLinesDetails =
                 null;
 
         /**
          * Collection of SQL plan line objects for a particular database.
-         *
          * @param ingestSqlPlanLinesDetails the value to set
          * @return this builder instance
          */
@@ -146,15 +153,12 @@ public class IngestSqlPlanLinesRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -164,14 +168,13 @@ public class IngestSqlPlanLinesRequest
         }
 
         /**
-         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the associated DBaaS entity.
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
          */
         private String databaseId = null;
 
         /**
-         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the associated DBaaS entity.
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
          * @param databaseId the value to set
          * @return this builder instance
@@ -182,14 +185,13 @@ public class IngestSqlPlanLinesRequest
         }
 
         /**
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         *
          */
         private String id = null;
 
         /**
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
          *
          * @param id the value to set
          * @return this builder instance
@@ -200,14 +202,15 @@ public class IngestSqlPlanLinesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -218,18 +221,17 @@ public class IngestSqlPlanLinesRequest
         }
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -241,21 +243,22 @@ public class IngestSqlPlanLinesRequest
 
         /**
          * A token that uniquely identifies a request that can be retried in case of a timeout or
-         * server error without risk of executing the same action again. Retry tokens expire after
-         * 24 hours.
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
          *
-         * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to
-         * conflicting operations, such as a resource being deleted or purged from the system.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request that can be retried in case of a timeout or
-         * server error without risk of executing the same action again. Retry tokens expire after
-         * 24 hours.
-         *
-         * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to
-         * conflicting operations, such as a resource being deleted or purged from the system.
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -267,19 +270,18 @@ public class IngestSqlPlanLinesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -291,7 +293,6 @@ public class IngestSqlPlanLinesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(IngestSqlPlanLinesRequest o) {
@@ -310,11 +311,10 @@ public class IngestSqlPlanLinesRequest
         /**
          * Build the instance of IngestSqlPlanLinesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of IngestSqlPlanLinesRequest
          */
@@ -327,7 +327,6 @@ public class IngestSqlPlanLinesRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -340,8 +339,7 @@ public class IngestSqlPlanLinesRequest
         /**
          * Build the instance of IngestSqlPlanLinesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of IngestSqlPlanLinesRequest
@@ -356,14 +354,12 @@ public class IngestSqlPlanLinesRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new IngestSqlPlanLinesRequest(ingestSqlPlanLinesDetails, compartmentId, databaseId,
-            // id, opcRequestId, ifMatch, opcRetryToken);
+            // new IngestSqlPlanLinesRequest(ingestSqlPlanLinesDetails, compartmentId, databaseId, id, opcRequestId, ifMatch, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -379,7 +375,6 @@ public class IngestSqlPlanLinesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

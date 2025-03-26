@@ -5,24 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A workspace is an organizational construct to keep multiple data integration solutions and their
- * resources (data assets, data flows, tasks, and so on) separate from each other, helping you to
- * stay organized. For example, you could have separate workspaces for development, testing, and
- * production. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * A workspace is an organizational construct to keep multiple data integration solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you could have separate workspaces for development, testing, and production.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Workspace.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Workspace extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcnId",
@@ -89,170 +84,170 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the VCN the subnet is in. */
+        /**
+         * The OCID of the VCN the subnet is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
          * The OCID of the VCN the subnet is in.
-         *
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** The OCID of the subnet for customer connected databases. */
+        /**
+         * The OCID of the subnet for customer connected databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The OCID of the subnet for customer connected databases.
-         *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The IP of the custom DNS. */
+        /**
+         * The IP of the custom DNS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServerIp")
         private String dnsServerIp;
 
         /**
          * The IP of the custom DNS.
-         *
          * @param dnsServerIp the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsServerIp(String dnsServerIp) {
             this.dnsServerIp = dnsServerIp;
             this.__explicitlySet__.add("dnsServerIp");
             return this;
         }
-        /** The DNS zone of the custom DNS to use to resolve names. */
+        /**
+         * The DNS zone of the custom DNS to use to resolve names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServerZone")
         private String dnsServerZone;
 
         /**
          * The DNS zone of the custom DNS to use to resolve names.
-         *
          * @param dnsServerZone the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsServerZone(String dnsServerZone) {
             this.dnsServerZone = dnsServerZone;
             this.__explicitlySet__.add("dnsServerZone");
             return this;
         }
-        /** Specifies whether the private network connection is enabled or disabled. */
+        /**
+         * Specifies whether the private network connection is enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivateNetworkEnabled")
         private Boolean isPrivateNetworkEnabled;
 
         /**
          * Specifies whether the private network connection is enabled or disabled.
-         *
          * @param isPrivateNetworkEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrivateNetworkEnabled(Boolean isPrivateNetworkEnabled) {
             this.isPrivateNetworkEnabled = isPrivateNetworkEnabled;
             this.__explicitlySet__.add("isPrivateNetworkEnabled");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** A detailed description for the workspace. */
+        /**
+         * A detailed description for the workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A detailed description for the workspace.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * A user-friendly display name for the workspace. Does not have to be unique, and can be
-         * modified. Avoid entering confidential information.
-         */
+         * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name for the workspace. Does not have to be unique, and can be
-         * modified. Avoid entering confidential information.
-         *
+         * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment containing the workspace. */
+        /**
+         * The OCID of the compartment containing the workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the workspace.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -260,7 +255,8 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * The date and time the workspace was created, in the timestamp format defined by RFC3339.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -269,157 +265,159 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the workspace was updated, in the timestamp format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the workspace was updated, in the timestamp format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
+         * The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is
-         * being created and may not be usable until the entire metadata is defined UPDATING - The
-         * resource is being updated and may not be usable until all changes are commited DELETING -
-         * The resource is being deleted and might require deep cleanup of children. ACTIVE - The
-         * resource is valid and available for access INACTIVE - The resource might be incomplete in
-         * its definition or might have been made unavailable for administrative reasons DELETED -
-         * The resource has been deleted and isn't available FAILED - The resource is in a failed
-         * state due to validation or other errors STARTING - The resource is being started and may
-         * not be usable until becomes ACTIVE again STOPPING - The resource is in the process of
-         * Stopping and may not be usable until it Stops or fails STOPPED - The resource is in
-         * Stopped state due to stop operation.
-         */
+         * Lifecycle states for workspaces in Data Integration Service
+         * CREATING - The resource is being created and may not be usable until the entire metadata is defined
+         * UPDATING - The resource is being updated and may not be usable until all changes are commited
+         * DELETING - The resource is being deleted and might require deep cleanup of children.
+         * ACTIVE   - The resource is valid and available for access
+         * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
+         *          administrative reasons
+         * DELETED  - The resource has been deleted and isn't available
+         * FAILED   - The resource is in a failed state due to validation or other errors
+         * STARTING - The resource is being started and may not be usable until becomes ACTIVE again
+         * STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails
+         * STOPPED  - The resource is in Stopped state due to stop operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is
-         * being created and may not be usable until the entire metadata is defined UPDATING - The
-         * resource is being updated and may not be usable until all changes are commited DELETING -
-         * The resource is being deleted and might require deep cleanup of children. ACTIVE - The
-         * resource is valid and available for access INACTIVE - The resource might be incomplete in
-         * its definition or might have been made unavailable for administrative reasons DELETED -
-         * The resource has been deleted and isn't available FAILED - The resource is in a failed
-         * state due to validation or other errors STARTING - The resource is being started and may
-         * not be usable until becomes ACTIVE again STOPPING - The resource is in the process of
-         * Stopping and may not be usable until it Stops or fails STOPPED - The resource is in
-         * Stopped state due to stop operation.
+         * Lifecycle states for workspaces in Data Integration Service
+         * CREATING - The resource is being created and may not be usable until the entire metadata is defined
+         * UPDATING - The resource is being updated and may not be usable until all changes are commited
+         * DELETING - The resource is being deleted and might require deep cleanup of children.
+         * ACTIVE   - The resource is valid and available for access
+         * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
+         *          administrative reasons
+         * DELETED  - The resource has been deleted and isn't available
+         * FAILED   - The resource is in a failed state due to validation or other errors
+         * STARTING - The resource is being started and may not be usable until becomes ACTIVE again
+         * STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails
+         * STOPPED  - The resource is in Stopped state due to stop operation.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
         private String stateMessage;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
          * @param stateMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = stateMessage;
             this.__explicitlySet__.add("stateMessage");
             return this;
         }
-        /** A system-generated and immutable identifier assigned to the workspace upon creation. */
+        /**
+         * A system-generated and immutable identifier assigned to the workspace upon creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * A system-generated and immutable identifier assigned to the workspace upon creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID of the private endpoint associated with the container/workspace. */
+        /**
+         * OCID of the private endpoint associated with the container/workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private String endpointId;
 
         /**
          * OCID of the private endpoint associated with the container/workspace.
-         *
          * @param endpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointId(String endpointId) {
             this.endpointId = endpointId;
             this.__explicitlySet__.add("endpointId");
             return this;
         }
-        /** Name of the private endpoint associated with the container/workspace. */
+        /**
+         * Name of the private endpoint associated with the container/workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
         private String endpointName;
 
         /**
          * Name of the private endpoint associated with the container/workspace.
-         *
          * @param endpointName the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointName(String endpointName) {
             this.endpointName = endpointName;
             this.__explicitlySet__.add("endpointName");
             return this;
         }
-        /** DCMS Registry ID associated with the container/workspace. */
+        /**
+         * DCMS Registry ID associated with the container/workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryId")
         private String registryId;
 
         /**
          * DCMS Registry ID associated with the container/workspace.
-         *
          * @param registryId the value to set
          * @return this builder
-         */
+         **/
         public Builder registryId(String registryId) {
             this.registryId = registryId;
             this.__explicitlySet__.add("registryId");
             return this;
         }
-        /** key-value pairs of workspace properties */
+        /**
+         * key-value pairs of workspace properties
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
         private java.util.Map<String, String> workspaceProperties;
 
         /**
          * key-value pairs of workspace properties
-         *
          * @param workspaceProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder workspaceProperties(java.util.Map<String, String> workspaceProperties) {
             this.workspaceProperties = workspaceProperties;
             this.__explicitlySet__.add("workspaceProperties");
@@ -520,7 +518,9 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -529,155 +529,158 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The OCID of the VCN the subnet is in. */
+    /**
+     * The OCID of the VCN the subnet is in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
      * The OCID of the VCN the subnet is in.
-     *
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
-    /** The OCID of the subnet for customer connected databases. */
+    /**
+     * The OCID of the subnet for customer connected databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The OCID of the subnet for customer connected databases.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** The IP of the custom DNS. */
+    /**
+     * The IP of the custom DNS.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServerIp")
     private final String dnsServerIp;
 
     /**
      * The IP of the custom DNS.
-     *
      * @return the value
-     */
+     **/
     public String getDnsServerIp() {
         return dnsServerIp;
     }
 
-    /** The DNS zone of the custom DNS to use to resolve names. */
+    /**
+     * The DNS zone of the custom DNS to use to resolve names.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServerZone")
     private final String dnsServerZone;
 
     /**
      * The DNS zone of the custom DNS to use to resolve names.
-     *
      * @return the value
-     */
+     **/
     public String getDnsServerZone() {
         return dnsServerZone;
     }
 
-    /** Specifies whether the private network connection is enabled or disabled. */
+    /**
+     * Specifies whether the private network connection is enabled or disabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivateNetworkEnabled")
     private final Boolean isPrivateNetworkEnabled;
 
     /**
      * Specifies whether the private network connection is enabled or disabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPrivateNetworkEnabled() {
         return isPrivateNetworkEnabled;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** A detailed description for the workspace. */
+    /**
+     * A detailed description for the workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A detailed description for the workspace.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * A user-friendly display name for the workspace. Does not have to be unique, and can be
-     * modified. Avoid entering confidential information.
-     */
+     * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name for the workspace. Does not have to be unique, and can be
-     * modified. Avoid entering confidential information.
-     *
+     * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment containing the workspace. */
+    /**
+     * The OCID of the compartment containing the workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the workspace.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The date and time the workspace was created, in the timestamp format defined by RFC3339. */
+    /**
+     * The date and time the workspace was created, in the timestamp format defined by RFC3339.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -685,41 +688,41 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
      * The date and time the workspace was created, in the timestamp format defined by RFC3339.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the workspace was updated, in the timestamp format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the workspace was updated, in the timestamp format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being
-     * created and may not be usable until the entire metadata is defined UPDATING - The resource is
-     * being updated and may not be usable until all changes are commited DELETING - The resource is
-     * being deleted and might require deep cleanup of children. ACTIVE - The resource is valid and
-     * available for access INACTIVE - The resource might be incomplete in its definition or might
-     * have been made unavailable for administrative reasons DELETED - The resource has been deleted
-     * and isn't available FAILED - The resource is in a failed state due to validation or other
-     * errors STARTING - The resource is being started and may not be usable until becomes ACTIVE
-     * again STOPPING - The resource is in the process of Stopping and may not be usable until it
-     * Stops or fails STOPPED - The resource is in Stopped state due to stop operation.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * Lifecycle states for workspaces in Data Integration Service
+     * CREATING - The resource is being created and may not be usable until the entire metadata is defined
+     * UPDATING - The resource is being updated and may not be usable until all changes are commited
+     * DELETING - The resource is being deleted and might require deep cleanup of children.
+     * ACTIVE   - The resource is valid and available for access
+     * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
+     *          administrative reasons
+     * DELETED  - The resource has been deleted and isn't available
+     * FAILED   - The resource is in a failed state due to validation or other errors
+     * STARTING - The resource is being started and may not be usable until becomes ACTIVE again
+     * STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails
+     * STOPPED  - The resource is in Stopped state due to stop operation.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -732,8 +735,8 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         Stopped("STOPPED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -773,116 +776,123 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         }
     };
     /**
-     * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being
-     * created and may not be usable until the entire metadata is defined UPDATING - The resource is
-     * being updated and may not be usable until all changes are commited DELETING - The resource is
-     * being deleted and might require deep cleanup of children. ACTIVE - The resource is valid and
-     * available for access INACTIVE - The resource might be incomplete in its definition or might
-     * have been made unavailable for administrative reasons DELETED - The resource has been deleted
-     * and isn't available FAILED - The resource is in a failed state due to validation or other
-     * errors STARTING - The resource is being started and may not be usable until becomes ACTIVE
-     * again STOPPING - The resource is in the process of Stopping and may not be usable until it
-     * Stops or fails STOPPED - The resource is in Stopped state due to stop operation.
-     */
+     * Lifecycle states for workspaces in Data Integration Service
+     * CREATING - The resource is being created and may not be usable until the entire metadata is defined
+     * UPDATING - The resource is being updated and may not be usable until all changes are commited
+     * DELETING - The resource is being deleted and might require deep cleanup of children.
+     * ACTIVE   - The resource is valid and available for access
+     * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
+     *          administrative reasons
+     * DELETED  - The resource has been deleted and isn't available
+     * FAILED   - The resource is in a failed state due to validation or other errors
+     * STARTING - The resource is being started and may not be usable until becomes ACTIVE again
+     * STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails
+     * STOPPED  - The resource is in Stopped state due to stop operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being
-     * created and may not be usable until the entire metadata is defined UPDATING - The resource is
-     * being updated and may not be usable until all changes are commited DELETING - The resource is
-     * being deleted and might require deep cleanup of children. ACTIVE - The resource is valid and
-     * available for access INACTIVE - The resource might be incomplete in its definition or might
-     * have been made unavailable for administrative reasons DELETED - The resource has been deleted
-     * and isn't available FAILED - The resource is in a failed state due to validation or other
-     * errors STARTING - The resource is being started and may not be usable until becomes ACTIVE
-     * again STOPPING - The resource is in the process of Stopping and may not be usable until it
-     * Stops or fails STOPPED - The resource is in Stopped state due to stop operation.
+     * Lifecycle states for workspaces in Data Integration Service
+     * CREATING - The resource is being created and may not be usable until the entire metadata is defined
+     * UPDATING - The resource is being updated and may not be usable until all changes are commited
+     * DELETING - The resource is being deleted and might require deep cleanup of children.
+     * ACTIVE   - The resource is valid and available for access
+     * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
+     *          administrative reasons
+     * DELETED  - The resource has been deleted and isn't available
+     * FAILED   - The resource is in a failed state due to validation or other errors
+     * STARTING - The resource is being started and may not be usable until becomes ACTIVE again
+     * STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails
+     * STOPPED  - The resource is in Stopped state due to stop operation.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
     private final String stateMessage;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      * @return the value
-     */
+     **/
     public String getStateMessage() {
         return stateMessage;
     }
 
-    /** A system-generated and immutable identifier assigned to the workspace upon creation. */
+    /**
+     * A system-generated and immutable identifier assigned to the workspace upon creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * A system-generated and immutable identifier assigned to the workspace upon creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OCID of the private endpoint associated with the container/workspace. */
+    /**
+     * OCID of the private endpoint associated with the container/workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
     private final String endpointId;
 
     /**
      * OCID of the private endpoint associated with the container/workspace.
-     *
      * @return the value
-     */
+     **/
     public String getEndpointId() {
         return endpointId;
     }
 
-    /** Name of the private endpoint associated with the container/workspace. */
+    /**
+     * Name of the private endpoint associated with the container/workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
     private final String endpointName;
 
     /**
      * Name of the private endpoint associated with the container/workspace.
-     *
      * @return the value
-     */
+     **/
     public String getEndpointName() {
         return endpointName;
     }
 
-    /** DCMS Registry ID associated with the container/workspace. */
+    /**
+     * DCMS Registry ID associated with the container/workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryId")
     private final String registryId;
 
     /**
      * DCMS Registry ID associated with the container/workspace.
-     *
      * @return the value
-     */
+     **/
     public String getRegistryId() {
         return registryId;
     }
 
-    /** key-value pairs of workspace properties */
+    /**
+     * key-value pairs of workspace properties
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
     private final java.util.Map<String, String> workspaceProperties;
 
     /**
      * key-value pairs of workspace properties
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getWorkspaceProperties() {
         return workspaceProperties;
     }
@@ -894,7 +904,6 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

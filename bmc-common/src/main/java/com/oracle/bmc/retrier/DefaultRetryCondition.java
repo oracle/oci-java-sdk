@@ -13,16 +13,14 @@ import java.util.Set;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 /**
  * Class that represents the conditions documented in
- * https://docs.oracle.com/iaas/Content/API/References/apierrors.htm for which the operation may be
- * retried.
+ * https://docs.oracle.com/iaas/Content/API/References/apierrors.htm for which the operation may be retried.
  */
 public class DefaultRetryCondition implements RetryCondition {
-    // List of retryable errors from
-    // https://docs.oracle.com/iaas/Content/API/References/apierrors.htm
+    // List of retryable errors from https://docs.oracle.com/iaas/Content/API/References/apierrors.htm
     private static final Map<Integer, Set<String>> RETRYABLE_SERVICE_ERRORS;
 
     static {
@@ -39,6 +37,7 @@ public class DefaultRetryCondition implements RetryCondition {
         if (exception == null) {
             throw new java.lang.NullPointerException("exception is marked non-null but is null");
         }
+
         return (exception.isClientSide()
                         && !(exception.getCause() instanceof CallNotAllowedException))
                 || exception.isTimeout()

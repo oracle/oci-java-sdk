@@ -6,12 +6,13 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ChangeDeploymentBackupCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -28,40 +29,37 @@ public class ChangeDeploymentBackupCompartmentResponse
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private ChangeDeploymentBackupCompartmentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ChangeDeploymentBackupCompartmentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -73,10 +71,8 @@ public class ChangeDeploymentBackupCompartmentResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ChangeDeploymentBackupCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -87,10 +83,8 @@ public class ChangeDeploymentBackupCompartmentResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ChangeDeploymentBackupCompartmentResponse build() {
             return new ChangeDeploymentBackupCompartmentResponse(
                     __httpStatusCode__, headers, opcRequestId);
@@ -99,7 +93,6 @@ public class ChangeDeploymentBackupCompartmentResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

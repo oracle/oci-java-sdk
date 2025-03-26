@@ -5,23 +5,23 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Bulk request object containing the details of the attributes to be unpinned. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Bulk request object containing the details of the attributes to be unpinned.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkUnpinAttributeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkUnpinAttributeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkUnpinAttributeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"attributeDetails"})
     public BulkUnpinAttributeDetails(java.util.List<BulkUnpinAttributeDetail> attributeDetails) {
@@ -33,7 +33,8 @@ public final class BulkUnpinAttributeDetails
     public static class Builder {
         /**
          * Collection of objects containing the details about individual attribute to be unpinned.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeDetails")
         private java.util.List<BulkUnpinAttributeDetail> attributeDetails;
 
@@ -42,7 +43,7 @@ public final class BulkUnpinAttributeDetails
          *
          * @param attributeDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeDetails(java.util.List<BulkUnpinAttributeDetail> attributeDetails) {
             this.attributeDetails = attributeDetails;
             this.__explicitlySet__.add("attributeDetails");
@@ -69,7 +70,9 @@ public final class BulkUnpinAttributeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,7 +81,10 @@ public final class BulkUnpinAttributeDetails
         return new Builder().copy(this);
     }
 
-    /** Collection of objects containing the details about individual attribute to be unpinned. */
+    /**
+     * Collection of objects containing the details about individual attribute to be unpinned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeDetails")
     private final java.util.List<BulkUnpinAttributeDetail> attributeDetails;
 
@@ -86,7 +92,7 @@ public final class BulkUnpinAttributeDetails
      * Collection of objects containing the details about individual attribute to be unpinned.
      *
      * @return the value
-     */
+     **/
     public java.util.List<BulkUnpinAttributeDetail> getAttributeDetails() {
         return attributeDetails;
     }
@@ -98,7 +104,6 @@ public final class BulkUnpinAttributeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

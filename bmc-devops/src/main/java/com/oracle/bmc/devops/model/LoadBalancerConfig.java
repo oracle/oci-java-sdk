@@ -5,24 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies configuration for load balancer traffic shift stages. The load balancer specified here
- * should be an Application load balancer type. Network load balancers are not supported. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies configuration for load balancer traffic shift stages.
+ * The load balancer specified here should be an Application load balancer type.
+ * Network load balancers are not supported.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LoadBalancerConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LoadBalancerConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = LoadBalancerConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LoadBalancerConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"loadBalancerId", "listenerName", "backendPort"})
     public LoadBalancerConfig(String loadBalancerId, String listenerName, Integer backendPort) {
@@ -34,46 +34,49 @@ public final class LoadBalancerConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the load balancer. */
+        /**
+         * The OCID of the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
         /**
          * The OCID of the load balancer.
-         *
          * @param loadBalancerId the value to set
          * @return this builder
-         */
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-        /** Name of the load balancer listener. */
+        /**
+         * Name of the load balancer listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerName")
         private String listenerName;
 
         /**
          * Name of the load balancer listener.
-         *
          * @param listenerName the value to set
          * @return this builder
-         */
+         **/
         public Builder listenerName(String listenerName) {
             this.listenerName = listenerName;
             this.__explicitlySet__.add("listenerName");
             return this;
         }
-        /** Listen port for the backend server. */
+        /**
+         * Listen port for the backend server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendPort")
         private Integer backendPort;
 
         /**
          * Listen port for the backend server.
-         *
          * @param backendPort the value to set
          * @return this builder
-         */
+         **/
         public Builder backendPort(Integer backendPort) {
             this.backendPort = backendPort;
             this.__explicitlySet__.add("backendPort");
@@ -108,7 +111,9 @@ public final class LoadBalancerConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +122,44 @@ public final class LoadBalancerConfig
         return new Builder().copy(this);
     }
 
-    /** The OCID of the load balancer. */
+    /**
+     * The OCID of the load balancer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
     /**
      * The OCID of the load balancer.
-     *
      * @return the value
-     */
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
 
-    /** Name of the load balancer listener. */
+    /**
+     * Name of the load balancer listener.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerName")
     private final String listenerName;
 
     /**
      * Name of the load balancer listener.
-     *
      * @return the value
-     */
+     **/
     public String getListenerName() {
         return listenerName;
     }
 
-    /** Listen port for the backend server. */
+    /**
+     * Listen port for the backend server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendPort")
     private final Integer backendPort;
 
     /**
      * Listen port for the backend server.
-     *
      * @return the value
-     */
+     **/
     public Integer getBackendPort() {
         return backendPort;
     }
@@ -163,7 +171,6 @@ public final class LoadBalancerConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

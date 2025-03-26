@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The types of managed instance. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ManagedInstanceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The types of managed instance.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum ManagedInstanceType {
     OracleManagementAgent("ORACLE_MANAGEMENT_AGENT"),
     OracleCloudAgent("ORACLE_CLOUD_AGENT"),
 

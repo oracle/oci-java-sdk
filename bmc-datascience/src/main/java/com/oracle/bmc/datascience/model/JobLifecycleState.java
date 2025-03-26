@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The status of a job. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum JobLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The status of a job.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum JobLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),

@@ -5,51 +5,58 @@
 package com.oracle.bmc.demandsignal.model;
 
 /**
- * A single instruction to be included as part of Patch request content. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+ * A single instruction to be included as part of Patch request content.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "operation",
-        defaultImpl = PatchInstruction.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "operation",
+    defaultImpl = PatchInstruction.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchMoveInstruction.class,
-            name = "MOVE"),
+        value = PatchMoveInstruction.class,
+        name = "MOVE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchRemoveInstruction.class,
-            name = "REMOVE"),
+        value = PatchRemoveInstruction.class,
+        name = "REMOVE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchReplaceInstruction.class,
-            name = "REPLACE"),
+        value = PatchReplaceInstruction.class,
+        name = "REPLACE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchInsertMultipleInstruction.class,
-            name = "INSERT_MULTIPLE"),
+        value = PatchInsertMultipleInstruction.class,
+        name = "INSERT_MULTIPLE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchInsertInstruction.class,
-            name = "INSERT"),
+        value = PatchInsertInstruction.class,
+        name = "INSERT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchRequireInstruction.class,
-            name = "REQUIRE"),
+        value = PatchRequireInstruction.class,
+        name = "REQUIRE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchMergeInstruction.class,
-            name = "MERGE"),
+        value = PatchMergeInstruction.class,
+        name = "MERGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PatchProhibitInstruction.class,
-            name = "PROHIBIT")
+        value = PatchProhibitInstruction.class,
+        name = "PROHIBIT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PatchInstruction extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PatchInstruction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"selection"})
     protected PatchInstruction(String selection) {
@@ -58,24 +65,21 @@ public class PatchInstruction extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The set of values to which the operation applies as a [JMESPath
-     * expression](https://jmespath.org/specification.html) for evaluation against the context
-     * resource. An operation fails if the selection yields an exception, except as otherwise
-     * specified. Note that comparisons involving non-primitive values (objects or arrays) are not
-     * supported and will always evaluate to false.
-     */
+     * The set of values to which the operation applies as a [JMESPath expression](https://jmespath.org/specification.html) for evaluation against the context resource.
+     * An operation fails if the selection yields an exception, except as otherwise specified.
+     * Note that comparisons involving non-primitive values (objects or arrays) are not supported and will always evaluate to false.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selection")
     private final String selection;
 
     /**
-     * The set of values to which the operation applies as a [JMESPath
-     * expression](https://jmespath.org/specification.html) for evaluation against the context
-     * resource. An operation fails if the selection yields an exception, except as otherwise
-     * specified. Note that comparisons involving non-primitive values (objects or arrays) are not
-     * supported and will always evaluate to false.
+     * The set of values to which the operation applies as a [JMESPath expression](https://jmespath.org/specification.html) for evaluation against the context resource.
+     * An operation fails if the selection yields an exception, except as otherwise specified.
+     * Note that comparisons involving non-primitive values (objects or arrays) are not supported and will always evaluate to false.
      *
      * @return the value
-     */
+     **/
     public String getSelection() {
         return selection;
     }
@@ -87,7 +91,6 @@ public class PatchInstruction extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -122,8 +125,10 @@ public class PatchInstruction extends com.oracle.bmc.http.client.internal.Explic
         return result;
     }
 
-    /** The type of this patch instruction. */
-    public enum Operation implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of this patch instruction.
+     **/
+    public enum Operation {
         Require("REQUIRE"),
         Prohibit("PROHIBIT"),
         Replace("REPLACE"),

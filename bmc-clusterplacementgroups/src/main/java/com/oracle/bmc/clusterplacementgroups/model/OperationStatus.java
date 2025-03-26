@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.clusterplacementgroups.model;
 
-/** The status of the work request operation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The status of the work request operation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum OperationStatus {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Waiting("WAITING"),

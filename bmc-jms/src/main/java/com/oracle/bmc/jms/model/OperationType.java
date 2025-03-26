@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum OperationType {
     CreateFleet("CREATE_FLEET"),
     DeleteFleet("DELETE_FLEET"),
     MoveFleet("MOVE_FLEET"),

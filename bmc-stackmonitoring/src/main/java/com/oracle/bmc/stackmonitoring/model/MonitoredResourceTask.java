@@ -5,27 +5,27 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The request details for importing resources from Telemetry. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The request details for importing resources from Telemetry.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MonitoredResourceTask.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MonitoredResourceTask.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MonitoredResourceTask
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
         "name",
+        "type",
         "compartmentId",
         "tenantId",
         "taskDetails",
@@ -40,6 +40,7 @@ public final class MonitoredResourceTask
     public MonitoredResourceTask(
             String id,
             String name,
+            String type,
             String compartmentId,
             String tenantId,
             MonitoredResourceTaskDetails taskDetails,
@@ -53,6 +54,7 @@ public final class MonitoredResourceTask
         super();
         this.id = id;
         this.name = name;
+        this.type = type;
         this.compartmentId = compartmentId;
         this.tenantId = tenantId;
         this.taskDetails = taskDetails;
@@ -68,72 +70,84 @@ public final class MonitoredResourceTask
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Task identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Task identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Task identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Task identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Name of the task. */
+        /**
+         * Name of the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the task.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment identifier.
-         */
+         * Type of the task.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
+        /**
+         * Type of the task.
+         * @param type the value to set
+         * @return this builder
+         **/
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment identifier.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
          *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
@@ -149,38 +163,38 @@ public final class MonitoredResourceTask
             return this;
         }
         /**
-         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for work requests submitted for this task.
-         */
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
         private java.util.List<String> workRequestIds;
 
         /**
-         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for work requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
          *
          * @param workRequestIds the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestIds(java.util.List<String> workRequestIds) {
             this.workRequestIds = workRequestIds;
             this.__explicitlySet__.add("workRequestIds");
             return this;
         }
         /**
-         * The date and time when the stack monitoring resource task was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         */
+         * The date and time when the stack monitoring resource task was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the stack monitoring resource task was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time when the stack monitoring resource task was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -189,7 +203,8 @@ public final class MonitoredResourceTask
         /**
          * The date and time when the stack monitoring resource task was last updated, expressed in
          * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -199,41 +214,43 @@ public final class MonitoredResourceTask
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the stack monitoring resource task. */
+        /**
+         * The current state of the stack monitoring resource task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MonitoredResourceTaskLifecycleState lifecycleState;
 
         /**
          * The current state of the stack monitoring resource task.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(MonitoredResourceTaskLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -242,7 +259,8 @@ public final class MonitoredResourceTask
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -252,7 +270,7 @@ public final class MonitoredResourceTask
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -260,19 +278,20 @@ public final class MonitoredResourceTask
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -287,6 +306,7 @@ public final class MonitoredResourceTask
                     new MonitoredResourceTask(
                             this.id,
                             this.name,
+                            this.type,
                             this.compartmentId,
                             this.tenantId,
                             this.taskDetails,
@@ -310,6 +330,9 @@ public final class MonitoredResourceTask
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -345,7 +368,9 @@ public final class MonitoredResourceTask
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -355,65 +380,75 @@ public final class MonitoredResourceTask
     }
 
     /**
-     * Task identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Task identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Task identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Task identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Name of the task. */
+    /**
+     * Name of the task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the task.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment identifier.
-     */
+     * Type of the task.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final String type;
+
+    /**
+     * Type of the task.
+     * @return the value
+     **/
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment identifier.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
      *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
@@ -426,116 +461,121 @@ public final class MonitoredResourceTask
     }
 
     /**
-     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * work requests submitted for this task.
-     */
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
     private final java.util.List<String> workRequestIds;
 
     /**
-     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getWorkRequestIds() {
         return workRequestIds;
     }
 
     /**
-     * The date and time when the stack monitoring resource task was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     */
+     * The date and time when the stack monitoring resource task was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the stack monitoring resource task was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time when the stack monitoring resource task was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time when the stack monitoring resource task was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     */
+     * The date and time when the stack monitoring resource task was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time when the stack monitoring resource task was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time when the stack monitoring resource task was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the stack monitoring resource task. */
+    /**
+     * The current state of the stack monitoring resource task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MonitoredResourceTaskLifecycleState lifecycleState;
 
     /**
      * The current state of the stack monitoring resource task.
-     *
      * @return the value
-     */
+     **/
     public MonitoredResourceTaskLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -547,7 +587,6 @@ public final class MonitoredResourceTask
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -557,6 +596,7 @@ public final class MonitoredResourceTask
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", taskDetails=").append(String.valueOf(this.taskDetails));
@@ -583,6 +623,7 @@ public final class MonitoredResourceTask
         MonitoredResourceTask other = (MonitoredResourceTask) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.taskDetails, other.taskDetails)
@@ -602,6 +643,7 @@ public final class MonitoredResourceTask
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

@@ -5,11 +5,10 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The current status of the monitoring template i.e. whether it is Applied, Not Applied or Partial
- * Applied
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MonitoringTemplateLifeCycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+ * The current status of the monitoring template i.e. whether it is Applied, Not Applied or Partial Applied
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MonitoringTemplateLifeCycleDetails {
     NotApplied("NOT_APPLIED"),
     Applied("APPLIED"),
     PartialApplied("PARTIAL_APPLIED"),

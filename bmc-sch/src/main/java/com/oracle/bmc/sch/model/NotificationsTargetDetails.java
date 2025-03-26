@@ -5,67 +5,64 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The destination topic for data transferred from the source. For configuration instructions, see
- * [Creating a
- * Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+ * The destination topic for data transferred from the source.
+ * For configuration instructions, see
+ * [Creating a Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NotificationsTargetDetails.Builder.class)
+    builder = NotificationsTargetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NotificationsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * topic.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
          *
          * @param topicId the value to set
          * @return this builder
-         */
+         **/
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
             return this;
         }
         /**
-         * Whether to apply a simplified, user-friendly format to the message. Applies only when
-         * friendly formatting is supported by the connector source and the subscription protocol.
+         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
+         * Example: {@code true}
          *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
         private Boolean enableFormattedMessaging;
 
         /**
-         * Whether to apply a simplified, user-friendly format to the message. Applies only when
-         * friendly formatting is supported by the connector source and the subscription protocol.
-         *
-         * <p>Example: {@code true}
+         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
+         * Example: {@code true}
          *
          * @param enableFormattedMessaging the value to set
          * @return this builder
-         */
+         **/
         public Builder enableFormattedMessaging(Boolean enableFormattedMessaging) {
             this.enableFormattedMessaging = enableFormattedMessaging;
             this.__explicitlySet__.add("enableFormattedMessaging");
@@ -96,7 +93,9 @@ public final class NotificationsTargetDetails extends TargetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,39 +112,35 @@ public final class NotificationsTargetDetails extends TargetDetails {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * topic.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      *
      * @return the value
-     */
+     **/
     public String getTopicId() {
         return topicId;
     }
 
     /**
-     * Whether to apply a simplified, user-friendly format to the message. Applies only when
-     * friendly formatting is supported by the connector source and the subscription protocol.
+     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableFormattedMessaging")
     private final Boolean enableFormattedMessaging;
 
     /**
-     * Whether to apply a simplified, user-friendly format to the message. Applies only when
-     * friendly formatting is supported by the connector source and the subscription protocol.
-     *
-     * <p>Example: {@code true}
+     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getEnableFormattedMessaging() {
         return enableFormattedMessaging;
     }
@@ -157,7 +152,6 @@ public final class NotificationsTargetDetails extends TargetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

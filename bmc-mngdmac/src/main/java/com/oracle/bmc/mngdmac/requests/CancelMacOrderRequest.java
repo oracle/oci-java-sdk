@@ -6,63 +6,69 @@ package com.oracle.bmc.mngdmac.requests;
 
 import com.oracle.bmc.mngdmac.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mngdmac/CancelMacOrderExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CancelMacOrderRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mngdmac/CancelMacOrderExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CancelMacOrderRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
 public class CancelMacOrderRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mngdmac.model.CancelMacOrderDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * MacOrder.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MacOrder.
      */
     private String macOrderId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * MacOrder.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MacOrder.
      */
     public String getMacOrderId() {
         return macOrderId;
     }
-    /** The information to cancel a MacOrder. */
+    /**
+     * The information to cancel a MacOrder.
+     */
     private com.oracle.bmc.mngdmac.model.CancelMacOrderDetails cancelMacOrderDetails;
 
-    /** The information to cancel a MacOrder. */
+    /**
+     * The information to cancel a MacOrder.
+     */
     public com.oracle.bmc.mngdmac.model.CancelMacOrderDetails getCancelMacOrderDetails() {
         return cancelMacOrderDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the etag you provide
+     * matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the etag you provide
+     * matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID. The only valid characters for request IDs
-     * are letters, numbers, underscore, and dash.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     * The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID. The only valid characters for request IDs
-     * are letters, numbers, underscore, and dash.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     * The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -70,18 +76,20 @@ public class CancelMacOrderRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of running that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and removed from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and removed from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of running that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and removed from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and removed from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -89,7 +97,6 @@ public class CancelMacOrderRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -101,19 +108,17 @@ public class CancelMacOrderRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CancelMacOrderRequest, com.oracle.bmc.mngdmac.model.CancelMacOrderDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * MacOrder.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MacOrder.
          */
         private String macOrderId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * MacOrder.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MacOrder.
          * @param macOrderId the value to set
          * @return this builder instance
          */
@@ -122,12 +127,13 @@ public class CancelMacOrderRequest
             return this;
         }
 
-        /** The information to cancel a MacOrder. */
+        /**
+         * The information to cancel a MacOrder.
+         */
         private com.oracle.bmc.mngdmac.model.CancelMacOrderDetails cancelMacOrderDetails = null;
 
         /**
          * The information to cancel a MacOrder.
-         *
          * @param cancelMacOrderDetails the value to set
          * @return this builder instance
          */
@@ -139,16 +145,17 @@ public class CancelMacOrderRequest
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for
+         * that resource. The resource will be updated or deleted only if the etag you provide
          * matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for
+         * that resource. The resource will be updated or deleted only if the etag you provide
          * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
@@ -160,16 +167,19 @@ public class CancelMacOrderRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID. The only valid characters for request
-         * IDs are letters, numbers, underscore, and dash.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         * The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID. The only valid characters for request
-         * IDs are letters, numbers, underscore, and dash.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         * The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -182,18 +192,19 @@ public class CancelMacOrderRequest
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
          * server error without risk of running that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if
-         * a resource has been deleted and removed from the system, then a retry of the original
-         * creation request might be rejected.
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and removed from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
          * server error without risk of running that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if
-         * a resource has been deleted and removed from the system, then a retry of the original
-         * creation request might be rejected.
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and removed from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -205,19 +216,18 @@ public class CancelMacOrderRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -229,7 +239,6 @@ public class CancelMacOrderRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CancelMacOrderRequest o) {
@@ -246,11 +255,10 @@ public class CancelMacOrderRequest
         /**
          * Build the instance of CancelMacOrderRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CancelMacOrderRequest
          */
@@ -263,7 +271,6 @@ public class CancelMacOrderRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -276,8 +283,7 @@ public class CancelMacOrderRequest
         /**
          * Build the instance of CancelMacOrderRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CancelMacOrderRequest
@@ -290,14 +296,12 @@ public class CancelMacOrderRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CancelMacOrderRequest(macOrderId, cancelMacOrderDetails, ifMatch, opcRequestId,
-            // opcRetryToken);
+            // new CancelMacOrderRequest(macOrderId, cancelMacOrderDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -311,7 +315,6 @@ public class CancelMacOrderRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

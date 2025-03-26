@@ -5,54 +5,56 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Unified Agent logging service configuration object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Unified Agent logging service configuration object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentLoggingConfiguration.Builder.class)
+    builder = UnifiedAgentLoggingConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configurationType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configurationType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentLoggingConfiguration
         extends UnifiedAgentServiceConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Logging source object. */
+        /**
+         * Logging source object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sources")
         private java.util.List<UnifiedAgentLoggingSource> sources;
 
         /**
          * Logging source object.
-         *
          * @param sources the value to set
          * @return this builder
-         */
+         **/
         public Builder sources(java.util.List<UnifiedAgentLoggingSource> sources) {
             this.sources = sources;
             this.__explicitlySet__.add("sources");
             return this;
         }
-        /** Logging filter object. */
+        /**
+         * Logging filter object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filter")
         private java.util.List<UnifiedAgentLoggingFilter> filter;
 
         /**
          * Logging filter object.
-         *
          * @param filter the value to set
          * @return this builder
-         */
+         **/
         public Builder filter(java.util.List<UnifiedAgentLoggingFilter> filter) {
             this.filter = filter;
             this.__explicitlySet__.add("filter");
@@ -96,7 +98,9 @@ public final class UnifiedAgentLoggingConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,28 +120,30 @@ public final class UnifiedAgentLoggingConfiguration
         this.destination = destination;
     }
 
-    /** Logging source object. */
+    /**
+     * Logging source object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
     private final java.util.List<UnifiedAgentLoggingSource> sources;
 
     /**
      * Logging source object.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UnifiedAgentLoggingSource> getSources() {
         return sources;
     }
 
-    /** Logging filter object. */
+    /**
+     * Logging filter object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
     private final java.util.List<UnifiedAgentLoggingFilter> filter;
 
     /**
      * Logging filter object.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UnifiedAgentLoggingFilter> getFilter() {
         return filter;
     }
@@ -156,7 +162,6 @@ public final class UnifiedAgentLoggingConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

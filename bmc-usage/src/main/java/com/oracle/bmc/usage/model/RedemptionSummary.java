@@ -5,23 +5,21 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The redemption summary for the requested subscription ID and date range. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * The redemption summary for the requested subscription ID and date range.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RedemptionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RedemptionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = RedemptionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RedemptionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeRedeemed",
@@ -61,151 +59,161 @@ public final class RedemptionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** It provides redeem date. */
+        /**
+         * It provides redeem date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRedeemed")
         private java.util.Date timeRedeemed;
 
         /**
          * It provides redeem date.
-         *
          * @param timeRedeemed the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRedeemed(java.util.Date timeRedeemed) {
             this.timeRedeemed = timeRedeemed;
             this.__explicitlySet__.add("timeRedeemed");
             return this;
         }
-        /** It provides the redemption email id. */
+        /**
+         * It provides the redemption email id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redemptionEmail")
         private String redemptionEmail;
 
         /**
          * It provides the redemption email id.
-         *
          * @param redemptionEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder redemptionEmail(String redemptionEmail) {
             this.redemptionEmail = redemptionEmail;
             this.__explicitlySet__.add("redemptionEmail");
             return this;
         }
-        /** The redemption code used in the Billing Center during the reward redemption process. */
+        /**
+         * The redemption code used in the Billing Center during the reward redemption process.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
         private String redemptionCode;
 
         /**
          * The redemption code used in the Billing Center during the reward redemption process.
-         *
          * @param redemptionCode the value to set
          * @return this builder
-         */
+         **/
         public Builder redemptionCode(String redemptionCode) {
             this.redemptionCode = redemptionCode;
             this.__explicitlySet__.add("redemptionCode");
             return this;
         }
-        /** It provides the invoice number against the redemption. */
+        /**
+         * It provides the invoice number against the redemption.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceNumber")
         private String invoiceNumber;
 
         /**
          * It provides the invoice number against the redemption.
-         *
          * @param invoiceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder invoiceNumber(String invoiceNumber) {
             this.invoiceNumber = invoiceNumber;
             this.__explicitlySet__.add("invoiceNumber");
             return this;
         }
-        /** It provides the invoice total amount of given redemption. */
+        /**
+         * It provides the invoice total amount of given redemption.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceTotalAmount")
         private Double invoiceTotalAmount;
 
         /**
          * It provides the invoice total amount of given redemption.
-         *
          * @param invoiceTotalAmount the value to set
          * @return this builder
-         */
+         **/
         public Builder invoiceTotalAmount(Double invoiceTotalAmount) {
             this.invoiceTotalAmount = invoiceTotalAmount;
             this.__explicitlySet__.add("invoiceTotalAmount");
             return this;
         }
-        /** The currency associated with invoice. */
+        /**
+         * The currency associated with invoice.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceCurrency")
         private String invoiceCurrency;
 
         /**
          * The currency associated with invoice.
-         *
          * @param invoiceCurrency the value to set
          * @return this builder
-         */
+         **/
         public Builder invoiceCurrency(String invoiceCurrency) {
             this.invoiceCurrency = invoiceCurrency;
             this.__explicitlySet__.add("invoiceCurrency");
             return this;
         }
-        /** It provides the redeemed rewards in invoice currency. */
+        /**
+         * It provides the redeemed rewards in invoice currency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redeemedRewards")
         private Float redeemedRewards;
 
         /**
          * It provides the redeemed rewards in invoice currency.
-         *
          * @param redeemedRewards the value to set
          * @return this builder
-         */
+         **/
         public Builder redeemedRewards(Float redeemedRewards) {
             this.redeemedRewards = redeemedRewards;
             this.__explicitlySet__.add("redeemedRewards");
             return this;
         }
-        /** It provides the redeemed rewards in base/subscription currency. */
+        /**
+         * It provides the redeemed rewards in base/subscription currency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseRewards")
         private Float baseRewards;
 
         /**
          * It provides the redeemed rewards in base/subscription currency.
-         *
          * @param baseRewards the value to set
          * @return this builder
-         */
+         **/
         public Builder baseRewards(Float baseRewards) {
             this.baseRewards = baseRewards;
             this.__explicitlySet__.add("baseRewards");
             return this;
         }
-        /** It provides the fxRate between invoice currency and subscription currency. */
+        /**
+         * It provides the fxRate between invoice currency and subscription currency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fxRate")
         private Double fxRate;
 
         /**
          * It provides the fxRate between invoice currency and subscription currency.
-         *
          * @param fxRate the value to set
          * @return this builder
-         */
+         **/
         public Builder fxRate(Double fxRate) {
             this.fxRate = fxRate;
             this.__explicitlySet__.add("fxRate");
             return this;
         }
-        /** It provides the invoice date. */
+        /**
+         * It provides the invoice date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiced")
         private java.util.Date timeInvoiced;
 
         /**
          * It provides the invoice date.
-         *
          * @param timeInvoiced the value to set
          * @return this builder
-         */
+         **/
         public Builder timeInvoiced(java.util.Date timeInvoiced) {
             this.timeInvoiced = timeInvoiced;
             this.__explicitlySet__.add("timeInvoiced");
@@ -270,7 +278,9 @@ public final class RedemptionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -279,132 +289,142 @@ public final class RedemptionSummary
         return new Builder().copy(this);
     }
 
-    /** It provides redeem date. */
+    /**
+     * It provides redeem date.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRedeemed")
     private final java.util.Date timeRedeemed;
 
     /**
      * It provides redeem date.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRedeemed() {
         return timeRedeemed;
     }
 
-    /** It provides the redemption email id. */
+    /**
+     * It provides the redemption email id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redemptionEmail")
     private final String redemptionEmail;
 
     /**
      * It provides the redemption email id.
-     *
      * @return the value
-     */
+     **/
     public String getRedemptionEmail() {
         return redemptionEmail;
     }
 
-    /** The redemption code used in the Billing Center during the reward redemption process. */
+    /**
+     * The redemption code used in the Billing Center during the reward redemption process.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
     private final String redemptionCode;
 
     /**
      * The redemption code used in the Billing Center during the reward redemption process.
-     *
      * @return the value
-     */
+     **/
     public String getRedemptionCode() {
         return redemptionCode;
     }
 
-    /** It provides the invoice number against the redemption. */
+    /**
+     * It provides the invoice number against the redemption.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceNumber")
     private final String invoiceNumber;
 
     /**
      * It provides the invoice number against the redemption.
-     *
      * @return the value
-     */
+     **/
     public String getInvoiceNumber() {
         return invoiceNumber;
     }
 
-    /** It provides the invoice total amount of given redemption. */
+    /**
+     * It provides the invoice total amount of given redemption.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceTotalAmount")
     private final Double invoiceTotalAmount;
 
     /**
      * It provides the invoice total amount of given redemption.
-     *
      * @return the value
-     */
+     **/
     public Double getInvoiceTotalAmount() {
         return invoiceTotalAmount;
     }
 
-    /** The currency associated with invoice. */
+    /**
+     * The currency associated with invoice.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceCurrency")
     private final String invoiceCurrency;
 
     /**
      * The currency associated with invoice.
-     *
      * @return the value
-     */
+     **/
     public String getInvoiceCurrency() {
         return invoiceCurrency;
     }
 
-    /** It provides the redeemed rewards in invoice currency. */
+    /**
+     * It provides the redeemed rewards in invoice currency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redeemedRewards")
     private final Float redeemedRewards;
 
     /**
      * It provides the redeemed rewards in invoice currency.
-     *
      * @return the value
-     */
+     **/
     public Float getRedeemedRewards() {
         return redeemedRewards;
     }
 
-    /** It provides the redeemed rewards in base/subscription currency. */
+    /**
+     * It provides the redeemed rewards in base/subscription currency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseRewards")
     private final Float baseRewards;
 
     /**
      * It provides the redeemed rewards in base/subscription currency.
-     *
      * @return the value
-     */
+     **/
     public Float getBaseRewards() {
         return baseRewards;
     }
 
-    /** It provides the fxRate between invoice currency and subscription currency. */
+    /**
+     * It provides the fxRate between invoice currency and subscription currency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fxRate")
     private final Double fxRate;
 
     /**
      * It provides the fxRate between invoice currency and subscription currency.
-     *
      * @return the value
-     */
+     **/
     public Double getFxRate() {
         return fxRate;
     }
 
-    /** It provides the invoice date. */
+    /**
+     * It provides the invoice date.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiced")
     private final java.util.Date timeInvoiced;
 
     /**
      * It provides the invoice date.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeInvoiced() {
         return timeInvoiced;
     }
@@ -416,7 +436,6 @@ public final class RedemptionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,11 +5,12 @@
 package com.oracle.bmc.oce.model;
 
 /**
- * license types can be NEW for new oracle content management cloud license, or BYOL for bring your
- * own license
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
-public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
+ * license types can be NEW for new oracle content management cloud license,
+ * or BYOL for bring your own license
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+public enum LicenseType {
     New("NEW"),
     Byol("BYOL"),
     Premium("PREMIUM"),

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.analytics.model;
 
-/** The way in which a resource was affected by a work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum WorkRequestActionResult implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The way in which a resource was affected by a work request.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+public enum WorkRequestActionResult {
     CompartmentChanged("COMPARTMENT_CHANGED"),
     Created("CREATED"),
     Deleted("DELETED"),

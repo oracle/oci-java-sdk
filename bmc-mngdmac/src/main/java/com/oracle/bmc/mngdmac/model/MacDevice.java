@@ -5,21 +5,20 @@
 package com.oracle.bmc.mngdmac.model;
 
 /**
- * Represents a MacDevice resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
+ * Represents a MacDevice resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacDevice.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MacDevice extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MacDevice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -62,170 +61,177 @@ public final class MacDevice extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique ID of the MacDevice. */
+        /**
+         * The unique ID of the MacDevice.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique ID of the MacDevice.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID of the compartment to which the resource belongs to. */
+        /**
+         * OCID of the compartment to which the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of the compartment to which the resource belongs to.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macOrderId")
         private String macOrderId;
 
         /**
          * The OCID of the resource.
-         *
          * @param macOrderId the value to set
          * @return this builder
-         */
+         **/
         public Builder macOrderId(String macOrderId) {
             this.macOrderId = macOrderId;
             this.__explicitlySet__.add("macOrderId");
             return this;
         }
-        /** The serial number of the MacDevice. */
+        /**
+         * The serial number of the MacDevice.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
         private String serialNumber;
 
         /**
          * The serial number of the MacDevice.
-         *
          * @param serialNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = serialNumber;
             this.__explicitlySet__.add("serialNumber");
             return this;
         }
-        /** The IP address assigned to the MacDevice. */
+        /**
+         * The IP address assigned to the MacDevice.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * The IP address assigned to the MacDevice.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The current status of the MacDevice. */
+        /**
+         * The current status of the MacDevice.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current status of the MacDevice.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The shape of the Mac. */
+        /**
+         * The shape of the Mac.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private MacOrder.Shape shape;
 
         /**
          * The shape of the Mac.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(MacOrder.Shape shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The time this resource was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was last updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time this resource was last updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** A flag that indicates if this MacDevice is decommissioned. */
+        /**
+         * A flag that indicates if this MacDevice is decommissioned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMarkedDecom")
         private Boolean isMarkedDecom;
 
         /**
          * A flag that indicates if this MacDevice is decommissioned.
-         *
          * @param isMarkedDecom the value to set
          * @return this builder
-         */
+         **/
         public Builder isMarkedDecom(Boolean isMarkedDecom) {
             this.isMarkedDecom = isMarkedDecom;
             this.__explicitlySet__.add("isMarkedDecom");
             return this;
         }
         /**
-         * An RFC3339-formatted datetime string containing the time this MacDevice was
-         * decommissioned.
-         */
+         * An RFC3339-formatted datetime string containing the time this MacDevice was decommissioned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDecom")
         private java.util.Date timeDecom;
 
         /**
-         * An RFC3339-formatted datetime string containing the time this MacDevice was
-         * decommissioned.
-         *
+         * An RFC3339-formatted datetime string containing the time this MacDevice was decommissioned.
          * @param timeDecom the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDecom(java.util.Date timeDecom) {
             this.timeDecom = timeDecom;
             this.__explicitlySet__.add("timeDecom");
@@ -294,7 +300,9 @@ public final class MacDevice extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -303,73 +311,80 @@ public final class MacDevice extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The unique ID of the MacDevice. */
+    /**
+     * The unique ID of the MacDevice.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique ID of the MacDevice.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OCID of the compartment to which the resource belongs to. */
+    /**
+     * OCID of the compartment to which the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of the compartment to which the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macOrderId")
     private final String macOrderId;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getMacOrderId() {
         return macOrderId;
     }
 
-    /** The serial number of the MacDevice. */
+    /**
+     * The serial number of the MacDevice.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     private final String serialNumber;
 
     /**
      * The serial number of the MacDevice.
-     *
      * @return the value
-     */
+     **/
     public String getSerialNumber() {
         return serialNumber;
     }
 
-    /** The IP address assigned to the MacDevice. */
+    /**
+     * The IP address assigned to the MacDevice.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * The IP address assigned to the MacDevice.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** The current status of the MacDevice. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current status of the MacDevice.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         NeedsAttention("NEEDS_ATTENTION"),
@@ -377,8 +392,8 @@ public final class MacDevice extends com.oracle.bmc.http.client.internal.Explici
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -417,82 +432,86 @@ public final class MacDevice extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** The current status of the MacDevice. */
+    /**
+     * The current status of the MacDevice.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current status of the MacDevice.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The shape of the Mac. */
+    /**
+     * The shape of the Mac.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final MacOrder.Shape shape;
 
     /**
      * The shape of the Mac.
-     *
      * @return the value
-     */
+     **/
     public MacOrder.Shape getShape() {
         return shape;
     }
 
-    /** The time this resource was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was last updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** A flag that indicates if this MacDevice is decommissioned. */
+    /**
+     * A flag that indicates if this MacDevice is decommissioned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMarkedDecom")
     private final Boolean isMarkedDecom;
 
     /**
      * A flag that indicates if this MacDevice is decommissioned.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMarkedDecom() {
         return isMarkedDecom;
     }
 
     /**
      * An RFC3339-formatted datetime string containing the time this MacDevice was decommissioned.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDecom")
     private final java.util.Date timeDecom;
 
     /**
      * An RFC3339-formatted datetime string containing the time this MacDevice was decommissioned.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDecom() {
         return timeDecom;
     }
@@ -504,7 +523,6 @@ public final class MacDevice extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

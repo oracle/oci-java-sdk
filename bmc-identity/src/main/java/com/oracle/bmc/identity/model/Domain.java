@@ -5,23 +5,20 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * (For tenancies that support identity domains) Properties for an identity domain. An identity
- * domain is used to manage users and groups, integration standards, external identities, and secure
- * application integration through Oracle Single Sign-on (SSO) configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * (For tenancies that support identity domains) Properties for an identity domain. An identity domain is used to manage users and groups, integration standards, external identities, and secure application integration through Oracle Single Sign-on (SSO) configuration.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Domain.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Domain extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Domain extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,137 +76,148 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the identity domain. */
+        /**
+         * The OCID of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the identity domain.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment containing the identity domain. */
+        /**
+         * The OCID of the compartment containing the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the identity domain.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The mutable display name of the identity domain. */
+        /**
+         * The mutable display name of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The mutable display name of the identity domain.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The identity domain description. You can have an empty description. */
+        /**
+         * The identity domain description. You can have an empty description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The identity domain description. You can have an empty description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Region-agnostic identity domain URL. */
+        /**
+         * Region-agnostic identity domain URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * Region-agnostic identity domain URL.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** Region-specific identity domain URL. */
+        /**
+         * Region-specific identity domain URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("homeRegionUrl")
         private String homeRegionUrl;
 
         /**
          * Region-specific identity domain URL.
-         *
          * @param homeRegionUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder homeRegionUrl(String homeRegionUrl) {
             this.homeRegionUrl = homeRegionUrl;
             this.__explicitlySet__.add("homeRegionUrl");
             return this;
         }
         /**
-         * The home region for the identity domain. See [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
-         * list of supported region names.
+         * The home region for the identity domain.
+         * See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
          *
-         * <p>Example: {@code us-phoenix-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
         private String homeRegion;
 
         /**
-         * The home region for the identity domain. See [Regions and Availability
-         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
-         * list of supported region names.
-         *
-         * <p>Example: {@code us-phoenix-1}
+         * The home region for the identity domain.
+         * See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+         * for the full list of supported region names.
+         * <p>
+         * Example: {@code us-phoenix-1}
          *
          * @param homeRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder homeRegion(String homeRegion) {
             this.homeRegion = homeRegion;
             this.__explicitlySet__.add("homeRegion");
             return this;
         }
-        /** The regions where replicas of the identity domain exist. */
+        /**
+         * The regions where replicas of the identity domain exist.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicaRegions")
         private java.util.List<ReplicatedRegionDetails> replicaRegions;
 
         /**
          * The regions where replicas of the identity domain exist.
-         *
          * @param replicaRegions the value to set
          * @return this builder
-         */
+         **/
         public Builder replicaRegions(java.util.List<ReplicatedRegionDetails> replicaRegions) {
             this.replicaRegions = replicaRegions;
             this.__explicitlySet__.add("replicaRegions");
             return this;
         }
-        /** The type of the domain. */
+        /**
+         * The type of the domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -218,28 +226,32 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The license type of the identity domain. */
+        /**
+         * The license type of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private String licenseType;
 
         /**
          * The license type of the identity domain.
-         *
          * @param licenseType the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseType(String licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-        /** Indicates whether the identity domain is hidden on the sign-in screen or not. */
+        /**
+         * Indicates whether the identity domain is hidden on the sign-in screen or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")
         private Boolean isHiddenOnLogin;
 
@@ -248,7 +260,7 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
          *
          * @param isHiddenOnLogin the value to set
          * @return this builder
-         */
+         **/
         public Builder isHiddenOnLogin(Boolean isHiddenOnLogin) {
             this.isHiddenOnLogin = isHiddenOnLogin;
             this.__explicitlySet__.add("isHiddenOnLogin");
@@ -256,26 +268,30 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Date and time the identity domain was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the identity domain was created, in the format defined by RFC3339.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current state. */
+        /**
+         * The current state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -284,13 +300,16 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Any additional details about the current state of the identity domain. */
+        /**
+         * Any additional details about the current state of the identity domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
@@ -299,53 +318,51 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -435,7 +452,9 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -444,128 +463,139 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /** The OCID of the identity domain. */
+    /**
+     * The OCID of the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the identity domain.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment containing the identity domain. */
+    /**
+     * The OCID of the compartment containing the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the identity domain.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The mutable display name of the identity domain. */
+    /**
+     * The mutable display name of the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The mutable display name of the identity domain.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The identity domain description. You can have an empty description. */
+    /**
+     * The identity domain description. You can have an empty description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The identity domain description. You can have an empty description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Region-agnostic identity domain URL. */
+    /**
+     * Region-agnostic identity domain URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * Region-agnostic identity domain URL.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** Region-specific identity domain URL. */
+    /**
+     * Region-specific identity domain URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionUrl")
     private final String homeRegionUrl;
 
     /**
      * Region-specific identity domain URL.
-     *
      * @return the value
-     */
+     **/
     public String getHomeRegionUrl() {
         return homeRegionUrl;
     }
 
     /**
-     * The home region for the identity domain. See [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
-     * of supported region names.
+     * The home region for the identity domain.
+     * See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     * <p>
+     * Example: {@code us-phoenix-1}
      *
-     * <p>Example: {@code us-phoenix-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
     private final String homeRegion;
 
     /**
-     * The home region for the identity domain. See [Regions and Availability
-     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
-     * of supported region names.
-     *
-     * <p>Example: {@code us-phoenix-1}
+     * The home region for the identity domain.
+     * See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
+     * for the full list of supported region names.
+     * <p>
+     * Example: {@code us-phoenix-1}
      *
      * @return the value
-     */
+     **/
     public String getHomeRegion() {
         return homeRegion;
     }
 
-    /** The regions where replicas of the identity domain exist. */
+    /**
+     * The regions where replicas of the identity domain exist.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegions")
     private final java.util.List<ReplicatedRegionDetails> replicaRegions;
 
     /**
      * The regions where replicas of the identity domain exist.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ReplicatedRegionDetails> getReplicaRegions() {
         return replicaRegions;
     }
 
-    /** The type of the domain. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the domain.
+     *
+     **/
+    public enum Type {
         Default("DEFAULT"),
         Secondary("SECONDARY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -602,7 +632,10 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** The type of the domain. */
+    /**
+     * The type of the domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -610,25 +643,29 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
      * The type of the domain.
      *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** The license type of the identity domain. */
+    /**
+     * The license type of the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final String licenseType;
 
     /**
      * The license type of the identity domain.
-     *
      * @return the value
-     */
+     **/
     public String getLicenseType() {
         return licenseType;
     }
 
-    /** Indicates whether the identity domain is hidden on the sign-in screen or not. */
+    /**
+     * Indicates whether the identity domain is hidden on the sign-in screen or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")
     private final Boolean isHiddenOnLogin;
 
@@ -636,40 +673,44 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
      * Indicates whether the identity domain is hidden on the sign-in screen or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHiddenOnLogin() {
         return isHiddenOnLogin;
     }
 
     /**
      * Date and time the identity domain was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the identity domain was created, in the format defined by RFC3339.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The current state. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
         Inactive("INACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -708,7 +749,10 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** The current state. */
+    /**
+     * The current state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -716,20 +760,23 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
      * The current state.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Any additional details about the current state of the identity domain. */
-    public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Any additional details about the current state of the identity domain.
+     *
+     **/
+    public enum LifecycleDetails {
         Deactivating("DEACTIVATING"),
         Activating("ACTIVATING"),
         Updating("UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -768,7 +815,10 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** Any additional details about the current state of the identity domain. */
+    /**
+     * Any additional details about the current state of the identity domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
@@ -776,49 +826,47 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
      * Any additional details about the current state of the identity domain.
      *
      * @return the value
-     */
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -830,7 +878,6 @@ public final class Domain extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

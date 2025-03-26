@@ -6,50 +6,46 @@ package com.oracle.bmc.datascience.requests;
 
 import com.oracle.bmc.datascience.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreatePipelineExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreatePipelineRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreatePipelineExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreatePipelineRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class CreatePipelineRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datascience.model.CreatePipelineDetails> {
 
-    /** Details for the new Pipeline. */
+    /**
+     * Details for the new Pipeline.
+     */
     private com.oracle.bmc.datascience.model.CreatePipelineDetails createPipelineDetails;
 
-    /** Details for the new Pipeline. */
+    /**
+     * Details for the new Pipeline.
+     */
     public com.oracle.bmc.datascience.model.CreatePipelineDetails getCreatePipelineDetails() {
         return createPipelineDetails;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -57,7 +53,6 @@ public class CreatePipelineRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -69,15 +64,17 @@ public class CreatePipelineRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreatePipelineRequest, com.oracle.bmc.datascience.model.CreatePipelineDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new Pipeline. */
+        /**
+         * Details for the new Pipeline.
+         */
         private com.oracle.bmc.datascience.model.CreatePipelineDetails createPipelineDetails = null;
 
         /**
          * Details for the new Pipeline.
-         *
          * @param createPipelineDetails the value to set
          * @return this builder instance
          */
@@ -88,20 +85,13 @@ public class CreatePipelineRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -112,14 +102,13 @@ public class CreatePipelineRequest
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -131,19 +120,18 @@ public class CreatePipelineRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -155,7 +143,6 @@ public class CreatePipelineRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreatePipelineRequest o) {
@@ -170,11 +157,10 @@ public class CreatePipelineRequest
         /**
          * Build the instance of CreatePipelineRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreatePipelineRequest
          */
@@ -187,7 +173,6 @@ public class CreatePipelineRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -200,8 +185,7 @@ public class CreatePipelineRequest
         /**
          * Build the instance of CreatePipelineRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreatePipelineRequest
@@ -218,7 +202,6 @@ public class CreatePipelineRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -230,7 +213,6 @@ public class CreatePipelineRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -9,7 +9,7 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerFactory;
-import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
@@ -25,7 +25,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 
-/** A sample to demonstrate how to configure a client using circuit breaker configuration. */
+/**
+ * A sample to demonstrate how to configure a client using circuit breaker configuration.
+ */
 public class RetryOnOpenCircuitBreakerExample {
 
     public static void main(String[] args) throws Exception {
@@ -33,10 +35,8 @@ public class RetryOnOpenCircuitBreakerExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -44,14 +44,14 @@ public class RetryOnOpenCircuitBreakerExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        // Retry even when the CircuitBreaker is OPEN
+        //Retry even when the CircuitBreaker is OPEN
         retryRegardlessOfCircuitBreakerStatus(provider);
     }
 
     private static void retryRegardlessOfCircuitBreakerStatus(
             AuthenticationDetailsProvider provider) throws Exception {
-        // Just for this example add one more status code SERVICE_NOTFOUND - 404(compare with
-        // default circuit breaker setting) as the failure request in circuit breaker.
+
+        // Just for this example add one more status code SERVICE_NOTFOUND - 404(compare with default circuit breaker setting) as the failure request in circuit breaker.
         int SERVICE_NOTFOUND = Response.Status.NOT_FOUND.getStatusCode();
         int MIN_NUM_CALLS = 2;
         CircuitBreakerConfiguration circuitBreakerConfiguration =
@@ -72,9 +72,14 @@ public class RetryOnOpenCircuitBreakerExample {
                                                         CircuitBreakerConfiguration
                                                                 .SERVICE_UNAVAILABLE,
                                                         SERVICE_NOTFOUND))))
+                        .recordExceptions(
+                                Collections.unmodifiableList(
+                                        Arrays.asList(
+                                                CircuitBreakerConfiguration
+                                                        .SERVICE_UNAVAILABLE_EXCEPTION_CLASS)))
                         .build();
 
-        OciCircuitBreaker cb = CircuitBreakerFactory.build(circuitBreakerConfiguration, null);
+        JaxRsCircuitBreaker cb = CircuitBreakerFactory.build(circuitBreakerConfiguration);
 
         ClientConfiguration clientConfiguration =
                 ClientConfiguration.builder()
@@ -85,17 +90,15 @@ public class RetryOnOpenCircuitBreakerExample {
                         .build();
 
         // Create Clients using above ClientConfiguration
-        ObjectStorage client =
-                ObjectStorageClient.builder()
-                        .region(Region.US_PHOENIX_1)
-                        .configuration(clientConfiguration)
-                        .build(provider);
+        ObjectStorage client = new ObjectStorageClient(provider, clientConfiguration);
+        client.setRegion(Region.US_PHOENIX_1);
 
         GetNamespaceResponse namespaceResponse =
                 client.getNamespace(GetNamespaceRequest.builder().build());
         String namespaceName = namespaceResponse.getValue();
+        System.out.println("Using namespace: " + namespaceName);
 
-        // Make the tenancy OCID incorrect to invoke 404 errors
+        // Make the tenancy OCID incorrect("mm") to invoke 404 errors
         String invalidTenantId = "invalid_tenantId";
         ListBucketsRequest.Builder listBucketsBuilder =
                 ListBucketsRequest.builder()
@@ -117,6 +120,7 @@ public class RetryOnOpenCircuitBreakerExample {
                                 + e.getCause());
             }
         }
+
         client.close();
     }
 }

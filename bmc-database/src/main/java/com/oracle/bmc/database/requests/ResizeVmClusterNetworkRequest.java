@@ -6,90 +6,95 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResizeVmClusterNetworkExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ResizeVmClusterNetworkRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResizeVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ResizeVmClusterNetworkRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ResizeVmClusterNetworkRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.ResizeVmClusterNetworkDetails> {
 
     /**
-     * The Exadata infrastructure
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String exadataInfrastructureId;
 
     /**
-     * The Exadata infrastructure
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
     /**
-     * The VM cluster network
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The VM cluster network [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String vmClusterNetworkId;
 
     /**
-     * The VM cluster network
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The VM cluster network [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getVmClusterNetworkId() {
         return vmClusterNetworkId;
     }
-    /** Request to add or remove Db server network nodes in the VM cluster network. */
+    /**
+     * Request to add or remove Db server network nodes in the VM cluster network.
+     */
     private com.oracle.bmc.database.model.ResizeVmClusterNetworkDetails
             resizeVmClusterNetworkDetails;
 
-    /** Request to add or remove Db server network nodes in the VM cluster network. */
+    /**
+     * Request to add or remove Db server network nodes in the VM cluster network.
+     */
     public com.oracle.bmc.database.model.ResizeVmClusterNetworkDetails
             getResizeVmClusterNetworkDetails() {
         return resizeVmClusterNetworkDetails;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -97,7 +102,6 @@ public class ResizeVmClusterNetworkRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -110,19 +114,17 @@ public class ResizeVmClusterNetworkRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ResizeVmClusterNetworkRequest,
                     com.oracle.bmc.database.model.ResizeVmClusterNetworkDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Exadata infrastructure
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String exadataInfrastructureId = null;
 
         /**
-         * The Exadata infrastructure
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param exadataInfrastructureId the value to set
          * @return this builder instance
          */
@@ -132,15 +134,12 @@ public class ResizeVmClusterNetworkRequest
         }
 
         /**
-         * The VM cluster network
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The VM cluster network [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String vmClusterNetworkId = null;
 
         /**
-         * The VM cluster network
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The VM cluster network [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param vmClusterNetworkId the value to set
          * @return this builder instance
          */
@@ -149,13 +148,14 @@ public class ResizeVmClusterNetworkRequest
             return this;
         }
 
-        /** Request to add or remove Db server network nodes in the VM cluster network. */
+        /**
+         * Request to add or remove Db server network nodes in the VM cluster network.
+         */
         private com.oracle.bmc.database.model.ResizeVmClusterNetworkDetails
                 resizeVmClusterNetworkDetails = null;
 
         /**
          * Request to add or remove Db server network nodes in the VM cluster network.
-         *
          * @param resizeVmClusterNetworkDetails the value to set
          * @return this builder instance
          */
@@ -166,7 +166,10 @@ public class ResizeVmClusterNetworkRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -182,19 +185,20 @@ public class ResizeVmClusterNetworkRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -205,18 +209,17 @@ public class ResizeVmClusterNetworkRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -228,19 +231,18 @@ public class ResizeVmClusterNetworkRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -252,7 +254,6 @@ public class ResizeVmClusterNetworkRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ResizeVmClusterNetworkRequest o) {
@@ -270,11 +271,10 @@ public class ResizeVmClusterNetworkRequest
         /**
          * Build the instance of ResizeVmClusterNetworkRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ResizeVmClusterNetworkRequest
          */
@@ -287,7 +287,6 @@ public class ResizeVmClusterNetworkRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -300,8 +299,7 @@ public class ResizeVmClusterNetworkRequest
         /**
          * Build the instance of ResizeVmClusterNetworkRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ResizeVmClusterNetworkRequest
@@ -315,14 +313,12 @@ public class ResizeVmClusterNetworkRequest
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             return request;
-            // new ResizeVmClusterNetworkRequest(exadataInfrastructureId, vmClusterNetworkId,
-            // resizeVmClusterNetworkDetails, opcRequestId, opcRetryToken, ifMatch);
+            // new ResizeVmClusterNetworkRequest(exadataInfrastructureId, vmClusterNetworkId, resizeVmClusterNetworkDetails, opcRequestId, opcRetryToken, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -337,7 +333,6 @@ public class ResizeVmClusterNetworkRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

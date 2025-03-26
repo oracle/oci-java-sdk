@@ -5,23 +5,21 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Details of data masking activity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * Details of data masking activity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataMaskingActivity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DataMaskingActivity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DataMaskingActivity.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DataMaskingActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -46,76 +44,81 @@ public final class DataMaskingActivity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation. */
+        /**
+         * Unique identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Fusion Environment Identifier. */
+        /**
+         * Fusion Environment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentId")
         private String fusionEnvironmentId;
 
         /**
          * Fusion Environment Identifier.
-         *
          * @param fusionEnvironmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
             this.fusionEnvironmentId = fusionEnvironmentId;
             this.__explicitlySet__.add("fusionEnvironmentId");
             return this;
         }
-        /** The current state of the DataMaskingActivity. */
+        /**
+         * The current state of the DataMaskingActivity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the DataMaskingActivity.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The time the data masking activity started. An RFC3339 formatted datetime string. */
+        /**
+         * The time the data masking activity started. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStart")
         private java.util.Date timeMaskingStart;
 
         /**
          * The time the data masking activity started. An RFC3339 formatted datetime string.
-         *
          * @param timeMaskingStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMaskingStart(java.util.Date timeMaskingStart) {
             this.timeMaskingStart = timeMaskingStart;
             this.__explicitlySet__.add("timeMaskingStart");
             return this;
         }
-        /** The time the data masking activity ended. An RFC3339 formatted datetime string. */
+        /**
+         * The time the data masking activity ended. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinish")
         private java.util.Date timeMaskingFinish;
 
         /**
          * The time the data masking activity ended. An RFC3339 formatted datetime string.
-         *
          * @param timeMaskingFinish the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMaskingFinish(java.util.Date timeMaskingFinish) {
             this.timeMaskingFinish = timeMaskingFinish;
             this.__explicitlySet__.add("timeMaskingFinish");
@@ -160,7 +163,9 @@ public final class DataMaskingActivity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,34 +174,38 @@ public final class DataMaskingActivity
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation. */
+    /**
+     * Unique identifier that is immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Fusion Environment Identifier. */
+    /**
+     * Fusion Environment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentId")
     private final String fusionEnvironmentId;
 
     /**
      * Fusion Environment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getFusionEnvironmentId() {
         return fusionEnvironmentId;
     }
 
-    /** The current state of the DataMaskingActivity. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the DataMaskingActivity.
+     **/
+    public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
@@ -204,8 +213,8 @@ public final class DataMaskingActivity
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -244,41 +253,44 @@ public final class DataMaskingActivity
             return UnknownEnumValue;
         }
     };
-    /** The current state of the DataMaskingActivity. */
+    /**
+     * The current state of the DataMaskingActivity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the DataMaskingActivity.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The time the data masking activity started. An RFC3339 formatted datetime string. */
+    /**
+     * The time the data masking activity started. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStart")
     private final java.util.Date timeMaskingStart;
 
     /**
      * The time the data masking activity started. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMaskingStart() {
         return timeMaskingStart;
     }
 
-    /** The time the data masking activity ended. An RFC3339 formatted datetime string. */
+    /**
+     * The time the data masking activity ended. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinish")
     private final java.util.Date timeMaskingFinish;
 
     /**
      * The time the data masking activity ended. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMaskingFinish() {
         return timeMaskingFinish;
     }
@@ -290,7 +302,6 @@ public final class DataMaskingActivity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

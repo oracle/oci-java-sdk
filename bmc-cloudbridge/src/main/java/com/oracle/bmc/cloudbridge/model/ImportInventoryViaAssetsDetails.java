@@ -5,25 +5,25 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Details for importing assets from a file. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Details for importing assets from a file.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ImportInventoryViaAssetsDetails.Builder.class)
+    builder = ImportInventoryViaAssetsDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "resourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "resourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ImportInventoryViaAssetsDetails extends ImportInventoryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -54,31 +54,33 @@ public final class ImportInventoryViaAssetsDetails extends ImportInventoryDetail
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The file body to be sent in the request. */
+        /**
+         * The file body to be sent in the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("data")
         private byte[] data;
 
         /**
          * The file body to be sent in the request.
-         *
          * @param data the value to set
          * @return this builder
-         */
+         **/
         public Builder data(byte[] data) {
             this.data = data;
             this.__explicitlySet__.add("data");
             return this;
         }
-        /** The type of asset. */
+        /**
+         * The type of asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assetType")
         private AssetType assetType;
 
         /**
          * The type of asset.
-         *
          * @param assetType the value to set
          * @return this builder
-         */
+         **/
         public Builder assetType(AssetType assetType) {
             this.assetType = assetType;
             this.__explicitlySet__.add("assetType");
@@ -123,7 +125,9 @@ public final class ImportInventoryViaAssetsDetails extends ImportInventoryDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,28 +148,30 @@ public final class ImportInventoryViaAssetsDetails extends ImportInventoryDetail
         this.assetType = assetType;
     }
 
-    /** The file body to be sent in the request. */
+    /**
+     * The file body to be sent in the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     private final byte[] data;
 
     /**
      * The file body to be sent in the request.
-     *
      * @return the value
-     */
+     **/
     public byte[] getData() {
         return data;
     }
 
-    /** The type of asset. */
+    /**
+     * The type of asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetType")
     private final AssetType assetType;
 
     /**
      * The type of asset.
-     *
      * @return the value
-     */
+     **/
     public AssetType getAssetType() {
         return assetType;
     }
@@ -177,7 +183,6 @@ public final class ImportInventoryViaAssetsDetails extends ImportInventoryDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

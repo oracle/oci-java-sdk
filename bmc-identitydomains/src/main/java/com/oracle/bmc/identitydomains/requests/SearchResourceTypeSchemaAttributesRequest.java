@@ -6,90 +6,84 @@ package com.oracle.bmc.identitydomains.requests;
 
 import com.oracle.bmc.identitydomains.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchResourceTypeSchemaAttributesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SearchResourceTypeSchemaAttributesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchResourceTypeSchemaAttributesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SearchResourceTypeSchemaAttributesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class SearchResourceTypeSchemaAttributesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identitydomains.model.ResourceTypeSchemaAttributeSearchRequest> {
 
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     private String authorization;
 
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     public String getAuthorization() {
         return authorization;
     }
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     private String resourceTypeSchemaVersion;
 
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     public String getResourceTypeSchemaVersion() {
         return resourceTypeSchemaVersion;
     }
-    /** Parameters for searching ResourceTypeSchemaAttributes */
+    /**
+     * Parameters for searching ResourceTypeSchemaAttributes
+     */
     private com.oracle.bmc.identitydomains.model.ResourceTypeSchemaAttributeSearchRequest
             resourceTypeSchemaAttributeSearchRequest;
 
-    /** Parameters for searching ResourceTypeSchemaAttributes */
+    /**
+     * Parameters for searching ResourceTypeSchemaAttributes
+     */
     public com.oracle.bmc.identitydomains.model.ResourceTypeSchemaAttributeSearchRequest
             getResourceTypeSchemaAttributeSearchRequest() {
         return resourceTypeSchemaAttributeSearchRequest;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The value of the {@code opc-next-page} response header from the previous 'List' call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous 'List' call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous 'List' call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous 'List' call.
+     */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return in a paginated 'List' call. */
+    /**
+     * The maximum number of items to return in a paginated 'List' call.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated 'List' call. */
+    /**
+     * The maximum number of items to return in a paginated 'List' call.
+     */
     public Integer getLimit() {
         return limit;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -103,19 +97,17 @@ public class SearchResourceTypeSchemaAttributesRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SearchResourceTypeSchemaAttributesRequest,
                     com.oracle.bmc.identitydomains.model.ResourceTypeSchemaAttributeSearchRequest> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          */
         private String authorization = null;
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
-         *
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          * @param authorization the value to set
          * @return this builder instance
          */
@@ -125,23 +117,12 @@ public class SearchResourceTypeSchemaAttributesRequest
         }
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          */
         private String resourceTypeSchemaVersion = null;
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
-         *
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          * @param resourceTypeSchemaVersion the value to set
          * @return this builder instance
          */
@@ -150,13 +131,14 @@ public class SearchResourceTypeSchemaAttributesRequest
             return this;
         }
 
-        /** Parameters for searching ResourceTypeSchemaAttributes */
+        /**
+         * Parameters for searching ResourceTypeSchemaAttributes
+         */
         private com.oracle.bmc.identitydomains.model.ResourceTypeSchemaAttributeSearchRequest
                 resourceTypeSchemaAttributeSearchRequest = null;
 
         /**
          * Parameters for searching ResourceTypeSchemaAttributes
-         *
          * @param resourceTypeSchemaAttributeSearchRequest the value to set
          * @return this builder instance
          */
@@ -169,15 +151,12 @@ public class SearchResourceTypeSchemaAttributesRequest
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
-         *
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -186,12 +165,13 @@ public class SearchResourceTypeSchemaAttributesRequest
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous 'List' call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous 'List' call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous 'List' call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -200,12 +180,13 @@ public class SearchResourceTypeSchemaAttributesRequest
             return this;
         }
 
-        /** The maximum number of items to return in a paginated 'List' call. */
+        /**
+         * The maximum number of items to return in a paginated 'List' call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated 'List' call.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -216,19 +197,18 @@ public class SearchResourceTypeSchemaAttributesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -240,7 +220,6 @@ public class SearchResourceTypeSchemaAttributesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SearchResourceTypeSchemaAttributesRequest o) {
@@ -257,14 +236,12 @@ public class SearchResourceTypeSchemaAttributesRequest
         }
 
         /**
-         * Build the instance of SearchResourceTypeSchemaAttributesRequest as configured by this
-         * builder
+         * Build the instance of SearchResourceTypeSchemaAttributesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SearchResourceTypeSchemaAttributesRequest
          */
@@ -277,7 +254,6 @@ public class SearchResourceTypeSchemaAttributesRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -290,11 +266,9 @@ public class SearchResourceTypeSchemaAttributesRequest
         }
 
         /**
-         * Build the instance of SearchResourceTypeSchemaAttributesRequest as configured by this
-         * builder
+         * Build the instance of SearchResourceTypeSchemaAttributesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SearchResourceTypeSchemaAttributesRequest
@@ -310,15 +284,12 @@ public class SearchResourceTypeSchemaAttributesRequest
             request.page = page;
             request.limit = limit;
             return request;
-            // new SearchResourceTypeSchemaAttributesRequest(authorization,
-            // resourceTypeSchemaVersion, resourceTypeSchemaAttributeSearchRequest, opcRetryToken,
-            // page, limit);
+            // new SearchResourceTypeSchemaAttributesRequest(authorization, resourceTypeSchemaVersion, resourceTypeSchemaAttributeSearchRequest, opcRetryToken, page, limit);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -333,7 +304,6 @@ public class SearchResourceTypeSchemaAttributesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

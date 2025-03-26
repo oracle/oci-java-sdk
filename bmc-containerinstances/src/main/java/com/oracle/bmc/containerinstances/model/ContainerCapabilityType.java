@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.containerinstances.model;
 
-/** Types of container capability. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
-public enum ContainerCapabilityType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Types of container capability.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+public enum ContainerCapabilityType {
     CapChown("CAP_CHOWN"),
     CapDacOverride("CAP_DAC_OVERRIDE"),
     CapFsetid("CAP_FSETID"),

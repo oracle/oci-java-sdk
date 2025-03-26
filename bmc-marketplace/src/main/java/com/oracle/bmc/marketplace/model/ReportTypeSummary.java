@@ -5,23 +5,21 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The model of the description of a report. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * The model of the description of a report.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ReportTypeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ReportTypeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ReportTypeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ReportTypeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reportType", "name", "description", "columns"})
     public ReportTypeSummary(
@@ -35,61 +33,65 @@ public final class ReportTypeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of report. */
+        /**
+         * The type of report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reportType")
         private String reportType;
 
         /**
          * The type of report.
-         *
          * @param reportType the value to set
          * @return this builder
-         */
+         **/
         public Builder reportType(String reportType) {
             this.reportType = reportType;
             this.__explicitlySet__.add("reportType");
             return this;
         }
-        /** The name of the report. */
+        /**
+         * The name of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the report.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A description of the report. */
+        /**
+         * A description of the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the report.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The columns in the report. */
+        /**
+         * The columns in the report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<String> columns;
 
         /**
          * The columns in the report.
-         *
          * @param columns the value to set
          * @return this builder
-         */
+         **/
         public Builder columns(java.util.List<String> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
@@ -127,7 +129,9 @@ public final class ReportTypeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,54 +140,58 @@ public final class ReportTypeSummary
         return new Builder().copy(this);
     }
 
-    /** The type of report. */
+    /**
+     * The type of report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportType")
     private final String reportType;
 
     /**
      * The type of report.
-     *
      * @return the value
-     */
+     **/
     public String getReportType() {
         return reportType;
     }
 
-    /** The name of the report. */
+    /**
+     * The name of the report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the report.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** A description of the report. */
+    /**
+     * A description of the report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the report.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The columns in the report. */
+    /**
+     * The columns in the report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<String> columns;
 
     /**
      * The columns in the report.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getColumns() {
         return columns;
     }
@@ -195,7 +203,6 @@ public final class ReportTypeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/** Lifecycle state of a V1 (legacy schema version) subscription. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public enum ClassicSubscriptionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle state of a V1 (legacy schema version) subscription.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public enum ClassicSubscriptionLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

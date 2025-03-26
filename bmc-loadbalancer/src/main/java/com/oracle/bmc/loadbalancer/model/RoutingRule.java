@@ -5,23 +5,21 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * A routing rule examines an incoming request, routing matching requests to the specified backend
- * set. Routing rules apply only to HTTP and HTTPS requests. They have no effect on TCP requests.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * A routing rule examines an incoming request, routing matching requests to the specified backend set.
+ * Routing rules apply only to HTTP and HTTPS requests. They have no effect on TCP requests.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoutingRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RoutingRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RoutingRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "condition", "actions"})
     public RoutingRule(String name, String condition, java.util.List<Action> actions) {
@@ -33,7 +31,10 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A unique name for the routing policy rule. Avoid entering confidential information. */
+        /**
+         * A unique name for the routing policy rule. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -42,32 +43,34 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * A routing rule to evaluate defined conditions against the incoming HTTP request and
-         * perform an action.
-         */
+         * A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
         /**
-         * A routing rule to evaluate defined conditions against the incoming HTTP request and
-         * perform an action.
+         * A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
          *
          * @param condition the value to set
          * @return this builder
-         */
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-        /** A list of actions to be applied when conditions of the routing rule are met. */
+        /**
+         * A list of actions to be applied when conditions of the routing rule are met.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actions")
         private java.util.List<Action> actions;
 
@@ -76,7 +79,7 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param actions the value to set
          * @return this builder
-         */
+         **/
         public Builder actions(java.util.List<Action> actions) {
             this.actions = actions;
             this.__explicitlySet__.add("actions");
@@ -109,7 +112,9 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,7 +123,10 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** A unique name for the routing policy rule. Avoid entering confidential information. */
+    /**
+     * A unique name for the routing policy rule. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -126,29 +134,31 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
      * A unique name for the routing policy rule. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * A routing rule to evaluate defined conditions against the incoming HTTP request and perform
-     * an action.
-     */
+     * A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
     /**
-     * A routing rule to evaluate defined conditions against the incoming HTTP request and perform
-     * an action.
+     * A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
      *
      * @return the value
-     */
+     **/
     public String getCondition() {
         return condition;
     }
 
-    /** A list of actions to be applied when conditions of the routing rule are met. */
+    /**
+     * A list of actions to be applied when conditions of the routing rule are met.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     private final java.util.List<Action> actions;
 
@@ -156,7 +166,7 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
      * A list of actions to be applied when conditions of the routing rule are met.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Action> getActions() {
         return actions;
     }
@@ -168,7 +178,6 @@ public final class RoutingRule extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

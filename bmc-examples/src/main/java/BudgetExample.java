@@ -42,26 +42,24 @@ import java.math.BigDecimal;
 import java.util.Collections;
 
 /**
- * This class provides an example of how you can create a budget and an alert rule on the budget. It
- * then shows how to perform updates, reads, and deletes. It will:
- *
+ * This class provides an example of how you can create a budget and an alert rule on the budget. It then shows how to
+ * perform updates, reads, and deletes. It will:
  * <ul>
- *   <li>Create a budget
- *   <li>List budgets in the compartment
- *   <li>Get a single budget (the one that was created above)
- *   <li>Create an alert rule on the budget to trigger when forecast spend reaches 100% of the
- *       budget amount, specifically:
- *       <ul>
- *         <li>type: FORECAST
- *         <li>threshold: 100
- *         <li>thresholdType: PERCENTAGE
- *       </ul>
- *   <li>List alert rules in the budget
- *   <li>Get a single alert rule (the one that was created above)
- *   <li>Update the budget amount
- *   <li>Update the alert rule threshold
- *   <li>Delete the alert rule
- *   <li>Delete the budget
+ *   <li>Create a budget</li>
+ *   <li>List budgets in the compartment</li>
+ *   <li>Get a single budget (the one that was created above)</li>
+ *   <li>Create an alert rule on the budget to trigger when forecast spend reaches 100% of the budget amount, specifically:</li>
+ *   <ul>
+ *     <li>type: FORECAST</li>
+ *     <li>threshold: 100</li>
+ *     <li>thresholdType: PERCENTAGE</li>
+ *   </ul>
+ *   <li>List alert rules in the budget</li>
+ *   <li>Get a single alert rule (the one that was created above)</li>
+ *   <li>Update the budget amount</li>
+ *   <li>Update the alert rule threshold</li>
+ *   <li>Delete the alert rule</li>
+ *   <li>Delete the budget</li>
  * </ul>
  */
 public class BudgetExample {
@@ -72,20 +70,14 @@ public class BudgetExample {
 
     /**
      * @param args Parameters to use for the budget service example are as follows:
-     *     <ul>
-     *       <li>The 1st argument is the ocid of the compartment for the budget, which should be the
-     *           tenancy root compartment.
-     *       <li>The 2nd argument is the target type of the budget, which should be COMPARTMENT or
-     *           TAG.
-     *       <li>The 3rd is the target for the budget. For COMPARTMENT budget, this should be the
-     *           target compartment OCID; For TAG budget, this should be the target tag in String
-     *           format 'TagNamespace.TagDefinition.TagValue'.
-     *       <li>The 4th is the amount for the budget, which should an unformatted number.
-     *       <li>The 5th is an email address to be used as the budget alert rule recipient.
-     *       <li>Optional params below may be left unspecified or fully specified, but not partially
-     *           specified:
-     *     </ul>
-     *
+     * <ul>
+     *   <li>The 1st argument is the ocid of the compartment for the budget, which should be the tenancy root compartment.</li>
+     *   <li>The 2nd argument is the target type of the budget, which should be COMPARTMENT or TAG.</li>
+     *   <li>The 3rd is the target for the budget. For COMPARTMENT budget, this should be the target compartment OCID; For TAG budget, this should be the target tag in String format 'TagNamespace.TagDefinition.TagValue'.</li>
+     *   <li>The 4th is the amount for the budget, which should an unformatted number.</li>
+     *   <li>The 5th is an email address to be used as the budget alert rule recipient.</li>
+     *   <li>Optional params below may be left unspecified or fully specified, but not partially specified:</li>
+     * </ul>
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -120,10 +112,8 @@ public class BudgetExample {
         ThresholdType thresholdType = ThresholdType.Percentage;
         AlertType alertType = AlertType.Forecast;
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -246,7 +236,8 @@ public class BudgetExample {
         System.out.println(
                 String.format(
                         "New alert rule threshold = %s%%, type = %s",
-                        alertRule.getThreshold().toPlainString(), alertRule.getType().getValue()));
+                        alertRule.getThreshold().toPlainString(),
+                        alertRule.getType().getValue()));
 
         // (Clean-up) Delete the alert rule
         budgetClient.deleteAlertRule(
@@ -256,8 +247,7 @@ public class BudgetExample {
                         .build());
 
         // (Clean-up) Delete the budget
-        // Note, this triggers a cascading delete of all alert rules in the budget, and would have
-        // deleted the alert rule above.
+        // Note, this triggers a cascading delete of all alert rules in the budget, and would have deleted the alert rule above.
         budgetClient.deleteBudget(DeleteBudgetRequest.builder().budgetId(budget.getId()).build());
     }
 }

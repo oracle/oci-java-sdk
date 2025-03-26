@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsParserFunctionParameter <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * LogAnalyticsParserFunctionParameter
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsParserFunctionParameter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsParserFunctionParameter.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsParserFunctionParameter
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parserFunctionId",
@@ -52,91 +51,97 @@ public final class LogAnalyticsParserFunctionParameter
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The parser function unique identifier. */
+        /**
+         * The parser function unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
         private Long parserFunctionId;
 
         /**
          * The parser function unique identifier.
-         *
          * @param parserFunctionId the value to set
          * @return this builder
-         */
+         **/
         public Builder parserFunctionId(Long parserFunctionId) {
             this.parserFunctionId = parserFunctionId;
             this.__explicitlySet__.add("parserFunctionId");
             return this;
         }
-        /** The internal name */
+        /**
+         * The internal name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterName")
         private String parserFunctionParameterName;
 
         /**
          * The internal name
-         *
          * @param parserFunctionParameterName the value to set
          * @return this builder
-         */
+         **/
         public Builder parserFunctionParameterName(String parserFunctionParameterName) {
             this.parserFunctionParameterName = parserFunctionParameterName;
             this.__explicitlySet__.add("parserFunctionParameterName");
             return this;
         }
-        /** The parameter unique identifier. */
+        /**
+         * The parameter unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterId")
         private Long parserFunctionParameterId;
 
         /**
          * The parameter unique identifier.
-         *
          * @param parserFunctionParameterId the value to set
          * @return this builder
-         */
+         **/
         public Builder parserFunctionParameterId(Long parserFunctionParameterId) {
             this.parserFunctionParameterId = parserFunctionParameterId;
             this.__explicitlySet__.add("parserFunctionParameterId");
             return this;
         }
-        /** The parameter internal name. */
+        /**
+         * The parameter internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterName")
         private String parserMetaPluginParameterName;
 
         /**
          * The parameter internal name.
-         *
          * @param parserMetaPluginParameterName the value to set
          * @return this builder
-         */
+         **/
         public Builder parserMetaPluginParameterName(String parserMetaPluginParameterName) {
             this.parserMetaPluginParameterName = parserMetaPluginParameterName;
             this.__explicitlySet__.add("parserMetaPluginParameterName");
             return this;
         }
-        /** The parameter value. */
+        /**
+         * The parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterValue")
         private String parserMetaPluginParameterValue;
 
         /**
          * The parameter value.
-         *
          * @param parserMetaPluginParameterValue the value to set
          * @return this builder
-         */
+         **/
         public Builder parserMetaPluginParameterValue(String parserMetaPluginParameterValue) {
             this.parserMetaPluginParameterValue = parserMetaPluginParameterValue;
             this.__explicitlySet__.add("parserMetaPluginParameterValue");
             return this;
         }
-        /** The parser internal name. */
+        /**
+         * The parser internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserName")
         private String parserName;
 
         /**
          * The parser internal name.
-         *
          * @param parserName the value to set
          * @return this builder
-         */
+         **/
         public Builder parserName(String parserName) {
             this.parserName = parserName;
             this.__explicitlySet__.add("parserName");
@@ -199,7 +204,9 @@ public final class LogAnalyticsParserFunctionParameter
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -208,80 +215,86 @@ public final class LogAnalyticsParserFunctionParameter
         return new Builder().copy(this);
     }
 
-    /** The parser function unique identifier. */
+    /**
+     * The parser function unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionId")
     private final Long parserFunctionId;
 
     /**
      * The parser function unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getParserFunctionId() {
         return parserFunctionId;
     }
 
-    /** The internal name */
+    /**
+     * The internal name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterName")
     private final String parserFunctionParameterName;
 
     /**
      * The internal name
-     *
      * @return the value
-     */
+     **/
     public String getParserFunctionParameterName() {
         return parserFunctionParameterName;
     }
 
-    /** The parameter unique identifier. */
+    /**
+     * The parameter unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserFunctionParameterId")
     private final Long parserFunctionParameterId;
 
     /**
      * The parameter unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getParserFunctionParameterId() {
         return parserFunctionParameterId;
     }
 
-    /** The parameter internal name. */
+    /**
+     * The parameter internal name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterName")
     private final String parserMetaPluginParameterName;
 
     /**
      * The parameter internal name.
-     *
      * @return the value
-     */
+     **/
     public String getParserMetaPluginParameterName() {
         return parserMetaPluginParameterName;
     }
 
-    /** The parameter value. */
+    /**
+     * The parameter value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserMetaPluginParameterValue")
     private final String parserMetaPluginParameterValue;
 
     /**
      * The parameter value.
-     *
      * @return the value
-     */
+     **/
     public String getParserMetaPluginParameterValue() {
         return parserMetaPluginParameterValue;
     }
 
-    /** The parser internal name. */
+    /**
+     * The parser internal name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     private final String parserName;
 
     /**
      * The parser internal name.
-     *
      * @return the value
-     */
+     **/
     public String getParserName() {
         return parserName;
     }
@@ -300,7 +313,6 @@ public final class LogAnalyticsParserFunctionParameter
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

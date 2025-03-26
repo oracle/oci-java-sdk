@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * List of TLS/SSL information of services <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * List of TLS/SSL information of services
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CertificateServiceInfoSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CertificateServiceInfoSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CertificateServiceInfoSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "service",
@@ -40,46 +39,49 @@ public final class CertificateServiceInfoSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the service */
+        /**
+         * Name of the service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private Service service;
 
         /**
          * Name of the service
-         *
          * @param service the value to set
          * @return this builder
-         */
+         **/
         public Builder service(Service service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /** Whether certificate is enabled or disabled */
+        /**
+         * Whether certificate is enabled or disabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceCertificateStatus")
         private ServiceCertificateStatus serviceCertificateStatus;
 
         /**
          * Whether certificate is enabled or disabled
-         *
          * @param serviceCertificateStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceCertificateStatus(ServiceCertificateStatus serviceCertificateStatus) {
             this.serviceCertificateStatus = serviceCertificateStatus;
             this.__explicitlySet__.add("serviceCertificateStatus");
             return this;
         }
-        /** List of Host specific certificate details */
+        /**
+         * List of Host specific certificate details
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostSpecificCertificateDetails")
         private java.util.List<HostSpecificCertificateDetails> hostSpecificCertificateDetails;
 
         /**
          * List of Host specific certificate details
-         *
          * @param hostSpecificCertificateDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder hostSpecificCertificateDetails(
                 java.util.List<HostSpecificCertificateDetails> hostSpecificCertificateDetails) {
             this.hostSpecificCertificateDetails = hostSpecificCertificateDetails;
@@ -117,7 +119,9 @@ public final class CertificateServiceInfoSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,8 +130,10 @@ public final class CertificateServiceInfoSummary
         return new Builder().copy(this);
     }
 
-    /** Name of the service */
-    public enum Service implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Name of the service
+     **/
+    public enum Service {
         Zookeeper("ZOOKEEPER"),
         Ams("AMS"),
         Hdfs("HDFS"),
@@ -142,8 +148,8 @@ public final class CertificateServiceInfoSummary
         Registry("REGISTRY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -182,27 +188,30 @@ public final class CertificateServiceInfoSummary
             return UnknownEnumValue;
         }
     };
-    /** Name of the service */
+    /**
+     * Name of the service
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final Service service;
 
     /**
      * Name of the service
-     *
      * @return the value
-     */
+     **/
     public Service getService() {
         return service;
     }
 
-    /** Whether certificate is enabled or disabled */
-    public enum ServiceCertificateStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Whether certificate is enabled or disabled
+     **/
+    public enum ServiceCertificateStatus {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -241,28 +250,30 @@ public final class CertificateServiceInfoSummary
             return UnknownEnumValue;
         }
     };
-    /** Whether certificate is enabled or disabled */
+    /**
+     * Whether certificate is enabled or disabled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceCertificateStatus")
     private final ServiceCertificateStatus serviceCertificateStatus;
 
     /**
      * Whether certificate is enabled or disabled
-     *
      * @return the value
-     */
+     **/
     public ServiceCertificateStatus getServiceCertificateStatus() {
         return serviceCertificateStatus;
     }
 
-    /** List of Host specific certificate details */
+    /**
+     * List of Host specific certificate details
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostSpecificCertificateDetails")
     private final java.util.List<HostSpecificCertificateDetails> hostSpecificCertificateDetails;
 
     /**
      * List of Host specific certificate details
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HostSpecificCertificateDetails> getHostSpecificCertificateDetails() {
         return hostSpecificCertificateDetails;
     }
@@ -274,7 +285,6 @@ public final class CertificateServiceInfoSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

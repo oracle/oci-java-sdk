@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The pipeline start type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum StartPipelineType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The pipeline start type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum StartPipelineType {
     Default("DEFAULT"),
     ;
 

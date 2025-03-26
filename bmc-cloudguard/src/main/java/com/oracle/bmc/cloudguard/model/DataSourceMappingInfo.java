@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of the detector recipe and detector rule mapped to the data source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Details of the detector recipe and detector rule mapped to the data source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataSourceMappingInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DataSourceMappingInfo.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataSourceMappingInfo
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"detectorRecipeId", "detectorRuleId"})
     public DataSourceMappingInfo(String detectorRecipeId, String detectorRuleId) {
@@ -32,31 +31,33 @@ public final class DataSourceMappingInfo
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ID of the detector recipe attached to the data source */
+        /**
+         * ID of the detector recipe attached to the data source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
 
         /**
          * ID of the detector recipe attached to the data source
-         *
          * @param detectorRecipeId the value to set
          * @return this builder
-         */
+         **/
         public Builder detectorRecipeId(String detectorRecipeId) {
             this.detectorRecipeId = detectorRecipeId;
             this.__explicitlySet__.add("detectorRecipeId");
             return this;
         }
-        /** ID of the detector rule attached to the data source */
+        /**
+         * ID of the detector rule attached to the data source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
          * ID of the detector rule attached to the data source
-         *
          * @param detectorRuleId the value to set
          * @return this builder
-         */
+         **/
         public Builder detectorRuleId(String detectorRuleId) {
             this.detectorRuleId = detectorRuleId;
             this.__explicitlySet__.add("detectorRuleId");
@@ -87,7 +88,9 @@ public final class DataSourceMappingInfo
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class DataSourceMappingInfo
         return new Builder().copy(this);
     }
 
-    /** ID of the detector recipe attached to the data source */
+    /**
+     * ID of the detector recipe attached to the data source
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
     private final String detectorRecipeId;
 
     /**
      * ID of the detector recipe attached to the data source
-     *
      * @return the value
-     */
+     **/
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
 
-    /** ID of the detector rule attached to the data source */
+    /**
+     * ID of the detector rule attached to the data source
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
      * ID of the detector rule attached to the data source
-     *
      * @return the value
-     */
+     **/
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
@@ -129,7 +134,6 @@ public final class DataSourceMappingInfo
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

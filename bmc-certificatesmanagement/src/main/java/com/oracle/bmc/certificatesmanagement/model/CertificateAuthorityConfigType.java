@@ -5,12 +5,11 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The manner in which the certificate authority (CA) was created, whether it is a root CA generated
- * internally by the service or a subordinate CA issued by another CA that was itself generated
- * internally by the service.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public enum CertificateAuthorityConfigType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The manner in which the certificate authority (CA) was created, whether it is a root CA generated internally by the service or a subordinate CA issued by another CA that was itself generated internally by the service.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+public enum CertificateAuthorityConfigType {
     RootCaGeneratedInternally("ROOT_CA_GENERATED_INTERNALLY"),
     SubordinateCaIssuedByInternalCa("SUBORDINATE_CA_ISSUED_BY_INTERNAL_CA"),
 

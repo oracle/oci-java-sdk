@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Type of SQL data collection method i.e. either a Statement or SQL Script File */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum SqlQueryTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of SQL data collection method i.e. either a Statement or SQL Script File
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum SqlQueryTypes {
     Statement("STATEMENT"),
     SqlScript("SQL_SCRIPT"),
 

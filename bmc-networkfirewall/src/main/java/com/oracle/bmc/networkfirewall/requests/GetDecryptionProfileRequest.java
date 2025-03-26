@@ -6,32 +6,42 @@ package com.oracle.bmc.networkfirewall.requests;
 
 import com.oracle.bmc.networkfirewall.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetDecryptionProfileExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDecryptionProfileRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetDecryptionProfileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDecryptionProfileRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class GetDecryptionProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Network Firewall Policy identifier */
+    /**
+     * Unique Network Firewall Policy identifier
+     */
     private String networkFirewallPolicyId;
 
-    /** Unique Network Firewall Policy identifier */
+    /**
+     * Unique Network Firewall Policy identifier
+     */
     public String getNetworkFirewallPolicyId() {
         return networkFirewallPolicyId;
     }
-    /** Unique identifier for Decryption Profiles. */
+    /**
+     * Unique identifier for Decryption Profiles.
+     */
     private String decryptionProfileName;
 
-    /** Unique identifier for Decryption Profiles. */
+    /**
+     * Unique identifier for Decryption Profiles.
+     */
     public String getDecryptionProfileName() {
         return decryptionProfileName;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -39,15 +49,17 @@ public class GetDecryptionProfileRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDecryptionProfileRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Network Firewall Policy identifier */
+        /**
+         * Unique Network Firewall Policy identifier
+         */
         private String networkFirewallPolicyId = null;
 
         /**
          * Unique Network Firewall Policy identifier
-         *
          * @param networkFirewallPolicyId the value to set
          * @return this builder instance
          */
@@ -56,12 +68,13 @@ public class GetDecryptionProfileRequest
             return this;
         }
 
-        /** Unique identifier for Decryption Profiles. */
+        /**
+         * Unique identifier for Decryption Profiles.
+         */
         private String decryptionProfileName = null;
 
         /**
          * Unique identifier for Decryption Profiles.
-         *
          * @param decryptionProfileName the value to set
          * @return this builder instance
          */
@@ -70,12 +83,13 @@ public class GetDecryptionProfileRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -86,19 +100,18 @@ public class GetDecryptionProfileRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -110,7 +123,6 @@ public class GetDecryptionProfileRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetDecryptionProfileRequest o) {
@@ -125,11 +137,10 @@ public class GetDecryptionProfileRequest
         /**
          * Build the instance of GetDecryptionProfileRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetDecryptionProfileRequest
          */
@@ -143,8 +154,7 @@ public class GetDecryptionProfileRequest
         /**
          * Build the instance of GetDecryptionProfileRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetDecryptionProfileRequest
@@ -155,14 +165,12 @@ public class GetDecryptionProfileRequest
             request.decryptionProfileName = decryptionProfileName;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetDecryptionProfileRequest(networkFirewallPolicyId, decryptionProfileName,
-            // opcRequestId);
+            // new GetDecryptionProfileRequest(networkFirewallPolicyId, decryptionProfileName, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -174,7 +182,6 @@ public class GetDecryptionProfileRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

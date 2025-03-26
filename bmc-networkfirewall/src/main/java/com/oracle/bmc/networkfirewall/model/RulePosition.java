@@ -5,21 +5,19 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * An object which defines the position of the rule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * An object which defines the position of the rule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RulePosition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RulePosition extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RulePosition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"beforeRule", "afterRule"})
     public RulePosition(String beforeRule, String afterRule) {
@@ -30,31 +28,33 @@ public final class RulePosition extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier for rule before which this rule lies. */
+        /**
+         * Identifier for rule before which this rule lies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("beforeRule")
         private String beforeRule;
 
         /**
          * Identifier for rule before which this rule lies.
-         *
          * @param beforeRule the value to set
          * @return this builder
-         */
+         **/
         public Builder beforeRule(String beforeRule) {
             this.beforeRule = beforeRule;
             this.__explicitlySet__.add("beforeRule");
             return this;
         }
-        /** Identifier for rule after which this rule lies. */
+        /**
+         * Identifier for rule after which this rule lies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("afterRule")
         private String afterRule;
 
         /**
          * Identifier for rule after which this rule lies.
-         *
          * @param afterRule the value to set
          * @return this builder
-         */
+         **/
         public Builder afterRule(String afterRule) {
             this.afterRule = afterRule;
             this.__explicitlySet__.add("afterRule");
@@ -84,7 +84,9 @@ public final class RulePosition extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,28 +95,30 @@ public final class RulePosition extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Identifier for rule before which this rule lies. */
+    /**
+     * Identifier for rule before which this rule lies.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("beforeRule")
     private final String beforeRule;
 
     /**
      * Identifier for rule before which this rule lies.
-     *
      * @return the value
-     */
+     **/
     public String getBeforeRule() {
         return beforeRule;
     }
 
-    /** Identifier for rule after which this rule lies. */
+    /**
+     * Identifier for rule after which this rule lies.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("afterRule")
     private final String afterRule;
 
     /**
      * Identifier for rule after which this rule lies.
-     *
      * @return the value
-     */
+     **/
     public String getAfterRule() {
         return afterRule;
     }
@@ -126,7 +130,6 @@ public final class RulePosition extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

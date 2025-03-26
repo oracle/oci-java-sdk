@@ -6,43 +6,51 @@ package com.oracle.bmc.fusionapps.requests;
 
 import com.oracle.bmc.fusionapps.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/VerifyServiceAttachmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * VerifyServiceAttachmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/VerifyServiceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use VerifyServiceAttachmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class VerifyServiceAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fusionapps.model.VerifyServiceAttachmentDetails> {
 
-    /** Details for the service attachment. */
+    /**
+     * Details for the service attachment.
+     */
     private com.oracle.bmc.fusionapps.model.VerifyServiceAttachmentDetails
             verifyServiceAttachmentDetails;
 
-    /** Details for the service attachment. */
+    /**
+     * Details for the service attachment.
+     */
     public com.oracle.bmc.fusionapps.model.VerifyServiceAttachmentDetails
             getVerifyServiceAttachmentDetails() {
         return verifyServiceAttachmentDetails;
     }
-    /** unique FusionEnvironment identifier */
+    /**
+     * unique FusionEnvironment identifier
+     */
     private String fusionEnvironmentId;
 
-    /** unique FusionEnvironment identifier */
+    /**
+     * unique FusionEnvironment identifier
+     */
     public String getFusionEnvironmentId() {
         return fusionEnvironmentId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -55,16 +63,18 @@ public class VerifyServiceAttachmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     VerifyServiceAttachmentRequest,
                     com.oracle.bmc.fusionapps.model.VerifyServiceAttachmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the service attachment. */
+        /**
+         * Details for the service attachment.
+         */
         private com.oracle.bmc.fusionapps.model.VerifyServiceAttachmentDetails
                 verifyServiceAttachmentDetails = null;
 
         /**
          * Details for the service attachment.
-         *
          * @param verifyServiceAttachmentDetails the value to set
          * @return this builder instance
          */
@@ -75,12 +85,13 @@ public class VerifyServiceAttachmentRequest
             return this;
         }
 
-        /** unique FusionEnvironment identifier */
+        /**
+         * unique FusionEnvironment identifier
+         */
         private String fusionEnvironmentId = null;
 
         /**
          * unique FusionEnvironment identifier
-         *
          * @param fusionEnvironmentId the value to set
          * @return this builder instance
          */
@@ -89,12 +100,13 @@ public class VerifyServiceAttachmentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -105,19 +117,18 @@ public class VerifyServiceAttachmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -129,7 +140,6 @@ public class VerifyServiceAttachmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(VerifyServiceAttachmentRequest o) {
@@ -144,11 +154,10 @@ public class VerifyServiceAttachmentRequest
         /**
          * Build the instance of VerifyServiceAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of VerifyServiceAttachmentRequest
          */
@@ -161,7 +170,6 @@ public class VerifyServiceAttachmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -174,8 +182,7 @@ public class VerifyServiceAttachmentRequest
         /**
          * Build the instance of VerifyServiceAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of VerifyServiceAttachmentRequest
@@ -186,14 +193,12 @@ public class VerifyServiceAttachmentRequest
             request.fusionEnvironmentId = fusionEnvironmentId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new VerifyServiceAttachmentRequest(verifyServiceAttachmentDetails,
-            // fusionEnvironmentId, opcRequestId);
+            // new VerifyServiceAttachmentRequest(verifyServiceAttachmentDetails, fusionEnvironmentId, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -205,7 +210,6 @@ public class VerifyServiceAttachmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

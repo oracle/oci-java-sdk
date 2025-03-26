@@ -63,31 +63,29 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * This class provides an example of how to create a Container Engine node pool in the Java SDK. It
- * will create a VCN and three subnets, one Container Engine cluster and add one node pool in the
- * cluster. These will be deleted at the end. The class also makes some assumptions about the
- * resources it will create:
+ * This class provides an example of how to create a Container Engine node pool in the Java SDK.
+ * It will create a VCN and three subnets, one Container Engine cluster and add one node pool in the cluster.
+ * These will be deleted at the end. The class also makes some assumptions about
+ * the resources it will create:
  *
+ * <ul>:
+ *   <li>The VCN created by this example will have a display name of java_sdk_oke_example_vcn</li>
+ *   <li>The subnet created by this example will have a display name of: java_sdk_oke_example_subnet_1</li>
+ *   <li>The subnet created by this example will have a display name of: java_sdk_oke_example_subnet_2</li>
+ *   <li>The subnet created by this example will have a display name of: java_sdk_oke_example_subnet_3</li>
+ *   <li>The VCN will have a private IP CIDR block of 10.0.0.0/16</li>
+ *   <li>The subnets will have private IP CIDR blocks of 10.0.0.0/24, 10.0.1.0/24 and 10.0.2.0/24</li>
+ *   <li>The cluster created will have hardcoded display names of ContainerEngineExampleCluster</li>
+ *   <li>The node pool created will have hardcoded display names of ContainerEngineNodePoolExample</li>
+ *   <li>The first two subnets are used for creating cluster</li>
+ *   <li>The third subnet is used for creating node pool</li>
+ *   <li>
+ *      The configuration file used by service clients will be sourced from the default
+ *      location (~/.oci/config) and the DEFAULT profile will be used
+ *   </li>
+ *   <li>Resources will be created in us-phoenix-1</li>
+ *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call</li>
  * <ul>
- *   :
- *   <li>The VCN created by this example will have a display name of java_sdk_oke_example_vcn
- *   <li>The subnet created by this example will have a display name of:
- *       java_sdk_oke_example_subnet_1
- *   <li>The subnet created by this example will have a display name of:
- *       java_sdk_oke_example_subnet_2
- *   <li>The subnet created by this example will have a display name of:
- *       java_sdk_oke_example_subnet_3
- *   <li>The VCN will have a private IP CIDR block of 10.0.0.0/16
- *   <li>The subnets will have private IP CIDR blocks of 10.0.0.0/24, 10.0.1.0/24 and 10.0.2.0/24
- *   <li>The cluster created will have hardcoded display names of ContainerEngineExampleCluster
- *   <li>The node pool created will have hardcoded display names of ContainerEngineNodePoolExample
- *   <li>The first two subnets are used for creating cluster
- *   <li>The third subnet is used for creating node pool
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Resources will be created in us-phoenix-1
- *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call
- *       <ul>
  */
 public class ContainerEngineNodePoolExample {
     private static final String VCN_DISPLAY_NAME = "java_sdk_oke_example_vcn";
@@ -118,10 +116,9 @@ public class ContainerEngineNodePoolExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where the Container Engine cluster and associated
-     *           resources will be created
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of the compartment where the Container Engine cluster and associated resources will be created</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
@@ -131,10 +128,8 @@ public class ContainerEngineNodePoolExample {
 
         final String compartmentId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -142,12 +137,13 @@ public class ContainerEngineNodePoolExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final ContainerEngineClient containerEngineClient =
-                ContainerEngineClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final VirtualNetworkClient vcnClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final IdentityClient identityClient =
-                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final ContainerEngineClient containerEngineClient = new ContainerEngineClient(provider);
+        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
+
+        containerEngineClient.setRegion(Region.US_PHOENIX_1);
+        vcnClient.setRegion(Region.US_PHOENIX_1);
+        identityClient.setRegion(Region.US_PHOENIX_1);
 
         Vcn vcn = null;
         List<Subnet> subnets = new ArrayList<Subnet>();
@@ -185,7 +181,7 @@ public class ContainerEngineNodePoolExample {
                 System.out.println();
             }
 
-            // Create a Container Engine Cluster
+            //Create a Container Engine Cluster
             String kubernetesVersion = getKubernetesVersions(containerEngineClient).get(0);
             System.out.println("kubernetes version: " + kubernetesVersion);
 
@@ -272,7 +268,9 @@ public class ContainerEngineNodePoolExample {
      *
      * @param vcnClient the service client to use to create the VCN
      * @param compartmentId the OCID of the compartment where the VCN will be created
+     *
      * @return the created VCN
+     *
      * @throws Exception if there is an error waiting on the VCN to become available to use
      */
     private static Vcn createVcn(final VirtualNetworkClient vcnClient, final String compartmentId)
@@ -306,6 +304,7 @@ public class ContainerEngineNodePoolExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param vcn the VCN to delete
+     *
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn) {
         try {
@@ -330,7 +329,9 @@ public class ContainerEngineNodePoolExample {
      * @param vcnId the ID of the VCN which will own the subnet
      * @param subnetName the subnet that will be created
      * @param cidrBlock the cidr block used to create subnet
+     *
      * @return the created subnet
+     *
      * @throws Exception if there is an error waiting on the subnet to become available to use
      */
     private static Subnet createSubnet(
@@ -371,6 +372,7 @@ public class ContainerEngineNodePoolExample {
      *
      * @param vcnClient the service client to use to delete the subnet
      * @param subnet the subnet to delete
+     *
      */
     private static void deleteSubnet(final VirtualNetworkClient vcnClient, final Subnet subnet) {
 
@@ -393,6 +395,7 @@ public class ContainerEngineNodePoolExample {
      *
      * @param identityClient the client to use to retrieve the availability domains
      * @param compartmentId the OCID of the compartment whose availability domains we're listing
+     *
      * @return a list of all availability domains in a compartment
      */
     private static List<AvailabilityDomain> getAvailabilityDomains(
@@ -415,7 +418,9 @@ public class ContainerEngineNodePoolExample {
      * @param subnetIds list of subnet ids
      * @param kubernetesVersion kubernetesVersion
      * @param compartmentId
+     *
      * @return the created cluster
+     *
      * @throws Exception if there is an error waiting for work request finished
      */
     private static Cluster createCluster(
@@ -473,6 +478,7 @@ public class ContainerEngineNodePoolExample {
      *
      * @param containerEngineClient the service client to use to delete the cluster
      * @param clusterId the ID of the cluster to be deleted
+     *
      */
     private static void deleteCluster(
             ContainerEngineClient containerEngineClient, String clusterId) {
@@ -507,11 +513,11 @@ public class ContainerEngineNodePoolExample {
      * @param displayName The display name of the node pool
      * @param kubernetesVersion kubernetesVersion
      * @param nodeImageName The image to use on each node in the node pool
-     * @param nodeShape The number of CPUs and the amount of memory allocated to each node in the
-     *     node pool
+     * @param nodeShape The number of CPUs and the amount of memory allocated to each node in the node pool
      * @param initialNodeLabels The initial node label
      * @param nodePoolNodeConfigDetails The node pool size and the placementConfig of nodes.
      * @return the created node pool
+     *
      * @throws Exception if there is an error waiting for work request finished
      */
     private static NodePool createNodePool(
@@ -573,6 +579,7 @@ public class ContainerEngineNodePoolExample {
      * @param containerEngineClient the service client to use to update the node pool
      * @param nodePoolId the node pool ID
      * @param newNodePoolName The new node pool name
+     *
      * @throws Exception if there is an error waiting for work request finished
      */
     private static void updateNodePool(
@@ -607,6 +614,7 @@ public class ContainerEngineNodePoolExample {
      *
      * @param containerEngineClient the service client to use to delete the node pool
      * @param nodePoolId the ID of the node pool to be deleted
+     *
      */
     private static void deleteNodePool(
             ContainerEngineClient containerEngineClient, String nodePoolId) {
@@ -626,7 +634,9 @@ public class ContainerEngineNodePoolExample {
      * Retrieve a list of Kubernetes versions
      *
      * @param containerEngineClient the service client to use to retrieve Kubernetes versions
+     *
      * @return a list of Kubernetes versions
+     *
      * @throws Exception if there is an error while retrieving
      */
     private static List<String> getKubernetesVersions(ContainerEngineClient containerEngineClient)
@@ -642,6 +652,7 @@ public class ContainerEngineNodePoolExample {
      *
      * @param getWorkRequestResponse The work request response for getting work request resource ID
      * @param entityType resource entity type
+     *
      * @return work request resource ID
      */
     private static String getWorkRequestResourceId(
@@ -661,7 +672,6 @@ public class ContainerEngineNodePoolExample {
 
     /**
      * Wait for a work request finished
-     *
      * @param containerEngineClient the service client to use to get work request
      * @param workRequestId the id of work request
      * @return a work request response object
@@ -684,7 +694,6 @@ public class ContainerEngineNodePoolExample {
 
     /**
      * Check work request in Success state
-     *
      * @param workRequestResponse work request response to check
      * @return boolean
      * @throws Exception If there is error

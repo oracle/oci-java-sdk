@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Lifecycle state value of Baselineable Metric like ACTIVE or DELETED */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum BaselineableMetricLifeCycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle state value of Baselineable Metric like ACTIVE or DELETED
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum BaselineableMetricLifeCycleStates {
     Active("ACTIVE"),
     Deleted("DELETED"),
 

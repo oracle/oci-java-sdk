@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * POSIX User extension <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * POSIX User extension
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionPosixUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionPosixUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ExtensionPosixUser.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionPosixUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "uidNumber",
@@ -48,22 +46,33 @@ public final class ExtensionPosixUser
     public static class Builder {
         /**
          * Integer uniquely identifying a user in a POSIX administrative domain
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: server
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uidNumber")
         private Integer uidNumber;
 
         /**
          * Integer uniquely identifying a user in a POSIX administrative domain
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: server
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: server
          * @param uidNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder uidNumber(Integer uidNumber) {
             this.uidNumber = uidNumber;
             this.__explicitlySet__.add("uidNumber");
@@ -71,22 +80,33 @@ public final class ExtensionPosixUser
         }
         /**
          * Primary Group identifier of the POSIX user
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gidNumber")
         private Integer gidNumber;
 
         /**
          * Primary Group identifier of the POSIX user
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param gidNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder gidNumber(Integer gidNumber) {
             this.gidNumber = gidNumber;
             this.__explicitlySet__.add("gidNumber");
@@ -94,22 +114,33 @@ public final class ExtensionPosixUser
         }
         /**
          * General information about the POSIX account such as their real name and phone number
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gecos")
         private String gecos;
 
         /**
          * General information about the POSIX account such as their real name and phone number
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param gecos the value to set
          * @return this builder
-         */
+         **/
         public Builder gecos(String gecos) {
             this.gecos = gecos;
             this.__explicitlySet__.add("gecos");
@@ -117,22 +148,33 @@ public final class ExtensionPosixUser
         }
         /**
          * The absolute path to the home directory of the POSIX account
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("homeDirectory")
         private String homeDirectory;
 
         /**
          * The absolute path to the home directory of the POSIX account
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param homeDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder homeDirectory(String homeDirectory) {
             this.homeDirectory = homeDirectory;
             this.__explicitlySet__.add("homeDirectory");
@@ -140,22 +182,33 @@ public final class ExtensionPosixUser
         }
         /**
          * The path to the login shell of the POSIX account
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loginShell")
         private String loginShell;
 
         /**
          * The path to the login shell of the POSIX account
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param loginShell the value to set
          * @return this builder
-         */
+         **/
         public Builder loginShell(String loginShell) {
             this.loginShell = loginShell;
             this.__explicitlySet__.add("loginShell");
@@ -200,7 +253,9 @@ public final class ExtensionPosixUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,105 +266,160 @@ public final class ExtensionPosixUser
 
     /**
      * Integer uniquely identifying a user in a POSIX administrative domain
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: server
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uidNumber")
     private final Integer uidNumber;
 
     /**
      * Integer uniquely identifying a user in a POSIX administrative domain
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: server
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: server
      * @return the value
-     */
+     **/
     public Integer getUidNumber() {
         return uidNumber;
     }
 
     /**
      * Primary Group identifier of the POSIX user
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gidNumber")
     private final Integer gidNumber;
 
     /**
      * Primary Group identifier of the POSIX user
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getGidNumber() {
         return gidNumber;
     }
 
     /**
      * General information about the POSIX account such as their real name and phone number
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gecos")
     private final String gecos;
 
     /**
      * General information about the POSIX account such as their real name and phone number
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getGecos() {
         return gecos;
     }
 
     /**
      * The absolute path to the home directory of the POSIX account
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeDirectory")
     private final String homeDirectory;
 
     /**
      * The absolute path to the home directory of the POSIX account
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHomeDirectory() {
         return homeDirectory;
     }
 
     /**
      * The path to the login shell of the POSIX account
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loginShell")
     private final String loginShell;
 
     /**
      * The path to the login shell of the POSIX account
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLoginShell() {
         return loginShell;
     }
@@ -321,7 +431,6 @@ public final class ExtensionPosixUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

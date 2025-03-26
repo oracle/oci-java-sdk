@@ -15,15 +15,15 @@ import java.util.stream.Collectors;
 
 /**
  * This sample demonstrates the process of updating the network security groups for a load balancer.
- * A network security group (NSG) provides virtual firewall rules for a specified set of VNICs and
- * load balancers in a VCN. Compare NSGs with SecurityLists, which provide virtual firewall rules to
- * all the VNICs in a subnet. Please refer to
- * https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ for more information
- * about creating network security groups using the API. After creating an NSG, you can add load
- * balancers to it with UpdateNetworkSecurityGroups. Please refer to
- * https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/methods/UpdateNetworkSecurityGroups
- * for more information about the LB NSG API. This example requires an existing load balancer OCID
- * and a comma-separated list of NSG OCIDs. It will place the load balancer into the NSGs provided.
+ * A network security group (NSG) provides virtual firewall rules for a specified set of VNICs and load balancers
+ * in a VCN. Compare NSGs with SecurityLists, which provide virtual firewall rules to all the VNICs in a subnet.
+ * Please refer to https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ for more
+ * information about creating network security groups using the API.
+ * After creating an NSG, you can add load balancers to it with UpdateNetworkSecurityGroups. Please refer
+ * to https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/methods/UpdateNetworkSecurityGroups
+ * for more information about the LB NSG API.
+ * This example requires an existing load balancer OCID and a comma-separated list of NSG OCIDs.
+ * It will place the load balancer into the NSGs provided.
  */
 public class UpdateLoadBalancerWithNsgExample {
 
@@ -43,10 +43,8 @@ public class UpdateLoadBalancerWithNsgExample {
                 Arrays.stream(nsgids.split(",")).collect(Collectors.toList());
         System.out.println("nsgIds = " + networkSecurityGroupIds);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -54,7 +52,7 @@ public class UpdateLoadBalancerWithNsgExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
+        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
 
         loadBalancerClient.updateNetworkSecurityGroups(
                 UpdateNetworkSecurityGroupsRequest.builder()

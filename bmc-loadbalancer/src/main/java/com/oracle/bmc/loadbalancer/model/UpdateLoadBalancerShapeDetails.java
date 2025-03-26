@@ -5,23 +5,22 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateLoadBalancerShapeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateLoadBalancerShapeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateLoadBalancerShapeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shapeName", "shapeDetails"})
     public UpdateLoadBalancerShapeDetails(String shapeName, ShapeDetails shapeDetails) {
@@ -34,36 +33,50 @@ public final class UpdateLoadBalancerShapeDetails
     public static class Builder {
         /**
          * The new shape name for the load balancer.
+         * <p>
+         * Allowed values are :
+         *   *  10Mbps
+         *   *  100Mbps
+         *   *  400Mbps
+         *   *  8000Mbps
+         *   *  Flexible
+         * <p>
+         * Example: {@code flexible}
+         * <p>
+         * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023. This api
+         *   * will only support {@code Flexible} shape after that date.
          *
-         * <p>Allowed values are : * 10Mbps * 100Mbps * 400Mbps * 8000Mbps * Flexible
-         *
-         * <p>Example: {@code flexible}
-         *
-         * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May
-         * 2023. This api * will only support {@code Flexible} shape after that date.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
          * The new shape name for the load balancer.
-         *
-         * <p>Allowed values are : * 10Mbps * 100Mbps * 400Mbps * 8000Mbps * Flexible
-         *
-         * <p>Example: {@code flexible}
-         *
-         * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May
-         * 2023. This api * will only support {@code Flexible} shape after that date.
+         * <p>
+         * Allowed values are :
+         *   *  10Mbps
+         *   *  100Mbps
+         *   *  400Mbps
+         *   *  8000Mbps
+         *   *  Flexible
+         * <p>
+         * Example: {@code flexible}
+         * <p>
+         * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023. This api
+         *   * will only support {@code Flexible} shape after that date.
          *
          * @param shapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /** The configuration details to update load balancer to a different profile. */
+        /**
+         * The configuration details to update load balancer to a different profile.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
         private ShapeDetails shapeDetails;
 
@@ -72,7 +85,7 @@ public final class UpdateLoadBalancerShapeDetails
          *
          * @param shapeDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeDetails(ShapeDetails shapeDetails) {
             this.shapeDetails = shapeDetails;
             this.__explicitlySet__.add("shapeDetails");
@@ -103,7 +116,9 @@ public final class UpdateLoadBalancerShapeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,34 +129,48 @@ public final class UpdateLoadBalancerShapeDetails
 
     /**
      * The new shape name for the load balancer.
+     * <p>
+     * Allowed values are :
+     *   *  10Mbps
+     *   *  100Mbps
+     *   *  400Mbps
+     *   *  8000Mbps
+     *   *  Flexible
+     * <p>
+     * Example: {@code flexible}
+     * <p>
+     * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023. This api
+     *   * will only support {@code Flexible} shape after that date.
      *
-     * <p>Allowed values are : * 10Mbps * 100Mbps * 400Mbps * 8000Mbps * Flexible
-     *
-     * <p>Example: {@code flexible}
-     *
-     * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023.
-     * This api * will only support {@code Flexible} shape after that date.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
      * The new shape name for the load balancer.
-     *
-     * <p>Allowed values are : * 10Mbps * 100Mbps * 400Mbps * 8000Mbps * Flexible
-     *
-     * <p>Example: {@code flexible}
-     *
-     * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023.
-     * This api * will only support {@code Flexible} shape after that date.
+     * <p>
+     * Allowed values are :
+     *   *  10Mbps
+     *   *  100Mbps
+     *   *  400Mbps
+     *   *  8000Mbps
+     *   *  Flexible
+     * <p>
+     * Example: {@code flexible}
+     * <p>
+     * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023. This api
+     *   * will only support {@code Flexible} shape after that date.
      *
      * @return the value
-     */
+     **/
     public String getShapeName() {
         return shapeName;
     }
 
-    /** The configuration details to update load balancer to a different profile. */
+    /**
+     * The configuration details to update load balancer to a different profile.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
     private final ShapeDetails shapeDetails;
 
@@ -149,7 +178,7 @@ public final class UpdateLoadBalancerShapeDetails
      * The configuration details to update load balancer to a different profile.
      *
      * @return the value
-     */
+     **/
     public ShapeDetails getShapeDetails() {
         return shapeDetails;
     }
@@ -161,7 +190,6 @@ public final class UpdateLoadBalancerShapeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

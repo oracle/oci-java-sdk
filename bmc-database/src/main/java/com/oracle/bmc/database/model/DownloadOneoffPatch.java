@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Data to download one-off patch. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Data to download one-off patch.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DownloadOneoffPatch.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DownloadOneoffPatch
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DownloadOneoffPatch.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DownloadOneoffPatch extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"accessUri", "timeCreated", "timeExpires"})
     public DownloadOneoffPatch(
@@ -34,46 +33,49 @@ public final class DownloadOneoffPatch
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** URI to download one-off patch. */
+        /**
+         * URI to download one-off patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessUri")
         private String accessUri;
 
         /**
          * URI to download one-off patch.
-         *
          * @param accessUri the value to set
          * @return this builder
-         */
+         **/
         public Builder accessUri(String accessUri) {
             this.accessUri = accessUri;
             this.__explicitlySet__.add("accessUri");
             return this;
         }
-        /** The date and time one-off patch URI was created. */
+        /**
+         * The date and time one-off patch URI was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time one-off patch URI was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time until which the one-off patch URI will be available for download. */
+        /**
+         * The date and time until which the one-off patch URI will be available for download.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
          * The date and time until which the one-off patch URI will be available for download.
-         *
          * @param timeExpires the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
@@ -107,7 +109,9 @@ public final class DownloadOneoffPatch
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +120,44 @@ public final class DownloadOneoffPatch
         return new Builder().copy(this);
     }
 
-    /** URI to download one-off patch. */
+    /**
+     * URI to download one-off patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessUri")
     private final String accessUri;
 
     /**
      * URI to download one-off patch.
-     *
      * @return the value
-     */
+     **/
     public String getAccessUri() {
         return accessUri;
     }
 
-    /** The date and time one-off patch URI was created. */
+    /**
+     * The date and time one-off patch URI was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time one-off patch URI was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time until which the one-off patch URI will be available for download. */
+    /**
+     * The date and time until which the one-off patch URI will be available for download.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
      * The date and time until which the one-off patch URI will be available for download.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
@@ -162,7 +169,6 @@ public final class DownloadOneoffPatch
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

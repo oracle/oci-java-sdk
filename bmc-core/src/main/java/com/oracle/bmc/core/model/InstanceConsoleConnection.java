@@ -7,26 +7,24 @@ package com.oracle.bmc.core.model;
 /**
  * The {@code InstanceConsoleConnection} API provides you with console access to Compute instances,
  * enabling you to troubleshoot malfunctioning instances remotely.
+ * <p>
+ * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
  *
- * <p>For more information about instance console connections, see [Troubleshooting Instances Using
- * Instance Console
- * Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceConsoleConnection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceConsoleConnection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConsoleConnection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -66,176 +64,182 @@ public final class InstanceConsoleConnection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment to contain the console connection. */
+        /**
+         * The OCID of the compartment to contain the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment to contain the console connection.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The SSH connection string for the console connection. */
+        /**
+         * The SSH connection string for the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
          * The SSH connection string for the console connection.
-         *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The SSH public key's fingerprint for client authentication to the console connection. */
+        /**
+         * The SSH public key's fingerprint for client authentication to the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
         /**
          * The SSH public key's fingerprint for client authentication to the console connection.
-         *
          * @param fingerprint the value to set
          * @return this builder
-         */
+         **/
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = fingerprint;
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** The OCID of the console connection. */
+        /**
+         * The OCID of the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the console connection.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the instance the console connection connects to. */
+        /**
+         * The OCID of the instance the console connection connects to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the instance the console connection connects to.
-         *
          * @param instanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /** The current state of the console connection. */
+        /**
+         * The current state of the console connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the console connection.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The SSH public key's fingerprint for the console connection service host. */
+        /**
+         * The SSH public key's fingerprint for the console connection service host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceHostKeyFingerprint")
         private String serviceHostKeyFingerprint;
 
         /**
          * The SSH public key's fingerprint for the console connection service host.
-         *
          * @param serviceHostKeyFingerprint the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
             this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
             this.__explicitlySet__.add("serviceHostKeyFingerprint");
             return this;
         }
         /**
-         * The SSH connection string for the SSH tunnel used to connect to the console connection
-         * over VNC.
-         */
+         * The SSH connection string for the SSH tunnel used to
+         * connect to the console connection over VNC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vncConnectionString")
         private String vncConnectionString;
 
         /**
-         * The SSH connection string for the SSH tunnel used to connect to the console connection
-         * over VNC.
+         * The SSH connection string for the SSH tunnel used to
+         * connect to the console connection over VNC.
          *
          * @param vncConnectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder vncConnectionString(String vncConnectionString) {
             this.vncConnectionString = vncConnectionString;
             this.__explicitlySet__.add("vncConnectionString");
@@ -300,7 +304,9 @@ public final class InstanceConsoleConnection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -309,119 +315,124 @@ public final class InstanceConsoleConnection
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment to contain the console connection. */
+    /**
+     * The OCID of the compartment to contain the console connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment to contain the console connection.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The SSH connection string for the console connection. */
+    /**
+     * The SSH connection string for the console connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
      * The SSH connection string for the console connection.
-     *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** The SSH public key's fingerprint for client authentication to the console connection. */
+    /**
+     * The SSH public key's fingerprint for client authentication to the console connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     private final String fingerprint;
 
     /**
      * The SSH public key's fingerprint for client authentication to the console connection.
-     *
      * @return the value
-     */
+     **/
     public String getFingerprint() {
         return fingerprint;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /** The OCID of the console connection. */
+    /**
+     * The OCID of the console connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the console connection.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the instance the console connection connects to. */
+    /**
+     * The OCID of the instance the console connection connects to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the instance the console connection connects to.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceId() {
         return instanceId;
     }
 
-    /** The current state of the console connection. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the console connection.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleted("DELETED"),
@@ -429,8 +440,8 @@ public final class InstanceConsoleConnection
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -469,45 +480,48 @@ public final class InstanceConsoleConnection
             return UnknownEnumValue;
         }
     };
-    /** The current state of the console connection. */
+    /**
+     * The current state of the console connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the console connection.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The SSH public key's fingerprint for the console connection service host. */
+    /**
+     * The SSH public key's fingerprint for the console connection service host.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceHostKeyFingerprint")
     private final String serviceHostKeyFingerprint;
 
     /**
      * The SSH public key's fingerprint for the console connection service host.
-     *
      * @return the value
-     */
+     **/
     public String getServiceHostKeyFingerprint() {
         return serviceHostKeyFingerprint;
     }
 
     /**
-     * The SSH connection string for the SSH tunnel used to connect to the console connection over
-     * VNC.
-     */
+     * The SSH connection string for the SSH tunnel used to
+     * connect to the console connection over VNC.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vncConnectionString")
     private final String vncConnectionString;
 
     /**
-     * The SSH connection string for the SSH tunnel used to connect to the console connection over
-     * VNC.
+     * The SSH connection string for the SSH tunnel used to
+     * connect to the console connection over VNC.
      *
      * @return the value
-     */
+     **/
     public String getVncConnectionString() {
         return vncConnectionString;
     }
@@ -519,7 +533,6 @@ public final class InstanceConsoleConnection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The parameters for updating a domain govenance entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * The parameters for updating a domain govenance entity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDomainGovernanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateDomainGovernanceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDomainGovernanceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "subscriptionEmail",
@@ -44,53 +43,52 @@ public final class UpdateDomainGovernanceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Email address to be used to notify the user, and that the ONS subscription will be
-         * created with. The ONS subscription for the previous email will also be deleted.
-         */
+         * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
         private String subscriptionEmail;
 
         /**
-         * Email address to be used to notify the user, and that the ONS subscription will be
-         * created with. The ONS subscription for the previous email will also be deleted.
-         *
+         * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
          * @param subscriptionEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionEmail(String subscriptionEmail) {
             this.subscriptionEmail = subscriptionEmail;
             this.__explicitlySet__.add("subscriptionEmail");
             return this;
         }
-        /** Indicates whether governance is enabled for this domain. */
+        /**
+         * Indicates whether governance is enabled for this domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
         private Boolean isGovernanceEnabled;
 
         /**
          * Indicates whether governance is enabled for this domain.
-         *
          * @param isGovernanceEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isGovernanceEnabled(Boolean isGovernanceEnabled) {
             this.isGovernanceEnabled = isGovernanceEnabled;
             this.__explicitlySet__.add("isGovernanceEnabled");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -99,7 +97,8 @@ public final class UpdateDomainGovernanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -109,7 +108,7 @@ public final class UpdateDomainGovernanceDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -151,7 +150,9 @@ public final class UpdateDomainGovernanceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -161,65 +162,65 @@ public final class UpdateDomainGovernanceDetails
     }
 
     /**
-     * Email address to be used to notify the user, and that the ONS subscription will be created
-     * with. The ONS subscription for the previous email will also be deleted.
-     */
+     * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
     private final String subscriptionEmail;
 
     /**
-     * Email address to be used to notify the user, and that the ONS subscription will be created
-     * with. The ONS subscription for the previous email will also be deleted.
-     *
+     * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
      * @return the value
-     */
+     **/
     public String getSubscriptionEmail() {
         return subscriptionEmail;
     }
 
-    /** Indicates whether governance is enabled for this domain. */
+    /**
+     * Indicates whether governance is enabled for this domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
     private final Boolean isGovernanceEnabled;
 
     /**
      * Indicates whether governance is enabled for this domain.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsGovernanceEnabled() {
         return isGovernanceEnabled;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -231,7 +232,6 @@ public final class UpdateDomainGovernanceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

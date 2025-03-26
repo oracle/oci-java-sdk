@@ -5,25 +5,25 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of an Exadata insight resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of an Exadata insight resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EmManagedExternalExadataInsightSummary.Builder.class)
+    builder = EmManagedExternalExadataInsightSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entitySource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EmManagedExternalExadataInsightSummary extends ExadataInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -153,92 +153,98 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Enterprise Manager Unique Identifier */
+        /**
+         * Enterprise Manager Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
         /**
          * Enterprise Manager Unique Identifier
-         *
          * @param enterpriseManagerIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             this.__explicitlySet__.add("enterpriseManagerIdentifier");
             return this;
         }
-        /** Enterprise Manager Entity Name */
+        /**
+         * Enterprise Manager Entity Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityName")
         private String enterpriseManagerEntityName;
 
         /**
          * Enterprise Manager Entity Name
-         *
          * @param enterpriseManagerEntityName the value to set
          * @return this builder
-         */
+         **/
         public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
             this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             this.__explicitlySet__.add("enterpriseManagerEntityName");
             return this;
         }
-        /** Enterprise Manager Entity Type */
+        /**
+         * Enterprise Manager Entity Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
         private String enterpriseManagerEntityType;
 
         /**
          * Enterprise Manager Entity Type
-         *
          * @param enterpriseManagerEntityType the value to set
          * @return this builder
-         */
+         **/
         public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
             this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             this.__explicitlySet__.add("enterpriseManagerEntityType");
             return this;
         }
-        /** Enterprise Manager Entity Unique Identifier */
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
         private String enterpriseManagerEntityIdentifier;
 
         /**
          * Enterprise Manager Entity Unique Identifier
-         *
          * @param enterpriseManagerEntityIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
             return this;
         }
-        /** Enterprise Manager Entity Display Name */
+        /**
+         * Enterprise Manager Entity Display Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityDisplayName")
         private String enterpriseManagerEntityDisplayName;
 
         /**
          * Enterprise Manager Entity Display Name
-         *
          * @param enterpriseManagerEntityDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder enterpriseManagerEntityDisplayName(
                 String enterpriseManagerEntityDisplayName) {
             this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             this.__explicitlySet__.add("enterpriseManagerEntityDisplayName");
             return this;
         }
-        /** OPSI Enterprise Manager Bridge OCID */
+        /**
+         * OPSI Enterprise Manager Bridge OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
         private String enterpriseManagerBridgeId;
 
         /**
          * OPSI Enterprise Manager Bridge OCID
-         *
          * @param enterpriseManagerBridgeId the value to set
          * @return this builder
-         */
+         **/
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             this.__explicitlySet__.add("enterpriseManagerBridgeId");
@@ -345,7 +351,9 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -399,80 +407,86 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
         this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
     }
 
-    /** Enterprise Manager Unique Identifier */
+    /**
+     * Enterprise Manager Unique Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
     private final String enterpriseManagerIdentifier;
 
     /**
      * Enterprise Manager Unique Identifier
-     *
      * @return the value
-     */
+     **/
     public String getEnterpriseManagerIdentifier() {
         return enterpriseManagerIdentifier;
     }
 
-    /** Enterprise Manager Entity Name */
+    /**
+     * Enterprise Manager Entity Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityName")
     private final String enterpriseManagerEntityName;
 
     /**
      * Enterprise Manager Entity Name
-     *
      * @return the value
-     */
+     **/
     public String getEnterpriseManagerEntityName() {
         return enterpriseManagerEntityName;
     }
 
-    /** Enterprise Manager Entity Type */
+    /**
+     * Enterprise Manager Entity Type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
     private final String enterpriseManagerEntityType;
 
     /**
      * Enterprise Manager Entity Type
-     *
      * @return the value
-     */
+     **/
     public String getEnterpriseManagerEntityType() {
         return enterpriseManagerEntityType;
     }
 
-    /** Enterprise Manager Entity Unique Identifier */
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     private final String enterpriseManagerEntityIdentifier;
 
     /**
      * Enterprise Manager Entity Unique Identifier
-     *
      * @return the value
-     */
+     **/
     public String getEnterpriseManagerEntityIdentifier() {
         return enterpriseManagerEntityIdentifier;
     }
 
-    /** Enterprise Manager Entity Display Name */
+    /**
+     * Enterprise Manager Entity Display Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityDisplayName")
     private final String enterpriseManagerEntityDisplayName;
 
     /**
      * Enterprise Manager Entity Display Name
-     *
      * @return the value
-     */
+     **/
     public String getEnterpriseManagerEntityDisplayName() {
         return enterpriseManagerEntityDisplayName;
     }
 
-    /** OPSI Enterprise Manager Bridge OCID */
+    /**
+     * OPSI Enterprise Manager Bridge OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerBridgeId")
     private final String enterpriseManagerBridgeId;
 
     /**
      * OPSI Enterprise Manager Bridge OCID
-     *
      * @return the value
-     */
+     **/
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
@@ -484,7 +498,6 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

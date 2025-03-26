@@ -5,22 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The validation status of a specified endpoint. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * The validation status of a specified endpoint.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EndpointResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EndpointResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EndpointResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "endpointName",
@@ -45,76 +42,81 @@ public final class EndpointResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The endpoint name. */
+        /**
+         * The endpoint name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
         private String endpointName;
 
         /**
          * The endpoint name.
-         *
          * @param endpointName the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointName(String endpointName) {
             this.endpointName = endpointName;
             this.__explicitlySet__.add("endpointName");
             return this;
         }
-        /** The endpoint URL. */
+        /**
+         * The endpoint URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The endpoint URL.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The endpoint validation status. */
+        /**
+         * The endpoint validation status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The endpoint validation status.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The list of violations (if any). */
+        /**
+         * The list of violations (if any).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("violations")
         private java.util.List<Violation> violations;
 
         /**
          * The list of violations (if any).
-         *
          * @param violations the value to set
          * @return this builder
-         */
+         **/
         public Builder violations(java.util.List<Violation> violations) {
             this.violations = violations;
             this.__explicitlySet__.add("violations");
             return this;
         }
-        /** The resolved log endpoints based on the specified list endpoint response. */
+        /**
+         * The resolved log endpoints based on the specified list endpoint response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logEndpoints")
         private java.util.List<String> logEndpoints;
 
         /**
          * The resolved log endpoints based on the specified list endpoint response.
-         *
          * @param logEndpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder logEndpoints(java.util.List<String> logEndpoints) {
             this.logEndpoints = logEndpoints;
             this.__explicitlySet__.add("logEndpoints");
@@ -159,7 +161,9 @@ public final class EndpointResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,67 +172,72 @@ public final class EndpointResult
         return new Builder().copy(this);
     }
 
-    /** The endpoint name. */
+    /**
+     * The endpoint name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
     private final String endpointName;
 
     /**
      * The endpoint name.
-     *
      * @return the value
-     */
+     **/
     public String getEndpointName() {
         return endpointName;
     }
 
-    /** The endpoint URL. */
+    /**
+     * The endpoint URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The endpoint URL.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** The endpoint validation status. */
+    /**
+     * The endpoint validation status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The endpoint validation status.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** The list of violations (if any). */
+    /**
+     * The list of violations (if any).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("violations")
     private final java.util.List<Violation> violations;
 
     /**
      * The list of violations (if any).
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Violation> getViolations() {
         return violations;
     }
 
-    /** The resolved log endpoints based on the specified list endpoint response. */
+    /**
+     * The resolved log endpoints based on the specified list endpoint response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logEndpoints")
     private final java.util.List<String> logEndpoints;
 
     /**
      * The resolved log endpoints based on the specified list endpoint response.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getLogEndpoints() {
         return logEndpoints;
     }
@@ -240,7 +249,6 @@ public final class EndpointResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

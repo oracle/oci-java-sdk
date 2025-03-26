@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OperationType {
     EnableDatabaseInsight("ENABLE_DATABASE_INSIGHT"),
     DisableDatabaseInsight("DISABLE_DATABASE_INSIGHT"),
     UpdateDatabaseInsight("UPDATE_DATABASE_INSIGHT"),

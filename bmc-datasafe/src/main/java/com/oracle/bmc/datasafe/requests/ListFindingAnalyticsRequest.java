@@ -6,51 +6,55 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingAnalyticsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFindingAnalyticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFindingAnalyticsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListFindingAnalyticsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -84,26 +88,35 @@ public class ListFindingAnalyticsRequest
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** A filter to return only the findings that are marked as top findings. */
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     */
     private Boolean isTopFinding;
 
-    /** A filter to return only the findings that are marked as top findings. */
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     */
     public Boolean getIsTopFinding() {
         return isTopFinding;
     }
-    /** Attribute by which the finding analytics data should be grouped. */
+    /**
+     * Attribute by which the finding analytics data should be grouped.
+     */
     private GroupBy groupBy;
 
-    /** Attribute by which the finding analytics data should be grouped. */
-    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Attribute by which the finding analytics data should be grouped.
+     **/
+    public enum GroupBy {
         FindingKeyAndTopFindingStatus("findingKeyAndTopFindingStatus"),
         FindingKeyAndSeverity("findingKeyAndSeverity"),
         ;
@@ -136,24 +149,34 @@ public class ListFindingAnalyticsRequest
         }
     };
 
-    /** Attribute by which the finding analytics data should be grouped. */
+    /**
+     * Attribute by which the finding analytics data should be grouped.
+     */
     public GroupBy getGroupBy() {
         return groupBy;
     }
-    /** An optional filter to return only the top finding that match the specified status. */
+    /**
+     * An optional filter to return only the top finding that match the specified status.
+     */
     private com.oracle.bmc.datasafe.model.FindingAnalyticsDimensions.TopFindingStatus
             topFindingStatus;
 
-    /** An optional filter to return only the top finding that match the specified status. */
+    /**
+     * An optional filter to return only the top finding that match the specified status.
+     */
     public com.oracle.bmc.datasafe.model.FindingAnalyticsDimensions.TopFindingStatus
             getTopFindingStatus() {
         return topFindingStatus;
     }
-    /** A filter to return only findings of a particular risk level. */
+    /**
+     * A filter to return only findings of a particular risk level.
+     */
     private Severity severity;
 
-    /** A filter to return only findings of a particular risk level. */
-    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only findings of a particular risk level.
+     **/
+    public enum Severity {
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
@@ -191,58 +214,52 @@ public class ListFindingAnalyticsRequest
         }
     };
 
-    /** A filter to return only findings of a particular risk level. */
+    /**
+     * A filter to return only findings of a particular risk level.
+     */
     public Severity getSeverity() {
         return severity;
     }
     /**
-     * The unique key that identifies the finding. It is a string and unique within a security
-     * assessment.
+     * The unique key that identifies the finding. It is a string and unique within a security assessment.
      */
     private String findingKey;
 
     /**
-     * The unique key that identifies the finding. It is a string and unique within a security
-     * assessment.
+     * The unique key that identifies the finding. It is a string and unique within a security assessment.
      */
     public String getFindingKey() {
         return findingKey;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -251,15 +268,17 @@ public class ListFindingAnalyticsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListFindingAnalyticsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -269,16 +288,15 @@ public class ListFindingAnalyticsRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -289,18 +307,19 @@ public class ListFindingAnalyticsRequest
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -310,12 +329,13 @@ public class ListFindingAnalyticsRequest
             return this;
         }
 
-        /** A filter to return only the findings that are marked as top findings. */
+        /**
+         * A filter to return only the findings that are marked as top findings.
+         */
         private Boolean isTopFinding = null;
 
         /**
          * A filter to return only the findings that are marked as top findings.
-         *
          * @param isTopFinding the value to set
          * @return this builder instance
          */
@@ -324,12 +344,13 @@ public class ListFindingAnalyticsRequest
             return this;
         }
 
-        /** Attribute by which the finding analytics data should be grouped. */
+        /**
+         * Attribute by which the finding analytics data should be grouped.
+         */
         private GroupBy groupBy = null;
 
         /**
          * Attribute by which the finding analytics data should be grouped.
-         *
          * @param groupBy the value to set
          * @return this builder instance
          */
@@ -338,13 +359,14 @@ public class ListFindingAnalyticsRequest
             return this;
         }
 
-        /** An optional filter to return only the top finding that match the specified status. */
+        /**
+         * An optional filter to return only the top finding that match the specified status.
+         */
         private com.oracle.bmc.datasafe.model.FindingAnalyticsDimensions.TopFindingStatus
                 topFindingStatus = null;
 
         /**
          * An optional filter to return only the top finding that match the specified status.
-         *
          * @param topFindingStatus the value to set
          * @return this builder instance
          */
@@ -355,12 +377,13 @@ public class ListFindingAnalyticsRequest
             return this;
         }
 
-        /** A filter to return only findings of a particular risk level. */
+        /**
+         * A filter to return only findings of a particular risk level.
+         */
         private Severity severity = null;
 
         /**
          * A filter to return only findings of a particular risk level.
-         *
          * @param severity the value to set
          * @return this builder instance
          */
@@ -370,15 +393,12 @@ public class ListFindingAnalyticsRequest
         }
 
         /**
-         * The unique key that identifies the finding. It is a string and unique within a security
-         * assessment.
+         * The unique key that identifies the finding. It is a string and unique within a security assessment.
          */
         private String findingKey = null;
 
         /**
-         * The unique key that identifies the finding. It is a string and unique within a security
-         * assessment.
-         *
+         * The unique key that identifies the finding. It is a string and unique within a security assessment.
          * @param findingKey the value to set
          * @return this builder instance
          */
@@ -387,12 +407,13 @@ public class ListFindingAnalyticsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -402,17 +423,12 @@ public class ListFindingAnalyticsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -422,19 +438,12 @@ public class ListFindingAnalyticsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -445,19 +454,18 @@ public class ListFindingAnalyticsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -469,7 +477,6 @@ public class ListFindingAnalyticsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListFindingAnalyticsRequest o) {
@@ -492,11 +499,10 @@ public class ListFindingAnalyticsRequest
         /**
          * Build the instance of ListFindingAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListFindingAnalyticsRequest
          */
@@ -510,8 +516,7 @@ public class ListFindingAnalyticsRequest
         /**
          * Build the instance of ListFindingAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListFindingAnalyticsRequest
@@ -530,15 +535,12 @@ public class ListFindingAnalyticsRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListFindingAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel,
-            // isTopFinding, groupBy, topFindingStatus, severity, findingKey, opcRequestId, limit,
-            // page);
+            // new ListFindingAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, isTopFinding, groupBy, topFindingStatus, severity, findingKey, opcRequestId, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -558,7 +560,6 @@ public class ListFindingAnalyticsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

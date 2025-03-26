@@ -5,28 +5,29 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * The Database service Database Software Image resource is required as goal version for the Exadata
- * Fleet Update Maintenance Cycle when IMAGE_ID type is selected. Specify a Database Software Image
- * of type DATABASE_IMAGE for a DB Collection. Specify a Database Software Image of type GRID_IMAGE
- * for a GI Collection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * The Database service Database Software Image resource is required as goal version for the Exadata Fleet Update Maintenance Cycle
+ * when IMAGE_ID type is selected.
+ * Specify a Database Software Image of type DATABASE_IMAGE for a DB Collection.
+ * Specify a Database Software Image of type GRID_IMAGE for a GI Collection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ImageIdFsuTargetDetails.Builder.class)
+    builder = ImageIdFsuTargetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -47,7 +48,10 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
             this.__explicitlySet__.add("newHomePrefix");
             return this;
         }
-        /** Target database software image OCID. */
+        /**
+         * Target database software image OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
         private String softwareImageId;
 
@@ -56,7 +60,7 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
          *
          * @param softwareImageId the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareImageId(String softwareImageId) {
             this.softwareImageId = softwareImageId;
             this.__explicitlySet__.add("softwareImageId");
@@ -91,7 +95,9 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -107,7 +113,10 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
         this.softwareImageId = softwareImageId;
     }
 
-    /** Target database software image OCID. */
+    /**
+     * Target database software image OCID.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
     private final String softwareImageId;
 
@@ -115,7 +124,7 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
      * Target database software image OCID.
      *
      * @return the value
-     */
+     **/
     public String getSoftwareImageId() {
         return softwareImageId;
     }
@@ -127,7 +136,6 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

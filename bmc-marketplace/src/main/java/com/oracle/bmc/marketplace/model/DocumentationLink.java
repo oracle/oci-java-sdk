@@ -5,23 +5,21 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A link to a documentation resource on the internet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * A link to a documentation resource on the internet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DocumentationLink.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DocumentationLink
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DocumentationLink.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DocumentationLink extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "url", "documentCategory"})
     public DocumentationLink(String name, String url, String documentCategory) {
@@ -33,46 +31,49 @@ public final class DocumentationLink
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Text that describes the resource. */
+        /**
+         * Text that describes the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Text that describes the resource.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The URL of the resource. */
+        /**
+         * The URL of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The URL of the resource.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The category that the document belongs to. */
+        /**
+         * The category that the document belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentCategory")
         private String documentCategory;
 
         /**
          * The category that the document belongs to.
-         *
          * @param documentCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder documentCategory(String documentCategory) {
             this.documentCategory = documentCategory;
             this.__explicitlySet__.add("documentCategory");
@@ -106,7 +107,9 @@ public final class DocumentationLink
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class DocumentationLink
         return new Builder().copy(this);
     }
 
-    /** Text that describes the resource. */
+    /**
+     * Text that describes the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Text that describes the resource.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The URL of the resource. */
+    /**
+     * The URL of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The URL of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** The category that the document belongs to. */
+    /**
+     * The category that the document belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentCategory")
     private final String documentCategory;
 
     /**
      * The category that the document belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getDocumentCategory() {
         return documentCategory;
     }
@@ -161,7 +167,6 @@ public final class DocumentationLink
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

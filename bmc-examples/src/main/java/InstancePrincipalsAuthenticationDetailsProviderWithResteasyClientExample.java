@@ -20,16 +20,14 @@ import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
 /**
- * An example to demonstrate how to use resteasy client with
- * InstancePrincipalsAuthenticationDetailsProvider.
+ * An example to demonstrate how to use resteasy client with InstancePrincipalsAuthenticationDetailsProvider.
  */
 public class InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample {
 
     public static void main(String[] args) {
         // The following line is only necessary for this example because of our configuration in
         // resources/META-INF/services/javax.ws.rs.client.ClientBuilder
-        // which enables Jersey by default. If you are using Resteasy by default, this line is not
-        // necessary
+        // which enables Jersey by default. If you are using Resteasy by default, this line is not necessary
         System.setProperty(
                 ClientBuilder.JAXRS_DEFAULT_CLIENT_BUILDER_PROPERTY,
                 "org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder");
@@ -56,8 +54,7 @@ public class InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientEx
                         .additionalClientConfigurator(new ResteasyClientConfigurator())
                         .build(provider);
 
-        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if
-        // known)
+        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if known)
         final String compartmentId = args[0];
         System.out.println(compartmentId);
 

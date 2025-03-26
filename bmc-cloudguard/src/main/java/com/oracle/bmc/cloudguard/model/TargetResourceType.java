@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible target resource types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum TargetResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible target resource types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum TargetResourceType {
     Compartment("COMPARTMENT"),
     Erpcloud("ERPCLOUD"),
     Hcmcloud("HCMCLOUD"),

@@ -5,33 +5,34 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Represents the parameters common for all connections in list operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Represents the parameters common for all connections in list operation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType",
-        defaultImpl = ConnectionSummary.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType",
+    defaultImpl = ConnectionSummary.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OracleConnectionSummary.class,
-            name = "ORACLE"),
+        value = OracleConnectionSummary.class,
+        name = "ORACLE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MysqlConnectionSummary.class,
-            name = "MYSQL")
+        value = MysqlConnectionSummary.class,
+        name = "MYSQL"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ConnectionSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -87,236 +88,252 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         this.nsgIds = nsgIds;
     }
 
-    /** The OCID of the connection being referenced. */
+    /**
+     * The OCID of the connection being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the connection being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A user-friendly description. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly description. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-friendly description. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly description. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
-     * "Finance"}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
-     * "Finance"}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** Lifecycle state for connection. */
+    /**
+     * Lifecycle state for connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Connection.LifecycleState lifecycleState;
 
     /**
      * Lifecycle state for connection.
-     *
      * @return the value
-     */
+     **/
     public Connection.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The time when this resource was created. An RFC3339 formatted datetime string such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     */
+     * The time when this resource was created.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time when this resource was created. An RFC3339 formatted datetime string such as {@code
-     * 2016-08-25T21:10:29.600Z}.
+     * The time when this resource was created.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time when this resource was updated. An RFC3339 formatted datetime string such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     */
+     * The time when this resource was updated.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time when this resource was updated. An RFC3339 formatted datetime string such as {@code
-     * 2016-08-25T21:10:29.600Z}.
+     * The time when this resource was updated.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** OCI resource ID. */
+    /**
+     * OCI resource ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
      * OCI resource ID.
-     *
      * @return the value
-     */
+     **/
     public String getVaultId() {
         return vaultId;
     }
 
-    /** The OCID of the key used in cryptographic operations. */
+    /**
+     * The OCID of the key used in cryptographic operations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
      * The OCID of the key used in cryptographic operations.
-     *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
-    /** OCI resource ID. */
+    /**
+     * OCI resource ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * OCI resource ID.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** List of ingress IP addresses from where to connect to this connection's privateIp. */
+    /**
+     * List of ingress IP addresses from where to connect to this connection's privateIp.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
     private final java.util.List<IngressIpDetails> ingressIps;
 
     /**
      * List of ingress IP addresses from where to connect to this connection's privateIp.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<IngressIpDetails> getIngressIps() {
         return ingressIps;
     }
 
-    /** An array of Network Security Group OCIDs used to define network access for Connections. */
+    /**
+     * An array of Network Security Group OCIDs used to define network access for Connections.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
@@ -324,7 +341,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
      * An array of Network Security Group OCIDs used to define network access for Connections.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -336,7 +353,6 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Configuration information for mirroring the repository. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Configuration information for mirroring the repository.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MirrorRepositoryConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MirrorRepositoryConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MirrorRepositoryConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"connectorId", "repositoryUrl", "triggerSchedule"})
     public MirrorRepositoryConfig(
@@ -34,31 +33,33 @@ public final class MirrorRepositoryConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Upstream git repository connection identifier. */
+        /**
+         * Upstream git repository connection identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
          * Upstream git repository connection identifier.
-         *
          * @param connectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-        /** URL of external repository you want to mirror. */
+        /**
+         * URL of external repository you want to mirror.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
         /**
          * URL of external repository you want to mirror.
-         *
          * @param repositoryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
@@ -102,7 +103,9 @@ public final class MirrorRepositoryConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,28 +114,30 @@ public final class MirrorRepositoryConfig
         return new Builder().copy(this);
     }
 
-    /** Upstream git repository connection identifier. */
+    /**
+     * Upstream git repository connection identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
      * Upstream git repository connection identifier.
-     *
      * @return the value
-     */
+     **/
     public String getConnectorId() {
         return connectorId;
     }
 
-    /** URL of external repository you want to mirror. */
+    /**
+     * URL of external repository you want to mirror.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
     /**
      * URL of external repository you want to mirror.
-     *
      * @return the value
-     */
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
@@ -151,7 +156,6 @@ public final class MirrorRepositoryConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

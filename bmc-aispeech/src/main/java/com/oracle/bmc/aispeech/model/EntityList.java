@@ -5,23 +5,21 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * List of entities of a given type, to be used to train a customization. Note: If multiple
- * EntityLists are provided, a separate Customization resource will be created for each EntityList.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * List of entities of a given type, to be used to train a customization.
+ * Note: If multiple EntityLists are provided, a separate Customization resource will be created for each EntityList.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntityList.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EntityList extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EntityList extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"alias", "id", "entityType", "entities"})
     public EntityList(String alias, String id, String entityType, java.util.List<Entity> entities) {
@@ -35,68 +33,64 @@ public final class EntityList extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Alias of existing customization or to associate with new customization created from
-         * entityList.
-         */
+         * Alias of existing customization or to associate with new customization created from entityList.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
         /**
-         * Alias of existing customization or to associate with new customization created from
-         * entityList.
-         *
+         * Alias of existing customization or to associate with new customization created from entityList.
          * @param alias the value to set
          * @return this builder
-         */
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
             return this;
         }
-        /** Entity type OCID */
+        /**
+         * Entity type OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Entity type OCID
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Entity Type */
+        /**
+         * Entity Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * Entity Type
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
         /**
-         * List of entities such as names, words or phrases matching the given entityType to add
-         * recognition support for
-         */
+         * List of entities such as names, words or phrases matching the given entityType to add recognition support for
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entities")
         private java.util.List<Entity> entities;
 
         /**
-         * List of entities such as names, words or phrases matching the given entityType to add
-         * recognition support for
-         *
+         * List of entities such as names, words or phrases matching the given entityType to add recognition support for
          * @param entities the value to set
          * @return this builder
-         */
+         **/
         public Builder entities(java.util.List<Entity> entities) {
             this.entities = entities;
             this.__explicitlySet__.add("entities");
@@ -132,7 +126,9 @@ public final class EntityList extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -142,61 +138,57 @@ public final class EntityList extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * Alias of existing customization or to associate with new customization created from
-     * entityList.
-     */
+     * Alias of existing customization or to associate with new customization created from entityList.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
     /**
-     * Alias of existing customization or to associate with new customization created from
-     * entityList.
-     *
+     * Alias of existing customization or to associate with new customization created from entityList.
      * @return the value
-     */
+     **/
     public String getAlias() {
         return alias;
     }
 
-    /** Entity type OCID */
+    /**
+     * Entity type OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Entity type OCID
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Entity Type */
+    /**
+     * Entity Type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * Entity Type
-     *
      * @return the value
-     */
+     **/
     public String getEntityType() {
         return entityType;
     }
 
     /**
-     * List of entities such as names, words or phrases matching the given entityType to add
-     * recognition support for
-     */
+     * List of entities such as names, words or phrases matching the given entityType to add recognition support for
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<Entity> entities;
 
     /**
-     * List of entities such as names, words or phrases matching the given entityType to add
-     * recognition support for
-     *
+     * List of entities such as names, words or phrases matching the given entityType to add recognition support for
      * @return the value
-     */
+     **/
     public java.util.List<Entity> getEntities() {
         return entities;
     }
@@ -208,7 +200,6 @@ public final class EntityList extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

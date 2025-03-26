@@ -5,86 +5,86 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * The details of IDCS configured as OpenID setting in OpenSearch. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * The details of IDCS configured as OpenID setting in OpenSearch.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdcsSecret.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IdcsSecret extends SecretDetail {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The URL represent authentication url of the IDCS. */
+        /**
+         * The URL represent authentication url of the IDCS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsUrl")
         private String idcsUrl;
 
         /**
          * The URL represent authentication url of the IDCS.
-         *
          * @param idcsUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsUrl(String idcsUrl) {
             this.idcsUrl = idcsUrl;
             this.__explicitlySet__.add("idcsUrl");
             return this;
         }
-        /** The IDCS Connect clientId. */
+        /**
+         * The IDCS Connect clientId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
          * The IDCS Connect clientId.
-         *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * secret for client secret.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for client secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
         private String vaultSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * secret for client secret.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for client secret.
          * @param vaultSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultSecretId(String vaultSecretId) {
             this.vaultSecretId = vaultSecretId;
             this.__explicitlySet__.add("vaultSecretId");
             return this;
         }
-        /** Fully qualified scope url */
+        /**
+         * Fully qualified scope url
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopeUrl")
         private String scopeUrl;
 
         /**
          * Fully qualified scope url
-         *
          * @param scopeUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder scopeUrl(String scopeUrl) {
             this.scopeUrl = scopeUrl;
             this.__explicitlySet__.add("scopeUrl");
@@ -121,7 +121,9 @@ public final class IdcsSecret extends SecretDetail {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,58 +141,58 @@ public final class IdcsSecret extends SecretDetail {
         this.scopeUrl = scopeUrl;
     }
 
-    /** The URL represent authentication url of the IDCS. */
+    /**
+     * The URL represent authentication url of the IDCS.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsUrl")
     private final String idcsUrl;
 
     /**
      * The URL represent authentication url of the IDCS.
-     *
      * @return the value
-     */
+     **/
     public String getIdcsUrl() {
         return idcsUrl;
     }
 
-    /** The IDCS Connect clientId. */
+    /**
+     * The IDCS Connect clientId.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
      * The IDCS Connect clientId.
-     *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * secret for client secret.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for client secret.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
     private final String vaultSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * secret for client secret.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for client secret.
      * @return the value
-     */
+     **/
     public String getVaultSecretId() {
         return vaultSecretId;
     }
 
-    /** Fully qualified scope url */
+    /**
+     * Fully qualified scope url
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopeUrl")
     private final String scopeUrl;
 
     /**
      * Fully qualified scope url
-     *
      * @return the value
-     */
+     **/
     public String getScopeUrl() {
         return scopeUrl;
     }
@@ -202,7 +204,6 @@ public final class IdcsSecret extends SecretDetail {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

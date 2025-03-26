@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Summary of the Oracle Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Summary of the Oracle Connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OracleConnectionSummary.Builder.class)
+    builder = OracleConnectionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleConnectionSummary extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -171,22 +171,26 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-        /** The Oracle technology type. */
+        /**
+         * The Oracle technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private OracleConnection.TechnologyType technologyType;
 
         /**
          * The Oracle technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(OracleConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+        /**
+         * Connect descriptor or Easy Connect Naming method used to connect to a database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
@@ -195,13 +199,16 @@ public final class OracleConnectionSummary extends ConnectionSummary {
          *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /** The OCID of the database being referenced. */
+        /**
+         * The OCID of the database being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -210,7 +217,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
          *
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
@@ -311,7 +318,9 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -363,20 +372,24 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         this.databaseId = databaseId;
     }
 
-    /** The Oracle technology type. */
+    /**
+     * The Oracle technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final OracleConnection.TechnologyType technologyType;
 
     /**
      * The Oracle technology type.
-     *
      * @return the value
-     */
+     **/
     public OracleConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+    /**
+     * Connect descriptor or Easy Connect Naming method used to connect to a database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
@@ -384,12 +397,15 @@ public final class OracleConnectionSummary extends ConnectionSummary {
      * Connect descriptor or Easy Connect Naming method used to connect to a database.
      *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
-    /** The OCID of the database being referenced. */
+    /**
+     * The OCID of the database being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
@@ -397,7 +413,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
      * The OCID of the database being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
@@ -409,7 +425,6 @@ public final class OracleConnectionSummary extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

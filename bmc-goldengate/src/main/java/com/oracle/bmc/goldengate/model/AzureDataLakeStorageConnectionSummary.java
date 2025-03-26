@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the Azure Data Lake Storage Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the Azure Data Lake Storage Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AzureDataLakeStorageConnectionSummary.Builder.class)
+    builder = AzureDataLakeStorageConnectionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AzureDataLakeStorageConnectionSummary extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,23 +199,27 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Azure Data Lake Storage technology type. */
+        /**
+         * The Azure Data Lake Storage technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private AzureDataLakeStorageConnection.TechnologyType technologyType;
 
         /**
          * The Azure Data Lake Storage technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(
                 AzureDataLakeStorageConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** Used authentication mechanism to access Azure Data Lake Storage. */
+        /**
+         * Used authentication mechanism to access Azure Data Lake Storage.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AzureDataLakeStorageConnection.AuthenticationType authenticationType;
 
@@ -223,14 +228,17 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
          *
          * @param authenticationType the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationType(
                 AzureDataLakeStorageConnection.AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
-        /** Sets the Azure storage account name. */
+        /**
+         * Sets the Azure storage account name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountName")
         private String accountName;
 
@@ -239,123 +247,127 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
          *
          * @param accountName the value to set
          * @return this builder
-         */
+         **/
         public Builder accountName(String accountName) {
             this.accountName = accountName;
             this.__explicitlySet__.add("accountName");
             return this;
         }
         /**
-         * Azure tenant ID of the application. This property is required when 'authenticationType'
-         * is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-         */
+         * Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+         * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("azureTenantId")
         private String azureTenantId;
 
         /**
-         * Azure tenant ID of the application. This property is required when 'authenticationType'
-         * is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+         * Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+         * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
          *
          * @param azureTenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder azureTenantId(String azureTenantId) {
             this.azureTenantId = azureTenantId;
             this.__explicitlySet__.add("azureTenantId");
             return this;
         }
         /**
-         * Azure client ID of the application. This property is required when 'authenticationType'
-         * is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-         */
+         * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+         * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
-         * Azure client ID of the application. This property is required when 'authenticationType'
-         * is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+         * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
          *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
-        /** Azure Storage service endpoint. e.g: https://test.blob.core.windows.net */
+        /**
+         * Azure Storage service endpoint.
+         * e.g: https://test.blob.core.windows.net
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private String endpoint;
 
         /**
-         * Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+         * Azure Storage service endpoint.
+         * e.g: https://test.blob.core.windows.net
          *
          * @param endpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder endpoint(String endpoint) {
             this.endpoint = endpoint;
             this.__explicitlySet__.add("endpoint");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
-         * be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * Note: When provided, 'accountKey' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
         private String accountKeySecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
-         * be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * Note: When provided, 'accountKey' field must not be provided.
          *
          * @param accountKeySecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder accountKeySecretId(String accountKeySecretId) {
             this.accountKeySecretId = accountKeySecretId;
             this.__explicitlySet__.add("accountKeySecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
-         * provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * Note: When provided, 'sasToken' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
         private String sasTokenSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
-         * provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * Note: When provided, 'sasToken' field must not be provided.
          *
          * @param sasTokenSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sasTokenSecretId(String sasTokenSecretId) {
             this.sasTokenSecretId = sasTokenSecretId;
             this.__explicitlySet__.add("sasTokenSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
-         * not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Note: When provided, 'clientSecret' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
-         * not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Note: When provided, 'clientSecret' field must not be provided.
          *
          * @param clientSecretSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecretSecretId(String clientSecretSecretId) {
             this.clientSecretSecretId = clientSecretSecretId;
             this.__explicitlySet__.add("clientSecretSecretId");
@@ -492,7 +504,9 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -562,20 +576,24 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         this.clientSecretSecretId = clientSecretSecretId;
     }
 
-    /** The Azure Data Lake Storage technology type. */
+    /**
+     * The Azure Data Lake Storage technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final AzureDataLakeStorageConnection.TechnologyType technologyType;
 
     /**
      * The Azure Data Lake Storage technology type.
-     *
      * @return the value
-     */
+     **/
     public AzureDataLakeStorageConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** Used authentication mechanism to access Azure Data Lake Storage. */
+    /**
+     * Used authentication mechanism to access Azure Data Lake Storage.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AzureDataLakeStorageConnection.AuthenticationType authenticationType;
 
@@ -583,12 +601,15 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
      * Used authentication mechanism to access Azure Data Lake Storage.
      *
      * @return the value
-     */
+     **/
     public AzureDataLakeStorageConnection.AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
 
-    /** Sets the Azure storage account name. */
+    /**
+     * Sets the Azure storage account name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountName")
     private final String accountName;
 
@@ -596,111 +617,115 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
      * Sets the Azure storage account name.
      *
      * @return the value
-     */
+     **/
     public String getAccountName() {
         return accountName;
     }
 
     /**
-     * Azure tenant ID of the application. This property is required when 'authenticationType' is
-     * set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-     */
+     * Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+     * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("azureTenantId")
     private final String azureTenantId;
 
     /**
-     * Azure tenant ID of the application. This property is required when 'authenticationType' is
-     * set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+     * Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+     * e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      *
      * @return the value
-     */
+     **/
     public String getAzureTenantId() {
         return azureTenantId;
     }
 
     /**
-     * Azure client ID of the application. This property is required when 'authenticationType' is
-     * set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-     */
+     * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+     * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
-     * Azure client ID of the application. This property is required when 'authenticationType' is
-     * set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
+     * e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
-    /** Azure Storage service endpoint. e.g: https://test.blob.core.windows.net */
+    /**
+     * Azure Storage service endpoint.
+     * e.g: https://test.blob.core.windows.net
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final String endpoint;
 
     /**
-     * Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * Azure Storage service endpoint.
+     * e.g: https://test.blob.core.windows.net
      *
      * @return the value
-     */
+     **/
     public String getEndpoint() {
         return endpoint;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
-     * provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * Note: When provided, 'accountKey' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
     private final String accountKeySecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
-     * provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * Note: When provided, 'accountKey' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getAccountKeySecretId() {
         return accountKeySecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
-     * provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * Note: When provided, 'sasToken' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
     private final String sasTokenSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
-     * provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * Note: When provided, 'sasToken' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSasTokenSecretId() {
         return sasTokenSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
-     * be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Note: When provided, 'clientSecret' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
-     * be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Note: When provided, 'clientSecret' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getClientSecretSecretId() {
         return clientSecretSecretId;
     }
@@ -712,7 +737,6 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

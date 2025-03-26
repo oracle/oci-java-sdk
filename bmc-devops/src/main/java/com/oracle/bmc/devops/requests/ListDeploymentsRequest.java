@@ -6,95 +6,119 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeploymentsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDeploymentsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeploymentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDeploymentsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the parent pipeline. */
+    /**
+     * The ID of the parent pipeline.
+     */
     private String deployPipelineId;
 
-    /** The ID of the parent pipeline. */
+    /**
+     * The ID of the parent pipeline.
+     */
     public String getDeployPipelineId() {
         return deployPipelineId;
     }
-    /** Unique identifier or OCID for listing a single resource by ID. */
+    /**
+     * Unique identifier or OCID for listing a single resource by ID.
+     */
     private String id;
 
-    /** Unique identifier or OCID for listing a single resource by ID. */
+    /**
+     * Unique identifier or OCID for listing a single resource by ID.
+     */
     public String getId() {
         return id;
     }
-    /** The OCID of the compartment in which to list resources. */
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment in which to list resources. */
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** unique project identifier */
+    /**
+     * unique project identifier
+     */
     private String projectId;
 
-    /** unique project identifier */
+    /**
+     * unique project identifier
+     */
     public String getProjectId() {
         return projectId;
     }
-    /** A filter to return only Deployments that matches the given lifecycleState. */
+    /**
+     * A filter to return only Deployments that matches the given lifecycleState.
+     */
     private com.oracle.bmc.devops.model.Deployment.LifecycleState lifecycleState;
 
-    /** A filter to return only Deployments that matches the given lifecycleState. */
+    /**
+     * A filter to return only Deployments that matches the given lifecycleState.
+     */
     public com.oracle.bmc.devops.model.Deployment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use. Use either ascending or descending. */
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
-    /** The sort order to use. Use either ascending or descending. */
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for time created is
-     * descending. Default order for display name is ascending. If no value is specified, then the
-     * default time created value is considered.
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for time created is
-     * descending. Default order for display name is ascending. If no value is specified, then the
-     * default time created value is considered.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -128,58 +152,40 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for time created is
-     * descending. Default order for display name is ascending. If no value is specified, then the
-     * default time created value is considered.
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Search for DevOps resources that were created before a specific date. Specifying this
-     * parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all
-     * assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z
-     * offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * Search for DevOps resources that were created before a specific date. Specifying this
-     * parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all
-     * assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z
-     * offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
     /**
-     * Search for DevOps resources that were created after a specific date. Specifying this
-     * parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve
-     * all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ"
-     * format with a Z offset, as defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * Search for DevOps resources that were created after a specific date. Specifying this
-     * parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve
-     * all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ"
-     * format with a Z offset, as defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
@@ -188,15 +194,17 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDeploymentsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the parent pipeline. */
+        /**
+         * The ID of the parent pipeline.
+         */
         private String deployPipelineId = null;
 
         /**
          * The ID of the parent pipeline.
-         *
          * @param deployPipelineId the value to set
          * @return this builder instance
          */
@@ -205,12 +213,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Unique identifier or OCID for listing a single resource by ID. */
+        /**
+         * Unique identifier or OCID for listing a single resource by ID.
+         */
         private String id = null;
 
         /**
          * Unique identifier or OCID for listing a single resource by ID.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -219,12 +228,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The OCID of the compartment in which to list resources. */
+        /**
+         * The OCID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -233,12 +243,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** unique project identifier */
+        /**
+         * unique project identifier
+         */
         private String projectId = null;
 
         /**
          * unique project identifier
-         *
          * @param projectId the value to set
          * @return this builder instance
          */
@@ -247,12 +258,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** A filter to return only Deployments that matches the given lifecycleState. */
+        /**
+         * A filter to return only Deployments that matches the given lifecycleState.
+         */
         private com.oracle.bmc.devops.model.Deployment.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only Deployments that matches the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -262,12 +274,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -276,12 +289,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -291,15 +305,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -308,12 +319,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The sort order to use. Use either ascending or descending. */
+        /**
+         * The sort order to use. Use either ascending or descending.
+         */
         private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use. Use either ascending or descending.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -323,17 +335,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for time created
-         * is descending. Default order for display name is ascending. If no value is specified,
-         * then the default time created value is considered.
+         * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for time created
-         * is descending. Default order for display name is ascending. If no value is specified,
-         * then the default time created value is considered.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for display name is ascending. If no value is specified, then the default time created value is considered.
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -343,15 +350,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -361,19 +365,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Search for DevOps resources that were created before a specific date. Specifying this
-         * parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all
-         * assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with
-         * a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * Search for DevOps resources that were created before a specific date. Specifying this
-         * parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all
-         * assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with
-         * a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to {@code timeCreatedLessThan} parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
          */
@@ -383,21 +380,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Search for DevOps resources that were created after a specific date. Specifying this
-         * parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will
-         * retrieve all security assessments created after the specified created date, in
-         * "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * Search for DevOps resources that were created after a specific date. Specifying this
-         * parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will
-         * retrieve all security assessments created after the specified created date, in
-         * "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -409,19 +397,18 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -433,7 +420,6 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDeploymentsRequest o) {
@@ -458,11 +444,10 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListDeploymentsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDeploymentsRequest
          */
@@ -476,8 +461,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListDeploymentsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDeploymentsRequest
@@ -498,15 +482,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.timeCreatedLessThan = timeCreatedLessThan;
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return request;
-            // new ListDeploymentsRequest(deployPipelineId, id, compartmentId, projectId,
-            // lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId,
-            // timeCreatedLessThan, timeCreatedGreaterThanOrEqualTo);
+            // new ListDeploymentsRequest(deployPipelineId, id, compartmentId, projectId, lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId, timeCreatedLessThan, timeCreatedGreaterThanOrEqualTo);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -528,7 +509,6 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

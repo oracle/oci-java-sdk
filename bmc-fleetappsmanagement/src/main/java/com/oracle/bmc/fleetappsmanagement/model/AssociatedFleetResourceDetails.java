@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information about associated FleetResource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The information about associated FleetResource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedFleetResourceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssociatedFleetResourceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociatedFleetResourceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -40,61 +39,65 @@ public final class AssociatedFleetResourceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the resource. */
+        /**
+         * OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * OCID of the resource.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Type of the FleetResource. */
+        /**
+         * Type of the FleetResource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetResourceType")
         private String fleetResourceType;
 
         /**
          * Type of the FleetResource.
-         *
          * @param fleetResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetResourceType(String fleetResourceType) {
             this.fleetResourceType = fleetResourceType;
             this.__explicitlySet__.add("fleetResourceType");
             return this;
         }
-        /** Compartment Identifier[OCID]. */
+        /**
+         * Compartment Identifier[OCID].
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier[OCID].
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Tenancy Identifier[OCID]. */
+        /**
+         * Tenancy Identifier[OCID].
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * Tenancy Identifier[OCID].
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
@@ -135,7 +138,9 @@ public final class AssociatedFleetResourceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,54 +149,58 @@ public final class AssociatedFleetResourceDetails
         return new Builder().copy(this);
     }
 
-    /** OCID of the resource. */
+    /**
+     * OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Type of the FleetResource. */
+    /**
+     * Type of the FleetResource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetResourceType")
     private final String fleetResourceType;
 
     /**
      * Type of the FleetResource.
-     *
      * @return the value
-     */
+     **/
     public String getFleetResourceType() {
         return fleetResourceType;
     }
 
-    /** Compartment Identifier[OCID]. */
+    /**
+     * Compartment Identifier[OCID].
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier[OCID].
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Tenancy Identifier[OCID]. */
+    /**
+     * Tenancy Identifier[OCID].
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * Tenancy Identifier[OCID].
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
@@ -203,7 +212,6 @@ public final class AssociatedFleetResourceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

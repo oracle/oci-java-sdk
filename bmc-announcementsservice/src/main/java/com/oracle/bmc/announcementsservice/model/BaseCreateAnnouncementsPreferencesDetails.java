@@ -5,35 +5,35 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * The model for the parameters of announcement email preferences configured for the tenancy (root
- * compartment). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+ * The model for the parameters of announcement email preferences configured for the tenancy (root compartment).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = BaseCreateAnnouncementsPreferencesDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = BaseCreateAnnouncementsPreferencesDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateAnnouncementsPreferencesDetails.class,
-            name = "CreateAnnouncementsPreferencesDetails"),
+        value = CreateAnnouncementsPreferencesDetails.class,
+        name = "CreateAnnouncementsPreferencesDetails"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateAnnouncementsPreferencesDetails.class,
-            name = "UpdateAnnouncementsPreferencesDetails")
+        value = UpdateAnnouncementsPreferencesDetails.class,
+        name = "UpdateAnnouncementsPreferencesDetails"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BaseCreateAnnouncementsPreferencesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isUnsubscribed",
@@ -54,59 +54,49 @@ public class BaseCreateAnnouncementsPreferencesDetails
     }
 
     /**
-     * A Boolean value to indicate whether the specified compartment chooses to not to receive
-     * informational announcements by email. (Manage preferences for receiving announcements by
-     * email by specifying the {@code preferenceType} attribute instead.)
-     */
+     * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
+     * (Manage preferences for receiving announcements by email by specifying the {@code preferenceType} attribute instead.)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsubscribed")
     private final Boolean isUnsubscribed;
 
     /**
-     * A Boolean value to indicate whether the specified compartment chooses to not to receive
-     * informational announcements by email. (Manage preferences for receiving announcements by
-     * email by specifying the {@code preferenceType} attribute instead.)
+     * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
+     * (Manage preferences for receiving announcements by email by specifying the {@code preferenceType} attribute instead.)
      *
      * @return the value
-     */
+     **/
     public Boolean getIsUnsubscribed() {
         return isUnsubscribed;
     }
 
     /**
-     * The OCID of the compartment for which you want to manage announcement email preferences.
-     * (Specify the tenancy by providing the root compartment OCID.)
-     */
+     * The OCID of the compartment for which you want to manage announcement email preferences. (Specify the tenancy by providing the
+     * root compartment OCID.)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment for which you want to manage announcement email preferences.
-     * (Specify the tenancy by providing the root compartment OCID.)
+     * The OCID of the compartment for which you want to manage announcement email preferences. (Specify the tenancy by providing the
+     * root compartment OCID.)
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The string representing the user's preference, whether to opt in to only required
-     * announcements, to opt in to all announcements, including informational announcements, or to
-     * opt out of all announcements.
-     */
-    public enum PreferenceType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The string representing the user's preference, whether to opt in to only required announcements, to opt in to all announcements, including informational announcements, or to opt out of all announcements.
+     **/
+    public enum PreferenceType {
         OptInTenantAnnouncements("OPT_IN_TENANT_ANNOUNCEMENTS"),
         OptInTenantAndInformationalAnnouncements("OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS"),
         OptOutAllAnnouncements("OPT_OUT_ALL_ANNOUNCEMENTS"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(PreferenceType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, PreferenceType> map;
@@ -114,9 +104,7 @@ public class BaseCreateAnnouncementsPreferencesDetails
         static {
             map = new java.util.HashMap<>();
             for (PreferenceType v : PreferenceType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -134,46 +122,33 @@ public class BaseCreateAnnouncementsPreferencesDetails
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'PreferenceType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid PreferenceType: " + key);
         }
     };
     /**
-     * The string representing the user's preference, whether to opt in to only required
-     * announcements, to opt in to all announcements, including informational announcements, or to
-     * opt out of all announcements.
-     */
+     * The string representing the user's preference, whether to opt in to only required announcements, to opt in to all announcements, including informational announcements, or to opt out of all announcements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferenceType")
     private final PreferenceType preferenceType;
 
     /**
-     * The string representing the user's preference, whether to opt in to only required
-     * announcements, to opt in to all announcements, including informational announcements, or to
-     * opt out of all announcements.
-     *
+     * The string representing the user's preference, whether to opt in to only required announcements, to opt in to all announcements, including informational announcements, or to opt out of all announcements.
      * @return the value
-     */
+     **/
     public PreferenceType getPreferenceType() {
         return preferenceType;
     }
 
     /**
-     * The time zone in which the user prefers to receive announcements. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
-     */
+     * The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
     private final String preferredTimeZone;
 
     /**
-     * The time zone in which the user prefers to receive announcements. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
-     *
+     * The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * @return the value
-     */
+     **/
     public String getPreferredTimeZone() {
         return preferredTimeZone;
     }
@@ -185,7 +160,6 @@ public class BaseCreateAnnouncementsPreferencesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

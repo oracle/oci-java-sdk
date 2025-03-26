@@ -6,52 +6,68 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadFilesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUploadFilesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadFilesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUploadFilesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** Unique internal identifier to refer upload container. */
+    /**
+     * Unique internal identifier to refer upload container.
+     */
     private String uploadReference;
 
-    /** Unique internal identifier to refer upload container. */
+    /**
+     * Unique internal identifier to refer upload container.
+     */
     public String getUploadReference() {
         return uploadReference;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -84,23 +100,26 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is
-     * descending. timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name,
-     * logGroup accordingly.
+     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+     * timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is
-     * descending. timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name,
-     * logGroup accordingly.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+     * timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
+     *
+     **/
+    public enum SortBy {
         TimeStarted("timeStarted"),
         Name("name"),
         LogGroupName("logGroupName"),
@@ -140,9 +159,9 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is
-     * descending. timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name,
-     * logGroup accordingly.
+     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+     * timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -158,11 +177,15 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
     public String getSearchStr() {
         return searchStr;
     }
-    /** Upload File processing state. */
+    /**
+     * Upload File processing state.
+     */
     private java.util.List<Status> status;
 
-    /** Upload File processing state. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Upload File processing state.
+     **/
+    public enum Status {
         InProgress("IN_PROGRESS"),
         Successful("SUCCESSFUL"),
         Failed("FAILED"),
@@ -196,14 +219,20 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /** Upload File processing state. */
+    /**
+     * Upload File processing state.
+     */
     public java.util.List<Status> getStatus() {
         return status;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -211,10 +240,14 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUploadFilesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -228,12 +261,13 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Unique internal identifier to refer upload container. */
+        /**
+         * Unique internal identifier to refer upload container.
+         */
         private String uploadReference = null;
 
         /**
          * Unique internal identifier to refer upload container.
-         *
          * @param uploadReference the value to set
          * @return this builder instance
          */
@@ -242,12 +276,13 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -257,15 +292,12 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -274,7 +306,10 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -289,16 +324,15 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeStarted
-         * is descending. timeCreated, fileName and logGroup are deprecated. Instead use
-         * timestarted, name, logGroup accordingly.
+         * The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+         * timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeStarted
-         * is descending. timeCreated, fileName and logGroup are deprecated. Instead use
-         * timestarted, name, logGroup accordingly.
+         * The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+         * timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -309,15 +343,12 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * This can be used to filter upload files based on the file, log group and log source
-         * names.
+         * This can be used to filter upload files based on the file, log group and log source names.
          */
         private String searchStr = null;
 
         /**
-         * This can be used to filter upload files based on the file, log group and log source
-         * names.
-         *
+         * This can be used to filter upload files based on the file, log group and log source names.
          * @param searchStr the value to set
          * @return this builder instance
          */
@@ -326,12 +357,13 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Upload File processing state. */
+        /**
+         * Upload File processing state.
+         */
         private java.util.List<Status> status = null;
 
         /**
          * Upload File processing state.
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -342,7 +374,6 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Singular setter. Upload File processing state.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -350,12 +381,13 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this.status(java.util.Arrays.asList(singularValue));
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -366,19 +398,18 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -390,7 +421,6 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListUploadFilesRequest o) {
@@ -411,11 +441,10 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListUploadFilesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListUploadFilesRequest
          */
@@ -429,8 +458,7 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListUploadFilesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListUploadFilesRequest
@@ -447,14 +475,12 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.status = status;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListUploadFilesRequest(namespaceName, uploadReference, limit, page, sortOrder,
-            // sortBy, searchStr, status, opcRequestId);
+            // new ListUploadFilesRequest(namespaceName, uploadReference, limit, page, sortOrder, sortBy, searchStr, status, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -472,7 +498,6 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Details of the request to create DRS file in a Fleet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Details of the request to create DRS file in a Fleet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDrsFileDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateDrsFileDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateDrsFileDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateDrsFileDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bucketName", "namespace", "drsFileName"})
     public CreateDrsFileDetails(String bucketName, String namespace, String drsFileName) {
@@ -33,46 +31,49 @@ public final class CreateDrsFileDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Object Storage bucket name where the DRS file is located. */
+        /**
+         * The Object Storage bucket name where the DRS file is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The Object Storage bucket name where the DRS file is located.
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The namespace for Object Storage. */
+        /**
+         * The namespace for Object Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The namespace for Object Storage.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The name of the DRS file in Object Store. */
+        /**
+         * The name of the DRS file in Object Store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drsFileName")
         private String drsFileName;
 
         /**
          * The name of the DRS file in Object Store.
-         *
          * @param drsFileName the value to set
          * @return this builder
-         */
+         **/
         public Builder drsFileName(String drsFileName) {
             this.drsFileName = drsFileName;
             this.__explicitlySet__.add("drsFileName");
@@ -106,7 +107,9 @@ public final class CreateDrsFileDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class CreateDrsFileDetails
         return new Builder().copy(this);
     }
 
-    /** The Object Storage bucket name where the DRS file is located. */
+    /**
+     * The Object Storage bucket name where the DRS file is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The Object Storage bucket name where the DRS file is located.
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** The namespace for Object Storage. */
+    /**
+     * The namespace for Object Storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The namespace for Object Storage.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The name of the DRS file in Object Store. */
+    /**
+     * The name of the DRS file in Object Store.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("drsFileName")
     private final String drsFileName;
 
     /**
      * The name of the DRS file in Object Store.
-     *
      * @return the value
-     */
+     **/
     public String getDrsFileName() {
         return drsFileName;
     }
@@ -161,7 +167,6 @@ public final class CreateDrsFileDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

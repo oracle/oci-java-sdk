@@ -5,39 +5,42 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The minimum details of a work item. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The minimum details of a work item.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind",
-        defaultImpl = WorkItemDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind",
+    defaultImpl = WorkItemDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DeployedApplicationWorkItemDetails.class,
-            name = "DEPLOYED_APPLICATION"),
+        value = DeployedApplicationWorkItemDetails.class,
+        name = "DEPLOYED_APPLICATION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LcmWorkItemDetails.class,
-            name = "LCM"),
+        value = LcmWorkItemDetails.class,
+        name = "LCM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BasicWorkItemDetails.class,
-            name = "BASIC"),
+        value = BasicWorkItemDetails.class,
+        name = "BASIC"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ApplicationWorkItemDetails.class,
-            name = "APPLICATION")
+        value = ApplicationWorkItemDetails.class,
+        name = "APPLICATION"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class WorkItemDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class WorkItemDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workItemType"})
     protected WorkItemDetails(WorkItemType workItemType) {
@@ -45,15 +48,16 @@ public class WorkItemDetails extends com.oracle.bmc.http.client.internal.Explici
         this.workItemType = workItemType;
     }
 
-    /** The work item type. */
+    /**
+     * The work item type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workItemType")
     private final WorkItemType workItemType;
 
     /**
      * The work item type.
-     *
      * @return the value
-     */
+     **/
     public WorkItemType getWorkItemType() {
         return workItemType;
     }
@@ -65,7 +69,6 @@ public class WorkItemDetails extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -101,16 +104,18 @@ public class WorkItemDetails extends com.oracle.bmc.http.client.internal.Explici
         return result;
     }
 
-    /** The kind of work item details. */
-    public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The kind of work item details.
+     **/
+    public enum Kind {
         Basic("BASIC"),
         Application("APPLICATION"),
         Lcm("LCM"),
         DeployedApplication("DEPLOYED_APPLICATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

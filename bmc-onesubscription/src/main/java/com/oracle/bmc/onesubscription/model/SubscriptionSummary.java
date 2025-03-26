@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Subscription summary <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * Subscription summary
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SubscriptionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SubscriptionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SubscriptionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SubscriptionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "status",
@@ -55,7 +54,10 @@ public final class SubscriptionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Status of the plan */
+        /**
+         * Status of the plan
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
@@ -64,13 +66,16 @@ public final class SubscriptionSummary
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Represents the date when the first service of the subscription was activated */
+        /**
+         * Represents the date when the first service of the subscription was activated
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -79,13 +84,16 @@ public final class SubscriptionSummary
          *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Represents the date when the last service of the subscription ends */
+        /**
+         * Represents the date when the last service of the subscription ends
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
@@ -94,7 +102,7 @@ public final class SubscriptionSummary
          *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
@@ -109,7 +117,10 @@ public final class SubscriptionSummary
             this.__explicitlySet__.add("currency");
             return this;
         }
-        /** Customer friendly service name provided by PRG */
+        /**
+         * Customer friendly service name provided by PRG
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
@@ -118,13 +129,16 @@ public final class SubscriptionSummary
          *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** Hold reason of the plan */
+        /**
+         * Hold reason of the plan
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("holdReason")
         private String holdReason;
 
@@ -133,13 +147,16 @@ public final class SubscriptionSummary
          *
          * @param holdReason the value to set
          * @return this builder
-         */
+         **/
         public Builder holdReason(String holdReason) {
             this.holdReason = holdReason;
             this.__explicitlySet__.add("holdReason");
             return this;
         }
-        /** Represents the date of the hold release */
+        /**
+         * Represents the date of the hold release
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeHoldReleaseEta")
         private java.util.Date timeHoldReleaseEta;
 
@@ -148,13 +165,16 @@ public final class SubscriptionSummary
          *
          * @param timeHoldReleaseEta the value to set
          * @return this builder
-         */
+         **/
         public Builder timeHoldReleaseEta(java.util.Date timeHoldReleaseEta) {
             this.timeHoldReleaseEta = timeHoldReleaseEta;
             this.__explicitlySet__.add("timeHoldReleaseEta");
             return this;
         }
-        /** List of Subscribed Services of the plan */
+        /**
+         * List of Subscribed Services of the plan
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscribedServices")
         private java.util.List<SubscriptionSubscribedService> subscribedServices;
 
@@ -163,7 +183,7 @@ public final class SubscriptionSummary
          *
          * @param subscribedServices the value to set
          * @return this builder
-         */
+         **/
         public Builder subscribedServices(
                 java.util.List<SubscriptionSubscribedService> subscribedServices) {
             this.subscribedServices = subscribedServices;
@@ -221,7 +241,9 @@ public final class SubscriptionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -230,7 +252,10 @@ public final class SubscriptionSummary
         return new Builder().copy(this);
     }
 
-    /** Status of the plan */
+    /**
+     * Status of the plan
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
@@ -238,12 +263,15 @@ public final class SubscriptionSummary
      * Status of the plan
      *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** Represents the date when the first service of the subscription was activated */
+    /**
+     * Represents the date when the first service of the subscription was activated
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
@@ -251,12 +279,15 @@ public final class SubscriptionSummary
      * Represents the date when the first service of the subscription was activated
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** Represents the date when the last service of the subscription ends */
+    /**
+     * Represents the date when the last service of the subscription ends
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
@@ -264,7 +295,7 @@ public final class SubscriptionSummary
      * Represents the date when the last service of the subscription ends
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -276,7 +307,10 @@ public final class SubscriptionSummary
         return currency;
     }
 
-    /** Customer friendly service name provided by PRG */
+    /**
+     * Customer friendly service name provided by PRG
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
@@ -284,12 +318,15 @@ public final class SubscriptionSummary
      * Customer friendly service name provided by PRG
      *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** Hold reason of the plan */
+    /**
+     * Hold reason of the plan
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("holdReason")
     private final String holdReason;
 
@@ -297,12 +334,15 @@ public final class SubscriptionSummary
      * Hold reason of the plan
      *
      * @return the value
-     */
+     **/
     public String getHoldReason() {
         return holdReason;
     }
 
-    /** Represents the date of the hold release */
+    /**
+     * Represents the date of the hold release
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeHoldReleaseEta")
     private final java.util.Date timeHoldReleaseEta;
 
@@ -310,12 +350,15 @@ public final class SubscriptionSummary
      * Represents the date of the hold release
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeHoldReleaseEta() {
         return timeHoldReleaseEta;
     }
 
-    /** List of Subscribed Services of the plan */
+    /**
+     * List of Subscribed Services of the plan
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscribedServices")
     private final java.util.List<SubscriptionSubscribedService> subscribedServices;
 
@@ -323,7 +366,7 @@ public final class SubscriptionSummary
      * List of Subscribed Services of the plan
      *
      * @return the value
-     */
+     **/
     public java.util.List<SubscriptionSubscribedService> getSubscribedServices() {
         return subscribedServices;
     }
@@ -335,7 +378,6 @@ public final class SubscriptionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

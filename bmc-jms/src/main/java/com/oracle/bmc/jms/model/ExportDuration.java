@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Export duration in days */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ExportDuration implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Export duration in days
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum ExportDuration {
     Last30Days("LAST_30_DAYS"),
     Last60Days("LAST_60_DAYS"),
     Last90Days("LAST_90_DAYS"),

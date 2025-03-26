@@ -5,42 +5,39 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * An individual employee or system that needs to manage or use your company's Oracle Cloud
- * Infrastructure resources. Users might need to launch instances, manage remote disks, work with
- * your cloud network, etc. Users have one or more IAM Service credentials ({@link ApiKey}, {@link
- * UIPassword}, {@link SwiftPassword} and {@link AuthToken}). For more information, see [User
- * Credentials](https://docs.oracle.com/iaas/Content/Identity/usercred/usercredentials.htm)). End
- * users of your application are not typically IAM Service users, but for tenancies that have
- * identity domains, they might be. For conceptual information about users and other IAM Service
- * components, see [Overview of
- * IAM](https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm).
+ * An individual employee or system that needs to manage or use your company's Oracle Cloud Infrastructure
+ * resources. Users might need to launch instances, manage remote disks, work with your cloud network, etc. Users
+ * have one or more IAM Service credentials ({@link ApiKey},
+ * {@link UIPassword}, {@link SwiftPassword} and
+ * {@link AuthToken}).
+ * For more information, see [User Credentials](https://docs.oracle.com/iaas/Content/Identity/usercred/usercredentials.htm)). End users of your
+ * application are not typically IAM Service users, but for tenancies that have identity domains, they might be.
+ * For conceptual information about users and other IAM Service components, see [Overview of IAM](https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm).
+ * <p>
+ * These users are created directly within the Oracle Cloud Infrastructure system, via the IAM service.
+ * They are different from *federated users*, who authenticate themselves to the Oracle Cloud Infrastructure
+ * Console via an identity provider. For more information, see
+ * [Identity Providers and Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access,
+ * see [Get Started with Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
+ * using the API.
  *
- * <p>These users are created directly within the Oracle Cloud Infrastructure system, via the IAM
- * service. They are different from *federated users*, who authenticate themselves to the Oracle
- * Cloud Infrastructure Console via an identity provider. For more information, see [Identity
- * Providers and Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
- *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Get Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
- *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -104,50 +101,53 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the user. */
+        /**
+         * The OCID of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the user.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the tenancy containing the user. */
+        /**
+         * The OCID of the tenancy containing the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the tenancy containing the user.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The name you assign to the user during creation. This is the user's login for the
-         * Console. The name must be unique across all users in the tenancy and cannot be changed.
-         */
+         * The name you assign to the user during creation. This is the user's login for the Console.
+         * The name must be unique across all users in the tenancy and cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name you assign to the user during creation. This is the user's login for the
-         * Console. The name must be unique across all users in the tenancy and cannot be changed.
+         * The name you assign to the user during creation. This is the user's login for the Console.
+         * The name must be unique across all users in the tenancy and cannot be changed.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -155,105 +155,109 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * The description you assign to the user. Does not have to be unique, and it's changeable.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
          *
-         * <p>(For tenancies that support identity domains) You can have an empty description.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description you assign to the user. Does not have to be unique, and it's changeable.
-         *
-         * <p>(For tenancies that support identity domains) You can have an empty description.
+         * <p>
+         * (For tenancies that support identity domains) You can have an empty description.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The email address you assign to the user. The email address must be unique across all
-         * users in the tenancy.
+         * The email address you assign to the user.
+         * The email address must be unique across all users in the tenancy.
+         * <p>
+         * (For tenancies that support identity domains) The email address is required unless the requirement is disabled at the tenancy level.
          *
-         * <p>(For tenancies that support identity domains) The email address is required unless the
-         * requirement is disabled at the tenancy level.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
-         * The email address you assign to the user. The email address must be unique across all
-         * users in the tenancy.
-         *
-         * <p>(For tenancies that support identity domains) The email address is required unless the
-         * requirement is disabled at the tenancy level.
+         * The email address you assign to the user.
+         * The email address must be unique across all users in the tenancy.
+         * <p>
+         * (For tenancies that support identity domains) The email address is required unless the requirement is disabled at the tenancy level.
          *
          * @param email the value to set
          * @return this builder
-         */
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
             return this;
         }
-        /** Whether the email address has been validated. */
+        /**
+         * Whether the email address has been validated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailVerified")
         private Boolean emailVerified;
 
         /**
          * Whether the email address has been validated.
-         *
          * @param emailVerified the value to set
          * @return this builder
-         */
+         **/
         public Builder emailVerified(Boolean emailVerified) {
             this.emailVerified = emailVerified;
             this.__explicitlySet__.add("emailVerified");
             return this;
         }
-        /** DB username of the DB credential. Has to be unique across the tenancy. */
+        /**
+         * DB username of the DB credential. Has to be unique across the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private String dbUserName;
 
         /**
          * DB username of the DB credential. Has to be unique across the tenancy.
-         *
          * @param dbUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUserName(String dbUserName) {
             this.dbUserName = dbUserName;
             this.__explicitlySet__.add("dbUserName");
             return this;
         }
-        /** The OCID of the {@code IdentityProvider} this user belongs to. */
+        /**
+         * The OCID of the {@code IdentityProvider} this user belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
         private String identityProviderId;
 
         /**
          * The OCID of the {@code IdentityProvider} this user belongs to.
-         *
          * @param identityProviderId the value to set
          * @return this builder
-         */
+         **/
         public Builder identityProviderId(String identityProviderId) {
             this.identityProviderId = identityProviderId;
             this.__explicitlySet__.add("identityProviderId");
             return this;
         }
-        /** Identifier of the user in the identity provider */
+        /**
+         * Identifier of the user in the identity provider
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalIdentifier")
         private String externalIdentifier;
 
         /**
          * Identifier of the user in the identity provider
-         *
          * @param externalIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder externalIdentifier(String externalIdentifier) {
             this.externalIdentifier = externalIdentifier;
             this.__explicitlySet__.add("externalIdentifier");
@@ -261,114 +265,115 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * Date and time the user was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the user was created, in the format defined by RFC3339.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The user's current state. After creating a user, make sure its {@code lifecycleState}
-         * changes from CREATING to ACTIVE before using it.
-         */
+         * The user's current state. After creating a user, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The user's current state. After creating a user, make sure its {@code lifecycleState}
-         * changes from CREATING to ACTIVE before using it.
+         * The user's current state. After creating a user, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing
-         * the reason why the user is inactive:
+         * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing the reason why the user
+         * is inactive:
+         * <p>
+         * - bit 0: SUSPENDED (reserved for future use)
+         * - bit 1: DISABLED (reserved for future use)
+         * - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
          *
-         * <p>- bit 0: SUSPENDED (reserved for future use) - bit 1: DISABLED (reserved for future
-         * use) - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts
-         * for the Console)
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
         /**
-         * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing
-         * the reason why the user is inactive:
-         *
-         * <p>- bit 0: SUSPENDED (reserved for future use) - bit 1: DISABLED (reserved for future
-         * use) - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts
-         * for the Console)
+         * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing the reason why the user
+         * is inactive:
+         * <p>
+         * - bit 0: SUSPENDED (reserved for future use)
+         * - bit 1: DISABLED (reserved for future use)
+         * - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
          *
          * @param inactiveStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -384,86 +389,93 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("capabilities");
             return this;
         }
-        /** Flag indicates if MFA has been activated for the user. */
+        /**
+         * Flag indicates if MFA has been activated for the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
         private Boolean isMfaActivated;
 
         /**
          * Flag indicates if MFA has been activated for the user.
-         *
          * @param isMfaActivated the value to set
          * @return this builder
-         */
+         **/
         public Builder isMfaActivated(Boolean isMfaActivated) {
             this.isMfaActivated = isMfaActivated;
             this.__explicitlySet__.add("isMfaActivated");
             return this;
         }
         /**
-         * The date and time of when the user most recently logged in the format defined by RFC3339
-         * (ex. {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
+         * The date and time of when the user most recently logged in the
+         * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+         * If there is no login history, this field is null.
+         * <p>
+         * For illustrative purposes, suppose we have a user who has logged in
+         * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+         * They then login again on July 2nd, 2020 at 1500 PST.
+         * <p>
+         * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+         * <p>
+         * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
          *
-         * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020
-         * at 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at
-         * 1500 PST.
-         *
-         * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-         *
-         * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginTime")
         private java.util.Date lastSuccessfulLoginTime;
 
         /**
-         * The date and time of when the user most recently logged in the format defined by RFC3339
-         * (ex. {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
-         *
-         * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020
-         * at 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at
-         * 1500 PST.
-         *
-         * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-         *
-         * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
+         * The date and time of when the user most recently logged in the
+         * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+         * If there is no login history, this field is null.
+         * <p>
+         * For illustrative purposes, suppose we have a user who has logged in
+         * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+         * They then login again on July 2nd, 2020 at 1500 PST.
+         * <p>
+         * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+         * <p>
+         * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
          *
          * @param lastSuccessfulLoginTime the value to set
          * @return this builder
-         */
+         **/
         public Builder lastSuccessfulLoginTime(java.util.Date lastSuccessfulLoginTime) {
             this.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
             this.__explicitlySet__.add("lastSuccessfulLoginTime");
             return this;
         }
         /**
-         * The date and time of when the user most recently logged in the format defined by RFC3339
-         * (ex. {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
+         * The date and time of when the user most recently logged in the
+         * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+         * If there is no login history, this field is null.
+         * <p>
+         * For illustrative purposes, suppose we have a user who has logged in
+         * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+         * They then login again on July 2nd, 2020 at 1500 PST.
+         * <p>
+         * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+         * <p>
+         * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
          *
-         * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020
-         * at 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at
-         * 1500 PST.
-         *
-         * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-         *
-         * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginTime")
         private java.util.Date previousSuccessfulLoginTime;
 
         /**
-         * The date and time of when the user most recently logged in the format defined by RFC3339
-         * (ex. {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
-         *
-         * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020
-         * at 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at
-         * 1500 PST.
-         *
-         * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-         *
-         * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
+         * The date and time of when the user most recently logged in the
+         * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+         * If there is no login history, this field is null.
+         * <p>
+         * For illustrative purposes, suppose we have a user who has logged in
+         * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+         * They then login again on July 2nd, 2020 at 1500 PST.
+         * <p>
+         * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+         * <p>
+         * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
          *
          * @param previousSuccessfulLoginTime the value to set
          * @return this builder
-         */
+         **/
         public Builder previousSuccessfulLoginTime(java.util.Date previousSuccessfulLoginTime) {
             this.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
             this.__explicitlySet__.add("previousSuccessfulLoginTime");
@@ -560,7 +572,9 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -569,28 +583,30 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** The OCID of the user. */
+    /**
+     * The OCID of the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the user.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the tenancy containing the user. */
+    /**
+     * The OCID of the tenancy containing the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy containing the user.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -598,7 +614,8 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * The name you assign to the user during creation. This is the user's login for the Console.
      * The name must be unique across all users in the tenancy and cannot be changed.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -607,129 +624,135 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
      * The name must be unique across all users in the tenancy and cannot be changed.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * The description you assign to the user. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
      *
-     * <p>(For tenancies that support identity domains) You can have an empty description.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description you assign to the user. Does not have to be unique, and it's changeable.
-     *
-     * <p>(For tenancies that support identity domains) You can have an empty description.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The email address you assign to the user. The email address must be unique across all users
-     * in the tenancy.
+     * The email address you assign to the user.
+     * The email address must be unique across all users in the tenancy.
+     * <p>
+     * (For tenancies that support identity domains) The email address is required unless the requirement is disabled at the tenancy level.
      *
-     * <p>(For tenancies that support identity domains) The email address is required unless the
-     * requirement is disabled at the tenancy level.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
-     * The email address you assign to the user. The email address must be unique across all users
-     * in the tenancy.
-     *
-     * <p>(For tenancies that support identity domains) The email address is required unless the
-     * requirement is disabled at the tenancy level.
+     * The email address you assign to the user.
+     * The email address must be unique across all users in the tenancy.
+     * <p>
+     * (For tenancies that support identity domains) The email address is required unless the requirement is disabled at the tenancy level.
      *
      * @return the value
-     */
+     **/
     public String getEmail() {
         return email;
     }
 
-    /** Whether the email address has been validated. */
+    /**
+     * Whether the email address has been validated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailVerified")
     private final Boolean emailVerified;
 
     /**
      * Whether the email address has been validated.
-     *
      * @return the value
-     */
+     **/
     public Boolean getEmailVerified() {
         return emailVerified;
     }
 
-    /** DB username of the DB credential. Has to be unique across the tenancy. */
+    /**
+     * DB username of the DB credential. Has to be unique across the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final String dbUserName;
 
     /**
      * DB username of the DB credential. Has to be unique across the tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getDbUserName() {
         return dbUserName;
     }
 
-    /** The OCID of the {@code IdentityProvider} this user belongs to. */
+    /**
+     * The OCID of the {@code IdentityProvider} this user belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
     private final String identityProviderId;
 
     /**
      * The OCID of the {@code IdentityProvider} this user belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getIdentityProviderId() {
         return identityProviderId;
     }
 
-    /** Identifier of the user in the identity provider */
+    /**
+     * Identifier of the user in the identity provider
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalIdentifier")
     private final String externalIdentifier;
 
     /**
      * Identifier of the user in the identity provider
-     *
      * @return the value
-     */
+     **/
     public String getExternalIdentifier() {
         return externalIdentifier;
     }
 
     /**
      * Date and time the user was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the user was created, in the format defined by RFC3339.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes
-     * from CREATING to ACTIVE before using it.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes from CREATING to
+     * ACTIVE before using it.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -737,8 +760,8 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -778,87 +801,87 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     };
     /**
-     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes
-     * from CREATING to ACTIVE before using it.
-     */
+     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes from CREATING to
+     * ACTIVE before using it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes
-     * from CREATING to ACTIVE before using it.
+     * The user's current state. After creating a user, make sure its {@code lifecycleState} changes from CREATING to
+     * ACTIVE before using it.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing the
-     * reason why the user is inactive:
+     * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing the reason why the user
+     * is inactive:
+     * <p>
+     * - bit 0: SUSPENDED (reserved for future use)
+     * - bit 1: DISABLED (reserved for future use)
+     * - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      *
-     * <p>- bit 0: SUSPENDED (reserved for future use) - bit 1: DISABLED (reserved for future use) -
-     * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the
-     * Console)
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
     /**
-     * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing the
-     * reason why the user is inactive:
-     *
-     * <p>- bit 0: SUSPENDED (reserved for future use) - bit 1: DISABLED (reserved for future use) -
-     * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the
-     * Console)
+     * Returned only if the user's {@code lifecycleState} is INACTIVE. A 16-bit value showing the reason why the user
+     * is inactive:
+     * <p>
+     * - bit 0: SUSPENDED (reserved for future use)
+     * - bit 1: DISABLED (reserved for future use)
+     * - bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      *
      * @return the value
-     */
+     **/
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -870,81 +893,88 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return capabilities;
     }
 
-    /** Flag indicates if MFA has been activated for the user. */
+    /**
+     * Flag indicates if MFA has been activated for the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
     private final Boolean isMfaActivated;
 
     /**
      * Flag indicates if MFA has been activated for the user.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMfaActivated() {
         return isMfaActivated;
     }
 
     /**
-     * The date and time of when the user most recently logged in the format defined by RFC3339 (ex.
-     * {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
+     * The date and time of when the user most recently logged in the
+     * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+     * If there is no login history, this field is null.
+     * <p>
+     * For illustrative purposes, suppose we have a user who has logged in
+     * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+     * They then login again on July 2nd, 2020 at 1500 PST.
+     * <p>
+     * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+     * <p>
+     * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
      *
-     * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020 at
-     * 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at 1500
-     * PST.
-     *
-     * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-     *
-     * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginTime")
     private final java.util.Date lastSuccessfulLoginTime;
 
     /**
-     * The date and time of when the user most recently logged in the format defined by RFC3339 (ex.
-     * {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
-     *
-     * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020 at
-     * 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at 1500
-     * PST.
-     *
-     * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-     *
-     * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
+     * The date and time of when the user most recently logged in the
+     * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+     * If there is no login history, this field is null.
+     * <p>
+     * For illustrative purposes, suppose we have a user who has logged in
+     * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+     * They then login again on July 2nd, 2020 at 1500 PST.
+     * <p>
+     * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+     * <p>
+     * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getLastSuccessfulLoginTime() {
         return lastSuccessfulLoginTime;
     }
 
     /**
-     * The date and time of when the user most recently logged in the format defined by RFC3339 (ex.
-     * {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
+     * The date and time of when the user most recently logged in the
+     * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+     * If there is no login history, this field is null.
+     * <p>
+     * For illustrative purposes, suppose we have a user who has logged in
+     * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+     * They then login again on July 2nd, 2020 at 1500 PST.
+     * <p>
+     * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+     * <p>
+     * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
      *
-     * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020 at
-     * 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at 1500
-     * PST.
-     *
-     * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-     *
-     * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginTime")
     private final java.util.Date previousSuccessfulLoginTime;
 
     /**
-     * The date and time of when the user most recently logged in the format defined by RFC3339 (ex.
-     * {@code 2016-08-25T21:10:29.600Z}). If there is no login history, this field is null.
-     *
-     * <p>For illustrative purposes, suppose we have a user who has logged in at July 1st, 2020 at
-     * 1200 PST and logged out 30 minutes later. They then login again on July 2nd, 2020 at 1500
-     * PST.
-     *
-     * <p>Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
-     *
-     * <p>Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
+     * The date and time of when the user most recently logged in the
+     * format defined by RFC3339 (ex. {@code 2016-08-25T21:10:29.600Z}).
+     * If there is no login history, this field is null.
+     * <p>
+     * For illustrative purposes, suppose we have a user who has logged in
+     * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+     * They then login again on July 2nd, 2020 at 1500 PST.
+     * <p>
+     * Their previousSuccessfulLoginTime would be {@code 2020-07-01:19:00.000Z}.
+     * <p>
+     * Their lastSuccessfulLoginTime would be {@code 2020-07-02:22:00.000Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getPreviousSuccessfulLoginTime() {
         return previousSuccessfulLoginTime;
     }
@@ -956,7 +986,6 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

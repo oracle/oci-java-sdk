@@ -5,12 +5,10 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * Qualitative evaluation of the severity for a vulnerability, from NONE to CRITICAL. Used to
- * configure requests that specify severity requirements, that's why UNSET is also a valid value
- * (unlike in VulnerabilitySeverity).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-public enum ConfigSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+ * Qualitative evaluation of the severity for a vulnerability, from NONE to CRITICAL. Used to configure requests that specify severity requirements, that's why UNSET is also a valid value (unlike in VulnerabilitySeverity).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+public enum ConfigSeverity {
     Unset("UNSET"),
     None("NONE"),
     Low("LOW"),

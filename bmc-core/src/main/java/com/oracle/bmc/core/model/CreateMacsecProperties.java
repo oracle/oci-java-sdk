@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Properties used to configure MACsec (if capable). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Properties used to configure MACsec (if capable).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMacsecProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMacsecProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMacsecProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "state",
@@ -43,16 +42,17 @@ public final class CreateMacsecProperties
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Indicates whether or not MACsec is enabled. */
+        /**
+         * Indicates whether or not MACsec is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private MacsecState state;
 
         /**
          * Indicates whether or not MACsec is enabled.
-         *
          * @param state the value to set
          * @return this builder
-         */
+         **/
         public Builder state(MacsecState state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -67,35 +67,33 @@ public final class CreateMacsecProperties
             this.__explicitlySet__.add("primaryKey");
             return this;
         }
-        /** Type of encryption cipher suite to use for the MACsec connection. */
+        /**
+         * Type of encryption cipher suite to use for the MACsec connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionCipher")
         private MacsecEncryptionCipher encryptionCipher;
 
         /**
          * Type of encryption cipher suite to use for the MACsec connection.
-         *
          * @param encryptionCipher the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionCipher(MacsecEncryptionCipher encryptionCipher) {
             this.encryptionCipher = encryptionCipher;
             this.__explicitlySet__.add("encryptionCipher");
             return this;
         }
         /**
-         * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA)
-         * fails.
-         */
+         * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnprotectedTrafficAllowed")
         private Boolean isUnprotectedTrafficAllowed;
 
         /**
-         * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA)
-         * fails.
-         *
+         * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
          * @param isUnprotectedTrafficAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnprotectedTrafficAllowed(Boolean isUnprotectedTrafficAllowed) {
             this.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             this.__explicitlySet__.add("isUnprotectedTrafficAllowed");
@@ -136,7 +134,9 @@ public final class CreateMacsecProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,15 +145,16 @@ public final class CreateMacsecProperties
         return new Builder().copy(this);
     }
 
-    /** Indicates whether or not MACsec is enabled. */
+    /**
+     * Indicates whether or not MACsec is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final MacsecState state;
 
     /**
      * Indicates whether or not MACsec is enabled.
-     *
      * @return the value
-     */
+     **/
     public MacsecState getState() {
         return state;
     }
@@ -165,32 +166,30 @@ public final class CreateMacsecProperties
         return primaryKey;
     }
 
-    /** Type of encryption cipher suite to use for the MACsec connection. */
+    /**
+     * Type of encryption cipher suite to use for the MACsec connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionCipher")
     private final MacsecEncryptionCipher encryptionCipher;
 
     /**
      * Type of encryption cipher suite to use for the MACsec connection.
-     *
      * @return the value
-     */
+     **/
     public MacsecEncryptionCipher getEncryptionCipher() {
         return encryptionCipher;
     }
 
     /**
-     * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA)
-     * fails.
-     */
+     * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnprotectedTrafficAllowed")
     private final Boolean isUnprotectedTrafficAllowed;
 
     /**
-     * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA)
-     * fails.
-     *
+     * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
      * @return the value
-     */
+     **/
     public Boolean getIsUnprotectedTrafficAllowed() {
         return isUnprotectedTrafficAllowed;
     }
@@ -202,7 +201,6 @@ public final class CreateMacsecProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

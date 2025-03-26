@@ -5,24 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A data series specific to a particular link output field. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * A data series specific to a particular link output field.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChartDataColumn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ChartDataColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -133,7 +133,10 @@ public final class ChartDataColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /** Data points for each timestamp for a specific link field un-filtered. */
+        /**
+         * Data points for each timestamp for a specific link field un-filtered.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataItems")
         private java.util.List<Object> dataItems;
 
@@ -142,26 +145,25 @@ public final class ChartDataColumn extends AbstractColumn {
          *
          * @param dataItems the value to set
          * @return this builder
-         */
+         **/
         public Builder dataItems(java.util.List<Object> dataItems) {
             this.dataItems = dataItems;
             this.__explicitlySet__.add("dataItems");
             return this;
         }
         /**
-         * Data points filtered by query string. May not contain data points for each timestamp due
-         * to filtering.
-         */
+         * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filteredDataItems")
         private java.util.List<Object> filteredDataItems;
 
         /**
-         * Data points filtered by query string. May not contain data points for each timestamp due
-         * to filtering.
+         * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
          *
          * @param filteredDataItems the value to set
          * @return this builder
-         */
+         **/
         public Builder filteredDataItems(java.util.List<Object> filteredDataItems) {
             this.filteredDataItems = filteredDataItems;
             this.__explicitlySet__.add("filteredDataItems");
@@ -242,7 +244,9 @@ public final class ChartDataColumn extends AbstractColumn {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -284,7 +288,10 @@ public final class ChartDataColumn extends AbstractColumn {
         this.filteredDataItems = filteredDataItems;
     }
 
-    /** Data points for each timestamp for a specific link field un-filtered. */
+    /**
+     * Data points for each timestamp for a specific link field un-filtered.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataItems")
     private final java.util.List<Object> dataItems;
 
@@ -292,24 +299,23 @@ public final class ChartDataColumn extends AbstractColumn {
      * Data points for each timestamp for a specific link field un-filtered.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Object> getDataItems() {
         return dataItems;
     }
 
     /**
-     * Data points filtered by query string. May not contain data points for each timestamp due to
-     * filtering.
-     */
+     * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filteredDataItems")
     private final java.util.List<Object> filteredDataItems;
 
     /**
-     * Data points filtered by query string. May not contain data points for each timestamp due to
-     * filtering.
+     * Data points filtered by query string. May not contain data points for each timestamp due to filtering.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Object> getFilteredDataItems() {
         return filteredDataItems;
     }
@@ -321,7 +327,6 @@ public final class ChartDataColumn extends AbstractColumn {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

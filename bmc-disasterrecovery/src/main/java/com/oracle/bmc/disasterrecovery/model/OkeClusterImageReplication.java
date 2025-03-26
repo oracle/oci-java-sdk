@@ -5,11 +5,12 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Controls the behavior of image replication across regions. Image replication is enabled by
- * default for DR Protection Groups with a primary role.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum OkeClusterImageReplication implements com.oracle.bmc.http.internal.BmcEnum {
+ * Controls the behavior of image replication across regions.
+ * Image replication is enabled by default for DR Protection Groups with a primary role.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum OkeClusterImageReplication {
     Enable("ENABLE"),
     Disable("DISABLE"),
 

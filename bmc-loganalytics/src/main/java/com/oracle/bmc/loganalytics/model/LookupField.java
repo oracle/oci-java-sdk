@@ -5,21 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LookupField <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * LookupField
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LookupField.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LookupField extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LookupField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "commonFieldName",
@@ -50,52 +48,58 @@ public final class LookupField extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The common field name. */
+        /**
+         * The common field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commonFieldName")
         private String commonFieldName;
 
         /**
          * The common field name.
-         *
          * @param commonFieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder commonFieldName(String commonFieldName) {
             this.commonFieldName = commonFieldName;
             this.__explicitlySet__.add("commonFieldName");
             return this;
         }
-        /** The default match value. */
+        /**
+         * The default match value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
         private String defaultMatchValue;
 
         /**
          * The default match value.
-         *
          * @param defaultMatchValue the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultMatchValue(String defaultMatchValue) {
             this.defaultMatchValue = defaultMatchValue;
             this.__explicitlySet__.add("defaultMatchValue");
             return this;
         }
-        /** The field display name. */
+        /**
+         * The field display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The field display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A flag indicating whether or not the lookup field is a common field. */
+        /**
+         * A flag indicating whether or not the lookup field is a common field.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCommonField")
         private Boolean isCommonField;
 
@@ -104,52 +108,55 @@ public final class LookupField extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param isCommonField the value to set
          * @return this builder
-         */
+         **/
         public Builder isCommonField(Boolean isCommonField) {
             this.isCommonField = isCommonField;
             this.__explicitlySet__.add("isCommonField");
             return this;
         }
-        /** The match operator. */
+        /**
+         * The match operator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchOperator")
         private String matchOperator;
 
         /**
          * The match operator.
-         *
          * @param matchOperator the value to set
          * @return this builder
-         */
+         **/
         public Builder matchOperator(String matchOperator) {
             this.matchOperator = matchOperator;
             this.__explicitlySet__.add("matchOperator");
             return this;
         }
-        /** The field name. */
+        /**
+         * The field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The field name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** THe field position. */
+        /**
+         * THe field position.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Long position;
 
         /**
          * THe field position.
-         *
          * @param position the value to set
          * @return this builder
-         */
+         **/
         public Builder position(Long position) {
             this.position = position;
             this.__explicitlySet__.add("position");
@@ -202,7 +209,9 @@ public final class LookupField extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,46 +220,52 @@ public final class LookupField extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The common field name. */
+    /**
+     * The common field name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonFieldName")
     private final String commonFieldName;
 
     /**
      * The common field name.
-     *
      * @return the value
-     */
+     **/
     public String getCommonFieldName() {
         return commonFieldName;
     }
 
-    /** The default match value. */
+    /**
+     * The default match value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
     private final String defaultMatchValue;
 
     /**
      * The default match value.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultMatchValue() {
         return defaultMatchValue;
     }
 
-    /** The field display name. */
+    /**
+     * The field display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The field display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A flag indicating whether or not the lookup field is a common field. */
+    /**
+     * A flag indicating whether or not the lookup field is a common field.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCommonField")
     private final Boolean isCommonField;
 
@@ -258,46 +273,49 @@ public final class LookupField extends com.oracle.bmc.http.client.internal.Expli
      * A flag indicating whether or not the lookup field is a common field.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCommonField() {
         return isCommonField;
     }
 
-    /** The match operator. */
+    /**
+     * The match operator.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchOperator")
     private final String matchOperator;
 
     /**
      * The match operator.
-     *
      * @return the value
-     */
+     **/
     public String getMatchOperator() {
         return matchOperator;
     }
 
-    /** The field name. */
+    /**
+     * The field name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The field name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** THe field position. */
+    /**
+     * THe field position.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Long position;
 
     /**
      * THe field position.
-     *
      * @return the value
-     */
+     **/
     public Long getPosition() {
         return position;
     }
@@ -309,7 +327,6 @@ public final class LookupField extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

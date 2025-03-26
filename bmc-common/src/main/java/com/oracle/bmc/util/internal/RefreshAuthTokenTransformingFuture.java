@@ -14,23 +14,24 @@ import com.oracle.bmc.model.BmcException;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 import org.slf4j.Logger;
 
 /**
- * Future that both delegates to another one and provides the ability to transform the response to
- * another type. This is intended to work with some authenticated calls, like instance principals,
+ * Future that both delegates to another one and provides the ability to transform
+ * the response to another type. This is intended to work with some authenticated calls, like instance principals,
  * and has handling so that if we receive a 401, we'll refresh the auth token and then try again.
  *
- * <p>This is to account for scenarios where we have a valid/non-expired token but the permissions
+ * This is to account for scenarios where we have a valid/non-expired token but the permissions
  * for the instance have changed since the token was issued and so on the server-side the presented
  * token is considered invalid.
  *
  * @param <FROM> The type returned by the delegate Future.
  * @param <TO> The type to convert to.
- * @deprecated in favor of RefreshAuthTokenWrapper -- versions after 1.25.1 do not use
- *     RefreshAuthTokenTransformingFuture anymore
+ *
+ * @deprecated in favor of RefreshAuthTokenWrapper -- versions after 1.25.1 do not use RefreshAuthTokenTransformingFuture anymore
  */
+@Deprecated
 public class RefreshAuthTokenTransformingFuture<FROM, TO> implements Future<TO> {
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RefreshAuthTokenTransformingFuture.class);

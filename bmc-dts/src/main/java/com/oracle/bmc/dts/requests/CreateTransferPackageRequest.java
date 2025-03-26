@@ -6,20 +6,21 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferPackageExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateTransferPackageRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateTransferPackageRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class CreateTransferPackageRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.CreateTransferPackageDetails> {
 
-    /** ID of the Transfer Job */
+    /**
+     * ID of the Transfer Job
+     */
     private String id;
 
-    /** ID of the Transfer Job */
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
@@ -29,6 +30,7 @@ public class CreateTransferPackageRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     private String opcRetryToken;
 
@@ -38,21 +40,25 @@ public class CreateTransferPackageRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** Creates a New Transfer Package */
+    /**
+     * Creates a New Transfer Package
+     */
     private com.oracle.bmc.dts.model.CreateTransferPackageDetails createTransferPackageDetails;
 
-    /** Creates a New Transfer Package */
+    /**
+     * Creates a New Transfer Package
+     */
     public com.oracle.bmc.dts.model.CreateTransferPackageDetails getCreateTransferPackageDetails() {
         return createTransferPackageDetails;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -65,15 +71,17 @@ public class CreateTransferPackageRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateTransferPackageRequest,
                     com.oracle.bmc.dts.model.CreateTransferPackageDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the Transfer Job */
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -84,19 +92,20 @@ public class CreateTransferPackageRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -106,13 +115,14 @@ public class CreateTransferPackageRequest
             return this;
         }
 
-        /** Creates a New Transfer Package */
+        /**
+         * Creates a New Transfer Package
+         */
         private com.oracle.bmc.dts.model.CreateTransferPackageDetails createTransferPackageDetails =
                 null;
 
         /**
          * Creates a New Transfer Package
-         *
          * @param createTransferPackageDetails the value to set
          * @return this builder instance
          */
@@ -125,19 +135,18 @@ public class CreateTransferPackageRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -149,7 +158,6 @@ public class CreateTransferPackageRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateTransferPackageRequest o) {
@@ -164,11 +172,10 @@ public class CreateTransferPackageRequest
         /**
          * Build the instance of CreateTransferPackageRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateTransferPackageRequest
          */
@@ -181,7 +188,6 @@ public class CreateTransferPackageRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -194,8 +200,7 @@ public class CreateTransferPackageRequest
         /**
          * Build the instance of CreateTransferPackageRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateTransferPackageRequest
@@ -212,7 +217,6 @@ public class CreateTransferPackageRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -224,7 +228,6 @@ public class CreateTransferPackageRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

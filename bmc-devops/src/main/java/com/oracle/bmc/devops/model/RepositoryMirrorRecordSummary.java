@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing information about a mirror record. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Object containing information about a mirror record.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RepositoryMirrorRecordSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RepositoryMirrorRecordSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RepositoryMirrorRecordSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mirrorStatus",
@@ -56,123 +55,122 @@ public final class RepositoryMirrorRecordSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
-         * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
-         */
+         * Mirror status of current mirror entry.
+         * QUEUED - Mirroring Queued
+         * RUNNING - Mirroring is Running
+         * PASSED - Mirroring Passed
+         * FAILED - Mirroring Failed
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
         private MirrorStatus mirrorStatus;
 
         /**
-         * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
-         * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
+         * Mirror status of current mirror entry.
+         * QUEUED - Mirroring Queued
+         * RUNNING - Mirroring is Running
+         * PASSED - Mirroring Passed
+         * FAILED - Mirroring Failed
          *
          * @param mirrorStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder mirrorStatus(MirrorStatus mirrorStatus) {
             this.mirrorStatus = mirrorStatus;
             this.__explicitlySet__.add("mirrorStatus");
             return this;
         }
-        /** Workrequest ID to track current mirror operation. */
+        /**
+         * Workrequest ID to track current mirror operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * Workrequest ID to track current mirror operation.
-         *
          * @param workRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
-        /** The time to enqueue a mirror operation. */
+        /**
+         * The time to enqueue a mirror operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
         private java.util.Date timeEnqueued;
 
         /**
          * The time to enqueue a mirror operation.
-         *
          * @param timeEnqueued the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnqueued(java.util.Date timeEnqueued) {
             this.timeEnqueued = timeEnqueued;
             this.__explicitlySet__.add("timeEnqueued");
             return this;
         }
-        /** The time to start a mirror operation. */
+        /**
+         * The time to start a mirror operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time to start a mirror operation.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time to complete a mirror operation. */
+        /**
+         * The time to complete a mirror operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
         /**
          * The time to complete a mirror operation.
-         *
          * @param timeCompleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"bar-key": "value"}}
-         *
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -180,21 +178,16 @@ public final class RepositoryMirrorRecordSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -251,7 +244,9 @@ public final class RepositoryMirrorRecordSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,10 +256,14 @@ public final class RepositoryMirrorRecordSummary
     }
 
     /**
-     * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
-     * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
-     */
-    public enum MirrorStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * Mirror status of current mirror entry.
+     * QUEUED - Mirroring Queued
+     * RUNNING - Mirroring is Running
+     * PASSED - Mirroring Passed
+     * FAILED - Mirroring Failed
+     *
+     **/
+    public enum MirrorStatus {
         None("NONE"),
         Queued("QUEUED"),
         Running("RUNNING"),
@@ -272,8 +271,8 @@ public final class RepositoryMirrorRecordSummary
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -313,129 +312,123 @@ public final class RepositoryMirrorRecordSummary
         }
     };
     /**
-     * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
-     * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
-     */
+     * Mirror status of current mirror entry.
+     * QUEUED - Mirroring Queued
+     * RUNNING - Mirroring is Running
+     * PASSED - Mirroring Passed
+     * FAILED - Mirroring Failed
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mirrorStatus")
     private final MirrorStatus mirrorStatus;
 
     /**
-     * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is
-     * Running PASSED - Mirroring Passed FAILED - Mirroring Failed
+     * Mirror status of current mirror entry.
+     * QUEUED - Mirroring Queued
+     * RUNNING - Mirroring is Running
+     * PASSED - Mirroring Passed
+     * FAILED - Mirroring Failed
      *
      * @return the value
-     */
+     **/
     public MirrorStatus getMirrorStatus() {
         return mirrorStatus;
     }
 
-    /** Workrequest ID to track current mirror operation. */
+    /**
+     * Workrequest ID to track current mirror operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * Workrequest ID to track current mirror operation.
-     *
      * @return the value
-     */
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
 
-    /** The time to enqueue a mirror operation. */
+    /**
+     * The time to enqueue a mirror operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnqueued")
     private final java.util.Date timeEnqueued;
 
     /**
      * The time to enqueue a mirror operation.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnqueued() {
         return timeEnqueued;
     }
 
-    /** The time to start a mirror operation. */
+    /**
+     * The time to start a mirror operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time to start a mirror operation.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time to complete a mirror operation. */
+    /**
+     * The time to complete a mirror operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
     /**
      * The time to complete a mirror operation.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     *
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -447,7 +440,6 @@ public final class RepositoryMirrorRecordSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

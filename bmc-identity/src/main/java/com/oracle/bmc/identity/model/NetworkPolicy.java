@@ -5,21 +5,20 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Network policy, which consists of a list of network source IDs. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Network policy, which consists of a list of network source IDs.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NetworkPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NetworkPolicy extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NetworkPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"networkSourceIds"})
     public NetworkPolicy(java.util.List<String> networkSourceIds) {
@@ -29,7 +28,10 @@ public final class NetworkPolicy extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Network Source ids */
+        /**
+         * Network Source ids
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSourceIds")
         private java.util.List<String> networkSourceIds;
 
@@ -38,7 +40,7 @@ public final class NetworkPolicy extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param networkSourceIds the value to set
          * @return this builder
-         */
+         **/
         public Builder networkSourceIds(java.util.List<String> networkSourceIds) {
             this.networkSourceIds = networkSourceIds;
             this.__explicitlySet__.add("networkSourceIds");
@@ -65,7 +67,9 @@ public final class NetworkPolicy extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -74,7 +78,10 @@ public final class NetworkPolicy extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Network Source ids */
+    /**
+     * Network Source ids
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSourceIds")
     private final java.util.List<String> networkSourceIds;
 
@@ -82,7 +89,7 @@ public final class NetworkPolicy extends com.oracle.bmc.http.client.internal.Exp
      * Network Source ids
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNetworkSourceIds() {
         return networkSourceIds;
     }
@@ -94,7 +101,6 @@ public final class NetworkPolicy extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

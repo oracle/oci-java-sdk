@@ -173,7 +173,8 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
                                     "Artifacts in version "
                                             + version
                                             + " before: "
-                                            + artifactSet.stream()
+                                            + artifactSet
+                                                    .stream()
                                                     .map(Artifact::getId)
                                                     .collect(Collectors.joining(", ")));
                     artifactSet.removeAll(ignored);
@@ -181,7 +182,8 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
                                     "Artifacts in version "
                                             + version
                                             + " after: "
-                                            + artifactSet.stream()
+                                            + artifactSet
+                                                    .stream()
                                                     .map(Artifact::getId)
                                                     .collect(Collectors.joining(", ")));
                 }
@@ -215,7 +217,8 @@ public class NoMixedOciJavaSdkVersionsRule extends AbstractEnforcerRule {
 
     private Set<Artifact> getDependenciesToCheck() {
         // this will be transitive in nature
-        return project.getArtifacts().stream()
+        return project.getArtifacts()
+                .stream()
                 .filter(
                         a ->
                                 a.getScope().isEmpty()

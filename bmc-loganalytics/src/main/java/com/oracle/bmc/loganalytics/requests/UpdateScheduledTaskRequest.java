@@ -6,61 +6,85 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateScheduledTaskExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateScheduledTaskRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateScheduledTaskExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateScheduledTaskRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class UpdateScheduledTaskRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
+     * Unique scheduledTask id returned from task create.
+     * If invalid will lead to a 404 not found.
+     *
      */
     private String scheduledTaskId;
 
     /**
-     * Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
+     * Unique scheduledTask id returned from task create.
+     * If invalid will lead to a 404 not found.
+     *
      */
     public String getScheduledTaskId() {
         return scheduledTaskId;
     }
-    /** Update details. Schedules may be updated only for taskType SAVED_SEARCH and PURGE. */
+    /**
+     * Update details.
+     * Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
+     *
+     */
     private com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails updateScheduledTaskDetails;
 
-    /** Update details. Schedules may be updated only for taskType SAVED_SEARCH and PURGE. */
+    /**
+     * Update details.
+     * Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
+     *
+     */
     public com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails
             getUpdateScheduledTaskDetails() {
         return updateScheduledTaskDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -68,7 +92,6 @@ public class UpdateScheduledTaskRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -86,10 +109,14 @@ public class UpdateScheduledTaskRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateScheduledTaskRequest,
                     com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -104,14 +131,15 @@ public class UpdateScheduledTaskRequest
         }
 
         /**
-         * Unique scheduledTask id returned from task create. If invalid will lead to a 404 not
-         * found.
+         * Unique scheduledTask id returned from task create.
+         * If invalid will lead to a 404 not found.
+         *
          */
         private String scheduledTaskId = null;
 
         /**
-         * Unique scheduledTask id returned from task create. If invalid will lead to a 404 not
-         * found.
+         * Unique scheduledTask id returned from task create.
+         * If invalid will lead to a 404 not found.
          *
          * @param scheduledTaskId the value to set
          * @return this builder instance
@@ -121,12 +149,17 @@ public class UpdateScheduledTaskRequest
             return this;
         }
 
-        /** Update details. Schedules may be updated only for taskType SAVED_SEARCH and PURGE. */
+        /**
+         * Update details.
+         * Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
+         *
+         */
         private com.oracle.bmc.loganalytics.model.UpdateScheduledTaskDetails
                 updateScheduledTaskDetails = null;
 
         /**
-         * Update details. Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
+         * Update details.
+         * Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
          *
          * @param updateScheduledTaskDetails the value to set
          * @return this builder instance
@@ -138,12 +171,13 @@ public class UpdateScheduledTaskRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -153,18 +187,21 @@ public class UpdateScheduledTaskRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -176,19 +213,18 @@ public class UpdateScheduledTaskRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -200,7 +236,6 @@ public class UpdateScheduledTaskRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateScheduledTaskRequest o) {
@@ -217,11 +252,10 @@ public class UpdateScheduledTaskRequest
         /**
          * Build the instance of UpdateScheduledTaskRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateScheduledTaskRequest
          */
@@ -234,7 +268,6 @@ public class UpdateScheduledTaskRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -247,8 +280,7 @@ public class UpdateScheduledTaskRequest
         /**
          * Build the instance of UpdateScheduledTaskRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateScheduledTaskRequest
@@ -261,14 +293,12 @@ public class UpdateScheduledTaskRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateScheduledTaskRequest(namespaceName, scheduledTaskId,
-            // updateScheduledTaskDetails, opcRequestId, ifMatch);
+            // new UpdateScheduledTaskRequest(namespaceName, scheduledTaskId, updateScheduledTaskDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -282,7 +312,6 @@ public class UpdateScheduledTaskRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

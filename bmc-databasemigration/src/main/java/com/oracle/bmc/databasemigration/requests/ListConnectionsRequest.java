@@ -6,96 +6,126 @@ package com.oracle.bmc.databasemigration.requests;
 
 import com.oracle.bmc.databasemigration.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListConnectionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConnectionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConnectionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     *
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The array of technology types. */
+    /**
+     * The array of technology types.
+     */
     private java.util.List<com.oracle.bmc.databasemigration.model.TechnologyType> technologyType;
 
-    /** The array of technology types. */
+    /**
+     * The array of technology types.
+     */
     public java.util.List<com.oracle.bmc.databasemigration.model.TechnologyType>
             getTechnologyType() {
         return technologyType;
     }
-    /** The array of connection types. */
+    /**
+     * The array of connection types.
+     */
     private java.util.List<com.oracle.bmc.databasemigration.model.ConnectionType> connectionType;
 
-    /** The array of connection types. */
+    /**
+     * The array of connection types.
+     */
     public java.util.List<com.oracle.bmc.databasemigration.model.ConnectionType>
             getConnectionType() {
         return connectionType;
     }
-    /** The OCID of the source database connection. */
+    /**
+     * The OCID of the source database connection.
+     */
     private String sourceConnectionId;
 
-    /** The OCID of the source database connection. */
+    /**
+     * The OCID of the source database connection.
+     */
     public String getSourceConnectionId() {
         return sourceConnectionId;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -129,24 +159,36 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     private com.oracle.bmc.databasemigration.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.databasemigration.model.SortOrders getSortOrder() {
         return sortOrder;
     }
-    /** The current state of the Database Migration Deployment. */
+    /**
+     * The current state of the Database Migration Deployment.
+     *
+     */
     private com.oracle.bmc.databasemigration.model.LifecycleStates lifecycleState;
 
-    /** The current state of the Database Migration Deployment. */
+    /**
+     * The current state of the Database Migration Deployment.
+     *
+     */
     public com.oracle.bmc.databasemigration.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -154,10 +196,14 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListConnectionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -174,6 +220,7 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -189,13 +236,14 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The array of technology types. */
+        /**
+         * The array of technology types.
+         */
         private java.util.List<com.oracle.bmc.databasemigration.model.TechnologyType>
                 technologyType = null;
 
         /**
          * The array of technology types.
-         *
          * @param technologyType the value to set
          * @return this builder instance
          */
@@ -208,7 +256,6 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Singular setter. The array of technology types.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -216,13 +263,14 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this.technologyType(java.util.Arrays.asList(singularValue));
         }
 
-        /** The array of connection types. */
+        /**
+         * The array of connection types.
+         */
         private java.util.List<com.oracle.bmc.databasemigration.model.ConnectionType>
                 connectionType = null;
 
         /**
          * The array of connection types.
-         *
          * @param connectionType the value to set
          * @return this builder instance
          */
@@ -235,7 +283,6 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Singular setter. The array of connection types.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -243,12 +290,13 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this.connectionType(java.util.Arrays.asList(singularValue));
         }
 
-        /** The OCID of the source database connection. */
+        /**
+         * The OCID of the source database connection.
+         */
         private String sourceConnectionId = null;
 
         /**
          * The OCID of the source database connection.
-         *
          * @param sourceConnectionId the value to set
          * @return this builder instance
          */
@@ -257,7 +305,10 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -271,7 +322,10 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -286,14 +340,13 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -304,16 +357,15 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         * Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         * Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -323,7 +375,10 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.databasemigration.model.SortOrders sortOrder = null;
 
         /**
@@ -337,7 +392,10 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The current state of the Database Migration Deployment. */
+        /**
+         * The current state of the Database Migration Deployment.
+         *
+         */
         private com.oracle.bmc.databasemigration.model.LifecycleStates lifecycleState = null;
 
         /**
@@ -354,19 +412,18 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -378,7 +435,6 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListConnectionsRequest o) {
@@ -401,11 +457,10 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListConnectionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListConnectionsRequest
          */
@@ -419,8 +474,7 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListConnectionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListConnectionsRequest
@@ -439,15 +493,12 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListConnectionsRequest(compartmentId, opcRequestId, technologyType,
-            // connectionType, sourceConnectionId, displayName, limit, page, sortBy, sortOrder,
-            // lifecycleState);
+            // new ListConnectionsRequest(compartmentId, opcRequestId, technologyType, connectionType, sourceConnectionId, displayName, limit, page, sortBy, sortOrder, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -467,7 +518,6 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

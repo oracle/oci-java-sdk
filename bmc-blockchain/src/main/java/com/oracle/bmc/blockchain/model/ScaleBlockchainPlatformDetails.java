@@ -5,29 +5,32 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * Scale operation details for a blockchain platform. The scale operation payload has multiple
- * options - Add one or more Ordering Service Node (addOsns) - Add one or more Peers (addPeers) -
- * Add more replicas of CA, Console and Rest Proxy (addReplicas) - Add more storage to the platform
- * (addStorage) - Modify the CPU allocation for Peer Nodes (modifyPeers) - Remove one or more
- * replicas of CA, Console and Rest Proxy (removeReplicas) - Remove one or more Ordering Service
- * Node (removeOsns) - Remove one or more Peers (removePeers). The scale operation payload must have
- * at least one of the above options. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+ * Scale operation details for a blockchain platform. The scale operation payload has multiple options
+ * - Add one or more Ordering Service Node (addOsns)
+ * - Add one or more Peers (addPeers)
+ * - Add more replicas of CA, Console and Rest Proxy (addReplicas)
+ * - Add more storage to the platform (addStorage)
+ * - Modify the CPU allocation for Peer Nodes (modifyPeers)
+ * - Remove one or more replicas of CA, Console and Rest Proxy (removeReplicas)
+ * - Remove one or more Ordering Service Node (removeOsns)
+ * - Remove one or more Peers (removePeers).
+ * The scale operation payload must have at least one of the above options.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScaleBlockchainPlatformDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ScaleBlockchainPlatformDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScaleBlockchainPlatformDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "addOsns",
@@ -61,16 +64,17 @@ public final class ScaleBlockchainPlatformDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** new OSNs to add */
+        /**
+         * new OSNs to add
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addOsns")
         private java.util.List<CreateOsnDetails> addOsns;
 
         /**
          * new OSNs to add
-         *
          * @param addOsns the value to set
          * @return this builder
-         */
+         **/
         public Builder addOsns(java.util.List<CreateOsnDetails> addOsns) {
             this.addOsns = addOsns;
             this.__explicitlySet__.add("addOsns");
@@ -85,16 +89,17 @@ public final class ScaleBlockchainPlatformDetails
             this.__explicitlySet__.add("addReplicas");
             return this;
         }
-        /** new Peers to add */
+        /**
+         * new Peers to add
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addPeers")
         private java.util.List<CreatePeerDetails> addPeers;
 
         /**
          * new Peers to add
-         *
          * @param addPeers the value to set
          * @return this builder
-         */
+         **/
         public Builder addPeers(java.util.List<CreatePeerDetails> addPeers) {
             this.addPeers = addPeers;
             this.__explicitlySet__.add("addPeers");
@@ -109,16 +114,17 @@ public final class ScaleBlockchainPlatformDetails
             this.__explicitlySet__.add("addStorage");
             return this;
         }
-        /** modify ocpu allocation to existing Peers */
+        /**
+         * modify ocpu allocation to existing Peers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modifyPeers")
         private java.util.List<ModifyPeerDetails> modifyPeers;
 
         /**
          * modify ocpu allocation to existing Peers
-         *
          * @param modifyPeers the value to set
          * @return this builder
-         */
+         **/
         public Builder modifyPeers(java.util.List<ModifyPeerDetails> modifyPeers) {
             this.modifyPeers = modifyPeers;
             this.__explicitlySet__.add("modifyPeers");
@@ -133,31 +139,33 @@ public final class ScaleBlockchainPlatformDetails
             this.__explicitlySet__.add("removeReplicas");
             return this;
         }
-        /** OSN id list to remove */
+        /**
+         * OSN id list to remove
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("removeOsns")
         private java.util.List<String> removeOsns;
 
         /**
          * OSN id list to remove
-         *
          * @param removeOsns the value to set
          * @return this builder
-         */
+         **/
         public Builder removeOsns(java.util.List<String> removeOsns) {
             this.removeOsns = removeOsns;
             this.__explicitlySet__.add("removeOsns");
             return this;
         }
-        /** Peer id list to remove */
+        /**
+         * Peer id list to remove
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("removePeers")
         private java.util.List<String> removePeers;
 
         /**
          * Peer id list to remove
-         *
          * @param removePeers the value to set
          * @return this builder
-         */
+         **/
         public Builder removePeers(java.util.List<String> removePeers) {
             this.removePeers = removePeers;
             this.__explicitlySet__.add("removePeers");
@@ -214,7 +222,9 @@ public final class ScaleBlockchainPlatformDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -223,15 +233,16 @@ public final class ScaleBlockchainPlatformDetails
         return new Builder().copy(this);
     }
 
-    /** new OSNs to add */
+    /**
+     * new OSNs to add
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addOsns")
     private final java.util.List<CreateOsnDetails> addOsns;
 
     /**
      * new OSNs to add
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CreateOsnDetails> getAddOsns() {
         return addOsns;
     }
@@ -243,15 +254,16 @@ public final class ScaleBlockchainPlatformDetails
         return addReplicas;
     }
 
-    /** new Peers to add */
+    /**
+     * new Peers to add
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addPeers")
     private final java.util.List<CreatePeerDetails> addPeers;
 
     /**
      * new Peers to add
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CreatePeerDetails> getAddPeers() {
         return addPeers;
     }
@@ -263,15 +275,16 @@ public final class ScaleBlockchainPlatformDetails
         return addStorage;
     }
 
-    /** modify ocpu allocation to existing Peers */
+    /**
+     * modify ocpu allocation to existing Peers
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modifyPeers")
     private final java.util.List<ModifyPeerDetails> modifyPeers;
 
     /**
      * modify ocpu allocation to existing Peers
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModifyPeerDetails> getModifyPeers() {
         return modifyPeers;
     }
@@ -283,28 +296,30 @@ public final class ScaleBlockchainPlatformDetails
         return removeReplicas;
     }
 
-    /** OSN id list to remove */
+    /**
+     * OSN id list to remove
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("removeOsns")
     private final java.util.List<String> removeOsns;
 
     /**
      * OSN id list to remove
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRemoveOsns() {
         return removeOsns;
     }
 
-    /** Peer id list to remove */
+    /**
+     * Peer id list to remove
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("removePeers")
     private final java.util.List<String> removePeers;
 
     /**
      * Peer id list to remove
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRemovePeers() {
         return removePeers;
     }
@@ -316,7 +331,6 @@ public final class ScaleBlockchainPlatformDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

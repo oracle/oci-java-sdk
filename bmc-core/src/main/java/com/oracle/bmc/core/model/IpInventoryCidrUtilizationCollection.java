@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The IP Inventory CIDR utilization details of a subnet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The IP Inventory CIDR utilization details of a subnet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IpInventoryCidrUtilizationCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IpInventoryCidrUtilizationCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IpInventoryCidrUtilizationCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "count",
@@ -46,41 +45,46 @@ public final class IpInventoryCidrUtilizationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Specifies the count for the number of results for the response. */
+        /**
+         * Specifies the count for the number of results for the response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * Specifies the count for the number of results for the response.
-         *
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
         /**
-         * The Timestamp of the latest update from the database in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         * The Timestamp of the latest update from the database in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedTimestamp")
         private java.util.Date lastUpdatedTimestamp;
 
         /**
-         * The Timestamp of the latest update from the database in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+         * The Timestamp of the latest update from the database in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param lastUpdatedTimestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder lastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
             this.lastUpdatedTimestamp = lastUpdatedTimestamp;
             this.__explicitlySet__.add("lastUpdatedTimestamp");
             return this;
         }
-        /** Lists 'IpInventoryCidrUtilizationSummary object. */
+        /**
+         * Lists 'IpInventoryCidrUtilizationSummary object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipInventoryCidrUtilizationSummary")
         private java.util.List<IpInventoryCidrUtilizationSummary> ipInventoryCidrUtilizationSummary;
 
@@ -89,7 +93,7 @@ public final class IpInventoryCidrUtilizationCollection
          *
          * @param ipInventoryCidrUtilizationSummary the value to set
          * @return this builder
-         */
+         **/
         public Builder ipInventoryCidrUtilizationSummary(
                 java.util.List<IpInventoryCidrUtilizationSummary>
                         ipInventoryCidrUtilizationSummary) {
@@ -97,22 +101,26 @@ public final class IpInventoryCidrUtilizationCollection
             this.__explicitlySet__.add("ipInventoryCidrUtilizationSummary");
             return this;
         }
-        /** Indicates the status of the data. */
+        /**
+         * Indicates the status of the data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * Indicates the status of the data.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** Compartment of the subnet. */
+        /**
+         * Compartment of the subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -121,7 +129,7 @@ public final class IpInventoryCidrUtilizationCollection
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -167,7 +175,9 @@ public final class IpInventoryCidrUtilizationCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,37 +186,42 @@ public final class IpInventoryCidrUtilizationCollection
         return new Builder().copy(this);
     }
 
-    /** Specifies the count for the number of results for the response. */
+    /**
+     * Specifies the count for the number of results for the response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * Specifies the count for the number of results for the response.
-     *
      * @return the value
-     */
+     **/
     public Integer getCount() {
         return count;
     }
 
     /**
-     * The Timestamp of the latest update from the database in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     * The Timestamp of the latest update from the database in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedTimestamp")
     private final java.util.Date lastUpdatedTimestamp;
 
     /**
-     * The Timestamp of the latest update from the database in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+     * The Timestamp of the latest update from the database in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getLastUpdatedTimestamp() {
         return lastUpdatedTimestamp;
     }
 
-    /** Lists 'IpInventoryCidrUtilizationSummary object. */
+    /**
+     * Lists 'IpInventoryCidrUtilizationSummary object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipInventoryCidrUtilizationSummary")
     private final java.util.List<IpInventoryCidrUtilizationSummary>
             ipInventoryCidrUtilizationSummary;
@@ -215,26 +230,30 @@ public final class IpInventoryCidrUtilizationCollection
      * Lists 'IpInventoryCidrUtilizationSummary object.
      *
      * @return the value
-     */
+     **/
     public java.util.List<IpInventoryCidrUtilizationSummary>
             getIpInventoryCidrUtilizationSummary() {
         return ipInventoryCidrUtilizationSummary;
     }
 
-    /** Indicates the status of the data. */
+    /**
+     * Indicates the status of the data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * Indicates the status of the data.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
-    /** Compartment of the subnet. */
+    /**
+     * Compartment of the subnet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -242,7 +261,7 @@ public final class IpInventoryCidrUtilizationCollection
      * Compartment of the subnet.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -254,7 +273,6 @@ public final class IpInventoryCidrUtilizationCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -18,21 +18,30 @@ class SimpleRetry implements DownloadExecution {
             org.slf4j.LoggerFactory.getLogger(SimpleRetry.class);
 
     /**
-     * Maximum amount of time we are willing to wait for. We will perform exponential backoff from
-     * {@link #currentBackoffMillis} until we hit this value.
+     * Maximum amount of time we are willing to wait for. We will perform
+     * exponential backoff from {@link #currentBackoffMillis} until we hit this
+     * value.
      */
     final Duration maximumBackoff;
 
-    /** Maximum number of retries we are willing to do. */
+    /**
+     * Maximum number of retries we are willing to do.
+     */
     final long maxRetries;
 
-    /** How long to sleep on the next retry. */
+    /**
+     * How long to sleep on the next retry.
+     */
     final AtomicLong currentBackoffMillis;
 
-    /** Number of retries we have performed so far. */
+    /**
+     * Number of retries we have performed so far.
+     */
     final AtomicLong currentRetries;
 
-    /** Default retry condition, to re-use the retry conditions from the rest of the SDK. */
+    /**
+     * Default retry condition, to re-use the retry conditions from the rest of the SDK.
+     */
     static final DefaultRetryCondition defaultRetryCondition = new DefaultRetryCondition();
 
     private SimpleRetry(Duration initialBackoff, Duration maximumBackoff, int maxRetries) {

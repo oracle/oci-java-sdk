@@ -5,22 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A complex type that specifies the set of Resource attributes <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * A complex type that specifies the set of Resource attributes
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SchemaAttributes.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SchemaAttributes
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SchemaAttributes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -274,47 +271,67 @@ public final class SchemaAttributes
     public static class Builder {
         /**
          * Attribute's name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Attribute's name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Localized schema attribute display name for use by UI client for displaying attribute
-         * labels
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * Localized schema attribute display name for use by UI client  for displaying attribute labels
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsDisplayNameMessageId")
         private String idcsDisplayNameMessageId;
 
         /**
-         * Localized schema attribute display name for use by UI client for displaying attribute
-         * labels
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * Localized schema attribute display name for use by UI client  for displaying attribute labels
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsDisplayNameMessageId the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsDisplayNameMessageId(String idcsDisplayNameMessageId) {
             this.idcsDisplayNameMessageId = idcsDisplayNameMessageId;
             this.__explicitlySet__.add("idcsDisplayNameMessageId");
@@ -322,26 +339,37 @@ public final class SchemaAttributes
         }
         /**
          * Specifies if the attributes in this schema should be hidden externally
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsRtsaHideAttribute")
         private Boolean idcsRtsaHideAttribute;
 
         /**
          * Specifies if the attributes in this schema should be hidden externally
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsRtsaHideAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsRtsaHideAttribute(Boolean idcsRtsaHideAttribute) {
             this.idcsRtsaHideAttribute = idcsRtsaHideAttribute;
             this.__explicitlySet__.add("idcsRtsaHideAttribute");
@@ -358,22 +386,33 @@ public final class SchemaAttributes
         }
         /**
          * The attribute's data type--for example, String
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The attribute's data type--for example, String
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -381,22 +420,29 @@ public final class SchemaAttributes
         }
         /**
          * Indicates the attribute's plurality
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multiValued")
         private Boolean multiValued;
 
         /**
          * Indicates the attribute's plurality
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param multiValued the value to set
          * @return this builder
-         */
+         **/
         public Builder multiValued(Boolean multiValued) {
             this.multiValued = multiValued;
             this.__explicitlySet__.add("multiValued");
@@ -404,22 +450,33 @@ public final class SchemaAttributes
         }
         /**
          * The attribute's human-readable description
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The attribute's human-readable description
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -427,22 +484,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies if the attribute is required
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("required")
         private Boolean required;
 
         /**
          * Specifies if the attribute is required
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param required the value to set
          * @return this builder
-         */
+         **/
         public Builder required(Boolean required) {
             this.required = required;
             this.__explicitlySet__.add("required");
@@ -450,80 +514,105 @@ public final class SchemaAttributes
         }
         /**
          * Specifies if the attribute is required
-         *
-         * <p>*Added In:** 2305190132
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **Added In:** 2305190132
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsReturnEmptyWhenNull")
         private Boolean idcsReturnEmptyWhenNull;
 
         /**
          * Specifies if the attribute is required
-         *
-         * <p>*Added In:** 2305190132
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **Added In:** 2305190132
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsReturnEmptyWhenNull the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsReturnEmptyWhenNull(Boolean idcsReturnEmptyWhenNull) {
             this.idcsReturnEmptyWhenNull = idcsReturnEmptyWhenNull;
             this.__explicitlySet__.add("idcsReturnEmptyWhenNull");
             return this;
         }
         /**
-         * A collection of canonical values. Applicable Service Providers MUST specify the canonical
-         * types specified in the core schema specification--for example, \\"work\\", \\"home\\".
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, \\"work\\", \\"home\\".
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canonicalValues")
         private java.util.List<String> canonicalValues;
 
         /**
-         * A collection of canonical values. Applicable Service Providers MUST specify the canonical
-         * types specified in the core schema specification--for example, \\"work\\", \\"home\\".
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, \\"work\\", \\"home\\".
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param canonicalValues the value to set
          * @return this builder
-         */
+         **/
         public Builder canonicalValues(java.util.List<String> canonicalValues) {
             this.canonicalValues = canonicalValues;
             this.__explicitlySet__.add("canonicalValues");
             return this;
         }
         /**
-         * Specifies the default value for an attribute. The value must be one from canonicalValues
-         * if defined.
-         *
-         * <p>*Added In:** 18.1.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the default value for an attribute. The value must be one from canonicalValues if defined.
+         * <p>
+         **Added In:** 18.1.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsDefaultValue")
         private String idcsDefaultValue;
 
         /**
-         * Specifies the default value for an attribute. The value must be one from canonicalValues
-         * if defined.
-         *
-         * <p>*Added In:** 18.1.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the default value for an attribute. The value must be one from canonicalValues if defined.
+         * <p>
+         **Added In:** 18.1.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsDefaultValue the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsDefaultValue(String idcsDefaultValue) {
             this.idcsDefaultValue = idcsDefaultValue;
             this.__explicitlySet__.add("idcsDefaultValue");
@@ -531,22 +620,29 @@ public final class SchemaAttributes
         }
         /**
          * A collection of Localized canonical values.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localizedCanonicalValues")
         private java.util.List<SchemaLocalizedCanonicalValues> localizedCanonicalValues;
 
         /**
          * A collection of Localized canonical values.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
          * @param localizedCanonicalValues the value to set
          * @return this builder
-         */
+         **/
         public Builder localizedCanonicalValues(
                 java.util.List<SchemaLocalizedCanonicalValues> localizedCanonicalValues) {
             this.localizedCanonicalValues = localizedCanonicalValues;
@@ -555,22 +651,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies if the String attribute is case-sensitive
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caseExact")
         private Boolean caseExact;
 
         /**
          * Specifies if the String attribute is case-sensitive
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param caseExact the value to set
          * @return this builder
-         */
+         **/
         public Builder caseExact(Boolean caseExact) {
             this.caseExact = caseExact;
             this.__explicitlySet__.add("caseExact");
@@ -578,78 +681,99 @@ public final class SchemaAttributes
         }
         /**
          * Specifies if the attribute is mutable
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mutability")
         private Mutability mutability;
 
         /**
          * Specifies if the attribute is mutable
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mutability the value to set
          * @return this builder
-         */
+         **/
         public Builder mutability(Mutability mutability) {
             this.mutability = mutability;
             this.__explicitlySet__.add("mutability");
             return this;
         }
         /**
-         * A single keyword that indicates when an attribute and associated values are returned in
-         * response to a GET request or in response to a PUT, POST, or PATCH request
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("returned")
         private Returned returned;
 
         /**
-         * A single keyword that indicates when an attribute and associated values are returned in
-         * response to a GET request or in response to a PUT, POST, or PATCH request
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param returned the value to set
          * @return this builder
-         */
+         **/
         public Builder returned(Returned returned) {
             this.returned = returned;
             this.__explicitlySet__.add("returned");
             return this;
         }
         /**
-         * A single keyword value that specifies how the Service Provider enforces uniqueness of
-         * attribute values. A server MAY reject an invalid value based on uniqueness by returning
-         * an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client
-         * side to a greater degree than the Service Provider enforces. For example, a client could
-         * make a value unique while the server has the uniqueness of \\"none\\".
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \\"none\\".
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueness")
         private Uniqueness uniqueness;
 
         /**
-         * A single keyword value that specifies how the Service Provider enforces uniqueness of
-         * attribute values. A server MAY reject an invalid value based on uniqueness by returning
-         * an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client
-         * side to a greater degree than the Service Provider enforces. For example, a client could
-         * make a value unique while the server has the uniqueness of \\"none\\".
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \\"none\\".
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param uniqueness the value to set
          * @return this builder
-         */
+         **/
         public Builder uniqueness(Uniqueness uniqueness) {
             this.uniqueness = uniqueness;
             this.__explicitlySet__.add("uniqueness");
@@ -657,48 +781,64 @@ public final class SchemaAttributes
         }
         /**
          * The attribute defining the CSV header name for import/export
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCsvAttributeName")
         private String idcsCsvAttributeName;
 
         /**
          * The attribute defining the CSV header name for import/export
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCsvAttributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCsvAttributeName(String idcsCsvAttributeName) {
             this.idcsCsvAttributeName = idcsCsvAttributeName;
             this.__explicitlySet__.add("idcsCsvAttributeName");
             return this;
         }
         /**
-         * Specifies the mapping between external identity source attributes and Oracle Identity
-         * Cloud Service complex attributes (e.g. email => emails[work].value)
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readOnly - required: false -
-         * returned: default - type: complex
-         */
+         * Specifies the mapping between external identity source attributes and Oracle Identity Cloud Service complex attributes (e.g. email => emails[work].value)
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsComplexAttributeNameMappings")
         private java.util.List<SchemaIdcsComplexAttributeNameMappings>
                 idcsComplexAttributeNameMappings;
 
         /**
-         * Specifies the mapping between external identity source attributes and Oracle Identity
-         * Cloud Service complex attributes (e.g. email => emails[work].value)
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readOnly - required: false -
-         * returned: default - type: complex
-         *
+         * Specifies the mapping between external identity source attributes and Oracle Identity Cloud Service complex attributes (e.g. email => emails[work].value)
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
          * @param idcsComplexAttributeNameMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsComplexAttributeNameMappings(
                 java.util.List<SchemaIdcsComplexAttributeNameMappings>
                         idcsComplexAttributeNameMappings) {
@@ -708,22 +848,33 @@ public final class SchemaAttributes
         }
         /**
          * Maps to ICF target attribute name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsICFBundleAttributeName")
         private String idcsICFBundleAttributeName;
 
         /**
          * Maps to ICF target attribute name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsICFBundleAttributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsICFBundleAttributeName(String idcsICFBundleAttributeName) {
             this.idcsICFBundleAttributeName = idcsICFBundleAttributeName;
             this.__explicitlySet__.add("idcsICFBundleAttributeName");
@@ -731,22 +882,33 @@ public final class SchemaAttributes
         }
         /**
          * Metadata to identify the ICF required attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsICFRequired")
         private Boolean idcsICFRequired;
 
         /**
          * Metadata to identify the ICF required attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsICFRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsICFRequired(Boolean idcsICFRequired) {
             this.idcsICFRequired = idcsICFRequired;
             this.__explicitlySet__.add("idcsICFRequired");
@@ -754,47 +916,63 @@ public final class SchemaAttributes
         }
         /**
          * Maps to ICF data type
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsICFAttributeType")
         private IdcsICFAttributeType idcsICFAttributeType;
 
         /**
          * Maps to ICF data type
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsICFAttributeType the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsICFAttributeType(IdcsICFAttributeType idcsICFAttributeType) {
             this.idcsICFAttributeType = idcsICFAttributeType;
             this.__explicitlySet__.add("idcsICFAttributeType");
             return this;
         }
         /**
-         * Csv meta data for those resource type attributes which can be imported / exported from /
-         * to csv.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex
-         */
+         * Csv meta data for those resource type attributes which can be imported / exported from / to csv.
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCsvAttributeNameMappings")
         private java.util.List<SchemaIdcsCsvAttributeNameMappings> idcsCsvAttributeNameMappings;
 
         /**
-         * Csv meta data for those resource type attributes which can be imported / exported from /
-         * to csv.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex
-         *
+         * Csv meta data for those resource type attributes which can be imported / exported from / to csv.
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
          * @param idcsCsvAttributeNameMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCsvAttributeNameMappings(
                 java.util.List<SchemaIdcsCsvAttributeNameMappings> idcsCsvAttributeNameMappings) {
             this.idcsCsvAttributeNameMappings = idcsCsvAttributeNameMappings;
@@ -802,25 +980,34 @@ public final class SchemaAttributes
             return this;
         }
         /**
-         * The names of the Resource types that may be referenced--for example, User. This is only
-         * applicable for attributes that are of the \\"reference\\" data type.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \\"reference\\" data type.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceTypes")
         private java.util.List<String> referenceTypes;
 
         /**
-         * The names of the Resource types that may be referenced--for example, User. This is only
-         * applicable for attributes that are of the \\"reference\\" data type.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \\"reference\\" data type.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param referenceTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder referenceTypes(java.util.List<String> referenceTypes) {
             this.referenceTypes = referenceTypes;
             this.__explicitlySet__.add("referenceTypes");
@@ -828,26 +1015,33 @@ public final class SchemaAttributes
         }
         /**
          * Indicates that the schema has been deprecated since version
-         *
-         * <p>*Deprecated Since: 19.3.3**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         */
+         * <p>
+         **Deprecated Since: 19.3.3**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsDeprecatedSinceVersion")
         private Integer idcsDeprecatedSinceVersion;
 
         /**
          * Indicates that the schema has been deprecated since version
-         *
-         * <p>*Deprecated Since: 19.3.3**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         *
+         * <p>
+         **Deprecated Since: 19.3.3**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
          * @param idcsDeprecatedSinceVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsDeprecatedSinceVersion(Integer idcsDeprecatedSinceVersion) {
             this.idcsDeprecatedSinceVersion = idcsDeprecatedSinceVersion;
             this.__explicitlySet__.add("idcsDeprecatedSinceVersion");
@@ -855,26 +1049,33 @@ public final class SchemaAttributes
         }
         /**
          * Indicates that the schema has been added since version
-         *
-         * <p>*Deprecated Since: 19.3.3**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         */
+         * <p>
+         **Deprecated Since: 19.3.3**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAddedSinceVersion")
         private Integer idcsAddedSinceVersion;
 
         /**
          * Indicates that the schema has been added since version
-         *
-         * <p>*Deprecated Since: 19.3.3**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         *
+         * <p>
+         **Deprecated Since: 19.3.3**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
          * @param idcsAddedSinceVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAddedSinceVersion(Integer idcsAddedSinceVersion) {
             this.idcsAddedSinceVersion = idcsAddedSinceVersion;
             this.__explicitlySet__.add("idcsAddedSinceVersion");
@@ -882,26 +1083,33 @@ public final class SchemaAttributes
         }
         /**
          * Indicates that the schema has been deprecated since this release number
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsDeprecatedSinceReleaseNumber")
         private String idcsDeprecatedSinceReleaseNumber;
 
         /**
          * Indicates that the schema has been deprecated since this release number
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsDeprecatedSinceReleaseNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsDeprecatedSinceReleaseNumber(String idcsDeprecatedSinceReleaseNumber) {
             this.idcsDeprecatedSinceReleaseNumber = idcsDeprecatedSinceReleaseNumber;
             this.__explicitlySet__.add("idcsDeprecatedSinceReleaseNumber");
@@ -909,26 +1117,33 @@ public final class SchemaAttributes
         }
         /**
          * Indicates that the schema has been added since this release number
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAddedSinceReleaseNumber")
         private String idcsAddedSinceReleaseNumber;
 
         /**
          * Indicates that the schema has been added since this release number
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsAddedSinceReleaseNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAddedSinceReleaseNumber(String idcsAddedSinceReleaseNumber) {
             this.idcsAddedSinceReleaseNumber = idcsAddedSinceReleaseNumber;
             this.__explicitlySet__.add("idcsAddedSinceReleaseNumber");
@@ -936,22 +1151,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the minimum length of the attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsMinLength")
         private Integer idcsMinLength;
 
         /**
          * Specifies the minimum length of the attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
          * @param idcsMinLength the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsMinLength(Integer idcsMinLength) {
             this.idcsMinLength = idcsMinLength;
             this.__explicitlySet__.add("idcsMinLength");
@@ -959,22 +1181,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the maximum length of the attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsMaxLength")
         private Integer idcsMaxLength;
 
         /**
          * Specifies the maximum length of the attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
          * @param idcsMaxLength the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsMaxLength(Integer idcsMaxLength) {
             this.idcsMaxLength = idcsMaxLength;
             this.__explicitlySet__.add("idcsMaxLength");
@@ -982,22 +1211,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the minimum value of the integer attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: integer
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsMinValue")
         private Integer idcsMinValue;
 
         /**
          * Specifies the minimum value of the integer attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: integer
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
          * @param idcsMinValue the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsMinValue(Integer idcsMinValue) {
             this.idcsMinValue = idcsMinValue;
             this.__explicitlySet__.add("idcsMinValue");
@@ -1005,47 +1241,63 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the maximum value of the integer attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: integer
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsMaxValue")
         private Integer idcsMaxValue;
 
         /**
          * Specifies the maximum value of the integer attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: integer
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
          * @param idcsMaxValue the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsMaxValue(Integer idcsMaxValue) {
             this.idcsMaxValue = idcsMaxValue;
             this.__explicitlySet__.add("idcsMaxValue");
             return this;
         }
         /**
-         * If true, specifies that the attribute can have multiple language values set for the
-         * attribute on which this is set.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, specifies that the attribute can have multiple language values set for the attribute on which this is set.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsMultiLanguage")
         private Boolean idcsMultiLanguage;
 
         /**
-         * If true, specifies that the attribute can have multiple language values set for the
-         * attribute on which this is set.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, specifies that the attribute can have multiple language values set for the attribute on which this is set.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsMultiLanguage the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsMultiLanguage(Boolean idcsMultiLanguage) {
             this.idcsMultiLanguage = idcsMultiLanguage;
             this.__explicitlySet__.add("idcsMultiLanguage");
@@ -1053,22 +1305,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the directly referenced Resources
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsRefResourceAttributes")
         private java.util.List<String> idcsRefResourceAttributes;
 
         /**
          * Specifies the directly referenced Resources
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsRefResourceAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsRefResourceAttributes(java.util.List<String> idcsRefResourceAttributes) {
             this.idcsRefResourceAttributes = idcsRefResourceAttributes;
             this.__explicitlySet__.add("idcsRefResourceAttributes");
@@ -1076,22 +1335,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the indirectly referenced Resources
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsIndirectRefResourceAttributes")
         private java.util.List<String> idcsIndirectRefResourceAttributes;
 
         /**
          * Specifies the indirectly referenced Resources
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsIndirectRefResourceAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsIndirectRefResourceAttributes(
                 java.util.List<String> idcsIndirectRefResourceAttributes) {
             this.idcsIndirectRefResourceAttributes = idcsIndirectRefResourceAttributes;
@@ -1100,22 +1366,29 @@ public final class SchemaAttributes
         }
         /**
          * Sequence tracking ID name for the attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAutoIncrementSeqName")
         private String idcsAutoIncrementSeqName;
 
         /**
          * Sequence tracking ID name for the attribute
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsAutoIncrementSeqName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAutoIncrementSeqName(String idcsAutoIncrementSeqName) {
             this.idcsAutoIncrementSeqName = idcsAutoIncrementSeqName;
             this.__explicitlySet__.add("idcsAutoIncrementSeqName");
@@ -1123,22 +1396,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies whether the value of the Resource attribute is persisted
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsValuePersisted")
         private Boolean idcsValuePersisted;
 
         /**
          * Specifies whether the value of the Resource attribute is persisted
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsValuePersisted the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsValuePersisted(Boolean idcsValuePersisted) {
             this.idcsValuePersisted = idcsValuePersisted;
             this.__explicitlySet__.add("idcsValuePersisted");
@@ -1146,53 +1426,63 @@ public final class SchemaAttributes
         }
         /**
          * Flag to specify if the attribute should be encrypted or hashed
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsSensitive")
         private IdcsSensitive idcsSensitive;
 
         /**
          * Flag to specify if the attribute should be encrypted or hashed
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsSensitive the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsSensitive(IdcsSensitive idcsSensitive) {
             this.idcsSensitive = idcsSensitive;
             this.__explicitlySet__.add("idcsSensitive");
             return this;
         }
         /**
-         * Specifies whether the schema attribute is for internal use only. Internal attributes are
-         * not exposed via REST. This attribute overrides mutability for create/update if the
-         * request is internal and the attribute internalflag is set to True. This attribute
-         * overrides the return attribute while building SCIM response attributes when both the
-         * request is internal and the schema attribute is internal.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * Specifies whether the schema attribute is for internal use only. Internal attributes are not exposed via REST. This attribute overrides mutability for create/update if the request is internal and the attribute internalflag is set to True. This attribute overrides the return attribute while building SCIM response attributes when both the request is internal and the schema attribute is internal.
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsInternal")
         private Boolean idcsInternal;
 
         /**
-         * Specifies whether the schema attribute is for internal use only. Internal attributes are
-         * not exposed via REST. This attribute overrides mutability for create/update if the
-         * request is internal and the attribute internalflag is set to True. This attribute
-         * overrides the return attribute while building SCIM response attributes when both the
-         * request is internal and the schema attribute is internal.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * Specifies whether the schema attribute is for internal use only. Internal attributes are not exposed via REST. This attribute overrides mutability for create/update if the request is internal and the attribute internalflag is set to True. This attribute overrides the return attribute while building SCIM response attributes when both the request is internal and the schema attribute is internal.
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsInternal the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsInternal(Boolean idcsInternal) {
             this.idcsInternal = idcsInternal;
             this.__explicitlySet__.add("idcsInternal");
@@ -1200,22 +1490,29 @@ public final class SchemaAttributes
         }
         /**
          * Trims any leading and trailing blanks from String values. Default is True.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsTrimStringValue")
         private Boolean idcsTrimStringValue;
 
         /**
          * Trims any leading and trailing blanks from String values. Default is True.
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsTrimStringValue the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsTrimStringValue(Boolean idcsTrimStringValue) {
             this.idcsTrimStringValue = idcsTrimStringValue;
             this.__explicitlySet__.add("idcsTrimStringValue");
@@ -1223,22 +1520,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies whether this attribute can be included in a search filter
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsSearchable")
         private Boolean idcsSearchable;
 
         /**
          * Specifies whether this attribute can be included in a search filter
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsSearchable the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsSearchable(Boolean idcsSearchable) {
             this.idcsSearchable = idcsSearchable;
             this.__explicitlySet__.add("idcsSearchable");
@@ -1246,22 +1550,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies whether this attribute value was generated
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsGenerated")
         private Boolean idcsGenerated;
 
         /**
          * Specifies whether this attribute value was generated
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsGenerated the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsGenerated(Boolean idcsGenerated) {
             this.idcsGenerated = idcsGenerated;
             this.__explicitlySet__.add("idcsGenerated");
@@ -1269,22 +1580,29 @@ public final class SchemaAttributes
         }
         /**
          * Specifies whether changes to this attribute value are audited
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAuditable")
         private Boolean idcsAuditable;
 
         /**
          * Specifies whether changes to this attribute value are audited
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsAuditable the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAuditable(Boolean idcsAuditable) {
             this.idcsAuditable = idcsAuditable;
             this.__explicitlySet__.add("idcsAuditable");
@@ -1292,53 +1610,73 @@ public final class SchemaAttributes
         }
         /**
          * Target attribute name that this attribute gets mapped to for persistence
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetAttributeName")
         private String idcsTargetAttributeName;
 
         /**
          * Target attribute name that this attribute gets mapped to for persistence
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsTargetAttributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsTargetAttributeName(String idcsTargetAttributeName) {
             this.idcsTargetAttributeName = idcsTargetAttributeName;
             this.__explicitlySet__.add("idcsTargetAttributeName");
             return this;
         }
         /**
-         * Contains the canonical name of the other attribute sharing the same
-         * idcsTargetAttributeName
-         *
-         * <p>*Added In:** 2209122038
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: always - type: string - uniqueness:
-         * none
-         */
+         * Contains the canonical name of the other attribute sharing the same idcsTargetAttributeName
+         * <p>
+         **Added In:** 2209122038
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsMapsToSameTargetAttributeNameAs")
         private String idcsMapsToSameTargetAttributeNameAs;
 
         /**
-         * Contains the canonical name of the other attribute sharing the same
-         * idcsTargetAttributeName
-         *
-         * <p>*Added In:** 2209122038
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: always - type: string - uniqueness:
-         * none
-         *
+         * Contains the canonical name of the other attribute sharing the same idcsTargetAttributeName
+         * <p>
+         **Added In:** 2209122038
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsMapsToSameTargetAttributeNameAs the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsMapsToSameTargetAttributeNameAs(
                 String idcsMapsToSameTargetAttributeNameAs) {
             this.idcsMapsToSameTargetAttributeNameAs = idcsMapsToSameTargetAttributeNameAs;
@@ -1346,60 +1684,76 @@ public final class SchemaAttributes
             return this;
         }
         /**
-         * Target normalized attribute name that this normalized value of attribute gets mapped to
-         * for persistence. Only set for caseExact=false & searchable attributes. Do not use by
-         * default.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * Target normalized attribute name that this normalized value of attribute gets mapped to for persistence. Only set for caseExact=false & searchable attributes. Do not use by default.
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetNormAttributeName")
         private String idcsTargetNormAttributeName;
 
         /**
-         * Target normalized attribute name that this normalized value of attribute gets mapped to
-         * for persistence. Only set for caseExact=false & searchable attributes. Do not use by
-         * default.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * Target normalized attribute name that this normalized value of attribute gets mapped to for persistence. Only set for caseExact=false & searchable attributes. Do not use by default.
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsTargetNormAttributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsTargetNormAttributeName(String idcsTargetNormAttributeName) {
             this.idcsTargetNormAttributeName = idcsTargetNormAttributeName;
             this.__explicitlySet__.add("idcsTargetNormAttributeName");
             return this;
         }
         /**
-         * Old Target attribute name from child table for CSVA attribute prior to migration. This
-         * maintains this attribute used to get mapped to for persistence
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * Old Target attribute name from child table for CSVA attribute prior to migration. This maintains this attribute used to get mapped to for persistence
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetAttributeNameToMigrateFrom")
         private String idcsTargetAttributeNameToMigrateFrom;
 
         /**
-         * Old Target attribute name from child table for CSVA attribute prior to migration. This
-         * maintains this attribute used to get mapped to for persistence
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * Old Target attribute name from child table for CSVA attribute prior to migration. This maintains this attribute used to get mapped to for persistence
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsTargetAttributeNameToMigrateFrom the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsTargetAttributeNameToMigrateFrom(
                 String idcsTargetAttributeNameToMigrateFrom) {
             this.idcsTargetAttributeNameToMigrateFrom = idcsTargetAttributeNameToMigrateFrom;
@@ -1408,97 +1762,135 @@ public final class SchemaAttributes
         }
         /**
          * Target index name created for this attribute for performance
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetUniqueConstraintName")
         private String idcsTargetUniqueConstraintName;
 
         /**
          * Target index name created for this attribute for performance
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsTargetUniqueConstraintName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsTargetUniqueConstraintName(String idcsTargetUniqueConstraintName) {
             this.idcsTargetUniqueConstraintName = idcsTargetUniqueConstraintName;
             this.__explicitlySet__.add("idcsTargetUniqueConstraintName");
             return this;
         }
         /**
-         * Specifies the mapper to use when mapping this attribute value to DataProvider-specific
-         * semantics
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the mapper to use when mapping this attribute value to DataProvider-specific semantics
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsToTargetMapper")
         private String idcsToTargetMapper;
 
         /**
-         * Specifies the mapper to use when mapping this attribute value to DataProvider-specific
-         * semantics
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the mapper to use when mapping this attribute value to DataProvider-specific semantics
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsToTargetMapper the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsToTargetMapper(String idcsToTargetMapper) {
             this.idcsToTargetMapper = idcsToTargetMapper;
             this.__explicitlySet__.add("idcsToTargetMapper");
             return this;
         }
         /**
-         * Specifies the mapper to use when mapping this attribute value from DataProvider-specific
-         * semantics
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the mapper to use when mapping this attribute value from DataProvider-specific semantics
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsFromTargetMapper")
         private String idcsFromTargetMapper;
 
         /**
-         * Specifies the mapper to use when mapping this attribute value from DataProvider-specific
-         * semantics
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the mapper to use when mapping this attribute value from DataProvider-specific semantics
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsFromTargetMapper the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsFromTargetMapper(String idcsFromTargetMapper) {
             this.idcsFromTargetMapper = idcsFromTargetMapper;
             this.__explicitlySet__.add("idcsFromTargetMapper");
             return this;
         }
         /**
-         * Specifies the user-friendly displayable attribute name or catalog key used for
-         * localization
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the user-friendly displayable attribute name or catalog key used for localization
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsDisplayName")
         private String idcsDisplayName;
 
         /**
-         * Specifies the user-friendly displayable attribute name or catalog key used for
-         * localization
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the user-friendly displayable attribute name or catalog key used for localization
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsDisplayName(String idcsDisplayName) {
             this.idcsDisplayName = idcsDisplayName;
             this.__explicitlySet__.add("idcsDisplayName");
@@ -1506,22 +1898,33 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the Resource type to read from for dynamic canonical values
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceResourceType")
         private String idcsCanonicalValueSourceResourceType;
 
         /**
          * Specifies the Resource type to read from for dynamic canonical values
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCanonicalValueSourceResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCanonicalValueSourceResourceType(
                 String idcsCanonicalValueSourceResourceType) {
             this.idcsCanonicalValueSourceResourceType = idcsCanonicalValueSourceResourceType;
@@ -1530,24 +1933,35 @@ public final class SchemaAttributes
         }
         /**
          * Filter to use when getting canonical values for this schema attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceFilter")
         private String idcsCanonicalValueSourceFilter;
 
         /**
          * Filter to use when getting canonical values for this schema attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCanonicalValueSourceFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCanonicalValueSourceFilter(String idcsCanonicalValueSourceFilter) {
             this.idcsCanonicalValueSourceFilter = idcsCanonicalValueSourceFilter;
             this.__explicitlySet__.add("idcsCanonicalValueSourceFilter");
@@ -1555,26 +1969,37 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the Resource type ID to read from for dynamic canonical values
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceResourceTypeID")
         private String idcsCanonicalValueSourceResourceTypeID;
 
         /**
          * Specifies the Resource type ID to read from for dynamic canonical values
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCanonicalValueSourceResourceTypeID the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCanonicalValueSourceResourceTypeID(
                 String idcsCanonicalValueSourceResourceTypeID) {
             this.idcsCanonicalValueSourceResourceTypeID = idcsCanonicalValueSourceResourceTypeID;
@@ -1583,28 +2008,39 @@ public final class SchemaAttributes
         }
         /**
          * Display name for the canonical value attribute name.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceDisplayAttrName")
         private String idcsCanonicalValueSourceDisplayAttrName;
 
         /**
          * Display name for the canonical value attribute name.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCanonicalValueSourceDisplayAttrName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCanonicalValueSourceDisplayAttrName(
                 String idcsCanonicalValueSourceDisplayAttrName) {
             this.idcsCanonicalValueSourceDisplayAttrName = idcsCanonicalValueSourceDisplayAttrName;
@@ -1613,26 +2049,37 @@ public final class SchemaAttributes
         }
         /**
          * Source key attribute for the canonical value.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceKeyAttrName")
         private String idcsCanonicalValueSourceKeyAttrName;
 
         /**
          * Source key attribute for the canonical value.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCanonicalValueSourceKeyAttrName the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCanonicalValueSourceKeyAttrName(
                 String idcsCanonicalValueSourceKeyAttrName) {
             this.idcsCanonicalValueSourceKeyAttrName = idcsCanonicalValueSourceKeyAttrName;
@@ -1641,28 +2088,39 @@ public final class SchemaAttributes
         }
         /**
          * Type of the canonical value.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueType")
         private IdcsCanonicalValueType idcsCanonicalValueType;
 
         /**
          * Type of the canonical value.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCanonicalValueType the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCanonicalValueType(IdcsCanonicalValueType idcsCanonicalValueType) {
             this.idcsCanonicalValueType = idcsCanonicalValueType;
             this.__explicitlySet__.add("idcsCanonicalValueType");
@@ -1670,72 +2128,101 @@ public final class SchemaAttributes
         }
         /**
          * Validate payload reference value during create, replace, and update. Default is True.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsValidateReference")
         private Boolean idcsValidateReference;
 
         /**
          * Validate payload reference value during create, replace, and update. Default is True.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsValidateReference the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsValidateReference(Boolean idcsValidateReference) {
             this.idcsValidateReference = idcsValidateReference;
             this.__explicitlySet__.add("idcsValidateReference");
             return this;
         }
         /**
-         * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an
-         * instance of a CMVA
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an instance of a CMVA
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsCompositeKey")
         private java.util.List<String> idcsCompositeKey;
 
         /**
-         * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an
-         * instance of a CMVA
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an instance of a CMVA
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsCompositeKey the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsCompositeKey(java.util.List<String> idcsCompositeKey) {
             this.idcsCompositeKey = idcsCompositeKey;
             this.__explicitlySet__.add("idcsCompositeKey");
             return this;
         }
         /**
-         * **SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none Whether the CMVA
-         * attribute will be fetched or not for current resource in AbstractResourceManager update
-         * operation before calling data provider update. Default is true.
-         */
+         * **SCIM++ Properties:**
+         * - caseExact: false
+         * - multiValued: false
+         * - mutability: readOnly
+         * - required: false
+         * - returned: default
+         * - type: boolean
+         * - uniqueness: none
+         * Whether the CMVA attribute will be fetched or not for current resource in AbstractResourceManager update operation before calling data provider update. Default is true.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsFetchComplexAttributeValues")
         private Boolean idcsFetchComplexAttributeValues;
 
         /**
-         * **SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none Whether the CMVA
-         * attribute will be fetched or not for current resource in AbstractResourceManager update
-         * operation before calling data provider update. Default is true.
-         *
+         * **SCIM++ Properties:**
+         * - caseExact: false
+         * - multiValued: false
+         * - mutability: readOnly
+         * - required: false
+         * - returned: default
+         * - type: boolean
+         * - uniqueness: none
+         * Whether the CMVA attribute will be fetched or not for current resource in AbstractResourceManager update operation before calling data provider update. Default is true.
          * @param idcsFetchComplexAttributeValues the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsFetchComplexAttributeValues(Boolean idcsFetchComplexAttributeValues) {
             this.idcsFetchComplexAttributeValues = idcsFetchComplexAttributeValues;
             this.__explicitlySet__.add("idcsFetchComplexAttributeValues");
@@ -1743,80 +2230,93 @@ public final class SchemaAttributes
         }
         /**
          * Indicates if the attribute is scim compliant, default is true
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsScimCompliant")
         private Boolean idcsScimCompliant;
 
         /**
          * Indicates if the attribute is scim compliant, default is true
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsScimCompliant the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsScimCompliant(Boolean idcsScimCompliant) {
             this.idcsScimCompliant = idcsScimCompliant;
             this.__explicitlySet__.add("idcsScimCompliant");
             return this;
         }
         /**
-         * Specifies if the attribute can be used for mapping with external identity sources such as
-         * AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined,
-         * then this flag is ignored
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         */
+         * Specifies if the attribute can be used for mapping with external identity sources such as AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then this flag is ignored
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAttributeMappable")
         private Boolean idcsAttributeMappable;
 
         /**
-         * Specifies if the attribute can be used for mapping with external identity sources such as
-         * AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined,
-         * then this flag is ignored
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         *
+         * Specifies if the attribute can be used for mapping with external identity sources such as AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then this flag is ignored
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsAttributeMappable the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAttributeMappable(Boolean idcsAttributeMappable) {
             this.idcsAttributeMappable = idcsAttributeMappable;
             this.__explicitlySet__.add("idcsAttributeMappable");
             return this;
         }
         /**
-         * If true, ARM should not validate the value of the attribute since it will be
-         * converted/migrated to another attribute internally by the manager which will build valid
-         * post, put, or patch payload, depending on the client requested operation
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * If true, ARM should not validate the value of the attribute since it will be converted/migrated to another attribute internally by the manager which will build valid post, put, or patch payload, depending on the client requested operation
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsValuePersistedInOtherAttribute")
         private Boolean idcsValuePersistedInOtherAttribute;
 
         /**
-         * If true, ARM should not validate the value of the attribute since it will be
-         * converted/migrated to another attribute internally by the manager which will build valid
-         * post, put, or patch payload, depending on the client requested operation
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * If true, ARM should not validate the value of the attribute since it will be converted/migrated to another attribute internally by the manager which will build valid post, put, or patch payload, depending on the client requested operation
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsValuePersistedInOtherAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsValuePersistedInOtherAttribute(
                 Boolean idcsValuePersistedInOtherAttribute) {
             this.idcsValuePersistedInOtherAttribute = idcsValuePersistedInOtherAttribute;
@@ -1824,60 +2324,68 @@ public final class SchemaAttributes
             return this;
         }
         /**
-         * Specifies whether the attribute is PII (personal information). False by default for all
-         * attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's
-         * written to the Oracle Identity Cloud Service system logs.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         */
+         * Specifies whether the attribute is PII (personal information). False by default for all attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's written to the Oracle Identity Cloud Service system logs.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsPii")
         private Boolean idcsPii;
 
         /**
-         * Specifies whether the attribute is PII (personal information). False by default for all
-         * attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's
-         * written to the Oracle Identity Cloud Service system logs.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         *
+         * Specifies whether the attribute is PII (personal information). False by default for all attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's written to the Oracle Identity Cloud Service system logs.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsPii the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsPii(Boolean idcsPii) {
             this.idcsPii = idcsPii;
             this.__explicitlySet__.add("idcsPii");
             return this;
         }
         /**
-         * Specifies whether the attribute should be excluded from the BulkApi patch generated by
-         * gradle task for upgrading OOTB resources.
-         *
-         * <p>*Added In:** 2104150946
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: never - type: boolean
-         */
+         * Specifies whether the attribute should be excluded from the BulkApi patch generated by gradle task for upgrading OOTB resources.
+         * <p>
+         **Added In:** 2104150946
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsExcludeFromUpgradePatch")
         private Boolean idcsExcludeFromUpgradePatch;
 
         /**
-         * Specifies whether the attribute should be excluded from the BulkApi patch generated by
-         * gradle task for upgrading OOTB resources.
-         *
-         * <p>*Added In:** 2104150946
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: never - type: boolean
-         *
+         * Specifies whether the attribute should be excluded from the BulkApi patch generated by gradle task for upgrading OOTB resources.
+         * <p>
+         **Added In:** 2104150946
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
          * @param idcsExcludeFromUpgradePatch the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsExcludeFromUpgradePatch(Boolean idcsExcludeFromUpgradePatch) {
             this.idcsExcludeFromUpgradePatch = idcsExcludeFromUpgradePatch;
             this.__explicitlySet__.add("idcsExcludeFromUpgradePatch");
@@ -1885,22 +2393,29 @@ public final class SchemaAttributes
         }
         /**
          * A list specifying the contained attributes
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subAttributes")
         private java.util.List<SchemaSubAttributes> subAttributes;
 
         /**
          * A list specifying the contained attributes
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
          * @param subAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder subAttributes(java.util.List<SchemaSubAttributes> subAttributes) {
             this.subAttributes = subAttributes;
             this.__explicitlySet__.add("subAttributes");
@@ -1908,175 +2423,203 @@ public final class SchemaAttributes
         }
         /**
          * Specifies the referenced Resource attribute
-         *
-         * <p>*Deprecated Since: 17.3.4**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **Deprecated Since: 17.3.4**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsRefResourceAttribute")
         private String idcsRefResourceAttribute;
 
         /**
          * Specifies the referenced Resource attribute
-         *
-         * <p>*Deprecated Since: 17.3.4**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **Deprecated Since: 17.3.4**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsRefResourceAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsRefResourceAttribute(String idcsRefResourceAttribute) {
             this.idcsRefResourceAttribute = idcsRefResourceAttribute;
             this.__explicitlySet__.add("idcsRefResourceAttribute");
             return this;
         }
         /**
-         * Specifies whether the attribute is cacheable. True by default for all attributes. If
-         * attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while
-         * executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data
-         * Provider.
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAttributeCacheable")
         private Boolean idcsAttributeCacheable;
 
         /**
-         * Specifies whether the attribute is cacheable. True by default for all attributes. If
-         * attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while
-         * executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data
-         * Provider.
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsAttributeCacheable the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAttributeCacheable(Boolean idcsAttributeCacheable) {
             this.idcsAttributeCacheable = idcsAttributeCacheable;
             this.__explicitlySet__.add("idcsAttributeCacheable");
             return this;
         }
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on
-         * the Account Form.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         */
+         * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on the Account Form.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsuiOrder")
         private Integer idcsuiOrder;
 
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on
-         * the Account Form.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer
-         *
+         * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on the Account Form.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
          * @param idcsuiOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsuiOrder(Integer idcsuiOrder) {
             this.idcsuiOrder = idcsuiOrder;
             this.__explicitlySet__.add("idcsuiOrder");
             return this;
         }
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using
-         * regular expressions.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using regular expressions.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsuiRegexp")
         private String idcsuiRegexp;
 
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using
-         * regular expressions.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using regular expressions.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsuiRegexp the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsuiRegexp(String idcsuiRegexp) {
             this.idcsuiRegexp = idcsuiRegexp;
             this.__explicitlySet__.add("idcsuiRegexp");
             return this;
         }
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be
-         * displayed on the Account Form.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         */
+         * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be displayed on the Account Form.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsuiVisible")
         private Boolean idcsuiVisible;
 
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be
-         * displayed on the Account Form.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean
-         *
+         * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be displayed on the Account Form.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsuiVisible the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsuiVisible(Boolean idcsuiVisible) {
             this.idcsuiVisible = idcsuiVisible;
             this.__explicitlySet__.add("idcsuiVisible");
             return this;
         }
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute
-         * on the Account Form.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on the Account Form.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsuiWidget")
         private IdcsuiWidget idcsuiWidget;
 
         /**
-         * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute
-         * on the Account Form.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on the Account Form.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsuiWidget the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsuiWidget(IdcsuiWidget idcsuiWidget) {
             this.idcsuiWidget = idcsuiWidget;
             this.__explicitlySet__.add("idcsuiWidget");
@@ -2084,55 +2627,71 @@ public final class SchemaAttributes
         }
         /**
          * The list of features that require this attribute
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsFeatures")
         private java.util.List<IdcsFeatures> idcsFeatures;
 
         /**
          * The list of features that require this attribute
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param idcsFeatures the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsFeatures(java.util.List<IdcsFeatures> idcsFeatures) {
             this.idcsFeatures = idcsFeatures;
             this.__explicitlySet__.add("idcsFeatures");
             return this;
         }
         /**
-         * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\"
-         * feature is disabled in GlobalConfig.
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\" feature is disabled in GlobalConfig.
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsOptionalPiiCanonicalValues")
         private java.util.List<String> idcsOptionalPiiCanonicalValues;
 
         /**
-         * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\"
-         * feature is disabled in GlobalConfig.
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\" feature is disabled in GlobalConfig.
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsOptionalPiiCanonicalValues the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsOptionalPiiCanonicalValues(
                 java.util.List<String> idcsOptionalPiiCanonicalValues) {
             this.idcsOptionalPiiCanonicalValues = idcsOptionalPiiCanonicalValues;
@@ -2140,88 +2699,109 @@ public final class SchemaAttributes
             return this;
         }
         /**
-         * Specifies if the value of the attribute should be sanitized using OWASP library for HTML
-         * content
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * Specifies if the value of the attribute should be sanitized using OWASP library for HTML content
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsSanitize")
         private Boolean idcsSanitize;
 
         /**
-         * Specifies if the value of the attribute should be sanitized using OWASP library for HTML
-         * content
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * Specifies if the value of the attribute should be sanitized using OWASP library for HTML content
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsSanitize the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsSanitize(Boolean idcsSanitize) {
             this.idcsSanitize = idcsSanitize;
             this.__explicitlySet__.add("idcsSanitize");
             return this;
         }
         /**
-         * Specifies whether the attribute from resource schema should override from common schema
-         * with the same name.
-         *
-         * <p>*Added In:** 2102181953
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         */
+         * Specifies whether the attribute from resource schema should override from common schema with the same name.
+         * <p>
+         **Added In:** 2102181953
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsOverrideCommonAttribute")
         private Boolean idcsOverrideCommonAttribute;
 
         /**
-         * Specifies whether the attribute from resource schema should override from common schema
-         * with the same name.
-         *
-         * <p>*Added In:** 2102181953
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: boolean
-         *
+         * Specifies whether the attribute from resource schema should override from common schema with the same name.
+         * <p>
+         **Added In:** 2102181953
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
          * @param idcsOverrideCommonAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsOverrideCommonAttribute(Boolean idcsOverrideCommonAttribute) {
             this.idcsOverrideCommonAttribute = idcsOverrideCommonAttribute;
             this.__explicitlySet__.add("idcsOverrideCommonAttribute");
             return this;
         }
         /**
-         * Specifies whether the readOnly and immutable reference attributes should be ignored when
-         * forceDelete=true.
-         *
-         * <p>*Added In:** 2104220644
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * Specifies whether the readOnly and immutable reference attributes should be ignored when forceDelete=true.
+         * <p>
+         **Added In:** 2104220644
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete")
         private Boolean idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete;
 
         /**
-         * Specifies whether the readOnly and immutable reference attributes should be ignored when
-         * forceDelete=true.
-         *
-         * <p>*Added In:** 2104220644
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * Specifies whether the readOnly and immutable reference attributes should be ignored when forceDelete=true.
+         * <p>
+         **Added In:** 2104220644
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete(
                 Boolean idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete) {
             this.idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete =
@@ -2230,29 +2810,36 @@ public final class SchemaAttributes
             return this;
         }
         /**
-         * Set this attribute to True if the resource is eligibal for update while system is in
-         * readonly mode.
-         *
-         * <p>*Added In:** 2106170416
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * Set this attribute to True if the resource is eligibal for update while system is in readonly mode.
+         * <p>
+         **Added In:** 2106170416
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAllowUpdatesInReadOnlyMode")
         private Boolean idcsAllowUpdatesInReadOnlyMode;
 
         /**
-         * Set this attribute to True if the resource is eligibal for update while system is in
-         * readonly mode.
-         *
-         * <p>*Added In:** 2106170416
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * Set this attribute to True if the resource is eligibal for update while system is in readonly mode.
+         * <p>
+         **Added In:** 2106170416
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsAllowUpdatesInReadOnlyMode the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAllowUpdatesInReadOnlyMode(Boolean idcsAllowUpdatesInReadOnlyMode) {
             this.idcsAllowUpdatesInReadOnlyMode = idcsAllowUpdatesInReadOnlyMode;
             this.__explicitlySet__.add("idcsAllowUpdatesInReadOnlyMode");
@@ -2260,87 +2847,106 @@ public final class SchemaAttributes
         }
         /**
          * Set this attribute to True if the pagination is required on an attribute.
-         *
-         * <p>*Added In:** 2202230830
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2202230830
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsPaginateResponse")
         private Boolean idcsPaginateResponse;
 
         /**
          * Set this attribute to True if the pagination is required on an attribute.
-         *
-         * <p>*Added In:** 2202230830
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2202230830
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsPaginateResponse the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsPaginateResponse(Boolean idcsPaginateResponse) {
             this.idcsPaginateResponse = idcsPaginateResponse;
             this.__explicitlySet__.add("idcsPaginateResponse");
             return this;
         }
         /**
-         * If true, indicates that the attribute value must be written to the home region for access
-         * flows initiated from a replica region.
-         *
-         * <p>*Added In:** 2209220956
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the attribute value must be written to the home region for access flows initiated from a replica region.
+         * <p>
+         **Added In:** 2209220956
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsRequiresWriteForAccessFlows")
         private Boolean idcsRequiresWriteForAccessFlows;
 
         /**
-         * If true, indicates that the attribute value must be written to the home region for access
-         * flows initiated from a replica region.
-         *
-         * <p>*Added In:** 2209220956
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the attribute value must be written to the home region for access flows initiated from a replica region.
+         * <p>
+         **Added In:** 2209220956
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsRequiresWriteForAccessFlows the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsRequiresWriteForAccessFlows(Boolean idcsRequiresWriteForAccessFlows) {
             this.idcsRequiresWriteForAccessFlows = idcsRequiresWriteForAccessFlows;
             this.__explicitlySet__.add("idcsRequiresWriteForAccessFlows");
             return this;
         }
         /**
-         * If true, indicates that the attribute value must be written to the home region and
-         * requires immediate read-after-write consistency for access flows initiated from a replica
-         * region.
-         *
-         * <p>*Added In:** 2209220956
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: never - type: boolean
-         */
+         * If true, indicates that the attribute value must be written to the home region and requires immediate read-after-write consistency for access flows initiated from a replica region.
+         * <p>
+         **Added In:** 2209220956
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "idcsRequiresImmediateReadAfterWriteForAccessFlows")
         private Boolean idcsRequiresImmediateReadAfterWriteForAccessFlows;
 
         /**
-         * If true, indicates that the attribute value must be written to the home region and
-         * requires immediate read-after-write consistency for access flows initiated from a replica
-         * region.
-         *
-         * <p>*Added In:** 2209220956
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: never - type: boolean
-         *
+         * If true, indicates that the attribute value must be written to the home region and requires immediate read-after-write consistency for access flows initiated from a replica region.
+         * <p>
+         **Added In:** 2209220956
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
          * @param idcsRequiresImmediateReadAfterWriteForAccessFlows the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsRequiresImmediateReadAfterWriteForAccessFlows(
                 Boolean idcsRequiresImmediateReadAfterWriteForAccessFlows) {
             this.idcsRequiresImmediateReadAfterWriteForAccessFlows =
@@ -2699,7 +3305,9 @@ public final class SchemaAttributes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -2710,67 +3318,100 @@ public final class SchemaAttributes
 
     /**
      * Attribute's name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Attribute's name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Localized schema attribute display name for use by UI client for displaying attribute labels
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Localized schema attribute display name for use by UI client  for displaying attribute labels
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsDisplayNameMessageId")
     private final String idcsDisplayNameMessageId;
 
     /**
-     * Localized schema attribute display name for use by UI client for displaying attribute labels
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Localized schema attribute display name for use by UI client  for displaying attribute labels
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsDisplayNameMessageId() {
         return idcsDisplayNameMessageId;
     }
 
     /**
      * Specifies if the attributes in this schema should be hidden externally
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsRtsaHideAttribute")
     private final Boolean idcsRtsaHideAttribute;
 
     /**
      * Specifies if the attributes in this schema should be hidden externally
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsRtsaHideAttribute() {
         return idcsRtsaHideAttribute;
     }
@@ -2784,11 +3425,17 @@ public final class SchemaAttributes
 
     /**
      * The attribute's data type--for example, String
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Type {
         String("string"),
         Complex("complex"),
         Boolean("boolean"),
@@ -2799,8 +3446,8 @@ public final class SchemaAttributes
         Binary("binary"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -2839,220 +3486,301 @@ public final class SchemaAttributes
     };
     /**
      * The attribute's data type--for example, String
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The attribute's data type--for example, String
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
     /**
      * Indicates the attribute's plurality
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("multiValued")
     private final Boolean multiValued;
 
     /**
      * Indicates the attribute's plurality
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getMultiValued() {
         return multiValued;
     }
 
     /**
      * The attribute's human-readable description
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The attribute's human-readable description
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
      * Specifies if the attribute is required
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("required")
     private final Boolean required;
 
     /**
      * Specifies if the attribute is required
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getRequired() {
         return required;
     }
 
     /**
      * Specifies if the attribute is required
-     *
-     * <p>*Added In:** 2305190132
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **Added In:** 2305190132
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsReturnEmptyWhenNull")
     private final Boolean idcsReturnEmptyWhenNull;
 
     /**
      * Specifies if the attribute is required
-     *
-     * <p>*Added In:** 2305190132
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **Added In:** 2305190132
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsReturnEmptyWhenNull() {
         return idcsReturnEmptyWhenNull;
     }
 
     /**
-     * A collection of canonical values. Applicable Service Providers MUST specify the canonical
-     * types specified in the core schema specification--for example, \\"work\\", \\"home\\".
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, \\"work\\", \\"home\\".
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canonicalValues")
     private final java.util.List<String> canonicalValues;
 
     /**
-     * A collection of canonical values. Applicable Service Providers MUST specify the canonical
-     * types specified in the core schema specification--for example, \\"work\\", \\"home\\".
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, \\"work\\", \\"home\\".
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getCanonicalValues() {
         return canonicalValues;
     }
 
     /**
-     * Specifies the default value for an attribute. The value must be one from canonicalValues if
-     * defined.
-     *
-     * <p>*Added In:** 18.1.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Specifies the default value for an attribute. The value must be one from canonicalValues if defined.
+     * <p>
+     **Added In:** 18.1.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsDefaultValue")
     private final String idcsDefaultValue;
 
     /**
-     * Specifies the default value for an attribute. The value must be one from canonicalValues if
-     * defined.
-     *
-     * <p>*Added In:** 18.1.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Specifies the default value for an attribute. The value must be one from canonicalValues if defined.
+     * <p>
+     **Added In:** 18.1.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsDefaultValue() {
         return idcsDefaultValue;
     }
 
     /**
      * A collection of Localized canonical values.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: complex
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localizedCanonicalValues")
     private final java.util.List<SchemaLocalizedCanonicalValues> localizedCanonicalValues;
 
     /**
      * A collection of Localized canonical values.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: complex
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<SchemaLocalizedCanonicalValues> getLocalizedCanonicalValues() {
         return localizedCanonicalValues;
     }
 
     /**
      * Specifies if the String attribute is case-sensitive
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caseExact")
     private final Boolean caseExact;
 
     /**
      * Specifies if the String attribute is case-sensitive
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getCaseExact() {
         return caseExact;
     }
 
     /**
      * Specifies if the attribute is mutable
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum Mutability implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Mutability {
         ReadOnly("readOnly"),
         ReadWrite("readWrite"),
         Immutable("immutable"),
         WriteOnly("writeOnly"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -3093,41 +3821,57 @@ public final class SchemaAttributes
     };
     /**
      * Specifies if the attribute is mutable
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mutability")
     private final Mutability mutability;
 
     /**
      * Specifies if the attribute is mutable
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Mutability getMutability() {
         return mutability;
     }
 
     /**
-     * A single keyword that indicates when an attribute and associated values are returned in
-     * response to a GET request or in response to a PUT, POST, or PATCH request
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum Returned implements com.oracle.bmc.http.internal.BmcEnum {
+     * A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Returned {
         Always("always"),
         Never("never"),
         Default("default"),
         Request("request"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -3167,46 +3911,56 @@ public final class SchemaAttributes
         }
     };
     /**
-     * A single keyword that indicates when an attribute and associated values are returned in
-     * response to a GET request or in response to a PUT, POST, or PATCH request
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("returned")
     private final Returned returned;
 
     /**
-     * A single keyword that indicates when an attribute and associated values are returned in
-     * response to a GET request or in response to a PUT, POST, or PATCH request
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Returned getReturned() {
         return returned;
     }
 
     /**
-     * A single keyword value that specifies how the Service Provider enforces uniqueness of
-     * attribute values. A server MAY reject an invalid value based on uniqueness by returning an
-     * HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side
-     * to a greater degree than the Service Provider enforces. For example, a client could make a
-     * value unique while the server has the uniqueness of \\"none\\".
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - required: false - returned:
-     * default - type: string - uniqueness: none
-     */
-    public enum Uniqueness implements com.oracle.bmc.http.internal.BmcEnum {
+     * A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \\"none\\".
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Uniqueness {
         None("none"),
         Server("server"),
         Global("global"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -3246,75 +4000,92 @@ public final class SchemaAttributes
         }
     };
     /**
-     * A single keyword value that specifies how the Service Provider enforces uniqueness of
-     * attribute values. A server MAY reject an invalid value based on uniqueness by returning an
-     * HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side
-     * to a greater degree than the Service Provider enforces. For example, a client could make a
-     * value unique while the server has the uniqueness of \\"none\\".
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - required: false - returned:
-     * default - type: string - uniqueness: none
-     */
+     * A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \\"none\\".
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueness")
     private final Uniqueness uniqueness;
 
     /**
-     * A single keyword value that specifies how the Service Provider enforces uniqueness of
-     * attribute values. A server MAY reject an invalid value based on uniqueness by returning an
-     * HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side
-     * to a greater degree than the Service Provider enforces. For example, a client could make a
-     * value unique while the server has the uniqueness of \\"none\\".
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - required: false - returned:
-     * default - type: string - uniqueness: none
-     *
+     * A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \\"none\\".
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Uniqueness getUniqueness() {
         return uniqueness;
     }
 
     /**
      * The attribute defining the CSV header name for import/export
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCsvAttributeName")
     private final String idcsCsvAttributeName;
 
     /**
      * The attribute defining the CSV header name for import/export
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsCsvAttributeName() {
         return idcsCsvAttributeName;
     }
 
     /**
-     * Specifies the mapping between external identity source attributes and Oracle Identity Cloud
-     * Service complex attributes (e.g. email => emails[work].value)
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readOnly - required: false -
-     * returned: default - type: complex
-     */
+     * Specifies the mapping between external identity source attributes and Oracle Identity Cloud Service complex attributes (e.g. email => emails[work].value)
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsComplexAttributeNameMappings")
     private final java.util.List<SchemaIdcsComplexAttributeNameMappings>
             idcsComplexAttributeNameMappings;
 
     /**
-     * Specifies the mapping between external identity source attributes and Oracle Identity Cloud
-     * Service complex attributes (e.g. email => emails[work].value)
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readOnly - required: false -
-     * returned: default - type: complex
-     *
+     * Specifies the mapping between external identity source attributes and Oracle Identity Cloud Service complex attributes (e.g. email => emails[work].value)
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<SchemaIdcsComplexAttributeNameMappings>
             getIdcsComplexAttributeNameMappings() {
         return idcsComplexAttributeNameMappings;
@@ -3322,53 +4093,81 @@ public final class SchemaAttributes
 
     /**
      * Maps to ICF target attribute name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsICFBundleAttributeName")
     private final String idcsICFBundleAttributeName;
 
     /**
      * Maps to ICF target attribute name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsICFBundleAttributeName() {
         return idcsICFBundleAttributeName;
     }
 
     /**
      * Metadata to identify the ICF required attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsICFRequired")
     private final Boolean idcsICFRequired;
 
     /**
      * Metadata to identify the ICF required attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsICFRequired() {
         return idcsICFRequired;
     }
 
     /**
      * Maps to ICF data type
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum IdcsICFAttributeType implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum IdcsICFAttributeType {
         String("string"),
         Long("long"),
         Char("char"),
@@ -3383,8 +4182,8 @@ public final class SchemaAttributes
         Guardedstring("guardedstring"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -3425,369 +4224,493 @@ public final class SchemaAttributes
     };
     /**
      * Maps to ICF data type
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsICFAttributeType")
     private final IdcsICFAttributeType idcsICFAttributeType;
 
     /**
      * Maps to ICF data type
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public IdcsICFAttributeType getIdcsICFAttributeType() {
         return idcsICFAttributeType;
     }
 
     /**
-     * Csv meta data for those resource type attributes which can be imported / exported from / to
-     * csv.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: complex
-     */
+     * Csv meta data for those resource type attributes which can be imported / exported from / to csv.
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCsvAttributeNameMappings")
     private final java.util.List<SchemaIdcsCsvAttributeNameMappings> idcsCsvAttributeNameMappings;
 
     /**
-     * Csv meta data for those resource type attributes which can be imported / exported from / to
-     * csv.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: complex
-     *
+     * Csv meta data for those resource type attributes which can be imported / exported from / to csv.
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<SchemaIdcsCsvAttributeNameMappings> getIdcsCsvAttributeNameMappings() {
         return idcsCsvAttributeNameMappings;
     }
 
     /**
-     * The names of the Resource types that may be referenced--for example, User. This is only
-     * applicable for attributes that are of the \\"reference\\" data type.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \\"reference\\" data type.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceTypes")
     private final java.util.List<String> referenceTypes;
 
     /**
-     * The names of the Resource types that may be referenced--for example, User. This is only
-     * applicable for attributes that are of the \\"reference\\" data type.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \\"reference\\" data type.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getReferenceTypes() {
         return referenceTypes;
     }
 
     /**
      * Indicates that the schema has been deprecated since version
-     *
-     * <p>*Deprecated Since: 19.3.3**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     */
+     * <p>
+     **Deprecated Since: 19.3.3**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsDeprecatedSinceVersion")
     private final Integer idcsDeprecatedSinceVersion;
 
     /**
      * Indicates that the schema has been deprecated since version
-     *
-     * <p>*Deprecated Since: 19.3.3**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     *
+     * <p>
+     **Deprecated Since: 19.3.3**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getIdcsDeprecatedSinceVersion() {
         return idcsDeprecatedSinceVersion;
     }
 
     /**
      * Indicates that the schema has been added since version
-     *
-     * <p>*Deprecated Since: 19.3.3**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     */
+     * <p>
+     **Deprecated Since: 19.3.3**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAddedSinceVersion")
     private final Integer idcsAddedSinceVersion;
 
     /**
      * Indicates that the schema has been added since version
-     *
-     * <p>*Deprecated Since: 19.3.3**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     *
+     * <p>
+     **Deprecated Since: 19.3.3**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getIdcsAddedSinceVersion() {
         return idcsAddedSinceVersion;
     }
 
     /**
      * Indicates that the schema has been deprecated since this release number
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsDeprecatedSinceReleaseNumber")
     private final String idcsDeprecatedSinceReleaseNumber;
 
     /**
      * Indicates that the schema has been deprecated since this release number
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getIdcsDeprecatedSinceReleaseNumber() {
         return idcsDeprecatedSinceReleaseNumber;
     }
 
     /**
      * Indicates that the schema has been added since this release number
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAddedSinceReleaseNumber")
     private final String idcsAddedSinceReleaseNumber;
 
     /**
      * Indicates that the schema has been added since this release number
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getIdcsAddedSinceReleaseNumber() {
         return idcsAddedSinceReleaseNumber;
     }
 
     /**
      * Specifies the minimum length of the attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsMinLength")
     private final Integer idcsMinLength;
 
     /**
      * Specifies the minimum length of the attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getIdcsMinLength() {
         return idcsMinLength;
     }
 
     /**
      * Specifies the maximum length of the attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsMaxLength")
     private final Integer idcsMaxLength;
 
     /**
      * Specifies the maximum length of the attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getIdcsMaxLength() {
         return idcsMaxLength;
     }
 
     /**
      * Specifies the minimum value of the integer attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: integer
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsMinValue")
     private final Integer idcsMinValue;
 
     /**
      * Specifies the minimum value of the integer attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: integer
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getIdcsMinValue() {
         return idcsMinValue;
     }
 
     /**
      * Specifies the maximum value of the integer attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: integer
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsMaxValue")
     private final Integer idcsMaxValue;
 
     /**
      * Specifies the maximum value of the integer attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: integer
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getIdcsMaxValue() {
         return idcsMaxValue;
     }
 
     /**
-     * If true, specifies that the attribute can have multiple language values set for the attribute
-     * on which this is set.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, specifies that the attribute can have multiple language values set for the attribute on which this is set.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsMultiLanguage")
     private final Boolean idcsMultiLanguage;
 
     /**
-     * If true, specifies that the attribute can have multiple language values set for the attribute
-     * on which this is set.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, specifies that the attribute can have multiple language values set for the attribute on which this is set.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsMultiLanguage() {
         return idcsMultiLanguage;
     }
 
     /**
      * Specifies the directly referenced Resources
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsRefResourceAttributes")
     private final java.util.List<String> idcsRefResourceAttributes;
 
     /**
      * Specifies the directly referenced Resources
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public java.util.List<String> getIdcsRefResourceAttributes() {
         return idcsRefResourceAttributes;
     }
 
     /**
      * Specifies the indirectly referenced Resources
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsIndirectRefResourceAttributes")
     private final java.util.List<String> idcsIndirectRefResourceAttributes;
 
     /**
      * Specifies the indirectly referenced Resources
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public java.util.List<String> getIdcsIndirectRefResourceAttributes() {
         return idcsIndirectRefResourceAttributes;
     }
 
     /**
      * Sequence tracking ID name for the attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAutoIncrementSeqName")
     private final String idcsAutoIncrementSeqName;
 
     /**
      * Sequence tracking ID name for the attribute
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getIdcsAutoIncrementSeqName() {
         return idcsAutoIncrementSeqName;
     }
 
     /**
      * Specifies whether the value of the Resource attribute is persisted
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsValuePersisted")
     private final Boolean idcsValuePersisted;
 
     /**
      * Specifies whether the value of the Resource attribute is persisted
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsValuePersisted() {
         return idcsValuePersisted;
     }
 
     /**
      * Flag to specify if the attribute should be encrypted or hashed
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum IdcsSensitive implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum IdcsSensitive {
         Encrypt("encrypt"),
         Hash("hash"),
         HashSc("hash_sc"),
@@ -3795,8 +4718,8 @@ public final class SchemaAttributes
         None("none"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -3837,458 +4760,644 @@ public final class SchemaAttributes
     };
     /**
      * Flag to specify if the attribute should be encrypted or hashed
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsSensitive")
     private final IdcsSensitive idcsSensitive;
 
     /**
      * Flag to specify if the attribute should be encrypted or hashed
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public IdcsSensitive getIdcsSensitive() {
         return idcsSensitive;
     }
 
     /**
-     * Specifies whether the schema attribute is for internal use only. Internal attributes are not
-     * exposed via REST. This attribute overrides mutability for create/update if the request is
-     * internal and the attribute internalflag is set to True. This attribute overrides the return
-     * attribute while building SCIM response attributes when both the request is internal and the
-     * schema attribute is internal.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * Specifies whether the schema attribute is for internal use only. Internal attributes are not exposed via REST. This attribute overrides mutability for create/update if the request is internal and the attribute internalflag is set to True. This attribute overrides the return attribute while building SCIM response attributes when both the request is internal and the schema attribute is internal.
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsInternal")
     private final Boolean idcsInternal;
 
     /**
-     * Specifies whether the schema attribute is for internal use only. Internal attributes are not
-     * exposed via REST. This attribute overrides mutability for create/update if the request is
-     * internal and the attribute internalflag is set to True. This attribute overrides the return
-     * attribute while building SCIM response attributes when both the request is internal and the
-     * schema attribute is internal.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * Specifies whether the schema attribute is for internal use only. Internal attributes are not exposed via REST. This attribute overrides mutability for create/update if the request is internal and the attribute internalflag is set to True. This attribute overrides the return attribute while building SCIM response attributes when both the request is internal and the schema attribute is internal.
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsInternal() {
         return idcsInternal;
     }
 
     /**
      * Trims any leading and trailing blanks from String values. Default is True.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsTrimStringValue")
     private final Boolean idcsTrimStringValue;
 
     /**
      * Trims any leading and trailing blanks from String values. Default is True.
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsTrimStringValue() {
         return idcsTrimStringValue;
     }
 
     /**
      * Specifies whether this attribute can be included in a search filter
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsSearchable")
     private final Boolean idcsSearchable;
 
     /**
      * Specifies whether this attribute can be included in a search filter
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsSearchable() {
         return idcsSearchable;
     }
 
     /**
      * Specifies whether this attribute value was generated
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsGenerated")
     private final Boolean idcsGenerated;
 
     /**
      * Specifies whether this attribute value was generated
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsGenerated() {
         return idcsGenerated;
     }
 
     /**
      * Specifies whether changes to this attribute value are audited
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAuditable")
     private final Boolean idcsAuditable;
 
     /**
      * Specifies whether changes to this attribute value are audited
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsAuditable() {
         return idcsAuditable;
     }
 
     /**
      * Target attribute name that this attribute gets mapped to for persistence
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetAttributeName")
     private final String idcsTargetAttributeName;
 
     /**
      * Target attribute name that this attribute gets mapped to for persistence
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsTargetAttributeName() {
         return idcsTargetAttributeName;
     }
 
     /**
      * Contains the canonical name of the other attribute sharing the same idcsTargetAttributeName
-     *
-     * <p>*Added In:** 2209122038
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: always - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2209122038
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsMapsToSameTargetAttributeNameAs")
     private final String idcsMapsToSameTargetAttributeNameAs;
 
     /**
      * Contains the canonical name of the other attribute sharing the same idcsTargetAttributeName
-     *
-     * <p>*Added In:** 2209122038
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: always - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2209122038
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsMapsToSameTargetAttributeNameAs() {
         return idcsMapsToSameTargetAttributeNameAs;
     }
 
     /**
-     * Target normalized attribute name that this normalized value of attribute gets mapped to for
-     * persistence. Only set for caseExact=false & searchable attributes. Do not use by default.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Target normalized attribute name that this normalized value of attribute gets mapped to for persistence. Only set for caseExact=false & searchable attributes. Do not use by default.
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetNormAttributeName")
     private final String idcsTargetNormAttributeName;
 
     /**
-     * Target normalized attribute name that this normalized value of attribute gets mapped to for
-     * persistence. Only set for caseExact=false & searchable attributes. Do not use by default.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Target normalized attribute name that this normalized value of attribute gets mapped to for persistence. Only set for caseExact=false & searchable attributes. Do not use by default.
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsTargetNormAttributeName() {
         return idcsTargetNormAttributeName;
     }
 
     /**
-     * Old Target attribute name from child table for CSVA attribute prior to migration. This
-     * maintains this attribute used to get mapped to for persistence
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Old Target attribute name from child table for CSVA attribute prior to migration. This maintains this attribute used to get mapped to for persistence
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetAttributeNameToMigrateFrom")
     private final String idcsTargetAttributeNameToMigrateFrom;
 
     /**
-     * Old Target attribute name from child table for CSVA attribute prior to migration. This
-     * maintains this attribute used to get mapped to for persistence
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Old Target attribute name from child table for CSVA attribute prior to migration. This maintains this attribute used to get mapped to for persistence
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsTargetAttributeNameToMigrateFrom() {
         return idcsTargetAttributeNameToMigrateFrom;
     }
 
     /**
      * Target index name created for this attribute for performance
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsTargetUniqueConstraintName")
     private final String idcsTargetUniqueConstraintName;
 
     /**
      * Target index name created for this attribute for performance
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsTargetUniqueConstraintName() {
         return idcsTargetUniqueConstraintName;
     }
 
     /**
-     * Specifies the mapper to use when mapping this attribute value to DataProvider-specific
-     * semantics
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Specifies the mapper to use when mapping this attribute value to DataProvider-specific semantics
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsToTargetMapper")
     private final String idcsToTargetMapper;
 
     /**
-     * Specifies the mapper to use when mapping this attribute value to DataProvider-specific
-     * semantics
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Specifies the mapper to use when mapping this attribute value to DataProvider-specific semantics
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsToTargetMapper() {
         return idcsToTargetMapper;
     }
 
     /**
-     * Specifies the mapper to use when mapping this attribute value from DataProvider-specific
-     * semantics
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Specifies the mapper to use when mapping this attribute value from DataProvider-specific semantics
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsFromTargetMapper")
     private final String idcsFromTargetMapper;
 
     /**
-     * Specifies the mapper to use when mapping this attribute value from DataProvider-specific
-     * semantics
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Specifies the mapper to use when mapping this attribute value from DataProvider-specific semantics
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsFromTargetMapper() {
         return idcsFromTargetMapper;
     }
 
     /**
      * Specifies the user-friendly displayable attribute name or catalog key used for localization
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsDisplayName")
     private final String idcsDisplayName;
 
     /**
      * Specifies the user-friendly displayable attribute name or catalog key used for localization
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsDisplayName() {
         return idcsDisplayName;
     }
 
     /**
      * Specifies the Resource type to read from for dynamic canonical values
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceResourceType")
     private final String idcsCanonicalValueSourceResourceType;
 
     /**
      * Specifies the Resource type to read from for dynamic canonical values
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsCanonicalValueSourceResourceType() {
         return idcsCanonicalValueSourceResourceType;
     }
 
     /**
      * Filter to use when getting canonical values for this schema attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceFilter")
     private final String idcsCanonicalValueSourceFilter;
 
     /**
      * Filter to use when getting canonical values for this schema attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsCanonicalValueSourceFilter() {
         return idcsCanonicalValueSourceFilter;
     }
 
     /**
      * Specifies the Resource type ID to read from for dynamic canonical values
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceResourceTypeID")
     private final String idcsCanonicalValueSourceResourceTypeID;
 
     /**
      * Specifies the Resource type ID to read from for dynamic canonical values
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsCanonicalValueSourceResourceTypeID() {
         return idcsCanonicalValueSourceResourceTypeID;
     }
 
     /**
      * Display name for the canonical value attribute name.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceDisplayAttrName")
     private final String idcsCanonicalValueSourceDisplayAttrName;
 
     /**
      * Display name for the canonical value attribute name.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsCanonicalValueSourceDisplayAttrName() {
         return idcsCanonicalValueSourceDisplayAttrName;
     }
 
     /**
      * Source key attribute for the canonical value.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueSourceKeyAttrName")
     private final String idcsCanonicalValueSourceKeyAttrName;
 
     /**
      * Source key attribute for the canonical value.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsCanonicalValueSourceKeyAttrName() {
         return idcsCanonicalValueSourceKeyAttrName;
     }
 
     /**
      * Type of the canonical value.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum IdcsCanonicalValueType implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum IdcsCanonicalValueType {
         Dynamic("dynamic"),
         Static("static"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -4329,403 +5438,499 @@ public final class SchemaAttributes
     };
     /**
      * Type of the canonical value.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCanonicalValueType")
     private final IdcsCanonicalValueType idcsCanonicalValueType;
 
     /**
      * Type of the canonical value.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public IdcsCanonicalValueType getIdcsCanonicalValueType() {
         return idcsCanonicalValueType;
     }
 
     /**
      * Validate payload reference value during create, replace, and update. Default is True.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsValidateReference")
     private final Boolean idcsValidateReference;
 
     /**
      * Validate payload reference value during create, replace, and update. Default is True.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsValidateReference() {
         return idcsValidateReference;
     }
 
     /**
-     * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an
-     * instance of a CMVA
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an instance of a CMVA
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsCompositeKey")
     private final java.util.List<String> idcsCompositeKey;
 
     /**
-     * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an
-     * instance of a CMVA
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an instance of a CMVA
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getIdcsCompositeKey() {
         return idcsCompositeKey;
     }
 
     /**
-     * **SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none Whether the CMVA
-     * attribute will be fetched or not for current resource in AbstractResourceManager update
-     * operation before calling data provider update. Default is true.
-     */
+     * **SCIM++ Properties:**
+     * - caseExact: false
+     * - multiValued: false
+     * - mutability: readOnly
+     * - required: false
+     * - returned: default
+     * - type: boolean
+     * - uniqueness: none
+     * Whether the CMVA attribute will be fetched or not for current resource in AbstractResourceManager update operation before calling data provider update. Default is true.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsFetchComplexAttributeValues")
     private final Boolean idcsFetchComplexAttributeValues;
 
     /**
-     * **SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none Whether the CMVA
-     * attribute will be fetched or not for current resource in AbstractResourceManager update
-     * operation before calling data provider update. Default is true.
-     *
+     * **SCIM++ Properties:**
+     * - caseExact: false
+     * - multiValued: false
+     * - mutability: readOnly
+     * - required: false
+     * - returned: default
+     * - type: boolean
+     * - uniqueness: none
+     * Whether the CMVA attribute will be fetched or not for current resource in AbstractResourceManager update operation before calling data provider update. Default is true.
      * @return the value
-     */
+     **/
     public Boolean getIdcsFetchComplexAttributeValues() {
         return idcsFetchComplexAttributeValues;
     }
 
     /**
      * Indicates if the attribute is scim compliant, default is true
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsScimCompliant")
     private final Boolean idcsScimCompliant;
 
     /**
      * Indicates if the attribute is scim compliant, default is true
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsScimCompliant() {
         return idcsScimCompliant;
     }
 
     /**
-     * Specifies if the attribute can be used for mapping with external identity sources such as AD
-     * or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then
-     * this flag is ignored
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     */
+     * Specifies if the attribute can be used for mapping with external identity sources such as AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then this flag is ignored
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAttributeMappable")
     private final Boolean idcsAttributeMappable;
 
     /**
-     * Specifies if the attribute can be used for mapping with external identity sources such as AD
-     * or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then
-     * this flag is ignored
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     *
+     * Specifies if the attribute can be used for mapping with external identity sources such as AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then this flag is ignored
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsAttributeMappable() {
         return idcsAttributeMappable;
     }
 
     /**
-     * If true, ARM should not validate the value of the attribute since it will be
-     * converted/migrated to another attribute internally by the manager which will build valid
-     * post, put, or patch payload, depending on the client requested operation
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * If true, ARM should not validate the value of the attribute since it will be converted/migrated to another attribute internally by the manager which will build valid post, put, or patch payload, depending on the client requested operation
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsValuePersistedInOtherAttribute")
     private final Boolean idcsValuePersistedInOtherAttribute;
 
     /**
-     * If true, ARM should not validate the value of the attribute since it will be
-     * converted/migrated to another attribute internally by the manager which will build valid
-     * post, put, or patch payload, depending on the client requested operation
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * If true, ARM should not validate the value of the attribute since it will be converted/migrated to another attribute internally by the manager which will build valid post, put, or patch payload, depending on the client requested operation
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsValuePersistedInOtherAttribute() {
         return idcsValuePersistedInOtherAttribute;
     }
 
     /**
-     * Specifies whether the attribute is PII (personal information). False by default for all
-     * attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's
-     * written to the Oracle Identity Cloud Service system logs.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     */
+     * Specifies whether the attribute is PII (personal information). False by default for all attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's written to the Oracle Identity Cloud Service system logs.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsPii")
     private final Boolean idcsPii;
 
     /**
-     * Specifies whether the attribute is PII (personal information). False by default for all
-     * attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's
-     * written to the Oracle Identity Cloud Service system logs.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     *
+     * Specifies whether the attribute is PII (personal information). False by default for all attributes. If attribute with idcsPii = true, it's value must be obfuscated before it's written to the Oracle Identity Cloud Service system logs.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsPii() {
         return idcsPii;
     }
 
     /**
-     * Specifies whether the attribute should be excluded from the BulkApi patch generated by gradle
-     * task for upgrading OOTB resources.
-     *
-     * <p>*Added In:** 2104150946
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: never - type: boolean
-     */
+     * Specifies whether the attribute should be excluded from the BulkApi patch generated by gradle task for upgrading OOTB resources.
+     * <p>
+     **Added In:** 2104150946
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsExcludeFromUpgradePatch")
     private final Boolean idcsExcludeFromUpgradePatch;
 
     /**
-     * Specifies whether the attribute should be excluded from the BulkApi patch generated by gradle
-     * task for upgrading OOTB resources.
-     *
-     * <p>*Added In:** 2104150946
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: never - type: boolean
-     *
+     * Specifies whether the attribute should be excluded from the BulkApi patch generated by gradle task for upgrading OOTB resources.
+     * <p>
+     **Added In:** 2104150946
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsExcludeFromUpgradePatch() {
         return idcsExcludeFromUpgradePatch;
     }
 
     /**
      * A list specifying the contained attributes
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: complex
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subAttributes")
     private final java.util.List<SchemaSubAttributes> subAttributes;
 
     /**
      * A list specifying the contained attributes
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: complex
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<SchemaSubAttributes> getSubAttributes() {
         return subAttributes;
     }
 
     /**
      * Specifies the referenced Resource attribute
-     *
-     * <p>*Deprecated Since: 17.3.4**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **Deprecated Since: 17.3.4**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsRefResourceAttribute")
     private final String idcsRefResourceAttribute;
 
     /**
      * Specifies the referenced Resource attribute
-     *
-     * <p>*Deprecated Since: 17.3.4**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **Deprecated Since: 17.3.4**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getIdcsRefResourceAttribute() {
         return idcsRefResourceAttribute;
     }
 
     /**
-     * Specifies whether the attribute is cacheable. True by default for all attributes. If
-     * attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while
-     * executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data
-     * Provider.
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAttributeCacheable")
     private final Boolean idcsAttributeCacheable;
 
     /**
-     * Specifies whether the attribute is cacheable. True by default for all attributes. If
-     * attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while
-     * executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data
-     * Provider.
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \\"attributesToGet\\" while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsAttributeCacheable() {
         return idcsAttributeCacheable;
     }
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on the
-     * Account Form.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     */
+     * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on the Account Form.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsuiOrder")
     private final Integer idcsuiOrder;
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on the
-     * Account Form.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer
-     *
+     * Metadata used by Oracle Identity Cloud Service UI to sequence the attributes displayed on the Account Form.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getIdcsuiOrder() {
         return idcsuiOrder;
     }
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using
-     * regular expressions.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using regular expressions.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsuiRegexp")
     private final String idcsuiRegexp;
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using
-     * regular expressions.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * Metadata used by Oracle Identity Cloud Service UI to validate the attribute values using regular expressions.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getIdcsuiRegexp() {
         return idcsuiRegexp;
     }
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be
-     * displayed on the Account Form.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     */
+     * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be displayed on the Account Form.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsuiVisible")
     private final Boolean idcsuiVisible;
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be
-     * displayed on the Account Form.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean
-     *
+     * Metadata used by Oracle Identity Cloud Service UI to decide whether the attribute must be displayed on the Account Form.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsuiVisible() {
         return idcsuiVisible;
     }
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on
-     * the Account Form.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
-    public enum IdcsuiWidget implements com.oracle.bmc.http.internal.BmcEnum {
+     * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on the Account Form.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
+    public enum IdcsuiWidget {
         Inputtext("inputtext"),
         Checkbox("checkbox"),
         Textarea("textarea"),
         Combobox("combobox"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -4765,42 +5970,48 @@ public final class SchemaAttributes
         }
     };
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on
-     * the Account Form.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on the Account Form.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsuiWidget")
     private final IdcsuiWidget idcsuiWidget;
 
     /**
-     * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on
-     * the Account Form.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * Metadata used by Oracle Identity Cloud Service UI to render a widget for this attribute on the Account Form.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public IdcsuiWidget getIdcsuiWidget() {
         return idcsuiWidget;
     }
 
-    /** */
-    public enum IdcsFeatures implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum IdcsFeatures {
         OptionalPii("optionalPii"),
         Mfa("mfa"),
         Social("social"),
         SchemaCustomization("schemaCustomization"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -4841,241 +6052,306 @@ public final class SchemaAttributes
     };
     /**
      * The list of features that require this attribute
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsFeatures")
     private final java.util.List<IdcsFeatures> idcsFeatures;
 
     /**
      * The list of features that require this attribute
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: true - mutability: readWrite - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public java.util.List<IdcsFeatures> getIdcsFeatures() {
         return idcsFeatures;
     }
 
     /**
-     * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\" feature
-     * is disabled in GlobalConfig.
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\" feature is disabled in GlobalConfig.
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsOptionalPiiCanonicalValues")
     private final java.util.List<String> idcsOptionalPiiCanonicalValues;
 
     /**
-     * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\" feature
-     * is disabled in GlobalConfig.
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * A subset of \\"canonicalValues\\" that are not supported when the \\"optionalPii\\" feature is disabled in GlobalConfig.
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getIdcsOptionalPiiCanonicalValues() {
         return idcsOptionalPiiCanonicalValues;
     }
 
     /**
-     * Specifies if the value of the attribute should be sanitized using OWASP library for HTML
-     * content
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * Specifies if the value of the attribute should be sanitized using OWASP library for HTML content
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsSanitize")
     private final Boolean idcsSanitize;
 
     /**
-     * Specifies if the value of the attribute should be sanitized using OWASP library for HTML
-     * content
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * Specifies if the value of the attribute should be sanitized using OWASP library for HTML content
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsSanitize() {
         return idcsSanitize;
     }
 
     /**
-     * Specifies whether the attribute from resource schema should override from common schema with
-     * the same name.
-     *
-     * <p>*Added In:** 2102181953
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     */
+     * Specifies whether the attribute from resource schema should override from common schema with the same name.
+     * <p>
+     **Added In:** 2102181953
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsOverrideCommonAttribute")
     private final Boolean idcsOverrideCommonAttribute;
 
     /**
-     * Specifies whether the attribute from resource schema should override from common schema with
-     * the same name.
-     *
-     * <p>*Added In:** 2102181953
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: boolean
-     *
+     * Specifies whether the attribute from resource schema should override from common schema with the same name.
+     * <p>
+     **Added In:** 2102181953
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsOverrideCommonAttribute() {
         return idcsOverrideCommonAttribute;
     }
 
     /**
-     * Specifies whether the readOnly and immutable reference attributes should be ignored when
-     * forceDelete=true.
-     *
-     * <p>*Added In:** 2104220644
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * Specifies whether the readOnly and immutable reference attributes should be ignored when forceDelete=true.
+     * <p>
+     **Added In:** 2104220644
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty(
             "idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete")
     private final Boolean idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete;
 
     /**
-     * Specifies whether the readOnly and immutable reference attributes should be ignored when
-     * forceDelete=true.
-     *
-     * <p>*Added In:** 2104220644
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * Specifies whether the readOnly and immutable reference attributes should be ignored when forceDelete=true.
+     * <p>
+     **Added In:** 2104220644
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete() {
         return idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete;
     }
 
     /**
-     * Set this attribute to True if the resource is eligibal for update while system is in readonly
-     * mode.
-     *
-     * <p>*Added In:** 2106170416
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * Set this attribute to True if the resource is eligibal for update while system is in readonly mode.
+     * <p>
+     **Added In:** 2106170416
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAllowUpdatesInReadOnlyMode")
     private final Boolean idcsAllowUpdatesInReadOnlyMode;
 
     /**
-     * Set this attribute to True if the resource is eligibal for update while system is in readonly
-     * mode.
-     *
-     * <p>*Added In:** 2106170416
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * Set this attribute to True if the resource is eligibal for update while system is in readonly mode.
+     * <p>
+     **Added In:** 2106170416
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsAllowUpdatesInReadOnlyMode() {
         return idcsAllowUpdatesInReadOnlyMode;
     }
 
     /**
      * Set this attribute to True if the pagination is required on an attribute.
-     *
-     * <p>*Added In:** 2202230830
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2202230830
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsPaginateResponse")
     private final Boolean idcsPaginateResponse;
 
     /**
      * Set this attribute to True if the pagination is required on an attribute.
-     *
-     * <p>*Added In:** 2202230830
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2202230830
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsPaginateResponse() {
         return idcsPaginateResponse;
     }
 
     /**
-     * If true, indicates that the attribute value must be written to the home region for access
-     * flows initiated from a replica region.
-     *
-     * <p>*Added In:** 2209220956
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that the attribute value must be written to the home region for access flows initiated from a replica region.
+     * <p>
+     **Added In:** 2209220956
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsRequiresWriteForAccessFlows")
     private final Boolean idcsRequiresWriteForAccessFlows;
 
     /**
-     * If true, indicates that the attribute value must be written to the home region for access
-     * flows initiated from a replica region.
-     *
-     * <p>*Added In:** 2209220956
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that the attribute value must be written to the home region for access flows initiated from a replica region.
+     * <p>
+     **Added In:** 2209220956
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsRequiresWriteForAccessFlows() {
         return idcsRequiresWriteForAccessFlows;
     }
 
     /**
-     * If true, indicates that the attribute value must be written to the home region and requires
-     * immediate read-after-write consistency for access flows initiated from a replica region.
-     *
-     * <p>*Added In:** 2209220956
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: never - type: boolean
-     */
+     * If true, indicates that the attribute value must be written to the home region and requires immediate read-after-write consistency for access flows initiated from a replica region.
+     * <p>
+     **Added In:** 2209220956
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty(
             "idcsRequiresImmediateReadAfterWriteForAccessFlows")
     private final Boolean idcsRequiresImmediateReadAfterWriteForAccessFlows;
 
     /**
-     * If true, indicates that the attribute value must be written to the home region and requires
-     * immediate read-after-write consistency for access flows initiated from a replica region.
-     *
-     * <p>*Added In:** 2209220956
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: never - type: boolean
-     *
+     * If true, indicates that the attribute value must be written to the home region and requires immediate read-after-write consistency for access flows initiated from a replica region.
+     * <p>
+     **Added In:** 2209220956
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIdcsRequiresImmediateReadAfterWriteForAccessFlows() {
         return idcsRequiresImmediateReadAfterWriteForAccessFlows;
     }
@@ -5087,7 +6363,6 @@ public final class SchemaAttributes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

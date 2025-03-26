@@ -5,25 +5,25 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Named entity recognition model testing and evaluation results <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Named entity recognition model testing and evaluation results
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NamedEntityRecognitionEvaluationResults.Builder.class)
+    builder = NamedEntityRecognitionEvaluationResults.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NamedEntityRecognitionEvaluationResults extends EvaluationResults {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,47 +36,50 @@ public final class NamedEntityRecognitionEvaluationResults extends EvaluationRes
             this.__explicitlySet__.add("metrics");
             return this;
         }
-        /** List of entity metrics */
+        /**
+         * List of entity metrics
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityMetrics")
         private java.util.List<EntityMetrics> entityMetrics;
 
         /**
          * List of entity metrics
-         *
          * @param entityMetrics the value to set
          * @return this builder
-         */
+         **/
         public Builder entityMetrics(java.util.List<EntityMetrics> entityMetrics) {
             this.entityMetrics = entityMetrics;
             this.__explicitlySet__.add("entityMetrics");
             return this;
         }
-        /** class level confusion matrix */
+        /**
+         * class level confusion matrix
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confusionMatrix")
         private java.util.Map<String, ConfusionMatrixDetails> confusionMatrix;
 
         /**
          * class level confusion matrix
-         *
          * @param confusionMatrix the value to set
          * @return this builder
-         */
+         **/
         public Builder confusionMatrix(
                 java.util.Map<String, ConfusionMatrixDetails> confusionMatrix) {
             this.confusionMatrix = confusionMatrix;
             this.__explicitlySet__.add("confusionMatrix");
             return this;
         }
-        /** labels */
+        /**
+         * labels
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
          * labels
-         *
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -114,7 +117,9 @@ public final class NamedEntityRecognitionEvaluationResults extends EvaluationRes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,41 +148,44 @@ public final class NamedEntityRecognitionEvaluationResults extends EvaluationRes
         return metrics;
     }
 
-    /** List of entity metrics */
+    /**
+     * List of entity metrics
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityMetrics")
     private final java.util.List<EntityMetrics> entityMetrics;
 
     /**
      * List of entity metrics
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityMetrics> getEntityMetrics() {
         return entityMetrics;
     }
 
-    /** class level confusion matrix */
+    /**
+     * class level confusion matrix
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confusionMatrix")
     private final java.util.Map<String, ConfusionMatrixDetails> confusionMatrix;
 
     /**
      * class level confusion matrix
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, ConfusionMatrixDetails> getConfusionMatrix() {
         return confusionMatrix;
     }
 
-    /** labels */
+    /**
+     * labels
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
      * labels
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -189,7 +197,6 @@ public final class NamedEntityRecognitionEvaluationResults extends EvaluationRes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Supported ort orders. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum SortOrders implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported ort orders.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum SortOrders {
     Asc("ASC"),
     Desc("DESC"),
     ;

@@ -5,21 +5,19 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * Child PDB for a CDB. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * Child PDB for a CDB.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChildPdb.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ChildPdb extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ChildPdb extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "pdbId",
@@ -47,91 +45,97 @@ public final class ChildPdb extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier for the pluggable database. */
+        /**
+         * Identifier for the pluggable database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbId")
         private String pdbId;
 
         /**
          * Identifier for the pluggable database.
-         *
          * @param pdbId the value to set
          * @return this builder
-         */
+         **/
         public Builder pdbId(String pdbId) {
             this.pdbId = pdbId;
             this.__explicitlySet__.add("pdbId");
             return this;
         }
-        /** Name fo the pluggable database. */
+        /**
+         * Name fo the pluggable database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name fo the pluggable database.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Open mode */
+        /**
+         * Open mode
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("openMode")
         private String openMode;
 
         /**
          * Open mode
-         *
          * @param openMode the value to set
          * @return this builder
-         */
+         **/
         public Builder openMode(String openMode) {
             this.openMode = openMode;
             this.__explicitlySet__.add("openMode");
             return this;
         }
-        /** Restricted */
+        /**
+         * Restricted
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("restricted")
         private String restricted;
 
         /**
          * Restricted
-         *
          * @param restricted the value to set
          * @return this builder
-         */
+         **/
         public Builder restricted(String restricted) {
             this.restricted = restricted;
             this.__explicitlySet__.add("restricted");
             return this;
         }
-        /** Recovery status */
+        /**
+         * Recovery status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryStatus")
         private String recoveryStatus;
 
         /**
          * Recovery status
-         *
          * @param recoveryStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder recoveryStatus(String recoveryStatus) {
             this.recoveryStatus = recoveryStatus;
             this.__explicitlySet__.add("recoveryStatus");
             return this;
         }
-        /** Last changed by */
+        /**
+         * Last changed by
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastChangedBy")
         private String lastChangedBy;
 
         /**
          * Last changed by
-         *
          * @param lastChangedBy the value to set
          * @return this builder
-         */
+         **/
         public Builder lastChangedBy(String lastChangedBy) {
             this.lastChangedBy = lastChangedBy;
             this.__explicitlySet__.add("lastChangedBy");
@@ -180,7 +184,9 @@ public final class ChildPdb extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,80 +195,86 @@ public final class ChildPdb extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** Identifier for the pluggable database. */
+    /**
+     * Identifier for the pluggable database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbId")
     private final String pdbId;
 
     /**
      * Identifier for the pluggable database.
-     *
      * @return the value
-     */
+     **/
     public String getPdbId() {
         return pdbId;
     }
 
-    /** Name fo the pluggable database. */
+    /**
+     * Name fo the pluggable database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name fo the pluggable database.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Open mode */
+    /**
+     * Open mode
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     private final String openMode;
 
     /**
      * Open mode
-     *
      * @return the value
-     */
+     **/
     public String getOpenMode() {
         return openMode;
     }
 
-    /** Restricted */
+    /**
+     * Restricted
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("restricted")
     private final String restricted;
 
     /**
      * Restricted
-     *
      * @return the value
-     */
+     **/
     public String getRestricted() {
         return restricted;
     }
 
-    /** Recovery status */
+    /**
+     * Recovery status
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryStatus")
     private final String recoveryStatus;
 
     /**
      * Recovery status
-     *
      * @return the value
-     */
+     **/
     public String getRecoveryStatus() {
         return recoveryStatus;
     }
 
-    /** Last changed by */
+    /**
+     * Last changed by
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastChangedBy")
     private final String lastChangedBy;
 
     /**
      * Last changed by
-     *
      * @return the value
-     */
+     **/
     public String getLastChangedBy() {
         return lastChangedBy;
     }
@@ -274,7 +286,6 @@ public final class ChildPdb extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

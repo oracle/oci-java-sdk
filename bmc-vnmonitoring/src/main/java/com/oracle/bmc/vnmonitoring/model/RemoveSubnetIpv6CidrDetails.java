@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Details object for removing an IPv6 CIDR Block from a Subnet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details object for removing an IPv6 CIDR Block from a Subnet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RemoveSubnetIpv6CidrDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RemoveSubnetIpv6CidrDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RemoveSubnetIpv6CidrDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipv6CidrBlock"})
     public RemoveSubnetIpv6CidrDetails(String ipv6CidrBlock) {
@@ -32,25 +31,26 @@ public final class RemoveSubnetIpv6CidrDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This field is not required and should only be specified when removing an IPv6 CIDR from a
-         * subnet's IPv6 address space. See[IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * This field is not required and should only be specified when removing an IPv6 CIDR
+         * from a subnet's IPv6 address space.
+         * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 2001:0db8:0123::/64}
          *
-         * <p>Example: {@code 2001:0db8:0123::/64}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * This field is not required and should only be specified when removing an IPv6 CIDR from a
-         * subnet's IPv6 address space. See[IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         *
-         * <p>Example: {@code 2001:0db8:0123::/64}
+         * This field is not required and should only be specified when removing an IPv6 CIDR
+         * from a subnet's IPv6 address space.
+         * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 2001:0db8:0123::/64}
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.__explicitlySet__.add("ipv6CidrBlock");
@@ -77,7 +77,9 @@ public final class RemoveSubnetIpv6CidrDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -87,24 +89,25 @@ public final class RemoveSubnetIpv6CidrDetails
     }
 
     /**
-     * This field is not required and should only be specified when removing an IPv6 CIDR from a
-     * subnet's IPv6 address space. See[IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * This field is not required and should only be specified when removing an IPv6 CIDR
+     * from a subnet's IPv6 address space.
+     * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code 2001:0db8:0123::/64}
      *
-     * <p>Example: {@code 2001:0db8:0123::/64}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * This field is not required and should only be specified when removing an IPv6 CIDR from a
-     * subnet's IPv6 address space. See[IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     *
-     * <p>Example: {@code 2001:0db8:0123::/64}
+     * This field is not required and should only be specified when removing an IPv6 CIDR
+     * from a subnet's IPv6 address space.
+     * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code 2001:0db8:0123::/64}
      *
      * @return the value
-     */
+     **/
     public String getIpv6CidrBlock() {
         return ipv6CidrBlock;
     }
@@ -116,7 +119,6 @@ public final class RemoveSubnetIpv6CidrDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

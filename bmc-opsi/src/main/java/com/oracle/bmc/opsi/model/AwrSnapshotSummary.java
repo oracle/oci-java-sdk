@@ -5,23 +5,21 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The AWR snapshot summary of one snapshot. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * The AWR snapshot summary of one snapshot.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AwrSnapshotSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AwrSnapshotSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AwrSnapshotSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AwrSnapshotSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "awrSourceDatabaseId",
@@ -52,106 +50,113 @@ public final class AwrSnapshotSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub. */
+        /**
+         * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("awrSourceDatabaseId")
         private String awrSourceDatabaseId;
 
         /**
          * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-         *
          * @param awrSourceDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder awrSourceDatabaseId(String awrSourceDatabaseId) {
             this.awrSourceDatabaseId = awrSourceDatabaseId;
             this.__explicitlySet__.add("awrSourceDatabaseId");
             return this;
         }
-        /** The database instance number. */
+        /**
+         * The database instance number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
         private Integer instanceNumber;
 
         /**
          * The database instance number.
-         *
          * @param instanceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceNumber(Integer instanceNumber) {
             this.instanceNumber = instanceNumber;
             this.__explicitlySet__.add("instanceNumber");
             return this;
         }
-        /** The timestamp of the database startup. */
+        /**
+         * The timestamp of the database startup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDbStartup")
         private java.util.Date timeDbStartup;
 
         /**
          * The timestamp of the database startup.
-         *
          * @param timeDbStartup the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDbStartup(java.util.Date timeDbStartup) {
             this.timeDbStartup = timeDbStartup;
             this.__explicitlySet__.add("timeDbStartup");
             return this;
         }
-        /** The start time of the snapshot. */
+        /**
+         * The start time of the snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotBegin")
         private java.util.Date timeSnapshotBegin;
 
         /**
          * The start time of the snapshot.
-         *
          * @param timeSnapshotBegin the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSnapshotBegin(java.util.Date timeSnapshotBegin) {
             this.timeSnapshotBegin = timeSnapshotBegin;
             this.__explicitlySet__.add("timeSnapshotBegin");
             return this;
         }
-        /** The end time of the snapshot. */
+        /**
+         * The end time of the snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotEnd")
         private java.util.Date timeSnapshotEnd;
 
         /**
          * The end time of the snapshot.
-         *
          * @param timeSnapshotEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSnapshotEnd(java.util.Date timeSnapshotEnd) {
             this.timeSnapshotEnd = timeSnapshotEnd;
             this.__explicitlySet__.add("timeSnapshotEnd");
             return this;
         }
-        /** The identifier of the snapshot. */
+        /**
+         * The identifier of the snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
         private Integer snapshotIdentifier;
 
         /**
          * The identifier of the snapshot.
-         *
          * @param snapshotIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder snapshotIdentifier(Integer snapshotIdentifier) {
             this.snapshotIdentifier = snapshotIdentifier;
             this.__explicitlySet__.add("snapshotIdentifier");
             return this;
         }
-        /** The total number of errors. */
+        /**
+         * The total number of errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
         private Long errorCount;
 
         /**
          * The total number of errors.
-         *
          * @param errorCount the value to set
          * @return this builder
-         */
+         **/
         public Builder errorCount(Long errorCount) {
             this.errorCount = errorCount;
             this.__explicitlySet__.add("errorCount");
@@ -204,7 +209,9 @@ public final class AwrSnapshotSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,93 +220,100 @@ public final class AwrSnapshotSummary
         return new Builder().copy(this);
     }
 
-    /** DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub. */
+    /**
+     * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("awrSourceDatabaseId")
     private final String awrSourceDatabaseId;
 
     /**
      * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-     *
      * @return the value
-     */
+     **/
     public String getAwrSourceDatabaseId() {
         return awrSourceDatabaseId;
     }
 
-    /** The database instance number. */
+    /**
+     * The database instance number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
     private final Integer instanceNumber;
 
     /**
      * The database instance number.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstanceNumber() {
         return instanceNumber;
     }
 
-    /** The timestamp of the database startup. */
+    /**
+     * The timestamp of the database startup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDbStartup")
     private final java.util.Date timeDbStartup;
 
     /**
      * The timestamp of the database startup.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDbStartup() {
         return timeDbStartup;
     }
 
-    /** The start time of the snapshot. */
+    /**
+     * The start time of the snapshot.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotBegin")
     private final java.util.Date timeSnapshotBegin;
 
     /**
      * The start time of the snapshot.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSnapshotBegin() {
         return timeSnapshotBegin;
     }
 
-    /** The end time of the snapshot. */
+    /**
+     * The end time of the snapshot.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotEnd")
     private final java.util.Date timeSnapshotEnd;
 
     /**
      * The end time of the snapshot.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSnapshotEnd() {
         return timeSnapshotEnd;
     }
 
-    /** The identifier of the snapshot. */
+    /**
+     * The identifier of the snapshot.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
     private final Integer snapshotIdentifier;
 
     /**
      * The identifier of the snapshot.
-     *
      * @return the value
-     */
+     **/
     public Integer getSnapshotIdentifier() {
         return snapshotIdentifier;
     }
 
-    /** The total number of errors. */
+    /**
+     * The total number of errors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
     private final Long errorCount;
 
     /**
      * The total number of errors.
-     *
      * @return the value
-     */
+     **/
     public Long getErrorCount() {
         return errorCount;
     }
@@ -311,7 +325,6 @@ public final class AwrSnapshotSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Name of OS vendor. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum VendorName implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Name of OS vendor.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum VendorName {
     Oracle("ORACLE"),
     Microsoft("MICROSOFT"),
 

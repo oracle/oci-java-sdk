@@ -5,21 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * News report resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * News report resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NewsReport.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NewsReport extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NewsReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "newsFrequency",
@@ -89,16 +87,17 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** News report frequency. */
+        /**
+         * News report frequency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newsFrequency")
         private NewsFrequency newsFrequency;
 
         /**
          * News report frequency.
-         *
          * @param newsFrequency the value to set
          * @return this builder
-         */
+         **/
         public Builder newsFrequency(NewsFrequency newsFrequency) {
             this.newsFrequency = newsFrequency;
             this.__explicitlySet__.add("newsFrequency");
@@ -113,41 +112,42 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("contentTypes");
             return this;
         }
-        /** Language of the news report. */
+        /**
+         * Language of the news report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locale")
         private NewsLocale locale;
 
         /**
          * Language of the news report.
-         *
          * @param locale the value to set
          * @return this builder
-         */
+         **/
         public Builder locale(NewsLocale locale) {
             this.locale = locale;
             this.__explicitlySet__.add("locale");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * news report resource.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * news report resource.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The description of the news report. */
+        /**
+         * The description of the news report.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -156,79 +156,75 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The news report name. */
+        /**
+         * The news report name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The news report name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * ONS topic.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
         private String onsTopicId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * ONS topic.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
          * @param onsTopicId the value to set
          * @return this builder
-         */
+         **/
         public Builder onsTopicId(String onsTopicId) {
             this.onsTopicId = onsTopicId;
             this.__explicitlySet__.add("onsTopicId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -237,7 +233,8 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -247,7 +244,7 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -255,98 +252,100 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Indicates the status of a news report in Ops Insights. */
+        /**
+         * Indicates the status of a news report in Ops Insights.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ResourceStatus status;
 
         /**
          * Indicates the status of a news report in Ops Insights.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(ResourceStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The time the the news report was first enabled. An RFC3339 formatted datetime string. */
+        /**
+         * The time the the news report was first enabled. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the news report was first enabled. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the news report was updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time the news report was updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the news report was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the news report. */
+        /**
+         * The current state of the news report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the news report.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -354,67 +353,69 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
 
         /**
          * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
-         *
          * @param dayOfWeek the value to set
          * @return this builder
-         */
+         **/
         public Builder dayOfWeek(DayOfWeek dayOfWeek) {
             this.dayOfWeek = dayOfWeek;
             this.__explicitlySet__.add("dayOfWeek");
             return this;
         }
-        /** A flag to consider the resources within a given compartment and all sub-compartments. */
+        /**
+         * A flag to consider the resources within a given compartment and all sub-compartments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
         private Boolean areChildCompartmentsIncluded;
 
         /**
          * A flag to consider the resources within a given compartment and all sub-compartments.
-         *
          * @param areChildCompartmentsIncluded the value to set
          * @return this builder
-         */
+         **/
         public Builder areChildCompartmentsIncluded(Boolean areChildCompartmentsIncluded) {
             this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
             this.__explicitlySet__.add("areChildCompartmentsIncluded");
             return this;
         }
         /**
-         * List of tag filters; each filter composed by a namespace, key, and value. Example for
-         * defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
-         * '<TagKey>=<TagValue>'.
-         */
+         * List of tag filters; each filter composed by a namespace, key, and value.
+         * Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'.
+         * Example for freeform tags - '<TagKey>=<TagValue>'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagFilters")
         private java.util.List<String> tagFilters;
 
         /**
-         * List of tag filters; each filter composed by a namespace, key, and value. Example for
-         * defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
-         * '<TagKey>=<TagValue>'.
+         * List of tag filters; each filter composed by a namespace, key, and value.
+         * Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'.
+         * Example for freeform tags - '<TagKey>=<TagValue>'.
          *
          * @param tagFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder tagFilters(java.util.List<String> tagFilters) {
             this.tagFilters = tagFilters;
             this.__explicitlySet__.add("tagFilters");
             return this;
         }
-        /** Match rule used for tag filters. */
+        /**
+         * Match rule used for tag filters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchRule")
         private MatchRule matchRule;
 
         /**
          * Match rule used for tag filters.
-         *
          * @param matchRule the value to set
          * @return this builder
-         */
+         **/
         public Builder matchRule(MatchRule matchRule) {
             this.matchRule = matchRule;
             this.__explicitlySet__.add("matchRule");
@@ -519,7 +520,9 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -528,15 +531,16 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** News report frequency. */
+    /**
+     * News report frequency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("newsFrequency")
     private final NewsFrequency newsFrequency;
 
     /**
      * News report frequency.
-     *
      * @return the value
-     */
+     **/
     public NewsFrequency getNewsFrequency() {
         return newsFrequency;
     }
@@ -548,37 +552,38 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         return contentTypes;
     }
 
-    /** Language of the news report. */
+    /**
+     * Language of the news report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locale")
     private final NewsLocale locale;
 
     /**
      * Language of the news report.
-     *
      * @return the value
-     */
+     **/
     public NewsLocale getLocale() {
         return locale;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news
-     * report resource.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news
-     * report resource.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The description of the news report. */
+    /**
+     * The description of the news report.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -586,232 +591,235 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
      * The description of the news report.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The news report name. */
+    /**
+     * The news report name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The news report name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
-     * topic.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
     private final String onsTopicId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
-     * topic.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
      * @return the value
-     */
+     **/
     public String getOnsTopicId() {
         return onsTopicId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** Indicates the status of a news report in Ops Insights. */
+    /**
+     * Indicates the status of a news report in Ops Insights.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
      * Indicates the status of a news report in Ops Insights.
-     *
      * @return the value
-     */
+     **/
     public ResourceStatus getStatus() {
         return status;
     }
 
-    /** The time the the news report was first enabled. An RFC3339 formatted datetime string. */
+    /**
+     * The time the the news report was first enabled. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the news report was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the news report was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the news report was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the news report. */
+    /**
+     * The current state of the news report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the news report.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** Day of the week in which the news report will be sent if the frequency is set to WEEKLY. */
+    /**
+     * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
     private final DayOfWeek dayOfWeek;
 
     /**
      * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
-     *
      * @return the value
-     */
+     **/
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
 
-    /** A flag to consider the resources within a given compartment and all sub-compartments. */
+    /**
+     * A flag to consider the resources within a given compartment and all sub-compartments.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
     private final Boolean areChildCompartmentsIncluded;
 
     /**
      * A flag to consider the resources within a given compartment and all sub-compartments.
-     *
      * @return the value
-     */
+     **/
     public Boolean getAreChildCompartmentsIncluded() {
         return areChildCompartmentsIncluded;
     }
 
     /**
-     * List of tag filters; each filter composed by a namespace, key, and value. Example for defined
-     * tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
-     * '<TagKey>=<TagValue>'.
-     */
+     * List of tag filters; each filter composed by a namespace, key, and value.
+     * Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'.
+     * Example for freeform tags - '<TagKey>=<TagValue>'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagFilters")
     private final java.util.List<String> tagFilters;
 
     /**
-     * List of tag filters; each filter composed by a namespace, key, and value. Example for defined
-     * tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags -
-     * '<TagKey>=<TagValue>'.
+     * List of tag filters; each filter composed by a namespace, key, and value.
+     * Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'.
+     * Example for freeform tags - '<TagKey>=<TagValue>'.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getTagFilters() {
         return tagFilters;
     }
 
-    /** Match rule used for tag filters. */
+    /**
+     * Match rule used for tag filters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchRule")
     private final MatchRule matchRule;
 
     /**
      * Match rule used for tag filters.
-     *
      * @return the value
-     */
+     **/
     public MatchRule getMatchRule() {
         return matchRule;
     }
@@ -823,7 +831,6 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

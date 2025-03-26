@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The Possible OperationType for the deployment wallet which is either IMPORT or EXPORT. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum DeploymentWalletOperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The Possible OperationType for the deployment wallet which is either IMPORT or EXPORT.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum DeploymentWalletOperationType {
     Export("EXPORT"),
     Import("IMPORT"),
 

@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Oracle Identity Cloud Service User <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Oracle Identity Cloud Service User
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionUserUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionUserUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ExtensionUserUser.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionUserUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isFederatedUser",
@@ -108,59 +106,81 @@ public final class ExtensionUserUser
     public static class Builder {
         /**
          * A Boolean value indicating whether or not the user is federated.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Federated
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFederatedUser")
         private Boolean isFederatedUser;
 
         /**
          * A Boolean value indicating whether or not the user is federated.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Federated
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isFederatedUser the value to set
          * @return this builder
-         */
+         **/
         public Builder isFederatedUser(Boolean isFederatedUser) {
             this.isFederatedUser = isFederatedUser;
             this.__explicitlySet__.add("isFederatedUser");
             return this;
         }
         /**
-         * A Boolean value indicating whether or not authentication request by this user should be
-         * delegated to a remote app. This value should be true only when the User was originally
-         * synced from an app which is enabled for delegated authentication
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         */
+         * A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAuthenticationDelegated")
         private Boolean isAuthenticationDelegated;
 
         /**
-         * A Boolean value indicating whether or not authentication request by this user should be
-         * delegated to a remote app. This value should be true only when the User was originally
-         * synced from an app which is enabled for delegated authentication
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         *
+         * A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isAuthenticationDelegated the value to set
          * @return this builder
-         */
+         **/
         public Builder isAuthenticationDelegated(Boolean isAuthenticationDelegated) {
             this.isAuthenticationDelegated = isAuthenticationDelegated;
             this.__explicitlySet__.add("isAuthenticationDelegated");
@@ -168,24 +188,35 @@ public final class ExtensionUserUser
         }
         /**
          * A supplemental status indicating the reason why a user is disabled
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * A supplemental status indicating the reason why a user is disabled
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -193,24 +224,35 @@ public final class ExtensionUserUser
         }
         /**
          * Registration provider
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provider")
         private Provider provider;
 
         /**
          * Registration provider
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param provider the value to set
          * @return this builder
-         */
+         **/
         public Builder provider(Provider provider) {
             this.provider = provider;
             this.__explicitlySet__.add("provider");
@@ -218,28 +260,39 @@ public final class ExtensionUserUser
         }
         /**
          * User's preferred landing page following login, logout and reset password.
-         *
-         * <p>*Added In:** 2302092332
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2302092332
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredUiLandingPage")
         private PreferredUiLandingPage preferredUiLandingPage;
 
         /**
          * User's preferred landing page following login, logout and reset password.
-         *
-         * <p>*Added In:** 2302092332
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2302092332
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param preferredUiLandingPage the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredUiLandingPage(PreferredUiLandingPage preferredUiLandingPage) {
             this.preferredUiLandingPage = preferredUiLandingPage;
             this.__explicitlySet__.add("preferredUiLandingPage");
@@ -247,26 +300,39 @@ public final class ExtensionUserUser
         }
         /**
          * User creation mechanism
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
-         * type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("creationMechanism")
         private CreationMechanism creationMechanism;
 
         /**
          * User creation mechanism
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned: request -
-         * type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param creationMechanism the value to set
          * @return this builder
-         */
+         **/
         public Builder creationMechanism(CreationMechanism creationMechanism) {
             this.creationMechanism = creationMechanism;
             this.__explicitlySet__.add("creationMechanism");
@@ -274,26 +340,37 @@ public final class ExtensionUserUser
         }
         /**
          * Specifies date time when a User's group membership was last modified.
-         *
-         * <p>*Added In:** 2304270343
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: request - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipLastModified")
         private String groupMembershipLastModified;
 
         /**
          * Specifies date time when a User's group membership was last modified.
-         *
-         * <p>*Added In:** 2304270343
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: request - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param groupMembershipLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder groupMembershipLastModified(String groupMembershipLastModified) {
             this.groupMembershipLastModified = groupMembershipLastModified;
             this.__explicitlySet__.add("groupMembershipLastModified");
@@ -301,53 +378,75 @@ public final class ExtensionUserUser
         }
         /**
          * A Boolean value indicating whether or not to hide the getting started page
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("doNotShowGettingStarted")
         private Boolean doNotShowGettingStarted;
 
         /**
          * A Boolean value indicating whether or not to hide the getting started page
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param doNotShowGettingStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder doNotShowGettingStarted(Boolean doNotShowGettingStarted) {
             this.doNotShowGettingStarted = doNotShowGettingStarted;
             this.__explicitlySet__.add("doNotShowGettingStarted");
             return this;
         }
         /**
-         * A Boolean value indicating whether or not to send email notification after creating the
-         * user. This attribute is not used in update/replace operations.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: never - type: boolean - uniqueness: none
-         */
+         * A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bypassNotification")
         private Boolean bypassNotification;
 
         /**
-         * A Boolean value indicating whether or not to send email notification after creating the
-         * user. This attribute is not used in update/replace operations.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: never - type: boolean - uniqueness: none
-         *
+         * A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
          * @param bypassNotification the value to set
          * @return this builder
-         */
+         **/
         public Builder bypassNotification(Boolean bypassNotification) {
             this.bypassNotification = bypassNotification;
             this.__explicitlySet__.add("bypassNotification");
@@ -355,28 +454,39 @@ public final class ExtensionUserUser
         }
         /**
          * A Boolean value indicating whether or not a user is enrolled for account recovery
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAccountRecoveryEnrolled")
         private Boolean isAccountRecoveryEnrolled;
 
         /**
          * A Boolean value indicating whether or not a user is enrolled for account recovery
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isAccountRecoveryEnrolled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAccountRecoveryEnrolled(Boolean isAccountRecoveryEnrolled) {
             this.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             this.__explicitlySet__.add("isAccountRecoveryEnrolled");
@@ -384,57 +494,77 @@ public final class ExtensionUserUser
         }
         /**
          * Boolean value to prompt user to setup account recovery during login.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountRecoveryRequired")
         private Boolean accountRecoveryRequired;
 
         /**
          * Boolean value to prompt user to setup account recovery during login.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param accountRecoveryRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder accountRecoveryRequired(Boolean accountRecoveryRequired) {
             this.accountRecoveryRequired = accountRecoveryRequired;
             this.__explicitlySet__.add("accountRecoveryRequired");
             return this;
         }
         /**
-         * A Boolean value indicating whether to bypass notification and return user token to be
-         * used by an external client to control the user flow.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         */
+         * A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userFlowControlledByExternalClient")
         private Boolean userFlowControlledByExternalClient;
 
         /**
-         * A Boolean value indicating whether to bypass notification and return user token to be
-         * used by an external client to control the user flow.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         *
+         * A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
          * @param userFlowControlledByExternalClient the value to set
          * @return this builder
-         */
+         **/
         public Builder userFlowControlledByExternalClient(
                 Boolean userFlowControlledByExternalClient) {
             this.userFlowControlledByExternalClient = userFlowControlledByExternalClient;
@@ -443,59 +573,79 @@ public final class ExtensionUserUser
         }
         /**
          * A Boolean value indicating whether or not group membership is normalized for this user.
-         *
-         * <p>*Deprecated Since: 19.3.3**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Deprecated Since: 19.3.3**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGroupMembershipNormalized")
         private Boolean isGroupMembershipNormalized;
 
         /**
          * A Boolean value indicating whether or not group membership is normalized for this user.
-         *
-         * <p>*Deprecated Since: 19.3.3**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Deprecated Since: 19.3.3**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isGroupMembershipNormalized the value to set
          * @return this builder
-         */
+         **/
         public Builder isGroupMembershipNormalized(Boolean isGroupMembershipNormalized) {
             this.isGroupMembershipNormalized = isGroupMembershipNormalized;
             this.__explicitlySet__.add("isGroupMembershipNormalized");
             return this;
         }
         /**
-         * A Boolean value Indicates whether this User's group membership has been sync'ed from
-         * Group.members to UsersGroups.
-         *
-         * <p>*Added In:** 19.3.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         */
+         * A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+         * <p>
+         **Added In:** 19.3.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGroupMembershipSyncedToUsersGroups")
         private Boolean isGroupMembershipSyncedToUsersGroups;
 
         /**
-         * A Boolean value Indicates whether this User's group membership has been sync'ed from
-         * Group.members to UsersGroups.
-         *
-         * <p>*Added In:** 19.3.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: false - returned: never - type: boolean - uniqueness:
-         * none
-         *
+         * A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+         * <p>
+         **Added In:** 19.3.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isGroupMembershipSyncedToUsersGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder isGroupMembershipSyncedToUsersGroups(
                 Boolean isGroupMembershipSyncedToUsersGroups) {
             this.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
@@ -503,27 +653,36 @@ public final class ExtensionUserUser
             return this;
         }
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request
-         * is for. If specified, it overrides the default EmailTemplate for this event.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: writeOnly - required: false - returned: never - type: string - uniqueness:
-         * none
-         */
+         * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationEmailTemplateId")
         private String notificationEmailTemplateId;
 
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request
-         * is for. If specified, it overrides the default EmailTemplate for this event.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: writeOnly - required: false - returned: never - type: string - uniqueness:
-         * none
-         *
+         * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         *  - uniqueness: none
          * @param notificationEmailTemplateId the value to set
          * @return this builder
-         */
+         **/
         public Builder notificationEmailTemplateId(String notificationEmailTemplateId) {
             this.notificationEmailTemplateId = notificationEmailTemplateId;
             this.__explicitlySet__.add("notificationEmailTemplateId");
@@ -531,30 +690,43 @@ public final class ExtensionUserUser
         }
         /**
          * Indicates if User is a Service User
-         *
-         * <p>*Added In:** 2306131901
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
-         * multiValued: false - mutability: immutable - required: false - returned: default - type:
-         * boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2306131901
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Service User
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUser")
         private Boolean serviceUser;
 
         /**
          * Indicates if User is a Service User
-         *
-         * <p>*Added In:** 2306131901
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
-         * multiValued: false - mutability: immutable - required: false - returned: default - type:
-         * boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2306131901
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Service User
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param serviceUser the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceUser(Boolean serviceUser) {
             this.serviceUser = serviceUser;
             this.__explicitlySet__.add("serviceUser");
@@ -562,28 +734,39 @@ public final class ExtensionUserUser
         }
         /**
          * A list of Support Accounts corresponding to user.
-         *
-         * <p>*Added In:** 2103141444
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2103141444
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportAccounts")
         private java.util.List<UserExtSupportAccounts> supportAccounts;
 
         /**
          * A list of Support Accounts corresponding to user.
-         *
-         * <p>*Added In:** 2103141444
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2103141444
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param supportAccounts the value to set
          * @return this builder
-         */
+         **/
         public Builder supportAccounts(java.util.List<UserExtSupportAccounts> supportAccounts) {
             this.supportAccounts = supportAccounts;
             this.__explicitlySet__.add("supportAccounts");
@@ -591,28 +774,39 @@ public final class ExtensionUserUser
         }
         /**
          * Description:
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, idcsAppRoleId]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
          *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, idcsAppRoleId] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAppRolesLimitedToGroups")
         private java.util.List<UserExtIdcsAppRolesLimitedToGroups> idcsAppRolesLimitedToGroups;
 
         /**
          * Description:
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, idcsAppRoleId] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, idcsAppRoleId]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
          *
          * @param idcsAppRolesLimitedToGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAppRolesLimitedToGroups(
                 java.util.List<UserExtIdcsAppRolesLimitedToGroups> idcsAppRolesLimitedToGroups) {
             this.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
@@ -658,85 +852,104 @@ public final class ExtensionUserUser
             return this;
         }
         /**
-         * Accounts assigned to this User. Each value of this attribute refers to an app-specific
-         * identity that is owned by this User. Therefore, this attribute is a convenience that
-         * allows one to see on each User the Apps to which that User has access.
-         *
-         * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: true -
-         * mutability: readOnly - required: false - returned: request - type: complex - uniqueness:
-         * none
-         */
+         * Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accounts")
         private java.util.List<UserExtAccounts> accounts;
 
         /**
-         * Accounts assigned to this User. Each value of this attribute refers to an app-specific
-         * identity that is owned by this User. Therefore, this attribute is a convenience that
-         * allows one to see on each User the Apps to which that User has access.
-         *
-         * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: true -
-         * mutability: readOnly - required: false - returned: request - type: complex - uniqueness:
-         * none
-         *
+         * Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param accounts the value to set
          * @return this builder
-         */
+         **/
         public Builder accounts(java.util.List<UserExtAccounts> accounts) {
             this.accounts = accounts;
             this.__explicitlySet__.add("accounts");
             return this;
         }
         /**
-         * Grants to this User. Each value of this attribute refers to a Grant to this User of some
-         * App (and optionally of some entitlement). Therefore, this attribute is a convenience that
-         * allows one to see on each User all of the Grants to that User.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         */
+         * Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grants")
         private java.util.List<UserExtGrants> grants;
 
         /**
-         * Grants to this User. Each value of this attribute refers to a Grant to this User of some
-         * App (and optionally of some entitlement). Therefore, this attribute is a convenience that
-         * allows one to see on each User all of the Grants to that User.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         *
+         * Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param grants the value to set
          * @return this builder
-         */
+         **/
         public Builder grants(java.util.List<UserExtGrants> grants) {
             this.grants = grants;
             this.__explicitlySet__.add("grants");
             return this;
         }
         /**
-         * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The
-         * User could belong directly because the User is a member of the AppRole, could belong
-         * indirectly because the User is a member of a Group that is a member of the AppRole, or
-         * could belong implicitly because the AppRole is public.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         */
+         * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appRoles")
         private java.util.List<UserExtAppRoles> appRoles;
 
         /**
-         * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The
-         * User could belong directly because the User is a member of the AppRole, could belong
-         * indirectly because the User is a member of a Group that is a member of the AppRole, or
-         * could belong implicitly because the AppRole is public.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         *
+         * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param appRoles the value to set
          * @return this builder
-         */
+         **/
         public Builder appRoles(java.util.List<UserExtAppRoles> appRoles) {
             this.appRoles = appRoles;
             this.__explicitlySet__.add("appRoles");
@@ -864,7 +1077,9 @@ public final class ExtensionUserUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -875,71 +1090,102 @@ public final class ExtensionUserUser
 
     /**
      * A Boolean value indicating whether or not the user is federated.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Federated
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFederatedUser")
     private final Boolean isFederatedUser;
 
     /**
      * A Boolean value indicating whether or not the user is federated.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Federated -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - idcsRequiresWriteForAccessFlows: true -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Federated
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsFederatedUser() {
         return isFederatedUser;
     }
 
     /**
-     * A Boolean value indicating whether or not authentication request by this user should be
-     * delegated to a remote app. This value should be true only when the User was originally synced
-     * from an app which is enabled for delegated authentication
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     */
+     * A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAuthenticationDelegated")
     private final Boolean isAuthenticationDelegated;
 
     /**
-     * A Boolean value indicating whether or not authentication request by this user should be
-     * delegated to a remote app. This value should be true only when the User was originally synced
-     * from an app which is enabled for delegated authentication
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     *
+     * A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsAuthenticationDelegated() {
         return isAuthenticationDelegated;
     }
 
     /**
      * A supplemental status indicating the reason why a user is disabled
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Status {
         PendingVerification("pendingVerification"),
         Verified("verified"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -979,40 +1225,60 @@ public final class ExtensionUserUser
     };
     /**
      * A supplemental status indicating the reason why a user is disabled
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * A supplemental status indicating the reason why a user is disabled
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
      * Registration provider
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum Provider implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Provider {
         Facebook("facebook"),
         Google("google"),
         Idcs("IDCS"),
         Twitter("twitter"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1053,41 +1319,61 @@ public final class ExtensionUserUser
     };
     /**
      * Registration provider
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("provider")
     private final Provider provider;
 
     /**
      * Registration provider
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Provider getProvider() {
         return provider;
     }
 
     /**
      * User's preferred landing page following login, logout and reset password.
-     *
-     * <p>*Added In:** 2302092332
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum PreferredUiLandingPage implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum PreferredUiLandingPage {
         MyApps("MyApps"),
         MyProfile("MyProfile"),
         OciConsole("OciConsole"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1128,38 +1414,58 @@ public final class ExtensionUserUser
     };
     /**
      * User's preferred landing page following login, logout and reset password.
-     *
-     * <p>*Added In:** 2302092332
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredUiLandingPage")
     private final PreferredUiLandingPage preferredUiLandingPage;
 
     /**
      * User's preferred landing page following login, logout and reset password.
-     *
-     * <p>*Added In:** 2302092332
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public PreferredUiLandingPage getPreferredUiLandingPage() {
         return preferredUiLandingPage;
     }
 
     /**
      * User creation mechanism
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: string -
-     * uniqueness: none
-     */
-    public enum CreationMechanism implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum CreationMechanism {
         Bulk("bulk"),
         Api("api"),
         Adsync("adsync"),
@@ -1170,8 +1476,8 @@ public final class ExtensionUserUser
         Samljit("samljit"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1212,335 +1518,486 @@ public final class ExtensionUserUser
     };
     /**
      * User creation mechanism
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: string -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("creationMechanism")
     private final CreationMechanism creationMechanism;
 
     /**
      * User creation mechanism
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * idcsRequiresWriteForAccessFlows: true - required: false - returned: request - type: string -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public CreationMechanism getCreationMechanism() {
         return creationMechanism;
     }
 
     /**
      * Specifies date time when a User's group membership was last modified.
-     *
-     * <p>*Added In:** 2304270343
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: request - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipLastModified")
     private final String groupMembershipLastModified;
 
     /**
      * Specifies date time when a User's group membership was last modified.
-     *
-     * <p>*Added In:** 2304270343
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: request - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getGroupMembershipLastModified() {
         return groupMembershipLastModified;
     }
 
     /**
      * A Boolean value indicating whether or not to hide the getting started page
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("doNotShowGettingStarted")
     private final Boolean doNotShowGettingStarted;
 
     /**
      * A Boolean value indicating whether or not to hide the getting started page
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getDoNotShowGettingStarted() {
         return doNotShowGettingStarted;
     }
 
     /**
-     * A Boolean value indicating whether or not to send email notification after creating the user.
-     * This attribute is not used in update/replace operations.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * never - type: boolean - uniqueness: none
-     */
+     * A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bypassNotification")
     private final Boolean bypassNotification;
 
     /**
-     * A Boolean value indicating whether or not to send email notification after creating the user.
-     * This attribute is not used in update/replace operations.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:ByPass Notification]] - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * never - type: boolean - uniqueness: none
-     *
+     * A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getBypassNotification() {
         return bypassNotification;
     }
 
     /**
      * A Boolean value indicating whether or not a user is enrolled for account recovery
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccountRecoveryEnrolled")
     private final Boolean isAccountRecoveryEnrolled;
 
     /**
      * A Boolean value indicating whether or not a user is enrolled for account recovery
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsAccountRecoveryEnrolled() {
         return isAccountRecoveryEnrolled;
     }
 
     /**
      * Boolean value to prompt user to setup account recovery during login.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountRecoveryRequired")
     private final Boolean accountRecoveryRequired;
 
     /**
      * Boolean value to prompt user to setup account recovery during login.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAccountRecoveryRequired() {
         return accountRecoveryRequired;
     }
 
     /**
-     * A Boolean value indicating whether to bypass notification and return user token to be used by
-     * an external client to control the user flow.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     */
+     * A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userFlowControlledByExternalClient")
     private final Boolean userFlowControlledByExternalClient;
 
     /**
-     * A Boolean value indicating whether to bypass notification and return user token to be used by
-     * an external client to control the user flow.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     *
+     * A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getUserFlowControlledByExternalClient() {
         return userFlowControlledByExternalClient;
     }
 
     /**
      * A Boolean value indicating whether or not group membership is normalized for this user.
-     *
-     * <p>*Deprecated Since: 19.3.3**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Deprecated Since: 19.3.3**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGroupMembershipNormalized")
     private final Boolean isGroupMembershipNormalized;
 
     /**
      * A Boolean value indicating whether or not group membership is normalized for this user.
-     *
-     * <p>*Deprecated Since: 19.3.3**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Deprecated Since: 19.3.3**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsGroupMembershipNormalized() {
         return isGroupMembershipNormalized;
     }
 
     /**
-     * A Boolean value Indicates whether this User's group membership has been sync'ed from
-     * Group.members to UsersGroups.
-     *
-     * <p>*Added In:** 19.3.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     */
+     * A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+     * <p>
+     **Added In:** 19.3.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGroupMembershipSyncedToUsersGroups")
     private final Boolean isGroupMembershipSyncedToUsersGroups;
 
     /**
-     * A Boolean value Indicates whether this User's group membership has been sync'ed from
-     * Group.members to UsersGroups.
-     *
-     * <p>*Added In:** 19.3.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: false - returned: never - type: boolean - uniqueness: none
-     *
+     * A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+     * <p>
+     **Added In:** 19.3.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsGroupMembershipSyncedToUsersGroups() {
         return isGroupMembershipSyncedToUsersGroups;
     }
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is
-     * for. If specified, it overrides the default EmailTemplate for this event.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none
-     */
+     * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationEmailTemplateId")
     private final String notificationEmailTemplateId;
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is
-     * for. If specified, it overrides the default EmailTemplate for this event.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: writeOnly - required: false - returned: never - type: string - uniqueness: none
-     *
+     * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getNotificationEmailTemplateId() {
         return notificationEmailTemplateId;
     }
 
     /**
      * Indicates if User is a Service User
-     *
-     * <p>*Added In:** 2306131901
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
-     * multiValued: false - mutability: immutable - required: false - returned: default - type:
-     * boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2306131901
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Service User
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUser")
     private final Boolean serviceUser;
 
     /**
      * Indicates if User is a Service User
-     *
-     * <p>*Added In:** 2306131901
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Service User -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]] - idcsSearchable: true -
-     * multiValued: false - mutability: immutable - required: false - returned: default - type:
-     * boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2306131901
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Service User
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getServiceUser() {
         return serviceUser;
     }
 
     /**
      * A list of Support Accounts corresponding to user.
-     *
-     * <p>*Added In:** 2103141444
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **Added In:** 2103141444
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportAccounts")
     private final java.util.List<UserExtSupportAccounts> supportAccounts;
 
     /**
      * A list of Support Accounts corresponding to user.
-     *
-     * <p>*Added In:** 2103141444
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **Added In:** 2103141444
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtSupportAccounts> getSupportAccounts() {
         return supportAccounts;
     }
 
     /**
      * Description:
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, idcsAppRoleId]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
      *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, idcsAppRoleId] - idcsSearchable: true -
-     * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAppRolesLimitedToGroups")
     private final java.util.List<UserExtIdcsAppRolesLimitedToGroups> idcsAppRolesLimitedToGroups;
 
     /**
      * Description:
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, idcsAppRoleId] - idcsSearchable: true -
-     * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, idcsAppRoleId]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
      *
      * @return the value
-     */
+     **/
     public java.util.List<UserExtIdcsAppRolesLimitedToGroups> getIdcsAppRolesLimitedToGroups() {
         return idcsAppRolesLimitedToGroups;
     }
@@ -1574,78 +2031,99 @@ public final class ExtensionUserUser
     }
 
     /**
-     * Accounts assigned to this User. Each value of this attribute refers to an app-specific
-     * identity that is owned by this User. Therefore, this attribute is a convenience that allows
-     * one to see on each User the Apps to which that User has access.
-     *
-     * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: true -
-     * mutability: readOnly - required: false - returned: request - type: complex - uniqueness: none
-     */
+     * Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accounts")
     private final java.util.List<UserExtAccounts> accounts;
 
     /**
-     * Accounts assigned to this User. Each value of this attribute refers to an app-specific
-     * identity that is owned by this User. Therefore, this attribute is a convenience that allows
-     * one to see on each User the Apps to which that User has access.
-     *
-     * <p>*SCIM++ Properties:** - idcsPii: true - idcsSearchable: true - multiValued: true -
-     * mutability: readOnly - required: false - returned: request - type: complex - uniqueness: none
-     *
+     * Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtAccounts> getAccounts() {
         return accounts;
     }
 
     /**
-     * Grants to this User. Each value of this attribute refers to a Grant to this User of some App
-     * (and optionally of some entitlement). Therefore, this attribute is a convenience that allows
-     * one to see on each User all of the Grants to that User.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: complex - uniqueness: none
-     */
+     * Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grants")
     private final java.util.List<UserExtGrants> grants;
 
     /**
-     * Grants to this User. Each value of this attribute refers to a Grant to this User of some App
-     * (and optionally of some entitlement). Therefore, this attribute is a convenience that allows
-     * one to see on each User all of the Grants to that User.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: complex - uniqueness: none
-     *
+     * Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtGrants> getGrants() {
         return grants;
     }
 
     /**
-     * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The
-     * User could belong directly because the User is a member of the AppRole, could belong
-     * indirectly because the User is a member of a Group that is a member of the AppRole, or could
-     * belong implicitly because the AppRole is public.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readOnly - required: false - returned: request - type: complex - uniqueness: none
-     */
+     * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appRoles")
     private final java.util.List<UserExtAppRoles> appRoles;
 
     /**
-     * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The
-     * User could belong directly because the User is a member of the AppRole, could belong
-     * indirectly because the User is a member of a Group that is a member of the AppRole, or could
-     * belong implicitly because the AppRole is public.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readOnly - required: false - returned: request - type: complex - uniqueness: none
-     *
+     * A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtAppRoles> getAppRoles() {
         return appRoles;
     }
@@ -1657,7 +2135,6 @@ public final class ExtensionUserUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

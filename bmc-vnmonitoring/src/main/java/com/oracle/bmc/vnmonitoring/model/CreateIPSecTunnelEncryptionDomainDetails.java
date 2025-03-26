@@ -5,26 +5,25 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Request to enable a multi-encryption domain policy on the IPSec tunnel. There can't be more than
- * 50 security associations in use at one time. See [Encryption domain for policy-based
- * tunnels](https://docs.oracle.com/iaas/Content/Network/Tasks/ipsecencryptiondomains.htm#spi_policy_based_tunnel)
- * for more. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Request to enable a multi-encryption domain policy on the IPSec tunnel.
+ * There can't be more than 50 security associations in use at one time. See [Encryption domain for policy-based
+ * tunnels](https://docs.oracle.com/iaas/Content/Network/Tasks/ipsecencryptiondomains.htm#spi_policy_based_tunnel) for more.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateIPSecTunnelEncryptionDomainDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateIPSecTunnelEncryptionDomainDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateIPSecTunnelEncryptionDomainDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"oracleTrafficSelector", "cpeTrafficSelector"})
     public CreateIPSecTunnelEncryptionDomainDetails(
@@ -37,31 +36,33 @@ public final class CreateIPSecTunnelEncryptionDomainDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy. */
+        /**
+         * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleTrafficSelector")
         private java.util.List<String> oracleTrafficSelector;
 
         /**
          * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
-         *
          * @param oracleTrafficSelector the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleTrafficSelector(java.util.List<String> oracleTrafficSelector) {
             this.oracleTrafficSelector = oracleTrafficSelector;
             this.__explicitlySet__.add("oracleTrafficSelector");
             return this;
         }
-        /** Lists IPv4 or IPv6-enabled subnets in your on-premises network. */
+        /**
+         * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeTrafficSelector")
         private java.util.List<String> cpeTrafficSelector;
 
         /**
          * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
-         *
          * @param cpeTrafficSelector the value to set
          * @return this builder
-         */
+         **/
         public Builder cpeTrafficSelector(java.util.List<String> cpeTrafficSelector) {
             this.cpeTrafficSelector = cpeTrafficSelector;
             this.__explicitlySet__.add("cpeTrafficSelector");
@@ -93,7 +94,9 @@ public final class CreateIPSecTunnelEncryptionDomainDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,28 +105,30 @@ public final class CreateIPSecTunnelEncryptionDomainDetails
         return new Builder().copy(this);
     }
 
-    /** Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy. */
+    /**
+     * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleTrafficSelector")
     private final java.util.List<String> oracleTrafficSelector;
 
     /**
      * Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getOracleTrafficSelector() {
         return oracleTrafficSelector;
     }
 
-    /** Lists IPv4 or IPv6-enabled subnets in your on-premises network. */
+    /**
+     * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeTrafficSelector")
     private final java.util.List<String> cpeTrafficSelector;
 
     /**
      * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getCpeTrafficSelector() {
         return cpeTrafficSelector;
     }
@@ -135,7 +140,6 @@ public final class CreateIPSecTunnelEncryptionDomainDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

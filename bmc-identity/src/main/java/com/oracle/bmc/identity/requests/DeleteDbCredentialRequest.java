@@ -6,53 +6,61 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDbCredentialExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDbCredentialRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDbCredentialExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDbCredentialRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the user. */
+    /**
+     * The OCID of the user.
+     */
     private String userId;
 
-    /** The OCID of the user. */
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
-    /** The OCID of the DB credential. */
+    /**
+     * The OCID of the DB credential.
+     */
     private String dbCredentialId;
 
-    /** The OCID of the DB credential. */
+    /**
+     * The OCID of the DB credential.
+     */
     public String getDbCredentialId() {
         return dbCredentialId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -61,15 +69,17 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteDbCredentialRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the user. */
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
-         *
          * @param userId the value to set
          * @return this builder instance
          */
@@ -78,12 +88,13 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The OCID of the DB credential. */
+        /**
+         * The OCID of the DB credential.
+         */
         private String dbCredentialId = null;
 
         /**
          * The OCID of the DB credential.
-         *
          * @param dbCredentialId the value to set
          * @return this builder instance
          */
@@ -95,6 +106,7 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -111,18 +123,17 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -134,19 +145,18 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -158,7 +168,6 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteDbCredentialRequest o) {
@@ -174,11 +183,10 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of DeleteDbCredentialRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteDbCredentialRequest
          */
@@ -192,8 +200,7 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of DeleteDbCredentialRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteDbCredentialRequest
@@ -211,7 +218,6 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -224,7 +230,6 @@ public class DeleteDbCredentialRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

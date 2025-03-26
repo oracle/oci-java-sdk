@@ -9,31 +9,23 @@ import com.oracle.bmc.governancerulescontrolplane.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of GovernanceRule where multiple pages of data may be fetched. Two styles
- * of iteration are supported:
+ * to any list operations of GovernanceRule where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class GovernanceRulePaginators {
     private final GovernanceRule client;
 
@@ -42,20 +34,17 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listEnforcedGovernanceRules operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listEnforcedGovernanceRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListEnforcedGovernanceRulesResponse>
             listEnforcedGovernanceRulesResponseIterator(
                     final ListEnforcedGovernanceRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListEnforcedGovernanceRulesRequest.Builder,
-                ListEnforcedGovernanceRulesRequest,
+                ListEnforcedGovernanceRulesRequest.Builder, ListEnforcedGovernanceRulesRequest,
                 ListEnforcedGovernanceRulesResponse>(
                 new java.util.function.Supplier<ListEnforcedGovernanceRulesRequest.Builder>() {
                     @Override
@@ -98,22 +87,19 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleSummary} objects
-     * contained in responses from the listEnforcedGovernanceRules operation. This iterable will
-     * fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleSummary} objects
+     * contained in responses from the listEnforcedGovernanceRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleSummary>
             listEnforcedGovernanceRulesRecordIterator(
                     final ListEnforcedGovernanceRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListEnforcedGovernanceRulesRequest.Builder,
-                ListEnforcedGovernanceRulesRequest,
+                ListEnforcedGovernanceRulesRequest.Builder, ListEnforcedGovernanceRulesRequest,
                 ListEnforcedGovernanceRulesResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRuleSummary>(
                 new java.util.function.Supplier<ListEnforcedGovernanceRulesRequest.Builder>() {
@@ -170,18 +156,16 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listGovernanceRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listGovernanceRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListGovernanceRulesResponse> listGovernanceRulesResponseIterator(
             final ListGovernanceRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListGovernanceRulesRequest.Builder,
-                ListGovernanceRulesRequest,
+                ListGovernanceRulesRequest.Builder, ListGovernanceRulesRequest,
                 ListGovernanceRulesResponse>(
                 new java.util.function.Supplier<ListGovernanceRulesRequest.Builder>() {
                     @Override
@@ -223,21 +207,18 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleSummary} objects contained in
-     * responses from the listGovernanceRules operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleSummary} objects
+     * contained in responses from the listGovernanceRules operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleSummary>
             listGovernanceRulesRecordIterator(final ListGovernanceRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListGovernanceRulesRequest.Builder,
-                ListGovernanceRulesRequest,
+                ListGovernanceRulesRequest.Builder, ListGovernanceRulesRequest,
                 ListGovernanceRulesResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleSummary>(
                 new java.util.function.Supplier<ListGovernanceRulesRequest.Builder>() {
@@ -293,19 +274,16 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInclusionCriteria operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listInclusionCriteria operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInclusionCriteriaResponse> listInclusionCriteriaResponseIterator(
             final ListInclusionCriteriaRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListInclusionCriteriaRequest.Builder,
-                ListInclusionCriteriaRequest,
+                ListInclusionCriteriaRequest.Builder, ListInclusionCriteriaRequest,
                 ListInclusionCriteriaResponse>(
                 new java.util.function.Supplier<ListInclusionCriteriaRequest.Builder>() {
                     @Override
@@ -348,21 +326,18 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionSummary} objects contained
-     * in responses from the listInclusionCriteria operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionSummary} objects
+     * contained in responses from the listInclusionCriteria operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionSummary>
             listInclusionCriteriaRecordIterator(final ListInclusionCriteriaRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInclusionCriteriaRequest.Builder,
-                ListInclusionCriteriaRequest,
+                ListInclusionCriteriaRequest.Builder, ListInclusionCriteriaRequest,
                 ListInclusionCriteriaResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterionSummary>(
                 new java.util.function.Supplier<ListInclusionCriteriaRequest.Builder>() {
@@ -419,19 +394,16 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTenancyAttachments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listTenancyAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTenancyAttachmentsResponse> listTenancyAttachmentsResponseIterator(
             final ListTenancyAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTenancyAttachmentsRequest.Builder,
-                ListTenancyAttachmentsRequest,
+                ListTenancyAttachmentsRequest.Builder, ListTenancyAttachmentsRequest,
                 ListTenancyAttachmentsResponse>(
                 new java.util.function.Supplier<ListTenancyAttachmentsRequest.Builder>() {
                     @Override
@@ -474,21 +446,18 @@ public class GovernanceRulePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentSummary} objects contained
-     * in responses from the listTenancyAttachments operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentSummary} objects
+     * contained in responses from the listTenancyAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentSummary>
             listTenancyAttachmentsRecordIterator(final ListTenancyAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTenancyAttachmentsRequest.Builder,
-                ListTenancyAttachmentsRequest,
+                ListTenancyAttachmentsRequest.Builder, ListTenancyAttachmentsRequest,
                 ListTenancyAttachmentsResponse,
                 com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentSummary>(
                 new java.util.function.Supplier<ListTenancyAttachmentsRequest.Builder>() {

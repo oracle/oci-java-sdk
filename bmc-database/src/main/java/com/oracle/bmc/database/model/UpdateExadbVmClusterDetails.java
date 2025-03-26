@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating the Exadata VM cluster on Exascale Infrastructure. Applies to Exadata
- * Database Service on Exascale Infrastructure only. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details for updating the Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateExadbVmClusterDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateExadbVmClusterDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateExadbVmClusterDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -81,25 +80,25 @@ public final class UpdateExadbVmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name
-         * does not need to be unique.
-         */
+         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name
-         * does not need to be unique.
-         *
+         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure. */
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalECpuCount")
         private Integer totalECpuCount;
 
@@ -108,13 +107,16 @@ public final class UpdateExadbVmClusterDetails
          *
          * @param totalECpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalECpuCount(Integer totalECpuCount) {
             this.totalECpuCount = totalECpuCount;
             this.__explicitlySet__.add("totalECpuCount");
             return this;
         }
-        /** The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure. */
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabledECpuCount")
         private Integer enabledECpuCount;
 
@@ -123,7 +125,7 @@ public final class UpdateExadbVmClusterDetails
          *
          * @param enabledECpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder enabledECpuCount(Integer enabledECpuCount) {
             this.enabledECpuCount = enabledECpuCount;
             this.__explicitlySet__.add("enabledECpuCount");
@@ -138,7 +140,10 @@ public final class UpdateExadbVmClusterDetails
             this.__explicitlySet__.add("vmFileSystemStorage");
             return this;
         }
-        /** The number of nodes to be added in the Exadata VM cluster on Exascale Infrastructure. */
+        /**
+         * The number of nodes to be added in the Exadata VM cluster on Exascale Infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
@@ -147,149 +152,125 @@ public final class UpdateExadbVmClusterDetails
          *
          * @param nodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
         /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale
-         * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale
-         * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
          *
          * @param licenseModel the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
         /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM
-         * cluster on Exascale Infrastructure.
-         */
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
         /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM
-         * cluster on Exascale Infrastructure.
-         *
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
          * @param sshPublicKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
             return this;
         }
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
-         * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
-         * with private access. The nsgIds list can be empty.
-         */
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
-         * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
-         * with private access. The nsgIds list can be empty.
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * A list of the
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network security groups (NSGs) that the backup network of this DB system belongs to.
-         * Setting this to an empty array after the list is created removes the resource from all
-         * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         * Applicable only to Exadata systems.
-         */
+         * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
         private java.util.List<String> backupNetworkNsgIds;
 
         /**
-         * A list of the
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network security groups (NSGs) that the backup network of this DB system belongs to.
-         * Setting this to an empty array after the list is created removes the resource from all
-         * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         * Applicable only to Exadata systems.
+         * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
             this.backupNetworkNsgIds = backupNetworkNsgIds;
             this.__explicitlySet__.add("backupNetworkNsgIds");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -298,22 +279,21 @@ public final class UpdateExadbVmClusterDetails
         }
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
-         */
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributes(
                 java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
             this.securityAttributes = securityAttributes;
@@ -329,16 +309,17 @@ public final class UpdateExadbVmClusterDetails
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
-        /** Operating system version of the image. */
+        /**
+         * Operating system version of the image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
         private String systemVersion;
 
         /**
          * Operating system version of the image.
-         *
          * @param systemVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder systemVersion(String systemVersion) {
             this.systemVersion = systemVersion;
             this.__explicitlySet__.add("systemVersion");
@@ -346,43 +327,39 @@ public final class UpdateExadbVmClusterDetails
         }
         /**
          * Grid Setup will be done using this grid image id.
+         * <p>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
-         * <p>The grid image ID can be obtained using the API
-         * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-         * name>. The list of supported major versions can be obtained using the API
-         * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD
-         * name>
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
         private String gridImageId;
 
         /**
          * Grid Setup will be done using this grid image id.
-         *
-         * <p>The grid image ID can be obtained using the API
-         * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-         * name>. The list of supported major versions can be obtained using the API
-         * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD
-         * name>
+         * <p>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
          * @param gridImageId the value to set
          * @return this builder
-         */
+         **/
         public Builder gridImageId(String gridImageId) {
             this.gridImageId = gridImageId;
             this.__explicitlySet__.add("gridImageId");
             return this;
         }
-        /** The update action. */
+        /**
+         * The update action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
         private UpdateAction updateAction;
 
         /**
          * The update action.
-         *
          * @param updateAction the value to set
          * @return this builder
-         */
+         **/
         public Builder updateAction(UpdateAction updateAction) {
             this.updateAction = updateAction;
             this.__explicitlySet__.add("updateAction");
@@ -471,7 +448,9 @@ public final class UpdateExadbVmClusterDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -481,23 +460,23 @@ public final class UpdateExadbVmClusterDetails
     }
 
     /**
-     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does
-     * not need to be unique.
-     */
+     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does
-     * not need to be unique.
-     *
+     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure. */
+    /**
+     * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalECpuCount")
     private final Integer totalECpuCount;
 
@@ -505,12 +484,15 @@ public final class UpdateExadbVmClusterDetails
      * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public Integer getTotalECpuCount() {
         return totalECpuCount;
     }
 
-    /** The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure. */
+    /**
+     * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabledECpuCount")
     private final Integer enabledECpuCount;
 
@@ -518,7 +500,7 @@ public final class UpdateExadbVmClusterDetails
      * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public Integer getEnabledECpuCount() {
         return enabledECpuCount;
     }
@@ -530,7 +512,10 @@ public final class UpdateExadbVmClusterDetails
         return vmFileSystemStorage;
     }
 
-    /** The number of nodes to be added in the Exadata VM cluster on Exascale Infrastructure. */
+    /**
+     * The number of nodes to be added in the Exadata VM cluster on Exascale Infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
@@ -538,16 +523,16 @@ public final class UpdateExadbVmClusterDetails
      * The number of nodes to be added in the Exadata VM cluster on Exascale Infrastructure.
      *
      * @return the value
-     */
+     **/
     public Integer getNodeCount() {
         return nodeCount;
     }
 
     /**
-     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure.
-     * The default is BRING_YOUR_OWN_LICENSE.
-     */
-    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
+     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     **/
+    public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -580,148 +565,127 @@ public final class UpdateExadbVmClusterDetails
         }
     };
     /**
-     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure.
-     * The default is BRING_YOUR_OWN_LICENSE.
-     */
+     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure.
-     * The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      *
      * @return the value
-     */
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
     /**
-     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster
-     * on Exascale Infrastructure.
-     */
+     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     private final java.util.List<String> sshPublicKeys;
 
     /**
-     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster
-     * on Exascale Infrastructure.
-     *
+     * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      * @return the value
-     */
+     **/
     public java.util.List<String> getSshPublicKeys() {
         return sshPublicKeys;
     }
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
-     * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-     * Databases with private access. The nsgIds list can be empty.
-     */
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
-     * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-     * Databases with private access. The nsgIds list can be empty.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
-     * Setting this to an empty array after the list is created removes the resource from all NSGs.
-     * For more information about NSGs, see [Security
-     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
-     * only to Exadata systems.
-     */
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the network security groups (NSGs) that the backup network of this DB system belongs to.
-     * Setting this to an empty array after the list is created removes the resource from all NSGs.
-     * For more information about NSGs, see [Security
-     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
-     * only to Exadata systems.
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getBackupNetworkNsgIds() {
         return backupNetworkNsgIds;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
-     */
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
         return securityAttributes;
     }
@@ -733,46 +697,46 @@ public final class UpdateExadbVmClusterDetails
         return dataCollectionOptions;
     }
 
-    /** Operating system version of the image. */
+    /**
+     * Operating system version of the image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
     private final String systemVersion;
 
     /**
      * Operating system version of the image.
-     *
      * @return the value
-     */
+     **/
     public String getSystemVersion() {
         return systemVersion;
     }
 
     /**
      * Grid Setup will be done using this grid image id.
+     * <p>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
-     * <p>The grid image ID can be obtained using the API
-     * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-     * name>. The list of supported major versions can be obtained using the API
-     * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
     private final String gridImageId;
 
     /**
      * Grid Setup will be done using this grid image id.
-     *
-     * <p>The grid image ID can be obtained using the API
-     * /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
-     * name>. The list of supported major versions can be obtained using the API
-     * /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
+     * <p>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
      * @return the value
-     */
+     **/
     public String getGridImageId() {
         return gridImageId;
     }
 
-    /** The update action. */
-    public enum UpdateAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The update action.
+     **/
+    public enum UpdateAction {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
         Precheck("PRECHECK"),
@@ -806,15 +770,16 @@ public final class UpdateExadbVmClusterDetails
             throw new IllegalArgumentException("Invalid UpdateAction: " + key);
         }
     };
-    /** The update action. */
+    /**
+     * The update action.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
     private final UpdateAction updateAction;
 
     /**
      * The update action.
-     *
      * @return the value
-     */
+     **/
     public UpdateAction getUpdateAction() {
         return updateAction;
     }
@@ -826,7 +791,6 @@ public final class UpdateExadbVmClusterDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,19 @@
 package com.oracle.bmc.vault.model;
 
 /**
- * Defines the frequency of the rotation and the information about the target system <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+ * Defines the frequency of the rotation and the information about the target system
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RotationConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RotationConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RotationConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "rotationInterval",
@@ -40,23 +37,22 @@ public final class RotationConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The time interval that indicates the frequency for rotating secret data, as described in
-         * ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example,
-         * if you want to set the time interval for rotating a secret data as 30 days, the duration
-         * is expressed as "P30D."
-         */
+         * The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format.
+         * The minimum value is 1 day and maximum value is 360 days.
+         * For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rotationInterval")
         private String rotationInterval;
 
         /**
-         * The time interval that indicates the frequency for rotating secret data, as described in
-         * ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example,
-         * if you want to set the time interval for rotating a secret data as 30 days, the duration
-         * is expressed as "P30D."
+         * The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format.
+         * The minimum value is 1 day and maximum value is 360 days.
+         * For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
          *
          * @param rotationInterval the value to set
          * @return this builder
-         */
+         **/
         public Builder rotationInterval(String rotationInterval) {
             this.rotationInterval = rotationInterval;
             this.__explicitlySet__.add("rotationInterval");
@@ -71,7 +67,10 @@ public final class RotationConfig
             this.__explicitlySet__.add("targetSystemDetails");
             return this;
         }
-        /** Enables auto rotation, when set to true rotationInterval must be set. */
+        /**
+         * Enables auto rotation, when set to true rotationInterval must be set.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isScheduledRotationEnabled")
         private Boolean isScheduledRotationEnabled;
 
@@ -80,7 +79,7 @@ public final class RotationConfig
          *
          * @param isScheduledRotationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isScheduledRotationEnabled(Boolean isScheduledRotationEnabled) {
             this.isScheduledRotationEnabled = isScheduledRotationEnabled;
             this.__explicitlySet__.add("isScheduledRotationEnabled");
@@ -117,7 +116,9 @@ public final class RotationConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,22 +128,21 @@ public final class RotationConfig
     }
 
     /**
-     * The time interval that indicates the frequency for rotating secret data, as described in ISO
-     * 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you
-     * want to set the time interval for rotating a secret data as 30 days, the duration is
-     * expressed as "P30D."
-     */
+     * The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format.
+     * The minimum value is 1 day and maximum value is 360 days.
+     * For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rotationInterval")
     private final String rotationInterval;
 
     /**
-     * The time interval that indicates the frequency for rotating secret data, as described in ISO
-     * 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you
-     * want to set the time interval for rotating a secret data as 30 days, the duration is
-     * expressed as "P30D."
+     * The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format.
+     * The minimum value is 1 day and maximum value is 360 days.
+     * For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
      *
      * @return the value
-     */
+     **/
     public String getRotationInterval() {
         return rotationInterval;
     }
@@ -154,7 +154,10 @@ public final class RotationConfig
         return targetSystemDetails;
     }
 
-    /** Enables auto rotation, when set to true rotationInterval must be set. */
+    /**
+     * Enables auto rotation, when set to true rotationInterval must be set.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isScheduledRotationEnabled")
     private final Boolean isScheduledRotationEnabled;
 
@@ -162,7 +165,7 @@ public final class RotationConfig
      * Enables auto rotation, when set to true rotationInterval must be set.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsScheduledRotationEnabled() {
         return isScheduledRotationEnabled;
     }
@@ -174,7 +177,6 @@ public final class RotationConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

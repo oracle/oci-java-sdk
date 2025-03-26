@@ -5,25 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The object that defines a versioned custom software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The object that defines a versioned custom software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VersionedCustomSoftwareSource.Builder.class)
+    builder = VersionedCustomSoftwareSource.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "softwareSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "softwareSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VersionedCustomSoftwareSource extends SoftwareSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -217,19 +217,16 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             return this;
         }
         /**
-         * List of vendor software sources that are used for the basis of the versioned custom
-         * software source.
-         */
+         * List of vendor software sources that are used for the basis of the versioned custom software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
         private java.util.List<Id> vendorSoftwareSources;
 
         /**
-         * List of vendor software sources that are used for the basis of the versioned custom
-         * software source.
-         *
+         * List of vendor software sources that are used for the basis of the versioned custom software source.
          * @param vendorSoftwareSources the value to set
          * @return this builder
-         */
+         **/
         public Builder vendorSoftwareSources(java.util.List<Id> vendorSoftwareSources) {
             this.vendorSoftwareSources = vendorSoftwareSources;
             this.__explicitlySet__.add("vendorSoftwareSources");
@@ -245,142 +242,127 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("customSoftwareSourceFilter");
             return this;
         }
-        /** The version to assign to this custom software source. */
+        /**
+         * The version to assign to this custom software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceVersion")
         private String softwareSourceVersion;
 
         /**
          * The version to assign to this custom software source.
-         *
          * @param softwareSourceVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceVersion(String softwareSourceVersion) {
             this.softwareSourceVersion = softwareSourceVersion;
             this.__explicitlySet__.add("softwareSourceVersion");
             return this;
         }
         /**
-         * Indicates whether the service should automatically resolve package dependencies when
-         * including specific packages in the software source.
-         */
+         * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
         private Boolean isAutoResolveDependencies;
 
         /**
-         * Indicates whether the service should automatically resolve package dependencies when
-         * including specific packages in the software source.
-         *
+         * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
          * @param isAutoResolveDependencies the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
             this.isAutoResolveDependencies = isAutoResolveDependencies;
             this.__explicitlySet__.add("isAutoResolveDependencies");
             return this;
         }
         /**
-         * Indicates whether the service should create the software source from a list of packages
-         * provided by the user.
-         */
+         * Indicates whether the service should create the software source from a list of packages provided by the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
         private Boolean isCreatedFromPackageList;
 
         /**
-         * Indicates whether the service should create the software source from a list of packages
-         * provided by the user.
-         *
+         * Indicates whether the service should create the software source from a list of packages provided by the user.
          * @param isCreatedFromPackageList the value to set
          * @return this builder
-         */
+         **/
         public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
             this.isCreatedFromPackageList = isCreatedFromPackageList;
             this.__explicitlySet__.add("isCreatedFromPackageList");
             return this;
         }
         /**
-         * Indicates whether the software source will include only the latest versions of content
-         * from vendor software sources, while accounting for other constraints set in the custom or
-         * versioned custom software source (such as a package list or filters). * For a module
-         * filter that does not specify a stream, this will include all available streams, and
-         * within each stream only the latest version of packages. * For a module filter that does
-         * specify a stream, this will include only the latest version of packages for the specified
-         * stream. * For a package filter that does not specify a version, this will include only
-         * the latest available version of the package. * For a package filter that does specify a
-         * version, this will include only the specified version of the package (the
-         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
-         * the specified version of packages and modules in the list (the isLatestContentOnly
-         * attribute is ignored).
-         */
+         * Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+         * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+         * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+         * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+         * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+         * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
         private Boolean isLatestContentOnly;
 
         /**
-         * Indicates whether the software source will include only the latest versions of content
-         * from vendor software sources, while accounting for other constraints set in the custom or
-         * versioned custom software source (such as a package list or filters). * For a module
-         * filter that does not specify a stream, this will include all available streams, and
-         * within each stream only the latest version of packages. * For a module filter that does
-         * specify a stream, this will include only the latest version of packages for the specified
-         * stream. * For a package filter that does not specify a version, this will include only
-         * the latest available version of the package. * For a package filter that does specify a
-         * version, this will include only the specified version of the package (the
-         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
-         * the specified version of packages and modules in the list (the isLatestContentOnly
-         * attribute is ignored).
+         * Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+         * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+         * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+         * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+         * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+         * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
          *
          * @param isLatestContentOnly the value to set
          * @return this builder
-         */
+         **/
         public Builder isLatestContentOnly(Boolean isLatestContentOnly) {
             this.isLatestContentOnly = isLatestContentOnly;
             this.__explicitlySet__.add("isLatestContentOnly");
             return this;
         }
-        /** The packages in the software source. */
+        /**
+         * The packages in the software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private java.util.List<String> packages;
 
         /**
          * The packages in the software source.
-         *
          * @param packages the value to set
          * @return this builder
-         */
+         **/
         public Builder packages(java.util.List<String> packages) {
             this.packages = packages;
             this.__explicitlySet__.add("packages");
             return this;
         }
-        /** Identifies how the versioned custom software source was created. */
+        /**
+         * Identifies how the versioned custom software source was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
         private SoftwareSourceSubType softwareSourceSubType;
 
         /**
          * Identifies how the versioned custom software source was created.
-         *
          * @param softwareSourceSubType the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceSubType(SoftwareSourceSubType softwareSourceSubType) {
             this.softwareSourceSubType = softwareSourceSubType;
             this.__explicitlySet__.add("softwareSourceSubType");
             return this;
         }
         /**
-         * The date and time the metadata for this software source was last updated (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMetadataUpdated")
         private java.util.Date timeMetadataUpdated;
 
         /**
-         * The date and time the metadata for this software source was last updated (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeMetadataUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMetadataUpdated(java.util.Date timeMetadataUpdated) {
             this.timeMetadataUpdated = timeMetadataUpdated;
             this.__explicitlySet__.add("timeMetadataUpdated");
@@ -525,7 +507,9 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -600,18 +584,15 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
     }
 
     /**
-     * List of vendor software sources that are used for the basis of the versioned custom software
-     * source.
-     */
+     * List of vendor software sources that are used for the basis of the versioned custom software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
     private final java.util.List<Id> vendorSoftwareSources;
 
     /**
-     * List of vendor software sources that are used for the basis of the versioned custom software
-     * source.
-     *
+     * List of vendor software sources that are used for the basis of the versioned custom software source.
      * @return the value
-     */
+     **/
     public java.util.List<Id> getVendorSoftwareSources() {
         return vendorSoftwareSources;
     }
@@ -623,127 +604,114 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         return customSoftwareSourceFilter;
     }
 
-    /** The version to assign to this custom software source. */
+    /**
+     * The version to assign to this custom software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceVersion")
     private final String softwareSourceVersion;
 
     /**
      * The version to assign to this custom software source.
-     *
      * @return the value
-     */
+     **/
     public String getSoftwareSourceVersion() {
         return softwareSourceVersion;
     }
 
     /**
-     * Indicates whether the service should automatically resolve package dependencies when
-     * including specific packages in the software source.
-     */
+     * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
     private final Boolean isAutoResolveDependencies;
 
     /**
-     * Indicates whether the service should automatically resolve package dependencies when
-     * including specific packages in the software source.
-     *
+     * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
      * @return the value
-     */
+     **/
     public Boolean getIsAutoResolveDependencies() {
         return isAutoResolveDependencies;
     }
 
     /**
-     * Indicates whether the service should create the software source from a list of packages
-     * provided by the user.
-     */
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
     private final Boolean isCreatedFromPackageList;
 
     /**
-     * Indicates whether the service should create the software source from a list of packages
-     * provided by the user.
-     *
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
      * @return the value
-     */
+     **/
     public Boolean getIsCreatedFromPackageList() {
         return isCreatedFromPackageList;
     }
 
     /**
-     * Indicates whether the software source will include only the latest versions of content from
-     * vendor software sources, while accounting for other constraints set in the custom or
-     * versioned custom software source (such as a package list or filters). * For a module filter
-     * that does not specify a stream, this will include all available streams, and within each
-     * stream only the latest version of packages. * For a module filter that does specify a stream,
-     * this will include only the latest version of packages for the specified stream. * For a
-     * package filter that does not specify a version, this will include only the latest available
-     * version of the package. * For a package filter that does specify a version, this will include
-     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
-     * For a package list, this will include only the specified version of packages and modules in
-     * the list (the isLatestContentOnly attribute is ignored).
-     */
+     * Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
     private final Boolean isLatestContentOnly;
 
     /**
-     * Indicates whether the software source will include only the latest versions of content from
-     * vendor software sources, while accounting for other constraints set in the custom or
-     * versioned custom software source (such as a package list or filters). * For a module filter
-     * that does not specify a stream, this will include all available streams, and within each
-     * stream only the latest version of packages. * For a module filter that does specify a stream,
-     * this will include only the latest version of packages for the specified stream. * For a
-     * package filter that does not specify a version, this will include only the latest available
-     * version of the package. * For a package filter that does specify a version, this will include
-     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
-     * For a package list, this will include only the specified version of packages and modules in
-     * the list (the isLatestContentOnly attribute is ignored).
+     * Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
      *
      * @return the value
-     */
+     **/
     public Boolean getIsLatestContentOnly() {
         return isLatestContentOnly;
     }
 
-    /** The packages in the software source. */
+    /**
+     * The packages in the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final java.util.List<String> packages;
 
     /**
      * The packages in the software source.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPackages() {
         return packages;
     }
 
-    /** Identifies how the versioned custom software source was created. */
+    /**
+     * Identifies how the versioned custom software source was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
     private final SoftwareSourceSubType softwareSourceSubType;
 
     /**
      * Identifies how the versioned custom software source was created.
-     *
      * @return the value
-     */
+     **/
     public SoftwareSourceSubType getSoftwareSourceSubType() {
         return softwareSourceSubType;
     }
 
     /**
-     * The date and time the metadata for this software source was last updated (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMetadataUpdated")
     private final java.util.Date timeMetadataUpdated;
 
     /**
-     * The date and time the metadata for this software source was last updated (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMetadataUpdated() {
         return timeMetadataUpdated;
     }
@@ -755,7 +723,6 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

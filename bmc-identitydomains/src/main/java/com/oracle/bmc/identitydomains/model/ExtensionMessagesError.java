@@ -5,26 +5,23 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Extension schema for error messages providing more details with the exception status. Returns
- * messageId corresponding to the detailed error message and optionally additional data related to
- * the error condition - for example reason for authentication failure such as user is disabled or
- * locked. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Extension schema for error messages providing more details with the exception status.
+ * Returns messageId corresponding to the detailed error message and optionally additional data related to the error condition - for example reason for authentication failure such as user is disabled or locked.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionMessagesError.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionMessagesError.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionMessagesError
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"messageId", "additionalData"})
     public ExtensionMessagesError(String messageId, Object additionalData) {
@@ -35,35 +32,33 @@ public final class ExtensionMessagesError
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Internal error keyword pointing to the exception status message. REQUIRED. */
+        /**
+         * Internal error keyword pointing to the exception status message. REQUIRED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageId")
         private String messageId;
 
         /**
          * Internal error keyword pointing to the exception status message. REQUIRED.
-         *
          * @param messageId the value to set
          * @return this builder
-         */
+         **/
         public Builder messageId(String messageId) {
             this.messageId = messageId;
             this.__explicitlySet__.add("messageId");
             return this;
         }
         /**
-         * Contains Map based additional data for the exception message (as key-value pair). All
-         * keys and values are in string format.
-         */
+         * Contains Map based additional data for the exception message (as key-value pair). All keys and values are in string format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalData")
         private Object additionalData;
 
         /**
-         * Contains Map based additional data for the exception message (as key-value pair). All
-         * keys and values are in string format.
-         *
+         * Contains Map based additional data for the exception message (as key-value pair). All keys and values are in string format.
          * @param additionalData the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalData(Object additionalData) {
             this.additionalData = additionalData;
             this.__explicitlySet__.add("additionalData");
@@ -94,7 +89,9 @@ public final class ExtensionMessagesError
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,32 +100,30 @@ public final class ExtensionMessagesError
         return new Builder().copy(this);
     }
 
-    /** Internal error keyword pointing to the exception status message. REQUIRED. */
+    /**
+     * Internal error keyword pointing to the exception status message. REQUIRED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageId")
     private final String messageId;
 
     /**
      * Internal error keyword pointing to the exception status message. REQUIRED.
-     *
      * @return the value
-     */
+     **/
     public String getMessageId() {
         return messageId;
     }
 
     /**
-     * Contains Map based additional data for the exception message (as key-value pair). All keys
-     * and values are in string format.
-     */
+     * Contains Map based additional data for the exception message (as key-value pair). All keys and values are in string format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalData")
     private final Object additionalData;
 
     /**
-     * Contains Map based additional data for the exception message (as key-value pair). All keys
-     * and values are in string format.
-     *
+     * Contains Map based additional data for the exception message (as key-value pair). All keys and values are in string format.
      * @return the value
-     */
+     **/
     public Object getAdditionalData() {
         return additionalData;
     }
@@ -140,7 +135,6 @@ public final class ExtensionMessagesError
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

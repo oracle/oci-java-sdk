@@ -6,13 +6,14 @@ package com.oracle.bmc.util.internal;
 
 import java.util.Arrays;
 
-/** Argument validation. */
+/**
+ * Argument validation.
+ */
 public enum Validate {
     ; // prevent instantiation
 
     /**
      * Throw {@link NullPointerException} if the object is null.
-     *
      * @param o object that has to be non-null
      * @param reason exception message
      * @param values values to be put in placeholders in reason (e.g. "%s").
@@ -28,7 +29,6 @@ public enum Validate {
 
     /**
      * Throw {@link IllegalArgumentException} if the object is not an instance of the class.
-     *
      * @param clazz the class the object has to be
      * @param o the object
      * @param reason the exception message
@@ -44,9 +44,8 @@ public enum Validate {
     }
 
     /**
-     * Throw @{@link NullPointerException} if the string is null, or {@link
-     * IllegalArgumentException} if the string is just whitespace.
-     *
+     * Throw @{@link NullPointerException} if the string is null, or {@link IllegalArgumentException} if the string is
+     * just whitespace.
      * @param s string
      * @param reason exception message
      * @param values values to be put in placeholders in reason (e.g. "%s").
@@ -66,7 +65,6 @@ public enum Validate {
 
     /**
      * Throw {@link IllegalArgumentException} if the condition is false.
-     *
      * @param condition the condition
      * @param reason exception message
      * @param values values to be put in placeholders in reason (e.g. "%s").
@@ -79,9 +77,7 @@ public enum Validate {
     }
 
     /**
-     * Throw {@link IllegalArgumentException} if value is strictly less than minimum or strictly
-     * greater than maximum.
-     *
+     * Throw {@link IllegalArgumentException} if value is strictly less than minimum or strictly greater than maximum.
      * @param minimum the minimum, inclusive
      * @param maximum the maximum, inclusive
      * @param value the value to check
@@ -104,7 +100,6 @@ public enum Validate {
 
     /**
      * Throw {@link IllegalArgumentException} if one of the array elements is null.
-     *
      * @param array array to check
      * @param reason exception message
      * @param values values to be put in placeholders in reason (e.g. "%s").
@@ -124,7 +119,6 @@ public enum Validate {
 
     /**
      * Throw {@link IllegalArgumentException} if the array is empty
-     *
      * @param array array to check
      * @param reason exception message
      * @param values values to be put in placeholders in reason (e.g. "%s").

@@ -5,23 +5,23 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the routing action taken on traffic flow with no route found. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Defines the routing action taken on traffic flow with no route found.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NoRouteRoutingActionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NoRouteRoutingActionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NoRouteRoutingActionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isRestrictedOrPartial",
@@ -40,54 +40,53 @@ public final class NoRouteRoutingActionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** If true, the evaluated route table details are incomplete. */
+        /**
+         * If true, the evaluated route table details are incomplete.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRestrictedOrPartial")
         private Boolean isRestrictedOrPartial;
 
         /**
          * If true, the evaluated route table details are incomplete.
-         *
          * @param isRestrictedOrPartial the value to set
          * @return this builder
-         */
+         **/
         public Builder isRestrictedOrPartial(Boolean isRestrictedOrPartial) {
             this.isRestrictedOrPartial = isRestrictedOrPartial;
             this.__explicitlySet__.add("isRestrictedOrPartial");
             return this;
         }
         /**
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * evaluated VCN route table.
-         */
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedVcnRouteTableId")
         private String evaluatedVcnRouteTableId;
 
         /**
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * evaluated VCN route table.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
          *
          * @param evaluatedVcnRouteTableId the value to set
          * @return this builder
-         */
+         **/
         public Builder evaluatedVcnRouteTableId(String evaluatedVcnRouteTableId) {
             this.evaluatedVcnRouteTableId = evaluatedVcnRouteTableId;
             this.__explicitlySet__.add("evaluatedVcnRouteTableId");
             return this;
         }
         /**
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * evaluated DRG route table.
-         */
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedDrgRouteTableId")
         private String evaluatedDrgRouteTableId;
 
         /**
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * evaluated DRG route table.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
          *
          * @param evaluatedDrgRouteTableId the value to set
          * @return this builder
-         */
+         **/
         public Builder evaluatedDrgRouteTableId(String evaluatedDrgRouteTableId) {
             this.evaluatedDrgRouteTableId = evaluatedDrgRouteTableId;
             this.__explicitlySet__.add("evaluatedDrgRouteTableId");
@@ -124,7 +123,9 @@ public final class NoRouteRoutingActionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,49 +134,48 @@ public final class NoRouteRoutingActionDetails
         return new Builder().copy(this);
     }
 
-    /** If true, the evaluated route table details are incomplete. */
+    /**
+     * If true, the evaluated route table details are incomplete.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRestrictedOrPartial")
     private final Boolean isRestrictedOrPartial;
 
     /**
      * If true, the evaluated route table details are incomplete.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRestrictedOrPartial() {
         return isRestrictedOrPartial;
     }
 
     /**
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * evaluated VCN route table.
-     */
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedVcnRouteTableId")
     private final String evaluatedVcnRouteTableId;
 
     /**
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * evaluated VCN route table.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
      *
      * @return the value
-     */
+     **/
     public String getEvaluatedVcnRouteTableId() {
         return evaluatedVcnRouteTableId;
     }
 
     /**
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated
-     * DRG route table.
-     */
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedDrgRouteTableId")
     private final String evaluatedDrgRouteTableId;
 
     /**
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated
-     * DRG route table.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
      *
      * @return the value
-     */
+     **/
     public String getEvaluatedDrgRouteTableId() {
         return evaluatedDrgRouteTableId;
     }
@@ -187,7 +187,6 @@ public final class NoRouteRoutingActionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

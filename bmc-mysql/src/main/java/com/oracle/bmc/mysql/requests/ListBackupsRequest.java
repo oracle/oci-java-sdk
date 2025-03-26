@@ -6,52 +6,58 @@ package com.oracle.bmc.mysql.requests;
 
 import com.oracle.bmc.mysql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListBackupsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBackupsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListBackupsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBackupsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-     * specific request, please provide the request ID that you supplied in this header with the
-     * request.
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-     * specific request, please provide the request ID that you supplied in this header with the
-     * request.
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Backup OCID */
+    /**
+     * Backup OCID
+     */
     private String backupId;
 
-    /** Backup OCID */
+    /**
+     * Backup OCID
+     */
     public String getBackupId() {
         return backupId;
     }
-    /** Backup Lifecycle State */
+    /**
+     * Backup Lifecycle State
+     */
     private com.oracle.bmc.mysql.model.Backup.LifecycleState lifecycleState;
 
-    /** Backup Lifecycle State */
+    /**
+     * Backup Lifecycle State
+     */
     public com.oracle.bmc.mysql.model.Backup.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -66,31 +72,39 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getDbSystemId() {
         return dbSystemId;
     }
-    /** A filter to return only the resource matching the given display name exactly. */
+    /**
+     * A filter to return only the resource matching the given display name exactly.
+     */
     private String displayName;
 
-    /** A filter to return only the resource matching the given display name exactly. */
+    /**
+     * A filter to return only the resource matching the given display name exactly.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** Backup creationType */
+    /**
+     * Backup creationType
+     */
     private com.oracle.bmc.mysql.model.Backup.CreationType creationType;
 
-    /** Backup creationType */
+    /**
+     * Backup creationType
+     */
     public com.oracle.bmc.mysql.model.Backup.CreationType getCreationType() {
         return creationType;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as
-     * descending.
+     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as
-     * descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
         DisplayName("displayName"),
@@ -125,17 +139,21 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as
-     * descending.
+     * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use (ASC or DESC). */
+    /**
+     * The sort order to use (ASC or DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use (ASC or DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use (ASC or DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -168,36 +186,40 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /** The sort order to use (ASC or DESC). */
+    /**
+     * The sort order to use (ASC or DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The maximum number of items to return in a paginated list call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     * The maximum number of items to return in a paginated list call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a paginated list call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     * The maximum number of items to return in a paginated list call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-     * previous list call. For information about pagination, see [List
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+     * the previous list call. For information about pagination, see [List
      * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     private String page;
 
     /**
-     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-     * previous list call. For information about pagination, see [List
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+     * the previous list call. For information about pagination, see [List
      * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     public String getPage() {
         return page;
@@ -206,19 +228,17 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBackupsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -228,16 +248,17 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-         * specific request, please provide the request ID that you supplied in this header with the
-         * request.
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-         * specific request, please provide the request ID that you supplied in this header with the
-         * request.
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -247,12 +268,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Backup OCID */
+        /**
+         * Backup OCID
+         */
         private String backupId = null;
 
         /**
          * Backup OCID
-         *
          * @param backupId the value to set
          * @return this builder instance
          */
@@ -261,12 +283,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Backup Lifecycle State */
+        /**
+         * Backup Lifecycle State
+         */
         private com.oracle.bmc.mysql.model.Backup.LifecycleState lifecycleState = null;
 
         /**
          * Backup Lifecycle State
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -277,15 +300,12 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The DB System
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dbSystemId = null;
 
         /**
-         * The DB System
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param dbSystemId the value to set
          * @return this builder instance
          */
@@ -294,12 +314,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only the resource matching the given display name exactly. */
+        /**
+         * A filter to return only the resource matching the given display name exactly.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only the resource matching the given display name exactly.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -308,12 +329,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Backup creationType */
+        /**
+         * Backup creationType
+         */
         private com.oracle.bmc.mysql.model.Backup.CreationType creationType = null;
 
         /**
          * Backup creationType
-         *
          * @param creationType the value to set
          * @return this builder instance
          */
@@ -323,14 +345,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Time fields are default
-         * ordered as descending.
+         * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Time fields are default
-         * ordered as descending.
+         * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -340,12 +361,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The sort order to use (ASC or DESC). */
+        /**
+         * The sort order to use (ASC or DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use (ASC or DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -355,16 +377,15 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The maximum number of items to return in a paginated list call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         * The maximum number of items to return in a paginated list call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         *
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated list call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         * The maximum number of items to return in a paginated list call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -375,15 +396,16 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-         * previous list call. For information about pagination, see [List
+         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+         * the previous list call. For information about pagination, see [List
          * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         *
          */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-         * previous list call. For information about pagination, see [List
+         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+         * the previous list call. For information about pagination, see [List
          * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param page the value to set
@@ -396,19 +418,18 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -420,7 +441,6 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListBackupsRequest o) {
@@ -443,11 +463,10 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListBackupsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListBackupsRequest
          */
@@ -461,8 +480,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListBackupsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListBackupsRequest
@@ -481,14 +499,12 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListBackupsRequest(compartmentId, opcRequestId, backupId, lifecycleState,
-            // dbSystemId, displayName, creationType, sortBy, sortOrder, limit, page);
+            // new ListBackupsRequest(compartmentId, opcRequestId, backupId, lifecycleState, dbSystemId, displayName, creationType, sortBy, sortOrder, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -508,7 +524,6 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

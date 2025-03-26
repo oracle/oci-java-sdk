@@ -4,10 +4,12 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The current state of the private endpoint. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum DataSciencePrivateEndpointLifecycleState
-        implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of the private endpoint.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum DataSciencePrivateEndpointLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

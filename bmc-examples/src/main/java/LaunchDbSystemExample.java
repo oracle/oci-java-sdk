@@ -50,32 +50,27 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This class provides a basic example of how to launch a DB system using the Java SDK. This will
- * cover:
- *
- * <p>
- *
+ * This class provides a basic example of how to launch a DB system using the Java SDK. This will cover:
+ * <p></p>
  * <ul>
- *   <li>Create a VCN and subnet for the DB system and its related resources
- *   <li>Launch a DB system containing a single DB home and database. See: <a
- *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> and
- *       <a href="https://docs.oracle.com/iaas/Content/Database/Tasks/launchingDB.htm">managing DB
- *       systems</a> for more information
- *   <li>Demonstrate listing and retrieving information on individual DB systems, DB homes and
- *       databases
- *   <li>Demonstrate taking action on nodes
+ *   <li>Create a VCN and subnet for the DB system and its related resources</li>
+ *   <li>
+ *     Launch a DB system containing a single DB home and database. See:
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> and
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Tasks/launchingDB.htm">managing DB systems</a>
+ *       for more information
+ *   <li>Demonstrate listing and retrieving information on individual DB systems, DB homes and databases</li>
+ *   <li>Demonstrate taking action on nodes</li>
  * </ul>
- *
- * <p>Resources created by this class will be removed when this example is done.
- *
- * <p>This class also makes assumptions on the following database parameters:
- *
- * <p>
- *
+ * <p></p>
+ * Resources created by this class will be removed when this example is done.
+ * <p></p>
+ * This class also makes assumptions on the following database parameters:
+ * <p></p>
  * <ul>
- *   <li>Core count
- *   <li>DB edition
- *   <li>DB version
+ *   <li>Core count</li>
+ *   <li>DB edition</li>
+ *   <li>DB version</li>
  * </ul>
  */
 public class LaunchDbSystemExample {
@@ -91,12 +86,12 @@ public class LaunchDbSystemExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment which owns the DB system
-     *       <li>The availability domain where the DB system will be launched
-     *       <li>The CIDR block for the VCN and subnet (these will use the same CIDR)
-     *       <li>Admin password for the DB system
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of the compartment which owns the DB system</li>
+     *   <li>The availability domain where the DB system will be launched</li>
+     *   <li>The CIDR block for the VCN and subnet (these will use the same CIDR)</li>
+     *   <li>Admin password for the DB system</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
@@ -111,20 +106,19 @@ public class LaunchDbSystemExample {
         String sshPublicKey =
                 "ssh-rsa AAAAB3NzaC1y...key shortened for example...fdK/ABqxgH7sy3AWgBjfj some description";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final DatabaseClient databaseClient =
-                DatabaseClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final VirtualNetworkClient virtualNetworkClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final DatabaseClient databaseClient = new DatabaseClient(provider);
+        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
+
+        databaseClient.setRegion(Region.US_PHOENIX_1);
+        virtualNetworkClient.setRegion(Region.US_PHOENIX_1);
 
         Vcn vcn = null;
         Subnet subnet = null;

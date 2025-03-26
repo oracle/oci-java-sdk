@@ -5,23 +5,22 @@
 package com.oracle.bmc.securityattribute.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkEditSecurityAttributeOperationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkEditSecurityAttributeOperationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkEditSecurityAttributeOperationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operationType", "securityAttributes"})
     public BulkEditSecurityAttributeOperationDetails(
@@ -36,30 +35,29 @@ public final class BulkEditSecurityAttributeOperationDetails
     public static class Builder {
         /**
          * An enum-like description of the type of operation.
+         * <p>
+         * {@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on the resource.
+         * * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if it is present on the resource.
+         * * {@code ADD_OR_SET} combines the first two operations to add a security attribute if it does not already exist on the resource
+         * or update the value if it is present on the resource.
+         * * {@code REMOVE} removes the security attribute from the resource. It's removed from the resource regardless of the value.
          *
-         * <p>{@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist
-         * on the resource. * {@code SET_WHERE_PRESENT} updates the value for a security attribute
-         * only if it is present on the resource. * {@code ADD_OR_SET} combines the first two
-         * operations to add a security attribute if it does not already exist on the resource or
-         * update the value if it is present on the resource. * {@code REMOVE} removes the security
-         * attribute from the resource. It's removed from the resource regardless of the value.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
          * An enum-like description of the type of operation.
-         *
-         * <p>{@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist
-         * on the resource. * {@code SET_WHERE_PRESENT} updates the value for a security attribute
-         * only if it is present on the resource. * {@code ADD_OR_SET} combines the first two
-         * operations to add a security attribute if it does not already exist on the resource or
-         * update the value if it is present on the resource. * {@code REMOVE} removes the security
-         * attribute from the resource. It's removed from the resource regardless of the value.
+         * <p>
+         * {@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on the resource.
+         * * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if it is present on the resource.
+         * * {@code ADD_OR_SET} combines the first two operations to add a security attribute if it does not already exist on the resource
+         * or update the value if it is present on the resource.
+         * * {@code REMOVE} removes the security attribute from the resource. It's removed from the resource regardless of the value.
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
@@ -67,22 +65,21 @@ public final class BulkEditSecurityAttributeOperationDetails
         }
         /**
          * Security attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
-         */
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
          * Security attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributes(
                 java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
             this.securityAttributes = securityAttributes;
@@ -115,7 +112,9 @@ public final class BulkEditSecurityAttributeOperationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,15 +125,15 @@ public final class BulkEditSecurityAttributeOperationDetails
 
     /**
      * An enum-like description of the type of operation.
+     * <p>
+     * {@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on the resource.
+     * * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if it is present on the resource.
+     * * {@code ADD_OR_SET} combines the first two operations to add a security attribute if it does not already exist on the resource
+     * or update the value if it is present on the resource.
+     * * {@code REMOVE} removes the security attribute from the resource. It's removed from the resource regardless of the value.
      *
-     * <p>{@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on
-     * the resource. * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if
-     * it is present on the resource. * {@code ADD_OR_SET} combines the first two operations to add
-     * a security attribute if it does not already exist on the resource or update the value if it
-     * is present on the resource. * {@code REMOVE} removes the security attribute from the
-     * resource. It's removed from the resource regardless of the value.
-     */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum OperationType {
         AddWhereAbsent("ADD_WHERE_ABSENT"),
         SetWherePresent("SET_WHERE_PRESENT"),
         AddOrSet("ADD_OR_SET"),
@@ -170,50 +169,48 @@ public final class BulkEditSecurityAttributeOperationDetails
     };
     /**
      * An enum-like description of the type of operation.
+     * <p>
+     * {@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on the resource.
+     * * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if it is present on the resource.
+     * * {@code ADD_OR_SET} combines the first two operations to add a security attribute if it does not already exist on the resource
+     * or update the value if it is present on the resource.
+     * * {@code REMOVE} removes the security attribute from the resource. It's removed from the resource regardless of the value.
      *
-     * <p>{@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on
-     * the resource. * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if
-     * it is present on the resource. * {@code ADD_OR_SET} combines the first two operations to add
-     * a security attribute if it does not already exist on the resource or update the value if it
-     * is present on the resource. * {@code REMOVE} removes the security attribute from the
-     * resource. It's removed from the resource regardless of the value.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
      * An enum-like description of the type of operation.
-     *
-     * <p>{@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on
-     * the resource. * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if
-     * it is present on the resource. * {@code ADD_OR_SET} combines the first two operations to add
-     * a security attribute if it does not already exist on the resource or update the value if it
-     * is present on the resource. * {@code REMOVE} removes the security attribute from the
-     * resource. It's removed from the resource regardless of the value.
+     * <p>
+     * {@code ADD_WHERE_ABSENT} adds a security attribute only if it does not already exist on the resource.
+     * * {@code SET_WHERE_PRESENT} updates the value for a security attribute only if it is present on the resource.
+     * * {@code ADD_OR_SET} combines the first two operations to add a security attribute if it does not already exist on the resource
+     * or update the value if it is present on the resource.
+     * * {@code REMOVE} removes the security attribute from the resource. It's removed from the resource regardless of the value.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
     /**
-     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
-     */
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
         return securityAttributes;
     }
@@ -225,7 +222,6 @@ public final class BulkEditSecurityAttributeOperationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

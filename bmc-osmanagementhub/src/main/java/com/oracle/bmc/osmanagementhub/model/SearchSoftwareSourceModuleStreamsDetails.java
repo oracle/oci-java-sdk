@@ -6,23 +6,21 @@ package com.oracle.bmc.osmanagementhub.model;
 
 /**
  * Provides the information used to search for a set of module streams from a list software sources.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SearchSoftwareSourceModuleStreamsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SearchSoftwareSourceModuleStreamsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SearchSoftwareSourceModuleStreamsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"softwareSourceIds", "sortOrder", "moduleName", "sortBy"})
     public SearchSoftwareSourceModuleStreamsDetails(
@@ -40,40 +38,41 @@ public final class SearchSoftwareSourceModuleStreamsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of software source
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * List of software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
-         * List of software source
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * List of software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param softwareSourceIds the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceIds(java.util.List<String> softwareSourceIds) {
             this.softwareSourceIds = softwareSourceIds;
             this.__explicitlySet__.add("softwareSourceIds");
             return this;
         }
-        /** The sort order. */
+        /**
+         * The sort order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
          * The sort order.
-         *
          * @param sortOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
             return this;
         }
-        /** The name of a module. */
+        /**
+         * The name of a module.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
@@ -82,22 +81,23 @@ public final class SearchSoftwareSourceModuleStreamsDetails
          *
          * @param moduleName the value to set
          * @return this builder
-         */
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-        /** The field to sort by. */
+        /**
+         * The field to sort by.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private SortBy sortBy;
 
         /**
          * The field to sort by.
-         *
          * @param sortBy the value to set
          * @return this builder
-         */
+         **/
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
@@ -135,7 +135,9 @@ public final class SearchSoftwareSourceModuleStreamsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,24 +147,23 @@ public final class SearchSoftwareSourceModuleStreamsDetails
     }
 
     /**
-     * List of software source
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * List of software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
-     * List of software source
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * List of software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public java.util.List<String> getSoftwareSourceIds() {
         return softwareSourceIds;
     }
 
-    /** The sort order. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -194,20 +195,24 @@ public final class SearchSoftwareSourceModuleStreamsDetails
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-    /** The sort order. */
+    /**
+     * The sort order.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
      * The sort order.
-     *
      * @return the value
-     */
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }
 
-    /** The name of a module. */
+    /**
+     * The name of a module.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
@@ -215,13 +220,15 @@ public final class SearchSoftwareSourceModuleStreamsDetails
      * The name of a module.
      *
      * @return the value
-     */
+     **/
     public String getModuleName() {
         return moduleName;
     }
 
-    /** The field to sort by. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by.
+     **/
+    public enum SortBy {
         Modulename("MODULENAME"),
         ;
 
@@ -252,15 +259,16 @@ public final class SearchSoftwareSourceModuleStreamsDetails
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-    /** The field to sort by. */
+    /**
+     * The field to sort by.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final SortBy sortBy;
 
     /**
      * The field to sort by.
-     *
      * @return the value
-     */
+     **/
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -272,7 +280,6 @@ public final class SearchSoftwareSourceModuleStreamsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

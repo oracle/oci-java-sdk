@@ -5,23 +5,22 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Analytics Instance Private Access Channel model. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+ * Analytics Instance Private Access Channel model.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PrivateAccessChannel.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PrivateAccessChannel
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PrivateAccessChannel.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -58,7 +57,10 @@ public final class PrivateAccessChannel
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Private Access Channel unique identifier key. */
+        /**
+         * Private Access Channel unique identifier key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -67,13 +69,16 @@ public final class PrivateAccessChannel
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Display Name of the Private Access Channel. */
+        /**
+         * Display Name of the Private Access Channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -82,13 +87,16 @@ public final class PrivateAccessChannel
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** OCID of the customer VCN peered with private access channel. */
+        /**
+         * OCID of the customer VCN peered with private access channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
@@ -97,13 +105,16 @@ public final class PrivateAccessChannel
          *
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** OCID of the customer subnet connected to private access channel. */
+        /**
+         * OCID of the customer subnet connected to private access channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -112,13 +123,16 @@ public final class PrivateAccessChannel
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** IP Address of the Private Access channel. */
+        /**
+         * IP Address of the Private Access channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
@@ -127,51 +141,49 @@ public final class PrivateAccessChannel
          *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
         /**
-         * The list of IP addresses from the customer subnet connected to private access channel,
-         * used as a source Ip by Private Access Channel for network traffic from the
-         * AnalyticsInstance to Private Sources.
-         */
+         * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel
+         * for network traffic from the AnalyticsInstance to Private Sources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("egressSourceIpAddresses")
         private java.util.List<String> egressSourceIpAddresses;
 
         /**
-         * The list of IP addresses from the customer subnet connected to private access channel,
-         * used as a source Ip by Private Access Channel for network traffic from the
-         * AnalyticsInstance to Private Sources.
+         * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel
+         * for network traffic from the AnalyticsInstance to Private Sources.
          *
          * @param egressSourceIpAddresses the value to set
          * @return this builder
-         */
+         **/
         public Builder egressSourceIpAddresses(java.util.List<String> egressSourceIpAddresses) {
             this.egressSourceIpAddresses = egressSourceIpAddresses;
             this.__explicitlySet__.add("egressSourceIpAddresses");
             return this;
         }
         /**
-         * List of Private Source DNS zones registered with Private Access Channel, where datasource
-         * hostnames from these dns zones / domains will be resolved in the peered VCN for access
-         * from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can
-         * be registered.
-         */
+         * List of Private Source DNS zones registered with Private Access Channel,
+         * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
+         * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateSourceDnsZones")
         private java.util.List<PrivateSourceDnsZone> privateSourceDnsZones;
 
         /**
-         * List of Private Source DNS zones registered with Private Access Channel, where datasource
-         * hostnames from these dns zones / domains will be resolved in the peered VCN for access
-         * from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can
-         * be registered.
+         * List of Private Source DNS zones registered with Private Access Channel,
+         * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
+         * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
          *
          * @param privateSourceDnsZones the value to set
          * @return this builder
-         */
+         **/
         public Builder privateSourceDnsZones(
                 java.util.List<PrivateSourceDnsZone> privateSourceDnsZones) {
             this.privateSourceDnsZones = privateSourceDnsZones;
@@ -179,26 +191,28 @@ public final class PrivateAccessChannel
             return this;
         }
         /**
-         * List of Private Source DB SCAN hosts registered with Private Access Channel for access
-         * from Analytics Instance.
-         */
+         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
         private java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
 
         /**
-         * List of Private Source DB SCAN hosts registered with Private Access Channel for access
-         * from Analytics Instance.
+         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
          *
          * @param privateSourceScanHosts the value to set
          * @return this builder
-         */
+         **/
         public Builder privateSourceScanHosts(
                 java.util.List<PrivateSourceScanHost> privateSourceScanHosts) {
             this.privateSourceScanHosts = privateSourceScanHosts;
             this.__explicitlySet__.add("privateSourceScanHosts");
             return this;
         }
-        /** Network Security Group OCIDs for an Analytics instance. */
+        /**
+         * Network Security Group OCIDs for an Analytics instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
@@ -207,7 +221,7 @@ public final class PrivateAccessChannel
          *
          * @param networkSecurityGroupIds the value to set
          * @return this builder
-         */
+         **/
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
@@ -268,7 +282,9 @@ public final class PrivateAccessChannel
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -277,7 +293,10 @@ public final class PrivateAccessChannel
         return new Builder().copy(this);
     }
 
-    /** Private Access Channel unique identifier key. */
+    /**
+     * Private Access Channel unique identifier key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -285,12 +304,15 @@ public final class PrivateAccessChannel
      * Private Access Channel unique identifier key.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Display Name of the Private Access Channel. */
+    /**
+     * Display Name of the Private Access Channel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -298,12 +320,15 @@ public final class PrivateAccessChannel
      * Display Name of the Private Access Channel.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** OCID of the customer VCN peered with private access channel. */
+    /**
+     * OCID of the customer VCN peered with private access channel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
@@ -311,12 +336,15 @@ public final class PrivateAccessChannel
      * OCID of the customer VCN peered with private access channel.
      *
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
-    /** OCID of the customer subnet connected to private access channel. */
+    /**
+     * OCID of the customer subnet connected to private access channel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
@@ -324,12 +352,15 @@ public final class PrivateAccessChannel
      * OCID of the customer subnet connected to private access channel.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** IP Address of the Private Access channel. */
+    /**
+     * IP Address of the Private Access channel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
@@ -337,69 +368,69 @@ public final class PrivateAccessChannel
      * IP Address of the Private Access channel.
      *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * The list of IP addresses from the customer subnet connected to private access channel, used
-     * as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to
-     * Private Sources.
-     */
+     * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel
+     * for network traffic from the AnalyticsInstance to Private Sources.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("egressSourceIpAddresses")
     private final java.util.List<String> egressSourceIpAddresses;
 
     /**
-     * The list of IP addresses from the customer subnet connected to private access channel, used
-     * as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to
-     * Private Sources.
+     * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel
+     * for network traffic from the AnalyticsInstance to Private Sources.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getEgressSourceIpAddresses() {
         return egressSourceIpAddresses;
     }
 
     /**
-     * List of Private Source DNS zones registered with Private Access Channel, where datasource
-     * hostnames from these dns zones / domains will be resolved in the peered VCN for access from
-     * Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be
-     * registered.
-     */
+     * List of Private Source DNS zones registered with Private Access Channel,
+     * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
+     * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateSourceDnsZones")
     private final java.util.List<PrivateSourceDnsZone> privateSourceDnsZones;
 
     /**
-     * List of Private Source DNS zones registered with Private Access Channel, where datasource
-     * hostnames from these dns zones / domains will be resolved in the peered VCN for access from
-     * Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be
-     * registered.
+     * List of Private Source DNS zones registered with Private Access Channel,
+     * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
+     * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      *
      * @return the value
-     */
+     **/
     public java.util.List<PrivateSourceDnsZone> getPrivateSourceDnsZones() {
         return privateSourceDnsZones;
     }
 
     /**
-     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from
-     * Analytics Instance.
-     */
+     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
     private final java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
 
     /**
-     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from
-     * Analytics Instance.
+     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<PrivateSourceScanHost> getPrivateSourceScanHosts() {
         return privateSourceScanHosts;
     }
 
-    /** Network Security Group OCIDs for an Analytics instance. */
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
@@ -407,7 +438,7 @@ public final class PrivateAccessChannel
      * Network Security Group OCIDs for an Analytics instance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }
@@ -419,7 +450,6 @@ public final class PrivateAccessChannel
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

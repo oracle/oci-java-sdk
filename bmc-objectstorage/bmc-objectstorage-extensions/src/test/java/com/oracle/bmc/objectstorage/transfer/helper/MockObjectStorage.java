@@ -11,7 +11,9 @@ public final class MockObjectStorage {
 
     private MockObjectStorage() {}
 
-    /** Create a mock ObjectStorage client that can return the specified object. */
+    /**
+     * Create a mock ObjectStorage client that can return the specified object.
+     */
     public static ObjectStorage create(MockObject mockObject) {
         final ObjectStorage objectStorage = Mockito.mock(ObjectStorage.class);
         Mockito.when(objectStorage.getObject(Mockito.anyObject())).thenAnswer(mockObject);

@@ -6,57 +6,53 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingColumnsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskingColumnsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingColumnsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskingColumnsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the masking policy. */
+    /**
+     * The OCID of the masking policy.
+     */
     private String maskingPolicyId;
 
-    /** The OCID of the masking policy. */
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -89,21 +85,25 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order for timeCreated is descending. The default order for other fields is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
+     * The default order for other fields is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order for timeCreated is descending. The default order for other fields is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
+     * The default order for other fields is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         SchemaName("schemaName"),
         ObjectName("objectName"),
@@ -139,25 +139,34 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order for timeCreated is descending. The default order for other fields is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
+     * The default order for other fields is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** A filter to return only the resources that match the specified lifecycle states. */
+    /**
+     * A filter to return only the resources that match the specified lifecycle states.
+     */
     private com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState maskingColumnLifecycleState;
 
-    /** A filter to return only the resources that match the specified lifecycle states. */
+    /**
+     * A filter to return only the resources that match the specified lifecycle states.
+     */
     public com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState
             getMaskingColumnLifecycleState() {
         return maskingColumnLifecycleState;
     }
-    /** A filter to return only resources that match the specified data types. */
+    /**
+     * A filter to return only resources that match the specified data types.
+     */
     private java.util.List<DataType> dataType;
 
-    /** A filter to return only resources that match the specified data types. */
-    public enum DataType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only resources that match the specified data types.
+     **/
+    public enum DataType {
         Character("CHARACTER"),
         Date("DATE"),
         Lob("LOB"),
@@ -192,36 +201,54 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /** A filter to return only resources that match the specified data types. */
+    /**
+     * A filter to return only resources that match the specified data types.
+     */
     public java.util.List<DataType> getDataType() {
         return dataType;
     }
-    /** A filter to return only items related to specific schema name. */
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     private java.util.List<String> schemaName;
 
-    /** A filter to return only items related to specific schema name. */
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     public java.util.List<String> getSchemaName() {
         return schemaName;
     }
-    /** A filter to return only items related to a specific object name. */
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     private java.util.List<String> objectName;
 
-    /** A filter to return only items related to a specific object name. */
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     public java.util.List<String> getObjectName() {
         return objectName;
     }
-    /** A filter to return only a specific column based on column name. */
+    /**
+     * A filter to return only a specific column based on column name.
+     */
     private java.util.List<String> columnName;
 
-    /** A filter to return only a specific column based on column name. */
+    /**
+     * A filter to return only a specific column based on column name.
+     */
     public java.util.List<String> getColumnName() {
         return columnName;
     }
-    /** A filter to return only items related to a specific object type. */
+    /**
+     * A filter to return only items related to a specific object type.
+     */
     private java.util.List<ObjectType> objectType;
 
-    /** A filter to return only items related to a specific object type. */
-    public enum ObjectType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only items related to a specific object type.
+     **/
+    public enum ObjectType {
         All("ALL"),
         Table("TABLE"),
         EditioningView("EDITIONING_VIEW"),
@@ -255,136 +282,162 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /** A filter to return only items related to a specific object type. */
+    /**
+     * A filter to return only items related to a specific object type.
+     */
     public java.util.List<ObjectType> getObjectType() {
         return objectType;
     }
-    /** A filter to return only the resources that match the specified masking column group. */
+    /**
+     * A filter to return only the resources that match the specified masking column group.
+     */
     private java.util.List<String> maskingColumnGroup;
 
-    /** A filter to return only the resources that match the specified masking column group. */
+    /**
+     * A filter to return only the resources that match the specified masking column group.
+     */
     public java.util.List<String> getMaskingColumnGroup() {
         return maskingColumnGroup;
     }
-    /** A filter to return only items related to a specific sensitive type OCID. */
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
     private String sensitiveTypeId;
 
-    /** A filter to return only items related to a specific sensitive type OCID. */
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
     /**
-     * A filter to return the masking column resources based on the value of their isMaskingEnabled
-     * attribute. A value of true returns only those columns for which masking is enabled. A value
-     * of false returns only those columns for which masking is disabled. Omitting this parameter
-     * returns all the masking columns in a masking policy.
+     * A filter to return the masking column resources based on the value of their isMaskingEnabled attribute.
+     * A value of true returns only those columns for which masking is enabled. A value of false returns only those columns
+     * for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
+     *
      */
     private Boolean isMaskingEnabled;
 
     /**
-     * A filter to return the masking column resources based on the value of their isMaskingEnabled
-     * attribute. A value of true returns only those columns for which masking is enabled. A value
-     * of false returns only those columns for which masking is disabled. Omitting this parameter
-     * returns all the masking columns in a masking policy.
+     * A filter to return the masking column resources based on the value of their isMaskingEnabled attribute.
+     * A value of true returns only those columns for which masking is enabled. A value of false returns only those columns
+     * for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
+     *
      */
     public Boolean getIsMaskingEnabled() {
         return isMaskingEnabled;
     }
     /**
-     * A filter to return masking columns based on whether the assigned masking formats need a seed
-     * value for masking. A value of true returns those masking columns that are using Deterministic
-     * Encryption or Deterministic Substitution masking format.
+     * A filter to return masking columns based on whether the assigned masking formats need a
+     * seed value for masking. A value of true returns those masking columns that are using
+     * Deterministic Encryption or Deterministic Substitution masking format.
+     *
      */
     private Boolean isSeedRequired;
 
     /**
-     * A filter to return masking columns based on whether the assigned masking formats need a seed
-     * value for masking. A value of true returns those masking columns that are using Deterministic
-     * Encryption or Deterministic Substitution masking format.
+     * A filter to return masking columns based on whether the assigned masking formats need a
+     * seed value for masking. A value of true returns those masking columns that are using
+     * Deterministic Encryption or Deterministic Substitution masking format.
+     *
      */
     public Boolean getIsSeedRequired() {
         return isSeedRequired;
     }
     /**
-     * A filter to return only the resources that were created after the specified date and time, as
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-     * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-     * that date.
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * A filter to return only the resources that were created after the specified date and time, as
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-     * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-     * that date.
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
     /**
-     * Search for resources that were created before a specific date. Specifying this parameter
-     * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * Search for resources that were created before a specific date. Specifying this parameter
-     * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were created before a specific date.
+     * Specifying this parameter corresponding {@code timeCreatedLessThan}
+     * parameter will retrieve all resources created before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
     /**
-     * Search for resources that were updated after a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all resources
-     * updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * Search for resources that were updated after a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+     * parameter will retrieve all resources updated after the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
      * defined by RFC 3339.
+     *
      */
     private java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
     /**
-     * Search for resources that were updated after a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all resources
-     * updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * Search for resources that were updated after a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+     * parameter will retrieve all resources updated after the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
      * defined by RFC 3339.
+     *
      */
     public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
         return timeUpdatedGreaterThanOrEqualTo;
     }
     /**
-     * Search for resources that were updated before a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were updated before a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+     * parameter will retrieve all resources updated before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
      */
     private java.util.Date timeUpdatedLessThan;
 
     /**
-     * Search for resources that were updated before a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were updated before a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+     * parameter will retrieve all resources updated before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
      */
     public java.util.Date getTimeUpdatedLessThan() {
         return timeUpdatedLessThan;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -392,15 +445,17 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMaskingColumnsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the masking policy. */
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
-         *
          * @param maskingPolicyId the value to set
          * @return this builder instance
          */
@@ -410,17 +465,12 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -430,19 +480,12 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -451,12 +494,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -466,14 +510,15 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-         * order for timeCreated is descending. The default order for other fields is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
+         * The default order for other fields is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-         * order for timeCreated is descending. The default order for other fields is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
+         * The default order for other fields is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -483,13 +528,14 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return only the resources that match the specified lifecycle states. */
+        /**
+         * A filter to return only the resources that match the specified lifecycle states.
+         */
         private com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState
                 maskingColumnLifecycleState = null;
 
         /**
          * A filter to return only the resources that match the specified lifecycle states.
-         *
          * @param maskingColumnLifecycleState the value to set
          * @return this builder instance
          */
@@ -500,12 +546,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return only resources that match the specified data types. */
+        /**
+         * A filter to return only resources that match the specified data types.
+         */
         private java.util.List<DataType> dataType = null;
 
         /**
          * A filter to return only resources that match the specified data types.
-         *
          * @param dataType the value to set
          * @return this builder instance
          */
@@ -516,7 +563,6 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Singular setter. A filter to return only resources that match the specified data types.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -524,12 +570,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this.dataType(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only items related to specific schema name. */
+        /**
+         * A filter to return only items related to specific schema name.
+         */
         private java.util.List<String> schemaName = null;
 
         /**
          * A filter to return only items related to specific schema name.
-         *
          * @param schemaName the value to set
          * @return this builder instance
          */
@@ -540,7 +587,6 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Singular setter. A filter to return only items related to specific schema name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -548,12 +594,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this.schemaName(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only items related to a specific object name. */
+        /**
+         * A filter to return only items related to a specific object name.
+         */
         private java.util.List<String> objectName = null;
 
         /**
          * A filter to return only items related to a specific object name.
-         *
          * @param objectName the value to set
          * @return this builder instance
          */
@@ -564,7 +611,6 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Singular setter. A filter to return only items related to a specific object name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -572,12 +618,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this.objectName(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only a specific column based on column name. */
+        /**
+         * A filter to return only a specific column based on column name.
+         */
         private java.util.List<String> columnName = null;
 
         /**
          * A filter to return only a specific column based on column name.
-         *
          * @param columnName the value to set
          * @return this builder instance
          */
@@ -588,7 +635,6 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Singular setter. A filter to return only a specific column based on column name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -596,12 +642,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this.columnName(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only items related to a specific object type. */
+        /**
+         * A filter to return only items related to a specific object type.
+         */
         private java.util.List<ObjectType> objectType = null;
 
         /**
          * A filter to return only items related to a specific object type.
-         *
          * @param objectType the value to set
          * @return this builder instance
          */
@@ -612,7 +659,6 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Singular setter. A filter to return only items related to a specific object type.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -620,12 +666,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this.objectType(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only the resources that match the specified masking column group. */
+        /**
+         * A filter to return only the resources that match the specified masking column group.
+         */
         private java.util.List<String> maskingColumnGroup = null;
 
         /**
          * A filter to return only the resources that match the specified masking column group.
-         *
          * @param maskingColumnGroup the value to set
          * @return this builder instance
          */
@@ -635,9 +682,7 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Singular setter. A filter to return only the resources that match the specified masking
-         * column group.
-         *
+         * Singular setter. A filter to return only the resources that match the specified masking column group.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -645,12 +690,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this.maskingColumnGroup(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only items related to a specific sensitive type OCID. */
+        /**
+         * A filter to return only items related to a specific sensitive type OCID.
+         */
         private String sensitiveTypeId = null;
 
         /**
          * A filter to return only items related to a specific sensitive type OCID.
-         *
          * @param sensitiveTypeId the value to set
          * @return this builder instance
          */
@@ -660,18 +706,17 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return the masking column resources based on the value of their
-         * isMaskingEnabled attribute. A value of true returns only those columns for which masking
-         * is enabled. A value of false returns only those columns for which masking is disabled.
-         * Omitting this parameter returns all the masking columns in a masking policy.
+         * A filter to return the masking column resources based on the value of their isMaskingEnabled attribute.
+         * A value of true returns only those columns for which masking is enabled. A value of false returns only those columns
+         * for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
+         *
          */
         private Boolean isMaskingEnabled = null;
 
         /**
-         * A filter to return the masking column resources based on the value of their
-         * isMaskingEnabled attribute. A value of true returns only those columns for which masking
-         * is enabled. A value of false returns only those columns for which masking is disabled.
-         * Omitting this parameter returns all the masking columns in a masking policy.
+         * A filter to return the masking column resources based on the value of their isMaskingEnabled attribute.
+         * A value of true returns only those columns for which masking is enabled. A value of false returns only those columns
+         * for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
          *
          * @param isMaskingEnabled the value to set
          * @return this builder instance
@@ -685,6 +730,7 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
          * A filter to return masking columns based on whether the assigned masking formats need a
          * seed value for masking. A value of true returns those masking columns that are using
          * Deterministic Encryption or Deterministic Substitution masking format.
+         *
          */
         private Boolean isSeedRequired = null;
 
@@ -702,22 +748,19 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return only the resources that were created after the specified date and
-         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-         * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-         * that date.
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * A filter to return only the resources that were created after the specified date and
-         * time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using
-         * TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after
-         * that date.
-         *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -729,22 +772,25 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Search for resources that were created before a specific date. Specifying this parameter
-         * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * Search for resources that were created before a specific date. Specifying this parameter
-         * corresponding {@code timeCreatedLessThan} parameter will retrieve all resources created
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were created before a specific date.
+         * Specifying this parameter corresponding {@code timeCreatedLessThan}
+         * parameter will retrieve all resources created before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
-         *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
@@ -755,18 +801,21 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Search for resources that were updated after a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all
-         * resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a
-         * Z offset, as defined by RFC 3339.
+         * Search for resources that were updated after a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+         * parameter will retrieve all resources updated after the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         *
          */
         private java.util.Date timeUpdatedGreaterThanOrEqualTo = null;
 
         /**
-         * Search for resources that were updated after a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all
-         * resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a
-         * Z offset, as defined by RFC 3339.
+         * Search for resources that were updated after a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+         * parameter will retrieve all resources updated after the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
          *
          * @param timeUpdatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -778,17 +827,20 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Search for resources that were updated before a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were updated before a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+         * parameter will retrieve all resources updated before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
+         *
          */
         private java.util.Date timeUpdatedLessThan = null;
 
         /**
-         * Search for resources that were updated before a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were updated before a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+         * parameter will retrieve all resources updated before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
          *
          * @param timeUpdatedLessThan the value to set
@@ -799,12 +851,13 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -815,19 +868,18 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -839,7 +891,6 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMaskingColumnsRequest o) {
@@ -871,11 +922,10 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListMaskingColumnsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMaskingColumnsRequest
          */
@@ -889,8 +939,7 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListMaskingColumnsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMaskingColumnsRequest
@@ -918,17 +967,12 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
             request.timeUpdatedLessThan = timeUpdatedLessThan;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMaskingColumnsRequest(maskingPolicyId, limit, page, sortOrder, sortBy,
-            // maskingColumnLifecycleState, dataType, schemaName, objectName, columnName,
-            // objectType, maskingColumnGroup, sensitiveTypeId, isMaskingEnabled, isSeedRequired,
-            // timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan,
-            // timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, opcRequestId);
+            // new ListMaskingColumnsRequest(maskingPolicyId, limit, page, sortOrder, sortBy, maskingColumnLifecycleState, dataType, schemaName, objectName, columnName, objectType, maskingColumnGroup, sensitiveTypeId, isMaskingEnabled, isSeedRequired, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -957,7 +1001,6 @@ public class ListMaskingColumnsRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

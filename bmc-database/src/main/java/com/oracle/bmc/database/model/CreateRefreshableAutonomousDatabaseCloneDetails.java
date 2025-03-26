@@ -5,25 +5,26 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Database refreshable clone. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details to create an Oracle Autonomous Database refreshable clone.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateRefreshableAutonomousDatabaseCloneDetails.Builder.class)
+    builder = CreateRefreshableAutonomousDatabaseCloneDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "source")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "source"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateRefreshableAutonomousDatabaseCloneDetails
         extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -511,132 +512,102 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that you will clone to create a new Autonomous Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that you will clone to create a new Autonomous Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
          * @param sourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
         /**
-         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-         * refreshed with data from the source Autonomous Database.
-         */
+         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
         private RefreshableMode refreshableMode;
 
         /**
-         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-         * refreshed with data from the source Autonomous Database.
-         *
+         * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
          * @param refreshableMode the value to set
          * @return this builder
-         */
+         **/
         public Builder refreshableMode(RefreshableMode refreshableMode) {
             this.refreshableMode = refreshableMode;
             this.__explicitlySet__.add("refreshableMode");
             return this;
         }
         /**
-         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum
-         * is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is
-         * controlled by the {@code timeOfAutoRefreshStart} parameter.
-         */
+         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the {@code timeOfAutoRefreshStart} parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshFrequencyInSeconds")
         private Integer autoRefreshFrequencyInSeconds;
 
         /**
-         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum
-         * is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is
-         * controlled by the {@code timeOfAutoRefreshStart} parameter.
-         *
+         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the {@code timeOfAutoRefreshStart} parameter.
          * @param autoRefreshFrequencyInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder autoRefreshFrequencyInSeconds(Integer autoRefreshFrequencyInSeconds) {
             this.autoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
             this.__explicitlySet__.add("autoRefreshFrequencyInSeconds");
             return this;
         }
         /**
-         * The time, in seconds, the data of the refreshable clone lags the primary database at the
-         * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
-         * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
-         * data refresh happens.
-         */
+         * The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshPointLagInSeconds")
         private Integer autoRefreshPointLagInSeconds;
 
         /**
-         * The time, in seconds, the data of the refreshable clone lags the primary database at the
-         * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
-         * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
-         * data refresh happens.
-         *
+         * The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
          * @param autoRefreshPointLagInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder autoRefreshPointLagInSeconds(Integer autoRefreshPointLagInSeconds) {
             this.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
             this.__explicitlySet__.add("autoRefreshPointLagInSeconds");
             return this;
         }
         /**
-         * The the date and time that auto-refreshing will begin for an Autonomous Database
-         * refreshable clone. This value controls only the start time for the first refresh
-         * operation. Subsequent (ongoing) refresh operations have start times controlled by the
-         * value of the {@code autoRefreshFrequencyInSeconds} parameter.
-         */
+         * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the {@code autoRefreshFrequencyInSeconds} parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
         private java.util.Date timeOfAutoRefreshStart;
 
         /**
-         * The the date and time that auto-refreshing will begin for an Autonomous Database
-         * refreshable clone. This value controls only the start time for the first refresh
-         * operation. Subsequent (ongoing) refresh operations have start times controlled by the
-         * value of the {@code autoRefreshFrequencyInSeconds} parameter.
-         *
+         * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the {@code autoRefreshFrequencyInSeconds} parameter.
          * @param timeOfAutoRefreshStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfAutoRefreshStart(java.util.Date timeOfAutoRefreshStart) {
             this.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
             this.__explicitlySet__.add("timeOfAutoRefreshStart");
             return this;
         }
         /**
-         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
-         * or {@code READ_WRITE} mode.
+         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or {@code READ_WRITE} mode.
+         * <p>
+         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          *
-         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
-         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("openMode")
         private OpenMode openMode;
 
         /**
-         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
-         * or {@code READ_WRITE} mode.
-         *
-         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
-         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
-         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or {@code READ_WRITE} mode.
+         * <p>
+         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param openMode the value to set
          * @return this builder
-         */
+         **/
         public Builder openMode(OpenMode openMode) {
             this.openMode = openMode;
             this.__explicitlySet__.add("openMode");
@@ -899,7 +870,9 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -1032,27 +1005,23 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that you will clone to create a new Autonomous Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that you will clone to create a new Autonomous Database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      * @return the value
-     */
+     **/
     public String getSourceId() {
         return sourceId;
     }
 
     /**
-     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
-     */
-    public enum RefreshableMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     **/
+    public enum RefreshableMode {
         Automatic("AUTOMATIC"),
         Manual("MANUAL"),
         ;
@@ -1085,92 +1054,68 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
     };
     /**
-     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
-     */
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
     private final RefreshableMode refreshableMode;
 
     /**
-     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being
-     * refreshed with data from the source Autonomous Database.
-     *
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * @return the value
-     */
+     **/
     public RefreshableMode getRefreshableMode() {
         return refreshableMode;
     }
 
     /**
-     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is
-     * 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled
-     * by the {@code timeOfAutoRefreshStart} parameter.
-     */
+     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the {@code timeOfAutoRefreshStart} parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshFrequencyInSeconds")
     private final Integer autoRefreshFrequencyInSeconds;
 
     /**
-     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is
-     * 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled
-     * by the {@code timeOfAutoRefreshStart} parameter.
-     *
+     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the {@code timeOfAutoRefreshStart} parameter.
      * @return the value
-     */
+     **/
     public Integer getAutoRefreshFrequencyInSeconds() {
         return autoRefreshFrequencyInSeconds;
     }
 
     /**
-     * The time, in seconds, the data of the refreshable clone lags the primary database at the
-     * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
-     * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
-     * data refresh happens.
-     */
+     * The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshPointLagInSeconds")
     private final Integer autoRefreshPointLagInSeconds;
 
     /**
-     * The time, in seconds, the data of the refreshable clone lags the primary database at the
-     * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
-     * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
-     * data refresh happens.
-     *
+     * The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
      * @return the value
-     */
+     **/
     public Integer getAutoRefreshPointLagInSeconds() {
         return autoRefreshPointLagInSeconds;
     }
 
     /**
-     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
-     * clone. This value controls only the start time for the first refresh operation. Subsequent
-     * (ongoing) refresh operations have start times controlled by the value of the {@code
-     * autoRefreshFrequencyInSeconds} parameter.
-     */
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the {@code autoRefreshFrequencyInSeconds} parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
     private final java.util.Date timeOfAutoRefreshStart;
 
     /**
-     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
-     * clone. This value controls only the start time for the first refresh operation. Subsequent
-     * (ongoing) refresh operations have start times controlled by the value of the {@code
-     * autoRefreshFrequencyInSeconds} parameter.
-     *
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the {@code autoRefreshFrequencyInSeconds} parameter.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfAutoRefreshStart() {
         return timeOfAutoRefreshStart;
     }
 
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
-     * {@code READ_WRITE} mode.
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or {@code READ_WRITE} mode.
+     * <p>
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
-     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
-     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
-     */
-    public enum OpenMode implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum OpenMode {
         ReadOnly("READ_ONLY"),
         ReadWrite("READ_WRITE"),
         ;
@@ -1203,26 +1148,21 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         }
     };
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
-     * {@code READ_WRITE} mode.
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or {@code READ_WRITE} mode.
+     * <p>
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
-     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
-     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     private final OpenMode openMode;
 
     /**
-     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
-     * {@code READ_WRITE} mode.
-     *
-     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
-     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
-     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or {@code READ_WRITE} mode.
+     * <p>
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      * @return the value
-     */
+     **/
     public OpenMode getOpenMode() {
         return openMode;
     }
@@ -1234,7 +1174,6 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

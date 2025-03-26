@@ -5,23 +5,22 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * The contents of the command. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+ * The contents of the command.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceAgentCommandContent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceAgentCommandContent.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceAgentCommandContent
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"source", "output"})
     public InstanceAgentCommandContent(
@@ -33,31 +32,33 @@ public final class InstanceAgentCommandContent
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source of the command. */
+        /**
+         * The source of the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private InstanceAgentCommandSourceDetails source;
 
         /**
          * The source of the command.
-         *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(InstanceAgentCommandSourceDetails source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-        /** The output destination for the command. */
+        /**
+         * The output destination for the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("output")
         private InstanceAgentCommandOutputDetails output;
 
         /**
          * The output destination for the command.
-         *
          * @param output the value to set
          * @return this builder
-         */
+         **/
         public Builder output(InstanceAgentCommandOutputDetails output) {
             this.output = output;
             this.__explicitlySet__.add("output");
@@ -88,7 +89,9 @@ public final class InstanceAgentCommandContent
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class InstanceAgentCommandContent
         return new Builder().copy(this);
     }
 
-    /** The source of the command. */
+    /**
+     * The source of the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final InstanceAgentCommandSourceDetails source;
 
     /**
      * The source of the command.
-     *
      * @return the value
-     */
+     **/
     public InstanceAgentCommandSourceDetails getSource() {
         return source;
     }
 
-    /** The output destination for the command. */
+    /**
+     * The output destination for the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("output")
     private final InstanceAgentCommandOutputDetails output;
 
     /**
      * The output destination for the command.
-     *
      * @return the value
-     */
+     **/
     public InstanceAgentCommandOutputDetails getOutput() {
         return output;
     }
@@ -130,7 +135,6 @@ public final class InstanceAgentCommandContent
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

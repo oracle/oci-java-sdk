@@ -6,75 +6,79 @@ package com.oracle.bmc.mysql.requests;
 
 import com.oracle.bmc.mysql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListReplicasExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListReplicasRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListReplicasExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListReplicasRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-     * specific request, please provide the request ID that you supplied in this header with the
-     * request.
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-     * specific request, please provide the request ID that you supplied in this header with the
-     * request.
+     * Customer-defined unique identifier for the request. If you need to
+     * contact Oracle about a specific request, please provide the request
+     * ID that you supplied in this header with the request.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The maximum number of items to return in a paginated list call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     * The maximum number of items to return in a paginated list call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a paginated list call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     * The maximum number of items to return in a paginated list call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-     * previous list call. For information about pagination, see [List
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+     * the previous list call. For information about pagination, see [List
      * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     private String page;
 
     /**
-     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-     * previous list call. For information about pagination, see [List
+     * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+     * the previous list call. For information about pagination, see [List
      * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** A filter to return only the resource matching the given display name exactly. */
+    /**
+     * A filter to return only the resource matching the given display name exactly.
+     */
     private String displayName;
 
-    /** A filter to return only the resource matching the given display name exactly. */
+    /**
+     * A filter to return only the resource matching the given display name exactly.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -89,57 +93,65 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getDbSystemId() {
         return dbSystemId;
     }
-    /** The LifecycleState of the read replica. */
+    /**
+     * The LifecycleState of the read replica.
+     */
     private com.oracle.bmc.mysql.model.ReplicaSummary.LifecycleState lifecycleState;
 
-    /** The LifecycleState of the read replica. */
+    /**
+     * The LifecycleState of the read replica.
+     */
     public com.oracle.bmc.mysql.model.ReplicaSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The read replica
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The read replica [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String replicaId;
 
     /**
-     * The read replica
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The read replica [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getReplicaId() {
         return replicaId;
     }
-    /** The requested Configuration instance. */
+    /**
+     * The requested Configuration instance.
+     */
     private String configurationId;
 
-    /** The requested Configuration instance. */
+    /**
+     * The requested Configuration instance.
+     */
     public String getConfigurationId() {
         return configurationId;
     }
     /**
-     * Filter instances if they are using the latest revision of the Configuration they are
-     * associated with.
+     * Filter instances if they are using the latest revision of the
+     * Configuration they are associated with.
+     *
      */
     private Boolean isUpToDate;
 
     /**
-     * Filter instances if they are using the latest revision of the Configuration they are
-     * associated with.
+     * Filter instances if they are using the latest revision of the
+     * Configuration they are associated with.
+     *
      */
     public Boolean getIsUpToDate() {
         return isUpToDate;
     }
     /**
-     * The field to sort by. You can sort by one field only. By default, the Time field is sorted in
-     * descending order and the Display Name field in ascending order.
+     * The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can sort by one field only. By default, the Time field is sorted in
-     * descending order and the Display Name field in ascending order.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -173,17 +185,21 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * The field to sort by. You can sort by one field only. By default, the Time field is sorted in
-     * descending order and the Display Name field in ascending order.
+     * The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use (ASC or DESC). */
+    /**
+     * The sort order to use (ASC or DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use (ASC or DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use (ASC or DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -216,7 +232,9 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** The sort order to use (ASC or DESC). */
+    /**
+     * The sort order to use (ASC or DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -224,19 +242,17 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListReplicasRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -246,16 +262,17 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-         * specific request, please provide the request ID that you supplied in this header with the
-         * request.
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
-         * specific request, please provide the request ID that you supplied in this header with the
-         * request.
+         * Customer-defined unique identifier for the request. If you need to
+         * contact Oracle about a specific request, please provide the request
+         * ID that you supplied in this header with the request.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -266,16 +283,15 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The maximum number of items to return in a paginated list call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         * The maximum number of items to return in a paginated list call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         *
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated list call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         * The maximum number of items to return in a paginated list call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -286,15 +302,16 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-         * previous list call. For information about pagination, see [List
+         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+         * the previous list call. For information about pagination, see [List
          * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
+         *
          */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
-         * previous list call. For information about pagination, see [List
+         * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
+         * the previous list call. For information about pagination, see [List
          * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param page the value to set
@@ -305,12 +322,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only the resource matching the given display name exactly. */
+        /**
+         * A filter to return only the resource matching the given display name exactly.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only the resource matching the given display name exactly.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -320,15 +338,12 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The DB System
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dbSystemId = null;
 
         /**
-         * The DB System
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param dbSystemId the value to set
          * @return this builder instance
          */
@@ -337,12 +352,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The LifecycleState of the read replica. */
+        /**
+         * The LifecycleState of the read replica.
+         */
         private com.oracle.bmc.mysql.model.ReplicaSummary.LifecycleState lifecycleState = null;
 
         /**
          * The LifecycleState of the read replica.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -353,15 +369,12 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The read replica
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The read replica [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String replicaId = null;
 
         /**
-         * The read replica
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The read replica [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param replicaId the value to set
          * @return this builder instance
          */
@@ -370,12 +383,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The requested Configuration instance. */
+        /**
+         * The requested Configuration instance.
+         */
         private String configurationId = null;
 
         /**
          * The requested Configuration instance.
-         *
          * @param configurationId the value to set
          * @return this builder instance
          */
@@ -385,14 +399,15 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Filter instances if they are using the latest revision of the Configuration they are
-         * associated with.
+         * Filter instances if they are using the latest revision of the
+         * Configuration they are associated with.
+         *
          */
         private Boolean isUpToDate = null;
 
         /**
-         * Filter instances if they are using the latest revision of the Configuration they are
-         * associated with.
+         * Filter instances if they are using the latest revision of the
+         * Configuration they are associated with.
          *
          * @param isUpToDate the value to set
          * @return this builder instance
@@ -403,14 +418,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field to sort by. You can sort by one field only. By default, the Time field is
-         * sorted in descending order and the Display Name field in ascending order.
+         * The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can sort by one field only. By default, the Time field is
-         * sorted in descending order and the Display Name field in ascending order.
+         * The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -420,12 +434,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The sort order to use (ASC or DESC). */
+        /**
+         * The sort order to use (ASC or DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use (ASC or DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -436,19 +451,18 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -460,7 +474,6 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListReplicasRequest o) {
@@ -484,11 +497,10 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListReplicasRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListReplicasRequest
          */
@@ -502,8 +514,7 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListReplicasRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListReplicasRequest
@@ -523,15 +534,12 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListReplicasRequest(compartmentId, opcRequestId, limit, page, displayName,
-            // dbSystemId, lifecycleState, replicaId, configurationId, isUpToDate, sortBy,
-            // sortOrder);
+            // new ListReplicasRequest(compartmentId, opcRequestId, limit, page, displayName, dbSystemId, lifecycleState, replicaId, configurationId, isUpToDate, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -552,7 +560,6 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

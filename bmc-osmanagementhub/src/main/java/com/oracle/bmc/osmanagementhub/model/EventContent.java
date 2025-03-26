@@ -5,33 +5,34 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information collected during the event, such as logs. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Information collected during the event, such as logs.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = EventContent.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = EventContent.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = KernelEventContent.class,
-            name = "KERNEL"),
+        value = KernelEventContent.class,
+        name = "KERNEL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExploitAttemptEventContent.class,
-            name = "EXPLOIT_ATTEMPT")
+        value = ExploitAttemptEventContent.class,
+        name = "EXPLOIT_ATTEMPT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class EventContent extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class EventContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected EventContent() {
@@ -45,7 +46,6 @@ public class EventContent extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -79,20 +79,15 @@ public class EventContent extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * Event type: * {@code KERNEL} - Used to identify a kernel oops/crash content * {@code
-     * EXPLOIT_ATTEMPT} - Used to identify a known exploit detection content
-     */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+     * Event type:
+     *   * {@code KERNEL} - Used to identify a kernel oops/crash content
+     *   * {@code EXPLOIT_ATTEMPT} - Used to identify a known exploit detection content
+     *
+     **/
+    public enum Type {
         Kernel("KERNEL"),
         ExploitAttempt("EXPLOIT_ATTEMPT"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -100,9 +95,7 @@ public class EventContent extends com.oracle.bmc.http.client.internal.Explicitly
         static {
             map = new java.util.HashMap<>();
             for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -120,9 +113,7 @@ public class EventContent extends com.oracle.bmc.http.client.internal.Explicitly
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
 }

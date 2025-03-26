@@ -6,17 +6,16 @@ package com.oracle.bmc.dataintegration.responses;
 
 import com.oracle.bmc.dataintegration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class GetExternalPublicationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -25,14 +24,15 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,12 +40,13 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned {@code ExternalPublication} instance. */
+    /**
+     * The returned ExternalPublication instance.
+     */
     private com.oracle.bmc.dataintegration.model.ExternalPublication externalPublication;
 
     /**
-     * The returned {@code ExternalPublication} instance.
-     *
+     * The returned ExternalPublication instance.
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.ExternalPublication getExternalPublication() {
@@ -61,7 +62,7 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
     })
     private GetExternalPublicationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.ExternalPublication externalPublication) {
@@ -71,34 +72,29 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
         this.externalPublication = externalPublication;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetExternalPublicationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -109,14 +105,15 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -126,12 +123,13 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code ExternalPublication} instance. */
+        /**
+         * The returned ExternalPublication instance.
+         */
         private com.oracle.bmc.dataintegration.model.ExternalPublication externalPublication;
 
         /**
-         * The returned {@code ExternalPublication} instance.
-         *
+         * The returned ExternalPublication instance.
          * @param externalPublication the value to set
          * @return this builder
          */
@@ -143,10 +141,8 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetExternalPublicationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -159,10 +155,8 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetExternalPublicationResponse build() {
             return new GetExternalPublicationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, externalPublication);
@@ -171,7 +165,6 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

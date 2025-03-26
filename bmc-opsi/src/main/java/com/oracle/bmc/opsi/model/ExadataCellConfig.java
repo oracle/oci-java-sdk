@@ -5,25 +5,26 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Storage server configuration <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Storage server configuration
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExadataCellConfig.Builder.class)
+    builder = ExadataCellConfig.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExadataCellConfig extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,76 +36,81 @@ public final class ExadataCellConfig extends DatabaseConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** Cell name */
+        /**
+         * Cell name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cellName")
         private String cellName;
 
         /**
          * Cell name
-         *
          * @param cellName the value to set
          * @return this builder
-         */
+         **/
         public Builder cellName(String cellName) {
             this.cellName = cellName;
             this.__explicitlySet__.add("cellName");
             return this;
         }
-        /** Cell hash */
+        /**
+         * Cell hash
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cellHash")
         private String cellHash;
 
         /**
          * Cell hash
-         *
          * @param cellHash the value to set
          * @return this builder
-         */
+         **/
         public Builder cellHash(String cellHash) {
             this.cellHash = cellHash;
             this.__explicitlySet__.add("cellHash");
             return this;
         }
-        /** Cell properties */
+        /**
+         * Cell properties
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cellProperties")
         private String cellProperties;
 
         /**
          * Cell properties
-         *
          * @param cellProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder cellProperties(String cellProperties) {
             this.cellProperties = cellProperties;
             this.__explicitlySet__.add("cellProperties");
             return this;
         }
-        /** Cell configs */
+        /**
+         * Cell configs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cellConfigs")
         private String cellConfigs;
 
         /**
          * Cell configs
-         *
          * @param cellConfigs the value to set
          * @return this builder
-         */
+         **/
         public Builder cellConfigs(String cellConfigs) {
             this.cellConfigs = cellConfigs;
             this.__explicitlySet__.add("cellConfigs");
             return this;
         }
-        /** Cell disk counts */
+        /**
+         * Cell disk counts
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskCounts")
         private String diskCounts;
 
         /**
          * Cell disk counts
-         *
          * @param diskCounts the value to set
          * @return this builder
-         */
+         **/
         public Builder diskCounts(String diskCounts) {
             this.diskCounts = diskCounts;
             this.__explicitlySet__.add("diskCounts");
@@ -153,7 +159,9 @@ public final class ExadataCellConfig extends DatabaseConfigurationMetricGroup {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -178,67 +186,72 @@ public final class ExadataCellConfig extends DatabaseConfigurationMetricGroup {
         this.diskCounts = diskCounts;
     }
 
-    /** Cell name */
+    /**
+     * Cell name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cellName")
     private final String cellName;
 
     /**
      * Cell name
-     *
      * @return the value
-     */
+     **/
     public String getCellName() {
         return cellName;
     }
 
-    /** Cell hash */
+    /**
+     * Cell hash
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cellHash")
     private final String cellHash;
 
     /**
      * Cell hash
-     *
      * @return the value
-     */
+     **/
     public String getCellHash() {
         return cellHash;
     }
 
-    /** Cell properties */
+    /**
+     * Cell properties
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cellProperties")
     private final String cellProperties;
 
     /**
      * Cell properties
-     *
      * @return the value
-     */
+     **/
     public String getCellProperties() {
         return cellProperties;
     }
 
-    /** Cell configs */
+    /**
+     * Cell configs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cellConfigs")
     private final String cellConfigs;
 
     /**
      * Cell configs
-     *
      * @return the value
-     */
+     **/
     public String getCellConfigs() {
         return cellConfigs;
     }
 
-    /** Cell disk counts */
+    /**
+     * Cell disk counts
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskCounts")
     private final String diskCounts;
 
     /**
      * Cell disk counts
-     *
      * @return the value
-     */
+     **/
     public String getDiskCounts() {
         return diskCounts;
     }
@@ -250,7 +263,6 @@ public final class ExadataCellConfig extends DatabaseConfigurationMetricGroup {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

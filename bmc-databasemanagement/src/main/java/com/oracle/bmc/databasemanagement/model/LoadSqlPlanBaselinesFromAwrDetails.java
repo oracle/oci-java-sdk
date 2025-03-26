@@ -5,24 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to load plans from Automatic Workload Repository (AWR). It takes either
- * credentials or databaseCredential. It's recommended to provide databaseCredential <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details required to load plans from Automatic Workload Repository (AWR).
+ * It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LoadSqlPlanBaselinesFromAwrDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LoadSqlPlanBaselinesFromAwrDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LoadSqlPlanBaselinesFromAwrDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "jobName",
@@ -59,122 +59,129 @@ public final class LoadSqlPlanBaselinesFromAwrDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the database job used for loading SQL plan baselines. */
+        /**
+         * The name of the database job used for loading SQL plan baselines.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobName")
         private String jobName;
 
         /**
          * The name of the database job used for loading SQL plan baselines.
-         *
          * @param jobName the value to set
          * @return this builder
-         */
+         **/
         public Builder jobName(String jobName) {
             this.jobName = jobName;
             this.__explicitlySet__.add("jobName");
             return this;
         }
-        /** The description of the job. */
+        /**
+         * The description of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDescription")
         private String jobDescription;
 
         /**
          * The description of the job.
-         *
          * @param jobDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder jobDescription(String jobDescription) {
             this.jobDescription = jobDescription;
             this.__explicitlySet__.add("jobDescription");
             return this;
         }
-        /** The begin snapshot. */
+        /**
+         * The begin snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("beginSnapshot")
         private Integer beginSnapshot;
 
         /**
          * The begin snapshot.
-         *
          * @param beginSnapshot the value to set
          * @return this builder
-         */
+         **/
         public Builder beginSnapshot(Integer beginSnapshot) {
             this.beginSnapshot = beginSnapshot;
             this.__explicitlySet__.add("beginSnapshot");
             return this;
         }
-        /** The end snapshot. */
+        /**
+         * The end snapshot.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endSnapshot")
         private Integer endSnapshot;
 
         /**
          * The end snapshot.
-         *
          * @param endSnapshot the value to set
          * @return this builder
-         */
+         **/
         public Builder endSnapshot(Integer endSnapshot) {
             this.endSnapshot = endSnapshot;
             this.__explicitlySet__.add("endSnapshot");
             return this;
         }
         /**
-         * A filter applied to AWR to select only qualifying plans to be loaded. By default all
-         * plans in AWR are selected. The filter can take the form of any {@code WHERE} clause
-         * predicate that can be specified against the column {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An
-         * example is {@code sql_text like 'SELECT %'}.
-         */
+         * A filter applied to AWR to select only qualifying plans to be loaded.
+         * By default all plans in AWR are selected. The filter can take the form of
+         * any {@code WHERE} clause predicate that can be specified against the column
+         * {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An example is {@code sql_text like 'SELECT %'}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTextFilter")
         private String sqlTextFilter;
 
         /**
-         * A filter applied to AWR to select only qualifying plans to be loaded. By default all
-         * plans in AWR are selected. The filter can take the form of any {@code WHERE} clause
-         * predicate that can be specified against the column {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An
-         * example is {@code sql_text like 'SELECT %'}.
+         * A filter applied to AWR to select only qualifying plans to be loaded.
+         * By default all plans in AWR are selected. The filter can take the form of
+         * any {@code WHERE} clause predicate that can be specified against the column
+         * {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An example is {@code sql_text like 'SELECT %'}.
          *
          * @param sqlTextFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlTextFilter(String sqlTextFilter) {
             this.sqlTextFilter = sqlTextFilter;
             this.__explicitlySet__.add("sqlTextFilter");
             return this;
         }
         /**
-         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-         * ({@code false}). By default, they are loaded as non-fixed plans.
-         */
+         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+         * By default, they are loaded as non-fixed plans.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFixed")
         private Boolean isFixed;
 
         /**
-         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-         * ({@code false}). By default, they are loaded as non-fixed plans.
+         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+         * By default, they are loaded as non-fixed plans.
          *
          * @param isFixed the value to set
          * @return this builder
-         */
+         **/
         public Builder isFixed(Boolean isFixed) {
             this.isFixed = isFixed;
             this.__explicitlySet__.add("isFixed");
             return this;
         }
         /**
-         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-         * default, they are enabled.
-         */
+         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+         * By default, they are enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-         * default, they are enabled.
+         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+         * By default, they are enabled.
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -253,7 +260,9 @@ public final class LoadSqlPlanBaselinesFromAwrDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -262,109 +271,116 @@ public final class LoadSqlPlanBaselinesFromAwrDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the database job used for loading SQL plan baselines. */
+    /**
+     * The name of the database job used for loading SQL plan baselines.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobName")
     private final String jobName;
 
     /**
      * The name of the database job used for loading SQL plan baselines.
-     *
      * @return the value
-     */
+     **/
     public String getJobName() {
         return jobName;
     }
 
-    /** The description of the job. */
+    /**
+     * The description of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDescription")
     private final String jobDescription;
 
     /**
      * The description of the job.
-     *
      * @return the value
-     */
+     **/
     public String getJobDescription() {
         return jobDescription;
     }
 
-    /** The begin snapshot. */
+    /**
+     * The begin snapshot.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("beginSnapshot")
     private final Integer beginSnapshot;
 
     /**
      * The begin snapshot.
-     *
      * @return the value
-     */
+     **/
     public Integer getBeginSnapshot() {
         return beginSnapshot;
     }
 
-    /** The end snapshot. */
+    /**
+     * The end snapshot.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endSnapshot")
     private final Integer endSnapshot;
 
     /**
      * The end snapshot.
-     *
      * @return the value
-     */
+     **/
     public Integer getEndSnapshot() {
         return endSnapshot;
     }
 
     /**
-     * A filter applied to AWR to select only qualifying plans to be loaded. By default all plans in
-     * AWR are selected. The filter can take the form of any {@code WHERE} clause predicate that can
-     * be specified against the column {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An example is {@code
-     * sql_text like 'SELECT %'}.
-     */
+     * A filter applied to AWR to select only qualifying plans to be loaded.
+     * By default all plans in AWR are selected. The filter can take the form of
+     * any {@code WHERE} clause predicate that can be specified against the column
+     * {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An example is {@code sql_text like 'SELECT %'}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTextFilter")
     private final String sqlTextFilter;
 
     /**
-     * A filter applied to AWR to select only qualifying plans to be loaded. By default all plans in
-     * AWR are selected. The filter can take the form of any {@code WHERE} clause predicate that can
-     * be specified against the column {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An example is {@code
-     * sql_text like 'SELECT %'}.
+     * A filter applied to AWR to select only qualifying plans to be loaded.
+     * By default all plans in AWR are selected. The filter can take the form of
+     * any {@code WHERE} clause predicate that can be specified against the column
+     * {@code DBA_HIST_SQLTEXT.SQL_TEXT}. An example is {@code sql_text like 'SELECT %'}.
      *
      * @return the value
-     */
+     **/
     public String getSqlTextFilter() {
         return sqlTextFilter;
     }
 
     /**
-     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-     * ({@code false}). By default, they are loaded as non-fixed plans.
-     */
+     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+     * By default, they are loaded as non-fixed plans.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFixed")
     private final Boolean isFixed;
 
     /**
-     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-     * ({@code false}). By default, they are loaded as non-fixed plans.
+     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+     * By default, they are loaded as non-fixed plans.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFixed() {
         return isFixed;
     }
 
     /**
-     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-     * default, they are enabled.
-     */
+     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+     * By default, they are enabled.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-     * default, they are enabled.
+     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+     * By default, they are enabled.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -390,7 +406,6 @@ public final class LoadSqlPlanBaselinesFromAwrDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

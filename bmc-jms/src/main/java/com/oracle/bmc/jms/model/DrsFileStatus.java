@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Status of the DRS file. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum DrsFileStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Status of the DRS file.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum DrsFileStatus {
     Present("PRESENT"),
     Absent("ABSENT"),
     Mismatch("MISMATCH"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * force patching a pipeline. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * force patching a pipeline.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ForcePatchPipelineDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ForcePatchPipelineDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ForcePatchPipelineDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pipelineId", "flexShape"})
     public ForcePatchPipelineDetails(String pipelineId, String flexShape) {
@@ -32,31 +31,33 @@ public final class ForcePatchPipelineDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the Opensearch Pipeline. */
+        /**
+         * OCID of the Opensearch Pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pipelineId")
         private String pipelineId;
 
         /**
          * OCID of the Opensearch Pipeline.
-         *
          * @param pipelineId the value to set
          * @return this builder
-         */
+         **/
         public Builder pipelineId(String pipelineId) {
             this.pipelineId = pipelineId;
             this.__explicitlySet__.add("pipelineId");
             return this;
         }
-        /** flex shape name for the instances in the pipeline */
+        /**
+         * flex shape name for the instances in the pipeline
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flexShape")
         private String flexShape;
 
         /**
          * flex shape name for the instances in the pipeline
-         *
          * @param flexShape the value to set
          * @return this builder
-         */
+         **/
         public Builder flexShape(String flexShape) {
             this.flexShape = flexShape;
             this.__explicitlySet__.add("flexShape");
@@ -87,7 +88,9 @@ public final class ForcePatchPipelineDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class ForcePatchPipelineDetails
         return new Builder().copy(this);
     }
 
-    /** OCID of the Opensearch Pipeline. */
+    /**
+     * OCID of the Opensearch Pipeline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pipelineId")
     private final String pipelineId;
 
     /**
      * OCID of the Opensearch Pipeline.
-     *
      * @return the value
-     */
+     **/
     public String getPipelineId() {
         return pipelineId;
     }
 
-    /** flex shape name for the instances in the pipeline */
+    /**
+     * flex shape name for the instances in the pipeline
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flexShape")
     private final String flexShape;
 
     /**
      * flex shape name for the instances in the pipeline
-     *
      * @return the value
-     */
+     **/
     public String getFlexShape() {
         return flexShape;
     }
@@ -129,7 +134,6 @@ public final class ForcePatchPipelineDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

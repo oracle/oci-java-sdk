@@ -5,23 +5,23 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * A backend set mapping between source and destination network load balancer. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * A backend set mapping between source and destination network load balancer.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NetworkLoadBalancerBackendSetMapping.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NetworkLoadBalancerBackendSetMapping.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NetworkLoadBalancerBackendSetMapping
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isBackendSetForNonMovable",
@@ -41,31 +41,26 @@ public final class NetworkLoadBalancerBackendSetMapping
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This flag specifies if this backend set is used for traffic for non-movable compute
-         * instances. Backend sets that point to non-movable instances are only enabled or disabled
-         * during DR. For non-movable instances this flag should be set to 'true'. Backend sets that
-         * point to movable instances are emptied and their contents are transferred to the
-         * destination region network load balancer. For movable instances this flag should be set
-         * to 'false'.
+         * This flag specifies if this backend set is used for traffic for non-movable compute instances.
+         * Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'.
+         * Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.
+         * <p>
+         * Example: {@code true}
          *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBackendSetForNonMovable")
         private Boolean isBackendSetForNonMovable;
 
         /**
-         * This flag specifies if this backend set is used for traffic for non-movable compute
-         * instances. Backend sets that point to non-movable instances are only enabled or disabled
-         * during DR. For non-movable instances this flag should be set to 'true'. Backend sets that
-         * point to movable instances are emptied and their contents are transferred to the
-         * destination region network load balancer. For movable instances this flag should be set
-         * to 'false'.
-         *
-         * <p>Example: {@code true}
+         * This flag specifies if this backend set is used for traffic for non-movable compute instances.
+         * Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'.
+         * Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.
+         * <p>
+         * Example: {@code true}
          *
          * @param isBackendSetForNonMovable the value to set
          * @return this builder
-         */
+         **/
         public Builder isBackendSetForNonMovable(Boolean isBackendSetForNonMovable) {
             this.isBackendSetForNonMovable = isBackendSetForNonMovable;
             this.__explicitlySet__.add("isBackendSetForNonMovable");
@@ -73,20 +68,21 @@ public final class NetworkLoadBalancerBackendSetMapping
         }
         /**
          * The name of the source backend set.
+         * <p>
+         * Example: {@code example_backend_set}
          *
-         * <p>Example: {@code example_backend_set}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBackendSetName")
         private String sourceBackendSetName;
 
         /**
          * The name of the source backend set.
-         *
-         * <p>Example: {@code example_backend_set}
+         * <p>
+         * Example: {@code example_backend_set}
          *
          * @param sourceBackendSetName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceBackendSetName(String sourceBackendSetName) {
             this.sourceBackendSetName = sourceBackendSetName;
             this.__explicitlySet__.add("sourceBackendSetName");
@@ -94,20 +90,21 @@ public final class NetworkLoadBalancerBackendSetMapping
         }
         /**
          * The name of the destination backend set.
+         * <p>
+         * Example: {@code example_backend_set}
          *
-         * <p>Example: {@code example_backend_set}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBackendSetName")
         private String destinationBackendSetName;
 
         /**
          * The name of the destination backend set.
-         *
-         * <p>Example: {@code example_backend_set}
+         * <p>
+         * Example: {@code example_backend_set}
          *
          * @param destinationBackendSetName the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationBackendSetName(String destinationBackendSetName) {
             this.destinationBackendSetName = destinationBackendSetName;
             this.__explicitlySet__.add("destinationBackendSetName");
@@ -144,7 +141,9 @@ public final class NetworkLoadBalancerBackendSetMapping
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -154,66 +153,65 @@ public final class NetworkLoadBalancerBackendSetMapping
     }
 
     /**
-     * This flag specifies if this backend set is used for traffic for non-movable compute
-     * instances. Backend sets that point to non-movable instances are only enabled or disabled
-     * during DR. For non-movable instances this flag should be set to 'true'. Backend sets that
-     * point to movable instances are emptied and their contents are transferred to the destination
-     * region network load balancer. For movable instances this flag should be set to 'false'.
+     * This flag specifies if this backend set is used for traffic for non-movable compute instances.
+     * Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'.
+     * Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.
+     * <p>
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBackendSetForNonMovable")
     private final Boolean isBackendSetForNonMovable;
 
     /**
-     * This flag specifies if this backend set is used for traffic for non-movable compute
-     * instances. Backend sets that point to non-movable instances are only enabled or disabled
-     * during DR. For non-movable instances this flag should be set to 'true'. Backend sets that
-     * point to movable instances are emptied and their contents are transferred to the destination
-     * region network load balancer. For movable instances this flag should be set to 'false'.
-     *
-     * <p>Example: {@code true}
+     * This flag specifies if this backend set is used for traffic for non-movable compute instances.
+     * Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'.
+     * Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsBackendSetForNonMovable() {
         return isBackendSetForNonMovable;
     }
 
     /**
      * The name of the source backend set.
+     * <p>
+     * Example: {@code example_backend_set}
      *
-     * <p>Example: {@code example_backend_set}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBackendSetName")
     private final String sourceBackendSetName;
 
     /**
      * The name of the source backend set.
-     *
-     * <p>Example: {@code example_backend_set}
+     * <p>
+     * Example: {@code example_backend_set}
      *
      * @return the value
-     */
+     **/
     public String getSourceBackendSetName() {
         return sourceBackendSetName;
     }
 
     /**
      * The name of the destination backend set.
+     * <p>
+     * Example: {@code example_backend_set}
      *
-     * <p>Example: {@code example_backend_set}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBackendSetName")
     private final String destinationBackendSetName;
 
     /**
      * The name of the destination backend set.
-     *
-     * <p>Example: {@code example_backend_set}
+     * <p>
+     * Example: {@code example_backend_set}
      *
      * @return the value
-     */
+     **/
     public String getDestinationBackendSetName() {
         return destinationBackendSetName;
     }
@@ -225,7 +223,6 @@ public final class NetworkLoadBalancerBackendSetMapping
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

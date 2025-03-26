@@ -9,8 +9,8 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.Optional;
@@ -21,7 +21,9 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.junit.Assert.assertNull;
 
-/** Tests for {@link PEMFileRSAPrivateKeySupplierTest}. */
+/**
+ * Tests for {@link PEMFileRSAPrivateKeySupplierTest}.
+ */
 public class PEMFileRSAPrivateKeySupplierTest {
 
     private static final char[] INCORRECT_PASSPHRASE = "incorrect_passphrase".toCharArray();

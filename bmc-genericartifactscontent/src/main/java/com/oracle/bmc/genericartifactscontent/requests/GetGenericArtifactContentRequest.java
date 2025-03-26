@@ -6,47 +6,44 @@ package com.oracle.bmc.genericartifactscontent.requests;
 
 import com.oracle.bmc.genericartifactscontent.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/genericartifactscontent/GetGenericArtifactContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetGenericArtifactContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/genericartifactscontent/GetGenericArtifactContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetGenericArtifactContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetGenericArtifactContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * artifact.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+     * <p>
+     * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
      *
-     * <p>Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
      */
     private String artifactId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * artifact.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+     * <p>
+     * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
      *
-     * <p>Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
      */
     public String getArtifactId() {
         return artifactId;
     }
     /**
-     * Unique Oracle-assigned [request
-     * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * Unique Oracle-assigned [request ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * <p>
+     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+     * If you contact Oracle about a request, provide this request ID.
      *
-     * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
-     * request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned [request
-     * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * Unique Oracle-assigned [request ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * <p>
+     * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+     * If you contact Oracle about a request, provide this request ID.
      *
-     * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
-     * request, provide this request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -55,22 +52,22 @@ public class GetGenericArtifactContentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetGenericArtifactContentRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * artifact.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+         * <p>
+         * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
          *
-         * <p>Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
          */
         private String artifactId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * artifact.
-         *
-         * <p>Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+         * <p>
+         * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
          *
          * @param artifactId the value to set
          * @return this builder instance
@@ -81,20 +78,19 @@ public class GetGenericArtifactContentRequest
         }
 
         /**
-         * Unique Oracle-assigned [request
-         * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * Unique Oracle-assigned [request ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * <p>
+         * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+         * If you contact Oracle about a request, provide this request ID.
          *
-         * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
-         * request, provide this request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned [request
-         * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
-         *
-         * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
-         * request, provide this request ID.
+         * Unique Oracle-assigned [request ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * <p>
+         * Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx}
+         * If you contact Oracle about a request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -106,19 +102,18 @@ public class GetGenericArtifactContentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -130,7 +125,6 @@ public class GetGenericArtifactContentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetGenericArtifactContentRequest o) {
@@ -144,11 +138,10 @@ public class GetGenericArtifactContentRequest
         /**
          * Build the instance of GetGenericArtifactContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetGenericArtifactContentRequest
          */
@@ -162,8 +155,7 @@ public class GetGenericArtifactContentRequest
         /**
          * Build the instance of GetGenericArtifactContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetGenericArtifactContentRequest
@@ -179,7 +171,6 @@ public class GetGenericArtifactContentRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -188,7 +179,6 @@ public class GetGenericArtifactContentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

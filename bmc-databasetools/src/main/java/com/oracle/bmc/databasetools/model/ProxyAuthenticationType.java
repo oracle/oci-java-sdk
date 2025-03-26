@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/** The proxy authentication type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum ProxyAuthenticationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The proxy authentication type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+public enum ProxyAuthenticationType {
     UserName("USER_NAME"),
     NoProxy("NO_PROXY"),
 

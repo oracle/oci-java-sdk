@@ -5,24 +5,24 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A referential relation is a resource corresponding to a database columns. It's a subresource of
- * sensitive data model resource and is always associated with a sensitive data model. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * A referential relation is a resource corresponding to a database columns.
+ * It's a subresource of sensitive data model resource and is always associated with a sensitive data model.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ReferentialRelationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ReferentialRelationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ReferentialRelationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -54,72 +54,70 @@ public final class ReferentialRelationSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique key that identifies the referential relation. It's numeric and unique within a
-         * sensitive data model.
-         */
+         * The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * The unique key that identifies the referential relation. It's numeric and unique within a
-         * sensitive data model.
-         *
+         * The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The current state of the referential relation. */
+        /**
+         * The current state of the referential relation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ReferentialRelationLifecycleState lifecycleState;
 
         /**
          * The current state of the referential relation.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(ReferentialRelationLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The OCID of the sensitive data model that contains the sensitive column. */
+        /**
+         * The OCID of the sensitive data model that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
         private String sensitiveDataModelId;
 
         /**
          * The OCID of the sensitive data model that contains the sensitive column.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             this.__explicitlySet__.add("sensitiveDataModelId");
             return this;
         }
         /**
-         * The type of referential relationship the sensitive column has with its parent. NONE
-         * indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the
-         * relationship is defined in the database dictionary. APP_DEFINED indicates that the
-         * relationship is defined at the application level and not in the database dictionary.
-         */
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+         * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+         * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relationType")
         private RelationType relationType;
 
         /**
-         * The type of referential relationship the sensitive column has with its parent. NONE
-         * indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the
-         * relationship is defined in the database dictionary. APP_DEFINED indicates that the
-         * relationship is defined at the application level and not in the database dictionary.
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+         * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+         * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
          *
          * @param relationType the value to set
          * @return this builder
-         */
+         **/
         public Builder relationType(RelationType relationType) {
             this.relationType = relationType;
             this.__explicitlySet__.add("relationType");
@@ -144,19 +142,16 @@ public final class ReferentialRelationSummary
             return this;
         }
         /**
-         * Determines if the columns present in the referential relation is present in the sensitive
-         * data model
-         */
+         * Determines if the columns present in the referential relation is present in the sensitive data model
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
         private Boolean isSensitive;
 
         /**
-         * Determines if the columns present in the referential relation is present in the sensitive
-         * data model
-         *
+         * Determines if the columns present in the referential relation is present in the sensitive data model
          * @param isSensitive the value to set
          * @return this builder
-         */
+         **/
         public Builder isSensitive(Boolean isSensitive) {
             this.isSensitive = isSensitive;
             this.__explicitlySet__.add("isSensitive");
@@ -209,7 +204,9 @@ public final class ReferentialRelationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -219,62 +216,61 @@ public final class ReferentialRelationSummary
     }
 
     /**
-     * The unique key that identifies the referential relation. It's numeric and unique within a
-     * sensitive data model.
-     */
+     * The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * The unique key that identifies the referential relation. It's numeric and unique within a
-     * sensitive data model.
-     *
+     * The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The current state of the referential relation. */
+    /**
+     * The current state of the referential relation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ReferentialRelationLifecycleState lifecycleState;
 
     /**
      * The current state of the referential relation.
-     *
      * @return the value
-     */
+     **/
     public ReferentialRelationLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The OCID of the sensitive data model that contains the sensitive column. */
+    /**
+     * The OCID of the sensitive data model that contains the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
     private final String sensitiveDataModelId;
 
     /**
      * The OCID of the sensitive data model that contains the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
 
     /**
-     * The type of referential relationship the sensitive column has with its parent. NONE indicates
-     * that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship
-     * is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined
-     * at the application level and not in the database dictionary.
-     */
-    public enum RelationType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+     * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+     * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+     *
+     **/
+    public enum RelationType {
         None("NONE"),
         AppDefined("APP_DEFINED"),
         DbDefined("DB_DEFINED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -314,22 +310,21 @@ public final class ReferentialRelationSummary
         }
     };
     /**
-     * The type of referential relationship the sensitive column has with its parent. NONE indicates
-     * that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship
-     * is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined
-     * at the application level and not in the database dictionary.
-     */
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+     * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+     * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relationType")
     private final RelationType relationType;
 
     /**
-     * The type of referential relationship the sensitive column has with its parent. NONE indicates
-     * that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship
-     * is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined
-     * at the application level and not in the database dictionary.
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+     * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+     * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      *
      * @return the value
-     */
+     **/
     public RelationType getRelationType() {
         return relationType;
     }
@@ -349,18 +344,15 @@ public final class ReferentialRelationSummary
     }
 
     /**
-     * Determines if the columns present in the referential relation is present in the sensitive
-     * data model
-     */
+     * Determines if the columns present in the referential relation is present in the sensitive data model
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
     private final Boolean isSensitive;
 
     /**
-     * Determines if the columns present in the referential relation is present in the sensitive
-     * data model
-     *
+     * Determines if the columns present in the referential relation is present in the sensitive data model
      * @return the value
-     */
+     **/
     public Boolean getIsSensitive() {
         return isSensitive;
     }
@@ -372,7 +364,6 @@ public final class ReferentialRelationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

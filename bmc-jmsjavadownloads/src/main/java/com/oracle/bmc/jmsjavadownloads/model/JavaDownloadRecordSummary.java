@@ -5,23 +5,22 @@
 package com.oracle.bmc.jmsjavadownloads.model;
 
 /**
- * A summary of Java artifact download in a tenancy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+ * A summary of Java artifact download in a tenancy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JavaDownloadRecordSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = JavaDownloadRecordSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JavaDownloadRecordSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "familyVersion",
@@ -61,151 +60,161 @@ public final class JavaDownloadRecordSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Java family version identifier. */
+        /**
+         * The Java family version identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
         private String familyVersion;
 
         /**
          * The Java family version identifier.
-         *
          * @param familyVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder familyVersion(String familyVersion) {
             this.familyVersion = familyVersion;
             this.__explicitlySet__.add("familyVersion");
             return this;
         }
-        /** The Java family display name. */
+        /**
+         * The Java family display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyDisplayName")
         private String familyDisplayName;
 
         /**
          * The Java family display name.
-         *
          * @param familyDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder familyDisplayName(String familyDisplayName) {
             this.familyDisplayName = familyDisplayName;
             this.__explicitlySet__.add("familyDisplayName");
             return this;
         }
-        /** The Java release version identifier. */
+        /**
+         * The Java release version identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
         private String releaseVersion;
 
         /**
          * The Java release version identifier.
-         *
          * @param releaseVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseVersion(String releaseVersion) {
             this.releaseVersion = releaseVersion;
             this.__explicitlySet__.add("releaseVersion");
             return this;
         }
-        /** The target Operating System family for the artifact. */
+        /**
+         * The target Operating System family for the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private String osFamily;
 
         /**
          * The target Operating System family for the artifact.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(String osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** The target Operating System architecture for the artifact. */
+        /**
+         * The target Operating System architecture for the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
         /**
          * The target Operating System architecture for the artifact.
-         *
          * @param architecture the value to set
          * @return this builder
-         */
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-        /** The package type (typically the file extension) of the artifact. */
+        /**
+         * The package type (typically the file extension) of the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private String packageType;
 
         /**
          * The package type (typically the file extension) of the artifact.
-         *
          * @param packageType the value to set
          * @return this builder
-         */
+         **/
         public Builder packageType(String packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
             return this;
         }
-        /** Additional information about the package type. */
+        /**
+         * Additional information about the package type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageTypeDetail")
         private String packageTypeDetail;
 
         /**
          * Additional information about the package type.
-         *
          * @param packageTypeDetail the value to set
          * @return this builder
-         */
+         **/
         public Builder packageTypeDetail(String packageTypeDetail) {
             this.packageTypeDetail = packageTypeDetail;
             this.__explicitlySet__.add("packageTypeDetail");
             return this;
         }
-        /** Identifier of the source that downloaded the artifact. */
+        /**
+         * Identifier of the source that downloaded the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("downloadSourceId")
         private String downloadSourceId;
 
         /**
          * Identifier of the source that downloaded the artifact.
-         *
          * @param downloadSourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder downloadSourceId(String downloadSourceId) {
             this.downloadSourceId = downloadSourceId;
             this.__explicitlySet__.add("downloadSourceId");
             return this;
         }
-        /** Timestamp of download. */
+        /**
+         * Timestamp of download.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDownloaded")
         private java.util.Date timeDownloaded;
 
         /**
          * Timestamp of download.
-         *
          * @param timeDownloaded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDownloaded(java.util.Date timeDownloaded) {
             this.timeDownloaded = timeDownloaded;
             this.__explicitlySet__.add("timeDownloaded");
             return this;
         }
-        /** Type of download. */
+        /**
+         * Type of download.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("downloadType")
         private String downloadType;
 
         /**
          * Type of download.
-         *
          * @param downloadType the value to set
          * @return this builder
-         */
+         **/
         public Builder downloadType(String downloadType) {
             this.downloadType = downloadType;
             this.__explicitlySet__.add("downloadType");
@@ -270,7 +279,9 @@ public final class JavaDownloadRecordSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -279,132 +290,142 @@ public final class JavaDownloadRecordSummary
         return new Builder().copy(this);
     }
 
-    /** The Java family version identifier. */
+    /**
+     * The Java family version identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
     private final String familyVersion;
 
     /**
      * The Java family version identifier.
-     *
      * @return the value
-     */
+     **/
     public String getFamilyVersion() {
         return familyVersion;
     }
 
-    /** The Java family display name. */
+    /**
+     * The Java family display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyDisplayName")
     private final String familyDisplayName;
 
     /**
      * The Java family display name.
-     *
      * @return the value
-     */
+     **/
     public String getFamilyDisplayName() {
         return familyDisplayName;
     }
 
-    /** The Java release version identifier. */
+    /**
+     * The Java release version identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
     private final String releaseVersion;
 
     /**
      * The Java release version identifier.
-     *
      * @return the value
-     */
+     **/
     public String getReleaseVersion() {
         return releaseVersion;
     }
 
-    /** The target Operating System family for the artifact. */
+    /**
+     * The target Operating System family for the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final String osFamily;
 
     /**
      * The target Operating System family for the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getOsFamily() {
         return osFamily;
     }
 
-    /** The target Operating System architecture for the artifact. */
+    /**
+     * The target Operating System architecture for the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
     /**
      * The target Operating System architecture for the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getArchitecture() {
         return architecture;
     }
 
-    /** The package type (typically the file extension) of the artifact. */
+    /**
+     * The package type (typically the file extension) of the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final String packageType;
 
     /**
      * The package type (typically the file extension) of the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getPackageType() {
         return packageType;
     }
 
-    /** Additional information about the package type. */
+    /**
+     * Additional information about the package type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageTypeDetail")
     private final String packageTypeDetail;
 
     /**
      * Additional information about the package type.
-     *
      * @return the value
-     */
+     **/
     public String getPackageTypeDetail() {
         return packageTypeDetail;
     }
 
-    /** Identifier of the source that downloaded the artifact. */
+    /**
+     * Identifier of the source that downloaded the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("downloadSourceId")
     private final String downloadSourceId;
 
     /**
      * Identifier of the source that downloaded the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getDownloadSourceId() {
         return downloadSourceId;
     }
 
-    /** Timestamp of download. */
+    /**
+     * Timestamp of download.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDownloaded")
     private final java.util.Date timeDownloaded;
 
     /**
      * Timestamp of download.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDownloaded() {
         return timeDownloaded;
     }
 
-    /** Type of download. */
+    /**
+     * Type of download.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("downloadType")
     private final String downloadType;
 
     /**
      * Type of download.
-     *
      * @return the value
-     */
+     **/
     public String getDownloadType() {
         return downloadType;
     }
@@ -416,7 +437,6 @@ public final class JavaDownloadRecordSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

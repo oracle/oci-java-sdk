@@ -5,24 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * (For tenancies that support identity domains) Details for updating the license type of the
- * identity domain. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * (For tenancies that support identity domains) Details for updating the license type of the identity domain.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ChangeDomainLicenseTypeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ChangeDomainLicenseTypeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ChangeDomainLicenseTypeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"licenseType"})
     public ChangeDomainLicenseTypeDetails(String licenseType) {
@@ -32,16 +30,17 @@ public final class ChangeDomainLicenseTypeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The license type of the identity domain. */
+        /**
+         * The license type of the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private String licenseType;
 
         /**
          * The license type of the identity domain.
-         *
          * @param licenseType the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseType(String licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
@@ -69,7 +68,9 @@ public final class ChangeDomainLicenseTypeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,15 +79,16 @@ public final class ChangeDomainLicenseTypeDetails
         return new Builder().copy(this);
     }
 
-    /** The license type of the identity domain. */
+    /**
+     * The license type of the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final String licenseType;
 
     /**
      * The license type of the identity domain.
-     *
      * @return the value
-     */
+     **/
     public String getLicenseType() {
         return licenseType;
     }
@@ -98,7 +100,6 @@ public final class ChangeDomainLicenseTypeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

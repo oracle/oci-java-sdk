@@ -5,21 +5,19 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The API key information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The API key information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BdsApiKey.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BdsApiKey extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -59,50 +57,53 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier of the user's API key. */
+        /**
+         * Identifier of the user's API key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Identifier of the user's API key.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The user OCID for which this API key was created. */
+        /**
+         * The user OCID for which this API key was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * The user OCID for which this API key was created.
-         *
          * @param userId the value to set
          * @return this builder
-         */
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
         /**
-         * User friendly identifier used to uniquely differentiate between different API keys. Only
-         * ASCII alphanumeric characters with no spaces allowed.
-         */
+         * User friendly identifier used to uniquely differentiate between different API keys.
+         * Only ASCII alphanumeric characters with no spaces allowed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
         private String keyAlias;
 
         /**
-         * User friendly identifier used to uniquely differentiate between different API keys. Only
-         * ASCII alphanumeric characters with no spaces allowed.
+         * User friendly identifier used to uniquely differentiate between different API keys.
+         * Only ASCII alphanumeric characters with no spaces allowed.
          *
          * @param keyAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder keyAlias(String keyAlias) {
             this.keyAlias = keyAlias;
             this.__explicitlySet__.add("keyAlias");
@@ -110,114 +111,115 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
         private String defaultRegion;
 
         /**
          * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
-         *
          * @param defaultRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultRegion(String defaultRegion) {
             this.defaultRegion = defaultRegion;
             this.__explicitlySet__.add("defaultRegion");
             return this;
         }
-        /** The OCID of your tenancy. */
+        /**
+         * The OCID of your tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * The OCID of your tenancy.
-         *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** The fingerprint that corresponds to the public API key requested. */
+        /**
+         * The fingerprint that corresponds to the public API key requested.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
         /**
          * The fingerprint that corresponds to the public API key requested.
-         *
          * @param fingerprint the value to set
          * @return this builder
-         */
+         **/
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = fingerprint;
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
         /**
-         * The full path and file name of the private key used for authentication. This location
-         * will be automatically selected on the BDS local file system.
-         */
+         * The full path and file name of the private key used for authentication. This location will be automatically selected
+         * on the BDS local file system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pemfilepath")
         private String pemfilepath;
 
         /**
-         * The full path and file name of the private key used for authentication. This location
-         * will be automatically selected on the BDS local file system.
+         * The full path and file name of the private key used for authentication. This location will be automatically selected
+         * on the BDS local file system.
          *
          * @param pemfilepath the value to set
          * @return this builder
-         */
+         **/
         public Builder pemfilepath(String pemfilepath) {
             this.pemfilepath = pemfilepath;
             this.__explicitlySet__.add("pemfilepath");
             return this;
         }
-        /** The time the API key was created, shown as an RFC 3339 formatted datetime string. */
+        /**
+         * The time the API key was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the API key was created, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The state of the key. */
+        /**
+         * The state of the key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the key.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Identity domain OCID ,where user is present. For default domain ,this field will be
-         * optional.
-         */
+         * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
         private String domainOcid;
 
         /**
-         * Identity domain OCID ,where user is present. For default domain ,this field will be
-         * optional.
-         *
+         * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
          * @param domainOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder domainOcid(String domainOcid) {
             this.domainOcid = domainOcid;
             this.__explicitlySet__.add("domainOcid");
@@ -282,7 +284,9 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -291,120 +295,130 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Identifier of the user's API key. */
+    /**
+     * Identifier of the user's API key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Identifier of the user's API key.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The user OCID for which this API key was created. */
+    /**
+     * The user OCID for which this API key was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * The user OCID for which this API key was created.
-     *
      * @return the value
-     */
+     **/
     public String getUserId() {
         return userId;
     }
 
     /**
-     * User friendly identifier used to uniquely differentiate between different API keys. Only
-     * ASCII alphanumeric characters with no spaces allowed.
-     */
+     * User friendly identifier used to uniquely differentiate between different API keys.
+     * Only ASCII alphanumeric characters with no spaces allowed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
     private final String keyAlias;
 
     /**
-     * User friendly identifier used to uniquely differentiate between different API keys. Only
-     * ASCII alphanumeric characters with no spaces allowed.
+     * User friendly identifier used to uniquely differentiate between different API keys.
+     * Only ASCII alphanumeric characters with no spaces allowed.
      *
      * @return the value
-     */
+     **/
     public String getKeyAlias() {
         return keyAlias;
     }
 
-    /** The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 . */
+    /**
+     * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
     private final String defaultRegion;
 
     /**
      * The name of the region to establish the Object Storage endpoint. Example us-phoenix-1 .
-     *
      * @return the value
-     */
+     **/
     public String getDefaultRegion() {
         return defaultRegion;
     }
 
-    /** The OCID of your tenancy. */
+    /**
+     * The OCID of your tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * The OCID of your tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** The fingerprint that corresponds to the public API key requested. */
+    /**
+     * The fingerprint that corresponds to the public API key requested.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     private final String fingerprint;
 
     /**
      * The fingerprint that corresponds to the public API key requested.
-     *
      * @return the value
-     */
+     **/
     public String getFingerprint() {
         return fingerprint;
     }
 
     /**
-     * The full path and file name of the private key used for authentication. This location will be
-     * automatically selected on the BDS local file system.
-     */
+     * The full path and file name of the private key used for authentication. This location will be automatically selected
+     * on the BDS local file system.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pemfilepath")
     private final String pemfilepath;
 
     /**
-     * The full path and file name of the private key used for authentication. This location will be
-     * automatically selected on the BDS local file system.
+     * The full path and file name of the private key used for authentication. This location will be automatically selected
+     * on the BDS local file system.
      *
      * @return the value
-     */
+     **/
     public String getPemfilepath() {
         return pemfilepath;
     }
 
-    /** The time the API key was created, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * The time the API key was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The state of the key. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the key.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
@@ -412,8 +426,8 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -452,30 +466,30 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** The state of the key. */
+    /**
+     * The state of the key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the key.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
     private final String domainOcid;
 
     /**
      * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
-     *
      * @return the value
-     */
+     **/
     public String getDomainOcid() {
         return domainOcid;
     }
@@ -487,7 +501,6 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

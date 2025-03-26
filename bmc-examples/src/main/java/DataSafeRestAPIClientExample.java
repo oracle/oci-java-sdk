@@ -2,14 +2,38 @@
  * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
+/**
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
+
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.datasafe.DataSafeClient;
 import com.oracle.bmc.datasafe.model.AuditEventSummary;
 import com.oracle.bmc.datasafe.requests.ListAuditEventsRequest;
 import com.oracle.bmc.datasafe.responses.ListAuditEventsResponse;
-import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
 import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
@@ -19,35 +43,22 @@ import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 import com.oracle.bmc.objectstorage.transfer.UploadManager;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
-
 public class DataSafeRestAPIClientExample {
     /**
      * The entry point for the example.
      *
-     * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The first is the name of bucket where auditEvents from DataSafe will be copied
-     *       <li>The second argument is the OCID of the compartment only auditEvents in specified
-     *           compartment OCID and its subcompartments for which the user has INSPECT permissions
-     *           directly or indirectly
-     *     </ul>
+     * @param args Arguments to provide to the example. The following arguments are
+     *             expected:
+     *             <ul>
+     *             <li>The first is the name of bucket where auditEvents from
+     *             DataSafe will be copied</li>
+     *             <li>The second argument is the OCID of the compartment only
+     *             auditEvents in specified compartment OCID and its subcompartments
+     *             for which the user has INSPECT permissions directly or
+     *             indirectly</li>
+     *             </ul>
      */
     String configurationFilePath = "~/.oci/config";
-
     String profile = "DEFAULT";
 
     public static void main(String[] args) throws Exception {
@@ -59,18 +70,18 @@ public class DataSafeRestAPIClientExample {
         String compartmentId = args[1];
 
         /**
-         * Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-         * config file "~/.oci/config", and a profile in that config with the name "DEFAULT". Make
-         * changes to the following line if needed and use ConfigFileReader.parse(CONFIG_LOCATION,
-         * CONFIG_PROFILE);
+         * Configuring the AuthenticationDetailsProvider. It's assuming there is a
+         * default OCI config file "~/.oci/config", and a profile in that config with
+         * the name "DEFAULT". Make changes to the following line if needed and use
+         * ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
          */
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage objStoreClient =
-                ObjectStorageClient.builder().region(Region.EU_FRANKFURT_1).build(provider);
+        ObjectStorage objStoreClient = new ObjectStorageClient(provider);
+        objStoreClient.setRegion(Region.EU_FRANKFURT_1);
         System.out.println("Getting the namespace\n\n");
         com.oracle.bmc.objectstorage.responses.GetNamespaceResponse namespaceResponse =
                 objStoreClient.getNamespace(GetNamespaceRequest.builder().build());
@@ -104,7 +115,7 @@ public class DataSafeRestAPIClientExample {
                         + result
                         + "\n\n");
 
-        DataSafeClient datasafeClient = DataSafeClient.builder().build(provider);
+        DataSafeClient datasafeClient = new DataSafeClient(provider);
 
         ListAuditEventsResponse eventList = null;
 
@@ -170,7 +181,7 @@ public class DataSafeRestAPIClientExample {
         System.out.println(
                 "Count" + eventList.getAuditEventCollection().getItems().size() + "\n\n");
         if (eventList.getAuditEventCollection().getItems().size() > 0) {
-            Serializer mapper = Serializer.getDefault();
+            ObjectMapper mapper = com.oracle.bmc.http.Serialization.getObjectMapper();
             StringBuffer sb = new StringBuffer();
             AtomicBoolean isFirst = new AtomicBoolean(true);
             count = eventList.getAuditEventCollection().getItems().size();
@@ -187,7 +198,7 @@ public class DataSafeRestAPIClientExample {
                                     }
                                     sb.append(mapper.writeValueAsString(it));
 
-                                } catch (IOException e) {
+                                } catch (JsonProcessingException e) {
                                     e.printStackTrace();
                                 }
                             });
@@ -227,9 +238,9 @@ public class DataSafeRestAPIClientExample {
 
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        ObjectStorage client =
-                ObjectStorageClient.builder().region(Region.EU_FRANKFURT_1).build(provider);
+        ObjectStorage client = new ObjectStorageClient(provider);
 
+        client.setRegion(Region.EU_FRANKFURT_1);
         byte[] byteVal = value.getBytes(StandardCharsets.UTF_8);
 
         UploadConfiguration uploadConfiguration =

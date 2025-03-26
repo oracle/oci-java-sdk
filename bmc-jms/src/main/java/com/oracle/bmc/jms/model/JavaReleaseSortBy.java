@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field to sort the Java version. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum JavaReleaseSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field to sort the Java version.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum JavaReleaseSortBy {
     ReleaseDate("releaseDate"),
     ReleaseVersion("releaseVersion"),
     FamilyVersion("familyVersion"),

@@ -6,127 +6,149 @@ package com.oracle.bmc.email.requests;
 
 import com.oracle.bmc.email.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSuppressionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSuppressionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID for the compartment. */
+    /**
+     * The OCID for the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID for the compartment. */
+    /**
+     * The OCID for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     private String opcRequestId;
 
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The email address of the suppression. */
+    /**
+     * The email address of the suppression.
+     */
     private String emailAddress;
 
-    /** The email address of the suppression. */
+    /**
+     * The email address of the suppression.
+     */
     public String getEmailAddress() {
         return emailAddress;
     }
     /**
-     * Search for suppressions that were created within a specific date range, using this parameter
-     * to specify the earliest creation date for the returned list (inclusive). Specifying this
-     * parameter without the corresponding {@code timeCreatedLessThan} parameter will retrieve
-     * suppressions created from the given {@code timeCreatedGreaterThanOrEqualTo} to the current
-     * time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
+     * Search for suppressions that were created within a specific date range,
+     * using this parameter to specify the earliest creation date for the
+     * returned list (inclusive). Specifying this parameter without the
+     * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
+     * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+     * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * Search for suppressions that were created within a specific date range, using this parameter
-     * to specify the earliest creation date for the returned list (inclusive). Specifying this
-     * parameter without the corresponding {@code timeCreatedLessThan} parameter will retrieve
-     * suppressions created from the given {@code timeCreatedGreaterThanOrEqualTo} to the current
-     * time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
+     * Search for suppressions that were created within a specific date range,
+     * using this parameter to specify the earliest creation date for the
+     * returned list (inclusive). Specifying this parameter without the
+     * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
+     * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+     * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
     /**
-     * Search for suppressions that were created within a specific date range, using this parameter
-     * to specify the latest creation date for the returned list (exclusive). Specifying this
-     * parameter without the corresponding {@code timeCreatedGreaterThanOrEqualTo} parameter will
-     * retrieve all suppressions created before the specified end date, in "YYYY-MM-ddThh:mmZ"
-     * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * Search for suppressions that were created within a specific date range,
+     * using this parameter to specify the latest creation date for the returned
+     * list (exclusive). Specifying this parameter without the corresponding
+     * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
+     * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * Search for suppressions that were created within a specific date range, using this parameter
-     * to specify the latest creation date for the returned list (exclusive). Specifying this
-     * parameter without the corresponding {@code timeCreatedGreaterThanOrEqualTo} parameter will
-     * retrieve all suppressions created before the specified end date, in "YYYY-MM-ddThh:mmZ"
-     * format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * Search for suppressions that were created within a specific date range,
+     * using this parameter to specify the latest creation date for the returned
+     * list (exclusive). Specifying this parameter without the corresponding
+     * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
+     * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T16:39:57.600Z
      *
-     * <p>*Example:** 2016-12-19T16:39:57.600Z
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
-     * details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
-     * details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort by. The {@code TIMECREATED} value returns the list in in descending order
-     * by default. The {@code EMAILADDRESS} value returns the list in ascending order by default.
-     * Use the {@code SortOrderQueryParam} to change the direction of the returned list of items.
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+     * direction of the returned list of items.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. The {@code TIMECREATED} value returns the list in in descending order
-     * by default. The {@code EMAILADDRESS} value returns the list in ascending order by default.
-     * Use the {@code SortOrderQueryParam} to change the direction of the returned list of items.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+     * direction of the returned list of items.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Emailaddress("EMAILADDRESS"),
         ;
@@ -160,17 +182,25 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field to sort by. The {@code TIMECREATED} value returns the list in in descending order
-     * by default. The {@code EMAILADDRESS} value returns the list in ascending order by default.
-     * Use the {@code SortOrderQueryParam} to change the direction of the returned list of items.
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+     * direction of the returned list of items.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending or descending order. */
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
     private com.oracle.bmc.email.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending or descending order. */
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
     public com.oracle.bmc.email.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -178,15 +208,17 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSuppressionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID for the compartment. */
+        /**
+         * The OCID for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID for the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -195,12 +227,13 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The request ID for tracing from the system */
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -209,12 +242,13 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The email address of the suppression. */
+        /**
+         * The email address of the suppression.
+         */
         private String emailAddress = null;
 
         /**
          * The email address of the suppression.
-         *
          * @param emailAddress the value to set
          * @return this builder instance
          */
@@ -224,26 +258,27 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Search for suppressions that were created within a specific date range, using this
-         * parameter to specify the earliest creation date for the returned list (inclusive).
-         * Specifying this parameter without the corresponding {@code timeCreatedLessThan} parameter
-         * will retrieve suppressions created from the given {@code timeCreatedGreaterThanOrEqualTo}
-         * to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
+         * Search for suppressions that were created within a specific date range,
+         * using this parameter to specify the earliest creation date for the
+         * returned list (inclusive). Specifying this parameter without the
+         * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
+         * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * Search for suppressions that were created within a specific date range, using this
-         * parameter to specify the earliest creation date for the returned list (inclusive).
-         * Specifying this parameter without the corresponding {@code timeCreatedLessThan} parameter
-         * will retrieve suppressions created from the given {@code timeCreatedGreaterThanOrEqualTo}
-         * to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         * Search for suppressions that were created within a specific date range,
+         * using this parameter to specify the earliest creation date for the
+         * returned list (inclusive). Specifying this parameter without the
+         * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
+         * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -255,26 +290,27 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Search for suppressions that were created within a specific date range, using this
-         * parameter to specify the latest creation date for the returned list (exclusive).
-         * Specifying this parameter without the corresponding {@code
-         * timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before
-         * the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
+         * Search for suppressions that were created within a specific date range,
+         * using this parameter to specify the latest creation date for the returned
+         * list (exclusive). Specifying this parameter without the corresponding
+         * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
+         * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * Search for suppressions that were created within a specific date range, using this
-         * parameter to specify the latest creation date for the returned list (exclusive).
-         * Specifying this parameter without the corresponding {@code
-         * timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before
-         * the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>*Example:** 2016-12-19T16:39:57.600Z
+         * Search for suppressions that were created within a specific date range,
+         * using this parameter to specify the latest creation date for the returned
+         * list (exclusive). Specifying this parameter without the corresponding
+         * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
+         * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T16:39:57.600Z
          *
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
@@ -285,16 +321,17 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -306,17 +343,16 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
-         * important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
-         * important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -327,18 +363,19 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. The {@code TIMECREATED} value returns the list in in descending
-         * order by default. The {@code EMAILADDRESS} value returns the list in ascending order by
-         * default. Use the {@code SortOrderQueryParam} to change the direction of the returned list
-         * of items.
+         * The field to sort by. The {@code TIMECREATED} value returns the list in in
+         * descending order by default. The {@code EMAILADDRESS} value returns the list in
+         * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+         * direction of the returned list of items.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. The {@code TIMECREATED} value returns the list in in descending
-         * order by default. The {@code EMAILADDRESS} value returns the list in ascending order by
-         * default. Use the {@code SortOrderQueryParam} to change the direction of the returned list
-         * of items.
+         * The field to sort by. The {@code TIMECREATED} value returns the list in in
+         * descending order by default. The {@code EMAILADDRESS} value returns the list in
+         * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+         * direction of the returned list of items.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -348,7 +385,10 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sort order to use, either ascending or descending order. */
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         */
         private com.oracle.bmc.email.model.SortOrder sortOrder = null;
 
         /**
@@ -364,19 +404,18 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -388,7 +427,6 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSuppressionsRequest o) {
@@ -409,11 +447,10 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListSuppressionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSuppressionsRequest
          */
@@ -427,8 +464,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListSuppressionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSuppressionsRequest
@@ -445,15 +481,12 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListSuppressionsRequest(compartmentId, opcRequestId, emailAddress,
-            // timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, page, limit, sortBy,
-            // sortOrder);
+            // new ListSuppressionsRequest(compartmentId, opcRequestId, emailAddress, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, page, limit, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -471,7 +504,6 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

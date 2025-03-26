@@ -5,23 +5,21 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Text label and score for the given text. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Text label and score for the given text.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TextClassification.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TextClassification
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = TextClassification.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TextClassification extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"label", "score"})
     public TextClassification(String label, Double score) {
@@ -32,31 +30,37 @@ public final class TextClassification
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Label of the the given text. */
+        /**
+         * Label of the the given text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * Label of the the given text.
-         *
          * @param label the value to set
          * @return this builder
-         */
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-        /** Score or confidence of extracted text label. Example: {@code 0.9999856066867399} */
+        /**
+         * Score or confidence of extracted text label.
+         * Example: {@code 0.9999856066867399}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
-         * Score or confidence of extracted text label. Example: {@code 0.9999856066867399}
+         * Score or confidence of extracted text label.
+         * Example: {@code 0.9999856066867399}
          *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -86,7 +90,9 @@ public final class TextClassification
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +101,34 @@ public final class TextClassification
         return new Builder().copy(this);
     }
 
-    /** Label of the the given text. */
+    /**
+     * Label of the the given text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * Label of the the given text.
-     *
      * @return the value
-     */
+     **/
     public String getLabel() {
         return label;
     }
 
-    /** Score or confidence of extracted text label. Example: {@code 0.9999856066867399} */
+    /**
+     * Score or confidence of extracted text label.
+     * Example: {@code 0.9999856066867399}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
-     * Score or confidence of extracted text label. Example: {@code 0.9999856066867399}
+     * Score or confidence of extracted text label.
+     * Example: {@code 0.9999856066867399}
      *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
@@ -128,7 +140,6 @@ public final class TextClassification
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

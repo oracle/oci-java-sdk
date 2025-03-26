@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Configuration details for enterprise manager bridge. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Configuration details for enterprise manager bridge.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsEmBridge.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LogAnalyticsEmBridge
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = LogAnalyticsEmBridge.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LogAnalyticsEmBridge extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,7 +78,10 @@ public final class LogAnalyticsEmBridge
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The enterprise manager bridge OCID. */
+        /**
+         * The enterprise manager bridge OCID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -88,13 +90,16 @@ public final class LogAnalyticsEmBridge
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Log analytics enterprise manager bridge display name. */
+        /**
+         * Log analytics enterprise manager bridge display name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -103,13 +108,16 @@ public final class LogAnalyticsEmBridge
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A description for log analytics enterprise manager bridge. */
+        /**
+         * A description for log analytics enterprise manager bridge.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -118,32 +126,32 @@ public final class LogAnalyticsEmBridge
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Compartment for entities created from enterprise manager. */
+        /**
+         * Compartment for entities created from enterprise manager.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emEntitiesCompartmentId")
         private String emEntitiesCompartmentId;
 
@@ -152,7 +160,7 @@ public final class LogAnalyticsEmBridge
          *
          * @param emEntitiesCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder emEntitiesCompartmentId(String emEntitiesCompartmentId) {
             this.emEntitiesCompartmentId = emEntitiesCompartmentId;
             this.__explicitlySet__.add("emEntitiesCompartmentId");
@@ -160,22 +168,24 @@ public final class LogAnalyticsEmBridge
         }
         /**
          * Object store bucket name where enterprise manager harvested entities will be uploaded.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * Object store bucket name where enterprise manager harvested entities will be uploaded.
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The date and time the resource was created, in the format defined by RFC3339. */
+        /**
+         * The date and time the resource was created, in the format defined by RFC3339.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -184,13 +194,16 @@ public final class LogAnalyticsEmBridge
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the resource was last updated, in the format defined by RFC3339. */
+        /**
+         * The date and time the resource was last updated, in the format defined by RFC3339.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -199,13 +212,16 @@ public final class LogAnalyticsEmBridge
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the enterprise manager bridge. */
+        /**
+         * The current state of the enterprise manager bridge.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private EmBridgeLifecycleStates lifecycleState;
 
@@ -214,32 +230,34 @@ public final class LogAnalyticsEmBridge
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(EmBridgeLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * lifecycleDetails has additional information regarding substeps such as verifying
-         * connection to object store.
-         */
+         * lifecycleDetails has additional information regarding substeps such as verifying connection to object store.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * lifecycleDetails has additional information regarding substeps such as verifying
-         * connection to object store.
+         * lifecycleDetails has additional information regarding substeps such as verifying connection to object store.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The status from last processing status of enterprise manager upload. */
+        /**
+         * The status from last processing status of enterprise manager upload.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastImportProcessingStatus")
         private EmBridgeLatestImportProcessingStatus lastImportProcessingStatus;
 
@@ -248,7 +266,7 @@ public final class LogAnalyticsEmBridge
          *
          * @param lastImportProcessingStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder lastImportProcessingStatus(
                 EmBridgeLatestImportProcessingStatus lastImportProcessingStatus) {
             this.lastImportProcessingStatus = lastImportProcessingStatus;
@@ -258,7 +276,8 @@ public final class LogAnalyticsEmBridge
         /**
          * Processing status details of enterprise manager upload. This provides additional details
          * for failed status
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastImportProcessingDetails")
         private String lastImportProcessingDetails;
 
@@ -268,64 +287,63 @@ public final class LogAnalyticsEmBridge
          *
          * @param lastImportProcessingDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lastImportProcessingDetails(String lastImportProcessingDetails) {
             this.lastImportProcessingDetails = lastImportProcessingDetails;
             this.__explicitlySet__.add("lastImportProcessingDetails");
             return this;
         }
         /**
-         * The last time of enterprise manager upload was processed. This is in the format defined
-         * by RFC3339
-         */
+         * The last time of enterprise manager upload was processed. This is in the format defined by RFC3339
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeImportLastProcessed")
         private java.util.Date timeImportLastProcessed;
 
         /**
-         * The last time of enterprise manager upload was processed. This is in the format defined
-         * by RFC3339
+         * The last time of enterprise manager upload was processed. This is in the format defined by RFC3339
          *
          * @param timeImportLastProcessed the value to set
          * @return this builder
-         */
+         **/
         public Builder timeImportLastProcessed(java.util.Date timeImportLastProcessed) {
             this.timeImportLastProcessed = timeImportLastProcessed;
             this.__explicitlySet__.add("timeImportLastProcessed");
             return this;
         }
         /**
-         * The timestamp of last enterprise manager upload to OCI Object Store. This is in the
-         * format defined by RFC3339
-         */
+         * The timestamp of last enterprise manager upload to OCI Object Store. This is in the format defined by RFC3339
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEmDataLastExtracted")
         private java.util.Date timeEmDataLastExtracted;
 
         /**
-         * The timestamp of last enterprise manager upload to OCI Object Store. This is in the
-         * format defined by RFC3339
+         * The timestamp of last enterprise manager upload to OCI Object Store. This is in the format defined by RFC3339
          *
          * @param timeEmDataLastExtracted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEmDataLastExtracted(java.util.Date timeEmDataLastExtracted) {
             this.timeEmDataLastExtracted = timeEmDataLastExtracted;
             this.__explicitlySet__.add("timeEmDataLastExtracted");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -334,7 +352,8 @@ public final class LogAnalyticsEmBridge
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -344,7 +363,7 @@ public final class LogAnalyticsEmBridge
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -434,7 +453,9 @@ public final class LogAnalyticsEmBridge
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -443,7 +464,10 @@ public final class LogAnalyticsEmBridge
         return new Builder().copy(this);
     }
 
-    /** The enterprise manager bridge OCID. */
+    /**
+     * The enterprise manager bridge OCID.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -451,12 +475,15 @@ public final class LogAnalyticsEmBridge
      * The enterprise manager bridge OCID.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Log analytics enterprise manager bridge display name. */
+    /**
+     * Log analytics enterprise manager bridge display name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -464,12 +491,15 @@ public final class LogAnalyticsEmBridge
      * Log analytics enterprise manager bridge display name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A description for log analytics enterprise manager bridge. */
+    /**
+     * A description for log analytics enterprise manager bridge.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -477,29 +507,29 @@ public final class LogAnalyticsEmBridge
      * A description for log analytics enterprise manager bridge.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Compartment for entities created from enterprise manager. */
+    /**
+     * Compartment for entities created from enterprise manager.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emEntitiesCompartmentId")
     private final String emEntitiesCompartmentId;
 
@@ -507,25 +537,29 @@ public final class LogAnalyticsEmBridge
      * Compartment for entities created from enterprise manager.
      *
      * @return the value
-     */
+     **/
     public String getEmEntitiesCompartmentId() {
         return emEntitiesCompartmentId;
     }
 
-    /** Object store bucket name where enterprise manager harvested entities will be uploaded. */
+    /**
+     * Object store bucket name where enterprise manager harvested entities will be uploaded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * Object store bucket name where enterprise manager harvested entities will be uploaded.
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** The date and time the resource was created, in the format defined by RFC3339. */
+    /**
+     * The date and time the resource was created, in the format defined by RFC3339.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -533,12 +567,15 @@ public final class LogAnalyticsEmBridge
      * The date and time the resource was created, in the format defined by RFC3339.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time the resource was last updated, in the format defined by RFC3339. */
+    /**
+     * The date and time the resource was last updated, in the format defined by RFC3339.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -546,12 +583,15 @@ public final class LogAnalyticsEmBridge
      * The date and time the resource was last updated, in the format defined by RFC3339.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the enterprise manager bridge. */
+    /**
+     * The current state of the enterprise manager bridge.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final EmBridgeLifecycleStates lifecycleState;
 
@@ -559,29 +599,31 @@ public final class LogAnalyticsEmBridge
      * The current state of the enterprise manager bridge.
      *
      * @return the value
-     */
+     **/
     public EmBridgeLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * lifecycleDetails has additional information regarding substeps such as verifying connection
-     * to object store.
-     */
+     * lifecycleDetails has additional information regarding substeps such as verifying connection to object store.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * lifecycleDetails has additional information regarding substeps such as verifying connection
-     * to object store.
+     * lifecycleDetails has additional information regarding substeps such as verifying connection to object store.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The status from last processing status of enterprise manager upload. */
+    /**
+     * The status from last processing status of enterprise manager upload.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastImportProcessingStatus")
     private final EmBridgeLatestImportProcessingStatus lastImportProcessingStatus;
 
@@ -589,92 +631,93 @@ public final class LogAnalyticsEmBridge
      * The status from last processing status of enterprise manager upload.
      *
      * @return the value
-     */
+     **/
     public EmBridgeLatestImportProcessingStatus getLastImportProcessingStatus() {
         return lastImportProcessingStatus;
     }
 
     /**
-     * Processing status details of enterprise manager upload. This provides additional details for
-     * failed status
-     */
+     * Processing status details of enterprise manager upload. This provides additional details
+     * for failed status
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastImportProcessingDetails")
     private final String lastImportProcessingDetails;
 
     /**
-     * Processing status details of enterprise manager upload. This provides additional details for
-     * failed status
+     * Processing status details of enterprise manager upload. This provides additional details
+     * for failed status
      *
      * @return the value
-     */
+     **/
     public String getLastImportProcessingDetails() {
         return lastImportProcessingDetails;
     }
 
     /**
-     * The last time of enterprise manager upload was processed. This is in the format defined by
-     * RFC3339
-     */
+     * The last time of enterprise manager upload was processed. This is in the format defined by RFC3339
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeImportLastProcessed")
     private final java.util.Date timeImportLastProcessed;
 
     /**
-     * The last time of enterprise manager upload was processed. This is in the format defined by
-     * RFC3339
+     * The last time of enterprise manager upload was processed. This is in the format defined by RFC3339
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeImportLastProcessed() {
         return timeImportLastProcessed;
     }
 
     /**
-     * The timestamp of last enterprise manager upload to OCI Object Store. This is in the format
-     * defined by RFC3339
-     */
+     * The timestamp of last enterprise manager upload to OCI Object Store. This is in the format defined by RFC3339
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEmDataLastExtracted")
     private final java.util.Date timeEmDataLastExtracted;
 
     /**
-     * The timestamp of last enterprise manager upload to OCI Object Store. This is in the format
-     * defined by RFC3339
+     * The timestamp of last enterprise manager upload to OCI Object Store. This is in the format defined by RFC3339
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEmDataLastExtracted() {
         return timeEmDataLastExtracted;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -686,7 +729,6 @@ public final class LogAnalyticsEmBridge
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

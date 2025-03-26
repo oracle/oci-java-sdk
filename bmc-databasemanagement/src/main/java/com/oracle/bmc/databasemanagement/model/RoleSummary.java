@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of each role. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A summary of each role.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoleSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RoleSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RoleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -47,84 +45,87 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the role granted to the user. */
+        /**
+         * The name of the role granted to the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the role granted to the user.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO). */
+        /**
+         * Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminOption")
         private AdminOption adminOption;
 
         /**
          * Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
-         *
          * @param adminOption the value to set
          * @return this builder
-         */
+         **/
         public Builder adminOption(AdminOption adminOption) {
             this.adminOption = adminOption;
             this.__explicitlySet__.add("adminOption");
             return this;
         }
-        /** Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO). */
+        /**
+         * Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("delegateOption")
         private DelegateOption delegateOption;
 
         /**
          * Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
-         *
          * @param delegateOption the value to set
          * @return this builder
-         */
+         **/
         public Builder delegateOption(DelegateOption delegateOption) {
             this.delegateOption = delegateOption;
             this.__explicitlySet__.add("delegateOption");
             return this;
         }
         /**
-         * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not
-         * (NO).
-         */
+         * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultRole")
         private DefaultRole defaultRole;
 
         /**
-         * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not
-         * (NO).
-         *
+         * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
          * @param defaultRole the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultRole(DefaultRole defaultRole) {
             this.defaultRole = defaultRole;
             this.__explicitlySet__.add("defaultRole");
             return this;
         }
         /**
-         * Indicates how the role was granted. Possible values: YES if the role is granted commonly
-         * (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
-         */
+         * Indicates how the role was granted. Possible values:
+         * YES if the role is granted commonly (CONTAINER=ALL is used)
+         * NO if the role is granted locally (CONTAINER=ALL is not used)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("common")
         private Common common;
 
         /**
-         * Indicates how the role was granted. Possible values: YES if the role is granted commonly
-         * (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
+         * Indicates how the role was granted. Possible values:
+         * YES if the role is granted commonly (CONTAINER=ALL is used)
+         * NO if the role is granted locally (CONTAINER=ALL is not used)
          *
          * @param common the value to set
          * @return this builder
-         */
+         **/
         public Builder common(Common common) {
             this.common = common;
             this.__explicitlySet__.add("common");
@@ -132,16 +133,15 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * Indicates whether the granted role is inherited from another container (YES) or not (NO).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inherited")
         private Inherited inherited;
 
         /**
          * Indicates whether the granted role is inherited from another container (YES) or not (NO).
-         *
          * @param inherited the value to set
          * @return this builder
-         */
+         **/
         public Builder inherited(Inherited inherited) {
             this.inherited = inherited;
             this.__explicitlySet__.add("inherited");
@@ -190,7 +190,9 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -199,27 +201,30 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The name of the role granted to the user. */
+    /**
+     * The name of the role granted to the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the role granted to the user.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO). */
-    public enum AdminOption implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
+     **/
+    public enum AdminOption {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -258,27 +263,30 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO). */
+    /**
+     * Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminOption")
     private final AdminOption adminOption;
 
     /**
      * Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public AdminOption getAdminOption() {
         return adminOption;
     }
 
-    /** Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO). */
-    public enum DelegateOption implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
+     **/
+    public enum DelegateOption {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -317,29 +325,30 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO). */
+    /**
+     * Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("delegateOption")
     private final DelegateOption delegateOption;
 
     /**
      * Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public DelegateOption getDelegateOption() {
         return delegateOption;
     }
 
     /**
      * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
-     */
-    public enum DefaultRole implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum DefaultRole {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -380,30 +389,31 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
     };
     /**
      * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRole")
     private final DefaultRole defaultRole;
 
     /**
      * Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public DefaultRole getDefaultRole() {
         return defaultRole;
     }
 
     /**
-     * Indicates how the role was granted. Possible values: YES if the role is granted commonly
-     * (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
-     */
-    public enum Common implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates how the role was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
+     *
+     **/
+    public enum Common {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -442,30 +452,35 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     };
     /**
-     * Indicates how the role was granted. Possible values: YES if the role is granted commonly
-     * (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
-     */
+     * Indicates how the role was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
     private final Common common;
 
     /**
-     * Indicates how the role was granted. Possible values: YES if the role is granted commonly
-     * (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
+     * Indicates how the role was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
      *
      * @return the value
-     */
+     **/
     public Common getCommon() {
         return common;
     }
 
-    /** Indicates whether the granted role is inherited from another container (YES) or not (NO). */
-    public enum Inherited implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the granted role is inherited from another container (YES) or not (NO).
+     **/
+    public enum Inherited {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -504,15 +519,16 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the granted role is inherited from another container (YES) or not (NO). */
+    /**
+     * Indicates whether the granted role is inherited from another container (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
     private final Inherited inherited;
 
     /**
      * Indicates whether the granted role is inherited from another container (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public Inherited getInherited() {
         return inherited;
     }
@@ -524,7 +540,6 @@ public final class RoleSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

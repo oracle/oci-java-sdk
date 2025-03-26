@@ -5,24 +5,24 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of a Redis Database Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of a Redis Database Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RedisConnection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RedisConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -197,218 +197,219 @@ public final class RedisConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Redis technology type. */
+        /**
+         * The Redis technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Redis technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * Comma separated list of Redis server addresses, specified as host:port entries, where
-         * :port is optional. If port is not specified, it defaults to 6379. Used for establishing
-         * the initial connection to the Redis cluster. Example: {@code
-         * "server1.example.com:6379,server2.example.com:6379"}
-         */
+         * Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional.
+         * If port is not specified, it defaults to 6379.
+         * Used for establishing the initial connection to the Redis cluster.
+         * Example: {@code "server1.example.com:6379,server2.example.com:6379"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servers")
         private String servers;
 
         /**
-         * Comma separated list of Redis server addresses, specified as host:port entries, where
-         * :port is optional. If port is not specified, it defaults to 6379. Used for establishing
-         * the initial connection to the Redis cluster. Example: {@code
-         * "server1.example.com:6379,server2.example.com:6379"}
+         * Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional.
+         * If port is not specified, it defaults to 6379.
+         * Used for establishing the initial connection to the Redis cluster.
+         * Example: {@code "server1.example.com:6379,server2.example.com:6379"}
          *
          * @param servers the value to set
          * @return this builder
-         */
+         **/
         public Builder servers(String servers) {
             this.servers = servers;
             this.__explicitlySet__.add("servers");
             return this;
         }
-        /** Security protocol for Redis */
+        /**
+         * Security protocol for Redis
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private SecurityProtocol securityProtocol;
 
         /**
          * Security protocol for Redis
-         *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
-        /** Authentication type for Redis. */
+        /**
+         * Authentication type for Redis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AuthenticationType authenticationType;
 
         /**
          * Authentication type for Redis.
-         *
          * @param authenticationType the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationType(AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
-         */
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Redis cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
         private String redisClusterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Redis cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
          *
          * @param redisClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder redisClusterId(String redisClusterId) {
             this.redisClusterId = redisClusterId;
             this.__explicitlySet__.add("redisClusterId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+         * Note: When provided, 'trustStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+         * Note: When provided, 'trustStore' field must not be provided.
          *
          * @param trustStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStoreSecretId(String trustStoreSecretId) {
             this.trustStoreSecretId = trustStoreSecretId;
             this.__explicitlySet__.add("trustStoreSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the Redis TrustStore password is stored. Note: When provided,
-         * 'trustStorePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the Redis TrustStore password is stored. Note: When provided,
-         * 'trustStorePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
          *
          * @param trustStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
             this.trustStorePasswordSecretId = trustStorePasswordSecretId;
             this.__explicitlySet__.add("trustStorePasswordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+         * Note: When provided, 'keyStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+         * Note: When provided, 'keyStore' field must not be provided.
          *
          * @param keyStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStoreSecretId(String keyStoreSecretId) {
             this.keyStoreSecretId = keyStoreSecretId;
             this.__explicitlySet__.add("keyStoreSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the Redis KeyStore password is stored. Note: When provided,
-         * 'keyStorePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the Redis KeyStore password is stored. Note: When provided,
-         * 'keyStorePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
          *
          * @param keyStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
             this.keyStorePasswordSecretId = keyStorePasswordSecretId;
             this.__explicitlySet__.add("keyStorePasswordSecretId");
@@ -553,7 +554,9 @@ public final class RedisConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -627,14 +630,16 @@ public final class RedisConnection extends Connection {
         this.keyStorePasswordSecretId = keyStorePasswordSecretId;
     }
 
-    /** The Redis technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Redis technology type.
+     **/
+    public enum TechnologyType {
         Redis("REDIS"),
         OciCacheWithRedis("OCI_CACHE_WITH_REDIS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -673,49 +678,53 @@ public final class RedisConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Redis technology type. */
+    /**
+     * The Redis technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Redis technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
     /**
-     * Comma separated list of Redis server addresses, specified as host:port entries, where :port
-     * is optional. If port is not specified, it defaults to 6379. Used for establishing the initial
-     * connection to the Redis cluster. Example: {@code
-     * "server1.example.com:6379,server2.example.com:6379"}
-     */
+     * Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional.
+     * If port is not specified, it defaults to 6379.
+     * Used for establishing the initial connection to the Redis cluster.
+     * Example: {@code "server1.example.com:6379,server2.example.com:6379"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("servers")
     private final String servers;
 
     /**
-     * Comma separated list of Redis server addresses, specified as host:port entries, where :port
-     * is optional. If port is not specified, it defaults to 6379. Used for establishing the initial
-     * connection to the Redis cluster. Example: {@code
-     * "server1.example.com:6379,server2.example.com:6379"}
+     * Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional.
+     * If port is not specified, it defaults to 6379.
+     * Used for establishing the initial connection to the Redis cluster.
+     * Example: {@code "server1.example.com:6379,server2.example.com:6379"}
      *
      * @return the value
-     */
+     **/
     public String getServers() {
         return servers;
     }
 
-    /** Security protocol for Redis */
-    public enum SecurityProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Security protocol for Redis
+     **/
+    public enum SecurityProtocol {
         Plain("PLAIN"),
         Tls("TLS"),
         Mtls("MTLS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -754,27 +763,30 @@ public final class RedisConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** Security protocol for Redis */
+    /**
+     * Security protocol for Redis
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final SecurityProtocol securityProtocol;
 
     /**
      * Security protocol for Redis
-     *
      * @return the value
-     */
+     **/
     public SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
-    /** Authentication type for Redis. */
-    public enum AuthenticationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Authentication type for Redis.
+     **/
+    public enum AuthenticationType {
         None("NONE"),
         Basic("BASIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -813,150 +825,148 @@ public final class RedisConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** Authentication type for Redis. */
+    /**
+     * Authentication type for Redis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AuthenticationType authenticationType;
 
     /**
      * Authentication type for Redis.
-     *
      * @return the value
-     */
+     **/
     public AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
-     */
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Redis cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
     private final String redisClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Redis cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
      *
      * @return the value
-     */
+     **/
     public String getRedisClusterId() {
         return redisClusterId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+     * Note: When provided, 'trustStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+     * Note: When provided, 'trustStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStoreSecretId() {
         return trustStoreSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the Redis TrustStore password is stored. Note: When provided,
-     * 'trustStorePassword' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the Redis TrustStore password is stored. Note: When provided,
-     * 'trustStorePassword' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStorePasswordSecretId() {
         return trustStorePasswordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
-     * must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+     * Note: When provided, 'keyStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
-     * must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+     * Note: When provided, 'keyStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStoreSecretId() {
         return keyStoreSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the Redis KeyStore password is stored. Note: When provided, 'keyStorePassword'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the Redis KeyStore password is stored. Note: When provided, 'keyStorePassword'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStorePasswordSecretId() {
         return keyStorePasswordSecretId;
     }
@@ -968,7 +978,6 @@ public final class RedisConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

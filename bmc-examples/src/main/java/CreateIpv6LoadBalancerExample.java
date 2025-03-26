@@ -15,12 +15,11 @@ import java.util.Arrays;
 
 /**
  * This class provides an example of how to create an IPv6-Enabled Load Balancer.
- *
  * <ul>
- *   <li>The load balancer will be created within the provided compartment OCID
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *       <ul>
+ * <li>The load balancer will be created within the provided compartment OCID</li>
+ * <li>The configuration file used by service clients will be sourced from the default
+ * location (~/.oci/config) and the DEFAULT profile will be used</li>
+ * <ul>
  */
 public class CreateIpv6LoadBalancerExample {
     private static String CONFIG_LOCATION = "~/.oci/config";
@@ -33,10 +32,10 @@ public class CreateIpv6LoadBalancerExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where the load balancer will be created.
-     *       <li>The OCID of the subnet to be assigned to the load balancer.
-     *     </ul>
+     *             <ul>
+     *             <li>The OCID of the compartment where the load balancer will be created.</li>
+     *             <li>The OCID of the subnet to be assigned to the load balancer.</li>
+     *             </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length < 2) {
@@ -46,17 +45,15 @@ public class CreateIpv6LoadBalancerExample {
         final String compartmentId = args[0];
         final String loadBalSubnet = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
+        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
 
         CreateLoadBalancerDetails loadBalancerDetails =
                 CreateLoadBalancerDetails.builder()

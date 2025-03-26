@@ -5,33 +5,30 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A point-in-time copy of a volume group that can then be used to create a new volume group or
- * restore a volume group. For more information, see [Volume
- * Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+ * A point-in-time copy of a volume group that can then be used to create a new volume group
+ * or restore a volume group. For more information, see [Volume Groups](https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API.
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VolumeGroupBackup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VolumeGroupBackup
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VolumeGroupBackup.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VolumeGroupBackup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -95,41 +92,41 @@ public final class VolumeGroupBackup
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that contains the volume group backup. */
+        /**
+         * The OCID of the compartment that contains the volume group backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the volume group backup.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -137,19 +134,20 @@ public final class VolumeGroupBackup
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -157,87 +155,90 @@ public final class VolumeGroupBackup
         }
         /**
          * The date and time the volume group backup will expire and be automatically deleted.
-         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will
-         * always be present for volume group backups that were created automatically by a
-         * scheduled-backup policy. For manually created volume group backups, it will be absent,
-         * signifying that there is no expiration time and the backup will last forever until
-         * manually deleted.
-         */
+         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group
+         * backups that were created automatically by a scheduled-backup policy. For manually
+         * created volume group backups, it will be absent, signifying that there is no expiration
+         * time and the backup will last forever until manually deleted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
         private java.util.Date expirationTime;
 
         /**
          * The date and time the volume group backup will expire and be automatically deleted.
-         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will
-         * always be present for volume group backups that were created automatically by a
-         * scheduled-backup policy. For manually created volume group backups, it will be absent,
-         * signifying that there is no expiration time and the backup will last forever until
-         * manually deleted.
+         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group
+         * backups that were created automatically by a scheduled-backup policy. For manually
+         * created volume group backups, it will be absent, signifying that there is no expiration
+         * time and the backup will last forever until manually deleted.
          *
          * @param expirationTime the value to set
          * @return this builder
-         */
+         **/
         public Builder expirationTime(java.util.Date expirationTime) {
             this.expirationTime = expirationTime;
             this.__explicitlySet__.add("expirationTime");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** The OCID of the volume group backup. */
+        /**
+         * The OCID of the volume group backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the volume group backup.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The current state of a volume group backup. */
+        /**
+         * The current state of a volume group backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of a volume group backup.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The aggregate size of the volume group backup, in MBs. */
+        /**
+         * The aggregate size of the volume group backup, in MBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
 
@@ -246,13 +247,16 @@ public final class VolumeGroupBackup
          *
          * @param sizeInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInMBs(Long sizeInMBs) {
             this.sizeInMBs = sizeInMBs;
             this.__explicitlySet__.add("sizeInMBs");
             return this;
         }
-        /** The aggregate size of the volume group backup, in GBs. */
+        /**
+         * The aggregate size of the volume group backup, in GBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -261,81 +265,81 @@ public final class VolumeGroupBackup
          *
          * @param sizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInGBs(Long sizeInGBs) {
             this.sizeInGBs = sizeInGBs;
             this.__explicitlySet__.add("sizeInGBs");
             return this;
         }
         /**
-         * Specifies whether the volume group backup was created manually, or via scheduled backup
-         * policy.
-         */
+         * Specifies whether the volume group backup was created manually, or via scheduled
+         * backup policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
         /**
-         * Specifies whether the volume group backup was created manually, or via scheduled backup
-         * policy.
+         * Specifies whether the volume group backup was created manually, or via scheduled
+         * backup policy.
          *
          * @param sourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
         /**
-         * The date and time the volume group backup was created. This is the time the actual
-         * point-in-time image of the volume group data was taken. Format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the volume group backup was created. This is the time the actual point-in-time image
+         * of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the volume group backup was created. This is the time the actual
-         * point-in-time image of the volume group data was taken. Format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the volume group backup was created. This is the time the actual point-in-time image
+         * of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the request to create the volume group backup was received. Format
-         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
         private java.util.Date timeRequestReceived;
 
         /**
-         * The date and time the request to create the volume group backup was received. Format
-         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeRequestReceived the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRequestReceived(java.util.Date timeRequestReceived) {
             this.timeRequestReceived = timeRequestReceived;
             this.__explicitlySet__.add("timeRequestReceived");
             return this;
         }
-        /** The type of backup. */
+        /**
+         * The type of backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of backup.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -343,22 +347,23 @@ public final class VolumeGroupBackup
         }
         /**
          * The aggregate size used by the volume group backup, in MBs.
+         * <p>
+         * It is typically smaller than sizeInMBs, depending on the spaceconsumed
+         * on the volume group and whether the volume backup is full or incremental.
          *
-         * <p>It is typically smaller than sizeInMBs, depending on the spaceconsumed on the volume
-         * group and whether the volume backup is full or incremental.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
         private Long uniqueSizeInMbs;
 
         /**
          * The aggregate size used by the volume group backup, in MBs.
-         *
-         * <p>It is typically smaller than sizeInMBs, depending on the spaceconsumed on the volume
-         * group and whether the volume backup is full or incremental.
+         * <p>
+         * It is typically smaller than sizeInMBs, depending on the spaceconsumed
+         * on the volume group and whether the volume backup is full or incremental.
          *
          * @param uniqueSizeInMbs the value to set
          * @return this builder
-         */
+         **/
         public Builder uniqueSizeInMbs(Long uniqueSizeInMbs) {
             this.uniqueSizeInMbs = uniqueSizeInMbs;
             this.__explicitlySet__.add("uniqueSizeInMbs");
@@ -366,67 +371,71 @@ public final class VolumeGroupBackup
         }
         /**
          * The aggregate size used by the volume group backup, in GBs.
+         * <p>
+         * It is typically smaller than sizeInGBs, depending on the spaceconsumed
+         * on the volume group and whether the volume backup is full or incremental.
          *
-         * <p>It is typically smaller than sizeInGBs, depending on the spaceconsumed on the volume
-         * group and whether the volume backup is full or incremental.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGbs")
         private Long uniqueSizeInGbs;
 
         /**
          * The aggregate size used by the volume group backup, in GBs.
-         *
-         * <p>It is typically smaller than sizeInGBs, depending on the spaceconsumed on the volume
-         * group and whether the volume backup is full or incremental.
+         * <p>
+         * It is typically smaller than sizeInGBs, depending on the spaceconsumed
+         * on the volume group and whether the volume backup is full or incremental.
          *
          * @param uniqueSizeInGbs the value to set
          * @return this builder
-         */
+         **/
         public Builder uniqueSizeInGbs(Long uniqueSizeInGbs) {
             this.uniqueSizeInGbs = uniqueSizeInGbs;
             this.__explicitlySet__.add("uniqueSizeInGbs");
             return this;
         }
-        /** OCIDs for the volume backups in this volume group backup. */
+        /**
+         * OCIDs for the volume backups in this volume group backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupIds")
         private java.util.List<String> volumeBackupIds;
 
         /**
          * OCIDs for the volume backups in this volume group backup.
-         *
          * @param volumeBackupIds the value to set
          * @return this builder
-         */
+         **/
         public Builder volumeBackupIds(java.util.List<String> volumeBackupIds) {
             this.volumeBackupIds = volumeBackupIds;
             this.__explicitlySet__.add("volumeBackupIds");
             return this;
         }
-        /** The OCID of the source volume group. */
+        /**
+         * The OCID of the source volume group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
         private String volumeGroupId;
 
         /**
          * The OCID of the source volume group.
-         *
          * @param volumeGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder volumeGroupId(String volumeGroupId) {
             this.volumeGroupId = volumeGroupId;
             this.__explicitlySet__.add("volumeGroupId");
             return this;
         }
-        /** The OCID of the source volume group backup. */
+        /**
+         * The OCID of the source volume group backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeGroupBackupId")
         private String sourceVolumeGroupBackupId;
 
         /**
          * The OCID of the source volume group backup.
-         *
          * @param sourceVolumeGroupBackupId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceVolumeGroupBackupId(String sourceVolumeGroupBackupId) {
             this.sourceVolumeGroupBackupId = sourceVolumeGroupBackupId;
             this.__explicitlySet__.add("sourceVolumeGroupBackupId");
@@ -523,7 +532,9 @@ public final class VolumeGroupBackup
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -532,120 +543,124 @@ public final class VolumeGroupBackup
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that contains the volume group backup. */
+    /**
+     * The OCID of the compartment that contains the volume group backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the volume group backup.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The date and time the volume group backup will expire and be automatically deleted. Format
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be
-     * present for volume group backups that were created automatically by a scheduled-backup
-     * policy. For manually created volume group backups, it will be absent, signifying that there
-     * is no expiration time and the backup will last forever until manually deleted.
-     */
+     * The date and time the volume group backup will expire and be automatically deleted.
+     * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group
+     * backups that were created automatically by a scheduled-backup policy. For manually
+     * created volume group backups, it will be absent, signifying that there is no expiration
+     * time and the backup will last forever until manually deleted.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
     private final java.util.Date expirationTime;
 
     /**
-     * The date and time the volume group backup will expire and be automatically deleted. Format
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be
-     * present for volume group backups that were created automatically by a scheduled-backup
-     * policy. For manually created volume group backups, it will be absent, signifying that there
-     * is no expiration time and the backup will last forever until manually deleted.
+     * The date and time the volume group backup will expire and be automatically deleted.
+     * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group
+     * backups that were created automatically by a scheduled-backup policy. For manually
+     * created volume group backups, it will be absent, signifying that there is no expiration
+     * time and the backup will last forever until manually deleted.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getExpirationTime() {
         return expirationTime;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /** The OCID of the volume group backup. */
+    /**
+     * The OCID of the volume group backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the volume group backup.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The current state of a volume group backup. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of a volume group backup.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Committed("COMMITTED"),
         Available("AVAILABLE"),
@@ -655,8 +670,8 @@ public final class VolumeGroupBackup
         RequestReceived("REQUEST_RECEIVED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -695,20 +710,24 @@ public final class VolumeGroupBackup
             return UnknownEnumValue;
         }
     };
-    /** The current state of a volume group backup. */
+    /**
+     * The current state of a volume group backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of a volume group backup.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The aggregate size of the volume group backup, in MBs. */
+    /**
+     * The aggregate size of the volume group backup, in MBs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     private final Long sizeInMBs;
 
@@ -716,12 +735,15 @@ public final class VolumeGroupBackup
      * The aggregate size of the volume group backup, in MBs.
      *
      * @return the value
-     */
+     **/
     public Long getSizeInMBs() {
         return sizeInMBs;
     }
 
-    /** The aggregate size of the volume group backup, in GBs. */
+    /**
+     * The aggregate size of the volume group backup, in GBs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
 
@@ -729,22 +751,23 @@ public final class VolumeGroupBackup
      * The aggregate size of the volume group backup, in GBs.
      *
      * @return the value
-     */
+     **/
     public Long getSizeInGBs() {
         return sizeInGBs;
     }
 
     /**
-     * Specifies whether the volume group backup was created manually, or via scheduled backup
-     * policy.
-     */
-    public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether the volume group backup was created manually, or via scheduled
+     * backup policy.
+     *
+     **/
+    public enum SourceType {
         Manual("MANUAL"),
         Scheduled("SCHEDULED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -784,66 +807,67 @@ public final class VolumeGroupBackup
         }
     };
     /**
-     * Specifies whether the volume group backup was created manually, or via scheduled backup
-     * policy.
-     */
+     * Specifies whether the volume group backup was created manually, or via scheduled
+     * backup policy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
     /**
-     * Specifies whether the volume group backup was created manually, or via scheduled backup
-     * policy.
+     * Specifies whether the volume group backup was created manually, or via scheduled
+     * backup policy.
      *
      * @return the value
-     */
+     **/
     public SourceType getSourceType() {
         return sourceType;
     }
 
     /**
-     * The date and time the volume group backup was created. This is the time the actual
-     * point-in-time image of the volume group data was taken. Format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the volume group backup was created. This is the time the actual point-in-time image
+     * of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the volume group backup was created. This is the time the actual
-     * point-in-time image of the volume group data was taken. Format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the volume group backup was created. This is the time the actual point-in-time image
+     * of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the request to create the volume group backup was received. Format defined
-     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
     private final java.util.Date timeRequestReceived;
 
     /**
-     * The date and time the request to create the volume group backup was received. Format defined
-     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRequestReceived() {
         return timeRequestReceived;
     }
 
-    /** The type of backup. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of backup.
+     **/
+    public enum Type {
         Full("FULL"),
         Incremental("INCREMENTAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -880,96 +904,102 @@ public final class VolumeGroupBackup
             return UnknownEnumValue;
         }
     };
-    /** The type of backup. */
+    /**
+     * The type of backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of backup.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
     /**
      * The aggregate size used by the volume group backup, in MBs.
+     * <p>
+     * It is typically smaller than sizeInMBs, depending on the spaceconsumed
+     * on the volume group and whether the volume backup is full or incremental.
      *
-     * <p>It is typically smaller than sizeInMBs, depending on the spaceconsumed on the volume group
-     * and whether the volume backup is full or incremental.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
     private final Long uniqueSizeInMbs;
 
     /**
      * The aggregate size used by the volume group backup, in MBs.
-     *
-     * <p>It is typically smaller than sizeInMBs, depending on the spaceconsumed on the volume group
-     * and whether the volume backup is full or incremental.
+     * <p>
+     * It is typically smaller than sizeInMBs, depending on the spaceconsumed
+     * on the volume group and whether the volume backup is full or incremental.
      *
      * @return the value
-     */
+     **/
     public Long getUniqueSizeInMbs() {
         return uniqueSizeInMbs;
     }
 
     /**
      * The aggregate size used by the volume group backup, in GBs.
+     * <p>
+     * It is typically smaller than sizeInGBs, depending on the spaceconsumed
+     * on the volume group and whether the volume backup is full or incremental.
      *
-     * <p>It is typically smaller than sizeInGBs, depending on the spaceconsumed on the volume group
-     * and whether the volume backup is full or incremental.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGbs")
     private final Long uniqueSizeInGbs;
 
     /**
      * The aggregate size used by the volume group backup, in GBs.
-     *
-     * <p>It is typically smaller than sizeInGBs, depending on the spaceconsumed on the volume group
-     * and whether the volume backup is full or incremental.
+     * <p>
+     * It is typically smaller than sizeInGBs, depending on the spaceconsumed
+     * on the volume group and whether the volume backup is full or incremental.
      *
      * @return the value
-     */
+     **/
     public Long getUniqueSizeInGbs() {
         return uniqueSizeInGbs;
     }
 
-    /** OCIDs for the volume backups in this volume group backup. */
+    /**
+     * OCIDs for the volume backups in this volume group backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupIds")
     private final java.util.List<String> volumeBackupIds;
 
     /**
      * OCIDs for the volume backups in this volume group backup.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getVolumeBackupIds() {
         return volumeBackupIds;
     }
 
-    /** The OCID of the source volume group. */
+    /**
+     * The OCID of the source volume group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
     private final String volumeGroupId;
 
     /**
      * The OCID of the source volume group.
-     *
      * @return the value
-     */
+     **/
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
 
-    /** The OCID of the source volume group backup. */
+    /**
+     * The OCID of the source volume group backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeGroupBackupId")
     private final String sourceVolumeGroupBackupId;
 
     /**
      * The OCID of the source volume group backup.
-     *
      * @return the value
-     */
+     **/
     public String getSourceVolumeGroupBackupId() {
         return sourceVolumeGroupBackupId;
     }
@@ -981,7 +1011,6 @@ public final class VolumeGroupBackup
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

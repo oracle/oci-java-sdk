@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The dimensions available for SQL collection analytics. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The dimensions available for SQL collection analytics.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlCollectionLogDimensions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlCollectionLogDimensions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlCollectionLogDimensions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clientIp", "clientOsUserName", "clientProgram"})
     public SqlCollectionLogDimensions(
@@ -34,46 +33,49 @@ public final class SqlCollectionLogDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The IP addresses for the SQL collection. */
+        /**
+         * The IP addresses for the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientIp")
         private String clientIp;
 
         /**
          * The IP addresses for the SQL collection.
-         *
          * @param clientIp the value to set
          * @return this builder
-         */
+         **/
         public Builder clientIp(String clientIp) {
             this.clientIp = clientIp;
             this.__explicitlySet__.add("clientIp");
             return this;
         }
-        /** The operating system user names for the SQL collection. */
+        /**
+         * The operating system user names for the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientOsUserName")
         private String clientOsUserName;
 
         /**
          * The operating system user names for the SQL collection.
-         *
          * @param clientOsUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder clientOsUserName(String clientOsUserName) {
             this.clientOsUserName = clientOsUserName;
             this.__explicitlySet__.add("clientOsUserName");
             return this;
         }
-        /** The allowed client programs for the SQL collection. */
+        /**
+         * The allowed client programs for the SQL collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
         private String clientProgram;
 
         /**
          * The allowed client programs for the SQL collection.
-         *
          * @param clientProgram the value to set
          * @return this builder
-         */
+         **/
         public Builder clientProgram(String clientProgram) {
             this.clientProgram = clientProgram;
             this.__explicitlySet__.add("clientProgram");
@@ -108,7 +110,9 @@ public final class SqlCollectionLogDimensions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +121,44 @@ public final class SqlCollectionLogDimensions
         return new Builder().copy(this);
     }
 
-    /** The IP addresses for the SQL collection. */
+    /**
+     * The IP addresses for the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientIp")
     private final String clientIp;
 
     /**
      * The IP addresses for the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getClientIp() {
         return clientIp;
     }
 
-    /** The operating system user names for the SQL collection. */
+    /**
+     * The operating system user names for the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientOsUserName")
     private final String clientOsUserName;
 
     /**
      * The operating system user names for the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getClientOsUserName() {
         return clientOsUserName;
     }
 
-    /** The allowed client programs for the SQL collection. */
+    /**
+     * The allowed client programs for the SQL collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
     private final String clientProgram;
 
     /**
      * The allowed client programs for the SQL collection.
-     *
      * @return the value
-     */
+     **/
     public String getClientProgram() {
         return clientProgram;
     }
@@ -163,7 +170,6 @@ public final class SqlCollectionLogDimensions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

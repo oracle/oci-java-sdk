@@ -5,23 +5,22 @@
 package com.oracle.bmc.recovery.model;
 
 /**
- * The details for scheduling deletion of the protected database <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+ * The details for scheduling deletion of the protected database
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScheduleProtectedDatabaseDeletionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ScheduleProtectedDatabaseDeletionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScheduleProtectedDatabaseDeletionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"deletionSchedule"})
     public ScheduleProtectedDatabaseDeletionDetails(DeletionSchedule deletionSchedule) {
@@ -32,27 +31,22 @@ public final class ScheduleProtectedDatabaseDeletionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Defines a preferred schedule to delete a protected database after you terminate the
-         * source database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete
-         * operation can occur 72 hours (3 days) after the source database is terminated. * The
-         * alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to
-         * delete a protected database only after the policy-defined backup retention period
-         * expires.
-         */
+         * Defines a preferred schedule to delete a protected database after you terminate the source database.
+         * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+         * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletionSchedule")
         private DeletionSchedule deletionSchedule;
 
         /**
-         * Defines a preferred schedule to delete a protected database after you terminate the
-         * source database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete
-         * operation can occur 72 hours (3 days) after the source database is terminated. * The
-         * alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to
-         * delete a protected database only after the policy-defined backup retention period
-         * expires.
+         * Defines a preferred schedule to delete a protected database after you terminate the source database.
+         * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+         * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
          *
          * @param deletionSchedule the value to set
          * @return this builder
-         */
+         **/
         public Builder deletionSchedule(DeletionSchedule deletionSchedule) {
             this.deletionSchedule = deletionSchedule;
             this.__explicitlySet__.add("deletionSchedule");
@@ -80,7 +74,9 @@ public final class ScheduleProtectedDatabaseDeletionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -90,24 +86,21 @@ public final class ScheduleProtectedDatabaseDeletionDetails
     }
 
     /**
-     * Defines a preferred schedule to delete a protected database after you terminate the source
-     * database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can
-     * occur 72 hours (3 days) after the source database is terminated. * The alternate schedule is
-     * DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database
-     * only after the policy-defined backup retention period expires.
-     */
+     * Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletionSchedule")
     private final DeletionSchedule deletionSchedule;
 
     /**
-     * Defines a preferred schedule to delete a protected database after you terminate the source
-     * database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can
-     * occur 72 hours (3 days) after the source database is terminated. * The alternate schedule is
-     * DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database
-     * only after the policy-defined backup retention period expires.
+     * Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
      *
      * @return the value
-     */
+     **/
     public DeletionSchedule getDeletionSchedule() {
         return deletionSchedule;
     }
@@ -119,7 +112,6 @@ public final class ScheduleProtectedDatabaseDeletionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,19 +6,16 @@ package com.oracle.bmc.datascience.responses;
 
 import com.oracle.bmc.datascience.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional
-     * pages of results remain. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional
-     * pages of results remain. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -27,16 +24,13 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous
-     * pages of results exist. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcPrevPage;
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous
-     * pages of results exist. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -45,14 +39,15 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
      *
      * @return the value
      */
@@ -60,12 +55,13 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances. */
+    /**
+     * A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances.
+     */
     private java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary> items;
 
     /**
-     * A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances.
-     *
+     * A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary> getItems() {
@@ -82,7 +78,7 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
     })
     private ListModelDeploymentShapesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPrevPage,
             String opcRequestId,
@@ -94,36 +90,29 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListModelDeploymentShapesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional
-         * pages of results remain. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional
-         * pages of results remain. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -134,16 +123,13 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response,
-         * previous pages of results exist. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcPrevPage;
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response,
-         * previous pages of results exist. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -154,14 +140,15 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -172,13 +159,12 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances.
+         * A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances.
          */
         private java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary> items;
 
         /**
-         * A list of {@code com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} instances.
-         *
+         * A list of com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary instances.
          * @param items the value to set
          * @return this builder
          */
@@ -191,10 +177,8 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListModelDeploymentShapesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -208,10 +192,8 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListModelDeploymentShapesResponse build() {
             return new ListModelDeploymentShapesResponse(
                     __httpStatusCode__, headers, opcNextPage, opcPrevPage, opcRequestId, items);
@@ -220,7 +202,6 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

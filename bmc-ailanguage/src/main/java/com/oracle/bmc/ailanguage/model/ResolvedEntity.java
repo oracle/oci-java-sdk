@@ -5,22 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Resolved entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Resolved entity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResolvedEntity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResolvedEntity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResolvedEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "offset", "length", "text", "type", "value"})
     public ResolvedEntity(
@@ -41,97 +38,97 @@ public final class ResolvedEntity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** id of the resolved entity in input */
+        /**
+         * id of the resolved entity in input
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * id of the resolved entity in input
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** offset of resolved entity in input */
+        /**
+         * offset of resolved entity in input
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
         /**
          * offset of resolved entity in input
-         *
          * @param offset the value to set
          * @return this builder
-         */
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-        /** length of resolved entity in input */
+        /**
+         * length of resolved entity in input
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
         /**
          * length of resolved entity in input
-         *
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-        /** Entity text like name of person, location, and so on. */
+        /**
+         * Entity text like name of person, location, and so on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Entity text like name of person, location, and so on.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-        /** Type of entity text like PER, LOC. */
+        /**
+         * Type of entity text like PER, LOC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Type of entity text like PER, LOC.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * key and value pair for resolved entities. keys can be specific for each type of resolved
-         * entity. Values can be instances of resolvedEntity, arrays of resolvedEntities,
-         * primitives, or custom JSON.
-         */
+         * key and value pair for resolved entities. keys can be specific for each type of resolved entity. Values can be instances of resolvedEntity, arrays of resolvedEntities, primitives, or custom JSON.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private java.util.Map<String, String> value;
 
         /**
-         * key and value pair for resolved entities. keys can be specific for each type of resolved
-         * entity. Values can be instances of resolvedEntity, arrays of resolvedEntities,
-         * primitives, or custom JSON.
-         *
+         * key and value pair for resolved entities. keys can be specific for each type of resolved entity. Values can be instances of resolvedEntity, arrays of resolvedEntities, primitives, or custom JSON.
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(java.util.Map<String, String> value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -175,7 +172,9 @@ public final class ResolvedEntity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -184,86 +183,86 @@ public final class ResolvedEntity
         return new Builder().copy(this);
     }
 
-    /** id of the resolved entity in input */
+    /**
+     * id of the resolved entity in input
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * id of the resolved entity in input
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** offset of resolved entity in input */
+    /**
+     * offset of resolved entity in input
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
     /**
      * offset of resolved entity in input
-     *
      * @return the value
-     */
+     **/
     public Integer getOffset() {
         return offset;
     }
 
-    /** length of resolved entity in input */
+    /**
+     * length of resolved entity in input
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
     /**
      * length of resolved entity in input
-     *
      * @return the value
-     */
+     **/
     public Integer getLength() {
         return length;
     }
 
-    /** Entity text like name of person, location, and so on. */
+    /**
+     * Entity text like name of person, location, and so on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Entity text like name of person, location, and so on.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
-    /** Type of entity text like PER, LOC. */
+    /**
+     * Type of entity text like PER, LOC.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of entity text like PER, LOC.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
-     * key and value pair for resolved entities. keys can be specific for each type of resolved
-     * entity. Values can be instances of resolvedEntity, arrays of resolvedEntities, primitives, or
-     * custom JSON.
-     */
+     * key and value pair for resolved entities. keys can be specific for each type of resolved entity. Values can be instances of resolvedEntity, arrays of resolvedEntities, primitives, or custom JSON.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final java.util.Map<String, String> value;
 
     /**
-     * key and value pair for resolved entities. keys can be specific for each type of resolved
-     * entity. Values can be instances of resolvedEntity, arrays of resolvedEntities, primitives, or
-     * custom JSON.
-     *
+     * key and value pair for resolved entities. keys can be specific for each type of resolved entity. Values can be instances of resolvedEntity, arrays of resolvedEntities, primitives, or custom JSON.
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getValue() {
         return value;
     }
@@ -275,7 +274,6 @@ public final class ResolvedEntity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

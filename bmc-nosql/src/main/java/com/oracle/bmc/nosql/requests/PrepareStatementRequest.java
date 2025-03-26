@@ -6,38 +6,52 @@ package com.oracle.bmc.nosql.requests;
 
 import com.oracle.bmc.nosql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/PrepareStatementExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use PrepareStatementRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/nosql/PrepareStatementExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PrepareStatementRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of a table's compartment. */
+    /**
+     * The ID of a table's compartment.
+     */
     private String compartmentId;
 
-    /** The ID of a table's compartment. */
+    /**
+     * The ID of a table's compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A NoSQL SQL statement. */
+    /**
+     * A NoSQL SQL statement.
+     */
     private String statement;
 
-    /** A NoSQL SQL statement. */
+    /**
+     * A NoSQL SQL statement.
+     */
     public String getStatement() {
         return statement;
     }
-    /** Include a query execution plan in the result. */
+    /**
+     * Include a query execution plan in the result.
+     */
     private Boolean isGetQueryPlan;
 
-    /** Include a query execution plan in the result. */
+    /**
+     * Include a query execution plan in the result.
+     */
     public Boolean getIsGetQueryPlan() {
         return isGetQueryPlan;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -45,15 +59,17 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PrepareStatementRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of a table's compartment. */
+        /**
+         * The ID of a table's compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of a table's compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -62,12 +78,13 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A NoSQL SQL statement. */
+        /**
+         * A NoSQL SQL statement.
+         */
         private String statement = null;
 
         /**
          * A NoSQL SQL statement.
-         *
          * @param statement the value to set
          * @return this builder instance
          */
@@ -76,12 +93,13 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** Include a query execution plan in the result. */
+        /**
+         * Include a query execution plan in the result.
+         */
         private Boolean isGetQueryPlan = null;
 
         /**
          * Include a query execution plan in the result.
-         *
          * @param isGetQueryPlan the value to set
          * @return this builder instance
          */
@@ -90,12 +108,13 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -106,19 +125,18 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -130,7 +148,6 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PrepareStatementRequest o) {
@@ -146,11 +163,10 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of PrepareStatementRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PrepareStatementRequest
          */
@@ -164,8 +180,7 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of PrepareStatementRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PrepareStatementRequest
@@ -183,7 +198,6 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -196,7 +210,6 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

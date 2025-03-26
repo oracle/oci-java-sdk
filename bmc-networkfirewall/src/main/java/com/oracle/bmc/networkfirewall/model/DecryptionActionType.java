@@ -5,11 +5,13 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Action: * NO_DECRYPT - Matching traffic is not decrypted. * DECRYPT - Matching traffic is
- * decrypted with the specified {@code secret} according to the specified {@code decryptionProfile}.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum DecryptionActionType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Action:
+ * * NO_DECRYPT - Matching traffic is not decrypted.
+ * * DECRYPT - Matching traffic is decrypted with the specified {@code secret} according to the specified {@code decryptionProfile}.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum DecryptionActionType {
     NoDecrypt("NO_DECRYPT"),
     Decrypt("DECRYPT"),
 

@@ -5,25 +5,25 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Summary of assigned subscription information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * Summary of assigned subscription information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ClassicAssignedSubscriptionSummary.Builder.class)
+    builder = ClassicAssignedSubscriptionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entityVersion")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityVersion"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ClassicAssignedSubscriptionSummary extends AssignedSubscriptionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -99,121 +99,129 @@ public final class ClassicAssignedSubscriptionSummary extends AssignedSubscripti
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Lifecycle state of the subscription. */
+        /**
+         * Lifecycle state of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ClassicSubscriptionLifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the subscription.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(ClassicSubscriptionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Subscription ID. */
+        /**
+         * Subscription ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
         private String classicSubscriptionId;
 
         /**
          * Subscription ID.
-         *
          * @param classicSubscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder classicSubscriptionId(String classicSubscriptionId) {
             this.classicSubscriptionId = classicSubscriptionId;
             this.__explicitlySet__.add("classicSubscriptionId");
             return this;
         }
-        /** Specifies whether or not the subscription is legacy. */
+        /**
+         * Specifies whether or not the subscription is legacy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClassicSubscription")
         private Boolean isClassicSubscription;
 
         /**
          * Specifies whether or not the subscription is legacy.
-         *
          * @param isClassicSubscription the value to set
          * @return this builder
-         */
+         **/
         public Builder isClassicSubscription(Boolean isClassicSubscription) {
             this.isClassicSubscription = isClassicSubscription;
             this.__explicitlySet__.add("isClassicSubscription");
             return this;
         }
-        /** Region for the subscription. */
+        /**
+         * Region for the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionAssignment")
         private String regionAssignment;
 
         /**
          * Region for the subscription.
-         *
          * @param regionAssignment the value to set
          * @return this builder
-         */
+         **/
         public Builder regionAssignment(String regionAssignment) {
             this.regionAssignment = regionAssignment;
             this.__explicitlySet__.add("regionAssignment");
             return this;
         }
-        /** Subscription start time. */
+        /**
+         * Subscription start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
         private java.util.Date startDate;
 
         /**
          * Subscription start time.
-         *
          * @param startDate the value to set
          * @return this builder
-         */
+         **/
         public Builder startDate(java.util.Date startDate) {
             this.startDate = startDate;
             this.__explicitlySet__.add("startDate");
             return this;
         }
-        /** Subscription end time. */
+        /**
+         * Subscription end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endDate")
         private java.util.Date endDate;
 
         /**
          * Subscription end time.
-         *
          * @param endDate the value to set
          * @return this builder
-         */
+         **/
         public Builder endDate(java.util.Date endDate) {
             this.endDate = endDate;
             this.__explicitlySet__.add("endDate");
             return this;
         }
-        /** Customer service identifier for the customer associated with the subscription. */
+        /**
+         * Customer service identifier for the customer associated with the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
         private String csiNumber;
 
         /**
          * Customer service identifier for the customer associated with the subscription.
-         *
          * @param csiNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder csiNumber(String csiNumber) {
             this.csiNumber = csiNumber;
             this.__explicitlySet__.add("csiNumber");
             return this;
         }
-        /** Service or component which is used to provision and manage the subscription. */
+        /**
+         * Service or component which is used to provision and manage the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedBy")
         private ClassicSubscriptionManagedBy managedBy;
 
         /**
          * Service or component which is used to provision and manage the subscription.
-         *
          * @param managedBy the value to set
          * @return this builder
-         */
+         **/
         public Builder managedBy(ClassicSubscriptionManagedBy managedBy) {
             this.managedBy = managedBy;
             this.__explicitlySet__.add("managedBy");
@@ -302,7 +310,9 @@ public final class ClassicAssignedSubscriptionSummary extends AssignedSubscripti
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -348,106 +358,114 @@ public final class ClassicAssignedSubscriptionSummary extends AssignedSubscripti
         this.managedBy = managedBy;
     }
 
-    /** Lifecycle state of the subscription. */
+    /**
+     * Lifecycle state of the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ClassicSubscriptionLifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the subscription.
-     *
      * @return the value
-     */
+     **/
     public ClassicSubscriptionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Subscription ID. */
+    /**
+     * Subscription ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
     private final String classicSubscriptionId;
 
     /**
      * Subscription ID.
-     *
      * @return the value
-     */
+     **/
     public String getClassicSubscriptionId() {
         return classicSubscriptionId;
     }
 
-    /** Specifies whether or not the subscription is legacy. */
+    /**
+     * Specifies whether or not the subscription is legacy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClassicSubscription")
     private final Boolean isClassicSubscription;
 
     /**
      * Specifies whether or not the subscription is legacy.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsClassicSubscription() {
         return isClassicSubscription;
     }
 
-    /** Region for the subscription. */
+    /**
+     * Region for the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionAssignment")
     private final String regionAssignment;
 
     /**
      * Region for the subscription.
-     *
      * @return the value
-     */
+     **/
     public String getRegionAssignment() {
         return regionAssignment;
     }
 
-    /** Subscription start time. */
+    /**
+     * Subscription start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     private final java.util.Date startDate;
 
     /**
      * Subscription start time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getStartDate() {
         return startDate;
     }
 
-    /** Subscription end time. */
+    /**
+     * Subscription end time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     private final java.util.Date endDate;
 
     /**
      * Subscription end time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getEndDate() {
         return endDate;
     }
 
-    /** Customer service identifier for the customer associated with the subscription. */
+    /**
+     * Customer service identifier for the customer associated with the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
     private final String csiNumber;
 
     /**
      * Customer service identifier for the customer associated with the subscription.
-     *
      * @return the value
-     */
+     **/
     public String getCsiNumber() {
         return csiNumber;
     }
 
-    /** Service or component which is used to provision and manage the subscription. */
+    /**
+     * Service or component which is used to provision and manage the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedBy")
     private final ClassicSubscriptionManagedBy managedBy;
 
     /**
      * Service or component which is used to provision and manage the subscription.
-     *
      * @return the value
-     */
+     **/
     public ClassicSubscriptionManagedBy getManagedBy() {
         return managedBy;
     }
@@ -459,7 +477,6 @@ public final class ClassicAssignedSubscriptionSummary extends AssignedSubscripti
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

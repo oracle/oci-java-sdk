@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/** The lifecycle state of an workloadMapping. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-public enum WorkloadMappingLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The lifecycle state of an workloadMapping.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+public enum WorkloadMappingLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Failed("FAILED"),

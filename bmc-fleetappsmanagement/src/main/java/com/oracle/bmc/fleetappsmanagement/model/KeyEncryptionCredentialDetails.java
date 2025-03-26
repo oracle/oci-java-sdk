@@ -5,68 +5,71 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details for the Credentials that use key encryption. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details for the Credentials that use key encryption.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KeyEncryptionCredentialDetails.Builder.class)
+    builder = KeyEncryptionCredentialDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "credentialType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "credentialType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KeyEncryptionCredentialDetails extends CredentialDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The value corresponding to the credential. */
+        /**
+         * The value corresponding to the credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value corresponding to the credential.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** OCID for the Vault Key that will be used to encrypt/decrypt the value given. */
+        /**
+         * OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
          * OCID for the Vault Key that will be used to encrypt/decrypt the value given.
-         *
          * @param keyId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-        /** The Vault Key version. */
+        /**
+         * The Vault Key version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersion")
         private String keyVersion;
 
         /**
          * The Vault Key version.
-         *
          * @param keyVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder keyVersion(String keyVersion) {
             this.keyVersion = keyVersion;
             this.__explicitlySet__.add("keyVersion");
@@ -74,16 +77,15 @@ public final class KeyEncryptionCredentialDetails extends CredentialDetails {
         }
         /**
          * OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
          * OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-         *
          * @param vaultId the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
@@ -121,7 +123,9 @@ public final class KeyEncryptionCredentialDetails extends CredentialDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,54 +144,58 @@ public final class KeyEncryptionCredentialDetails extends CredentialDetails {
         this.vaultId = vaultId;
     }
 
-    /** The value corresponding to the credential. */
+    /**
+     * The value corresponding to the credential.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value corresponding to the credential.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** OCID for the Vault Key that will be used to encrypt/decrypt the value given. */
+    /**
+     * OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
      * OCID for the Vault Key that will be used to encrypt/decrypt the value given.
-     *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
-    /** The Vault Key version. */
+    /**
+     * The Vault Key version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersion")
     private final String keyVersion;
 
     /**
      * The Vault Key version.
-     *
      * @return the value
-     */
+     **/
     public String getKeyVersion() {
         return keyVersion;
     }
 
-    /** OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given. */
+    /**
+     * OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
      * OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-     *
      * @return the value
-     */
+     **/
     public String getVaultId() {
         return vaultId;
     }
@@ -199,7 +207,6 @@ public final class KeyEncryptionCredentialDetails extends CredentialDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

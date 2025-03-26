@@ -6,58 +6,72 @@ package com.oracle.bmc.loggingingestion.requests;
 
 import com.oracle.bmc.loggingingestion.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingingestion/PutLogsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use PutLogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingingestion/PutLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutLogsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 public class PutLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loggingingestion.model.PutLogsDetails> {
 
-    /** OCID of a log to work with. */
+    /**
+     * OCID of a log to work with.
+     */
     private String logId;
 
-    /** OCID of a log to work with. */
+    /**
+     * OCID of a log to work with.
+     */
     public String getLogId() {
         return logId;
     }
-    /** The logs to emit. */
+    /**
+     * The logs to emit.
+     */
     private com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails;
 
-    /** The logs to emit. */
+    /**
+     * The logs to emit.
+     */
     public com.oracle.bmc.loggingingestion.model.PutLogsDetails getPutLogsDetails() {
         return putLogsDetails;
     }
     /**
-     * Effective timestamp, for when the agent started processing the log segment being sent. An
-     * RFC3339-formatted date-time string with milliseconds precision.
+     * Effective timestamp, for when the agent started processing the log
+     * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
+     *
      */
     private java.util.Date timestampOpcAgentProcessing;
 
     /**
-     * Effective timestamp, for when the agent started processing the log segment being sent. An
-     * RFC3339-formatted date-time string with milliseconds precision.
+     * Effective timestamp, for when the agent started processing the log
+     * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
+     *
      */
     public java.util.Date getTimestampOpcAgentProcessing() {
         return timestampOpcAgentProcessing;
     }
-    /** Version of the agent sending the request. */
+    /**
+     * Version of the agent sending the request.
+     */
     private String opcAgentVersion;
 
-    /** Version of the agent sending the request. */
+    /**
+     * Version of the agent sending the request.
+     */
     public String getOpcAgentVersion() {
         return opcAgentVersion;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -65,7 +79,6 @@ public class PutLogsRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -77,15 +90,17 @@ public class PutLogsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PutLogsRequest, com.oracle.bmc.loggingingestion.model.PutLogsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of a log to work with. */
+        /**
+         * OCID of a log to work with.
+         */
         private String logId = null;
 
         /**
          * OCID of a log to work with.
-         *
          * @param logId the value to set
          * @return this builder instance
          */
@@ -94,12 +109,13 @@ public class PutLogsRequest
             return this;
         }
 
-        /** The logs to emit. */
+        /**
+         * The logs to emit.
+         */
         private com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails = null;
 
         /**
          * The logs to emit.
-         *
          * @param putLogsDetails the value to set
          * @return this builder instance
          */
@@ -110,14 +126,15 @@ public class PutLogsRequest
         }
 
         /**
-         * Effective timestamp, for when the agent started processing the log segment being sent. An
-         * RFC3339-formatted date-time string with milliseconds precision.
+         * Effective timestamp, for when the agent started processing the log
+         * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
+         *
          */
         private java.util.Date timestampOpcAgentProcessing = null;
 
         /**
-         * Effective timestamp, for when the agent started processing the log segment being sent. An
-         * RFC3339-formatted date-time string with milliseconds precision.
+         * Effective timestamp, for when the agent started processing the log
+         * segment being sent. An RFC3339-formatted date-time string with milliseconds precision.
          *
          * @param timestampOpcAgentProcessing the value to set
          * @return this builder instance
@@ -127,12 +144,13 @@ public class PutLogsRequest
             return this;
         }
 
-        /** Version of the agent sending the request. */
+        /**
+         * Version of the agent sending the request.
+         */
         private String opcAgentVersion = null;
 
         /**
          * Version of the agent sending the request.
-         *
          * @param opcAgentVersion the value to set
          * @return this builder instance
          */
@@ -142,14 +160,15 @@ public class PutLogsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -161,19 +180,18 @@ public class PutLogsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -185,7 +203,6 @@ public class PutLogsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PutLogsRequest o) {
@@ -202,11 +219,10 @@ public class PutLogsRequest
         /**
          * Build the instance of PutLogsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PutLogsRequest
          */
@@ -219,7 +235,6 @@ public class PutLogsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -232,8 +247,7 @@ public class PutLogsRequest
         /**
          * Build the instance of PutLogsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PutLogsRequest
@@ -246,14 +260,12 @@ public class PutLogsRequest
             request.opcAgentVersion = opcAgentVersion;
             request.opcRequestId = opcRequestId;
             return request;
-            // new PutLogsRequest(logId, putLogsDetails, timestampOpcAgentProcessing,
-            // opcAgentVersion, opcRequestId);
+            // new PutLogsRequest(logId, putLogsDetails, timestampOpcAgentProcessing, opcAgentVersion, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -267,7 +279,6 @@ public class PutLogsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

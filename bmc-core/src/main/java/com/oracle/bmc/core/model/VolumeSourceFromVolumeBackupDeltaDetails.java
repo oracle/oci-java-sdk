@@ -5,74 +5,73 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Specifies the volume backups (first & second) and block size in bytes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Specifies the volume backups (first & second) and block size in bytes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VolumeSourceFromVolumeBackupDeltaDetails.Builder.class)
+    builder = VolumeSourceFromVolumeBackupDeltaDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VolumeSourceFromVolumeBackupDeltaDetails extends VolumeSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the first volume backup. */
+        /**
+         * The OCID of the first volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstBackupId")
         private String firstBackupId;
 
         /**
          * The OCID of the first volume backup.
-         *
          * @param firstBackupId the value to set
          * @return this builder
-         */
+         **/
         public Builder firstBackupId(String firstBackupId) {
             this.firstBackupId = firstBackupId;
             this.__explicitlySet__.add("firstBackupId");
             return this;
         }
-        /** The OCID of the second volume backup. */
+        /**
+         * The OCID of the second volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secondBackupId")
         private String secondBackupId;
 
         /**
          * The OCID of the second volume backup.
-         *
          * @param secondBackupId the value to set
          * @return this builder
-         */
+         **/
         public Builder secondBackupId(String secondBackupId) {
             this.secondBackupId = secondBackupId;
             this.__explicitlySet__.add("secondBackupId");
             return this;
         }
         /**
-         * Block size in bytes to be considered while performing volume restore. The value must be a
-         * power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to
-         * 4,096 bytes (4 KiB).
-         */
+         * Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeBlockSizeInBytes")
         private Long changeBlockSizeInBytes;
 
         /**
-         * Block size in bytes to be considered while performing volume restore. The value must be a
-         * power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to
-         * 4,096 bytes (4 KiB).
+         * Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
          *
          * @param changeBlockSizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder changeBlockSizeInBytes(Long changeBlockSizeInBytes) {
             this.changeBlockSizeInBytes = changeBlockSizeInBytes;
             this.__explicitlySet__.add("changeBlockSizeInBytes");
@@ -107,7 +106,9 @@ public final class VolumeSourceFromVolumeBackupDeltaDetails extends VolumeSource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,47 +126,46 @@ public final class VolumeSourceFromVolumeBackupDeltaDetails extends VolumeSource
         this.changeBlockSizeInBytes = changeBlockSizeInBytes;
     }
 
-    /** The OCID of the first volume backup. */
+    /**
+     * The OCID of the first volume backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstBackupId")
     private final String firstBackupId;
 
     /**
      * The OCID of the first volume backup.
-     *
      * @return the value
-     */
+     **/
     public String getFirstBackupId() {
         return firstBackupId;
     }
 
-    /** The OCID of the second volume backup. */
+    /**
+     * The OCID of the second volume backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondBackupId")
     private final String secondBackupId;
 
     /**
      * The OCID of the second volume backup.
-     *
      * @return the value
-     */
+     **/
     public String getSecondBackupId() {
         return secondBackupId;
     }
 
     /**
-     * Block size in bytes to be considered while performing volume restore. The value must be a
-     * power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to
-     * 4,096 bytes (4 KiB).
-     */
+     * Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeBlockSizeInBytes")
     private final Long changeBlockSizeInBytes;
 
     /**
-     * Block size in bytes to be considered while performing volume restore. The value must be a
-     * power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to
-     * 4,096 bytes (4 KiB).
+     * Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
      *
      * @return the value
-     */
+     **/
     public Long getChangeBlockSizeInBytes() {
         return changeBlockSizeInBytes;
     }
@@ -177,7 +177,6 @@ public final class VolumeSourceFromVolumeBackupDeltaDetails extends VolumeSource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

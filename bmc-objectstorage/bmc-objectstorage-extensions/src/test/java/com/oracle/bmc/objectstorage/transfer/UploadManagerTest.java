@@ -4,22 +4,32 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
+import com.oracle.bmc.internal.EndpointBuilder;
+import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
+import com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.internal.RestClient;
+import com.oracle.bmc.http.internal.RestClientFactory;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import com.oracle.bmc.http.internal.WrappedWebTarget;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
-import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
+import com.oracle.bmc.objectstorage.internal.http.CommitMultipartUploadConverter;
+import com.oracle.bmc.objectstorage.internal.http.CreateMultipartUploadConverter;
+import com.oracle.bmc.objectstorage.internal.http.UploadPartConverter;
 import com.oracle.bmc.objectstorage.model.MultipartUpload;
 import com.oracle.bmc.objectstorage.model.StorageTier;
 import com.oracle.bmc.objectstorage.requests.AbortMultipartUploadRequest;
+import com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
@@ -34,7 +44,6 @@ import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
 import com.oracle.bmc.retrier.DefaultRetryCondition;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.StreamUtils;
-import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -44,7 +53,9 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.io.ByteArrayInputStream;
@@ -78,7 +89,14 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({Serializer.class})
+@PrepareForTest({
+    RestClientFactory.class,
+    CreateMultipartUploadConverter.class,
+    UploadPartConverter.class,
+    CommitMultipartUploadConverter.class,
+    EndpointBuilder.class
+})
+@PowerMockIgnore({"jdk.internal.reflect.*"})
 public class UploadManagerTest {
     private static final String CONTENT =
             StringUtils.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB
@@ -417,7 +435,7 @@ public class UploadManagerTest {
                             public PutObjectResponse answer(InvocationOnMock invocationOnMock)
                                     throws Throwable {
                                 final PutObjectRequest putObjectRequest =
-                                        invocationOnMock.getArgument(0);
+                                        invocationOnMock.getArgumentAt(0, null);
                                 final InputStream inputStream = putObjectRequest.getPutObjectBody();
                                 byte[] buffer = new byte[READ_BLOCK_SIZE];
                                 while (inputStream.read(buffer) != -1) {
@@ -455,7 +473,8 @@ public class UploadManagerTest {
                             @Override
                             public Integer answer(InvocationOnMock invocationOnMock)
                                     throws Throwable {
-                                final InputStream inputStream = invocationOnMock.getArgument(0);
+                                final InputStream inputStream =
+                                        invocationOnMock.getArgumentAt(0, null);
                                 final byte[] buffer = new byte[READ_BLOCK_SIZE];
                                 while (inputStream.read(buffer) != -1) {
                                     onProgressCallbackCount.incrementAndGet();
@@ -474,7 +493,7 @@ public class UploadManagerTest {
                 .onProgress(and(gt(0L), leq(CONTENT_LENGTH)), eq(CONTENT_LENGTH));
     }
 
-    // @Test
+    @Test
     public void multipartUpload_progressReporter_withRetries() throws Exception {
         // we have to build a full client to test retries
         // to make sure we don't accidentally use the interface mock, set it to null
@@ -486,8 +505,9 @@ public class UploadManagerTest {
         ClientConfigurator clientConfigurator = null;
         RequestSignerFactory defaultRequestSignerFactory = mock(RequestSignerFactory.class);
         RequestSigner mockRequestSigner = mock(RequestSigner.class);
-        when(defaultRequestSignerFactory.createRequestSigner(
-                        any(Service.class), eq(authenticationDetailsProvider)))
+        when(
+                        defaultRequestSignerFactory.createRequestSigner(
+                                any(Service.class), eq(authenticationDetailsProvider)))
                 .thenReturn(mockRequestSigner);
 
         Map<
@@ -503,13 +523,22 @@ public class UploadManagerTest {
         String endpoint = null;
         java.util.concurrent.ExecutorService executorService = null;
 
-        // PowerMockito.whenNew(RestClient.class).withAnyArguments().thenReturn(mockRestClient);
+        RestClient mockRestClient = PowerMockito.mock(RestClient.class);
+        PowerMockito.whenNew(RestClient.class).withAnyArguments().thenReturn(mockRestClient);
+
+        WrappedWebTarget mockBaseTarget = mock(WrappedWebTarget.class);
+        when(mockRestClient.getBaseTarget()).thenReturn(mockBaseTarget);
+        when(mockBaseTarget.path(anyString())).thenReturn(mockBaseTarget);
+        when(mockBaseTarget.queryParam(anyString(), any())).thenReturn(mockBaseTarget);
+
+        WrappedInvocationBuilder mockInvocationBuilder = mock(WrappedInvocationBuilder.class);
+        when(mockBaseTarget.request()).thenReturn(mockInvocationBuilder);
 
         URI testURI = new URI("https://objectstorage.test-region.test.domain/");
+        when(mockInvocationBuilder.getRequestUri()).thenReturn(testURI);
 
         final AtomicInteger onProgressCallbackCount = new AtomicInteger();
 
-        /*
         when(mockRestClient.put(any(WrappedInvocationBuilder.class), any(InputStream.class), any()))
                 .then(
                         invocationOnMock -> {
@@ -524,15 +553,11 @@ public class UploadManagerTest {
                             }
                             return null;
                         });
-        */
 
-        // TODO: DEX-14784 - this should not use jakarta.ws.rs-api as a test dependency; rewrite
-        // tests
         // CreateMultipartUpload
         java.util.function.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
                 mockCreateResponseConverter = mock(java.util.function.Function.class);
 
-        /*
         PowerMockito.mockStatic(CreateMultipartUploadConverter.class);
         PowerMockito.when(
                         CreateMultipartUploadConverter.fromResponse(any(java.util.Optional.class)))
@@ -545,7 +570,6 @@ public class UploadManagerTest {
                         CreateMultipartUploadConverter.interceptRequest(
                                 any(CreateMultipartUploadRequest.class)))
                 .thenCallRealMethod();
-        */
 
         CreateMultipartUploadResponse createMultipartUploadResponse =
                 CreateMultipartUploadResponse.builder()
@@ -558,7 +582,6 @@ public class UploadManagerTest {
         java.util.function.Function<javax.ws.rs.core.Response, UploadPartResponse>
                 mockUploadResponseConverter = mock(java.util.function.Function.class);
 
-        /*
         PowerMockito.mockStatic(UploadPartConverter.class);
         PowerMockito.when(UploadPartConverter.fromResponse(any(java.util.Optional.class)))
                 .thenReturn(mockUploadResponseConverter);
@@ -568,8 +591,6 @@ public class UploadManagerTest {
                 .thenCallRealMethod();
         PowerMockito.when(UploadPartConverter.interceptRequest(any(UploadPartRequest.class)))
                 .thenCallRealMethod();
-
-         */
 
         UploadPartResponse uploadPartResponse = UploadPartResponse.builder().build();
         when(mockUploadResponseConverter.apply(any(javax.ws.rs.core.Response.class)))
@@ -583,7 +604,6 @@ public class UploadManagerTest {
         java.util.function.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
                 mockCommitResponseConverter = mock(java.util.function.Function.class);
 
-        /*
         PowerMockito.mockStatic(CommitMultipartUploadConverter.class);
         PowerMockito.when(
                         CommitMultipartUploadConverter.fromResponse(any(java.util.Optional.class)))
@@ -596,12 +616,17 @@ public class UploadManagerTest {
                         CommitMultipartUploadConverter.interceptRequest(
                                 any(CommitMultipartUploadRequest.class)))
                 .thenCallRealMethod();
-        */
 
         CommitMultipartUploadResponse commitMultipartUploadResponse =
                 CommitMultipartUploadResponse.builder().build();
         when(mockCommitResponseConverter.apply(any(javax.ws.rs.core.Response.class)))
                 .thenReturn(commitMultipartUploadResponse);
+
+        PowerMockito.mockStatic(EndpointBuilder.class);
+        PowerMockito.when(
+                        EndpointBuilder.populateServiceParametersInEndpoint(
+                                any(RestClient.class), any(Map.class)))
+                .thenReturn(mockBaseTarget);
 
         ObjectStorageClient objectStorageClient =
                 new ObjectStorageClient(

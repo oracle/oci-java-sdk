@@ -6,85 +6,109 @@ package com.oracle.bmc.adm.requests;
 
 import com.oracle.bmc.adm.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListStagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListStagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListStagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListStagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Remediation Run identifier path parameter. */
+    /**
+     * Unique Remediation Run identifier path parameter.
+     */
     private String remediationRunId;
 
-    /** Unique Remediation Run identifier path parameter. */
+    /**
+     * Unique Remediation Run identifier path parameter.
+     */
     public String getRemediationRunId() {
         return remediationRunId;
     }
-    /** A filter to return only Stages that match the specified type. */
+    /**
+     * A filter to return only Stages that match the specified type.
+     */
     private com.oracle.bmc.adm.model.RemediationRunStageType type;
 
-    /** A filter to return only Stages that match the specified type. */
+    /**
+     * A filter to return only Stages that match the specified type.
+     */
     public com.oracle.bmc.adm.model.RemediationRunStageType getType() {
         return type;
     }
-    /** A filter to return only Stages that match the specified status. */
+    /**
+     * A filter to return only Stages that match the specified status.
+     */
     private com.oracle.bmc.adm.model.RemediationRunStage.Status status;
 
-    /** A filter to return only Stages that match the specified status. */
+    /**
+     * A filter to return only Stages that match the specified status.
+     */
     public com.oracle.bmc.adm.model.RemediationRunStage.Status getStatus() {
         return status;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The field used to sort Stages. Only one sort order is allowed. Default order for status is
-     * the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
-     * Default order for _timeCreated_ is **descending**. Default order for _timeFinished_ is
-     * **descending**. Default order for _timeStarted_ is **descending**. Default order for _type_
-     * is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     * The field used to sort Stages. Only one sort order is allowed.
+     * Default order for status is the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeFinished_ is **descending**.
+     * Default order for _timeStarted_ is **descending**.
+     * Default order for _type_ is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field used to sort Stages. Only one sort order is allowed. Default order for status is
-     * the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
-     * Default order for _timeCreated_ is **descending**. Default order for _timeFinished_ is
-     * **descending**. Default order for _timeStarted_ is **descending**. Default order for _type_
-     * is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field used to sort Stages. Only one sort order is allowed.
+     * Default order for status is the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeFinished_ is **descending**.
+     * Default order for _timeStarted_ is **descending**.
+     * Default order for _type_ is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     *
+     **/
+    public enum SortBy {
         Status("status"),
         TimeCreated("timeCreated"),
         TimeFinished("timeFinished"),
@@ -121,11 +145,13 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     };
 
     /**
-     * The field used to sort Stages. Only one sort order is allowed. Default order for status is
-     * the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
-     * Default order for _timeCreated_ is **descending**. Default order for _timeFinished_ is
-     * **descending**. Default order for _timeStarted_ is **descending**. Default order for _type_
-     * is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     * The field used to sort Stages. Only one sort order is allowed.
+     * Default order for status is the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeFinished_ is **descending**.
+     * Default order for _timeStarted_ is **descending**.
+     * Default order for _type_ is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -134,15 +160,17 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListStagesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Remediation Run identifier path parameter. */
+        /**
+         * Unique Remediation Run identifier path parameter.
+         */
         private String remediationRunId = null;
 
         /**
          * Unique Remediation Run identifier path parameter.
-         *
          * @param remediationRunId the value to set
          * @return this builder instance
          */
@@ -151,12 +179,13 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return only Stages that match the specified type. */
+        /**
+         * A filter to return only Stages that match the specified type.
+         */
         private com.oracle.bmc.adm.model.RemediationRunStageType type = null;
 
         /**
          * A filter to return only Stages that match the specified type.
-         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -165,12 +194,13 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return only Stages that match the specified status. */
+        /**
+         * A filter to return only Stages that match the specified status.
+         */
         private com.oracle.bmc.adm.model.RemediationRunStage.Status status = null;
 
         /**
          * A filter to return only Stages that match the specified status.
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -179,12 +209,13 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -193,12 +224,13 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -208,15 +240,12 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -225,12 +254,13 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -240,22 +270,23 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The field used to sort Stages. Only one sort order is allowed. Default order for status
-         * is the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and
-         * CANCELED**. Default order for _timeCreated_ is **descending**. Default order for
-         * _timeFinished_ is **descending**. Default order for _timeStarted_ is **descending**.
-         * Default order for _type_ is the following sequence: **DETECT, RECOMMEND, VERIFY, and
-         * APPLY**.
+         * The field used to sort Stages. Only one sort order is allowed.
+         * Default order for status is the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
+         * Default order for _timeCreated_ is **descending**.
+         * Default order for _timeFinished_ is **descending**.
+         * Default order for _timeStarted_ is **descending**.
+         * Default order for _type_ is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used to sort Stages. Only one sort order is allowed. Default order for status
-         * is the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and
-         * CANCELED**. Default order for _timeCreated_ is **descending**. Default order for
-         * _timeFinished_ is **descending**. Default order for _timeStarted_ is **descending**.
-         * Default order for _type_ is the following sequence: **DETECT, RECOMMEND, VERIFY, and
-         * APPLY**.
+         * The field used to sort Stages. Only one sort order is allowed.
+         * Default order for status is the following sequence: **CREATED, IN_PROGRESS, SUCCEEDED, FAILED, CANCELING, and CANCELED**.
+         * Default order for _timeCreated_ is **descending**.
+         * Default order for _timeFinished_ is **descending**.
+         * Default order for _timeStarted_ is **descending**.
+         * Default order for _type_ is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -267,19 +298,18 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -291,7 +321,6 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListStagesRequest o) {
@@ -311,11 +340,10 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListStagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListStagesRequest
          */
@@ -329,8 +357,7 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListStagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListStagesRequest
@@ -346,14 +373,12 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.opcRequestId = opcRequestId;
             request.sortBy = sortBy;
             return request;
-            // new ListStagesRequest(remediationRunId, type, status, sortOrder, limit, page,
-            // opcRequestId, sortBy);
+            // new ListStagesRequest(remediationRunId, type, status, sortOrder, limit, page, opcRequestId, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -370,7 +395,6 @@ public class ListStagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagement.model;
 
-/** Indicates whether the update can be installed using OSMS. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum IsEligibleForInstallation implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Indicates whether the update can be installed using OSMS.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+public enum IsEligibleForInstallation {
     Installable("INSTALLABLE"),
     NotInstallable("NOT_INSTALLABLE"),
     Unknown("UNKNOWN"),

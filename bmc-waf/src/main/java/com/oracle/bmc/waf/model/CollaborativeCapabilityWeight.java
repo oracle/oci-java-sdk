@@ -5,24 +5,23 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * Defines how much a contributing capability contributes towards the action threshold of a
- * collaborative protection capability. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * Defines how much a contributing capability contributes towards the action threshold of a collaborative protection capability.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CollaborativeCapabilityWeight.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CollaborativeCapabilityWeight.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CollaborativeCapabilityWeight
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "displayName", "weight"})
     public CollaborativeCapabilityWeight(String key, String displayName, Integer weight) {
@@ -34,46 +33,49 @@ public final class CollaborativeCapabilityWeight
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique key of contributing protection capability. */
+        /**
+         * Unique key of contributing protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique key of contributing protection capability.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The display name of contributing protection capability. */
+        /**
+         * The display name of contributing protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of contributing protection capability.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The weight of contributing protection capability. */
+        /**
+         * The weight of contributing protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
         /**
          * The weight of contributing protection capability.
-         *
          * @param weight the value to set
          * @return this builder
-         */
+         **/
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
@@ -107,7 +109,9 @@ public final class CollaborativeCapabilityWeight
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +120,44 @@ public final class CollaborativeCapabilityWeight
         return new Builder().copy(this);
     }
 
-    /** Unique key of contributing protection capability. */
+    /**
+     * Unique key of contributing protection capability.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique key of contributing protection capability.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The display name of contributing protection capability. */
+    /**
+     * The display name of contributing protection capability.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of contributing protection capability.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The weight of contributing protection capability. */
+    /**
+     * The weight of contributing protection capability.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Integer weight;
 
     /**
      * The weight of contributing protection capability.
-     *
      * @return the value
-     */
+     **/
     public Integer getWeight() {
         return weight;
     }
@@ -162,7 +169,6 @@ public final class CollaborativeCapabilityWeight
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

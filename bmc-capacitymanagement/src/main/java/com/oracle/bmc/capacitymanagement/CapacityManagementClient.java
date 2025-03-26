@@ -4,18 +4,17 @@
  */
 package com.oracle.bmc.capacitymanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.capacitymanagement.internal.http.*;
 import com.oracle.bmc.capacitymanagement.requests.*;
 import com.oracle.bmc.capacitymanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
-public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements CapacityManagement {
-    /** Service instance for CapacityManagement. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+public class CapacityManagementClient implements CapacityManagement {
+    /**
+     * Service instance for CapacityManagement.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("CAPACITYMANAGEMENT")
@@ -24,30 +23,319 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                             "https://control-center-cp.{region}.oci.{secondLevelDomain}")
                     .endpointServiceName("control-center-cp")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(CapacityManagementClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final CapacityManagementWaiters waiters;
 
     private final CapacityManagementPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    CapacityManagementClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        this(builder, authenticationDetailsProvider, executorService, true);
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
     }
 
-    CapacityManagementClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService,
-            boolean isStreamWarningEnabled) {
-        super(
-                builder,
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public CapacityManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected CapacityManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -69,16 +357,34 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
         this.waiters = new CapacityManagementWaiters(executorService, this);
 
         this.paginators = new CapacityManagementPaginators(this);
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "CapacityManagementClient", "getOccAvailabilityCatalogContent"));
         }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -86,18 +392,15 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, CapacityManagementClient> {
-        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "capacitymanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -105,7 +408,6 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -115,1221 +417,1427 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
         }
 
         /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public CapacityManagementClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new CapacityManagementClient(
-                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public CreateOccAvailabilityCatalogResponse createOccAvailabilityCatalog(
             CreateOccAvailabilityCatalogRequest request) {
-        Objects.requireNonNull(
-                request.getCreateOccAvailabilityCatalogDetails(),
-                "createOccAvailabilityCatalogDetails is required");
+        LOG.trace("Called createOccAvailabilityCatalog");
+        final CreateOccAvailabilityCatalogRequest interceptedRequest =
+                CreateOccAvailabilityCatalogConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccAvailabilityCatalogConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateOccAvailabilityCatalogResponse::builder)
-                .logger(LOG, "createOccAvailabilityCatalog")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "CreateOccAvailabilityCatalog",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateOccAvailabilityCatalogRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.class,
-                        CreateOccAvailabilityCatalogResponse.Builder::occAvailabilityCatalog)
-                .handleResponseHeaderString(
-                        "etag", CreateOccAvailabilityCatalogResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateOccAvailabilityCatalogResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", CreateOccAvailabilityCatalogResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOccAvailabilityCatalogResponse>
+                transformer =
+                        CreateOccAvailabilityCatalogConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateOccAvailabilityCatalogDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateOccCapacityRequestResponse createOccCapacityRequest(
             CreateOccCapacityRequestRequest request) {
-        Objects.requireNonNull(
-                request.getCreateOccCapacityRequestDetails(),
-                "createOccCapacityRequestDetails is required");
+        LOG.trace("Called createOccCapacityRequest");
+        final CreateOccCapacityRequestRequest interceptedRequest =
+                CreateOccCapacityRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateOccCapacityRequestResponse::builder)
-                .logger(LOG, "createOccCapacityRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "CreateOccCapacityRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/CreateOccCapacityRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateOccCapacityRequestRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCapacityRequests")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.class,
-                        CreateOccCapacityRequestResponse.Builder::occCapacityRequest)
-                .handleResponseHeaderString("etag", CreateOccCapacityRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateOccCapacityRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", CreateOccCapacityRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/CreateOccCapacityRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOccCapacityRequestResponse>
+                transformer =
+                        CreateOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOccCapacityRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateOccCustomerResponse createOccCustomer(CreateOccCustomerRequest request) {
-        Objects.requireNonNull(
-                request.getCreateOccCustomerDetails(), "createOccCustomerDetails is required");
+        LOG.trace("Called createOccCustomer");
+        final CreateOccCustomerRequest interceptedRequest =
+                CreateOccCustomerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccCustomerConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
-
-        return clientCall(request, CreateOccCustomerResponse::builder)
-                .logger(LOG, "createOccCustomer")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "CreateOccCustomer",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/CreateOccCustomer")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateOccCustomerRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .appendPathParam(request.getOccCustomerGroupId())
-                .appendPathParam("occCustomers")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCustomer.class,
-                        CreateOccCustomerResponse.Builder::occCustomer)
-                .handleResponseHeaderString("etag", CreateOccCustomerResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateOccCustomerResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", CreateOccCustomerResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/CreateOccCustomer");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOccCustomerResponse>
+                transformer =
+                        CreateOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOccCustomerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateOccCustomerGroupResponse createOccCustomerGroup(
             CreateOccCustomerGroupRequest request) {
-        Objects.requireNonNull(
-                request.getCreateOccCustomerGroupDetails(),
-                "createOccCustomerGroupDetails is required");
+        LOG.trace("Called createOccCustomerGroup");
+        final CreateOccCustomerGroupRequest interceptedRequest =
+                CreateOccCustomerGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateOccCustomerGroupResponse::builder)
-                .logger(LOG, "createOccCustomerGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "CreateOccCustomerGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/CreateOccCustomerGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateOccCustomerGroupRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCustomerGroup.class,
-                        CreateOccCustomerGroupResponse.Builder::occCustomerGroup)
-                .handleResponseHeaderString("etag", CreateOccCustomerGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateOccCustomerGroupResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", CreateOccCustomerGroupResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/CreateOccCustomerGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOccCustomerGroupResponse>
+                transformer =
+                        CreateOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOccCustomerGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteOccAvailabilityCatalogResponse deleteOccAvailabilityCatalog(
             DeleteOccAvailabilityCatalogRequest request) {
+        LOG.trace("Called deleteOccAvailabilityCatalog");
+        final DeleteOccAvailabilityCatalogRequest interceptedRequest =
+                DeleteOccAvailabilityCatalogConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccAvailabilityCatalogConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccAvailabilityCatalogId(),
-                "occAvailabilityCatalogId must not be blank");
-
-        return clientCall(request, DeleteOccAvailabilityCatalogResponse::builder)
-                .logger(LOG, "deleteOccAvailabilityCatalog")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "DeleteOccAvailabilityCatalog",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteOccAvailabilityCatalogRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendPathParam(request.getOccAvailabilityCatalogId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteOccAvailabilityCatalogResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", DeleteOccAvailabilityCatalogResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOccAvailabilityCatalogResponse>
+                transformer =
+                        DeleteOccAvailabilityCatalogConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteOccCapacityRequestResponse deleteOccCapacityRequest(
             DeleteOccCapacityRequestRequest request) {
+        LOG.trace("Called deleteOccCapacityRequest");
+        final DeleteOccCapacityRequestRequest interceptedRequest =
+                DeleteOccCapacityRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccCapacityRequestId(), "occCapacityRequestId must not be blank");
-
-        return clientCall(request, DeleteOccCapacityRequestResponse::builder)
-                .logger(LOG, "deleteOccCapacityRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "DeleteOccCapacityRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/DeleteOccCapacityRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteOccCapacityRequestRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCapacityRequests")
-                .appendPathParam(request.getOccCapacityRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteOccCapacityRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", DeleteOccCapacityRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/DeleteOccCapacityRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCapacityRequestResponse>
+                transformer =
+                        DeleteOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteOccCustomerResponse deleteOccCustomer(DeleteOccCustomerRequest request) {
+        LOG.trace("Called deleteOccCustomer");
+        final DeleteOccCustomerRequest interceptedRequest =
+                DeleteOccCustomerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccCustomerConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
-
-        Validate.notBlank(request.getOccCustomerId(), "occCustomerId must not be blank");
-
-        return clientCall(request, DeleteOccCustomerResponse::builder)
-                .logger(LOG, "deleteOccCustomer")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "DeleteOccCustomer",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/DeleteOccCustomer")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteOccCustomerRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .appendPathParam(request.getOccCustomerGroupId())
-                .appendPathParam("occCustomers")
-                .appendPathParam(request.getOccCustomerId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteOccCustomerResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", DeleteOccCustomerResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/DeleteOccCustomer");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCustomerResponse>
+                transformer =
+                        DeleteOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteOccCustomerGroupResponse deleteOccCustomerGroup(
             DeleteOccCustomerGroupRequest request) {
+        LOG.trace("Called deleteOccCustomerGroup");
+        final DeleteOccCustomerGroupRequest interceptedRequest =
+                DeleteOccCustomerGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
-
-        return clientCall(request, DeleteOccCustomerGroupResponse::builder)
-                .logger(LOG, "deleteOccCustomerGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "DeleteOccCustomerGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/DeleteOccCustomerGroup")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteOccCustomerGroupRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .appendPathParam(request.getOccCustomerGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteOccCustomerGroupResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", DeleteOccCustomerGroupResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/DeleteOccCustomerGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCustomerGroupResponse>
+                transformer =
+                        DeleteOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetOccAvailabilityCatalogResponse getOccAvailabilityCatalog(
             GetOccAvailabilityCatalogRequest request) {
+        LOG.trace("Called getOccAvailabilityCatalog");
+        final GetOccAvailabilityCatalogRequest interceptedRequest =
+                GetOccAvailabilityCatalogConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOccAvailabilityCatalogConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccAvailabilityCatalogId(),
-                "occAvailabilityCatalogId must not be blank");
-
-        return clientCall(request, GetOccAvailabilityCatalogResponse::builder)
-                .logger(LOG, "getOccAvailabilityCatalog")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "GetOccAvailabilityCatalog",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetOccAvailabilityCatalogRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendPathParam(request.getOccAvailabilityCatalogId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.class,
-                        GetOccAvailabilityCatalogResponse.Builder::occAvailabilityCatalog)
-                .handleResponseHeaderString("etag", GetOccAvailabilityCatalogResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetOccAvailabilityCatalogResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog");
+        java.util.function.Function<javax.ws.rs.core.Response, GetOccAvailabilityCatalogResponse>
+                transformer =
+                        GetOccAvailabilityCatalogConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetOccAvailabilityCatalogContentResponse getOccAvailabilityCatalogContent(
             GetOccAvailabilityCatalogContentRequest request) {
+        LOG.trace("Called getOccAvailabilityCatalogContent");
+        final GetOccAvailabilityCatalogContentRequest interceptedRequest =
+                GetOccAvailabilityCatalogContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOccAvailabilityCatalogContentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccAvailabilityCatalogId(),
-                "occAvailabilityCatalogId must not be blank");
-
-        return clientCall(request, GetOccAvailabilityCatalogContentResponse::builder)
-                .logger(LOG, "getOccAvailabilityCatalogContent")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "GetOccAvailabilityCatalogContent",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetOccAvailabilityCatalogContentRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendPathParam(request.getOccAvailabilityCatalogId())
-                .appendPathParam("content")
-                .accept("application/binary")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetOccAvailabilityCatalogContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetOccAvailabilityCatalogContentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOccAvailabilityCatalogContentResponse>
+                transformer =
+                        GetOccAvailabilityCatalogContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetOccCapacityRequestResponse getOccCapacityRequest(
             GetOccCapacityRequestRequest request) {
+        LOG.trace("Called getOccCapacityRequest");
+        final GetOccCapacityRequestRequest interceptedRequest =
+                GetOccCapacityRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccCapacityRequestId(), "occCapacityRequestId must not be blank");
-
-        return clientCall(request, GetOccCapacityRequestResponse::builder)
-                .logger(LOG, "getOccCapacityRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "GetOccCapacityRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/GetOccCapacityRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetOccCapacityRequestRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCapacityRequests")
-                .appendPathParam(request.getOccCapacityRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.class,
-                        GetOccCapacityRequestResponse.Builder::occCapacityRequest)
-                .handleResponseHeaderString("etag", GetOccCapacityRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetOccCapacityRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/GetOccCapacityRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetOccCapacityRequestResponse>
+                transformer =
+                        GetOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetOccCustomerGroupResponse getOccCustomerGroup(GetOccCustomerGroupRequest request) {
+        LOG.trace("Called getOccCustomerGroup");
+        final GetOccCustomerGroupRequest interceptedRequest =
+                GetOccCustomerGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
-
-        return clientCall(request, GetOccCustomerGroupResponse::builder)
-                .logger(LOG, "getOccCustomerGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "GetOccCustomerGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/GetOccCustomerGroup")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetOccCustomerGroupRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .appendPathParam(request.getOccCustomerGroupId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCustomerGroup.class,
-                        GetOccCustomerGroupResponse.Builder::occCustomerGroup)
-                .handleResponseHeaderString("etag", GetOccCustomerGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetOccCustomerGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/GetOccCustomerGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetOccCustomerGroupResponse>
+                transformer =
+                        GetOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListInternalNamespaceOccOverviewsResponse listInternalNamespaceOccOverviews(
             ListInternalNamespaceOccOverviewsRequest request) {
+        LOG.trace("Called listInternalNamespaceOccOverviews");
+        final ListInternalNamespaceOccOverviewsRequest interceptedRequest =
+                ListInternalNamespaceOccOverviewsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalNamespaceOccOverviewsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespace().getValue(), "namespace must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
-
-        return clientCall(request, ListInternalNamespaceOccOverviewsResponse::builder)
-                .logger(LOG, "listInternalNamespaceOccOverviews")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListInternalNamespaceOccOverviews",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListInternalNamespaceOccOverviewsRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("internal")
-                .appendPathParam("namespace")
-                .appendPathParam(request.getNamespace().getValue())
-                .appendPathParam("occOverview")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("occCustomerGroupId", request.getOccCustomerGroupId())
-                .appendQueryParam("workloadType", request.getWorkloadType())
-                .appendQueryParam("from", request.getFrom())
-                .appendQueryParam("to", request.getTo())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccOverviewCollection.class,
-                        ListInternalNamespaceOccOverviewsResponse.Builder::occOverviewCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListInternalNamespaceOccOverviewsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListInternalNamespaceOccOverviewsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInternalNamespaceOccOverviewsResponse>
+                transformer =
+                        ListInternalNamespaceOccOverviewsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListInternalOccHandoverResourceBlockDetailsResponse
             listInternalOccHandoverResourceBlockDetails(
                     ListInternalOccHandoverResourceBlockDetailsRequest request) {
-        Objects.requireNonNull(
-                request.getOccHandoverResourceBlockId(), "occHandoverResourceBlockId is required");
+        LOG.trace("Called listInternalOccHandoverResourceBlockDetails");
+        final ListInternalOccHandoverResourceBlockDetailsRequest interceptedRequest =
+                ListInternalOccHandoverResourceBlockDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalOccHandoverResourceBlockDetailsConverter.fromRequest(
+                        client, interceptedRequest);
 
-        return clientCall(request, ListInternalOccHandoverResourceBlockDetailsResponse::builder)
-                .logger(LOG, "listInternalOccHandoverResourceBlockDetails")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListInternalOccHandoverResourceBlockDetails",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListInternalOccHandoverResourceBlockDetails")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListInternalOccHandoverResourceBlockDetailsRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("internal")
-                .appendPathParam("occHandoverResourceBlockDetails")
-                .appendQueryParam(
-                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
-                .appendQueryParam("hostId", request.getHostId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model
-                                .OccHandoverResourceBlockDetailCollection.class,
-                        ListInternalOccHandoverResourceBlockDetailsResponse.Builder
-                                ::occHandoverResourceBlockDetailCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListInternalOccHandoverResourceBlockDetailsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListInternalOccHandoverResourceBlockDetailsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListInternalOccHandoverResourceBlockDetails");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListInternalOccHandoverResourceBlockDetailsResponse>
+                transformer =
+                        ListInternalOccHandoverResourceBlockDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListInternalOccHandoverResourceBlocksResponse listInternalOccHandoverResourceBlocks(
             ListInternalOccHandoverResourceBlocksRequest request) {
-        Objects.requireNonNull(request.getNamespace(), "namespace is required");
+        LOG.trace("Called listInternalOccHandoverResourceBlocks");
+        final ListInternalOccHandoverResourceBlocksRequest interceptedRequest =
+                ListInternalOccHandoverResourceBlocksConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalOccHandoverResourceBlocksConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
-
-        return clientCall(request, ListInternalOccHandoverResourceBlocksResponse::builder)
-                .logger(LOG, "listInternalOccHandoverResourceBlocks")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListInternalOccHandoverResourceBlocks",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListInternalOccHandoverResourceBlocks")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListInternalOccHandoverResourceBlocksRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("internal")
-                .appendPathParam("occHandoverResourceBlocks")
-                .appendEnumQueryParam("namespace", request.getNamespace())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("occCustomerGroupId", request.getOccCustomerGroupId())
-                .appendQueryParam("handoverResourceName", request.getHandoverResourceName())
-                .appendQueryParam(
-                        "handoverDateGreaterThanOrEqualTo",
-                        request.getHandoverDateGreaterThanOrEqualTo())
-                .appendQueryParam(
-                        "handoverDateLessThanOrEqualTo", request.getHandoverDateLessThanOrEqualTo())
-                .appendQueryParam(
-                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockCollection
-                                .class,
-                        ListInternalOccHandoverResourceBlocksResponse.Builder
-                                ::occHandoverResourceBlockCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListInternalOccHandoverResourceBlocksResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListInternalOccHandoverResourceBlocksResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListInternalOccHandoverResourceBlocks");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInternalOccHandoverResourceBlocksResponse>
+                transformer =
+                        ListInternalOccHandoverResourceBlocksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccAvailabilitiesResponse listOccAvailabilities(
             ListOccAvailabilitiesRequest request) {
+        LOG.trace("Called listOccAvailabilities");
+        final ListOccAvailabilitiesRequest interceptedRequest =
+                ListOccAvailabilitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccAvailabilitiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccAvailabilityCatalogId(),
-                "occAvailabilityCatalogId must not be blank");
-
-        return clientCall(request, ListOccAvailabilitiesResponse::builder)
-                .logger(LOG, "listOccAvailabilities")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccAvailabilities",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCollection/ListOccAvailabilities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccAvailabilitiesRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendPathParam(request.getOccAvailabilityCatalogId())
-                .appendPathParam("occAvailabilities")
-                .appendQueryParam(
-                        "dateExpectedCapacityHandover", request.getDateExpectedCapacityHandover())
-                .appendQueryParam("resourceName", request.getResourceName())
-                .appendQueryParam("resourceType", request.getResourceType())
-                .appendQueryParam("workloadType", request.getWorkloadType())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccAvailabilityCollection.class,
-                        ListOccAvailabilitiesResponse.Builder::occAvailabilityCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOccAvailabilitiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOccAvailabilitiesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCollection/ListOccAvailabilities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOccAvailabilitiesResponse>
+                transformer =
+                        ListOccAvailabilitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccAvailabilityCatalogsResponse listOccAvailabilityCatalogs(
             ListOccAvailabilityCatalogsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listOccAvailabilityCatalogs");
+        final ListOccAvailabilityCatalogsRequest interceptedRequest =
+                ListOccAvailabilityCatalogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccAvailabilityCatalogsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListOccAvailabilityCatalogsResponse::builder)
-                .logger(LOG, "listOccAvailabilityCatalogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogs",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccAvailabilityCatalogsRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("namespace", request.getNamespace())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("catalogState", request.getCatalogState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogCollection
-                                .class,
-                        ListOccAvailabilityCatalogsResponse.Builder
-                                ::occAvailabilityCatalogCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOccAvailabilityCatalogsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOccAvailabilityCatalogsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOccAvailabilityCatalogsResponse>
+                transformer =
+                        ListOccAvailabilityCatalogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccAvailabilityCatalogsInternalResponse listOccAvailabilityCatalogsInternal(
             ListOccAvailabilityCatalogsInternalRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listOccAvailabilityCatalogsInternal");
+        final ListOccAvailabilityCatalogsInternalRequest interceptedRequest =
+                ListOccAvailabilityCatalogsInternalConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccAvailabilityCatalogsInternalConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
-
-        return clientCall(request, ListOccAvailabilityCatalogsInternalResponse::builder)
-                .logger(LOG, "listOccAvailabilityCatalogsInternal")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogsInternal",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccAvailabilityCatalogsInternalRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("internal")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("namespace", request.getNamespace())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("catalogState", request.getCatalogState())
-                .appendQueryParam("occCustomerGroupId", request.getOccCustomerGroupId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogCollection
-                                .class,
-                        ListOccAvailabilityCatalogsInternalResponse.Builder
-                                ::occAvailabilityCatalogCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListOccAvailabilityCatalogsInternalResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListOccAvailabilityCatalogsInternalResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccAvailabilityCatalogsInternalResponse>
+                transformer =
+                        ListOccAvailabilityCatalogsInternalConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccCapacityRequestsResponse listOccCapacityRequests(
             ListOccCapacityRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listOccCapacityRequests");
+        final ListOccCapacityRequestsRequest interceptedRequest =
+                ListOccCapacityRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccCapacityRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListOccCapacityRequestsResponse::builder)
-                .logger(LOG, "listOccCapacityRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccCapacityRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccCapacityRequestsRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCapacityRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("occAvailabilityCatalogId", request.getOccAvailabilityCatalogId())
-                .appendEnumQueryParam("namespace", request.getNamespace())
-                .appendEnumQueryParam("requestType", request.getRequestType())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequestCollection.class,
-                        ListOccCapacityRequestsResponse.Builder::occCapacityRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOccCapacityRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOccCapacityRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOccCapacityRequestsResponse>
+                transformer =
+                        ListOccCapacityRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccCapacityRequestsInternalResponse listOccCapacityRequestsInternal(
             ListOccCapacityRequestsInternalRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listOccCapacityRequestsInternal");
+        final ListOccCapacityRequestsInternalRequest interceptedRequest =
+                ListOccCapacityRequestsInternalConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccCapacityRequestsInternalConverter.fromRequest(client, interceptedRequest);
 
-        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
-
-        return clientCall(request, ListOccCapacityRequestsInternalResponse::builder)
-                .logger(LOG, "listOccCapacityRequestsInternal")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccCapacityRequestsInternal",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccCapacityRequestsInternalRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("internal")
-                .appendPathParam("occCapacityRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("occCustomerGroupId", request.getOccCustomerGroupId())
-                .appendQueryParam("occAvailabilityCatalogId", request.getOccAvailabilityCatalogId())
-                .appendEnumQueryParam("namespace", request.getNamespace())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("requestType", request.getRequestType())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequestCollection.class,
-                        ListOccCapacityRequestsInternalResponse.Builder
-                                ::occCapacityRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListOccCapacityRequestsInternalResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListOccCapacityRequestsInternalResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccCapacityRequestsInternalResponse>
+                transformer =
+                        ListOccCapacityRequestsInternalConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccCustomerGroupsResponse listOccCustomerGroups(
             ListOccCustomerGroupsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listOccCustomerGroups");
+        final ListOccCustomerGroupsRequest interceptedRequest =
+                ListOccCustomerGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccCustomerGroupsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListOccCustomerGroupsResponse::builder)
-                .logger(LOG, "listOccCustomerGroups")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccCustomerGroups",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccCustomerGroupsRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCustomerGroupCollection.class,
-                        ListOccCustomerGroupsResponse.Builder::occCustomerGroupCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOccCustomerGroupsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOccCustomerGroupsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOccCustomerGroupsResponse>
+                transformer =
+                        ListOccCustomerGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccHandoverResourceBlockDetailsResponse listOccHandoverResourceBlockDetails(
             ListOccHandoverResourceBlockDetailsRequest request) {
-        Objects.requireNonNull(
-                request.getOccHandoverResourceBlockId(), "occHandoverResourceBlockId is required");
+        LOG.trace("Called listOccHandoverResourceBlockDetails");
+        final ListOccHandoverResourceBlockDetailsRequest interceptedRequest =
+                ListOccHandoverResourceBlockDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccHandoverResourceBlockDetailsConverter.fromRequest(
+                        client, interceptedRequest);
 
-        return clientCall(request, ListOccHandoverResourceBlockDetailsResponse::builder)
-                .logger(LOG, "listOccHandoverResourceBlockDetails")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccHandoverResourceBlockDetails",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListOccHandoverResourceBlockDetails")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccHandoverResourceBlockDetailsRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occHandoverResourceBlockDetails")
-                .appendQueryParam(
-                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
-                .appendQueryParam("hostId", request.getHostId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model
-                                .OccHandoverResourceBlockDetailCollection.class,
-                        ListOccHandoverResourceBlockDetailsResponse.Builder
-                                ::occHandoverResourceBlockDetailCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListOccHandoverResourceBlockDetailsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListOccHandoverResourceBlockDetailsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListOccHandoverResourceBlockDetails");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccHandoverResourceBlockDetailsResponse>
+                transformer =
+                        ListOccHandoverResourceBlockDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccHandoverResourceBlocksResponse listOccHandoverResourceBlocks(
             ListOccHandoverResourceBlocksRequest request) {
+        LOG.trace("Called listOccHandoverResourceBlocks");
+        final ListOccHandoverResourceBlocksRequest interceptedRequest =
+                ListOccHandoverResourceBlocksConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccHandoverResourceBlocksConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListOccHandoverResourceBlocksResponse::builder)
-                .logger(LOG, "listOccHandoverResourceBlocks")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccHandoverResourceBlocks",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListOccHandoverResourceBlocks")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccHandoverResourceBlocksRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occHandoverResourceBlocks")
-                .appendEnumQueryParam("namespace", request.getNamespace())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("handoverResourceName", request.getHandoverResourceName())
-                .appendQueryParam(
-                        "handoverDateGreaterThanOrEqualTo",
-                        request.getHandoverDateGreaterThanOrEqualTo())
-                .appendQueryParam(
-                        "handoverDateLessThanOrEqualTo", request.getHandoverDateLessThanOrEqualTo())
-                .appendQueryParam(
-                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockCollection
-                                .class,
-                        ListOccHandoverResourceBlocksResponse.Builder
-                                ::occHandoverResourceBlockCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListOccHandoverResourceBlocksResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOccHandoverResourceBlocksResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListOccHandoverResourceBlocks");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccHandoverResourceBlocksResponse>
+                transformer =
+                        ListOccHandoverResourceBlocksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListOccOverviewsResponse listOccOverviews(ListOccOverviewsRequest request) {
+        LOG.trace("Called listOccOverviews");
+        final ListOccOverviewsRequest interceptedRequest =
+                ListOccOverviewsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccOverviewsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getNamespace().getValue(), "namespace must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListOccOverviewsResponse::builder)
-                .logger(LOG, "listOccOverviews")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "ListOccOverviews",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListOccOverviews")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOccOverviewsRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("namespace")
-                .appendPathParam(request.getNamespace().getValue())
-                .appendPathParam("occOverview")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("from", request.getFrom())
-                .appendQueryParam("to", request.getTo())
-                .appendQueryParam("workloadType", request.getWorkloadType())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccOverviewCollection.class,
-                        ListOccOverviewsResponse.Builder::occOverviewCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOccOverviewsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOccOverviewsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListOccOverviews");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOccOverviewsResponse>
+                transformer =
+                        ListOccOverviewsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PatchInternalOccCapacityRequestResponse patchInternalOccCapacityRequest(
             PatchInternalOccCapacityRequestRequest request) {
-        Objects.requireNonNull(
-                request.getPatchOccCapacityRequestDetails(),
-                "patchOccCapacityRequestDetails is required");
+        LOG.trace("Called patchInternalOccCapacityRequest");
+        final PatchInternalOccCapacityRequestRequest interceptedRequest =
+                PatchInternalOccCapacityRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchInternalOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccCapacityRequestId(), "occCapacityRequestId must not be blank");
-
-        return clientCall(request, PatchInternalOccCapacityRequestResponse::builder)
-                .logger(LOG, "patchInternalOccCapacityRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "PatchInternalOccCapacityRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest")
-                .method(com.oracle.bmc.http.client.Method.PATCH)
-                .requestBuilder(PatchInternalOccCapacityRequestRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("internal")
-                .appendPathParam("occCapacityRequests")
-                .appendPathParam(request.getOccCapacityRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.class,
-                        PatchInternalOccCapacityRequestResponse.Builder::occCapacityRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PatchInternalOccCapacityRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", PatchInternalOccCapacityRequestResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchInternalOccCapacityRequestResponse>
+                transformer =
+                        PatchInternalOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib,
+                                                retriedRequest.getPatchOccCapacityRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PatchOccCapacityRequestResponse patchOccCapacityRequest(
             PatchOccCapacityRequestRequest request) {
-        Objects.requireNonNull(
-                request.getPatchOccCapacityRequestDetails(),
-                "patchOccCapacityRequestDetails is required");
+        LOG.trace("Called patchOccCapacityRequest");
+        final PatchOccCapacityRequestRequest interceptedRequest =
+                PatchOccCapacityRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccCapacityRequestId(), "occCapacityRequestId must not be blank");
-
-        return clientCall(request, PatchOccCapacityRequestResponse::builder)
-                .logger(LOG, "patchOccCapacityRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "PatchOccCapacityRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchOccCapacityRequest")
-                .method(com.oracle.bmc.http.client.Method.PATCH)
-                .requestBuilder(PatchOccCapacityRequestRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCapacityRequests")
-                .appendPathParam(request.getOccCapacityRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.class,
-                        PatchOccCapacityRequestResponse.Builder::occCapacityRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", PatchOccCapacityRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", PatchOccCapacityRequestResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchOccCapacityRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, PatchOccCapacityRequestResponse>
+                transformer =
+                        PatchOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib,
+                                                retriedRequest.getPatchOccCapacityRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PublishOccAvailabilityCatalogResponse publishOccAvailabilityCatalog(
             PublishOccAvailabilityCatalogRequest request) {
+        LOG.trace("Called publishOccAvailabilityCatalog");
+        final PublishOccAvailabilityCatalogRequest interceptedRequest =
+                PublishOccAvailabilityCatalogConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishOccAvailabilityCatalogConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccAvailabilityCatalogId(),
-                "occAvailabilityCatalogId must not be blank");
-
-        return clientCall(request, PublishOccAvailabilityCatalogResponse::builder)
-                .logger(LOG, "publishOccAvailabilityCatalog")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "PublishOccAvailabilityCatalog",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PublishOccAvailabilityCatalogRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendPathParam(request.getOccAvailabilityCatalogId())
-                .appendPathParam("actions")
-                .appendPathParam("publish")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PublishOccAvailabilityCatalogResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PublishOccAvailabilityCatalogResponse>
+                transformer =
+                        PublishOccAvailabilityCatalogConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateInternalOccCapacityRequestResponse updateInternalOccCapacityRequest(
             UpdateInternalOccCapacityRequestRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateInternalOccCapacityRequestDetails(),
-                "updateInternalOccCapacityRequestDetails is required");
+        LOG.trace("Called updateInternalOccCapacityRequest");
+        final UpdateInternalOccCapacityRequestRequest interceptedRequest =
+                UpdateInternalOccCapacityRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateInternalOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccCapacityRequestId(), "occCapacityRequestId must not be blank");
-
-        return clientCall(request, UpdateInternalOccCapacityRequestResponse::builder)
-                .logger(LOG, "updateInternalOccCapacityRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "UpdateInternalOccCapacityRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateInternalOccCapacityRequestRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("internal")
-                .appendPathParam("occCapacityRequests")
-                .appendPathParam(request.getOccCapacityRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.class,
-                        UpdateInternalOccCapacityRequestResponse.Builder::occCapacityRequest)
-                .handleResponseHeaderString(
-                        "etag", UpdateInternalOccCapacityRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateInternalOccCapacityRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", UpdateInternalOccCapacityRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateInternalOccCapacityRequestResponse>
+                transformer =
+                        UpdateInternalOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateInternalOccCapacityRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateOccAvailabilityCatalogResponse updateOccAvailabilityCatalog(
             UpdateOccAvailabilityCatalogRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateOccAvailabilityCatalogDetails(),
-                "updateOccAvailabilityCatalogDetails is required");
+        LOG.trace("Called updateOccAvailabilityCatalog");
+        final UpdateOccAvailabilityCatalogRequest interceptedRequest =
+                UpdateOccAvailabilityCatalogConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccAvailabilityCatalogConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccAvailabilityCatalogId(),
-                "occAvailabilityCatalogId must not be blank");
-
-        return clientCall(request, UpdateOccAvailabilityCatalogResponse::builder)
-                .logger(LOG, "updateOccAvailabilityCatalog")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "UpdateOccAvailabilityCatalog",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateOccAvailabilityCatalogRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occAvailabilityCatalogs")
-                .appendPathParam(request.getOccAvailabilityCatalogId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.class,
-                        UpdateOccAvailabilityCatalogResponse.Builder::occAvailabilityCatalog)
-                .handleResponseHeaderString(
-                        "etag", UpdateOccAvailabilityCatalogResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateOccAvailabilityCatalogResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", UpdateOccAvailabilityCatalogResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOccAvailabilityCatalogResponse>
+                transformer =
+                        UpdateOccAvailabilityCatalogConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateOccAvailabilityCatalogDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateOccCapacityRequestResponse updateOccCapacityRequest(
             UpdateOccCapacityRequestRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateOccCapacityRequestDetails(),
-                "updateOccCapacityRequestDetails is required");
+        LOG.trace("Called updateOccCapacityRequest");
+        final UpdateOccCapacityRequestRequest interceptedRequest =
+                UpdateOccCapacityRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getOccCapacityRequestId(), "occCapacityRequestId must not be blank");
-
-        return clientCall(request, UpdateOccCapacityRequestResponse::builder)
-                .logger(LOG, "updateOccCapacityRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "UpdateOccCapacityRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateOccCapacityRequest")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateOccCapacityRequestRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCapacityRequests")
-                .appendPathParam(request.getOccCapacityRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.class,
-                        UpdateOccCapacityRequestResponse.Builder::occCapacityRequest)
-                .handleResponseHeaderString("etag", UpdateOccCapacityRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateOccCapacityRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", UpdateOccCapacityRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateOccCapacityRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCapacityRequestResponse>
+                transformer =
+                        UpdateOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOccCapacityRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateOccCustomerResponse updateOccCustomer(UpdateOccCustomerRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateOccCustomerDetails(), "updateOccCustomerDetails is required");
+        LOG.trace("Called updateOccCustomer");
+        final UpdateOccCustomerRequest interceptedRequest =
+                UpdateOccCustomerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccCustomerConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
-
-        Validate.notBlank(request.getOccCustomerId(), "occCustomerId must not be blank");
-
-        return clientCall(request, UpdateOccCustomerResponse::builder)
-                .logger(LOG, "updateOccCustomer")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "UpdateOccCustomer",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/UpdateOccCustomer")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateOccCustomerRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .appendPathParam(request.getOccCustomerGroupId())
-                .appendPathParam("occCustomers")
-                .appendPathParam(request.getOccCustomerId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCustomer.class,
-                        UpdateOccCustomerResponse.Builder::occCustomer)
-                .handleResponseHeaderString("etag", UpdateOccCustomerResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateOccCustomerResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", UpdateOccCustomerResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/UpdateOccCustomer");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCustomerResponse>
+                transformer =
+                        UpdateOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOccCustomerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateOccCustomerGroupResponse updateOccCustomerGroup(
             UpdateOccCustomerGroupRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateOccCustomerGroupDetails(),
-                "updateOccCustomerGroupDetails is required");
+        LOG.trace("Called updateOccCustomerGroup");
+        final UpdateOccCustomerGroupRequest interceptedRequest =
+                UpdateOccCustomerGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
-
-        return clientCall(request, UpdateOccCustomerGroupResponse::builder)
-                .logger(LOG, "updateOccCustomerGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CapacityManagement",
                         "UpdateOccCustomerGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/UpdateOccCustomerGroup")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateOccCustomerGroupRequest::builder)
-                .basePath("/20231107")
-                .appendPathParam("occCustomerGroups")
-                .appendPathParam(request.getOccCustomerGroupId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.capacitymanagement.model.OccCustomerGroup.class,
-                        UpdateOccCustomerGroupResponse.Builder::occCustomerGroup)
-                .handleResponseHeaderString("etag", UpdateOccCustomerGroupResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateOccCustomerGroupResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", UpdateOccCustomerGroupResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/UpdateOccCustomerGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCustomerGroupResponse>
+                transformer =
+                        UpdateOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOccCustomerGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -1340,209 +1848,5 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
     @Override
     public CapacityManagementPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CapacityManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

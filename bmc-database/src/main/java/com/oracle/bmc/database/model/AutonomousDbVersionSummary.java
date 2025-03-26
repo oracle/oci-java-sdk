@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The supported Autonomous Database version. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The supported Autonomous Database version.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDbVersionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousDbVersionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDbVersionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -55,16 +55,17 @@ public final class AutonomousDbVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A valid Oracle Database version for Autonomous Database. */
+        /**
+         * A valid Oracle Database version for Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * A valid Oracle Database version for Autonomous Database.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -72,134 +73,129 @@ public final class AutonomousDbVersionSummary
         }
         /**
          * The Autonomous Database workload type. The following values are valid:
+         * <p>
+         * - OLTP - indicates an Autonomous Transaction Processing database
+         * - DW - indicates an Autonomous Data Warehouse database
+         * - AJD - indicates an Autonomous JSON Database
+         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
-         * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-         * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-         * indicates an Autonomous Database with the Oracle APEX Application Development workload
-         * type.
-         *
-         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-         * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
-         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
         /**
          * The Autonomous Database workload type. The following values are valid:
-         *
-         * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-         * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-         * indicates an Autonomous Database with the Oracle APEX Application Development workload
-         * type.
-         *
-         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-         * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
-         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         * <p>
+         * - OLTP - indicates an Autonomous Transaction Processing database
+         * - DW - indicates an Autonomous Data Warehouse database
+         * - AJD - indicates an Autonomous JSON Database
+         * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param dbWorkload the value to set
          * @return this builder
-         */
+         **/
         public Builder dbWorkload(DbWorkload dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
             return this;
         }
         /**
-         * True if the database uses [dedicated Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-         */
+         * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
         /**
-         * True if the database uses [dedicated Exadata
-         * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+         * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
          *
          * @param isDedicated the value to set
          * @return this builder
-         */
+         **/
         public Builder isDedicated(Boolean isDedicated) {
             this.isDedicated = isDedicated;
             this.__explicitlySet__.add("isDedicated");
             return this;
         }
-        /** A URL that points to a detailed description of the Autonomous Database version. */
+        /**
+         * A URL that points to a detailed description of the Autonomous Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
          * A URL that points to a detailed description of the Autonomous Database version.
-         *
          * @param details the value to set
          * @return this builder
-         */
+         **/
         public Builder details(String details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
         /**
-         * True if this version of the Oracle Database software can be used for Always-Free
-         * Autonomous Databases.
-         */
+         * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
         private Boolean isFreeTierEnabled;
 
         /**
-         * True if this version of the Oracle Database software can be used for Always-Free
-         * Autonomous Databases.
-         *
+         * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
          * @param isFreeTierEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isFreeTierEnabled(Boolean isFreeTierEnabled) {
             this.isFreeTierEnabled = isFreeTierEnabled;
             this.__explicitlySet__.add("isFreeTierEnabled");
             return this;
         }
-        /** True if this version of the Oracle Database software has payments enabled. */
+        /**
+         * True if this version of the Oracle Database software has payments enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
         private Boolean isPaidEnabled;
 
         /**
          * True if this version of the Oracle Database software has payments enabled.
-         *
          * @param isPaidEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPaidEnabled(Boolean isPaidEnabled) {
             this.isPaidEnabled = isPaidEnabled;
             this.__explicitlySet__.add("isPaidEnabled");
             return this;
         }
-        /** True if this version of the Oracle Database software's default is free. */
+        /**
+         * True if this version of the Oracle Database software's default is free.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
         private Boolean isDefaultForFree;
 
         /**
          * True if this version of the Oracle Database software's default is free.
-         *
          * @param isDefaultForFree the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefaultForFree(Boolean isDefaultForFree) {
             this.isDefaultForFree = isDefaultForFree;
             this.__explicitlySet__.add("isDefaultForFree");
             return this;
         }
-        /** True if this version of the Oracle Database software's default is paid. */
+        /**
+         * True if this version of the Oracle Database software's default is paid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
         private Boolean isDefaultForPaid;
 
         /**
          * True if this version of the Oracle Database software's default is paid.
-         *
          * @param isDefaultForPaid the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefaultForPaid(Boolean isDefaultForPaid) {
             this.isDefaultForPaid = isDefaultForPaid;
             this.__explicitlySet__.add("isDefaultForPaid");
@@ -256,7 +252,9 @@ public final class AutonomousDbVersionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -265,40 +263,40 @@ public final class AutonomousDbVersionSummary
         return new Builder().copy(this);
     }
 
-    /** A valid Oracle Database version for Autonomous Database. */
+    /**
+     * A valid Oracle Database version for Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * A valid Oracle Database version for Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
     /**
      * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-     *
-     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-     * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
-     * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-     */
-    public enum DbWorkload implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum DbWorkload {
         Oltp("OLTP"),
         Dw("DW"),
         Ajd("AJD"),
         Apex("APEX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -339,119 +337,116 @@ public final class AutonomousDbVersionSummary
     };
     /**
      * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-     *
-     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-     * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
-     * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
 
     /**
      * The Autonomous Database workload type. The following values are valid:
-     *
-     * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
-     * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
-     * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-     *
-     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-     * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
-     * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
-     */
+     **/
     public DbWorkload getDbWorkload() {
         return dbWorkload;
     }
 
     /**
-     * True if the database uses [dedicated Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
-     */
+     * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
     private final Boolean isDedicated;
 
     /**
-     * True if the database uses [dedicated Exadata
-     * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDedicated() {
         return isDedicated;
     }
 
-    /** A URL that points to a detailed description of the Autonomous Database version. */
+    /**
+     * A URL that points to a detailed description of the Autonomous Database version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
      * A URL that points to a detailed description of the Autonomous Database version.
-     *
      * @return the value
-     */
+     **/
     public String getDetails() {
         return details;
     }
 
     /**
-     * True if this version of the Oracle Database software can be used for Always-Free Autonomous
-     * Databases.
-     */
+     * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
     private final Boolean isFreeTierEnabled;
 
     /**
-     * True if this version of the Oracle Database software can be used for Always-Free Autonomous
-     * Databases.
-     *
+     * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
      * @return the value
-     */
+     **/
     public Boolean getIsFreeTierEnabled() {
         return isFreeTierEnabled;
     }
 
-    /** True if this version of the Oracle Database software has payments enabled. */
+    /**
+     * True if this version of the Oracle Database software has payments enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
     private final Boolean isPaidEnabled;
 
     /**
      * True if this version of the Oracle Database software has payments enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPaidEnabled() {
         return isPaidEnabled;
     }
 
-    /** True if this version of the Oracle Database software's default is free. */
+    /**
+     * True if this version of the Oracle Database software's default is free.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
     private final Boolean isDefaultForFree;
 
     /**
      * True if this version of the Oracle Database software's default is free.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefaultForFree() {
         return isDefaultForFree;
     }
 
-    /** True if this version of the Oracle Database software's default is paid. */
+    /**
+     * True if this version of the Oracle Database software's default is paid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
     private final Boolean isDefaultForPaid;
 
     /**
      * True if this version of the Oracle Database software's default is paid.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefaultForPaid() {
         return isDefaultForPaid;
     }
@@ -463,7 +458,6 @@ public final class AutonomousDbVersionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

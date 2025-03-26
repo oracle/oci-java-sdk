@@ -5,26 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an external Pluggable Database (PDB) discovered in an external DB system discovery
- * run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an external Pluggable Database (PDB) discovered in an external DB system discovery run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalPluggableDatabase.Builder.class)
+    builder = DiscoveredExternalPluggableDatabase.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalPluggableDatabase extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -92,49 +91,48 @@ public final class DiscoveredExternalPluggableDatabase extends DiscoveredExterna
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The unique identifier of the parent Container Database (CDB). */
+        /**
+         * The unique identifier of the parent Container Database (CDB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
         private String containerDatabaseId;
 
         /**
          * The unique identifier of the parent Container Database (CDB).
-         *
          * @param containerDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder containerDatabaseId(String containerDatabaseId) {
             this.containerDatabaseId = containerDatabaseId;
             this.__explicitlySet__.add("containerDatabaseId");
             return this;
         }
-        /** The unique identifier of the PDB. */
+        /**
+         * The unique identifier of the PDB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("guid")
         private String guid;
 
         /**
          * The unique identifier of the PDB.
-         *
          * @param guid the value to set
          * @return this builder
-         */
+         **/
         public Builder guid(String guid) {
             this.guid = guid;
             this.__explicitlySet__.add("guid");
@@ -212,7 +210,9 @@ public final class DiscoveredExternalPluggableDatabase extends DiscoveredExterna
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -249,44 +249,43 @@ public final class DiscoveredExternalPluggableDatabase extends DiscoveredExterna
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The unique identifier of the parent Container Database (CDB). */
+    /**
+     * The unique identifier of the parent Container Database (CDB).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
     private final String containerDatabaseId;
 
     /**
      * The unique identifier of the parent Container Database (CDB).
-     *
      * @return the value
-     */
+     **/
     public String getContainerDatabaseId() {
         return containerDatabaseId;
     }
 
-    /** The unique identifier of the PDB. */
+    /**
+     * The unique identifier of the PDB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("guid")
     private final String guid;
 
     /**
      * The unique identifier of the PDB.
-     *
      * @return the value
-     */
+     **/
     public String getGuid() {
         return guid;
     }
@@ -305,7 +304,6 @@ public final class DiscoveredExternalPluggableDatabase extends DiscoveredExterna
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

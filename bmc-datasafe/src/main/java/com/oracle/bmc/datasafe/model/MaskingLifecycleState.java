@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The current state of a masking resource such as masking policy or library masking format. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum MaskingLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of a masking resource such as masking policy or library masking format.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum MaskingLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

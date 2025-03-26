@@ -5,22 +5,19 @@
 package com.oracle.bmc.desktops.model;
 
 /**
- * Provides the schedule information for a desktop. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+ * Provides the schedule information for a desktop.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DesktopSchedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DesktopSchedule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DesktopSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cronExpression", "timezone"})
     public DesktopSchedule(String cronExpression, String timezone) {
@@ -31,31 +28,33 @@ public final class DesktopSchedule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A cron expression describing the desktop's schedule. */
+        /**
+         * A cron expression describing the desktop's schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cronExpression")
         private String cronExpression;
 
         /**
          * A cron expression describing the desktop's schedule.
-         *
          * @param cronExpression the value to set
          * @return this builder
-         */
+         **/
         public Builder cronExpression(String cronExpression) {
             this.cronExpression = cronExpression;
             this.__explicitlySet__.add("cronExpression");
             return this;
         }
-        /** The timezone of the desktop's schedule. */
+        /**
+         * The timezone of the desktop's schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timezone")
         private String timezone;
 
         /**
          * The timezone of the desktop's schedule.
-         *
          * @param timezone the value to set
          * @return this builder
-         */
+         **/
         public Builder timezone(String timezone) {
             this.timezone = timezone;
             this.__explicitlySet__.add("timezone");
@@ -85,7 +84,9 @@ public final class DesktopSchedule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,28 +95,30 @@ public final class DesktopSchedule
         return new Builder().copy(this);
     }
 
-    /** A cron expression describing the desktop's schedule. */
+    /**
+     * A cron expression describing the desktop's schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cronExpression")
     private final String cronExpression;
 
     /**
      * A cron expression describing the desktop's schedule.
-     *
      * @return the value
-     */
+     **/
     public String getCronExpression() {
         return cronExpression;
     }
 
-    /** The timezone of the desktop's schedule. */
+    /**
+     * The timezone of the desktop's schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     private final String timezone;
 
     /**
      * The timezone of the desktop's schedule.
-     *
      * @return the value
-     */
+     **/
     public String getTimezone() {
         return timezone;
     }
@@ -127,7 +130,6 @@ public final class DesktopSchedule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

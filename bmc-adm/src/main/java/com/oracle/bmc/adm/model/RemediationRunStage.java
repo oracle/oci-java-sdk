@@ -5,34 +5,35 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * A remediation run stage is one step of an remediation run. Each stage provides output logs and
- * has a specific type. The stages are: DETECT, RECOMMEND, VERIFY, and APPLY. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+ * A remediation run stage is one step of an remediation run. Each stage provides output logs and has a specific type.
+ * The stages are: DETECT, RECOMMEND, VERIFY, and APPLY.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = RemediationRunStage.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = RemediationRunStage.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = RecommendStage.class,
-            name = "RECOMMEND"),
+        value = RecommendStage.class,
+        name = "RECOMMEND"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VerifyStage.class, name = "VERIFY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ApplyStage.class, name = "APPLY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = DetectStage.class, name = "DETECT")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class RemediationRunStage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class RemediationRunStage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "status",
@@ -64,8 +65,10 @@ public class RemediationRunStage extends com.oracle.bmc.http.client.internal.Exp
         this.nextStageType = nextStageType;
     }
 
-    /** The current status of a remediation run stage. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current status of a remediation run stage.
+     **/
+    public enum Status {
         Created("CREATED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -74,8 +77,8 @@ public class RemediationRunStage extends com.oracle.bmc.http.client.internal.Exp
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -113,124 +116,114 @@ public class RemediationRunStage extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The current status of a remediation run stage. */
+    /**
+     * The current status of a remediation run stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The current status of a remediation run stage.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
-     * The creation date and time of the remediation run stage (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The creation date and time of the remediation run stage (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     *
+     * The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time of the start of the remediation run stage (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time of the start of the remediation run stage (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     *
+     * The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * The date and time of the finish of the remediation run stage (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time of the finish of the remediation run stage (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     *
+     * The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** Information about the current step within the stage. */
+    /**
+     * Information about the current step within the stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
      * Information about the current step within the stage.
-     *
      * @return the value
-     */
+     **/
     public String getSummary() {
         return summary;
     }
 
     /**
-     * The Oracle Cloud identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * remediation run.
-     */
+     * The Oracle Cloud identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remediationRunId")
     private final String remediationRunId;
 
     /**
-     * The Oracle Cloud identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * remediation run.
-     *
+     * The Oracle Cloud identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * @return the value
-     */
+     **/
     public String getRemediationRunId() {
         return remediationRunId;
     }
 
-    /** The previous type of stage in the remediation run. */
+    /**
+     * The previous type of stage in the remediation run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousStageType")
     private final RemediationRunStageType previousStageType;
 
     /**
      * The previous type of stage in the remediation run.
-     *
      * @return the value
-     */
+     **/
     public RemediationRunStageType getPreviousStageType() {
         return previousStageType;
     }
 
-    /** The next type of stage in the remediation run. */
+    /**
+     * The next type of stage in the remediation run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextStageType")
     private final RemediationRunStageType nextStageType;
 
     /**
      * The next type of stage in the remediation run.
-     *
      * @return the value
-     */
+     **/
     public RemediationRunStageType getNextStageType() {
         return nextStageType;
     }
@@ -242,7 +235,6 @@ public class RemediationRunStage extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

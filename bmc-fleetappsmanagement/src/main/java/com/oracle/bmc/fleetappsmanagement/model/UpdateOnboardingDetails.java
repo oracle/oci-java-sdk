@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information about updating onboarding. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The information about updating onboarding.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateOnboardingDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateOnboardingDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateOnboardingDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isFamsTagEnabled", "isCostTrackingTagEnabled"})
     public UpdateOnboardingDetails(Boolean isFamsTagEnabled, Boolean isCostTrackingTagEnabled) {
@@ -32,31 +31,33 @@ public final class UpdateOnboardingDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A value determining Fleet Application Management tag is enabled or not */
+        /**
+         * A value determining Fleet Application Management tag is enabled or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFamsTagEnabled")
         private Boolean isFamsTagEnabled;
 
         /**
          * A value determining Fleet Application Management tag is enabled or not
-         *
          * @param isFamsTagEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isFamsTagEnabled(Boolean isFamsTagEnabled) {
             this.isFamsTagEnabled = isFamsTagEnabled;
             this.__explicitlySet__.add("isFamsTagEnabled");
             return this;
         }
-        /** A value determining if cost tracking tag is enabled or not */
+        /**
+         * A value determining if cost tracking tag is enabled or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCostTrackingTagEnabled")
         private Boolean isCostTrackingTagEnabled;
 
         /**
          * A value determining if cost tracking tag is enabled or not
-         *
          * @param isCostTrackingTagEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCostTrackingTagEnabled(Boolean isCostTrackingTagEnabled) {
             this.isCostTrackingTagEnabled = isCostTrackingTagEnabled;
             this.__explicitlySet__.add("isCostTrackingTagEnabled");
@@ -88,7 +89,9 @@ public final class UpdateOnboardingDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class UpdateOnboardingDetails
         return new Builder().copy(this);
     }
 
-    /** A value determining Fleet Application Management tag is enabled or not */
+    /**
+     * A value determining Fleet Application Management tag is enabled or not
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFamsTagEnabled")
     private final Boolean isFamsTagEnabled;
 
     /**
      * A value determining Fleet Application Management tag is enabled or not
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFamsTagEnabled() {
         return isFamsTagEnabled;
     }
 
-    /** A value determining if cost tracking tag is enabled or not */
+    /**
+     * A value determining if cost tracking tag is enabled or not
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTrackingTagEnabled")
     private final Boolean isCostTrackingTagEnabled;
 
     /**
      * A value determining if cost tracking tag is enabled or not
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCostTrackingTagEnabled() {
         return isCostTrackingTagEnabled;
     }
@@ -130,7 +135,6 @@ public final class UpdateOnboardingDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

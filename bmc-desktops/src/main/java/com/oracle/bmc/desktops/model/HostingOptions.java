@@ -5,22 +5,19 @@
 package com.oracle.bmc.desktops.model;
 
 /**
- * Provides information about where a desktop is hosted. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+ * Provides information about where a desktop is hosted.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostingOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HostingOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class HostingOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"image", "connectAddress"})
     public HostingOptions(DesktopImage image, String connectAddress) {
@@ -40,16 +37,17 @@ public final class HostingOptions
             this.__explicitlySet__.add("image");
             return this;
         }
-        /** The connection address of the desktop. */
+        /**
+         * The connection address of the desktop.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectAddress")
         private String connectAddress;
 
         /**
          * The connection address of the desktop.
-         *
          * @param connectAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder connectAddress(String connectAddress) {
             this.connectAddress = connectAddress;
             this.__explicitlySet__.add("connectAddress");
@@ -79,7 +77,9 @@ public final class HostingOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,15 +95,16 @@ public final class HostingOptions
         return image;
     }
 
-    /** The connection address of the desktop. */
+    /**
+     * The connection address of the desktop.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectAddress")
     private final String connectAddress;
 
     /**
      * The connection address of the desktop.
-     *
      * @return the value
-     */
+     **/
     public String getConnectAddress() {
         return connectAddress;
     }
@@ -115,7 +116,6 @@ public final class HostingOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

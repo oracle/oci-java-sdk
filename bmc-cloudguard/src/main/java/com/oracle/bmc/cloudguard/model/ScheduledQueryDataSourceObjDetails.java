@@ -5,83 +5,87 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about new schedule Query of type DataSource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * The information about new schedule Query of type DataSource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScheduledQueryDataSourceObjDetails.Builder.class)
+    builder = ScheduledQueryDataSourceObjDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "dataSourceFeedProvider")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "dataSourceFeedProvider"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScheduledQueryDataSourceObjDetails extends DataSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The continuous query expression that is run periodically. */
+        /**
+         * The continuous query expression that is run periodically.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
          * The continuous query expression that is run periodically.
-         *
          * @param query the value to set
          * @return this builder
-         */
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
             return this;
         }
-        /** Description text for the query */
+        /**
+         * Description text for the query
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description text for the query
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Interval in minutes which query is run periodically. */
+        /**
+         * Interval in minutes which query is run periodically.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
         private Integer intervalInSeconds;
 
         /**
          * Interval in minutes which query is run periodically.
-         *
          * @param intervalInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder intervalInSeconds(Integer intervalInSeconds) {
             this.intervalInSeconds = intervalInSeconds;
             this.__explicitlySet__.add("intervalInSeconds");
             return this;
         }
-        /** Target information in which scheduled query will be run */
+        /**
+         * Target information in which scheduled query will be run
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledQueryScopeDetails")
         private java.util.List<ScheduledQueryScopeDetail> scheduledQueryScopeDetails;
 
         /**
          * Target information in which scheduled query will be run
-         *
          * @param scheduledQueryScopeDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledQueryScopeDetails(
                 java.util.List<ScheduledQueryScopeDetail> scheduledQueryScopeDetails) {
             this.scheduledQueryScopeDetails = scheduledQueryScopeDetails;
@@ -123,7 +127,9 @@ public final class ScheduledQueryDataSourceObjDetails extends DataSourceDetails 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,54 +151,58 @@ public final class ScheduledQueryDataSourceObjDetails extends DataSourceDetails 
         this.scheduledQueryScopeDetails = scheduledQueryScopeDetails;
     }
 
-    /** The continuous query expression that is run periodically. */
+    /**
+     * The continuous query expression that is run periodically.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
      * The continuous query expression that is run periodically.
-     *
      * @return the value
-     */
+     **/
     public String getQuery() {
         return query;
     }
 
-    /** Description text for the query */
+    /**
+     * Description text for the query
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description text for the query
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Interval in minutes which query is run periodically. */
+    /**
+     * Interval in minutes which query is run periodically.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
     private final Integer intervalInSeconds;
 
     /**
      * Interval in minutes which query is run periodically.
-     *
      * @return the value
-     */
+     **/
     public Integer getIntervalInSeconds() {
         return intervalInSeconds;
     }
 
-    /** Target information in which scheduled query will be run */
+    /**
+     * Target information in which scheduled query will be run
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledQueryScopeDetails")
     private final java.util.List<ScheduledQueryScopeDetail> scheduledQueryScopeDetails;
 
     /**
      * Target information in which scheduled query will be run
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ScheduledQueryScopeDetail> getScheduledQueryScopeDetails() {
         return scheduledQueryScopeDetails;
     }
@@ -204,7 +214,6 @@ public final class ScheduledQueryDataSourceObjDetails extends DataSourceDetails 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

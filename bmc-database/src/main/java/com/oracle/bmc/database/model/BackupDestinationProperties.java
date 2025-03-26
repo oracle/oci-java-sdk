@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The properties of the backup destination associated with the Autonomous Container Database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The properties of the backup destination associated with the Autonomous Container Database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BackupDestinationProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BackupDestinationProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BackupDestinationProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "backupDestinationAttachHistory",
@@ -41,19 +40,16 @@ public final class BackupDestinationProperties
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The timestamps at which this backup destination is used as the preferred destination to
-         * host the Autonomous Container Database backups.
-         */
+         * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationAttachHistory")
         private java.util.List<java.util.Date> backupDestinationAttachHistory;
 
         /**
-         * The timestamps at which this backup destination is used as the preferred destination to
-         * host the Autonomous Container Database backups.
-         *
+         * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
          * @param backupDestinationAttachHistory the value to set
          * @return this builder
-         */
+         **/
         public Builder backupDestinationAttachHistory(
                 java.util.List<java.util.Date> backupDestinationAttachHistory) {
             this.backupDestinationAttachHistory = backupDestinationAttachHistory;
@@ -61,38 +57,32 @@ public final class BackupDestinationProperties
             return this;
         }
         /**
-         * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-         * destination, rounded to the nearest integer.
-         */
+         * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spaceUtilizedInGBs")
         private Integer spaceUtilizedInGBs;
 
         /**
-         * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-         * destination, rounded to the nearest integer.
-         *
+         * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
          * @param spaceUtilizedInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder spaceUtilizedInGBs(Integer spaceUtilizedInGBs) {
             this.spaceUtilizedInGBs = spaceUtilizedInGBs;
             this.__explicitlySet__.add("spaceUtilizedInGBs");
             return this;
         }
         /**
-         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-         * updated.
-         */
+         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
         private java.util.Date timeAtWhichStorageDetailsAreUpdated;
 
         /**
-         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-         * updated.
-         *
+         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
          * @param timeAtWhichStorageDetailsAreUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAtWhichStorageDetailsAreUpdated(
                 java.util.Date timeAtWhichStorageDetailsAreUpdated) {
             this.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
@@ -131,7 +121,9 @@ public final class BackupDestinationProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,52 +133,43 @@ public final class BackupDestinationProperties
     }
 
     /**
-     * The timestamps at which this backup destination is used as the preferred destination to host
-     * the Autonomous Container Database backups.
-     */
+     * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationAttachHistory")
     private final java.util.List<java.util.Date> backupDestinationAttachHistory;
 
     /**
-     * The timestamps at which this backup destination is used as the preferred destination to host
-     * the Autonomous Container Database backups.
-     *
+     * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
      * @return the value
-     */
+     **/
     public java.util.List<java.util.Date> getBackupDestinationAttachHistory() {
         return backupDestinationAttachHistory;
     }
 
     /**
-     * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-     * destination, rounded to the nearest integer.
-     */
+     * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("spaceUtilizedInGBs")
     private final Integer spaceUtilizedInGBs;
 
     /**
-     * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-     * destination, rounded to the nearest integer.
-     *
+     * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
      * @return the value
-     */
+     **/
     public Integer getSpaceUtilizedInGBs() {
         return spaceUtilizedInGBs;
     }
 
     /**
-     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-     * updated.
-     */
+     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
     private final java.util.Date timeAtWhichStorageDetailsAreUpdated;
 
     /**
-     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-     * updated.
-     *
+     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAtWhichStorageDetailsAreUpdated() {
         return timeAtWhichStorageDetailsAreUpdated;
     }
@@ -198,7 +181,6 @@ public final class BackupDestinationProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * State stored in All States Map of Composite State <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * State stored in All States Map of Composite State
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = State.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class State extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class State extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "parameterValue", "timeValue"})
     public State(String name, ParameterValue parameterValue, java.util.Date timeValue) {
@@ -31,16 +29,17 @@ public final class State extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A simple name for the State. */
+        /**
+         * A simple name for the State.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * A simple name for the State.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -55,16 +54,17 @@ public final class State extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("parameterValue");
             return this;
         }
-        /** To store a date value for the State we use dateValue attribute. */
+        /**
+         * To store a date value for the State we use dateValue attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeValue")
         private java.util.Date timeValue;
 
         /**
          * To store a date value for the State we use dateValue attribute.
-         *
          * @param timeValue the value to set
          * @return this builder
-         */
+         **/
         public Builder timeValue(java.util.Date timeValue) {
             this.timeValue = timeValue;
             this.__explicitlySet__.add("timeValue");
@@ -97,7 +97,9 @@ public final class State extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,15 +108,16 @@ public final class State extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** A simple name for the State. */
+    /**
+     * A simple name for the State.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * A simple name for the State.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -126,15 +129,16 @@ public final class State extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return parameterValue;
     }
 
-    /** To store a date value for the State we use dateValue attribute. */
+    /**
+     * To store a date value for the State we use dateValue attribute.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeValue")
     private final java.util.Date timeValue;
 
     /**
      * To store a date value for the State we use dateValue attribute.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeValue() {
         return timeValue;
     }
@@ -146,7 +150,6 @@ public final class State extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The information of the VM Cluster which contains databases. Either an opsiPrivateEndpointId or
- * dbmPrivateEndpointId must be specified. If the dbmPrivateEndpointId is specified, a new
- * Operations Insights private endpoint will be created. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * The information of the VM Cluster which contains databases. Either an opsiPrivateEndpointId or dbmPrivateEndpointId must be specified. If the dbmPrivateEndpointId is specified, a new Operations Insights private endpoint will be created.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreatePeComanagedExadataVmclusterDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreatePeComanagedExadataVmclusterDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreatePeComanagedExadataVmclusterDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vmclusterId",
@@ -49,72 +46,64 @@ public final class CreatePeComanagedExadataVmclusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM Cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmclusterId")
         private String vmclusterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM Cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
          * @param vmclusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder vmclusterId(String vmclusterId) {
             this.vmclusterId = vmclusterId;
             this.__explicitlySet__.add("vmclusterId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * OPSI private endpoint
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * OPSI private endpoint
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
          * @param opsiPrivateEndpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             this.__explicitlySet__.add("opsiPrivateEndpointId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Management private endpoint
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbmPrivateEndpointId")
         private String dbmPrivateEndpointId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Management private endpoint
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
          * @param dbmPrivateEndpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
             this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             this.__explicitlySet__.add("dbmPrivateEndpointId");
             return this;
         }
-        /** The databases that belong to the VM Cluster */
+        /**
+         * The databases that belong to the VM Cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memberDatabaseDetails")
         private java.util.List<CreatePeComanagedDatabaseInsightDetails> memberDatabaseDetails;
 
         /**
          * The databases that belong to the VM Cluster
-         *
          * @param memberDatabaseDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder memberDatabaseDetails(
                 java.util.List<CreatePeComanagedDatabaseInsightDetails> memberDatabaseDetails) {
             this.memberDatabaseDetails = memberDatabaseDetails;
@@ -122,19 +111,16 @@ public final class CreatePeComanagedExadataVmclusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -179,7 +165,9 @@ public final class CreatePeComanagedExadataVmclusterDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,82 +177,71 @@ public final class CreatePeComanagedExadataVmclusterDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * Cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmclusterId")
     private final String vmclusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * Cluster.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
      * @return the value
-     */
+     **/
     public String getVmclusterId() {
         return vmclusterId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
-     * private endpoint
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
-     * private endpoint
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * @return the value
-     */
+     **/
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Management private endpoint
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbmPrivateEndpointId")
     private final String dbmPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Management private endpoint
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
      * @return the value
-     */
+     **/
     public String getDbmPrivateEndpointId() {
         return dbmPrivateEndpointId;
     }
 
-    /** The databases that belong to the VM Cluster */
+    /**
+     * The databases that belong to the VM Cluster
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memberDatabaseDetails")
     private final java.util.List<CreatePeComanagedDatabaseInsightDetails> memberDatabaseDetails;
 
     /**
      * The databases that belong to the VM Cluster
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CreatePeComanagedDatabaseInsightDetails> getMemberDatabaseDetails() {
         return memberDatabaseDetails;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -276,7 +253,6 @@ public final class CreatePeComanagedExadataVmclusterDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

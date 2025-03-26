@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the Databricks Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the Databricks Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabricksConnectionSummary.Builder.class)
+    builder = DatabricksConnectionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DatabricksConnectionSummary extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,22 +199,26 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Databricks technology type. */
+        /**
+         * The Databricks technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private DatabricksConnection.TechnologyType technologyType;
 
         /**
          * The Databricks technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(DatabricksConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** Used authentication mechanism to access Databricks. */
+        /**
+         * Used authentication mechanism to access Databricks.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private DatabricksConnection.AuthenticationType authenticationType;
 
@@ -222,7 +227,7 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
          *
          * @param authenticationType the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationType(
                 DatabricksConnection.AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
@@ -230,46 +235,49 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * Connection URL. e.g.:
-         * 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-         */
+         * Connection URL.
+         * e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
         private String connectionUrl;
 
         /**
-         * Connection URL. e.g.:
-         * 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+         * Connection URL.
+         * e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
          *
          * @param connectionUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionUrl(String connectionUrl) {
             this.connectionUrl = connectionUrl;
             this.__explicitlySet__.add("connectionUrl");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. Note: When provided, 'password' field must not be
-         * provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. Note: When provided, 'password' field must not be
-         * provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-        /** OAuth client id, only applicable for authenticationType == OAUTH_M2M */
+        /**
+         * OAuth client id, only applicable for authenticationType == OAUTH_M2M
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
@@ -278,47 +286,47 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
          *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the client secret is stored. Only applicable for authenticationType ==
-         * OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Only applicable for authenticationType == OAUTH_M2M.
+         * Note: When provided, 'clientSecret' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the client secret is stored. Only applicable for authenticationType ==
-         * OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Only applicable for authenticationType == OAUTH_M2M.
+         * Note: When provided, 'clientSecret' field must not be provided.
          *
          * @param clientSecretSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecretSecretId(String clientSecretSecretId) {
             this.clientSecretSecretId = clientSecretSecretId;
             this.__explicitlySet__.add("clientSecretSecretId");
             return this;
         }
         /**
-         * Optional. External storage credential name to access files on object storage such as ADLS
-         * Gen2, S3 or GCS.
-         */
+         * Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageCredentialName")
         private String storageCredentialName;
 
         /**
-         * Optional. External storage credential name to access files on object storage such as ADLS
-         * Gen2, S3 or GCS.
+         * Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
          *
          * @param storageCredentialName the value to set
          * @return this builder
-         */
+         **/
         public Builder storageCredentialName(String storageCredentialName) {
             this.storageCredentialName = storageCredentialName;
             this.__explicitlySet__.add("storageCredentialName");
@@ -447,7 +455,9 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -513,20 +523,24 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
         this.storageCredentialName = storageCredentialName;
     }
 
-    /** The Databricks technology type. */
+    /**
+     * The Databricks technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final DatabricksConnection.TechnologyType technologyType;
 
     /**
      * The Databricks technology type.
-     *
      * @return the value
-     */
+     **/
     public DatabricksConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** Used authentication mechanism to access Databricks. */
+    /**
+     * Used authentication mechanism to access Databricks.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final DatabricksConnection.AuthenticationType authenticationType;
 
@@ -534,48 +548,51 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
      * Used authentication mechanism to access Databricks.
      *
      * @return the value
-     */
+     **/
     public DatabricksConnection.AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
 
     /**
-     * Connection URL. e.g.:
-     * 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-     */
+     * Connection URL.
+     * e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
     private final String connectionUrl;
 
     /**
-     * Connection URL. e.g.:
-     * 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+     * Connection URL.
+     * e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
      *
      * @return the value
-     */
+     **/
     public String getConnectionUrl() {
         return connectionUrl;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. Note: When provided, 'password' field must not be
-     * provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. Note: When provided, 'password' field must not be
-     * provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
-    /** OAuth client id, only applicable for authenticationType == OAUTH_M2M */
+    /**
+     * OAuth client id, only applicable for authenticationType == OAUTH_M2M
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
@@ -583,43 +600,43 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
      * OAuth client id, only applicable for authenticationType == OAUTH_M2M
      *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the client secret is stored. Only applicable for authenticationType ==
-     * OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Only applicable for authenticationType == OAUTH_M2M.
+     * Note: When provided, 'clientSecret' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the client secret is stored. Only applicable for authenticationType ==
-     * OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Only applicable for authenticationType == OAUTH_M2M.
+     * Note: When provided, 'clientSecret' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getClientSecretSecretId() {
         return clientSecretSecretId;
     }
 
     /**
-     * Optional. External storage credential name to access files on object storage such as ADLS
-     * Gen2, S3 or GCS.
-     */
+     * Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageCredentialName")
     private final String storageCredentialName;
 
     /**
-     * Optional. External storage credential name to access files on object storage such as ADLS
-     * Gen2, S3 or GCS.
+     * Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
      *
      * @return the value
-     */
+     **/
     public String getStorageCredentialName() {
         return storageCredentialName;
     }
@@ -631,7 +648,6 @@ public final class DatabricksConnectionSummary extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

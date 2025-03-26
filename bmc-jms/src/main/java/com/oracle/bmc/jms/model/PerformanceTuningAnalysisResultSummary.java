@@ -5,24 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Summary of a performance tuning analysis result. The actual output of the analysis is stored in
- * the Object Storage object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Summary of a performance tuning analysis result. The actual output of the analysis is stored in the Object Storage object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PerformanceTuningAnalysisResultSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PerformanceTuningAnalysisResultSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PerformanceTuningAnalysisResultSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -83,260 +81,273 @@ public final class PerformanceTuningAnalysisResultSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID to identify this analysis results. */
+        /**
+         * The OCID to identify this analysis results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID to identify this analysis results.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the work request to start the analysis. */
+        /**
+         * The OCID of the work request to start the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * The OCID of the work request to start the analysis.
-         *
          * @param workRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
-        /** The fleet OCID. */
+        /**
+         * The fleet OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
          * The fleet OCID.
-         *
          * @param fleetId the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-        /** The OCID of the application for which the report has been generated. */
+        /**
+         * The OCID of the application for which the report has been generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
         /**
          * The OCID of the application for which the report has been generated.
-         *
          * @param applicationId the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
             return this;
         }
         /**
-         * The internal identifier of the application installation for which the report has been
-         * generated.
-         */
+         * The internal identifier of the application installation for which the report has been generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationId")
         private String applicationInstallationId;
 
         /**
-         * The internal identifier of the application installation for which the report has been
-         * generated.
-         *
+         * The internal identifier of the application installation for which the report has been generated.
          * @param applicationInstallationId the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationInstallationId(String applicationInstallationId) {
             this.applicationInstallationId = applicationInstallationId;
             this.__explicitlySet__.add("applicationInstallationId");
             return this;
         }
-        /** The installation path of the application for which the report has been generated. */
+        /**
+         * The installation path of the application for which the report has been generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationPath")
         private String applicationInstallationPath;
 
         /**
          * The installation path of the application for which the report has been generated.
-         *
          * @param applicationInstallationPath the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationInstallationPath(String applicationInstallationPath) {
             this.applicationInstallationPath = applicationInstallationPath;
             this.__explicitlySet__.add("applicationInstallationPath");
             return this;
         }
-        /** Total number of warnings reported by the analysis. */
+        /**
+         * Total number of warnings reported by the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningCount")
         private Integer warningCount;
 
         /**
          * Total number of warnings reported by the analysis.
-         *
          * @param warningCount the value to set
          * @return this builder
-         */
+         **/
         public Builder warningCount(Integer warningCount) {
             this.warningCount = warningCount;
             this.__explicitlySet__.add("warningCount");
             return this;
         }
-        /** Result of the analysis based on whether warnings have been found or not. */
+        /**
+         * Result of the analysis based on whether warnings have been found or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("result")
         private PerformanceTuningResultStatus result;
 
         /**
          * Result of the analysis based on whether warnings have been found or not.
-         *
          * @param result the value to set
          * @return this builder
-         */
+         **/
         public Builder result(PerformanceTuningResultStatus result) {
             this.result = result;
             this.__explicitlySet__.add("result");
             return this;
         }
-        /** The managed instance OCID. */
+        /**
+         * The managed instance OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
          * The managed instance OCID.
-         *
          * @param managedInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
-        /** The hostname of the managed instance. */
+        /**
+         * The hostname of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The hostname of the managed instance.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** The name of the application for which the report has been generated. */
+        /**
+         * The name of the application for which the report has been generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
         private String applicationName;
 
         /**
          * The name of the application for which the report has been generated.
-         *
          * @param applicationName the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationName(String applicationName) {
             this.applicationName = applicationName;
             this.__explicitlySet__.add("applicationName");
             return this;
         }
-        /** The Object Storage namespace of this analysis result. */
+        /**
+         * The Object Storage namespace of this analysis result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The Object Storage namespace of this analysis result.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The Object Storage bucket name of this analysis result. */
+        /**
+         * The Object Storage bucket name of this analysis result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The Object Storage bucket name of this analysis result.
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The Object Storage object name of this analysis result. */
+        /**
+         * The Object Storage object name of this analysis result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The Object Storage object name of this analysis result.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** The time the result is compiled. */
+        /**
+         * The time the result is compiled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the result is compiled.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the JFR recording has started. */
+        /**
+         * The time the JFR recording has started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time the JFR recording has started.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the JFR recording has finished. */
+        /**
+         * The time the JFR recording has finished.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The time the JFR recording has finished.
-         *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -429,7 +440,9 @@ public final class PerformanceTuningAnalysisResultSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -438,227 +451,240 @@ public final class PerformanceTuningAnalysisResultSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID to identify this analysis results. */
+    /**
+     * The OCID to identify this analysis results.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID to identify this analysis results.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the work request to start the analysis. */
+    /**
+     * The OCID of the work request to start the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * The OCID of the work request to start the analysis.
-     *
      * @return the value
-     */
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
 
-    /** The fleet OCID. */
+    /**
+     * The fleet OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
      * The fleet OCID.
-     *
      * @return the value
-     */
+     **/
     public String getFleetId() {
         return fleetId;
     }
 
-    /** The OCID of the application for which the report has been generated. */
+    /**
+     * The OCID of the application for which the report has been generated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
     /**
      * The OCID of the application for which the report has been generated.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationId() {
         return applicationId;
     }
 
     /**
-     * The internal identifier of the application installation for which the report has been
-     * generated.
-     */
+     * The internal identifier of the application installation for which the report has been generated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationId")
     private final String applicationInstallationId;
 
     /**
-     * The internal identifier of the application installation for which the report has been
-     * generated.
-     *
+     * The internal identifier of the application installation for which the report has been generated.
      * @return the value
-     */
+     **/
     public String getApplicationInstallationId() {
         return applicationInstallationId;
     }
 
-    /** The installation path of the application for which the report has been generated. */
+    /**
+     * The installation path of the application for which the report has been generated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationInstallationPath")
     private final String applicationInstallationPath;
 
     /**
      * The installation path of the application for which the report has been generated.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationInstallationPath() {
         return applicationInstallationPath;
     }
 
-    /** Total number of warnings reported by the analysis. */
+    /**
+     * Total number of warnings reported by the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningCount")
     private final Integer warningCount;
 
     /**
      * Total number of warnings reported by the analysis.
-     *
      * @return the value
-     */
+     **/
     public Integer getWarningCount() {
         return warningCount;
     }
 
-    /** Result of the analysis based on whether warnings have been found or not. */
+    /**
+     * Result of the analysis based on whether warnings have been found or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("result")
     private final PerformanceTuningResultStatus result;
 
     /**
      * Result of the analysis based on whether warnings have been found or not.
-     *
      * @return the value
-     */
+     **/
     public PerformanceTuningResultStatus getResult() {
         return result;
     }
 
-    /** The managed instance OCID. */
+    /**
+     * The managed instance OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
      * The managed instance OCID.
-     *
      * @return the value
-     */
+     **/
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
 
-    /** The hostname of the managed instance. */
+    /**
+     * The hostname of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The hostname of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** The name of the application for which the report has been generated. */
+    /**
+     * The name of the application for which the report has been generated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
     private final String applicationName;
 
     /**
      * The name of the application for which the report has been generated.
-     *
      * @return the value
-     */
+     **/
     public String getApplicationName() {
         return applicationName;
     }
 
-    /** The Object Storage namespace of this analysis result. */
+    /**
+     * The Object Storage namespace of this analysis result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The Object Storage namespace of this analysis result.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The Object Storage bucket name of this analysis result. */
+    /**
+     * The Object Storage bucket name of this analysis result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The Object Storage bucket name of this analysis result.
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** The Object Storage object name of this analysis result. */
+    /**
+     * The Object Storage object name of this analysis result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The Object Storage object name of this analysis result.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** The time the result is compiled. */
+    /**
+     * The time the result is compiled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the result is compiled.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the JFR recording has started. */
+    /**
+     * The time the JFR recording has started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time the JFR recording has started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time the JFR recording has finished. */
+    /**
+     * The time the JFR recording has finished.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The time the JFR recording has finished.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
@@ -670,7 +696,6 @@ public final class PerformanceTuningAnalysisResultSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

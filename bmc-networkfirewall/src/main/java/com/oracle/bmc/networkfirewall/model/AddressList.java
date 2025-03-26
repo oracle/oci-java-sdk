@@ -5,23 +5,22 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * List of addresses with a reference name. The value of an entry is a list of IP addresses or
- * prefixes in CIDR notation or FQDNs. The associated key is the identifier by which the IP address
- * list is referenced. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * List of addresses with a reference name.
+ * The value of an entry is a list of IP addresses or prefixes in CIDR notation or FQDNs.
+ * The associated key is the identifier by which the IP address list is referenced.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddressList.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AddressList extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AddressList extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -46,76 +45,81 @@ public final class AddressList extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique name to identify the group of addresses to be used in the policy rules. */
+        /**
+         * Unique name to identify the group of addresses to be used in the policy rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Unique name to identify the group of addresses to be used in the policy rules.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of address List. The accepted values are - * FQDN * IP */
+        /**
+         * Type of address List. The accepted values are - * FQDN * IP
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private AddressListType type;
 
         /**
          * Type of address List. The accepted values are - * FQDN * IP
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(AddressListType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** List of addresses. */
+        /**
+         * List of addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private java.util.List<String> addresses;
 
         /**
          * List of addresses.
-         *
          * @param addresses the value to set
          * @return this builder
-         */
+         **/
         public Builder addresses(java.util.List<String> addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
             return this;
         }
-        /** Count of total Addresses in the AddressList */
+        /**
+         * Count of total Addresses in the AddressList
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalAddresses")
         private Integer totalAddresses;
 
         /**
          * Count of total Addresses in the AddressList
-         *
          * @param totalAddresses the value to set
          * @return this builder
-         */
+         **/
         public Builder totalAddresses(Integer totalAddresses) {
             this.totalAddresses = totalAddresses;
             this.__explicitlySet__.add("totalAddresses");
             return this;
         }
-        /** OCID of the Network Firewall Policy this Address List belongs to. */
+        /**
+         * OCID of the Network Firewall Policy this Address List belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
         private String parentResourceId;
 
         /**
          * OCID of the Network Firewall Policy this Address List belongs to.
-         *
          * @param parentResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
@@ -160,7 +164,9 @@ public final class AddressList extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +175,72 @@ public final class AddressList extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Unique name to identify the group of addresses to be used in the policy rules. */
+    /**
+     * Unique name to identify the group of addresses to be used in the policy rules.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of address List. The accepted values are - * FQDN * IP */
+    /**
+     * Type of address List. The accepted values are - * FQDN * IP
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final AddressListType type;
 
     /**
      * Type of address List. The accepted values are - * FQDN * IP
-     *
      * @return the value
-     */
+     **/
     public AddressListType getType() {
         return type;
     }
 
-    /** List of addresses. */
+    /**
+     * List of addresses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final java.util.List<String> addresses;
 
     /**
      * List of addresses.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAddresses() {
         return addresses;
     }
 
-    /** Count of total Addresses in the AddressList */
+    /**
+     * Count of total Addresses in the AddressList
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalAddresses")
     private final Integer totalAddresses;
 
     /**
      * Count of total Addresses in the AddressList
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalAddresses() {
         return totalAddresses;
     }
 
-    /** OCID of the Network Firewall Policy this Address List belongs to. */
+    /**
+     * OCID of the Network Firewall Policy this Address List belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
     private final String parentResourceId;
 
     /**
      * OCID of the Network Firewall Policy this Address List belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getParentResourceId() {
         return parentResourceId;
     }
@@ -241,7 +252,6 @@ public final class AddressList extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

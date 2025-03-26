@@ -6,60 +6,86 @@ package com.oracle.bmc.desktops.requests;
 
 import com.oracle.bmc.desktops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDesktopsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDesktopsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment of the desktop pool. */
+    /**
+     * The OCID of the compartment of the desktop pool.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment of the desktop pool. */
+    /**
+     * The OCID of the compartment of the desktop pool.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The name of the availability domain. */
+    /**
+     * The name of the availability domain.
+     */
     private String availabilityDomain;
 
-    /** The name of the availability domain. */
+    /**
+     * The name of the availability domain.
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
-    /** A filter to return only results with the given displayName. */
+    /**
+     * A filter to return only results with the given displayName.
+     */
     private String displayName;
 
-    /** A filter to return only results with the given displayName. */
+    /**
+     * A filter to return only results with the given displayName.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only results with the given OCID. */
+    /**
+     * A filter to return only results with the given OCID.
+     */
     private String id;
 
-    /** A filter to return only results with the given OCID. */
+    /**
+     * A filter to return only results with the given OCID.
+     */
     public String getId() {
         return id;
     }
-    /** A filter to return only results with the given lifecycleState. */
+    /**
+     * A filter to return only results with the given lifecycleState.
+     */
     private String lifecycleState;
 
-    /** A filter to return only results with the given lifecycleState. */
+    /**
+     * A filter to return only results with the given lifecycleState.
+     */
     public String getLifecycleState() {
         return lifecycleState;
     }
-    /** The maximum number of results to return. */
+    /**
+     * The maximum number of results to return.
+     */
     private Integer limit;
 
-    /** The maximum number of results to return. */
+    /**
+     * The maximum number of results to return.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** A field to sort by. */
+    /**
+     * A field to sort by.
+     */
     private SortBy sortBy;
 
-    /** A field to sort by. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A field to sort by.
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -92,15 +118,21 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** A field to sort by. */
+    /**
+     * A field to sort by.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** A field to indicate the sort order. */
+    /**
+     * A field to indicate the sort order.
+     */
     private SortOrder sortOrder;
 
-    /** A field to indicate the sort order. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A field to indicate the sort order.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -133,28 +165,42 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** A field to indicate the sort order. */
+    /**
+     * A field to indicate the sort order.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** For list pagination. */
+    /**
+     * For list pagination.
+     */
     private String page;
 
-    /** For list pagination. */
+    /**
+     * For list pagination.
+     */
     public String getPage() {
         return page;
     }
-    /** The OCID of the desktop pool. */
+    /**
+     * The OCID of the desktop pool.
+     */
     private String desktopPoolId;
 
-    /** The OCID of the desktop pool. */
+    /**
+     * The OCID of the desktop pool.
+     */
     public String getDesktopPoolId() {
         return desktopPoolId;
     }
@@ -162,15 +208,17 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDesktopsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment of the desktop pool. */
+        /**
+         * The OCID of the compartment of the desktop pool.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment of the desktop pool.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -179,12 +227,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The name of the availability domain. */
+        /**
+         * The name of the availability domain.
+         */
         private String availabilityDomain = null;
 
         /**
          * The name of the availability domain.
-         *
          * @param availabilityDomain the value to set
          * @return this builder instance
          */
@@ -193,12 +242,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only results with the given displayName. */
+        /**
+         * A filter to return only results with the given displayName.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only results with the given displayName.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -207,12 +257,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only results with the given OCID. */
+        /**
+         * A filter to return only results with the given OCID.
+         */
         private String id = null;
 
         /**
          * A filter to return only results with the given OCID.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -221,12 +272,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only results with the given lifecycleState. */
+        /**
+         * A filter to return only results with the given lifecycleState.
+         */
         private String lifecycleState = null;
 
         /**
          * A filter to return only results with the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -235,12 +287,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The maximum number of results to return. */
+        /**
+         * The maximum number of results to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of results to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -249,12 +302,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A field to sort by. */
+        /**
+         * A field to sort by.
+         */
         private SortBy sortBy = null;
 
         /**
          * A field to sort by.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -263,12 +317,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A field to indicate the sort order. */
+        /**
+         * A field to indicate the sort order.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * A field to indicate the sort order.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -277,12 +332,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -291,12 +347,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** For list pagination. */
+        /**
+         * For list pagination.
+         */
         private String page = null;
 
         /**
          * For list pagination.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -305,12 +362,13 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The OCID of the desktop pool. */
+        /**
+         * The OCID of the desktop pool.
+         */
         private String desktopPoolId = null;
 
         /**
          * The OCID of the desktop pool.
-         *
          * @param desktopPoolId the value to set
          * @return this builder instance
          */
@@ -321,19 +379,18 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -345,7 +402,6 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDesktopsRequest o) {
@@ -368,11 +424,10 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListDesktopsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDesktopsRequest
          */
@@ -386,8 +441,7 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListDesktopsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDesktopsRequest
@@ -406,14 +460,12 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.page = page;
             request.desktopPoolId = desktopPoolId;
             return request;
-            // new ListDesktopsRequest(compartmentId, availabilityDomain, displayName, id,
-            // lifecycleState, limit, sortBy, sortOrder, opcRequestId, page, desktopPoolId);
+            // new ListDesktopsRequest(compartmentId, availabilityDomain, displayName, id, lifecycleState, limit, sortBy, sortOrder, opcRequestId, page, desktopPoolId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -433,7 +485,6 @@ public class ListDesktopsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

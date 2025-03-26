@@ -50,9 +50,9 @@ public class DecryptionHandler extends CipherHandler {
     }
 
     /**
-     * If this key provider already has the KMSMasterKey that was requested, it will return it. If
-     * it does not have a representation of the KMSMasterKey locally, it will attempt to retrieve it
-     * from KMS.
+     *  If this key provider already has the KMSMasterKey that was requested, it will return it.
+     *  If it does not have a representation of the KMSMasterKey locally, it will attempt to
+     *  retrieve it from KMS.
      */
     private KmsMasterKey createDecryptionKmsMasterKey(EncryptionHeader encryptionHeader) {
         KmsMasterKey kmsMasterKey = (KmsMasterKey) provider.getMasterKey();

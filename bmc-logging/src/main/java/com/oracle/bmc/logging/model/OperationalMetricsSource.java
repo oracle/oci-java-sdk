@@ -5,23 +5,22 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Unified monitoring agent operational metrics source object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Unified monitoring agent operational metrics source object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OperationalMetricsSource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OperationalMetricsSource.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OperationalMetricsSource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "metrics", "recordInput"})
     public OperationalMetricsSource(
@@ -34,31 +33,33 @@ public final class OperationalMetricsSource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the unified monitoring agent operational metrics source object. */
+        /**
+         * Type of the unified monitoring agent operational metrics source object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of the unified monitoring agent operational metrics source object.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** List of unified monitoring agent operational metrics. */
+        /**
+         * List of unified monitoring agent operational metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<String> metrics;
 
         /**
          * List of unified monitoring agent operational metrics.
-         *
          * @param metrics the value to set
          * @return this builder
-         */
+         **/
         public Builder metrics(java.util.List<String> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -101,7 +102,9 @@ public final class OperationalMetricsSource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,13 +113,15 @@ public final class OperationalMetricsSource
         return new Builder().copy(this);
     }
 
-    /** Type of the unified monitoring agent operational metrics source object. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the unified monitoring agent operational metrics source object.
+     **/
+    public enum Type {
         UmaMetrics("UMA_METRICS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -153,28 +158,30 @@ public final class OperationalMetricsSource
             return UnknownEnumValue;
         }
     };
-    /** Type of the unified monitoring agent operational metrics source object. */
+    /**
+     * Type of the unified monitoring agent operational metrics source object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the unified monitoring agent operational metrics source object.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** List of unified monitoring agent operational metrics. */
+    /**
+     * List of unified monitoring agent operational metrics.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<String> metrics;
 
     /**
      * List of unified monitoring agent operational metrics.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getMetrics() {
         return metrics;
     }
@@ -193,7 +200,6 @@ public final class OperationalMetricsSource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

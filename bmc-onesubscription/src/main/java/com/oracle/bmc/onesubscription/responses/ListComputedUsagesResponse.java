@@ -6,19 +6,20 @@ package com.oracle.bmc.onesubscription.responses;
 
 import com.oracle.bmc.onesubscription.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -29,6 +30,7 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -42,12 +44,13 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** A list of {@code com.oracle.bmc.onesubscription.model.ComputedUsageSummary} instances. */
+    /**
+     * A list of com.oracle.bmc.onesubscription.model.ComputedUsageSummary instances.
+     */
     private java.util.List<com.oracle.bmc.onesubscription.model.ComputedUsageSummary> items;
 
     /**
-     * A list of {@code com.oracle.bmc.onesubscription.model.ComputedUsageSummary} instances.
-     *
+     * A list of com.oracle.bmc.onesubscription.model.ComputedUsageSummary instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.onesubscription.model.ComputedUsageSummary> getItems() {
@@ -63,7 +66,7 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
     })
     private ListComputedUsagesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.onesubscription.model.ComputedUsageSummary> items) {
@@ -73,35 +76,33 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListComputedUsagesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -114,6 +115,7 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -130,13 +132,12 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * A list of {@code com.oracle.bmc.onesubscription.model.ComputedUsageSummary} instances.
+         * A list of com.oracle.bmc.onesubscription.model.ComputedUsageSummary instances.
          */
         private java.util.List<com.oracle.bmc.onesubscription.model.ComputedUsageSummary> items;
 
         /**
-         * A list of {@code com.oracle.bmc.onesubscription.model.ComputedUsageSummary} instances.
-         *
+         * A list of com.oracle.bmc.onesubscription.model.ComputedUsageSummary instances.
          * @param items the value to set
          * @return this builder
          */
@@ -148,10 +149,8 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListComputedUsagesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -164,10 +163,8 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListComputedUsagesResponse build() {
             return new ListComputedUsagesResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -176,7 +173,6 @@ public class ListComputedUsagesResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

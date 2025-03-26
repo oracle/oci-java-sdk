@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** Customer notification type based on setting action events for backup, archival and deletion. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ModelSettingCustomerNotificationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Customer notification type based on setting action events for backup, archival and deletion.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ModelSettingCustomerNotificationType {
     None("NONE"),
     All("ALL"),
     OnFailure("ON_FAILURE"),

@@ -5,46 +5,50 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for a user-defined step in a DR plan. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details for a user-defined step in a DR plan.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "stepType",
-        defaultImpl = DrPlanUserDefinedStep.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "stepType",
+    defaultImpl = DrPlanUserDefinedStep.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = InvokeFunctionStep.class,
-            name = "INVOKE_FUNCTION"),
+        value = InvokeFunctionStep.class,
+        name = "INVOKE_FUNCTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = InvokeFunctionPrecheckStep.class,
-            name = "INVOKE_FUNCTION_PRECHECK"),
+        value = InvokeFunctionPrecheckStep.class,
+        name = "INVOKE_FUNCTION_PRECHECK"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = RunLocalScriptUserDefinedStep.class,
-            name = "RUN_LOCAL_SCRIPT"),
+        value = RunLocalScriptUserDefinedStep.class,
+        name = "RUN_LOCAL_SCRIPT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LocalScriptPrecheckStep.class,
-            name = "RUN_LOCAL_SCRIPT_PRECHECK"),
+        value = LocalScriptPrecheckStep.class,
+        name = "RUN_LOCAL_SCRIPT_PRECHECK"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ObjectStoreScriptPrecheckStep.class,
-            name = "RUN_OBJECTSTORE_SCRIPT_PRECHECK"),
+        value = ObjectStoreScriptPrecheckStep.class,
+        name = "RUN_OBJECTSTORE_SCRIPT_PRECHECK"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = RunObjectStoreScriptUserDefinedStep.class,
-            name = "RUN_OBJECTSTORE_SCRIPT")
+        value = RunObjectStoreScriptUserDefinedStep.class,
+        name = "RUN_OBJECTSTORE_SCRIPT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DrPlanUserDefinedStep
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class DrPlanUserDefinedStep extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected DrPlanUserDefinedStep() {
@@ -58,7 +62,6 @@ public class DrPlanUserDefinedStep
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -93,25 +96,25 @@ public class DrPlanUserDefinedStep
 
     /**
      * The type of the user-defined step.
+     * <p>
+     **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
+     *     in OCI object storage.
+     * <p>
+     **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
+     *     locally on a compute instance.
+     * <p>
+     **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
+     *     See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+     * <p>
+     **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
+     * <p>
+     **RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute instance.
+     * <p>
+     **INVOKE_FUNCTION** - A step which invokes an OCI function.
+     *     See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
      *
-     * <p>*RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
-     * in OCI object storage.
-     *
-     * <p>*RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
-     * locally on a compute instance.
-     *
-     * <p>*INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function. See
-     * https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
-     *
-     * <p>*RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
-     *
-     * <p>*RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute
-     * instance.
-     *
-     * <p>*INVOKE_FUNCTION** - A step which invokes an OCI function. See
-     * https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
-     */
-    public enum StepType implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum StepType {
         RunObjectstoreScriptPrecheck("RUN_OBJECTSTORE_SCRIPT_PRECHECK"),
         RunLocalScriptPrecheck("RUN_LOCAL_SCRIPT_PRECHECK"),
         InvokeFunctionPrecheck("INVOKE_FUNCTION_PRECHECK"),
@@ -120,8 +123,8 @@ public class DrPlanUserDefinedStep
         InvokeFunction("INVOKE_FUNCTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Supported resources for the news report content types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum NewsContentTypesResource implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported resources for the news report content types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum NewsContentTypesResource {
     Host("HOST"),
     Database("DATABASE"),
     Exadata("EXADATA"),

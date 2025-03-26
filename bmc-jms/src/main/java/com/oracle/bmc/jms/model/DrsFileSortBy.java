@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field used to sort the DRS details results. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum DrsFileSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort the DRS details results.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum DrsFileSortBy {
     BucketName("bucketName"),
     Namespace("namespace"),
     DrsFileKey("drsFileKey"),

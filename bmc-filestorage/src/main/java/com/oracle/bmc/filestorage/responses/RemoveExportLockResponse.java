@@ -6,14 +6,15 @@ package com.oracle.bmc.filestorage.responses;
 
 import com.oracle.bmc.filestorage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -21,14 +22,17 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned {@code Export} instance. */
+    /**
+     * The returned Export instance.
+     */
     private com.oracle.bmc.filestorage.model.Export export;
 
     /**
-     * The returned {@code Export} instance.
-     *
+     * The returned Export instance.
      * @return the value
      */
     public com.oracle.bmc.filestorage.model.Export getExport() {
@@ -57,7 +62,7 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private RemoveExportLockResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.filestorage.model.Export export) {
@@ -67,30 +72,28 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
         this.export = export;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<RemoveExportLockResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -100,14 +103,17 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code Export} instance. */
+        /**
+         * The returned Export instance.
+         */
         private com.oracle.bmc.filestorage.model.Export export;
 
         /**
-         * The returned {@code Export} instance.
-         *
+         * The returned Export instance.
          * @param export the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RemoveExportLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RemoveExportLockResponse build() {
             return new RemoveExportLockResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, export);
@@ -161,7 +164,6 @@ public class RemoveExportLockResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

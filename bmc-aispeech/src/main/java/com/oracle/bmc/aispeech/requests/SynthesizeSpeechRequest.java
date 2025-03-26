@@ -6,33 +6,38 @@ package com.oracle.bmc.aispeech.requests;
 
 import com.oracle.bmc.aispeech.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/SynthesizeSpeechExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use SynthesizeSpeechRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/SynthesizeSpeechExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SynthesizeSpeechRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class SynthesizeSpeechRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aispeech.model.SynthesizeSpeechDetails> {
 
-    /** The request to be sent to the TTS service to get required inference audio. */
+    /**
+     * The request to be sent to the TTS service to get required inference audio.
+     */
     private com.oracle.bmc.aispeech.model.SynthesizeSpeechDetails synthesizeSpeechDetails;
 
-    /** The request to be sent to the TTS service to get required inference audio. */
+    /**
+     * The request to be sent to the TTS service to get required inference audio.
+     */
     public com.oracle.bmc.aispeech.model.SynthesizeSpeechDetails getSynthesizeSpeechDetails() {
         return synthesizeSpeechDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -45,16 +50,18 @@ public class SynthesizeSpeechRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SynthesizeSpeechRequest,
                     com.oracle.bmc.aispeech.model.SynthesizeSpeechDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The request to be sent to the TTS service to get required inference audio. */
+        /**
+         * The request to be sent to the TTS service to get required inference audio.
+         */
         private com.oracle.bmc.aispeech.model.SynthesizeSpeechDetails synthesizeSpeechDetails =
                 null;
 
         /**
          * The request to be sent to the TTS service to get required inference audio.
-         *
          * @param synthesizeSpeechDetails the value to set
          * @return this builder instance
          */
@@ -64,12 +71,13 @@ public class SynthesizeSpeechRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -80,19 +88,18 @@ public class SynthesizeSpeechRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -104,7 +111,6 @@ public class SynthesizeSpeechRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SynthesizeSpeechRequest o) {
@@ -118,11 +124,10 @@ public class SynthesizeSpeechRequest
         /**
          * Build the instance of SynthesizeSpeechRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SynthesizeSpeechRequest
          */
@@ -135,7 +140,6 @@ public class SynthesizeSpeechRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -148,8 +152,7 @@ public class SynthesizeSpeechRequest
         /**
          * Build the instance of SynthesizeSpeechRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SynthesizeSpeechRequest
@@ -165,7 +168,6 @@ public class SynthesizeSpeechRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -176,7 +178,6 @@ public class SynthesizeSpeechRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

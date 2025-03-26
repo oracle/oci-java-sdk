@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Lists resources and its properties under a given subnet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Lists resources and its properties under a given subnet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InventoryResourceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InventoryResourceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InventoryResourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceName",
@@ -46,37 +45,42 @@ public final class InventoryResourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the resource created. */
+        /**
+         * The name of the resource created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The name of the resource created.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** Resource types of the resource. */
+        /**
+         * Resource types of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceType resourceType;
 
         /**
          * Resource types of the resource.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(ResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Lists the 'IpAddressCollection' object. */
+        /**
+         * Lists the 'IpAddressCollection' object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddressCollection")
         private java.util.List<InventoryIpAddressSummary> ipAddressCollection;
 
@@ -85,42 +89,40 @@ public final class InventoryResourceSummary
          *
          * @param ipAddressCollection the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddressCollection(
                 java.util.List<InventoryIpAddressSummary> ipAddressCollection) {
             this.ipAddressCollection = ipAddressCollection;
             this.__explicitlySet__.add("ipAddressCollection");
             return this;
         }
-        /** The region name of the corresponding resource. */
+        /**
+         * The region name of the corresponding resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The region name of the corresponding resource.
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -165,7 +167,9 @@ public final class InventoryResourceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -174,26 +178,29 @@ public final class InventoryResourceSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the resource created. */
+    /**
+     * The name of the resource created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The name of the resource created.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** Resource types of the resource. */
-    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Resource types of the resource.
+     **/
+    public enum ResourceType {
         Resource("Resource"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -232,20 +239,24 @@ public final class InventoryResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** Resource types of the resource. */
+    /**
+     * Resource types of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceType resourceType;
 
     /**
      * Resource types of the resource.
-     *
      * @return the value
-     */
+     **/
     public ResourceType getResourceType() {
         return resourceType;
     }
 
-    /** Lists the 'IpAddressCollection' object. */
+    /**
+     * Lists the 'IpAddressCollection' object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddressCollection")
     private final java.util.List<InventoryIpAddressSummary> ipAddressCollection;
 
@@ -253,37 +264,35 @@ public final class InventoryResourceSummary
      * Lists the 'IpAddressCollection' object.
      *
      * @return the value
-     */
+     **/
     public java.util.List<InventoryIpAddressSummary> getIpAddressCollection() {
         return ipAddressCollection;
     }
 
-    /** The region name of the corresponding resource. */
+    /**
+     * The region name of the corresponding resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The region name of the corresponding resource.
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -295,7 +304,6 @@ public final class InventoryResourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

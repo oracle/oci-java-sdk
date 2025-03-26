@@ -6,93 +6,117 @@ package com.oracle.bmc.email.requests;
 
 import com.oracle.bmc.email.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSendersExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSendersRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSendersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSendersRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID for the compartment. */
+    /**
+     * The OCID for the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID for the compartment. */
+    /**
+     * The OCID for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     private String opcRequestId;
 
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The current state of a sender. */
+    /**
+     * The current state of a sender.
+     */
     private com.oracle.bmc.email.model.Sender.LifecycleState lifecycleState;
 
-    /** The current state of a sender. */
+    /**
+     * The current state of a sender.
+     */
     public com.oracle.bmc.email.model.Sender.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to only return resources that match the given domain exactly. */
+    /**
+     * A filter to only return resources that match the given domain exactly.
+     */
     private String domain;
 
-    /** A filter to only return resources that match the given domain exactly. */
+    /**
+     * A filter to only return resources that match the given domain exactly.
+     */
     public String getDomain() {
         return domain;
     }
-    /** The email address of the approved sender. */
+    /**
+     * The email address of the approved sender.
+     */
     private String emailAddress;
 
-    /** The email address of the approved sender. */
+    /**
+     * The email address of the approved sender.
+     */
     public String getEmailAddress() {
         return emailAddress;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
-     * details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
-     * details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort by. The {@code TIMECREATED} value returns the list in in descending order
-     * by default. The {@code EMAILADDRESS} value returns the list in ascending order by default.
-     * Use the {@code SortOrderQueryParam} to change the direction of the returned list of items.
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+     * direction of the returned list of items.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. The {@code TIMECREATED} value returns the list in in descending order
-     * by default. The {@code EMAILADDRESS} value returns the list in ascending order by default.
-     * Use the {@code SortOrderQueryParam} to change the direction of the returned list of items.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+     * direction of the returned list of items.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Emailaddress("EMAILADDRESS"),
         ;
@@ -126,17 +150,25 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The field to sort by. The {@code TIMECREATED} value returns the list in in descending order
-     * by default. The {@code EMAILADDRESS} value returns the list in ascending order by default.
-     * Use the {@code SortOrderQueryParam} to change the direction of the returned list of items.
+     * The field to sort by. The {@code TIMECREATED} value returns the list in in
+     * descending order by default. The {@code EMAILADDRESS} value returns the list in
+     * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+     * direction of the returned list of items.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending or descending order. */
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
     private com.oracle.bmc.email.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending or descending order. */
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
     public com.oracle.bmc.email.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -144,15 +176,17 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSendersRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID for the compartment. */
+        /**
+         * The OCID for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID for the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -161,12 +195,13 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The request ID for tracing from the system */
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -175,12 +210,13 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The current state of a sender. */
+        /**
+         * The current state of a sender.
+         */
         private com.oracle.bmc.email.model.Sender.LifecycleState lifecycleState = null;
 
         /**
          * The current state of a sender.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -190,12 +226,13 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to only return resources that match the given domain exactly. */
+        /**
+         * A filter to only return resources that match the given domain exactly.
+         */
         private String domain = null;
 
         /**
          * A filter to only return resources that match the given domain exactly.
-         *
          * @param domain the value to set
          * @return this builder instance
          */
@@ -204,12 +241,13 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The email address of the approved sender. */
+        /**
+         * The email address of the approved sender.
+         */
         private String emailAddress = null;
 
         /**
          * The email address of the approved sender.
-         *
          * @param emailAddress the value to set
          * @return this builder instance
          */
@@ -219,16 +257,17 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -240,17 +279,16 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
-         * important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
-         * important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -261,18 +299,19 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. The {@code TIMECREATED} value returns the list in in descending
-         * order by default. The {@code EMAILADDRESS} value returns the list in ascending order by
-         * default. Use the {@code SortOrderQueryParam} to change the direction of the returned list
-         * of items.
+         * The field to sort by. The {@code TIMECREATED} value returns the list in in
+         * descending order by default. The {@code EMAILADDRESS} value returns the list in
+         * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+         * direction of the returned list of items.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. The {@code TIMECREATED} value returns the list in in descending
-         * order by default. The {@code EMAILADDRESS} value returns the list in ascending order by
-         * default. Use the {@code SortOrderQueryParam} to change the direction of the returned list
-         * of items.
+         * The field to sort by. The {@code TIMECREATED} value returns the list in in
+         * descending order by default. The {@code EMAILADDRESS} value returns the list in
+         * ascending order by default. Use the {@code SortOrderQueryParam} to change the
+         * direction of the returned list of items.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -282,7 +321,10 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The sort order to use, either ascending or descending order. */
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         */
         private com.oracle.bmc.email.model.SortOrder sortOrder = null;
 
         /**
@@ -298,19 +340,18 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -322,7 +363,6 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSendersRequest o) {
@@ -343,11 +383,10 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListSendersRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSendersRequest
          */
@@ -361,8 +400,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListSendersRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSendersRequest
@@ -379,14 +417,12 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListSendersRequest(compartmentId, opcRequestId, lifecycleState, domain,
-            // emailAddress, page, limit, sortBy, sortOrder);
+            // new ListSendersRequest(compartmentId, opcRequestId, lifecycleState, domain, emailAddress, page, limit, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -404,7 +440,6 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,30 +5,31 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata details of a pipeline in the same compartment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata details of a pipeline in the same compartment.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "recipeType",
-        defaultImpl = Pipeline.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "recipeType",
+    defaultImpl = Pipeline.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ZeroEtlPipeline.class,
-            name = "ZERO_ETL")
+        value = ZeroEtlPipeline.class,
+        name = "ZERO_ETL"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -91,23 +92,25 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * pipeline. This option applies when retrieving a pipeline.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * pipeline. This option applies when retrieving a pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -115,12 +118,15 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Metadata about this specific object. */
+    /**
+     * Metadata about this specific object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -128,29 +134,31 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * Metadata about this specific object.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The Oracle license model that applies to a Deployment. */
+    /**
+     * The Oracle license model that applies to a Deployment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
@@ -158,12 +166,15 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * The Oracle license model that applies to a Deployment.
      *
      * @return the value
-     */
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
-    /** The Minimum number of OCPUs to be made available for this Deployment. */
+    /**
+     * The Minimum number of OCPUs to be made available for this Deployment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
@@ -171,12 +182,15 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * The Minimum number of OCPUs to be made available for this Deployment.
      *
      * @return the value
-     */
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
-    /** Indicates if auto scaling is enabled for the Deployment's CPU core count. */
+    /**
+     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
@@ -184,7 +198,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
@@ -206,83 +220,88 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
-     * <p>Example: {@code {"bar-key": "value"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
-     *
-     * <p>Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
-     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
 
-    /** Lifecycle state of the pipeline. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifecycle state of the pipeline.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -292,8 +311,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -332,7 +351,10 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
             return UnknownEnumValue;
         }
     };
-    /** Lifecycle state of the pipeline. */
+    /**
+     * Lifecycle state of the pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -340,12 +362,15 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * Lifecycle state of the pipeline.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Possible lifecycle substates when retrieving a pipeline. */
+    /**
+     * Possible lifecycle substates when retrieving a pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
     private final PipelineLifecycleSubState lifecycleSubState;
 
@@ -353,7 +378,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * Possible lifecycle substates when retrieving a pipeline.
      *
      * @return the value
-     */
+     **/
     public PipelineLifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
@@ -361,7 +386,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     /**
      * Describes the object's current state in detail. For example, it can be used to provide
      * actionable information for a resource in a Failed state.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -370,7 +396,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * actionable information for a resource in a Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -378,7 +404,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     /**
      * The time the resource was created. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -387,7 +414,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -395,7 +422,8 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     /**
      * The time the resource was last updated. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -404,7 +432,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -416,7 +444,6 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,25 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details specific to ISCSI type volume attachments. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details specific to ISCSI type volume attachments.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LaunchAttachIScsiVolumeDetails.Builder.class)
+    builder = LaunchAttachIScsiVolumeDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LaunchAttachIScsiVolumeDetails extends LaunchAttachVolumeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,7 +81,10 @@ public final class LaunchAttachIScsiVolumeDetails extends LaunchAttachVolumeDeta
             this.__explicitlySet__.add("launchCreateVolumeDetails");
             return this;
         }
-        /** Whether to use CHAP authentication for the volume attachment. Defaults to false. */
+        /**
+         * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("useChap")
         private Boolean useChap;
 
@@ -90,41 +93,45 @@ public final class LaunchAttachIScsiVolumeDetails extends LaunchAttachVolumeDeta
          *
          * @param useChap the value to set
          * @return this builder
-         */
+         **/
         public Builder useChap(Boolean useChap) {
             this.useChap = useChap;
             this.__explicitlySet__.add("useChap");
             return this;
         }
-        /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
         private EncryptionInTransitType encryptionInTransitType;
 
         /**
-         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
          *
          * @param encryptionInTransitType the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
             this.encryptionInTransitType = encryptionInTransitType;
             this.__explicitlySet__.add("encryptionInTransitType");
             return this;
         }
         /**
-         * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after
-         * the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-         */
+         * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
         private Boolean isAgentAutoIscsiLoginEnabled;
 
         /**
-         * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after
-         * the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
          *
          * @param isAgentAutoIscsiLoginEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
             this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
             this.__explicitlySet__.add("isAgentAutoIscsiLoginEnabled");
@@ -185,7 +192,9 @@ public final class LaunchAttachIScsiVolumeDetails extends LaunchAttachVolumeDeta
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,7 +220,10 @@ public final class LaunchAttachIScsiVolumeDetails extends LaunchAttachVolumeDeta
         this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
     }
 
-    /** Whether to use CHAP authentication for the volume attachment. Defaults to false. */
+    /**
+     * Whether to use CHAP authentication for the volume attachment. Defaults to false.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("useChap")
     private final Boolean useChap;
 
@@ -219,37 +231,41 @@ public final class LaunchAttachIScsiVolumeDetails extends LaunchAttachVolumeDeta
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      *
      * @return the value
-     */
+     **/
     public Boolean getUseChap() {
         return useChap;
     }
 
-    /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     private final EncryptionInTransitType encryptionInTransitType;
 
     /**
-     * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
      *
      * @return the value
-     */
+     **/
     public EncryptionInTransitType getEncryptionInTransitType() {
         return encryptionInTransitType;
     }
 
     /**
-     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the
-     * volume attach or detach operations for non multipath-enabled iSCSI attachments.
-     */
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
     private final Boolean isAgentAutoIscsiLoginEnabled;
 
     /**
-     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the
-     * volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAgentAutoIscsiLoginEnabled() {
         return isAgentAutoIscsiLoginEnabled;
     }
@@ -261,7 +277,6 @@ public final class LaunchAttachIScsiVolumeDetails extends LaunchAttachVolumeDeta
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

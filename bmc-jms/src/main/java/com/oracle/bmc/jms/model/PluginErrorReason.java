@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The plugin error reason. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum PluginErrorReason implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The plugin error reason.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum PluginErrorReason {
     RegistrationPolicy("REGISTRATION_POLICY"),
     LogResourcePolicy("LOG_RESOURCE_POLICY"),
     NoFleet("NO_FLEET"),

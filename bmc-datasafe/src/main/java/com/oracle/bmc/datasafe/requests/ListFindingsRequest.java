@@ -6,39 +6,53 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFindingsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFindingsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the security assessment. */
+    /**
+     * The OCID of the security assessment.
+     */
     private String securityAssessmentId;
 
-    /** The OCID of the security assessment. */
+    /**
+     * The OCID of the security assessment.
+     */
     public String getSecurityAssessmentId() {
         return securityAssessmentId;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only the findings that are marked as top findings. */
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     */
     private Boolean isTopFinding;
 
-    /** A filter to return only the findings that are marked as top findings. */
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     */
     public Boolean getIsTopFinding() {
         return isTopFinding;
     }
-    /** A filter to return only findings of a particular risk level. */
+    /**
+     * A filter to return only findings of a particular risk level.
+     */
     private Severity severity;
 
-    /** A filter to return only findings of a particular risk level. */
-    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only findings of a particular risk level.
+     **/
+    public enum Severity {
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
@@ -76,86 +90,88 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** A filter to return only findings of a particular risk level. */
+    /**
+     * A filter to return only findings of a particular risk level.
+     */
     public Severity getSeverity() {
         return severity;
     }
-    /** A filter to return only the findings that match the specified lifecycle states. */
+    /**
+     * A filter to return only the findings that match the specified lifecycle states.
+     */
     private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState;
 
-    /** A filter to return only the findings that match the specified lifecycle states. */
+    /**
+     * A filter to return only the findings that match the specified lifecycle states.
+     */
     public com.oracle.bmc.datasafe.model.FindingLifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** An optional filter to return only findings that match the specified reference. */
+    /**
+     * An optional filter to return only findings that match the specified reference.
+     */
     private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references;
 
-    /** An optional filter to return only findings that match the specified reference. */
+    /**
+     * An optional filter to return only findings that match the specified reference.
+     */
     public com.oracle.bmc.datasafe.model.SecurityAssessmentReferences getReferences() {
         return references;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -189,61 +205,92 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     private String targetId;
 
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** |
+     * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+     * scimQuery=(category eq "Users") and (targetId eq "target_1")
+     * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * <p>
+     * Supported fields:
+     * severity
+     * findingKey
+     * reference
+     * targetId
+     * isTopFinding
+     * title
+     * category
+     * remarks
+     * details
+     * summary
+     * isRiskModified
      *
-     * <p>*Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1')
-     * scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS')
-     * and (targetId eq 'target_1')
-     *
-     * <p>Supported fields: severity findingKey reference targetId isTopFinding title category
-     * remarks details summary isRiskModified
      */
     private String scimQuery;
 
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** |
+     * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+     * scimQuery=(category eq "Users") and (targetId eq "target_1")
+     * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * <p>
+     * Supported fields:
+     * severity
+     * findingKey
+     * reference
+     * targetId
+     * isTopFinding
+     * title
+     * category
+     * remarks
+     * details
+     * summary
+     * isRiskModified
      *
-     * <p>*Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1')
-     * scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS')
-     * and (targetId eq 'target_1')
-     *
-     * <p>Supported fields: severity findingKey reference targetId isTopFinding title category
-     * remarks details summary isRiskModified
      */
     public String getScimQuery() {
         return scimQuery;
     }
-    /** Specifies a subset of fields to be returned in the response. */
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     */
     private java.util.List<Field> field;
 
-    /** Specifies a subset of fields to be returned in the response. */
-    public enum Field implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     **/
+    public enum Field {
         Severity("severity"),
         FindingKey("findingKey"),
         Reference("reference"),
@@ -285,21 +332,23 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** Specifies a subset of fields to be returned in the response. */
+    /**
+     * Specifies a subset of fields to be returned in the response.
+     */
     public java.util.List<Field> getField() {
         return field;
     }
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * category is alphabetical.
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * category is alphabetical.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+     *
+     **/
+    public enum SortBy {
         Category("category"),
         FindingKey("findingKey"),
         Severity("severity"),
@@ -334,23 +383,23 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * category is alphabetical.
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name).
-     * For a given finding, the key will be the same across targets. The user can use these keys to
-     * filter the findings.
+     * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+     *
      */
     private String findingKey;
 
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name).
-     * For a given finding, the key will be the same across targets. The user can use these keys to
-     * filter the findings.
+     * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+     *
      */
     public String getFindingKey() {
         return findingKey;
@@ -359,15 +408,17 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListFindingsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the security assessment. */
+        /**
+         * The OCID of the security assessment.
+         */
         private String securityAssessmentId = null;
 
         /**
          * The OCID of the security assessment.
-         *
          * @param securityAssessmentId the value to set
          * @return this builder instance
          */
@@ -376,12 +427,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -390,12 +442,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only the findings that are marked as top findings. */
+        /**
+         * A filter to return only the findings that are marked as top findings.
+         */
         private Boolean isTopFinding = null;
 
         /**
          * A filter to return only the findings that are marked as top findings.
-         *
          * @param isTopFinding the value to set
          * @return this builder instance
          */
@@ -404,12 +457,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only findings of a particular risk level. */
+        /**
+         * A filter to return only findings of a particular risk level.
+         */
         private Severity severity = null;
 
         /**
          * A filter to return only findings of a particular risk level.
-         *
          * @param severity the value to set
          * @return this builder instance
          */
@@ -418,12 +472,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only the findings that match the specified lifecycle states. */
+        /**
+         * A filter to return only the findings that match the specified lifecycle states.
+         */
         private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState = null;
 
         /**
          * A filter to return only the findings that match the specified lifecycle states.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -433,12 +488,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** An optional filter to return only findings that match the specified reference. */
+        /**
+         * An optional filter to return only findings that match the specified reference.
+         */
         private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references = null;
 
         /**
          * An optional filter to return only findings that match the specified reference.
-         *
          * @param references the value to set
          * @return this builder instance
          */
@@ -449,17 +505,12 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -469,19 +520,12 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -491,16 +535,15 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -511,18 +554,19 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -532,12 +576,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only items related to a specific target OCID. */
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -547,36 +592,57 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** |
+         * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+         * scimQuery=(category eq "Users") and (targetId eq "target_1")
+         * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+         * <p>
+         * Supported fields:
+         * severity
+         * findingKey
+         * reference
+         * targetId
+         * isTopFinding
+         * title
+         * category
+         * remarks
+         * details
+         * summary
+         * isRiskModified
          *
-         * <p>*Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1')
-         * scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq
-         * 'CIS') and (targetId eq 'target_1')
-         *
-         * <p>Supported fields: severity findingKey reference targetId isTopFinding title category
-         * remarks details summary isRiskModified
          */
         private String scimQuery = null;
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
-         *
-         * <p>*Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1')
-         * scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq
-         * 'CIS') and (targetId eq 'target_1')
-         *
-         * <p>Supported fields: severity findingKey reference targetId isTopFinding title category
-         * remarks details summary isRiskModified
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** |
+         * scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+         * scimQuery=(category eq "Users") and (targetId eq "target_1")
+         * scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+         * <p>
+         * Supported fields:
+         * severity
+         * findingKey
+         * reference
+         * targetId
+         * isTopFinding
+         * title
+         * category
+         * remarks
+         * details
+         * summary
+         * isRiskModified
          *
          * @param scimQuery the value to set
          * @return this builder instance
@@ -586,12 +652,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Specifies a subset of fields to be returned in the response. */
+        /**
+         * Specifies a subset of fields to be returned in the response.
+         */
         private java.util.List<Field> field = null;
 
         /**
          * Specifies a subset of fields to be returned in the response.
-         *
          * @param field the value to set
          * @return this builder instance
          */
@@ -602,7 +669,6 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Singular setter. Specifies a subset of fields to be returned in the response.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -611,14 +677,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field to sort by. You can specify only one sort order(sortOrder). The default order
-         * for category is alphabetical.
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order(sortOrder). The default order
-         * for category is alphabetical.
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -629,16 +694,15 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Each finding in security assessment has an associated key (think of key as a finding's
-         * name). For a given finding, the key will be the same across targets. The user can use
-         * these keys to filter the findings.
+         * Each finding in security assessment has an associated key (think of key as a finding's name).
+         * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+         *
          */
         private String findingKey = null;
 
         /**
-         * Each finding in security assessment has an associated key (think of key as a finding's
-         * name). For a given finding, the key will be the same across targets. The user can use
-         * these keys to filter the findings.
+         * Each finding in security assessment has an associated key (think of key as a finding's name).
+         * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          *
          * @param findingKey the value to set
          * @return this builder instance
@@ -650,19 +714,18 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -674,7 +737,6 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListFindingsRequest o) {
@@ -701,11 +763,10 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListFindingsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListFindingsRequest
          */
@@ -719,8 +780,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListFindingsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListFindingsRequest
@@ -743,15 +803,12 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.findingKey = findingKey;
             return request;
-            // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity,
-            // lifecycleState, references, limit, page, compartmentIdInSubtree, accessLevel,
-            // targetId, scimQuery, field, sortBy, findingKey);
+            // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity, lifecycleState, references, limit, page, compartmentIdInSubtree, accessLevel, targetId, scimQuery, field, sortBy, findingKey);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -775,7 +832,6 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

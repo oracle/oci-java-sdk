@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Displays exadata database resource metrics */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum Database implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Displays exadata database resource metrics
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum Database {
     Cpu("CPU"),
     Storage("STORAGE"),
     Io("IO"),

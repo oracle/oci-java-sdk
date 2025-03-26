@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for a managed instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for a managed instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManagedInstanceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ManagedInstanceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ManagedInstanceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -89,147 +88,150 @@ public final class ManagedInstanceSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** User-friendly name for the managed instance. */
+        /**
+         * User-friendly name for the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * User-friendly name for the managed instance.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** User-specified description of the managed instance. */
+        /**
+         * User-specified description of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * User-specified description of the managed instance.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy this managed instance resides in.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy this managed instance resides in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
          *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the managed instance.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The location of the managed instance. */
+        /**
+         * The location of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("location")
         private ManagedInstanceLocation location;
 
         /**
          * The location of the managed instance.
-         *
          * @param location the value to set
          * @return this builder
-         */
+         **/
         public Builder location(ManagedInstanceLocation location) {
             this.location = location;
             this.__explicitlySet__.add("location");
             return this;
         }
-        /** The CPU architecture type of the managed instance. */
+        /**
+         * The CPU architecture type of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private ArchType architecture;
 
         /**
          * The CPU architecture type of the managed instance.
-         *
          * @param architecture the value to set
          * @return this builder
-         */
+         **/
         public Builder architecture(ArchType architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-        /** The operating system type of the managed instance. */
+        /**
+         * The operating system type of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
          * The operating system type of the managed instance.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(OsFamily osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** Current status of the managed instance. */
+        /**
+         * Current status of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ManagedInstanceStatus status;
 
         /**
          * Current status of the managed instance.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(ManagedInstanceStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -262,67 +264,67 @@ public final class ManagedInstanceSummary
             this.__explicitlySet__.add("lifecycleStage");
             return this;
         }
-        /** Indicates whether a reboot is required to complete installation of updates. */
+        /**
+         * Indicates whether a reboot is required to complete installation of updates.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
         private Boolean isRebootRequired;
 
         /**
          * Indicates whether a reboot is required to complete installation of updates.
-         *
          * @param isRebootRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRebootRequired(Boolean isRebootRequired) {
             this.isRebootRequired = isRebootRequired;
             this.__explicitlySet__.add("isRebootRequired");
             return this;
         }
-        /** Number of updates available for installation. */
+        /**
+         * Number of updates available for installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
         private Integer updatesAvailable;
 
         /**
          * Number of updates available for installation.
-         *
          * @param updatesAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder updatesAvailable(Integer updatesAvailable) {
             this.updatesAvailable = updatesAvailable;
             this.__explicitlySet__.add("updatesAvailable");
             return this;
         }
-        /** Whether this managed instance is acting as an on-premises management station. */
+        /**
+         * Whether this managed instance is acting as an on-premises management station.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManagementStation")
         private Boolean isManagementStation;
 
         /**
          * Whether this managed instance is acting as an on-premises management station.
-         *
          * @param isManagementStation the value to set
          * @return this builder
-         */
+         **/
         public Builder isManagementStation(Boolean isManagementStation) {
             this.isManagementStation = isManagementStation;
             this.__explicitlySet__.add("isManagementStation");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
-         * to the customer.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
-         * to the customer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
          *
          * @param notificationTopicId the value to set
          * @return this builder
-         */
+         **/
         public Builder notificationTopicId(String notificationTopicId) {
             this.notificationTopicId = notificationTopicId;
             this.__explicitlySet__.add("notificationTopicId");
@@ -337,31 +339,33 @@ public final class ManagedInstanceSummary
             this.__explicitlySet__.add("autonomousSettings");
             return this;
         }
-        /** Indicates whether Autonomous Linux manages this instance. */
+        /**
+         * Indicates whether Autonomous Linux manages this instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
         private Boolean isManagedByAutonomousLinux;
 
         /**
          * Indicates whether Autonomous Linux manages this instance.
-         *
          * @param isManagedByAutonomousLinux the value to set
          * @return this builder
-         */
+         **/
         public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
             this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
-        /** The version of osmh-agent running on the managed instance */
+        /**
+         * The version of osmh-agent running on the managed instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
         private String agentVersion;
 
         /**
          * The version of osmh-agent running on the managed instance
-         *
          * @param agentVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder agentVersion(String agentVersion) {
             this.agentVersion = agentVersion;
             this.__explicitlySet__.add("agentVersion");
@@ -462,7 +466,9 @@ public final class ManagedInstanceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -472,130 +478,133 @@ public final class ManagedInstanceSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** User-friendly name for the managed instance. */
+    /**
+     * User-friendly name for the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * User-friendly name for the managed instance.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** User-specified description of the managed instance. */
+    /**
+     * User-specified description of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-specified description of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy this managed instance resides in.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy this managed instance resides in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
      *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the managed instance.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The location of the managed instance. */
+    /**
+     * The location of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("location")
     private final ManagedInstanceLocation location;
 
     /**
      * The location of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public ManagedInstanceLocation getLocation() {
         return location;
     }
 
-    /** The CPU architecture type of the managed instance. */
+    /**
+     * The CPU architecture type of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final ArchType architecture;
 
     /**
      * The CPU architecture type of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchitecture() {
         return architecture;
     }
 
-    /** The operating system type of the managed instance. */
+    /**
+     * The operating system type of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * The operating system type of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** Current status of the managed instance. */
+    /**
+     * Current status of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ManagedInstanceStatus status;
 
     /**
      * Current status of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public ManagedInstanceStatus getStatus() {
         return status;
     }
@@ -621,60 +630,60 @@ public final class ManagedInstanceSummary
         return lifecycleStage;
     }
 
-    /** Indicates whether a reboot is required to complete installation of updates. */
+    /**
+     * Indicates whether a reboot is required to complete installation of updates.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
     private final Boolean isRebootRequired;
 
     /**
      * Indicates whether a reboot is required to complete installation of updates.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRebootRequired() {
         return isRebootRequired;
     }
 
-    /** Number of updates available for installation. */
+    /**
+     * Number of updates available for installation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
     private final Integer updatesAvailable;
 
     /**
      * Number of updates available for installation.
-     *
      * @return the value
-     */
+     **/
     public Integer getUpdatesAvailable() {
         return updatesAvailable;
     }
 
-    /** Whether this managed instance is acting as an on-premises management station. */
+    /**
+     * Whether this managed instance is acting as an on-premises management station.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementStation")
     private final Boolean isManagementStation;
 
     /**
      * Whether this managed instance is acting as an on-premises management station.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsManagementStation() {
         return isManagementStation;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to
-     * the customer.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to
-     * the customer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      *
      * @return the value
-     */
+     **/
     public String getNotificationTopicId() {
         return notificationTopicId;
     }
@@ -686,28 +695,30 @@ public final class ManagedInstanceSummary
         return autonomousSettings;
     }
 
-    /** Indicates whether Autonomous Linux manages this instance. */
+    /**
+     * Indicates whether Autonomous Linux manages this instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
     private final Boolean isManagedByAutonomousLinux;
 
     /**
      * Indicates whether Autonomous Linux manages this instance.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsManagedByAutonomousLinux() {
         return isManagedByAutonomousLinux;
     }
 
-    /** The version of osmh-agent running on the managed instance */
+    /**
+     * The version of osmh-agent running on the managed instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
     private final String agentVersion;
 
     /**
      * The version of osmh-agent running on the managed instance
-     *
      * @return the value
-     */
+     **/
     public String getAgentVersion() {
         return agentVersion;
     }
@@ -719,7 +730,6 @@ public final class ManagedInstanceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

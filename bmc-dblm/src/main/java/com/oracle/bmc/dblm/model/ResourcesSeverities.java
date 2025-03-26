@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.dblm.model;
 
-/** Applicable severity types are critical, high, medium, low, info and none. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
-public enum ResourcesSeverities implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Applicable severity types are critical, high, medium, low, info and none.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+public enum ResourcesSeverities {
     Critical("CRITICAL"),
     High("HIGH"),
     Medium("MEDIUM"),

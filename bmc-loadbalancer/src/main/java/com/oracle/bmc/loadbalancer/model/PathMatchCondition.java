@@ -6,87 +6,87 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * The path string and match condition to apply when evaluating an incoming URI for redirection.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PathMatchCondition.Builder.class)
+    builder = PathMatchCondition.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "attributeName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "attributeName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PathMatchCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
          * The path string that the redirection rule applies to.
+         * <p>
+         * Example: {@code /example}
          *
-         * <p>Example: {@code /example}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
         private String attributeValue;
 
         /**
          * The path string that the redirection rule applies to.
-         *
-         * <p>Example: {@code /example}
+         * <p>
+         * Example: {@code /example}
          *
          * @param attributeValue the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeValue(String attributeValue) {
             this.attributeValue = attributeValue;
             this.__explicitlySet__.add("attributeValue");
             return this;
         }
         /**
-         * A string that specifies how to compare the PathMatchCondition object's {@code
-         * attributeValue} string to the incoming URI.
+         * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+         * incoming URI.
+         * <p>
+         *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+         * <p>
+         *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+         *    longest match of the beginning portion of the incoming URI path.
+         * <p>
+         *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+         *    {@code attributeValue} string.
+         * <p>
+         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+         *    string.
          *
-         * <p>**EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code
-         * attributeValue} string.
-         *
-         * <p>**FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue}
-         * string with the best, longest match of the beginning portion of the incoming URI path.
-         *
-         * <p>**PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match
-         * the {@code attributeValue} string.
-         *
-         * <p>**SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the
-         * {@code attributeValue} string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
         /**
-         * A string that specifies how to compare the PathMatchCondition object's {@code
-         * attributeValue} string to the incoming URI.
-         *
-         * <p>**EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code
-         * attributeValue} string.
-         *
-         * <p>**FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue}
-         * string with the best, longest match of the beginning portion of the incoming URI path.
-         *
-         * <p>**PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match
-         * the {@code attributeValue} string.
-         *
-         * <p>**SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the
-         * {@code attributeValue} string.
+         * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+         * incoming URI.
+         * <p>
+         *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+         * <p>
+         *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+         *    longest match of the beginning portion of the incoming URI path.
+         * <p>
+         *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+         *    {@code attributeValue} string.
+         * <p>
+         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+         *    string.
          *
          * @param operator the value to set
          * @return this builder
-         */
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
@@ -116,7 +116,9 @@ public final class PathMatchCondition extends RuleCondition {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,48 +136,49 @@ public final class PathMatchCondition extends RuleCondition {
 
     /**
      * The path string that the redirection rule applies to.
+     * <p>
+     * Example: {@code /example}
      *
-     * <p>Example: {@code /example}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")
     private final String attributeValue;
 
     /**
      * The path string that the redirection rule applies to.
-     *
-     * <p>Example: {@code /example}
+     * <p>
+     * Example: {@code /example}
      *
      * @return the value
-     */
+     **/
     public String getAttributeValue() {
         return attributeValue;
     }
 
     /**
-     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue}
-     * string to the incoming URI.
+     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+     * incoming URI.
+     * <p>
+     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+     * <p>
+     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+     *    longest match of the beginning portion of the incoming URI path.
+     * <p>
+     *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+     *    {@code attributeValue} string.
+     * <p>
+     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+     *    string.
      *
-     * <p>**EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code
-     * attributeValue} string.
-     *
-     * <p>**FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string
-     * with the best, longest match of the beginning portion of the incoming URI path.
-     *
-     * <p>**PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
-     * {@code attributeValue} string.
-     *
-     * <p>**SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the
-     * {@code attributeValue} string.
-     */
-    public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Operator {
         ExactMatch("EXACT_MATCH"),
         ForceLongestPrefixMatch("FORCE_LONGEST_PREFIX_MATCH"),
         PrefixMatch("PREFIX_MATCH"),
         SuffixMatch("SUFFIX_MATCH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -215,42 +218,41 @@ public final class PathMatchCondition extends RuleCondition {
         }
     };
     /**
-     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue}
-     * string to the incoming URI.
+     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+     * incoming URI.
+     * <p>
+     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+     * <p>
+     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+     *    longest match of the beginning portion of the incoming URI path.
+     * <p>
+     *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+     *    {@code attributeValue} string.
+     * <p>
+     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+     *    string.
      *
-     * <p>**EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code
-     * attributeValue} string.
-     *
-     * <p>**FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string
-     * with the best, longest match of the beginning portion of the incoming URI path.
-     *
-     * <p>**PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
-     * {@code attributeValue} string.
-     *
-     * <p>**SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the
-     * {@code attributeValue} string.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
     /**
-     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue}
-     * string to the incoming URI.
-     *
-     * <p>**EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code
-     * attributeValue} string.
-     *
-     * <p>**FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string
-     * with the best, longest match of the beginning portion of the incoming URI path.
-     *
-     * <p>**PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
-     * {@code attributeValue} string.
-     *
-     * <p>**SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the
-     * {@code attributeValue} string.
+     * A string that specifies how to compare the PathMatchCondition object's {@code attributeValue} string to the
+     * incoming URI.
+     * <p>
+     *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the {@code attributeValue} string.
+     * <p>
+     *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the {@code attributeValue} string with the best,
+     *    longest match of the beginning portion of the incoming URI path.
+     * <p>
+     *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the
+     *    {@code attributeValue} string.
+     * <p>
+     *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the {@code attributeValue}
+     *    string.
      *
      * @return the value
-     */
+     **/
     public Operator getOperator() {
         return operator;
     }
@@ -262,7 +264,6 @@ public final class PathMatchCondition extends RuleCondition {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

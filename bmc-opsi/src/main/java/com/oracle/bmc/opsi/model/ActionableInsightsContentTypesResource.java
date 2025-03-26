@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Supported resources for actionable insights content type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ActionableInsightsContentTypesResource implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported resources for actionable insights content type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ActionableInsightsContentTypesResource {
     NewHighs("NEW_HIGHS"),
     BigChanges("BIG_CHANGES"),
     CurrentInventory("CURRENT_INVENTORY"),

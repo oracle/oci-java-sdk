@@ -5,33 +5,33 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The Post Processing Function masking format is a special masking option that enables you to use a
- * custom function to further transform column values after they have been masked using some other
- * masking formats. It takes the intermediate masked values as input and returns the final masked
- * values. For example, you can use it for adding checksums or special encodings to the masked
- * values.
+ * The Post Processing Function masking format is a special masking option that
+ * enables you to use a custom function to further transform column values after
+ * they have been masked using some other masking formats. It takes the intermediate
+ * masked values as input and returns the final masked values. For example, you can
+ * use it for adding checksums or special encodings to the masked values.
+ * <p>
+ * A post-processing function has the same signature as a user-defined function,
+ * but it passes in the masked values the masking engine generates, and returns
+ * the final masked values that should be used for masking. To learn more, check
+ * Post Processing Function in the Data Safe documentation.
  *
- * <p>A post-processing function has the same signature as a user-defined function, but it passes in
- * the masked values the masking engine generates, and returns the final masked values that should
- * be used for masking. To learn more, check Post Processing Function in the Data Safe
- * documentation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PPFFormatEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PPFFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,19 +44,22 @@ public final class PPFFormatEntry extends FormatEntry {
             return this;
         }
         /**
-         * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be
-         * a standalone or packaged function, so PACKAGE_NAME is optional.
-         */
+         * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME
+         * format. It can be a standalone or packaged function, so PACKAGE_NAME
+         * is optional.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("postProcessingFunction")
         private String postProcessingFunction;
 
         /**
-         * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be
-         * a standalone or packaged function, so PACKAGE_NAME is optional.
+         * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME
+         * format. It can be a standalone or packaged function, so PACKAGE_NAME
+         * is optional.
          *
          * @param postProcessingFunction the value to set
          * @return this builder
-         */
+         **/
         public Builder postProcessingFunction(String postProcessingFunction) {
             this.postProcessingFunction = postProcessingFunction;
             this.__explicitlySet__.add("postProcessingFunction");
@@ -87,7 +90,9 @@ public final class PPFFormatEntry extends FormatEntry {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,18 +108,21 @@ public final class PPFFormatEntry extends FormatEntry {
     }
 
     /**
-     * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a
-     * standalone or packaged function, so PACKAGE_NAME is optional.
-     */
+     * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME
+     * format. It can be a standalone or packaged function, so PACKAGE_NAME
+     * is optional.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("postProcessingFunction")
     private final String postProcessingFunction;
 
     /**
-     * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a
-     * standalone or packaged function, so PACKAGE_NAME is optional.
+     * The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME
+     * format. It can be a standalone or packaged function, so PACKAGE_NAME
+     * is optional.
      *
      * @return the value
-     */
+     **/
     public String getPostProcessingFunction() {
         return postProcessingFunction;
     }
@@ -126,7 +134,6 @@ public final class PPFFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

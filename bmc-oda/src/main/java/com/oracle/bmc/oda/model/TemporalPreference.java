@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of temporal preference values. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum TemporalPreference implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of temporal preference values.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum TemporalPreference {
     Past("PAST"),
     Future("FUTURE"),
     Nearest("NEAREST"),

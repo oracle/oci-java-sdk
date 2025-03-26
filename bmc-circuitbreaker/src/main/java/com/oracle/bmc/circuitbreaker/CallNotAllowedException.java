@@ -5,8 +5,8 @@
 package com.oracle.bmc.circuitbreaker;
 
 /**
- * A {@link CallNotAllowedException} signals that the CircuitBreaker is HALF_OPEN or OPEN and a call
- * is not permitted to be executed.
+ * A {@link CallNotAllowedException} signals that the CircuitBreaker is HALF_OPEN or OPEN and a
+ * call is not permitted to be executed.
  */
 public class CallNotAllowedException extends RuntimeException {
 
@@ -17,7 +17,7 @@ public class CallNotAllowedException extends RuntimeException {
     /**
      * Static method to construct a {@link CallNotAllowedException}
      *
-     * @param message the detail message.
+     * @param message            the detail message.
      * @param writableStackTrace whether or not the stack trace should be writable
      * @return {@link CallNotAllowedException} instance
      */

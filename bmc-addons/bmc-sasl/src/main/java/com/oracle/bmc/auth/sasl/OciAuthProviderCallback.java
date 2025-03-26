@@ -13,10 +13,8 @@ import javax.security.auth.callback.NameCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
 
 /**
- * Callback to handle in the SASL callback handler used when creating a {@link
- * javax.security.sasl.SaslClient} using the OCI SASL mechanism. Here's the code for a possible
- * {@link CallbackHandler}:
- *
+ * Callback to handle in the SASL callback handler used when creating a {@link javax.security.sasl.SaslClient} using the OCI SASL mechanism.
+ * Here's the code for a possible {@link CallbackHandler}:
  * <pre>{@code
  * public class OciSaslClientCallBackHandler implements CallbackHandler {
  *
@@ -47,12 +45,16 @@ import javax.security.auth.callback.UnsupportedCallbackException;
 public class OciAuthProviderCallback implements Callback {
     private BasicAuthenticationDetailsProvider authProvider;
 
-    /** Gets the associated {@link BasicAuthenticationDetailsProvider} */
+    /**
+     * Gets the associated {@link BasicAuthenticationDetailsProvider}
+     */
     public BasicAuthenticationDetailsProvider authProvider() {
         return authProvider;
     }
 
-    /** Sets the provided {@link BasicAuthenticationDetailsProvider} */
+    /**
+     * Sets the provided {@link BasicAuthenticationDetailsProvider}
+     */
     public void authProvider(BasicAuthenticationDetailsProvider authProvider) {
         this.authProvider = authProvider;
     }

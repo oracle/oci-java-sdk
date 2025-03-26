@@ -5,16 +5,23 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The lifecycle states of a DR plan execution. - ACCEPTED - DR plan execution has been accepted. -
- * IN_PROGRESS - DR plan execution is in progress. - WAITING - DR plan execution is waiting for user
- * action. - CANCELING - DR plan execution is being canceled. - CANCELED - DR plan execution has
- * been canceled. - SUCCEEDED - DR plan execution has succeeded. - FAILED - DR plan execution has
- * failed. - DELETING - DR plan execution is being deleted. - DELETED - DR plan execution has been
- * deleted. - PAUSING - DR plan execution is being paused. - PAUSED - DR plan execution has been
- * paused. - RESUMING - DR plan execution is resuming.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DrPlanExecutionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+ * The lifecycle states of a DR plan execution.
+ * - ACCEPTED - DR plan execution has been accepted.
+ * - IN_PROGRESS - DR plan execution is in progress.
+ * - WAITING - DR plan execution is waiting for user action.
+ * - CANCELING - DR plan execution is being canceled.
+ * - CANCELED - DR plan execution has been canceled.
+ * - SUCCEEDED - DR plan execution has succeeded.
+ * - FAILED - DR plan execution has failed.
+ * - DELETING - DR plan execution is being deleted.
+ * - DELETED - DR plan execution has been deleted.
+ * - PAUSING - DR plan execution is being paused.
+ * - PAUSED - DR plan execution has been paused.
+ * - RESUMING - DR plan execution is resuming.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum DrPlanExecutionLifecycleState {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Waiting("WAITING"),

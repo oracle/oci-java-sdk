@@ -4,18 +4,29 @@
  */
 package com.oracle.bmc.waiter;
 
-/** Configuration used when invoking a waiter loop. */
+/**
+ * Configuration used when invoking a waiter loop.
+ */
 public class WaiterConfiguration {
     private final TerminationStrategy terminationStrategy;
     private final DelayStrategy delayStrategy;
 
-    /** The context that should be maintained by the wait loop. */
+    /**
+     * The context that should be maintained by the wait loop.
+     */
     public static class WaitContext {
-        /** The time the polling starting (ex, System.currentTimeMillis()). */
+        /**
+         * The time the polling starting (ex, System.currentTimeMillis()).
+         */
         private final long startTime;
-        /** The number of attempts that have been made so far. */
+        /**
+         * The number of attempts that have been made so far.
+         */
         private int attemptsMade;
-        /** The current time (ex, System.currentTimeMillis()). Exposed for tests. */
+        /**
+         * The current time (ex, System.currentTimeMillis()).  Exposed for
+         * tests.
+         */
         private long currentTime;
 
         // currentTime = startTime as well
@@ -30,7 +41,9 @@ public class WaiterConfiguration {
             this.currentTime = currentTime;
         }
 
-        /** Increments the number of attempts made. */
+        /**
+         * Increments the number of attempts made.
+         */
         public void incrementAttempts() {
             this.attemptsMade++;
         }

@@ -5,22 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Job details which contain input document details on which prediction need to run, features (which
- * and all language services ) need to run and where to store results <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Job details which contain input document details on which prediction need to run, features (which and all language services ) need to run and where to store results
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Job.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -94,49 +91,48 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * job.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * job.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** A user-friendly display name for the job. */
+        /**
+         * A user-friendly display name for the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly display name for the job.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A short description of the job. */
+        /**
+         * A short description of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A short description of the job.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -161,21 +157,22 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * training model details For this release only one model is allowed to be input here. One
-         * of the three modelType, ModelId, endpointId should be given other wise error will be
-         * thrown from API
-         */
+         * training model details
+         * For this release only one model is allowed to be input here.
+         * One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelMetadataDetails")
         private java.util.List<ModelMetadataDetails> modelMetadataDetails;
 
         /**
-         * training model details For this release only one model is allowed to be input here. One
-         * of the three modelType, ModelId, endpointId should be given other wise error will be
-         * thrown from API
+         * training model details
+         * For this release only one model is allowed to be input here.
+         * One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
          *
          * @param modelMetadataDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder modelMetadataDetails(
                 java.util.List<ModelMetadataDetails> modelMetadataDetails) {
             this.modelMetadataDetails = modelMetadataDetails;
@@ -183,163 +180,144 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where you want to create the job.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where you want to create the job.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The current state of the Job. */
+        /**
+         * The current state of the Job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Job.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * How much progress the operation has made, vs the total amount of work that must be
-         * performed.
-         */
+         * How much progress the operation has made, vs the total amount of work that must be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
         /**
-         * How much progress the operation has made, vs the total amount of work that must be
-         * performed.
-         *
+         * How much progress the operation has made, vs the total amount of work that must be performed.
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
         /**
-         * Total number of documents given as input for prediction. For CSV this signifies number of
-         * rows and for TXT this signifies number of files.
-         */
+         * Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalDocuments")
         private Integer totalDocuments;
 
         /**
-         * Total number of documents given as input for prediction. For CSV this signifies number of
-         * rows and for TXT this signifies number of files.
-         *
+         * Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
          * @param totalDocuments the value to set
          * @return this builder
-         */
+         **/
         public Builder totalDocuments(Integer totalDocuments) {
             this.totalDocuments = totalDocuments;
             this.__explicitlySet__.add("totalDocuments");
             return this;
         }
         /**
-         * Number of documents still to process. For CSV this signifies number of rows and for TXT
-         * this signifies number of files.
-         */
+         * Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pendingDocuments")
         private Integer pendingDocuments;
 
         /**
-         * Number of documents still to process. For CSV this signifies number of rows and for TXT
-         * this signifies number of files.
-         *
+         * Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
          * @param pendingDocuments the value to set
          * @return this builder
-         */
+         **/
         public Builder pendingDocuments(Integer pendingDocuments) {
             this.pendingDocuments = pendingDocuments;
             this.__explicitlySet__.add("pendingDocuments");
             return this;
         }
         /**
-         * Number of documents processed for prediction. For CSV this signifies number of rows and
-         * for TXT this signifies number of files.
-         */
+         * Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("completedDocuments")
         private Integer completedDocuments;
 
         /**
-         * Number of documents processed for prediction. For CSV this signifies number of rows and
-         * for TXT this signifies number of files.
-         *
+         * Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
          * @param completedDocuments the value to set
          * @return this builder
-         */
+         **/
         public Builder completedDocuments(Integer completedDocuments) {
             this.completedDocuments = completedDocuments;
             this.__explicitlySet__.add("completedDocuments");
             return this;
         }
         /**
-         * Number of documents failed for prediction. For CSV this signifies number of rows and for
-         * TXT this signifies number of files.
-         */
+         * Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedDocuments")
         private Integer failedDocuments;
 
         /**
-         * Number of documents failed for prediction. For CSV this signifies number of rows and for
-         * TXT this signifies number of files.
-         *
+         * Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
          * @param failedDocuments the value to set
          * @return this builder
-         */
+         **/
         public Builder failedDocuments(Integer failedDocuments) {
             this.failedDocuments = failedDocuments;
             this.__explicitlySet__.add("failedDocuments");
             return this;
         }
-        /** warnings count */
+        /**
+         * warnings count
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warningsCount")
         private Integer warningsCount;
 
         /**
          * warnings count
-         *
          * @param warningsCount the value to set
          * @return this builder
-         */
+         **/
         public Builder warningsCount(Integer warningsCount) {
             this.warningsCount = warningsCount;
             this.__explicitlySet__.add("warningsCount");
@@ -354,80 +332,81 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-        /** Time to live duration in days for Job. Job will be available till max 90 days. */
+        /**
+         * Time to live duration in days for Job. Job will be available till max 90 days.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ttlInDays")
         private Integer ttlInDays;
 
         /**
          * Time to live duration in days for Job. Job will be available till max 90 days.
-         *
          * @param ttlInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder ttlInDays(Integer ttlInDays) {
             this.ttlInDays = ttlInDays;
             this.__explicitlySet__.add("ttlInDays");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * user who created the job.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * user who created the job.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** Job accepted time. */
+        /**
+         * Job accepted time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * Job accepted time.
-         *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** Job started time. */
+        /**
+         * Job started time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * Job started time.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** Job finished time. */
+        /**
+         * Job finished time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
         /**
          * Job finished time.
-         *
          * @param timeCompleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
@@ -536,7 +515,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -547,41 +528,42 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** A user-friendly display name for the job. */
+    /**
+     * A user-friendly display name for the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly display name for the job.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A short description of the job. */
+    /**
+     * A short description of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description of the job.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -601,43 +583,43 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * training model details For this release only one model is allowed to be input here. One of
-     * the three modelType, ModelId, endpointId should be given other wise error will be thrown from
-     * API
-     */
+     * training model details
+     * For this release only one model is allowed to be input here.
+     * One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelMetadataDetails")
     private final java.util.List<ModelMetadataDetails> modelMetadataDetails;
 
     /**
-     * training model details For this release only one model is allowed to be input here. One of
-     * the three modelType, ModelId, endpointId should be given other wise error will be thrown from
-     * API
+     * training model details
+     * For this release only one model is allowed to be input here.
+     * One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
      *
      * @return the value
-     */
+     **/
     public java.util.List<ModelMetadataDetails> getModelMetadataDetails() {
         return modelMetadataDetails;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where you want to create the job.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where you want to create the job.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The current state of the Job. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Job.
+     **/
+    public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -648,8 +630,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -688,128 +670,114 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Job. */
+    /**
+     * The current state of the Job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Job.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
      * How much progress the operation has made, vs the total amount of work that must be performed.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
     /**
      * How much progress the operation has made, vs the total amount of work that must be performed.
-     *
      * @return the value
-     */
+     **/
     public Integer getPercentComplete() {
         return percentComplete;
     }
 
     /**
-     * Total number of documents given as input for prediction. For CSV this signifies number of
-     * rows and for TXT this signifies number of files.
-     */
+     * Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDocuments")
     private final Integer totalDocuments;
 
     /**
-     * Total number of documents given as input for prediction. For CSV this signifies number of
-     * rows and for TXT this signifies number of files.
-     *
+     * Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
      * @return the value
-     */
+     **/
     public Integer getTotalDocuments() {
         return totalDocuments;
     }
 
     /**
-     * Number of documents still to process. For CSV this signifies number of rows and for TXT this
-     * signifies number of files.
-     */
+     * Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pendingDocuments")
     private final Integer pendingDocuments;
 
     /**
-     * Number of documents still to process. For CSV this signifies number of rows and for TXT this
-     * signifies number of files.
-     *
+     * Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
      * @return the value
-     */
+     **/
     public Integer getPendingDocuments() {
         return pendingDocuments;
     }
 
     /**
-     * Number of documents processed for prediction. For CSV this signifies number of rows and for
-     * TXT this signifies number of files.
-     */
+     * Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("completedDocuments")
     private final Integer completedDocuments;
 
     /**
-     * Number of documents processed for prediction. For CSV this signifies number of rows and for
-     * TXT this signifies number of files.
-     *
+     * Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
      * @return the value
-     */
+     **/
     public Integer getCompletedDocuments() {
         return completedDocuments;
     }
 
     /**
-     * Number of documents failed for prediction. For CSV this signifies number of rows and for TXT
-     * this signifies number of files.
-     */
+     * Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedDocuments")
     private final Integer failedDocuments;
 
     /**
-     * Number of documents failed for prediction. For CSV this signifies number of rows and for TXT
-     * this signifies number of files.
-     *
+     * Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
      * @return the value
-     */
+     **/
     public Integer getFailedDocuments() {
         return failedDocuments;
     }
 
-    /** warnings count */
+    /**
+     * warnings count
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningsCount")
     private final Integer warningsCount;
 
     /**
      * warnings count
-     *
      * @return the value
-     */
+     **/
     public Integer getWarningsCount() {
         return warningsCount;
     }
@@ -821,71 +789,72 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return outputLocation;
     }
 
-    /** Time to live duration in days for Job. Job will be available till max 90 days. */
+    /**
+     * Time to live duration in days for Job. Job will be available till max 90 days.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttlInDays")
     private final Integer ttlInDays;
 
     /**
      * Time to live duration in days for Job. Job will be available till max 90 days.
-     *
      * @return the value
-     */
+     **/
     public Integer getTtlInDays() {
         return ttlInDays;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-     * who created the job.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-     * who created the job.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** Job accepted time. */
+    /**
+     * Job accepted time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * Job accepted time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** Job started time. */
+    /**
+     * Job started time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * Job started time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** Job finished time. */
+    /**
+     * Job finished time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
     /**
      * Job finished time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }
@@ -897,7 +866,6 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

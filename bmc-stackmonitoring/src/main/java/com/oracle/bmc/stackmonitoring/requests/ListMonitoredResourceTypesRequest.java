@@ -6,79 +6,112 @@ package com.oracle.bmc.stackmonitoring.requests;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMonitoredResourceTypesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListMonitoredResourceTypesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMonitoredResourceTypesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMonitoredResourceTypesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class ListMonitoredResourceTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy for which monitored resource types should be listed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which
+     * monitored resource types should be listed.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy for which monitored resource types should be listed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which
+     * monitored resource types should be listed.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * A filter to return monitored resource types that match exactly with the resource type name
-     * given.
+     * A filter to return monitored resource types that match exactly with the resource type name given.
+     *
      */
     private String name;
 
     /**
-     * A filter to return monitored resource types that match exactly with the resource type name
-     * given.
+     * A filter to return monitored resource types that match exactly with the resource type name given.
+     *
      */
     public String getName() {
         return name;
     }
-    /** A filter to return only resources that matches with lifecycleState given. */
+    /**
+     * A filter to return only resources that matches with lifecycleState given.
+     */
     private com.oracle.bmc.stackmonitoring.model.ResourceTypeLifecycleState status;
 
-    /** A filter to return only resources that matches with lifecycleState given. */
+    /**
+     * A filter to return only resources that matches with lifecycleState given.
+     */
     public com.oracle.bmc.stackmonitoring.model.ResourceTypeLifecycleState getStatus() {
         return status;
     }
     /**
-     * A filter to exclude system resource types. If set to true, system resource types will be
-     * excluded.
+     * A filter to exclude system resource types. If set to true, system resource types will be excluded.
+     *
      */
     private Boolean isExcludeSystemTypes;
 
     /**
-     * A filter to exclude system resource types. If set to true, system resource types will be
-     * excluded.
+     * A filter to exclude system resource types. If set to true, system resource types will be excluded.
+     *
      */
     public Boolean getIsExcludeSystemTypes() {
         return isExcludeSystemTypes;
     }
-    /** A filter to return monitored resource types that has the matching namespace. */
+    /**
+     * A filter to return monitored resource types that has the matching namespace.
+     *
+     */
     private String metricNamespace;
 
-    /** A filter to return monitored resource types that has the matching namespace. */
+    /**
+     * A filter to return monitored resource types that has the matching namespace.
+     *
+     */
     public String getMetricNamespace() {
         return metricNamespace;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for 'timeUpdated' is
-     * descending. Default order for 'name' is ascending.
+     * A filter to return only resources with matching source type.
+     */
+    private com.oracle.bmc.stackmonitoring.model.SourceType sourceType;
+
+    /**
+     * A filter to return only resources with matching source type.
+     */
+    public com.oracle.bmc.stackmonitoring.model.SourceType getSourceType() {
+        return sourceType;
+    }
+    /**
+     * A filter to return only resources with matching resource category.
+     */
+    private com.oracle.bmc.stackmonitoring.model.ResourceCategory resourceCategory;
+
+    /**
+     * A filter to return only resources with matching resource category.
+     */
+    public com.oracle.bmc.stackmonitoring.model.ResourceCategory getResourceCategory() {
+        return resourceCategory;
+    }
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for 'timeUpdated' is descending. Default order for 'name' is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for 'timeUpdated' is
-     * descending. Default order for 'name' is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for 'timeUpdated' is descending. Default order for 'name' is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeUpdated("timeUpdated"),
         Name("name"),
         ;
@@ -112,45 +145,56 @@ public class ListMonitoredResourceTypesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for 'timeUpdated' is
-     * descending. Default order for 'name' is ascending.
+     * The field to sort by. Only one sort order may be provided.
+     * Default order for 'timeUpdated' is descending. Default order for 'name' is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.stackmonitoring.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the
+     * previous "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the
+     * previous "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
@@ -158,62 +202,80 @@ public class ListMonitoredResourceTypesRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-     * return only the information (fields) required by the client. In this mechanism, the client
-     * sends the required field names as the query parameters for an API to the server, and the
-     * server trims down the default response content by removing the fields that are not required
-     * by the client. The parameter controls which fields to return and should be a query string
-     * parameter called "fields" of an array type, provide the values as enums, and use
-     * collectionFormat.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return only the information
+     * (fields) required by the client. In this mechanism, the client
+     * sends the required field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * return and should be a query string parameter called "fields" of
+     * an array type, provide the values as enums, and use collectionFormat.
+     * <p>
+     * MonitoredResourceType Id, name and compartment will be added by default.
      *
-     * <p>MonitoredResourceType Id, name and compartment will be added by default.
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-     * return only the information (fields) required by the client. In this mechanism, the client
-     * sends the required field names as the query parameters for an API to the server, and the
-     * server trims down the default response content by removing the fields that are not required
-     * by the client. The parameter controls which fields to return and should be a query string
-     * parameter called "fields" of an array type, provide the values as enums, and use
-     * collectionFormat.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return only the information
+     * (fields) required by the client. In this mechanism, the client
+     * sends the required field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * return and should be a query string parameter called "fields" of
+     * an array type, provide the values as enums, and use collectionFormat.
+     * <p>
+     * MonitoredResourceType Id, name and compartment will be added by default.
      *
-     * <p>MonitoredResourceType Id, name and compartment will be added by default.
      */
     public java.util.List<String> getFields() {
         return fields;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-     * return all the information except the fields requested to be excluded (excludeFields) by the
-     * client. In this mechanism, the client sends the exclude field names as the query parameters
-     * for an API to the server, and the server trims down the default response content by removing
-     * the fields that are not required by the client. The parameter controls which fields to exlude
-     * and to return and should be a query string parameter called "excludeFields" of an array type,
-     * provide the values as enums, and use collectionFormat.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return all the information except
+     * the fields requested to be excluded (excludeFields) by the client.
+     * In this mechanism, the client
+     * sends the exclude field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * exlude and to return and should be a query string parameter
+     * called "excludeFields" of an array type, provide the values
+     * as enums, and use collectionFormat.
+     *
      */
     private java.util.List<String> excludeFields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-     * return all the information except the fields requested to be excluded (excludeFields) by the
-     * client. In this mechanism, the client sends the exclude field names as the query parameters
-     * for an API to the server, and the server trims down the default response content by removing
-     * the fields that are not required by the client. The parameter controls which fields to exlude
-     * and to return and should be a query string parameter called "excludeFields" of an array type,
-     * provide the values as enums, and use collectionFormat.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return all the information except
+     * the fields requested to be excluded (excludeFields) by the client.
+     * In this mechanism, the client
+     * sends the exclude field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * exlude and to return and should be a query string parameter
+     * called "excludeFields" of an array type, provide the values
+     * as enums, and use collectionFormat.
+     *
      */
     public java.util.List<String> getExcludeFields() {
         return excludeFields;
@@ -222,18 +284,20 @@ public class ListMonitoredResourceTypesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMonitoredResourceTypesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy for which monitored resource types should be listed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which
+         * monitored resource types should be listed.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy for which monitored resource types should be listed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which
+         * monitored resource types should be listed.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -244,14 +308,13 @@ public class ListMonitoredResourceTypesRequest
         }
 
         /**
-         * A filter to return monitored resource types that match exactly with the resource type
-         * name given.
+         * A filter to return monitored resource types that match exactly with the resource type name given.
+         *
          */
         private String name = null;
 
         /**
-         * A filter to return monitored resource types that match exactly with the resource type
-         * name given.
+         * A filter to return monitored resource types that match exactly with the resource type name given.
          *
          * @param name the value to set
          * @return this builder instance
@@ -261,12 +324,13 @@ public class ListMonitoredResourceTypesRequest
             return this;
         }
 
-        /** A filter to return only resources that matches with lifecycleState given. */
+        /**
+         * A filter to return only resources that matches with lifecycleState given.
+         */
         private com.oracle.bmc.stackmonitoring.model.ResourceTypeLifecycleState status = null;
 
         /**
          * A filter to return only resources that matches with lifecycleState given.
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -277,14 +341,13 @@ public class ListMonitoredResourceTypesRequest
         }
 
         /**
-         * A filter to exclude system resource types. If set to true, system resource types will be
-         * excluded.
+         * A filter to exclude system resource types. If set to true, system resource types will be excluded.
+         *
          */
         private Boolean isExcludeSystemTypes = null;
 
         /**
-         * A filter to exclude system resource types. If set to true, system resource types will be
-         * excluded.
+         * A filter to exclude system resource types. If set to true, system resource types will be excluded.
          *
          * @param isExcludeSystemTypes the value to set
          * @return this builder instance
@@ -294,7 +357,10 @@ public class ListMonitoredResourceTypesRequest
             return this;
         }
 
-        /** A filter to return monitored resource types that has the matching namespace. */
+        /**
+         * A filter to return monitored resource types that has the matching namespace.
+         *
+         */
         private String metricNamespace = null;
 
         /**
@@ -309,14 +375,46 @@ public class ListMonitoredResourceTypesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for
-         * 'timeUpdated' is descending. Default order for 'name' is ascending.
+         * A filter to return only resources with matching source type.
+         */
+        private com.oracle.bmc.stackmonitoring.model.SourceType sourceType = null;
+
+        /**
+         * A filter to return only resources with matching source type.
+         * @param sourceType the value to set
+         * @return this builder instance
+         */
+        public Builder sourceType(com.oracle.bmc.stackmonitoring.model.SourceType sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources with matching resource category.
+         */
+        private com.oracle.bmc.stackmonitoring.model.ResourceCategory resourceCategory = null;
+
+        /**
+         * A filter to return only resources with matching resource category.
+         * @param resourceCategory the value to set
+         * @return this builder instance
+         */
+        public Builder resourceCategory(
+                com.oracle.bmc.stackmonitoring.model.ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for 'timeUpdated' is descending. Default order for 'name' is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for
-         * 'timeUpdated' is descending. Default order for 'name' is ascending.
+         * The field to sort by. Only one sort order may be provided.
+         * Default order for 'timeUpdated' is descending. Default order for 'name' is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -326,7 +424,10 @@ public class ListMonitoredResourceTypesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder = null;
 
         /**
@@ -342,15 +443,16 @@ public class ListMonitoredResourceTypesRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -362,15 +464,16 @@ public class ListMonitoredResourceTypesRequest
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * previous "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * previous "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -383,6 +486,7 @@ public class ListMonitoredResourceTypesRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -399,28 +503,33 @@ public class ListMonitoredResourceTypesRequest
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-         * return only the information (fields) required by the client. In this mechanism, the
-         * client sends the required field names as the query parameters for an API to the server,
-         * and the server trims down the default response content by removing the fields that are
-         * not required by the client. The parameter controls which fields to return and should be a
-         * query string parameter called "fields" of an array type, provide the values as enums, and
-         * use collectionFormat.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return only the information
+         * (fields) required by the client. In this mechanism, the client
+         * sends the required field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * return and should be a query string parameter called "fields" of
+         * an array type, provide the values as enums, and use collectionFormat.
+         * <p>
+         * MonitoredResourceType Id, name and compartment will be added by default.
          *
-         * <p>MonitoredResourceType Id, name and compartment will be added by default.
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-         * return only the information (fields) required by the client. In this mechanism, the
-         * client sends the required field names as the query parameters for an API to the server,
-         * and the server trims down the default response content by removing the fields that are
-         * not required by the client. The parameter controls which fields to return and should be a
-         * query string parameter called "fields" of an array type, provide the values as enums, and
-         * use collectionFormat.
-         *
-         * <p>MonitoredResourceType Id, name and compartment will be added by default.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return only the information
+         * (fields) required by the client. In this mechanism, the client
+         * sends the required field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * return and should be a query string parameter called "fields" of
+         * an array type, provide the values as enums, and use collectionFormat.
+         * <p>
+         * MonitoredResourceType Id, name and compartment will be added by default.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -431,15 +540,17 @@ public class ListMonitoredResourceTypesRequest
         }
 
         /**
-         * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs, to return only the information (fields) required by the client. In this
-         * mechanism, the client sends the required field names as the query parameters for an API
-         * to the server, and the server trims down the default response content by removing the
-         * fields that are not required by the client. The parameter controls which fields to return
-         * and should be a query string parameter called "fields" of an array type, provide the
-         * values as enums, and use collectionFormat.
-         *
-         * <p>MonitoredResourceType Id, name and compartment will be added by default.
+         * Singular setter. Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return only the information
+         * (fields) required by the client. In this mechanism, the client
+         * sends the required field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * return and should be a query string parameter called "fields" of
+         * an array type, provide the values as enums, and use collectionFormat.
+         * <p>
+         * MonitoredResourceType Id, name and compartment will be added by default.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -449,26 +560,33 @@ public class ListMonitoredResourceTypesRequest
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-         * return all the information except the fields requested to be excluded (excludeFields) by
-         * the client. In this mechanism, the client sends the exclude field names as the query
-         * parameters for an API to the server, and the server trims down the default response
-         * content by removing the fields that are not required by the client. The parameter
-         * controls which fields to exlude and to return and should be a query string parameter
-         * called "excludeFields" of an array type, provide the values as enums, and use
-         * collectionFormat.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return all the information except
+         * the fields requested to be excluded (excludeFields) by the client.
+         * In this mechanism, the client
+         * sends the exclude field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * exlude and to return and should be a query string parameter
+         * called "excludeFields" of an array type, provide the values
+         * as enums, and use collectionFormat.
+         *
          */
         private java.util.List<String> excludeFields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
-         * return all the information except the fields requested to be excluded (excludeFields) by
-         * the client. In this mechanism, the client sends the exclude field names as the query
-         * parameters for an API to the server, and the server trims down the default response
-         * content by removing the fields that are not required by the client. The parameter
-         * controls which fields to exlude and to return and should be a query string parameter
-         * called "excludeFields" of an array type, provide the values as enums, and use
-         * collectionFormat.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return all the information except
+         * the fields requested to be excluded (excludeFields) by the client.
+         * In this mechanism, the client
+         * sends the exclude field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * exlude and to return and should be a query string parameter
+         * called "excludeFields" of an array type, provide the values
+         * as enums, and use collectionFormat.
          *
          * @param excludeFields the value to set
          * @return this builder instance
@@ -479,14 +597,17 @@ public class ListMonitoredResourceTypesRequest
         }
 
         /**
-         * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs, to return all the information except the fields requested to be
-         * excluded (excludeFields) by the client. In this mechanism, the client sends the exclude
-         * field names as the query parameters for an API to the server, and the server trims down
-         * the default response content by removing the fields that are not required by the client.
-         * The parameter controls which fields to exlude and to return and should be a query string
-         * parameter called "excludeFields" of an array type, provide the values as enums, and use
-         * collectionFormat.
+         * Singular setter. Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return all the information except
+         * the fields requested to be excluded (excludeFields) by the client.
+         * In this mechanism, the client
+         * sends the exclude field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * exlude and to return and should be a query string parameter
+         * called "excludeFields" of an array type, provide the values
+         * as enums, and use collectionFormat.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -497,19 +618,18 @@ public class ListMonitoredResourceTypesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -521,7 +641,6 @@ public class ListMonitoredResourceTypesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMonitoredResourceTypesRequest o) {
@@ -530,6 +649,8 @@ public class ListMonitoredResourceTypesRequest
             status(o.getStatus());
             isExcludeSystemTypes(o.getIsExcludeSystemTypes());
             metricNamespace(o.getMetricNamespace());
+            sourceType(o.getSourceType());
+            resourceCategory(o.getResourceCategory());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
@@ -545,11 +666,10 @@ public class ListMonitoredResourceTypesRequest
         /**
          * Build the instance of ListMonitoredResourceTypesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMonitoredResourceTypesRequest
          */
@@ -563,8 +683,7 @@ public class ListMonitoredResourceTypesRequest
         /**
          * Build the instance of ListMonitoredResourceTypesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMonitoredResourceTypesRequest
@@ -576,6 +695,8 @@ public class ListMonitoredResourceTypesRequest
             request.status = status;
             request.isExcludeSystemTypes = isExcludeSystemTypes;
             request.metricNamespace = metricNamespace;
+            request.sourceType = sourceType;
+            request.resourceCategory = resourceCategory;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
@@ -584,15 +705,12 @@ public class ListMonitoredResourceTypesRequest
             request.fields = fields;
             request.excludeFields = excludeFields;
             return request;
-            // new ListMonitoredResourceTypesRequest(compartmentId, name, status,
-            // isExcludeSystemTypes, metricNamespace, sortBy, sortOrder, limit, page, opcRequestId,
-            // fields, excludeFields);
+            // new ListMonitoredResourceTypesRequest(compartmentId, name, status, isExcludeSystemTypes, metricNamespace, sourceType, resourceCategory, sortBy, sortOrder, limit, page, opcRequestId, fields, excludeFields);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -602,6 +720,8 @@ public class ListMonitoredResourceTypesRequest
                 .status(status)
                 .isExcludeSystemTypes(isExcludeSystemTypes)
                 .metricNamespace(metricNamespace)
+                .sourceType(sourceType)
+                .resourceCategory(resourceCategory)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .limit(limit)
@@ -613,7 +733,6 @@ public class ListMonitoredResourceTypesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {
@@ -630,6 +749,8 @@ public class ListMonitoredResourceTypesRequest
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",isExcludeSystemTypes=").append(String.valueOf(this.isExcludeSystemTypes));
         sb.append(",metricNamespace=").append(String.valueOf(this.metricNamespace));
+        sb.append(",sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(",resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -657,6 +778,8 @@ public class ListMonitoredResourceTypesRequest
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.isExcludeSystemTypes, other.isExcludeSystemTypes)
                 && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -683,6 +806,10 @@ public class ListMonitoredResourceTypesRequest
         result =
                 (result * PRIME)
                         + (this.metricNamespace == null ? 43 : this.metricNamespace.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

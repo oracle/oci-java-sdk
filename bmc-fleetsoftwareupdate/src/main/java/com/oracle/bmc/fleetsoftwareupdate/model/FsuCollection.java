@@ -5,29 +5,29 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Exadata Fleet Update Collection Resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Exadata Fleet Update Collection Resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = FsuCollection.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = FsuCollection.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GiCollection.class, name = "GI"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = DbCollection.class, name = "DB")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class FsuCollection extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -77,7 +77,10 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
         this.systemTags = systemTags;
     }
 
-    /** OCID identifier for the Exadata Fleet Update Collection. */
+    /**
+     * OCID identifier for the Exadata Fleet Update Collection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -85,12 +88,15 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
      * OCID identifier for the Exadata Fleet Update Collection.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Exadata Fleet Update Collection resource display name. */
+    /**
+     * Exadata Fleet Update Collection resource display name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -98,12 +104,15 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
      * Exadata Fleet Update Collection resource display name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Exadata service type for the target resource members. */
+    /**
+     * Exadata service type for the target resource members.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
     private final CollectionServiceTypes serviceType;
 
@@ -111,12 +120,15 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
      * Exadata service type for the target resource members.
      *
      * @return the value
-     */
+     **/
     public CollectionServiceTypes getServiceType() {
         return serviceType;
     }
 
-    /** Compartment Identifier */
+    /**
+     * Compartment Identifier
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -124,7 +136,7 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
      * Compartment Identifier
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -136,7 +148,10 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
         return activeFsuCycle;
     }
 
-    /** Number of targets that are members of this Collection. */
+    /**
+     * Number of targets that are members of this Collection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCount")
     private final Integer targetCount;
 
@@ -144,139 +159,141 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
      * Number of targets that are members of this Collection.
      *
      * @return the value
-     */
+     **/
     public Integer getTargetCount() {
         return targetCount;
     }
 
     /**
-     * The time the Exadata Fleet Update Collection was created. An RFC3339 formatted datetime
-     * string.
-     */
+     * The time the Exadata Fleet Update Collection was created. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Exadata Fleet Update Collection was created. An RFC3339 formatted datetime
-     * string.
+     * The time the Exadata Fleet Update Collection was created. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the Exadata Fleet Update Collection was updated. An RFC3339 formatted datetime
-     * string.
-     */
+     * The time the Exadata Fleet Update Collection was updated. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Exadata Fleet Update Collection was updated. An RFC3339 formatted datetime
-     * string.
+     * The time the Exadata Fleet Update Collection was updated. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the Exadata Fleet Update Collection. */
+    /**
+     * The current state of the Exadata Fleet Update Collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final CollectionLifecycleStates lifecycleState;
 
     /**
      * The current state of the Exadata Fleet Update Collection.
-     *
      * @return the value
-     */
+     **/
     public CollectionLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail.
+     * For example, can be used to provide actionable information for a resource in Failed state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message describing the current state in more detail.
+     * For example, can be used to provide actionable information for a resource in Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last
-     * completed FSU Cycle.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedFsuCycleId")
     private final String lastCompletedFsuCycleId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last
-     * completed FSU Cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
      *
      * @return the value
-     */
+     **/
     public String getLastCompletedFsuCycleId() {
         return lastCompletedFsuCycleId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -288,7 +305,6 @@ public class FsuCollection extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Schema for App resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Schema for App resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = App.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class App extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -400,37 +398,36 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         */
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         *
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -438,61 +435,71 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocid")
         private String ocid;
 
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
          * @param ocid the value to set
          * @return this builder
-         */
+         **/
         public Builder ocid(String ocid) {
             this.ocid = ocid;
             this.__explicitlySet__.add("ocid");
             return this;
         }
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemas")
         private java.util.List<String> schemas;
 
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param schemas the value to set
          * @return this builder
-         */
+         **/
         public Builder schemas(java.util.List<String> schemas) {
             this.schemas = schemas;
             this.__explicitlySet__.add("schemas");
@@ -526,25 +533,34 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         */
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
         private java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         *
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsPreventedOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsPreventedOperations(
                 java.util.List<IdcsPreventedOperations> idcsPreventedOperations) {
             this.idcsPreventedOperations = idcsPreventedOperations;
@@ -553,51 +569,71 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tags> tags;
 
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tags> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
         private Boolean deleteInProgress;
 
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param deleteInProgress the value to set
          * @return this builder
-         */
+         **/
         public Builder deleteInProgress(Boolean deleteInProgress) {
             this.deleteInProgress = deleteInProgress;
             this.__explicitlySet__.add("deleteInProgress");
@@ -605,24 +641,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
         private String idcsLastUpgradedInRelease;
 
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsLastUpgradedInRelease the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
             this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             this.__explicitlySet__.add("idcsLastUpgradedInRelease");
@@ -630,24 +677,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
         private String domainOcid;
 
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param domainOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder domainOcid(String domainOcid) {
             this.domainOcid = domainOcid;
             this.__explicitlySet__.add("domainOcid");
@@ -655,24 +713,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
         private String compartmentOcid;
 
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param compartmentOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentOcid(String compartmentOcid) {
             this.compartmentOcid = compartmentOcid;
             this.__explicitlySet__.add("compartmentOcid");
@@ -680,169 +749,223 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
         private String tenancyOcid;
 
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param tenancyOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyOcid(String tenancyOcid) {
             this.tenancyOcid = tenancyOcid;
             this.__explicitlySet__.add("tenancyOcid");
             return this;
         }
         /**
-         * Indicates whether the application is billed as an OPCService. If true, customer is not
-         * billed for runtime operations of the app.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: always - type: boolean - uniqueness: none
-         */
+         * Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("meterAsOPCService")
         private Boolean meterAsOPCService;
 
         /**
-         * Indicates whether the application is billed as an OPCService. If true, customer is not
-         * billed for runtime operations of the app.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: always - type: boolean - uniqueness: none
-         *
+         * Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: boolean
+         *  - uniqueness: none
          * @param meterAsOPCService the value to set
          * @return this builder
-         */
+         **/
         public Builder meterAsOPCService(Boolean meterAsOPCService) {
             this.meterAsOPCService = meterAsOPCService;
             this.__explicitlySet__.add("meterAsOPCService");
             return this;
         }
         /**
-         * Name of the application. Also serves as username if the application authenticates to
-         * Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be
-         * changed once an App is created.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * server
-         */
+         * Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Name of the application. Also serves as username if the application authenticates to
-         * Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be
-         * changed once an App is created.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * server
-         *
+         * Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: server
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * This value is the credential of this App, which this App supplies as a password when this
-         * App authenticates to the Oracle Public Cloud infrastructure. This value is also the
-         * client secret of this App when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none
-         * - multiValued: false - mutability: readOnly - required: false - returned: default - type:
-         * string - uniqueness: none
-         */
+         * This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
         private String clientSecret;
 
         /**
-         * This value is the credential of this App, which this App supplies as a password when this
-         * App authenticates to the Oracle Public Cloud infrastructure. This value is also the
-         * client secret of this App when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none
-         * - multiValued: false - mutability: readOnly - required: false - returned: default - type:
-         * string - uniqueness: none
-         *
+         * This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param clientSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecret(String clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
         /**
-         * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of
-         * this App
-         *
-         * <p>*Added In:** 2106240046
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash_sc - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
+         * <p>
+         **Added In:** 2106240046
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: hash_sc
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hashedClientSecret")
         private String hashedClientSecret;
 
         /**
-         * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of
-         * this App
-         *
-         * <p>*Added In:** 2106240046
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash_sc - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
+         * <p>
+         **Added In:** 2106240046
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: hash_sc
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param hashedClientSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder hashedClientSecret(String hashedClientSecret) {
             this.hashedClientSecret = hashedClientSecret;
             this.__explicitlySet__.add("hashedClientSecret");
             return this;
         }
         /**
-         * Display name of the application. Display name is intended to be user-friendly, and an
-         * administrator can change the value at any time.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
-         * server
-         */
+         * Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of the application. Display name is intended to be user-friendly, and an
-         * administrator can change the value at any time.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
-         * server
-         *
+         * Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: server
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -850,24 +973,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Description of the application.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the application.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -875,86 +1009,113 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Encryption Alogrithm to use for encrypting ID token.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idTokenEncAlgo")
         private String idTokenEncAlgo;
 
         /**
          * Encryption Alogrithm to use for encrypting ID token.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param idTokenEncAlgo the value to set
          * @return this builder
-         */
+         **/
         public Builder idTokenEncAlgo(String idTokenEncAlgo) {
             this.idTokenEncAlgo = idTokenEncAlgo;
             this.__explicitlySet__.add("idTokenEncAlgo");
             return this;
         }
         /**
-         * Service Names allow to use OCI signature for client authentication instead of client
-         * credentials
-         *
-         * <p>*Added In:** 2207040824
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Service Names allow to use OCI signature for client authentication instead of client credentials
+         * <p>
+         **Added In:** 2207040824
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("delegatedServiceNames")
         private java.util.List<String> delegatedServiceNames;
 
         /**
-         * Service Names allow to use OCI signature for client authentication instead of client
-         * credentials
-         *
-         * <p>*Added In:** 2207040824
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Service Names allow to use OCI signature for client authentication instead of client credentials
+         * <p>
+         **Added In:** 2207040824
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param delegatedServiceNames the value to set
          * @return this builder
-         */
+         **/
         public Builder delegatedServiceNames(java.util.List<String> delegatedServiceNames) {
             this.delegatedServiceNames = delegatedServiceNames;
             this.__explicitlySet__.add("delegatedServiceNames");
             return this;
         }
         /**
-         * If true, this App is able to participate in runtime services, such as automatic-login,
-         * OAuth, and SAML. If false, all runtime services are disabled for this App, and only
-         * administrative operations can be performed.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("active")
         private Boolean active;
 
         /**
-         * If true, this App is able to participate in runtime services, such as automatic-login,
-         * OAuth, and SAML. If false, all runtime services are disabled for this App, and only
-         * administrative operations can be performed.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param active the value to set
          * @return this builder
-         */
+         **/
         public Builder active(Boolean active) {
             this.active = active;
             this.__explicitlySet__.add("active");
@@ -962,22 +1123,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Application icon.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appIcon")
         private String appIcon;
 
         /**
          * Application icon.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param appIcon the value to set
          * @return this builder
-         */
+         **/
         public Builder appIcon(String appIcon) {
             this.appIcon = appIcon;
             this.__explicitlySet__.add("appIcon");
@@ -985,49 +1157,67 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Application thumbnail.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appThumbnail")
         private String appThumbnail;
 
         /**
          * Application thumbnail.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param appThumbnail the value to set
          * @return this builder
-         */
+         **/
         public Builder appThumbnail(String appThumbnail) {
             this.appThumbnail = appThumbnail;
             this.__explicitlySet__.add("appThumbnail");
             return this;
         }
         /**
-         * If true, this App was migrated from an earlier version of Oracle Public Cloud
-         * infrastructure (and may therefore require special handling from runtime services such as
-         * OAuth or SAML). If false, this App requires no special handling from runtime services.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("migrated")
         private Boolean migrated;
 
         /**
-         * If true, this App was migrated from an earlier version of Oracle Public Cloud
-         * infrastructure (and may therefore require special handling from runtime services such as
-         * OAuth or SAML). If false, this App requires no special handling from runtime services.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param migrated the value to set
          * @return this builder
-         */
+         **/
         public Builder migrated(Boolean migrated) {
             this.migrated = migrated;
             this.__explicitlySet__.add("migrated");
@@ -1035,22 +1225,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this App is an internal infrastructure App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("infrastructure")
         private Boolean infrastructure;
 
         /**
          * If true, this App is an internal infrastructure App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param infrastructure the value to set
          * @return this builder
-         */
+         **/
         public Builder infrastructure(Boolean infrastructure) {
             this.infrastructure = infrastructure;
             this.__explicitlySet__.add("infrastructure");
@@ -1058,105 +1259,141 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this App allows runtime services to log end users into this App automatically.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLoginTarget")
         private Boolean isLoginTarget;
 
         /**
          * If true, this App allows runtime services to log end users into this App automatically.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isLoginTarget the value to set
          * @return this builder
-         */
+         **/
         public Builder isLoginTarget(Boolean isLoginTarget) {
             this.isLoginTarget = isLoginTarget;
             this.__explicitlySet__.add("isLoginTarget");
             return this;
         }
         /**
-         * If true, this app will be displayed in the MyApps page of each end-user who has access to
-         * the App.
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("showInMyApps")
         private Boolean showInMyApps;
 
         /**
-         * If true, this app will be displayed in the MyApps page of each end-user who has access to
-         * the App.
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param showInMyApps the value to set
          * @return this builder
-         */
+         **/
         public Builder showInMyApps(Boolean showInMyApps) {
             this.showInMyApps = showInMyApps;
             this.__explicitlySet__.add("showInMyApps");
             return this;
         }
         /**
-         * The protocol that runtime services will use to log end users in to this App
-         * automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If
-         * 'SAML', then runtime services use Security Assertion Markup Language protocol.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loginMechanism")
         private LoginMechanism loginMechanism;
 
         /**
-         * The protocol that runtime services will use to log end users in to this App
-         * automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If
-         * 'SAML', then runtime services use Security Assertion Markup Language protocol.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param loginMechanism the value to set
          * @return this builder
-         */
+         **/
         public Builder loginMechanism(LoginMechanism loginMechanism) {
             this.loginMechanism = loginMechanism;
             this.__explicitlySet__.add("loginMechanism");
             return this;
         }
         /**
-         * The URL of the landing page for this App, which is the first page that an end user should
-         * see if runtime services log that end user in to this App automatically.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("landingPageUrl")
         private String landingPageUrl;
 
         /**
-         * The URL of the landing page for this App, which is the first page that an end user should
-         * see if runtime services log that end user in to this App automatically.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param landingPageUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder landingPageUrl(String landingPageUrl) {
             this.landingPageUrl = landingPageUrl;
             this.__explicitlySet__.add("landingPageUrl");
@@ -1164,26 +1401,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Application Logo URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productLogoUrl")
         private String productLogoUrl;
 
         /**
          * Application Logo URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param productLogoUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder productLogoUrl(String productLogoUrl) {
             this.productLogoUrl = productLogoUrl;
             this.__explicitlySet__.add("productLogoUrl");
@@ -1191,26 +1439,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Privacy Policy URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privacyPolicyUrl")
         private String privacyPolicyUrl;
 
         /**
          * Privacy Policy URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param privacyPolicyUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder privacyPolicyUrl(String privacyPolicyUrl) {
             this.privacyPolicyUrl = privacyPolicyUrl;
             this.__explicitlySet__.add("privacyPolicyUrl");
@@ -1218,26 +1477,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Terms of Service URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("termsOfServiceUrl")
         private String termsOfServiceUrl;
 
         /**
          * Terms of Service URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param termsOfServiceUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder termsOfServiceUrl(String termsOfServiceUrl) {
             this.termsOfServiceUrl = termsOfServiceUrl;
             this.__explicitlySet__.add("termsOfServiceUrl");
@@ -1245,26 +1515,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Contact Email Address
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactEmailAddress")
         private String contactEmailAddress;
 
         /**
          * Contact Email Address
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param contactEmailAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder contactEmailAddress(String contactEmailAddress) {
             this.contactEmailAddress = contactEmailAddress;
             this.__explicitlySet__.add("contactEmailAddress");
@@ -1272,26 +1553,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Product Name
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
          * Product Name
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param productName the value to set
          * @return this builder
-         */
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
@@ -1299,26 +1591,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Home Page URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("homePageUrl")
         private String homePageUrl;
 
         /**
          * Home Page URL
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param homePageUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder homePageUrl(String homePageUrl) {
             this.homePageUrl = homePageUrl;
             this.__explicitlySet__.add("homePageUrl");
@@ -1326,22 +1629,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this application acts as FormFill Application
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFormFill")
         private Boolean isFormFill;
 
         /**
          * If true, this application acts as FormFill Application
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isFormFill the value to set
          * @return this builder
-         */
+         **/
         public Builder isFormFill(Boolean isFormFill) {
             this.isFormFill = isFormFill;
             this.__explicitlySet__.add("isFormFill");
@@ -1349,22 +1663,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this application acts as an OAuth Client
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOAuthClient")
         private Boolean isOAuthClient;
 
         /**
          * If true, this application acts as an OAuth Client
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isOAuthClient the value to set
          * @return this builder
-         */
+         **/
         public Builder isOAuthClient(Boolean isOAuthClient) {
             this.isOAuthClient = isOAuthClient;
             this.__explicitlySet__.add("isOAuthClient");
@@ -1372,26 +1697,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this application acts as an Radius App
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRadiusApp")
         private Boolean isRadiusApp;
 
         /**
          * If true, this application acts as an Radius App
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isRadiusApp the value to set
          * @return this builder
-         */
+         **/
         public Builder isRadiusApp(Boolean isRadiusApp) {
             this.isRadiusApp = isRadiusApp;
             this.__explicitlySet__.add("isRadiusApp");
@@ -1399,142 +1735,177 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Specifies the type of access that this App has when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientType")
         private ClientType clientType;
 
         /**
          * Specifies the type of access that this App has when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param clientType the value to set
          * @return this builder
-         */
+         **/
         public Builder clientType(ClientType clientType) {
             this.clientType = clientType;
             this.__explicitlySet__.add("clientType");
             return this;
         }
         /**
-         * OPTIONAL. Each value is a URI within this App. This attribute is required when this App
-         * acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redirectUris")
         private java.util.List<String> redirectUris;
 
         /**
-         * OPTIONAL. Each value is a URI within this App. This attribute is required when this App
-         * acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param redirectUris the value to set
          * @return this builder
-         */
+         **/
         public Builder redirectUris(java.util.List<String> redirectUris) {
             this.redirectUris = redirectUris;
             this.__explicitlySet__.add("redirectUris");
             return this;
         }
         /**
-         * If true, indicates that the system should allow all URL-schemes within each value of the
-         * 'redirectUris' attribute. Also indicates that the system should not attempt to confirm
-         * that each value of the 'redirectUris' attribute is a valid URI. In particular, the system
-         * should not confirm that the domain component of the URI is a top-level domain and the
-         * system should not confirm that the hostname portion is a valid system that is reachable
-         * over the network.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allUrlSchemesAllowed")
         private Boolean allUrlSchemesAllowed;
 
         /**
-         * If true, indicates that the system should allow all URL-schemes within each value of the
-         * 'redirectUris' attribute. Also indicates that the system should not attempt to confirm
-         * that each value of the 'redirectUris' attribute is a valid URI. In particular, the system
-         * should not confirm that the domain component of the URI is a top-level domain and the
-         * system should not confirm that the hostname portion is a valid system that is reachable
-         * over the network.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param allUrlSchemesAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder allUrlSchemesAllowed(Boolean allUrlSchemesAllowed) {
             this.allUrlSchemesAllowed = allUrlSchemesAllowed;
             this.__explicitlySet__.add("allUrlSchemesAllowed");
             return this;
         }
         /**
-         * OAuth will use this URI to logout if this App wants to participate in SSO, and if this
-         * App's session gets cleared as part of global logout. Note: This attribute is used only if
-         * this App acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoutUri")
         private String logoutUri;
 
         /**
-         * OAuth will use this URI to logout if this App wants to participate in SSO, and if this
-         * App's session gets cleared as part of global logout. Note: This attribute is used only if
-         * this App acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param logoutUri the value to set
          * @return this builder
-         */
+         **/
         public Builder logoutUri(String logoutUri) {
             this.logoutUri = logoutUri;
             this.__explicitlySet__.add("logoutUri");
             return this;
         }
         /**
-         * Each value of this attribute is the URI of a landing page within this App. It is used
-         * only when this App, acting as an OAuthClient, initiates the logout flow and wants to be
-         * redirected back to one of its landing pages.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("postLogoutRedirectUris")
         private java.util.List<String> postLogoutRedirectUris;
 
         /**
-         * Each value of this attribute is the URI of a landing page within this App. It is used
-         * only when this App, acting as an OAuthClient, initiates the logout flow and wants to be
-         * redirected back to one of its landing pages.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param postLogoutRedirectUris the value to set
          * @return this builder
-         */
+         **/
         public Builder postLogoutRedirectUris(java.util.List<String> postLogoutRedirectUris) {
             this.postLogoutRedirectUris = postLogoutRedirectUris;
             this.__explicitlySet__.add("postLogoutRedirectUris");
@@ -1542,63 +1913,71 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedGrants")
         private java.util.List<String> allowedGrants;
 
         /**
          * List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param allowedGrants the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedGrants(java.util.List<String> allowedGrants) {
             this.allowedGrants = allowedGrants;
             this.__explicitlySet__.add("allowedGrants");
             return this;
         }
         /**
-         * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are
-         * 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look
-         * inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges
-         * are combined with the privileges of the Subject User. Ordinarily, authorization
-         * calculates the set of effective privileges as the intersection of the client's privileges
-         * and the user's privileges. The value 'onBehalfOf' indicates that authorization should
-         * ignore the privileges of the client and use only the user's privileges to calculate the
-         * effective privileges.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedOperations")
         private java.util.List<AllowedOperations> allowedOperations;
 
         /**
-         * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are
-         * 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look
-         * inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges
-         * are combined with the privileges of the Subject User. Ordinarily, authorization
-         * calculates the set of effective privileges as the intersection of the client's privileges
-         * and the user's privileges. The value 'onBehalfOf' indicates that authorization should
-         * ignore the privileges of the client and use only the user's privileges to calculate the
-         * effective privileges.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param allowedOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedOperations(java.util.List<AllowedOperations> allowedOperations) {
             this.allowedOperations = allowedOperations;
             this.__explicitlySet__.add("allowedOperations");
@@ -1606,28 +1985,39 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Network Perimeters checking mode
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientIPChecking")
         private ClientIPChecking clientIPChecking;
 
         /**
          * Network Perimeters checking mode
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param clientIPChecking the value to set
          * @return this builder
-         */
+         **/
         public Builder clientIPChecking(ClientIPChecking clientIPChecking) {
             this.clientIPChecking = clientIPChecking;
             this.__explicitlySet__.add("clientIPChecking");
@@ -1635,76 +2025,101 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this application is an Oracle Public Cloud service-instance.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOPCService")
         private Boolean isOPCService;
 
         /**
          * If true, this application is an Oracle Public Cloud service-instance.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isOPCService the value to set
          * @return this builder
-         */
+         **/
         public Builder isOPCService(Boolean isOPCService) {
             this.isOPCService = isOPCService;
             this.__explicitlySet__.add("isOPCService");
             return this;
         }
         /**
-         * If true, indicates that this application accepts an Oracle Cloud Identity Service User as
-         * a login-identity (does not require an account) and relies for authorization on the User's
-         * memberships in AppRoles.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnmanagedApp")
         private Boolean isUnmanagedApp;
 
         /**
-         * If true, indicates that this application accepts an Oracle Cloud Identity Service User as
-         * a login-identity (does not require an account) and relies for authorization on the User's
-         * memberships in AppRoles.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isUnmanagedApp the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnmanagedApp(Boolean isUnmanagedApp) {
             this.isUnmanagedApp = isUnmanagedApp;
             this.__explicitlySet__.add("isUnmanagedApp");
             return this;
         }
         /**
-         * If true, any managed App that is based on this template is checked for access control
-         * that is, access to this app is subject to successful authorization at SSO service, viz.
-         * app grants to start with.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowAccessControl")
         private Boolean allowAccessControl;
 
         /**
-         * If true, any managed App that is based on this template is checked for access control
-         * that is, access to this app is subject to successful authorization at SSO service, viz.
-         * app grants to start with.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param allowAccessControl the value to set
          * @return this builder
-         */
+         **/
         public Builder allowAccessControl(Boolean allowAccessControl) {
             this.allowAccessControl = allowAccessControl;
             this.__explicitlySet__.add("allowAccessControl");
@@ -1712,97 +2127,135 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, indicates that this application acts as an OAuth Resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOAuthResource")
         private Boolean isOAuthResource;
 
         /**
          * If true, indicates that this application acts as an OAuth Resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isOAuthResource the value to set
          * @return this builder
-         */
+         **/
         public Builder isOAuthResource(Boolean isOAuthResource) {
             this.isOAuthResource = isOAuthResource;
             this.__explicitlySet__.add("isOAuthResource");
             return this;
         }
         /**
-         * Expiry-time in seconds for an Access Token. Any token that allows access to this App will
-         * expire after the specified duration.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         */
+         * Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessTokenExpiry")
         private Integer accessTokenExpiry;
 
         /**
-         * Expiry-time in seconds for an Access Token. Any token that allows access to this App will
-         * expire after the specified duration.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         *
+         * Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param accessTokenExpiry the value to set
          * @return this builder
-         */
+         **/
         public Builder accessTokenExpiry(Integer accessTokenExpiry) {
             this.accessTokenExpiry = accessTokenExpiry;
             this.__explicitlySet__.add("accessTokenExpiry");
             return this;
         }
         /**
-         * Expiry-time in seconds for a Refresh Token. Any token that allows access to this App,
-         * once refreshed, will expire after the specified duration.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         */
+         * Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refreshTokenExpiry")
         private Integer refreshTokenExpiry;
 
         /**
-         * Expiry-time in seconds for a Refresh Token. Any token that allows access to this App,
-         * once refreshed, will expire after the specified duration.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: integer - uniqueness: none
-         *
+         * Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param refreshTokenExpiry the value to set
          * @return this builder
-         */
+         **/
         public Builder refreshTokenExpiry(Integer refreshTokenExpiry) {
             this.refreshTokenExpiry = refreshTokenExpiry;
             this.__explicitlySet__.add("refreshTokenExpiry");
             return this;
         }
         /**
-         * If true, indicates that the Refresh Token is allowed when this App acts as an OAuth
-         * Resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowOffline")
         private Boolean allowOffline;
 
         /**
-         * If true, indicates that the Refresh Token is allowed when this App acts as an OAuth
-         * Resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param allowOffline the value to set
          * @return this builder
-         */
+         **/
         public Builder allowOffline(Boolean allowOffline) {
             this.allowOffline = allowOffline;
             this.__explicitlySet__.add("allowOffline");
@@ -1810,51 +2263,71 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Callback Service URL
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("callbackServiceUrl")
         private String callbackServiceUrl;
 
         /**
          * Callback Service URL
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param callbackServiceUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder callbackServiceUrl(String callbackServiceUrl) {
             this.callbackServiceUrl = callbackServiceUrl;
             this.__explicitlySet__.add("callbackServiceUrl");
             return this;
         }
         /**
-         * The base URI for all of the scopes defined in this App. The value of 'audience' is
-         * combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("audience")
         private String audience;
 
         /**
-         * The base URI for all of the scopes defined in this App. The value of 'audience' is
-         * combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param audience the value to set
          * @return this builder
-         */
+         **/
         public Builder audience(String audience) {
             this.audience = audience;
             this.__explicitlySet__.add("audience");
@@ -1862,49 +2335,69 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, indicates that the App should be visible in each end-user's mobile application.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMobileTarget")
         private Boolean isMobileTarget;
 
         /**
          * If true, indicates that the App should be visible in each end-user's mobile application.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isMobileTarget the value to set
          * @return this builder
-         */
+         **/
         public Builder isMobileTarget(Boolean isMobileTarget) {
             this.isMobileTarget = isMobileTarget;
             this.__explicitlySet__.add("isMobileTarget");
             return this;
         }
         /**
-         * This attribute specifies the URL of the page that the App uses when an end-user signs in
-         * to that App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loginPageUrl")
         private String loginPageUrl;
 
         /**
-         * This attribute specifies the URL of the page that the App uses when an end-user signs in
-         * to that App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param loginPageUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder loginPageUrl(String loginPageUrl) {
             this.loginPageUrl = loginPageUrl;
             this.__explicitlySet__.add("loginPageUrl");
@@ -1912,86 +2405,115 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * This attribute specifies the callback URL for the social linking operation.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("linkingCallbackUrl")
         private String linkingCallbackUrl;
 
         /**
          * This attribute specifies the callback URL for the social linking operation.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param linkingCallbackUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder linkingCallbackUrl(String linkingCallbackUrl) {
             this.linkingCallbackUrl = linkingCallbackUrl;
             this.__explicitlySet__.add("linkingCallbackUrl");
             return this;
         }
         /**
-         * This attribute specifies the URL of the page that the App uses when an end-user signs
-         * out.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * This attribute specifies the URL of the page that the App uses when an end-user signs out.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoutPageUrl")
         private String logoutPageUrl;
 
         /**
-         * This attribute specifies the URL of the page that the App uses when an end-user signs
-         * out.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * This attribute specifies the URL of the page that the App uses when an end-user signs out.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param logoutPageUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder logoutPageUrl(String logoutPageUrl) {
             this.logoutPageUrl = logoutPageUrl;
             this.__explicitlySet__.add("logoutPageUrl");
             return this;
         }
         /**
-         * This attribute specifies the URL of the page to which an application will redirect an
-         * end-user in case of error.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorPageUrl")
         private String errorPageUrl;
 
         /**
-         * This attribute specifies the URL of the page to which an application will redirect an
-         * end-user in case of error.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param errorPageUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder errorPageUrl(String errorPageUrl) {
             this.errorPageUrl = errorPageUrl;
             this.__explicitlySet__.add("errorPageUrl");
@@ -1999,22 +2521,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, then this App acts as a SAML Service Provider.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSamlServiceProvider")
         private Boolean isSamlServiceProvider;
 
         /**
          * If true, then this App acts as a SAML Service Provider.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isSamlServiceProvider the value to set
          * @return this builder
-         */
+         **/
         public Builder isSamlServiceProvider(Boolean isSamlServiceProvider) {
             this.isSamlServiceProvider = isSamlServiceProvider;
             this.__explicitlySet__.add("isSamlServiceProvider");
@@ -2022,22 +2555,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, the webtier policy is active
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isWebTierPolicy")
         private Boolean isWebTierPolicy;
 
         /**
          * If true, the webtier policy is active
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isWebTierPolicy the value to set
          * @return this builder
-         */
+         **/
         public Builder isWebTierPolicy(Boolean isWebTierPolicy) {
             this.isWebTierPolicy = isWebTierPolicy;
             this.__explicitlySet__.add("isWebTierPolicy");
@@ -2045,22 +2589,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, indicates that this App supports Kerberos Authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKerberosRealm")
         private Boolean isKerberosRealm;
 
         /**
          * If true, indicates that this App supports Kerberos Authentication
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isKerberosRealm the value to set
          * @return this builder
-         */
+         **/
         public Builder isKerberosRealm(Boolean isKerberosRealm) {
             this.isKerberosRealm = isKerberosRealm;
             this.__explicitlySet__.add("isKerberosRealm");
@@ -2068,22 +2623,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * URL of application icon.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: reference - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("icon")
         private String icon;
 
         /**
          * URL of application icon.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: reference - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param icon the value to set
          * @return this builder
-         */
+         **/
         public Builder icon(String icon) {
             this.icon = icon;
             this.__explicitlySet__.add("icon");
@@ -2091,198 +2657,249 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: always - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: always
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAliasApp")
         private Boolean isAliasApp;
 
         /**
          * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: always - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: always
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isAliasApp the value to set
          * @return this builder
-         */
+         **/
         public Builder isAliasApp(Boolean isAliasApp) {
             this.isAliasApp = isAliasApp;
             this.__explicitlySet__.add("isAliasApp");
             return this;
         }
         /**
-         * If true, indicates that access to this App requires an account. That is, in order to log
-         * in to the App, a User must use an application-specific identity that is maintained in the
-         * remote identity-repository of that App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManagedApp")
         private Boolean isManagedApp;
 
         /**
-         * If true, indicates that access to this App requires an account. That is, in order to log
-         * in to the App, a User must use an application-specific identity that is maintained in the
-         * remote identity-repository of that App.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isManagedApp the value to set
          * @return this builder
-         */
+         **/
         public Builder isManagedApp(Boolean isManagedApp) {
             this.isManagedApp = isManagedApp;
             this.__explicitlySet__.add("isManagedApp");
             return this;
         }
         /**
-         * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service
-         * of which this app is an instance.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceTypeURN")
         private String serviceTypeURN;
 
         /**
-         * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service
-         * of which this app is an instance.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param serviceTypeURN the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceTypeURN(String serviceTypeURN) {
             this.serviceTypeURN = serviceTypeURN;
             this.__explicitlySet__.add("serviceTypeURN");
             return this;
         }
         /**
-         * This value specifies the version of the Oracle Public Cloud service of which this App is
-         * an instance
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * This value specifies the version of the Oracle Public Cloud service of which this App is an instance
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceTypeVersion")
         private String serviceTypeVersion;
 
         /**
-         * This value specifies the version of the Oracle Public Cloud service of which this App is
-         * an instance
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * This value specifies the version of the Oracle Public Cloud service of which this App is an instance
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param serviceTypeVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceTypeVersion(String serviceTypeVersion) {
             this.serviceTypeVersion = serviceTypeVersion;
             this.__explicitlySet__.add("serviceTypeVersion");
             return this;
         }
         /**
-         * This flag indicates if the App is capable of validating obligations with the token for
-         * allowing access to the App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isObligationCapable")
         private Boolean isObligationCapable;
 
         /**
-         * This flag indicates if the App is capable of validating obligations with the token for
-         * allowing access to the App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isObligationCapable the value to set
          * @return this builder
-         */
+         **/
         public Builder isObligationCapable(Boolean isObligationCapable) {
             this.isObligationCapable = isObligationCapable;
             this.__explicitlySet__.add("isObligationCapable");
             return this;
         }
         /**
-         * If true, this App requires an upgrade and mandates attention from application
-         * administrator. The flag is used by UI to indicate this app is ready to upgrade.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("readyToUpgrade")
         private Boolean readyToUpgrade;
 
         /**
-         * If true, this App requires an upgrade and mandates attention from application
-         * administrator. The flag is used by UI to indicate this app is ready to upgrade.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param readyToUpgrade the value to set
          * @return this builder
-         */
+         **/
         public Builder readyToUpgrade(Boolean readyToUpgrade) {
             this.readyToUpgrade = readyToUpgrade;
             this.__explicitlySet__.add("readyToUpgrade");
             return this;
         }
         /**
-         * Indicates the scope of trust for this App when acting as an OAuthClient. A value of
-         * 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources
-         * that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the
-         * App is allowed implicitly to access any scope of any OAuthResource within the same Oracle
-         * Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of
-         * any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of
-         * 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings
-         * is used.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustScope")
         private TrustScope trustScope;
 
         /**
-         * Indicates the scope of trust for this App when acting as an OAuthClient. A value of
-         * 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources
-         * that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the
-         * App is allowed implicitly to access any scope of any OAuthResource within the same Oracle
-         * Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of
-         * any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of
-         * 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings
-         * is used.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param trustScope the value to set
          * @return this builder
-         */
+         **/
         public Builder trustScope(TrustScope trustScope) {
             this.trustScope = trustScope;
             this.__explicitlySet__.add("trustScope");
@@ -2290,59 +2907,73 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this application acts as database service Application
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - type: boolean
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDatabaseService")
         private Boolean isDatabaseService;
 
         /**
          * If true, this application acts as database service Application
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - type: boolean
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - type: boolean
          * @param isDatabaseService the value to set
          * @return this builder
-         */
+         **/
         public Builder isDatabaseService(Boolean isDatabaseService) {
             this.isDatabaseService = isDatabaseService;
             this.__explicitlySet__.add("isDatabaseService");
             return this;
         }
         /**
-         * A list of secondary audiences--additional URIs to be added automatically to any OAuth
-         * token that allows access to this App. Note: This attribute is used mainly for backward
-         * compatibility in certain Oracle Public Cloud Apps.
-         *
-         * <p>*Deprecated Since: 18.2.6**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+         * <p>
+         **Deprecated Since: 18.2.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryAudiences")
         private java.util.List<String> secondaryAudiences;
 
         /**
-         * A list of secondary audiences--additional URIs to be added automatically to any OAuth
-         * token that allows access to this App. Note: This attribute is used mainly for backward
-         * compatibility in certain Oracle Public Cloud Apps.
-         *
-         * <p>*Deprecated Since: 18.2.6**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+         * <p>
+         **Deprecated Since: 18.2.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param secondaryAudiences the value to set
          * @return this builder
-         */
+         **/
         public Builder secondaryAudiences(java.util.List<String> secondaryAudiences) {
             this.secondaryAudiences = secondaryAudiences;
             this.__explicitlySet__.add("secondaryAudiences");
@@ -2350,26 +2981,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnterpriseApp")
         private Boolean isEnterpriseApp;
 
         /**
          * If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isEnterpriseApp the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnterpriseApp(Boolean isEnterpriseApp) {
             this.isEnterpriseApp = isEnterpriseApp;
             this.__explicitlySet__.add("isEnterpriseApp");
@@ -2377,28 +3019,39 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, indicates that consent should be skipped for all scopes
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bypassConsent")
         private Boolean bypassConsent;
 
         /**
          * If true, indicates that consent should be skipped for all scopes
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param bypassConsent the value to set
          * @return this builder
-         */
+         **/
         public Builder bypassConsent(Boolean bypassConsent) {
             this.bypassConsent = bypassConsent;
             this.__explicitlySet__.add("bypassConsent");
@@ -2406,26 +3059,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Indicates whether the application is allowed to be access using kmsi token.
-         *
-         * <p>*Added In:** 2111190457
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: always - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2111190457
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: always
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disableKmsiTokenAuthentication")
         private Boolean disableKmsiTokenAuthentication;
 
         /**
          * Indicates whether the application is allowed to be access using kmsi token.
-         *
-         * <p>*Added In:** 2111190457
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: always - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2111190457
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: always
+         *  - type: boolean
+         *  - uniqueness: none
          * @param disableKmsiTokenAuthentication the value to set
          * @return this builder
-         */
+         **/
         public Builder disableKmsiTokenAuthentication(Boolean disableKmsiTokenAuthentication) {
             this.disableKmsiTokenAuthentication = disableKmsiTokenAuthentication;
             this.__explicitlySet__.add("disableKmsiTokenAuthentication");
@@ -2433,26 +3097,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * If true, indicates the app is used for multicloud service integration.
-         *
-         * <p>*Added In:** 2301202328
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2301202328
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMulticloudServiceApp")
         private Boolean isMulticloudServiceApp;
 
         /**
          * If true, indicates the app is used for multicloud service integration.
-         *
-         * <p>*Added In:** 2301202328
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2301202328
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isMulticloudServiceApp the value to set
          * @return this builder
-         */
+         **/
         public Builder isMulticloudServiceApp(Boolean isMulticloudServiceApp) {
             this.isMulticloudServiceApp = isMulticloudServiceApp;
             this.__explicitlySet__.add("isMulticloudServiceApp");
@@ -2469,26 +3144,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Network Perimeter
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appsNetworkPerimeters")
         private java.util.List<AppAppsNetworkPerimeters> appsNetworkPerimeters;
 
         /**
          * Network Perimeter
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
          * @param appsNetworkPerimeters the value to set
          * @return this builder
-         */
+         **/
         public Builder appsNetworkPerimeters(
                 java.util.List<AppAppsNetworkPerimeters> appsNetworkPerimeters) {
             this.appsNetworkPerimeters = appsNetworkPerimeters;
@@ -2497,28 +3181,39 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * A collection of arbitrary properties that scope the privileges of a cloud-control App.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudControlProperties")
         private java.util.List<AppCloudControlProperties> cloudControlProperties;
 
         /**
          * A collection of arbitrary properties that scope the privileges of a cloud-control App.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param cloudControlProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudControlProperties(
                 java.util.List<AppCloudControlProperties> cloudControlProperties) {
             this.cloudControlProperties = cloudControlProperties;
@@ -2527,28 +3222,41 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * App attributes editable by subject
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-         * false - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editableAttributes")
         private java.util.List<AppEditableAttributes> editableAttributes;
 
         /**
          * App attributes editable by subject
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-         * false - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param editableAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder editableAttributes(
                 java.util.List<AppEditableAttributes> editableAttributes) {
             this.editableAttributes = editableAttributes;
@@ -2565,33 +3273,42 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * A list of secondary audiences--additional URIs to be added automatically to any OAuth
-         * token that allows access to this App. Note: This attribute is used mainly for backward
-         * compatibility in certain Oracle Public Cloud Apps.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-         * false - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         */
+         * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectableSecondaryAudiences")
         private java.util.List<AppProtectableSecondaryAudiences> protectableSecondaryAudiences;
 
         /**
-         * A list of secondary audiences--additional URIs to be added automatically to any OAuth
-         * token that allows access to this App. Note: This attribute is used mainly for backward
-         * compatibility in certain Oracle Public Cloud Apps.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-         * false - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         *
+         * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param protectableSecondaryAudiences the value to set
          * @return this builder
-         */
+         **/
         public Builder protectableSecondaryAudiences(
                 java.util.List<AppProtectableSecondaryAudiences> protectableSecondaryAudiences) {
             this.protectableSecondaryAudiences = protectableSecondaryAudiences;
@@ -2609,28 +3326,39 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * A list of tags, acting as an OAuthClient, this App is allowed to access.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedTags")
         private java.util.List<AppAllowedTags> allowedTags;
 
         /**
          * A list of tags, acting as an OAuthClient, this App is allowed to access.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param allowedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedTags(java.util.List<AppAllowedTags> allowedTags) {
             this.allowedTags = allowedTags;
             this.__explicitlySet__.add("allowedTags");
@@ -2647,24 +3375,33 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Trust Policies.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustPolicies")
         private java.util.List<AppTrustPolicies> trustPolicies;
 
         /**
          * Trust Policies.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-         * complex
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
          * @param trustPolicies the value to set
          * @return this builder
-         */
+         **/
         public Builder trustPolicies(java.util.List<AppTrustPolicies> trustPolicies) {
             this.trustPolicies = trustPolicies;
             this.__explicitlySet__.add("trustPolicies");
@@ -2680,29 +3417,34 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * A list of IdentityProvider assigned to app. A user trying to access this app will be
-         * automatically redirected to configured IdP during the authentication phase, before being
-         * able to access App.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex
-         */
+         * A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityProviders")
         private java.util.List<AppIdentityProviders> identityProviders;
 
         /**
-         * A list of IdentityProvider assigned to app. A user trying to access this app will be
-         * automatically redirected to configured IdP during the authentication phase, before being
-         * able to access App.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex
-         *
+         * A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
          * @param identityProviders the value to set
          * @return this builder
-         */
+         **/
         public Builder identityProviders(java.util.List<AppIdentityProviders> identityProviders) {
             this.identityProviders = identityProviders;
             this.__explicitlySet__.add("identityProviders");
@@ -2710,24 +3452,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Accounts of App
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accounts")
         private java.util.List<AppAccounts> accounts;
 
         /**
          * Accounts of App
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param accounts the value to set
          * @return this builder
-         */
+         **/
         public Builder accounts(java.util.List<AppAccounts> accounts) {
             this.accounts = accounts;
             this.__explicitlySet__.add("accounts");
@@ -2735,24 +3488,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Grants assigned to the app
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grants")
         private java.util.List<AppGrants> grants;
 
         /**
          * Grants assigned to the app
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param grants the value to set
          * @return this builder
-         */
+         **/
         public Builder grants(java.util.List<AppGrants> grants) {
             this.grants = grants;
             this.__explicitlySet__.add("grants");
@@ -2760,24 +3524,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Custom attribute that is required to compute other attribute values during app creation.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: false - returned: always - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: always
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceParams")
         private java.util.List<AppServiceParams> serviceParams;
 
         /**
          * Custom attribute that is required to compute other attribute values during app creation.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: readWrite - required: false - returned: always - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: always
+         *  - type: complex
+         *  - uniqueness: none
          * @param serviceParams the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceParams(java.util.List<AppServiceParams> serviceParams) {
             this.serviceParams = serviceParams;
             this.__explicitlySet__.add("serviceParams");
@@ -2785,24 +3560,35 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Label for the attribute to be shown in the UI.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: immutable - required: false - returned: default - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attrRenderingMetadata")
         private java.util.List<AppAttrRenderingMetadata> attrRenderingMetadata;
 
         /**
          * Label for the attribute to be shown in the UI.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
-         * multiValued: true - mutability: immutable - required: false - returned: default - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param attrRenderingMetadata the value to set
          * @return this builder
-         */
+         **/
         public Builder attrRenderingMetadata(
                 java.util.List<AppAttrRenderingMetadata> attrRenderingMetadata) {
             this.attrRenderingMetadata = attrRenderingMetadata;
@@ -2819,31 +3605,38 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * A list of AppRoles that are granted to this App (and that are defined by other Apps).
-         * Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such
-         * an association allows this App to act as a consumer and thus to access resources of
-         * another App that acts as a producer.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: default -
-         * type: complex - uniqueness: none
-         */
+         * A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantedAppRoles")
         private java.util.List<AppGrantedAppRoles> grantedAppRoles;
 
         /**
-         * A list of AppRoles that are granted to this App (and that are defined by other Apps).
-         * Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such
-         * an association allows this App to act as a consumer and thus to access resources of
-         * another App that acts as a producer.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: default -
-         * type: complex - uniqueness: none
-         *
+         * A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param grantedAppRoles the value to set
          * @return this builder
-         */
+         **/
         public Builder grantedAppRoles(java.util.List<AppGrantedAppRoles> grantedAppRoles) {
             this.grantedAppRoles = grantedAppRoles;
             this.__explicitlySet__.add("grantedAppRoles");
@@ -2859,81 +3652,114 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * A list of scopes (exposed by this App or by other Apps) that this App is allowed to
-         * access when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [fqs] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         */
+         * A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [fqs]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedScopes")
         private java.util.List<AppAllowedScopes> allowedScopes;
 
         /**
-         * A list of scopes (exposed by this App or by other Apps) that this App is allowed to
-         * access when it acts as an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [fqs] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         *
+         * A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [fqs]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param allowedScopes the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedScopes(java.util.List<AppAllowedScopes> allowedScopes) {
             this.allowedScopes = allowedScopes;
             this.__explicitlySet__.add("allowedScopes");
             return this;
         }
         /**
-         * Each value of this attribute represent a certificate that this App uses when it acts as
-         * an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [certAlias] -
-         * idcsSearchable: false - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex - uniqueness: none
-         */
+         * Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [certAlias]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificates")
         private java.util.List<AppCertificates> certificates;
 
         /**
-         * Each value of this attribute represent a certificate that this App uses when it acts as
-         * an OAuthClient.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [certAlias] -
-         * idcsSearchable: false - multiValued: true - mutability: readWrite - required: false -
-         * returned: default - type: complex - uniqueness: none
-         *
+         * Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [certAlias]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param certificates the value to set
          * @return this builder
-         */
+         **/
         public Builder certificates(java.util.List<AppCertificates> certificates) {
             this.certificates = certificates;
             this.__explicitlySet__.add("certificates");
             return this;
         }
         /**
-         * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App
-         * on which this App depends.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         */
+         * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aliasApps")
         private java.util.List<AppAliasApps> aliasApps;
 
         /**
-         * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App
-         * on which this App depends.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         *
+         * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param aliasApps the value to set
          * @return this builder
-         */
+         **/
         public Builder aliasApps(java.util.List<AppAliasApps> aliasApps) {
             this.aliasApps = aliasApps;
             this.__explicitlySet__.add("aliasApps");
@@ -2949,54 +3775,68 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles
-         * confers administrative privilege within this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex
-         */
+         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminRoles")
         private java.util.List<AppAdminRoles> adminRoles;
 
         /**
-         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles
-         * confers administrative privilege within this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex
-         *
+         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
          * @param adminRoles the value to set
          * @return this builder
-         */
+         **/
         public Builder adminRoles(java.util.List<AppAdminRoles> adminRoles) {
             this.adminRoles = adminRoles;
             this.__explicitlySet__.add("adminRoles");
             return this;
         }
         /**
-         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles
-         * confers end-user privilege within this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex
-         */
+         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userRoles")
         private java.util.List<AppUserRoles> userRoles;
 
         /**
-         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles
-         * confers end-user privilege within this App.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex
-         *
+         * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
          * @param userRoles the value to set
          * @return this builder
-         */
+         **/
         public Builder userRoles(java.util.List<AppUserRoles> userRoles) {
             this.userRoles = userRoles;
             this.__explicitlySet__.add("userRoles");
@@ -3004,24 +3844,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Scopes defined by this App. Used when this App acts as an OAuth Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private java.util.List<AppScopes> scopes;
 
         /**
          * Scopes defined by this App. Used when this App acts as an OAuth Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param scopes the value to set
          * @return this builder
-         */
+         **/
         public Builder scopes(java.util.List<AppScopes> scopes) {
             this.scopes = scopes;
             this.__explicitlySet__.add("scopes");
@@ -3322,8 +4175,7 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionSamlServiceProviderApp,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionWebTierPolicyApp,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionManagedappApp,
-                            this
-                                    .urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate,
+                            this.urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionOpcServiceApp,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionKerberosRealmApp,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionRequestableApp,
@@ -3331,8 +4183,7 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionDbcsApp,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionEnterpriseAppApp,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionOciTags,
-                            this
-                                    .urnIetfParamsScimSchemasOracleIdcsExtensionMulticloudServiceAppApp);
+                            this.urnIetfParamsScimSchemasOracleIdcsExtensionMulticloudServiceAppApp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -3725,7 +4576,9 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -3735,90 +4588,103 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     */
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     *
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocid")
     private final String ocid;
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getOcid() {
         return ocid;
     }
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemas")
     private final java.util.List<String> schemas;
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getSchemas() {
         return schemas;
     }
@@ -3845,542 +4711,779 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
     private final java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<IdcsPreventedOperations> getIdcsPreventedOperations() {
         return idcsPreventedOperations;
     }
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tags> tags;
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<Tags> getTags() {
         return tags;
     }
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
     private final Boolean deleteInProgress;
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getDeleteInProgress() {
         return deleteInProgress;
     }
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
     private final String idcsLastUpgradedInRelease;
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsLastUpgradedInRelease() {
         return idcsLastUpgradedInRelease;
     }
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
     private final String domainOcid;
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDomainOcid() {
         return domainOcid;
     }
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
     private final String compartmentOcid;
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCompartmentOcid() {
         return compartmentOcid;
     }
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
     private final String tenancyOcid;
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTenancyOcid() {
         return tenancyOcid;
     }
 
     /**
-     * Indicates whether the application is billed as an OPCService. If true, customer is not billed
-     * for runtime operations of the app.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: always - type: boolean - uniqueness: none
-     */
+     * Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("meterAsOPCService")
     private final Boolean meterAsOPCService;
 
     /**
-     * Indicates whether the application is billed as an OPCService. If true, customer is not billed
-     * for runtime operations of the app.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: always - type: boolean - uniqueness: none
-     *
+     * Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getMeterAsOPCService() {
         return meterAsOPCService;
     }
 
     /**
-     * Name of the application. Also serves as username if the application authenticates to Oracle
-     * Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an
-     * App is created.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * server
-     */
+     * Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the application. Also serves as username if the application authenticates to Oracle
-     * Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an
-     * App is created.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * server
-     *
+     * Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: server
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * This value is the credential of this App, which this App supplies as a password when this App
-     * authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret
-     * of this App when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none -
-     * multiValued: false - mutability: readOnly - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
     private final String clientSecret;
 
     /**
-     * This value is the credential of this App, which this App supplies as a password when this App
-     * authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret
-     * of this App when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: none -
-     * multiValued: false - mutability: readOnly - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getClientSecret() {
         return clientSecret;
     }
 
     /**
-     * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this
-     * App
-     *
-     * <p>*Added In:** 2106240046
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash_sc - multiValued:
-     * false - mutability: readOnly - required: false - returned: request - type: string -
-     * uniqueness: none
-     */
+     * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
+     * <p>
+     **Added In:** 2106240046
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: hash_sc
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hashedClientSecret")
     private final String hashedClientSecret;
 
     /**
-     * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this
-     * App
-     *
-     * <p>*Added In:** 2106240046
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: hash_sc - multiValued:
-     * false - mutability: readOnly - required: false - returned: request - type: string -
-     * uniqueness: none
-     *
+     * Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
+     * <p>
+     **Added In:** 2106240046
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: hash_sc
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHashedClientSecret() {
         return hashedClientSecret;
     }
 
     /**
-     * Display name of the application. Display name is intended to be user-friendly, and an
-     * administrator can change the value at any time.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: always - type: string - uniqueness: server
-     */
+     * Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of the application. Display name is intended to be user-friendly, and an
-     * administrator can change the value at any time.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: always - type: string - uniqueness: server
-     *
+     * Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: server
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * Description of the application.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the application.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
      * Encryption Alogrithm to use for encrypting ID token.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idTokenEncAlgo")
     private final String idTokenEncAlgo;
 
     /**
      * Encryption Alogrithm to use for encrypting ID token.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdTokenEncAlgo() {
         return idTokenEncAlgo;
     }
 
     /**
-     * Service Names allow to use OCI signature for client authentication instead of client
-     * credentials
-     *
-     * <p>*Added In:** 2207040824
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Service Names allow to use OCI signature for client authentication instead of client credentials
+     * <p>
+     **Added In:** 2207040824
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("delegatedServiceNames")
     private final java.util.List<String> delegatedServiceNames;
 
     /**
-     * Service Names allow to use OCI signature for client authentication instead of client
-     * credentials
-     *
-     * <p>*Added In:** 2207040824
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Service Names allow to use OCI signature for client authentication instead of client credentials
+     * <p>
+     **Added In:** 2207040824
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getDelegatedServiceNames() {
         return delegatedServiceNames;
     }
 
     /**
-     * If true, this App is able to participate in runtime services, such as automatic-login, OAuth,
-     * and SAML. If false, all runtime services are disabled for this App, and only administrative
-     * operations can be performed.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("active")
     private final Boolean active;
 
     /**
-     * If true, this App is able to participate in runtime services, such as automatic-login, OAuth,
-     * and SAML. If false, all runtime services are disabled for this App, and only administrative
-     * operations can be performed.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getActive() {
         return active;
     }
 
     /**
      * Application icon.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appIcon")
     private final String appIcon;
 
     /**
      * Application icon.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAppIcon() {
         return appIcon;
     }
 
     /**
      * Application thumbnail.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appThumbnail")
     private final String appThumbnail;
 
     /**
      * Application thumbnail.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAppThumbnail() {
         return appThumbnail;
     }
 
     /**
-     * If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure
-     * (and may therefore require special handling from runtime services such as OAuth or SAML). If
-     * false, this App requires no special handling from runtime services.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("migrated")
     private final Boolean migrated;
 
     /**
-     * If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure
-     * (and may therefore require special handling from runtime services such as OAuth or SAML). If
-     * false, this App requires no special handling from runtime services.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getMigrated() {
         return migrated;
     }
 
     /**
      * If true, this App is an internal infrastructure App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructure")
     private final Boolean infrastructure;
 
     /**
      * If true, this App is an internal infrastructure App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getInfrastructure() {
         return infrastructure;
     }
 
     /**
      * If true, this App allows runtime services to log end users into this App automatically.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLoginTarget")
     private final Boolean isLoginTarget;
 
     /**
      * If true, this App allows runtime services to log end users into this App automatically.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsLoginTarget() {
         return isLoginTarget;
     }
 
     /**
-     * If true, this app will be displayed in the MyApps page of each end-user who has access to the
-     * App.
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("showInMyApps")
     private final Boolean showInMyApps;
 
     /**
-     * If true, this app will be displayed in the MyApps page of each end-user who has access to the
-     * App.
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getShowInMyApps() {
         return showInMyApps;
     }
 
     /**
-     * The protocol that runtime services will use to log end users in to this App automatically. If
-     * 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime
-     * services use Security Assertion Markup Language protocol.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum LoginMechanism implements com.oracle.bmc.http.internal.BmcEnum {
+     * The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum LoginMechanism {
         Oidc("OIDC"),
         Saml("SAML"),
         Formfill("FORMFILL"),
         Radius("RADIUS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -4420,284 +5523,408 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     };
     /**
-     * The protocol that runtime services will use to log end users in to this App automatically. If
-     * 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime
-     * services use Security Assertion Markup Language protocol.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loginMechanism")
     private final LoginMechanism loginMechanism;
 
     /**
-     * The protocol that runtime services will use to log end users in to this App automatically. If
-     * 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime
-     * services use Security Assertion Markup Language protocol.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public LoginMechanism getLoginMechanism() {
         return loginMechanism;
     }
 
     /**
-     * The URL of the landing page for this App, which is the first page that an end user should see
-     * if runtime services log that end user in to this App automatically.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("landingPageUrl")
     private final String landingPageUrl;
 
     /**
-     * The URL of the landing page for this App, which is the first page that an end user should see
-     * if runtime services log that end user in to this App automatically.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLandingPageUrl() {
         return landingPageUrl;
     }
 
     /**
      * Application Logo URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productLogoUrl")
     private final String productLogoUrl;
 
     /**
      * Application Logo URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getProductLogoUrl() {
         return productLogoUrl;
     }
 
     /**
      * Privacy Policy URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privacyPolicyUrl")
     private final String privacyPolicyUrl;
 
     /**
      * Privacy Policy URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPrivacyPolicyUrl() {
         return privacyPolicyUrl;
     }
 
     /**
      * Terms of Service URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("termsOfServiceUrl")
     private final String termsOfServiceUrl;
 
     /**
      * Terms of Service URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTermsOfServiceUrl() {
         return termsOfServiceUrl;
     }
 
     /**
      * Contact Email Address
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmailAddress")
     private final String contactEmailAddress;
 
     /**
      * Contact Email Address
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getContactEmailAddress() {
         return contactEmailAddress;
     }
 
     /**
      * Product Name
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
      * Product Name
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getProductName() {
         return productName;
     }
 
     /**
      * Home Page URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("homePageUrl")
     private final String homePageUrl;
 
     /**
      * Home Page URL
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHomePageUrl() {
         return homePageUrl;
     }
 
     /**
      * If true, this application acts as FormFill Application
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFormFill")
     private final Boolean isFormFill;
 
     /**
      * If true, this application acts as FormFill Application
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsFormFill() {
         return isFormFill;
     }
 
     /**
      * If true, this application acts as an OAuth Client
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOAuthClient")
     private final Boolean isOAuthClient;
 
     /**
      * If true, this application acts as an OAuth Client
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsOAuthClient() {
         return isOAuthClient;
     }
 
     /**
      * If true, this application acts as an Radius App
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRadiusApp")
     private final Boolean isRadiusApp;
 
     /**
      * If true, this application acts as an Radius App
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsRadiusApp() {
         return isRadiusApp;
     }
 
     /**
      * Specifies the type of access that this App has when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum ClientType implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum ClientType {
         Confidential("confidential"),
         Public("public"),
         Trusted("trusted"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -4738,156 +5965,215 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     };
     /**
      * Specifies the type of access that this App has when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientType")
     private final ClientType clientType;
 
     /**
      * Specifies the type of access that this App has when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public ClientType getClientType() {
         return clientType;
     }
 
     /**
-     * OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts
-     * as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUris")
     private final java.util.List<String> redirectUris;
 
     /**
-     * OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts
-     * as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getRedirectUris() {
         return redirectUris;
     }
 
     /**
-     * If true, indicates that the system should allow all URL-schemes within each value of the
-     * 'redirectUris' attribute. Also indicates that the system should not attempt to confirm that
-     * each value of the 'redirectUris' attribute is a valid URI. In particular, the system should
-     * not confirm that the domain component of the URI is a top-level domain and the system should
-     * not confirm that the hostname portion is a valid system that is reachable over the network.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allUrlSchemesAllowed")
     private final Boolean allUrlSchemesAllowed;
 
     /**
-     * If true, indicates that the system should allow all URL-schemes within each value of the
-     * 'redirectUris' attribute. Also indicates that the system should not attempt to confirm that
-     * each value of the 'redirectUris' attribute is a valid URI. In particular, the system should
-     * not confirm that the domain component of the URI is a top-level domain and the system should
-     * not confirm that the hostname portion is a valid system that is reachable over the network.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAllUrlSchemesAllowed() {
         return allUrlSchemesAllowed;
     }
 
     /**
-     * OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's
-     * session gets cleared as part of global logout. Note: This attribute is used only if this App
-     * acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoutUri")
     private final String logoutUri;
 
     /**
-     * OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's
-     * session gets cleared as part of global logout. Note: This attribute is used only if this App
-     * acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLogoutUri() {
         return logoutUri;
     }
 
     /**
-     * Each value of this attribute is the URI of a landing page within this App. It is used only
-     * when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected
-     * back to one of its landing pages.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("postLogoutRedirectUris")
     private final java.util.List<String> postLogoutRedirectUris;
 
     /**
-     * Each value of this attribute is the URI of a landing page within this App. It is used only
-     * when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected
-     * back to one of its landing pages.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getPostLogoutRedirectUris() {
         return postLogoutRedirectUris;
     }
 
     /**
      * List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedGrants")
     private final java.util.List<String> allowedGrants;
 
     /**
      * List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getAllowedGrants() {
         return allowedGrants;
     }
 
-    /** */
-    public enum AllowedOperations implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum AllowedOperations {
         Introspect("introspect"),
         OnBehalfOfUser("onBehalfOfUser"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -4927,53 +6213,61 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     };
     /**
-     * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are
-     * 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside
-     * the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are
-     * combined with the privileges of the Subject User. Ordinarily, authorization calculates the
-     * set of effective privileges as the intersection of the client's privileges and the user's
-     * privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges
-     * of the client and use only the user's privileges to calculate the effective privileges.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedOperations")
     private final java.util.List<AllowedOperations> allowedOperations;
 
     /**
-     * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are
-     * 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside
-     * the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are
-     * combined with the privileges of the Subject User. Ordinarily, authorization calculates the
-     * set of effective privileges as the intersection of the client's privileges and the user's
-     * privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges
-     * of the client and use only the user's privileges to calculate the effective privileges.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AllowedOperations> getAllowedOperations() {
         return allowedOperations;
     }
 
     /**
      * Network Perimeters checking mode
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum ClientIPChecking implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum ClientIPChecking {
         Anywhere("anywhere"),
         Whitelisted("whitelisted"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -5014,596 +6308,860 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     };
     /**
      * Network Perimeters checking mode
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientIPChecking")
     private final ClientIPChecking clientIPChecking;
 
     /**
      * Network Perimeters checking mode
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public ClientIPChecking getClientIPChecking() {
         return clientIPChecking;
     }
 
     /**
      * If true, this application is an Oracle Public Cloud service-instance.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOPCService")
     private final Boolean isOPCService;
 
     /**
      * If true, this application is an Oracle Public Cloud service-instance.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsOPCService() {
         return isOPCService;
     }
 
     /**
-     * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a
-     * login-identity (does not require an account) and relies for authorization on the User's
-     * memberships in AppRoles.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnmanagedApp")
     private final Boolean isUnmanagedApp;
 
     /**
-     * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a
-     * login-identity (does not require an account) and relies for authorization on the User's
-     * memberships in AppRoles.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsUnmanagedApp() {
         return isUnmanagedApp;
     }
 
     /**
-     * If true, any managed App that is based on this template is checked for access control that
-     * is, access to this app is subject to successful authorization at SSO service, viz. app grants
-     * to start with.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowAccessControl")
     private final Boolean allowAccessControl;
 
     /**
-     * If true, any managed App that is based on this template is checked for access control that
-     * is, access to this app is subject to successful authorization at SSO service, viz. app grants
-     * to start with.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAllowAccessControl() {
         return allowAccessControl;
     }
 
     /**
      * If true, indicates that this application acts as an OAuth Resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOAuthResource")
     private final Boolean isOAuthResource;
 
     /**
      * If true, indicates that this application acts as an OAuth Resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsOAuthResource() {
         return isOAuthResource;
     }
 
     /**
-     * Expiry-time in seconds for an Access Token. Any token that allows access to this App will
-     * expire after the specified duration.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     */
+     * Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessTokenExpiry")
     private final Integer accessTokenExpiry;
 
     /**
-     * Expiry-time in seconds for an Access Token. Any token that allows access to this App will
-     * expire after the specified duration.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     *
+     * Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getAccessTokenExpiry() {
         return accessTokenExpiry;
     }
 
     /**
-     * Expiry-time in seconds for a Refresh Token. Any token that allows access to this App, once
-     * refreshed, will expire after the specified duration.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     */
+     * Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshTokenExpiry")
     private final Integer refreshTokenExpiry;
 
     /**
-     * Expiry-time in seconds for a Refresh Token. Any token that allows access to this App, once
-     * refreshed, will expire after the specified duration.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: integer - uniqueness: none
-     *
+     * Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getRefreshTokenExpiry() {
         return refreshTokenExpiry;
     }
 
     /**
      * If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowOffline")
     private final Boolean allowOffline;
 
     /**
      * If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAllowOffline() {
         return allowOffline;
     }
 
     /**
      * Callback Service URL
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("callbackServiceUrl")
     private final String callbackServiceUrl;
 
     /**
      * Callback Service URL
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCallbackServiceUrl() {
         return callbackServiceUrl;
     }
 
     /**
-     * The base URI for all of the scopes defined in this App. The value of 'audience' is combined
-     * with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("audience")
     private final String audience;
 
     /**
-     * The base URI for all of the scopes defined in this App. The value of 'audience' is combined
-     * with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAudience() {
         return audience;
     }
 
     /**
      * If true, indicates that the App should be visible in each end-user's mobile application.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMobileTarget")
     private final Boolean isMobileTarget;
 
     /**
      * If true, indicates that the App should be visible in each end-user's mobile application.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsMobileTarget() {
         return isMobileTarget;
     }
 
     /**
-     * This attribute specifies the URL of the page that the App uses when an end-user signs in to
-     * that App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loginPageUrl")
     private final String loginPageUrl;
 
     /**
-     * This attribute specifies the URL of the page that the App uses when an end-user signs in to
-     * that App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLoginPageUrl() {
         return loginPageUrl;
     }
 
     /**
      * This attribute specifies the callback URL for the social linking operation.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("linkingCallbackUrl")
     private final String linkingCallbackUrl;
 
     /**
      * This attribute specifies the callback URL for the social linking operation.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLinkingCallbackUrl() {
         return linkingCallbackUrl;
     }
 
     /**
      * This attribute specifies the URL of the page that the App uses when an end-user signs out.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoutPageUrl")
     private final String logoutPageUrl;
 
     /**
      * This attribute specifies the URL of the page that the App uses when an end-user signs out.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLogoutPageUrl() {
         return logoutPageUrl;
     }
 
     /**
-     * This attribute specifies the URL of the page to which an application will redirect an
-     * end-user in case of error.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorPageUrl")
     private final String errorPageUrl;
 
     /**
-     * This attribute specifies the URL of the page to which an application will redirect an
-     * end-user in case of error.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getErrorPageUrl() {
         return errorPageUrl;
     }
 
     /**
      * If true, then this App acts as a SAML Service Provider.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSamlServiceProvider")
     private final Boolean isSamlServiceProvider;
 
     /**
      * If true, then this App acts as a SAML Service Provider.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsSamlServiceProvider() {
         return isSamlServiceProvider;
     }
 
     /**
      * If true, the webtier policy is active
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isWebTierPolicy")
     private final Boolean isWebTierPolicy;
 
     /**
      * If true, the webtier policy is active
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsWebTierPolicy() {
         return isWebTierPolicy;
     }
 
     /**
      * If true, indicates that this App supports Kerberos Authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKerberosRealm")
     private final Boolean isKerberosRealm;
 
     /**
      * If true, indicates that this App supports Kerberos Authentication
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsKerberosRealm() {
         return isKerberosRealm;
     }
 
     /**
      * URL of application icon.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: reference - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("icon")
     private final String icon;
 
     /**
      * URL of application icon.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: reference - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIcon() {
         return icon;
     }
 
     /**
      * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: always - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: always
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAliasApp")
     private final Boolean isAliasApp;
 
     /**
      * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: always - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: always
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsAliasApp() {
         return isAliasApp;
     }
 
     /**
-     * If true, indicates that access to this App requires an account. That is, in order to log in
-     * to the App, a User must use an application-specific identity that is maintained in the remote
-     * identity-repository of that App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagedApp")
     private final Boolean isManagedApp;
 
     /**
-     * If true, indicates that access to this App requires an account. That is, in order to log in
-     * to the App, a User must use an application-specific identity that is maintained in the remote
-     * identity-repository of that App.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsManagedApp() {
         return isManagedApp;
     }
 
     /**
-     * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of
-     * which this app is an instance.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceTypeURN")
     private final String serviceTypeURN;
 
     /**
-     * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of
-     * which this app is an instance.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getServiceTypeURN() {
         return serviceTypeURN;
     }
 
     /**
-     * This value specifies the version of the Oracle Public Cloud service of which this App is an
-     * instance
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * This value specifies the version of the Oracle Public Cloud service of which this App is an instance
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceTypeVersion")
     private final String serviceTypeVersion;
 
     /**
-     * This value specifies the version of the Oracle Public Cloud service of which this App is an
-     * instance
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * This value specifies the version of the Oracle Public Cloud service of which this App is an instance
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getServiceTypeVersion() {
         return serviceTypeVersion;
     }
 
     /**
-     * This flag indicates if the App is capable of validating obligations with the token for
-     * allowing access to the App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isObligationCapable")
     private final Boolean isObligationCapable;
 
     /**
-     * This flag indicates if the App is capable of validating obligations with the token for
-     * allowing access to the App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsObligationCapable() {
         return isObligationCapable;
     }
 
     /**
-     * If true, this App requires an upgrade and mandates attention from application administrator.
-     * The flag is used by UI to indicate this app is ready to upgrade.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("readyToUpgrade")
     private final Boolean readyToUpgrade;
 
     /**
-     * If true, this App requires an upgrade and mandates attention from application administrator.
-     * The flag is used by UI to indicate this app is ready to upgrade.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getReadyToUpgrade() {
         return readyToUpgrade;
     }
 
     /**
-     * Indicates the scope of trust for this App when acting as an OAuthClient. A value of
-     * 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that
-     * are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is
-     * allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud
-     * Account. A value of 'Tags' indicates that the App is allowed to access any scope of any
-     * OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default'
-     * indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum TrustScope implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum TrustScope {
         Explicit("Explicit"),
         Account("Account"),
         Tags("Tags"),
         Default("Default"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -5643,194 +7201,255 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     };
     /**
-     * Indicates the scope of trust for this App when acting as an OAuthClient. A value of
-     * 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that
-     * are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is
-     * allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud
-     * Account. A value of 'Tags' indicates that the App is allowed to access any scope of any
-     * OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default'
-     * indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustScope")
     private final TrustScope trustScope;
 
     /**
-     * Indicates the scope of trust for this App when acting as an OAuthClient. A value of
-     * 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that
-     * are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is
-     * allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud
-     * Account. A value of 'Tags' indicates that the App is allowed to access any scope of any
-     * OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default'
-     * indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public TrustScope getTrustScope() {
         return trustScope;
     }
 
     /**
      * If true, this application acts as database service Application
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - type: boolean
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDatabaseService")
     private final Boolean isDatabaseService;
 
     /**
      * If true, this application acts as database service Application
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - type: boolean
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getIsDatabaseService() {
         return isDatabaseService;
     }
 
     /**
-     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token
-     * that allows access to this App. Note: This attribute is used mainly for backward
-     * compatibility in certain Oracle Public Cloud Apps.
-     *
-     * <p>*Deprecated Since: 18.2.6**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+     * <p>
+     **Deprecated Since: 18.2.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryAudiences")
     private final java.util.List<String> secondaryAudiences;
 
     /**
-     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token
-     * that allows access to this App. Note: This attribute is used mainly for backward
-     * compatibility in certain Oracle Public Cloud Apps.
-     *
-     * <p>*Deprecated Since: 18.2.6**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+     * <p>
+     **Deprecated Since: 18.2.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getSecondaryAudiences() {
         return secondaryAudiences;
     }
 
     /**
      * If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnterpriseApp")
     private final Boolean isEnterpriseApp;
 
     /**
      * If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsEnterpriseApp() {
         return isEnterpriseApp;
     }
 
     /**
      * If true, indicates that consent should be skipped for all scopes
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bypassConsent")
     private final Boolean bypassConsent;
 
     /**
      * If true, indicates that consent should be skipped for all scopes
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getBypassConsent() {
         return bypassConsent;
     }
 
     /**
      * Indicates whether the application is allowed to be access using kmsi token.
-     *
-     * <p>*Added In:** 2111190457
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: always - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2111190457
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: always
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("disableKmsiTokenAuthentication")
     private final Boolean disableKmsiTokenAuthentication;
 
     /**
      * Indicates whether the application is allowed to be access using kmsi token.
-     *
-     * <p>*Added In:** 2111190457
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: always - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2111190457
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: always
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getDisableKmsiTokenAuthentication() {
         return disableKmsiTokenAuthentication;
     }
 
     /**
      * If true, indicates the app is used for multicloud service integration.
-     *
-     * <p>*Added In:** 2301202328
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2301202328
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMulticloudServiceApp")
     private final Boolean isMulticloudServiceApp;
 
     /**
      * If true, indicates the app is used for multicloud service integration.
-     *
-     * <p>*Added In:** 2301202328
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2301202328
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsMulticloudServiceApp() {
         return isMulticloudServiceApp;
     }
@@ -5844,79 +7463,112 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Network Perimeter
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appsNetworkPerimeters")
     private final java.util.List<AppAppsNetworkPerimeters> appsNetworkPerimeters;
 
     /**
      * Network Perimeter
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<AppAppsNetworkPerimeters> getAppsNetworkPerimeters() {
         return appsNetworkPerimeters;
     }
 
     /**
      * A collection of arbitrary properties that scope the privileges of a cloud-control App.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudControlProperties")
     private final java.util.List<AppCloudControlProperties> cloudControlProperties;
 
     /**
      * A collection of arbitrary properties that scope the privileges of a cloud-control App.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppCloudControlProperties> getCloudControlProperties() {
         return cloudControlProperties;
     }
 
     /**
      * App attributes editable by subject
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-     * false - multiValued: true - mutability: readOnly - required: false - returned: request -
-     * type: complex - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("editableAttributes")
     private final java.util.List<AppEditableAttributes> editableAttributes;
 
     /**
      * App attributes editable by subject
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable:
-     * false - multiValued: true - mutability: readOnly - required: false - returned: request -
-     * type: complex - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppEditableAttributes> getEditableAttributes() {
         return editableAttributes;
     }
@@ -5929,32 +7581,41 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token
-     * that allows access to this App. Note: This attribute is used mainly for backward
-     * compatibility in certain Oracle Public Cloud Apps.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-     * false - multiValued: true - mutability: readWrite - required: false - returned: default -
-     * type: complex - uniqueness: none
-     */
+     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectableSecondaryAudiences")
     private final java.util.List<AppProtectableSecondaryAudiences> protectableSecondaryAudiences;
 
     /**
-     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token
-     * that allows access to this App. Note: This attribute is used mainly for backward
-     * compatibility in certain Oracle Public Cloud Apps.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-     * false - multiValued: true - mutability: readWrite - required: false - returned: default -
-     * type: complex - uniqueness: none
-     *
+     * A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppProtectableSecondaryAudiences> getProtectableSecondaryAudiences() {
         return protectableSecondaryAudiences;
     }
@@ -5968,27 +7629,38 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * A list of tags, acting as an OAuthClient, this App is allowed to access.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedTags")
     private final java.util.List<AppAllowedTags> allowedTags;
 
     /**
      * A list of tags, acting as an OAuthClient, this App is allowed to access.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppAllowedTags> getAllowedTags() {
         return allowedTags;
     }
@@ -6002,21 +7674,32 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Trust Policies.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustPolicies")
     private final java.util.List<AppTrustPolicies> trustPolicies;
 
     /**
      * Trust Policies.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<AppTrustPolicies> getTrustPolicies() {
         return trustPolicies;
     }
@@ -6029,118 +7712,169 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * A list of IdentityProvider assigned to app. A user trying to access this app will be
-     * automatically redirected to configured IdP during the authentication phase, before being able
-     * to access App.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: false - returned: request - type: complex
-     */
+     * A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityProviders")
     private final java.util.List<AppIdentityProviders> identityProviders;
 
     /**
-     * A list of IdentityProvider assigned to app. A user trying to access this app will be
-     * automatically redirected to configured IdP during the authentication phase, before being able
-     * to access App.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: false - returned: request - type: complex
-     *
+     * A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<AppIdentityProviders> getIdentityProviders() {
         return identityProviders;
     }
 
     /**
      * Accounts of App
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accounts")
     private final java.util.List<AppAccounts> accounts;
 
     /**
      * Accounts of App
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppAccounts> getAccounts() {
         return accounts;
     }
 
     /**
      * Grants assigned to the app
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grants")
     private final java.util.List<AppGrants> grants;
 
     /**
      * Grants assigned to the app
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppGrants> getGrants() {
         return grants;
     }
 
     /**
      * Custom attribute that is required to compute other attribute values during app creation.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: false - returned: always - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: always
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceParams")
     private final java.util.List<AppServiceParams> serviceParams;
 
     /**
      * Custom attribute that is required to compute other attribute values during app creation.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: readWrite - required: false - returned: always - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: always
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppServiceParams> getServiceParams() {
         return serviceParams;
     }
 
     /**
      * Label for the attribute to be shown in the UI.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: immutable - required: false - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attrRenderingMetadata")
     private final java.util.List<AppAttrRenderingMetadata> attrRenderingMetadata;
 
     /**
      * Label for the attribute to be shown in the UI.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
-     * true - mutability: immutable - required: false - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppAttrRenderingMetadata> getAttrRenderingMetadata() {
         return attrRenderingMetadata;
     }
@@ -6153,30 +7887,37 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * A list of AppRoles that are granted to this App (and that are defined by other Apps). Within
-     * the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an
-     * association allows this App to act as a consumer and thus to access resources of another App
-     * that acts as a producer.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readOnly - required: false - returned: default - type:
-     * complex - uniqueness: none
-     */
+     * A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantedAppRoles")
     private final java.util.List<AppGrantedAppRoles> grantedAppRoles;
 
     /**
-     * A list of AppRoles that are granted to this App (and that are defined by other Apps). Within
-     * the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an
-     * association allows this App to act as a consumer and thus to access resources of another App
-     * that acts as a producer.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readOnly - required: false - returned: default - type:
-     * complex - uniqueness: none
-     *
+     * A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppGrantedAppRoles> getGrantedAppRoles() {
         return grantedAppRoles;
     }
@@ -6189,76 +7930,109 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * A list of scopes (exposed by this App or by other Apps) that this App is allowed to access
-     * when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [fqs] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     */
+     * A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [fqs]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedScopes")
     private final java.util.List<AppAllowedScopes> allowedScopes;
 
     /**
-     * A list of scopes (exposed by this App or by other Apps) that this App is allowed to access
-     * when it acts as an OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [fqs] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     *
+     * A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [fqs]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppAllowedScopes> getAllowedScopes() {
         return allowedScopes;
     }
 
     /**
-     * Each value of this attribute represent a certificate that this App uses when it acts as an
-     * OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [certAlias] - idcsSearchable:
-     * false - multiValued: true - mutability: readWrite - required: false - returned: default -
-     * type: complex - uniqueness: none
-     */
+     * Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [certAlias]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificates")
     private final java.util.List<AppCertificates> certificates;
 
     /**
-     * Each value of this attribute represent a certificate that this App uses when it acts as an
-     * OAuthClient.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [certAlias] - idcsSearchable:
-     * false - multiValued: true - mutability: readWrite - required: false - returned: default -
-     * type: complex - uniqueness: none
-     *
+     * Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [certAlias]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppCertificates> getCertificates() {
         return certificates;
     }
 
     /**
-     * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on
-     * which this App depends.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     */
+     * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliasApps")
     private final java.util.List<AppAliasApps> aliasApps;
 
     /**
-     * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on
-     * which this App depends.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     *
+     * Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppAliasApps> getAliasApps() {
         return aliasApps;
     }
@@ -6271,70 +8045,101 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers
-     * administrative privilege within this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex
-     */
+     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminRoles")
     private final java.util.List<AppAdminRoles> adminRoles;
 
     /**
-     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers
-     * administrative privilege within this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex
-     *
+     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<AppAdminRoles> getAdminRoles() {
         return adminRoles;
     }
 
     /**
-     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers
-     * end-user privilege within this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex
-     */
+     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userRoles")
     private final java.util.List<AppUserRoles> userRoles;
 
     /**
-     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers
-     * end-user privilege within this App.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: false - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex
-     *
+     * A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<AppUserRoles> getUserRoles() {
         return userRoles;
     }
 
     /**
      * Scopes defined by this App. Used when this App acts as an OAuth Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
     private final java.util.List<AppScopes> scopes;
 
     /**
      * Scopes defined by this App. Used when this App acts as an OAuth Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppScopes> getScopes() {
         return scopes;
     }
@@ -6468,7 +8273,6 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -6591,8 +8395,7 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionSamlServiceProviderApp=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionSamlServiceProviderApp));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionSamlServiceProviderApp));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionWebTierPolicyApp=")
                 .append(
                         String.valueOf(
@@ -6604,8 +8407,7 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionOpcServiceApp=")
                 .append(
                         String.valueOf(
@@ -6633,8 +8435,7 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionMulticloudServiceAppApp=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionMulticloudServiceAppApp));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionMulticloudServiceAppApp));
         sb.append(")");
         return sb.toString();
     }
@@ -6773,8 +8574,7 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
                         this.urnIetfParamsScimSchemasOracleIdcsExtensionManagedappApp,
                         other.urnIetfParamsScimSchemasOracleIdcsExtensionManagedappApp)
                 && java.util.Objects.equals(
-                        this
-                                .urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate,
+                        this.urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate,
                         other.urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate)
                 && java.util.Objects.equals(
                         this.urnIetfParamsScimSchemasOracleIdcsExtensionOpcServiceApp,
@@ -7105,8 +8905,7 @@ public final class App extends com.oracle.bmc.http.client.internal.ExplicitlySet
                                         .hashCode());
         result =
                 (result * PRIME)
-                        + (this
-                                                .urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate
+                        + (this.urnIetfParamsScimSchemasOracleIdcsExtensionFormFillAppTemplateAppTemplate
                                         == null
                                 ? 43
                                 : this

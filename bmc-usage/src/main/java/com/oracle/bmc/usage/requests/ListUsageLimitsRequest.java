@@ -6,80 +6,108 @@ package com.oracle.bmc.usage.requests;
 
 import com.oracle.bmc.usage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/ListUsageLimitsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUsageLimitsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/ListUsageLimitsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUsageLimitsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The subscription ID for which rewards information is requested for. */
+    /**
+     * The subscription ID for which rewards information is requested for.
+     */
     private String subscriptionId;
 
-    /** The subscription ID for which rewards information is requested for. */
+    /**
+     * The subscription ID for which rewards information is requested for.
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /** Hard or soft limit. Hard limits lead to breaches, soft to alerts. */
+    /**
+     * Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+     */
     private String limitType;
 
-    /** Hard or soft limit. Hard limits lead to breaches, soft to alerts. */
+    /**
+     * Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+     */
     public String getLimitType() {
         return limitType;
     }
-    /** Resource Name. */
+    /**
+     * Resource Name.
+     */
     private String resourceType;
 
-    /** Resource Name. */
+    /**
+     * Resource Name.
+     */
     public String getResourceType() {
         return resourceType;
     }
-    /** Service Name. */
+    /**
+     * Service Name.
+     */
     private String serviceType;
 
-    /** Service Name. */
+    /**
+     * Service Name.
+     */
     public String getServiceType() {
         return serviceType;
     }
     /**
-     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The value of the 'opc-next-page' response header from the previous call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous call.
+     */
     private String page;
 
-    /** The value of the 'opc-next-page' response header from the previous call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous call.
+     */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return in the paginated response. */
+    /**
+     * The maximum number of items to return in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in the paginated response. */
+    /**
+     * The maximum number of items to return in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -112,15 +140,21 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. Supports one sort order. */
+    /**
+     * The field to sort by. Supports one sort order.
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. Supports one sort order. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. Supports one sort order.
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Timestart("TIMESTART"),
         ;
@@ -153,7 +187,9 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /** The field to sort by. Supports one sort order. */
+    /**
+     * The field to sort by. Supports one sort order.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -161,15 +197,17 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUsageLimitsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the root compartment. */
+        /**
+         * The OCID of the root compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -178,12 +216,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The subscription ID for which rewards information is requested for. */
+        /**
+         * The subscription ID for which rewards information is requested for.
+         */
         private String subscriptionId = null;
 
         /**
          * The subscription ID for which rewards information is requested for.
-         *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -192,12 +231,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Hard or soft limit. Hard limits lead to breaches, soft to alerts. */
+        /**
+         * Hard or soft limit. Hard limits lead to breaches, soft to alerts.
+         */
         private String limitType = null;
 
         /**
          * Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-         *
          * @param limitType the value to set
          * @return this builder instance
          */
@@ -206,12 +246,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Resource Name. */
+        /**
+         * Resource Name.
+         */
         private String resourceType = null;
 
         /**
          * Resource Name.
-         *
          * @param resourceType the value to set
          * @return this builder instance
          */
@@ -220,12 +261,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Service Name. */
+        /**
+         * Service Name.
+         */
         private String serviceType = null;
 
         /**
          * Service Name.
-         *
          * @param serviceType the value to set
          * @return this builder instance
          */
@@ -235,15 +277,12 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -252,12 +291,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The value of the 'opc-next-page' response header from the previous call. */
+        /**
+         * The value of the 'opc-next-page' response header from the previous call.
+         */
         private String page = null;
 
         /**
          * The value of the 'opc-next-page' response header from the previous call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -266,12 +306,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The maximum number of items to return in the paginated response. */
+        /**
+         * The maximum number of items to return in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -280,12 +321,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, which can be ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, which can be ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -294,12 +336,13 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The field to sort by. Supports one sort order. */
+        /**
+         * The field to sort by. Supports one sort order.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Supports one sort order.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -310,19 +353,18 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -334,7 +376,6 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListUsageLimitsRequest o) {
@@ -356,11 +397,10 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListUsageLimitsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListUsageLimitsRequest
          */
@@ -374,8 +414,7 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListUsageLimitsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListUsageLimitsRequest
@@ -393,14 +432,12 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListUsageLimitsRequest(compartmentId, subscriptionId, limitType, resourceType,
-            // serviceType, opcRequestId, page, limit, sortOrder, sortBy);
+            // new ListUsageLimitsRequest(compartmentId, subscriptionId, limitType, resourceType, serviceType, opcRequestId, page, limit, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -419,7 +456,6 @@ public class ListUsageLimitsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

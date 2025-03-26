@@ -5,23 +5,21 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Header validation properties. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * Header validation properties.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HeaderValidationItem.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HeaderValidationItem
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = HeaderValidationItem.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class HeaderValidationItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"required", "name"})
     public HeaderValidationItem(Boolean required, String name) {
@@ -32,31 +30,33 @@ public final class HeaderValidationItem
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Determines if the header is required in the request. */
+        /**
+         * Determines if the header is required in the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("required")
         private Boolean required;
 
         /**
          * Determines if the header is required in the request.
-         *
          * @param required the value to set
          * @return this builder
-         */
+         **/
         public Builder required(Boolean required) {
             this.required = required;
             this.__explicitlySet__.add("required");
             return this;
         }
-        /** Parameter name. */
+        /**
+         * Parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Parameter name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -86,7 +86,9 @@ public final class HeaderValidationItem
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +97,30 @@ public final class HeaderValidationItem
         return new Builder().copy(this);
     }
 
-    /** Determines if the header is required in the request. */
+    /**
+     * Determines if the header is required in the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("required")
     private final Boolean required;
 
     /**
      * Determines if the header is required in the request.
-     *
      * @return the value
-     */
+     **/
     public Boolean getRequired() {
         return required;
     }
 
-    /** Parameter name. */
+    /**
+     * Parameter name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Parameter name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -128,7 +132,6 @@ public final class HeaderValidationItem
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

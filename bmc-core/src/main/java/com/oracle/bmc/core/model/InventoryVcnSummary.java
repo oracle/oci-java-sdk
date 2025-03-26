@@ -5,23 +5,21 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Provides the summary of a VCN's IP Inventory data under specified compartments. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Provides the summary of a VCN's IP Inventory data under specified compartments.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InventoryVcnSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InventoryVcnSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = InventoryVcnSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InventoryVcnSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcnId",
@@ -56,55 +54,57 @@ public final class InventoryVcnSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN .
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN .
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** Name of the VCN. */
+        /**
+         * Name of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
         private String vcnName;
 
         /**
          * Name of the VCN.
-         *
          * @param vcnName the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnName(String vcnName) {
             this.vcnName = vcnName;
             this.__explicitlySet__.add("vcnName");
             return this;
         }
-        /** Resource types of the VCN. */
+        /**
+         * Resource types of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceType resourceType;
 
         /**
          * Resource types of the VCN.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(ResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Lists {@code InventoryVcnCidrBlockSummary} objects. */
+        /**
+         * Lists {@code InventoryVcnCidrBlockSummary} objects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inventoryVcnCidrBlockCollection")
         private java.util.List<InventoryVcnCidrBlockSummary> inventoryVcnCidrBlockCollection;
 
@@ -113,63 +113,65 @@ public final class InventoryVcnSummary
          *
          * @param inventoryVcnCidrBlockCollection the value to set
          * @return this builder
-         */
+         **/
         public Builder inventoryVcnCidrBlockCollection(
                 java.util.List<InventoryVcnCidrBlockSummary> inventoryVcnCidrBlockCollection) {
             this.inventoryVcnCidrBlockCollection = inventoryVcnCidrBlockCollection;
             this.__explicitlySet__.add("inventoryVcnCidrBlockCollection");
             return this;
         }
-        /** DNS domain name of the VCN. */
+        /**
+         * DNS domain name of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsDomainName")
         private String dnsDomainName;
 
         /**
          * DNS domain name of the VCN.
-         *
          * @param dnsDomainName the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsDomainName(String dnsDomainName) {
             this.dnsDomainName = dnsDomainName;
             this.__explicitlySet__.add("dnsDomainName");
             return this;
         }
-        /** Region name of the VCN. */
+        /**
+         * Region name of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Region name of the VCN.
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Lists {@code Subnetcollection} objects */
+        /**
+         * Lists {@code Subnetcollection} objects
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inventorySubnetcollection")
         private java.util.List<InventorySubnetSummary> inventorySubnetcollection;
 
@@ -178,7 +180,7 @@ public final class InventoryVcnSummary
          *
          * @param inventorySubnetcollection the value to set
          * @return this builder
-         */
+         **/
         public Builder inventorySubnetcollection(
                 java.util.List<InventorySubnetSummary> inventorySubnetcollection) {
             this.inventorySubnetcollection = inventorySubnetcollection;
@@ -236,7 +238,9 @@ public final class InventoryVcnSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -246,42 +250,42 @@ public final class InventoryVcnSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
-     * .
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
-     * .
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
-    /** Name of the VCN. */
+    /**
+     * Name of the VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnName")
     private final String vcnName;
 
     /**
      * Name of the VCN.
-     *
      * @return the value
-     */
+     **/
     public String getVcnName() {
         return vcnName;
     }
 
-    /** Resource types of the VCN. */
-    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Resource types of the VCN.
+     **/
+    public enum ResourceType {
         Vcn("VCN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -320,20 +324,24 @@ public final class InventoryVcnSummary
             return UnknownEnumValue;
         }
     };
-    /** Resource types of the VCN. */
+    /**
+     * Resource types of the VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceType resourceType;
 
     /**
      * Resource types of the VCN.
-     *
      * @return the value
-     */
+     **/
     public ResourceType getResourceType() {
         return resourceType;
     }
 
-    /** Lists {@code InventoryVcnCidrBlockSummary} objects. */
+    /**
+     * Lists {@code InventoryVcnCidrBlockSummary} objects.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inventoryVcnCidrBlockCollection")
     private final java.util.List<InventoryVcnCidrBlockSummary> inventoryVcnCidrBlockCollection;
 
@@ -341,55 +349,57 @@ public final class InventoryVcnSummary
      * Lists {@code InventoryVcnCidrBlockSummary} objects.
      *
      * @return the value
-     */
+     **/
     public java.util.List<InventoryVcnCidrBlockSummary> getInventoryVcnCidrBlockCollection() {
         return inventoryVcnCidrBlockCollection;
     }
 
-    /** DNS domain name of the VCN. */
+    /**
+     * DNS domain name of the VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsDomainName")
     private final String dnsDomainName;
 
     /**
      * DNS domain name of the VCN.
-     *
      * @return the value
-     */
+     **/
     public String getDnsDomainName() {
         return dnsDomainName;
     }
 
-    /** Region name of the VCN. */
+    /**
+     * Region name of the VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Region name of the VCN.
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Lists {@code Subnetcollection} objects */
+    /**
+     * Lists {@code Subnetcollection} objects
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inventorySubnetcollection")
     private final java.util.List<InventorySubnetSummary> inventorySubnetcollection;
 
@@ -397,7 +407,7 @@ public final class InventoryVcnSummary
      * Lists {@code Subnetcollection} objects
      *
      * @return the value
-     */
+     **/
     public java.util.List<InventorySubnetSummary> getInventorySubnetcollection() {
         return inventorySubnetcollection;
     }
@@ -409,7 +419,6 @@ public final class InventoryVcnSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * A container for your OCI GoldenGate Upgrade information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * A container for your OCI GoldenGate Upgrade information.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeploymentUpgrade.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DeploymentUpgrade
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DeploymentUpgrade.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -119,25 +118,27 @@ public final class DeploymentUpgrade
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment upgrade being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment upgrade being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -146,13 +147,16 @@ public final class DeploymentUpgrade
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Metadata about this specific object. */
+        /**
+         * Metadata about this specific object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -161,51 +165,52 @@ public final class DeploymentUpgrade
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
          *
          * @param deploymentId the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
             return this;
         }
-        /** The type of the deployment upgrade: MANUAL or AUTOMATIC */
+        /**
+         * The type of the deployment upgrade: MANUAL or AUTOMATIC
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentUpgradeType")
         private DeploymentUpgradeType deploymentUpgradeType;
 
@@ -214,7 +219,7 @@ public final class DeploymentUpgrade
          *
          * @param deploymentUpgradeType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentUpgradeType(DeploymentUpgradeType deploymentUpgradeType) {
             this.deploymentUpgradeType = deploymentUpgradeType;
             this.__explicitlySet__.add("deploymentUpgradeType");
@@ -223,7 +228,8 @@ public final class DeploymentUpgrade
         /**
          * The date and time the request was started. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
@@ -233,7 +239,7 @@ public final class DeploymentUpgrade
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -242,7 +248,8 @@ public final class DeploymentUpgrade
         /**
          * The date and time the request was finished. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
@@ -252,13 +259,16 @@ public final class DeploymentUpgrade
          *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** Version of OGG */
+        /**
+         * Version of OGG
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
         private String oggVersion;
 
@@ -267,7 +277,7 @@ public final class DeploymentUpgrade
          *
          * @param oggVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = oggVersion;
             this.__explicitlySet__.add("oggVersion");
@@ -276,7 +286,8 @@ public final class DeploymentUpgrade
         /**
          * The time the resource was created. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -286,7 +297,7 @@ public final class DeploymentUpgrade
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -295,7 +306,8 @@ public final class DeploymentUpgrade
         /**
          * The time the resource was last updated. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -305,13 +317,16 @@ public final class DeploymentUpgrade
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Possible lifecycle states. */
+        /**
+         * Possible lifecycle states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -320,13 +335,16 @@ public final class DeploymentUpgrade
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Possible GGS lifecycle sub-states. */
+        /**
+         * Possible GGS lifecycle sub-states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
         private LifecycleSubState lifecycleSubState;
 
@@ -335,7 +353,7 @@ public final class DeploymentUpgrade
          *
          * @param lifecycleSubState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleSubState(LifecycleSubState lifecycleSubState) {
             this.lifecycleSubState = lifecycleSubState;
             this.__explicitlySet__.add("lifecycleSubState");
@@ -344,7 +362,8 @@ public final class DeploymentUpgrade
         /**
          * Describes the object's current state in detail. For example, it can be used to provide
          * actionable information for a resource in a Failed state.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -354,30 +373,31 @@ public final class DeploymentUpgrade
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
-         * <p>Example: {@code {"bar-key": "value"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only.
-         *
-         * <p>Example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -385,20 +405,21 @@ public final class DeploymentUpgrade
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -407,32 +428,34 @@ public final class DeploymentUpgrade
         }
         /**
          * The system tags associated with this resource, if any. The system tags are set by Oracle
-         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
-         * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * The system tags associated with this resource, if any. The system tags are set by Oracle
-         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Version of OGG */
+        /**
+         * Version of OGG
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousOggVersion")
         private String previousOggVersion;
 
@@ -441,7 +464,7 @@ public final class DeploymentUpgrade
          *
          * @param previousOggVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder previousOggVersion(String previousOggVersion) {
             this.previousOggVersion = previousOggVersion;
             this.__explicitlySet__.add("previousOggVersion");
@@ -450,7 +473,8 @@ public final class DeploymentUpgrade
         /**
          * The time of upgrade schedule. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSchedule")
         private java.util.Date timeSchedule;
 
@@ -460,13 +484,16 @@ public final class DeploymentUpgrade
          *
          * @param timeSchedule the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSchedule(java.util.Date timeSchedule) {
             this.timeSchedule = timeSchedule;
             this.__explicitlySet__.add("timeSchedule");
             return this;
         }
-        /** Indicates if upgrade notifications are snoozed or not. */
+        /**
+         * Indicates if upgrade notifications are snoozed or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSnoozed")
         private Boolean isSnoozed;
 
@@ -475,7 +502,7 @@ public final class DeploymentUpgrade
          *
          * @param isSnoozed the value to set
          * @return this builder
-         */
+         **/
         public Builder isSnoozed(Boolean isSnoozed) {
             this.isSnoozed = isSnoozed;
             this.__explicitlySet__.add("isSnoozed");
@@ -484,7 +511,8 @@ public final class DeploymentUpgrade
         /**
          * The time the upgrade notifications are snoozed until. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSnoozedUntil")
         private java.util.Date timeSnoozedUntil;
 
@@ -494,7 +522,7 @@ public final class DeploymentUpgrade
          *
          * @param timeSnoozedUntil the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSnoozedUntil(java.util.Date timeSnoozedUntil) {
             this.timeSnoozedUntil = timeSnoozedUntil;
             this.__explicitlySet__.add("timeSnoozedUntil");
@@ -503,7 +531,8 @@ public final class DeploymentUpgrade
         /**
          * The time the resource was released. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
@@ -513,13 +542,16 @@ public final class DeploymentUpgrade
          *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-        /** The type of release. */
+        /**
+         * The type of release.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
         private ReleaseType releaseType;
 
@@ -528,13 +560,16 @@ public final class DeploymentUpgrade
          *
          * @param releaseType the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseType(ReleaseType releaseType) {
             this.releaseType = releaseType;
             this.__explicitlySet__.add("releaseType");
             return this;
         }
-        /** Indicates if OGG release contains security fix. */
+        /**
+         * Indicates if OGG release contains security fix.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSecurityFix")
         private Boolean isSecurityFix;
 
@@ -543,108 +578,107 @@ public final class DeploymentUpgrade
          *
          * @param isSecurityFix the value to set
          * @return this builder
-         */
+         **/
         public Builder isSecurityFix(Boolean isSecurityFix) {
             this.isSecurityFix = isSecurityFix;
             this.__explicitlySet__.add("isSecurityFix");
             return this;
         }
         /**
-         * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back. -
-         * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet. -
-         * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
-         */
+         * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+         * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+         * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRollbackAllowed")
         private Boolean isRollbackAllowed;
 
         /**
-         * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back. -
-         * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet. -
-         * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+         * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+         * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+         * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
          *
          * @param isRollbackAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isRollbackAllowed(Boolean isRollbackAllowed) {
             this.isRollbackAllowed = isRollbackAllowed;
             this.__explicitlySet__.add("isRollbackAllowed");
             return this;
         }
         /**
-         * The time until OGG version is supported. After this date has passed OGG version will not
-         * be available anymore. The format is defined by
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOggVersionSupportedUntil")
         private java.util.Date timeOggVersionSupportedUntil;
 
         /**
-         * The time until OGG version is supported. After this date has passed OGG version will not
-         * be available anymore. The format is defined by
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeOggVersionSupportedUntil the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOggVersionSupportedUntil(java.util.Date timeOggVersionSupportedUntil) {
             this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             this.__explicitlySet__.add("timeOggVersionSupportedUntil");
             return this;
         }
         /**
-         * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version
-         * is not forced by service, otherwise only reschedule allowed.
-         */
+         * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+         * otherwise only reschedule allowed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCancelAllowed")
         private Boolean isCancelAllowed;
 
         /**
-         * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version
-         * is not forced by service, otherwise only reschedule allowed.
+         * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+         * otherwise only reschedule allowed.
          *
          * @param isCancelAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isCancelAllowed(Boolean isCancelAllowed) {
             this.isCancelAllowed = isCancelAllowed;
             this.__explicitlySet__.add("isCancelAllowed");
             return this;
         }
         /**
-         * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of
-         * the service defined auto-upgrade period.
-         */
+         * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRescheduleAllowed")
         private Boolean isRescheduleAllowed;
 
         /**
-         * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of
-         * the service defined auto-upgrade period.
+         * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
          *
          * @param isRescheduleAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isRescheduleAllowed(Boolean isRescheduleAllowed) {
             this.isRescheduleAllowed = isRescheduleAllowed;
             this.__explicitlySet__.add("isRescheduleAllowed");
             return this;
         }
         /**
-         * Indicates the latest time until the deployment upgrade could be rescheduled. The format
-         * is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
-         */
+         * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleMax")
         private java.util.Date timeScheduleMax;
 
         /**
-         * Indicates the latest time until the deployment upgrade could be rescheduled. The format
-         * is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
+         * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeScheduleMax the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduleMax(java.util.Date timeScheduleMax) {
             this.timeScheduleMax = timeScheduleMax;
             this.__explicitlySet__.add("timeScheduleMax");
@@ -785,7 +819,9 @@ public final class DeploymentUpgrade
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -795,23 +831,25 @@ public final class DeploymentUpgrade
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment upgrade being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment upgrade being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -819,12 +857,15 @@ public final class DeploymentUpgrade
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Metadata about this specific object. */
+    /**
+     * Metadata about this specific object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -832,46 +873,47 @@ public final class DeploymentUpgrade
      * Metadata about this specific object.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDeploymentId() {
         return deploymentId;
     }
 
-    /** The type of the deployment upgrade: MANUAL or AUTOMATIC */
+    /**
+     * The type of the deployment upgrade: MANUAL or AUTOMATIC
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentUpgradeType")
     private final DeploymentUpgradeType deploymentUpgradeType;
 
@@ -879,7 +921,7 @@ public final class DeploymentUpgrade
      * The type of the deployment upgrade: MANUAL or AUTOMATIC
      *
      * @return the value
-     */
+     **/
     public DeploymentUpgradeType getDeploymentUpgradeType() {
         return deploymentUpgradeType;
     }
@@ -887,7 +929,8 @@ public final class DeploymentUpgrade
     /**
      * The date and time the request was started. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
@@ -896,7 +939,7 @@ public final class DeploymentUpgrade
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -904,7 +947,8 @@ public final class DeploymentUpgrade
     /**
      * The date and time the request was finished. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
@@ -913,12 +957,15 @@ public final class DeploymentUpgrade
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** Version of OGG */
+    /**
+     * Version of OGG
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
     private final String oggVersion;
 
@@ -926,7 +973,7 @@ public final class DeploymentUpgrade
      * Version of OGG
      *
      * @return the value
-     */
+     **/
     public String getOggVersion() {
         return oggVersion;
     }
@@ -934,7 +981,8 @@ public final class DeploymentUpgrade
     /**
      * The time the resource was created. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -943,7 +991,7 @@ public final class DeploymentUpgrade
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -951,7 +999,8 @@ public final class DeploymentUpgrade
     /**
      * The time the resource was last updated. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -960,12 +1009,15 @@ public final class DeploymentUpgrade
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Possible lifecycle states. */
+    /**
+     * Possible lifecycle states.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -973,12 +1025,15 @@ public final class DeploymentUpgrade
      * Possible lifecycle states.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Possible GGS lifecycle sub-states. */
+    /**
+     * Possible GGS lifecycle sub-states.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
     private final LifecycleSubState lifecycleSubState;
 
@@ -986,7 +1041,7 @@ public final class DeploymentUpgrade
      * Possible GGS lifecycle sub-states.
      *
      * @return the value
-     */
+     **/
     public LifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
@@ -994,7 +1049,8 @@ public final class DeploymentUpgrade
     /**
      * Describes the object's current state in detail. For example, it can be used to provide
      * actionable information for a resource in a Failed state.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -1003,7 +1059,7 @@ public final class DeploymentUpgrade
      * actionable information for a resource in a Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -1011,69 +1067,73 @@ public final class DeploymentUpgrade
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
-     * <p>Example: {@code {"bar-key": "value"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
-     *
-     * <p>Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
-     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** Version of OGG */
+    /**
+     * Version of OGG
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousOggVersion")
     private final String previousOggVersion;
 
@@ -1081,7 +1141,7 @@ public final class DeploymentUpgrade
      * Version of OGG
      *
      * @return the value
-     */
+     **/
     public String getPreviousOggVersion() {
         return previousOggVersion;
     }
@@ -1089,7 +1149,8 @@ public final class DeploymentUpgrade
     /**
      * The time of upgrade schedule. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSchedule")
     private final java.util.Date timeSchedule;
 
@@ -1098,12 +1159,15 @@ public final class DeploymentUpgrade
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSchedule() {
         return timeSchedule;
     }
 
-    /** Indicates if upgrade notifications are snoozed or not. */
+    /**
+     * Indicates if upgrade notifications are snoozed or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSnoozed")
     private final Boolean isSnoozed;
 
@@ -1111,7 +1175,7 @@ public final class DeploymentUpgrade
      * Indicates if upgrade notifications are snoozed or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSnoozed() {
         return isSnoozed;
     }
@@ -1119,7 +1183,8 @@ public final class DeploymentUpgrade
     /**
      * The time the upgrade notifications are snoozed until. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSnoozedUntil")
     private final java.util.Date timeSnoozedUntil;
 
@@ -1128,7 +1193,7 @@ public final class DeploymentUpgrade
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSnoozedUntil() {
         return timeSnoozedUntil;
     }
@@ -1136,7 +1201,8 @@ public final class DeploymentUpgrade
     /**
      * The time the resource was released. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
@@ -1145,12 +1211,15 @@ public final class DeploymentUpgrade
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
 
-    /** The type of release. */
+    /**
+     * The type of release.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
     private final ReleaseType releaseType;
 
@@ -1158,12 +1227,15 @@ public final class DeploymentUpgrade
      * The type of release.
      *
      * @return the value
-     */
+     **/
     public ReleaseType getReleaseType() {
         return releaseType;
     }
 
-    /** Indicates if OGG release contains security fix. */
+    /**
+     * Indicates if OGG release contains security fix.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecurityFix")
     private final Boolean isSecurityFix;
 
@@ -1171,98 +1243,97 @@ public final class DeploymentUpgrade
      * Indicates if OGG release contains security fix.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSecurityFix() {
         return isSecurityFix;
     }
 
     /**
-     * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back. -
-     * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet. -
-     * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
-     */
+     * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+     * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+     * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRollbackAllowed")
     private final Boolean isRollbackAllowed;
 
     /**
-     * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back. -
-     * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet. -
-     * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+     * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+     * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+     * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRollbackAllowed() {
         return isRollbackAllowed;
     }
 
     /**
-     * The time until OGG version is supported. After this date has passed OGG version will not be
-     * available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-     * such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOggVersionSupportedUntil")
     private final java.util.Date timeOggVersionSupportedUntil;
 
     /**
-     * The time until OGG version is supported. After this date has passed OGG version will not be
-     * available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-     * such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOggVersionSupportedUntil() {
         return timeOggVersionSupportedUntil;
     }
 
     /**
-     * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is
-     * not forced by service, otherwise only reschedule allowed.
-     */
+     * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+     * otherwise only reschedule allowed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCancelAllowed")
     private final Boolean isCancelAllowed;
 
     /**
-     * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is
-     * not forced by service, otherwise only reschedule allowed.
+     * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+     * otherwise only reschedule allowed.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCancelAllowed() {
         return isCancelAllowed;
     }
 
     /**
-     * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the
-     * service defined auto-upgrade period.
-     */
+     * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRescheduleAllowed")
     private final Boolean isRescheduleAllowed;
 
     /**
-     * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the
-     * service defined auto-upgrade period.
+     * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRescheduleAllowed() {
         return isRescheduleAllowed;
     }
 
     /**
-     * Indicates the latest time until the deployment upgrade could be rescheduled. The format is
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     */
+     * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleMax")
     private final java.util.Date timeScheduleMax;
 
     /**
-     * Indicates the latest time until the deployment upgrade could be rescheduled. The format is
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
+     * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduleMax() {
         return timeScheduleMax;
     }
@@ -1274,7 +1345,6 @@ public final class DeploymentUpgrade
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

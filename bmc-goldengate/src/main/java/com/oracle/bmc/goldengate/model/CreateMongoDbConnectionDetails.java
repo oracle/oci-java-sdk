@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information about a new MongoDB Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information about a new MongoDB Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMongoDbConnectionDetails.Builder.class)
+    builder = CreateMongoDbConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMongoDbConnectionDetails extends CreateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -135,233 +136,231 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The MongoDB technology type. */
+        /**
+         * The MongoDB technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private MongoDbConnection.TechnologyType technologyType;
 
         /**
          * The MongoDB technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(MongoDbConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-         */
+         * MongoDB connection string.
+         * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
-         * MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+         * MongoDB connection string.
+         * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
          *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect to the database. This username must
-         * already exist and be available by the database to be connected to.
-         */
+         * The username Oracle GoldenGate uses to connect to the database.
+         * This username must already exist and be available by the database to be connected to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect to the database. This username must
-         * already exist and be available by the database to be connected to.
+         * The username Oracle GoldenGate uses to connect to the database.
+         * This username must already exist and be available by the database to be connected to.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
-         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-         * February 15 2026.
-         */
+         * The password Oracle GoldenGate uses to connect the associated database.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
-         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-         * February 15 2026.
+         * The password Oracle GoldenGate uses to connect the associated database.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password Oracle GoldenGate uses to connect the associated
-         * database. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password Oracle GoldenGate uses to connect the associated
-         * database. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Autonomous Json Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Autonomous Json Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
          *
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** Security Type for MongoDB. */
+        /**
+         * Security Type for MongoDB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private MongoDbConnection.SecurityProtocol securityProtocol;
 
         /**
          * Security Type for MongoDB.
-         *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(MongoDbConnection.SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of a .pem file, containing the server
-         * public key (for 1 and 2-way SSL).
-         */
+         * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
         private String tlsCaFile;
 
         /**
-         * Database Certificate - The base64 encoded content of a .pem file, containing the server
-         * public key (for 1 and 2-way SSL).
+         * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
          *
          * @param tlsCaFile the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsCaFile(String tlsCaFile) {
             this.tlsCaFile = tlsCaFile;
             this.__explicitlySet__.add("tlsCaFile");
             return this;
         }
         /**
-         * Client Certificate - The base64 encoded content of a .pem file, containing the client
-         * public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
-         * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
-         */
+         * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
         private String tlsCertificateKeyFile;
 
         /**
-         * Client Certificate - The base64 encoded content of a .pem file, containing the client
-         * public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
-         * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+         * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
          *
          * @param tlsCertificateKeyFile the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsCertificateKeyFile(String tlsCertificateKeyFile) {
             this.tlsCertificateKeyFile = tlsCertificateKeyFile;
             this.__explicitlySet__.add("tlsCertificateKeyFile");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the certificate key file of the mtls connection. - The content of a
-         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
-         * 'tlsCertificateKeyFile' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+         * - The content of a .pem file containing the client private key (for 2-way SSL).
+         * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
         private String tlsCertificateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the certificate key file of the mtls connection. - The content of a
-         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
-         * 'tlsCertificateKeyFile' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+         * - The content of a .pem file containing the client private key (for 2-way SSL).
+         * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
          *
          * @param tlsCertificateKeyFileSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsCertificateKeyFileSecretId(String tlsCertificateKeyFileSecretId) {
             this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
             this.__explicitlySet__.add("tlsCertificateKeyFileSecretId");
             return this;
         }
         /**
-         * Client Certificate key file password. Deprecated: This field is deprecated and replaced
-         * by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15
-         * 2026.
-         */
+         * Client Certificate key file password.
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
         private String tlsCertificateKeyFilePassword;
 
         /**
-         * Client Certificate key file password. Deprecated: This field is deprecated and replaced
-         * by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15
-         * 2026.
+         * Client Certificate key file password.
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param tlsCertificateKeyFilePassword the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
             this.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
             this.__explicitlySet__.add("tlsCertificateKeyFilePassword");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password of the tls certificate key file. Note: When provided,
-         * 'tlsCertificateKeyFilePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+         * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
         private String tlsCertificateKeyFilePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password of the tls certificate key file. Note: When provided,
-         * 'tlsCertificateKeyFilePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+         * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
          *
          * @param tlsCertificateKeyFilePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsCertificateKeyFilePasswordSecretId(
                 String tlsCertificateKeyFilePasswordSecretId) {
             this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
@@ -484,7 +483,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -546,206 +547,208 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
     }
 
-    /** The MongoDB technology type. */
+    /**
+     * The MongoDB technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final MongoDbConnection.TechnologyType technologyType;
 
     /**
      * The MongoDB technology type.
-     *
      * @return the value
-     */
+     **/
     public MongoDbConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords' */
+    /**
+     * MongoDB connection string.
+     * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
-     * MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+     * MongoDB connection string.
+     * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
      *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect to the database. This username must already
-     * exist and be available by the database to be connected to.
-     */
+     * The username Oracle GoldenGate uses to connect to the database.
+     * This username must already exist and be available by the database to be connected to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect to the database. This username must already
-     * exist and be available by the database to be connected to.
+     * The username Oracle GoldenGate uses to connect to the database.
+     * This username must already exist and be available by the database to be connected to.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
-     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-     * February 15 2026.
-     */
+     * The password Oracle GoldenGate uses to connect the associated database.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
-     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-     * February 15 2026.
+     * The password Oracle GoldenGate uses to connect the associated database.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
      * Note: When provided, 'password' field must not be provided.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
      * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Autonomous Json Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Autonomous Json Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** Security Type for MongoDB. */
+    /**
+     * Security Type for MongoDB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final MongoDbConnection.SecurityProtocol securityProtocol;
 
     /**
      * Security Type for MongoDB.
-     *
      * @return the value
-     */
+     **/
     public MongoDbConnection.SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem file, containing the server
-     * public key (for 1 and 2-way SSL).
-     */
+     * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
     private final String tlsCaFile;
 
     /**
-     * Database Certificate - The base64 encoded content of a .pem file, containing the server
-     * public key (for 1 and 2-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
      *
      * @return the value
-     */
+     **/
     public String getTlsCaFile() {
         return tlsCaFile;
     }
 
     /**
-     * Client Certificate - The base64 encoded content of a .pem file, containing the client public
-     * key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
-     * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
-     */
+     * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
     private final String tlsCertificateKeyFile;
 
     /**
-     * Client Certificate - The base64 encoded content of a .pem file, containing the client public
-     * key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
-     * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+     * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getTlsCertificateKeyFile() {
         return tlsCertificateKeyFile;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
-     * file containing the client private key (for 2-way SSL). Note: When provided,
-     * 'tlsCertificateKeyFile' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * - The content of a .pem file containing the client private key (for 2-way SSL).
+     * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
     private final String tlsCertificateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
-     * file containing the client private key (for 2-way SSL). Note: When provided,
-     * 'tlsCertificateKeyFile' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * - The content of a .pem file containing the client private key (for 2-way SSL).
+     * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTlsCertificateKeyFileSecretId() {
         return tlsCertificateKeyFileSecretId;
     }
 
     /**
-     * Client Certificate key file password. Deprecated: This field is deprecated and replaced by
-     * "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
-     */
+     * Client Certificate key file password.
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
     private final String tlsCertificateKeyFilePassword;
 
     /**
-     * Client Certificate key file password. Deprecated: This field is deprecated and replaced by
-     * "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+     * Client Certificate key file password.
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getTlsCertificateKeyFilePassword() {
         return tlsCertificateKeyFilePassword;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password of the tls certificate key file. Note: When provided,
-     * 'tlsCertificateKeyFilePassword' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+     * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
     private final String tlsCertificateKeyFilePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password of the tls certificate key file. Note: When provided,
-     * 'tlsCertificateKeyFilePassword' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+     * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTlsCertificateKeyFilePasswordSecretId() {
         return tlsCertificateKeyFilePasswordSecretId;
     }
@@ -757,7 +760,6 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

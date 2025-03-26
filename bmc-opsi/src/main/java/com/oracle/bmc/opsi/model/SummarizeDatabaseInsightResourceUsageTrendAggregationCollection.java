@@ -5,23 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Top level response object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Top level response object.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SummarizeDatabaseInsightResourceUsageTrendAggregationCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SummarizeDatabaseInsightResourceUsageTrendAggregationCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -49,37 +49,42 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The start timestamp that was passed into the request. */
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
-         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /** The end timestamp that was passed into the request. */
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
-         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /** Defines the type of resource metric (example: CPU, STORAGE) */
+        /**
+         * Defines the type of resource metric (example: CPU, STORAGE)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
         private ResourceMetric resourceMetric;
 
@@ -88,28 +93,32 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
          *
          * @param resourceMetric the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceMetric(ResourceMetric resourceMetric) {
             this.resourceMetric = resourceMetric;
             this.__explicitlySet__.add("resourceMetric");
             return this;
         }
-        /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
+        /**
+         * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
         /**
          * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-         *
          * @param usageUnit the value to set
          * @return this builder
-         */
+         **/
         public Builder usageUnit(UsageUnit usageUnit) {
             this.usageUnit = usageUnit;
             this.__explicitlySet__.add("usageUnit");
             return this;
         }
-        /** Time duration in milliseconds between data points (one hour or one day). */
+        /**
+         * Time duration in milliseconds between data points (one hour or one day).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("itemDurationInMs")
         private Long itemDurationInMs;
 
@@ -118,13 +127,16 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
          *
          * @param itemDurationInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder itemDurationInMs(Long itemDurationInMs) {
             this.itemDurationInMs = itemDurationInMs;
             this.__explicitlySet__.add("itemDurationInMs");
             return this;
         }
-        /** Usage Data with time stamps */
+        /**
+         * Usage Data with time stamps
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageData")
         private java.util.List<ResourceUsageTrendAggregation> usageData;
 
@@ -133,7 +145,7 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
          *
          * @param usageData the value to set
          * @return this builder
-         */
+         **/
         public Builder usageData(java.util.List<ResourceUsageTrendAggregation> usageData) {
             this.usageData = usageData;
             this.__explicitlySet__.add("usageData");
@@ -182,7 +194,9 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,34 +205,39 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
         return new Builder().copy(this);
     }
 
-    /** The start timestamp that was passed into the request. */
+    /**
+     * The start timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /** The end timestamp that was passed into the request. */
+    /**
+     * The end timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /** Defines the type of resource metric (example: CPU, STORAGE) */
-    public enum ResourceMetric implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Defines the type of resource metric (example: CPU, STORAGE)
+     *
+     **/
+    public enum ResourceMetric {
         Cpu("CPU"),
         Storage("STORAGE"),
         Io("IO"),
@@ -227,8 +246,8 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
         MemorySga("MEMORY_SGA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -267,7 +286,10 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
             return UnknownEnumValue;
         }
     };
-    /** Defines the type of resource metric (example: CPU, STORAGE) */
+    /**
+     * Defines the type of resource metric (example: CPU, STORAGE)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
     private final ResourceMetric resourceMetric;
 
@@ -275,13 +297,15 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
      * Defines the type of resource metric (example: CPU, STORAGE)
      *
      * @return the value
-     */
+     **/
     public ResourceMetric getResourceMetric() {
         return resourceMetric;
     }
 
-    /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
-    public enum UsageUnit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+     **/
+    public enum UsageUnit {
         Cores("CORES"),
         Gb("GB"),
         Mbps("MBPS"),
@@ -289,8 +313,8 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
         Percent("PERCENT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -329,20 +353,24 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
             return UnknownEnumValue;
         }
     };
-    /** Displays usage unit ( CORES, GB , PERCENT, MBPS) */
+    /**
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
     /**
      * Displays usage unit ( CORES, GB , PERCENT, MBPS)
-     *
      * @return the value
-     */
+     **/
     public UsageUnit getUsageUnit() {
         return usageUnit;
     }
 
-    /** Time duration in milliseconds between data points (one hour or one day). */
+    /**
+     * Time duration in milliseconds between data points (one hour or one day).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("itemDurationInMs")
     private final Long itemDurationInMs;
 
@@ -350,12 +378,15 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
      * Time duration in milliseconds between data points (one hour or one day).
      *
      * @return the value
-     */
+     **/
     public Long getItemDurationInMs() {
         return itemDurationInMs;
     }
 
-    /** Usage Data with time stamps */
+    /**
+     * Usage Data with time stamps
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
     private final java.util.List<ResourceUsageTrendAggregation> usageData;
 
@@ -363,7 +394,7 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
      * Usage Data with time stamps
      *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceUsageTrendAggregation> getUsageData() {
         return usageData;
     }
@@ -375,7 +406,6 @@ public final class SummarizeDatabaseInsightResourceUsageTrendAggregationCollecti
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

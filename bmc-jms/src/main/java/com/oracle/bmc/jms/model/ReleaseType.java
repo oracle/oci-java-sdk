@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Types of release made available for the Java version. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ReleaseType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Types of release made available for the Java version.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum ReleaseType {
     Cpu("CPU"),
     Feature("FEATURE"),
     Bpr("BPR"),

@@ -5,24 +5,21 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * The response to a UpdateMessages request. It indicates the number of server and client failures
- * as well as an array of entries for successful and failed actions. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * The response to a UpdateMessages request. It indicates the number of server and client failures as well as an array of entries for successful and failed actions.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMessagesResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpdateMessagesResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = UpdateMessagesResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UpdateMessagesResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serverFailures", "clientFailures", "entries"})
     public UpdateMessagesResult(
@@ -38,63 +35,56 @@ public final class UpdateMessagesResult
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The number of messages that failed to be updated in the queue because of a server
-         * failure.
-         */
+         * The number of messages that failed to be updated in the queue because of a server failure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serverFailures")
         private Integer serverFailures;
 
         /**
-         * The number of messages that failed to be updated in the queue because of a server
-         * failure.
-         *
+         * The number of messages that failed to be updated in the queue because of a server failure.
          * @param serverFailures the value to set
          * @return this builder
-         */
+         **/
         public Builder serverFailures(Integer serverFailures) {
             this.serverFailures = serverFailures;
             this.__explicitlySet__.add("serverFailures");
             return this;
         }
         /**
-         * The number of messages that failed to be updated in the queue because of a client failure
-         * such as an invalid receipt or invalid {@code visibilityInSeconds}.
-         */
+         * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientFailures")
         private Integer clientFailures;
 
         /**
-         * The number of messages that failed to be updated in the queue because of a client failure
-         * such as an invalid receipt or invalid {@code visibilityInSeconds}.
-         *
+         * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
          * @param clientFailures the value to set
          * @return this builder
-         */
+         **/
         public Builder clientFailures(Integer clientFailures) {
             this.clientFailures = clientFailures;
             this.__explicitlySet__.add("clientFailures");
             return this;
         }
         /**
-         * An array of items representing the result of each action. The order is guaranteed to be
-         * the same as in the {@code UpdateMessagesDetails} object. If a message was successfully
-         * updated in the queue, the entry includes the {@code id} and {@code visibleAfter} fields.
-         * If a message failed to be updated in the queue, the entry includes the {@code errorCode}
-         * and {@code errorMessage} fields.
-         */
+         * An array of items representing the result of each action.
+         * The order is guaranteed to be the same as in the {@code UpdateMessagesDetails} object.
+         * If a message was successfully updated in the queue, the entry includes the {@code id} and {@code visibleAfter} fields.
+         * If a message failed to be updated in the queue, the entry includes the {@code errorCode} and {@code errorMessage} fields.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entries")
         private java.util.List<UpdateMessagesResultEntry> entries;
 
         /**
-         * An array of items representing the result of each action. The order is guaranteed to be
-         * the same as in the {@code UpdateMessagesDetails} object. If a message was successfully
-         * updated in the queue, the entry includes the {@code id} and {@code visibleAfter} fields.
-         * If a message failed to be updated in the queue, the entry includes the {@code errorCode}
-         * and {@code errorMessage} fields.
+         * An array of items representing the result of each action.
+         * The order is guaranteed to be the same as in the {@code UpdateMessagesDetails} object.
+         * If a message was successfully updated in the queue, the entry includes the {@code id} and {@code visibleAfter} fields.
+         * If a message failed to be updated in the queue, the entry includes the {@code errorCode} and {@code errorMessage} fields.
          *
          * @param entries the value to set
          * @return this builder
-         */
+         **/
         public Builder entries(java.util.List<UpdateMessagesResultEntry> entries) {
             this.entries = entries;
             this.__explicitlySet__.add("entries");
@@ -129,7 +119,9 @@ public final class UpdateMessagesResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,55 +132,50 @@ public final class UpdateMessagesResult
 
     /**
      * The number of messages that failed to be updated in the queue because of a server failure.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverFailures")
     private final Integer serverFailures;
 
     /**
      * The number of messages that failed to be updated in the queue because of a server failure.
-     *
      * @return the value
-     */
+     **/
     public Integer getServerFailures() {
         return serverFailures;
     }
 
     /**
-     * The number of messages that failed to be updated in the queue because of a client failure
-     * such as an invalid receipt or invalid {@code visibilityInSeconds}.
-     */
+     * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientFailures")
     private final Integer clientFailures;
 
     /**
-     * The number of messages that failed to be updated in the queue because of a client failure
-     * such as an invalid receipt or invalid {@code visibilityInSeconds}.
-     *
+     * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
      * @return the value
-     */
+     **/
     public Integer getClientFailures() {
         return clientFailures;
     }
 
     /**
-     * An array of items representing the result of each action. The order is guaranteed to be the
-     * same as in the {@code UpdateMessagesDetails} object. If a message was successfully updated in
-     * the queue, the entry includes the {@code id} and {@code visibleAfter} fields. If a message
-     * failed to be updated in the queue, the entry includes the {@code errorCode} and {@code
-     * errorMessage} fields.
-     */
+     * An array of items representing the result of each action.
+     * The order is guaranteed to be the same as in the {@code UpdateMessagesDetails} object.
+     * If a message was successfully updated in the queue, the entry includes the {@code id} and {@code visibleAfter} fields.
+     * If a message failed to be updated in the queue, the entry includes the {@code errorCode} and {@code errorMessage} fields.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
     private final java.util.List<UpdateMessagesResultEntry> entries;
 
     /**
-     * An array of items representing the result of each action. The order is guaranteed to be the
-     * same as in the {@code UpdateMessagesDetails} object. If a message was successfully updated in
-     * the queue, the entry includes the {@code id} and {@code visibleAfter} fields. If a message
-     * failed to be updated in the queue, the entry includes the {@code errorCode} and {@code
-     * errorMessage} fields.
+     * An array of items representing the result of each action.
+     * The order is guaranteed to be the same as in the {@code UpdateMessagesDetails} object.
+     * If a message was successfully updated in the queue, the entry includes the {@code id} and {@code visibleAfter} fields.
+     * If a message failed to be updated in the queue, the entry includes the {@code errorCode} and {@code errorMessage} fields.
      *
      * @return the value
-     */
+     **/
     public java.util.List<UpdateMessagesResultEntry> getEntries() {
         return entries;
     }
@@ -200,7 +187,6 @@ public final class UpdateMessagesResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Architecture type of a software package. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum SoftwarePackageArchitecture implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Architecture type of a software package.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum SoftwarePackageArchitecture {
     I386("I386"),
     I686("I686"),
     Aarch64("AARCH64"),

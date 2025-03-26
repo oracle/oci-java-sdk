@@ -5,23 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database objects to exclude from migration <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Database objects to exclude from migration
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnsupportedDatabaseObject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UnsupportedDatabaseObject.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnsupportedDatabaseObject
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "owner", "objectName"})
     public UnsupportedDatabaseObject(Type type, String owner, String objectName) {
@@ -33,7 +33,10 @@ public final class UnsupportedDatabaseObject
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of unsupported object */
+        /**
+         * Type of unsupported object
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -42,13 +45,16 @@ public final class UnsupportedDatabaseObject
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Owner of the object (regular expression is allowed) */
+        /**
+         * Owner of the object (regular expression is allowed)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
@@ -57,13 +63,16 @@ public final class UnsupportedDatabaseObject
          *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** Name of the object (regular expression is allowed) */
+        /**
+         * Name of the object (regular expression is allowed)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
@@ -72,7 +81,7 @@ public final class UnsupportedDatabaseObject
          *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -106,7 +115,9 @@ public final class UnsupportedDatabaseObject
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,13 +126,16 @@ public final class UnsupportedDatabaseObject
         return new Builder().copy(this);
     }
 
-    /** Type of unsupported object */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of unsupported object
+     *
+     **/
+    public enum Type {
         GoldenGate("GOLDEN_GATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -158,7 +172,10 @@ public final class UnsupportedDatabaseObject
             return UnknownEnumValue;
         }
     };
-    /** Type of unsupported object */
+    /**
+     * Type of unsupported object
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -166,12 +183,15 @@ public final class UnsupportedDatabaseObject
      * Type of unsupported object
      *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** Owner of the object (regular expression is allowed) */
+    /**
+     * Owner of the object (regular expression is allowed)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
@@ -179,12 +199,15 @@ public final class UnsupportedDatabaseObject
      * Owner of the object (regular expression is allowed)
      *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** Name of the object (regular expression is allowed) */
+    /**
+     * Name of the object (regular expression is allowed)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
@@ -192,7 +215,7 @@ public final class UnsupportedDatabaseObject
      * Name of the object (regular expression is allowed)
      *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -204,7 +227,6 @@ public final class UnsupportedDatabaseObject
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

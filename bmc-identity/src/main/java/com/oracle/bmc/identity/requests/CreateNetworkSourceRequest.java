@@ -6,19 +6,21 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateNetworkSourceExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateNetworkSourceRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateNetworkSourceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateNetworkSourceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateNetworkSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.CreateNetworkSourceDetails> {
 
-    /** Request object for creating a new network source. */
+    /**
+     * Request object for creating a new network source.
+     */
     private com.oracle.bmc.identity.model.CreateNetworkSourceDetails createNetworkSourceDetails;
 
-    /** Request object for creating a new network source. */
+    /**
+     * Request object for creating a new network source.
+     */
     public com.oracle.bmc.identity.model.CreateNetworkSourceDetails
             getCreateNetworkSourceDetails() {
         return createNetworkSourceDetails;
@@ -29,6 +31,7 @@ public class CreateNetworkSourceRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     private String opcRetryToken;
 
@@ -38,6 +41,7 @@ public class CreateNetworkSourceRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -45,7 +49,6 @@ public class CreateNetworkSourceRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -58,16 +61,18 @@ public class CreateNetworkSourceRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateNetworkSourceRequest,
                     com.oracle.bmc.identity.model.CreateNetworkSourceDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request object for creating a new network source. */
+        /**
+         * Request object for creating a new network source.
+         */
         private com.oracle.bmc.identity.model.CreateNetworkSourceDetails
                 createNetworkSourceDetails = null;
 
         /**
          * Request object for creating a new network source.
-         *
          * @param createNetworkSourceDetails the value to set
          * @return this builder instance
          */
@@ -80,19 +85,20 @@ public class CreateNetworkSourceRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -104,19 +110,18 @@ public class CreateNetworkSourceRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -128,7 +133,6 @@ public class CreateNetworkSourceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateNetworkSourceRequest o) {
@@ -142,11 +146,10 @@ public class CreateNetworkSourceRequest
         /**
          * Build the instance of CreateNetworkSourceRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateNetworkSourceRequest
          */
@@ -159,7 +162,6 @@ public class CreateNetworkSourceRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -172,8 +174,7 @@ public class CreateNetworkSourceRequest
         /**
          * Build the instance of CreateNetworkSourceRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateNetworkSourceRequest
@@ -189,7 +190,6 @@ public class CreateNetworkSourceRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -200,7 +200,6 @@ public class CreateNetworkSourceRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

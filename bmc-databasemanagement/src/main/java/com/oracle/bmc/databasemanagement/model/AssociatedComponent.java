@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the associated component. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the associated component.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedComponent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AssociatedComponent
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AssociatedComponent.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AssociatedComponent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"componentId", "componentType", "associationType"})
     public AssociatedComponent(
@@ -36,46 +34,49 @@ public final class AssociatedComponent
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The identifier of the associated component. */
+        /**
+         * The identifier of the associated component.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("componentId")
         private String componentId;
 
         /**
          * The identifier of the associated component.
-         *
          * @param componentId the value to set
          * @return this builder
-         */
+         **/
         public Builder componentId(String componentId) {
             this.componentId = componentId;
             this.__explicitlySet__.add("componentId");
             return this;
         }
-        /** The type of associated component. */
+        /**
+         * The type of associated component.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("componentType")
         private ExternalDbSystemComponentType componentType;
 
         /**
          * The type of associated component.
-         *
          * @param componentType the value to set
          * @return this builder
-         */
+         **/
         public Builder componentType(ExternalDbSystemComponentType componentType) {
             this.componentType = componentType;
             this.__explicitlySet__.add("componentType");
             return this;
         }
-        /** The association type. */
+        /**
+         * The association type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private AssociationType associationType;
 
         /**
          * The association type.
-         *
          * @param associationType the value to set
          * @return this builder
-         */
+         **/
         public Builder associationType(AssociationType associationType) {
             this.associationType = associationType;
             this.__explicitlySet__.add("associationType");
@@ -110,7 +111,9 @@ public final class AssociatedComponent
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,40 +122,44 @@ public final class AssociatedComponent
         return new Builder().copy(this);
     }
 
-    /** The identifier of the associated component. */
+    /**
+     * The identifier of the associated component.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("componentId")
     private final String componentId;
 
     /**
      * The identifier of the associated component.
-     *
      * @return the value
-     */
+     **/
     public String getComponentId() {
         return componentId;
     }
 
-    /** The type of associated component. */
+    /**
+     * The type of associated component.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("componentType")
     private final ExternalDbSystemComponentType componentType;
 
     /**
      * The type of associated component.
-     *
      * @return the value
-     */
+     **/
     public ExternalDbSystemComponentType getComponentType() {
         return componentType;
     }
 
-    /** The association type. */
-    public enum AssociationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The association type.
+     **/
+    public enum AssociationType {
         Contains("CONTAINS"),
         Uses("USES"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -191,15 +198,16 @@ public final class AssociatedComponent
             return UnknownEnumValue;
         }
     };
-    /** The association type. */
+    /**
+     * The association type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final AssociationType associationType;
 
     /**
      * The association type.
-     *
      * @return the value
-     */
+     **/
     public AssociationType getAssociationType() {
         return associationType;
     }
@@ -211,7 +219,6 @@ public final class AssociatedComponent
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

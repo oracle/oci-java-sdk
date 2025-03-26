@@ -5,23 +5,22 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * An organization tenancy summary entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * An organization tenancy summary entity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OrganizationTenancySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OrganizationTenancySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OrganizationTenancySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenancyId",
@@ -58,140 +57,149 @@ public final class OrganizationTenancySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the tenancy. */
+        /**
+         * OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * OCID of the tenancy.
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** Name of the tenancy. */
+        /**
+         * Name of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the tenancy.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Lifecycle state of the organization tenancy. */
+        /**
+         * Lifecycle state of the organization tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OrganizationTenancyLifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the organization tenancy.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(OrganizationTenancyLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Role of the organization tenancy. */
+        /**
+         * Role of the organization tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private OrganizationTenancyRole role;
 
         /**
          * Role of the organization tenancy.
-         *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(OrganizationTenancyRole role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-        /** Date and time when the tenancy joined the organization. */
+        /**
+         * Date and time when the tenancy joined the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeJoined")
         private java.util.Date timeJoined;
 
         /**
          * Date and time when the tenancy joined the organization.
-         *
          * @param timeJoined the value to set
          * @return this builder
-         */
+         **/
         public Builder timeJoined(java.util.Date timeJoined) {
             this.timeJoined = timeJoined;
             this.__explicitlySet__.add("timeJoined");
             return this;
         }
-        /** Date and time when the tenancy left the organization. */
+        /**
+         * Date and time when the tenancy left the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLeft")
         private java.util.Date timeLeft;
 
         /**
          * Date and time when the tenancy left the organization.
-         *
          * @param timeLeft the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLeft(java.util.Date timeLeft) {
             this.timeLeft = timeLeft;
             this.__explicitlySet__.add("timeLeft");
             return this;
         }
-        /** Parameter to indicate the tenancy is approved for transfer to another organization. */
+        /**
+         * Parameter to indicate the tenancy is approved for transfer to another organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isApprovedForTransfer")
         private Boolean isApprovedForTransfer;
 
         /**
          * Parameter to indicate the tenancy is approved for transfer to another organization.
-         *
          * @param isApprovedForTransfer the value to set
          * @return this builder
-         */
+         **/
         public Builder isApprovedForTransfer(Boolean isApprovedForTransfer) {
             this.isApprovedForTransfer = isApprovedForTransfer;
             this.__explicitlySet__.add("isApprovedForTransfer");
             return this;
         }
-        /** The governance status of the tenancy. */
+        /**
+         * The governance status of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
         private GovernanceStatus governanceStatus;
 
         /**
          * The governance status of the tenancy.
-         *
          * @param governanceStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder governanceStatus(GovernanceStatus governanceStatus) {
             this.governanceStatus = governanceStatus;
             this.__explicitlySet__.add("governanceStatus");
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -252,7 +260,9 @@ public final class OrganizationTenancySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,123 +271,132 @@ public final class OrganizationTenancySummary
         return new Builder().copy(this);
     }
 
-    /** OCID of the tenancy. */
+    /**
+     * OCID of the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * OCID of the tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /** Name of the tenancy. */
+    /**
+     * Name of the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Lifecycle state of the organization tenancy. */
+    /**
+     * Lifecycle state of the organization tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OrganizationTenancyLifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the organization tenancy.
-     *
      * @return the value
-     */
+     **/
     public OrganizationTenancyLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Role of the organization tenancy. */
+    /**
+     * Role of the organization tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final OrganizationTenancyRole role;
 
     /**
      * Role of the organization tenancy.
-     *
      * @return the value
-     */
+     **/
     public OrganizationTenancyRole getRole() {
         return role;
     }
 
-    /** Date and time when the tenancy joined the organization. */
+    /**
+     * Date and time when the tenancy joined the organization.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeJoined")
     private final java.util.Date timeJoined;
 
     /**
      * Date and time when the tenancy joined the organization.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeJoined() {
         return timeJoined;
     }
 
-    /** Date and time when the tenancy left the organization. */
+    /**
+     * Date and time when the tenancy left the organization.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLeft")
     private final java.util.Date timeLeft;
 
     /**
      * Date and time when the tenancy left the organization.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLeft() {
         return timeLeft;
     }
 
-    /** Parameter to indicate the tenancy is approved for transfer to another organization. */
+    /**
+     * Parameter to indicate the tenancy is approved for transfer to another organization.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isApprovedForTransfer")
     private final Boolean isApprovedForTransfer;
 
     /**
      * Parameter to indicate the tenancy is approved for transfer to another organization.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsApprovedForTransfer() {
         return isApprovedForTransfer;
     }
 
-    /** The governance status of the tenancy. */
+    /**
+     * The governance status of the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
     private final GovernanceStatus governanceStatus;
 
     /**
      * The governance status of the tenancy.
-     *
      * @return the value
-     */
+     **/
     public GovernanceStatus getGovernanceStatus() {
         return governanceStatus;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -389,7 +408,6 @@ public final class OrganizationTenancySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The process (Extract or Replicat) status type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum ProcessStatusType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The process (Extract or Replicat) status type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum ProcessStatusType {
     Stopped("STOPPED"),
     Running("RUNNING"),
     Error("ERROR"),

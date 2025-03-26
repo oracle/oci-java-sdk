@@ -6,30 +6,28 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code SecurityQuestionSetting} instance. */
+    /**
+     * The returned SecurityQuestionSetting instance.
+     */
     private com.oracle.bmc.identitydomains.model.SecurityQuestionSetting securityQuestionSetting;
 
     /**
-     * The returned {@code SecurityQuestionSetting} instance.
-     *
+     * The returned SecurityQuestionSetting instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.SecurityQuestionSetting
@@ -45,7 +43,7 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
     })
     private GetSecurityQuestionSettingResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identitydomains.model.SecurityQuestionSetting securityQuestionSetting) {
         super(__httpStatusCode__, headers);
@@ -53,35 +51,28 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
         this.securityQuestionSetting = securityQuestionSetting;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetSecurityQuestionSettingResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -90,13 +81,14 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned {@code SecurityQuestionSetting} instance. */
+        /**
+         * The returned SecurityQuestionSetting instance.
+         */
         private com.oracle.bmc.identitydomains.model.SecurityQuestionSetting
                 securityQuestionSetting;
 
         /**
-         * The returned {@code SecurityQuestionSetting} instance.
-         *
+         * The returned SecurityQuestionSetting instance.
          * @param securityQuestionSetting the value to set
          * @return this builder
          */
@@ -109,10 +101,8 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetSecurityQuestionSettingResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -124,10 +114,8 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetSecurityQuestionSettingResponse build() {
             return new GetSecurityQuestionSettingResponse(
                     __httpStatusCode__, headers, opcRequestId, securityQuestionSetting);
@@ -136,7 +124,6 @@ public class GetSecurityQuestionSettingResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

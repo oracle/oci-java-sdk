@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** Possible Action Group types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum LifeCycleActionGroupType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Action Group types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum LifeCycleActionGroupType {
     Product("PRODUCT"),
     Environment("ENVIRONMENT"),
 

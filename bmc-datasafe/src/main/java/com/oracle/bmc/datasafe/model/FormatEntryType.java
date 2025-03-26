@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The type of the format entry. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum FormatEntryType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of the format entry.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum FormatEntryType {
     DeleteRows("DELETE_ROWS"),
     DeterministicSubstitution("DETERMINISTIC_SUBSTITUTION"),
     DeterministicEncryption("DETERMINISTIC_ENCRYPTION"),

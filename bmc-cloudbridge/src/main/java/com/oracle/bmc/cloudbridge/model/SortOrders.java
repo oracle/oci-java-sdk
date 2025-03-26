@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudbridge.model;
 
-/** Sort orders. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public enum SortOrders implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Sort orders.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+public enum SortOrders {
     Asc("ASC"),
     Desc("DESC"),
     ;

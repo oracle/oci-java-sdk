@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.identitydomains.model;
 
-/** Enum for sortOrder. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Enum for sortOrder.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+public enum SortOrder {
     Ascending("ASCENDING"),
     Descending("DESCENDING"),
     ;

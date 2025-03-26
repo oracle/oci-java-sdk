@@ -5,23 +5,22 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * The details to update a retention rule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The details to update a retention rule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateRetentionRuleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateRetentionRuleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateRetentionRuleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "duration", "timeRuleLocked"})
     public UpdateRetentionRuleDetails(
@@ -35,19 +34,20 @@ public final class UpdateRetentionRuleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-specified name for the retention rule. Names can be helpful in identifying
-         * retention rules. Avoid entering confidential information.
-         */
+         * A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-specified name for the retention rule. Names can be helpful in identifying
-         * retention rules. Avoid entering confidential information.
+         * A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -63,25 +63,24 @@ public final class UpdateRetentionRuleDetails
             return this;
         }
         /**
-         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this
-         * rule is locked and can only be deleted by deleting the bucket. Once a rule is locked,
-         * only increases in the duration are allowed and no other properties can be changed. This
-         * property cannot be updated for rules that are in a locked state. Specifying it when a
-         * duration is not specified is considered an error.
-         */
+         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked
+         * and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are
+         * allowed and no other properties can be changed. This property cannot be updated for rules that are in a
+         * locked state. Specifying it when a duration is not specified is considered an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRuleLocked")
         private java.util.Date timeRuleLocked;
 
         /**
-         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this
-         * rule is locked and can only be deleted by deleting the bucket. Once a rule is locked,
-         * only increases in the duration are allowed and no other properties can be changed. This
-         * property cannot be updated for rules that are in a locked state. Specifying it when a
-         * duration is not specified is considered an error.
+         * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked
+         * and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are
+         * allowed and no other properties can be changed. This property cannot be updated for rules that are in a
+         * locked state. Specifying it when a duration is not specified is considered an error.
          *
          * @param timeRuleLocked the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRuleLocked(java.util.Date timeRuleLocked) {
             this.timeRuleLocked = timeRuleLocked;
             this.__explicitlySet__.add("timeRuleLocked");
@@ -116,7 +115,9 @@ public final class UpdateRetentionRuleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,18 +127,19 @@ public final class UpdateRetentionRuleDetails
     }
 
     /**
-     * A user-specified name for the retention rule. Names can be helpful in identifying retention
-     * rules. Avoid entering confidential information.
-     */
+     * A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-specified name for the retention rule. Names can be helpful in identifying retention
-     * rules. Avoid entering confidential information.
+     * A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -150,24 +152,23 @@ public final class UpdateRetentionRuleDetails
     }
 
     /**
-     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this
-     * rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only
-     * increases in the duration are allowed and no other properties can be changed. This property
-     * cannot be updated for rules that are in a locked state. Specifying it when a duration is not
-     * specified is considered an error.
-     */
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked
+     * and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are
+     * allowed and no other properties can be changed. This property cannot be updated for rules that are in a
+     * locked state. Specifying it when a duration is not specified is considered an error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRuleLocked")
     private final java.util.Date timeRuleLocked;
 
     /**
-     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this
-     * rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only
-     * increases in the duration are allowed and no other properties can be changed. This property
-     * cannot be updated for rules that are in a locked state. Specifying it when a duration is not
-     * specified is considered an error.
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked
+     * and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are
+     * allowed and no other properties can be changed. This property cannot be updated for rules that are in a
+     * locked state. Specifying it when a duration is not specified is considered an error.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRuleLocked() {
         return timeRuleLocked;
     }
@@ -179,7 +180,6 @@ public final class UpdateRetentionRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

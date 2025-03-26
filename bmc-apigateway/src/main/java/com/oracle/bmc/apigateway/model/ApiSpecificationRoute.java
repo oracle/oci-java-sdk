@@ -5,24 +5,23 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * A single route that forwards requests to a particular backend and may contain some additional
- * policies. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * A single route that forwards requests to a particular backend and may contain some additional policies.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApiSpecificationRoute.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ApiSpecificationRoute.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApiSpecificationRoute
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "path",
@@ -51,25 +50,29 @@ public final class ApiSpecificationRoute
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A URL path pattern that must be matched on this route. The path pattern may contain a
-         * subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
-         */
+         * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
+         * to allow wildcard and parameterized matching.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
-         * A URL path pattern that must be matched on this route. The path pattern may contain a
-         * subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
+         * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
+         * to allow wildcard and parameterized matching.
          *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** A list of allowed methods on this route. */
+        /**
+         * A list of allowed methods on this route.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("methods")
         private java.util.List<Methods> methods;
 
@@ -78,7 +81,7 @@ public final class ApiSpecificationRoute
          *
          * @param methods the value to set
          * @return this builder
-         */
+         **/
         public Builder methods(java.util.List<Methods> methods) {
             this.methods = methods;
             this.__explicitlySet__.add("methods");
@@ -163,7 +166,9 @@ public final class ApiSpecificationRoute
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,24 +178,26 @@ public final class ApiSpecificationRoute
     }
 
     /**
-     * A URL path pattern that must be matched on this route. The path pattern may contain a subset
-     * of RFC 6570 identifiers to allow wildcard and parameterized matching.
-     */
+     * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
+     * to allow wildcard and parameterized matching.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
-     * A URL path pattern that must be matched on this route. The path pattern may contain a subset
-     * of RFC 6570 identifiers to allow wildcard and parameterized matching.
+     * A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers
+     * to allow wildcard and parameterized matching.
      *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** */
-    public enum Methods implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum Methods {
         Any("ANY"),
         Head("HEAD"),
         Get("GET"),
@@ -201,8 +208,8 @@ public final class ApiSpecificationRoute
         Options("OPTIONS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -241,7 +248,10 @@ public final class ApiSpecificationRoute
             return UnknownEnumValue;
         }
     };
-    /** A list of allowed methods on this route. */
+    /**
+     * A list of allowed methods on this route.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("methods")
     private final java.util.List<Methods> methods;
 
@@ -249,7 +259,7 @@ public final class ApiSpecificationRoute
      * A list of allowed methods on this route.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Methods> getMethods() {
         return methods;
     }
@@ -289,7 +299,6 @@ public final class ApiSpecificationRoute
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

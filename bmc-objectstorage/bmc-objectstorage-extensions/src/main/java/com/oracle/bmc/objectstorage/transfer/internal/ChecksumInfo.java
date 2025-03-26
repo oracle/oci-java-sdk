@@ -5,10 +5,11 @@
 package com.oracle.bmc.objectstorage.transfer.internal;
 
 import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
+import com.oracle.bmc.util.internal.Validate;
 
 /**
- * Encapsulates a checksum value and its corresponding algorithm. Stores a checksum along with the
- * {@link ChecksumAlgorithm}.
+ * Encapsulates a checksum value and its corresponding algorithm.
+ * Stores a checksum along with the {@link ChecksumAlgorithm}.
  */
 public class ChecksumInfo {
     private final String checksum;

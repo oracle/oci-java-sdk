@@ -5,35 +5,36 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * Base class for the DetectAnomalies call. It contains the identifier that is used for deciding
- * what type of request this is. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * Base class for the DetectAnomalies call. It contains the identifier that is
+ * used for deciding what type of request this is.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "requestType",
-        defaultImpl = DetectAnomaliesDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "requestType",
+    defaultImpl = DetectAnomaliesDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = InlineDetectAnomaliesRequest.class,
-            name = "INLINE"),
+        value = InlineDetectAnomaliesRequest.class,
+        name = "INLINE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = EmbeddedDetectAnomaliesRequest.class,
-            name = "BASE64_ENCODED")
+        value = EmbeddedDetectAnomaliesRequest.class,
+        name = "BASE64_ENCODED"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DetectAnomaliesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class DetectAnomaliesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"modelId", "sensitivity"})
     protected DetectAnomaliesDetails(String modelId, Float sensitivity) {
@@ -42,34 +43,30 @@ public class DetectAnomaliesDetails
         this.sensitivity = sensitivity;
     }
 
-    /** The OCID of the trained model. */
+    /**
+     * The OCID of the trained model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
      * The OCID of the trained model.
-     *
      * @return the value
-     */
+     **/
     public String getModelId() {
         return modelId;
     }
 
     /**
-     * Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get
-     * flagged. The value estimated during training is used by default. You can choose to provide a
-     * custom value.
-     */
+     * Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get flagged. The value estimated during training is used by default. You can choose to provide a custom value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitivity")
     private final Float sensitivity;
 
     /**
-     * Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get
-     * flagged. The value estimated during training is used by default. You can choose to provide a
-     * custom value.
-     *
+     * Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get flagged. The value estimated during training is used by default. You can choose to provide a custom value.
      * @return the value
-     */
+     **/
     public Float getSensitivity() {
         return sensitivity;
     }
@@ -81,7 +78,6 @@ public class DetectAnomaliesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -121,10 +117,11 @@ public class DetectAnomaliesDetails
     }
 
     /**
-     * Type of request. This parameter is automatically populated by classes generated by the SDK.
-     * For raw curl requests, you must provide this field.
-     */
-    public enum RequestType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of request. This parameter is automatically populated by classes generated
+     * by the SDK. For raw curl requests, you must provide this field.
+     *
+     **/
+    public enum RequestType {
         Inline("INLINE"),
         Base64Encoded("BASE64_ENCODED"),
         ;

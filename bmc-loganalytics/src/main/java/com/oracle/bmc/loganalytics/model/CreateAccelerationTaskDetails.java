@@ -5,27 +5,28 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Details for creating a scheduled task to accelerate a saved search. The client must specify the
- * savedSearchId, and the service will supply other details. The resulting scheduled task will have
- * TaskType ACCELERATION. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Details for creating a scheduled task to accelerate a saved search.
+ * The client must specify the savedSearchId, and the service will supply other details.
+ * The resulting scheduled task will have TaskType ACCELERATION.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateAccelerationTaskDetails.Builder.class)
+    builder = CreateAccelerationTaskDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -65,16 +66,17 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The ManagementSavedSearch id [OCID] to be accelerated. */
+        /**
+         * The ManagementSavedSearch id [OCID] to be accelerated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
         private String savedSearchId;
 
         /**
          * The ManagementSavedSearch id [OCID] to be accelerated.
-         *
          * @param savedSearchId the value to set
          * @return this builder
-         */
+         **/
         public Builder savedSearchId(String savedSearchId) {
             this.savedSearchId = savedSearchId;
             this.__explicitlySet__.add("savedSearchId");
@@ -119,7 +121,9 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,15 +143,16 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
         this.savedSearchId = savedSearchId;
     }
 
-    /** The ManagementSavedSearch id [OCID] to be accelerated. */
+    /**
+     * The ManagementSavedSearch id [OCID] to be accelerated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
     private final String savedSearchId;
 
     /**
      * The ManagementSavedSearch id [OCID] to be accelerated.
-     *
      * @return the value
-     */
+     **/
     public String getSavedSearchId() {
         return savedSearchId;
     }
@@ -159,7 +164,6 @@ public final class CreateAccelerationTaskDetails extends CreateScheduledTaskDeta
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

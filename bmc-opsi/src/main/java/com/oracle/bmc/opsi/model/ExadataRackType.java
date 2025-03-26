@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Exadata rack type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ExadataRackType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Exadata rack type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ExadataRackType {
     Full("FULL"),
     Half("HALF"),
     Quarter("QUARTER"),

@@ -6,62 +6,66 @@ package com.oracle.bmc.announcementsservice.requests;
 
 import com.oracle.bmc.announcementsservice.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementsPreferenceExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateAnnouncementsPreferenceRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementsPreferenceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAnnouncementsPreferenceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class UpdateAnnouncementsPreferenceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails> {
 
-    /** The ID of the preference. */
+    /**
+     * The ID of the preference.
+     */
     private String preferenceId;
 
-    /** The ID of the preference. */
+    /**
+     * The ID of the preference.
+     */
     public String getPreferenceId() {
         return preferenceId;
     }
     /**
-     * The object that contains details about tenancy preferences for receiving announcements by
-     * email.
+     * The object that contains details about tenancy preferences for receiving announcements by email.
      */
     private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
             announcementsPreferenceDetails;
 
     /**
-     * The object that contains details about tenancy preferences for receiving announcements by
-     * email.
+     * The object that contains details about tenancy preferences for receiving announcements by email.
      */
     public com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
             getAnnouncementsPreferenceDetails() {
         return announcementsPreferenceDetails;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The locking version, used for optimistic concurrency control. */
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     private String ifMatch;
 
-    /** The locking version, used for optimistic concurrency control. */
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -76,15 +80,17 @@ public class UpdateAnnouncementsPreferenceRequest
                     UpdateAnnouncementsPreferenceRequest,
                     com.oracle.bmc.announcementsservice.model
                             .UpdateAnnouncementsPreferencesDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the preference. */
+        /**
+         * The ID of the preference.
+         */
         private String preferenceId = null;
 
         /**
          * The ID of the preference.
-         *
          * @param preferenceId the value to set
          * @return this builder instance
          */
@@ -94,16 +100,13 @@ public class UpdateAnnouncementsPreferenceRequest
         }
 
         /**
-         * The object that contains details about tenancy preferences for receiving announcements by
-         * email.
+         * The object that contains details about tenancy preferences for receiving announcements by email.
          */
         private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
                 announcementsPreferenceDetails = null;
 
         /**
-         * The object that contains details about tenancy preferences for receiving announcements by
-         * email.
-         *
+         * The object that contains details about tenancy preferences for receiving announcements by email.
          * @param announcementsPreferenceDetails the value to set
          * @return this builder instance
          */
@@ -115,14 +118,15 @@ public class UpdateAnnouncementsPreferenceRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -132,12 +136,13 @@ public class UpdateAnnouncementsPreferenceRequest
             return this;
         }
 
-        /** The locking version, used for optimistic concurrency control. */
+        /**
+         * The locking version, used for optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
-         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -148,19 +153,18 @@ public class UpdateAnnouncementsPreferenceRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -172,7 +176,6 @@ public class UpdateAnnouncementsPreferenceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateAnnouncementsPreferenceRequest o) {
@@ -188,11 +191,10 @@ public class UpdateAnnouncementsPreferenceRequest
         /**
          * Build the instance of UpdateAnnouncementsPreferenceRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateAnnouncementsPreferenceRequest
          */
@@ -205,7 +207,6 @@ public class UpdateAnnouncementsPreferenceRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -220,8 +221,7 @@ public class UpdateAnnouncementsPreferenceRequest
         /**
          * Build the instance of UpdateAnnouncementsPreferenceRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateAnnouncementsPreferenceRequest
@@ -234,14 +234,12 @@ public class UpdateAnnouncementsPreferenceRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateAnnouncementsPreferenceRequest(preferenceId,
-            // announcementsPreferenceDetails, opcRequestId, ifMatch);
+            // new UpdateAnnouncementsPreferenceRequest(preferenceId, announcementsPreferenceDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -254,7 +252,6 @@ public class UpdateAnnouncementsPreferenceRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

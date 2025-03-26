@@ -5,21 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary resource object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary resource object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ObjectSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ObjectSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -53,46 +51,49 @@ public final class ObjectSummary extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the Awr Hub object. */
+        /**
+         * The name of the Awr Hub object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Awr Hub object.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Size of the Awr Hub object in bytes. */
+        /**
+         * Size of the Awr Hub object in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Long size;
 
         /**
          * Size of the Awr Hub object in bytes.
-         *
          * @param size the value to set
          * @return this builder
-         */
+         **/
         public Builder size(Long size) {
             this.size = size;
             this.__explicitlySet__.add("size");
             return this;
         }
-        /** Base64-encoded MD5 hash of the Awr Hub object data. */
+        /**
+         * Base64-encoded MD5 hash of the Awr Hub object data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("md5")
         private String md5;
 
         /**
          * Base64-encoded MD5 hash of the Awr Hub object data.
-         *
          * @param md5 the value to set
          * @return this builder
-         */
+         **/
         public Builder md5(String md5) {
             this.md5 = md5;
             this.__explicitlySet__.add("md5");
@@ -100,22 +101,24 @@ public final class ObjectSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The time at which the resource was first created. An RFC3339 formatted datetime string
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time at which the resource was first created. An RFC3339 formatted datetime string
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
@@ -124,52 +127,55 @@ public final class ObjectSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param etag the value to set
          * @return this builder
-         */
+         **/
         public Builder etag(String etag) {
             this.etag = etag;
             this.__explicitlySet__.add("etag");
             return this;
         }
-        /** The object's storage tier. */
+        /**
+         * The object's storage tier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
         private StorageTier storageTier;
 
         /**
          * The object's storage tier.
-         *
          * @param storageTier the value to set
          * @return this builder
-         */
+         **/
         public Builder storageTier(StorageTier storageTier) {
             this.storageTier = storageTier;
             this.__explicitlySet__.add("storageTier");
             return this;
         }
-        /** Archival state of an object for those in the archival tier. */
+        /**
+         * Archival state of an object for those in the archival tier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archivalState")
         private ArchivalState archivalState;
 
         /**
          * Archival state of an object for those in the archival tier.
-         *
          * @param archivalState the value to set
          * @return this builder
-         */
+         **/
         public Builder archivalState(ArchivalState archivalState) {
             this.archivalState = archivalState;
             this.__explicitlySet__.add("archivalState");
             return this;
         }
-        /** The date and time the Awr Hub object was modified */
+        /**
+         * The date and time the Awr Hub object was modified
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
          * The date and time the Awr Hub object was modified
-         *
          * @param timeModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
@@ -226,7 +232,9 @@ public final class ObjectSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -235,59 +243,66 @@ public final class ObjectSummary extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The name of the Awr Hub object. */
+    /**
+     * The name of the Awr Hub object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Awr Hub object.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Size of the Awr Hub object in bytes. */
+    /**
+     * Size of the Awr Hub object in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Long size;
 
     /**
      * Size of the Awr Hub object in bytes.
-     *
      * @return the value
-     */
+     **/
     public Long getSize() {
         return size;
     }
 
-    /** Base64-encoded MD5 hash of the Awr Hub object data. */
+    /**
+     * Base64-encoded MD5 hash of the Awr Hub object data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
     private final String md5;
 
     /**
      * Base64-encoded MD5 hash of the Awr Hub object data.
-     *
      * @return the value
-     */
+     **/
     public String getMd5() {
         return md5;
     }
 
-    /** The time at which the resource was first created. An RFC3339 formatted datetime string */
+    /**
+     * The time at which the resource was first created. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     private final String etag;
 
@@ -295,46 +310,49 @@ public final class ObjectSummary extends com.oracle.bmc.http.client.internal.Exp
      * For optimistic concurrency control. See {@code if-match}.
      *
      * @return the value
-     */
+     **/
     public String getEtag() {
         return etag;
     }
 
-    /** The object's storage tier. */
+    /**
+     * The object's storage tier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
     private final StorageTier storageTier;
 
     /**
      * The object's storage tier.
-     *
      * @return the value
-     */
+     **/
     public StorageTier getStorageTier() {
         return storageTier;
     }
 
-    /** Archival state of an object for those in the archival tier. */
+    /**
+     * Archival state of an object for those in the archival tier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archivalState")
     private final ArchivalState archivalState;
 
     /**
      * Archival state of an object for those in the archival tier.
-     *
      * @return the value
-     */
+     **/
     public ArchivalState getArchivalState() {
         return archivalState;
     }
 
-    /** The date and time the Awr Hub object was modified */
+    /**
+     * The date and time the Awr Hub object was modified
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
      * The date and time the Awr Hub object was modified
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
@@ -346,7 +364,6 @@ public final class ObjectSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -37,42 +37,43 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
- * This class provides an example of how to create Dataflow application service in the Java SDK.
- * This will cover:
+ * This class provides an example of how to create Dataflow application service in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Create the application
- *   <li>Update the application
- *   <li>Get the application
- *   <li/>
- *   <li>List all the application
- *   <li/>
- *   <li>Delete the application
- *   <li>Create the Run application
- *   <li>Update the Run application
- *   <li>Delete the Run application
+ *   <li>Create the application</li>
+ *   <li>Update the application</li>
+ *   <li>Get the application<li/>
+ *   <li>List all the application<li/>
+ *   <li>Delete the application</li>
+ *   <li>Create the Run application</li>
+ *   <li>Update the Run application</li>
+ *   <li>Delete the Run application</li>
  * </ul>
  *
  * This class makes the following assumptions:
- *
  * <ul>
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Region where the example will be run is: us-phoenix-1
- *   <li>The user has the appropriate permissions to manage dataflow application and to run the
- *       application in the compartment specified.
- *   <li>It will be run in two parts, user can check the features in OCI console section. 1.
- *       Dataflow -> Applications 2. Dataflow -> Runs In the first run the user can create a
- *       dataflow application, update the application, list all application in the compartment
- *       specified, delete the application.
- *       <p>In the second run the user can comment the code run in first part and continue with
- *       running the second part of code. user can create run application, update run application,
- *       get the details of run application, delete run application.
- *       <p>user can comment the delete application part in both parts to track the status in OCI
- *       console and end to end execution of serverless spark as a service for more details refer
- *       below links. https://www.oracle.com/big-data/data-flow/
+ *   <li>
+ *      The configuration file used by service clients will be sourced from the default
+ *      location (~/.oci/config) and the DEFAULT profile will be used
+ *   </li>
+ *   <li>Region where the example will be run is: us-phoenix-1</li>
+ *   <li>
+ *      The user has the appropriate permissions to manage dataflow application and to run the application in the compartment specified.
+ *   </li>
+ *   <li>
+ *       It will be run in two parts, user can check the features in OCI console section.
+ *          1. Dataflow -> Applications
+ *          2. Dataflow -> Runs
+ *       In the first run the user can create a dataflow application, update the application, list all application in the compartment specified, delete the application.
+ *
+ *       In the second run the user can comment the code run in first part and continue with running the second part of code.
+ *       user can create run application, update run application, get the details of run application, delete run application.
+ *
+ *       user can comment the delete application part in both parts to track the status in OCI console and end to end execution of serverless spark as a service for more details refer below links.
+ *       https://www.oracle.com/big-data/data-flow/
  *       https://docs.oracle.com/en-us/iaas/data-flow/using/dfs_run_applications.htm
- *       <ul>
+ *   </li>
+ * <ul>
  */
 public class DataflowExample {
     public static void main(String[] args) throws Exception {
@@ -80,32 +81,27 @@ public class DataflowExample {
         String compartmentId = args[0]; // <your_compartmentId>
 
         /**
-         * Below data types are required to create and run data flow service application. refer link
-         * https://docs.oracle.com/en-us/iaas/api/#/en/data-flow/20200129/datatypes/CreateApplicationDetails
-         * to add/modify data type
-         */
-        String className = args[1]; // executable jar main class
+         * Below data types are required to create and run data flow service application.
+         * refer link https://docs.oracle.com/en-us/iaas/api/#/en/data-flow/20200129/datatypes/CreateApplicationDetails to add/modify data type
+         **/
+        String className = args[1]; //executable jar main class
         String jarPath = args[2]; // oci://<bucket>@<object_storage_namespace>/*.jar
         String logPath = args[3]; // Ex: oci://<bucket>@<object_storage_namespace>/
         String sparkVersion = args[4]; // Ex: 2.4.4, 3.2.1 etc
 
-        // Compute shapes reference link
-        // https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm
+        //Compute shapes reference link https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm
         String driverShape = args[5]; // Ex: VM.Standard2.1, VM.Standard3.Flex
         String executorShape = args[6]; // Ex: VM.Standard2.1, VM.Standard3.Flex
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFile configFile = ConfigFileReader.parseDefault(CONFIG_PROFILE);
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        DataFlowClient dataFlowClient =
-                DataFlowClient.builder().configuration(null).build(provider);
+        DataFlowClient dataFlowClient = new DataFlowClient(provider, null);
         final DataflowExample dataflowExample = new DataflowExample();
 
         System.out.println(
@@ -170,7 +166,9 @@ public class DataflowExample {
         ListApplicationsResponse listApplicationsResponse =
                 dataflowExample.getApplicationList(dataFlowClient, compartmentId);
         System.out.println("Application count: " + listApplicationsResponse.getItems().size());
-        listApplicationsResponse.getItems().stream()
+        listApplicationsResponse
+                .getItems()
+                .stream()
                 .forEach(
                         applicationSummary -> {
                             System.out.println(applicationSummary.getId());
@@ -250,7 +248,6 @@ public class DataflowExample {
 
     /**
      * Creates a new Application here.
-     *
      * @param compartmentId compartment id where the Application should be created.
      * @param applicationName name of the application to be created.
      * @return The Application response that was created.
@@ -310,7 +307,6 @@ public class DataflowExample {
 
     /**
      * Update existing Application display name.
-     *
      * @param applicationId application id where the Application display name should be updated.
      * @param updateApplicationName new name of the application to be updated.
      * @return The Application updated response.
@@ -368,7 +364,6 @@ public class DataflowExample {
 
     /**
      * Fetch the details of Application by id.
-     *
      * @param applicationId application id of dataflow application.
      * @return The Application response.
      */
@@ -386,7 +381,6 @@ public class DataflowExample {
 
     /**
      * Get the list of Application in the specified compartment.
-     *
      * @param compartmentId specified compartment id .
      * @return The list of application response.
      */
@@ -409,7 +403,6 @@ public class DataflowExample {
 
     /**
      * Deleted existing application by id.
-     *
      * @param applicationId id of the application which is to be deleted.
      * @return The deleted application response.
      */
@@ -427,7 +420,6 @@ public class DataflowExample {
 
     /**
      * Creates new run application for the specified existing application.
-     *
      * @param applicationId application id which is to be executed.
      * @return The created run application response.
      */
@@ -468,7 +460,6 @@ public class DataflowExample {
 
     /**
      * Get the run details by id.
-     *
      * @param runId run id of the application.
      * @return The run application response.
      */
@@ -483,7 +474,6 @@ public class DataflowExample {
 
     /**
      * Update the free form tag attribute of run application id.
-     *
      * @param runId run id of the application to be updated.
      * @param tagName tag name to be updated.
      * @return The updated run application response.
@@ -511,7 +501,6 @@ public class DataflowExample {
 
     /**
      * Delete specified run application by id.
-     *
      * @param runId run id of the application to be deleted.
      * @return The deleted run application response.
      */

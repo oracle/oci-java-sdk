@@ -5,21 +5,19 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the KeyVersion associated with the Key. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * The details of the KeyVersion associated with the Key.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KeyVersion.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class KeyVersion extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -71,52 +69,58 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that contains this key version. */
+        /**
+         * The OCID of the compartment that contains this key version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains this key version.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the key version. */
+        /**
+         * The OCID of the key version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the key version.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the key associated with this key version. */
+        /**
+         * The OCID of the key associated with this key version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
          * The OCID of the key associated with this key version.
-         *
          * @param keyId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-        /** The public key in PEM format. (This value pertains only to RSA and ECDSA keys.) */
+        /**
+         * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
@@ -125,7 +129,7 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param publicKey the value to set
          * @return this builder
-         */
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
@@ -133,20 +137,21 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The key version's current lifecycle state.
+         * <p>
+         * Example: {@code ENABLED}
          *
-         * <p>Example: {@code ENABLED}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The key version's current lifecycle state.
-         *
-         * <p>Example: {@code ENABLED}
+         * <p>
+         * Example: {@code ENABLED}
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -154,94 +159,95 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The source of the key material. When this value is {@code INTERNAL}, Key Management
-         * created the key material. When this value is {@code EXTERNAL}, the key material was
-         * imported from an external source.
-         */
+         * created the key material. When this value is {@code EXTERNAL}, the key material
+         * was imported from an external source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("origin")
         private Origin origin;
 
         /**
          * The source of the key material. When this value is {@code INTERNAL}, Key Management
-         * created the key material. When this value is {@code EXTERNAL}, the key material was
-         * imported from an external source.
+         * created the key material. When this value is {@code EXTERNAL}, the key material
+         * was imported from an external source.
          *
          * @param origin the value to set
          * @return this builder
-         */
+         **/
         public Builder origin(Origin origin) {
             this.origin = origin;
             this.__explicitlySet__.add("origin");
             return this;
         }
         /**
-         * The date and time this key version was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: "2018-04-03T21:10:29.600Z"
          *
-         * <p>Example: "2018-04-03T21:10:29.600Z"
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time this key version was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         *
-         * <p>Example: "2018-04-03T21:10:29.600Z"
+         * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: "2018-04-03T21:10:29.600Z"
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * An optional property indicating when to delete the key version, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2019-04-03T21:10:29.600Z}
-         */
+         * An optional property indicating when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
         /**
-         * An optional property indicating when to delete the key version, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2019-04-03T21:10:29.600Z}
+         * An optional property indicating when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-04-03T21:10:29.600Z}
          *
          * @param timeOfDeletion the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
             return this;
         }
-        /** The OCID of the vault that contains this key version. */
+        /**
+         * The OCID of the vault that contains this key version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
          * The OCID of the vault that contains this key version.
-         *
          * @param vaultId the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-        /** The OCID of the key version from which this key version was restored. */
+        /**
+         * The OCID of the key version from which this key version was restored.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyVersionId")
         private String restoredFromKeyVersionId;
 
         /**
          * The OCID of the key version from which this key version was restored.
-         *
          * @param restoredFromKeyVersionId the value to set
          * @return this builder
-         */
+         **/
         public Builder restoredFromKeyVersionId(String restoredFromKeyVersionId) {
             this.restoredFromKeyVersionId = restoredFromKeyVersionId;
             this.__explicitlySet__.add("restoredFromKeyVersionId");
@@ -257,19 +263,16 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
-         * Vault.
-         */
+         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
         /**
-         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
-         * Vault.
-         *
+         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
          * @param isPrimary the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
@@ -287,16 +290,15 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
         private Boolean isAutoRotated;
 
         /**
          * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
-         *
          * @param isAutoRotated the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoRotated(Boolean isAutoRotated) {
             this.isAutoRotated = isAutoRotated;
             this.__explicitlySet__.add("isAutoRotated");
@@ -377,7 +379,9 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -386,46 +390,52 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that contains this key version. */
+    /**
+     * The OCID of the compartment that contains this key version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains this key version.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the key version. */
+    /**
+     * The OCID of the key version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the key version.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the key associated with this key version. */
+    /**
+     * The OCID of the key associated with this key version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
      * The OCID of the key associated with this key version.
-     *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
-    /** The public key in PEM format. (This value pertains only to RSA and ECDSA keys.) */
+    /**
+     * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
@@ -433,17 +443,18 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
      * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      *
      * @return the value
-     */
+     **/
     public String getPublicKey() {
         return publicKey;
     }
 
     /**
      * The key version's current lifecycle state.
+     * <p>
+     * Example: {@code ENABLED}
      *
-     * <p>Example: {@code ENABLED}
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Enabling("ENABLING"),
         Enabled("ENABLED"),
@@ -456,8 +467,8 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         CancellingDeletion("CANCELLING_DELETION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -498,35 +509,37 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
     };
     /**
      * The key version's current lifecycle state.
+     * <p>
+     * Example: {@code ENABLED}
      *
-     * <p>Example: {@code ENABLED}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The key version's current lifecycle state.
-     *
-     * <p>Example: {@code ENABLED}
+     * <p>
+     * Example: {@code ENABLED}
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The source of the key material. When this value is {@code INTERNAL}, Key Management created
-     * the key material. When this value is {@code EXTERNAL}, the key material was imported from an
-     * external source.
-     */
-    public enum Origin implements com.oracle.bmc.http.internal.BmcEnum {
+     * The source of the key material. When this value is {@code INTERNAL}, Key Management
+     * created the key material. When this value is {@code EXTERNAL}, the key material
+     * was imported from an external source.
+     *
+     **/
+    public enum Origin {
         Internal("INTERNAL"),
         External("EXTERNAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -565,86 +578,87 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         }
     };
     /**
-     * The source of the key material. When this value is {@code INTERNAL}, Key Management created
-     * the key material. When this value is {@code EXTERNAL}, the key material was imported from an
-     * external source.
-     */
+     * The source of the key material. When this value is {@code INTERNAL}, Key Management
+     * created the key material. When this value is {@code EXTERNAL}, the key material
+     * was imported from an external source.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     private final Origin origin;
 
     /**
-     * The source of the key material. When this value is {@code INTERNAL}, Key Management created
-     * the key material. When this value is {@code EXTERNAL}, the key material was imported from an
-     * external source.
+     * The source of the key material. When this value is {@code INTERNAL}, Key Management
+     * created the key material. When this value is {@code EXTERNAL}, the key material
+     * was imported from an external source.
      *
      * @return the value
-     */
+     **/
     public Origin getOrigin() {
         return origin;
     }
 
     /**
-     * The date and time this key version was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: "2018-04-03T21:10:29.600Z"
      *
-     * <p>Example: "2018-04-03T21:10:29.600Z"
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time this key version was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     *
-     * <p>Example: "2018-04-03T21:10:29.600Z"
+     * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: "2018-04-03T21:10:29.600Z"
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * An optional property indicating when to delete the key version, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-04-03T21:10:29.600Z}
-     */
+     * An optional property indicating when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
     /**
-     * An optional property indicating when to delete the key version, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-04-03T21:10:29.600Z}
+     * An optional property indicating when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
 
-    /** The OCID of the vault that contains this key version. */
+    /**
+     * The OCID of the vault that contains this key version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
      * The OCID of the vault that contains this key version.
-     *
      * @return the value
-     */
+     **/
     public String getVaultId() {
         return vaultId;
     }
 
-    /** The OCID of the key version from which this key version was restored. */
+    /**
+     * The OCID of the key version from which this key version was restored.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyVersionId")
     private final String restoredFromKeyVersionId;
 
     /**
      * The OCID of the key version from which this key version was restored.
-     *
      * @return the value
-     */
+     **/
     public String getRestoredFromKeyVersionId() {
         return restoredFromKeyVersionId;
     }
@@ -657,18 +671,15 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
-     * Vault.
-     */
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
     /**
-     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica
-     * Vault.
-     *
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * @return the value
-     */
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
     }
@@ -680,15 +691,16 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
         return externalKeyReferenceDetails;
     }
 
-    /** A Boolean Value indicating whether this keyversion is generated from auto rotation of key */
+    /**
+     * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
     private final Boolean isAutoRotated;
 
     /**
      * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoRotated() {
         return isAutoRotated;
     }
@@ -700,7 +712,6 @@ public final class KeyVersion extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

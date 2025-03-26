@@ -6,43 +6,50 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemStoragePerformancesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDbSystemStoragePerformancesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemStoragePerformancesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDbSystemStoragePerformancesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListDbSystemStoragePerformancesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The DB system storage management option. Used to list database versions available for that
-     * storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies Oracle
-     * Automatic Storage Management * LVM specifies logical volume manager, sometimes called logical
-     * disk manager.
+     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
+     * * ASM specifies Oracle Automatic Storage Management
+     * * LVM specifies logical volume manager, sometimes called logical disk manager.
+     *
      */
     private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement;
 
     /**
-     * The DB system storage management option. Used to list database versions available for that
-     * storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies Oracle
-     * Automatic Storage Management * LVM specifies logical volume manager, sometimes called logical
-     * disk manager.
+     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
+     * * ASM specifies Oracle Automatic Storage Management
+     * * LVM specifies logical volume manager, sometimes called logical disk manager.
+     *
      */
     public com.oracle.bmc.database.model.DbSystemOptions.StorageManagement getStorageManagement() {
         return storageManagement;
     }
-    /** Optional. Filters the performance results by shape type. */
+    /**
+     * Optional. Filters the performance results by shape type.
+     */
     private String shapeType;
 
-    /** Optional. Filters the performance results by shape type. */
+    /**
+     * Optional. Filters the performance results by shape type.
+     */
     public String getShapeType() {
         return shapeType;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -50,23 +57,23 @@ public class ListDbSystemStoragePerformancesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDbSystemStoragePerformancesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The DB system storage management option. Used to list database versions available for
-         * that storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies
-         * Oracle Automatic Storage Management * LVM specifies logical volume manager, sometimes
-         * called logical disk manager.
+         * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
+         * * ASM specifies Oracle Automatic Storage Management
+         * * LVM specifies logical volume manager, sometimes called logical disk manager.
+         *
          */
         private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement =
                 null;
 
         /**
-         * The DB system storage management option. Used to list database versions available for
-         * that storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies
-         * Oracle Automatic Storage Management * LVM specifies logical volume manager, sometimes
-         * called logical disk manager.
+         * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
+         * * ASM specifies Oracle Automatic Storage Management
+         * * LVM specifies logical volume manager, sometimes called logical disk manager.
          *
          * @param storageManagement the value to set
          * @return this builder instance
@@ -77,12 +84,13 @@ public class ListDbSystemStoragePerformancesRequest
             return this;
         }
 
-        /** Optional. Filters the performance results by shape type. */
+        /**
+         * Optional. Filters the performance results by shape type.
+         */
         private String shapeType = null;
 
         /**
          * Optional. Filters the performance results by shape type.
-         *
          * @param shapeType the value to set
          * @return this builder instance
          */
@@ -91,7 +99,10 @@ public class ListDbSystemStoragePerformancesRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -107,19 +118,18 @@ public class ListDbSystemStoragePerformancesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -131,7 +141,6 @@ public class ListDbSystemStoragePerformancesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDbSystemStoragePerformancesRequest o) {
@@ -144,14 +153,12 @@ public class ListDbSystemStoragePerformancesRequest
         }
 
         /**
-         * Build the instance of ListDbSystemStoragePerformancesRequest as configured by this
-         * builder
+         * Build the instance of ListDbSystemStoragePerformancesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDbSystemStoragePerformancesRequest
          */
@@ -163,11 +170,9 @@ public class ListDbSystemStoragePerformancesRequest
         }
 
         /**
-         * Build the instance of ListDbSystemStoragePerformancesRequest as configured by this
-         * builder
+         * Build the instance of ListDbSystemStoragePerformancesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDbSystemStoragePerformancesRequest
@@ -179,14 +184,12 @@ public class ListDbSystemStoragePerformancesRequest
             request.shapeType = shapeType;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDbSystemStoragePerformancesRequest(storageManagement, shapeType,
-            // opcRequestId);
+            // new ListDbSystemStoragePerformancesRequest(storageManagement, shapeType, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -198,7 +201,6 @@ public class ListDbSystemStoragePerformancesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

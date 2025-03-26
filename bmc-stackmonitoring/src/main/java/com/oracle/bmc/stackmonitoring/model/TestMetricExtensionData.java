@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The Test result details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The Test result details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TestMetricExtensionData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TestMetricExtensionData.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TestMetricExtensionData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "testRunId",
@@ -43,61 +42,65 @@ public final class TestMetricExtensionData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Test Run Id */
+        /**
+         * Test Run Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("testRunId")
         private String testRunId;
 
         /**
          * Test Run Id
-         *
          * @param testRunId the value to set
          * @return this builder
-         */
+         **/
         public Builder testRunId(String testRunId) {
             this.testRunId = testRunId;
             this.__explicitlySet__.add("testRunId");
             return this;
         }
-        /** Test Run Metric Suffix */
+        /**
+         * Test Run Metric Suffix
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("testRunMetricSuffix")
         private String testRunMetricSuffix;
 
         /**
          * Test Run Metric Suffix
-         *
          * @param testRunMetricSuffix the value to set
          * @return this builder
-         */
+         **/
         public Builder testRunMetricSuffix(String testRunMetricSuffix) {
             this.testRunMetricSuffix = testRunMetricSuffix;
             this.__explicitlySet__.add("testRunMetricSuffix");
             return this;
         }
-        /** Test Run Namespace name */
+        /**
+         * Test Run Namespace name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("testRunNamespaceName")
         private String testRunNamespaceName;
 
         /**
          * Test Run Namespace name
-         *
          * @param testRunNamespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder testRunNamespaceName(String testRunNamespaceName) {
             this.testRunNamespaceName = testRunNamespaceName;
             this.__explicitlySet__.add("testRunNamespaceName");
             return this;
         }
-        /** Test Run Resource Group name */
+        /**
+         * Test Run Resource Group name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("testRunResourceGroupName")
         private String testRunResourceGroupName;
 
         /**
          * Test Run Resource Group name
-         *
          * @param testRunResourceGroupName the value to set
          * @return this builder
-         */
+         **/
         public Builder testRunResourceGroupName(String testRunResourceGroupName) {
             this.testRunResourceGroupName = testRunResourceGroupName;
             this.__explicitlySet__.add("testRunResourceGroupName");
@@ -138,7 +141,9 @@ public final class TestMetricExtensionData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +152,58 @@ public final class TestMetricExtensionData
         return new Builder().copy(this);
     }
 
-    /** Test Run Id */
+    /**
+     * Test Run Id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("testRunId")
     private final String testRunId;
 
     /**
      * Test Run Id
-     *
      * @return the value
-     */
+     **/
     public String getTestRunId() {
         return testRunId;
     }
 
-    /** Test Run Metric Suffix */
+    /**
+     * Test Run Metric Suffix
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("testRunMetricSuffix")
     private final String testRunMetricSuffix;
 
     /**
      * Test Run Metric Suffix
-     *
      * @return the value
-     */
+     **/
     public String getTestRunMetricSuffix() {
         return testRunMetricSuffix;
     }
 
-    /** Test Run Namespace name */
+    /**
+     * Test Run Namespace name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("testRunNamespaceName")
     private final String testRunNamespaceName;
 
     /**
      * Test Run Namespace name
-     *
      * @return the value
-     */
+     **/
     public String getTestRunNamespaceName() {
         return testRunNamespaceName;
     }
 
-    /** Test Run Resource Group name */
+    /**
+     * Test Run Resource Group name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("testRunResourceGroupName")
     private final String testRunResourceGroupName;
 
     /**
      * Test Run Resource Group name
-     *
      * @return the value
-     */
+     **/
     public String getTestRunResourceGroupName() {
         return testRunResourceGroupName;
     }
@@ -206,7 +215,6 @@ public final class TestMetricExtensionData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

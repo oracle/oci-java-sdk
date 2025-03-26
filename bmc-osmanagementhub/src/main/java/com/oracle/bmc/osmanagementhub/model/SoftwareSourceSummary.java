@@ -5,45 +5,46 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for a software source. A software source contains a collection of
- * packages. For more information, see [Managing Software
- * Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for a software source. A software source contains a collection of packages. For more information, see [Managing Software Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "softwareSourceType",
-        defaultImpl = SoftwareSourceSummary.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "softwareSourceType",
+    defaultImpl = SoftwareSourceSummary.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PrivateSoftwareSourceSummary.class,
-            name = "PRIVATE"),
+        value = PrivateSoftwareSourceSummary.class,
+        name = "PRIVATE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = VendorSoftwareSourceSummary.class,
-            name = "VENDOR"),
+        value = VendorSoftwareSourceSummary.class,
+        name = "VENDOR"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = VersionedCustomSoftwareSourceSummary.class,
-            name = "VERSIONED"),
+        value = VersionedCustomSoftwareSourceSummary.class,
+        name = "VERSIONED"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ThirdPartySoftwareSourceSummary.class,
-            name = "THIRD_PARTY"),
+        value = ThirdPartySoftwareSourceSummary.class,
+        name = "THIRD_PARTY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CustomSoftwareSourceSummary.class,
-            name = "CUSTOM")
+        value = CustomSoftwareSourceSummary.class,
+        name = "CUSTOM"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class SoftwareSourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class SoftwareSourceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -106,275 +107,273 @@ public class SoftwareSourceSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the software source.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the software source.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** User-friendly name for the software source. */
+    /**
+     * User-friendly name for the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * User-friendly name for the software source.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The repository ID for the software source. */
+    /**
+     * The repository ID for the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repoId")
     private final String repoId;
 
     /**
      * The repository ID for the software source.
-     *
      * @return the value
-     */
+     **/
     public String getRepoId() {
         return repoId;
     }
 
     /**
-     * URL for the repository. For vendor software sources, this is the URL to the regional yum
-     * server. For custom software sources, this is 'custom/<repoId>'.
-     */
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * URL for the repository. For vendor software sources, this is the URL to the regional yum
-     * server. For custom software sources, this is 'custom/<repoId>'.
-     *
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
     /**
-     * The date and time the software source was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the software source was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the software source was updated (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the software source was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the software source was updated (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the software source was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Description of the software source. For custom software sources, this is user-specified. */
+    /**
+     * Description of the software source. For custom software sources, this is user-specified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the software source. For custom software sources, this is user-specified.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Availability of the software source (for non-OCI environments). */
+    /**
+     * Availability of the software source (for non-OCI environments).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availability")
     private final Availability availability;
 
     /**
      * Availability of the software source (for non-OCI environments).
-     *
      * @return the value
-     */
+     **/
     public Availability getAvailability() {
         return availability;
     }
 
-    /** Availability of the software source (for OCI environments). */
+    /**
+     * Availability of the software source (for OCI environments).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
     private final Availability availabilityAtOci;
 
     /**
      * Availability of the software source (for OCI environments).
-     *
      * @return the value
-     */
+     **/
     public Availability getAvailabilityAtOci() {
         return availabilityAtOci;
     }
 
-    /** The OS family of the software source. */
+    /**
+     * The OS family of the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * The OS family of the software source.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** The architecture type supported by the software source. */
+    /**
+     * The architecture type supported by the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchType archType;
 
     /**
      * The architecture type supported by the software source.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchType() {
         return archType;
     }
 
-    /** Number of packages the software source contains. */
+    /**
+     * Number of packages the software source contains.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageCount")
     private final Long packageCount;
 
     /**
      * Number of packages the software source contains.
-     *
      * @return the value
-     */
+     **/
     public Long getPackageCount() {
         return packageCount;
     }
 
-    /** The current state of the software source. */
+    /**
+     * The current state of the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SoftwareSource.LifecycleState lifecycleState;
 
     /**
      * The current state of the software source.
-     *
      * @return the value
-     */
+     **/
     public SoftwareSource.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The size of the software source in bytes (B). */
+    /**
+     * The size of the software source in bytes (B).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Double size;
 
     /**
      * The size of the software source in bytes (B).
-     *
      * @return the value
-     */
+     **/
     public Double getSize() {
         return size;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -386,7 +385,6 @@ public class SoftwareSourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

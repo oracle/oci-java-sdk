@@ -6,37 +6,30 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseDataguardAssociationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetAutonomousContainerDatabaseDataguardAssociationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAutonomousContainerDatabaseDataguardAssociationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetAutonomousContainerDatabaseDataguardAssociationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Autonomous Container Database
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousContainerDatabaseId;
 
     /**
-     * The Autonomous Container Database
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
     }
     /**
-     * The Autonomous Container Database-Autonomous Data Guard association
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousContainerDatabaseDataguardAssociationId;
 
     /**
-     * The Autonomous Container Database-Autonomous Data Guard association
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousContainerDatabaseDataguardAssociationId() {
         return autonomousContainerDatabaseDataguardAssociationId;
@@ -45,19 +38,17 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAutonomousContainerDatabaseDataguardAssociationRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Autonomous Container Database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousContainerDatabaseId = null;
 
         /**
-         * The Autonomous Container Database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param autonomousContainerDatabaseId the value to set
          * @return this builder instance
          */
@@ -67,15 +58,12 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
         }
 
         /**
-         * The Autonomous Container Database-Autonomous Data Guard association
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousContainerDatabaseDataguardAssociationId = null;
 
         /**
-         * The Autonomous Container Database-Autonomous Data Guard association
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param autonomousContainerDatabaseDataguardAssociationId the value to set
          * @return this builder instance
          */
@@ -88,19 +76,18 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -112,7 +99,6 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetAutonomousContainerDatabaseDataguardAssociationRequest o) {
@@ -125,14 +111,12 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
         }
 
         /**
-         * Build the instance of GetAutonomousContainerDatabaseDataguardAssociationRequest as
-         * configured by this builder
+         * Build the instance of GetAutonomousContainerDatabaseDataguardAssociationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetAutonomousContainerDatabaseDataguardAssociationRequest
          */
@@ -145,11 +129,9 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
         }
 
         /**
-         * Build the instance of GetAutonomousContainerDatabaseDataguardAssociationRequest as
-         * configured by this builder
+         * Build the instance of GetAutonomousContainerDatabaseDataguardAssociationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetAutonomousContainerDatabaseDataguardAssociationRequest
@@ -162,14 +144,12 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
             request.autonomousContainerDatabaseDataguardAssociationId =
                     autonomousContainerDatabaseDataguardAssociationId;
             return request;
-            // new
-            // GetAutonomousContainerDatabaseDataguardAssociationRequest(autonomousContainerDatabaseId, autonomousContainerDatabaseDataguardAssociationId);
+            // new GetAutonomousContainerDatabaseDataguardAssociationRequest(autonomousContainerDatabaseId, autonomousContainerDatabaseDataguardAssociationId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -181,7 +161,6 @@ public class GetAutonomousContainerDatabaseDataguardAssociationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

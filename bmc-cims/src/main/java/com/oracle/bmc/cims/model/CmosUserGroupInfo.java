@@ -5,24 +5,22 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Identifier and name of the technical support request's user group ({@code userGroupId} and {@code
- * userGroupName}). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+ * Identifier and name of the technical support request's user group ({@code userGroupId} and {@code userGroupName}).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CmosUserGroupInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CmosUserGroupInfo
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CmosUserGroupInfo.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CmosUserGroupInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userGroupId", "userGroupName"})
     public CmosUserGroupInfo(String userGroupId, String userGroupName) {
@@ -34,38 +32,36 @@ public final class CmosUserGroupInfo
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
-         */
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
         private String userGroupId;
 
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
          *
          * @param userGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder userGroupId(String userGroupId) {
             this.userGroupId = userGroupId;
             this.__explicitlySet__.add("userGroupId");
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in
-         * My Oracle Cloud Support portal.
-         */
+         * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
         private String userGroupName;
 
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in
-         * My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
          *
          * @param userGroupName the value to set
          * @return this builder
-         */
+         **/
         public Builder userGroupName(String userGroupName) {
             this.userGroupName = userGroupName;
             this.__explicitlySet__.add("userGroupName");
@@ -95,7 +91,9 @@ public final class CmosUserGroupInfo
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,35 +103,33 @@ public final class CmosUserGroupInfo
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
-     */
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
     private final String userGroupId;
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
      *
      * @return the value
-     */
+     **/
     public String getUserGroupId() {
         return userGroupId;
     }
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
-     * Oracle Cloud Support portal.
-     */
+     * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
     private final String userGroupName;
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
-     * Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
      *
      * @return the value
-     */
+     **/
     public String getUserGroupName() {
         return userGroupName;
     }
@@ -145,7 +141,6 @@ public final class CmosUserGroupInfo
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

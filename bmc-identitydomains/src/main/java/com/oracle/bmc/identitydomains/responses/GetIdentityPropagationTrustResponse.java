@@ -6,30 +6,28 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GetIdentityPropagationTrustResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code IdentityPropagationTrust} instance. */
+    /**
+     * The returned IdentityPropagationTrust instance.
+     */
     private com.oracle.bmc.identitydomains.model.IdentityPropagationTrust identityPropagationTrust;
 
     /**
-     * The returned {@code IdentityPropagationTrust} instance.
-     *
+     * The returned IdentityPropagationTrust instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.IdentityPropagationTrust
@@ -45,7 +43,7 @@ public class GetIdentityPropagationTrustResponse extends com.oracle.bmc.response
     })
     private GetIdentityPropagationTrustResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identitydomains.model.IdentityPropagationTrust
                     identityPropagationTrust) {
@@ -54,35 +52,28 @@ public class GetIdentityPropagationTrustResponse extends com.oracle.bmc.response
         this.identityPropagationTrust = identityPropagationTrust;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetIdentityPropagationTrustResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -91,13 +82,14 @@ public class GetIdentityPropagationTrustResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code IdentityPropagationTrust} instance. */
+        /**
+         * The returned IdentityPropagationTrust instance.
+         */
         private com.oracle.bmc.identitydomains.model.IdentityPropagationTrust
                 identityPropagationTrust;
 
         /**
-         * The returned {@code IdentityPropagationTrust} instance.
-         *
+         * The returned IdentityPropagationTrust instance.
          * @param identityPropagationTrust the value to set
          * @return this builder
          */
@@ -110,10 +102,8 @@ public class GetIdentityPropagationTrustResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetIdentityPropagationTrustResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -125,10 +115,8 @@ public class GetIdentityPropagationTrustResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetIdentityPropagationTrustResponse build() {
             return new GetIdentityPropagationTrustResponse(
                     __httpStatusCode__, headers, opcRequestId, identityPropagationTrust);
@@ -137,7 +125,6 @@ public class GetIdentityPropagationTrustResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

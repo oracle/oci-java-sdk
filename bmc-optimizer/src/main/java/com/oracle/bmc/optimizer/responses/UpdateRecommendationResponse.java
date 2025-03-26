@@ -6,9 +6,12 @@ package com.oracle.bmc.optimizer.responses;
 
 import com.oracle.bmc.optimizer.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned {@code Recommendation} instance. */
+    /**
+     * The returned Recommendation instance.
+     */
     private com.oracle.bmc.optimizer.model.Recommendation recommendation;
 
     /**
-     * The returned {@code Recommendation} instance.
-     *
+     * The returned Recommendation instance.
      * @return the value
      */
     public com.oracle.bmc.optimizer.model.Recommendation getRecommendation() {
@@ -57,7 +62,7 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
     })
     private UpdateRecommendationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.optimizer.model.Recommendation recommendation) {
@@ -67,25 +72,25 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
         this.recommendation = recommendation;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateRecommendationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +105,15 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code Recommendation} instance. */
+        /**
+         * The returned Recommendation instance.
+         */
         private com.oracle.bmc.optimizer.model.Recommendation recommendation;
 
         /**
-         * The returned {@code Recommendation} instance.
-         *
+         * The returned Recommendation instance.
          * @param recommendation the value to set
          * @return this builder
          */
@@ -134,10 +141,8 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateRecommendationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +155,8 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateRecommendationResponse build() {
             return new UpdateRecommendationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, recommendation);
@@ -162,7 +165,6 @@ public class UpdateRecommendationResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

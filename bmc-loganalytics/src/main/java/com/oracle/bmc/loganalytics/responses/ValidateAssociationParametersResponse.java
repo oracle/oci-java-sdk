@@ -6,9 +6,12 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ValidateAssociationParametersResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,13 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -36,13 +38,14 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned {@code LogAnalyticsAssociationParameterCollection} instance. */
+    /**
+     * The returned LogAnalyticsAssociationParameterCollection instance.
+     */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
             logAnalyticsAssociationParameterCollection;
 
     /**
-     * The returned {@code LogAnalyticsAssociationParameterCollection} instance.
-     *
+     * The returned LogAnalyticsAssociationParameterCollection instance.
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
@@ -59,7 +62,7 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
     })
     private ValidateAssociationParametersResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
@@ -71,26 +74,25 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
                 logAnalyticsAssociationParameterCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ValidateAssociationParametersResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -105,14 +107,13 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -122,13 +123,14 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned {@code LogAnalyticsAssociationParameterCollection} instance. */
+        /**
+         * The returned LogAnalyticsAssociationParameterCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
                 logAnalyticsAssociationParameterCollection;
 
         /**
-         * The returned {@code LogAnalyticsAssociationParameterCollection} instance.
-         *
+         * The returned LogAnalyticsAssociationParameterCollection instance.
          * @param logAnalyticsAssociationParameterCollection the value to set
          * @return this builder
          */
@@ -142,10 +144,8 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ValidateAssociationParametersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -159,10 +159,8 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ValidateAssociationParametersResponse build() {
             return new ValidateAssociationParametersResponse(
                     __httpStatusCode__,
@@ -175,7 +173,6 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

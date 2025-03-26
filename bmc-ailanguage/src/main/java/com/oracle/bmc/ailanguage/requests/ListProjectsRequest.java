@@ -6,89 +6,109 @@ package com.oracle.bmc.ailanguage.requests;
 
 import com.oracle.bmc.ailanguage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListProjectsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProjectsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListProjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProjectsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the
-     * resource type.
+     * <b>Filter</b> results by the specified lifecycle state. Must be a valid
+     * state for the resource type.
+     *
      */
     private com.oracle.bmc.ailanguage.model.Project.LifecycleState lifecycleState;
 
     /**
-     * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the
-     * resource type.
+     * <b>Filter</b> results by the specified lifecycle state. Must be a valid
+     * state for the resource type.
+     *
      */
     public com.oracle.bmc.ailanguage.model.Project.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The ID of the project for which to list the objects. */
+    /**
+     * The ID of the project for which to list the objects.
+     */
     private String projectId;
 
-    /** The ID of the project for which to list the objects. */
+    /**
+     * The ID of the project for which to list the objects.
+     */
     public String getProjectId() {
         return projectId;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.ailanguage.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.ailanguage.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by {@code
-     * timeCreated}, the results are shown in descending order. When you sort by {@code
-     * displayName}, the results are shown in ascending order. Sort order for the {@code
-     * displayName} field is case sensitive.
+     * Specifies the field to sort by. Accepts only one field.
+     * By default, when you sort by {@code timeCreated}, the results are shown
+     * in descending order. When you sort by {@code displayName}, the results are
+     * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by {@code
-     * timeCreated}, the results are shown in descending order. When you sort by {@code
-     * displayName}, the results are shown in ascending order. Sort order for the {@code
-     * displayName} field is case sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the field to sort by. Accepts only one field.
+     * By default, when you sort by {@code timeCreated}, the results are shown
+     * in descending order. When you sort by {@code displayName}, the results are
+     * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -122,18 +142,23 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by {@code
-     * timeCreated}, the results are shown in descending order. When you sort by {@code
-     * displayName}, the results are shown in ascending order. Sort order for the {@code
-     * displayName} field is case sensitive.
+     * Specifies the field to sort by. Accepts only one field.
+     * By default, when you sort by {@code timeCreated}, the results are shown
+     * in descending order. When you sort by {@code displayName}, the results are
+     * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -141,15 +166,17 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListProjectsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -159,14 +186,15 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the
-         * resource type.
+         * <b>Filter</b> results by the specified lifecycle state. Must be a valid
+         * state for the resource type.
+         *
          */
         private com.oracle.bmc.ailanguage.model.Project.LifecycleState lifecycleState = null;
 
         /**
-         * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the
-         * resource type.
+         * <b>Filter</b> results by the specified lifecycle state. Must be a valid
+         * state for the resource type.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -177,12 +205,13 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -191,12 +220,13 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -206,15 +236,12 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -223,12 +250,13 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The ID of the project for which to list the objects. */
+        /**
+         * The ID of the project for which to list the objects.
+         */
         private String projectId = null;
 
         /**
          * The ID of the project for which to list the objects.
-         *
          * @param projectId the value to set
          * @return this builder instance
          */
@@ -237,12 +265,13 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.ailanguage.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -252,18 +281,19 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by
-         * {@code timeCreated}, the results are shown in descending order. When you sort by {@code
-         * displayName}, the results are shown in ascending order. Sort order for the {@code
-         * displayName} field is case sensitive.
+         * Specifies the field to sort by. Accepts only one field.
+         * By default, when you sort by {@code timeCreated}, the results are shown
+         * in descending order. When you sort by {@code displayName}, the results are
+         * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by
-         * {@code timeCreated}, the results are shown in descending order. When you sort by {@code
-         * displayName}, the results are shown in ascending order. Sort order for the {@code
-         * displayName} field is case sensitive.
+         * Specifies the field to sort by. Accepts only one field.
+         * By default, when you sort by {@code timeCreated}, the results are shown
+         * in descending order. When you sort by {@code displayName}, the results are
+         * shown in ascending order. Sort order for the {@code displayName} field is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -273,12 +303,13 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -289,19 +320,18 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -313,7 +343,6 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListProjectsRequest o) {
@@ -334,11 +363,10 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListProjectsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListProjectsRequest
          */
@@ -352,8 +380,7 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListProjectsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListProjectsRequest
@@ -370,14 +397,12 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListProjectsRequest(compartmentId, lifecycleState, displayName, limit, page,
-            // projectId, sortOrder, sortBy, opcRequestId);
+            // new ListProjectsRequest(compartmentId, lifecycleState, displayName, limit, page, projectId, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -395,7 +420,6 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

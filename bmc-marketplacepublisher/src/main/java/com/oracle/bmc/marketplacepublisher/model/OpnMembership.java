@@ -5,21 +5,19 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * OPN membership information <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * OPN membership information
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OpnMembership.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OpnMembership extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OpnMembership extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeStart",
@@ -44,76 +42,81 @@ public final class OpnMembership extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OPN membership start date. An RFC3339 formatted datetime string */
+        /**
+         * OPN membership start date. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
          * OPN membership start date. An RFC3339 formatted datetime string
-         *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** OPN membership end date. An RFC3339 formatted datetime string */
+        /**
+         * OPN membership end date. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
          * OPN membership end date. An RFC3339 formatted datetime string
-         *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** OPN status */
+        /**
+         * OPN status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opnStatus")
         private OpnStatus opnStatus;
 
         /**
          * OPN status
-         *
          * @param opnStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder opnStatus(OpnStatus opnStatus) {
             this.opnStatus = opnStatus;
             this.__explicitlySet__.add("opnStatus");
             return this;
         }
-        /** OPN Number number */
+        /**
+         * OPN Number number
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opnNumber")
         private String opnNumber;
 
         /**
          * OPN Number number
-         *
          * @param opnNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder opnNumber(String opnNumber) {
             this.opnNumber = opnNumber;
             this.__explicitlySet__.add("opnNumber");
             return this;
         }
-        /** OPN membership type */
+        /**
+         * OPN membership type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opnMembershipType")
         private String opnMembershipType;
 
         /**
          * OPN membership type
-         *
          * @param opnMembershipType the value to set
          * @return this builder
-         */
+         **/
         public Builder opnMembershipType(String opnMembershipType) {
             this.opnMembershipType = opnMembershipType;
             this.__explicitlySet__.add("opnMembershipType");
@@ -158,7 +161,9 @@ public final class OpnMembership extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,41 +172,45 @@ public final class OpnMembership extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** OPN membership start date. An RFC3339 formatted datetime string */
+    /**
+     * OPN membership start date. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
      * OPN membership start date. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** OPN membership end date. An RFC3339 formatted datetime string */
+    /**
+     * OPN membership end date. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
      * OPN membership end date. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** OPN status */
-    public enum OpnStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * OPN status
+     **/
+    public enum OpnStatus {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         RenewalInProgress("RENEWAL_IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -240,41 +249,44 @@ public final class OpnMembership extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** OPN status */
+    /**
+     * OPN status
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opnStatus")
     private final OpnStatus opnStatus;
 
     /**
      * OPN status
-     *
      * @return the value
-     */
+     **/
     public OpnStatus getOpnStatus() {
         return opnStatus;
     }
 
-    /** OPN Number number */
+    /**
+     * OPN Number number
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opnNumber")
     private final String opnNumber;
 
     /**
      * OPN Number number
-     *
      * @return the value
-     */
+     **/
     public String getOpnNumber() {
         return opnNumber;
     }
 
-    /** OPN membership type */
+    /**
+     * OPN membership type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opnMembershipType")
     private final String opnMembershipType;
 
     /**
      * OPN membership type
-     *
      * @return the value
-     */
+     **/
     public String getOpnMembershipType() {
         return opnMembershipType;
     }
@@ -286,7 +298,6 @@ public final class OpnMembership extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

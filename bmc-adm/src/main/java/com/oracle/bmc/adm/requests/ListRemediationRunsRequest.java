@@ -6,73 +6,93 @@ package com.oracle.bmc.adm.requests;
 
 import com.oracle.bmc.adm.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRunsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRemediationRunsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRunsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRemediationRunsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * A filter to return only resources that match the specified identifier. Required only if the
-     * compartmentId query parameter is not specified.
+     * A filter to return only resources that match the specified identifier.
+     * Required only if the compartmentId query parameter is not specified.
+     *
      */
     private String id;
 
     /**
-     * A filter to return only resources that match the specified identifier. Required only if the
-     * compartmentId query parameter is not specified.
+     * A filter to return only resources that match the specified identifier.
+     * Required only if the compartmentId query parameter is not specified.
+     *
      */
     public String getId() {
         return id;
     }
-    /** A filter to return only resources that match the specified Remediation Recipe identifier. */
+    /**
+     * A filter to return only resources that match the specified Remediation Recipe identifier.
+     */
     private String remediationRecipeId;
 
-    /** A filter to return only resources that match the specified Remediation Recipe identifier. */
+    /**
+     * A filter to return only resources that match the specified Remediation Recipe identifier.
+     */
     public String getRemediationRecipeId() {
         return remediationRecipeId;
     }
-    /** A filter to return only Remediation Runs that match the specified lifecycleState. */
+    /**
+     * A filter to return only Remediation Runs that match the specified lifecycleState.
+     */
     private com.oracle.bmc.adm.model.RemediationRun.LifecycleState lifecycleState;
 
-    /** A filter to return only Remediation Runs that match the specified lifecycleState. */
+    /**
+     * A filter to return only Remediation Runs that match the specified lifecycleState.
+     */
     public com.oracle.bmc.adm.model.RemediationRun.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field used to sort Remediation Runs. Only one sort order is allowed. Default order for
-     * _timeCreated_ is **descending**. Default order for _timeFinished_ is **descending**. Default
-     * order for _timeStarted_ is **descending**. Default order for _displayName_ is **ascending
-     * alphabetical order**. Default order for _lifecycleState_ is the following sequence:
-     * **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**. Default order for
-     * currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     * The field used to sort Remediation Runs. Only one sort order is allowed.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeFinished_ is **descending**.
+     * Default order for _timeStarted_ is **descending**.
+     * Default order for _displayName_ is **ascending alphabetical order**.
+     * Default order for _lifecycleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**.
+     * Default order for currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field used to sort Remediation Runs. Only one sort order is allowed. Default order for
-     * _timeCreated_ is **descending**. Default order for _timeFinished_ is **descending**. Default
-     * order for _timeStarted_ is **descending**. Default order for _displayName_ is **ascending
-     * alphabetical order**. Default order for _lifecycleState_ is the following sequence:
-     * **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**. Default order for
-     * currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field used to sort Remediation Runs. Only one sort order is allowed.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeFinished_ is **descending**.
+     * Default order for _timeStarted_ is **descending**.
+     * Default order for _displayName_ is **ascending alphabetical order**.
+     * Default order for _lifecycleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**.
+     * Default order for currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         TimeFinished("timeFinished"),
         TimeStarted("timeStarted"),
@@ -110,12 +130,14 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field used to sort Remediation Runs. Only one sort order is allowed. Default order for
-     * _timeCreated_ is **descending**. Default order for _timeFinished_ is **descending**. Default
-     * order for _timeStarted_ is **descending**. Default order for _displayName_ is **ascending
-     * alphabetical order**. Default order for _lifecycleState_ is the following sequence:
-     * **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**. Default order for
-     * currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     * The field used to sort Remediation Runs. Only one sort order is allowed.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeFinished_ is **descending**.
+     * Default order for _timeStarted_ is **descending**.
+     * Default order for _displayName_ is **ascending alphabetical order**.
+     * Default order for _lifecycleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**.
+     * Default order for currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -123,40 +145,48 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A filter to return only resources that belong to the specified compartment identifier.
      * Required only if the id query param is not specified.
+     *
      */
     private String compartmentId;
 
     /**
      * A filter to return only resources that belong to the specified compartment identifier.
      * Required only if the id query param is not specified.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -164,18 +194,20 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListRemediationRunsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * A filter to return only resources that match the specified identifier. Required only if
-         * the compartmentId query parameter is not specified.
+         * A filter to return only resources that match the specified identifier.
+         * Required only if the compartmentId query parameter is not specified.
+         *
          */
         private String id = null;
 
         /**
-         * A filter to return only resources that match the specified identifier. Required only if
-         * the compartmentId query parameter is not specified.
+         * A filter to return only resources that match the specified identifier.
+         * Required only if the compartmentId query parameter is not specified.
          *
          * @param id the value to set
          * @return this builder instance
@@ -192,7 +224,6 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * A filter to return only resources that match the specified Remediation Recipe identifier.
-         *
          * @param remediationRecipeId the value to set
          * @return this builder instance
          */
@@ -201,12 +232,13 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter to return only Remediation Runs that match the specified lifecycleState. */
+        /**
+         * A filter to return only Remediation Runs that match the specified lifecycleState.
+         */
         private com.oracle.bmc.adm.model.RemediationRun.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only Remediation Runs that match the specified lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -216,12 +248,13 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -230,12 +263,13 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -245,22 +279,25 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field used to sort Remediation Runs. Only one sort order is allowed. Default order
-         * for _timeCreated_ is **descending**. Default order for _timeFinished_ is **descending**.
-         * Default order for _timeStarted_ is **descending**. Default order for _displayName_ is
-         * **ascending alphabetical order**. Default order for _lifecycleState_ is the following
-         * sequence: **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**. Default order
-         * for currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+         * The field used to sort Remediation Runs. Only one sort order is allowed.
+         * Default order for _timeCreated_ is **descending**.
+         * Default order for _timeFinished_ is **descending**.
+         * Default order for _timeStarted_ is **descending**.
+         * Default order for _displayName_ is **ascending alphabetical order**.
+         * Default order for _lifecycleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**.
+         * Default order for currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used to sort Remediation Runs. Only one sort order is allowed. Default order
-         * for _timeCreated_ is **descending**. Default order for _timeFinished_ is **descending**.
-         * Default order for _timeStarted_ is **descending**. Default order for _displayName_ is
-         * **ascending alphabetical order**. Default order for _lifecycleState_ is the following
-         * sequence: **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**. Default order
-         * for currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
+         * The field used to sort Remediation Runs. Only one sort order is allowed.
+         * Default order for _timeCreated_ is **descending**.
+         * Default order for _timeFinished_ is **descending**.
+         * Default order for _timeStarted_ is **descending**.
+         * Default order for _displayName_ is **ascending alphabetical order**.
+         * Default order for _lifecycleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, DELETING, DELETED, and FAILED**.
+         * Default order for currentStageType is the following sequence: **DETECT, RECOMMEND, VERIFY, and APPLY**.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -273,6 +310,7 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * A filter to return only resources that belong to the specified compartment identifier.
          * Required only if the id query param is not specified.
+         *
          */
         private String compartmentId = null;
 
@@ -288,12 +326,13 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -303,15 +342,12 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -320,12 +356,13 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -336,19 +373,18 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -360,7 +396,6 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListRemediationRunsRequest o) {
@@ -382,11 +417,10 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListRemediationRunsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListRemediationRunsRequest
          */
@@ -400,8 +434,7 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListRemediationRunsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListRemediationRunsRequest
@@ -419,14 +452,12 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListRemediationRunsRequest(id, remediationRecipeId, lifecycleState, displayName,
-            // sortOrder, sortBy, compartmentId, limit, page, opcRequestId);
+            // new ListRemediationRunsRequest(id, remediationRecipeId, lifecycleState, displayName, sortOrder, sortBy, compartmentId, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -445,7 +476,6 @@ public class ListRemediationRunsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

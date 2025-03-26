@@ -6,57 +6,70 @@ package com.oracle.bmc.apmcontrolplane.requests;
 
 import com.oracle.bmc.apmcontrolplane.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmcontrolplane/GenerateDataKeysExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateDataKeysRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmcontrolplane/GenerateDataKeysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateDataKeysRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GenerateDataKeysRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>> {
 
-    /** List of new Data Keys to be generated. */
+    /**
+     * List of new Data Keys to be generated.
+     */
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
             generateDataKeysListDetails;
 
-    /** List of new Data Keys to be generated. */
+    /**
+     * List of new Data Keys to be generated.
+     */
     public java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
             getGenerateDataKeysListDetails() {
         return generateDataKeysListDetails;
     }
-    /** The OCID of the APM domain. */
+    /**
+     * The OCID of the APM domain.
+     */
     private String apmDomainId;
 
-    /** The OCID of the APM domain. */
+    /**
+     * The OCID of the APM domain.
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
     /**
-     * For optimistic concurrency control. Set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource. The resource will be updated or
-     * deleted only if the etag you provide matches the resource's current etag value.
+     * For optimistic concurrency control. Set the {@code if-match} parameter
+     * to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. Set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource. The resource will be updated or
-     * deleted only if the etag you provide matches the resource's current etag value.
+     * For optimistic concurrency control. Set the {@code if-match} parameter
+     * to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -69,16 +82,18 @@ public class GenerateDataKeysRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GenerateDataKeysRequest,
                     java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** List of new Data Keys to be generated. */
+        /**
+         * List of new Data Keys to be generated.
+         */
         private java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
                 generateDataKeysListDetails = null;
 
         /**
          * List of new Data Keys to be generated.
-         *
          * @param generateDataKeysListDetails the value to set
          * @return this builder instance
          */
@@ -91,7 +106,6 @@ public class GenerateDataKeysRequest
 
         /**
          * Singular setter. List of new Data Keys to be generated.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -100,12 +114,13 @@ public class GenerateDataKeysRequest
             return this.generateDataKeysListDetails(java.util.Arrays.asList(singularValue));
         }
 
-        /** The OCID of the APM domain. */
+        /**
+         * The OCID of the APM domain.
+         */
         private String apmDomainId = null;
 
         /**
          * The OCID of the APM domain.
-         *
          * @param apmDomainId the value to set
          * @return this builder instance
          */
@@ -115,18 +130,19 @@ public class GenerateDataKeysRequest
         }
 
         /**
-         * For optimistic concurrency control. Set the {@code if-match} parameter to the value of
-         * the etag from a previous GET or POST response for that resource. The resource will be
-         * updated or deleted only if the etag you provide matches the resource's current etag
-         * value.
+         * For optimistic concurrency control. Set the {@code if-match} parameter
+         * to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. Set the {@code if-match} parameter to the value of
-         * the etag from a previous GET or POST response for that resource. The resource will be
-         * updated or deleted only if the etag you provide matches the resource's current etag
-         * value.
+         * For optimistic concurrency control. Set the {@code if-match} parameter
+         * to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -136,12 +152,13 @@ public class GenerateDataKeysRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -152,19 +169,18 @@ public class GenerateDataKeysRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -176,7 +192,6 @@ public class GenerateDataKeysRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GenerateDataKeysRequest o) {
@@ -192,11 +207,10 @@ public class GenerateDataKeysRequest
         /**
          * Build the instance of GenerateDataKeysRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GenerateDataKeysRequest
          */
@@ -209,7 +223,6 @@ public class GenerateDataKeysRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -223,8 +236,7 @@ public class GenerateDataKeysRequest
         /**
          * Build the instance of GenerateDataKeysRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GenerateDataKeysRequest
@@ -236,14 +248,12 @@ public class GenerateDataKeysRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GenerateDataKeysRequest(generateDataKeysListDetails, apmDomainId, ifMatch,
-            // opcRequestId);
+            // new GenerateDataKeysRequest(generateDataKeysListDetails, apmDomainId, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -256,7 +266,6 @@ public class GenerateDataKeysRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

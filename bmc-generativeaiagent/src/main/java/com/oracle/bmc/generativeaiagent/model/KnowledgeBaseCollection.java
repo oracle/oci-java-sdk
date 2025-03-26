@@ -5,24 +5,23 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * Results of a knowledge base search. Contains both KnowledgeBaseSummary items and other
- * information, such as metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * Results of a knowledge base search. Contains both KnowledgeBaseSummary items and other information, such as metadata.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KnowledgeBaseCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = KnowledgeBaseCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KnowledgeBaseCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public KnowledgeBaseCollection(java.util.List<KnowledgeBaseSummary> items) {
@@ -32,16 +31,17 @@ public final class KnowledgeBaseCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of knowledge bases. */
+        /**
+         * List of knowledge bases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<KnowledgeBaseSummary> items;
 
         /**
          * List of knowledge bases.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<KnowledgeBaseSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -68,7 +68,9 @@ public final class KnowledgeBaseCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +79,16 @@ public final class KnowledgeBaseCollection
         return new Builder().copy(this);
     }
 
-    /** List of knowledge bases. */
+    /**
+     * List of knowledge bases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<KnowledgeBaseSummary> items;
 
     /**
      * List of knowledge bases.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<KnowledgeBaseSummary> getItems() {
         return items;
     }
@@ -97,7 +100,6 @@ public final class KnowledgeBaseCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

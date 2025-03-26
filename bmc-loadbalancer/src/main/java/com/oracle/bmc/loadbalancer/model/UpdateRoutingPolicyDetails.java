@@ -5,23 +5,22 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * An updated list of routing rules that overwrites the existing list of routing rules. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * An updated list of routing rules that overwrites the existing list of routing rules.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateRoutingPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateRoutingPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateRoutingPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"conditionLanguageVersion", "rules"})
     public UpdateRoutingPolicyDetails(
@@ -33,7 +32,10 @@ public final class UpdateRoutingPolicyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The version of the language in which {@code condition} of {@code rules} are composed. */
+        /**
+         * The version of the language in which {@code condition} of {@code rules} are composed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
         private ConditionLanguageVersion conditionLanguageVersion;
 
@@ -42,22 +44,23 @@ public final class UpdateRoutingPolicyDetails
          *
          * @param conditionLanguageVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder conditionLanguageVersion(ConditionLanguageVersion conditionLanguageVersion) {
             this.conditionLanguageVersion = conditionLanguageVersion;
             this.__explicitlySet__.add("conditionLanguageVersion");
             return this;
         }
-        /** The list of routing rules. */
+        /**
+         * The list of routing rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<RoutingRule> rules;
 
         /**
          * The list of routing rules.
-         *
          * @param rules the value to set
          * @return this builder
-         */
+         **/
         public Builder rules(java.util.List<RoutingRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -88,7 +91,9 @@ public final class UpdateRoutingPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,8 +102,11 @@ public final class UpdateRoutingPolicyDetails
         return new Builder().copy(this);
     }
 
-    /** The version of the language in which {@code condition} of {@code rules} are composed. */
-    public enum ConditionLanguageVersion implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The version of the language in which {@code condition} of {@code rules} are composed.
+     *
+     **/
+    public enum ConditionLanguageVersion {
         V1("V1"),
         ;
 
@@ -129,7 +137,10 @@ public final class UpdateRoutingPolicyDetails
             throw new IllegalArgumentException("Invalid ConditionLanguageVersion: " + key);
         }
     };
-    /** The version of the language in which {@code condition} of {@code rules} are composed. */
+    /**
+     * The version of the language in which {@code condition} of {@code rules} are composed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
     private final ConditionLanguageVersion conditionLanguageVersion;
 
@@ -137,20 +148,21 @@ public final class UpdateRoutingPolicyDetails
      * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      * @return the value
-     */
+     **/
     public ConditionLanguageVersion getConditionLanguageVersion() {
         return conditionLanguageVersion;
     }
 
-    /** The list of routing rules. */
+    /**
+     * The list of routing rules.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<RoutingRule> rules;
 
     /**
      * The list of routing rules.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RoutingRule> getRules() {
         return rules;
     }
@@ -162,7 +174,6 @@ public final class UpdateRoutingPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,47 +6,52 @@ package com.oracle.bmc.containerengine.requests;
 
 import com.oracle.bmc.containerengine.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateVirtualNodePoolExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateVirtualNodePoolRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateVirtualNodePoolExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateVirtualNodePoolRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class CreateVirtualNodePoolRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.CreateVirtualNodePoolDetails> {
 
-    /** The details of the virtual node pool to create. */
+    /**
+     * The details of the virtual node pool to create.
+     */
     private com.oracle.bmc.containerengine.model.CreateVirtualNodePoolDetails
             createVirtualNodePoolDetails;
 
-    /** The details of the virtual node pool to create. */
+    /**
+     * The details of the virtual node pool to create.
+     */
     public com.oracle.bmc.containerengine.model.CreateVirtualNodePoolDetails
             getCreateVirtualNodePoolDetails() {
         return createVirtualNodePoolDetails;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if
+     * the request is retried. Idempotency tokens expire after 24 hours.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if
+     * the request is retried. Idempotency tokens expire after 24 hours.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -54,7 +59,6 @@ public class CreateVirtualNodePoolRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -67,16 +71,18 @@ public class CreateVirtualNodePoolRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateVirtualNodePoolRequest,
                     com.oracle.bmc.containerengine.model.CreateVirtualNodePoolDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details of the virtual node pool to create. */
+        /**
+         * The details of the virtual node pool to create.
+         */
         private com.oracle.bmc.containerengine.model.CreateVirtualNodePoolDetails
                 createVirtualNodePoolDetails = null;
 
         /**
          * The details of the virtual node pool to create.
-         *
          * @param createVirtualNodePoolDetails the value to set
          * @return this builder instance
          */
@@ -88,14 +94,15 @@ public class CreateVirtualNodePoolRequest
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -106,14 +113,15 @@ public class CreateVirtualNodePoolRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -125,19 +133,18 @@ public class CreateVirtualNodePoolRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -149,7 +156,6 @@ public class CreateVirtualNodePoolRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateVirtualNodePoolRequest o) {
@@ -164,11 +170,10 @@ public class CreateVirtualNodePoolRequest
         /**
          * Build the instance of CreateVirtualNodePoolRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateVirtualNodePoolRequest
          */
@@ -181,7 +186,6 @@ public class CreateVirtualNodePoolRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -195,8 +199,7 @@ public class CreateVirtualNodePoolRequest
         /**
          * Build the instance of CreateVirtualNodePoolRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateVirtualNodePoolRequest
@@ -207,14 +210,12 @@ public class CreateVirtualNodePoolRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateVirtualNodePoolRequest(createVirtualNodePoolDetails, opcRetryToken,
-            // opcRequestId);
+            // new CreateVirtualNodePoolRequest(createVirtualNodePoolDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -226,7 +227,6 @@ public class CreateVirtualNodePoolRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

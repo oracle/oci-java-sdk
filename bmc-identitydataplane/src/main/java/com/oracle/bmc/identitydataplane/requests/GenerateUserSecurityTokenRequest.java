@@ -6,26 +6,21 @@ package com.oracle.bmc.identitydataplane.requests;
 
 import com.oracle.bmc.identitydataplane.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydataplane/GenerateUserSecurityTokenExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GenerateUserSecurityTokenRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydataplane/GenerateUserSecurityTokenExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateUserSecurityTokenRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GenerateUserSecurityTokenRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identitydataplane.model.GenerateUserSecurityTokenDetails> {
 
     /**
-     * The key-value pair object storing the token exchange request parameters required to obtain a
-     * UPST for self.
+     * The key-value pair object storing the token exchange request parameters required to obtain a UPST for self.
      */
     private com.oracle.bmc.identitydataplane.model.GenerateUserSecurityTokenDetails
             generateUserSecurityTokenDetails;
 
     /**
-     * The key-value pair object storing the token exchange request parameters required to obtain a
-     * UPST for self.
+     * The key-value pair object storing the token exchange request parameters required to obtain a UPST for self.
      */
     public com.oracle.bmc.identitydataplane.model.GenerateUserSecurityTokenDetails
             getGenerateUserSecurityTokenDetails() {
@@ -34,12 +29,14 @@ public class GenerateUserSecurityTokenRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -47,7 +44,6 @@ public class GenerateUserSecurityTokenRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -60,20 +56,18 @@ public class GenerateUserSecurityTokenRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GenerateUserSecurityTokenRequest,
                     com.oracle.bmc.identitydataplane.model.GenerateUserSecurityTokenDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The key-value pair object storing the token exchange request parameters required to
-         * obtain a UPST for self.
+         * The key-value pair object storing the token exchange request parameters required to obtain a UPST for self.
          */
         private com.oracle.bmc.identitydataplane.model.GenerateUserSecurityTokenDetails
                 generateUserSecurityTokenDetails = null;
 
         /**
-         * The key-value pair object storing the token exchange request parameters required to
-         * obtain a UPST for self.
-         *
+         * The key-value pair object storing the token exchange request parameters required to obtain a UPST for self.
          * @param generateUserSecurityTokenDetails the value to set
          * @return this builder instance
          */
@@ -87,6 +81,7 @@ public class GenerateUserSecurityTokenRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -104,19 +99,18 @@ public class GenerateUserSecurityTokenRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -128,7 +122,6 @@ public class GenerateUserSecurityTokenRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GenerateUserSecurityTokenRequest o) {
@@ -142,11 +135,10 @@ public class GenerateUserSecurityTokenRequest
         /**
          * Build the instance of GenerateUserSecurityTokenRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GenerateUserSecurityTokenRequest
          */
@@ -159,7 +151,6 @@ public class GenerateUserSecurityTokenRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -173,8 +164,7 @@ public class GenerateUserSecurityTokenRequest
         /**
          * Build the instance of GenerateUserSecurityTokenRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GenerateUserSecurityTokenRequest
@@ -190,7 +180,6 @@ public class GenerateUserSecurityTokenRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -201,7 +190,6 @@ public class GenerateUserSecurityTokenRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

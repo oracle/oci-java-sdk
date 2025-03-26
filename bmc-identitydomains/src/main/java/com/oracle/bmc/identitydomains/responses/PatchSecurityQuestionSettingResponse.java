@@ -6,42 +6,41 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code SecurityQuestionSetting} instance. */
+    /**
+     * The returned SecurityQuestionSetting instance.
+     */
     private com.oracle.bmc.identitydomains.model.SecurityQuestionSetting securityQuestionSetting;
 
     /**
-     * The returned {@code SecurityQuestionSetting} instance.
-     *
+     * The returned SecurityQuestionSetting instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.SecurityQuestionSetting
@@ -58,7 +57,7 @@ public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.respons
     })
     private PatchSecurityQuestionSettingResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identitydomains.model.SecurityQuestionSetting securityQuestionSetting) {
@@ -68,35 +67,28 @@ public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.respons
         this.securityQuestionSetting = securityQuestionSetting;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    PatchSecurityQuestionSettingResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -105,12 +97,13 @@ public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -119,13 +112,14 @@ public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned {@code SecurityQuestionSetting} instance. */
+        /**
+         * The returned SecurityQuestionSetting instance.
+         */
         private com.oracle.bmc.identitydomains.model.SecurityQuestionSetting
                 securityQuestionSetting;
 
         /**
-         * The returned {@code SecurityQuestionSetting} instance.
-         *
+         * The returned SecurityQuestionSetting instance.
          * @param securityQuestionSetting the value to set
          * @return this builder
          */
@@ -138,10 +132,8 @@ public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(PatchSecurityQuestionSettingResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,10 +146,8 @@ public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public PatchSecurityQuestionSettingResponse build() {
             return new PatchSecurityQuestionSettingResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, securityQuestionSetting);
@@ -166,7 +156,6 @@ public class PatchSecurityQuestionSettingResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

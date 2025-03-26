@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The current state of a referential relation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum ReferentialRelationLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of a referential relation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum ReferentialRelationLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

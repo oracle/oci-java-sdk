@@ -5,25 +5,26 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Memory Configuration metric for the host <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Memory Configuration metric for the host
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HostMemoryConfiguration.Builder.class)
+    builder = HostMemoryConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostMemoryConfiguration extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,76 +36,81 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** Page size in kilobytes */
+        /**
+         * Page size in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageSizeInKB")
         private Double pageSizeInKB;
 
         /**
          * Page size in kilobytes
-         *
          * @param pageSizeInKB the value to set
          * @return this builder
-         */
+         **/
         public Builder pageSizeInKB(Double pageSizeInKB) {
             this.pageSizeInKB = pageSizeInKB;
             this.__explicitlySet__.add("pageSizeInKB");
             return this;
         }
-        /** Amount of memory used for page tables in kilobytes */
+        /**
+         * Amount of memory used for page tables in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageTablesInKB")
         private Double pageTablesInKB;
 
         /**
          * Amount of memory used for page tables in kilobytes
-         *
          * @param pageTablesInKB the value to set
          * @return this builder
-         */
+         **/
         public Builder pageTablesInKB(Double pageTablesInKB) {
             this.pageTablesInKB = pageTablesInKB;
             this.__explicitlySet__.add("pageTablesInKB");
             return this;
         }
-        /** Amount of total swap space in kilobytes */
+        /**
+         * Amount of total swap space in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("swapTotalInKB")
         private Double swapTotalInKB;
 
         /**
          * Amount of total swap space in kilobytes
-         *
          * @param swapTotalInKB the value to set
          * @return this builder
-         */
+         **/
         public Builder swapTotalInKB(Double swapTotalInKB) {
             this.swapTotalInKB = swapTotalInKB;
             this.__explicitlySet__.add("swapTotalInKB");
             return this;
         }
-        /** Size of huge pages in kilobytes */
+        /**
+         * Size of huge pages in kilobytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInKB")
         private Double hugePageSizeInKB;
 
         /**
          * Size of huge pages in kilobytes
-         *
          * @param hugePageSizeInKB the value to set
          * @return this builder
-         */
+         **/
         public Builder hugePageSizeInKB(Double hugePageSizeInKB) {
             this.hugePageSizeInKB = hugePageSizeInKB;
             this.__explicitlySet__.add("hugePageSizeInKB");
             return this;
         }
-        /** Total number of huge pages */
+        /**
+         * Total number of huge pages
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
         private Integer hugePagesTotal;
 
         /**
          * Total number of huge pages
-         *
          * @param hugePagesTotal the value to set
          * @return this builder
-         */
+         **/
         public Builder hugePagesTotal(Integer hugePagesTotal) {
             this.hugePagesTotal = hugePagesTotal;
             this.__explicitlySet__.add("hugePagesTotal");
@@ -153,7 +159,9 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -178,67 +186,72 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
         this.hugePagesTotal = hugePagesTotal;
     }
 
-    /** Page size in kilobytes */
+    /**
+     * Page size in kilobytes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageSizeInKB")
     private final Double pageSizeInKB;
 
     /**
      * Page size in kilobytes
-     *
      * @return the value
-     */
+     **/
     public Double getPageSizeInKB() {
         return pageSizeInKB;
     }
 
-    /** Amount of memory used for page tables in kilobytes */
+    /**
+     * Amount of memory used for page tables in kilobytes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageTablesInKB")
     private final Double pageTablesInKB;
 
     /**
      * Amount of memory used for page tables in kilobytes
-     *
      * @return the value
-     */
+     **/
     public Double getPageTablesInKB() {
         return pageTablesInKB;
     }
 
-    /** Amount of total swap space in kilobytes */
+    /**
+     * Amount of total swap space in kilobytes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("swapTotalInKB")
     private final Double swapTotalInKB;
 
     /**
      * Amount of total swap space in kilobytes
-     *
      * @return the value
-     */
+     **/
     public Double getSwapTotalInKB() {
         return swapTotalInKB;
     }
 
-    /** Size of huge pages in kilobytes */
+    /**
+     * Size of huge pages in kilobytes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInKB")
     private final Double hugePageSizeInKB;
 
     /**
      * Size of huge pages in kilobytes
-     *
      * @return the value
-     */
+     **/
     public Double getHugePageSizeInKB() {
         return hugePageSizeInKB;
     }
 
-    /** Total number of huge pages */
+    /**
+     * Total number of huge pages
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
     private final Integer hugePagesTotal;
 
     /**
      * Total number of huge pages
-     *
      * @return the value
-     */
+     **/
     public Integer getHugePagesTotal() {
         return hugePagesTotal;
     }
@@ -250,7 +263,6 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

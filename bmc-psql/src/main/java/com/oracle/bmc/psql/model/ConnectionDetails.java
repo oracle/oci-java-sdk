@@ -5,23 +5,21 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Database system connection information. Used to connect to PostgreSQL instance(s). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Database system connection information. Used to connect to PostgreSQL instance(s).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConnectionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ConnectionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ConnectionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ConnectionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "caCertificate",
@@ -44,21 +42,22 @@ public final class ConnectionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
-         * certificate is used to authenticate the server identity. It is issued by PostgreSQL
-         * Service Private CA.
-         */
+         * The CA certificate to be used by the PosgreSQL client to connect to the database.
+         * The CA certificate is used to authenticate the server identity.
+         * It is issued by PostgreSQL Service Private CA.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
         /**
-         * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
-         * certificate is used to authenticate the server identity. It is issued by PostgreSQL
-         * Service Private CA.
+         * The CA certificate to be used by the PosgreSQL client to connect to the database.
+         * The CA certificate is used to authenticate the server identity.
+         * It is issued by PostgreSQL Service Private CA.
          *
          * @param caCertificate the value to set
          * @return this builder
-         */
+         **/
         public Builder caCertificate(String caCertificate) {
             this.caCertificate = caCertificate;
             this.__explicitlySet__.add("caCertificate");
@@ -73,16 +72,17 @@ public final class ConnectionDetails
             this.__explicitlySet__.add("primaryDbEndpoint");
             return this;
         }
-        /** The list of database instance node endpoints in the database system. */
+        /**
+         * The list of database instance node endpoints in the database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceEndpoints")
         private java.util.List<DbInstanceEndpoint> instanceEndpoints;
 
         /**
          * The list of database instance node endpoints in the database system.
-         *
          * @param instanceEndpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceEndpoints(java.util.List<DbInstanceEndpoint> instanceEndpoints) {
             this.instanceEndpoints = instanceEndpoints;
             this.__explicitlySet__.add("instanceEndpoints");
@@ -132,7 +132,9 @@ public final class ConnectionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -142,20 +144,21 @@ public final class ConnectionDetails
     }
 
     /**
-     * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
-     * certificate is used to authenticate the server identity. It is issued by PostgreSQL Service
-     * Private CA.
-     */
+     * The CA certificate to be used by the PosgreSQL client to connect to the database.
+     * The CA certificate is used to authenticate the server identity.
+     * It is issued by PostgreSQL Service Private CA.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     private final String caCertificate;
 
     /**
-     * The CA certificate to be used by the PosgreSQL client to connect to the database. The CA
-     * certificate is used to authenticate the server identity. It is issued by PostgreSQL Service
-     * Private CA.
+     * The CA certificate to be used by the PosgreSQL client to connect to the database.
+     * The CA certificate is used to authenticate the server identity.
+     * It is issued by PostgreSQL Service Private CA.
      *
      * @return the value
-     */
+     **/
     public String getCaCertificate() {
         return caCertificate;
     }
@@ -167,15 +170,16 @@ public final class ConnectionDetails
         return primaryDbEndpoint;
     }
 
-    /** The list of database instance node endpoints in the database system. */
+    /**
+     * The list of database instance node endpoints in the database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceEndpoints")
     private final java.util.List<DbInstanceEndpoint> instanceEndpoints;
 
     /**
      * The list of database instance node endpoints in the database system.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DbInstanceEndpoint> getInstanceEndpoints() {
         return instanceEndpoints;
     }
@@ -194,7 +198,6 @@ public final class ConnectionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

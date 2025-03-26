@@ -5,25 +5,25 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Request configuration details for the DNSSEC monitor type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Request configuration details for the DNSSEC monitor type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DnsSecMonitorConfiguration.Builder.class)
+    builder = DnsSecMonitorConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DnsSecMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,35 +44,37 @@ public final class DnsSecMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("dnsConfiguration");
             return this;
         }
-        /** DNS record type. */
+        /**
+         * DNS record type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recordType")
         private DnsRecordType recordType;
 
         /**
          * DNS record type.
-         *
          * @param recordType the value to set
          * @return this builder
-         */
+         **/
         public Builder recordType(DnsRecordType recordType) {
             this.recordType = recordType;
             this.__explicitlySet__.add("recordType");
             return this;
         }
         /**
-         * Verify response content against regular expression based string. If response content does
-         * not match the verifyResponseContent value, then it will be considered a failure.
-         */
+         * Verify response content against regular expression based string.
+         * If response content does not match the verifyResponseContent value, then it will be considered a failure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseContent")
         private String verifyResponseContent;
 
         /**
-         * Verify response content against regular expression based string. If response content does
-         * not match the verifyResponseContent value, then it will be considered a failure.
+         * Verify response content against regular expression based string.
+         * If response content does not match the verifyResponseContent value, then it will be considered a failure.
          *
          * @param verifyResponseContent the value to set
          * @return this builder
-         */
+         **/
         public Builder verifyResponseContent(String verifyResponseContent) {
             this.verifyResponseContent = verifyResponseContent;
             this.__explicitlySet__.add("verifyResponseContent");
@@ -113,7 +115,9 @@ public final class DnsSecMonitorConfiguration extends MonitorConfiguration {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,32 +137,34 @@ public final class DnsSecMonitorConfiguration extends MonitorConfiguration {
         this.verifyResponseContent = verifyResponseContent;
     }
 
-    /** DNS record type. */
+    /**
+     * DNS record type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordType")
     private final DnsRecordType recordType;
 
     /**
      * DNS record type.
-     *
      * @return the value
-     */
+     **/
     public DnsRecordType getRecordType() {
         return recordType;
     }
 
     /**
-     * Verify response content against regular expression based string. If response content does not
-     * match the verifyResponseContent value, then it will be considered a failure.
-     */
+     * Verify response content against regular expression based string.
+     * If response content does not match the verifyResponseContent value, then it will be considered a failure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseContent")
     private final String verifyResponseContent;
 
     /**
-     * Verify response content against regular expression based string. If response content does not
-     * match the verifyResponseContent value, then it will be considered a failure.
+     * Verify response content against regular expression based string.
+     * If response content does not match the verifyResponseContent value, then it will be considered a failure.
      *
      * @return the value
-     */
+     **/
     public String getVerifyResponseContent() {
         return verifyResponseContent;
     }
@@ -170,7 +176,6 @@ public final class DnsSecMonitorConfiguration extends MonitorConfiguration {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

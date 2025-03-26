@@ -5,22 +5,20 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Rate Card Summary <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * Rate Card Summary
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RateCardSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RateCardSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RateCardSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "subscribedServiceId",
@@ -60,7 +58,10 @@ public final class RateCardSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SPM internal Subscribed Service ID */
+        /**
+         * SPM internal Subscribed Service ID
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
         private String subscribedServiceId;
 
@@ -69,7 +70,7 @@ public final class RateCardSummary
          *
          * @param subscribedServiceId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscribedServiceId(String subscribedServiceId) {
             this.subscribedServiceId = subscribedServiceId;
             this.__explicitlySet__.add("subscribedServiceId");
@@ -84,7 +85,10 @@ public final class RateCardSummary
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Rate card start date */
+        /**
+         * Rate card start date
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -93,13 +97,16 @@ public final class RateCardSummary
          *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Rate card end date */
+        /**
+         * Rate card end date
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
@@ -108,13 +115,16 @@ public final class RateCardSummary
          *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** Rate card net unit price */
+        /**
+         * Rate card net unit price
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
@@ -123,13 +133,16 @@ public final class RateCardSummary
          *
          * @param netUnitPrice the value to set
          * @return this builder
-         */
+         **/
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Rate card discretionary discount percentage */
+        /**
+         * Rate card discretionary discount percentage
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discretionaryDiscountPercentage")
         private String discretionaryDiscountPercentage;
 
@@ -138,13 +151,16 @@ public final class RateCardSummary
          *
          * @param discretionaryDiscountPercentage the value to set
          * @return this builder
-         */
+         **/
         public Builder discretionaryDiscountPercentage(String discretionaryDiscountPercentage) {
             this.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
             this.__explicitlySet__.add("discretionaryDiscountPercentage");
             return this;
         }
-        /** Rate card overage price */
+        /**
+         * Rate card overage price
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
         private String overagePrice;
 
@@ -153,13 +169,16 @@ public final class RateCardSummary
          *
          * @param overagePrice the value to set
          * @return this builder
-         */
+         **/
         public Builder overagePrice(String overagePrice) {
             this.overagePrice = overagePrice;
             this.__explicitlySet__.add("overagePrice");
             return this;
         }
-        /** Rate card price tier flag */
+        /**
+         * Rate card price tier flag
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTier")
         private Boolean isTier;
 
@@ -168,7 +187,7 @@ public final class RateCardSummary
          *
          * @param isTier the value to set
          * @return this builder
-         */
+         **/
         public Builder isTier(Boolean isTier) {
             this.isTier = isTier;
             this.__explicitlySet__.add("isTier");
@@ -183,7 +202,10 @@ public final class RateCardSummary
             this.__explicitlySet__.add("currency");
             return this;
         }
-        /** List of tiered rate card prices */
+        /**
+         * List of tiered rate card prices
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardTiers")
         private java.util.List<RateCardTier> rateCardTiers;
 
@@ -192,7 +214,7 @@ public final class RateCardSummary
          *
          * @param rateCardTiers the value to set
          * @return this builder
-         */
+         **/
         public Builder rateCardTiers(java.util.List<RateCardTier> rateCardTiers) {
             this.rateCardTiers = rateCardTiers;
             this.__explicitlySet__.add("rateCardTiers");
@@ -257,7 +279,9 @@ public final class RateCardSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -266,7 +290,10 @@ public final class RateCardSummary
         return new Builder().copy(this);
     }
 
-    /** SPM internal Subscribed Service ID */
+    /**
+     * SPM internal Subscribed Service ID
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
     private final String subscribedServiceId;
 
@@ -274,7 +301,7 @@ public final class RateCardSummary
      * SPM internal Subscribed Service ID
      *
      * @return the value
-     */
+     **/
     public String getSubscribedServiceId() {
         return subscribedServiceId;
     }
@@ -286,7 +313,10 @@ public final class RateCardSummary
         return product;
     }
 
-    /** Rate card start date */
+    /**
+     * Rate card start date
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
@@ -294,12 +324,15 @@ public final class RateCardSummary
      * Rate card start date
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** Rate card end date */
+    /**
+     * Rate card end date
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
@@ -307,12 +340,15 @@ public final class RateCardSummary
      * Rate card end date
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** Rate card net unit price */
+    /**
+     * Rate card net unit price
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
@@ -320,12 +356,15 @@ public final class RateCardSummary
      * Rate card net unit price
      *
      * @return the value
-     */
+     **/
     public String getNetUnitPrice() {
         return netUnitPrice;
     }
 
-    /** Rate card discretionary discount percentage */
+    /**
+     * Rate card discretionary discount percentage
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discretionaryDiscountPercentage")
     private final String discretionaryDiscountPercentage;
 
@@ -333,12 +372,15 @@ public final class RateCardSummary
      * Rate card discretionary discount percentage
      *
      * @return the value
-     */
+     **/
     public String getDiscretionaryDiscountPercentage() {
         return discretionaryDiscountPercentage;
     }
 
-    /** Rate card overage price */
+    /**
+     * Rate card overage price
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
     private final String overagePrice;
 
@@ -346,12 +388,15 @@ public final class RateCardSummary
      * Rate card overage price
      *
      * @return the value
-     */
+     **/
     public String getOveragePrice() {
         return overagePrice;
     }
 
-    /** Rate card price tier flag */
+    /**
+     * Rate card price tier flag
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTier")
     private final Boolean isTier;
 
@@ -359,7 +404,7 @@ public final class RateCardSummary
      * Rate card price tier flag
      *
      * @return the value
-     */
+     **/
     public Boolean getIsTier() {
         return isTier;
     }
@@ -371,7 +416,10 @@ public final class RateCardSummary
         return currency;
     }
 
-    /** List of tiered rate card prices */
+    /**
+     * List of tiered rate card prices
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardTiers")
     private final java.util.List<RateCardTier> rateCardTiers;
 
@@ -379,7 +427,7 @@ public final class RateCardSummary
      * List of tiered rate card prices
      *
      * @return the value
-     */
+     **/
     public java.util.List<RateCardTier> getRateCardTiers() {
         return rateCardTiers;
     }
@@ -391,7 +439,6 @@ public final class RateCardSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

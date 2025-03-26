@@ -6,9 +6,12 @@ package com.oracle.bmc.stackmonitoring.responses;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,24 +40,26 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** Content location of the resource. */
+    /**
+     * Content location of the resource.
+     */
     private String contentLocation;
 
     /**
      * Content location of the resource.
-     *
      * @return the value
      */
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /** The returned {@code MetricExtension} instance. */
+    /**
+     * The returned MetricExtension instance.
+     */
     private com.oracle.bmc.stackmonitoring.model.MetricExtension metricExtension;
 
     /**
-     * The returned {@code MetricExtension} instance.
-     *
+     * The returned MetricExtension instance.
      * @return the value
      */
     public com.oracle.bmc.stackmonitoring.model.MetricExtension getMetricExtension() {
@@ -70,7 +76,7 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
     })
     private CreateMetricExtensionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String contentLocation,
@@ -82,25 +88,25 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
         this.metricExtension = metricExtension;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateMetricExtensionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -115,14 +121,15 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -132,12 +139,13 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** Content location of the resource. */
+        /**
+         * Content location of the resource.
+         */
         private String contentLocation;
 
         /**
          * Content location of the resource.
-         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -146,12 +154,13 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code MetricExtension} instance. */
+        /**
+         * The returned MetricExtension instance.
+         */
         private com.oracle.bmc.stackmonitoring.model.MetricExtension metricExtension;
 
         /**
-         * The returned {@code MetricExtension} instance.
-         *
+         * The returned MetricExtension instance.
          * @param metricExtension the value to set
          * @return this builder
          */
@@ -163,10 +172,8 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateMetricExtensionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -180,10 +187,8 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateMetricExtensionResponse build() {
             return new CreateMetricExtensionResponse(
                     __httpStatusCode__,
@@ -197,7 +202,6 @@ public class CreateMetricExtensionResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

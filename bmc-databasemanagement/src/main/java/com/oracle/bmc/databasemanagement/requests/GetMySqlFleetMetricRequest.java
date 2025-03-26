@@ -6,113 +6,139 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetMySqlFleetMetricExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMySqlFleetMetricRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetMySqlFleetMetricExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMySqlFleetMetricRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The start time of the time range to retrieve the health metrics of a Managed Database in UTC
-     * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String startTime;
 
     /**
-     * The start time of the time range to retrieve the health metrics of a Managed Database in UTC
-     * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getStartTime() {
         return startTime;
     }
     /**
-     * The end time of the time range to retrieve the health metrics of a Managed Database in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String endTime;
 
     /**
-     * The end time of the time range to retrieve the health metrics of a Managed Database in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getEndTime() {
         return endTime;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The filter used to retrieve a specific set of metrics by passing the desired metric names
-     * with a comma separator. Note that, by default, the service returns all supported metrics.
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     private String filterByMetricNames;
 
     /**
-     * The filter used to retrieve a specific set of metrics by passing the desired metric names
-     * with a comma separator. Note that, by default, the service returns all supported metrics.
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     public String getFilterByMetricNames() {
         return filterByMetricNames;
     }
-    /** The parameter to filter by MySQL deployment type. */
+    /**
+     * The parameter to filter by MySQL deployment type.
+     */
     private com.oracle.bmc.databasemanagement.model.MySqlDeploymentType
             filterByMySqlDeploymentTypeParam;
 
-    /** The parameter to filter by MySQL deployment type. */
+    /**
+     * The parameter to filter by MySQL deployment type.
+     */
     public com.oracle.bmc.databasemanagement.model.MySqlDeploymentType
             getFilterByMySqlDeploymentTypeParam() {
         return filterByMySqlDeploymentTypeParam;
     }
-    /** The parameter to filter by MySQL Database System type. */
+    /**
+     * The parameter to filter by MySQL Database System type.
+     */
     private com.oracle.bmc.databasemanagement.model.MdsType filterByMdsDeploymentType;
 
-    /** The parameter to filter by MySQL Database System type. */
+    /**
+     * The parameter to filter by MySQL Database System type.
+     */
     public com.oracle.bmc.databasemanagement.model.MdsType getFilterByMdsDeploymentType() {
         return filterByMdsDeploymentType;
     }
-    /** The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS. */
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     */
     private com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam;
 
-    /** The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS. */
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     */
     public com.oracle.bmc.databasemanagement.model.MySqlType getFilterByMySqlDatabaseTypeParam() {
         return filterByMySqlDatabaseTypeParam;
     }
-    /** The parameter to filter by MySQL Database status. */
+    /**
+     * The parameter to filter by MySQL Database status.
+     */
     private com.oracle.bmc.databasemanagement.model.DatabaseStatus filterByMySqlStatus;
 
-    /** The parameter to filter by MySQL Database status. */
+    /**
+     * The parameter to filter by MySQL Database status.
+     */
     public com.oracle.bmc.databasemanagement.model.DatabaseStatus getFilterByMySqlStatus() {
         return filterByMySqlStatus;
     }
-    /** The parameter to filter by MySQL database version. */
+    /**
+     * The parameter to filter by MySQL database version.
+     */
     private String filterByMySqlDatabaseVersion;
 
-    /** The parameter to filter by MySQL database version. */
+    /**
+     * The parameter to filter by MySQL database version.
+     */
     public String getFilterByMySqlDatabaseVersion() {
         return filterByMySqlDatabaseVersion;
     }
-    /** The parameter to filter based on whether HeatWave is enabled for the database. */
+    /**
+     * The parameter to filter based on whether HeatWave is enabled for the database.
+     */
     private Boolean isHeatWaveEnabled;
 
-    /** The parameter to filter based on whether HeatWave is enabled for the database. */
+    /**
+     * The parameter to filter based on whether HeatWave is enabled for the database.
+     */
     public Boolean getIsHeatWaveEnabled() {
         return isHeatWaveEnabled;
     }
@@ -120,19 +146,17 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetMySqlFleetMetricRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -142,14 +166,15 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The start time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String startTime = null;
 
         /**
-         * The start time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param startTime the value to set
          * @return this builder instance
@@ -160,14 +185,15 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The end time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String endTime = null;
 
         /**
-         * The end time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param endTime the value to set
          * @return this builder instance
@@ -177,12 +203,13 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -192,15 +219,12 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The filter used to retrieve a specific set of metrics by passing the desired metric names
-         * with a comma separator. Note that, by default, the service returns all supported metrics.
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
          */
         private String filterByMetricNames = null;
 
         /**
-         * The filter used to retrieve a specific set of metrics by passing the desired metric names
-         * with a comma separator. Note that, by default, the service returns all supported metrics.
-         *
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
          * @param filterByMetricNames the value to set
          * @return this builder instance
          */
@@ -209,13 +233,14 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The parameter to filter by MySQL deployment type. */
+        /**
+         * The parameter to filter by MySQL deployment type.
+         */
         private com.oracle.bmc.databasemanagement.model.MySqlDeploymentType
                 filterByMySqlDeploymentTypeParam = null;
 
         /**
          * The parameter to filter by MySQL deployment type.
-         *
          * @param filterByMySqlDeploymentTypeParam the value to set
          * @return this builder instance
          */
@@ -226,12 +251,13 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The parameter to filter by MySQL Database System type. */
+        /**
+         * The parameter to filter by MySQL Database System type.
+         */
         private com.oracle.bmc.databasemanagement.model.MdsType filterByMdsDeploymentType = null;
 
         /**
          * The parameter to filter by MySQL Database System type.
-         *
          * @param filterByMdsDeploymentType the value to set
          * @return this builder instance
          */
@@ -241,13 +267,14 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS. */
+        /**
+         * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+         */
         private com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam =
                 null;
 
         /**
          * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
-         *
          * @param filterByMySqlDatabaseTypeParam the value to set
          * @return this builder instance
          */
@@ -257,12 +284,13 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The parameter to filter by MySQL Database status. */
+        /**
+         * The parameter to filter by MySQL Database status.
+         */
         private com.oracle.bmc.databasemanagement.model.DatabaseStatus filterByMySqlStatus = null;
 
         /**
          * The parameter to filter by MySQL Database status.
-         *
          * @param filterByMySqlStatus the value to set
          * @return this builder instance
          */
@@ -272,12 +300,13 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The parameter to filter by MySQL database version. */
+        /**
+         * The parameter to filter by MySQL database version.
+         */
         private String filterByMySqlDatabaseVersion = null;
 
         /**
          * The parameter to filter by MySQL database version.
-         *
          * @param filterByMySqlDatabaseVersion the value to set
          * @return this builder instance
          */
@@ -286,12 +315,13 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The parameter to filter based on whether HeatWave is enabled for the database. */
+        /**
+         * The parameter to filter based on whether HeatWave is enabled for the database.
+         */
         private Boolean isHeatWaveEnabled = null;
 
         /**
          * The parameter to filter based on whether HeatWave is enabled for the database.
-         *
          * @param isHeatWaveEnabled the value to set
          * @return this builder instance
          */
@@ -302,19 +332,18 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -326,7 +355,6 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetMySqlFleetMetricRequest o) {
@@ -349,11 +377,10 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of GetMySqlFleetMetricRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetMySqlFleetMetricRequest
          */
@@ -367,8 +394,7 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of GetMySqlFleetMetricRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetMySqlFleetMetricRequest
@@ -387,16 +413,12 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             request.filterByMySqlDatabaseVersion = filterByMySqlDatabaseVersion;
             request.isHeatWaveEnabled = isHeatWaveEnabled;
             return request;
-            // new GetMySqlFleetMetricRequest(compartmentId, startTime, endTime, opcRequestId,
-            // filterByMetricNames, filterByMySqlDeploymentTypeParam, filterByMdsDeploymentType,
-            // filterByMySqlDatabaseTypeParam, filterByMySqlStatus, filterByMySqlDatabaseVersion,
-            // isHeatWaveEnabled);
+            // new GetMySqlFleetMetricRequest(compartmentId, startTime, endTime, opcRequestId, filterByMetricNames, filterByMySqlDeploymentTypeParam, filterByMdsDeploymentType, filterByMySqlDatabaseTypeParam, filterByMySqlStatus, filterByMySqlDatabaseVersion, isHeatWaveEnabled);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -416,7 +438,6 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

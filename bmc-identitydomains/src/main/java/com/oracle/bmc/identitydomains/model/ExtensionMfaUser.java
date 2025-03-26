@@ -5,24 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes used to manage Multi-Factor Authentication within a service
- * provider. The extension is typically applied to a User resource, but MAY be applied to other
- * resources that use MFA. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExtensionMfaUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionMfaUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "preferredAuthenticationFactor",
@@ -67,28 +62,39 @@ public final class ExtensionMfaUser
     public static class Builder {
         /**
          * The preferred authentication factor type.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredAuthenticationFactor")
         private PreferredAuthenticationFactor preferredAuthenticationFactor;
 
         /**
          * The preferred authentication factor type.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param preferredAuthenticationFactor the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredAuthenticationFactor(
                 PreferredAuthenticationFactor preferredAuthenticationFactor) {
             this.preferredAuthenticationFactor = preferredAuthenticationFactor;
@@ -97,28 +103,41 @@ public final class ExtensionMfaUser
         }
         /**
          * The user opted for MFA.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mfaStatus")
         private MfaStatus mfaStatus;
 
         /**
          * The user opted for MFA.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mfaStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder mfaStatus(MfaStatus mfaStatus) {
             this.mfaStatus = mfaStatus;
             this.__explicitlySet__.add("mfaStatus");
@@ -126,28 +145,39 @@ public final class ExtensionMfaUser
         }
         /**
          * The preferred third-party vendor name.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredThirdPartyVendor")
         private String preferredThirdPartyVendor;
 
         /**
          * The preferred third-party vendor name.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param preferredThirdPartyVendor the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredThirdPartyVendor(String preferredThirdPartyVendor) {
             this.preferredThirdPartyVendor = preferredThirdPartyVendor;
             this.__explicitlySet__.add("preferredThirdPartyVendor");
@@ -155,92 +185,119 @@ public final class ExtensionMfaUser
         }
         /**
          * The preferred authentication method.
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredAuthenticationMethod")
         private String preferredAuthenticationMethod;
 
         /**
          * The preferred authentication method.
-         *
-         * <p>*Added In:** 2009232244
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2009232244
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param preferredAuthenticationMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredAuthenticationMethod(String preferredAuthenticationMethod) {
             this.preferredAuthenticationMethod = preferredAuthenticationMethod;
             this.__explicitlySet__.add("preferredAuthenticationMethod");
             return this;
         }
         /**
-         * The number of incorrect multi factor authentication sign in attempts made by this user.
-         * The user is locked if this reaches the threshold specified in the maxIncorrectAttempts
-         * attribute in AuthenticationFactorSettings.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
-         * default - type: integer - uniqueness: none
-         */
+         * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
         private Integer loginAttempts;
 
         /**
-         * The number of incorrect multi factor authentication sign in attempts made by this user.
-         * The user is locked if this reaches the threshold specified in the maxIncorrectAttempts
-         * attribute in AuthenticationFactorSettings.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - idcsRequiresWriteForAccessFlows: true -
-         * idcsRequiresImmediateReadAfterWriteForAccessFlows: true - required: false - returned:
-         * default - type: integer - uniqueness: none
-         *
+         * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param loginAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder loginAttempts(Integer loginAttempts) {
             this.loginAttempts = loginAttempts;
             this.__explicitlySet__.add("loginAttempts");
             return this;
         }
         /**
-         * The date when the user enrolled in multi factor authentication. This will be set to null,
-         * when the user resets their factors.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: dateTime - uniqueness: none
-         */
+         * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mfaEnabledOn")
         private String mfaEnabledOn;
 
         /**
-         * The date when the user enrolled in multi factor authentication. This will be set to null,
-         * when the user resets their factors.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: dateTime - uniqueness: none
-         *
+         * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param mfaEnabledOn the value to set
          * @return this builder
-         */
+         **/
         public Builder mfaEnabledOn(String mfaEnabledOn) {
             this.mfaEnabledOn = mfaEnabledOn;
             this.__explicitlySet__.add("mfaEnabledOn");
@@ -248,28 +305,39 @@ public final class ExtensionMfaUser
         }
         /**
          * User MFA Ignored Apps Identifiers
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mfaIgnoredApps")
         private java.util.List<String> mfaIgnoredApps;
 
         /**
          * User MFA Ignored Apps Identifiers
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mfaIgnoredApps the value to set
          * @return this builder
-         */
+         **/
         public Builder mfaIgnoredApps(java.util.List<String> mfaIgnoredApps) {
             this.mfaIgnoredApps = mfaIgnoredApps;
             this.__explicitlySet__.add("mfaIgnoredApps");
@@ -286,26 +354,37 @@ public final class ExtensionMfaUser
         }
         /**
          * A list of devices enrolled by the user.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("devices")
         private java.util.List<UserExtDevices> devices;
 
         /**
          * A list of devices enrolled by the user.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param devices the value to set
          * @return this builder
-         */
+         **/
         public Builder devices(java.util.List<UserExtDevices> devices) {
             this.devices = devices;
             this.__explicitlySet__.add("devices");
@@ -313,63 +392,75 @@ public final class ExtensionMfaUser
         }
         /**
          * A list of bypass codes that belongs to the user.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bypassCodes")
         private java.util.List<UserExtBypassCodes> bypassCodes;
 
         /**
          * A list of bypass codes that belongs to the user.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param bypassCodes the value to set
          * @return this builder
-         */
+         **/
         public Builder bypassCodes(java.util.List<UserExtBypassCodes> bypassCodes) {
             this.bypassCodes = bypassCodes;
             this.__explicitlySet__.add("bypassCodes");
             return this;
         }
         /**
-         * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses
-         * Trusted User Agents to authenticate users. A User Agent is software application that a
-         * user uses to issue requests. For example, a User Agent could be a particular browser
-         * (possibly one of several executing on a desktop or laptop) or a particular mobile
-         * application (again, oneof several executing on a particular mobile device). A User Agent
-         * is trusted once the Multi-Factor Authentication has verified it in some way.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readWrite - required: false - returned: request - type: complex - uniqueness: none
-         */
+         * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustedUserAgents")
         private java.util.List<UserExtTrustedUserAgents> trustedUserAgents;
 
         /**
-         * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses
-         * Trusted User Agents to authenticate users. A User Agent is software application that a
-         * user uses to issue requests. For example, a User Agent could be a particular browser
-         * (possibly one of several executing on a desktop or laptop) or a particular mobile
-         * application (again, oneof several executing on a particular mobile device). A User Agent
-         * is trusted once the Multi-Factor Authentication has verified it in some way.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readWrite - required: false - returned: request - type: complex - uniqueness: none
-         *
+         * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param trustedUserAgents the value to set
          * @return this builder
-         */
+         **/
         public Builder trustedUserAgents(
                 java.util.List<UserExtTrustedUserAgents> trustedUserAgents) {
             this.trustedUserAgents = trustedUserAgents;
@@ -439,7 +530,9 @@ public final class ExtensionMfaUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -450,13 +543,20 @@ public final class ExtensionMfaUser
 
     /**
      * The preferred authentication factor type.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum PreferredAuthenticationFactor implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum PreferredAuthenticationFactor {
         Email("EMAIL"),
         Sms("SMS"),
         Totp("TOTP"),
@@ -471,8 +571,8 @@ public final class ExtensionMfaUser
         YubicoOtp("YUBICO_OTP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -513,47 +613,67 @@ public final class ExtensionMfaUser
     };
     /**
      * The preferred authentication factor type.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredAuthenticationFactor")
     private final PreferredAuthenticationFactor preferredAuthenticationFactor;
 
     /**
      * The preferred authentication factor type.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public PreferredAuthenticationFactor getPreferredAuthenticationFactor() {
         return preferredAuthenticationFactor;
     }
 
     /**
      * The user opted for MFA.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * default - type: string - uniqueness: none
-     */
-    public enum MfaStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum MfaStatus {
         Enrolled("ENROLLED"),
         Ignored("IGNORED"),
         UnEnrolled("UN_ENROLLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -594,160 +714,230 @@ public final class ExtensionMfaUser
     };
     /**
      * The user opted for MFA.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mfaStatus")
     private final MfaStatus mfaStatus;
 
     /**
      * The user opted for MFA.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public MfaStatus getMfaStatus() {
         return mfaStatus;
     }
 
     /**
      * The preferred third-party vendor name.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredThirdPartyVendor")
     private final String preferredThirdPartyVendor;
 
     /**
      * The preferred third-party vendor name.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPreferredThirdPartyVendor() {
         return preferredThirdPartyVendor;
     }
 
     /**
      * The preferred authentication method.
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredAuthenticationMethod")
     private final String preferredAuthenticationMethod;
 
     /**
      * The preferred authentication method.
-     *
-     * <p>*Added In:** 2009232244
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2009232244
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPreferredAuthenticationMethod() {
         return preferredAuthenticationMethod;
     }
 
     /**
-     * The number of incorrect multi factor authentication sign in attempts made by this user. The
-     * user is locked if this reaches the threshold specified in the maxIncorrectAttempts attribute
-     * in AuthenticationFactorSettings.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true - required: false - returned: default - type: integer - uniqueness: none
-     */
+     * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loginAttempts")
     private final Integer loginAttempts;
 
     /**
-     * The number of incorrect multi factor authentication sign in attempts made by this user. The
-     * user is locked if this reaches the threshold specified in the maxIncorrectAttempts attribute
-     * in AuthenticationFactorSettings.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - idcsRequiresWriteForAccessFlows: true - idcsRequiresImmediateReadAfterWriteForAccessFlows:
-     * true - required: false - returned: default - type: integer - uniqueness: none
-     *
+     * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getLoginAttempts() {
         return loginAttempts;
     }
 
     /**
-     * The date when the user enrolled in multi factor authentication. This will be set to null,
-     * when the user resets their factors.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: dateTime - uniqueness: none
-     */
+     * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mfaEnabledOn")
     private final String mfaEnabledOn;
 
     /**
-     * The date when the user enrolled in multi factor authentication. This will be set to null,
-     * when the user resets their factors.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: dateTime - uniqueness: none
-     *
+     * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMfaEnabledOn() {
         return mfaEnabledOn;
     }
 
     /**
      * User MFA Ignored Apps Identifiers
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mfaIgnoredApps")
     private final java.util.List<String> mfaIgnoredApps;
 
     /**
      * User MFA Ignored Apps Identifiers
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: true -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getMfaIgnoredApps() {
         return mfaIgnoredApps;
     }
@@ -761,85 +951,108 @@ public final class ExtensionMfaUser
 
     /**
      * A list of devices enrolled by the user.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readOnly - required: false - returned: request - type: complex - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("devices")
     private final java.util.List<UserExtDevices> devices;
 
     /**
      * A list of devices enrolled by the user.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readOnly - required: false - returned: request - type: complex - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtDevices> getDevices() {
         return devices;
     }
 
     /**
      * A list of bypass codes that belongs to the user.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readOnly - required: false - returned: request - type: complex - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bypassCodes")
     private final java.util.List<UserExtBypassCodes> bypassCodes;
 
     /**
      * A list of bypass codes that belongs to the user.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readOnly - required: false - returned: request - type: complex - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtBypassCodes> getBypassCodes() {
         return bypassCodes;
     }
 
     /**
-     * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted
-     * User Agents to authenticate users. A User Agent is software application that a user uses to
-     * issue requests. For example, a User Agent could be a particular browser (possibly one of
-     * several executing on a desktop or laptop) or a particular mobile application (again, oneof
-     * several executing on a particular mobile device). A User Agent is trusted once the
-     * Multi-Factor Authentication has verified it in some way.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readWrite - required: false - returned: request - type: complex - uniqueness: none
-     */
+     * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustedUserAgents")
     private final java.util.List<UserExtTrustedUserAgents> trustedUserAgents;
 
     /**
-     * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted
-     * User Agents to authenticate users. A User Agent is software application that a user uses to
-     * issue requests. For example, a User Agent could be a particular browser (possibly one of
-     * several executing on a desktop or laptop) or a particular mobile application (again, oneof
-     * several executing on a particular mobile device). A User Agent is trusted once the
-     * Multi-Factor Authentication has verified it in some way.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readWrite - required: false - returned: request - type: complex - uniqueness: none
-     *
+     * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtTrustedUserAgents> getTrustedUserAgents() {
         return trustedUserAgents;
     }
@@ -851,7 +1064,6 @@ public final class ExtensionMfaUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

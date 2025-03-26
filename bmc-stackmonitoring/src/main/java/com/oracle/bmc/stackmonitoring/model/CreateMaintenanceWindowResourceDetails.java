@@ -5,23 +5,23 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * List of resource IDs that are part of the Maintenance Window. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * List of resource IDs that are part of the Maintenance Window.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMaintenanceWindowResourceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMaintenanceWindowResourceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMaintenanceWindowResourceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceId", "areMembersIncluded"})
     public CreateMaintenanceWindowResourceDetails(String resourceId, Boolean areMembersIncluded) {
@@ -33,38 +33,40 @@ public final class CreateMaintenanceWindowResourceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * monitored resource part of the Maintenance window.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource
+         * part of the Maintenance window.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * monitored resource part of the Maintenance window.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource
+         * part of the Maintenance window.
          *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
         /**
-         * Flag to indicate if the members of the resource has to be include in the Maintenance
-         * Window.
-         */
+         * Flag to indicate if the members of the resource has to be include in the
+         * Maintenance Window.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areMembersIncluded")
         private Boolean areMembersIncluded;
 
         /**
-         * Flag to indicate if the members of the resource has to be include in the Maintenance
-         * Window.
+         * Flag to indicate if the members of the resource has to be include in the
+         * Maintenance Window.
          *
          * @param areMembersIncluded the value to set
          * @return this builder
-         */
+         **/
         public Builder areMembersIncluded(Boolean areMembersIncluded) {
             this.areMembersIncluded = areMembersIncluded;
             this.__explicitlySet__.add("areMembersIncluded");
@@ -96,7 +98,9 @@ public final class CreateMaintenanceWindowResourceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,33 +110,37 @@ public final class CreateMaintenanceWindowResourceDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * monitored resource part of the Maintenance window.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource
+     * part of the Maintenance window.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * monitored resource part of the Maintenance window.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource
+     * part of the Maintenance window.
      *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
     /**
-     * Flag to indicate if the members of the resource has to be include in the Maintenance Window.
-     */
+     * Flag to indicate if the members of the resource has to be include in the
+     * Maintenance Window.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areMembersIncluded")
     private final Boolean areMembersIncluded;
 
     /**
-     * Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+     * Flag to indicate if the members of the resource has to be include in the
+     * Maintenance Window.
      *
      * @return the value
-     */
+     **/
     public Boolean getAreMembersIncluded() {
         return areMembersIncluded;
     }
@@ -144,7 +152,6 @@ public final class CreateMaintenanceWindowResourceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

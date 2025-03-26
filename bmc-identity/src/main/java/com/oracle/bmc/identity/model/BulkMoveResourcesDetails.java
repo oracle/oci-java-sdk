@@ -5,23 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkMoveResourcesDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkMoveResourcesDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkMoveResourcesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resources", "targetCompartmentId"})
     public BulkMoveResourcesDetails(
@@ -33,7 +32,10 @@ public final class BulkMoveResourcesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The resources to be moved. */
+        /**
+         * The resources to be moved.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<BulkActionResource> resources;
 
@@ -42,26 +44,27 @@ public final class BulkMoveResourcesDetails
          *
          * @param resources the value to set
          * @return this builder
-         */
+         **/
         public Builder resources(java.util.List<BulkActionResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * destination compartment into which to move the resources.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination compartment
+         * into which to move the resources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
         private String targetCompartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * destination compartment into which to move the resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination compartment
+         * into which to move the resources.
          *
          * @param targetCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetCompartmentId(String targetCompartmentId) {
             this.targetCompartmentId = targetCompartmentId;
             this.__explicitlySet__.add("targetCompartmentId");
@@ -92,7 +95,9 @@ public final class BulkMoveResourcesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,7 +106,10 @@ public final class BulkMoveResourcesDetails
         return new Builder().copy(this);
     }
 
-    /** The resources to be moved. */
+    /**
+     * The resources to be moved.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<BulkActionResource> resources;
 
@@ -109,24 +117,25 @@ public final class BulkMoveResourcesDetails
      * The resources to be moved.
      *
      * @return the value
-     */
+     **/
     public java.util.List<BulkActionResource> getResources() {
         return resources;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * destination compartment into which to move the resources.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination compartment
+     * into which to move the resources.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
     private final String targetCompartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * destination compartment into which to move the resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination compartment
+     * into which to move the resources.
      *
      * @return the value
-     */
+     **/
     public String getTargetCompartmentId() {
         return targetCompartmentId;
     }
@@ -138,7 +147,6 @@ public final class BulkMoveResourcesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

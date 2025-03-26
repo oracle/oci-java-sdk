@@ -5,85 +5,102 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information to be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The information to be updated.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "deployStageType",
-        defaultImpl = UpdateDeployStageDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "deployStageType",
+    defaultImpl = UpdateDeployStageDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOkeCanaryTrafficShiftDeployStageDetails.class,
-            name = "OKE_CANARY_TRAFFIC_SHIFT"),
+        value = UpdateOkeCanaryTrafficShiftDeployStageDetails.class,
+        name = "OKE_CANARY_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOkeCanaryDeployStageDetails.class,
-            name = "OKE_CANARY_DEPLOYMENT"),
+        value = UpdateOkeCanaryDeployStageDetails.class,
+        name = "OKE_CANARY_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOkeHelmChartDeployStageDetails.class,
-            name = "OKE_HELM_CHART_DEPLOYMENT"),
+        value = UpdateOkeHelmChartDeployStageDetails.class,
+        name = "OKE_HELM_CHART_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateComputeInstanceGroupDeployStageDetails.class,
-            name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"),
+        value = UpdateComputeInstanceGroupDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOkeCanaryApprovalDeployStageDetails.class,
-            name = "OKE_CANARY_APPROVAL"),
+        value = UpdateOkeCanaryApprovalDeployStageDetails.class,
+        name = "OKE_CANARY_APPROVAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateShellDeployStageDetails.class,
-            name = "SHELL"),
+        value = UpdateShellDeployStageDetails.class,
+        name = "SHELL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOkeDeployStageDetails.class,
-            name = "OKE_DEPLOYMENT"),
+        value = UpdateOkeDeployStageDetails.class,
+        name = "OKE_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails.class,
-            name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"),
+        value = UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateLoadBalancerTrafficShiftDeployStageDetails.class,
-            name = "LOAD_BALANCER_TRAFFIC_SHIFT"),
+        value = UpdateLoadBalancerTrafficShiftDeployStageDetails.class,
+        name = "LOAD_BALANCER_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOkeBlueGreenDeployStageDetails.class,
-            name = "OKE_BLUE_GREEN_DEPLOYMENT"),
+        value = UpdateOkeBlueGreenDeployStageDetails.class,
+        name = "OKE_BLUE_GREEN_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateWaitDeployStageDetails.class,
-            name = "WAIT"),
+        value = UpdateWaitDeployStageDetails.class,
+        name = "WAIT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOkeBlueGreenTrafficShiftDeployStageDetails.class,
-            name = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"),
+        value = UpdateOkeBlueGreenTrafficShiftDeployStageDetails.class,
+        name = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateManualApprovalDeployStageDetails.class,
-            name = "MANUAL_APPROVAL"),
+        value = UpdateManualApprovalDeployStageDetails.class,
+        name = "MANUAL_APPROVAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateComputeInstanceGroupBlueGreenDeployStageDetails.class,
-            name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"),
+        value = UpdateComputeInstanceGroupBlueGreenDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateComputeInstanceGroupCanaryDeployStageDetails.class,
-            name = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"),
+        value = UpdateComputeInstanceGroupCanaryDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateFunctionDeployStageDetails.class,
-            name = "DEPLOY_FUNCTION"),
+        value = UpdateFunctionDeployStageDetails.class,
+        name = "DEPLOY_FUNCTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails.class,
-            name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"),
+        value = UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails.class,
-            name = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"),
+        value = UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateInvokeFunctionDeployStageDetails.class,
-            name = "INVOKE_FUNCTION")
+        value = UpdateInvokeFunctionDeployStageDetails.class,
+        name = "INVOKE_FUNCTION"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class UpdateDeployStageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class UpdateDeployStageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -106,32 +123,30 @@ public class UpdateDeployStageDetails
         this.definedTags = definedTags;
     }
 
-    /** Optional description about the deployment stage. */
+    /**
+     * Optional description about the deployment stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Optional description about the deployment stage.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Deployment stage display name, which can be renamed and is not necessarily unique. Avoid
-     * entering confidential information.
-     */
+     * Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Deployment stage display name, which can be renamed and is not necessarily unique. Avoid
-     * entering confidential information.
-     *
+     * Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -144,41 +159,29 @@ public class UpdateDeployStageDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     *
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -190,7 +193,6 @@ public class UpdateDeployStageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

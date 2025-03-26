@@ -6,50 +6,47 @@ package com.oracle.bmc.osmanagementhub.requests;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallModuleStreamProfileOnManagedInstanceGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * InstallModuleStreamProfileOnManagedInstanceGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallModuleStreamProfileOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use InstallModuleStreamProfileOnManagedInstanceGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model
                         .InstallModuleStreamProfileOnManagedInstanceGroupDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     private String managedInstanceGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** The details used to install module stream profiles on a managed instance gorup. */
+    /**
+     * The details used to install module stream profiles on a managed instance gorup.
+     */
     private com.oracle.bmc.osmanagementhub.model
                     .InstallModuleStreamProfileOnManagedInstanceGroupDetails
             installModuleStreamProfileOnManagedInstanceGroupDetails;
 
-    /** The details used to install module stream profiles on a managed instance gorup. */
+    /**
+     * The details used to install module stream profiles on a managed instance gorup.
+     */
     public com.oracle.bmc.osmanagementhub.model
                     .InstallModuleStreamProfileOnManagedInstanceGroupDetails
             getInstallModuleStreamProfileOnManagedInstanceGroupDetails() {
         return installModuleStreamProfileOnManagedInstanceGroupDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -57,35 +54,41 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -93,7 +96,6 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -109,19 +111,17 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
                     InstallModuleStreamProfileOnManagedInstanceGroupRequest,
                     com.oracle.bmc.osmanagementhub.model
                             .InstallModuleStreamProfileOnManagedInstanceGroupDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          */
         private String managedInstanceGroupId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance group.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
@@ -130,14 +130,15 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
             return this;
         }
 
-        /** The details used to install module stream profiles on a managed instance gorup. */
+        /**
+         * The details used to install module stream profiles on a managed instance gorup.
+         */
         private com.oracle.bmc.osmanagementhub.model
                         .InstallModuleStreamProfileOnManagedInstanceGroupDetails
                 installModuleStreamProfileOnManagedInstanceGroupDetails = null;
 
         /**
          * The details used to install module stream profiles on a managed instance gorup.
-         *
          * @param installModuleStreamProfileOnManagedInstanceGroupDetails the value to set
          * @return this builder instance
          */
@@ -151,15 +152,12 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -170,19 +168,20 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -193,18 +192,21 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -216,19 +218,18 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -240,7 +241,6 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(InstallModuleStreamProfileOnManagedInstanceGroupRequest o) {
@@ -256,14 +256,12 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
         }
 
         /**
-         * Build the instance of InstallModuleStreamProfileOnManagedInstanceGroupRequest as
-         * configured by this builder
+         * Build the instance of InstallModuleStreamProfileOnManagedInstanceGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of InstallModuleStreamProfileOnManagedInstanceGroupRequest
          */
@@ -277,7 +275,6 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -291,11 +288,9 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
         }
 
         /**
-         * Build the instance of InstallModuleStreamProfileOnManagedInstanceGroupRequest as
-         * configured by this builder
+         * Build the instance of InstallModuleStreamProfileOnManagedInstanceGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of InstallModuleStreamProfileOnManagedInstanceGroupRequest
@@ -311,15 +306,12 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             return request;
-            // new InstallModuleStreamProfileOnManagedInstanceGroupRequest(managedInstanceGroupId,
-            // installModuleStreamProfileOnManagedInstanceGroupDetails, opcRequestId, opcRetryToken,
-            // ifMatch);
+            // new InstallModuleStreamProfileOnManagedInstanceGroupRequest(managedInstanceGroupId, installModuleStreamProfileOnManagedInstanceGroupDetails, opcRequestId, opcRetryToken, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -334,7 +326,6 @@ public class InstallModuleStreamProfileOnManagedInstanceGroupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,19 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Secondary multipath device, it uses the charUsername and chapSecret from primary volume
- * attachment <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Secondary multipath device, it uses the charUsername and chapSecret from primary volume attachment
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MultipathDevice.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MultipathDevice
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MultipathDevice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipv4", "iqn", "port"})
     public MultipathDevice(String ipv4, String iqn, Integer port) {
@@ -35,43 +31,45 @@ public final class MultipathDevice
     public static class Builder {
         /**
          * The volume's iSCSI IP address.
+         * <p>
+         * Example: {@code 169.254.2.2}
          *
-         * <p>Example: {@code 169.254.2.2}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
         private String ipv4;
 
         /**
          * The volume's iSCSI IP address.
-         *
-         * <p>Example: {@code 169.254.2.2}
+         * <p>
+         * Example: {@code 169.254.2.2}
          *
          * @param ipv4 the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv4(String ipv4) {
             this.ipv4 = ipv4;
             this.__explicitlySet__.add("ipv4");
             return this;
         }
         /**
-         * The target volume's iSCSI Qualified Name in the format defined by [RFC
-         * 3720](https://tools.ietf.org/html/rfc3720#page-32).
+         * The target volume's iSCSI Qualified Name in the format defined
+         * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+         * <p>
+         * Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
          *
-         * <p>Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iqn")
         private String iqn;
 
         /**
-         * The target volume's iSCSI Qualified Name in the format defined by [RFC
-         * 3720](https://tools.ietf.org/html/rfc3720#page-32).
-         *
-         * <p>Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
+         * The target volume's iSCSI Qualified Name in the format defined
+         * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+         * <p>
+         * Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
          *
          * @param iqn the value to set
          * @return this builder
-         */
+         **/
         public Builder iqn(String iqn) {
             this.iqn = iqn;
             this.__explicitlySet__.add("iqn");
@@ -79,20 +77,21 @@ public final class MultipathDevice
         }
         /**
          * The volume's iSCSI port, usually port 860 or 3260.
+         * <p>
+         * Example: {@code 3260}
          *
-         * <p>Example: {@code 3260}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The volume's iSCSI port, usually port 860 or 3260.
-         *
-         * <p>Example: {@code 3260}
+         * <p>
+         * Example: {@code 3260}
          *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -125,7 +124,9 @@ public final class MultipathDevice
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,59 +137,62 @@ public final class MultipathDevice
 
     /**
      * The volume's iSCSI IP address.
+     * <p>
+     * Example: {@code 169.254.2.2}
      *
-     * <p>Example: {@code 169.254.2.2}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
     private final String ipv4;
 
     /**
      * The volume's iSCSI IP address.
-     *
-     * <p>Example: {@code 169.254.2.2}
+     * <p>
+     * Example: {@code 169.254.2.2}
      *
      * @return the value
-     */
+     **/
     public String getIpv4() {
         return ipv4;
     }
 
     /**
-     * The target volume's iSCSI Qualified Name in the format defined by [RFC
-     * 3720](https://tools.ietf.org/html/rfc3720#page-32).
+     * The target volume's iSCSI Qualified Name in the format defined
+     * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+     * <p>
+     * Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
      *
-     * <p>Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
     private final String iqn;
 
     /**
-     * The target volume's iSCSI Qualified Name in the format defined by [RFC
-     * 3720](https://tools.ietf.org/html/rfc3720#page-32).
-     *
-     * <p>Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
+     * The target volume's iSCSI Qualified Name in the format defined
+     * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+     * <p>
+     * Example: {@code iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195}
      *
      * @return the value
-     */
+     **/
     public String getIqn() {
         return iqn;
     }
 
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
+     * <p>
+     * Example: {@code 3260}
      *
-     * <p>Example: {@code 3260}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
-     *
-     * <p>Example: {@code 3260}
+     * <p>
+     * Example: {@code 3260}
      *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
@@ -200,7 +204,6 @@ public final class MultipathDevice
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

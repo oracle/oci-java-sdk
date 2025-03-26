@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/** The IP notation types for secure access. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum IpNotationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The IP notation types for secure access.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+public enum IpNotationType {
     IpAddress("IP_ADDRESS"),
     Cidr("CIDR"),
     Vcn("VCN"),

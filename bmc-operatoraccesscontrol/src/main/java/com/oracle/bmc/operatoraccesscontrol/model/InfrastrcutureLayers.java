@@ -5,11 +5,14 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Infrastructure layers available to be governed under operator control - DOM0 - CellServer - CPS
- * (Control Plane Server)
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum InfrastrcutureLayers implements com.oracle.bmc.http.internal.BmcEnum {
+ * Infrastructure layers available to be governed under operator control
+ * - DOM0
+ * - CellServer
+ * - CPS (Control Plane Server)
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum InfrastrcutureLayers {
     Dom0("DOM0"),
     Cellserver("CELLSERVER"),
     Cps("CPS"),

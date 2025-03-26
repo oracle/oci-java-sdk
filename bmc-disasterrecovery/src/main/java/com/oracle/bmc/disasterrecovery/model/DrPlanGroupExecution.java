@@ -5,23 +5,21 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details of a group execution in a DR plan execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details of a group execution in a DR plan execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DrPlanGroupExecution.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DrPlanGroupExecution
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DrPlanGroupExecution.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "groupId",
@@ -60,20 +58,21 @@ public final class DrPlanGroupExecution
     public static class Builder {
         /**
          * The unique id of the group. Must not be modified by user.
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
-         * <p>Example: {@code sgid1.group..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         /**
          * The unique id of the group. Must not be modified by user.
-         *
-         * <p>Example: {@code sgid1.group..uniqueID}
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
-         */
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
@@ -81,20 +80,21 @@ public final class DrPlanGroupExecution
         }
         /**
          * The group type.
+         * <p>
+         * Example: {@code BUILT_IN}
          *
-         * <p>Example: {@code BUILT_IN}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanGroupType type;
 
         /**
          * The group type.
-         *
-         * <p>Example: {@code BUILT_IN}
+         * <p>
+         * Example: {@code BUILT_IN}
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(DrPlanGroupType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -102,26 +102,30 @@ public final class DrPlanGroupExecution
         }
         /**
          * The display name of the group execution.
+         * <p>
+         * Example: {@code DATABASE_SWITCHOVER}
          *
-         * <p>Example: {@code DATABASE_SWITCHOVER}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the group execution.
-         *
-         * <p>Example: {@code DATABASE_SWITCHOVER}
+         * <p>
+         * Example: {@code DATABASE_SWITCHOVER}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The status of the group execution. */
+        /**
+         * The status of the group execution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DrPlanGroupExecutionStatus status;
 
@@ -130,7 +134,7 @@ public final class DrPlanGroupExecution
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(DrPlanGroupExecutionStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -138,20 +142,21 @@ public final class DrPlanGroupExecution
         }
         /**
          * Additional details on the group execution status.
+         * <p>
+         * Example: {@code A total of [3] steps failed in the group}
          *
-         * <p>Example: {@code A total of [3] steps failed in the group}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private String statusDetails;
 
         /**
          * Additional details on the group execution status.
-         *
-         * <p>Example: {@code A total of [3] steps failed in the group}
+         * <p>
+         * Example: {@code A total of [3] steps failed in the group}
          *
          * @param statusDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDetails(String statusDetails) {
             this.statusDetails = statusDetails;
             this.__explicitlySet__.add("statusDetails");
@@ -159,20 +164,21 @@ public final class DrPlanGroupExecution
         }
         /**
          * The time when group execution began. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time when group execution began. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -180,20 +186,21 @@ public final class DrPlanGroupExecution
         }
         /**
          * The time when group execution ended. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The time when group execution ended. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -201,26 +208,30 @@ public final class DrPlanGroupExecution
         }
         /**
          * The total duration in seconds taken to complete group execution.
+         * <p>
+         * Example: {@code 120}
          *
-         * <p>Example: {@code 120}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionDurationInSec")
         private Integer executionDurationInSec;
 
         /**
          * The total duration in seconds taken to complete group execution.
-         *
-         * <p>Example: {@code 120}
+         * <p>
+         * Example: {@code 120}
          *
          * @param executionDurationInSec the value to set
          * @return this builder
-         */
+         **/
         public Builder executionDurationInSec(Integer executionDurationInSec) {
             this.executionDurationInSec = executionDurationInSec;
             this.__explicitlySet__.add("executionDurationInSec");
             return this;
         }
-        /** A list of step executions in the group. */
+        /**
+         * A list of step executions in the group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepExecutions")
         private java.util.List<DrPlanStepExecution> stepExecutions;
 
@@ -229,7 +240,7 @@ public final class DrPlanGroupExecution
          *
          * @param stepExecutions the value to set
          * @return this builder
-         */
+         **/
         public Builder stepExecutions(java.util.List<DrPlanStepExecution> stepExecutions) {
             this.stepExecutions = stepExecutions;
             this.__explicitlySet__.add("stepExecutions");
@@ -290,7 +301,9 @@ public final class DrPlanGroupExecution
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -301,62 +314,68 @@ public final class DrPlanGroupExecution
 
     /**
      * The unique id of the group. Must not be modified by user.
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
-     * <p>Example: {@code sgid1.group..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
     /**
      * The unique id of the group. Must not be modified by user.
-     *
-     * <p>Example: {@code sgid1.group..uniqueID}
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getGroupId() {
         return groupId;
     }
 
     /**
      * The group type.
+     * <p>
+     * Example: {@code BUILT_IN}
      *
-     * <p>Example: {@code BUILT_IN}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanGroupType type;
 
     /**
      * The group type.
-     *
-     * <p>Example: {@code BUILT_IN}
+     * <p>
+     * Example: {@code BUILT_IN}
      *
      * @return the value
-     */
+     **/
     public DrPlanGroupType getType() {
         return type;
     }
 
     /**
      * The display name of the group execution.
+     * <p>
+     * Example: {@code DATABASE_SWITCHOVER}
      *
-     * <p>Example: {@code DATABASE_SWITCHOVER}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the group execution.
-     *
-     * <p>Example: {@code DATABASE_SWITCHOVER}
+     * <p>
+     * Example: {@code DATABASE_SWITCHOVER}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The status of the group execution. */
+    /**
+     * The status of the group execution.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DrPlanGroupExecutionStatus status;
 
@@ -364,88 +383,95 @@ public final class DrPlanGroupExecution
      * The status of the group execution.
      *
      * @return the value
-     */
+     **/
     public DrPlanGroupExecutionStatus getStatus() {
         return status;
     }
 
     /**
      * Additional details on the group execution status.
+     * <p>
+     * Example: {@code A total of [3] steps failed in the group}
      *
-     * <p>Example: {@code A total of [3] steps failed in the group}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final String statusDetails;
 
     /**
      * Additional details on the group execution status.
-     *
-     * <p>Example: {@code A total of [3] steps failed in the group}
+     * <p>
+     * Example: {@code A total of [3] steps failed in the group}
      *
      * @return the value
-     */
+     **/
     public String getStatusDetails() {
         return statusDetails;
     }
 
     /**
      * The time when group execution began. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time when group execution began. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
      * The time when group execution ended. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The time when group execution ended. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
     /**
      * The total duration in seconds taken to complete group execution.
+     * <p>
+     * Example: {@code 120}
      *
-     * <p>Example: {@code 120}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionDurationInSec")
     private final Integer executionDurationInSec;
 
     /**
      * The total duration in seconds taken to complete group execution.
-     *
-     * <p>Example: {@code 120}
+     * <p>
+     * Example: {@code 120}
      *
      * @return the value
-     */
+     **/
     public Integer getExecutionDurationInSec() {
         return executionDurationInSec;
     }
 
-    /** A list of step executions in the group. */
+    /**
+     * A list of step executions in the group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepExecutions")
     private final java.util.List<DrPlanStepExecution> stepExecutions;
 
@@ -453,7 +479,7 @@ public final class DrPlanGroupExecution
      * A list of step executions in the group.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DrPlanStepExecution> getStepExecutions() {
         return stepExecutions;
     }
@@ -465,7 +491,6 @@ public final class DrPlanGroupExecution
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

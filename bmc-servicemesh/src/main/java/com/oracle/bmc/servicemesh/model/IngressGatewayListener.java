@@ -5,23 +5,22 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Listener configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * Listener configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IngressGatewayListener.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IngressGatewayListener.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IngressGatewayListener
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"protocol", "port", "tls"})
     public IngressGatewayListener(Protocol protocol, Integer port, IngressListenerTlsConfig tls) {
@@ -33,31 +32,33 @@ public final class IngressGatewayListener
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of protocol used. */
+        /**
+         * Type of protocol used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * Type of protocol used.
-         *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /** Port on which ingress gateway is listening. */
+        /**
+         * Port on which ingress gateway is listening.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Port on which ingress gateway is listening.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -100,7 +101,9 @@ public final class IngressGatewayListener
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,15 +112,17 @@ public final class IngressGatewayListener
         return new Builder().copy(this);
     }
 
-    /** Type of protocol used. */
-    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of protocol used.
+     **/
+    public enum Protocol {
         Http("HTTP"),
         TlsPassthrough("TLS_PASSTHROUGH"),
         Tcp("TCP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -156,28 +161,30 @@ public final class IngressGatewayListener
             return UnknownEnumValue;
         }
     };
-    /** Type of protocol used. */
+    /**
+     * Type of protocol used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * Type of protocol used.
-     *
      * @return the value
-     */
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
 
-    /** Port on which ingress gateway is listening. */
+    /**
+     * Port on which ingress gateway is listening.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Port on which ingress gateway is listening.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
@@ -196,7 +203,6 @@ public final class IngressGatewayListener
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

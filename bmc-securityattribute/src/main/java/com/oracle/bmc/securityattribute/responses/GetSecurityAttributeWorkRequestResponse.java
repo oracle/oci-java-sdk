@@ -6,11 +6,12 @@ package com.oracle.bmc.securityattribute.responses;
 
 import com.oracle.bmc.securityattribute.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,7 +25,10 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The number of seconds that the client should wait before polling again. */
+    /**
+     * The number of seconds that the client should wait before polling again.
+     *
+     */
     private Float retryAfter;
 
     /**
@@ -36,13 +40,14 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
         return retryAfter;
     }
 
-    /** The returned {@code SecurityAttributeWorkRequest} instance. */
+    /**
+     * The returned SecurityAttributeWorkRequest instance.
+     */
     private com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequest
             securityAttributeWorkRequest;
 
     /**
-     * The returned {@code SecurityAttributeWorkRequest} instance.
-     *
+     * The returned SecurityAttributeWorkRequest instance.
      * @return the value
      */
     public com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequest
@@ -59,7 +64,7 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
     })
     private GetSecurityAttributeWorkRequestResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Float retryAfter,
             com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequest
@@ -70,21 +75,17 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
         this.securityAttributeWorkRequest = securityAttributeWorkRequest;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetSecurityAttributeWorkRequestResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -92,6 +93,7 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -107,7 +109,10 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The number of seconds that the client should wait before polling again. */
+        /**
+         * The number of seconds that the client should wait before polling again.
+         *
+         */
         private Float retryAfter;
 
         /**
@@ -121,13 +126,14 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned {@code SecurityAttributeWorkRequest} instance. */
+        /**
+         * The returned SecurityAttributeWorkRequest instance.
+         */
         private com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequest
                 securityAttributeWorkRequest;
 
         /**
-         * The returned {@code SecurityAttributeWorkRequest} instance.
-         *
+         * The returned SecurityAttributeWorkRequest instance.
          * @param securityAttributeWorkRequest the value to set
          * @return this builder
          */
@@ -140,10 +146,8 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetSecurityAttributeWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -156,10 +160,8 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetSecurityAttributeWorkRequestResponse build() {
             return new GetSecurityAttributeWorkRequestResponse(
                     __httpStatusCode__,
@@ -172,7 +174,6 @@ public class GetSecurityAttributeWorkRequestResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

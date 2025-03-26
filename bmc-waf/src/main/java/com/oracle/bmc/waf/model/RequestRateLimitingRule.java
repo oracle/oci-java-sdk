@@ -5,26 +5,29 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * Rule that represents RequestRateLimitingConfigurations. Only actions of the following types are
- * allowed to be referenced in this rule: * CHECK * RETURN_HTTP_RESPONSE <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * Rule that represents RequestRateLimitingConfigurations.
+ * Only actions of the following types are allowed to be referenced in this rule:
+ *  * CHECK
+ *  * RETURN_HTTP_RESPONSE
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RequestRateLimitingRule.Builder.class)
+    builder = RequestRateLimitingRule.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -64,19 +67,20 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
             return this;
         }
         /**
-         * Rate Limiting Configurations. Each configuration counts requests towards its own {@code
-         * requestsLimit}.
-         */
+         * Rate Limiting Configurations.
+         * Each configuration counts requests towards its own {@code requestsLimit}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<RequestRateLimitingConfiguration> configurations;
 
         /**
-         * Rate Limiting Configurations. Each configuration counts requests towards its own {@code
-         * requestsLimit}.
+         * Rate Limiting Configurations.
+         * Each configuration counts requests towards its own {@code requestsLimit}.
          *
          * @param configurations the value to set
          * @return this builder
-         */
+         **/
         public Builder configurations(
                 java.util.List<RequestRateLimitingConfiguration> configurations) {
             this.configurations = configurations;
@@ -122,7 +126,9 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,18 +149,19 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
     }
 
     /**
-     * Rate Limiting Configurations. Each configuration counts requests towards its own {@code
-     * requestsLimit}.
-     */
+     * Rate Limiting Configurations.
+     * Each configuration counts requests towards its own {@code requestsLimit}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<RequestRateLimitingConfiguration> configurations;
 
     /**
-     * Rate Limiting Configurations. Each configuration counts requests towards its own {@code
-     * requestsLimit}.
+     * Rate Limiting Configurations.
+     * Each configuration counts requests towards its own {@code requestsLimit}.
      *
      * @return the value
-     */
+     **/
     public java.util.List<RequestRateLimitingConfiguration> getConfigurations() {
         return configurations;
     }
@@ -166,7 +173,6 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

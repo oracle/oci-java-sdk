@@ -5,21 +5,19 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The configuration details for the WAAS policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+ * The configuration details for the WAAS policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PolicyConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PolicyConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PolicyConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certificateId",
@@ -71,326 +69,263 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SSL certificate to use if HTTPS is supported. */
+        /**
+         * The OCID of the SSL certificate to use if HTTPS is supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
          * The OCID of the SSL certificate to use if HTTPS is supported.
-         *
          * @param certificateId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
             return this;
         }
         /**
-         * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If
-         * unspecified, defaults to {@code false}.
-         */
+         * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If unspecified, defaults to {@code false}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHttpsEnabled")
         private Boolean isHttpsEnabled;
 
         /**
-         * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If
-         * unspecified, defaults to {@code false}.
-         *
+         * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If unspecified, defaults to {@code false}.
          * @param isHttpsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isHttpsEnabled(Boolean isHttpsEnabled) {
             this.isHttpsEnabled = isHttpsEnabled;
             this.__explicitlySet__.add("isHttpsEnabled");
             return this;
         }
-        /** Force HTTP to HTTPS redirection. If unspecified, defaults to {@code false}. */
+        /**
+         * Force HTTP to HTTPS redirection. If unspecified, defaults to {@code false}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHttpsForced")
         private Boolean isHttpsForced;
 
         /**
          * Force HTTP to HTTPS redirection. If unspecified, defaults to {@code false}.
-         *
          * @param isHttpsForced the value to set
          * @return this builder
-         */
+         **/
         public Builder isHttpsForced(Boolean isHttpsForced) {
             this.isHttpsForced = isHttpsForced;
             this.__explicitlySet__.add("isHttpsForced");
             return this;
         }
         /**
-         * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS
-         * protocol is negotiated while the request is connecting and the most recent protocol
-         * supported by both the edge node and client browser will be selected. If no such version
-         * exists, the connection will be aborted. - **TLS_V1:** corresponds to TLS 1.0
-         * specification.
-         *
-         * <p>- **TLS_V1_1:** corresponds to TLS 1.1 specification.
-         *
-         * <p>- **TLS_V1_2:** corresponds to TLS 1.2 specification.
-         *
-         * <p>- **TLS_V1_3:** corresponds to TLS 1.3 specification.
-         *
-         * <p>Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code
-         * TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
-         */
+         * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled.
+         * The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
+         * - **TLS_V1:** corresponds to TLS 1.0 specification.
+         * <p>
+         * - **TLS_V1_1:** corresponds to TLS 1.1 specification.
+         * <p>
+         * - **TLS_V1_2:** corresponds to TLS 1.2 specification.
+         * <p>
+         * - **TLS_V1_3:** corresponds to TLS 1.3 specification.
+         * <p>
+         * Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsProtocols")
         private java.util.List<TlsProtocols> tlsProtocols;
 
         /**
-         * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS
-         * protocol is negotiated while the request is connecting and the most recent protocol
-         * supported by both the edge node and client browser will be selected. If no such version
-         * exists, the connection will be aborted. - **TLS_V1:** corresponds to TLS 1.0
-         * specification.
-         *
-         * <p>- **TLS_V1_1:** corresponds to TLS 1.1 specification.
-         *
-         * <p>- **TLS_V1_2:** corresponds to TLS 1.2 specification.
-         *
-         * <p>- **TLS_V1_3:** corresponds to TLS 1.3 specification.
-         *
-         * <p>Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code
-         * TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
-         *
+         * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled.
+         * The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
+         * - **TLS_V1:** corresponds to TLS 1.0 specification.
+         * <p>
+         * - **TLS_V1_1:** corresponds to TLS 1.1 specification.
+         * <p>
+         * - **TLS_V1_2:** corresponds to TLS 1.2 specification.
+         * <p>
+         * - **TLS_V1_3:** corresponds to TLS 1.3 specification.
+         * <p>
+         * Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
          * @param tlsProtocols the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsProtocols(java.util.List<TlsProtocols> tlsProtocols) {
             this.tlsProtocols = tlsProtocols;
             this.__explicitlySet__.add("tlsProtocols");
             return this;
         }
         /**
-         * Enable or disable GZIP compression of origin responses. If enabled, the header {@code
-         * Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:}
-         * header is used.
-         */
+         * Enable or disable GZIP compression of origin responses. If enabled, the header {@code Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:} header is used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOriginCompressionEnabled")
         private Boolean isOriginCompressionEnabled;
 
         /**
-         * Enable or disable GZIP compression of origin responses. If enabled, the header {@code
-         * Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:}
-         * header is used.
-         *
+         * Enable or disable GZIP compression of origin responses. If enabled, the header {@code Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:} header is used.
          * @param isOriginCompressionEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isOriginCompressionEnabled(Boolean isOriginCompressionEnabled) {
             this.isOriginCompressionEnabled = isOriginCompressionEnabled;
             this.__explicitlySet__.add("isOriginCompressionEnabled");
             return this;
         }
         /**
-         * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client
-         * requests if the WAF is connected to a CDN.
-         */
+         * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBehindCdn")
         private Boolean isBehindCdn;
 
         /**
-         * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client
-         * requests if the WAF is connected to a CDN.
-         *
+         * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
          * @param isBehindCdn the value to set
          * @return this builder
-         */
+         **/
         public Builder isBehindCdn(Boolean isBehindCdn) {
             this.isBehindCdn = isBehindCdn;
             this.__explicitlySet__.add("isBehindCdn");
             return this;
         }
         /**
-         * Specifies an HTTP header name which is treated as the connecting client's IP address.
-         * Applicable only if {@code isBehindCdn} is enabled.
-         *
-         * <p>The edge node reads this header and its value and sets the client IP address as
-         * specified. It does not create the header if the header is not present in the request. If
-         * the header is not present, the connecting IP address will be used as the client's true IP
-         * address. It uses the last IP address in the header's value as the true IP address.
-         *
-         * <p>Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
-         *
-         * <p>In the case of multiple headers with the same name, only the first header will be
-         * used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
-         *
-         * <p>- **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
-         *
-         * <p>- **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
-         *
-         * <p>- **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
-         *
-         * <p>- **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
-         *
-         * <p>- **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
-         */
+         * Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if {@code isBehindCdn} is enabled.
+         * <p>
+         * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+         * <p>
+         * Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
+         * <p>
+         * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+         * <p>
+         * - **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
+         * <p>
+         * - **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
+         * <p>
+         * - **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
+         * <p>
+         * - **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
+         * <p>
+         * - **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientAddressHeader")
         private ClientAddressHeader clientAddressHeader;
 
         /**
-         * Specifies an HTTP header name which is treated as the connecting client's IP address.
-         * Applicable only if {@code isBehindCdn} is enabled.
-         *
-         * <p>The edge node reads this header and its value and sets the client IP address as
-         * specified. It does not create the header if the header is not present in the request. If
-         * the header is not present, the connecting IP address will be used as the client's true IP
-         * address. It uses the last IP address in the header's value as the true IP address.
-         *
-         * <p>Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
-         *
-         * <p>In the case of multiple headers with the same name, only the first header will be
-         * used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
-         *
-         * <p>- **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
-         *
-         * <p>- **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
-         *
-         * <p>- **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
-         *
-         * <p>- **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
-         *
-         * <p>- **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
-         *
+         * Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if {@code isBehindCdn} is enabled.
+         * <p>
+         * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+         * <p>
+         * Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
+         * <p>
+         * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+         * <p>
+         * - **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
+         * <p>
+         * - **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
+         * <p>
+         * - **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
+         * <p>
+         * - **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
+         * <p>
+         * - **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
          * @param clientAddressHeader the value to set
          * @return this builder
-         */
+         **/
         public Builder clientAddressHeader(ClientAddressHeader clientAddressHeader) {
             this.clientAddressHeader = clientAddressHeader;
             this.__explicitlySet__.add("clientAddressHeader");
             return this;
         }
         /**
-         * Enable or disable automatic content caching based on the response {@code cache-control}
-         * header. This feature enables the origin to act as a proxy cache. Caching is usually
-         * defined using {@code cache-control} header. For example {@code cache-control:
-         * max-age=120} means that the returned resource is valid for 120 seconds. Caching rules
-         * will overwrite this setting.
-         */
+         * Enable or disable automatic content caching based on the response {@code cache-control} header. This feature enables the origin to act as a proxy cache. Caching is usually defined using {@code cache-control} header. For example {@code cache-control: max-age=120} means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCacheControlRespected")
         private Boolean isCacheControlRespected;
 
         /**
-         * Enable or disable automatic content caching based on the response {@code cache-control}
-         * header. This feature enables the origin to act as a proxy cache. Caching is usually
-         * defined using {@code cache-control} header. For example {@code cache-control:
-         * max-age=120} means that the returned resource is valid for 120 seconds. Caching rules
-         * will overwrite this setting.
-         *
+         * Enable or disable automatic content caching based on the response {@code cache-control} header. This feature enables the origin to act as a proxy cache. Caching is usually defined using {@code cache-control} header. For example {@code cache-control: max-age=120} means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
          * @param isCacheControlRespected the value to set
          * @return this builder
-         */
+         **/
         public Builder isCacheControlRespected(Boolean isCacheControlRespected) {
             this.isCacheControlRespected = isCacheControlRespected;
             this.__explicitlySet__.add("isCacheControlRespected");
             return this;
         }
         /**
-         * Enable or disable buffering of responses from the origin. Buffering improves overall
-         * stability in case of network issues, but slightly increases Time To First Byte.
-         */
+         * Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isResponseBufferingEnabled")
         private Boolean isResponseBufferingEnabled;
 
         /**
-         * Enable or disable buffering of responses from the origin. Buffering improves overall
-         * stability in case of network issues, but slightly increases Time To First Byte.
-         *
+         * Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
          * @param isResponseBufferingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isResponseBufferingEnabled(Boolean isResponseBufferingEnabled) {
             this.isResponseBufferingEnabled = isResponseBufferingEnabled;
             this.__explicitlySet__.add("isResponseBufferingEnabled");
             return this;
         }
         /**
-         * The set cipher group for the configured TLS protocol. This sets the configuration for the
-         * TLS connections between clients and edge nodes only. - **DEFAULT:** Cipher group supports
-         * TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled:
-         * {@code
-         * ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
-         */
+         * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
+         * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cipherGroup")
         private CipherGroup cipherGroup;
 
         /**
-         * The set cipher group for the configured TLS protocol. This sets the configuration for the
-         * TLS connections between clients and edge nodes only. - **DEFAULT:** Cipher group supports
-         * TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled:
-         * {@code
-         * ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
-         *
+         * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
+         * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
          * @param cipherGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder cipherGroup(CipherGroup cipherGroup) {
             this.cipherGroup = cipherGroup;
             this.__explicitlySet__.add("cipherGroup");
             return this;
         }
-        /** An object that represents a load balancing method and its properties. */
+        /**
+         * An object that represents a load balancing method and its properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancingMethod")
         private LoadBalancingMethod loadBalancingMethod;
 
         /**
          * An object that represents a load balancing method and its properties.
-         *
          * @param loadBalancingMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder loadBalancingMethod(LoadBalancingMethod loadBalancingMethod) {
             this.loadBalancingMethod = loadBalancingMethod;
             this.__explicitlySet__.add("loadBalancingMethod");
             return this;
         }
         /**
-         * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF
-         * disabled if Connection request header from the client has the value Upgrade (case
-         * insensitive matching) and Upgrade request header has the value websocket (case
-         * insensitive matching). Paths matches if the concatenation of request URL path and query
-         * starts with the contents of the one of {@code websocketPathPrefixes} array value. In All
-         * other cases challenges, like JSC, HIC and etc., remain active.
-         */
+         * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of {@code websocketPathPrefixes} array value. In All other cases challenges, like JSC, HIC and etc., remain active.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("websocketPathPrefixes")
         private java.util.List<String> websocketPathPrefixes;
 
         /**
-         * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF
-         * disabled if Connection request header from the client has the value Upgrade (case
-         * insensitive matching) and Upgrade request header has the value websocket (case
-         * insensitive matching). Paths matches if the concatenation of request URL path and query
-         * starts with the contents of the one of {@code websocketPathPrefixes} array value. In All
-         * other cases challenges, like JSC, HIC and etc., remain active.
-         *
+         * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of {@code websocketPathPrefixes} array value. In All other cases challenges, like JSC, HIC and etc., remain active.
          * @param websocketPathPrefixes the value to set
          * @return this builder
-         */
+         **/
         public Builder websocketPathPrefixes(java.util.List<String> websocketPathPrefixes) {
             this.websocketPathPrefixes = websocketPathPrefixes;
             this.__explicitlySet__.add("websocketPathPrefixes");
             return this;
         }
         /**
-         * SNI stands for Server Name Indication and is an extension of the TLS protocol. It
-         * indicates which hostname is being contacted by the browser at the beginning of the
-         * 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP
-         * address and port.
-         */
+         * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSniEnabled")
         private Boolean isSniEnabled;
 
         /**
-         * SNI stands for Server Name Indication and is an extension of the TLS protocol. It
-         * indicates which hostname is being contacted by the browser at the beginning of the
-         * 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP
-         * address and port.
-         *
+         * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
          * @param isSniEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isSniEnabled(Boolean isSniEnabled) {
             this.isSniEnabled = isSniEnabled;
             this.__explicitlySet__.add("isSniEnabled");
@@ -480,7 +415,9 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -489,59 +426,59 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SSL certificate to use if HTTPS is supported. */
+    /**
+     * The OCID of the SSL certificate to use if HTTPS is supported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * The OCID of the SSL certificate to use if HTTPS is supported.
-     *
      * @return the value
-     */
+     **/
     public String getCertificateId() {
         return certificateId;
     }
 
     /**
-     * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If
-     * unspecified, defaults to {@code false}.
-     */
+     * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If unspecified, defaults to {@code false}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHttpsEnabled")
     private final Boolean isHttpsEnabled;
 
     /**
-     * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If
-     * unspecified, defaults to {@code false}.
-     *
+     * Enable or disable HTTPS support. If true, a {@code certificateId} is required. If unspecified, defaults to {@code false}.
      * @return the value
-     */
+     **/
     public Boolean getIsHttpsEnabled() {
         return isHttpsEnabled;
     }
 
-    /** Force HTTP to HTTPS redirection. If unspecified, defaults to {@code false}. */
+    /**
+     * Force HTTP to HTTPS redirection. If unspecified, defaults to {@code false}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHttpsForced")
     private final Boolean isHttpsForced;
 
     /**
      * Force HTTP to HTTPS redirection. If unspecified, defaults to {@code false}.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHttpsForced() {
         return isHttpsForced;
     }
 
-    /** */
-    public enum TlsProtocols implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum TlsProtocols {
         TlsV1("TLS_V1"),
         TlsV11("TLS_V1_1"),
         TlsV12("TLS_V1_2"),
         TlsV13("TLS_V1_3"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -581,105 +518,87 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS
-     * protocol is negotiated while the request is connecting and the most recent protocol supported
-     * by both the edge node and client browser will be selected. If no such version exists, the
-     * connection will be aborted. - **TLS_V1:** corresponds to TLS 1.0 specification.
-     *
-     * <p>- **TLS_V1_1:** corresponds to TLS 1.1 specification.
-     *
-     * <p>- **TLS_V1_2:** corresponds to TLS 1.2 specification.
-     *
-     * <p>- **TLS_V1_3:** corresponds to TLS 1.3 specification.
-     *
-     * <p>Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code
-     * TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
-     */
+     * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled.
+     * The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
+     * - **TLS_V1:** corresponds to TLS 1.0 specification.
+     * <p>
+     * - **TLS_V1_1:** corresponds to TLS 1.1 specification.
+     * <p>
+     * - **TLS_V1_2:** corresponds to TLS 1.2 specification.
+     * <p>
+     * - **TLS_V1_3:** corresponds to TLS 1.3 specification.
+     * <p>
+     * Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsProtocols")
     private final java.util.List<TlsProtocols> tlsProtocols;
 
     /**
-     * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS
-     * protocol is negotiated while the request is connecting and the most recent protocol supported
-     * by both the edge node and client browser will be selected. If no such version exists, the
-     * connection will be aborted. - **TLS_V1:** corresponds to TLS 1.0 specification.
-     *
-     * <p>- **TLS_V1_1:** corresponds to TLS 1.1 specification.
-     *
-     * <p>- **TLS_V1_2:** corresponds to TLS 1.2 specification.
-     *
-     * <p>- **TLS_V1_3:** corresponds to TLS 1.3 specification.
-     *
-     * <p>Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code
-     * TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
-     *
+     * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled.
+     * The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
+     * - **TLS_V1:** corresponds to TLS 1.0 specification.
+     * <p>
+     * - **TLS_V1_1:** corresponds to TLS 1.1 specification.
+     * <p>
+     * - **TLS_V1_2:** corresponds to TLS 1.2 specification.
+     * <p>
+     * - **TLS_V1_3:** corresponds to TLS 1.3 specification.
+     * <p>
+     * Enabled TLS protocols must go in a row. For example if {@code TLS_v1_1} and {@code TLS_V1_3} are enabled, {@code TLS_V1_2} must be enabled too.
      * @return the value
-     */
+     **/
     public java.util.List<TlsProtocols> getTlsProtocols() {
         return tlsProtocols;
     }
 
     /**
-     * Enable or disable GZIP compression of origin responses. If enabled, the header {@code
-     * Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:}
-     * header is used.
-     */
+     * Enable or disable GZIP compression of origin responses. If enabled, the header {@code Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:} header is used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOriginCompressionEnabled")
     private final Boolean isOriginCompressionEnabled;
 
     /**
-     * Enable or disable GZIP compression of origin responses. If enabled, the header {@code
-     * Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:}
-     * header is used.
-     *
+     * Enable or disable GZIP compression of origin responses. If enabled, the header {@code Accept-Encoding: gzip} is sent to origin, otherwise, the empty {@code Accept-Encoding:} header is used.
      * @return the value
-     */
+     **/
     public Boolean getIsOriginCompressionEnabled() {
         return isOriginCompressionEnabled;
     }
 
     /**
-     * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client requests
-     * if the WAF is connected to a CDN.
-     */
+     * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBehindCdn")
     private final Boolean isBehindCdn;
 
     /**
-     * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client requests
-     * if the WAF is connected to a CDN.
-     *
+     * Enabling {@code isBehindCdn} allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
      * @return the value
-     */
+     **/
     public Boolean getIsBehindCdn() {
         return isBehindCdn;
     }
 
     /**
-     * Specifies an HTTP header name which is treated as the connecting client's IP address.
-     * Applicable only if {@code isBehindCdn} is enabled.
-     *
-     * <p>The edge node reads this header and its value and sets the client IP address as specified.
-     * It does not create the header if the header is not present in the request. If the header is
-     * not present, the connecting IP address will be used as the client's true IP address. It uses
-     * the last IP address in the header's value as the true IP address.
-     *
-     * <p>Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
-     *
-     * <p>In the case of multiple headers with the same name, only the first header will be used. It
-     * is assumed that CDN sets the correct client IP address to prevent spoofing.
-     *
-     * <p>- **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
-     *
-     * <p>- **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
-     *
-     * <p>- **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
-     *
-     * <p>- **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
-     *
-     * <p>- **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
-     */
-    public enum ClientAddressHeader implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if {@code isBehindCdn} is enabled.
+     * <p>
+     * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+     * <p>
+     * Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
+     * <p>
+     * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+     * <p>
+     * - **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
+     * <p>
+     * - **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
+     * <p>
+     * - **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
+     * <p>
+     * - **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
+     * <p>
+     * - **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
+     **/
+    public enum ClientAddressHeader {
         XForwardedFor("X_FORWARDED_FOR"),
         XClientIp("X_CLIENT_IP"),
         XRealIp("X_REAL_IP"),
@@ -687,8 +606,8 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
         TrueClientIp("TRUE_CLIENT_IP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -728,112 +647,89 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * Specifies an HTTP header name which is treated as the connecting client's IP address.
-     * Applicable only if {@code isBehindCdn} is enabled.
-     *
-     * <p>The edge node reads this header and its value and sets the client IP address as specified.
-     * It does not create the header if the header is not present in the request. If the header is
-     * not present, the connecting IP address will be used as the client's true IP address. It uses
-     * the last IP address in the header's value as the true IP address.
-     *
-     * <p>Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
-     *
-     * <p>In the case of multiple headers with the same name, only the first header will be used. It
-     * is assumed that CDN sets the correct client IP address to prevent spoofing.
-     *
-     * <p>- **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
-     *
-     * <p>- **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
-     *
-     * <p>- **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
-     *
-     * <p>- **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
-     *
-     * <p>- **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
-     */
+     * Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if {@code isBehindCdn} is enabled.
+     * <p>
+     * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+     * <p>
+     * Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
+     * <p>
+     * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+     * <p>
+     * - **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
+     * <p>
+     * - **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
+     * <p>
+     * - **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
+     * <p>
+     * - **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
+     * <p>
+     * - **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientAddressHeader")
     private final ClientAddressHeader clientAddressHeader;
 
     /**
-     * Specifies an HTTP header name which is treated as the connecting client's IP address.
-     * Applicable only if {@code isBehindCdn} is enabled.
-     *
-     * <p>The edge node reads this header and its value and sets the client IP address as specified.
-     * It does not create the header if the header is not present in the request. If the header is
-     * not present, the connecting IP address will be used as the client's true IP address. It uses
-     * the last IP address in the header's value as the true IP address.
-     *
-     * <p>Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
-     *
-     * <p>In the case of multiple headers with the same name, only the first header will be used. It
-     * is assumed that CDN sets the correct client IP address to prevent spoofing.
-     *
-     * <p>- **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
-     *
-     * <p>- **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
-     *
-     * <p>- **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
-     *
-     * <p>- **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
-     *
-     * <p>- **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
-     *
+     * Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if {@code isBehindCdn} is enabled.
+     * <p>
+     * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+     * <p>
+     * Example: {@code X-Client-Ip: 11.1.1.1, 13.3.3.3}
+     * <p>
+     * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+     * <p>
+     * - **X_FORWARDED_FOR:** Corresponds to {@code X-Forwarded-For} header name.
+     * <p>
+     * - **X_CLIENT_IP:** Corresponds to {@code X-Client-Ip} header name.
+     * <p>
+     * - **X_REAL_IP:** Corresponds to {@code X-Real-Ip} header name.
+     * <p>
+     * - **CLIENT_IP:** Corresponds to {@code Client-Ip} header name.
+     * <p>
+     * - **TRUE_CLIENT_IP:** Corresponds to {@code True-Client-Ip} header name.
      * @return the value
-     */
+     **/
     public ClientAddressHeader getClientAddressHeader() {
         return clientAddressHeader;
     }
 
     /**
-     * Enable or disable automatic content caching based on the response {@code cache-control}
-     * header. This feature enables the origin to act as a proxy cache. Caching is usually defined
-     * using {@code cache-control} header. For example {@code cache-control: max-age=120} means that
-     * the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-     */
+     * Enable or disable automatic content caching based on the response {@code cache-control} header. This feature enables the origin to act as a proxy cache. Caching is usually defined using {@code cache-control} header. For example {@code cache-control: max-age=120} means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCacheControlRespected")
     private final Boolean isCacheControlRespected;
 
     /**
-     * Enable or disable automatic content caching based on the response {@code cache-control}
-     * header. This feature enables the origin to act as a proxy cache. Caching is usually defined
-     * using {@code cache-control} header. For example {@code cache-control: max-age=120} means that
-     * the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-     *
+     * Enable or disable automatic content caching based on the response {@code cache-control} header. This feature enables the origin to act as a proxy cache. Caching is usually defined using {@code cache-control} header. For example {@code cache-control: max-age=120} means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
      * @return the value
-     */
+     **/
     public Boolean getIsCacheControlRespected() {
         return isCacheControlRespected;
     }
 
     /**
-     * Enable or disable buffering of responses from the origin. Buffering improves overall
-     * stability in case of network issues, but slightly increases Time To First Byte.
-     */
+     * Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResponseBufferingEnabled")
     private final Boolean isResponseBufferingEnabled;
 
     /**
-     * Enable or disable buffering of responses from the origin. Buffering improves overall
-     * stability in case of network issues, but slightly increases Time To First Byte.
-     *
+     * Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
      * @return the value
-     */
+     **/
     public Boolean getIsResponseBufferingEnabled() {
         return isResponseBufferingEnabled;
     }
 
     /**
-     * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS
-     * connections between clients and edge nodes only. - **DEFAULT:** Cipher group supports TLS
-     * 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code
-     * ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
-     */
-    public enum CipherGroup implements com.oracle.bmc.http.internal.BmcEnum {
+     * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
+     * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
+     **/
+    public enum CipherGroup {
         Default("DEFAULT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -873,79 +769,59 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS
-     * connections between clients and edge nodes only. - **DEFAULT:** Cipher group supports TLS
-     * 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code
-     * ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
-     */
+     * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
+     * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cipherGroup")
     private final CipherGroup cipherGroup;
 
     /**
-     * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS
-     * connections between clients and edge nodes only. - **DEFAULT:** Cipher group supports TLS
-     * 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code
-     * ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
-     *
+     * The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
+     * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: {@code ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA}
      * @return the value
-     */
+     **/
     public CipherGroup getCipherGroup() {
         return cipherGroup;
     }
 
-    /** An object that represents a load balancing method and its properties. */
+    /**
+     * An object that represents a load balancing method and its properties.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancingMethod")
     private final LoadBalancingMethod loadBalancingMethod;
 
     /**
      * An object that represents a load balancing method and its properties.
-     *
      * @return the value
-     */
+     **/
     public LoadBalancingMethod getLoadBalancingMethod() {
         return loadBalancingMethod;
     }
 
     /**
-     * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF
-     * disabled if Connection request header from the client has the value Upgrade (case insensitive
-     * matching) and Upgrade request header has the value websocket (case insensitive matching).
-     * Paths matches if the concatenation of request URL path and query starts with the contents of
-     * the one of {@code websocketPathPrefixes} array value. In All other cases challenges, like
-     * JSC, HIC and etc., remain active.
-     */
+     * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of {@code websocketPathPrefixes} array value. In All other cases challenges, like JSC, HIC and etc., remain active.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("websocketPathPrefixes")
     private final java.util.List<String> websocketPathPrefixes;
 
     /**
-     * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF
-     * disabled if Connection request header from the client has the value Upgrade (case insensitive
-     * matching) and Upgrade request header has the value websocket (case insensitive matching).
-     * Paths matches if the concatenation of request URL path and query starts with the contents of
-     * the one of {@code websocketPathPrefixes} array value. In All other cases challenges, like
-     * JSC, HIC and etc., remain active.
-     *
+     * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of {@code websocketPathPrefixes} array value. In All other cases challenges, like JSC, HIC and etc., remain active.
      * @return the value
-     */
+     **/
     public java.util.List<String> getWebsocketPathPrefixes() {
         return websocketPathPrefixes;
     }
 
     /**
-     * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates
-     * which hostname is being contacted by the browser at the beginning of the 'handshake'-process.
-     * This allows a server to connect multiple SSL Certificates to one IP address and port.
-     */
+     * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSniEnabled")
     private final Boolean isSniEnabled;
 
     /**
-     * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates
-     * which hostname is being contacted by the browser at the beginning of the 'handshake'-process.
-     * This allows a server to connect multiple SSL Certificates to one IP address and port.
-     *
+     * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
      * @return the value
-     */
+     **/
     public Boolean getIsSniEnabled() {
         return isSniEnabled;
     }
@@ -964,7 +840,6 @@ public final class PolicyConfig extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

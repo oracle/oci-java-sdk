@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateExternalBackupJobDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateExternalBackupJobDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateExternalBackupJobDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -67,170 +66,177 @@ public final class CreateExternalBackupJobDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The targeted availability domain for the backup. */
+        /**
+         * The targeted availability domain for the backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The targeted availability domain for the backup.
-         *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where this backup should be created.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where this backup should be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where this backup should be created.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where this backup should be created.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** A user-friendly name for the backup. This name does not have to be unique. */
+        /**
+         * A user-friendly name for the backup. This name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name for the backup. This name does not have to be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A valid Oracle Database version. */
+        /**
+         * A valid Oracle Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
          * A valid Oracle Database version.
-         *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** The name of the database from which the backup is being taken. */
+        /**
+         * The name of the database from which the backup is being taken.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
         /**
          * The name of the database from which the backup is being taken.
-         *
          * @param dbName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-        /** The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up. */
+        /**
+         * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
          * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
-         *
          * @param dbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-        /** The pluggable database name. */
+        /**
+         * The pluggable database name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
         private String pdbName;
 
         /**
          * The pluggable database name.
-         *
          * @param pdbName the value to set
          * @return this builder
-         */
+         **/
         public Builder pdbName(String pdbName) {
             this.pdbName = pdbName;
             this.__explicitlySet__.add("pdbName");
             return this;
         }
-        /** The {@code DBID} of the Oracle Database being backed up. */
+        /**
+         * The {@code DBID} of the Oracle Database being backed up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseIdentifier")
         private Long externalDatabaseIdentifier;
 
         /**
          * The {@code DBID} of the Oracle Database being backed up.
-         *
          * @param externalDatabaseIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder externalDatabaseIdentifier(Long externalDatabaseIdentifier) {
             this.externalDatabaseIdentifier = externalDatabaseIdentifier;
             this.__explicitlySet__.add("externalDatabaseIdentifier");
             return this;
         }
-        /** The character set for the database. */
+        /**
+         * The character set for the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
         private String characterSet;
 
         /**
          * The character set for the database.
-         *
          * @param characterSet the value to set
          * @return this builder
-         */
+         **/
         public Builder characterSet(String characterSet) {
             this.characterSet = characterSet;
             this.__explicitlySet__.add("characterSet");
             return this;
         }
-        /** The national character set for the database. */
+        /**
+         * The national character set for the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
         private String ncharacterSet;
 
         /**
          * The national character set for the database.
-         *
          * @param ncharacterSet the value to set
          * @return this builder
-         */
+         **/
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
-        /** The mode (single instance or RAC) of the database being backed up. */
+        /**
+         * The mode (single instance or RAC) of the database being backed up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
         private DatabaseMode databaseMode;
 
         /**
          * The mode (single instance or RAC) of the database being backed up.
-         *
          * @param databaseMode the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseMode(DatabaseMode databaseMode) {
             this.databaseMode = databaseMode;
             this.__explicitlySet__.add("databaseMode");
@@ -239,7 +245,8 @@ public final class CreateExternalBackupJobDetails
         /**
          * The Oracle Database edition to use for creating a database from this standalone backup.
          * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
@@ -249,7 +256,7 @@ public final class CreateExternalBackupJobDetails
          *
          * @param databaseEdition the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseEdition(DatabaseEdition databaseEdition) {
             this.databaseEdition = databaseEdition;
             this.__explicitlySet__.add("databaseEdition");
@@ -322,7 +329,9 @@ public final class CreateExternalBackupJobDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -331,142 +340,150 @@ public final class CreateExternalBackupJobDetails
         return new Builder().copy(this);
     }
 
-    /** The targeted availability domain for the backup. */
+    /**
+     * The targeted availability domain for the backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The targeted availability domain for the backup.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where this backup should be created.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where this backup should be created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where this backup should be created.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where this backup should be created.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** A user-friendly name for the backup. This name does not have to be unique. */
+    /**
+     * A user-friendly name for the backup. This name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name for the backup. This name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A valid Oracle Database version. */
+    /**
+     * A valid Oracle Database version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
      * A valid Oracle Database version.
-     *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
 
-    /** The name of the database from which the backup is being taken. */
+    /**
+     * The name of the database from which the backup is being taken.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
     /**
      * The name of the database from which the backup is being taken.
-     *
      * @return the value
-     */
+     **/
     public String getDbName() {
         return dbName;
     }
 
-    /** The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up. */
+    /**
+     * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
      * The {@code DB_UNIQUE_NAME} of the Oracle Database being backed up.
-     *
      * @return the value
-     */
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
 
-    /** The pluggable database name. */
+    /**
+     * The pluggable database name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
     private final String pdbName;
 
     /**
      * The pluggable database name.
-     *
      * @return the value
-     */
+     **/
     public String getPdbName() {
         return pdbName;
     }
 
-    /** The {@code DBID} of the Oracle Database being backed up. */
+    /**
+     * The {@code DBID} of the Oracle Database being backed up.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseIdentifier")
     private final Long externalDatabaseIdentifier;
 
     /**
      * The {@code DBID} of the Oracle Database being backed up.
-     *
      * @return the value
-     */
+     **/
     public Long getExternalDatabaseIdentifier() {
         return externalDatabaseIdentifier;
     }
 
-    /** The character set for the database. */
+    /**
+     * The character set for the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
     private final String characterSet;
 
     /**
      * The character set for the database.
-     *
      * @return the value
-     */
+     **/
     public String getCharacterSet() {
         return characterSet;
     }
 
-    /** The national character set for the database. */
+    /**
+     * The national character set for the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
     private final String ncharacterSet;
 
     /**
      * The national character set for the database.
-     *
      * @return the value
-     */
+     **/
     public String getNcharacterSet() {
         return ncharacterSet;
     }
 
-    /** The mode (single instance or RAC) of the database being backed up. */
-    public enum DatabaseMode implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The mode (single instance or RAC) of the database being backed up.
+     **/
+    public enum DatabaseMode {
         Si("SI"),
         Rac("RAC"),
         ;
@@ -498,24 +515,26 @@ public final class CreateExternalBackupJobDetails
             throw new IllegalArgumentException("Invalid DatabaseMode: " + key);
         }
     };
-    /** The mode (single instance or RAC) of the database being backed up. */
+    /**
+     * The mode (single instance or RAC) of the database being backed up.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
     private final DatabaseMode databaseMode;
 
     /**
      * The mode (single instance or RAC) of the database being backed up.
-     *
      * @return the value
-     */
+     **/
     public DatabaseMode getDatabaseMode() {
         return databaseMode;
     }
 
     /**
-     * The Oracle Database edition to use for creating a database from this standalone backup. Note
-     * that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
-     */
-    public enum DatabaseEdition implements com.oracle.bmc.http.internal.BmcEnum {
+     * The Oracle Database edition to use for creating a database from this standalone backup.
+     * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+     *
+     **/
+    public enum DatabaseEdition {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
@@ -550,18 +569,19 @@ public final class CreateExternalBackupJobDetails
         }
     };
     /**
-     * The Oracle Database edition to use for creating a database from this standalone backup. Note
-     * that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
-     */
+     * The Oracle Database edition to use for creating a database from this standalone backup.
+     * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database edition to use for creating a database from this standalone backup. Note
-     * that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
+     * The Oracle Database edition to use for creating a database from this standalone backup.
+     * Note that 2-node RAC DB systems require Enterprise Edition - Extreme Performance.
      *
      * @return the value
-     */
+     **/
     public DatabaseEdition getDatabaseEdition() {
         return databaseEdition;
     }
@@ -573,7 +593,6 @@ public final class CreateExternalBackupJobDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

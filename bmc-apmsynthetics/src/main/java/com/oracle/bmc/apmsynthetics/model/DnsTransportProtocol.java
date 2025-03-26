@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Type of protocol for DNS Trace monitor. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum DnsTransportProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of protocol for DNS Trace monitor.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum DnsTransportProtocol {
     Tcp("TCP"),
     Udp("UDP"),
 

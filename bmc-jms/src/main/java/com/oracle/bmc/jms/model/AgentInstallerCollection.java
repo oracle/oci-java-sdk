@@ -5,23 +5,23 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Collection of the agent installer summary. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Collection of the agent installer summary.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AgentInstallerCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AgentInstallerCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AgentInstallerCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public AgentInstallerCollection(java.util.List<AgentInstallerSummary> items) {
@@ -31,16 +31,17 @@ public final class AgentInstallerCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of the agent installer summaries. */
+        /**
+         * A list of the agent installer summaries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AgentInstallerSummary> items;
 
         /**
          * A list of the agent installer summaries.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<AgentInstallerSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -67,7 +68,9 @@ public final class AgentInstallerCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +79,16 @@ public final class AgentInstallerCollection
         return new Builder().copy(this);
     }
 
-    /** A list of the agent installer summaries. */
+    /**
+     * A list of the agent installer summaries.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AgentInstallerSummary> items;
 
     /**
      * A list of the agent installer summaries.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AgentInstallerSummary> getItems() {
         return items;
     }
@@ -96,7 +100,6 @@ public final class AgentInstallerCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

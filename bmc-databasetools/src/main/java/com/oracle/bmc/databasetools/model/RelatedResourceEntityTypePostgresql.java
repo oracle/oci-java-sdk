@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/** The related PostgreSQL Server type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum RelatedResourceEntityTypePostgresql implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The related PostgreSQL Server type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+public enum RelatedResourceEntityTypePostgresql {
     Postgresqldbsystem("POSTGRESQLDBSYSTEM"),
 
     /**

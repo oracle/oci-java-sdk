@@ -6,19 +6,20 @@ package com.oracle.bmc.logging.responses;
 
 import com.oracle.bmc.logging.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -27,16 +28,17 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results
-     * exist. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, previous pages
+     * of results exist. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcPreviousPage;
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results
-     * exist. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, previous pages
+     * of results exist. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -45,14 +47,15 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -60,13 +63,14 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned {@code LogSavedSearchSummaryCollection} instance. */
+    /**
+     * The returned LogSavedSearchSummaryCollection instance.
+     */
     private com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
             logSavedSearchSummaryCollection;
 
     /**
-     * The returned {@code LogSavedSearchSummaryCollection} instance.
-     *
+     * The returned LogSavedSearchSummaryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
@@ -84,7 +88,7 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListLogSavedSearchesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPreviousPage,
             String opcRequestId,
@@ -97,35 +101,33 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
         this.logSavedSearchSummaryCollection = logSavedSearchSummaryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListLogSavedSearchesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -136,16 +138,17 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results
-         * exist. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, previous pages
+         * of results exist. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcPreviousPage;
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results
-         * exist. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, previous pages
+         * of results exist. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPreviousPage the value to set
          * @return this builder
@@ -156,14 +159,15 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -173,13 +177,14 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code LogSavedSearchSummaryCollection} instance. */
+        /**
+         * The returned LogSavedSearchSummaryCollection instance.
+         */
         private com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
                 logSavedSearchSummaryCollection;
 
         /**
-         * The returned {@code LogSavedSearchSummaryCollection} instance.
-         *
+         * The returned LogSavedSearchSummaryCollection instance.
          * @param logSavedSearchSummaryCollection the value to set
          * @return this builder
          */
@@ -192,10 +197,8 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListLogSavedSearchesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -209,10 +212,8 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListLogSavedSearchesResponse build() {
             return new ListLogSavedSearchesResponse(
                     __httpStatusCode__,
@@ -226,7 +227,6 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

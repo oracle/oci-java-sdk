@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Contains common summary statistics. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Contains common summary statistics.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SummaryStatistics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SummaryStatistics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SummaryStatistics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SummaryStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "minimum",
@@ -49,99 +48,97 @@ public final class SummaryStatistics
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The smallest number in the data set. */
+        /**
+         * The smallest number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimum")
         private Double minimum;
 
         /**
          * The smallest number in the data set.
-         *
          * @param minimum the value to set
          * @return this builder
-         */
+         **/
         public Builder minimum(Double minimum) {
             this.minimum = minimum;
             this.__explicitlySet__.add("minimum");
             return this;
         }
-        /** The largest number in the data set. */
+        /**
+         * The largest number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximum")
         private Double maximum;
 
         /**
          * The largest number in the data set.
-         *
          * @param maximum the value to set
          * @return this builder
-         */
+         **/
         public Builder maximum(Double maximum) {
             this.maximum = maximum;
             this.__explicitlySet__.add("maximum");
             return this;
         }
-        /** The average number in the data set. */
+        /**
+         * The average number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("average")
         private Double average;
 
         /**
          * The average number in the data set.
-         *
          * @param average the value to set
          * @return this builder
-         */
+         **/
         public Builder average(Double average) {
             this.average = average;
             this.__explicitlySet__.add("average");
             return this;
         }
-        /** The middle number in the data set. */
+        /**
+         * The middle number in the data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("median")
         private Double median;
 
         /**
          * The middle number in the data set.
-         *
          * @param median the value to set
          * @return this builder
-         */
+         **/
         public Builder median(Double median) {
             this.median = median;
             this.__explicitlySet__.add("median");
             return this;
         }
         /**
-         * The middle number between the smallest number and the median of the data set. It's also
-         * known as the 25th quartile.
-         */
+         * The middle number between the smallest number and the median of the data set. It's also known as the 25th quartile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lowerQuartile")
         private Double lowerQuartile;
 
         /**
-         * The middle number between the smallest number and the median of the data set. It's also
-         * known as the 25th quartile.
-         *
+         * The middle number between the smallest number and the median of the data set. It's also known as the 25th quartile.
          * @param lowerQuartile the value to set
          * @return this builder
-         */
+         **/
         public Builder lowerQuartile(Double lowerQuartile) {
             this.lowerQuartile = lowerQuartile;
             this.__explicitlySet__.add("lowerQuartile");
             return this;
         }
         /**
-         * The middle number between the median and the largest number of the data set. It's also
-         * known as the 75th quartile.
-         */
+         * The middle number between the median and the largest number of the data set. It's also known as the 75th quartile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upperQuartile")
         private Double upperQuartile;
 
         /**
-         * The middle number between the median and the largest number of the data set. It's also
-         * known as the 75th quartile.
-         *
+         * The middle number between the median and the largest number of the data set. It's also known as the 75th quartile.
          * @param upperQuartile the value to set
          * @return this builder
-         */
+         **/
         public Builder upperQuartile(Double upperQuartile) {
             this.upperQuartile = upperQuartile;
             this.__explicitlySet__.add("upperQuartile");
@@ -190,7 +187,9 @@ public final class SummaryStatistics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -199,88 +198,86 @@ public final class SummaryStatistics
         return new Builder().copy(this);
     }
 
-    /** The smallest number in the data set. */
+    /**
+     * The smallest number in the data set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimum")
     private final Double minimum;
 
     /**
      * The smallest number in the data set.
-     *
      * @return the value
-     */
+     **/
     public Double getMinimum() {
         return minimum;
     }
 
-    /** The largest number in the data set. */
+    /**
+     * The largest number in the data set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximum")
     private final Double maximum;
 
     /**
      * The largest number in the data set.
-     *
      * @return the value
-     */
+     **/
     public Double getMaximum() {
         return maximum;
     }
 
-    /** The average number in the data set. */
+    /**
+     * The average number in the data set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("average")
     private final Double average;
 
     /**
      * The average number in the data set.
-     *
      * @return the value
-     */
+     **/
     public Double getAverage() {
         return average;
     }
 
-    /** The middle number in the data set. */
+    /**
+     * The middle number in the data set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("median")
     private final Double median;
 
     /**
      * The middle number in the data set.
-     *
      * @return the value
-     */
+     **/
     public Double getMedian() {
         return median;
     }
 
     /**
-     * The middle number between the smallest number and the median of the data set. It's also known
-     * as the 25th quartile.
-     */
+     * The middle number between the smallest number and the median of the data set. It's also known as the 25th quartile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lowerQuartile")
     private final Double lowerQuartile;
 
     /**
-     * The middle number between the smallest number and the median of the data set. It's also known
-     * as the 25th quartile.
-     *
+     * The middle number between the smallest number and the median of the data set. It's also known as the 25th quartile.
      * @return the value
-     */
+     **/
     public Double getLowerQuartile() {
         return lowerQuartile;
     }
 
     /**
-     * The middle number between the median and the largest number of the data set. It's also known
-     * as the 75th quartile.
-     */
+     * The middle number between the median and the largest number of the data set. It's also known as the 75th quartile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upperQuartile")
     private final Double upperQuartile;
 
     /**
-     * The middle number between the median and the largest number of the data set. It's also known
-     * as the 75th quartile.
-     *
+     * The middle number between the median and the largest number of the data set. It's also known as the 75th quartile.
      * @return the value
-     */
+     **/
     public Double getUpperQuartile() {
         return upperQuartile;
     }
@@ -292,7 +289,6 @@ public final class SummaryStatistics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,80 +6,100 @@ package com.oracle.bmc.marketplace.requests;
 
 import com.oracle.bmc.marketplace.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPackagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPackagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPackagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPackagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique identifier for the listing. */
+    /**
+     * The unique identifier for the listing.
+     */
     private String listingId;
 
-    /** The unique identifier for the listing. */
+    /**
+     * The unique identifier for the listing.
+     */
     public String getListingId() {
         return listingId;
     }
-    /** The version of the package. Package versions are unique within a listing. */
+    /**
+     * The version of the package. Package versions are unique within a listing.
+     */
     private String packageVersion;
 
-    /** The version of the package. Package versions are unique within a listing. */
+    /**
+     * The version of the package. Package versions are unique within a listing.
+     */
     public String getPackageVersion() {
         return packageVersion;
     }
-    /** A filter to return only packages that match the given package type exactly. */
+    /**
+     * A filter to return only packages that match the given package type exactly.
+     *
+     */
     private String packageType;
 
-    /** A filter to return only packages that match the given package type exactly. */
+    /**
+     * A filter to return only packages that match the given package type exactly.
+     *
+     */
     public String getPackageType() {
         return packageType;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     private Integer limit;
 
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * The field to use to sort listed results. You can only specify one field to sort by. {@code
-     * TIMERELEASED} displays results in descending order by default. You can change your preference
-     * by specifying a different sort order.
+     * The field to use to sort listed results. You can only specify one field to sort by.
+     * {@code TIMERELEASED} displays results in descending order by default.
+     * You can change your preference by specifying a different sort order.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to use to sort listed results. You can only specify one field to sort by. {@code
-     * TIMERELEASED} displays results in descending order by default. You can change your preference
-     * by specifying a different sort order.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to use to sort listed results. You can only specify one field to sort by.
+     * {@code TIMERELEASED} displays results in descending order by default.
+     * You can change your preference by specifying a different sort order.
+     *
+     **/
+    public enum SortBy {
         Timereleased("TIMERELEASED"),
         ;
 
@@ -112,18 +132,23 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * The field to use to sort listed results. You can only specify one field to sort by. {@code
-     * TIMERELEASED} displays results in descending order by default. You can change your preference
-     * by specifying a different sort order.
+     * The field to use to sort listed results. You can only specify one field to sort by.
+     * {@code TIMERELEASED} displays results in descending order by default.
+     * You can change your preference by specifying a different sort order.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either {@code ASC} or {@code DESC}. */
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either {@code ASC} or {@code DESC}. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -156,14 +181,20 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** The sort order to use, either {@code ASC} or {@code DESC}. */
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The unique identifier for the compartment. */
+    /**
+     * The unique identifier for the compartment.
+     */
     private String compartmentId;
 
-    /** The unique identifier for the compartment. */
+    /**
+     * The unique identifier for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -171,15 +202,17 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPackagesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier for the listing. */
+        /**
+         * The unique identifier for the listing.
+         */
         private String listingId = null;
 
         /**
          * The unique identifier for the listing.
-         *
          * @param listingId the value to set
          * @return this builder instance
          */
@@ -188,12 +221,13 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The version of the package. Package versions are unique within a listing. */
+        /**
+         * The version of the package. Package versions are unique within a listing.
+         */
         private String packageVersion = null;
 
         /**
          * The version of the package. Package versions are unique within a listing.
-         *
          * @param packageVersion the value to set
          * @return this builder instance
          */
@@ -202,7 +236,10 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only packages that match the given package type exactly. */
+        /**
+         * A filter to return only packages that match the given package type exactly.
+         *
+         */
         private String packageType = null;
 
         /**
@@ -217,14 +254,15 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -235,14 +273,13 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
          */
         private Integer limit = null;
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -252,12 +289,13 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -268,15 +306,16 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The field to use to sort listed results. You can only specify one field to sort by.
-         * {@code TIMERELEASED} displays results in descending order by default. You can change your
-         * preference by specifying a different sort order.
+         * {@code TIMERELEASED} displays results in descending order by default.
+         * You can change your preference by specifying a different sort order.
+         *
          */
         private SortBy sortBy = null;
 
         /**
          * The field to use to sort listed results. You can only specify one field to sort by.
-         * {@code TIMERELEASED} displays results in descending order by default. You can change your
-         * preference by specifying a different sort order.
+         * {@code TIMERELEASED} displays results in descending order by default.
+         * You can change your preference by specifying a different sort order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -286,12 +325,13 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The sort order to use, either {@code ASC} or {@code DESC}. */
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either {@code ASC} or {@code DESC}.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -300,12 +340,13 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The unique identifier for the compartment. */
+        /**
+         * The unique identifier for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -316,19 +357,18 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -340,7 +380,6 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPackagesRequest o) {
@@ -361,11 +400,10 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListPackagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPackagesRequest
          */
@@ -379,8 +417,7 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListPackagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPackagesRequest
@@ -397,14 +434,12 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortOrder = sortOrder;
             request.compartmentId = compartmentId;
             return request;
-            // new ListPackagesRequest(listingId, packageVersion, packageType, opcRequestId, limit,
-            // page, sortBy, sortOrder, compartmentId);
+            // new ListPackagesRequest(listingId, packageVersion, packageType, opcRequestId, limit, page, sortBy, sortOrder, compartmentId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -422,7 +457,6 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

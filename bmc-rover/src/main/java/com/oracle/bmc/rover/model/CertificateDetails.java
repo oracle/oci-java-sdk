@@ -5,23 +5,21 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * The details of Oracle Cloud Infrastructure certificate created <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * The details of Oracle Cloud Infrastructure certificate created
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CertificateDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CertificateDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CertificateDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CertificateDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"certificateId", "certificateName"})
     public CertificateDetails(String certificateId, String certificateName) {
@@ -32,31 +30,33 @@ public final class CertificateDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the certificate. */
+        /**
+         * The id of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
          * The id of the certificate.
-         *
          * @param certificateId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
             return this;
         }
-        /** The name of the certificate. */
+        /**
+         * The name of the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
         /**
          * The name of the certificate.
-         *
          * @param certificateName the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateName(String certificateName) {
             this.certificateName = certificateName;
             this.__explicitlySet__.add("certificateName");
@@ -87,7 +87,9 @@ public final class CertificateDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +98,30 @@ public final class CertificateDetails
         return new Builder().copy(this);
     }
 
-    /** The id of the certificate. */
+    /**
+     * The id of the certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * The id of the certificate.
-     *
      * @return the value
-     */
+     **/
     public String getCertificateId() {
         return certificateId;
     }
 
-    /** The name of the certificate. */
+    /**
+     * The name of the certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
     private final String certificateName;
 
     /**
      * The name of the certificate.
-     *
      * @return the value
-     */
+     **/
     public String getCertificateName() {
         return certificateName;
     }
@@ -129,7 +133,6 @@ public final class CertificateDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

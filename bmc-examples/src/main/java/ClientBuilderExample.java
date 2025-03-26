@@ -6,47 +6,42 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
-import com.oracle.bmc.http.client.KeyStoreWithPassword;
-import com.oracle.bmc.http.client.StandardClientProperties;
-import com.oracle.bmc.http.client.jersey.ApacheClientProperties;
+import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
+import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
-import java.security.KeyStore;
-import java.time.Duration;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.ClientRequestContext;
+import javax.ws.rs.client.ClientRequestFilter;
+import java.io.IOException;
 
-/** Example of creating a client using the builder pattern. */
+/**
+ * Example of creating a client using the builder pattern.
+ */
 public class ClientBuilderExample {
-
-    private static final Duration READ_TIMEOUT_IN_MILLISECONDS = Duration.ofMillis(30000);
+    @Priority(Priorities.HEADER_DECORATOR)
+    public static class AddMyOwnHeaderFilter implements ClientRequestFilter {
+        @Override
+        public void filter(ClientRequestContext requestContext) throws IOException {
+            requestContext.getHeaders().putSingle("my-header", "my-value");
+        }
+    }
 
     public static void main(String[] args) throws Exception {
+        String configurationFilePath = "~/.oci/config";
+        String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
+
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-
-        // Define a connection manager and its properties
-        final PoolingHttpClientConnectionManager poolConnectionManager =
-                new PoolingHttpClientConnectionManager();
-        poolConnectionManager.setMaxTotal(100);
-        poolConnectionManager.setDefaultMaxPerRoute(50);
-
-        // Create a keyStore with password
-        KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-        String keyStorePassword = "somePassword";
-
-        // Define ssl context for the client
-        javax.net.ssl.SSLContext sslContext = null;
 
         // Create a client using the builder
         ObjectStorage client =
@@ -54,58 +49,32 @@ public class ClientBuilderExample {
                         // optional settings
 
                         // This will run after, and in addition to, the default client configurator;
-                        // this allows you to get the default behavior from the default client
-                        // configurator
-                        // (in the case of the ObjectStorageClient, the non-buffering behavior), but
-                        // you
+                        // this allows you to get the default behavior from the default client configurator
+                        // (in the case of the ObjectStorageClient, the non-buffering behavior), but you
                         // can also add other things on top of it, like adding new headers
                         .additionalClientConfigurator(
-                                builder -> {
-                                    // Setting an Apache connection manager
-                                    // see also ApacheConnectorPropertiesExample.java
-                                    builder.property(
-                                                    ApacheClientProperties.CONNECTION_MANAGER,
-                                                    poolConnectionManager)
+                                new ClientConfigurator() {
+                                    @Override
+                                    public void customizeBuilder(ClientBuilder builder) {
+                                        // additional customization of the ClientBuilder here
+                                    }
 
-                                            // Setting a key store
-                                            .property(
-                                                    StandardClientProperties.KEY_STORE,
-                                                    new KeyStoreWithPassword(
-                                                            keyStore, keyStorePassword))
-
-                                            // Setting the SSL context
-                                            // see also ApacheConnectorPropertiesExample.java
-                                            .property(
-                                                    StandardClientProperties.SSL_CONTEXT,
-                                                    sslContext)
-
-                                            // Setting a proxy
-                                            // for full example, see HttpProxyExample.java
-                                            // .property(StandardClientProperties.PROXY,
-                                            // proxyConfig)
-
-                                            // Setting a hostname verifier
-                                            .property(
-                                                    StandardClientProperties.HOSTNAME_VERIFIER,
-                                                    NoopHostnameVerifier.INSTANCE)
-
-                                            // Setting read timeout
-                                            .property(
-                                                    StandardClientProperties.READ_TIMEOUT,
-                                                    READ_TIMEOUT_IN_MILLISECONDS)
-
-                                            // Adding a custom header
-                                            .registerRequestInterceptor(
-                                                    Priorities.HEADER_DECORATOR,
-                                                    request -> {
-                                                        request.header("my-header", "my-value");
-                                                    });
+                                    @Override
+                                    public void customizeClient(Client client) {
+                                        // additional customization of Client here
+                                        // for example: add a custom header to the request
+                                        client.register(AddMyOwnHeaderFilter.class);
+                                    }
                                 })
 
-                        // authentication details provider is required, pass it to the build()
-                        // method
-                        .region(Region.US_PHOENIX_1)
+                        // .requestSignerFactory(requestSignerFactory)
+                        // .configuration(configuration)
+                        // .clientConfigurator(clientConfiguratorToReplaceDefault)
+
+                        // authentication details provider is required, pass it to the build() method
                         .build(provider);
+
+        client.setRegion(Region.US_PHOENIX_1);
 
         // use client...
     }

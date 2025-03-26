@@ -5,54 +5,62 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The base Exadata resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The base Exadata resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "resourceType",
-        defaultImpl = DbmResource.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "resourceType",
+    defaultImpl = DbmResource.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataStorageConnector.class,
-            name = "STORAGE_CONNECTOR"),
+        value = ExternalExadataStorageConnector.class,
+        name = "STORAGE_CONNECTOR"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataStorageGridSummary.class,
-            name = "STORAGE_GRID_SUMMARY"),
+        value = ExternalExadataStorageGridSummary.class,
+        name = "STORAGE_GRID_SUMMARY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataStorageServer.class,
-            name = "STORAGE_SERVER"),
+        value = ExternalExadataStorageServer.class,
+        name = "STORAGE_SERVER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataInfrastructure.class,
-            name = "INFRASTRUCTURE"),
+        value = ExternalExadataInfrastructure.class,
+        name = "INFRASTRUCTURE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataStorageGrid.class,
-            name = "STORAGE_GRID"),
+        value = ExternalExadataStorageGrid.class,
+        name = "STORAGE_GRID"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataInfrastructureSummary.class,
-            name = "INFRASTRUCTURE_SUMMARY"),
+        value = ExternalExadataInfrastructureSummary.class,
+        name = "INFRASTRUCTURE_SUMMARY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataDatabaseSystemSummary.class,
-            name = "DATABASE_SYSTEM_SUMMARY"),
+        value = ExternalExadataDatabaseSystemSummary.class,
+        name = "DATABASE_SYSTEM_SUMMARY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataStorageConnectorSummary.class,
-            name = "STORAGE_CONNECTOR_SUMMARY"),
+        value = ExternalExadataStorageConnectorSummary.class,
+        name = "STORAGE_CONNECTOR_SUMMARY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataStorageServerSummary.class,
-            name = "STORAGE_SERVER_SUMMARY")
+        value = ExternalExadataStorageServerSummary.class,
+        name = "STORAGE_SERVER_SUMMARY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -91,76 +99,79 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata resource.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata resource.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the Exadata resource. English letters, numbers, "-", "_" and "." only. */
+    /**
+     * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The version of the Exadata resource. */
+    /**
+     * The version of the Exadata resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the Exadata resource.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The internal ID of the Exadata resource. */
+    /**
+     * The internal ID of the Exadata resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalId")
     private final String internalId;
 
     /**
      * The internal ID of the Exadata resource.
-     *
      * @return the value
-     */
+     **/
     public String getInternalId() {
         return internalId;
     }
 
-    /** The status of the Exadata resource. */
+    /**
+     * The status of the Exadata resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The status of the Exadata resource.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** The current lifecycle state of the database resource. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current lifecycle state of the database resource.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -168,15 +179,7 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -184,9 +187,7 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -204,77 +205,79 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /** The current lifecycle state of the database resource. */
+    /**
+     * The current lifecycle state of the database resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the database resource.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The timestamp of the creation of the Exadata resource. */
+    /**
+     * The timestamp of the creation of the Exadata resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The timestamp of the creation of the Exadata resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The timestamp of the last update of the Exadata resource. */
+    /**
+     * The timestamp of the last update of the Exadata resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The timestamp of the last update of the Exadata resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The details of the lifecycle state of the Exadata resource. */
+    /**
+     * The details of the lifecycle state of the Exadata resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * The details of the lifecycle state of the Exadata resource.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The additional details of the resource defined in {@code {"key": "value"}} format. Example:
-     * {@code {"bar-key": "value"}}
-     */
+     * The additional details of the resource defined in {@code {"key": "value"}} format.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, String> additionalDetails;
 
     /**
-     * The additional details of the resource defined in {@code {"key": "value"}} format. Example:
-     * {@code {"bar-key": "value"}}
+     * The additional details of the resource defined in {@code {"key": "value"}} format.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdditionalDetails() {
         return additionalDetails;
     }
@@ -286,7 +289,6 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -355,8 +357,10 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return result;
     }
 
-    /** The type of Exadata resource. */
-    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of Exadata resource.
+     **/
+    public enum ResourceType {
         InfrastructureSummary("INFRASTRUCTURE_SUMMARY"),
         Infrastructure("INFRASTRUCTURE"),
         StorageServerSummary("STORAGE_SERVER_SUMMARY"),
@@ -367,15 +371,7 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         StorageConnector("STORAGE_CONNECTOR"),
         DatabaseSystemSummary("DATABASE_SYSTEM_SUMMARY"),
         DatabaseSummary("DATABASE_SUMMARY"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(ResourceType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, ResourceType> map;
@@ -383,9 +379,7 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         static {
             map = new java.util.HashMap<>();
             for (ResourceType v : ResourceType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -403,10 +397,7 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'ResourceType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid ResourceType: " + key);
         }
     };
 }

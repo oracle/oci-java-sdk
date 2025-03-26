@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * An individual bandwidth level for virtual circuits. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * An individual bandwidth level for virtual circuits.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VirtualCircuitBandwidthShape.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VirtualCircuitBandwidthShape.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VirtualCircuitBandwidthShape
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bandwidthInMbps", "name"})
     public VirtualCircuitBandwidthShape(Integer bandwidthInMbps, String name) {
@@ -34,20 +34,21 @@ public final class VirtualCircuitBandwidthShape
     public static class Builder {
         /**
          * The bandwidth in Mbps.
+         * <p>
+         * Example: {@code 10000}
          *
-         * <p>Example: {@code 10000}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
         private Integer bandwidthInMbps;
 
         /**
          * The bandwidth in Mbps.
-         *
-         * <p>Example: {@code 10000}
+         * <p>
+         * Example: {@code 10000}
          *
          * @param bandwidthInMbps the value to set
          * @return this builder
-         */
+         **/
         public Builder bandwidthInMbps(Integer bandwidthInMbps) {
             this.bandwidthInMbps = bandwidthInMbps;
             this.__explicitlySet__.add("bandwidthInMbps");
@@ -55,20 +56,21 @@ public final class VirtualCircuitBandwidthShape
         }
         /**
          * The name of the bandwidth shape.
+         * <p>
+         * Example: {@code 10 Gbps}
          *
-         * <p>Example: {@code 10 Gbps}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the bandwidth shape.
-         *
-         * <p>Example: {@code 10 Gbps}
+         * <p>
+         * Example: {@code 10 Gbps}
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -99,7 +101,9 @@ public final class VirtualCircuitBandwidthShape
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,38 +114,40 @@ public final class VirtualCircuitBandwidthShape
 
     /**
      * The bandwidth in Mbps.
+     * <p>
+     * Example: {@code 10000}
      *
-     * <p>Example: {@code 10000}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
     private final Integer bandwidthInMbps;
 
     /**
      * The bandwidth in Mbps.
-     *
-     * <p>Example: {@code 10000}
+     * <p>
+     * Example: {@code 10000}
      *
      * @return the value
-     */
+     **/
     public Integer getBandwidthInMbps() {
         return bandwidthInMbps;
     }
 
     /**
      * The name of the bandwidth shape.
+     * <p>
+     * Example: {@code 10 Gbps}
      *
-     * <p>Example: {@code 10 Gbps}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the bandwidth shape.
-     *
-     * <p>Example: {@code 10 Gbps}
+     * <p>
+     * Example: {@code 10 Gbps}
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -153,7 +159,6 @@ public final class VirtualCircuitBandwidthShape
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

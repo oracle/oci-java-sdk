@@ -16,16 +16,14 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * This class provides a basic example of how to create a DbHome with BackupDestination using the
- * Java SDK. This will cover:
- *
- * <p>
- *
+ * This class provides a basic example of how to create a DbHome with BackupDestination using the Java SDK. This will cover:
+ * <p></p>
  * <ul>
- *   <li>Create a BackupDestination for the DbHome to be created.
- *   <li>Creating DBHome with BackupDestination. See: <a
- *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> for
- *       more information
+ *   <li>Create a BackupDestination for the DbHome to be created.</li>
+ *   <li>
+ *     Creating DBHome with BackupDestination. See:
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a>
+ *       for more information</li>
  * </ul>
  */
 public class CreateDbHomeBackupDestinationExample {
@@ -36,7 +34,9 @@ public class CreateDbHomeBackupDestinationExample {
     private static final Map<String, Opts> mappings =
             Arrays.stream(Opts.values()).collect(Collectors.toMap(Opts::getArgName, o -> o));
 
-    /** Defines the arguments for this example. */
+    /**
+     * Defines the arguments for this example.
+     */
     private enum Opts {
         VM_CLUSTER_OCID("--vmClusterOcid", "The OCID of a VmCluster.", true, null),
         DB_NAME(
@@ -113,8 +113,8 @@ public class CreateDbHomeBackupDestinationExample {
      * A helper method for parsing command line arguments.
      *
      * @param argv the arguments as passed
-     * @return a mapping of argument to its value. Arguments may be missing from the map if they
-     *     were not supplied by the user and not required.
+     * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
+     * the user and not required.
      */
     private static Map<Opts, String> parseOpts(String[] argv) {
 
@@ -155,14 +155,14 @@ public class CreateDbHomeBackupDestinationExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>VM-cluster OCID
-     *       <li>Compartment OCID
-     *       <li>Database Name
-     *       <li>Database Unique Name
-     *       <li>Database Password
-     *       <li>DatabaseVersion
-     *     </ul>
+     *             <ul>
+     *             <li>VM-cluster OCID</li>
+     *             <li>Compartment OCID</li>
+     *             <li>Database Name</li>
+     *             <li>Database Unique Name</li>
+     *             <li>Database Password</li>
+     *             <li>DatabaseVersion</li>
+     *             </ul>
      */
     public static void main(String[] args) throws Exception {
         final Map<Opts, String> argumentMap = parseOpts(args);
@@ -185,17 +185,15 @@ public class CreateDbHomeBackupDestinationExample {
         final String vpcUser = argumentMap.getOrDefault(Opts.VPC_USER, null);
         final String vpcPassword = argumentMap.getOrDefault(Opts.VPC_PASSWORD, null);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = DatabaseClient.builder().build(provider);
+        databaseClient = new DatabaseClient(provider);
 
         final BackupDestinationDetails backupDestinationDetails =
                 BackupDestinationHelper.backupDestinationDetailsCreater(

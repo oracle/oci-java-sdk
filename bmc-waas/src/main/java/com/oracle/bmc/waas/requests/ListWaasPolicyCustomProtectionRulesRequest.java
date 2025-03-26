@@ -6,73 +6,76 @@ package com.oracle.bmc.waas.requests;
 
 import com.oracle.bmc.waas.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWaasPolicyCustomProtectionRulesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListWaasPolicyCustomProtectionRulesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWaasPolicyCustomProtectionRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWaasPolicyCustomProtectionRulesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListWaasPolicyCustomProtectionRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
-     * policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
     private String waasPolicyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
-     * policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
-     * 10}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
-     * 10}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
-    /** Filter rules using a list of ModSecurity rule IDs. */
+    /**
+     * Filter rules using a list of ModSecurity rule IDs.
+     */
     private java.util.List<String> modSecurityRuleId;
 
-    /** Filter rules using a list of ModSecurity rule IDs. */
+    /**
+     * Filter rules using a list of ModSecurity rule IDs.
+     */
     public java.util.List<String> getModSecurityRuleId() {
         return modSecurityRuleId;
     }
-    /** Filter rules using a list of actions. */
+    /**
+     * Filter rules using a list of actions.
+     */
     private java.util.List<Action> action;
 
-    /** Filter rules using a list of actions. */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Filter rules using a list of actions.
+     **/
+    public enum Action {
         Detect("DETECT"),
         Block("BLOCK"),
         ;
@@ -105,7 +108,9 @@ public class ListWaasPolicyCustomProtectionRulesRequest
         }
     };
 
-    /** Filter rules using a list of actions. */
+    /**
+     * Filter rules using a list of actions.
+     */
     public java.util.List<Action> getAction() {
         return action;
     }
@@ -113,19 +118,17 @@ public class ListWaasPolicyCustomProtectionRulesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWaasPolicyCustomProtectionRulesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * WAAS policy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
          */
         private String waasPolicyId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * WAAS policy.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
          * @param waasPolicyId the value to set
          * @return this builder instance
          */
@@ -135,15 +138,12 @@ public class ListWaasPolicyCustomProtectionRulesRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -153,15 +153,12 @@ public class ListWaasPolicyCustomProtectionRulesRequest
         }
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to
-         * {@code 10}.
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to
-         * {@code 10}.
-         *
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
          * @param limit the value to set
          * @return this builder instance
          */
@@ -177,7 +174,6 @@ public class ListWaasPolicyCustomProtectionRulesRequest
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -186,12 +182,13 @@ public class ListWaasPolicyCustomProtectionRulesRequest
             return this;
         }
 
-        /** Filter rules using a list of ModSecurity rule IDs. */
+        /**
+         * Filter rules using a list of ModSecurity rule IDs.
+         */
         private java.util.List<String> modSecurityRuleId = null;
 
         /**
          * Filter rules using a list of ModSecurity rule IDs.
-         *
          * @param modSecurityRuleId the value to set
          * @return this builder instance
          */
@@ -202,7 +199,6 @@ public class ListWaasPolicyCustomProtectionRulesRequest
 
         /**
          * Singular setter. Filter rules using a list of ModSecurity rule IDs.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -210,12 +206,13 @@ public class ListWaasPolicyCustomProtectionRulesRequest
             return this.modSecurityRuleId(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter rules using a list of actions. */
+        /**
+         * Filter rules using a list of actions.
+         */
         private java.util.List<Action> action = null;
 
         /**
          * Filter rules using a list of actions.
-         *
          * @param action the value to set
          * @return this builder instance
          */
@@ -226,7 +223,6 @@ public class ListWaasPolicyCustomProtectionRulesRequest
 
         /**
          * Singular setter. Filter rules using a list of actions.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -236,19 +232,18 @@ public class ListWaasPolicyCustomProtectionRulesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -260,7 +255,6 @@ public class ListWaasPolicyCustomProtectionRulesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWaasPolicyCustomProtectionRulesRequest o) {
@@ -276,14 +270,12 @@ public class ListWaasPolicyCustomProtectionRulesRequest
         }
 
         /**
-         * Build the instance of ListWaasPolicyCustomProtectionRulesRequest as configured by this
-         * builder
+         * Build the instance of ListWaasPolicyCustomProtectionRulesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWaasPolicyCustomProtectionRulesRequest
          */
@@ -295,11 +287,9 @@ public class ListWaasPolicyCustomProtectionRulesRequest
         }
 
         /**
-         * Build the instance of ListWaasPolicyCustomProtectionRulesRequest as configured by this
-         * builder
+         * Build the instance of ListWaasPolicyCustomProtectionRulesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWaasPolicyCustomProtectionRulesRequest
@@ -314,14 +304,12 @@ public class ListWaasPolicyCustomProtectionRulesRequest
             request.modSecurityRuleId = modSecurityRuleId;
             request.action = action;
             return request;
-            // new ListWaasPolicyCustomProtectionRulesRequest(waasPolicyId, opcRequestId, limit,
-            // page, modSecurityRuleId, action);
+            // new ListWaasPolicyCustomProtectionRulesRequest(waasPolicyId, opcRequestId, limit, page, modSecurityRuleId, action);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -336,7 +324,6 @@ public class ListWaasPolicyCustomProtectionRulesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

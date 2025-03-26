@@ -5,23 +5,20 @@
 package com.oracle.bmc.datalabelingservice.model;
 
 /**
- * A dataset is a logical collection of records. The dataset contains all the information necessary
- * to describe a record's source, format, type of annotations allowed on these records, and labels
- * allowed on annotations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * A dataset is a logical collection of records. The dataset contains all the information necessary to describe a record's source, format, type of annotations allowed on these records, and labels allowed on annotations.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Dataset.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Dataset extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -91,61 +88,65 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the Dataset. */
+        /**
+         * The OCID of the Dataset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the Dataset.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** A user-friendly display name for the resource. */
+        /**
+         * A user-friendly display name for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly display name for the resource.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment of the resource. */
+        /**
+         * The OCID of the compartment of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment of the resource.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** A user provided description of the dataset */
+        /**
+         * A user provided description of the dataset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A user provided description of the dataset
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -153,115 +154,115 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
         }
         /**
          * The date and time the resource was created, in the timestamp format defined by RFC3339.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the resource was created, in the timestamp format defined by RFC3339.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the resource was last updated, in the timestamp format defined by
-         * RFC3339.
-         */
+         * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the resource was last updated, in the timestamp format defined by
-         * RFC3339.
-         *
+         * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The state of a dataset. CREATING - The dataset is being created. It will transition to
-         * ACTIVE when it is ready for labeling. ACTIVE - The dataset is ready for labeling.
-         * UPDATING - The dataset is being updated. It and its related resources may be unavailable
-         * for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation
-         * operation has failed due to validation or other errors and needs attention. DELETING -
-         * The dataset and its related resources are being deleted. DELETED - The dataset has been
-         * deleted and is no longer available. FAILED - The dataset has failed due to validation or
-         * other errors.
-         */
+         * The state of a dataset.
+         * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+         * ACTIVE   - The dataset is ready for labeling.
+         * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+         * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+         * DELETING - The dataset and its related resources are being deleted.
+         * DELETED  - The dataset has been deleted and is no longer available.
+         * FAILED   - The dataset has failed due to validation or other errors.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The state of a dataset. CREATING - The dataset is being created. It will transition to
-         * ACTIVE when it is ready for labeling. ACTIVE - The dataset is ready for labeling.
-         * UPDATING - The dataset is being updated. It and its related resources may be unavailable
-         * for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation
-         * operation has failed due to validation or other errors and needs attention. DELETING -
-         * The dataset and its related resources are being deleted. DELETED - The dataset has been
-         * deleted and is no longer available. FAILED - The dataset has failed due to validation or
-         * other errors.
+         * The state of a dataset.
+         * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+         * ACTIVE   - The dataset is ready for labeling.
+         * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+         * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+         * DELETING - The dataset and its related resources are being deleted.
+         * DELETED  - The dataset has been deleted and is no longer available.
+         * FAILED   - The dataset has failed due to validation or other errors.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, it can be used to
-         * provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-         */
+         * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, it can be used to
-         * provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-         *
+         * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported. */
+        /**
+         * The sub-state of the dataset.
+         * IMPORT_DATASET - The dataset is being imported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubstate")
         private LifecycleSubstate lifecycleSubstate;
 
         /**
-         * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+         * The sub-state of the dataset.
+         * IMPORT_DATASET - The dataset is being imported.
          *
          * @param lifecycleSubstate the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleSubstate(LifecycleSubstate lifecycleSubstate) {
             this.lifecycleSubstate = lifecycleSubstate;
             this.__explicitlySet__.add("lifecycleSubstate");
             return this;
         }
-        /** The annotation format name required for labeling records. */
+        /**
+         * The annotation format name required for labeling records.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("annotationFormat")
         private String annotationFormat;
 
         /**
          * The annotation format name required for labeling records.
-         *
          * @param annotationFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder annotationFormat(String annotationFormat) {
             this.annotationFormat = annotationFormat;
             this.__explicitlySet__.add("annotationFormat");
@@ -314,54 +315,57 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("initialImportDatasetConfiguration");
             return this;
         }
-        /** The labeling instructions for human labelers in rich text format */
+        /**
+         * The labeling instructions for human labelers in rich text format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
         private String labelingInstructions;
 
         /**
          * The labeling instructions for human labelers in rich text format
-         *
          * @param labelingInstructions the value to set
          * @return this builder
-         */
+         **/
         public Builder labelingInstructions(String labelingInstructions) {
             this.labelingInstructions = labelingInstructions;
             this.__explicitlySet__.add("labelingInstructions");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It
-         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
-         */
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It
-         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -369,38 +373,40 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
-         * The usage of system tag keys. These predefined keys are scoped to namespaces. For
-         * example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * The usage of system tag keys. These predefined keys are scoped to namespaces.
+         * For example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * The usage of system tag keys. These predefined keys are scoped to namespaces. For
-         * example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * The usage of system tag keys. These predefined keys are scoped to namespaces.
+         * For example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It
-         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
-         */
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
         private java.util.Map<String, String> additionalProperties;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It
-         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
          *
          * @param additionalProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalProperties(java.util.Map<String, String> additionalProperties) {
             this.additionalProperties = additionalProperties;
             this.__explicitlySet__.add("additionalProperties");
@@ -507,7 +513,9 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -516,96 +524,102 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** The OCID of the Dataset. */
+    /**
+     * The OCID of the Dataset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the Dataset.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** A user-friendly display name for the resource. */
+    /**
+     * A user-friendly display name for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly display name for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment of the resource. */
+    /**
+     * The OCID of the compartment of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** A user provided description of the dataset */
+    /**
+     * A user provided description of the dataset
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user provided description of the dataset
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The date and time the resource was created, in the timestamp format defined by RFC3339. */
+    /**
+     * The date and time the resource was created, in the timestamp format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The state of a dataset. CREATING - The dataset is being created. It will transition to ACTIVE
-     * when it is ready for labeling. ACTIVE - The dataset is ready for labeling. UPDATING - The
-     * dataset is being updated. It and its related resources may be unavailable for other updates
-     * until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to
-     * validation or other errors and needs attention. DELETING - The dataset and its related
-     * resources are being deleted. DELETED - The dataset has been deleted and is no longer
-     * available. FAILED - The dataset has failed due to validation or other errors.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The state of a dataset.
+     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+     * ACTIVE   - The dataset is ready for labeling.
+     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+     * DELETING - The dataset and its related resources are being deleted.
+     * DELETED  - The dataset has been deleted and is no longer available.
+     * FAILED   - The dataset has failed due to validation or other errors.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -615,8 +629,8 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -656,56 +670,60 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
         }
     };
     /**
-     * The state of a dataset. CREATING - The dataset is being created. It will transition to ACTIVE
-     * when it is ready for labeling. ACTIVE - The dataset is ready for labeling. UPDATING - The
-     * dataset is being updated. It and its related resources may be unavailable for other updates
-     * until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to
-     * validation or other errors and needs attention. DELETING - The dataset and its related
-     * resources are being deleted. DELETED - The dataset has been deleted and is no longer
-     * available. FAILED - The dataset has failed due to validation or other errors.
-     */
+     * The state of a dataset.
+     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+     * ACTIVE   - The dataset is ready for labeling.
+     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+     * DELETING - The dataset and its related resources are being deleted.
+     * DELETED  - The dataset has been deleted and is no longer available.
+     * FAILED   - The dataset has failed due to validation or other errors.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The state of a dataset. CREATING - The dataset is being created. It will transition to ACTIVE
-     * when it is ready for labeling. ACTIVE - The dataset is ready for labeling. UPDATING - The
-     * dataset is being updated. It and its related resources may be unavailable for other updates
-     * until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to
-     * validation or other errors and needs attention. DELETING - The dataset and its related
-     * resources are being deleted. DELETED - The dataset has been deleted and is no longer
-     * available. FAILED - The dataset has failed due to validation or other errors.
+     * The state of a dataset.
+     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+     * ACTIVE   - The dataset is ready for labeling.
+     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+     * DELETING - The dataset and its related resources are being deleted.
+     * DELETED  - The dataset has been deleted and is no longer available.
+     * FAILED   - The dataset has failed due to validation or other errors.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, it can be used to provide
-     * actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-     */
+     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, it can be used to provide
-     * actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-     *
+     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported. */
-    public enum LifecycleSubstate implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sub-state of the dataset.
+     * IMPORT_DATASET - The dataset is being imported.
+     *
+     **/
+    public enum LifecycleSubstate {
         ImportDataset("IMPORT_DATASET"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -744,28 +762,34 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported. */
+    /**
+     * The sub-state of the dataset.
+     * IMPORT_DATASET - The dataset is being imported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubstate")
     private final LifecycleSubstate lifecycleSubstate;
 
     /**
-     * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
+     * The sub-state of the dataset.
+     * IMPORT_DATASET - The dataset is being imported.
      *
      * @return the value
-     */
+     **/
     public LifecycleSubstate getLifecycleSubstate() {
         return lifecycleSubstate;
     }
 
-    /** The annotation format name required for labeling records. */
+    /**
+     * The annotation format name required for labeling records.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("annotationFormat")
     private final String annotationFormat;
 
     /**
      * The annotation format name required for labeling records.
-     *
      * @return the value
-     */
+     **/
     public String getAnnotationFormat() {
         return annotationFormat;
     }
@@ -805,83 +829,88 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
         return initialImportDatasetConfiguration;
     }
 
-    /** The labeling instructions for human labelers in rich text format */
+    /**
+     * The labeling instructions for human labelers in rich text format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
     private final String labelingInstructions;
 
     /**
      * The labeling instructions for human labelers in rich text format
-     *
      * @return the value
-     */
+     **/
     public String getLabelingInstructions() {
         return labelingInstructions;
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It
-     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
-     */
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It
-     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-     * example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-     * example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The usage of system tag keys. These predefined keys are scoped to namespaces. For example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * The usage of system tag keys. These predefined keys are scoped to namespaces.
+     * For example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The usage of system tag keys. These predefined keys are scoped to namespaces. For example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * The usage of system tag keys. These predefined keys are scoped to namespaces.
+     * For example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It
-     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
-     */
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
     private final java.util.Map<String, String> additionalProperties;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It
-     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdditionalProperties() {
         return additionalProperties;
     }
@@ -893,7 +922,6 @@ public final class Dataset extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

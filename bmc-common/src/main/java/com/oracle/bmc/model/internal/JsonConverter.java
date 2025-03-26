@@ -4,16 +4,27 @@
  */
 package com.oracle.bmc.model.internal;
 
-import com.oracle.bmc.http.client.Serializer;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import javax.annotation.Nonnull;
 
-import jakarta.annotation.Nonnull;
-
-/** A helper class to support json related operations */
+/**
+ * A helper class to support json related operations
+ */
 public class JsonConverter {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(JsonConverter.class);
 
-    /** Get desired object from the json provided */
+    /**
+     * Object mapper to support jackson json operations
+     */
+    private static final ObjectMapper mapper =
+            com.oracle.bmc.http.Serialization.getObjectMapper()
+                    .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+    /**
+     * Get desired object from the json provided
+     */
     public static <T> T jsonBlobToObject(@Nonnull String jsonBlob, @Nonnull Class<T> clazz) {
         if (jsonBlob == null) {
             throw new java.lang.NullPointerException("jsonBlob is marked non-null but is null");
@@ -23,21 +34,23 @@ public class JsonConverter {
         }
         T object = null;
         try {
-            object = Serializer.getDefault().readValue(jsonBlob, clazz);
+            object = mapper.readValue(jsonBlob, clazz);
         } catch (Exception e) {
             LOG.error("Exception in parsing out json blob {}", jsonBlob, e);
         }
         return object;
     }
 
-    /** Get json string from the object param */
+    /**
+     * Get json string from the object param
+     */
     public static <T> String objectToJsonBlob(@Nonnull T object) {
         if (object == null) {
             throw new java.lang.NullPointerException("object is marked non-null but is null");
         }
         String jsonBlob = null;
         try {
-            jsonBlob = Serializer.getDefault().writeValueAsString(object);
+            jsonBlob = mapper.writeValueAsString(object);
         } catch (Exception e) {
             LOG.error("Exception in writing json blob from object {}", object, e);
         }

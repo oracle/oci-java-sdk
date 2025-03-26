@@ -9,31 +9,23 @@ import com.oracle.bmc.marketplacepublisher.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of MarketplacePublisher where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of MarketplacePublisher where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class MarketplacePublisherPaginators {
     private final MarketplacePublisher client;
 
@@ -42,12 +34,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listArtifacts
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listArtifacts operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListArtifactsResponse> listArtifactsResponseIterator(
             final ListArtifactsRequest request) {
@@ -92,22 +83,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.ArtifactSummary} objects contained in responses
-     * from the listArtifacts operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ArtifactSummary} objects
+     * contained in responses from the listArtifacts operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.ArtifactSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ArtifactSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.ArtifactSummary>
             listArtifactsRecordIterator(final ListArtifactsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListArtifactsRequest.Builder,
-                ListArtifactsRequest,
-                ListArtifactsResponse,
+                ListArtifactsRequest.Builder, ListArtifactsRequest, ListArtifactsResponse,
                 com.oracle.bmc.marketplacepublisher.model.ArtifactSummary>(
                 new java.util.function.Supplier<ListArtifactsRequest.Builder>() {
                     @Override
@@ -158,12 +145,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listCategories
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCategories operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCategoriesResponse> listCategoriesResponseIterator(
             final ListCategoriesRequest request) {
@@ -208,22 +194,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.CategorySummary} objects contained in responses
-     * from the listCategories operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.CategorySummary} objects
+     * contained in responses from the listCategories operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.CategorySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.CategorySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.CategorySummary>
             listCategoriesRecordIterator(final ListCategoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCategoriesRequest.Builder,
-                ListCategoriesRequest,
-                ListCategoriesResponse,
+                ListCategoriesRequest.Builder, ListCategoriesRequest, ListCategoriesResponse,
                 com.oracle.bmc.marketplacepublisher.model.CategorySummary>(
                 new java.util.function.Supplier<ListCategoriesRequest.Builder>() {
                     @Override
@@ -274,21 +256,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listListingRevisionAttachments operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listListingRevisionAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListListingRevisionAttachmentsResponse>
             listListingRevisionAttachmentsResponseIterator(
                     final ListListingRevisionAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListListingRevisionAttachmentsRequest.Builder,
-                ListListingRevisionAttachmentsRequest,
-                ListListingRevisionAttachmentsResponse>(
+                ListListingRevisionAttachmentsRequest, ListListingRevisionAttachmentsResponse>(
                 new java.util.function.Supplier<ListListingRevisionAttachmentsRequest.Builder>() {
                     @Override
                     public ListListingRevisionAttachmentsRequest.Builder get() {
@@ -331,23 +310,20 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachmentSummary} objects contained
-     * in responses from the listListingRevisionAttachments operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachmentSummary} objects
+     * contained in responses from the listListingRevisionAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachmentSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachmentSummary>
             listListingRevisionAttachmentsRecordIterator(
                     final ListListingRevisionAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListListingRevisionAttachmentsRequest.Builder,
-                ListListingRevisionAttachmentsRequest,
-                ListListingRevisionAttachmentsResponse,
+                ListListingRevisionAttachmentsRequest, ListListingRevisionAttachmentsResponse,
                 com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachmentSummary>(
                 new java.util.function.Supplier<ListListingRevisionAttachmentsRequest.Builder>() {
                     @Override
@@ -404,19 +380,16 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listListingRevisionNotes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listListingRevisionNotes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListListingRevisionNotesResponse> listListingRevisionNotesResponseIterator(
             final ListListingRevisionNotesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListListingRevisionNotesRequest.Builder,
-                ListListingRevisionNotesRequest,
+                ListListingRevisionNotesRequest.Builder, ListListingRevisionNotesRequest,
                 ListListingRevisionNotesResponse>(
                 new java.util.function.Supplier<ListListingRevisionNotesRequest.Builder>() {
                     @Override
@@ -459,21 +432,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteSummary} objects contained in
-     * responses from the listListingRevisionNotes operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteSummary} objects
+     * contained in responses from the listListingRevisionNotes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteSummary>
             listListingRevisionNotesRecordIterator(final ListListingRevisionNotesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListListingRevisionNotesRequest.Builder,
-                ListListingRevisionNotesRequest,
+                ListListingRevisionNotesRequest.Builder, ListListingRevisionNotesRequest,
                 ListListingRevisionNotesResponse,
                 com.oracle.bmc.marketplacepublisher.model.ListingRevisionNoteSummary>(
                 new java.util.function.Supplier<ListListingRevisionNotesRequest.Builder>() {
@@ -530,20 +500,17 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listListingRevisionPackages operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listListingRevisionPackages operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListListingRevisionPackagesResponse>
             listListingRevisionPackagesResponseIterator(
                     final ListListingRevisionPackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListListingRevisionPackagesRequest.Builder,
-                ListListingRevisionPackagesRequest,
+                ListListingRevisionPackagesRequest.Builder, ListListingRevisionPackagesRequest,
                 ListListingRevisionPackagesResponse>(
                 new java.util.function.Supplier<ListListingRevisionPackagesRequest.Builder>() {
                     @Override
@@ -586,22 +553,19 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageSummary} objects contained in
-     * responses from the listListingRevisionPackages operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageSummary} objects
+     * contained in responses from the listListingRevisionPackages operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageSummary>
             listListingRevisionPackagesRecordIterator(
                     final ListListingRevisionPackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListListingRevisionPackagesRequest.Builder,
-                ListListingRevisionPackagesRequest,
+                ListListingRevisionPackagesRequest.Builder, ListListingRevisionPackagesRequest,
                 ListListingRevisionPackagesResponse,
                 com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackageSummary>(
                 new java.util.function.Supplier<ListListingRevisionPackagesRequest.Builder>() {
@@ -658,18 +622,16 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listListingRevisions operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listListingRevisions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListListingRevisionsResponse> listListingRevisionsResponseIterator(
             final ListListingRevisionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListListingRevisionsRequest.Builder,
-                ListListingRevisionsRequest,
+                ListListingRevisionsRequest.Builder, ListListingRevisionsRequest,
                 ListListingRevisionsResponse>(
                 new java.util.function.Supplier<ListListingRevisionsRequest.Builder>() {
                     @Override
@@ -711,21 +673,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary} objects contained in
-     * responses from the listListingRevisions operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary} objects
+     * contained in responses from the listListingRevisions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary>
             listListingRevisionsRecordIterator(final ListListingRevisionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListListingRevisionsRequest.Builder,
-                ListListingRevisionsRequest,
+                ListListingRevisionsRequest.Builder, ListListingRevisionsRequest,
                 ListListingRevisionsResponse,
                 com.oracle.bmc.marketplacepublisher.model.ListingRevisionSummary>(
                 new java.util.function.Supplier<ListListingRevisionsRequest.Builder>() {
@@ -781,12 +740,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listListings
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listListings operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListListingsResponse> listListingsResponseIterator(
             final ListListingsRequest request) {
@@ -831,21 +789,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.ListingSummary} objects contained in responses from
-     * the listListings operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingSummary} objects
+     * contained in responses from the listListings operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.ListingSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ListingSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.ListingSummary>
             listListingsRecordIterator(final ListListingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListListingsRequest.Builder,
-                ListListingsRequest,
-                ListListingsResponse,
+                ListListingsRequest.Builder, ListListingsRequest, ListListingsResponse,
                 com.oracle.bmc.marketplacepublisher.model.ListingSummary>(
                 new java.util.function.Supplier<ListListingsRequest.Builder>() {
                     @Override
@@ -896,12 +851,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listMarkets
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMarkets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMarketsResponse> listMarketsResponseIterator(
             final ListMarketsRequest request) {
@@ -946,21 +900,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.MarketSummary} objects contained in responses from
-     * the listMarkets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.MarketSummary} objects
+     * contained in responses from the listMarkets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.MarketSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.MarketSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.MarketSummary>
             listMarketsRecordIterator(final ListMarketsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMarketsRequest.Builder,
-                ListMarketsRequest,
-                ListMarketsResponse,
+                ListMarketsRequest.Builder, ListMarketsRequest, ListMarketsResponse,
                 com.oracle.bmc.marketplacepublisher.model.MarketSummary>(
                 new java.util.function.Supplier<ListMarketsRequest.Builder>() {
                     @Override
@@ -1010,12 +961,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listProducts
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProducts operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProductsResponse> listProductsResponseIterator(
             final ListProductsRequest request) {
@@ -1060,21 +1010,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.ProductSummary} objects contained in responses from
-     * the listProducts operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ProductSummary} objects
+     * contained in responses from the listProducts operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.ProductSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.ProductSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.ProductSummary>
             listProductsRecordIterator(final ListProductsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProductsRequest.Builder,
-                ListProductsRequest,
-                ListProductsResponse,
+                ListProductsRequest.Builder, ListProductsRequest, ListProductsResponse,
                 com.oracle.bmc.marketplacepublisher.model.ProductSummary>(
                 new java.util.function.Supplier<ListProductsRequest.Builder>() {
                     @Override
@@ -1125,12 +1072,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPublishers
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPublishers operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPublishersResponse> listPublishersResponseIterator(
             final ListPublishersRequest request) {
@@ -1175,22 +1121,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.PublisherSummary} objects contained in responses
-     * from the listPublishers operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.PublisherSummary} objects
+     * contained in responses from the listPublishers operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.PublisherSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.PublisherSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.PublisherSummary>
             listPublishersRecordIterator(final ListPublishersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPublishersRequest.Builder,
-                ListPublishersRequest,
-                ListPublishersResponse,
+                ListPublishersRequest.Builder, ListPublishersRequest, ListPublishersResponse,
                 com.oracle.bmc.marketplacepublisher.model.PublisherSummary>(
                 new java.util.function.Supplier<ListPublishersRequest.Builder>() {
                     @Override
@@ -1242,12 +1184,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTermVersions operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTermVersions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTermVersionsResponse> listTermVersionsResponseIterator(
             final ListTermVersionsRequest request) {
@@ -1293,22 +1234,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.TermVersionSummary} objects contained in responses
-     * from the listTermVersions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.TermVersionSummary} objects
+     * contained in responses from the listTermVersions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.TermVersionSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.TermVersionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.TermVersionSummary>
             listTermVersionsRecordIterator(final ListTermVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTermVersionsRequest.Builder,
-                ListTermVersionsRequest,
-                ListTermVersionsResponse,
+                ListTermVersionsRequest.Builder, ListTermVersionsRequest, ListTermVersionsResponse,
                 com.oracle.bmc.marketplacepublisher.model.TermVersionSummary>(
                 new java.util.function.Supplier<ListTermVersionsRequest.Builder>() {
                     @Override
@@ -1361,12 +1298,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTerms
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTerms operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTermsResponse> listTermsResponseIterator(final ListTermsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -1410,21 +1346,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.TermSummary} objects contained in responses from
-     * the listTerms operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.TermSummary} objects
+     * contained in responses from the listTerms operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.TermSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.TermSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.TermSummary> listTermsRecordIterator(
             final ListTermsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTermsRequest.Builder,
-                ListTermsRequest,
-                ListTermsResponse,
+                ListTermsRequest.Builder, ListTermsRequest, ListTermsResponse,
                 com.oracle.bmc.marketplacepublisher.model.TermSummary>(
                 new java.util.function.Supplier<ListTermsRequest.Builder>() {
                     @Override
@@ -1474,19 +1407,16 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1529,21 +1459,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.WorkRequestError} objects contained in responses
-     * from the listWorkRequestErrors operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.WorkRequestError} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.marketplacepublisher.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
@@ -1598,18 +1525,16 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1651,21 +1576,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntry} objects contained in responses
-     * from the listWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntry} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.marketplacepublisher.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
@@ -1719,12 +1641,11 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1770,22 +1691,18 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.marketplacepublisher.model.WorkRequestSummary} objects contained in responses
-     * from the listWorkRequests operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.marketplacepublisher.model.WorkRequestSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.marketplacepublisher.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.marketplacepublisher.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The notification preference of the project. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The notification preference of the project.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProjectNotificationPreference.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ProjectNotificationPreference.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProjectNotificationPreference
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"projectId", "userId", "notificationPreference"})
     public ProjectNotificationPreference(
@@ -34,46 +33,49 @@ public final class ProjectNotificationPreference
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ocid of project resource */
+        /**
+         * The ocid of project resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
          * The ocid of project resource
-         *
          * @param projectId the value to set
          * @return this builder
-         */
+         **/
         public Builder projectId(String projectId) {
             this.projectId = projectId;
             this.__explicitlySet__.add("projectId");
             return this;
         }
-        /** The ocid of user. */
+        /**
+         * The ocid of user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * The ocid of user.
-         *
          * @param userId the value to set
          * @return this builder
-         */
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-        /** The override value of project notification preference. */
+        /**
+         * The override value of project notification preference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationPreference")
         private NotificationPreference notificationPreference;
 
         /**
          * The override value of project notification preference.
-         *
          * @param notificationPreference the value to set
          * @return this builder
-         */
+         **/
         public Builder notificationPreference(NotificationPreference notificationPreference) {
             this.notificationPreference = notificationPreference;
             this.__explicitlySet__.add("notificationPreference");
@@ -108,7 +110,9 @@ public final class ProjectNotificationPreference
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +121,45 @@ public final class ProjectNotificationPreference
         return new Builder().copy(this);
     }
 
-    /** The ocid of project resource */
+    /**
+     * The ocid of project resource
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
      * The ocid of project resource
-     *
      * @return the value
-     */
+     **/
     public String getProjectId() {
         return projectId;
     }
 
-    /** The ocid of user. */
+    /**
+     * The ocid of user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * The ocid of user.
-     *
      * @return the value
-     */
+     **/
     public String getUserId() {
         return userId;
     }
 
-    /** The override value of project notification preference. */
-    public enum NotificationPreference implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The override value of project notification preference.
+     **/
+    public enum NotificationPreference {
         Watch("WATCH"),
         Ignore("IGNORE"),
         Mention("MENTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -190,15 +198,16 @@ public final class ProjectNotificationPreference
             return UnknownEnumValue;
         }
     };
-    /** The override value of project notification preference. */
+    /**
+     * The override value of project notification preference.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationPreference")
     private final NotificationPreference notificationPreference;
 
     /**
      * The override value of project notification preference.
-     *
      * @return the value
-     */
+     **/
     public NotificationPreference getNotificationPreference() {
         return notificationPreference;
     }
@@ -210,7 +219,6 @@ public final class ProjectNotificationPreference
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

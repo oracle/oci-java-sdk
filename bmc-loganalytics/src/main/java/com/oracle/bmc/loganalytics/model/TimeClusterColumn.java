@@ -5,25 +5,26 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Column returned by querylanguage TIMECLUSTER command. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Column returned by querylanguage TIMECLUSTER command.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TimeClusterColumn.Builder.class)
+    builder = TimeClusterColumn.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TimeClusterColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -134,7 +135,10 @@ public final class TimeClusterColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /** Time span between each timestamp in the timeseries datapoints. */
+        /**
+         * Time span between each timestamp in the timeseries datapoints.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
         private String intervalGap;
 
@@ -143,13 +147,16 @@ public final class TimeClusterColumn extends AbstractColumn {
          *
          * @param intervalGap the value to set
          * @return this builder
-         */
+         **/
         public Builder intervalGap(String intervalGap) {
             this.intervalGap = intervalGap;
             this.__explicitlySet__.add("intervalGap");
             return this;
         }
-        /** List of timestamps making up the timeseries datapoints. */
+        /**
+         * List of timestamps making up the timeseries datapoints.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervals")
         private java.util.List<Long> intervals;
 
@@ -158,13 +165,16 @@ public final class TimeClusterColumn extends AbstractColumn {
          *
          * @param intervals the value to set
          * @return this builder
-         */
+         **/
         public Builder intervals(java.util.List<Long> intervals) {
             this.intervals = intervals;
             this.__explicitlySet__.add("intervals");
             return this;
         }
-        /** Group by columns specified in the command. */
+        /**
+         * Group by columns specified in the command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByColumns")
         private java.util.List<AbstractColumn> groupByColumns;
 
@@ -173,13 +183,16 @@ public final class TimeClusterColumn extends AbstractColumn {
          *
          * @param groupByColumns the value to set
          * @return this builder
-         */
+         **/
         public Builder groupByColumns(java.util.List<AbstractColumn> groupByColumns) {
             this.groupByColumns = groupByColumns;
             this.__explicitlySet__.add("groupByColumns");
             return this;
         }
-        /** Timeseries clusters identified by the command. */
+        /**
+         * Timeseries clusters identified by the command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusters")
         private java.util.Map<String, TimeStatsCluster> clusters;
 
@@ -188,13 +201,16 @@ public final class TimeClusterColumn extends AbstractColumn {
          *
          * @param clusters the value to set
          * @return this builder
-         */
+         **/
         public Builder clusters(java.util.Map<String, TimeStatsCluster> clusters) {
             this.clusters = clusters;
             this.__explicitlySet__.add("clusters");
             return this;
         }
-        /** List of series data sets for each statistical function specified in the command. */
+        /**
+         * List of series data sets for each statistical function specified in the command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("series")
         private java.util.List<TimeClusterDataColumn> series;
 
@@ -203,7 +219,7 @@ public final class TimeClusterColumn extends AbstractColumn {
          *
          * @param series the value to set
          * @return this builder
-         */
+         **/
         public Builder series(java.util.List<TimeClusterDataColumn> series) {
             this.series = series;
             this.__explicitlySet__.add("series");
@@ -296,7 +312,9 @@ public final class TimeClusterColumn extends AbstractColumn {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -344,7 +362,10 @@ public final class TimeClusterColumn extends AbstractColumn {
         this.series = series;
     }
 
-    /** Time span between each timestamp in the timeseries datapoints. */
+    /**
+     * Time span between each timestamp in the timeseries datapoints.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGap")
     private final String intervalGap;
 
@@ -352,12 +373,15 @@ public final class TimeClusterColumn extends AbstractColumn {
      * Time span between each timestamp in the timeseries datapoints.
      *
      * @return the value
-     */
+     **/
     public String getIntervalGap() {
         return intervalGap;
     }
 
-    /** List of timestamps making up the timeseries datapoints. */
+    /**
+     * List of timestamps making up the timeseries datapoints.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervals")
     private final java.util.List<Long> intervals;
 
@@ -365,12 +389,15 @@ public final class TimeClusterColumn extends AbstractColumn {
      * List of timestamps making up the timeseries datapoints.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Long> getIntervals() {
         return intervals;
     }
 
-    /** Group by columns specified in the command. */
+    /**
+     * Group by columns specified in the command.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByColumns")
     private final java.util.List<AbstractColumn> groupByColumns;
 
@@ -378,12 +405,15 @@ public final class TimeClusterColumn extends AbstractColumn {
      * Group by columns specified in the command.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AbstractColumn> getGroupByColumns() {
         return groupByColumns;
     }
 
-    /** Timeseries clusters identified by the command. */
+    /**
+     * Timeseries clusters identified by the command.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusters")
     private final java.util.Map<String, TimeStatsCluster> clusters;
 
@@ -391,12 +421,15 @@ public final class TimeClusterColumn extends AbstractColumn {
      * Timeseries clusters identified by the command.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, TimeStatsCluster> getClusters() {
         return clusters;
     }
 
-    /** List of series data sets for each statistical function specified in the command. */
+    /**
+     * List of series data sets for each statistical function specified in the command.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("series")
     private final java.util.List<TimeClusterDataColumn> series;
 
@@ -404,7 +437,7 @@ public final class TimeClusterColumn extends AbstractColumn {
      * List of series data sets for each statistical function specified in the command.
      *
      * @return the value
-     */
+     **/
     public java.util.List<TimeClusterDataColumn> getSeries() {
         return series;
     }
@@ -416,7 +449,6 @@ public final class TimeClusterColumn extends AbstractColumn {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opa.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
+public enum OperationType {
     CreateOpaInstance("CREATE_OPA_INSTANCE"),
     UpdateOpaInstance("UPDATE_OPA_INSTANCE"),
     DeleteOpaInstance("DELETE_OPA_INSTANCE"),

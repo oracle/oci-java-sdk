@@ -5,21 +5,19 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the link between two nodes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the link between two nodes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Link.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Link extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -56,140 +54,145 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ID of the link. */
+        /**
+         * ID of the link.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * ID of the link.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** ID of the source node. */
+        /**
+         * ID of the source node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
         /**
          * ID of the source node.
-         *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(String source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-        /** ID of the destination node. */
+        /**
+         * ID of the destination node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
         /**
          * ID of the destination node.
-         *
          * @param destination the value to set
          * @return this builder
-         */
+         **/
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
             return this;
         }
-        /** Number of times the link is repeated. */
+        /**
+         * Number of times the link is repeated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repeatCount")
         private Integer repeatCount;
 
         /**
          * Number of times the link is repeated.
-         *
          * @param repeatCount the value to set
          * @return this builder
-         */
+         **/
         public Builder repeatCount(Integer repeatCount) {
             this.repeatCount = repeatCount;
             this.__explicitlySet__.add("repeatCount");
             return this;
         }
-        /** Average packet loss. */
+        /**
+         * Average packet loss.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("forwardingLoss")
         private Double forwardingLoss;
 
         /**
          * Average packet loss.
-         *
          * @param forwardingLoss the value to set
          * @return this builder
-         */
+         **/
         public Builder forwardingLoss(Double forwardingLoss) {
             this.forwardingLoss = forwardingLoss;
             this.__explicitlySet__.add("forwardingLoss");
             return this;
         }
         /**
-         * Difference of the packet response time between source and destination nodes, in
-         * milliseconds.
-         */
+         * Difference of the packet response time between source and destination nodes, in milliseconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("delayInMilliseconds")
         private Double delayInMilliseconds;
 
         /**
-         * Difference of the packet response time between source and destination nodes, in
-         * milliseconds.
-         *
+         * Difference of the packet response time between source and destination nodes, in milliseconds.
          * @param delayInMilliseconds the value to set
          * @return this builder
-         */
+         **/
         public Builder delayInMilliseconds(Double delayInMilliseconds) {
             this.delayInMilliseconds = delayInMilliseconds;
             this.__explicitlySet__.add("delayInMilliseconds");
             return this;
         }
-        /** Minimum delay in milliseconds. */
+        /**
+         * Minimum delay in milliseconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minDelayInMilliseconds")
         private Double minDelayInMilliseconds;
 
         /**
          * Minimum delay in milliseconds.
-         *
          * @param minDelayInMilliseconds the value to set
          * @return this builder
-         */
+         **/
         public Builder minDelayInMilliseconds(Double minDelayInMilliseconds) {
             this.minDelayInMilliseconds = minDelayInMilliseconds;
             this.__explicitlySet__.add("minDelayInMilliseconds");
             return this;
         }
-        /** Maximum delay in milliseconds. */
+        /**
+         * Maximum delay in milliseconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxDelayInMilliseconds")
         private Double maxDelayInMilliseconds;
 
         /**
          * Maximum delay in milliseconds.
-         *
          * @param maxDelayInMilliseconds the value to set
          * @return this builder
-         */
+         **/
         public Builder maxDelayInMilliseconds(Double maxDelayInMilliseconds) {
             this.maxDelayInMilliseconds = maxDelayInMilliseconds;
             this.__explicitlySet__.add("maxDelayInMilliseconds");
             return this;
         }
-        /** List of all path IDs of which this link is part of. */
+        /**
+         * List of all path IDs of which this link is part of.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paths")
         private java.util.List<String> paths;
 
         /**
          * List of all path IDs of which this link is part of.
-         *
          * @param paths the value to set
          * @return this builder
-         */
+         **/
         public Builder paths(java.util.List<String> paths) {
             this.paths = paths;
             this.__explicitlySet__.add("paths");
@@ -250,7 +253,9 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -259,121 +264,128 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** ID of the link. */
+    /**
+     * ID of the link.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * ID of the link.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** ID of the source node. */
+    /**
+     * ID of the source node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
      * ID of the source node.
-     *
      * @return the value
-     */
+     **/
     public String getSource() {
         return source;
     }
 
-    /** ID of the destination node. */
+    /**
+     * ID of the destination node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
     /**
      * ID of the destination node.
-     *
      * @return the value
-     */
+     **/
     public String getDestination() {
         return destination;
     }
 
-    /** Number of times the link is repeated. */
+    /**
+     * Number of times the link is repeated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatCount")
     private final Integer repeatCount;
 
     /**
      * Number of times the link is repeated.
-     *
      * @return the value
-     */
+     **/
     public Integer getRepeatCount() {
         return repeatCount;
     }
 
-    /** Average packet loss. */
+    /**
+     * Average packet loss.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("forwardingLoss")
     private final Double forwardingLoss;
 
     /**
      * Average packet loss.
-     *
      * @return the value
-     */
+     **/
     public Double getForwardingLoss() {
         return forwardingLoss;
     }
 
     /**
      * Difference of the packet response time between source and destination nodes, in milliseconds.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("delayInMilliseconds")
     private final Double delayInMilliseconds;
 
     /**
      * Difference of the packet response time between source and destination nodes, in milliseconds.
-     *
      * @return the value
-     */
+     **/
     public Double getDelayInMilliseconds() {
         return delayInMilliseconds;
     }
 
-    /** Minimum delay in milliseconds. */
+    /**
+     * Minimum delay in milliseconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minDelayInMilliseconds")
     private final Double minDelayInMilliseconds;
 
     /**
      * Minimum delay in milliseconds.
-     *
      * @return the value
-     */
+     **/
     public Double getMinDelayInMilliseconds() {
         return minDelayInMilliseconds;
     }
 
-    /** Maximum delay in milliseconds. */
+    /**
+     * Maximum delay in milliseconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxDelayInMilliseconds")
     private final Double maxDelayInMilliseconds;
 
     /**
      * Maximum delay in milliseconds.
-     *
      * @return the value
-     */
+     **/
     public Double getMaxDelayInMilliseconds() {
         return maxDelayInMilliseconds;
     }
 
-    /** List of all path IDs of which this link is part of. */
+    /**
+     * List of all path IDs of which this link is part of.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
     private final java.util.List<String> paths;
 
     /**
      * List of all path IDs of which this link is part of.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPaths() {
         return paths;
     }
@@ -385,7 +397,6 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

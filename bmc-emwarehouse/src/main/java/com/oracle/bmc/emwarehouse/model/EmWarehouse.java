@@ -5,21 +5,19 @@
 package com.oracle.bmc.emwarehouse.model;
 
 /**
- * Description of EmWarehouse. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * Description of EmWarehouse.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EmWarehouse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EmWarehouse extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EmWarehouse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationsInsightsWarehouseId",
@@ -77,219 +75,229 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** operations Insights Warehouse Identifier */
+        /**
+         * operations Insights Warehouse Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseId")
         private String operationsInsightsWarehouseId;
 
         /**
          * operations Insights Warehouse Identifier
-         *
          * @param operationsInsightsWarehouseId the value to set
          * @return this builder
-         */
+         **/
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             this.__explicitlySet__.add("operationsInsightsWarehouseId");
             return this;
         }
-        /** Data Flow Run Status */
+        /**
+         * Data Flow Run Status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestEtlRunStatus")
         private String latestEtlRunStatus;
 
         /**
          * Data Flow Run Status
-         *
          * @param latestEtlRunStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder latestEtlRunStatus(String latestEtlRunStatus) {
             this.latestEtlRunStatus = latestEtlRunStatus;
             this.__explicitlySet__.add("latestEtlRunStatus");
             return this;
         }
-        /** Data Flow Run Status Message */
+        /**
+         * Data Flow Run Status Message
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestEtlRunMessage")
         private String latestEtlRunMessage;
 
         /**
          * Data Flow Run Status Message
-         *
          * @param latestEtlRunMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder latestEtlRunMessage(String latestEtlRunMessage) {
             this.latestEtlRunMessage = latestEtlRunMessage;
             this.__explicitlySet__.add("latestEtlRunMessage");
             return this;
         }
-        /** Data Flow Run Total Time */
+        /**
+         * Data Flow Run Total Time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestEtlRunTime")
         private String latestEtlRunTime;
 
         /**
          * Data Flow Run Total Time
-         *
          * @param latestEtlRunTime the value to set
          * @return this builder
-         */
+         **/
         public Builder latestEtlRunTime(String latestEtlRunTime) {
             this.latestEtlRunTime = latestEtlRunTime;
             this.__explicitlySet__.add("latestEtlRunTime");
             return this;
         }
-        /** Unique identifier that is immutable on creation */
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** EmWarehouse Identifier, can be renamed */
+        /**
+         * EmWarehouse Identifier, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * EmWarehouse Identifier, can be renamed
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Type of the EmWarehouse. */
+        /**
+         * Type of the EmWarehouse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emWarehouseType")
         private String emWarehouseType;
 
         /**
          * Type of the EmWarehouse.
-         *
          * @param emWarehouseType the value to set
          * @return this builder
-         */
+         **/
         public Builder emWarehouseType(String emWarehouseType) {
             this.emWarehouseType = emWarehouseType;
             this.__explicitlySet__.add("emWarehouseType");
             return this;
         }
-        /** EMBridge Identifier */
+        /**
+         * EMBridge Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emBridgeId")
         private String emBridgeId;
 
         /**
          * EMBridge Identifier
-         *
          * @param emBridgeId the value to set
          * @return this builder
-         */
+         **/
         public Builder emBridgeId(String emBridgeId) {
             this.emBridgeId = emBridgeId;
             this.__explicitlySet__.add("emBridgeId");
             return this;
         }
-        /** The time the the EmWarehouse was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the the EmWarehouse was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the EmWarehouse was updated. An RFC3339 formatted datetime string */
+        /**
+         * The time the EmWarehouse was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the EmWarehouse. */
+        /**
+         * The current state of the EmWarehouse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the EmWarehouse.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -298,7 +306,8 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -308,7 +317,7 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -316,19 +325,20 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -417,7 +427,9 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -426,151 +438,164 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** operations Insights Warehouse Identifier */
+    /**
+     * operations Insights Warehouse Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseId")
     private final String operationsInsightsWarehouseId;
 
     /**
      * operations Insights Warehouse Identifier
-     *
      * @return the value
-     */
+     **/
     public String getOperationsInsightsWarehouseId() {
         return operationsInsightsWarehouseId;
     }
 
-    /** Data Flow Run Status */
+    /**
+     * Data Flow Run Status
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestEtlRunStatus")
     private final String latestEtlRunStatus;
 
     /**
      * Data Flow Run Status
-     *
      * @return the value
-     */
+     **/
     public String getLatestEtlRunStatus() {
         return latestEtlRunStatus;
     }
 
-    /** Data Flow Run Status Message */
+    /**
+     * Data Flow Run Status Message
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestEtlRunMessage")
     private final String latestEtlRunMessage;
 
     /**
      * Data Flow Run Status Message
-     *
      * @return the value
-     */
+     **/
     public String getLatestEtlRunMessage() {
         return latestEtlRunMessage;
     }
 
-    /** Data Flow Run Total Time */
+    /**
+     * Data Flow Run Total Time
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestEtlRunTime")
     private final String latestEtlRunTime;
 
     /**
      * Data Flow Run Total Time
-     *
      * @return the value
-     */
+     **/
     public String getLatestEtlRunTime() {
         return latestEtlRunTime;
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * Unique identifier that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** EmWarehouse Identifier, can be renamed */
+    /**
+     * EmWarehouse Identifier, can be renamed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * EmWarehouse Identifier, can be renamed
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /**
+     * Compartment Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Type of the EmWarehouse. */
+    /**
+     * Type of the EmWarehouse.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emWarehouseType")
     private final String emWarehouseType;
 
     /**
      * Type of the EmWarehouse.
-     *
      * @return the value
-     */
+     **/
     public String getEmWarehouseType() {
         return emWarehouseType;
     }
 
-    /** EMBridge Identifier */
+    /**
+     * EMBridge Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emBridgeId")
     private final String emBridgeId;
 
     /**
      * EMBridge Identifier
-     *
      * @return the value
-     */
+     **/
     public String getEmBridgeId() {
         return emBridgeId;
     }
 
-    /** The time the the EmWarehouse was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the the EmWarehouse was created. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the EmWarehouse was updated. An RFC3339 formatted datetime string */
+    /**
+     * The time the EmWarehouse was updated. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the EmWarehouse. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the EmWarehouse.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -579,8 +604,8 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -619,83 +644,84 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The current state of the EmWarehouse. */
+    /**
+     * The current state of the EmWarehouse.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the EmWarehouse.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -707,7 +733,6 @@ public final class EmWarehouse extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

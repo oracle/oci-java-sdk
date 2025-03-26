@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
-import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
 import com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse;
@@ -105,7 +105,9 @@ public class ChecksumUtils {
                         false,
                         String.format(
                                 "Cannot compute %s client-side as content length (%d) is larger than max buffer. Disable %s enforcement or provide a DuplicableInputStream to avoid this problem",
-                                algorithmName, contentLength, algorithmName),
+                                algorithmName,
+                                contentLength,
+                                algorithmName),
                         null,
                         null);
             }
@@ -120,7 +122,8 @@ public class ChecksumUtils {
                         new OutOfMemoryError(
                                 String.format(
                                         "Could not compute %s. Disable %s enforcement or provide a DuplicableInputStream to avoid this problem",
-                                        algorithmName, algorithmName));
+                                        algorithmName,
+                                        algorithmName));
                 newOom.initCause(oom);
                 throw newOom;
             }
@@ -147,7 +150,9 @@ public class ChecksumUtils {
                     false,
                     String.format(
                             "Failed to read all bytes while calculating %s checksum: %d, %d",
-                            algorithmName, bytesCopied, contentLength),
+                            algorithmName,
+                            bytesCopied,
+                            contentLength),
                     null,
                     null);
         }

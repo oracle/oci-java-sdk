@@ -5,25 +5,25 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Configuration details for the SCRIPTED_REST monitor type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Configuration details for the SCRIPTED_REST monitor type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScriptedRestMonitorConfiguration.Builder.class)
+    builder = ScriptedRestMonitorConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,23 +44,27 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
             this.__explicitlySet__.add("dnsConfiguration");
             return this;
         }
-        /** Request HTTP authentication scheme. */
+        /**
+         * Request HTTP authentication scheme.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
         private RequestAuthenticationSchemesForScriptedRest reqAuthenticationScheme;
 
         /**
          * Request HTTP authentication scheme.
-         *
          * @param reqAuthenticationScheme the value to set
          * @return this builder
-         */
+         **/
         public Builder reqAuthenticationScheme(
                 RequestAuthenticationSchemesForScriptedRest reqAuthenticationScheme) {
             this.reqAuthenticationScheme = reqAuthenticationScheme;
             this.__explicitlySet__.add("reqAuthenticationScheme");
             return this;
         }
-        /** Expected HTTP response codes. For status code range, set values such as 2xx, 3xx. */
+        /**
+         * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
         private java.util.List<String> verifyResponseCodes;
 
@@ -69,7 +73,7 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
          *
          * @param verifyResponseCodes the value to set
          * @return this builder
-         */
+         **/
         public Builder verifyResponseCodes(java.util.List<String> verifyResponseCodes) {
             this.verifyResponseCodes = verifyResponseCodes;
             this.__explicitlySet__.add("verifyResponseCodes");
@@ -123,7 +127,9 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,20 +151,24 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
         this.networkConfiguration = networkConfiguration;
     }
 
-    /** Request HTTP authentication scheme. */
+    /**
+     * Request HTTP authentication scheme.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
     private final RequestAuthenticationSchemesForScriptedRest reqAuthenticationScheme;
 
     /**
      * Request HTTP authentication scheme.
-     *
      * @return the value
-     */
+     **/
     public RequestAuthenticationSchemesForScriptedRest getReqAuthenticationScheme() {
         return reqAuthenticationScheme;
     }
 
-    /** Expected HTTP response codes. For status code range, set values such as 2xx, 3xx. */
+    /**
+     * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
     private final java.util.List<String> verifyResponseCodes;
 
@@ -166,7 +176,7 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
      * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getVerifyResponseCodes() {
         return verifyResponseCodes;
     }
@@ -185,7 +195,6 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

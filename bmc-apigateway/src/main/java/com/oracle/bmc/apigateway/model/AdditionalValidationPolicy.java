@@ -5,23 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Additional JWT validation checks. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * Additional JWT validation checks.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AdditionalValidationPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AdditionalValidationPolicy.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AdditionalValidationPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"issuers", "audiences", "verifyClaims"})
     public AdditionalValidationPolicy(
@@ -36,46 +35,49 @@ public final class AdditionalValidationPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of parties that could have issued the token. */
+        /**
+         * A list of parties that could have issued the token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuers")
         private java.util.List<String> issuers;
 
         /**
          * A list of parties that could have issued the token.
-         *
          * @param issuers the value to set
          * @return this builder
-         */
+         **/
         public Builder issuers(java.util.List<String> issuers) {
             this.issuers = issuers;
             this.__explicitlySet__.add("issuers");
             return this;
         }
-        /** The list of intended recipients for the token. */
+        /**
+         * The list of intended recipients for the token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("audiences")
         private java.util.List<String> audiences;
 
         /**
          * The list of intended recipients for the token.
-         *
          * @param audiences the value to set
          * @return this builder
-         */
+         **/
         public Builder audiences(java.util.List<String> audiences) {
             this.audiences = audiences;
             this.__explicitlySet__.add("audiences");
             return this;
         }
-        /** A list of claims which should be validated to consider the token valid. */
+        /**
+         * A list of claims which should be validated to consider the token valid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyClaims")
         private java.util.List<JsonWebTokenClaim> verifyClaims;
 
         /**
          * A list of claims which should be validated to consider the token valid.
-         *
          * @param verifyClaims the value to set
          * @return this builder
-         */
+         **/
         public Builder verifyClaims(java.util.List<JsonWebTokenClaim> verifyClaims) {
             this.verifyClaims = verifyClaims;
             this.__explicitlySet__.add("verifyClaims");
@@ -109,7 +111,9 @@ public final class AdditionalValidationPolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,41 +122,44 @@ public final class AdditionalValidationPolicy
         return new Builder().copy(this);
     }
 
-    /** A list of parties that could have issued the token. */
+    /**
+     * A list of parties that could have issued the token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("issuers")
     private final java.util.List<String> issuers;
 
     /**
      * A list of parties that could have issued the token.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getIssuers() {
         return issuers;
     }
 
-    /** The list of intended recipients for the token. */
+    /**
+     * The list of intended recipients for the token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("audiences")
     private final java.util.List<String> audiences;
 
     /**
      * The list of intended recipients for the token.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAudiences() {
         return audiences;
     }
 
-    /** A list of claims which should be validated to consider the token valid. */
+    /**
+     * A list of claims which should be validated to consider the token valid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyClaims")
     private final java.util.List<JsonWebTokenClaim> verifyClaims;
 
     /**
      * A list of claims which should be validated to consider the token valid.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<JsonWebTokenClaim> getVerifyClaims() {
         return verifyClaims;
     }
@@ -164,7 +171,6 @@ public final class AdditionalValidationPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

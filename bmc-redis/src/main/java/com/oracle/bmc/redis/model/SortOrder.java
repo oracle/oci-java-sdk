@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.redis.model;
 
-/** The sort order to use, either 'ASC' or 'DESC'. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
-public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The sort order to use, either 'ASC' or 'DESC'.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
+public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),
     ;

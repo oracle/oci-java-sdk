@@ -5,25 +5,25 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a Cloud MACS-managed database host insight resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of a Cloud MACS-managed database host insight resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MacsManagedCloudDatabaseHostInsightSummary.Builder.class)
+    builder = MacsManagedCloudDatabaseHostInsightSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entitySource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MacsManagedCloudDatabaseHostInsightSummary extends HostInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -163,80 +163,72 @@ public final class MacsManagedCloudDatabaseHostInsightSummary extends HostInsigh
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Management Agent
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
          * @param managementAgentId the value to set
          * @return this builder
-         */
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
          * @param parentId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootId")
         private String rootId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
          * @param rootId the value to set
          * @return this builder
-         */
+         **/
         public Builder rootId(String rootId) {
             this.rootId = rootId;
             this.__explicitlySet__.add("rootId");
             return this;
         }
         /**
-         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-         * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
-         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
-         */
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
         /**
-         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-         * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
-         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
+         * Platform type.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
          *
          * @param platformType the value to set
          * @return this builder
-         */
+         **/
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
@@ -337,7 +329,9 @@ public final class MacsManagedCloudDatabaseHostInsightSummary extends HostInsigh
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -390,63 +384,55 @@ public final class MacsManagedCloudDatabaseHostInsightSummary extends HostInsigh
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Management Agent
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * @return the value
-     */
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * Cluster or DB System ID, depending on which configuration the resource belongs to.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * Cluster or DB System ID, depending on which configuration the resource belongs to.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      * @return the value
-     */
+     **/
     public String getParentId() {
         return parentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootId")
     private final String rootId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * @return the value
-     */
+     **/
     public String getRootId() {
         return rootId;
     }
 
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX, HP-UX].
-     */
-    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
+     *
+     **/
+    public enum PlatformType {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
@@ -456,8 +442,8 @@ public final class MacsManagedCloudDatabaseHostInsightSummary extends HostInsigh
         HpUx("HP_UX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -497,22 +483,23 @@ public final class MacsManagedCloudDatabaseHostInsightSummary extends HostInsigh
         }
     };
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX, HP-UX].
-     */
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX, HP-UX].
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      *
      * @return the value
-     */
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
@@ -524,7 +511,6 @@ public final class MacsManagedCloudDatabaseHostInsightSummary extends HostInsigh
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

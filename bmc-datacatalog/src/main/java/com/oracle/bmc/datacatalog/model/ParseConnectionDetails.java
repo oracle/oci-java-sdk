@@ -5,25 +5,24 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Parse connections from the connection metadata and Oracle wallet file. An error will be returned
- * if more than one of connectionPayload, walletSecretId or walletSecretName are present in the
- * request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Parse connections from the connection metadata and Oracle wallet file.
+ * An error will be returned if more than one of connectionPayload, walletSecretId or walletSecretName are present in the request.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ParseConnectionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ParseConnectionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ParseConnectionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "connectionDetail",
@@ -54,46 +53,49 @@ public final class ParseConnectionDetails
             this.__explicitlySet__.add("connectionDetail");
             return this;
         }
-        /** The information used to parse the connection from the wallet file payload. */
+        /**
+         * The information used to parse the connection from the wallet file payload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPayload")
         private byte[] connectionPayload;
 
         /**
          * The information used to parse the connection from the wallet file payload.
-         *
          * @param connectionPayload the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionPayload(byte[] connectionPayload) {
             this.connectionPayload = connectionPayload;
             this.__explicitlySet__.add("connectionPayload");
             return this;
         }
-        /** OCID of the OCI Vault secret holding the Oracle wallet to parse. */
+        /**
+         * OCID of the OCI Vault secret holding the Oracle wallet to parse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
         private String walletSecretId;
 
         /**
          * OCID of the OCI Vault secret holding the Oracle wallet to parse.
-         *
          * @param walletSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder walletSecretId(String walletSecretId) {
             this.walletSecretId = walletSecretId;
             this.__explicitlySet__.add("walletSecretId");
             return this;
         }
-        /** Name of the OCI Vault secret holding the Oracle wallet to parse. */
+        /**
+         * Name of the OCI Vault secret holding the Oracle wallet to parse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletSecretName")
         private String walletSecretName;
 
         /**
          * Name of the OCI Vault secret holding the Oracle wallet to parse.
-         *
          * @param walletSecretName the value to set
          * @return this builder
-         */
+         **/
         public Builder walletSecretName(String walletSecretName) {
             this.walletSecretName = walletSecretName;
             this.__explicitlySet__.add("walletSecretName");
@@ -134,7 +136,9 @@ public final class ParseConnectionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,41 +154,44 @@ public final class ParseConnectionDetails
         return connectionDetail;
     }
 
-    /** The information used to parse the connection from the wallet file payload. */
+    /**
+     * The information used to parse the connection from the wallet file payload.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPayload")
     private final byte[] connectionPayload;
 
     /**
      * The information used to parse the connection from the wallet file payload.
-     *
      * @return the value
-     */
+     **/
     public byte[] getConnectionPayload() {
         return connectionPayload;
     }
 
-    /** OCID of the OCI Vault secret holding the Oracle wallet to parse. */
+    /**
+     * OCID of the OCI Vault secret holding the Oracle wallet to parse.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
     private final String walletSecretId;
 
     /**
      * OCID of the OCI Vault secret holding the Oracle wallet to parse.
-     *
      * @return the value
-     */
+     **/
     public String getWalletSecretId() {
         return walletSecretId;
     }
 
-    /** Name of the OCI Vault secret holding the Oracle wallet to parse. */
+    /**
+     * Name of the OCI Vault secret holding the Oracle wallet to parse.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecretName")
     private final String walletSecretName;
 
     /**
      * Name of the OCI Vault secret holding the Oracle wallet to parse.
-     *
      * @return the value
-     */
+     **/
     public String getWalletSecretName() {
         return walletSecretName;
     }
@@ -196,7 +203,6 @@ public final class ParseConnectionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

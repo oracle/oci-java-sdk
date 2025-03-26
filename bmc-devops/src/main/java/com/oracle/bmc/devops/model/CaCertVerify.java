@@ -5,37 +5,37 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Enable TLS verification with CA certificate. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Enable TLS verification with CA certificate.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CaCertVerify.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "tlsVerifyMode")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "tlsVerifyMode"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CaCertVerify extends TlsVerifyConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of OCI certificate service CA bundle. */
+        /**
+         * The OCID of OCI certificate service CA bundle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificateBundleId")
         private String caCertificateBundleId;
 
         /**
          * The OCID of OCI certificate service CA bundle.
-         *
          * @param caCertificateBundleId the value to set
          * @return this builder
-         */
+         **/
         public Builder caCertificateBundleId(String caCertificateBundleId) {
             this.caCertificateBundleId = caCertificateBundleId;
             this.__explicitlySet__.add("caCertificateBundleId");
@@ -62,7 +62,9 @@ public final class CaCertVerify extends TlsVerifyConfig {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +79,16 @@ public final class CaCertVerify extends TlsVerifyConfig {
         this.caCertificateBundleId = caCertificateBundleId;
     }
 
-    /** The OCID of OCI certificate service CA bundle. */
+    /**
+     * The OCID of OCI certificate service CA bundle.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificateBundleId")
     private final String caCertificateBundleId;
 
     /**
      * The OCID of OCI certificate service CA bundle.
-     *
      * @return the value
-     */
+     **/
     public String getCaCertificateBundleId() {
         return caCertificateBundleId;
     }
@@ -97,7 +100,6 @@ public final class CaCertVerify extends TlsVerifyConfig {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

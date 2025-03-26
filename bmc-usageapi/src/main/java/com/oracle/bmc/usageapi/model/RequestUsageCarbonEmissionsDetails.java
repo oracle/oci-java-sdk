@@ -5,23 +5,22 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Details for the '/usageCarbonEmissions' query. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+ * Details for the '/usageCarbonEmissions' query.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RequestUsageCarbonEmissionsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RequestUsageCarbonEmissionsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RequestUsageCarbonEmissionsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenantId",
@@ -55,88 +54,91 @@ public final class RequestUsageCarbonEmissionsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Tenant ID. */
+        /**
+         * Tenant ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * Tenant ID.
-         *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** The usage start time. */
+        /**
+         * The usage start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
         private java.util.Date timeUsageStarted;
 
         /**
          * The usage start time.
-         *
          * @param timeUsageStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageStarted(java.util.Date timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             this.__explicitlySet__.add("timeUsageStarted");
             return this;
         }
-        /** The usage end time. */
+        /**
+         * The usage end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
         private java.util.Date timeUsageEnded;
 
         /**
          * The usage end time.
-         *
          * @param timeUsageEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageEnded(java.util.Date timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             this.__explicitlySet__.add("timeUsageEnded");
             return this;
         }
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon
-         * emissions over the query time period will be added up.
-         */
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon
-         * emissions over the query time period will be added up.
-         *
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
          * @param isAggregateByTime the value to set
          * @return this builder
-         */
+         **/
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
             this.isAggregateByTime = isAggregateByTime;
             this.__explicitlySet__.add("isAggregateByTime");
             return this;
         }
         /**
-         * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
-         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName",
-         * "tenantId", "tenantName", "subscriptionId"]}
-         */
+         * Aggregate the result by.
+         * For example:
+         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+         *     "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
         /**
-         * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
-         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName",
-         * "tenantId", "tenantName", "subscriptionId"]}
+         * Aggregate the result by.
+         * For example:
+         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+         *     "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]}
          *
          * @param groupBy the value to set
          * @return this builder
-         */
+         **/
         public Builder groupBy(java.util.List<String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
@@ -164,16 +166,17 @@ public final class RequestUsageCarbonEmissionsDetails
             this.__explicitlySet__.add("groupByTag");
             return this;
         }
-        /** The compartment depth level. */
+        /**
+         * The compartment depth level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
         private Integer compartmentDepth;
 
         /**
          * The compartment depth level.
-         *
          * @param compartmentDepth the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentDepth(Integer compartmentDepth) {
             this.compartmentDepth = compartmentDepth;
             this.__explicitlySet__.add("compartmentDepth");
@@ -239,7 +242,9 @@ public final class RequestUsageCarbonEmissionsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -248,79 +253,82 @@ public final class RequestUsageCarbonEmissionsDetails
         return new Builder().copy(this);
     }
 
-    /** Tenant ID. */
+    /**
+     * Tenant ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * Tenant ID.
-     *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** The usage start time. */
+    /**
+     * The usage start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     private final java.util.Date timeUsageStarted;
 
     /**
      * The usage start time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageStarted() {
         return timeUsageStarted;
     }
 
-    /** The usage end time. */
+    /**
+     * The usage end time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     private final java.util.Date timeUsageEnded;
 
     /**
      * The usage end time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageEnded() {
         return timeUsageEnded;
     }
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon
-     * emissions over the query time period will be added up.
-     */
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon
-     * emissions over the query time period will be added up.
-     *
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
      * @return the value
-     */
+     **/
     public Boolean getIsAggregateByTime() {
         return isAggregateByTime;
     }
 
     /**
-     * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
-     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId",
-     * "tenantName", "subscriptionId"]}
-     */
+     * Aggregate the result by.
+     * For example:
+     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+     *     "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
     /**
-     * Aggregate the result by. For example: {@code ["tagNamespace", "tagKey", "tagValue",
-     * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-     * "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId",
-     * "tenantName", "subscriptionId"]}
+     * Aggregate the result by.
+     * For example:
+     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+     *     "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getGroupBy() {
         return groupBy;
     }
@@ -345,15 +353,16 @@ public final class RequestUsageCarbonEmissionsDetails
         return groupByTag;
     }
 
-    /** The compartment depth level. */
+    /**
+     * The compartment depth level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
     private final Integer compartmentDepth;
 
     /**
      * The compartment depth level.
-     *
      * @return the value
-     */
+     **/
     public Integer getCompartmentDepth() {
         return compartmentDepth;
     }
@@ -372,7 +381,6 @@ public final class RequestUsageCarbonEmissionsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

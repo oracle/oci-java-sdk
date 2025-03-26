@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for an entitlement. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for an entitlement.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EntitlementSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EntitlementSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = EntitlementSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EntitlementSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "csi", "vendorName"})
     public EntitlementSummary(String compartmentId, String csi, String vendorName) {
@@ -34,53 +32,48 @@ public final class EntitlementSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy containing the entitlement.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * tenancy containing the entitlement.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a
-         * unique key given to a customer and it uniquely identifies the entitlement.
-         */
+         * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
-         * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a
-         * unique key given to a customer and it uniquely identifies the entitlement.
-         *
+         * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
          * @param csi the value to set
          * @return this builder
-         */
+         **/
         public Builder csi(String csi) {
             this.csi = csi;
             this.__explicitlySet__.add("csi");
             return this;
         }
-        /** The vendor for the entitlement. */
+        /**
+         * The vendor for the entitlement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private String vendorName;
 
         /**
          * The vendor for the entitlement.
-         *
          * @param vendorName the value to set
          * @return this builder
-         */
+         **/
         public Builder vendorName(String vendorName) {
             this.vendorName = vendorName;
             this.__explicitlySet__.add("vendorName");
@@ -114,7 +107,9 @@ public final class EntitlementSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,48 +119,43 @@ public final class EntitlementSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy containing the entitlement.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * tenancy containing the entitlement.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a
-     * unique key given to a customer and it uniquely identifies the entitlement.
-     */
+     * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
-     * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a
-     * unique key given to a customer and it uniquely identifies the entitlement.
-     *
+     * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
      * @return the value
-     */
+     **/
     public String getCsi() {
         return csi;
     }
 
-    /** The vendor for the entitlement. */
+    /**
+     * The vendor for the entitlement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final String vendorName;
 
     /**
      * The vendor for the entitlement.
-     *
      * @return the value
-     */
+     **/
     public String getVendorName() {
         return vendorName;
     }
@@ -177,7 +167,6 @@ public final class EntitlementSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

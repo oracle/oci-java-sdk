@@ -5,24 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to drop SQL plan baselines. It takes either credentials or
- * databaseCredential. It's recommended to provide databaseCredential <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details required to drop SQL plan baselines.
+ * It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DropSqlPlanBaselinesDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DropSqlPlanBaselinesDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DropSqlPlanBaselinesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlHandle",
@@ -45,38 +45,40 @@ public final class DropSqlPlanBaselinesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The SQL statement handle. It identifies plans associated with a SQL statement that are to
-         * be dropped. If {@code null} then {@code planName} must be specified.
-         */
+         * The SQL statement handle. It identifies plans associated with a SQL statement
+         * that are to be dropped. If {@code null} then {@code planName} must be specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlHandle")
         private String sqlHandle;
 
         /**
-         * The SQL statement handle. It identifies plans associated with a SQL statement that are to
-         * be dropped. If {@code null} then {@code planName} must be specified.
+         * The SQL statement handle. It identifies plans associated with a SQL statement
+         * that are to be dropped. If {@code null} then {@code planName} must be specified.
          *
          * @param sqlHandle the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlHandle(String sqlHandle) {
             this.sqlHandle = sqlHandle;
             this.__explicitlySet__.add("sqlHandle");
             return this;
         }
         /**
-         * The plan name. It identifies a specific plan. If {@code null' then all plans associated
-         * with the SQL statement identified by }sqlHandle' are dropped.
-         */
+         * The plan name. It identifies a specific plan. If {@code null' then all plans
+         * associated with the SQL statement identified by }sqlHandle' are dropped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planName")
         private String planName;
 
         /**
-         * The plan name. It identifies a specific plan. If {@code null' then all plans associated
-         * with the SQL statement identified by }sqlHandle' are dropped.
+         * The plan name. It identifies a specific plan. If {@code null' then all plans
+         * associated with the SQL statement identified by }sqlHandle' are dropped.
          *
          * @param planName the value to set
          * @return this builder
-         */
+         **/
         public Builder planName(String planName) {
             this.planName = planName;
             this.__explicitlySet__.add("planName");
@@ -135,7 +137,9 @@ public final class DropSqlPlanBaselinesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,35 +149,37 @@ public final class DropSqlPlanBaselinesDetails
     }
 
     /**
-     * The SQL statement handle. It identifies plans associated with a SQL statement that are to be
-     * dropped. If {@code null} then {@code planName} must be specified.
-     */
+     * The SQL statement handle. It identifies plans associated with a SQL statement
+     * that are to be dropped. If {@code null} then {@code planName} must be specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlHandle")
     private final String sqlHandle;
 
     /**
-     * The SQL statement handle. It identifies plans associated with a SQL statement that are to be
-     * dropped. If {@code null} then {@code planName} must be specified.
+     * The SQL statement handle. It identifies plans associated with a SQL statement
+     * that are to be dropped. If {@code null} then {@code planName} must be specified.
      *
      * @return the value
-     */
+     **/
     public String getSqlHandle() {
         return sqlHandle;
     }
 
     /**
-     * The plan name. It identifies a specific plan. If {@code null' then all plans associated with
-     * the SQL statement identified by }sqlHandle' are dropped.
-     */
+     * The plan name. It identifies a specific plan. If {@code null' then all plans
+     * associated with the SQL statement identified by }sqlHandle' are dropped.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planName")
     private final String planName;
 
     /**
-     * The plan name. It identifies a specific plan. If {@code null' then all plans associated with
-     * the SQL statement identified by }sqlHandle' are dropped.
+     * The plan name. It identifies a specific plan. If {@code null' then all plans
+     * associated with the SQL statement identified by }sqlHandle' are dropped.
      *
      * @return the value
-     */
+     **/
     public String getPlanName() {
         return planName;
     }
@@ -199,7 +205,6 @@ public final class DropSqlPlanBaselinesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

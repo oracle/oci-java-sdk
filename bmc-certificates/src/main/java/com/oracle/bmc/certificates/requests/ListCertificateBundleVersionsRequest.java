@@ -6,46 +6,51 @@ package com.oracle.bmc.certificates.requests;
 
 import com.oracle.bmc.certificates.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/ListCertificateBundleVersionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListCertificateBundleVersionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/ListCertificateBundleVersionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCertificateBundleVersionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class ListCertificateBundleVersionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the certificate. */
+    /**
+     * The OCID of the certificate.
+     */
     private String certificateId;
 
-    /** The OCID of the certificate. */
+    /**
+     * The OCID of the certificate.
+     */
     public String getCertificateId() {
         return certificateId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The field to sort by. You can specify only one sort order. The default order for {@code
-     * VERSION_NUMBER} is ascending.
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code VERSION_NUMBER} is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order. The default order for {@code
-     * VERSION_NUMBER} is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code VERSION_NUMBER} is ascending.
+     *
+     **/
+    public enum SortBy {
         VersionNumber("VERSION_NUMBER"),
         ;
 
@@ -78,17 +83,24 @@ public class ListCertificateBundleVersionsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order. The default order for {@code
-     * VERSION_NUMBER} is ascending.
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code VERSION_NUMBER} is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -121,7 +133,10 @@ public class ListCertificateBundleVersionsRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -129,15 +144,17 @@ public class ListCertificateBundleVersionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListCertificateBundleVersionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the certificate. */
+        /**
+         * The OCID of the certificate.
+         */
         private String certificateId = null;
 
         /**
          * The OCID of the certificate.
-         *
          * @param certificateId the value to set
          * @return this builder instance
          */
@@ -147,14 +164,15 @@ public class ListCertificateBundleVersionsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -165,14 +183,15 @@ public class ListCertificateBundleVersionsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order. The default order for {@code
-         * VERSION_NUMBER} is ascending.
+         * The field to sort by. You can specify only one sort order. The default
+         * order for {@code VERSION_NUMBER} is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order. The default order for {@code
-         * VERSION_NUMBER} is ascending.
+         * The field to sort by. You can specify only one sort order. The default
+         * order for {@code VERSION_NUMBER} is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -182,7 +201,10 @@ public class ListCertificateBundleVersionsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -198,19 +220,18 @@ public class ListCertificateBundleVersionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -222,7 +243,6 @@ public class ListCertificateBundleVersionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListCertificateBundleVersionsRequest o) {
@@ -238,11 +258,10 @@ public class ListCertificateBundleVersionsRequest
         /**
          * Build the instance of ListCertificateBundleVersionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListCertificateBundleVersionsRequest
          */
@@ -256,8 +275,7 @@ public class ListCertificateBundleVersionsRequest
         /**
          * Build the instance of ListCertificateBundleVersionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListCertificateBundleVersionsRequest
@@ -270,14 +288,12 @@ public class ListCertificateBundleVersionsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListCertificateBundleVersionsRequest(certificateId, opcRequestId, sortBy,
-            // sortOrder);
+            // new ListCertificateBundleVersionsRequest(certificateId, opcRequestId, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -290,7 +306,6 @@ public class ListCertificateBundleVersionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

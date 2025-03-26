@@ -6,17 +6,16 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +23,10 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -37,27 +39,25 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Float retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      * @return the value
      */
     public Float getRetryAfter() {
         return retryAfter;
     }
 
-    /** The returned {@code QueryWorkRequest} instance. */
+    /**
+     * The returned QueryWorkRequest instance.
+     */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
     /**
-     * The returned {@code QueryWorkRequest} instance.
-     *
+     * The returned QueryWorkRequest instance.
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.QueryWorkRequest getQueryWorkRequest() {
@@ -74,7 +74,7 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
     })
     private GetQueryWorkRequestResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             Float retryAfter,
@@ -86,33 +86,29 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
         this.queryWorkRequest = queryWorkRequest;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetQueryWorkRequestResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -122,7 +118,10 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -137,15 +136,12 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          */
         private Float retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -154,12 +150,13 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code QueryWorkRequest} instance. */
+        /**
+         * The returned QueryWorkRequest instance.
+         */
         private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
         /**
-         * The returned {@code QueryWorkRequest} instance.
-         *
+         * The returned QueryWorkRequest instance.
          * @param queryWorkRequest the value to set
          * @return this builder
          */
@@ -171,10 +168,8 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetQueryWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -188,10 +183,8 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetQueryWorkRequestResponse build() {
             return new GetQueryWorkRequestResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, retryAfter, queryWorkRequest);
@@ -200,7 +193,6 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

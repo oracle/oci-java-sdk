@@ -6,17 +6,18 @@ package com.oracle.bmc.vbsinst.responses;
 
 import com.oracle.bmc.vbsinst.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,17 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -42,12 +44,13 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned {@code VbsInstanceSummaryCollection} instance. */
+    /**
+     * The returned VbsInstanceSummaryCollection instance.
+     */
     private com.oracle.bmc.vbsinst.model.VbsInstanceSummaryCollection vbsInstanceSummaryCollection;
 
     /**
-     * The returned {@code VbsInstanceSummaryCollection} instance.
-     *
+     * The returned VbsInstanceSummaryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.vbsinst.model.VbsInstanceSummaryCollection
@@ -64,7 +67,7 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListVbsInstancesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.vbsinst.model.VbsInstanceSummaryCollection
@@ -75,33 +78,31 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         this.vbsInstanceSummaryCollection = vbsInstanceSummaryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListVbsInstancesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -112,16 +113,17 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -131,13 +133,14 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code VbsInstanceSummaryCollection} instance. */
+        /**
+         * The returned VbsInstanceSummaryCollection instance.
+         */
         private com.oracle.bmc.vbsinst.model.VbsInstanceSummaryCollection
                 vbsInstanceSummaryCollection;
 
         /**
-         * The returned {@code VbsInstanceSummaryCollection} instance.
-         *
+         * The returned VbsInstanceSummaryCollection instance.
          * @param vbsInstanceSummaryCollection the value to set
          * @return this builder
          */
@@ -150,10 +153,8 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListVbsInstancesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -166,10 +167,8 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListVbsInstancesResponse build() {
             return new ListVbsInstancesResponse(
                     __httpStatusCode__,
@@ -182,7 +181,6 @@ public class ListVbsInstancesResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

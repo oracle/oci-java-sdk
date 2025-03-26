@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Product. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details of the Product.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComplianceReportProduct.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComplianceReportProduct.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComplianceReportProduct
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"productName", "targets"})
     public ComplianceReportProduct(
@@ -33,31 +32,33 @@ public final class ComplianceReportProduct
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Product Name. */
+        /**
+         * Product Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
          * Product Name.
-         *
          * @param productName the value to set
          * @return this builder
-         */
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-        /** Managed Targets associated with the Product. */
+        /**
+         * Managed Targets associated with the Product.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targets")
         private java.util.List<ComplianceReportTarget> targets;
 
         /**
          * Managed Targets associated with the Product.
-         *
          * @param targets the value to set
          * @return this builder
-         */
+         **/
         public Builder targets(java.util.List<ComplianceReportTarget> targets) {
             this.targets = targets;
             this.__explicitlySet__.add("targets");
@@ -88,7 +89,9 @@ public final class ComplianceReportProduct
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class ComplianceReportProduct
         return new Builder().copy(this);
     }
 
-    /** Product Name. */
+    /**
+     * Product Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
      * Product Name.
-     *
      * @return the value
-     */
+     **/
     public String getProductName() {
         return productName;
     }
 
-    /** Managed Targets associated with the Product. */
+    /**
+     * Managed Targets associated with the Product.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
     private final java.util.List<ComplianceReportTarget> targets;
 
     /**
      * Managed Targets associated with the Product.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ComplianceReportTarget> getTargets() {
         return targets;
     }
@@ -130,7 +135,6 @@ public final class ComplianceReportProduct
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

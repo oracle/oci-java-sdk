@@ -5,52 +5,53 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The rule type config. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The rule type config.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuleTypeConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RuleTypeConfig extends DynamicTypeHandler {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The key of the object. */
+        /**
+         * The key of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key of the object.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The model version of an object. */
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -66,21 +67,16 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
             return this;
         }
         /**
-         * Deprecated - Reference to a typed object, this can be either a key value to an object
-         * within the document, a shall referenced to a {@code TypedObject} or a full {@code
-         * TypedObject} definition.
-         */
+         * Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject} definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Object scope;
 
         /**
-         * Deprecated - Reference to a typed object, this can be either a key value to an object
-         * within the document, a shall referenced to a {@code TypedObject} or a full {@code
-         * TypedObject} definition.
-         *
+         * Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject} definition.
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(Object scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
@@ -95,31 +91,33 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
             this.__explicitlySet__.add("scopeReference");
             return this;
         }
-        /** Specifies whether it is ordered by rule. */
+        /**
+         * Specifies whether it is ordered by rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOrderByRule")
         private Boolean isOrderByRule;
 
         /**
          * Specifies whether it is ordered by rule.
-         *
          * @param isOrderByRule the value to set
          * @return this builder
-         */
+         **/
         public Builder isOrderByRule(Boolean isOrderByRule) {
             this.isOrderByRule = isOrderByRule;
             this.__explicitlySet__.add("isOrderByRule");
             return this;
         }
-        /** The projection rules. */
+        /**
+         * The projection rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectionRules")
         private java.util.List<ProjectionRule> projectionRules;
 
         /**
          * The projection rules.
-         *
          * @param projectionRules the value to set
          * @return this builder
-         */
+         **/
         public Builder projectionRules(java.util.List<ProjectionRule> projectionRules) {
             this.projectionRules = projectionRules;
             this.__explicitlySet__.add("projectionRules");
@@ -135,19 +133,16 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -208,7 +203,9 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -240,28 +237,30 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
         this.objectStatus = objectStatus;
     }
 
-    /** The key of the object. */
+    /**
+     * The key of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -274,20 +273,15 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
     }
 
     /**
-     * Deprecated - Reference to a typed object, this can be either a key value to an object within
-     * the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject}
-     * definition.
-     */
+     * Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject} definition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Object scope;
 
     /**
-     * Deprecated - Reference to a typed object, this can be either a key value to an object within
-     * the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject}
-     * definition.
-     *
+     * Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject} definition.
      * @return the value
-     */
+     **/
     public Object getScope() {
         return scope;
     }
@@ -299,28 +293,30 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
         return scopeReference;
     }
 
-    /** Specifies whether it is ordered by rule. */
+    /**
+     * Specifies whether it is ordered by rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOrderByRule")
     private final Boolean isOrderByRule;
 
     /**
      * Specifies whether it is ordered by rule.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOrderByRule() {
         return isOrderByRule;
     }
 
-    /** The projection rules. */
+    /**
+     * The projection rules.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectionRules")
     private final java.util.List<ProjectionRule> projectionRules;
 
     /**
      * The projection rules.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ProjectionRule> getProjectionRules() {
         return projectionRules;
     }
@@ -333,18 +329,15 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -356,7 +349,6 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

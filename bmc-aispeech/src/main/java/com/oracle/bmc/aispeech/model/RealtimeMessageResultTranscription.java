@@ -5,23 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Transcription object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Transcription object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RealtimeMessageResultTranscription.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RealtimeMessageResultTranscription.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RealtimeMessageResultTranscription
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "transcription",
@@ -52,106 +51,113 @@ public final class RealtimeMessageResultTranscription
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Transcription text. */
+        /**
+         * Transcription text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transcription")
         private String transcription;
 
         /**
          * Transcription text.
-         *
          * @param transcription the value to set
          * @return this builder
-         */
+         **/
         public Builder transcription(String transcription) {
             this.transcription = transcription;
             this.__explicitlySet__.add("transcription");
             return this;
         }
-        /** Whether the transcription is final or partial. */
+        /**
+         * Whether the transcription is final or partial.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFinal")
         private Boolean isFinal;
 
         /**
          * Whether the transcription is final or partial.
-         *
          * @param isFinal the value to set
          * @return this builder
-         */
+         **/
         public Builder isFinal(Boolean isFinal) {
             this.isFinal = isFinal;
             this.__explicitlySet__.add("isFinal");
             return this;
         }
-        /** Start time in milliseconds for the transcription text. */
+        /**
+         * Start time in milliseconds for the transcription text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimeInMs")
         private Integer startTimeInMs;
 
         /**
          * Start time in milliseconds for the transcription text.
-         *
          * @param startTimeInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder startTimeInMs(Integer startTimeInMs) {
             this.startTimeInMs = startTimeInMs;
             this.__explicitlySet__.add("startTimeInMs");
             return this;
         }
-        /** End time in milliseconds for the transcription text. */
+        /**
+         * End time in milliseconds for the transcription text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimeInMs")
         private Integer endTimeInMs;
 
         /**
          * End time in milliseconds for the transcription text.
-         *
          * @param endTimeInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder endTimeInMs(Integer endTimeInMs) {
             this.endTimeInMs = endTimeInMs;
             this.__explicitlySet__.add("endTimeInMs");
             return this;
         }
-        /** Confidence for the transcription text. */
+        /**
+         * Confidence for the transcription text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * Confidence for the transcription text.
-         *
          * @param confidence the value to set
          * @return this builder
-         */
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /** Trailing silence after the transcription text. */
+        /**
+         * Trailing silence after the transcription text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trailingSilence")
         private Integer trailingSilence;
 
         /**
          * Trailing silence after the transcription text.
-         *
          * @param trailingSilence the value to set
          * @return this builder
-         */
+         **/
         public Builder trailingSilence(Integer trailingSilence) {
             this.trailingSilence = trailingSilence;
             this.__explicitlySet__.add("trailingSilence");
             return this;
         }
-        /** Array of individual transcription tokens. */
+        /**
+         * Array of individual transcription tokens.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tokens")
         private java.util.List<RealtimeMessageResultTranscriptionToken> tokens;
 
         /**
          * Array of individual transcription tokens.
-         *
          * @param tokens the value to set
          * @return this builder
-         */
+         **/
         public Builder tokens(java.util.List<RealtimeMessageResultTranscriptionToken> tokens) {
             this.tokens = tokens;
             this.__explicitlySet__.add("tokens");
@@ -204,7 +210,9 @@ public final class RealtimeMessageResultTranscription
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,93 +221,100 @@ public final class RealtimeMessageResultTranscription
         return new Builder().copy(this);
     }
 
-    /** Transcription text. */
+    /**
+     * Transcription text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("transcription")
     private final String transcription;
 
     /**
      * Transcription text.
-     *
      * @return the value
-     */
+     **/
     public String getTranscription() {
         return transcription;
     }
 
-    /** Whether the transcription is final or partial. */
+    /**
+     * Whether the transcription is final or partial.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFinal")
     private final Boolean isFinal;
 
     /**
      * Whether the transcription is final or partial.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFinal() {
         return isFinal;
     }
 
-    /** Start time in milliseconds for the transcription text. */
+    /**
+     * Start time in milliseconds for the transcription text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeInMs")
     private final Integer startTimeInMs;
 
     /**
      * Start time in milliseconds for the transcription text.
-     *
      * @return the value
-     */
+     **/
     public Integer getStartTimeInMs() {
         return startTimeInMs;
     }
 
-    /** End time in milliseconds for the transcription text. */
+    /**
+     * End time in milliseconds for the transcription text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeInMs")
     private final Integer endTimeInMs;
 
     /**
      * End time in milliseconds for the transcription text.
-     *
      * @return the value
-     */
+     **/
     public Integer getEndTimeInMs() {
         return endTimeInMs;
     }
 
-    /** Confidence for the transcription text. */
+    /**
+     * Confidence for the transcription text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * Confidence for the transcription text.
-     *
      * @return the value
-     */
+     **/
     public Float getConfidence() {
         return confidence;
     }
 
-    /** Trailing silence after the transcription text. */
+    /**
+     * Trailing silence after the transcription text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trailingSilence")
     private final Integer trailingSilence;
 
     /**
      * Trailing silence after the transcription text.
-     *
      * @return the value
-     */
+     **/
     public Integer getTrailingSilence() {
         return trailingSilence;
     }
 
-    /** Array of individual transcription tokens. */
+    /**
+     * Array of individual transcription tokens.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokens")
     private final java.util.List<RealtimeMessageResultTranscriptionToken> tokens;
 
     /**
      * Array of individual transcription tokens.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RealtimeMessageResultTranscriptionToken> getTokens() {
         return tokens;
     }
@@ -311,7 +326,6 @@ public final class RealtimeMessageResultTranscription
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

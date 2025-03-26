@@ -6,25 +6,24 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details to update a database.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDatabaseDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateDatabaseDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDatabaseDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dbBackupConfig",
@@ -65,128 +64,108 @@ public final class UpdateDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Home.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
         private String dbHomeId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Home.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
          * @param dbHomeId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbHomeId(String dbHomeId) {
             this.dbHomeId = dbHomeId;
             this.__explicitlySet__.add("dbHomeId");
             return this;
         }
         /**
-         * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The
-         * password must be at least nine characters and contain at least two uppercase, two
-         * lowercase, two numeric, and two special characters. The special characters must be _,
-         * \\#, or -.
-         */
+         * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
         private String newAdminPassword;
 
         /**
-         * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The
-         * password must be at least nine characters and contain at least two uppercase, two
-         * lowercase, two numeric, and two special characters. The special characters must be _,
-         * \\#, or -.
-         *
+         * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
          * @param newAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder newAdminPassword(String newAdminPassword) {
             this.newAdminPassword = newAdminPassword;
             this.__explicitlySet__.add("newAdminPassword");
             return this;
         }
         /**
-         * The existing TDE wallet password. You must provide the existing password in order to set
-         * a new TDE wallet password.
-         */
+         * The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
         private String oldTdeWalletPassword;
 
         /**
-         * The existing TDE wallet password. You must provide the existing password in order to set
-         * a new TDE wallet password.
-         *
+         * The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
          * @param oldTdeWalletPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder oldTdeWalletPassword(String oldTdeWalletPassword) {
             this.oldTdeWalletPassword = oldTdeWalletPassword;
             this.__explicitlySet__.add("oldTdeWalletPassword");
             return this;
         }
         /**
-         * The new password to open the TDE wallet. The password must be at least nine characters
-         * and contain at least two uppercase, two lowercase, two numeric, and two special
-         * characters. The special characters must be _, \\#, or -.
-         */
+         * The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
         private String newTdeWalletPassword;
 
         /**
-         * The new password to open the TDE wallet. The password must be at least nine characters
-         * and contain at least two uppercase, two lowercase, two numeric, and two special
-         * characters. The special characters must be _, \\#, or -.
-         *
+         * The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
          * @param newTdeWalletPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder newTdeWalletPassword(String newTdeWalletPassword) {
             this.newTdeWalletPassword = newTdeWalletPassword;
             this.__explicitlySet__.add("newTdeWalletPassword");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -240,7 +219,9 @@ public final class UpdateDatabaseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -257,115 +238,97 @@ public final class UpdateDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Home.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Home.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * @return the value
-     */
+     **/
     public String getDbHomeId() {
         return dbHomeId;
     }
 
     /**
-     * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password
-     * must be at least nine characters and contain at least two uppercase, two lowercase, two
-     * numeric, and two special characters. The special characters must be _, \\#, or -.
-     */
+     * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
     private final String newAdminPassword;
 
     /**
-     * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password
-     * must be at least nine characters and contain at least two uppercase, two lowercase, two
-     * numeric, and two special characters. The special characters must be _, \\#, or -.
-     *
+     * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      * @return the value
-     */
+     **/
     public String getNewAdminPassword() {
         return newAdminPassword;
     }
 
     /**
-     * The existing TDE wallet password. You must provide the existing password in order to set a
-     * new TDE wallet password.
-     */
+     * The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
     private final String oldTdeWalletPassword;
 
     /**
-     * The existing TDE wallet password. You must provide the existing password in order to set a
-     * new TDE wallet password.
-     *
+     * The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
      * @return the value
-     */
+     **/
     public String getOldTdeWalletPassword() {
         return oldTdeWalletPassword;
     }
 
     /**
-     * The new password to open the TDE wallet. The password must be at least nine characters and
-     * contain at least two uppercase, two lowercase, two numeric, and two special characters. The
-     * special characters must be _, \\#, or -.
-     */
+     * The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
     private final String newTdeWalletPassword;
 
     /**
-     * The new password to open the TDE wallet. The password must be at least nine characters and
-     * contain at least two uppercase, two lowercase, two numeric, and two special characters. The
-     * special characters must be _, \\#, or -.
-     *
+     * The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
      * @return the value
-     */
+     **/
     public String getNewTdeWalletPassword() {
         return newTdeWalletPassword;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -377,7 +340,6 @@ public final class UpdateDatabaseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

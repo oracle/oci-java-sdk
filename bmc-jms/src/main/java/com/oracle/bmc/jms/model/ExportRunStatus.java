@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Status of the latest export run. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ExportRunStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Status of the latest export run.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum ExportRunStatus {
     Scheduled("SCHEDULED"),
     Pending("PENDING"),
     InProgress("IN_PROGRESS"),

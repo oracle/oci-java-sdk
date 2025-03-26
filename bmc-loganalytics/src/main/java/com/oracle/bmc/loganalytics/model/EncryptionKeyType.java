@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** The type of encrytion key. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum EncryptionKeyType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of encrytion key.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum EncryptionKeyType {
     ActiveData("ACTIVE_DATA"),
     ArchivalData("ARCHIVAL_DATA"),
     All("ALL"),

@@ -5,23 +5,23 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Define the tracing configuration for an application. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Define the tracing configuration for an application.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApplicationTraceConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ApplicationTraceConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApplicationTraceConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "domainId"})
     public ApplicationTraceConfig(Boolean isEnabled, String domainId) {
@@ -32,7 +32,10 @@ public final class ApplicationTraceConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Define if tracing is enabled for the resource. */
+        /**
+         * Define if tracing is enabled for the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -41,13 +44,16 @@ public final class ApplicationTraceConfig
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** The OCID of the collector (e.g. an APM Domain) trace events will be sent to. */
+        /**
+         * The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
@@ -56,7 +62,7 @@ public final class ApplicationTraceConfig
          *
          * @param domainId the value to set
          * @return this builder
-         */
+         **/
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
@@ -87,7 +93,9 @@ public final class ApplicationTraceConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,7 +104,10 @@ public final class ApplicationTraceConfig
         return new Builder().copy(this);
     }
 
-    /** Define if tracing is enabled for the resource. */
+    /**
+     * Define if tracing is enabled for the resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -104,12 +115,15 @@ public final class ApplicationTraceConfig
      * Define if tracing is enabled for the resource.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** The OCID of the collector (e.g. an APM Domain) trace events will be sent to. */
+    /**
+     * The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
@@ -117,7 +131,7 @@ public final class ApplicationTraceConfig
      * The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
      *
      * @return the value
-     */
+     **/
     public String getDomainId() {
         return domainId;
     }
@@ -129,7 +143,6 @@ public final class ApplicationTraceConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

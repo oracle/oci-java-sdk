@@ -6,53 +6,57 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetSkillExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSkillRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetSkillExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSkillRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     private String odaInstanceId;
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     private String skillId;
 
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
     /**
-     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
-     * service will return the requested resource, with a 200 status, only if it doesn't have an
-     * ETag matching the given ones. When the condition fails for GET methods, then the service will
-     * return HTTP status code 304 (Not Modified).
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+     * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+     *
      */
     private String ifNoneMatch;
 
     /**
-     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
-     * service will return the requested resource, with a 200 status, only if it doesn't have an
-     * ETag matching the given ones. When the condition fails for GET methods, then the service will
-     * return HTTP status code 304 (Not Modified).
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+     * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+     *
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -60,15 +64,17 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetSkillRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Digital Assistant instance identifier. */
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
-         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -77,12 +83,13 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** Unique Skill identifier. */
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
-         *
          * @param skillId the value to set
          * @return this builder instance
          */
@@ -92,18 +99,17 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
-         * service will return the requested resource, with a 200 status, only if it doesn't have an
-         * ETag matching the given ones. When the condition fails for GET methods, then the service
-         * will return HTTP status code 304 (Not Modified).
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+         * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+         * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+         *
          */
         private String ifNoneMatch = null;
 
         /**
-         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
-         * service will return the requested resource, with a 200 status, only if it doesn't have an
-         * ETag matching the given ones. When the condition fails for GET methods, then the service
-         * will return HTTP status code 304 (Not Modified).
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+         * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+         * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -114,15 +120,12 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -133,19 +136,18 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -157,7 +159,6 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetSkillRequest o) {
@@ -173,11 +174,10 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of GetSkillRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetSkillRequest
          */
@@ -191,8 +191,7 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of GetSkillRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetSkillRequest
@@ -210,7 +209,6 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -223,7 +221,6 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

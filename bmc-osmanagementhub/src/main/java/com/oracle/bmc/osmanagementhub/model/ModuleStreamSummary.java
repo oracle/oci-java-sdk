@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the summary information for a module stream contained within a software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the summary information for a module stream contained within a software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ModuleStreamSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ModuleStreamSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ModuleStreamSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ModuleStreamSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -46,7 +44,10 @@ public final class ModuleStreamSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the stream. */
+        /**
+         * The name of the stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -55,13 +56,16 @@ public final class ModuleStreamSummary
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The name of the module that contains the stream. */
+        /**
+         * The name of the module that contains the stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
@@ -70,56 +74,57 @@ public final class ModuleStreamSummary
          *
          * @param moduleName the value to set
          * @return this builder
-         */
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-        /** List of profiles in the stream. */
+        /**
+         * List of profiles in the stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profiles")
         private java.util.List<String> profiles;
 
         /**
          * List of profiles in the stream.
-         *
          * @param profiles the value to set
          * @return this builder
-         */
+         **/
         public Builder profiles(java.util.List<String> profiles) {
             this.profiles = profiles;
             this.__explicitlySet__.add("profiles");
             return this;
         }
-        /** Indicates whether this module stream is the latest. */
+        /**
+         * Indicates whether this module stream is the latest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
         private Boolean isLatest;
 
         /**
          * Indicates whether this module stream is the latest.
-         *
          * @param isLatest the value to set
          * @return this builder
-         */
+         **/
         public Builder isLatest(Boolean isLatest) {
             this.isLatest = isLatest;
             this.__explicitlySet__.add("isLatest");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source that contains the the module stream.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the the module stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source that contains the the module stream.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the the module stream.
          *
          * @param softwareSourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
@@ -164,7 +169,9 @@ public final class ModuleStreamSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,7 +180,10 @@ public final class ModuleStreamSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the stream. */
+    /**
+     * The name of the stream.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -181,12 +191,15 @@ public final class ModuleStreamSummary
      * The name of the stream.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The name of the module that contains the stream. */
+    /**
+     * The name of the module that contains the stream.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
@@ -194,50 +207,51 @@ public final class ModuleStreamSummary
      * The name of the module that contains the stream.
      *
      * @return the value
-     */
+     **/
     public String getModuleName() {
         return moduleName;
     }
 
-    /** List of profiles in the stream. */
+    /**
+     * List of profiles in the stream.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
     private final java.util.List<String> profiles;
 
     /**
      * List of profiles in the stream.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getProfiles() {
         return profiles;
     }
 
-    /** Indicates whether this module stream is the latest. */
+    /**
+     * Indicates whether this module stream is the latest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
     private final Boolean isLatest;
 
     /**
      * Indicates whether this module stream is the latest.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLatest() {
         return isLatest;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source that contains the the module stream.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the the module stream.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source that contains the the module stream.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the the module stream.
      *
      * @return the value
-     */
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -249,7 +263,6 @@ public final class ModuleStreamSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

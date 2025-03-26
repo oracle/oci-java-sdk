@@ -6,17 +6,18 @@ package com.oracle.bmc.core.responses;
 
 import com.oracle.bmc.core.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,13 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned {@code ImageShapeCompatibilityEntry} instance. */
+    /**
+     * The returned ImageShapeCompatibilityEntry instance.
+     */
     private com.oracle.bmc.core.model.ImageShapeCompatibilityEntry imageShapeCompatibilityEntry;
 
     /**
-     * The returned {@code ImageShapeCompatibilityEntry} instance.
-     *
+     * The returned ImageShapeCompatibilityEntry instance.
      * @return the value
      */
     public com.oracle.bmc.core.model.ImageShapeCompatibilityEntry
@@ -45,7 +47,7 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
     })
     private GetImageShapeCompatibilityEntryResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.ImageShapeCompatibilityEntry imageShapeCompatibilityEntry) {
         super(__httpStatusCode__, headers);
@@ -53,34 +55,31 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
         this.imageShapeCompatibilityEntry = imageShapeCompatibilityEntry;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetImageShapeCompatibilityEntryResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -90,12 +89,13 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned {@code ImageShapeCompatibilityEntry} instance. */
+        /**
+         * The returned ImageShapeCompatibilityEntry instance.
+         */
         private com.oracle.bmc.core.model.ImageShapeCompatibilityEntry imageShapeCompatibilityEntry;
 
         /**
-         * The returned {@code ImageShapeCompatibilityEntry} instance.
-         *
+         * The returned ImageShapeCompatibilityEntry instance.
          * @param imageShapeCompatibilityEntry the value to set
          * @return this builder
          */
@@ -108,10 +108,8 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetImageShapeCompatibilityEntryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -123,10 +121,8 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetImageShapeCompatibilityEntryResponse build() {
             return new GetImageShapeCompatibilityEntryResponse(
                     __httpStatusCode__, headers, opcRequestId, imageShapeCompatibilityEntry);
@@ -135,7 +131,6 @@ public class GetImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

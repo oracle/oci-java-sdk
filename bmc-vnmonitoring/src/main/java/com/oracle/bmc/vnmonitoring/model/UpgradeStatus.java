@@ -5,21 +5,20 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * The upgrade status of a DRG. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The upgrade status of a DRG.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpgradeStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UpgradeStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"drgId", "status", "upgradedConnections"})
     public UpgradeStatus(String drgId, Status status, String upgradedConnections) {
@@ -31,7 +30,10 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The {@code drgId} of the upgraded DRG. */
+        /**
+         * The {@code drgId} of the upgraded DRG.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
@@ -40,13 +42,16 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param drgId the value to set
          * @return this builder
-         */
+         **/
         public Builder drgId(String drgId) {
             this.drgId = drgId;
             this.__explicitlySet__.add("drgId");
             return this;
         }
-        /** The current upgrade status of the DRG attachment. */
+        /**
+         * The current upgrade status of the DRG attachment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -55,13 +60,16 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The number of upgraded connections. */
+        /**
+         * The number of upgraded connections.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradedConnections")
         private String upgradedConnections;
 
@@ -70,7 +78,7 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param upgradedConnections the value to set
          * @return this builder
-         */
+         **/
         public Builder upgradedConnections(String upgradedConnections) {
             this.upgradedConnections = upgradedConnections;
             this.__explicitlySet__.add("upgradedConnections");
@@ -104,7 +112,9 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,7 +123,10 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The {@code drgId} of the upgraded DRG. */
+    /**
+     * The {@code drgId} of the upgraded DRG.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
@@ -121,13 +134,16 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
      * The {@code drgId} of the upgraded DRG.
      *
      * @return the value
-     */
+     **/
     public String getDrgId() {
         return drgId;
     }
 
-    /** The current upgrade status of the DRG attachment. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current upgrade status of the DRG attachment.
+     *
+     **/
+    public enum Status {
         NotUpgraded("NOT_UPGRADED"),
         InProgress("IN_PROGRESS"),
         Upgraded("UPGRADED"),
@@ -160,7 +176,10 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
             throw new IllegalArgumentException("Invalid Status: " + key);
         }
     };
-    /** The current upgrade status of the DRG attachment. */
+    /**
+     * The current upgrade status of the DRG attachment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
@@ -168,12 +187,15 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
      * The current upgrade status of the DRG attachment.
      *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The number of upgraded connections. */
+    /**
+     * The number of upgraded connections.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradedConnections")
     private final String upgradedConnections;
 
@@ -181,7 +203,7 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
      * The number of upgraded connections.
      *
      * @return the value
-     */
+     **/
     public String getUpgradedConnections() {
         return upgradedConnections;
     }
@@ -193,7 +215,6 @@ public final class UpgradeStatus extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

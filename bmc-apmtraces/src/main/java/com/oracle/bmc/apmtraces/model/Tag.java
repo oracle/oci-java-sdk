@@ -5,21 +5,20 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Definition of a tag which is a key-value pair. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Definition of a tag which is a key-value pair.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Tag.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Tag extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tagName", "tagValue"})
     public Tag(String tagName, String tagValue) {
@@ -30,7 +29,10 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Key that specifies the tag name. */
+        /**
+         * Key that specifies the tag name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagName")
         private String tagName;
 
@@ -39,13 +41,16 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
          *
          * @param tagName the value to set
          * @return this builder
-         */
+         **/
         public Builder tagName(String tagName) {
             this.tagName = tagName;
             this.__explicitlySet__.add("tagName");
             return this;
         }
-        /** Value associated with the tag key. */
+        /**
+         * Value associated with the tag key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagValue")
         private String tagValue;
 
@@ -54,7 +59,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
          *
          * @param tagValue the value to set
          * @return this builder
-         */
+         **/
         public Builder tagValue(String tagValue) {
             this.tagValue = tagValue;
             this.__explicitlySet__.add("tagValue");
@@ -84,7 +89,9 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,7 +100,10 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /** Key that specifies the tag name. */
+    /**
+     * Key that specifies the tag name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagName")
     private final String tagName;
 
@@ -101,12 +111,15 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * Key that specifies the tag name.
      *
      * @return the value
-     */
+     **/
     public String getTagName() {
         return tagName;
     }
 
-    /** Value associated with the tag key. */
+    /**
+     * Value associated with the tag key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagValue")
     private final String tagValue;
 
@@ -114,7 +127,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * Value associated with the tag key.
      *
      * @return the value
-     */
+     **/
     public String getTagValue() {
         return tagValue;
     }
@@ -126,7 +139,6 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

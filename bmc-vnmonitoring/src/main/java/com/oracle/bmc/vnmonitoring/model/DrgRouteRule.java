@@ -5,24 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A DRG route rule is a mapping between a destination IP address range and a DRG attachment. The
- * map is used to route matching packets. Traffic will be routed across the attachments using
- * Equal-cost multi-path routing (ECMP) if there are multiple rules with identical destinations and
- * none of the rules conflict. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * A DRG route rule is a mapping between a destination IP address range and a DRG attachment.
+ * The map is used to route matching packets. Traffic will be routed across the attachments using Equal-cost multi-path routing (ECMP)
+ * if there are multiple rules with identical destinations and none of the rules conflict.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DrgRouteRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DrgRouteRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "destination",
@@ -61,28 +59,29 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
     public static class Builder {
         /**
          * Represents the range of IP addresses to match against when routing traffic.
+         * <p>
+         * Potential values:
+         *   * An IP address range (IPv4 or IPv6) in CIDR notation. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}.
+         *   * When you're setting up a security rule for traffic destined for a particular {@code Service} through
+         *   a service gateway, this is the {@code cidrBlock} value associated with that {@link Service}. For example: {@code oci-phx-objectstorage}.
          *
-         * <p>Potential values: * An IP address range (IPv4 or IPv6) in CIDR notation. For example:
-         * {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. * When you're setting up a
-         * security rule for traffic destined for a particular {@code Service} through a service
-         * gateway, this is the {@code cidrBlock} value associated with that {@link Service}. For
-         * example: {@code oci-phx-objectstorage}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
         /**
          * Represents the range of IP addresses to match against when routing traffic.
-         *
-         * <p>Potential values: * An IP address range (IPv4 or IPv6) in CIDR notation. For example:
-         * {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. * When you're setting up a
-         * security rule for traffic destined for a particular {@code Service} through a service
-         * gateway, this is the {@code cidrBlock} value associated with that {@link Service}. For
-         * example: {@code oci-phx-objectstorage}.
+         * <p>
+         * Potential values:
+         *   * An IP address range (IPv4 or IPv6) in CIDR notation. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}.
+         *   * When you're setting up a security rule for traffic destined for a particular {@code Service} through
+         *   a service gateway, this is the {@code cidrBlock} value associated with that {@link Service}. For example: {@code oci-phx-objectstorage}.
          *
          * @param destination the value to set
          * @return this builder
-         */
+         **/
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
@@ -90,80 +89,84 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The type of destination for the rule.
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+         *   * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+         *     {@link Service} (the rule is for traffic destined for a
+         *     particular {@code Service} through a service gateway).
          *
-         * <p>Allowed values:
-         *
-         * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
-         * notation. * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code
-         * cidrBlock} value for a {@link Service} (the rule is for traffic destined for a particular
-         * {@code Service} through a service gateway).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private DestinationType destinationType;
 
         /**
          * The type of destination for the rule.
-         *
-         * <p>Allowed values:
-         *
-         * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
-         * notation. * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code
-         * cidrBlock} value for a {@link Service} (the rule is for traffic destined for a particular
-         * {@code Service} through a service gateway).
+         * <p>
+         * Allowed values:
+         * <p>
+         * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+         *   * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+         *     {@link Service} (the rule is for traffic destined for a
+         *     particular {@code Service} through a service gateway).
          *
          * @param destinationType the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationType(DestinationType destinationType) {
             this.destinationType = destinationType;
             this.__explicitlySet__.add("destinationType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * next hop DRG attachment responsible for reaching the network destination.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible
+         * for reaching the network destination.
+         * <p>
+         * A value of {@code BLACKHOLE} means traffic for this route is discarded without notification.
          *
-         * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
-         * notification.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
         private String nextHopDrgAttachmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * next hop DRG attachment responsible for reaching the network destination.
-         *
-         * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
-         * notification.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible
+         * for reaching the network destination.
+         * <p>
+         * A value of {@code BLACKHOLE} means traffic for this route is discarded without notification.
          *
          * @param nextHopDrgAttachmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder nextHopDrgAttachmentId(String nextHopDrgAttachmentId) {
             this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
             this.__explicitlySet__.add("nextHopDrgAttachmentId");
             return this;
         }
         /**
-         * You can specify static routes for the DRG route table using the API. The DRG learns
-         * dynamic routes from the DRG attachments using various routing protocols.
-         */
+         * You can specify static routes for the DRG route table using the API.
+         * The DRG learns dynamic routes from the DRG attachments using various routing protocols.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeType")
         private RouteType routeType;
 
         /**
-         * You can specify static routes for the DRG route table using the API. The DRG learns
-         * dynamic routes from the DRG attachments using various routing protocols.
+         * You can specify static routes for the DRG route table using the API.
+         * The DRG learns dynamic routes from the DRG attachments using various routing protocols.
          *
          * @param routeType the value to set
          * @return this builder
-         */
+         **/
         public Builder routeType(RouteType routeType) {
             this.routeType = routeType;
             this.__explicitlySet__.add("routeType");
             return this;
         }
-        /** Indicates that the route was not imported due to a conflict between route rules. */
+        /**
+         * Indicates that the route was not imported due to a conflict between route rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConflict")
         private Boolean isConflict;
 
@@ -172,32 +175,34 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param isConflict the value to set
          * @return this builder
-         */
+         **/
         public Builder isConflict(Boolean isConflict) {
             this.isConflict = isConflict;
             this.__explicitlySet__.add("isConflict");
             return this;
         }
         /**
-         * Indicates that if the next hop attachment does not exist, so traffic for this route is
-         * discarded without notification.
-         */
+         * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBlackhole")
         private Boolean isBlackhole;
 
         /**
-         * Indicates that if the next hop attachment does not exist, so traffic for this route is
-         * discarded without notification.
+         * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
          *
          * @param isBlackhole the value to set
          * @return this builder
-         */
+         **/
         public Builder isBlackhole(Boolean isBlackhole) {
             this.isBlackhole = isBlackhole;
             this.__explicitlySet__.add("isBlackhole");
             return this;
         }
-        /** The Oracle-assigned ID of the DRG route rule. */
+        /**
+         * The Oracle-assigned ID of the DRG route rule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -206,42 +211,44 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel
-         * attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance
-         * in the peered DRGs remains {@code IPSEC_TUNNEL}, because that is the earliest origin.
+         * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment,
+         * and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains {@code IPSEC_TUNNEL},
+         * because that is the earliest origin.
+         * <p>
+         * No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be exported to IPsec tunnel or virtual circuit attachments,
+         * regardless of the attachment's export distribution.
          *
-         * <p>No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be
-         * exported to IPsec tunnel or virtual circuit attachments, regardless of the attachment's
-         * export distribution.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeProvenance")
         private RouteProvenance routeProvenance;
 
         /**
-         * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel
-         * attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance
-         * in the peered DRGs remains {@code IPSEC_TUNNEL}, because that is the earliest origin.
-         *
-         * <p>No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be
-         * exported to IPsec tunnel or virtual circuit attachments, regardless of the attachment's
-         * export distribution.
+         * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment,
+         * and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains {@code IPSEC_TUNNEL},
+         * because that is the earliest origin.
+         * <p>
+         * No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be exported to IPsec tunnel or virtual circuit attachments,
+         * regardless of the attachment's export distribution.
          *
          * @param routeProvenance the value to set
          * @return this builder
-         */
+         **/
         public Builder routeProvenance(RouteProvenance routeProvenance) {
             this.routeProvenance = routeProvenance;
             this.__explicitlySet__.add("routeProvenance");
             return this;
         }
-        /** Additional properties for the route, computed by the service. */
+        /**
+         * Additional properties for the route, computed by the service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private Object attributes;
 
@@ -250,7 +257,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param attributes the value to set
          * @return this builder
-         */
+         **/
         public Builder attributes(Object attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
@@ -311,7 +318,9 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -322,48 +331,50 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Represents the range of IP addresses to match against when routing traffic.
+     * <p>
+     * Potential values:
+     *   * An IP address range (IPv4 or IPv6) in CIDR notation. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}.
+     *   * When you're setting up a security rule for traffic destined for a particular {@code Service} through
+     *   a service gateway, this is the {@code cidrBlock} value associated with that {@link Service}. For example: {@code oci-phx-objectstorage}.
      *
-     * <p>Potential values: * An IP address range (IPv4 or IPv6) in CIDR notation. For example:
-     * {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. * When you're setting up a security
-     * rule for traffic destined for a particular {@code Service} through a service gateway, this is
-     * the {@code cidrBlock} value associated with that {@link Service}. For example: {@code
-     * oci-phx-objectstorage}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
     /**
      * Represents the range of IP addresses to match against when routing traffic.
-     *
-     * <p>Potential values: * An IP address range (IPv4 or IPv6) in CIDR notation. For example:
-     * {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}. * When you're setting up a security
-     * rule for traffic destined for a particular {@code Service} through a service gateway, this is
-     * the {@code cidrBlock} value associated with that {@link Service}. For example: {@code
-     * oci-phx-objectstorage}.
+     * <p>
+     * Potential values:
+     *   * An IP address range (IPv4 or IPv6) in CIDR notation. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}.
+     *   * When you're setting up a security rule for traffic destined for a particular {@code Service} through
+     *   a service gateway, this is the {@code cidrBlock} value associated with that {@link Service}. For example: {@code oci-phx-objectstorage}.
      *
      * @return the value
-     */
+     **/
     public String getDestination() {
         return destination;
     }
 
     /**
      * The type of destination for the rule.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+     *   * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular {@code Service} through a service gateway).
      *
-     * <p>Allowed values:
-     *
-     * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
-     * notation. * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code
-     * cidrBlock} value for a {@link Service} (the rule is for traffic destined for a particular
-     * {@code Service} through a service gateway).
-     */
-    public enum DestinationType implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum DestinationType {
         CidrBlock("CIDR_BLOCK"),
         ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -404,67 +415,68 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
     };
     /**
      * The type of destination for the rule.
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+     *   * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular {@code Service} through a service gateway).
      *
-     * <p>Allowed values:
-     *
-     * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
-     * notation. * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code
-     * cidrBlock} value for a {@link Service} (the rule is for traffic destined for a particular
-     * {@code Service} through a service gateway).
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final DestinationType destinationType;
 
     /**
      * The type of destination for the rule.
-     *
-     * <p>Allowed values:
-     *
-     * <p>{@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR
-     * notation. * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code
-     * cidrBlock} value for a {@link Service} (the rule is for traffic destined for a particular
-     * {@code Service} through a service gateway).
+     * <p>
+     * Allowed values:
+     * <p>
+     * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+     *   * {@code SERVICE_CIDR_BLOCK}: If the rule's {@code destination} is the {@code cidrBlock} value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular {@code Service} through a service gateway).
      *
      * @return the value
-     */
+     **/
     public DestinationType getDestinationType() {
         return destinationType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
-     * hop DRG attachment responsible for reaching the network destination.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible
+     * for reaching the network destination.
+     * <p>
+     * A value of {@code BLACKHOLE} means traffic for this route is discarded without notification.
      *
-     * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
-     * notification.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
     private final String nextHopDrgAttachmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
-     * hop DRG attachment responsible for reaching the network destination.
-     *
-     * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
-     * notification.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible
+     * for reaching the network destination.
+     * <p>
+     * A value of {@code BLACKHOLE} means traffic for this route is discarded without notification.
      *
      * @return the value
-     */
+     **/
     public String getNextHopDrgAttachmentId() {
         return nextHopDrgAttachmentId;
     }
 
     /**
-     * You can specify static routes for the DRG route table using the API. The DRG learns dynamic
-     * routes from the DRG attachments using various routing protocols.
-     */
-    public enum RouteType implements com.oracle.bmc.http.internal.BmcEnum {
+     * You can specify static routes for the DRG route table using the API.
+     * The DRG learns dynamic routes from the DRG attachments using various routing protocols.
+     *
+     **/
+    public enum RouteType {
         Static("STATIC"),
         Dynamic("DYNAMIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -504,23 +516,27 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * You can specify static routes for the DRG route table using the API. The DRG learns dynamic
-     * routes from the DRG attachments using various routing protocols.
-     */
+     * You can specify static routes for the DRG route table using the API.
+     * The DRG learns dynamic routes from the DRG attachments using various routing protocols.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeType")
     private final RouteType routeType;
 
     /**
-     * You can specify static routes for the DRG route table using the API. The DRG learns dynamic
-     * routes from the DRG attachments using various routing protocols.
+     * You can specify static routes for the DRG route table using the API.
+     * The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      *
      * @return the value
-     */
+     **/
     public RouteType getRouteType() {
         return routeType;
     }
 
-    /** Indicates that the route was not imported due to a conflict between route rules. */
+    /**
+     * Indicates that the route was not imported due to a conflict between route rules.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConflict")
     private final Boolean isConflict;
 
@@ -528,29 +544,31 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
      * Indicates that the route was not imported due to a conflict between route rules.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsConflict() {
         return isConflict;
     }
 
     /**
-     * Indicates that if the next hop attachment does not exist, so traffic for this route is
-     * discarded without notification.
-     */
+     * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBlackhole")
     private final Boolean isBlackhole;
 
     /**
-     * Indicates that if the next hop attachment does not exist, so traffic for this route is
-     * discarded without notification.
+     * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsBlackhole() {
         return isBlackhole;
     }
 
-    /** The Oracle-assigned ID of the DRG route rule. */
+    /**
+     * The Oracle-assigned ID of the DRG route rule.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -558,29 +576,29 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
      * The Oracle-assigned ID of the DRG route rule.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel
-     * attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in
-     * the peered DRGs remains {@code IPSEC_TUNNEL}, because that is the earliest origin.
+     * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment,
+     * and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains {@code IPSEC_TUNNEL},
+     * because that is the earliest origin.
+     * <p>
+     * No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be exported to IPsec tunnel or virtual circuit attachments,
+     * regardless of the attachment's export distribution.
      *
-     * <p>No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be
-     * exported to IPsec tunnel or virtual circuit attachments, regardless of the attachment's
-     * export distribution.
-     */
-    public enum RouteProvenance implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum RouteProvenance {
         Static("STATIC"),
         Vcn("VCN"),
         VirtualCircuit("VIRTUAL_CIRCUIT"),
         IpsecTunnel("IPSEC_TUNNEL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -620,33 +638,35 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel
-     * attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in
-     * the peered DRGs remains {@code IPSEC_TUNNEL}, because that is the earliest origin.
+     * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment,
+     * and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains {@code IPSEC_TUNNEL},
+     * because that is the earliest origin.
+     * <p>
+     * No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be exported to IPsec tunnel or virtual circuit attachments,
+     * regardless of the attachment's export distribution.
      *
-     * <p>No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be
-     * exported to IPsec tunnel or virtual circuit attachments, regardless of the attachment's
-     * export distribution.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeProvenance")
     private final RouteProvenance routeProvenance;
 
     /**
-     * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel
-     * attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in
-     * the peered DRGs remains {@code IPSEC_TUNNEL}, because that is the earliest origin.
-     *
-     * <p>No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be
-     * exported to IPsec tunnel or virtual circuit attachments, regardless of the attachment's
-     * export distribution.
+     * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment,
+     * and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains {@code IPSEC_TUNNEL},
+     * because that is the earliest origin.
+     * <p>
+     * No routes with a provenance {@code IPSEC_TUNNEL} or {@code VIRTUAL_CIRCUIT} will be exported to IPsec tunnel or virtual circuit attachments,
+     * regardless of the attachment's export distribution.
      *
      * @return the value
-     */
+     **/
     public RouteProvenance getRouteProvenance() {
         return routeProvenance;
     }
 
-    /** Additional properties for the route, computed by the service. */
+    /**
+     * Additional properties for the route, computed by the service.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final Object attributes;
 
@@ -654,7 +674,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
      * Additional properties for the route, computed by the service.
      *
      * @return the value
-     */
+     **/
     public Object getAttributes() {
         return attributes;
     }
@@ -666,7 +686,6 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

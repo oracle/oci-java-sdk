@@ -5,23 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define the network configuration for Kubernetes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that define the network configuration for Kubernetes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KubernetesNetworkConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = KubernetesNetworkConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KubernetesNetworkConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"podsCidr", "servicesCidr"})
     public KubernetesNetworkConfig(String podsCidr, String servicesCidr) {
@@ -32,31 +31,33 @@ public final class KubernetesNetworkConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16. */
+        /**
+         * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("podsCidr")
         private String podsCidr;
 
         /**
          * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-         *
          * @param podsCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder podsCidr(String podsCidr) {
             this.podsCidr = podsCidr;
             this.__explicitlySet__.add("podsCidr");
             return this;
         }
-        /** The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16. */
+        /**
+         * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servicesCidr")
         private String servicesCidr;
 
         /**
          * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
-         *
          * @param servicesCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder servicesCidr(String servicesCidr) {
             this.servicesCidr = servicesCidr;
             this.__explicitlySet__.add("servicesCidr");
@@ -87,7 +88,9 @@ public final class KubernetesNetworkConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class KubernetesNetworkConfig
         return new Builder().copy(this);
     }
 
-    /** The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16. */
+    /**
+     * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("podsCidr")
     private final String podsCidr;
 
     /**
      * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-     *
      * @return the value
-     */
+     **/
     public String getPodsCidr() {
         return podsCidr;
     }
 
-    /** The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16. */
+    /**
+     * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicesCidr")
     private final String servicesCidr;
 
     /**
      * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
-     *
      * @return the value
-     */
+     **/
     public String getServicesCidr() {
         return servicesCidr;
     }
@@ -129,7 +134,6 @@ public final class KubernetesNetworkConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

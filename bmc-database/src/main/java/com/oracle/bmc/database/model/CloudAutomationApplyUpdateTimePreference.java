@@ -5,25 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Configure the time slot for applying VM cloud automation software updates to the cluster. When
- * nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available
- * starting at 12 AM. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CloudAutomationApplyUpdateTimePreference.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CloudAutomationApplyUpdateTimePreference.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CloudAutomationApplyUpdateTimePreference
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applyUpdatePreferredStartTime",
@@ -39,38 +37,36 @@ public final class CloudAutomationApplyUpdateTimePreference
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Start time for polling VM cloud automation software updates for the cluster. If the
-         * startTime is not specified, 12 AM UTC is used by default.
-         */
+         * Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applyUpdatePreferredStartTime")
         private String applyUpdatePreferredStartTime;
 
         /**
-         * Start time for polling VM cloud automation software updates for the cluster. If the
-         * startTime is not specified, 12 AM UTC is used by default.
+         * Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
          *
          * @param applyUpdatePreferredStartTime the value to set
          * @return this builder
-         */
+         **/
         public Builder applyUpdatePreferredStartTime(String applyUpdatePreferredStartTime) {
             this.applyUpdatePreferredStartTime = applyUpdatePreferredStartTime;
             this.__explicitlySet__.add("applyUpdatePreferredStartTime");
             return this;
         }
         /**
-         * End time for polling VM cloud automation software updates for the cluster. If the endTime
-         * is not specified, 2 AM UTC is used by default.
-         */
+         * End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applyUpdatePreferredEndTime")
         private String applyUpdatePreferredEndTime;
 
         /**
-         * End time for polling VM cloud automation software updates for the cluster. If the endTime
-         * is not specified, 2 AM UTC is used by default.
+         * End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
          *
          * @param applyUpdatePreferredEndTime the value to set
          * @return this builder
-         */
+         **/
         public Builder applyUpdatePreferredEndTime(String applyUpdatePreferredEndTime) {
             this.applyUpdatePreferredEndTime = applyUpdatePreferredEndTime;
             this.__explicitlySet__.add("applyUpdatePreferredEndTime");
@@ -102,7 +98,9 @@ public final class CloudAutomationApplyUpdateTimePreference
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,35 +110,33 @@ public final class CloudAutomationApplyUpdateTimePreference
     }
 
     /**
-     * Start time for polling VM cloud automation software updates for the cluster. If the startTime
-     * is not specified, 12 AM UTC is used by default.
-     */
+     * Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyUpdatePreferredStartTime")
     private final String applyUpdatePreferredStartTime;
 
     /**
-     * Start time for polling VM cloud automation software updates for the cluster. If the startTime
-     * is not specified, 12 AM UTC is used by default.
+     * Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
      *
      * @return the value
-     */
+     **/
     public String getApplyUpdatePreferredStartTime() {
         return applyUpdatePreferredStartTime;
     }
 
     /**
-     * End time for polling VM cloud automation software updates for the cluster. If the endTime is
-     * not specified, 2 AM UTC is used by default.
-     */
+     * End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyUpdatePreferredEndTime")
     private final String applyUpdatePreferredEndTime;
 
     /**
-     * End time for polling VM cloud automation software updates for the cluster. If the endTime is
-     * not specified, 2 AM UTC is used by default.
+     * End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
      *
      * @return the value
-     */
+     **/
     public String getApplyUpdatePreferredEndTime() {
         return applyUpdatePreferredEndTime;
     }
@@ -152,7 +148,6 @@ public final class CloudAutomationApplyUpdateTimePreference
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

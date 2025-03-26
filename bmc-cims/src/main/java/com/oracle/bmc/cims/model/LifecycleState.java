@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cims.model;
 
-/** The current state of the ticket. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of the ticket.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+public enum LifecycleState {
     Active("ACTIVE"),
     Closed("CLOSED"),
 

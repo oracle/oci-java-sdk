@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/** The connection type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The connection type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+public enum ConnectionType {
     OracleDatabase("ORACLE_DATABASE"),
     Mysql("MYSQL"),
     Postgresql("POSTGRESQL"),

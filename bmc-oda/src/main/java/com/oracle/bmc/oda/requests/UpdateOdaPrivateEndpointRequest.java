@@ -6,64 +6,67 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateOdaPrivateEndpointExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateOdaPrivateEndpointRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateOdaPrivateEndpointRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class UpdateOdaPrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oda.model.UpdateOdaPrivateEndpointDetails> {
 
     /**
-     * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String odaPrivateEndpointId;
 
     /**
-     * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getOdaPrivateEndpointId() {
         return odaPrivateEndpointId;
     }
-    /** The information to update. */
+    /**
+     * The information to update.
+     */
     private com.oracle.bmc.oda.model.UpdateOdaPrivateEndpointDetails
             updateOdaPrivateEndpointDetails;
 
-    /** The information to update. */
+    /**
+     * The information to update.
+     */
     public com.oracle.bmc.oda.model.UpdateOdaPrivateEndpointDetails
             getUpdateOdaPrivateEndpointDetails() {
         return updateOdaPrivateEndpointDetails;
     }
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -71,7 +74,6 @@ public class UpdateOdaPrivateEndpointRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -84,19 +86,17 @@ public class UpdateOdaPrivateEndpointRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateOdaPrivateEndpointRequest,
                     com.oracle.bmc.oda.model.UpdateOdaPrivateEndpointDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String odaPrivateEndpointId = null;
 
         /**
-         * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param odaPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -105,13 +105,14 @@ public class UpdateOdaPrivateEndpointRequest
             return this;
         }
 
-        /** The information to update. */
+        /**
+         * The information to update.
+         */
         private com.oracle.bmc.oda.model.UpdateOdaPrivateEndpointDetails
                 updateOdaPrivateEndpointDetails = null;
 
         /**
          * The information to update.
-         *
          * @param updateOdaPrivateEndpointDetails the value to set
          * @return this builder instance
          */
@@ -123,20 +124,23 @@ public class UpdateOdaPrivateEndpointRequest
         }
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -147,15 +151,12 @@ public class UpdateOdaPrivateEndpointRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -166,19 +167,18 @@ public class UpdateOdaPrivateEndpointRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -190,7 +190,6 @@ public class UpdateOdaPrivateEndpointRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateOdaPrivateEndpointRequest o) {
@@ -206,11 +205,10 @@ public class UpdateOdaPrivateEndpointRequest
         /**
          * Build the instance of UpdateOdaPrivateEndpointRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateOdaPrivateEndpointRequest
          */
@@ -223,7 +221,6 @@ public class UpdateOdaPrivateEndpointRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -236,8 +233,7 @@ public class UpdateOdaPrivateEndpointRequest
         /**
          * Build the instance of UpdateOdaPrivateEndpointRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateOdaPrivateEndpointRequest
@@ -249,14 +245,12 @@ public class UpdateOdaPrivateEndpointRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateOdaPrivateEndpointRequest(odaPrivateEndpointId,
-            // updateOdaPrivateEndpointDetails, ifMatch, opcRequestId);
+            // new UpdateOdaPrivateEndpointRequest(odaPrivateEndpointId, updateOdaPrivateEndpointDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -269,7 +263,6 @@ public class UpdateOdaPrivateEndpointRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

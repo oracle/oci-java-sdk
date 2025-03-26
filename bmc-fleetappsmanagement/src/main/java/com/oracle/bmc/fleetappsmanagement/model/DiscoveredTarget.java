@@ -5,22 +5,20 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * A target that is discovered by the Software discovery process. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * A target that is discovered by the Software discovery process.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiscoveredTarget.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DiscoveredTarget
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DiscoveredTarget extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetId",
@@ -41,76 +39,81 @@ public final class DiscoveredTarget
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ID of the Target. Can be the target name if a separate ID is not available. */
+        /**
+         * ID of the Target. Can be the target name if a separate ID is not available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * ID of the Target. Can be the target name if a separate ID is not available.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** Target Name. */
+        /**
+         * Target Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetName")
         private String targetName;
 
         /**
          * Target Name.
-         *
          * @param targetName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetName(String targetName) {
             this.targetName = targetName;
             this.__explicitlySet__.add("targetName");
             return this;
         }
-        /** Product that the target belongs to. */
+        /**
+         * Product that the target belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("product")
         private String product;
 
         /**
          * Product that the target belongs to.
-         *
          * @param product the value to set
          * @return this builder
-         */
+         **/
         public Builder product(String product) {
             this.product = product;
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Unique key that identifies the resource that the target belongs to. */
+        /**
+         * Unique key that identifies the resource that the target belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * Unique key that identifies the resource that the target belongs to.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Current version of the target. */
+        /**
+         * Current version of the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Current version of the target.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -155,7 +158,9 @@ public final class DiscoveredTarget
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -164,67 +169,72 @@ public final class DiscoveredTarget
         return new Builder().copy(this);
     }
 
-    /** ID of the Target. Can be the target name if a separate ID is not available. */
+    /**
+     * ID of the Target. Can be the target name if a separate ID is not available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * ID of the Target. Can be the target name if a separate ID is not available.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** Target Name. */
+    /**
+     * Target Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetName")
     private final String targetName;
 
     /**
      * Target Name.
-     *
      * @return the value
-     */
+     **/
     public String getTargetName() {
         return targetName;
     }
 
-    /** Product that the target belongs to. */
+    /**
+     * Product that the target belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("product")
     private final String product;
 
     /**
      * Product that the target belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getProduct() {
         return product;
     }
 
-    /** Unique key that identifies the resource that the target belongs to. */
+    /**
+     * Unique key that identifies the resource that the target belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * Unique key that identifies the resource that the target belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Current version of the target. */
+    /**
+     * Current version of the target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Current version of the target.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
@@ -236,7 +246,6 @@ public final class DiscoveredTarget
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

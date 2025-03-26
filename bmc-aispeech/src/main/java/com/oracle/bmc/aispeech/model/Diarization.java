@@ -5,22 +5,19 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Speaker diarization is a combination of speaker segmentation and speaker clustering. Provide
- * diarization details to enable this feature. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Speaker diarization is a combination of speaker segmentation and speaker clustering. Provide diarization details to enable this feature.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Diarization.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Diarization extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Diarization extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isDiarizationEnabled", "numberOfSpeakers"})
     public Diarization(Boolean isDiarizationEnabled, Integer numberOfSpeakers) {
@@ -32,38 +29,32 @@ public final class Diarization extends com.oracle.bmc.http.client.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Set true to enable Speaker diarization and tag transcription with speaker tags. By
-         * default this is disabled.
-         */
+         * Set true to enable Speaker diarization and tag transcription with speaker tags. By default this is disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDiarizationEnabled")
         private Boolean isDiarizationEnabled;
 
         /**
-         * Set true to enable Speaker diarization and tag transcription with speaker tags. By
-         * default this is disabled.
-         *
+         * Set true to enable Speaker diarization and tag transcription with speaker tags. By default this is disabled.
          * @param isDiarizationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDiarizationEnabled(Boolean isDiarizationEnabled) {
             this.isDiarizationEnabled = isDiarizationEnabled;
             this.__explicitlySet__.add("isDiarizationEnabled");
             return this;
         }
         /**
-         * Number of speakers in the audio provided. By default service will auto detect all
-         * speakers in audio file
-         */
+         * Number of speakers in the audio provided. By default service will auto detect all speakers in audio file
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfSpeakers")
         private Integer numberOfSpeakers;
 
         /**
-         * Number of speakers in the audio provided. By default service will auto detect all
-         * speakers in audio file
-         *
+         * Number of speakers in the audio provided. By default service will auto detect all speakers in audio file
          * @param numberOfSpeakers the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfSpeakers(Integer numberOfSpeakers) {
             this.numberOfSpeakers = numberOfSpeakers;
             this.__explicitlySet__.add("numberOfSpeakers");
@@ -93,7 +84,9 @@ public final class Diarization extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,35 +96,29 @@ public final class Diarization extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * Set true to enable Speaker diarization and tag transcription with speaker tags. By default
-     * this is disabled.
-     */
+     * Set true to enable Speaker diarization and tag transcription with speaker tags. By default this is disabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDiarizationEnabled")
     private final Boolean isDiarizationEnabled;
 
     /**
-     * Set true to enable Speaker diarization and tag transcription with speaker tags. By default
-     * this is disabled.
-     *
+     * Set true to enable Speaker diarization and tag transcription with speaker tags. By default this is disabled.
      * @return the value
-     */
+     **/
     public Boolean getIsDiarizationEnabled() {
         return isDiarizationEnabled;
     }
 
     /**
-     * Number of speakers in the audio provided. By default service will auto detect all speakers in
-     * audio file
-     */
+     * Number of speakers in the audio provided. By default service will auto detect all speakers in audio file
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfSpeakers")
     private final Integer numberOfSpeakers;
 
     /**
-     * Number of speakers in the audio provided. By default service will auto detect all speakers in
-     * audio file
-     *
+     * Number of speakers in the audio provided. By default service will auto detect all speakers in audio file
      * @return the value
-     */
+     **/
     public Integer getNumberOfSpeakers() {
         return numberOfSpeakers;
     }
@@ -143,7 +130,6 @@ public final class Diarization extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

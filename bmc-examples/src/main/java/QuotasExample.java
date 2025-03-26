@@ -24,15 +24,14 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This class provides an example of how you can create a quota. It then shows how to perform
- * updates, reads, and deletes. It will:
- *
+ * This class provides an example of how you can create a quota. It then shows how to
+ * perform updates, reads, and deletes. It will:
  * <ul>
- *   <li>Create a quota
- *   <li>List quotas in the compartment
- *   <li>Get a single quota (the one that was created above)
- *   <li>Update the quota (description and statements)
- *   <li>Delete the quota
+ *   <li>Create a quota</li>
+ *   <li>List quotas in the compartment</li>
+ *   <li>Get a single quota (the one that was created above)</li>
+ *   <li>Update the quota (description and statements)</li>
+ *   <li>Delete the quota</li>
  * </ul>
  */
 public class QuotasExample {
@@ -44,17 +43,13 @@ public class QuotasExample {
 
     /**
      * @param args Parameters to use for the limits service quotas example are as follows:
-     *     <ul>
-     *       <li>The 1st argument is the OCID of the target compartment for the quota.
-     *       <li>The 2nd is the name for this quota.
-     *       <li>The 3rd is one statement containing the quota-family (and if needed, quota-name)
-     *           which should be whitelisted in the tenancy beforehand.
-     *       <li>The 4th is another statement (valid as above), which will be used to replace the
-     *           original quota statement during update.
-     *       <li>Optional params below may be left unspecified or fully specified, but not partially
-     *           specified:
-     *     </ul>
-     *
+     * <ul>
+     *   <li>The 1st argument is the OCID of the target compartment for the quota.</li>
+     *   <li>The 2nd is the name for this quota.</li>
+     *   <li>The 3rd is one statement containing the quota-family (and if needed, quota-name) which should be whitelisted in the tenancy beforehand.</li>
+     *   <li>The 4th is another statement (valid as above), which will be used to replace the original quota statement during update.</li>
+     *   <li>Optional params below may be left unspecified or fully specified, but not partially specified:</li>
+     * </ul>
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -72,10 +67,8 @@ public class QuotasExample {
         String quotaStatement = args[2];
         String quotaStatementToUpdate = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -83,7 +76,7 @@ public class QuotasExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        quotasClient = QuotasClient.builder().build(provider);
+        quotasClient = new QuotasClient(provider);
 
         // Create a quota
         CreateQuotaDetails createQuotaDetails =

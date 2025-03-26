@@ -6,26 +6,28 @@ package com.oracle.bmc.osmanagement.responses;
 
 import com.oracle.bmc.osmanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** identifier for the request */
+    /**
+     * identifier for the request
+     */
     private String opcRequestId;
 
     /**
      * identifier for the request
-     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code EventReport} instance. */
+    /**
+     * The returned EventReport instance.
+     */
     private com.oracle.bmc.osmanagement.model.EventReport eventReport;
 
     /**
-     * The returned {@code EventReport} instance.
-     *
+     * The returned EventReport instance.
      * @return the value
      */
     public com.oracle.bmc.osmanagement.model.EventReport getEventReport() {
@@ -40,7 +42,7 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private GetEventReportResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.osmanagement.model.EventReport eventReport) {
         super(__httpStatusCode__, headers);
@@ -48,30 +50,28 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
         this.eventReport = eventReport;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetEventReportResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** identifier for the request */
+        /**
+         * identifier for the request
+         */
         private String opcRequestId;
 
         /**
          * identifier for the request
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -80,12 +80,13 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code EventReport} instance. */
+        /**
+         * The returned EventReport instance.
+         */
         private com.oracle.bmc.osmanagement.model.EventReport eventReport;
 
         /**
-         * The returned {@code EventReport} instance.
-         *
+         * The returned EventReport instance.
          * @param eventReport the value to set
          * @return this builder
          */
@@ -96,10 +97,8 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetEventReportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -111,10 +110,8 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetEventReportResponse build() {
             return new GetEventReportResponse(
                     __httpStatusCode__, headers, opcRequestId, eventReport);
@@ -123,7 +120,6 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

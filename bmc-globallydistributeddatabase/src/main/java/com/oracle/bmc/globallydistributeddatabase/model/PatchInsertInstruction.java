@@ -5,26 +5,26 @@
 package com.oracle.bmc.globallydistributeddatabase.model;
 
 /**
- * An operation that inserts a value into an array, shifting array items as necessary and handling
- * NOT_FOUND exceptions by creating the implied containing structure. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+ * An operation that inserts a value into an array, shifting array items as necessary and handling NOT_FOUND exceptions by creating the implied containing structure.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PatchInsertInstruction.Builder.class)
+    builder = PatchInsertInstruction.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "operation")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "operation"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PatchInsertInstruction extends PatchInstruction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,16 +36,17 @@ public final class PatchInsertInstruction extends PatchInstruction {
             this.__explicitlySet__.add("selection");
             return this;
         }
-        /** A value to be inserted into the target. */
+        /**
+         * A value to be inserted into the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Object value;
 
         /**
          * A value to be inserted into the target.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(Object value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -75,7 +76,9 @@ public final class PatchInsertInstruction extends PatchInstruction {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -90,15 +93,16 @@ public final class PatchInsertInstruction extends PatchInstruction {
         this.value = value;
     }
 
-    /** A value to be inserted into the target. */
+    /**
+     * A value to be inserted into the target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Object value;
 
     /**
      * A value to be inserted into the target.
-     *
      * @return the value
-     */
+     **/
     public Object getValue() {
         return value;
     }
@@ -110,7 +114,6 @@ public final class PatchInsertInstruction extends PatchInstruction {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

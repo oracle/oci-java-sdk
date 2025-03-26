@@ -6,18 +6,19 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListAutonomousDatabaseDataguardAssociationsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+     * a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+     * a particular request, then provide the request ID.
      *
      * @return the value
      */
@@ -26,18 +27,19 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items still to get. Include this value as the {@code
-     * page} parameter for the subsequent GET request. For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then there are additional items still to get. Include this value as the {@code page} parameter for the
+     * subsequent GET request. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items still to get. Include this value as the {@code
-     * page} parameter for the subsequent GET request. For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then there are additional items still to get. Include this value as the {@code page} parameter for the
+     * subsequent GET request. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -46,16 +48,13 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
     }
 
     /**
-     * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
-     * instances.
+     * A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances.
      */
     private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
             items;
 
     /**
-     * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
-     * instances.
-     *
+     * A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
@@ -72,7 +71,7 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
     })
     private ListAutonomousDatabaseDataguardAssociationsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
@@ -83,34 +82,31 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListAutonomousDatabaseDataguardAssociationsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+         * a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+         * a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -121,20 +117,19 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items still to get. Include this value as the
-         * {@code page} parameter for the subsequent GET request. For information about pagination,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items still to get. Include this value as the
-         * {@code page} parameter for the subsequent GET request. For information about pagination,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -145,16 +140,13 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
         }
 
         /**
-         * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
-         * instances.
+         * A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances.
          */
         private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
                 items;
 
         /**
-         * A list of {@code com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation}
-         * instances.
-         *
+         * A list of com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation instances.
          * @param items the value to set
          * @return this builder
          */
@@ -167,10 +159,8 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListAutonomousDatabaseDataguardAssociationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -183,10 +173,8 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListAutonomousDatabaseDataguardAssociationsResponse build() {
             return new ListAutonomousDatabaseDataguardAssociationsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
@@ -195,7 +183,6 @@ public class ListAutonomousDatabaseDataguardAssociationsResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,25 +5,24 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The target describes the input data for deployed Java migration analyses. A target contains a
- * managed instance, deployed application installation Key, sourceJdkVersion, targetJdkVersion and
- * optional excludePackagePrefixes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The target describes the input data for deployed Java migration analyses.
+ * A target contains a managed instance, deployed application installation Key, sourceJdkVersion, targetJdkVersion and optional excludePackagePrefixes.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeployedApplicationMigrationAnalysesTarget.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeployedApplicationMigrationAnalysesTarget.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeployedApplicationMigrationAnalysesTarget
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "managedInstanceId",
@@ -49,88 +48,81 @@ public final class DeployedApplicationMigrationAnalysesTarget
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the managed instance that hosts the application for which the Java migration
-         * analyses was performed.
-         */
+         * The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The OCID of the managed instance that hosts the application for which the Java migration
-         * analyses was performed.
-         *
+         * The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
          * @param managedInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
         /**
-         * The unique key that identifies the deployed application's installation path that is to be
-         * used for the Java migration analyses.
-         */
+         * The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationInstallationKey")
         private String deployedApplicationInstallationKey;
 
         /**
-         * The unique key that identifies the deployed application's installation path that is to be
-         * used for the Java migration analyses.
-         *
+         * The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
          * @param deployedApplicationInstallationKey the value to set
          * @return this builder
-         */
+         **/
         public Builder deployedApplicationInstallationKey(
                 String deployedApplicationInstallationKey) {
             this.deployedApplicationInstallationKey = deployedApplicationInstallationKey;
             this.__explicitlySet__.add("deployedApplicationInstallationKey");
             return this;
         }
-        /** The JDK version the application is currently running on. */
+        /**
+         * The JDK version the application is currently running on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceJdkVersion")
         private String sourceJdkVersion;
 
         /**
          * The JDK version the application is currently running on.
-         *
          * @param sourceJdkVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceJdkVersion(String sourceJdkVersion) {
             this.sourceJdkVersion = sourceJdkVersion;
             this.__explicitlySet__.add("sourceJdkVersion");
             return this;
         }
         /**
-         * The JDK version against which the migration analyses was performed to identify effort
-         * required to move from source JDK.
-         */
+         * The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetJdkVersion")
         private String targetJdkVersion;
 
         /**
-         * The JDK version against which the migration analyses was performed to identify effort
-         * required to move from source JDK.
-         *
+         * The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
          * @param targetJdkVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder targetJdkVersion(String targetJdkVersion) {
             this.targetJdkVersion = targetJdkVersion;
             this.__explicitlySet__.add("targetJdkVersion");
             return this;
         }
-        /** Excludes the packages that starts with the prefix from the migration analyses result. */
+        /**
+         * Excludes the packages that starts with the prefix from the migration analyses result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludePackagePrefixes")
         private java.util.List<String> excludePackagePrefixes;
 
         /**
          * Excludes the packages that starts with the prefix from the migration analyses result.
-         *
          * @param excludePackagePrefixes the value to set
          * @return this builder
-         */
+         **/
         public Builder excludePackagePrefixes(java.util.List<String> excludePackagePrefixes) {
             this.excludePackagePrefixes = excludePackagePrefixes;
             this.__explicitlySet__.add("excludePackagePrefixes");
@@ -176,7 +168,9 @@ public final class DeployedApplicationMigrationAnalysesTarget
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -186,78 +180,71 @@ public final class DeployedApplicationMigrationAnalysesTarget
     }
 
     /**
-     * The OCID of the managed instance that hosts the application for which the Java migration
-     * analyses was performed.
-     */
+     * The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The OCID of the managed instance that hosts the application for which the Java migration
-     * analyses was performed.
-     *
+     * The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
      * @return the value
-     */
+     **/
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
 
     /**
-     * The unique key that identifies the deployed application's installation path that is to be
-     * used for the Java migration analyses.
-     */
+     * The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationInstallationKey")
     private final String deployedApplicationInstallationKey;
 
     /**
-     * The unique key that identifies the deployed application's installation path that is to be
-     * used for the Java migration analyses.
-     *
+     * The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
      * @return the value
-     */
+     **/
     public String getDeployedApplicationInstallationKey() {
         return deployedApplicationInstallationKey;
     }
 
-    /** The JDK version the application is currently running on. */
+    /**
+     * The JDK version the application is currently running on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceJdkVersion")
     private final String sourceJdkVersion;
 
     /**
      * The JDK version the application is currently running on.
-     *
      * @return the value
-     */
+     **/
     public String getSourceJdkVersion() {
         return sourceJdkVersion;
     }
 
     /**
-     * The JDK version against which the migration analyses was performed to identify effort
-     * required to move from source JDK.
-     */
+     * The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetJdkVersion")
     private final String targetJdkVersion;
 
     /**
-     * The JDK version against which the migration analyses was performed to identify effort
-     * required to move from source JDK.
-     *
+     * The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
      * @return the value
-     */
+     **/
     public String getTargetJdkVersion() {
         return targetJdkVersion;
     }
 
-    /** Excludes the packages that starts with the prefix from the migration analyses result. */
+    /**
+     * Excludes the packages that starts with the prefix from the migration analyses result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludePackagePrefixes")
     private final java.util.List<String> excludePackagePrefixes;
 
     /**
      * Excludes the packages that starts with the prefix from the migration analyses result.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getExcludePackagePrefixes() {
         return excludePackagePrefixes;
     }
@@ -269,7 +256,6 @@ public final class DeployedApplicationMigrationAnalysesTarget
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

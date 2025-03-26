@@ -5,21 +5,19 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Complete metadata about a table. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+ * Complete metadata about a table.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Table.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Table extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -86,78 +84,89 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable. */
+        /**
+         * Unique identifier that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Human-friendly table name, immutable. */
+        /**
+         * Human-friendly table name, immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Human-friendly table name, immutable.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The time the the table was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time the the table was created. An RFC3339 formatted
+         * datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the table was created. An RFC3339 formatted datetime string.
+         * The time the the table was created. An RFC3339 formatted
+         * datetime string.
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
-         */
+         * The time the the table's metadata was last updated. An
+         * RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
+         * The time the the table's metadata was last updated. An
+         * RFC3339 formatted datetime string.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -172,56 +181,64 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("tableLimits");
             return this;
         }
-        /** The state of a table. */
+        /**
+         * The state of a table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of a table.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** True if this table can be reclaimed after an idle period. */
+        /**
+         * True if this table can be reclaimed after an idle period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
         private Boolean isAutoReclaimable;
 
         /**
          * True if this table can be reclaimed after an idle period.
-         *
          * @param isAutoReclaimable the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
             this.isAutoReclaimable = isAutoReclaimable;
             this.__explicitlySet__.add("isAutoReclaimable");
             return this;
         }
         /**
-         * If lifecycleState is INACTIVE, indicates when this table will be automatically removed.
+         * If lifecycleState is INACTIVE, indicates when
+         * this table will be automatically removed.
          * An RFC3339 formatted datetime string.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
         private java.util.Date timeOfExpiration;
 
         /**
-         * If lifecycleState is INACTIVE, indicates when this table will be automatically removed.
+         * If lifecycleState is INACTIVE, indicates when
+         * this table will be automatically removed.
          * An RFC3339 formatted datetime string.
          *
          * @param timeOfExpiration the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfExpiration(java.util.Date timeOfExpiration) {
             this.timeOfExpiration = timeOfExpiration;
             this.__explicitlySet__.add("timeOfExpiration");
             return this;
         }
-        /** A message describing the current state in more detail. */
+        /**
+         * A message describing the current state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -230,7 +247,7 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -245,127 +262,138 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("schema");
             return this;
         }
-        /** A DDL statement representing the schema. */
+        /**
+         * A DDL statement representing the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ddlStatement")
         private String ddlStatement;
 
         /**
          * A DDL statement representing the schema.
-         *
          * @param ddlStatement the value to set
          * @return this builder
-         */
+         **/
         public Builder ddlStatement(String ddlStatement) {
             this.ddlStatement = ddlStatement;
             this.__explicitlySet__.add("ddlStatement");
             return this;
         }
         /**
-         * The current state of this table's schema. Available states are MUTABLE - The schema can
-         * be changed. The table is not eligible for replication. FROZEN - The schema is immutable.
-         * The table is eligible for replication.
-         */
+         * The current state of this table's schema. Available states are
+         * MUTABLE - The schema can be changed. The table is not eligible for replication.
+         * FROZEN - The schema is immutable. The table is eligible for replication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaState")
         private SchemaState schemaState;
 
         /**
-         * The current state of this table's schema. Available states are MUTABLE - The schema can
-         * be changed. The table is not eligible for replication. FROZEN - The schema is immutable.
-         * The table is eligible for replication.
+         * The current state of this table's schema. Available states are
+         * MUTABLE - The schema can be changed. The table is not eligible for replication.
+         * FROZEN - The schema is immutable. The table is eligible for replication.
          *
          * @param schemaState the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaState(SchemaState schemaState) {
             this.schemaState = schemaState;
             this.__explicitlySet__.add("schemaState");
             return this;
         }
-        /** True if this table is currently a member of a replication set. */
+        /**
+         * True if this table is currently a member of a replication set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiRegion")
         private Boolean isMultiRegion;
 
         /**
          * True if this table is currently a member of a replication set.
-         *
          * @param isMultiRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder isMultiRegion(Boolean isMultiRegion) {
             this.isMultiRegion = isMultiRegion;
             this.__explicitlySet__.add("isMultiRegion");
             return this;
         }
         /**
-         * If this table is in a replication set, this value represents the progress of the
-         * initialization of the replica's data. A value of 100 indicates that initialization has
-         * completed.
-         */
+         * If this table is in a replication set, this value represents
+         * the progress of the initialization of the replica's data.  A
+         * value of 100 indicates that initialization has completed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localReplicaInitializationInPercent")
         private Integer localReplicaInitializationInPercent;
 
         /**
-         * If this table is in a replication set, this value represents the progress of the
-         * initialization of the replica's data. A value of 100 indicates that initialization has
-         * completed.
+         * If this table is in a replication set, this value represents
+         * the progress of the initialization of the replica's data.  A
+         * value of 100 indicates that initialization has completed.
          *
          * @param localReplicaInitializationInPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder localReplicaInitializationInPercent(
                 Integer localReplicaInitializationInPercent) {
             this.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
             this.__explicitlySet__.add("localReplicaInitializationInPercent");
             return this;
         }
-        /** An array of Replica listing this table's replicas, if any */
+        /**
+         * An array of Replica listing this table's replicas, if any
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicas")
         private java.util.List<Replica> replicas;
 
         /**
          * An array of Replica listing this table's replicas, if any
-         *
          * @param replicas the value to set
          * @return this builder
-         */
+         **/
         public Builder replicas(java.util.List<Replica> replicas) {
             this.replicas = replicas;
             this.__explicitlySet__.add("replicas");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined
+         * name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Defined tags for this resource. Each key is predefined and
+         * scoped to a namespace.  Example: {@code {"foo-namespace":
+         * {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -373,21 +401,26 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * Read-only system tag. These predefined keys are scoped to namespaces. At present the only
-         * supported namespace is {@code "orcl-cloud"}; and the only key in that namespace is {@code
-         * "free-tier-retained"}. Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
-         */
+         * Read-only system tag. These predefined keys are scoped to
+         * namespaces.  At present the only supported namespace is
+         * {@code "orcl-cloud"}; and the only key in that namespace is
+         * {@code "free-tier-retained"}.
+         * Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Read-only system tag. These predefined keys are scoped to namespaces. At present the only
-         * supported namespace is {@code "orcl-cloud"}; and the only key in that namespace is {@code
-         * "free-tier-retained"}. Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
+         * Read-only system tag. These predefined keys are scoped to
+         * namespaces.  At present the only supported namespace is
+         * {@code "orcl-cloud"}; and the only key in that namespace is
+         * {@code "free-tier-retained"}.
+         * Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -489,7 +522,9 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -498,67 +533,80 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable. */
+    /**
+     * Unique identifier that is immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Human-friendly table name, immutable. */
+    /**
+     * Human-friendly table name, immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Human-friendly table name, immutable.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The time the the table was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the the table was created. An RFC3339 formatted
+     * datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the table was created. An RFC3339 formatted datetime string.
+     * The time the the table was created. An RFC3339 formatted
+     * datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the the table's metadata was last updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the the table's metadata was last updated. An
+     * RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
+     * The time the the table's metadata was last updated. An
+     * RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -570,8 +618,10 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return tableLimits;
     }
 
-    /** The state of a table. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of a table.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -581,8 +631,8 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         Inactive("INACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -621,50 +671,58 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** The state of a table. */
+    /**
+     * The state of a table.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of a table.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** True if this table can be reclaimed after an idle period. */
+    /**
+     * True if this table can be reclaimed after an idle period.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
     private final Boolean isAutoReclaimable;
 
     /**
      * True if this table can be reclaimed after an idle period.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoReclaimable() {
         return isAutoReclaimable;
     }
 
     /**
-     * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An
-     * RFC3339 formatted datetime string.
-     */
+     * If lifecycleState is INACTIVE, indicates when
+     * this table will be automatically removed.
+     * An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
     private final java.util.Date timeOfExpiration;
 
     /**
-     * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An
-     * RFC3339 formatted datetime string.
+     * If lifecycleState is INACTIVE, indicates when
+     * this table will be automatically removed.
+     * An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfExpiration() {
         return timeOfExpiration;
     }
 
-    /** A message describing the current state in more detail. */
+    /**
+     * A message describing the current state in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -672,7 +730,7 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * A message describing the current state in more detail.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -684,31 +742,33 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return schema;
     }
 
-    /** A DDL statement representing the schema. */
+    /**
+     * A DDL statement representing the schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ddlStatement")
     private final String ddlStatement;
 
     /**
      * A DDL statement representing the schema.
-     *
      * @return the value
-     */
+     **/
     public String getDdlStatement() {
         return ddlStatement;
     }
 
     /**
-     * The current state of this table's schema. Available states are MUTABLE - The schema can be
-     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
-     * table is eligible for replication.
-     */
-    public enum SchemaState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The current state of this table's schema. Available states are
+     * MUTABLE - The schema can be changed. The table is not eligible for replication.
+     * FROZEN - The schema is immutable. The table is eligible for replication.
+     *
+     **/
+    public enum SchemaState {
         Mutable("MUTABLE"),
         Frozen("FROZEN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -748,118 +808,133 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     };
     /**
-     * The current state of this table's schema. Available states are MUTABLE - The schema can be
-     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
-     * table is eligible for replication.
-     */
+     * The current state of this table's schema. Available states are
+     * MUTABLE - The schema can be changed. The table is not eligible for replication.
+     * FROZEN - The schema is immutable. The table is eligible for replication.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaState")
     private final SchemaState schemaState;
 
     /**
-     * The current state of this table's schema. Available states are MUTABLE - The schema can be
-     * changed. The table is not eligible for replication. FROZEN - The schema is immutable. The
-     * table is eligible for replication.
+     * The current state of this table's schema. Available states are
+     * MUTABLE - The schema can be changed. The table is not eligible for replication.
+     * FROZEN - The schema is immutable. The table is eligible for replication.
      *
      * @return the value
-     */
+     **/
     public SchemaState getSchemaState() {
         return schemaState;
     }
 
-    /** True if this table is currently a member of a replication set. */
+    /**
+     * True if this table is currently a member of a replication set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiRegion")
     private final Boolean isMultiRegion;
 
     /**
      * True if this table is currently a member of a replication set.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMultiRegion() {
         return isMultiRegion;
     }
 
     /**
-     * If this table is in a replication set, this value represents the progress of the
-     * initialization of the replica's data. A value of 100 indicates that initialization has
-     * completed.
-     */
+     * If this table is in a replication set, this value represents
+     * the progress of the initialization of the replica's data.  A
+     * value of 100 indicates that initialization has completed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localReplicaInitializationInPercent")
     private final Integer localReplicaInitializationInPercent;
 
     /**
-     * If this table is in a replication set, this value represents the progress of the
-     * initialization of the replica's data. A value of 100 indicates that initialization has
-     * completed.
+     * If this table is in a replication set, this value represents
+     * the progress of the initialization of the replica's data.  A
+     * value of 100 indicates that initialization has completed.
      *
      * @return the value
-     */
+     **/
     public Integer getLocalReplicaInitializationInPercent() {
         return localReplicaInitializationInPercent;
     }
 
-    /** An array of Replica listing this table's replicas, if any */
+    /**
+     * An array of Replica listing this table's replicas, if any
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicas")
     private final java.util.List<Replica> replicas;
 
     /**
      * An array of Replica listing this table's replicas, if any
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Replica> getReplicas() {
         return replicas;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined
+     * name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined
+     * name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and
+     * scoped to a namespace.  Example: {@code {"foo-namespace":
+     * {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and
+     * scoped to a namespace.  Example: {@code {"foo-namespace":
+     * {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Read-only system tag. These predefined keys are scoped to namespaces. At present the only
-     * supported namespace is {@code "orcl-cloud"}; and the only key in that namespace is {@code
-     * "free-tier-retained"}. Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
-     */
+     * Read-only system tag. These predefined keys are scoped to
+     * namespaces.  At present the only supported namespace is
+     * {@code "orcl-cloud"}; and the only key in that namespace is
+     * {@code "free-tier-retained"}.
+     * Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Read-only system tag. These predefined keys are scoped to namespaces. At present the only
-     * supported namespace is {@code "orcl-cloud"}; and the only key in that namespace is {@code
-     * "free-tier-retained"}. Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
+     * Read-only system tag. These predefined keys are scoped to
+     * namespaces.  At present the only supported namespace is
+     * {@code "orcl-cloud"}; and the only key in that namespace is
+     * {@code "free-tier-retained"}.
+     * Example: {@code {"orcl-cloud"": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -871,7 +946,6 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.marketplace.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+public enum OperationType {
     ExportListing("EXPORT_LISTING"),
 
     /**

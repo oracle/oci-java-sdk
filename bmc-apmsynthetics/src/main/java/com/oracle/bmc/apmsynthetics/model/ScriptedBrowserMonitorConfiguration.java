@@ -5,25 +5,25 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Configuration details for the SCRIPTED_BROWSER monitor type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Configuration details for the SCRIPTED_BROWSER monitor type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScriptedBrowserMonitorConfiguration.Builder.class)
+    builder = ScriptedBrowserMonitorConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScriptedBrowserMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -45,34 +45,32 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
             return this;
         }
         /**
-         * If certificate validation is enabled, then the call will fail in case of certification
-         * errors.
-         */
+         * If certificate validation is enabled, then the call will fail in case of certification errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
         private Boolean isCertificateValidationEnabled;
 
         /**
-         * If certificate validation is enabled, then the call will fail in case of certification
-         * errors.
-         *
+         * If certificate validation is enabled, then the call will fail in case of certification errors.
          * @param isCertificateValidationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             this.__explicitlySet__.add("isCertificateValidationEnabled");
             return this;
         }
-        /** If disabled, auto snapshots are not collected. */
+        /**
+         * If disabled, auto snapshots are not collected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
         private Boolean isDefaultSnapshotEnabled;
 
         /**
          * If disabled, auto snapshots are not collected.
-         *
          * @param isDefaultSnapshotEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
             this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             this.__explicitlySet__.add("isDefaultSnapshotEnabled");
@@ -126,7 +124,9 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,31 +149,29 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
     }
 
     /**
-     * If certificate validation is enabled, then the call will fail in case of certification
-     * errors.
-     */
+     * If certificate validation is enabled, then the call will fail in case of certification errors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
     private final Boolean isCertificateValidationEnabled;
 
     /**
-     * If certificate validation is enabled, then the call will fail in case of certification
-     * errors.
-     *
+     * If certificate validation is enabled, then the call will fail in case of certification errors.
      * @return the value
-     */
+     **/
     public Boolean getIsCertificateValidationEnabled() {
         return isCertificateValidationEnabled;
     }
 
-    /** If disabled, auto snapshots are not collected. */
+    /**
+     * If disabled, auto snapshots are not collected.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
     private final Boolean isDefaultSnapshotEnabled;
 
     /**
      * If disabled, auto snapshots are not collected.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefaultSnapshotEnabled() {
         return isDefaultSnapshotEnabled;
     }
@@ -192,7 +190,6 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

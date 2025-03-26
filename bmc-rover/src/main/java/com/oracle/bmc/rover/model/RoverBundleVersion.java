@@ -5,23 +5,21 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * Description of rover bundle version. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * Description of rover bundle version.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RoverBundleVersion.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RoverBundleVersion
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = RoverBundleVersion.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RoverBundleVersion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bundleVersion", "compartmentId", "bundleName"})
     public RoverBundleVersion(String bundleVersion, String compartmentId, String bundleName) {
@@ -33,46 +31,49 @@ public final class RoverBundleVersion
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The version of the rover bundle. */
+        /**
+         * The version of the rover bundle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bundleVersion")
         private String bundleVersion;
 
         /**
          * The version of the rover bundle.
-         *
          * @param bundleVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder bundleVersion(String bundleVersion) {
             this.bundleVersion = bundleVersion;
             this.__explicitlySet__.add("bundleVersion");
             return this;
         }
-        /** The compartment OCID of roverNode/roverCluster that needs to be upgraded. */
+        /**
+         * The compartment OCID of roverNode/roverCluster that needs to be upgraded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment OCID of roverNode/roverCluster that needs to be upgraded.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The full name of the bundle. */
+        /**
+         * The full name of the bundle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bundleName")
         private String bundleName;
 
         /**
          * The full name of the bundle.
-         *
          * @param bundleName the value to set
          * @return this builder
-         */
+         **/
         public Builder bundleName(String bundleName) {
             this.bundleName = bundleName;
             this.__explicitlySet__.add("bundleName");
@@ -106,7 +107,9 @@ public final class RoverBundleVersion
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class RoverBundleVersion
         return new Builder().copy(this);
     }
 
-    /** The version of the rover bundle. */
+    /**
+     * The version of the rover bundle.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bundleVersion")
     private final String bundleVersion;
 
     /**
      * The version of the rover bundle.
-     *
      * @return the value
-     */
+     **/
     public String getBundleVersion() {
         return bundleVersion;
     }
 
-    /** The compartment OCID of roverNode/roverCluster that needs to be upgraded. */
+    /**
+     * The compartment OCID of roverNode/roverCluster that needs to be upgraded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartment OCID of roverNode/roverCluster that needs to be upgraded.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The full name of the bundle. */
+    /**
+     * The full name of the bundle.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bundleName")
     private final String bundleName;
 
     /**
      * The full name of the bundle.
-     *
      * @return the value
-     */
+     **/
     public String getBundleName() {
         return bundleName;
     }
@@ -161,7 +167,6 @@ public final class RoverBundleVersion
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

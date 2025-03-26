@@ -5,21 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User Account <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * User Account
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Me.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Me extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -198,37 +196,36 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         */
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         *
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -236,61 +233,71 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocid")
         private String ocid;
 
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
          * @param ocid the value to set
          * @return this builder
-         */
+         **/
         public Builder ocid(String ocid) {
             this.ocid = ocid;
             this.__explicitlySet__.add("ocid");
             return this;
         }
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemas")
         private java.util.List<String> schemas;
 
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param schemas the value to set
          * @return this builder
-         */
+         **/
         public Builder schemas(java.util.List<String> schemas) {
             this.schemas = schemas;
             this.__explicitlySet__.add("schemas");
@@ -324,25 +331,34 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
             return this;
         }
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         */
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
         private java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         *
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsPreventedOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsPreventedOperations(
                 java.util.List<IdcsPreventedOperations> idcsPreventedOperations) {
             this.idcsPreventedOperations = idcsPreventedOperations;
@@ -351,51 +367,71 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tags> tags;
 
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tags> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
         private Boolean deleteInProgress;
 
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param deleteInProgress the value to set
          * @return this builder
-         */
+         **/
         public Builder deleteInProgress(Boolean deleteInProgress) {
             this.deleteInProgress = deleteInProgress;
             this.__explicitlySet__.add("deleteInProgress");
@@ -403,24 +439,35 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
         private String idcsLastUpgradedInRelease;
 
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsLastUpgradedInRelease the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
             this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             this.__explicitlySet__.add("idcsLastUpgradedInRelease");
@@ -428,24 +475,35 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
         private String domainOcid;
 
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param domainOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder domainOcid(String domainOcid) {
             this.domainOcid = domainOcid;
             this.__explicitlySet__.add("domainOcid");
@@ -453,24 +511,35 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
         private String compartmentOcid;
 
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param compartmentOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentOcid(String compartmentOcid) {
             this.compartmentOcid = compartmentOcid;
             this.__explicitlySet__.add("compartmentOcid");
@@ -478,65 +547,75 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
         private String tenancyOcid;
 
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param tenancyOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyOcid(String tenancyOcid) {
             this.tenancyOcid = tenancyOcid;
             this.__explicitlySet__.add("tenancyOcid");
             return this;
         }
         /**
-         * An identifier for the Resource as defined by the Service Consumer. The externalId may
-         * simplify identification of the Resource between Service Consumer and Service Provider by
-         * allowing the Consumer to refer to the Resource with its own identifier, obviating the
-         * need to store a local mapping between the local identifier of the Resource and the
-         * identifier used by the Service Provider. Each Resource MAY include a non-empty externalId
-         * value. The value of the externalId attribute is always issued by the Service Consumer and
-         * can never be specified by the Service Provider. The Service Provider MUST always
-         * interpret the externalId as scoped to the Service Consumer's tenant.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:External Id]] - idcsPii: true - idcsSearchable: true - multiValued:
-         * false - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
         private String externalId;
 
         /**
-         * An identifier for the Resource as defined by the Service Consumer. The externalId may
-         * simplify identification of the Resource between Service Consumer and Service Provider by
-         * allowing the Consumer to refer to the Resource with its own identifier, obviating the
-         * need to store a local mapping between the local identifier of the Resource and the
-         * identifier used by the Service Provider. Each Resource MAY include a non-empty externalId
-         * value. The value of the externalId attribute is always issued by the Service Consumer and
-         * can never be specified by the Service Provider. The Service Provider MUST always
-         * interpret the externalId as scoped to the Service Consumer's tenant.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:External Id]] - idcsPii: true - idcsSearchable: true - multiValued:
-         * false - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param externalId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalId(String externalId) {
             this.externalId = externalId;
             this.__explicitlySet__.add("externalId");
@@ -544,28 +623,41 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * User name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User ID -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name,
-         * deprecatedColumnHeaderName:User ID]] - idcsPii: true - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: true - returned: always - type:
-         * string - uniqueness: global
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: User ID
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * User name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User ID -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name,
-         * deprecatedColumnHeaderName:User ID]] - idcsPii: true - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: true - returned: always - type:
-         * string - uniqueness: global
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: User ID
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
          * @param userName the value to set
          * @return this builder
-         */
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
@@ -573,28 +665,41 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Description of the user
-         *
-         * <p>*Added In:** 2012271618
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2012271618
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsPii: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the user
-         *
-         * <p>*Added In:** 2012271618
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2012271618
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsPii: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -602,26 +707,41 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Display name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Display Name -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Display Name
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Display Name -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Display Name
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -629,26 +749,41 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Nick name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Nick Name -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Nick Name
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nickName")
         private String nickName;
 
         /**
          * Nick name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Nick Name -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Nick Name
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param nickName the value to set
          * @return this builder
-         */
+         **/
         public Builder nickName(String nickName) {
             this.nickName = nickName;
             this.__explicitlySet__.add("nickName");
@@ -656,26 +791,41 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * A fully-qualified URL to a page representing the User's online profile
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Profile URL -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: reference - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Profile URL
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileUrl")
         private String profileUrl;
 
         /**
          * A fully-qualified URL to a page representing the User's online profile
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Profile URL -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: reference - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Profile URL
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param profileUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder profileUrl(String profileUrl) {
             this.profileUrl = profileUrl;
             this.__explicitlySet__.add("profileUrl");
@@ -683,26 +833,41 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Title
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Title -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Title
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
          * Title
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Title -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Title
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param title the value to set
          * @return this builder
-         */
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
@@ -710,55 +875,81 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Used to identify the organization-to-user relationship
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User Type -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: User Type
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userType")
         private UserType userType;
 
         /**
          * Used to identify the organization-to-user relationship
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User Type -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: User Type
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param userType the value to set
          * @return this builder
-         */
+         **/
         public Builder userType(UserType userType) {
             this.userType = userType;
             this.__explicitlySet__.add("userType");
             return this;
         }
         /**
-         * Used to indicate the User's default location for purposes of localizing items such as
-         * currency, date and time format, numerical representations, and so on.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Locale -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         */
+         * Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Locale
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locale")
         private String locale;
 
         /**
-         * Used to indicate the User's default location for purposes of localizing items such as
-         * currency, date and time format, numerical representations, and so on.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Locale -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         *
+         * Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Locale
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param locale the value to set
          * @return this builder
-         */
+         **/
         public Builder locale(String locale) {
             this.locale = locale;
             this.__explicitlySet__.add("locale");
@@ -766,26 +957,39 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * User's preferred written or spoken language used for localized user interfaces
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Preferred Language -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]] - idcsSearchable:
-         * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Preferred Language
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
         private String preferredLanguage;
 
         /**
          * User's preferred written or spoken language used for localized user interfaces
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Preferred Language -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]] - idcsSearchable:
-         * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Preferred Language
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param preferredLanguage the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredLanguage(String preferredLanguage) {
             this.preferredLanguage = preferredLanguage;
             this.__explicitlySet__.add("preferredLanguage");
@@ -793,30 +997,43 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * User's timezone
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-         * "timezones" and attrValues.value eq "$(timezone)" - idcsCanonicalValueSourceResourceType:
-         * AllowedValue - idcsCsvAttributeName: TimeZone - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]] - idcsSearchable:
-         * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
+         *  - idcsCanonicalValueSourceResourceType: AllowedValue
+         *  - idcsCsvAttributeName: TimeZone
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timezone")
         private String timezone;
 
         /**
          * User's timezone
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-         * "timezones" and attrValues.value eq "$(timezone)" - idcsCanonicalValueSourceResourceType:
-         * AllowedValue - idcsCsvAttributeName: TimeZone - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]] - idcsSearchable:
-         * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
+         *  - idcsCanonicalValueSourceResourceType: AllowedValue
+         *  - idcsCsvAttributeName: TimeZone
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param timezone the value to set
          * @return this builder
-         */
+         **/
         public Builder timezone(String timezone) {
             this.timezone = timezone;
             this.__explicitlySet__.add("timezone");
@@ -824,26 +1041,39 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * User status
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Active -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Active
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("active")
         private Boolean active;
 
         /**
          * User status
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Active -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Active
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param active the value to set
          * @return this builder
-         */
+         **/
         public Builder active(Boolean active) {
             this.active = active;
             this.__explicitlySet__.add("active");
@@ -851,26 +1081,41 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Password attribute. Max length for password is controlled via Password Policy.
-         *
-         * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Password - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:Password]] - idcsPii: true - idcsSearchable: false - idcsSensitive:
-         * hash - multiValued: false - mutability: writeOnly - required: false - returned: never -
-         * type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCsvAttributeName: Password
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+         *  - idcsPii: true
+         *  - idcsSearchable: false
+         *  - idcsSensitive: hash
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * Password attribute. Max length for password is controlled via Password Policy.
-         *
-         * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Password - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:Password]] - idcsPii: true - idcsSearchable: false - idcsSensitive:
-         * hash - multiValued: false - mutability: writeOnly - required: false - returned: never -
-         * type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCsvAttributeName: Password
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+         *  - idcsPii: true
+         *  - idcsSearchable: false
+         *  - idcsSensitive: hash
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         *  - uniqueness: none
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -887,40 +1132,37 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * A complex attribute representing emails
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value],
-         * [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email
-         * Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email,
-         * mapsTo:emails[other].value], [columnHeaderName:Recovery Email,
-         * mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified,
-         * mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified,
-         * mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified,
-         * mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified,
-         * mapsTo:emails[recovery].verified]] - idcsPii: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emails")
         private java.util.List<MeEmails> emails;
 
         /**
          * A complex attribute representing emails
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value],
-         * [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email
-         * Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email,
-         * mapsTo:emails[other].value], [columnHeaderName:Recovery Email,
-         * mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified,
-         * mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified,
-         * mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified,
-         * mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified,
-         * mapsTo:emails[recovery].verified]] - idcsPii: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param emails the value to set
          * @return this builder
-         */
+         **/
         public Builder emails(java.util.List<MeEmails> emails) {
             this.emails = emails;
             this.__explicitlySet__.add("emails");
@@ -928,38 +1170,37 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * Phone numbers
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone,
-         * mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No,
-         * mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone,
-         * mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value],
-         * [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other
-         * Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone,
-         * mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type,
-         * mapsTo:phoneNumbers[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumbers")
         private java.util.List<MePhoneNumbers> phoneNumbers;
 
         /**
          * Phone numbers
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone,
-         * mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No,
-         * mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone,
-         * mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value],
-         * [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other
-         * Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone,
-         * mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type,
-         * mapsTo:phoneNumbers[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param phoneNumbers the value to set
          * @return this builder
-         */
+         **/
         public Builder phoneNumbers(java.util.List<MePhoneNumbers> phoneNumbers) {
             this.phoneNumbers = phoneNumbers;
             this.__explicitlySet__.add("phoneNumbers");
@@ -967,24 +1208,35 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * User's instant messaging addresses
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ims")
         private java.util.List<MeIms> ims;
 
         /**
          * User's instant messaging addresses
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param ims the value to set
          * @return this builder
-         */
+         **/
         public Builder ims(java.util.List<MeIms> ims) {
             this.ims = ims;
             this.__explicitlySet__.add("ims");
@@ -992,122 +1244,109 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * URLs of photos for the User
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("photos")
         private java.util.List<MePhotos> photos;
 
         /**
          * URLs of photos for the User
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param photos the value to set
          * @return this builder
-         */
+         **/
         public Builder photos(java.util.List<MePhotos> photos) {
             this.photos = photos;
             this.__explicitlySet__.add("photos");
             return this;
         }
         /**
-         * A physical mailing address for this User, as described in (address Element). Canonical
-         * Type Values of work, home, and other. The value attribute is a complex type with the
-         * following sub-attributes.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address,
-         * mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality,
-         * deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality],
-         * [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State,
-         * mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code,
-         * deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode],
-         * [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country,
-         * mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted,
-         * mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted,
-         * mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted,
-         * mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street,
-         * mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street,
-         * mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality,
-         * mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality,
-         * mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region,
-         * mapsTo:addresses[home].region], [columnHeaderName:Other Address Region,
-         * mapsTo:addresses[other].region], [columnHeaderName:Home Address Country,
-         * mapsTo:addresses[home].country], [columnHeaderName:Other Address Country,
-         * mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code,
-         * mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code,
-         * mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type,
-         * mapsTo:addresses[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
+         * A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [type]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private java.util.List<Addresses> addresses;
 
         /**
-         * A physical mailing address for this User, as described in (address Element). Canonical
-         * Type Values of work, home, and other. The value attribute is a complex type with the
-         * following sub-attributes.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsCsvAttributeNameMappings:
-         * [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address,
-         * mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality,
-         * deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality],
-         * [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State,
-         * mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code,
-         * deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode],
-         * [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country,
-         * mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted,
-         * mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted,
-         * mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted,
-         * mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street,
-         * mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street,
-         * mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality,
-         * mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality,
-         * mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region,
-         * mapsTo:addresses[home].region], [columnHeaderName:Other Address Region,
-         * mapsTo:addresses[other].region], [columnHeaderName:Home Address Country,
-         * mapsTo:addresses[home].country], [columnHeaderName:Other Address Country,
-         * mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code,
-         * mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code,
-         * mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type,
-         * mapsTo:addresses[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
+         * A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [type]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+         *  - idcsPii: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param addresses the value to set
          * @return this builder
-         */
+         **/
         public Builder addresses(java.util.List<Addresses> addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
             return this;
         }
         /**
-         * A list of groups that the user belongs to, either thorough direct membership, nested
-         * groups, or dynamically calculated
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groups")
         private java.util.List<MeGroups> groups;
 
         /**
-         * A list of groups that the user belongs to, either thorough direct membership, nested
-         * groups, or dynamically calculated
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param groups the value to set
          * @return this builder
-         */
+         **/
         public Builder groups(java.util.List<MeGroups> groups) {
             this.groups = groups;
             this.__explicitlySet__.add("groups");
@@ -1115,51 +1354,67 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * A list of entitlements for the User that represent a thing the User has.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: complex - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entitlements")
         private java.util.List<MeEntitlements> entitlements;
 
         /**
          * A list of entitlements for the User that represent a thing the User has.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: complex - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param entitlements the value to set
          * @return this builder
-         */
+         **/
         public Builder entitlements(java.util.List<MeEntitlements> entitlements) {
             this.entitlements = entitlements;
             this.__explicitlySet__.add("entitlements");
             return this;
         }
         /**
-         * A list of roles for the User that collectively represent who the User is; e.g.,
-         * 'Student', 'Faculty'.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: complex - uniqueness:
-         * none
-         */
+         * A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("roles")
         private java.util.List<MeRoles> roles;
 
         /**
-         * A list of roles for the User that collectively represent who the User is; e.g.,
-         * 'Student', 'Faculty'.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true -
-         * mutability: readWrite - required: false - returned: default - type: complex - uniqueness:
-         * none
-         *
+         * A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value, type]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param roles the value to set
          * @return this builder
-         */
+         **/
         public Builder roles(java.util.List<MeRoles> roles) {
             this.roles = roles;
             this.__explicitlySet__.add("roles");
@@ -1167,22 +1422,33 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
         /**
          * A list of certificates issued to the User.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("x509Certificates")
         private java.util.List<MeX509Certificates> x509Certificates;
 
         /**
          * A list of certificates issued to the User.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param x509Certificates the value to set
          * @return this builder
-         */
+         **/
         public Builder x509Certificates(java.util.List<MeX509Certificates> x509Certificates) {
             this.x509Certificates = x509Certificates;
             this.__explicitlySet__.add("x509Certificates");
@@ -1622,7 +1888,9 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -1632,90 +1900,103 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     }
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     */
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     *
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocid")
     private final String ocid;
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getOcid() {
         return ocid;
     }
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemas")
     private final java.util.List<String> schemas;
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getSchemas() {
         return schemas;
     }
@@ -1742,358 +2023,536 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     }
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
     private final java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<IdcsPreventedOperations> getIdcsPreventedOperations() {
         return idcsPreventedOperations;
     }
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tags> tags;
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<Tags> getTags() {
         return tags;
     }
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
     private final Boolean deleteInProgress;
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getDeleteInProgress() {
         return deleteInProgress;
     }
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
     private final String idcsLastUpgradedInRelease;
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsLastUpgradedInRelease() {
         return idcsLastUpgradedInRelease;
     }
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
     private final String domainOcid;
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDomainOcid() {
         return domainOcid;
     }
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
     private final String compartmentOcid;
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCompartmentOcid() {
         return compartmentOcid;
     }
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
     private final String tenancyOcid;
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTenancyOcid() {
         return tenancyOcid;
     }
 
     /**
-     * An identifier for the Resource as defined by the Service Consumer. The externalId may
-     * simplify identification of the Resource between Service Consumer and Service Provider by
-     * allowing the Consumer to refer to the Resource with its own identifier, obviating the need to
-     * store a local mapping between the local identifier of the Resource and the identifier used by
-     * the Service Provider. Each Resource MAY include a non-empty externalId value. The value of
-     * the externalId attribute is always issued by the Service Consumer and can never be specified
-     * by the Service Provider. The Service Provider MUST always interpret the externalId as scoped
-     * to the Service Consumer's tenant.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:External Id]] - idcsPii: true - idcsSearchable: true - multiValued: false
-     * - mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-     * none
-     */
+     * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
     private final String externalId;
 
     /**
-     * An identifier for the Resource as defined by the Service Consumer. The externalId may
-     * simplify identification of the Resource between Service Consumer and Service Provider by
-     * allowing the Consumer to refer to the Resource with its own identifier, obviating the need to
-     * store a local mapping between the local identifier of the Resource and the identifier used by
-     * the Service Provider. Each Resource MAY include a non-empty externalId value. The value of
-     * the externalId attribute is always issued by the Service Consumer and can never be specified
-     * by the Service Provider. The Service Provider MUST always interpret the externalId as scoped
-     * to the Service Consumer's tenant.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:External Id]] - idcsPii: true - idcsSearchable: true - multiValued: false
-     * - mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-     * none
-     *
+     * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getExternalId() {
         return externalId;
     }
 
     /**
      * User name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User ID -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User
-     * ID]] - idcsPii: true - idcsSearchable: true - multiValued: false - mutability: readWrite -
-     * required: true - returned: always - type: string - uniqueness: global
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: User ID
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
      * User name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User ID -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User
-     * ID]] - idcsPii: true - idcsSearchable: true - multiValued: false - mutability: readWrite -
-     * required: true - returned: always - type: string - uniqueness: global
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: User ID
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getUserName() {
         return userName;
     }
 
     /**
      * Description of the user
-     *
-     * <p>*Added In:** 2012271618
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2012271618
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsPii: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the user
-     *
-     * <p>*Added In:** 2012271618
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2012271618
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsPii: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
      * Display name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Display Name -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Display Name
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Display Name -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Display Name
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * Nick name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Nick Name -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Nick Name
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nickName")
     private final String nickName;
 
     /**
      * Nick name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Nick Name -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Nick Name
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getNickName() {
         return nickName;
     }
 
     /**
      * A fully-qualified URL to a page representing the User's online profile
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Profile URL -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: reference - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Profile URL
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileUrl")
     private final String profileUrl;
 
     /**
      * A fully-qualified URL to a page representing the User's online profile
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Profile URL -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: reference - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Profile URL
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getProfileUrl() {
         return profileUrl;
     }
 
     /**
      * Title
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Title -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]] - idcsPii: true - idcsSearchable:
-     * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-     * type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Title
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
      * Title
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Title -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]] - idcsPii: true - idcsSearchable:
-     * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-     * type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Title
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTitle() {
         return title;
     }
 
     /**
      * Used to identify the organization-to-user relationship
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User Type -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
-    public enum UserType implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: User Type
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum UserType {
         Contractor("Contractor"),
         Employee("Employee"),
         Intern("Intern"),
@@ -2103,8 +2562,8 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         Generic("Generic"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -2145,156 +2604,236 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     };
     /**
      * Used to identify the organization-to-user relationship
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User Type -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: User Type
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userType")
     private final UserType userType;
 
     /**
      * Used to identify the organization-to-user relationship
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: User Type -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: User Type
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public UserType getUserType() {
         return userType;
     }
 
     /**
-     * Used to indicate the User's default location for purposes of localizing items such as
-     * currency, date and time format, numerical representations, and so on.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Locale -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Locale
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locale")
     private final String locale;
 
     /**
-     * Used to indicate the User's default location for purposes of localizing items such as
-     * currency, date and time format, numerical representations, and so on.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Locale -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Locale
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLocale() {
         return locale;
     }
 
     /**
      * User's preferred written or spoken language used for localized user interfaces
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Preferred Language -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]] - idcsSearchable: true
-     * - multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Preferred Language
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
     private final String preferredLanguage;
 
     /**
      * User's preferred written or spoken language used for localized user interfaces
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Preferred Language -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]] - idcsSearchable: true
-     * - multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Preferred Language
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPreferredLanguage() {
         return preferredLanguage;
     }
 
     /**
      * User's timezone
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-     * "timezones" and attrValues.value eq "$(timezone)" - idcsCanonicalValueSourceResourceType:
-     * AllowedValue - idcsCsvAttributeName: TimeZone - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
+     *  - idcsCanonicalValueSourceResourceType: AllowedValue
+     *  - idcsCsvAttributeName: TimeZone
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     private final String timezone;
 
     /**
      * User's timezone
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCanonicalValueSourceFilter: attrName eq
-     * "timezones" and attrValues.value eq "$(timezone)" - idcsCanonicalValueSourceResourceType:
-     * AllowedValue - idcsCsvAttributeName: TimeZone - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
+     *  - idcsCanonicalValueSourceResourceType: AllowedValue
+     *  - idcsCsvAttributeName: TimeZone
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTimezone() {
         return timezone;
     }
 
     /**
      * User status
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Active -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Active
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("active")
     private final Boolean active;
 
     /**
      * User status
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Active -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Active
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getActive() {
         return active;
     }
 
     /**
      * Password attribute. Max length for password is controlled via Password Policy.
-     *
-     * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Password - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Password]] - idcsPii: true - idcsSearchable: false - idcsSensitive: hash -
-     * multiValued: false - mutability: writeOnly - required: false - returned: never - type: string
-     * - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCsvAttributeName: Password
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+     *  - idcsPii: true
+     *  - idcsSearchable: false
+     *  - idcsSensitive: hash
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * Password attribute. Max length for password is controlled via Password Policy.
-     *
-     * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Password - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Password]] - idcsPii: true - idcsSearchable: false - idcsSensitive: hash -
-     * multiValued: false - mutability: writeOnly - required: false - returned: never - type: string
-     * - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCsvAttributeName: Password
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+     *  - idcsPii: true
+     *  - idcsSearchable: false
+     *  - idcsSensitive: hash
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
@@ -2308,277 +2847,306 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
 
     /**
      * A complex attribute representing emails
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email,
-     * mapsTo:emails[home].value], [columnHeaderName:Primary Email Type,
-     * mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value],
-     * [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work
-     * Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified,
-     * mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified,
-     * mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified,
-     * mapsTo:emails[recovery].verified]] - idcsPii: true - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emails")
     private final java.util.List<MeEmails> emails;
 
     /**
      * A complex attribute representing emails
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email,
-     * mapsTo:emails[home].value], [columnHeaderName:Primary Email Type,
-     * mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value],
-     * [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work
-     * Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified,
-     * mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified,
-     * mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified,
-     * mapsTo:emails[recovery].verified]] - idcsPii: true - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MeEmails> getEmails() {
         return emails;
     }
 
     /**
      * Phone numbers
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No,
-     * mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone,
-     * mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value],
-     * [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone,
-     * mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone,
-     * mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type,
-     * mapsTo:phoneNumbers[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumbers")
     private final java.util.List<MePhoneNumbers> phoneNumbers;
 
     /**
      * Phone numbers
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No,
-     * mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone,
-     * mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value],
-     * [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone,
-     * mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone,
-     * mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type,
-     * mapsTo:phoneNumbers[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MePhoneNumbers> getPhoneNumbers() {
         return phoneNumbers;
     }
 
     /**
      * User's instant messaging addresses
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ims")
     private final java.util.List<MeIms> ims;
 
     /**
      * User's instant messaging addresses
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MeIms> getIms() {
         return ims;
     }
 
     /**
      * URLs of photos for the User
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("photos")
     private final java.util.List<MePhotos> photos;
 
     /**
      * URLs of photos for the User
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - idcsPii: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MePhotos> getPhotos() {
         return photos;
     }
 
     /**
-     * A physical mailing address for this User, as described in (address Element). Canonical Type
-     * Values of work, home, and other. The value attribute is a complex type with the following
-     * sub-attributes.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address,
-     * mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality,
-     * deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality],
-     * [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State,
-     * mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code,
-     * deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode],
-     * [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country,
-     * mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted,
-     * mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted,
-     * mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted,
-     * mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street,
-     * mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street,
-     * mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality,
-     * mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality,
-     * mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region,
-     * mapsTo:addresses[home].region], [columnHeaderName:Other Address Region,
-     * mapsTo:addresses[other].region], [columnHeaderName:Home Address Country,
-     * mapsTo:addresses[home].country], [columnHeaderName:Other Address Country,
-     * mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code,
-     * mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code,
-     * mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type,
-     * mapsTo:addresses[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [type]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final java.util.List<Addresses> addresses;
 
     /**
-     * A physical mailing address for this User, as described in (address Element). Canonical Type
-     * Values of work, home, and other. The value attribute is a complex type with the following
-     * sub-attributes.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsCsvAttributeNameMappings:
-     * [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address,
-     * mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality,
-     * deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality],
-     * [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State,
-     * mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code,
-     * deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode],
-     * [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country,
-     * mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted,
-     * mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted,
-     * mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted,
-     * mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street,
-     * mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street,
-     * mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality,
-     * mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality,
-     * mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region,
-     * mapsTo:addresses[home].region], [columnHeaderName:Other Address Region,
-     * mapsTo:addresses[other].region], [columnHeaderName:Home Address Country,
-     * mapsTo:addresses[home].country], [columnHeaderName:Other Address Country,
-     * mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code,
-     * mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code,
-     * mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type,
-     * mapsTo:addresses[$(type)].primary]] - idcsPii: true - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [type]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+     *  - idcsPii: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<Addresses> getAddresses() {
         return addresses;
     }
 
     /**
-     * A list of groups that the user belongs to, either thorough direct membership, nested groups,
-     * or dynamically calculated
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     */
+     * A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groups")
     private final java.util.List<MeGroups> groups;
 
     /**
-     * A list of groups that the user belongs to, either thorough direct membership, nested groups,
-     * or dynamically calculated
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     *
+     * A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MeGroups> getGroups() {
         return groups;
     }
 
     /**
      * A list of entitlements for the User that represent a thing the User has.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entitlements")
     private final java.util.List<MeEntitlements> entitlements;
 
     /**
      * A list of entitlements for the User that represent a thing the User has.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MeEntitlements> getEntitlements() {
         return entitlements;
     }
 
     /**
-     * A list of roles for the User that collectively represent who the User is; e.g., 'Student',
-     * 'Faculty'.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("roles")
     private final java.util.List<MeRoles> roles;
 
     /**
-     * A list of roles for the User that collectively represent who the User is; e.g., 'Student',
-     * 'Faculty'.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value, type] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value, type]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MeRoles> getRoles() {
         return roles;
     }
 
     /**
      * A list of certificates issued to the User.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("x509Certificates")
     private final java.util.List<MeX509Certificates> x509Certificates;
 
     /**
      * A list of certificates issued to the User.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<MeX509Certificates> getX509Certificates() {
         return x509Certificates;
     }
@@ -2714,7 +3282,6 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -2781,13 +3348,11 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionSecurityQuestionsUser=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionSecurityQuestionsUser));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionSecurityQuestionsUser));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionSelfRegistrationUser=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionSelfRegistrationUser));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfRegistrationUser));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionTermsOfUseUser=")
                 .append(
                         String.valueOf(
@@ -2797,8 +3362,7 @@ public final class Me extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionUserCredentialsUser=")
                 .append(
                         String.valueOf(
-                                this
-                                        .urnIetfParamsScimSchemasOracleIdcsExtensionUserCredentialsUser));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionUserCredentialsUser));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionCapabilitiesUser=")
                 .append(
                         String.valueOf(

@@ -5,22 +5,20 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the TrailFiles. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the TrailFiles.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TrailFileSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TrailFileSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TrailFileSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "trailFileId",
@@ -57,7 +55,10 @@ public final class TrailFileSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The TrailFile Id. */
+        /**
+         * The TrailFile Id.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trailFileId")
         private String trailFileId;
 
@@ -66,13 +67,16 @@ public final class TrailFileSummary
          *
          * @param trailFileId the value to set
          * @return this builder
-         */
+         **/
         public Builder trailFileId(String trailFileId) {
             this.trailFileId = trailFileId;
             this.__explicitlySet__.add("trailFileId");
             return this;
         }
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -81,13 +85,16 @@ public final class TrailFileSummary
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The size of the backup stored in object storage (in bytes) */
+        /**
+         * The size of the backup stored in object storage (in bytes)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
@@ -96,7 +103,7 @@ public final class TrailFileSummary
          *
          * @param sizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
@@ -105,7 +112,8 @@ public final class TrailFileSummary
         /**
          * The time the resource was last updated. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
         private java.util.Date timeLastUpdated;
 
@@ -115,13 +123,16 @@ public final class TrailFileSummary
          *
          * @param timeLastUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
             this.timeLastUpdated = timeLastUpdated;
             this.__explicitlySet__.add("timeLastUpdated");
             return this;
         }
-        /** Number of sequences for a specific trail file */
+        /**
+         * Number of sequences for a specific trail file
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfSequences")
         private Integer numberOfSequences;
 
@@ -130,13 +141,16 @@ public final class TrailFileSummary
          *
          * @param numberOfSequences the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfSequences(Integer numberOfSequences) {
             this.numberOfSequences = numberOfSequences;
             this.__explicitlySet__.add("numberOfSequences");
             return this;
         }
-        /** Minimum sequence number */
+        /**
+         * Minimum sequence number
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minSequenceNumber")
         private String minSequenceNumber;
 
@@ -145,13 +159,16 @@ public final class TrailFileSummary
          *
          * @param minSequenceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder minSequenceNumber(String minSequenceNumber) {
             this.minSequenceNumber = minSequenceNumber;
             this.__explicitlySet__.add("minSequenceNumber");
             return this;
         }
-        /** Maximum sequence number */
+        /**
+         * Maximum sequence number
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxSequenceNumber")
         private String maxSequenceNumber;
 
@@ -160,13 +177,16 @@ public final class TrailFileSummary
          *
          * @param maxSequenceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder maxSequenceNumber(String maxSequenceNumber) {
             this.maxSequenceNumber = maxSequenceNumber;
             this.__explicitlySet__.add("maxSequenceNumber");
             return this;
         }
-        /** Producer Process Name if any. */
+        /**
+         * Producer Process Name if any.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("producer")
         private String producer;
 
@@ -175,13 +195,16 @@ public final class TrailFileSummary
          *
          * @param producer the value to set
          * @return this builder
-         */
+         **/
         public Builder producer(String producer) {
             this.producer = producer;
             this.__explicitlySet__.add("producer");
             return this;
         }
-        /** array of consumer process names */
+        /**
+         * array of consumer process names
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumers")
         private java.util.List<String> consumers;
 
@@ -190,7 +213,7 @@ public final class TrailFileSummary
          *
          * @param consumers the value to set
          * @return this builder
-         */
+         **/
         public Builder consumers(java.util.List<String> consumers) {
             this.consumers = consumers;
             this.__explicitlySet__.add("consumers");
@@ -251,7 +274,9 @@ public final class TrailFileSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -260,7 +285,10 @@ public final class TrailFileSummary
         return new Builder().copy(this);
     }
 
-    /** The TrailFile Id. */
+    /**
+     * The TrailFile Id.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trailFileId")
     private final String trailFileId;
 
@@ -268,12 +296,15 @@ public final class TrailFileSummary
      * The TrailFile Id.
      *
      * @return the value
-     */
+     **/
     public String getTrailFileId() {
         return trailFileId;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -281,12 +312,15 @@ public final class TrailFileSummary
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The size of the backup stored in object storage (in bytes) */
+    /**
+     * The size of the backup stored in object storage (in bytes)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
@@ -294,7 +328,7 @@ public final class TrailFileSummary
      * The size of the backup stored in object storage (in bytes)
      *
      * @return the value
-     */
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
@@ -302,7 +336,8 @@ public final class TrailFileSummary
     /**
      * The time the resource was last updated. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
     private final java.util.Date timeLastUpdated;
 
@@ -311,12 +346,15 @@ public final class TrailFileSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastUpdated() {
         return timeLastUpdated;
     }
 
-    /** Number of sequences for a specific trail file */
+    /**
+     * Number of sequences for a specific trail file
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfSequences")
     private final Integer numberOfSequences;
 
@@ -324,12 +362,15 @@ public final class TrailFileSummary
      * Number of sequences for a specific trail file
      *
      * @return the value
-     */
+     **/
     public Integer getNumberOfSequences() {
         return numberOfSequences;
     }
 
-    /** Minimum sequence number */
+    /**
+     * Minimum sequence number
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minSequenceNumber")
     private final String minSequenceNumber;
 
@@ -337,12 +378,15 @@ public final class TrailFileSummary
      * Minimum sequence number
      *
      * @return the value
-     */
+     **/
     public String getMinSequenceNumber() {
         return minSequenceNumber;
     }
 
-    /** Maximum sequence number */
+    /**
+     * Maximum sequence number
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSequenceNumber")
     private final String maxSequenceNumber;
 
@@ -350,12 +394,15 @@ public final class TrailFileSummary
      * Maximum sequence number
      *
      * @return the value
-     */
+     **/
     public String getMaxSequenceNumber() {
         return maxSequenceNumber;
     }
 
-    /** Producer Process Name if any. */
+    /**
+     * Producer Process Name if any.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("producer")
     private final String producer;
 
@@ -363,12 +410,15 @@ public final class TrailFileSummary
      * Producer Process Name if any.
      *
      * @return the value
-     */
+     **/
     public String getProducer() {
         return producer;
     }
 
-    /** array of consumer process names */
+    /**
+     * array of consumer process names
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumers")
     private final java.util.List<String> consumers;
 
@@ -376,7 +426,7 @@ public final class TrailFileSummary
      * array of consumer process names
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getConsumers() {
         return consumers;
     }
@@ -388,7 +438,6 @@ public final class TrailFileSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

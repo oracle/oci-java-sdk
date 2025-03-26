@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The database parameter scope. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum ParameterScope implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The database parameter scope.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum ParameterScope {
     Memory("MEMORY"),
     Spfile("SPFILE"),
     Both("BOTH"),

@@ -6,93 +6,106 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetHeatWaveFleetMetricExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetHeatWaveFleetMetricRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetHeatWaveFleetMetricExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetHeatWaveFleetMetricRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetHeatWaveFleetMetricRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The start time of the time range to retrieve the health metrics of a Managed Database in UTC
-     * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String startTime;
 
     /**
-     * The start time of the time range to retrieve the health metrics of a Managed Database in UTC
-     * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getStartTime() {
         return startTime;
     }
     /**
-     * The end time of the time range to retrieve the health metrics of a Managed Database in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String endTime;
 
     /**
-     * The end time of the time range to retrieve the health metrics of a Managed Database in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getEndTime() {
         return endTime;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The filter used to retrieve a specific set of metrics by passing the desired metric names
-     * with a comma separator. Note that, by default, the service returns all supported metrics.
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     private String filterByMetricNames;
 
     /**
-     * The filter used to retrieve a specific set of metrics by passing the desired metric names
-     * with a comma separator. Note that, by default, the service returns all supported metrics.
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     public String getFilterByMetricNames() {
         return filterByMetricNames;
     }
-    /** The parameter to filter by HeatWave cluster status. */
+    /**
+     * The parameter to filter by HeatWave cluster status.
+     */
     private com.oracle.bmc.databasemanagement.model.HeatWaveClusterStatus filterByHeatWaveStatus;
 
-    /** The parameter to filter by HeatWave cluster status. */
+    /**
+     * The parameter to filter by HeatWave cluster status.
+     */
     public com.oracle.bmc.databasemanagement.model.HeatWaveClusterStatus
             getFilterByHeatWaveStatus() {
         return filterByHeatWaveStatus;
     }
-    /** The parameter to filter by HeatWave node shape. */
+    /**
+     * The parameter to filter by HeatWave node shape.
+     */
     private String filterByHeatWaveShape;
 
-    /** The parameter to filter by HeatWave node shape. */
+    /**
+     * The parameter to filter by HeatWave node shape.
+     */
     public String getFilterByHeatWaveShape() {
         return filterByHeatWaveShape;
     }
-    /** The parameter to filter based on whether HeatWave Lakehouse is enabled for the cluster. */
+    /**
+     * The parameter to filter based on whether HeatWave Lakehouse is enabled for the cluster.
+     */
     private Boolean isHeatWaveLakehouseEnabled;
 
-    /** The parameter to filter based on whether HeatWave Lakehouse is enabled for the cluster. */
+    /**
+     * The parameter to filter based on whether HeatWave Lakehouse is enabled for the cluster.
+     */
     public Boolean getIsHeatWaveLakehouseEnabled() {
         return isHeatWaveLakehouseEnabled;
     }
@@ -100,19 +113,17 @@ public class GetHeatWaveFleetMetricRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetHeatWaveFleetMetricRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -122,14 +133,15 @@ public class GetHeatWaveFleetMetricRequest
         }
 
         /**
-         * The start time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String startTime = null;
 
         /**
-         * The start time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param startTime the value to set
          * @return this builder instance
@@ -140,14 +152,15 @@ public class GetHeatWaveFleetMetricRequest
         }
 
         /**
-         * The end time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String endTime = null;
 
         /**
-         * The end time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param endTime the value to set
          * @return this builder instance
@@ -157,12 +170,13 @@ public class GetHeatWaveFleetMetricRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -172,15 +186,12 @@ public class GetHeatWaveFleetMetricRequest
         }
 
         /**
-         * The filter used to retrieve a specific set of metrics by passing the desired metric names
-         * with a comma separator. Note that, by default, the service returns all supported metrics.
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
          */
         private String filterByMetricNames = null;
 
         /**
-         * The filter used to retrieve a specific set of metrics by passing the desired metric names
-         * with a comma separator. Note that, by default, the service returns all supported metrics.
-         *
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
          * @param filterByMetricNames the value to set
          * @return this builder instance
          */
@@ -189,13 +200,14 @@ public class GetHeatWaveFleetMetricRequest
             return this;
         }
 
-        /** The parameter to filter by HeatWave cluster status. */
+        /**
+         * The parameter to filter by HeatWave cluster status.
+         */
         private com.oracle.bmc.databasemanagement.model.HeatWaveClusterStatus
                 filterByHeatWaveStatus = null;
 
         /**
          * The parameter to filter by HeatWave cluster status.
-         *
          * @param filterByHeatWaveStatus the value to set
          * @return this builder instance
          */
@@ -206,12 +218,13 @@ public class GetHeatWaveFleetMetricRequest
             return this;
         }
 
-        /** The parameter to filter by HeatWave node shape. */
+        /**
+         * The parameter to filter by HeatWave node shape.
+         */
         private String filterByHeatWaveShape = null;
 
         /**
          * The parameter to filter by HeatWave node shape.
-         *
          * @param filterByHeatWaveShape the value to set
          * @return this builder instance
          */
@@ -227,7 +240,6 @@ public class GetHeatWaveFleetMetricRequest
 
         /**
          * The parameter to filter based on whether HeatWave Lakehouse is enabled for the cluster.
-         *
          * @param isHeatWaveLakehouseEnabled the value to set
          * @return this builder instance
          */
@@ -238,19 +250,18 @@ public class GetHeatWaveFleetMetricRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -262,7 +273,6 @@ public class GetHeatWaveFleetMetricRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetHeatWaveFleetMetricRequest o) {
@@ -282,11 +292,10 @@ public class GetHeatWaveFleetMetricRequest
         /**
          * Build the instance of GetHeatWaveFleetMetricRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetHeatWaveFleetMetricRequest
          */
@@ -300,8 +309,7 @@ public class GetHeatWaveFleetMetricRequest
         /**
          * Build the instance of GetHeatWaveFleetMetricRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetHeatWaveFleetMetricRequest
@@ -317,15 +325,12 @@ public class GetHeatWaveFleetMetricRequest
             request.filterByHeatWaveShape = filterByHeatWaveShape;
             request.isHeatWaveLakehouseEnabled = isHeatWaveLakehouseEnabled;
             return request;
-            // new GetHeatWaveFleetMetricRequest(compartmentId, startTime, endTime, opcRequestId,
-            // filterByMetricNames, filterByHeatWaveStatus, filterByHeatWaveShape,
-            // isHeatWaveLakehouseEnabled);
+            // new GetHeatWaveFleetMetricRequest(compartmentId, startTime, endTime, opcRequestId, filterByMetricNames, filterByHeatWaveStatus, filterByHeatWaveShape, isHeatWaveLakehouseEnabled);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -342,7 +347,6 @@ public class GetHeatWaveFleetMetricRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

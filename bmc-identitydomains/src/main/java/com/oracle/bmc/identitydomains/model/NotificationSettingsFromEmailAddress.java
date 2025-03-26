@@ -6,25 +6,30 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * From email address to be used in the notification emails
- *
- * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
- * required: true - returned: always - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **SCIM++ Properties:**
+ *  - caseExact: false
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: true
+ *  - returned: always
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NotificationSettingsFromEmailAddress.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NotificationSettingsFromEmailAddress.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NotificationSettingsFromEmailAddress
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "validationStatus", "validate", "displayName"})
     public NotificationSettingsFromEmailAddress(
@@ -43,22 +48,29 @@ public final class NotificationSettingsFromEmailAddress
     public static class Builder {
         /**
          * Value of the From email address
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-         * returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Value of the From email address
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-         * returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -66,53 +78,69 @@ public final class NotificationSettingsFromEmailAddress
         }
         /**
          * Validation status for the From email address
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
         private ValidationStatus validationStatus;
 
         /**
          * Validation status for the From email address
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param validationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder validationStatus(ValidationStatus validationStatus) {
             this.validationStatus = validationStatus;
             this.__explicitlySet__.add("validationStatus");
             return this;
         }
         /**
-         * From address verification mode. If postmaster account is available then 'domain' mode is
-         * used or entire valid email can be verified using 'email' mode
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * From address verification mode. If postmaster account is available then 'domain' mode is used or entire valid email can be verified using 'email' mode
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validate")
         private Validate validate;
 
         /**
-         * From address verification mode. If postmaster account is available then 'domain' mode is
-         * used or entire valid email can be verified using 'email' mode
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * From address verification mode. If postmaster account is available then 'domain' mode is used or entire valid email can be verified using 'email' mode
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param validate the value to set
          * @return this builder
-         */
+         **/
         public Builder validate(Validate validate) {
             this.validate = validate;
             this.__explicitlySet__.add("validate");
@@ -120,26 +148,35 @@ public final class NotificationSettingsFromEmailAddress
         }
         /**
          * Display name for the From email address
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name for the From email address
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -177,7 +214,9 @@ public final class NotificationSettingsFromEmailAddress
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -188,38 +227,49 @@ public final class NotificationSettingsFromEmailAddress
 
     /**
      * Value of the From email address
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-     * returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Value of the From email address
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-     * returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * Validation status for the From email address
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: string
-     */
-    public enum ValidationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
+    public enum ValidationStatus {
         Verified("VERIFIED"),
         Pending("PENDING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -260,41 +310,54 @@ public final class NotificationSettingsFromEmailAddress
     };
     /**
      * Validation status for the From email address
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
     private final ValidationStatus validationStatus;
 
     /**
      * Validation status for the From email address
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public ValidationStatus getValidationStatus() {
         return validationStatus;
     }
 
     /**
-     * From address verification mode. If postmaster account is available then 'domain' mode is used
-     * or entire valid email can be verified using 'email' mode
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
-    public enum Validate implements com.oracle.bmc.http.internal.BmcEnum {
+     * From address verification mode. If postmaster account is available then 'domain' mode is used or entire valid email can be verified using 'email' mode
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Validate {
         Email("email"),
         Domain("domain"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -334,53 +397,73 @@ public final class NotificationSettingsFromEmailAddress
         }
     };
     /**
-     * From address verification mode. If postmaster account is available then 'domain' mode is used
-     * or entire valid email can be verified using 'email' mode
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * From address verification mode. If postmaster account is available then 'domain' mode is used or entire valid email can be verified using 'email' mode
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validate")
     private final Validate validate;
 
     /**
-     * From address verification mode. If postmaster account is available then 'domain' mode is used
-     * or entire valid email can be verified using 'email' mode
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * From address verification mode. If postmaster account is available then 'domain' mode is used or entire valid email can be verified using 'email' mode
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Validate getValidate() {
         return validate;
     }
 
     /**
      * Display name for the From email address
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name for the From email address
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -392,7 +475,6 @@ public final class NotificationSettingsFromEmailAddress
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

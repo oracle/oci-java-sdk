@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible types of actions on the target resource. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible types of actions on the target resource.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ActionType {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

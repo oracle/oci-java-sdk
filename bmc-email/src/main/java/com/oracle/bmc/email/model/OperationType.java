@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.email.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+public enum OperationType {
     CreateDkim("CREATE_DKIM"),
     DeleteDkim("DELETE_DKIM"),
     MoveDkim("MOVE_DKIM"),

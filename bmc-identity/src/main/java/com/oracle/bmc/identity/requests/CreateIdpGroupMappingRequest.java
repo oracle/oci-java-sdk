@@ -6,28 +6,33 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateIdpGroupMappingExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateIdpGroupMappingRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateIdpGroupMappingExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateIdpGroupMappingRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateIdpGroupMappingRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails> {
 
-    /** Add a mapping from an SAML2.0 identity provider group to a BMC group. */
+    /**
+     * Add a mapping from an SAML2.0 identity provider group to a BMC group.
+     */
     private com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails createIdpGroupMappingDetails;
 
-    /** Add a mapping from an SAML2.0 identity provider group to a BMC group. */
+    /**
+     * Add a mapping from an SAML2.0 identity provider group to a BMC group.
+     */
     public com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails
             getCreateIdpGroupMappingDetails() {
         return createIdpGroupMappingDetails;
     }
-    /** The OCID of the identity provider. */
+    /**
+     * The OCID of the identity provider.
+     */
     private String identityProviderId;
 
-    /** The OCID of the identity provider. */
+    /**
+     * The OCID of the identity provider.
+     */
     public String getIdentityProviderId() {
         return identityProviderId;
     }
@@ -37,6 +42,7 @@ public class CreateIdpGroupMappingRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     private String opcRetryToken;
 
@@ -46,6 +52,7 @@ public class CreateIdpGroupMappingRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -53,7 +60,6 @@ public class CreateIdpGroupMappingRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -66,16 +72,18 @@ public class CreateIdpGroupMappingRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateIdpGroupMappingRequest,
                     com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Add a mapping from an SAML2.0 identity provider group to a BMC group. */
+        /**
+         * Add a mapping from an SAML2.0 identity provider group to a BMC group.
+         */
         private com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails
                 createIdpGroupMappingDetails = null;
 
         /**
          * Add a mapping from an SAML2.0 identity provider group to a BMC group.
-         *
          * @param createIdpGroupMappingDetails the value to set
          * @return this builder instance
          */
@@ -86,12 +94,13 @@ public class CreateIdpGroupMappingRequest
             return this;
         }
 
-        /** The OCID of the identity provider. */
+        /**
+         * The OCID of the identity provider.
+         */
         private String identityProviderId = null;
 
         /**
          * The OCID of the identity provider.
-         *
          * @param identityProviderId the value to set
          * @return this builder instance
          */
@@ -102,19 +111,20 @@ public class CreateIdpGroupMappingRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -126,19 +136,18 @@ public class CreateIdpGroupMappingRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -150,7 +159,6 @@ public class CreateIdpGroupMappingRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateIdpGroupMappingRequest o) {
@@ -165,11 +173,10 @@ public class CreateIdpGroupMappingRequest
         /**
          * Build the instance of CreateIdpGroupMappingRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateIdpGroupMappingRequest
          */
@@ -182,7 +189,6 @@ public class CreateIdpGroupMappingRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -195,8 +201,7 @@ public class CreateIdpGroupMappingRequest
         /**
          * Build the instance of CreateIdpGroupMappingRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateIdpGroupMappingRequest
@@ -207,14 +212,12 @@ public class CreateIdpGroupMappingRequest
             request.identityProviderId = identityProviderId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateIdpGroupMappingRequest(createIdpGroupMappingDetails, identityProviderId,
-            // opcRetryToken);
+            // new CreateIdpGroupMappingRequest(createIdpGroupMappingDetails, identityProviderId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -226,7 +229,6 @@ public class CreateIdpGroupMappingRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

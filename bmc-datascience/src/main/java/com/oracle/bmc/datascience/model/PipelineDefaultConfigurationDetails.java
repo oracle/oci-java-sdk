@@ -5,63 +5,64 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The default pipeline configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The default pipeline configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PipelineDefaultConfigurationDetails.Builder.class)
+    builder = PipelineDefaultConfigurationDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PipelineDefaultConfigurationDetails extends PipelineConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run
-         * is in progress.
-         */
+         * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumRuntimeInMinutes")
         private Long maximumRuntimeInMinutes;
 
         /**
-         * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run
-         * is in progress.
-         *
+         * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
          * @param maximumRuntimeInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder maximumRuntimeInMinutes(Long maximumRuntimeInMinutes) {
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             this.__explicitlySet__.add("maximumRuntimeInMinutes");
             return this;
         }
-        /** Environment variables to set for steps in the pipeline. */
+        /**
+         * Environment variables to set for steps in the pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
         private java.util.Map<String, String> environmentVariables;
 
         /**
          * Environment variables to set for steps in the pipeline.
-         *
          * @param environmentVariables the value to set
          * @return this builder
-         */
+         **/
         public Builder environmentVariables(java.util.Map<String, String> environmentVariables) {
             this.environmentVariables = environmentVariables;
             this.__explicitlySet__.add("environmentVariables");
             return this;
         }
-        /** The command line arguments to set for steps in the pipeline. */
+        /**
+         * The command line arguments to set for steps in the pipeline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commandLineArguments")
         private String commandLineArguments;
 
@@ -70,7 +71,7 @@ public final class PipelineDefaultConfigurationDetails extends PipelineConfigura
          *
          * @param commandLineArguments the value to set
          * @return this builder
-         */
+         **/
         public Builder commandLineArguments(String commandLineArguments) {
             this.commandLineArguments = commandLineArguments;
             this.__explicitlySet__.add("commandLineArguments");
@@ -107,7 +108,9 @@ public final class PipelineDefaultConfigurationDetails extends PipelineConfigura
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,36 +131,37 @@ public final class PipelineDefaultConfigurationDetails extends PipelineConfigura
     }
 
     /**
-     * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is
-     * in progress.
-     */
+     * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumRuntimeInMinutes")
     private final Long maximumRuntimeInMinutes;
 
     /**
-     * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is
-     * in progress.
-     *
+     * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
      * @return the value
-     */
+     **/
     public Long getMaximumRuntimeInMinutes() {
         return maximumRuntimeInMinutes;
     }
 
-    /** Environment variables to set for steps in the pipeline. */
+    /**
+     * Environment variables to set for steps in the pipeline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
     private final java.util.Map<String, String> environmentVariables;
 
     /**
      * Environment variables to set for steps in the pipeline.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getEnvironmentVariables() {
         return environmentVariables;
     }
 
-    /** The command line arguments to set for steps in the pipeline. */
+    /**
+     * The command line arguments to set for steps in the pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commandLineArguments")
     private final String commandLineArguments;
 
@@ -165,7 +169,7 @@ public final class PipelineDefaultConfigurationDetails extends PipelineConfigura
      * The command line arguments to set for steps in the pipeline.
      *
      * @return the value
-     */
+     **/
     public String getCommandLineArguments() {
         return commandLineArguments;
     }
@@ -177,7 +181,6 @@ public final class PipelineDefaultConfigurationDetails extends PipelineConfigura
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

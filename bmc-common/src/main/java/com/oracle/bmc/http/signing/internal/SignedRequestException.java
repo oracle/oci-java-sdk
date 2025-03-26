@@ -4,7 +4,9 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
-/** Generic exception exposed to callers of the HTTP Signature code */
+/**
+ * Generic exception exposed to callers of the HTTP Signature code
+ */
 public class SignedRequestException extends RuntimeException {
 
     private static final long serialVersionUID = 8908408039973580885L;

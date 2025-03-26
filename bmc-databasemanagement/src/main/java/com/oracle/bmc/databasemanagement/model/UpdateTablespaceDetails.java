@@ -5,24 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to update a tablespace. It takes either credentialDetails or
- * databaseCredential. It's recommended to provide databaseCredential <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details required to update a tablespace.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateTablespaceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateTablespaceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateTablespaceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -83,7 +83,10 @@ public final class UpdateTablespaceDetails
             this.__explicitlySet__.add("databaseCredential");
             return this;
         }
-        /** The name of the tablespace. It must be unique within a database. */
+        /**
+         * The name of the tablespace. It must be unique within a database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -92,13 +95,16 @@ public final class UpdateTablespaceDetails
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The type of tablespace. */
+        /**
+         * The type of tablespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -107,13 +113,16 @@ public final class UpdateTablespaceDetails
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The size of each data file or temp file. */
+        /**
+         * The size of each data file or temp file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
         private TablespaceStorageSize fileSize;
 
@@ -122,13 +131,16 @@ public final class UpdateTablespaceDetails
          *
          * @param fileSize the value to set
          * @return this builder
-         */
+         **/
         public Builder fileSize(TablespaceStorageSize fileSize) {
             this.fileSize = fileSize;
             this.__explicitlySet__.add("fileSize");
             return this;
         }
-        /** The status of the tablespace. */
+        /**
+         * The status of the tablespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -137,13 +149,16 @@ public final class UpdateTablespaceDetails
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Specifies whether the data file or temp file can be extended automatically. */
+        /**
+         * Specifies whether the data file or temp file can be extended automatically.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
         private Boolean isAutoExtensible;
 
@@ -152,26 +167,25 @@ public final class UpdateTablespaceDetails
          *
          * @param isAutoExtensible the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoExtensible(Boolean isAutoExtensible) {
             this.isAutoExtensible = isAutoExtensible;
             this.__explicitlySet__.add("isAutoExtensible");
             return this;
         }
         /**
-         * The size of the next increment of disk space to be allocated automatically when more
-         * extents are required.
-         */
+         * The size of the next increment of disk space to be allocated automatically when more extents are required.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
         private TablespaceStorageSize autoExtendNextSize;
 
         /**
-         * The size of the next increment of disk space to be allocated automatically when more
-         * extents are required.
+         * The size of the next increment of disk space to be allocated automatically when more extents are required.
          *
          * @param autoExtendNextSize the value to set
          * @return this builder
-         */
+         **/
         public Builder autoExtendNextSize(TablespaceStorageSize autoExtendNextSize) {
             this.autoExtendNextSize = autoExtendNextSize;
             this.__explicitlySet__.add("autoExtendNextSize");
@@ -179,7 +193,8 @@ public final class UpdateTablespaceDetails
         }
         /**
          * The maximum disk space allowed for automatic extension of the data files or temp files.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
         private TablespaceStorageSize autoExtendMaxSize;
 
@@ -188,13 +203,16 @@ public final class UpdateTablespaceDetails
          *
          * @param autoExtendMaxSize the value to set
          * @return this builder
-         */
+         **/
         public Builder autoExtendMaxSize(TablespaceStorageSize autoExtendMaxSize) {
             this.autoExtendMaxSize = autoExtendMaxSize;
             this.__explicitlySet__.add("autoExtendMaxSize");
             return this;
         }
-        /** Specifies whether the disk space of the data file or temp file can be limited. */
+        /**
+         * Specifies whether the disk space of the data file or temp file can be limited.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
         private Boolean isMaxSizeUnlimited;
 
@@ -203,13 +221,16 @@ public final class UpdateTablespaceDetails
          *
          * @param isMaxSizeUnlimited the value to set
          * @return this builder
-         */
+         **/
         public Builder isMaxSizeUnlimited(Boolean isMaxSizeUnlimited) {
             this.isMaxSizeUnlimited = isMaxSizeUnlimited;
             this.__explicitlySet__.add("isMaxSizeUnlimited");
             return this;
         }
-        /** Specifies whether the tablespace is the default tablespace. */
+        /**
+         * Specifies whether the tablespace is the default tablespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
@@ -218,7 +239,7 @@ public final class UpdateTablespaceDetails
          *
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -287,7 +308,9 @@ public final class UpdateTablespaceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -310,7 +333,10 @@ public final class UpdateTablespaceDetails
         return databaseCredential;
     }
 
-    /** The name of the tablespace. It must be unique within a database. */
+    /**
+     * The name of the tablespace. It must be unique within a database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -318,13 +344,16 @@ public final class UpdateTablespaceDetails
      * The name of the tablespace. It must be unique within a database.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The type of tablespace. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of tablespace.
+     *
+     **/
+    public enum Type {
         Permanent("PERMANENT"),
         Temporary("TEMPORARY"),
         ;
@@ -356,7 +385,10 @@ public final class UpdateTablespaceDetails
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /** The type of tablespace. */
+    /**
+     * The type of tablespace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -364,12 +396,15 @@ public final class UpdateTablespaceDetails
      * The type of tablespace.
      *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** The size of each data file or temp file. */
+    /**
+     * The size of each data file or temp file.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
     private final TablespaceStorageSize fileSize;
 
@@ -377,13 +412,16 @@ public final class UpdateTablespaceDetails
      * The size of each data file or temp file.
      *
      * @return the value
-     */
+     **/
     public TablespaceStorageSize getFileSize() {
         return fileSize;
     }
 
-    /** The status of the tablespace. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the tablespace.
+     *
+     **/
+    public enum Status {
         ReadOnly("READ_ONLY"),
         ReadWrite("READ_WRITE"),
         ;
@@ -415,7 +453,10 @@ public final class UpdateTablespaceDetails
             throw new IllegalArgumentException("Invalid Status: " + key);
         }
     };
-    /** The status of the tablespace. */
+    /**
+     * The status of the tablespace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
@@ -423,12 +464,15 @@ public final class UpdateTablespaceDetails
      * The status of the tablespace.
      *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** Specifies whether the data file or temp file can be extended automatically. */
+    /**
+     * Specifies whether the data file or temp file can be extended automatically.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
     private final Boolean isAutoExtensible;
 
@@ -436,29 +480,31 @@ public final class UpdateTablespaceDetails
      * Specifies whether the data file or temp file can be extended automatically.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoExtensible() {
         return isAutoExtensible;
     }
 
     /**
-     * The size of the next increment of disk space to be allocated automatically when more extents
-     * are required.
-     */
+     * The size of the next increment of disk space to be allocated automatically when more extents are required.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
     private final TablespaceStorageSize autoExtendNextSize;
 
     /**
-     * The size of the next increment of disk space to be allocated automatically when more extents
-     * are required.
+     * The size of the next increment of disk space to be allocated automatically when more extents are required.
      *
      * @return the value
-     */
+     **/
     public TablespaceStorageSize getAutoExtendNextSize() {
         return autoExtendNextSize;
     }
 
-    /** The maximum disk space allowed for automatic extension of the data files or temp files. */
+    /**
+     * The maximum disk space allowed for automatic extension of the data files or temp files.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
     private final TablespaceStorageSize autoExtendMaxSize;
 
@@ -466,12 +512,15 @@ public final class UpdateTablespaceDetails
      * The maximum disk space allowed for automatic extension of the data files or temp files.
      *
      * @return the value
-     */
+     **/
     public TablespaceStorageSize getAutoExtendMaxSize() {
         return autoExtendMaxSize;
     }
 
-    /** Specifies whether the disk space of the data file or temp file can be limited. */
+    /**
+     * Specifies whether the disk space of the data file or temp file can be limited.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
     private final Boolean isMaxSizeUnlimited;
 
@@ -479,12 +528,15 @@ public final class UpdateTablespaceDetails
      * Specifies whether the disk space of the data file or temp file can be limited.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsMaxSizeUnlimited() {
         return isMaxSizeUnlimited;
     }
 
-    /** Specifies whether the tablespace is the default tablespace. */
+    /**
+     * Specifies whether the tablespace is the default tablespace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
@@ -492,7 +544,7 @@ public final class UpdateTablespaceDetails
      * Specifies whether the tablespace is the default tablespace.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -504,7 +556,6 @@ public final class UpdateTablespaceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

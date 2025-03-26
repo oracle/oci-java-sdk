@@ -6,11 +6,12 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -25,16 +26,17 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -42,12 +44,13 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** A list of {@code com.oracle.bmc.identity.model.IdentityProviderGroupSummary} instances. */
+    /**
+     * A list of com.oracle.bmc.identity.model.IdentityProviderGroupSummary instances.
+     */
     private java.util.List<com.oracle.bmc.identity.model.IdentityProviderGroupSummary> items;
 
     /**
-     * A list of {@code com.oracle.bmc.identity.model.IdentityProviderGroupSummary} instances.
-     *
+     * A list of com.oracle.bmc.identity.model.IdentityProviderGroupSummary instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.identity.model.IdentityProviderGroupSummary> getItems() {
@@ -63,7 +66,7 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
     })
     private ListIdentityProviderGroupsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.identity.model.IdentityProviderGroupSummary> items) {
@@ -73,21 +76,17 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListIdentityProviderGroupsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -95,6 +94,7 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -111,16 +111,17 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -131,13 +132,12 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * A list of {@code com.oracle.bmc.identity.model.IdentityProviderGroupSummary} instances.
+         * A list of com.oracle.bmc.identity.model.IdentityProviderGroupSummary instances.
          */
         private java.util.List<com.oracle.bmc.identity.model.IdentityProviderGroupSummary> items;
 
         /**
-         * A list of {@code com.oracle.bmc.identity.model.IdentityProviderGroupSummary} instances.
-         *
+         * A list of com.oracle.bmc.identity.model.IdentityProviderGroupSummary instances.
          * @param items the value to set
          * @return this builder
          */
@@ -149,10 +149,8 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListIdentityProviderGroupsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -165,10 +163,8 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListIdentityProviderGroupsResponse build() {
             return new ListIdentityProviderGroupsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
@@ -177,7 +173,6 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

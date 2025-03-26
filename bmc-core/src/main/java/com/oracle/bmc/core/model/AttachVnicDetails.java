@@ -5,23 +5,21 @@
 package com.oracle.bmc.core.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AttachVnicDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AttachVnicDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AttachVnicDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AttachVnicDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "createVnicDetails",
@@ -53,59 +51,62 @@ public final class AttachVnicDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the instance. */
+        /**
+         * The OCID of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the instance.
-         *
          * @param instanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
         /**
-         * Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain
-         * bare metal instance shapes have two active physical NICs (0 and 1). If you add a
-         * secondary VNIC to one of these instances, you can specify which NIC the VNIC will use.
-         * For more information, see [Virtual Network Interface Cards
-         * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-         */
+         * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+         * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+         * you add a secondary VNIC to one of these instances, you can specify which NIC
+         * the VNIC will use. For more information, see
+         * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
         private Integer nicIndex;
 
         /**
-         * Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain
-         * bare metal instance shapes have two active physical NICs (0 and 1). If you add a
-         * secondary VNIC to one of these instances, you can specify which NIC the VNIC will use.
-         * For more information, see [Virtual Network Interface Cards
-         * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+         * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+         * you add a secondary VNIC to one of these instances, you can specify which NIC
+         * the VNIC will use. For more information, see
+         * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          *
          * @param nicIndex the value to set
          * @return this builder
-         */
+         **/
         public Builder nicIndex(Integer nicIndex) {
             this.nicIndex = nicIndex;
             this.__explicitlySet__.add("nicIndex");
@@ -146,7 +147,9 @@ public final class AttachVnicDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -163,54 +166,57 @@ public final class AttachVnicDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the instance. */
+    /**
+     * The OCID of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceId() {
         return instanceId;
     }
 
     /**
-     * Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare
-     * metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to
-     * one of these instances, you can specify which NIC the VNIC will use. For more information,
-     * see [Virtual Network Interface Cards
-     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-     */
+     * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+     * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+     * you add a secondary VNIC to one of these instances, you can specify which NIC
+     * the VNIC will use. For more information, see
+     * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
     private final Integer nicIndex;
 
     /**
-     * Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare
-     * metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to
-     * one of these instances, you can specify which NIC the VNIC will use. For more information,
-     * see [Virtual Network Interface Cards
-     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+     * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+     * you add a secondary VNIC to one of these instances, you can specify which NIC
+     * the VNIC will use. For more information, see
+     * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @return the value
-     */
+     **/
     public Integer getNicIndex() {
         return nicIndex;
     }
@@ -222,7 +228,6 @@ public final class AttachVnicDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

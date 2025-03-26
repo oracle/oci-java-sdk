@@ -6,17 +6,18 @@ package com.oracle.bmc.bds.responses;
 
 import com.oracle.bmc.bds.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
         return etag;
     }
 
-    /** The returned {@code NodeReplaceConfiguration} instance. */
+    /**
+     * The returned NodeReplaceConfiguration instance.
+     */
     private com.oracle.bmc.bds.model.NodeReplaceConfiguration nodeReplaceConfiguration;
 
     /**
-     * The returned {@code NodeReplaceConfiguration} instance.
-     *
+     * The returned NodeReplaceConfiguration instance.
      * @return the value
      */
     public com.oracle.bmc.bds.model.NodeReplaceConfiguration getNodeReplaceConfiguration() {
@@ -57,7 +62,7 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
     })
     private GetNodeReplaceConfigurationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.bds.model.NodeReplaceConfiguration nodeReplaceConfiguration) {
@@ -67,34 +72,31 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
         this.nodeReplaceConfiguration = nodeReplaceConfiguration;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetNodeReplaceConfigurationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -104,7 +106,10 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -118,12 +123,13 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code NodeReplaceConfiguration} instance. */
+        /**
+         * The returned NodeReplaceConfiguration instance.
+         */
         private com.oracle.bmc.bds.model.NodeReplaceConfiguration nodeReplaceConfiguration;
 
         /**
-         * The returned {@code NodeReplaceConfiguration} instance.
-         *
+         * The returned NodeReplaceConfiguration instance.
          * @param nodeReplaceConfiguration the value to set
          * @return this builder
          */
@@ -135,10 +141,8 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetNodeReplaceConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +155,8 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetNodeReplaceConfigurationResponse build() {
             return new GetNodeReplaceConfigurationResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, nodeReplaceConfiguration);
@@ -163,7 +165,6 @@ public class GetNodeReplaceConfigurationResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

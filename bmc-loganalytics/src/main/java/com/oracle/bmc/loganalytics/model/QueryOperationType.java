@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Asynchronous operation name for a work Request */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum QueryOperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Asynchronous operation name for a work Request
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum QueryOperationType {
     ExecuteQueryJob("EXECUTE_QUERY_JOB"),
     ExecutePurgeJob("EXECUTE_PURGE_JOB"),
 

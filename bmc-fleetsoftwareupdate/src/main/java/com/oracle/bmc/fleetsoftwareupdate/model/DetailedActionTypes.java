@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible Exadata Fleet Update Action types to report in a Exadata Fleet Update Cycle. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum DetailedActionTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Exadata Fleet Update Action types to report in a Exadata Fleet Update Cycle.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum DetailedActionTypes {
     Stage("STAGE"),
     PrecheckStage("PRECHECK_STAGE"),
     PrecheckApply("PRECHECK_APPLY"),

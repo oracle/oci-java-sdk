@@ -5,23 +5,23 @@
 package com.oracle.bmc.osubusage.model;
 
 /**
- * Subscribed Service Contract details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+ * Subscribed Service Contract details
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComputedUsageAggregatedSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComputedUsageAggregatedSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComputedUsageAggregatedSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "subscriptionId",
@@ -62,25 +62,27 @@ public final class ComputedUsageAggregatedSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM
-         */
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
          *
          * @param subscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-        /** Subscribed service line parent id */
+        /**
+         * Subscribed service line parent id
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
         private String parentSubscribedServiceId;
 
@@ -89,7 +91,7 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param parentSubscribedServiceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
             this.parentSubscribedServiceId = parentSubscribedServiceId;
             this.__explicitlySet__.add("parentSubscribedServiceId");
@@ -104,7 +106,10 @@ public final class ComputedUsageAggregatedSummary
             this.__explicitlySet__.add("parentProduct");
             return this;
         }
-        /** Subscribed services contract line start date, expressed in RFC 3339 timestamp format. */
+        /**
+         * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -113,13 +118,16 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Subscribed services contract line end date, expressed in RFC 3339 timestamp format. */
+        /**
+         * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
@@ -128,13 +136,16 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** Subscribed service asociated subscription plan number. */
+        /**
+         * Subscribed service asociated subscription plan number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
         private String planNumber;
 
@@ -143,13 +154,16 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param planNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder planNumber(String planNumber) {
             this.planNumber = planNumber;
             this.__explicitlySet__.add("planNumber");
             return this;
         }
-        /** Currency code */
+        /**
+         * Currency code
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
@@ -158,13 +172,16 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param currencyCode the value to set
          * @return this builder
-         */
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-        /** Inernal SPM Ratecard Id at line level */
+        /**
+         * Inernal SPM Ratecard Id at line level
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
         private String rateCardId;
 
@@ -173,13 +190,16 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param rateCardId the value to set
          * @return this builder
-         */
+         **/
         public Builder rateCardId(String rateCardId) {
             this.rateCardId = rateCardId;
             this.__explicitlySet__.add("rateCardId");
             return this;
         }
-        /** Subscribed services pricing model */
+        /**
+         * Subscribed services pricing model
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
         private PricingModel pricingModel;
 
@@ -188,13 +208,16 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param pricingModel the value to set
          * @return this builder
-         */
+         **/
         public Builder pricingModel(PricingModel pricingModel) {
             this.pricingModel = pricingModel;
             this.__explicitlySet__.add("pricingModel");
             return this;
         }
-        /** Aggregation of computed usages for the subscribed service. */
+        /**
+         * Aggregation of computed usages for the subscribed service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedComputedUsages")
         private java.util.List<ComputedUsageAggregation> aggregatedComputedUsages;
 
@@ -203,7 +226,7 @@ public final class ComputedUsageAggregatedSummary
          *
          * @param aggregatedComputedUsages the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregatedComputedUsages(
                 java.util.List<ComputedUsageAggregation> aggregatedComputedUsages) {
             this.aggregatedComputedUsages = aggregatedComputedUsages;
@@ -269,7 +292,9 @@ public final class ComputedUsageAggregatedSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -279,23 +304,25 @@ public final class ComputedUsageAggregatedSummary
     }
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM
-     */
+     * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM
+     * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
      *
      * @return the value
-     */
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
 
-    /** Subscribed service line parent id */
+    /**
+     * Subscribed service line parent id
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
     private final String parentSubscribedServiceId;
 
@@ -303,7 +330,7 @@ public final class ComputedUsageAggregatedSummary
      * Subscribed service line parent id
      *
      * @return the value
-     */
+     **/
     public String getParentSubscribedServiceId() {
         return parentSubscribedServiceId;
     }
@@ -315,7 +342,10 @@ public final class ComputedUsageAggregatedSummary
         return parentProduct;
     }
 
-    /** Subscribed services contract line start date, expressed in RFC 3339 timestamp format. */
+    /**
+     * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
@@ -323,12 +353,15 @@ public final class ComputedUsageAggregatedSummary
      * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** Subscribed services contract line end date, expressed in RFC 3339 timestamp format. */
+    /**
+     * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
@@ -336,12 +369,15 @@ public final class ComputedUsageAggregatedSummary
      * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** Subscribed service asociated subscription plan number. */
+    /**
+     * Subscribed service asociated subscription plan number.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
     private final String planNumber;
 
@@ -349,12 +385,15 @@ public final class ComputedUsageAggregatedSummary
      * Subscribed service asociated subscription plan number.
      *
      * @return the value
-     */
+     **/
     public String getPlanNumber() {
         return planNumber;
     }
 
-    /** Currency code */
+    /**
+     * Currency code
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
@@ -362,12 +401,15 @@ public final class ComputedUsageAggregatedSummary
      * Currency code
      *
      * @return the value
-     */
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
 
-    /** Inernal SPM Ratecard Id at line level */
+    /**
+     * Inernal SPM Ratecard Id at line level
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
     private final String rateCardId;
 
@@ -375,13 +417,16 @@ public final class ComputedUsageAggregatedSummary
      * Inernal SPM Ratecard Id at line level
      *
      * @return the value
-     */
+     **/
     public String getRateCardId() {
         return rateCardId;
     }
 
-    /** Subscribed services pricing model */
-    public enum PricingModel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Subscribed services pricing model
+     *
+     **/
+    public enum PricingModel {
         PayAsYouGo("PAY_AS_YOU_GO"),
         Monthly("MONTHLY"),
         Annual("ANNUAL"),
@@ -389,8 +434,8 @@ public final class ComputedUsageAggregatedSummary
         FundedAllocation("FUNDED_ALLOCATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -429,7 +474,10 @@ public final class ComputedUsageAggregatedSummary
             return UnknownEnumValue;
         }
     };
-    /** Subscribed services pricing model */
+    /**
+     * Subscribed services pricing model
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
     private final PricingModel pricingModel;
 
@@ -437,12 +485,15 @@ public final class ComputedUsageAggregatedSummary
      * Subscribed services pricing model
      *
      * @return the value
-     */
+     **/
     public PricingModel getPricingModel() {
         return pricingModel;
     }
 
-    /** Aggregation of computed usages for the subscribed service. */
+    /**
+     * Aggregation of computed usages for the subscribed service.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedComputedUsages")
     private final java.util.List<ComputedUsageAggregation> aggregatedComputedUsages;
 
@@ -450,7 +501,7 @@ public final class ComputedUsageAggregatedSummary
      * Aggregation of computed usages for the subscribed service.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ComputedUsageAggregation> getAggregatedComputedUsages() {
         return aggregatedComputedUsages;
     }
@@ -462,7 +513,6 @@ public final class ComputedUsageAggregatedSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

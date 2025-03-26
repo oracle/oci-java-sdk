@@ -5,26 +5,27 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Information required to execute query on data objects. Query is given in standard SQL syntax
- * providing flexibility to form complex queries such as queries with joins and nested queries. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Information required to execute query on data objects. Query is given in standard SQL syntax providing flexibility
+ * to form complex queries such as queries with joins and nested queries.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataObjectStandardQuery.Builder.class)
+    builder = DataObjectStandardQuery.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "queryType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "queryType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataObjectStandardQuery extends DataObjectQuery {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -46,29 +47,28 @@ public final class DataObjectStandardQuery extends DataObjectQuery {
             return this;
         }
         /**
-         * SQL query statement with standard Oracle supported SQL syntax. - When Warehouse (e.g: Awr
-         * hub) data objects are queried, use the actual names of underlying data objects (e.g:
-         * tables, views) in the query. The same query that works through JDBC connection with the
-         * OperationsInsightsWarehouseUsers credentials will work here and vice-versa. SCHEMA.VIEW
-         * syntax can also be used here. - When OPSI data objects are queried, use name of the
-         * respective OPSI data object, just like how views are used in a query. Identifier of the
-         * OPSI data object cannot be used in the query.
-         */
+         * SQL query statement with standard Oracle supported SQL syntax.
+         * - When Warehouse (e.g: Awr hub) data objects are queried, use the actual names of underlying data objects (e.g: tables, views) in the query.
+         * The same query that works through JDBC connection with the OperationsInsightsWarehouseUsers credentials will work here and vice-versa.
+         * SCHEMA.VIEW syntax can also be used here.
+         * - When OPSI data objects are queried, use name of the respective OPSI data object, just like how views are used in a query.
+         * Identifier of the OPSI data object cannot be used in the query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statement")
         private String statement;
 
         /**
-         * SQL query statement with standard Oracle supported SQL syntax. - When Warehouse (e.g: Awr
-         * hub) data objects are queried, use the actual names of underlying data objects (e.g:
-         * tables, views) in the query. The same query that works through JDBC connection with the
-         * OperationsInsightsWarehouseUsers credentials will work here and vice-versa. SCHEMA.VIEW
-         * syntax can also be used here. - When OPSI data objects are queried, use name of the
-         * respective OPSI data object, just like how views are used in a query. Identifier of the
-         * OPSI data object cannot be used in the query.
+         * SQL query statement with standard Oracle supported SQL syntax.
+         * - When Warehouse (e.g: Awr hub) data objects are queried, use the actual names of underlying data objects (e.g: tables, views) in the query.
+         * The same query that works through JDBC connection with the OperationsInsightsWarehouseUsers credentials will work here and vice-versa.
+         * SCHEMA.VIEW syntax can also be used here.
+         * - When OPSI data objects are queried, use name of the respective OPSI data object, just like how views are used in a query.
+         * Identifier of the OPSI data object cannot be used in the query.
          *
          * @param statement the value to set
          * @return this builder
-         */
+         **/
         public Builder statement(String statement) {
             this.statement = statement;
             this.__explicitlySet__.add("statement");
@@ -118,7 +118,9 @@ public final class DataObjectStandardQuery extends DataObjectQuery {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,28 +141,27 @@ public final class DataObjectStandardQuery extends DataObjectQuery {
     }
 
     /**
-     * SQL query statement with standard Oracle supported SQL syntax. - When Warehouse (e.g: Awr
-     * hub) data objects are queried, use the actual names of underlying data objects (e.g: tables,
-     * views) in the query. The same query that works through JDBC connection with the
-     * OperationsInsightsWarehouseUsers credentials will work here and vice-versa. SCHEMA.VIEW
-     * syntax can also be used here. - When OPSI data objects are queried, use name of the
-     * respective OPSI data object, just like how views are used in a query. Identifier of the OPSI
-     * data object cannot be used in the query.
-     */
+     * SQL query statement with standard Oracle supported SQL syntax.
+     * - When Warehouse (e.g: Awr hub) data objects are queried, use the actual names of underlying data objects (e.g: tables, views) in the query.
+     * The same query that works through JDBC connection with the OperationsInsightsWarehouseUsers credentials will work here and vice-versa.
+     * SCHEMA.VIEW syntax can also be used here.
+     * - When OPSI data objects are queried, use name of the respective OPSI data object, just like how views are used in a query.
+     * Identifier of the OPSI data object cannot be used in the query.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statement")
     private final String statement;
 
     /**
-     * SQL query statement with standard Oracle supported SQL syntax. - When Warehouse (e.g: Awr
-     * hub) data objects are queried, use the actual names of underlying data objects (e.g: tables,
-     * views) in the query. The same query that works through JDBC connection with the
-     * OperationsInsightsWarehouseUsers credentials will work here and vice-versa. SCHEMA.VIEW
-     * syntax can also be used here. - When OPSI data objects are queried, use name of the
-     * respective OPSI data object, just like how views are used in a query. Identifier of the OPSI
-     * data object cannot be used in the query.
+     * SQL query statement with standard Oracle supported SQL syntax.
+     * - When Warehouse (e.g: Awr hub) data objects are queried, use the actual names of underlying data objects (e.g: tables, views) in the query.
+     * The same query that works through JDBC connection with the OperationsInsightsWarehouseUsers credentials will work here and vice-versa.
+     * SCHEMA.VIEW syntax can also be used here.
+     * - When OPSI data objects are queried, use name of the respective OPSI data object, just like how views are used in a query.
+     * Identifier of the OPSI data object cannot be used in the query.
      *
      * @return the value
-     */
+     **/
     public String getStatement() {
         return statement;
     }
@@ -179,7 +180,6 @@ public final class DataObjectStandardQuery extends DataObjectQuery {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,52 +6,64 @@ package com.oracle.bmc.managementagent.requests;
 
 import com.oracle.bmc.managementagent.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListDataSourcesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDataSourcesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListDataSourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDataSourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Management Agent identifier */
+    /**
+     * Unique Management Agent identifier
+     */
     private String managementAgentId;
 
-    /** Unique Management Agent identifier */
+    /**
+     * Unique Management Agent identifier
+     */
     public String getManagementAgentId() {
         return managementAgentId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -84,21 +96,23 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. If no value is specified
-     * dataSourceName is default.
+     * The field to sort by. Only one sort order may be provided. If no value is specified dataSourceName is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. If no value is specified
-     * dataSourceName is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. If no value is specified dataSourceName is default.
+     *
+     **/
+    public enum SortBy {
         DataSourceName("dataSourceName"),
         DataSourceType("dataSourceType"),
         ;
@@ -132,16 +146,20 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. If no value is specified
-     * dataSourceName is default.
+     * The field to sort by. Only one sort order may be provided. If no value is specified dataSourceName is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Unique name of the dataSource. */
+    /**
+     * Unique name of the dataSource.
+     */
     private java.util.List<String> name;
 
-    /** Unique name of the dataSource. */
+    /**
+     * Unique name of the dataSource.
+     */
     public java.util.List<String> getName() {
         return name;
     }
@@ -149,15 +167,17 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDataSourcesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Management Agent identifier */
+        /**
+         * Unique Management Agent identifier
+         */
         private String managementAgentId = null;
 
         /**
          * Unique Management Agent identifier
-         *
          * @param managementAgentId the value to set
          * @return this builder instance
          */
@@ -166,12 +186,13 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -181,15 +202,12 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -198,12 +216,13 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -212,12 +231,13 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -227,14 +247,13 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. If no value is specified
-         * dataSourceName is default.
+         * The field to sort by. Only one sort order may be provided. If no value is specified dataSourceName is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. If no value is specified
-         * dataSourceName is default.
+         * The field to sort by. Only one sort order may be provided. If no value is specified dataSourceName is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -244,12 +263,13 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Unique name of the dataSource. */
+        /**
+         * Unique name of the dataSource.
+         */
         private java.util.List<String> name = null;
 
         /**
          * Unique name of the dataSource.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -260,7 +280,6 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Singular setter. Unique name of the dataSource.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -270,19 +289,18 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -294,7 +312,6 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDataSourcesRequest o) {
@@ -313,11 +330,10 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListDataSourcesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDataSourcesRequest
          */
@@ -331,8 +347,7 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListDataSourcesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDataSourcesRequest
@@ -347,14 +362,12 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortBy = sortBy;
             request.name = name;
             return request;
-            // new ListDataSourcesRequest(managementAgentId, opcRequestId, page, limit, sortOrder,
-            // sortBy, name);
+            // new ListDataSourcesRequest(managementAgentId, opcRequestId, page, limit, sortOrder, sortBy, name);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -370,7 +383,6 @@ public class ListDataSourcesRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

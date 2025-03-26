@@ -5,15 +5,19 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The lifecycle state of the target database. - CREATING - Represents that the target database is
- * creating. - UPDATING - Represents that the target database is updating. - ACTIVE - Represents
- * that the target database is active. - INACTIVE - Represents that the target database is inactive.
- * - DELETING - Represents that the target database is deleting. - DELETED - Represents that the
- * target database is deleted. - NEEDS_ATTENTION - Represents that the target database needs user
- * attention. - FAILED - Represents that the target database is failed.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum TargetDatabaseLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+ * The lifecycle state of the target database.
+ * - CREATING - Represents that the target database is creating.
+ * - UPDATING - Represents that the target database is updating.
+ * - ACTIVE - Represents that the target database is active.
+ * - INACTIVE - Represents that the target database is inactive.
+ * - DELETING - Represents that the target database is deleting.
+ * - DELETED - Represents that the target database is deleted.
+ * - NEEDS_ATTENTION - Represents that the target database needs user attention.
+ * - FAILED - Represents that the target database is failed.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum TargetDatabaseLifecycleState {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

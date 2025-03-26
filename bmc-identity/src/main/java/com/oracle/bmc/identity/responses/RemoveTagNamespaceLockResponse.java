@@ -6,30 +6,41 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** */
+    /**
+     *
+     */
     private String etag;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code TagNamespace} instance. */
+    /**
+     * The returned TagNamespace instance.
+     */
     private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
     /**
-     * The returned {@code TagNamespace} instance.
-     *
+     * The returned TagNamespace instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.TagNamespace getTagNamespace() {
@@ -45,7 +56,7 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
     })
     private RemoveTagNamespaceLockResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.TagNamespace tagNamespace) {
@@ -55,29 +66,28 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
         this.tagNamespace = tagNamespace;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    RemoveTagNamespaceLockResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -86,10 +96,13 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String etag;
 
         /**
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -98,12 +111,13 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code TagNamespace} instance. */
+        /**
+         * The returned TagNamespace instance.
+         */
         private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
         /**
-         * The returned {@code TagNamespace} instance.
-         *
+         * The returned TagNamespace instance.
          * @param tagNamespace the value to set
          * @return this builder
          */
@@ -114,10 +128,8 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RemoveTagNamespaceLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -130,10 +142,8 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RemoveTagNamespaceLockResponse build() {
             return new RemoveTagNamespaceLockResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, tagNamespace);
@@ -142,7 +152,6 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

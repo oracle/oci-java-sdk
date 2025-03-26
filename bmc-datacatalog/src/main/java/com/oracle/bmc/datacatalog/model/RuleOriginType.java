@@ -5,12 +5,14 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Origin type for the given rule. SOURCE - Represents rule is harvested and is as defined in source
- * system. USER - Represents user defined rules at data catalog system. PROFILING - Represents rules
- * which are inferred via profiling.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum RuleOriginType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Origin type for the given rule.
+ * SOURCE - Represents rule is harvested and is as defined in source system.
+ * USER - Represents user defined rules at data catalog system.
+ * PROFILING - Represents rules which are inferred via profiling.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum RuleOriginType {
     Source("SOURCE"),
     User("USER"),
     Profiling("PROFILING"),

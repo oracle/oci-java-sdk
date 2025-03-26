@@ -8,81 +8,77 @@ import com.oracle.bmc.autoscaling.requests.*;
 import com.oracle.bmc.autoscaling.responses.*;
 
 /**
- * APIs for dynamically scaling Compute resources to meet application requirements. For more
- * information about autoscaling, see
- * [Autoscaling](https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
- * For information about the Compute service, see [Overview of the Compute
- * Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+ * APIs for dynamically scaling Compute resources to meet application requirements. For more information about
+ * autoscaling, see [Autoscaling](https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm). For information about the
+ * Compute service, see [Overview of the Compute Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
  *
- * <p>*Note:** Autoscaling is not available in US Government Cloud tenancies. For more information,
- * see [Oracle Cloud Infrastructure US Government
- * Cloud](https://docs.oracle.com/iaas/Content/General/Concepts/govoverview.htm).
+ **Note:** Autoscaling is not available in US Government Cloud tenancies. For more information, see
+ * [Oracle Cloud Infrastructure US Government Cloud](https://docs.oracle.com/iaas/Content/General/Concepts/govoverview.htm).
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public interface AutoScalingAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves an autoscaling configuration into a different compartment within the same tenancy. For
-     * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves an autoscaling configuration into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * When you move an autoscaling configuration to a different compartment, associated resources such as instance
+     * pools are not moved.
      *
-     * <p>When you move an autoscaling configuration to a different compartment, associated
-     * resources such as instance pools are not moved.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAutoScalingConfigurationCompartmentResponse>
             changeAutoScalingConfigurationCompartment(
@@ -97,10 +93,10 @@ public interface AutoScalingAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAutoScalingConfigurationResponse>
             createAutoScalingConfiguration(
@@ -112,22 +108,22 @@ public interface AutoScalingAsync extends AutoCloseable {
 
     /**
      * Creates an autoscaling policy for the specified autoscaling configuration.
+     * <p>
+     * You can create the following types of autoscaling policies:
+     * <p>
+     * - **Schedule-based:** Autoscaling events take place at the specific times that you schedule.
+     * - **Threshold-based:** An autoscaling action is triggered when a performance metric meets or exceeds a threshold.
+     * <p>
+     * An autoscaling configuration can either have multiple schedule-based autoscaling policies, or one
+     * threshold-based autoscaling policy.
      *
-     * <p>You can create the following types of autoscaling policies:
-     *
-     * <p>- **Schedule-based:** Autoscaling events take place at the specific times that you
-     * schedule. - **Threshold-based:** An autoscaling action is triggered when a performance metric
-     * meets or exceeds a threshold.
-     *
-     * <p>An autoscaling configuration can either have multiple schedule-based autoscaling policies,
-     * or one threshold-based autoscaling policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAutoScalingPolicyResponse> createAutoScalingPolicy(
             CreateAutoScalingPolicyRequest request,
@@ -140,10 +136,10 @@ public interface AutoScalingAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAutoScalingConfigurationResponse>
             deleteAutoScalingConfiguration(
@@ -158,10 +154,10 @@ public interface AutoScalingAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAutoScalingPolicyResponse> deleteAutoScalingPolicy(
             DeleteAutoScalingPolicyRequest request,
@@ -174,10 +170,10 @@ public interface AutoScalingAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAutoScalingConfigurationResponse> getAutoScalingConfiguration(
             GetAutoScalingConfigurationRequest request,
@@ -186,15 +182,14 @@ public interface AutoScalingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified autoscaling policy in the specified autoscaling
-     * configuration.
+     * Gets information about the specified autoscaling policy in the specified autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAutoScalingPolicyResponse> getAutoScalingPolicy(
             GetAutoScalingPolicyRequest request,
@@ -205,12 +200,13 @@ public interface AutoScalingAsync extends AutoCloseable {
     /**
      * Lists autoscaling configurations in the specifed compartment.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAutoScalingConfigurationsResponse>
             listAutoScalingConfigurations(
@@ -223,12 +219,13 @@ public interface AutoScalingAsync extends AutoCloseable {
     /**
      * Lists the autoscaling policies in the specified autoscaling configuration.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAutoScalingPoliciesResponse> listAutoScalingPolicies(
             ListAutoScalingPoliciesRequest request,
@@ -237,15 +234,16 @@ public interface AutoScalingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates certain fields on the specified autoscaling configuration, such as the name, the
-     * cooldown period, and whether the autoscaling configuration is enabled.
+     * Updates certain fields on the specified autoscaling configuration, such as the name, the cooldown period,
+     * and whether the autoscaling configuration is enabled.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutoScalingConfigurationResponse>
             updateAutoScalingConfiguration(
@@ -260,10 +258,10 @@ public interface AutoScalingAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAutoScalingPolicyResponse> updateAutoScalingPolicy(
             UpdateAutoScalingPolicyRequest request,

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The name of the privilege granted to user. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum PrivilegeName implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The name of the privilege granted to user.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum PrivilegeName {
     Select("SELECT"),
     Update("UPDATE"),
     Insert("INSERT"),

@@ -5,21 +5,19 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * Description of Attachment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Description of Attachment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Attachment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Attachment extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Attachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -62,155 +60,165 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID of the seller's tenancy (root compartment). */
+        /**
+         * OCID of the seller's tenancy (root compartment).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sellerCompartmentId")
         private String sellerCompartmentId;
 
         /**
          * OCID of the seller's tenancy (root compartment).
-         *
          * @param sellerCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder sellerCompartmentId(String sellerCompartmentId) {
             this.sellerCompartmentId = sellerCompartmentId;
             this.__explicitlySet__.add("sellerCompartmentId");
             return this;
         }
-        /** Unique identifier of the associated offer that is immutable on creation */
+        /**
+         * Unique identifier of the associated offer that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offerId")
         private String offerId;
 
         /**
          * Unique identifier of the associated offer that is immutable on creation
-         *
          * @param offerId the value to set
          * @return this builder
-         */
+         **/
         public Builder offerId(String offerId) {
             this.offerId = offerId;
             this.__explicitlySet__.add("offerId");
             return this;
         }
-        /** OCID of the buyer's tenancy (root compartment). */
+        /**
+         * OCID of the buyer's tenancy (root compartment).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buyerCompartmentId")
         private String buyerCompartmentId;
 
         /**
          * OCID of the buyer's tenancy (root compartment).
-         *
          * @param buyerCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder buyerCompartmentId(String buyerCompartmentId) {
             this.buyerCompartmentId = buyerCompartmentId;
             this.__explicitlySet__.add("buyerCompartmentId");
             return this;
         }
-        /** The MIME type of the uploaded data. */
+        /**
+         * The MIME type of the uploaded data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private String mimeType;
 
         /**
          * The MIME type of the uploaded data.
-         *
          * @param mimeType the value to set
          * @return this builder
-         */
+         **/
         public Builder mimeType(String mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
             return this;
         }
-        /** The name used to refer to the uploaded data. */
+        /**
+         * The name used to refer to the uploaded data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name used to refer to the uploaded data.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The type of offer attachment. */
+        /**
+         * The type of offer attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of offer attachment.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The time the the Offer was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the the Offer was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the Offer was created. An RFC3339 formatted datetime string
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current state of the Offer. */
+        /**
+         * The current state of the Offer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Offer.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -219,7 +227,8 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -229,7 +238,7 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -299,7 +308,9 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -308,86 +319,94 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * Unique identifier that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OCID of the seller's tenancy (root compartment). */
+    /**
+     * OCID of the seller's tenancy (root compartment).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sellerCompartmentId")
     private final String sellerCompartmentId;
 
     /**
      * OCID of the seller's tenancy (root compartment).
-     *
      * @return the value
-     */
+     **/
     public String getSellerCompartmentId() {
         return sellerCompartmentId;
     }
 
-    /** Unique identifier of the associated offer that is immutable on creation */
+    /**
+     * Unique identifier of the associated offer that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offerId")
     private final String offerId;
 
     /**
      * Unique identifier of the associated offer that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getOfferId() {
         return offerId;
     }
 
-    /** OCID of the buyer's tenancy (root compartment). */
+    /**
+     * OCID of the buyer's tenancy (root compartment).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("buyerCompartmentId")
     private final String buyerCompartmentId;
 
     /**
      * OCID of the buyer's tenancy (root compartment).
-     *
      * @return the value
-     */
+     **/
     public String getBuyerCompartmentId() {
         return buyerCompartmentId;
     }
 
-    /** The MIME type of the uploaded data. */
+    /**
+     * The MIME type of the uploaded data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final String mimeType;
 
     /**
      * The MIME type of the uploaded data.
-     *
      * @return the value
-     */
+     **/
     public String getMimeType() {
         return mimeType;
     }
 
-    /** The name used to refer to the uploaded data. */
+    /**
+     * The name used to refer to the uploaded data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name used to refer to the uploaded data.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The type of offer attachment. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of offer attachment.
+     **/
+    public enum Type {
         ContractTAndC("CONTRACT_T_AND_C"),
         Quote("QUOTE"),
         Eula("EULA"),
@@ -395,8 +414,8 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         Misc("MISC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -433,34 +452,38 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /** The type of offer attachment. */
+    /**
+     * The type of offer attachment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of offer attachment.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** The time the the Offer was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the the Offer was created. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the Offer was created. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The current state of the Offer. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Offer.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -469,8 +492,8 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -509,49 +532,52 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Offer. */
+    /**
+     * The current state of the Offer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Offer.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -563,7 +589,6 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

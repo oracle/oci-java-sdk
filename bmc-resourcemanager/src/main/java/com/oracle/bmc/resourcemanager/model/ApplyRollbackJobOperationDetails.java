@@ -5,28 +5,27 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Job details that are specific to an apply rollback job. For more information about apply rollback
- * jobs, see [Creating an Apply Rollback
- * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-apply-rollback.htm).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Job details that are specific to an apply rollback job. For more information about apply rollback jobs, see
+ * [Creating an Apply Rollback Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-apply-rollback.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApplyRollbackJobOperationDetails.Builder.class)
+    builder = ApplyRollbackJobOperationDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "operation")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "operation"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApplyRollbackJobOperationDetails extends JobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -40,19 +39,20 @@ public final class ApplyRollbackJobOperationDetails extends JobOperationDetails 
             return this;
         }
         /**
-         * Specifies the source of the execution plan for rollback to apply. Use {@code
-         * AUTO_APPROVED} to run the job without an execution plan for rollback.
-         */
+         * Specifies the source of the execution plan for rollback to apply.
+         * Use {@code AUTO_APPROVED} to run the job without an execution plan for rollback.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanRollbackStrategy")
         private ExecutionPlanRollbackStrategy executionPlanRollbackStrategy;
 
         /**
-         * Specifies the source of the execution plan for rollback to apply. Use {@code
-         * AUTO_APPROVED} to run the job without an execution plan for rollback.
+         * Specifies the source of the execution plan for rollback to apply.
+         * Use {@code AUTO_APPROVED} to run the job without an execution plan for rollback.
          *
          * @param executionPlanRollbackStrategy the value to set
          * @return this builder
-         */
+         **/
         public Builder executionPlanRollbackStrategy(
                 ExecutionPlanRollbackStrategy executionPlanRollbackStrategy) {
             this.executionPlanRollbackStrategy = executionPlanRollbackStrategy;
@@ -60,42 +60,36 @@ public final class ApplyRollbackJobOperationDetails extends JobOperationDetails 
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the
-         * {@code executionPlanRollbackStrategy}.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code executionPlanRollbackStrategy}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanRollbackJobId")
         private String executionPlanRollbackJobId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the
-         * {@code executionPlanRollbackStrategy}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code executionPlanRollbackStrategy}.
          *
          * @param executionPlanRollbackJobId the value to set
          * @return this builder
-         */
+         **/
         public Builder executionPlanRollbackJobId(String executionPlanRollbackJobId) {
             this.executionPlanRollbackJobId = executionPlanRollbackJobId;
             this.__explicitlySet__.add("executionPlanRollbackJobId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
-         * executionPlanRollbackStrategy}.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code executionPlanRollbackStrategy}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetRollbackJobId")
         private String targetRollbackJobId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
-         * executionPlanRollbackStrategy}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code executionPlanRollbackStrategy}.
          *
          * @param targetRollbackJobId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetRollbackJobId(String targetRollbackJobId) {
             this.targetRollbackJobId = targetRollbackJobId;
             this.__explicitlySet__.add("targetRollbackJobId");
@@ -136,7 +130,9 @@ public final class ApplyRollbackJobOperationDetails extends JobOperationDetails 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -166,17 +162,18 @@ public final class ApplyRollbackJobOperationDetails extends JobOperationDetails 
     }
 
     /**
-     * Specifies the source of the execution plan for rollback to apply. Use {@code AUTO_APPROVED}
-     * to run the job without an execution plan for rollback.
-     */
-    public enum ExecutionPlanRollbackStrategy implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the source of the execution plan for rollback to apply.
+     * Use {@code AUTO_APPROVED} to run the job without an execution plan for rollback.
+     *
+     **/
+    public enum ExecutionPlanRollbackStrategy {
         FromPlanRollbackJobId("FROM_PLAN_ROLLBACK_JOB_ID"),
         FromLatestPlanRollbackJobId("FROM_LATEST_PLAN_ROLLBACK_JOB_ID"),
         AutoApproved("AUTO_APPROVED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -216,56 +213,51 @@ public final class ApplyRollbackJobOperationDetails extends JobOperationDetails 
         }
     };
     /**
-     * Specifies the source of the execution plan for rollback to apply. Use {@code AUTO_APPROVED}
-     * to run the job without an execution plan for rollback.
-     */
+     * Specifies the source of the execution plan for rollback to apply.
+     * Use {@code AUTO_APPROVED} to run the job without an execution plan for rollback.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanRollbackStrategy")
     private final ExecutionPlanRollbackStrategy executionPlanRollbackStrategy;
 
     /**
-     * Specifies the source of the execution plan for rollback to apply. Use {@code AUTO_APPROVED}
-     * to run the job without an execution plan for rollback.
+     * Specifies the source of the execution plan for rollback to apply.
+     * Use {@code AUTO_APPROVED} to run the job without an execution plan for rollback.
      *
      * @return the value
-     */
+     **/
     public ExecutionPlanRollbackStrategy getExecutionPlanRollbackStrategy() {
         return executionPlanRollbackStrategy;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
-     * rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code
-     * executionPlanRollbackStrategy}.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code executionPlanRollbackStrategy}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanRollbackJobId")
     private final String executionPlanRollbackJobId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
-     * rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code
-     * executionPlanRollbackStrategy}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code executionPlanRollbackStrategy}.
      *
      * @return the value
-     */
+     **/
     public String getExecutionPlanRollbackJobId() {
         return executionPlanRollbackJobId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
-     * executionPlanRollbackStrategy}.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code executionPlanRollbackStrategy}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetRollbackJobId")
     private final String targetRollbackJobId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
-     * executionPlanRollbackStrategy}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code executionPlanRollbackStrategy}.
      *
      * @return the value
-     */
+     **/
     public String getTargetRollbackJobId() {
         return targetRollbackJobId;
     }
@@ -277,7 +269,6 @@ public final class ApplyRollbackJobOperationDetails extends JobOperationDetails 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

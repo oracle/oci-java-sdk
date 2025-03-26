@@ -5,23 +5,22 @@
 package com.oracle.bmc.streaming.model;
 
 /**
- * Object that represents a message to emit to a stream. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+ * Object that represents a message to emit to a stream.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PutMessagesDetailsEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PutMessagesDetailsEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PutMessagesDetailsEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "value"})
     public PutMessagesDetailsEntry(byte[] key, byte[] value) {
@@ -33,34 +32,34 @@ public final class PutMessagesDetailsEntry
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with
-         * the same key are stored in the same partition.
-         */
+         * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the same key are stored in the same partition.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private byte[] key;
 
         /**
-         * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with
-         * the same key are stored in the same partition.
+         * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the same key are stored in the same partition.
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(byte[] key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The message, expressed as a byte array up to 1 MiB in size. */
+        /**
+         * The message, expressed as a byte array up to 1 MiB in size.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private byte[] value;
 
         /**
          * The message, expressed as a byte array up to 1 MiB in size.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(byte[] value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -90,7 +89,9 @@ public final class PutMessagesDetailsEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,31 +101,31 @@ public final class PutMessagesDetailsEntry
     }
 
     /**
-     * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the
-     * same key are stored in the same partition.
-     */
+     * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the same key are stored in the same partition.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final byte[] key;
 
     /**
-     * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the
-     * same key are stored in the same partition.
+     * The key of the message, expressed as a byte array up to 256 bytes in size. Messages with the same key are stored in the same partition.
      *
      * @return the value
-     */
+     **/
     public byte[] getKey() {
         return key;
     }
 
-    /** The message, expressed as a byte array up to 1 MiB in size. */
+    /**
+     * The message, expressed as a byte array up to 1 MiB in size.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final byte[] value;
 
     /**
      * The message, expressed as a byte array up to 1 MiB in size.
-     *
      * @return the value
-     */
+     **/
     public byte[] getValue() {
         return value;
     }
@@ -136,7 +137,6 @@ public final class PutMessagesDetailsEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,12 +5,14 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Status of a recommendation. - ACCEPTED : The recommendation was approved by the user. - REJECTED
- * : The recommendation was declined by the user. - INFERRED : The recommendation was proposed by
- * the system.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum RecommendationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+ * Status of a recommendation.
+ * - ACCEPTED : The recommendation was approved by the user.
+ * - REJECTED : The recommendation was declined by the user.
+ * - INFERRED : The recommendation was proposed by the system.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum RecommendationStatus {
     Accepted("ACCEPTED"),
     Rejected("REJECTED"),
     Inferred("INFERRED"),

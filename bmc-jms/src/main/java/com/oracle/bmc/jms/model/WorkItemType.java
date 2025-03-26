@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Possible work item types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum WorkItemType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible work item types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum WorkItemType {
     Lcm("LCM"),
     JfrCapture("JFR_CAPTURE"),
     JfrUpload("JFR_UPLOAD"),

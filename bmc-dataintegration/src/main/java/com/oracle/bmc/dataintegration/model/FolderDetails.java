@@ -5,22 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The details including name, description for the folder, which is a container of other folders,
- * tasks and dataflows. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The details including name, description for the folder, which is a container of other folders, tasks and dataflows.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FolderDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class FolderDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class FolderDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -63,135 +60,129 @@ public final class FolderDetails extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Generated key that can be used in API calls to identify folder. */
+        /**
+         * Generated key that can be used in API calls to identify folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Generated key that can be used in API calls to identify folder.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The type of the object. */
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The type of the object.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** The model version of an object. */
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A user defined description for the folder. */
+        /**
+         * A user defined description for the folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A user defined description for the folder.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The category name. */
+        /**
+         * The category name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
         private String categoryName;
 
         /**
          * The category name.
-         *
          * @param categoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder categoryName(String categoryName) {
             this.categoryName = categoryName;
             this.__explicitlySet__.add("categoryName");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         */
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         *
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
@@ -206,16 +197,17 @@ public final class FolderDetails extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-        /** The version of the object that is used to track changes in the object instance. */
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
-         *
          * @param objectVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
@@ -293,7 +285,9 @@ public final class FolderDetails extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,118 +296,114 @@ public final class FolderDetails extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Generated key that can be used in API calls to identify folder. */
+    /**
+     * Generated key that can be used in API calls to identify folder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Generated key that can be used in API calls to identify folder.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The type of the object. */
+    /**
+     * The type of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The type of the object.
-     *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** A user defined description for the folder. */
+    /**
+     * A user defined description for the folder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user defined description for the folder.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The category name. */
+    /**
+     * The category name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
     private final String categoryName;
 
     /**
      * The category name.
-     *
      * @return the value
-     */
+     **/
     public String getCategoryName() {
         return categoryName;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -425,15 +415,16 @@ public final class FolderDetails extends com.oracle.bmc.http.client.internal.Exp
         return parentRef;
     }
 
-    /** The version of the object that is used to track changes in the object instance. */
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -452,7 +443,6 @@ public final class FolderDetails extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

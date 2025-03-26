@@ -5,23 +5,21 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * A resource created or operated on by a work request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * A resource created or operated on by a work request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WorkRequestResource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkRequestResource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = WorkRequestResource.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceAction",
@@ -49,101 +47,105 @@ public final class WorkRequestResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The action to take against the resource. */
+        /**
+         * The action to take against the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
         private ResourceAction resourceAction;
 
         /**
          * The action to take against the resource.
-         *
          * @param resourceAction the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceAction(ResourceAction resourceAction) {
             this.resourceAction = resourceAction;
             this.__explicitlySet__.add("resourceAction");
             return this;
         }
-        /** The resource type that the work request affects. */
+        /**
+         * The resource type that the work request affects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The resource type that the work request affects.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The identifier of the resource that is the subject of the request. */
+        /**
+         * The identifier of the resource that is the subject of the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The identifier of the resource that is the subject of the request.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
         /**
-         * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code
-         * CANCELED} states correspond to the action being performed.
-         */
+         * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+         * correspond to the action being performed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code
-         * CANCELED} states correspond to the action being performed.
+         * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+         * correspond to the action being performed.
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * Short message providing more detail for the current status. For example, if an operation
-         * fails this may include information about the reason for the failure and a possible
-         * resolution.
-         */
+         * Short message providing more detail for the current status. For example, if an operation fails
+         * this may include information about the reason for the failure and a possible resolution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
         private String statusMessage;
 
         /**
-         * Short message providing more detail for the current status. For example, if an operation
-         * fails this may include information about the reason for the failure and a possible
-         * resolution.
+         * Short message providing more detail for the current status. For example, if an operation fails
+         * this may include information about the reason for the failure and a possible resolution.
          *
          * @param statusMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder statusMessage(String statusMessage) {
             this.statusMessage = statusMessage;
             this.__explicitlySet__.add("statusMessage");
             return this;
         }
-        /** The URI path that the user can do a GET on to access the resource metadata. */
+        /**
+         * The URI path that the user can do a GET on to access the resource metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
         private String resourceUri;
 
         /**
          * The URI path that the user can do a GET on to access the resource metadata.
-         *
          * @param resourceUri the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceUri(String resourceUri) {
             this.resourceUri = resourceUri;
             this.__explicitlySet__.add("resourceUri");
@@ -192,7 +194,9 @@ public final class WorkRequestResource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -201,8 +205,10 @@ public final class WorkRequestResource
         return new Builder().copy(this);
     }
 
-    /** The action to take against the resource. */
-    public enum ResourceAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The action to take against the resource.
+     **/
+    public enum ResourceAction {
         Create("CREATE"),
         Update("UPDATE"),
         Delete("DELETE"),
@@ -225,8 +231,8 @@ public final class WorkRequestResource
         Export("EXPORT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -265,50 +271,54 @@ public final class WorkRequestResource
             return UnknownEnumValue;
         }
     };
-    /** The action to take against the resource. */
+    /**
+     * The action to take against the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
     private final ResourceAction resourceAction;
 
     /**
      * The action to take against the resource.
-     *
      * @return the value
-     */
+     **/
     public ResourceAction getResourceAction() {
         return resourceAction;
     }
 
-    /** The resource type that the work request affects. */
+    /**
+     * The resource type that the work request affects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The resource type that the work request affects.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** The identifier of the resource that is the subject of the request. */
+    /**
+     * The identifier of the resource that is the subject of the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The identifier of the resource that is the subject of the request.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
     /**
-     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code
-     * CANCELED} states correspond to the action being performed.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+     * correspond to the action being performed.
+     *
+     **/
+    public enum Status {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -317,8 +327,8 @@ public final class WorkRequestResource
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -357,50 +367,51 @@ public final class WorkRequestResource
         }
     };
     /**
-     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code
-     * CANCELED} states correspond to the action being performed.
-     */
+     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+     * correspond to the action being performed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code
-     * CANCELED} states correspond to the action being performed.
+     * The current state of the work request. The {@code SUCCEEDED}, {@code FAILED}, AND {@code CANCELED} states
+     * correspond to the action being performed.
      *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
-     * Short message providing more detail for the current status. For example, if an operation
-     * fails this may include information about the reason for the failure and a possible
-     * resolution.
-     */
+     * Short message providing more detail for the current status. For example, if an operation fails
+     * this may include information about the reason for the failure and a possible resolution.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusMessage")
     private final String statusMessage;
 
     /**
-     * Short message providing more detail for the current status. For example, if an operation
-     * fails this may include information about the reason for the failure and a possible
-     * resolution.
+     * Short message providing more detail for the current status. For example, if an operation fails
+     * this may include information about the reason for the failure and a possible resolution.
      *
      * @return the value
-     */
+     **/
     public String getStatusMessage() {
         return statusMessage;
     }
 
-    /** The URI path that the user can do a GET on to access the resource metadata. */
+    /**
+     * The URI path that the user can do a GET on to access the resource metadata.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
     private final String resourceUri;
 
     /**
      * The URI path that the user can do a GET on to access the resource metadata.
-     *
      * @return the value
-     */
+     **/
     public String getResourceUri() {
         return resourceUri;
     }
@@ -412,7 +423,6 @@ public final class WorkRequestResource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

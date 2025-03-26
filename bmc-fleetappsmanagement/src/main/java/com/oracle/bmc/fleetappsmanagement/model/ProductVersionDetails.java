@@ -5,25 +5,25 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above
- * for Oracle WebLogic Application server. The policy applies to the next version only, and not to
- * other versions such as, 12.1.x. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * A specific product version or a specific version and succeeding.
+ * Example: 12.1 or 12.1 and above for Oracle WebLogic Application server.
+ * The policy applies to the next version only, and not to other versions such as, 12.1.x.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProductVersionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ProductVersionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProductVersionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "isApplicableForAllHigherVersions"})
     public ProductVersionDetails(String version, Boolean isApplicableForAllHigherVersions) {
@@ -34,31 +34,33 @@ public final class ProductVersionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Product version the rule is applicable. */
+        /**
+         * Product version the rule is applicable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Product version the rule is applicable.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Is rule applicable to all higher versions also */
+        /**
+         * Is rule applicable to all higher versions also
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isApplicableForAllHigherVersions")
         private Boolean isApplicableForAllHigherVersions;
 
         /**
          * Is rule applicable to all higher versions also
-         *
          * @param isApplicableForAllHigherVersions the value to set
          * @return this builder
-         */
+         **/
         public Builder isApplicableForAllHigherVersions(Boolean isApplicableForAllHigherVersions) {
             this.isApplicableForAllHigherVersions = isApplicableForAllHigherVersions;
             this.__explicitlySet__.add("isApplicableForAllHigherVersions");
@@ -89,7 +91,9 @@ public final class ProductVersionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +102,30 @@ public final class ProductVersionDetails
         return new Builder().copy(this);
     }
 
-    /** Product version the rule is applicable. */
+    /**
+     * Product version the rule is applicable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Product version the rule is applicable.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** Is rule applicable to all higher versions also */
+    /**
+     * Is rule applicable to all higher versions also
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isApplicableForAllHigherVersions")
     private final Boolean isApplicableForAllHigherVersions;
 
     /**
      * Is rule applicable to all higher versions also
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsApplicableForAllHigherVersions() {
         return isApplicableForAllHigherVersions;
     }
@@ -131,7 +137,6 @@ public final class ProductVersionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

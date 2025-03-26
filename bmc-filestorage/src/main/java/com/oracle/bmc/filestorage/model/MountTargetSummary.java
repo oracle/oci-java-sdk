@@ -5,23 +5,22 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Summary information for the specified mount target. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Summary information for the specified mount target.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MountTargetSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MountTargetSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = MountTargetSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MountTargetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -86,231 +85,229 @@ public final class MountTargetSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The availability domain the mount target is in. May be unset as a blank or NULL value.
+         * The availability domain the mount target is in. May be unset
+         * as a blank or NULL value.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain the mount target is in. May be unset as a blank or NULL value.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * The availability domain the mount target is in. May be unset
+         * as a blank or NULL value.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the mount target.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the mount target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the mount target.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the mount target.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My mount target}
          *
-         * <p>Example: {@code My mount target}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>Example: {@code My mount target}
+         * A user-friendly name. It does not have to be unique, and it is changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My mount target}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated export set. Controls what file systems will be exported using Network File
-         * System (NFS) protocol on this mount target.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file
+         * systems will be exported using Network File System (NFS) protocol on
+         * this mount target.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated export set. Controls what file systems will be exported using Network File
-         * System (NFS) protocol on this mount target.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file
+         * systems will be exported using Network File System (NFS) protocol on
+         * this mount target.
          *
          * @param exportSetId the value to set
          * @return this builder
-         */
+         **/
         public Builder exportSetId(String exportSetId) {
             this.exportSetId = exportSetId;
             this.__explicitlySet__.add("exportSetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * mount target.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * mount target.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The current state of the mount target. */
+        /**
+         * The current state of the mount target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the mount target.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The OCIDs of the private IP addresses associated with this mount target. */
+        /**
+         * The OCIDs of the private IP addresses associated with this mount target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpIds")
         private java.util.List<String> privateIpIds;
 
         /**
          * The OCIDs of the private IP addresses associated with this mount target.
-         *
          * @param privateIpIds the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIpIds(java.util.List<String> privateIpIds) {
             this.privateIpIds = privateIpIds;
             this.__explicitlySet__.add("privateIpIds");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet the mount target is in.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet the mount target is in.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * A list of Network Security Group
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
-         * the list is created removes the mount target from all NSGs. For more information about
-         * NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
+         * A list of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target.
+         * A maximum of 5 is allowed.
+         * Setting this to an empty array after the list is created removes the mount target from all NSGs.
+         * For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * A list of Network Security Group
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
-         * the list is created removes the mount target from all NSGs. For more information about
-         * NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         * A list of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target.
+         * A maximum of 5 is allowed.
+         * Setting this to an empty array after the list is created removes the mount target from all NSGs.
+         * For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * The date and time the mount target current billing cycle will end, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is
-         * updated automatically to next timestamp which is after 30 days.
+         * The date and time the mount target current billing cycle will end, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+         * automatically to next timestamp which is after 30 days.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBillingCycleEnd")
         private java.util.Date timeBillingCycleEnd;
 
         /**
-         * The date and time the mount target current billing cycle will end, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is
-         * updated automatically to next timestamp which is after 30 days.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the mount target current billing cycle will end, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+         * automatically to next timestamp which is after 30 days.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeBillingCycleEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeBillingCycleEnd(java.util.Date timeBillingCycleEnd) {
             this.timeBillingCycleEnd = timeBillingCycleEnd;
             this.__explicitlySet__.add("timeBillingCycleEnd");
             return this;
         }
         /**
-         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
-         * target. Available shapes and corresponding throughput are listed at [Mount Target
-         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
-         */
+         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+         * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("observedThroughput")
         private Long observedThroughput;
 
         /**
-         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
-         * target. Available shapes and corresponding throughput are listed at [Mount Target
-         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+         * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
          *
          * @param observedThroughput the value to set
          * @return this builder
-         */
+         **/
         public Builder observedThroughput(Long observedThroughput) {
             this.observedThroughput = observedThroughput;
             this.__explicitlySet__.add("observedThroughput");
             return this;
         }
-        /** - New throughput for mount target at the end of billing cycle in Gbps. */
+        /**
+         * - New throughput for mount target at the end of billing cycle in Gbps.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
         private Long requestedThroughput;
 
@@ -319,112 +316,113 @@ public final class MountTargetSummary
          *
          * @param requestedThroughput the value to set
          * @return this builder
-         */
+         **/
         public Builder requestedThroughput(Long requestedThroughput) {
             this.requestedThroughput = requestedThroughput;
             this.__explicitlySet__.add("requestedThroughput");
             return this;
         }
         /**
-         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
-         * observedThroughput value of mount target. Value is listed at [Mount Target
-         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
-         */
+         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+         * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservedStorageCapacity")
         private Long reservedStorageCapacity;
 
         /**
-         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
-         * observedThroughput value of mount target. Value is listed at [Mount Target
-         * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+         * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
          *
          * @param reservedStorageCapacity the value to set
          * @return this builder
-         */
+         **/
         public Builder reservedStorageCapacity(Long reservedStorageCapacity) {
             this.reservedStorageCapacity = reservedStorageCapacity;
             this.__explicitlySet__.add("reservedStorageCapacity");
             return this;
         }
         /**
-         * The date and time the mount target was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time the mount target was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the mount target was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the mount target was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair
+         *  with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair
+         *  with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -432,19 +430,20 @@ public final class MountTargetSummary
             return this;
         }
         /**
-         * System tags for this resource. System tags are applied to resources by internal OCI
-         * services.
-         */
+         * System tags for this resource.
+         * System tags are applied to resources by internal OCI services.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. System tags are applied to resources by internal OCI
-         * services.
+         * System tags for this resource.
+         * System tags are applied to resources by internal OCI services.
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -541,7 +540,9 @@ public final class MountTargetSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -551,100 +552,101 @@ public final class MountTargetSummary
     }
 
     /**
-     * The availability domain the mount target is in. May be unset as a blank or NULL value.
+     * The availability domain the mount target is in. May be unset
+     * as a blank or NULL value.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain the mount target is in. May be unset as a blank or NULL value.
-     *
-     * <p>Example: {@code Uocm:PHX-AD-1}
+     * The availability domain the mount target is in. May be unset
+     * as a blank or NULL value.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the mount target.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the mount target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the mount target.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the mount target.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My mount target}
      *
-     * <p>Example: {@code My mount target}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>Example: {@code My mount target}
+     * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My mount target}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated export set. Controls what file systems will be exported using Network File System
-     * (NFS) protocol on this mount target.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file
+     * systems will be exported using Network File System (NFS) protocol on
+     * this mount target.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     private final String exportSetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated export set. Controls what file systems will be exported using Network File System
-     * (NFS) protocol on this mount target.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file
+     * systems will be exported using Network File System (NFS) protocol on
+     * this mount target.
      *
      * @return the value
-     */
+     **/
     public String getExportSetId() {
         return exportSetId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * mount target.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * mount target.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The current state of the mount target. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the mount target.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
@@ -653,8 +655,8 @@ public final class MountTargetSummary
         Updating("UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -693,115 +695,116 @@ public final class MountTargetSummary
             return UnknownEnumValue;
         }
     };
-    /** The current state of the mount target. */
+    /**
+     * The current state of the mount target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the mount target.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The OCIDs of the private IP addresses associated with this mount target. */
+    /**
+     * The OCIDs of the private IP addresses associated with this mount target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpIds")
     private final java.util.List<String> privateIpIds;
 
     /**
      * The OCIDs of the private IP addresses associated with this mount target.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPrivateIpIds() {
         return privateIpIds;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet the mount target is in.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet the mount target is in.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * A list of Network Security Group
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
-     * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     */
+     * A list of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target.
+     * A maximum of 5 is allowed.
+     * Setting this to an empty array after the list is created removes the mount target from all NSGs.
+     * For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * A list of Network Security Group
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
-     * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     * A list of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target.
+     * A maximum of 5 is allowed.
+     * Setting this to an empty array after the list is created removes the mount target from all NSGs.
+     * For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * The date and time the mount target current billing cycle will end, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+     * The date and time the mount target current billing cycle will end, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
      * automatically to next timestamp which is after 30 days.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBillingCycleEnd")
     private final java.util.Date timeBillingCycleEnd;
 
     /**
-     * The date and time the mount target current billing cycle will end, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+     * The date and time the mount target current billing cycle will end, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
      * automatically to next timestamp which is after 30 days.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeBillingCycleEnd() {
         return timeBillingCycleEnd;
     }
 
     /**
-     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
-     * target. Available shapes and corresponding throughput are listed at [Mount Target
-     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
-     */
+     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+     * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("observedThroughput")
     private final Long observedThroughput;
 
     /**
-     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount
-     * target. Available shapes and corresponding throughput are listed at [Mount Target
-     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+     * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      *
      * @return the value
-     */
+     **/
     public Long getObservedThroughput() {
         return observedThroughput;
     }
 
-    /** - New throughput for mount target at the end of billing cycle in Gbps. */
+    /**
+     * - New throughput for mount target at the end of billing cycle in Gbps.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
     private final Long requestedThroughput;
 
@@ -809,117 +812,121 @@ public final class MountTargetSummary
      * - New throughput for mount target at the end of billing cycle in Gbps.
      *
      * @return the value
-     */
+     **/
     public Long getRequestedThroughput() {
         return requestedThroughput;
     }
 
     /**
-     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
-     * observedThroughput value of mount target. Value is listed at [Mount Target
-     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
-     */
+     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+     * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedStorageCapacity")
     private final Long reservedStorageCapacity;
 
     /**
-     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on
-     * observedThroughput value of mount target. Value is listed at [Mount Target
-     * Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+     * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      *
      * @return the value
-     */
+     **/
     public Long getReservedStorageCapacity() {
         return reservedStorageCapacity;
     }
 
     /**
-     * The date and time the mount target was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time the mount target was created, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the mount target was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the mount target was created, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair
+     *  with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair
+     *  with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. System tags are applied to resources by internal OCI services.
-     */
+     * System tags for this resource.
+     * System tags are applied to resources by internal OCI services.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. System tags are applied to resources by internal OCI services.
+     * System tags for this resource.
+     * System tags are applied to resources by internal OCI services.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -931,7 +938,6 @@ public final class MountTargetSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,75 +6,86 @@ package com.oracle.bmc.osubusage.requests;
 
 import com.oracle.bmc.osubusage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubusage/ListComputedUsageAggregatedsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListComputedUsageAggregatedsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubusage/ListComputedUsageAggregatedsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListComputedUsageAggregatedsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class ListComputedUsageAggregatedsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+     *
      */
     private String subscriptionId;
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+     *
      */
     public String getSubscriptionId() {
         return subscriptionId;
     }
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     *
      */
     private java.util.Date timeFrom;
 
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     *
      */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /**
+     * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+     *
+     */
     private java.util.Date timeTo;
 
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /**
+     * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+     *
+     */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
-    /** Product part number for subscribed service line, called parent product. */
+    /**
+     * Product part number for subscribed service line, called parent product.
+     *
+     */
     private String parentProduct;
 
-    /** Product part number for subscribed service line, called parent product. */
+    /**
+     * Product part number for subscribed service line, called parent product.
+     *
+     */
     public String getParentProduct() {
         return parentProduct;
     }
     /**
-     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}),
-     * daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a
-     * grouping criteria by date.
+     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a grouping criteria by date.
+     *
      */
     private Grouping grouping;
 
     /**
-     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}),
-     * daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a
-     * grouping criteria by date.
-     */
-    public enum Grouping implements com.oracle.bmc.http.internal.BmcEnum {
+     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a grouping criteria by date.
+     *
+     **/
+    public enum Grouping {
         Hourly("HOURLY"),
         Daily("DAILY"),
         Monthly("MONTHLY"),
@@ -110,55 +121,64 @@ public class ListComputedUsageAggregatedsRequest
     };
 
     /**
-     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}),
-     * daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a
-     * grouping criteria by date.
+     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a grouping criteria by date.
+     *
      */
     public Grouping getGrouping() {
         return grouping;
     }
     /**
-     * The maximum number aggregatedComputedUsages of items to return within the Subscription "List"
-     * call, this counts the overall count across all items Example: {@code 500}
+     * The maximum number aggregatedComputedUsages of items to return within the Subscription "List" call, this
+     * counts the overall count across all items
+     * Example: {@code 500}
+     *
      */
     private Integer limit;
 
     /**
-     * The maximum number aggregatedComputedUsages of items to return within the Subscription "List"
-     * call, this counts the overall count across all items Example: {@code 500}
+     * The maximum number aggregatedComputedUsages of items to return within the Subscription "List" call, this
+     * counts the overall count across all items
+     * Example: {@code 500}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-     * us-phoenix-1 etc.
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
      */
     private String xOneOriginRegion;
 
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-     * us-phoenix-1 etc.
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
      */
     public String getXOneOriginRegion() {
         return xOneOriginRegion;
@@ -167,15 +187,17 @@ public class ListComputedUsageAggregatedsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListComputedUsageAggregatedsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the root compartment. */
+        /**
+         * The OCID of the root compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -185,14 +207,13 @@ public class ListComputedUsageAggregatedsRequest
         }
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+         *
          */
         private String subscriptionId = null;
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -203,14 +224,13 @@ public class ListComputedUsageAggregatedsRequest
         }
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         *
          */
         private java.util.Date timeFrom = null;
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
          *
          * @param timeFrom the value to set
          * @return this builder instance
@@ -222,6 +242,7 @@ public class ListComputedUsageAggregatedsRequest
 
         /**
          * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+         *
          */
         private java.util.Date timeTo = null;
 
@@ -236,7 +257,10 @@ public class ListComputedUsageAggregatedsRequest
             return this;
         }
 
-        /** Product part number for subscribed service line, called parent product. */
+        /**
+         * Product part number for subscribed service line, called parent product.
+         *
+         */
         private String parentProduct = null;
 
         /**
@@ -251,16 +275,13 @@ public class ListComputedUsageAggregatedsRequest
         }
 
         /**
-         * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code
-         * HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not
-         * follow a grouping criteria by date.
+         * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a grouping criteria by date.
+         *
          */
         private Grouping grouping = null;
 
         /**
-         * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code
-         * HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not
-         * follow a grouping criteria by date.
+         * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a grouping criteria by date.
          *
          * @param grouping the value to set
          * @return this builder instance
@@ -271,14 +292,17 @@ public class ListComputedUsageAggregatedsRequest
         }
 
         /**
-         * The maximum number aggregatedComputedUsages of items to return within the Subscription
-         * "List" call, this counts the overall count across all items Example: {@code 500}
+         * The maximum number aggregatedComputedUsages of items to return within the Subscription "List" call, this
+         * counts the overall count across all items
+         * Example: {@code 500}
+         *
          */
         private Integer limit = null;
 
         /**
-         * The maximum number aggregatedComputedUsages of items to return within the Subscription
-         * "List" call, this counts the overall count across all items Example: {@code 500}
+         * The maximum number aggregatedComputedUsages of items to return within the Subscription "List" call, this
+         * counts the overall count across all items
+         * Example: {@code 500}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -288,7 +312,10 @@ public class ListComputedUsageAggregatedsRequest
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -303,14 +330,13 @@ public class ListComputedUsageAggregatedsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -321,14 +347,13 @@ public class ListComputedUsageAggregatedsRequest
         }
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-         * us-phoenix-1 etc.
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         *
          */
         private String xOneOriginRegion = null;
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-         * us-phoenix-1 etc.
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
          *
          * @param xOneOriginRegion the value to set
          * @return this builder instance
@@ -340,19 +365,18 @@ public class ListComputedUsageAggregatedsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -364,7 +388,6 @@ public class ListComputedUsageAggregatedsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListComputedUsageAggregatedsRequest o) {
@@ -386,11 +409,10 @@ public class ListComputedUsageAggregatedsRequest
         /**
          * Build the instance of ListComputedUsageAggregatedsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListComputedUsageAggregatedsRequest
          */
@@ -404,8 +426,7 @@ public class ListComputedUsageAggregatedsRequest
         /**
          * Build the instance of ListComputedUsageAggregatedsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListComputedUsageAggregatedsRequest
@@ -423,14 +444,12 @@ public class ListComputedUsageAggregatedsRequest
             request.opcRequestId = opcRequestId;
             request.xOneOriginRegion = xOneOriginRegion;
             return request;
-            // new ListComputedUsageAggregatedsRequest(compartmentId, subscriptionId, timeFrom,
-            // timeTo, parentProduct, grouping, limit, page, opcRequestId, xOneOriginRegion);
+            // new ListComputedUsageAggregatedsRequest(compartmentId, subscriptionId, timeFrom, timeTo, parentProduct, grouping, limit, page, opcRequestId, xOneOriginRegion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -449,7 +468,6 @@ public class ListComputedUsageAggregatedsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

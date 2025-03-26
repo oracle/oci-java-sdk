@@ -5,21 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * An object containing the endpoint proxy details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * An object containing the endpoint proxy details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EndpointProxy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EndpointProxy extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EndpointProxy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"url", "credentialName", "credentialType"})
     public EndpointProxy(String url, String credentialName, CredentialType credentialType) {
@@ -31,31 +29,33 @@ public final class EndpointProxy extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The proxy URL. */
+        /**
+         * The proxy URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The proxy URL.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The named credential name on the management agent, containing the proxy credentials. */
+        /**
+         * The named credential name on the management agent, containing the proxy credentials.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
 
         /**
          * The named credential name on the management agent, containing the proxy credentials.
-         *
          * @param credentialName the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialName(String credentialName) {
             this.credentialName = credentialName;
             this.__explicitlySet__.add("credentialName");
@@ -63,20 +63,19 @@ public final class EndpointProxy extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The credential type. NONE indicates credentials are not needed to access the proxy.
-         * BASIC_AUTH represents a username and password based model. TOKEN represents a token based
-         * model.
-         */
+         * BASIC_AUTH represents a username and password based model. TOKEN represents a token based model.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
         private CredentialType credentialType;
 
         /**
          * The credential type. NONE indicates credentials are not needed to access the proxy.
-         * BASIC_AUTH represents a username and password based model. TOKEN represents a token based
-         * model.
+         * BASIC_AUTH represents a username and password based model. TOKEN represents a token based model.
          *
          * @param credentialType the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialType(CredentialType credentialType) {
             this.credentialType = credentialType;
             this.__explicitlySet__.add("credentialType");
@@ -110,7 +109,9 @@ public final class EndpointProxy extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,45 +120,47 @@ public final class EndpointProxy extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The proxy URL. */
+    /**
+     * The proxy URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The proxy URL.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** The named credential name on the management agent, containing the proxy credentials. */
+    /**
+     * The named credential name on the management agent, containing the proxy credentials.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
     private final String credentialName;
 
     /**
      * The named credential name on the management agent, containing the proxy credentials.
-     *
      * @return the value
-     */
+     **/
     public String getCredentialName() {
         return credentialName;
     }
 
     /**
      * The credential type. NONE indicates credentials are not needed to access the proxy.
-     * BASIC_AUTH represents a username and password based model. TOKEN represents a token based
-     * model.
-     */
-    public enum CredentialType implements com.oracle.bmc.http.internal.BmcEnum {
+     * BASIC_AUTH represents a username and password based model. TOKEN represents a token based model.
+     *
+     **/
+    public enum CredentialType {
         None("NONE"),
         BasicAuth("BASIC_AUTH"),
         Token("TOKEN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -198,19 +201,18 @@ public final class EndpointProxy extends com.oracle.bmc.http.client.internal.Exp
     };
     /**
      * The credential type. NONE indicates credentials are not needed to access the proxy.
-     * BASIC_AUTH represents a username and password based model. TOKEN represents a token based
-     * model.
-     */
+     * BASIC_AUTH represents a username and password based model. TOKEN represents a token based model.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
     private final CredentialType credentialType;
 
     /**
      * The credential type. NONE indicates credentials are not needed to access the proxy.
-     * BASIC_AUTH represents a username and password based model. TOKEN represents a token based
-     * model.
+     * BASIC_AUTH represents a username and password based model. TOKEN represents a token based model.
      *
      * @return the value
-     */
+     **/
     public CredentialType getCredentialType() {
         return credentialType;
     }
@@ -222,7 +224,6 @@ public final class EndpointProxy extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The configuration details for change Autonomous Container Database Dataguard role <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The configuration details for change Autonomous Container Database Dataguard role
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ChangeDataguardRoleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ChangeDataguardRoleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ChangeDataguardRoleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "role",
@@ -42,39 +42,35 @@ public final class ChangeDataguardRoleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
-         * Autonomous Data Guard is enabled.
-         */
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
-         * Autonomous Data Guard is enabled.
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
          *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
         /**
-         * The Autonomous Container Database-Autonomous Data Guard association
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "autonomousContainerDatabaseDataguardAssociationId")
         private String autonomousContainerDatabaseDataguardAssociationId;
 
         /**
-         * The Autonomous Container Database-Autonomous Data Guard association
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param autonomousContainerDatabaseDataguardAssociationId the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousContainerDatabaseDataguardAssociationId(
                 String autonomousContainerDatabaseDataguardAssociationId) {
             this.autonomousContainerDatabaseDataguardAssociationId =
@@ -82,16 +78,17 @@ public final class ChangeDataguardRoleDetails
             this.__explicitlySet__.add("autonomousContainerDatabaseDataguardAssociationId");
             return this;
         }
-        /** type of connection strings when converting database to snapshot mode */
+        /**
+         * type of connection strings when converting database to snapshot mode
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionStringsType")
         private ConnectionStringsType connectionStringsType;
 
         /**
          * type of connection strings when converting database to snapshot mode
-         *
          * @param connectionStringsType the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionStringsType(ConnectionStringsType connectionStringsType) {
             this.connectionStringsType = connectionStringsType;
             this.__explicitlySet__.add("connectionStringsType");
@@ -130,7 +127,9 @@ public final class ChangeDataguardRoleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,10 +139,10 @@ public final class ChangeDataguardRoleDetails
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
-     * Autonomous Data Guard is enabled.
-     */
-    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     *
+     **/
+    public enum Role {
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
@@ -179,42 +178,40 @@ public final class ChangeDataguardRoleDetails
         }
     };
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
-     * Autonomous Data Guard is enabled.
-     */
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if
-     * Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      *
      * @return the value
-     */
+     **/
     public Role getRole() {
         return role;
     }
 
     /**
-     * The Autonomous Container Database-Autonomous Data Guard association
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty(
             "autonomousContainerDatabaseDataguardAssociationId")
     private final String autonomousContainerDatabaseDataguardAssociationId;
 
     /**
-     * The Autonomous Container Database-Autonomous Data Guard association
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getAutonomousContainerDatabaseDataguardAssociationId() {
         return autonomousContainerDatabaseDataguardAssociationId;
     }
 
-    /** type of connection strings when converting database to snapshot mode */
-    public enum ConnectionStringsType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * type of connection strings when converting database to snapshot mode
+     **/
+    public enum ConnectionStringsType {
         SnapshotServices("SNAPSHOT_SERVICES"),
         PrimaryServices("PRIMARY_SERVICES"),
         ;
@@ -246,15 +243,16 @@ public final class ChangeDataguardRoleDetails
             throw new IllegalArgumentException("Invalid ConnectionStringsType: " + key);
         }
     };
-    /** type of connection strings when converting database to snapshot mode */
+    /**
+     * type of connection strings when converting database to snapshot mode
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStringsType")
     private final ConnectionStringsType connectionStringsType;
 
     /**
      * type of connection strings when converting database to snapshot mode
-     *
      * @return the value
-     */
+     **/
     public ConnectionStringsType getConnectionStringsType() {
         return connectionStringsType;
     }
@@ -266,7 +264,6 @@ public final class ChangeDataguardRoleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

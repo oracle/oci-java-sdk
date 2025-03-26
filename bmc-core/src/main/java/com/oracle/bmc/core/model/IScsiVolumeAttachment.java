@@ -5,25 +5,25 @@
 package com.oracle.bmc.core.model;
 
 /**
- * An ISCSI volume attachment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * An ISCSI volume attachment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IScsiVolumeAttachment.Builder.class)
+    builder = IScsiVolumeAttachment.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "attachmentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "attachmentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IScsiVolumeAttachment extends VolumeAttachment {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -162,42 +162,46 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
         /**
-         * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated
-         * CHAP user name. (Also called the "CHAP password".)
-         */
+         * The Challenge-Handshake-Authentication-Protocol (CHAP) secret
+         * valid for the associated CHAP user name.
+         * (Also called the "CHAP password".)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
         private String chapSecret;
 
         /**
-         * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated
-         * CHAP user name. (Also called the "CHAP password".)
+         * The Challenge-Handshake-Authentication-Protocol (CHAP) secret
+         * valid for the associated CHAP user name.
+         * (Also called the "CHAP password".)
          *
          * @param chapSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder chapSecret(String chapSecret) {
             this.chapSecret = chapSecret;
             this.__explicitlySet__.add("chapSecret");
             return this;
         }
         /**
-         * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user
-         * name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
+         * The volume's system-generated Challenge-Handshake-Authentication-Protocol
+         * (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
+         * <p>
+         * Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
          *
-         * <p>Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chapUsername")
         private String chapUsername;
 
         /**
-         * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user
-         * name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
-         *
-         * <p>Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
+         * The volume's system-generated Challenge-Handshake-Authentication-Protocol
+         * (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
+         * <p>
+         * Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
          *
          * @param chapUsername the value to set
          * @return this builder
-         */
+         **/
         public Builder chapUsername(String chapUsername) {
             this.chapUsername = chapUsername;
             this.__explicitlySet__.add("chapUsername");
@@ -205,43 +209,45 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         }
         /**
          * The volume's iSCSI IP address.
+         * <p>
+         * Example: {@code 169.254.0.2}
          *
-         * <p>Example: {@code 169.254.0.2}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
         private String ipv4;
 
         /**
          * The volume's iSCSI IP address.
-         *
-         * <p>Example: {@code 169.254.0.2}
+         * <p>
+         * Example: {@code 169.254.0.2}
          *
          * @param ipv4 the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv4(String ipv4) {
             this.ipv4 = ipv4;
             this.__explicitlySet__.add("ipv4");
             return this;
         }
         /**
-         * The target volume's iSCSI Qualified Name in the format defined by [RFC
-         * 3720](https://tools.ietf.org/html/rfc3720#page-32).
+         * The target volume's iSCSI Qualified Name in the format defined
+         * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+         * <p>
+         * Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
          *
-         * <p>Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("iqn")
         private String iqn;
 
         /**
-         * The target volume's iSCSI Qualified Name in the format defined by [RFC
-         * 3720](https://tools.ietf.org/html/rfc3720#page-32).
-         *
-         * <p>Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
+         * The target volume's iSCSI Qualified Name in the format defined
+         * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+         * <p>
+         * Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
          *
          * @param iqn the value to set
          * @return this builder
-         */
+         **/
         public Builder iqn(String iqn) {
             this.iqn = iqn;
             this.__explicitlySet__.add("iqn");
@@ -249,69 +255,75 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         }
         /**
          * The volume's iSCSI port, usually port 860 or 3260.
+         * <p>
+         * Example: {@code 3260}
          *
-         * <p>Example: {@code 3260}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The volume's iSCSI port, usually port 860 or 3260.
-         *
-         * <p>Example: {@code 3260}
+         * <p>
+         * Example: {@code 3260}
          *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** A list of secondary multipath devices */
+        /**
+         * A list of secondary multipath devices
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multipathDevices")
         private java.util.List<MultipathDevice> multipathDevices;
 
         /**
          * A list of secondary multipath devices
-         *
          * @param multipathDevices the value to set
          * @return this builder
-         */
+         **/
         public Builder multipathDevices(java.util.List<MultipathDevice> multipathDevices) {
             this.multipathDevices = multipathDevices;
             this.__explicitlySet__.add("multipathDevices");
             return this;
         }
-        /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+        /**
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
         private EncryptionInTransitType encryptionInTransitType;
 
         /**
-         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         * Refer the top-level definition of encryptionInTransitType.
+         * The default value is NONE.
          *
          * @param encryptionInTransitType the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionInTransitType(EncryptionInTransitType encryptionInTransitType) {
             this.encryptionInTransitType = encryptionInTransitType;
             this.__explicitlySet__.add("encryptionInTransitType");
             return this;
         }
         /**
-         * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after
-         * the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-         */
+         * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
         private Boolean isAgentAutoIscsiLoginEnabled;
 
         /**
-         * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after
-         * the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
          *
          * @param isAgentAutoIscsiLoginEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
             this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
             this.__explicitlySet__.add("isAgentAutoIscsiLoginEnabled");
@@ -428,7 +440,9 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -489,141 +503,153 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
     }
 
     /**
-     * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP
-     * user name. (Also called the "CHAP password".)
-     */
+     * The Challenge-Handshake-Authentication-Protocol (CHAP) secret
+     * valid for the associated CHAP user name.
+     * (Also called the "CHAP password".)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
     private final String chapSecret;
 
     /**
-     * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP
-     * user name. (Also called the "CHAP password".)
+     * The Challenge-Handshake-Authentication-Protocol (CHAP) secret
+     * valid for the associated CHAP user name.
+     * (Also called the "CHAP password".)
      *
      * @return the value
-     */
+     **/
     public String getChapSecret() {
         return chapSecret;
     }
 
     /**
-     * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
-     * See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
+     * The volume's system-generated Challenge-Handshake-Authentication-Protocol
+     * (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
+     * <p>
+     * Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
      *
-     * <p>Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapUsername")
     private final String chapUsername;
 
     /**
-     * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
-     * See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
-     *
-     * <p>Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
+     * The volume's system-generated Challenge-Handshake-Authentication-Protocol
+     * (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
+     * <p>
+     * Example: {@code ocid1.volume.oc1.phx.<unique_ID>}
      *
      * @return the value
-     */
+     **/
     public String getChapUsername() {
         return chapUsername;
     }
 
     /**
      * The volume's iSCSI IP address.
+     * <p>
+     * Example: {@code 169.254.0.2}
      *
-     * <p>Example: {@code 169.254.0.2}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
     private final String ipv4;
 
     /**
      * The volume's iSCSI IP address.
-     *
-     * <p>Example: {@code 169.254.0.2}
+     * <p>
+     * Example: {@code 169.254.0.2}
      *
      * @return the value
-     */
+     **/
     public String getIpv4() {
         return ipv4;
     }
 
     /**
-     * The target volume's iSCSI Qualified Name in the format defined by [RFC
-     * 3720](https://tools.ietf.org/html/rfc3720#page-32).
+     * The target volume's iSCSI Qualified Name in the format defined
+     * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+     * <p>
+     * Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
      *
-     * <p>Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
     private final String iqn;
 
     /**
-     * The target volume's iSCSI Qualified Name in the format defined by [RFC
-     * 3720](https://tools.ietf.org/html/rfc3720#page-32).
-     *
-     * <p>Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
+     * The target volume's iSCSI Qualified Name in the format defined
+     * by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
+     * <p>
+     * Example: {@code iqn.2015-12.us.oracle.com:<CHAP_username>}
      *
      * @return the value
-     */
+     **/
     public String getIqn() {
         return iqn;
     }
 
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
+     * <p>
+     * Example: {@code 3260}
      *
-     * <p>Example: {@code 3260}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The volume's iSCSI port, usually port 860 or 3260.
-     *
-     * <p>Example: {@code 3260}
+     * <p>
+     * Example: {@code 3260}
      *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** A list of secondary multipath devices */
+    /**
+     * A list of secondary multipath devices
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("multipathDevices")
     private final java.util.List<MultipathDevice> multipathDevices;
 
     /**
      * A list of secondary multipath devices
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MultipathDevice> getMultipathDevices() {
         return multipathDevices;
     }
 
-    /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+    /**
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     private final EncryptionInTransitType encryptionInTransitType;
 
     /**
-     * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * Refer the top-level definition of encryptionInTransitType.
+     * The default value is NONE.
      *
      * @return the value
-     */
+     **/
     public EncryptionInTransitType getEncryptionInTransitType() {
         return encryptionInTransitType;
     }
 
     /**
-     * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the
-     * volume attach or detach operations for non multipath-enabled iSCSI attachments.
-     */
+     * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoIscsiLoginEnabled")
     private final Boolean isAgentAutoIscsiLoginEnabled;
 
     /**
-     * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the
-     * volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAgentAutoIscsiLoginEnabled() {
         return isAgentAutoIscsiLoginEnabled;
     }
@@ -635,7 +661,6 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

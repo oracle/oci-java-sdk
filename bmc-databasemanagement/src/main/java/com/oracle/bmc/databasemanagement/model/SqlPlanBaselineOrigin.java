@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The origin of the SQL plan baseline. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum SqlPlanBaselineOrigin implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The origin of the SQL plan baseline.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum SqlPlanBaselineOrigin {
     AddmSqltune("ADDM_SQLTUNE"),
     AutoCapture("AUTO_CAPTURE"),
     AutoSqltune("AUTO_SQLTUNE"),

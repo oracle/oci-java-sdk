@@ -5,22 +5,19 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Enabled and disabled merge strategies for a project or repository, also contains a default
- * strategy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MergeSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MergeSettings extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MergeSettings extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"defaultMergeStrategy", "allowedMergeStrategies"})
     public MergeSettings(
@@ -33,31 +30,33 @@ public final class MergeSettings extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Default type of merge strategy associated with the a Project or Repository. */
+        /**
+         * Default type of merge strategy associated with the a Project or Repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMergeStrategy")
         private MergeStrategy defaultMergeStrategy;
 
         /**
          * Default type of merge strategy associated with the a Project or Repository.
-         *
          * @param defaultMergeStrategy the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultMergeStrategy(MergeStrategy defaultMergeStrategy) {
             this.defaultMergeStrategy = defaultMergeStrategy;
             this.__explicitlySet__.add("defaultMergeStrategy");
             return this;
         }
-        /** List of merge strategies which are allowed for a Project or Repository. */
+        /**
+         * List of merge strategies which are allowed for a Project or Repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedMergeStrategies")
         private java.util.List<MergeStrategy> allowedMergeStrategies;
 
         /**
          * List of merge strategies which are allowed for a Project or Repository.
-         *
          * @param allowedMergeStrategies the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedMergeStrategies(
                 java.util.List<MergeStrategy> allowedMergeStrategies) {
             this.allowedMergeStrategies = allowedMergeStrategies;
@@ -89,7 +88,9 @@ public final class MergeSettings extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +99,30 @@ public final class MergeSettings extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Default type of merge strategy associated with the a Project or Repository. */
+    /**
+     * Default type of merge strategy associated with the a Project or Repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMergeStrategy")
     private final MergeStrategy defaultMergeStrategy;
 
     /**
      * Default type of merge strategy associated with the a Project or Repository.
-     *
      * @return the value
-     */
+     **/
     public MergeStrategy getDefaultMergeStrategy() {
         return defaultMergeStrategy;
     }
 
-    /** List of merge strategies which are allowed for a Project or Repository. */
+    /**
+     * List of merge strategies which are allowed for a Project or Repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedMergeStrategies")
     private final java.util.List<MergeStrategy> allowedMergeStrategies;
 
     /**
      * List of merge strategies which are allowed for a Project or Repository.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MergeStrategy> getAllowedMergeStrategies() {
         return allowedMergeStrategies;
     }
@@ -131,7 +134,6 @@ public final class MergeSettings extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Summary of the audit report. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Summary of the audit report.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Summary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Summary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Summary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -47,95 +45,97 @@ public final class Summary extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the report summary. */
+        /**
+         * Name of the report summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the report summary.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Indicates if the summary is hidden. Values can either be 'true' or 'false'. */
+        /**
+         * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
         /**
          * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-         *
          * @param isHidden the value to set
          * @return this builder
-         */
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /** Specifies the order in which the summary must be displayed. */
+        /**
+         * Specifies the order in which the summary must be displayed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
         private Integer displayOrder;
 
         /**
          * Specifies the order in which the summary must be displayed.
-         *
          * @param displayOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = displayOrder;
             this.__explicitlySet__.add("displayOrder");
             return this;
         }
         /**
-         * A comma-delimited string that specifies the names of the fields by which the records must
-         * be aggregated to get the summary.
-         */
+         * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByFieldName")
         private String groupByFieldName;
 
         /**
-         * A comma-delimited string that specifies the names of the fields by which the records must
-         * be aggregated to get the summary.
-         *
+         * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
          * @param groupByFieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder groupByFieldName(String groupByFieldName) {
             this.groupByFieldName = groupByFieldName;
             this.__explicitlySet__.add("groupByFieldName");
             return this;
         }
-        /** Name of the key or count of object. */
+        /**
+         * Name of the key or count of object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countOf")
         private String countOf;
 
         /**
          * Name of the key or count of object.
-         *
          * @param countOf the value to set
          * @return this builder
-         */
+         **/
         public Builder countOf(String countOf) {
             this.countOf = countOf;
             this.__explicitlySet__.add("countOf");
             return this;
         }
-        /** Additional scim filters used to get the specific summary. */
+        /**
+         * Additional scim filters used to get the specific summary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
         private String scimFilter;
 
         /**
          * Additional scim filters used to get the specific summary.
-         *
          * @param scimFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder scimFilter(String scimFilter) {
             this.scimFilter = scimFilter;
             this.__explicitlySet__.add("scimFilter");
@@ -184,7 +184,9 @@ public final class Summary extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -193,84 +195,86 @@ public final class Summary extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** Name of the report summary. */
+    /**
+     * Name of the report summary.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the report summary.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Indicates if the summary is hidden. Values can either be 'true' or 'false'. */
+    /**
+     * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
     /**
      * Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
 
-    /** Specifies the order in which the summary must be displayed. */
+    /**
+     * Specifies the order in which the summary must be displayed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
     private final Integer displayOrder;
 
     /**
      * Specifies the order in which the summary must be displayed.
-     *
      * @return the value
-     */
+     **/
     public Integer getDisplayOrder() {
         return displayOrder;
     }
 
     /**
-     * A comma-delimited string that specifies the names of the fields by which the records must be
-     * aggregated to get the summary.
-     */
+     * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFieldName")
     private final String groupByFieldName;
 
     /**
-     * A comma-delimited string that specifies the names of the fields by which the records must be
-     * aggregated to get the summary.
-     *
+     * A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
      * @return the value
-     */
+     **/
     public String getGroupByFieldName() {
         return groupByFieldName;
     }
 
-    /** Name of the key or count of object. */
+    /**
+     * Name of the key or count of object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countOf")
     private final String countOf;
 
     /**
      * Name of the key or count of object.
-     *
      * @return the value
-     */
+     **/
     public String getCountOf() {
         return countOf;
     }
 
-    /** Additional scim filters used to get the specific summary. */
+    /**
+     * Additional scim filters used to get the specific summary.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
     private final String scimFilter;
 
     /**
      * Additional scim filters used to get the specific summary.
-     *
      * @return the value
-     */
+     **/
     public String getScimFilter() {
         return scimFilter;
     }
@@ -282,7 +286,6 @@ public final class Summary extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

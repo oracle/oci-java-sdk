@@ -5,25 +5,26 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * The Lora training method hyperparameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * The Lora training method hyperparameters.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LoraTrainingConfig.Builder.class)
+    builder = LoraTrainingConfig.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "trainingConfigType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "trainingConfigType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LoraTrainingConfig extends TrainingConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -80,46 +81,49 @@ public final class LoraTrainingConfig extends TrainingConfig {
             this.__explicitlySet__.add("logModelMetricsIntervalInSteps");
             return this;
         }
-        /** This parameter represents the LoRA rank of the update matrices. */
+        /**
+         * This parameter represents the LoRA rank of the update matrices.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loraR")
         private Integer loraR;
 
         /**
          * This parameter represents the LoRA rank of the update matrices.
-         *
          * @param loraR the value to set
          * @return this builder
-         */
+         **/
         public Builder loraR(Integer loraR) {
             this.loraR = loraR;
             this.__explicitlySet__.add("loraR");
             return this;
         }
-        /** This parameter represents the scaling factor for the weight matrices in LoRA. */
+        /**
+         * This parameter represents the scaling factor for the weight matrices in LoRA.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loraAlpha")
         private Integer loraAlpha;
 
         /**
          * This parameter represents the scaling factor for the weight matrices in LoRA.
-         *
          * @param loraAlpha the value to set
          * @return this builder
-         */
+         **/
         public Builder loraAlpha(Integer loraAlpha) {
             this.loraAlpha = loraAlpha;
             this.__explicitlySet__.add("loraAlpha");
             return this;
         }
-        /** This parameter indicates the dropout probability for LoRA layers. */
+        /**
+         * This parameter indicates the dropout probability for LoRA layers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loraDropout")
         private Double loraDropout;
 
         /**
          * This parameter indicates the dropout probability for LoRA layers.
-         *
          * @param loraDropout the value to set
          * @return this builder
-         */
+         **/
         public Builder loraDropout(Double loraDropout) {
             this.loraDropout = loraDropout;
             this.__explicitlySet__.add("loraDropout");
@@ -180,7 +184,9 @@ public final class LoraTrainingConfig extends TrainingConfig {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -212,41 +218,44 @@ public final class LoraTrainingConfig extends TrainingConfig {
         this.loraDropout = loraDropout;
     }
 
-    /** This parameter represents the LoRA rank of the update matrices. */
+    /**
+     * This parameter represents the LoRA rank of the update matrices.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loraR")
     private final Integer loraR;
 
     /**
      * This parameter represents the LoRA rank of the update matrices.
-     *
      * @return the value
-     */
+     **/
     public Integer getLoraR() {
         return loraR;
     }
 
-    /** This parameter represents the scaling factor for the weight matrices in LoRA. */
+    /**
+     * This parameter represents the scaling factor for the weight matrices in LoRA.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loraAlpha")
     private final Integer loraAlpha;
 
     /**
      * This parameter represents the scaling factor for the weight matrices in LoRA.
-     *
      * @return the value
-     */
+     **/
     public Integer getLoraAlpha() {
         return loraAlpha;
     }
 
-    /** This parameter indicates the dropout probability for LoRA layers. */
+    /**
+     * This parameter indicates the dropout probability for LoRA layers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loraDropout")
     private final Double loraDropout;
 
     /**
      * This parameter indicates the dropout probability for LoRA layers.
-     *
      * @return the value
-     */
+     **/
     public Double getLoraDropout() {
         return loraDropout;
     }
@@ -258,7 +267,6 @@ public final class LoraTrainingConfig extends TrainingConfig {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

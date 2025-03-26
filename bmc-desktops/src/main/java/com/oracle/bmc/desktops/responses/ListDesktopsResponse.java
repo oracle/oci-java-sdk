@@ -6,38 +6,41 @@ package com.oracle.bmc.desktops.responses;
 
 import com.oracle.bmc.desktops.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
     /**
      * The unique identifier of the request.
-     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** For pagination. */
+    /**
+     * For pagination.
+     */
     private String opcNextPage;
 
     /**
      * For pagination.
-     *
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
     }
 
-    /** The returned {@code DesktopCollection} instance. */
+    /**
+     * The returned DesktopCollection instance.
+     */
     private com.oracle.bmc.desktops.model.DesktopCollection desktopCollection;
 
     /**
-     * The returned {@code DesktopCollection} instance.
-     *
+     * The returned DesktopCollection instance.
      * @return the value
      */
     public com.oracle.bmc.desktops.model.DesktopCollection getDesktopCollection() {
@@ -53,7 +56,7 @@ public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListDesktopsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.desktops.model.DesktopCollection desktopCollection) {
@@ -63,30 +66,28 @@ public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
         this.desktopCollection = desktopCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListDesktopsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -95,12 +96,13 @@ public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** For pagination. */
+        /**
+         * For pagination.
+         */
         private String opcNextPage;
 
         /**
          * For pagination.
-         *
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -109,12 +111,13 @@ public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code DesktopCollection} instance. */
+        /**
+         * The returned DesktopCollection instance.
+         */
         private com.oracle.bmc.desktops.model.DesktopCollection desktopCollection;
 
         /**
-         * The returned {@code DesktopCollection} instance.
-         *
+         * The returned DesktopCollection instance.
          * @param desktopCollection the value to set
          * @return this builder
          */
@@ -126,10 +129,8 @@ public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListDesktopsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -142,10 +143,8 @@ public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListDesktopsResponse build() {
             return new ListDesktopsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, desktopCollection);
@@ -154,7 +153,6 @@ public class ListDesktopsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

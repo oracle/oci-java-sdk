@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field used to sort plugin errors. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum PluginErrorSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort plugin errors.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum PluginErrorSortBy {
     TimeFirstSeen("TIME_FIRST_SEEN"),
     TimeLastSeen("TIME_LAST_SEEN"),
     ;

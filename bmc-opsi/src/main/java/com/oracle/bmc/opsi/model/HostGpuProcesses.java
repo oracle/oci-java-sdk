@@ -5,24 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * GPU processes metrics, processes using GPUs. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * GPU processes metrics, processes using GPUs.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostGpuProcesses.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostGpuProcesses extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -34,76 +34,81 @@ public final class HostGpuProcesses extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** GPU Identifier */
+        /**
+         * GPU Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpuId")
         private Integer gpuId;
 
         /**
          * GPU Identifier
-         *
          * @param gpuId the value to set
          * @return this builder
-         */
+         **/
         public Builder gpuId(Integer gpuId) {
             this.gpuId = gpuId;
             this.__explicitlySet__.add("gpuId");
             return this;
         }
-        /** Process Identifier */
+        /**
+         * Process Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pid")
         private Integer pid;
 
         /**
          * Process Identifier
-         *
          * @param pid the value to set
          * @return this builder
-         */
+         **/
         public Builder pid(Integer pid) {
             this.pid = pid;
             this.__explicitlySet__.add("pid");
             return this;
         }
-        /** Process Name (process using GPU) */
+        /**
+         * Process Name (process using GPU)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processName")
         private String processName;
 
         /**
          * Process Name (process using GPU)
-         *
          * @param processName the value to set
          * @return this builder
-         */
+         **/
         public Builder processName(String processName) {
             this.processName = processName;
             this.__explicitlySet__.add("processName");
             return this;
         }
-        /** Process elapsed time */
+        /**
+         * Process elapsed time
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("elapsedTime")
         private Double elapsedTime;
 
         /**
          * Process elapsed time
-         *
          * @param elapsedTime the value to set
          * @return this builder
-         */
+         **/
         public Builder elapsedTime(Double elapsedTime) {
             this.elapsedTime = elapsedTime;
             this.__explicitlySet__.add("elapsedTime");
             return this;
         }
-        /** Memory Used by Process in MBs */
+        /**
+         * Memory Used by Process in MBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryUsage")
         private Double gpuMemoryUsage;
 
         /**
          * Memory Used by Process in MBs
-         *
          * @param gpuMemoryUsage the value to set
          * @return this builder
-         */
+         **/
         public Builder gpuMemoryUsage(Double gpuMemoryUsage) {
             this.gpuMemoryUsage = gpuMemoryUsage;
             this.__explicitlySet__.add("gpuMemoryUsage");
@@ -152,7 +157,9 @@ public final class HostGpuProcesses extends HostPerformanceMetricGroup {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,67 +184,72 @@ public final class HostGpuProcesses extends HostPerformanceMetricGroup {
         this.gpuMemoryUsage = gpuMemoryUsage;
     }
 
-    /** GPU Identifier */
+    /**
+     * GPU Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuId")
     private final Integer gpuId;
 
     /**
      * GPU Identifier
-     *
      * @return the value
-     */
+     **/
     public Integer getGpuId() {
         return gpuId;
     }
 
-    /** Process Identifier */
+    /**
+     * Process Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pid")
     private final Integer pid;
 
     /**
      * Process Identifier
-     *
      * @return the value
-     */
+     **/
     public Integer getPid() {
         return pid;
     }
 
-    /** Process Name (process using GPU) */
+    /**
+     * Process Name (process using GPU)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processName")
     private final String processName;
 
     /**
      * Process Name (process using GPU)
-     *
      * @return the value
-     */
+     **/
     public String getProcessName() {
         return processName;
     }
 
-    /** Process elapsed time */
+    /**
+     * Process elapsed time
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("elapsedTime")
     private final Double elapsedTime;
 
     /**
      * Process elapsed time
-     *
      * @return the value
-     */
+     **/
     public Double getElapsedTime() {
         return elapsedTime;
     }
 
-    /** Memory Used by Process in MBs */
+    /**
+     * Memory Used by Process in MBs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryUsage")
     private final Double gpuMemoryUsage;
 
     /**
      * Memory Used by Process in MBs
-     *
      * @return the value
-     */
+     **/
     public Double getGpuMemoryUsage() {
         return gpuMemoryUsage;
     }
@@ -249,7 +261,6 @@ public final class HostGpuProcesses extends HostPerformanceMetricGroup {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information about the kernel event. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Information about the kernel event.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KernelEventData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class KernelEventData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class KernelEventData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "content",
@@ -57,61 +54,65 @@ public final class KernelEventData
             this.__explicitlySet__.add("content");
             return this;
         }
-        /** Number of times the event has occurred. */
+        /**
+         * Number of times the event has occurred.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * Number of times the event has occurred.
-         *
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /** Fingerprint of the event. */
+        /**
+         * Fingerprint of the event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventFingerprint")
         private String eventFingerprint;
 
         /**
          * Fingerprint of the event.
-         *
          * @param eventFingerprint the value to set
          * @return this builder
-         */
+         **/
         public Builder eventFingerprint(String eventFingerprint) {
             this.eventFingerprint = eventFingerprint;
             this.__explicitlySet__.add("eventFingerprint");
             return this;
         }
-        /** Reason for the event. */
+        /**
+         * Reason for the event.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
          * Reason for the event.
-         *
          * @param reason the value to set
          * @return this builder
-         */
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
-        /** The date and time that the event first occurred. */
+        /**
+         * The date and time that the event first occurred.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
         private java.util.Date timeFirstOccurred;
 
         /**
          * The date and time that the event first occurred.
-         *
          * @param timeFirstOccurred the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
             this.timeFirstOccurred = timeFirstOccurred;
             this.__explicitlySet__.add("timeFirstOccurred");
@@ -169,7 +170,9 @@ public final class KernelEventData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,54 +188,58 @@ public final class KernelEventData
         return content;
     }
 
-    /** Number of times the event has occurred. */
+    /**
+     * Number of times the event has occurred.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * Number of times the event has occurred.
-     *
      * @return the value
-     */
+     **/
     public Integer getCount() {
         return count;
     }
 
-    /** Fingerprint of the event. */
+    /**
+     * Fingerprint of the event.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventFingerprint")
     private final String eventFingerprint;
 
     /**
      * Fingerprint of the event.
-     *
      * @return the value
-     */
+     **/
     public String getEventFingerprint() {
         return eventFingerprint;
     }
 
-    /** Reason for the event. */
+    /**
+     * Reason for the event.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
      * Reason for the event.
-     *
      * @return the value
-     */
+     **/
     public String getReason() {
         return reason;
     }
 
-    /** The date and time that the event first occurred. */
+    /**
+     * The date and time that the event first occurred.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
     private final java.util.Date timeFirstOccurred;
 
     /**
      * The date and time that the event first occurred.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFirstOccurred() {
         return timeFirstOccurred;
     }
@@ -251,7 +258,6 @@ public final class KernelEventData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

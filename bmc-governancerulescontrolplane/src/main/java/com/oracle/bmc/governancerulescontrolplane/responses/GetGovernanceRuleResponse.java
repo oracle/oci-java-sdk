@@ -6,9 +6,12 @@ package com.oracle.bmc.governancerulescontrolplane.responses;
 
 import com.oracle.bmc.governancerulescontrolplane.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned {@code GovernanceRule} instance. */
+    /**
+     * The returned GovernanceRule instance.
+     */
     private com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule governanceRule;
 
     /**
-     * The returned {@code GovernanceRule} instance.
-     *
+     * The returned GovernanceRule instance.
      * @return the value
      */
     public com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule getGovernanceRule() {
@@ -57,7 +62,7 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private GetGovernanceRuleResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule governanceRule) {
@@ -67,25 +72,25 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
         this.governanceRule = governanceRule;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetGovernanceRuleResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +105,15 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code GovernanceRule} instance. */
+        /**
+         * The returned GovernanceRule instance.
+         */
         private com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule governanceRule;
 
         /**
-         * The returned {@code GovernanceRule} instance.
-         *
+         * The returned GovernanceRule instance.
          * @param governanceRule the value to set
          * @return this builder
          */
@@ -134,10 +141,8 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetGovernanceRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +155,8 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetGovernanceRuleResponse build() {
             return new GetGovernanceRuleResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, governanceRule);
@@ -162,7 +165,6 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

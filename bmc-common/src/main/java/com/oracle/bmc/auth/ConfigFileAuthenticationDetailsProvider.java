@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.auth;
 
-import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 import com.oracle.bmc.Realm;
@@ -23,30 +22,32 @@ import java.util.List;
 import java.util.function.Supplier;
 
 /**
- * Implementation of {@link AuthenticationDetailsProvider} that uses a standard OCI configuration
- * file as an input.
+ * Implementation of {@link AuthenticationDetailsProvider} that uses a standard
+ * OCI configuration file as an input.
  */
 public class ConfigFileAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider, RegionProvider, ProvidesClientConfigurators {
 
-    private static final String OCI_REGION_ENV_VAR_NAME = "OCI_REGION";
-    private static final String AUTHENTICATION_TYPE_KEY = "authentication_type";
-    private static final String INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE = "instance_principal";
-    private static final String RESOURCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE = "resource_principal";
+    private final static String OCI_REGION_ENV_VAR_NAME = "OCI_REGION";
+    private final static String AUTHENTICATION_TYPE_KEY = "authentication_type";
+    private final static String INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE = "instance_principal";
+    private final static String RESOURCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE = "resource_principal";
 
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ConfigFileAuthenticationDetailsProvider.class);
     protected final BasicConfigFileAuthenticationProvider delegate;
     private final Region region;
-    private static final String CONFIG_FILE_DEBUG_INFORMATION_LOG =
+    private final static String CONFIG_FILE_DEBUG_INFORMATION_LOG =
             "\nFor more information about OCI configuration file and how to get required information, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm";
 
     /**
-     * Creates a new instance using the config file at the default location, see {@link
-     * ConfigFileReader#DEFAULT_FILE_PATH}.
+     * Creates a new instance using the config file at the default location,
+     * see {@link ConfigFileReader#DEFAULT_FILE_PATH}.
      *
-     * @param profile profile to load, optional
-     * @throws IOException if the configuration file could not be loaded
+     * @param profile
+     *            profile to load, optional
+     * @throws IOException
+     *             if the configuration file could not be loaded
      */
     public ConfigFileAuthenticationDetailsProvider(String profile) throws IOException {
         this(ConfigFileReader.parseDefault(profile));
@@ -55,9 +56,12 @@ public class ConfigFileAuthenticationDetailsProvider
     /**
      * Creates a new instance.
      *
-     * @param configurationFilePath path to the OCI configuration file
-     * @param profile profile to load, optional
-     * @throws IOException if the configuration file could not be loaded
+     * @param configurationFilePath
+     *            path to the OCI configuration file
+     * @param profile
+     *            profile to load, optional
+     * @throws IOException
+     *             if the configuration file could not be loaded
      */
     public ConfigFileAuthenticationDetailsProvider(String configurationFilePath, String profile)
             throws IOException {
@@ -67,7 +71,8 @@ public class ConfigFileAuthenticationDetailsProvider
     /**
      * Creates a new instance.
      *
-     * @param configFile The configuration file to use.
+     * @param configFile
+     *            The configuration file to use.
      */
     public ConfigFileAuthenticationDetailsProvider(ConfigFile configFile) {
         final String authentication_type = configFile.get(AUTHENTICATION_TYPE_KEY);
@@ -88,15 +93,13 @@ public class ConfigFileAuthenticationDetailsProvider
 
     public static Region getRegionFromConfigFile(ConfigFile configFile) {
 
-        // region is optional, for backwards compatibility, if region is not known, log an error and
-        // continue.
-        // the same file may be used by other tools, where the region can be a newly launched region
-        // value
+        // region is optional, for backwards compatibility, if region is not known, log an error and continue.
+        // the same file may be used by other tools, where the region can be a newly launched region value
         // that is not supported by the SDK yet.
         Region region = null;
         String regionId = configFile.get("region");
 
-        // if regionId is not defined in config file check env variable
+        //if regionId is not defined in config file check env variable
         if (StringUtils.isBlank(regionId)) {
             regionId = System.getenv(OCI_REGION_ENV_VAR_NAME);
             LOG.info("regionId from OCI_REGION env variable: " + regionId);
@@ -106,9 +109,8 @@ public class ConfigFileAuthenticationDetailsProvider
             try {
                 region = Region.fromRegionId(regionId);
             } catch (IllegalArgumentException e) {
-                Alloy.throwUnknownAlloyRegionIfAppropriate(regionId, e);
                 LOG.warn(
-                        "Found regionId '{}' in config file or OCI_REGION env variable, but not supported by this version of the SDK."
+                        "Found regionId '{}' in config file or OCI_REGION env variable, but not supported by this version of the SDK"
                                 + CONFIG_FILE_DEBUG_INFORMATION_LOG,
                         regionId,
                         e);

@@ -5,27 +5,29 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A list of basic masking formats compatible with and grouped by the supported data types. The data
- * types are grouped into the following categories - Character - Includes CHAR, NCHAR, VARCHAR2, and
- * NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes
- * DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data
- * types <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * A list of basic masking formats compatible with and grouped by the supported data types. The data types are grouped into
+ * the following categories -
+ *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+ *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+ *   Date - Includes DATE and TIMESTAMP
+ *   LOB - Includes BLOB, CLOB, and NCLOB
+ *   All - Includes all the supported data types
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CompatibleFormatsForDataTypes.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CompatibleFormatsForDataTypes.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CompatibleFormatsForDataTypes
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"formatsForDataType"})
     public CompatibleFormatsForDataTypes(java.util.List<FormatsForDataType> formatsForDataType) {
@@ -35,16 +37,17 @@ public final class CompatibleFormatsForDataTypes
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An array of lists of basic masking formats compatible with the supported data types. */
+        /**
+         * An array of lists of basic masking formats compatible with the supported data types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formatsForDataType")
         private java.util.List<FormatsForDataType> formatsForDataType;
 
         /**
          * An array of lists of basic masking formats compatible with the supported data types.
-         *
          * @param formatsForDataType the value to set
          * @return this builder
-         */
+         **/
         public Builder formatsForDataType(java.util.List<FormatsForDataType> formatsForDataType) {
             this.formatsForDataType = formatsForDataType;
             this.__explicitlySet__.add("formatsForDataType");
@@ -72,7 +75,9 @@ public final class CompatibleFormatsForDataTypes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -81,15 +86,16 @@ public final class CompatibleFormatsForDataTypes
         return new Builder().copy(this);
     }
 
-    /** An array of lists of basic masking formats compatible with the supported data types. */
+    /**
+     * An array of lists of basic masking formats compatible with the supported data types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formatsForDataType")
     private final java.util.List<FormatsForDataType> formatsForDataType;
 
     /**
      * An array of lists of basic masking formats compatible with the supported data types.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FormatsForDataType> getFormatsForDataType() {
         return formatsForDataType;
     }
@@ -101,7 +107,6 @@ public final class CompatibleFormatsForDataTypes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

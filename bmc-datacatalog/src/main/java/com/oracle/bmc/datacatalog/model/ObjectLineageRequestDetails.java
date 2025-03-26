@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Details needed by a lineage fetch request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Details needed by a lineage fetch request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ObjectLineageRequestDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ObjectLineageRequestDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ObjectLineageRequestDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "level",
@@ -43,7 +42,10 @@ public final class ObjectLineageRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Object level at which the lineage is returned. */
+        /**
+         * Object level at which the lineage is returned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Integer level;
 
@@ -52,60 +54,63 @@ public final class ObjectLineageRequestDetails
          *
          * @param level the value to set
          * @return this builder
-         */
+         **/
         public Builder level(Integer level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
-        /** Direction of the lineage returned. */
+        /**
+         * Direction of the lineage returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("direction")
         private LineageDirection direction;
 
         /**
          * Direction of the lineage returned.
-         *
          * @param direction the value to set
          * @return this builder
-         */
+         **/
         public Builder direction(LineageDirection direction) {
             this.direction = direction;
             this.__explicitlySet__.add("direction");
             return this;
         }
         /**
-         * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages
-         * need to be expanded inline in the lineage returned.
-         */
+         * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages need to be
+         * expanded inline in the lineage returned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIntraLineage")
         private Boolean isIntraLineage;
 
         /**
-         * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages
-         * need to be expanded inline in the lineage returned.
+         * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages need to be
+         * expanded inline in the lineage returned.
          *
          * @param isIntraLineage the value to set
          * @return this builder
-         */
+         **/
         public Builder isIntraLineage(Boolean isIntraLineage) {
             this.isIntraLineage = isIntraLineage;
             this.__explicitlySet__.add("isIntraLineage");
             return this;
         }
         /**
-         * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage
-         * corresponding to the object whose object key is passed is returned.
-         */
+         * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage corresponding
+         * to the object whose object key is passed is returned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intraLineageObjectKey")
         private String intraLineageObjectKey;
 
         /**
-         * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage
-         * corresponding to the object whose object key is passed is returned.
+         * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage corresponding
+         * to the object whose object key is passed is returned.
          *
          * @param intraLineageObjectKey the value to set
          * @return this builder
-         */
+         **/
         public Builder intraLineageObjectKey(String intraLineageObjectKey) {
             this.intraLineageObjectKey = intraLineageObjectKey;
             this.__explicitlySet__.add("intraLineageObjectKey");
@@ -146,7 +151,9 @@ public final class ObjectLineageRequestDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,7 +162,10 @@ public final class ObjectLineageRequestDetails
         return new Builder().copy(this);
     }
 
-    /** Object level at which the lineage is returned. */
+    /**
+     * Object level at which the lineage is returned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Integer level;
 
@@ -163,54 +173,57 @@ public final class ObjectLineageRequestDetails
      * Object level at which the lineage is returned.
      *
      * @return the value
-     */
+     **/
     public Integer getLevel() {
         return level;
     }
 
-    /** Direction of the lineage returned. */
+    /**
+     * Direction of the lineage returned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
     private final LineageDirection direction;
 
     /**
      * Direction of the lineage returned.
-     *
      * @return the value
-     */
+     **/
     public LineageDirection getDirection() {
         return direction;
     }
 
     /**
-     * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages need
-     * to be expanded inline in the lineage returned.
-     */
+     * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages need to be
+     * expanded inline in the lineage returned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIntraLineage")
     private final Boolean isIntraLineage;
 
     /**
-     * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages need
-     * to be expanded inline in the lineage returned.
+     * Intra-lineages are drill down lineages. This field indicates whether all intra-lineages need to be
+     * expanded inline in the lineage returned.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsIntraLineage() {
         return isIntraLineage;
     }
 
     /**
-     * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage
-     * corresponding to the object whose object key is passed is returned.
-     */
+     * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage corresponding
+     * to the object whose object key is passed is returned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intraLineageObjectKey")
     private final String intraLineageObjectKey;
 
     /**
-     * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage
-     * corresponding to the object whose object key is passed is returned.
+     * Unique object key for which intra-lineage needs to be fetched. Only drill-down lineage corresponding
+     * to the object whose object key is passed is returned.
      *
      * @return the value
-     */
+     **/
     public String getIntraLineageObjectKey() {
         return intraLineageObjectKey;
     }
@@ -222,7 +235,6 @@ public final class ObjectLineageRequestDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

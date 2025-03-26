@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/** Upgrade Open Search cluster upgrade type(major or minor) */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum UpgradeType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Upgrade Open Search cluster upgrade type(major or minor)
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+public enum UpgradeType {
     Minor("MINOR"),
     Major("MAJOR"),
     ;

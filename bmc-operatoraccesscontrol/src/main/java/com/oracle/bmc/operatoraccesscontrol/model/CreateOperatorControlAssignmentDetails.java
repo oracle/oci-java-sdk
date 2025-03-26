@@ -5,26 +5,24 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Details of the Operator Control assignment. An Operator Control Assignment identifies the target
- * resource that is placed under the governance of an Operator Control. Creating an Operator Control
- * Assignment Assignment with a time duration ensures that human accesses to the target resource
- * will be governed by Operator Control for the duration specified. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the Operator Control assignment. An Operator Control Assignment identifies the target resource that is placed under the governance of an Operator Control.
+ * Creating an Operator Control Assignment Assignment with a time duration ensures that human accesses to the target resource will be governed by Operator Control for the duration specified.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateOperatorControlAssignmentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateOperatorControlAssignmentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateOperatorControlAssignmentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operatorControlId",
@@ -88,298 +86,288 @@ public final class CreateOperatorControlAssignmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the operator control that is being assigned to a target resource. */
+        /**
+         * The OCID of the operator control that is being assigned to a target resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatorControlId")
         private String operatorControlId;
 
         /**
          * The OCID of the operator control that is being assigned to a target resource.
-         *
          * @param operatorControlId the value to set
          * @return this builder
-         */
+         **/
         public Builder operatorControlId(String operatorControlId) {
             this.operatorControlId = operatorControlId;
             this.__explicitlySet__.add("operatorControlId");
             return this;
         }
         /**
-         * The OCID of the target resource being brought under the governance of the operator
-         * control.
-         */
+         * The OCID of the target resource being brought under the governance of the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The OCID of the target resource being brought under the governance of the operator
-         * control.
-         *
+         * The OCID of the target resource being brought under the governance of the operator control.
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Name of the target resource. */
+        /**
+         * Name of the target resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * Name of the target resource.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** Type of the target resource. */
+        /**
+         * Type of the target resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceTypes resourceType;
 
         /**
          * Type of the target resource.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(ResourceTypes resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The OCID of the compartment that contains the target resource. */
+        /**
+         * The OCID of the compartment that contains the target resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
         private String resourceCompartmentId;
 
         /**
          * The OCID of the compartment that contains the target resource.
-         *
          * @param resourceCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceCompartmentId(String resourceCompartmentId) {
             this.resourceCompartmentId = resourceCompartmentId;
             this.__explicitlySet__.add("resourceCompartmentId");
             return this;
         }
         /**
-         * The time at which the target resource will be brought under the governance of the
-         * operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: '2020-05-22T21:10:29.600Z'
-         */
+         * The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentFrom")
         private java.util.Date timeAssignmentFrom;
 
         /**
-         * The time at which the target resource will be brought under the governance of the
-         * operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: '2020-05-22T21:10:29.600Z'
+         * The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
          *
          * @param timeAssignmentFrom the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAssignmentFrom(java.util.Date timeAssignmentFrom) {
             this.timeAssignmentFrom = timeAssignmentFrom;
             this.__explicitlySet__.add("timeAssignmentFrom");
             return this;
         }
         /**
-         * The time at which the target resource will leave the governance of the operator control
-         * in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example:
-         * '2020-05-22T21:10:29.600Z'
-         */
+         * The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentTo")
         private java.util.Date timeAssignmentTo;
 
         /**
-         * The time at which the target resource will leave the governance of the operator control
-         * in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example:
-         * '2020-05-22T21:10:29.600Z'
+         * The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
          *
          * @param timeAssignmentTo the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAssignmentTo(java.util.Date timeAssignmentTo) {
             this.timeAssignmentTo = timeAssignmentTo;
             this.__explicitlySet__.add("timeAssignmentTo");
             return this;
         }
-        /** The OCID of the compartment that contains the operator control assignment. */
+        /**
+         * The OCID of the compartment that contains the operator control assignment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the operator control assignment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** If set, then the target resource is always governed by the operator control. */
+        /**
+         * If set, then the target resource is always governed by the operator control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedAlways")
         private Boolean isEnforcedAlways;
 
         /**
          * If set, then the target resource is always governed by the operator control.
-         *
          * @param isEnforcedAlways the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnforcedAlways(Boolean isEnforcedAlways) {
             this.isEnforcedAlways = isEnforcedAlways;
             this.__explicitlySet__.add("isEnforcedAlways");
             return this;
         }
-        /** Comment about the assignment of the operator control to this target resource. */
+        /**
+         * Comment about the assignment of the operator control to this target resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
         /**
          * Comment about the assignment of the operator control to this target resource.
-         *
          * @param comment the value to set
          * @return this builder
-         */
+         **/
         public Builder comment(String comment) {
             this.comment = comment;
             this.__explicitlySet__.add("comment");
             return this;
         }
-        /** If set, then the audit logs will be forwarded to the relevant remote logging server */
+        /**
+         * If set, then the audit logs will be forwarded to the relevant remote logging server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
         private Boolean isLogForwarded;
 
         /**
          * If set, then the audit logs will be forwarded to the relevant remote logging server
-         *
          * @param isLogForwarded the value to set
          * @return this builder
-         */
+         **/
         public Builder isLogForwarded(Boolean isLogForwarded) {
             this.isLogForwarded = isLogForwarded;
             this.__explicitlySet__.add("isLogForwarded");
             return this;
         }
         /**
-         * The address of the remote syslog server where the audit logs will be forwarded to.
-         * Address in host or IP format.
-         */
+         * The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
         private String remoteSyslogServerAddress;
 
         /**
-         * The address of the remote syslog server where the audit logs will be forwarded to.
-         * Address in host or IP format.
-         *
+         * The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
          * @param remoteSyslogServerAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder remoteSyslogServerAddress(String remoteSyslogServerAddress) {
             this.remoteSyslogServerAddress = remoteSyslogServerAddress;
             this.__explicitlySet__.add("remoteSyslogServerAddress");
             return this;
         }
         /**
-         * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP
-         * supported.
-         */
+         * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
         private Integer remoteSyslogServerPort;
 
         /**
-         * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP
-         * supported.
-         *
+         * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
          * @param remoteSyslogServerPort the value to set
          * @return this builder
-         */
+         **/
         public Builder remoteSyslogServerPort(Integer remoteSyslogServerPort) {
             this.remoteSyslogServerPort = remoteSyslogServerPort;
             this.__explicitlySet__.add("remoteSyslogServerPort");
             return this;
         }
         /**
-         * The CA certificate of the remote syslog server. Identity of the remote syslog server will
-         * be asserted based on this certificate.
-         */
+         * The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerCACert")
         private String remoteSyslogServerCACert;
 
         /**
-         * The CA certificate of the remote syslog server. Identity of the remote syslog server will
-         * be asserted based on this certificate.
-         *
+         * The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
          * @param remoteSyslogServerCACert the value to set
          * @return this builder
-         */
+         **/
         public Builder remoteSyslogServerCACert(String remoteSyslogServerCACert) {
             this.remoteSyslogServerCACert = remoteSyslogServerCACert;
             this.__explicitlySet__.add("remoteSyslogServerCACert");
             return this;
         }
         /**
-         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog
-         * server
-         */
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
         private Boolean isHypervisorLogForwarded;
 
         /**
-         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog
-         * server
-         *
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
          * @param isHypervisorLogForwarded the value to set
          * @return this builder
-         */
+         **/
         public Builder isHypervisorLogForwarded(Boolean isHypervisorLogForwarded) {
             this.isHypervisorLogForwarded = isHypervisorLogForwarded;
             this.__explicitlySet__.add("isHypervisorLogForwarded");
             return this;
         }
-        /** The boolean if true would autoApprove during maintenance. */
+        /**
+         * The boolean if true would autoApprove during maintenance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
         private Boolean isAutoApproveDuringMaintenance;
 
         /**
          * The boolean if true would autoApprove during maintenance.
-         *
          * @param isAutoApproveDuringMaintenance the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
             this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
             this.__explicitlySet__.add("isAutoApproveDuringMaintenance");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only.
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** Defined tags for this resource. Each key is predefined and scoped to a namespace. */
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -388,7 +376,7 @@ public final class CreateOperatorControlAssignmentDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -486,7 +474,9 @@ public final class CreateOperatorControlAssignmentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -495,260 +485,254 @@ public final class CreateOperatorControlAssignmentDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the operator control that is being assigned to a target resource. */
+    /**
+     * The OCID of the operator control that is being assigned to a target resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatorControlId")
     private final String operatorControlId;
 
     /**
      * The OCID of the operator control that is being assigned to a target resource.
-     *
      * @return the value
-     */
+     **/
     public String getOperatorControlId() {
         return operatorControlId;
     }
 
     /**
      * The OCID of the target resource being brought under the governance of the operator control.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The OCID of the target resource being brought under the governance of the operator control.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Name of the target resource. */
+    /**
+     * Name of the target resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * Name of the target resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** Type of the target resource. */
+    /**
+     * Type of the target resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceTypes resourceType;
 
     /**
      * Type of the target resource.
-     *
      * @return the value
-     */
+     **/
     public ResourceTypes getResourceType() {
         return resourceType;
     }
 
-    /** The OCID of the compartment that contains the target resource. */
+    /**
+     * The OCID of the compartment that contains the target resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
     private final String resourceCompartmentId;
 
     /**
      * The OCID of the compartment that contains the target resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceCompartmentId() {
         return resourceCompartmentId;
     }
 
     /**
-     * The time at which the target resource will be brought under the governance of the operator
-     * control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'
-     */
+     * The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentFrom")
     private final java.util.Date timeAssignmentFrom;
 
     /**
-     * The time at which the target resource will be brought under the governance of the operator
-     * control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'
+     * The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAssignmentFrom() {
         return timeAssignmentFrom;
     }
 
     /**
-     * The time at which the target resource will leave the governance of the operator control in
-     * [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example:
-     * '2020-05-22T21:10:29.600Z'
-     */
+     * The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssignmentTo")
     private final java.util.Date timeAssignmentTo;
 
     /**
-     * The time at which the target resource will leave the governance of the operator control in
-     * [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example:
-     * '2020-05-22T21:10:29.600Z'
+     * The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAssignmentTo() {
         return timeAssignmentTo;
     }
 
-    /** The OCID of the compartment that contains the operator control assignment. */
+    /**
+     * The OCID of the compartment that contains the operator control assignment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the operator control assignment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** If set, then the target resource is always governed by the operator control. */
+    /**
+     * If set, then the target resource is always governed by the operator control.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedAlways")
     private final Boolean isEnforcedAlways;
 
     /**
      * If set, then the target resource is always governed by the operator control.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnforcedAlways() {
         return isEnforcedAlways;
     }
 
-    /** Comment about the assignment of the operator control to this target resource. */
+    /**
+     * Comment about the assignment of the operator control to this target resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
     /**
      * Comment about the assignment of the operator control to this target resource.
-     *
      * @return the value
-     */
+     **/
     public String getComment() {
         return comment;
     }
 
-    /** If set, then the audit logs will be forwarded to the relevant remote logging server */
+    /**
+     * If set, then the audit logs will be forwarded to the relevant remote logging server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
     private final Boolean isLogForwarded;
 
     /**
      * If set, then the audit logs will be forwarded to the relevant remote logging server
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLogForwarded() {
         return isLogForwarded;
     }
 
     /**
-     * The address of the remote syslog server where the audit logs will be forwarded to. Address in
-     * host or IP format.
-     */
+     * The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
     private final String remoteSyslogServerAddress;
 
     /**
-     * The address of the remote syslog server where the audit logs will be forwarded to. Address in
-     * host or IP format.
-     *
+     * The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
      * @return the value
-     */
+     **/
     public String getRemoteSyslogServerAddress() {
         return remoteSyslogServerAddress;
     }
 
     /**
-     * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP
-     * supported.
-     */
+     * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
     private final Integer remoteSyslogServerPort;
 
     /**
-     * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP
-     * supported.
-     *
+     * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      * @return the value
-     */
+     **/
     public Integer getRemoteSyslogServerPort() {
         return remoteSyslogServerPort;
     }
 
     /**
-     * The CA certificate of the remote syslog server. Identity of the remote syslog server will be
-     * asserted based on this certificate.
-     */
+     * The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerCACert")
     private final String remoteSyslogServerCACert;
 
     /**
-     * The CA certificate of the remote syslog server. Identity of the remote syslog server will be
-     * asserted based on this certificate.
-     *
+     * The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      * @return the value
-     */
+     **/
     public String getRemoteSyslogServerCACert() {
         return remoteSyslogServerCACert;
     }
 
     /**
      * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
     private final Boolean isHypervisorLogForwarded;
 
     /**
      * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHypervisorLogForwarded() {
         return isHypervisorLogForwarded;
     }
 
-    /** The boolean if true would autoApprove during maintenance. */
+    /**
+     * The boolean if true would autoApprove during maintenance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
     private final Boolean isAutoApproveDuringMaintenance;
 
     /**
      * The boolean if true would autoApprove during maintenance.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoApproveDuringMaintenance() {
         return isAutoApproveDuringMaintenance;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /** Defined tags for this resource. Each key is predefined and scoped to a namespace. */
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -756,7 +740,7 @@ public final class CreateOperatorControlAssignmentDetails
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -768,7 +752,6 @@ public final class CreateOperatorControlAssignmentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

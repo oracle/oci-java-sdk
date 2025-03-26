@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/** ManagementAgentProperty unit. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum PropertyUnits implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * ManagementAgentProperty unit.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+public enum PropertyUnits {
     Percentage("PERCENTAGE"),
     Mb("MB"),
 

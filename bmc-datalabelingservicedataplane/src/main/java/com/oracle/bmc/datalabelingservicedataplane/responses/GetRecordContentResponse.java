@@ -6,9 +6,12 @@ package com.oracle.bmc.datalabelingservicedataplane.responses;
 
 import com.oracle.bmc.datalabelingservicedataplane.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The content size of the body in bytes. */
+    /**
+     * The content size of the body in bytes.
+     */
     private Long contentLength;
 
     /**
      * The content size of the body in bytes.
-     *
      * @return the value
      */
     public Long getContentLength() {
@@ -49,15 +54,12 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * The content disposition of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+     * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
      */
     private String contentDisposition;
 
     /**
-     * The content disposition of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
-     *
+     * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
      * @return the value
      */
     public String getContentDisposition() {
@@ -65,15 +67,12 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section
-     * 14.17.
+     * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
      */
     private String contentType;
 
     /**
-     * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section
-     * 14.17.
-     *
+     * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
      * @return the value
      */
     public String getContentType() {
@@ -81,14 +80,13 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether
-     * to validate them.
+     * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether to validate them.
+     *
      */
     private String cacheControl;
 
     /**
-     * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether
-     * to validate them.
+     * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether to validate them.
      *
      * @return the value
      */
@@ -96,12 +94,13 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         return cacheControl;
     }
 
-    /** The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true. */
+    /**
+     * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
+     */
     private java.io.InputStream inputStream;
 
     /**
      * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
-     *
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -109,17 +108,18 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
-     * object itself will return null. Callers should check this if they specified one of the
-     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
 
     /**
-     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
-     * object itself will return null. Callers should check this if they specified one of the
-     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
-     *
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
      * @param true if the object was not modified
      */
     public boolean isNotModified() {
@@ -140,7 +140,7 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetRecordContentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Long contentLength,
@@ -160,25 +160,25 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         this.isNotModified = isNotModified;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetRecordContentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -193,14 +193,15 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -210,12 +211,13 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The content size of the body in bytes. */
+        /**
+         * The content size of the body in bytes.
+         */
         private Long contentLength;
 
         /**
          * The content size of the body in bytes.
-         *
          * @param contentLength the value to set
          * @return this builder
          */
@@ -225,15 +227,12 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * The content disposition of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
          */
         private String contentDisposition;
 
         /**
-         * The content disposition of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
-         *
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
          * @param contentDisposition the value to set
          * @return this builder
          */
@@ -243,15 +242,12 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section
-         * 14.17.
+         * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
          */
         private String contentType;
 
         /**
-         * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section
-         * 14.17.
-         *
+         * The content type as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
          * @param contentType the value to set
          * @return this builder
          */
@@ -261,14 +257,13 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Cache-control allows us to tell browsers to cache assets, how long to store them, and
-         * whether to validate them.
+         * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether to validate them.
+         *
          */
         private String cacheControl;
 
         /**
-         * Cache-control allows us to tell browsers to cache assets, how long to store them, and
-         * whether to validate them.
+         * Cache-control allows us to tell browsers to cache assets, how long to store them, and whether to validate them.
          *
          * @param cacheControl the value to set
          * @return this builder
@@ -285,7 +280,6 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
-         *
          * @param inputStream the value to set
          * @return this builder
          */
@@ -295,19 +289,18 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Flag to indicate whether or not the object was modified. If this is true, the getter for
-         * the object itself will return null. Callers should check this if they specified one of
-         * the request params that might result in a conditional response (like
-         * 'if-match'/'if-none-match').
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
          */
         private boolean isNotModified;
 
         /**
-         * Flag to indicate whether or not the object was modified. If this is true, the getter for
-         * the object itself will return null. Callers should check this if they specified one of
-         * the request params that might result in a conditional response (like
-         * 'if-match'/'if-none-match').
-         *
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
          * @param true if the object was not modified
          */
         public Builder isNotModified(boolean isNotModified) {
@@ -317,10 +310,8 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetRecordContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -337,10 +328,8 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetRecordContentResponse build() {
             return new GetRecordContentResponse(
                     __httpStatusCode__,
@@ -358,7 +347,6 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

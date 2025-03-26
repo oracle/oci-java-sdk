@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Information about the IAM user sync configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Information about the IAM user sync configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IamUserSyncConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IamUserSyncConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IamUserSyncConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isPosixAttributesAdditionRequired",
@@ -43,70 +42,66 @@ public final class IamUserSyncConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** whether to append POSIX attributes to IAM users */
+        /**
+         * whether to append POSIX attributes to IAM users
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPosixAttributesAdditionRequired")
         private Boolean isPosixAttributesAdditionRequired;
 
         /**
          * whether to append POSIX attributes to IAM users
-         *
          * @param isPosixAttributesAdditionRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isPosixAttributesAdditionRequired(
                 Boolean isPosixAttributesAdditionRequired) {
             this.isPosixAttributesAdditionRequired = isPosixAttributesAdditionRequired;
             this.__explicitlySet__.add("isPosixAttributesAdditionRequired");
             return this;
         }
-        /** Lifecycle state of the IAM user sync config */
+        /**
+         * Lifecycle state of the IAM user sync config
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the IAM user sync config
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime
-         * string.
-         */
+         * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime
-         * string.
-         *
+         * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime
-         * string.
-         */
+         * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime
-         * string.
-         *
+         * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -148,7 +143,9 @@ public final class IamUserSyncConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,21 +154,24 @@ public final class IamUserSyncConfiguration
         return new Builder().copy(this);
     }
 
-    /** whether to append POSIX attributes to IAM users */
+    /**
+     * whether to append POSIX attributes to IAM users
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPosixAttributesAdditionRequired")
     private final Boolean isPosixAttributesAdditionRequired;
 
     /**
      * whether to append POSIX attributes to IAM users
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPosixAttributesAdditionRequired() {
         return isPosixAttributesAdditionRequired;
     }
 
-    /** Lifecycle state of the IAM user sync config */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifecycle state of the IAM user sync config
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -180,8 +180,8 @@ public final class IamUserSyncConfiguration
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -220,49 +220,44 @@ public final class IamUserSyncConfiguration
             return UnknownEnumValue;
         }
     };
-    /** Lifecycle state of the IAM user sync config */
+    /**
+     * Lifecycle state of the IAM user sync config
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the IAM user sync config
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime
-     * string.
-     */
+     * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime
-     * string.
-     *
+     * Time when this IAM user sync config was created, shown as an RFC 3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime
-     * string.
-     */
+     * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime
-     * string.
-     *
+     * Time when this IAM user sync config was updated, shown as an RFC 3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -274,7 +269,6 @@ public final class IamUserSyncConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

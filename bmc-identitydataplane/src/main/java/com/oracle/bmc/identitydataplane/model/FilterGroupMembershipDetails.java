@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FilterGroupMembershipDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FilterGroupMembershipDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FilterGroupMembershipDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"principal", "groupIds"})
     public FilterGroupMembershipDetails(Principal principal, java.util.List<String> groupIds) {
@@ -32,31 +31,33 @@ public final class FilterGroupMembershipDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A resolved principal object */
+        /**
+         * A resolved principal object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("principal")
         private Principal principal;
 
         /**
          * A resolved principal object
-         *
          * @param principal the value to set
          * @return this builder
-         */
+         **/
         public Builder principal(Principal principal) {
             this.principal = principal;
             this.__explicitlySet__.add("principal");
             return this;
         }
-        /** An array of group or dynamic group Ids the resolved principal potentially belongs to. */
+        /**
+         * An array of group or dynamic group Ids the resolved principal potentially belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupIds")
         private java.util.List<String> groupIds;
 
         /**
          * An array of group or dynamic group Ids the resolved principal potentially belongs to.
-         *
          * @param groupIds the value to set
          * @return this builder
-         */
+         **/
         public Builder groupIds(java.util.List<String> groupIds) {
             this.groupIds = groupIds;
             this.__explicitlySet__.add("groupIds");
@@ -87,7 +88,9 @@ public final class FilterGroupMembershipDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class FilterGroupMembershipDetails
         return new Builder().copy(this);
     }
 
-    /** A resolved principal object */
+    /**
+     * A resolved principal object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("principal")
     private final Principal principal;
 
     /**
      * A resolved principal object
-     *
      * @return the value
-     */
+     **/
     public Principal getPrincipal() {
         return principal;
     }
 
-    /** An array of group or dynamic group Ids the resolved principal potentially belongs to. */
+    /**
+     * An array of group or dynamic group Ids the resolved principal potentially belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupIds")
     private final java.util.List<String> groupIds;
 
     /**
      * An array of group or dynamic group Ids the resolved principal potentially belongs to.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getGroupIds() {
         return groupIds;
     }
@@ -129,7 +134,6 @@ public final class FilterGroupMembershipDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

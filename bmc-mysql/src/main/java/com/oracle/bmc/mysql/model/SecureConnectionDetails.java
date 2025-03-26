@@ -5,23 +5,23 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Secure connection configuration details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * Secure connection configuration details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SecureConnectionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SecureConnectionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SecureConnectionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"certificateId", "certificateGenerationType"})
     public SecureConnectionDetails(
@@ -33,35 +33,35 @@ public final class SecureConnectionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the certificate to use. */
+        /**
+         * The OCID of the certificate to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
          * The OCID of the certificate to use.
-         *
          * @param certificateId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
             return this;
         }
         /**
-         * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own
-         * certificate (BYOC).
-         */
+         * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
         private CertificateGenerationType certificateGenerationType;
 
         /**
-         * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own
-         * certificate (BYOC).
+         * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
          *
          * @param certificateGenerationType the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateGenerationType(
                 CertificateGenerationType certificateGenerationType) {
             this.certificateGenerationType = certificateGenerationType;
@@ -93,7 +93,9 @@ public final class SecureConnectionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,32 +104,32 @@ public final class SecureConnectionDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the certificate to use. */
+    /**
+     * The OCID of the certificate to use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * The OCID of the certificate to use.
-     *
      * @return the value
-     */
+     **/
     public String getCertificateId() {
         return certificateId;
     }
 
     /**
-     * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own
-     * certificate (BYOC).
-     */
+     * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
     private final CertificateGenerationType certificateGenerationType;
 
     /**
-     * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own
-     * certificate (BYOC).
+     * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
      *
      * @return the value
-     */
+     **/
     public CertificateGenerationType getCertificateGenerationType() {
         return certificateGenerationType;
     }
@@ -139,7 +141,6 @@ public final class SecureConnectionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

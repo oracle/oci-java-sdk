@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The types of work request operations. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The types of work request operations.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum WorkRequestOperationType {
     NotebookSessionCreate("NOTEBOOK_SESSION_CREATE"),
     NotebookSessionDelete("NOTEBOOK_SESSION_DELETE"),
     NotebookSessionActivate("NOTEBOOK_SESSION_ACTIVATE"),

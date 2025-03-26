@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Image version details of the On-premise VP worker. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Image version details of the On-premise VP worker.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OnPremiseVpWorkerVersionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OnPremiseVpWorkerVersionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OnPremiseVpWorkerVersionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "minSupportedVersion", "latestVersion"})
     public OnPremiseVpWorkerVersionDetails(
@@ -34,46 +33,49 @@ public final class OnPremiseVpWorkerVersionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Current image version of the On-premise VP worker. */
+        /**
+         * Current image version of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Current image version of the On-premise VP worker.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Minimum supported image version of the On-premise VP worker. */
+        /**
+         * Minimum supported image version of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minSupportedVersion")
         private String minSupportedVersion;
 
         /**
          * Minimum supported image version of the On-premise VP worker.
-         *
          * @param minSupportedVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder minSupportedVersion(String minSupportedVersion) {
             this.minSupportedVersion = minSupportedVersion;
             this.__explicitlySet__.add("minSupportedVersion");
             return this;
         }
-        /** Latest image version of the On-premise VP worker. */
+        /**
+         * Latest image version of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
         private String latestVersion;
 
         /**
          * Latest image version of the On-premise VP worker.
-         *
          * @param latestVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder latestVersion(String latestVersion) {
             this.latestVersion = latestVersion;
             this.__explicitlySet__.add("latestVersion");
@@ -108,7 +110,9 @@ public final class OnPremiseVpWorkerVersionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +121,44 @@ public final class OnPremiseVpWorkerVersionDetails
         return new Builder().copy(this);
     }
 
-    /** Current image version of the On-premise VP worker. */
+    /**
+     * Current image version of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Current image version of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** Minimum supported image version of the On-premise VP worker. */
+    /**
+     * Minimum supported image version of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minSupportedVersion")
     private final String minSupportedVersion;
 
     /**
      * Minimum supported image version of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getMinSupportedVersion() {
         return minSupportedVersion;
     }
 
-    /** Latest image version of the On-premise VP worker. */
+    /**
+     * Latest image version of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestVersion")
     private final String latestVersion;
 
     /**
      * Latest image version of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getLatestVersion() {
         return latestVersion;
     }
@@ -163,7 +170,6 @@ public final class OnPremiseVpWorkerVersionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

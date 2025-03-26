@@ -9,31 +9,23 @@ import com.oracle.bmc.goldengate.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of GoldenGate where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of GoldenGate where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GoldenGatePaginators {
     private final GoldenGate client;
 
@@ -42,12 +34,11 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCertificates operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCertificates operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCertificatesResponse> listCertificatesResponseIterator(
             final ListCertificatesRequest request) {
@@ -93,21 +84,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.CertificateSummary} objects contained in responses from the
-     * listCertificates operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.CertificateSummary} objects
+     * contained in responses from the listCertificates operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.CertificateSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.CertificateSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.CertificateSummary>
             listCertificatesRecordIterator(final ListCertificatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCertificatesRequest.Builder,
-                ListCertificatesRequest,
-                ListCertificatesResponse,
+                ListCertificatesRequest.Builder, ListCertificatesRequest, ListCertificatesResponse,
                 com.oracle.bmc.goldengate.model.CertificateSummary>(
                 new java.util.function.Supplier<ListCertificatesRequest.Builder>() {
                     @Override
@@ -158,19 +146,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listConnectionAssignments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listConnectionAssignments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListConnectionAssignmentsResponse> listConnectionAssignmentsResponseIterator(
             final ListConnectionAssignmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListConnectionAssignmentsRequest.Builder,
-                ListConnectionAssignmentsRequest,
+                ListConnectionAssignmentsRequest.Builder, ListConnectionAssignmentsRequest,
                 ListConnectionAssignmentsResponse>(
                 new java.util.function.Supplier<ListConnectionAssignmentsRequest.Builder>() {
                     @Override
@@ -213,22 +198,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary} objects contained in responses
-     * from the listConnectionAssignments operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary} objects
+     * contained in responses from the listConnectionAssignments operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary>
             listConnectionAssignmentsRecordIterator(
                     final ListConnectionAssignmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListConnectionAssignmentsRequest.Builder,
-                ListConnectionAssignmentsRequest,
+                ListConnectionAssignmentsRequest.Builder, ListConnectionAssignmentsRequest,
                 ListConnectionAssignmentsResponse,
                 com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary>(
                 new java.util.function.Supplier<ListConnectionAssignmentsRequest.Builder>() {
@@ -283,12 +265,11 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listConnections operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listConnections operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListConnectionsResponse> listConnectionsResponseIterator(
             final ListConnectionsRequest request) {
@@ -333,21 +314,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.ConnectionSummary} objects contained in responses from the
-     * listConnections operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionSummary} objects
+     * contained in responses from the listConnections operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.ConnectionSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.ConnectionSummary>
             listConnectionsRecordIterator(final ListConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListConnectionsRequest.Builder,
-                ListConnectionsRequest,
-                ListConnectionsResponse,
+                ListConnectionsRequest.Builder, ListConnectionsRequest, ListConnectionsResponse,
                 com.oracle.bmc.goldengate.model.ConnectionSummary>(
                 new java.util.function.Supplier<ListConnectionsRequest.Builder>() {
                     @Override
@@ -397,19 +375,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDatabaseRegistrations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDatabaseRegistrations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDatabaseRegistrationsResponse> listDatabaseRegistrationsResponseIterator(
             final ListDatabaseRegistrationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDatabaseRegistrationsRequest.Builder,
-                ListDatabaseRegistrationsRequest,
+                ListDatabaseRegistrationsRequest.Builder, ListDatabaseRegistrationsRequest,
                 ListDatabaseRegistrationsResponse>(
                 new java.util.function.Supplier<ListDatabaseRegistrationsRequest.Builder>() {
                     @Override
@@ -452,22 +427,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary} objects contained in responses
-     * from the listDatabaseRegistrations operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary} objects
+     * contained in responses from the listDatabaseRegistrations operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary>
             listDatabaseRegistrationsRecordIterator(
                     final ListDatabaseRegistrationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDatabaseRegistrationsRequest.Builder,
-                ListDatabaseRegistrationsRequest,
+                ListDatabaseRegistrationsRequest.Builder, ListDatabaseRegistrationsRequest,
                 ListDatabaseRegistrationsResponse,
                 com.oracle.bmc.goldengate.model.DatabaseRegistrationSummary>(
                 new java.util.function.Supplier<ListDatabaseRegistrationsRequest.Builder>() {
@@ -522,19 +494,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDeploymentBackups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentBackups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDeploymentBackupsResponse> listDeploymentBackupsResponseIterator(
             final ListDeploymentBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDeploymentBackupsRequest.Builder,
-                ListDeploymentBackupsRequest,
+                ListDeploymentBackupsRequest.Builder, ListDeploymentBackupsRequest,
                 ListDeploymentBackupsResponse>(
                 new java.util.function.Supplier<ListDeploymentBackupsRequest.Builder>() {
                     @Override
@@ -577,21 +546,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DeploymentBackupSummary} objects contained in responses from
-     * the listDeploymentBackups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentBackupSummary} objects
+     * contained in responses from the listDeploymentBackups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DeploymentBackupSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentBackupSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DeploymentBackupSummary>
             listDeploymentBackupsRecordIterator(final ListDeploymentBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDeploymentBackupsRequest.Builder,
-                ListDeploymentBackupsRequest,
+                ListDeploymentBackupsRequest.Builder, ListDeploymentBackupsRequest,
                 ListDeploymentBackupsResponse,
                 com.oracle.bmc.goldengate.model.DeploymentBackupSummary>(
                 new java.util.function.Supplier<ListDeploymentBackupsRequest.Builder>() {
@@ -644,19 +610,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDeploymentEnvironments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentEnvironments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDeploymentEnvironmentsResponse> listDeploymentEnvironmentsResponseIterator(
             final ListDeploymentEnvironmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDeploymentEnvironmentsRequest.Builder,
-                ListDeploymentEnvironmentsRequest,
+                ListDeploymentEnvironmentsRequest.Builder, ListDeploymentEnvironmentsRequest,
                 ListDeploymentEnvironmentsResponse>(
                 new java.util.function.Supplier<ListDeploymentEnvironmentsRequest.Builder>() {
                     @Override
@@ -699,22 +662,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects contained in responses
-     * from the listDeploymentEnvironments operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects
+     * contained in responses from the listDeploymentEnvironments operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>
             listDeploymentEnvironmentsRecordIterator(
                     final ListDeploymentEnvironmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDeploymentEnvironmentsRequest.Builder,
-                ListDeploymentEnvironmentsRequest,
+                ListDeploymentEnvironmentsRequest.Builder, ListDeploymentEnvironmentsRequest,
                 ListDeploymentEnvironmentsResponse,
                 com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>(
                 new java.util.function.Supplier<ListDeploymentEnvironmentsRequest.Builder>() {
@@ -769,18 +729,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDeploymentTypes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentTypes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDeploymentTypesResponse> listDeploymentTypesResponseIterator(
             final ListDeploymentTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDeploymentTypesRequest.Builder,
-                ListDeploymentTypesRequest,
+                ListDeploymentTypesRequest.Builder, ListDeploymentTypesRequest,
                 ListDeploymentTypesResponse>(
                 new java.util.function.Supplier<ListDeploymentTypesRequest.Builder>() {
                     @Override
@@ -822,23 +780,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DeploymentTypeSummary} objects contained in responses from
-     * the listDeploymentTypes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentTypeSummary} objects
+     * contained in responses from the listDeploymentTypes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DeploymentTypeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentTypeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DeploymentTypeSummary>
             listDeploymentTypesRecordIterator(final ListDeploymentTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDeploymentTypesRequest.Builder,
-                ListDeploymentTypesRequest,
-                ListDeploymentTypesResponse,
-                com.oracle.bmc.goldengate.model.DeploymentTypeSummary>(
+                ListDeploymentTypesRequest.Builder, ListDeploymentTypesRequest,
+                ListDeploymentTypesResponse, com.oracle.bmc.goldengate.model.DeploymentTypeSummary>(
                 new java.util.function.Supplier<ListDeploymentTypesRequest.Builder>() {
                     @Override
                     public ListDeploymentTypesRequest.Builder get() {
@@ -888,19 +842,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDeploymentUpgrades operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentUpgrades operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDeploymentUpgradesResponse> listDeploymentUpgradesResponseIterator(
             final ListDeploymentUpgradesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDeploymentUpgradesRequest.Builder,
-                ListDeploymentUpgradesRequest,
+                ListDeploymentUpgradesRequest.Builder, ListDeploymentUpgradesRequest,
                 ListDeploymentUpgradesResponse>(
                 new java.util.function.Supplier<ListDeploymentUpgradesRequest.Builder>() {
                     @Override
@@ -943,21 +894,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary} objects contained in responses from
-     * the listDeploymentUpgrades operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary} objects
+     * contained in responses from the listDeploymentUpgrades operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>
             listDeploymentUpgradesRecordIterator(final ListDeploymentUpgradesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDeploymentUpgradesRequest.Builder,
-                ListDeploymentUpgradesRequest,
+                ListDeploymentUpgradesRequest.Builder, ListDeploymentUpgradesRequest,
                 ListDeploymentUpgradesResponse,
                 com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>(
                 new java.util.function.Supplier<ListDeploymentUpgradesRequest.Builder>() {
@@ -1011,19 +959,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDeploymentVersions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentVersions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDeploymentVersionsResponse> listDeploymentVersionsResponseIterator(
             final ListDeploymentVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDeploymentVersionsRequest.Builder,
-                ListDeploymentVersionsRequest,
+                ListDeploymentVersionsRequest.Builder, ListDeploymentVersionsRequest,
                 ListDeploymentVersionsResponse>(
                 new java.util.function.Supplier<ListDeploymentVersionsRequest.Builder>() {
                     @Override
@@ -1066,21 +1011,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DeploymentVersionSummary} objects contained in responses from
-     * the listDeploymentVersions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentVersionSummary} objects
+     * contained in responses from the listDeploymentVersions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DeploymentVersionSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentVersionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DeploymentVersionSummary>
             listDeploymentVersionsRecordIterator(final ListDeploymentVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDeploymentVersionsRequest.Builder,
-                ListDeploymentVersionsRequest,
+                ListDeploymentVersionsRequest.Builder, ListDeploymentVersionsRequest,
                 ListDeploymentVersionsResponse,
                 com.oracle.bmc.goldengate.model.DeploymentVersionSummary>(
                 new java.util.function.Supplier<ListDeploymentVersionsRequest.Builder>() {
@@ -1134,21 +1076,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDeploymentWalletsOperations operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentWalletsOperations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDeploymentWalletsOperationsResponse>
             listDeploymentWalletsOperationsResponseIterator(
                     final ListDeploymentWalletsOperationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDeploymentWalletsOperationsRequest.Builder,
-                ListDeploymentWalletsOperationsRequest,
-                ListDeploymentWalletsOperationsResponse>(
+                ListDeploymentWalletsOperationsRequest, ListDeploymentWalletsOperationsResponse>(
                 new java.util.function.Supplier<ListDeploymentWalletsOperationsRequest.Builder>() {
                     @Override
                     public ListDeploymentWalletsOperationsRequest.Builder get() {
@@ -1191,23 +1130,20 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DeploymentWalletsOperationSummary} objects contained in
-     * responses from the listDeploymentWalletsOperations operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentWalletsOperationSummary} objects
+     * contained in responses from the listDeploymentWalletsOperations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DeploymentWalletsOperationSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentWalletsOperationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DeploymentWalletsOperationSummary>
             listDeploymentWalletsOperationsRecordIterator(
                     final ListDeploymentWalletsOperationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDeploymentWalletsOperationsRequest.Builder,
-                ListDeploymentWalletsOperationsRequest,
-                ListDeploymentWalletsOperationsResponse,
+                ListDeploymentWalletsOperationsRequest, ListDeploymentWalletsOperationsResponse,
                 com.oracle.bmc.goldengate.model.DeploymentWalletsOperationSummary>(
                 new java.util.function.Supplier<ListDeploymentWalletsOperationsRequest.Builder>() {
                     @Override
@@ -1264,12 +1200,11 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDeployments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDeployments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDeploymentsResponse> listDeploymentsResponseIterator(
             final ListDeploymentsRequest request) {
@@ -1314,21 +1249,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.DeploymentSummary} objects contained in responses from the
-     * listDeployments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentSummary} objects
+     * contained in responses from the listDeployments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.DeploymentSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.DeploymentSummary>
             listDeploymentsRecordIterator(final ListDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDeploymentsRequest.Builder,
-                ListDeploymentsRequest,
-                ListDeploymentsResponse,
+                ListDeploymentsRequest.Builder, ListDeploymentsRequest, ListDeploymentsResponse,
                 com.oracle.bmc.goldengate.model.DeploymentSummary>(
                 new java.util.function.Supplier<ListDeploymentsRequest.Builder>() {
                     @Override
@@ -1378,20 +1310,17 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listPipelineRunningProcesses operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listPipelineRunningProcesses operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPipelineRunningProcessesResponse>
             listPipelineRunningProcessesResponseIterator(
                     final ListPipelineRunningProcessesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListPipelineRunningProcessesRequest.Builder,
-                ListPipelineRunningProcessesRequest,
+                ListPipelineRunningProcessesRequest.Builder, ListPipelineRunningProcessesRequest,
                 ListPipelineRunningProcessesResponse>(
                 new java.util.function.Supplier<ListPipelineRunningProcessesRequest.Builder>() {
                     @Override
@@ -1435,22 +1364,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary} objects contained in responses
-     * from the listPipelineRunningProcesses operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary} objects
+     * contained in responses from the listPipelineRunningProcesses operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary>
             listPipelineRunningProcessesRecordIterator(
                     final ListPipelineRunningProcessesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPipelineRunningProcessesRequest.Builder,
-                ListPipelineRunningProcessesRequest,
+                ListPipelineRunningProcessesRequest.Builder, ListPipelineRunningProcessesRequest,
                 ListPipelineRunningProcessesResponse,
                 com.oracle.bmc.goldengate.model.PipelineRunningProcessSummary>(
                 new java.util.function.Supplier<ListPipelineRunningProcessesRequest.Builder>() {
@@ -1506,19 +1432,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listPipelineSchemaTables operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listPipelineSchemaTables operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPipelineSchemaTablesResponse> listPipelineSchemaTablesResponseIterator(
             final ListPipelineSchemaTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListPipelineSchemaTablesRequest.Builder,
-                ListPipelineSchemaTablesRequest,
+                ListPipelineSchemaTablesRequest.Builder, ListPipelineSchemaTablesRequest,
                 ListPipelineSchemaTablesResponse>(
                 new java.util.function.Supplier<ListPipelineSchemaTablesRequest.Builder>() {
                     @Override
@@ -1561,21 +1484,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary} objects contained in responses
-     * from the listPipelineSchemaTables operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary} objects
+     * contained in responses from the listPipelineSchemaTables operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary>
             listPipelineSchemaTablesRecordIterator(final ListPipelineSchemaTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPipelineSchemaTablesRequest.Builder,
-                ListPipelineSchemaTablesRequest,
+                ListPipelineSchemaTablesRequest.Builder, ListPipelineSchemaTablesRequest,
                 ListPipelineSchemaTablesResponse,
                 com.oracle.bmc.goldengate.model.PipelineSchemaTableSummary>(
                 new java.util.function.Supplier<ListPipelineSchemaTablesRequest.Builder>() {
@@ -1630,18 +1550,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listPipelineSchemas operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPipelineSchemas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPipelineSchemasResponse> listPipelineSchemasResponseIterator(
             final ListPipelineSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListPipelineSchemasRequest.Builder,
-                ListPipelineSchemasRequest,
+                ListPipelineSchemasRequest.Builder, ListPipelineSchemasRequest,
                 ListPipelineSchemasResponse>(
                 new java.util.function.Supplier<ListPipelineSchemasRequest.Builder>() {
                     @Override
@@ -1683,23 +1601,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.PipelineSchemaSummary} objects contained in responses from
-     * the listPipelineSchemas operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.PipelineSchemaSummary} objects
+     * contained in responses from the listPipelineSchemas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.PipelineSchemaSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.PipelineSchemaSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.PipelineSchemaSummary>
             listPipelineSchemasRecordIterator(final ListPipelineSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPipelineSchemasRequest.Builder,
-                ListPipelineSchemasRequest,
-                ListPipelineSchemasResponse,
-                com.oracle.bmc.goldengate.model.PipelineSchemaSummary>(
+                ListPipelineSchemasRequest.Builder, ListPipelineSchemasRequest,
+                ListPipelineSchemasResponse, com.oracle.bmc.goldengate.model.PipelineSchemaSummary>(
                 new java.util.function.Supplier<ListPipelineSchemasRequest.Builder>() {
                     @Override
                     public ListPipelineSchemasRequest.Builder get() {
@@ -1749,12 +1663,11 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPipelines
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPipelines operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPipelinesResponse> listPipelinesResponseIterator(
             final ListPipelinesRequest request) {
@@ -1799,21 +1712,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.PipelineSummary} objects contained in responses from the
-     * listPipelines operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.PipelineSummary} objects
+     * contained in responses from the listPipelines operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.PipelineSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.PipelineSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.PipelineSummary> listPipelinesRecordIterator(
             final ListPipelinesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPipelinesRequest.Builder,
-                ListPipelinesRequest,
-                ListPipelinesResponse,
+                ListPipelinesRequest.Builder, ListPipelinesRequest, ListPipelinesResponse,
                 com.oracle.bmc.goldengate.model.PipelineSummary>(
                 new java.util.function.Supplier<ListPipelinesRequest.Builder>() {
                     @Override
@@ -1863,12 +1773,11 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listRecipes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listRecipes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRecipesResponse> listRecipesResponseIterator(
             final ListRecipesRequest request) {
@@ -1913,21 +1822,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.RecipeSummary} objects contained in responses from the
-     * listRecipes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.RecipeSummary} objects
+     * contained in responses from the listRecipes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.RecipeSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.RecipeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.RecipeSummary> listRecipesRecordIterator(
             final ListRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRecipesRequest.Builder,
-                ListRecipesRequest,
-                ListRecipesResponse,
+                ListRecipesRequest.Builder, ListRecipesRequest, ListRecipesResponse,
                 com.oracle.bmc.goldengate.model.RecipeSummary>(
                 new java.util.function.Supplier<ListRecipesRequest.Builder>() {
                     @Override
@@ -1977,12 +1883,11 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTrailFiles
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTrailFiles operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTrailFilesResponse> listTrailFilesResponseIterator(
             final ListTrailFilesRequest request) {
@@ -2027,21 +1932,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.TrailFileSummary} objects contained in responses from the
-     * listTrailFiles operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.TrailFileSummary} objects
+     * contained in responses from the listTrailFiles operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.TrailFileSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.TrailFileSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.TrailFileSummary> listTrailFilesRecordIterator(
             final ListTrailFilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTrailFilesRequest.Builder,
-                ListTrailFilesRequest,
-                ListTrailFilesResponse,
+                ListTrailFilesRequest.Builder, ListTrailFilesRequest, ListTrailFilesResponse,
                 com.oracle.bmc.goldengate.model.TrailFileSummary>(
                 new java.util.function.Supplier<ListTrailFilesRequest.Builder>() {
                     @Override
@@ -2091,18 +1993,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTrailSequences operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTrailSequences operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTrailSequencesResponse> listTrailSequencesResponseIterator(
             final ListTrailSequencesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTrailSequencesRequest.Builder,
-                ListTrailSequencesRequest,
+                ListTrailSequencesRequest.Builder, ListTrailSequencesRequest,
                 ListTrailSequencesResponse>(
                 new java.util.function.Supplier<ListTrailSequencesRequest.Builder>() {
                     @Override
@@ -2144,22 +2044,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.TrailSequenceSummary} objects contained in responses from the
-     * listTrailSequences operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.TrailSequenceSummary} objects
+     * contained in responses from the listTrailSequences operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.TrailSequenceSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.TrailSequenceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.TrailSequenceSummary>
             listTrailSequencesRecordIterator(final ListTrailSequencesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTrailSequencesRequest.Builder,
-                ListTrailSequencesRequest,
-                ListTrailSequencesResponse,
-                com.oracle.bmc.goldengate.model.TrailSequenceSummary>(
+                ListTrailSequencesRequest.Builder, ListTrailSequencesRequest,
+                ListTrailSequencesResponse, com.oracle.bmc.goldengate.model.TrailSequenceSummary>(
                 new java.util.function.Supplier<ListTrailSequencesRequest.Builder>() {
                     @Override
                     public ListTrailSequencesRequest.Builder get() {
@@ -2209,19 +2106,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -2264,23 +2158,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.WorkRequestError} objects contained in responses from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.WorkRequestError} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse,
-                com.oracle.bmc.goldengate.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.goldengate.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -2331,18 +2221,16 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -2384,22 +2272,19 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.WorkRequestLogEntry} objects contained in responses from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.WorkRequestLogEntry} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse,
-                com.oracle.bmc.goldengate.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.goldengate.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -2449,12 +2334,11 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -2500,21 +2384,18 @@ public class GoldenGatePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.goldengate.model.WorkRequest} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.WorkRequest} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.goldengate.model.WorkRequest} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.WorkRequest} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.goldengate.model.WorkRequest> listWorkRequestsRecordIterator(
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.goldengate.model.WorkRequest>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

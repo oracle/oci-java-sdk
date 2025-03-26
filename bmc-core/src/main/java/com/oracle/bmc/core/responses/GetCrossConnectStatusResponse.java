@@ -6,17 +6,18 @@ package com.oracle.bmc.core.responses;
 
 import com.oracle.bmc.core.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,13 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned {@code CrossConnectStatus} instance. */
+    /**
+     * The returned CrossConnectStatus instance.
+     */
     private com.oracle.bmc.core.model.CrossConnectStatus crossConnectStatus;
 
     /**
-     * The returned {@code CrossConnectStatus} instance.
-     *
+     * The returned CrossConnectStatus instance.
      * @return the value
      */
     public com.oracle.bmc.core.model.CrossConnectStatus getCrossConnectStatus() {
@@ -44,7 +46,7 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetCrossConnectStatusResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.CrossConnectStatus crossConnectStatus) {
         super(__httpStatusCode__, headers);
@@ -52,33 +54,31 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
         this.crossConnectStatus = crossConnectStatus;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetCrossConnectStatusResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,12 +88,13 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code CrossConnectStatus} instance. */
+        /**
+         * The returned CrossConnectStatus instance.
+         */
         private com.oracle.bmc.core.model.CrossConnectStatus crossConnectStatus;
 
         /**
-         * The returned {@code CrossConnectStatus} instance.
-         *
+         * The returned CrossConnectStatus instance.
          * @param crossConnectStatus the value to set
          * @return this builder
          */
@@ -105,10 +106,8 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetCrossConnectStatusResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -120,10 +119,8 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetCrossConnectStatusResponse build() {
             return new GetCrossConnectStatusResponse(
                     __httpStatusCode__, headers, opcRequestId, crossConnectStatus);
@@ -132,7 +129,6 @@ public class GetCrossConnectStatusResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

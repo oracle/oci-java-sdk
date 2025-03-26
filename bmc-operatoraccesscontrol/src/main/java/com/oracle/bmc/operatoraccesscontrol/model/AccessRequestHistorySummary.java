@@ -5,23 +5,22 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Summary of access request status. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of access request status.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AccessRequestHistorySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AccessRequestHistorySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AccessRequestHistorySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -52,112 +51,115 @@ public final class AccessRequestHistorySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The current state of the AccessRequest. */
+        /**
+         * The current state of the AccessRequest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AccessRequestLifecycleStates lifecycleState;
 
         /**
          * The current state of the AccessRequest.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(AccessRequestLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Approver who modified the access request. */
+        /**
+         * Approver who modified the access request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * Approver who modified the access request.
-         *
          * @param userId the value to set
          * @return this builder
-         */
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-        /** Reason or description about the cause of change. */
+        /**
+         * Reason or description about the cause of change.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Reason or description about the cause of change.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Duration for approval of request or extension depending on the type of action. */
+        /**
+         * Duration for approval of request or extension depending on the type of action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private Integer duration;
 
         /**
          * Duration for approval of request or extension depending on the type of action.
-         *
          * @param duration the value to set
          * @return this builder
-         */
+         **/
         public Builder duration(Integer duration) {
             this.duration = duration;
             this.__explicitlySet__.add("duration");
             return this;
         }
-        /** Whether the access request was automatically approved. */
+        /**
+         * Whether the access request was automatically approved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproved")
         private Boolean isAutoApproved;
 
         /**
          * Whether the access request was automatically approved.
-         *
          * @param isAutoApproved the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoApproved(Boolean isAutoApproved) {
             this.isAutoApproved = isAutoApproved;
             this.__explicitlySet__.add("isAutoApproved");
             return this;
         }
-        /** List of operator actions for which approvals were requested by the operator. */
+        /**
+         * List of operator actions for which approvals were requested by the operator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionsList")
         private java.util.List<String> actionsList;
 
         /**
          * List of operator actions for which approvals were requested by the operator.
-         *
          * @param actionsList the value to set
          * @return this builder
-         */
+         **/
         public Builder actionsList(java.util.List<String> actionsList) {
             this.actionsList = actionsList;
             this.__explicitlySet__.add("actionsList");
             return this;
         }
         /**
-         * Time when the respective action happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'
-         */
+         * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfAction")
         private java.util.Date timeOfAction;
 
         /**
-         * Time when the respective action happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'
+         * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
          *
          * @param timeOfAction the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfAction(java.util.Date timeOfAction) {
             this.timeOfAction = timeOfAction;
             this.__explicitlySet__.add("timeOfAction");
@@ -210,7 +212,9 @@ public final class AccessRequestHistorySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -219,99 +223,102 @@ public final class AccessRequestHistorySummary
         return new Builder().copy(this);
     }
 
-    /** The current state of the AccessRequest. */
+    /**
+     * The current state of the AccessRequest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AccessRequestLifecycleStates lifecycleState;
 
     /**
      * The current state of the AccessRequest.
-     *
      * @return the value
-     */
+     **/
     public AccessRequestLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Approver who modified the access request. */
+    /**
+     * Approver who modified the access request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * Approver who modified the access request.
-     *
      * @return the value
-     */
+     **/
     public String getUserId() {
         return userId;
     }
 
-    /** Reason or description about the cause of change. */
+    /**
+     * Reason or description about the cause of change.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Reason or description about the cause of change.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Duration for approval of request or extension depending on the type of action. */
+    /**
+     * Duration for approval of request or extension depending on the type of action.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final Integer duration;
 
     /**
      * Duration for approval of request or extension depending on the type of action.
-     *
      * @return the value
-     */
+     **/
     public Integer getDuration() {
         return duration;
     }
 
-    /** Whether the access request was automatically approved. */
+    /**
+     * Whether the access request was automatically approved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproved")
     private final Boolean isAutoApproved;
 
     /**
      * Whether the access request was automatically approved.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoApproved() {
         return isAutoApproved;
     }
 
-    /** List of operator actions for which approvals were requested by the operator. */
+    /**
+     * List of operator actions for which approvals were requested by the operator.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionsList")
     private final java.util.List<String> actionsList;
 
     /**
      * List of operator actions for which approvals were requested by the operator.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getActionsList() {
         return actionsList;
     }
 
     /**
-     * Time when the respective action happened in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'
-     */
+     * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAction")
     private final java.util.Date timeOfAction;
 
     /**
-     * Time when the respective action happened in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'
+     * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfAction() {
         return timeOfAction;
     }
@@ -323,7 +330,6 @@ public final class AccessRequestHistorySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

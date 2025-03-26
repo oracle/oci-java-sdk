@@ -5,23 +5,23 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Defined Tag filter entry. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Defined Tag filter entry.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DefinedTagFilterEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DefinedTagFilterEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DefinedTagFilterEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"namespace", "key", "value"})
     public DefinedTagFilterEntry(String namespace, String key, String value) {
@@ -33,7 +33,10 @@ public final class DefinedTagFilterEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Defined tag namespace. */
+        /**
+         * Defined tag namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
@@ -42,13 +45,16 @@ public final class DefinedTagFilterEntry
          *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** Defined tag key. */
+        /**
+         * Defined tag key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -57,13 +63,16 @@ public final class DefinedTagFilterEntry
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Defined tag value. */
+        /**
+         * Defined tag value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
@@ -72,7 +81,7 @@ public final class DefinedTagFilterEntry
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -106,7 +115,9 @@ public final class DefinedTagFilterEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,7 +126,10 @@ public final class DefinedTagFilterEntry
         return new Builder().copy(this);
     }
 
-    /** Defined tag namespace. */
+    /**
+     * Defined tag namespace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
@@ -123,12 +137,15 @@ public final class DefinedTagFilterEntry
      * Defined tag namespace.
      *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** Defined tag key. */
+    /**
+     * Defined tag key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -136,12 +153,15 @@ public final class DefinedTagFilterEntry
      * Defined tag key.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Defined tag value. */
+    /**
+     * Defined tag value.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
@@ -149,7 +169,7 @@ public final class DefinedTagFilterEntry
      * Defined tag value.
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
@@ -161,7 +181,6 @@ public final class DefinedTagFilterEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

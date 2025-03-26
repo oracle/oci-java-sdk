@@ -5,23 +5,22 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * Summary of patch recommendations for databases. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * Summary of patch recommendations for databases.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PatchRecommendationsDetailsSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PatchRecommendationsDetailsSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PatchRecommendationsDetailsSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "patchName",
@@ -49,91 +48,97 @@ public final class PatchRecommendationsDetailsSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the patch recommendation. */
+        /**
+         * Name of the patch recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchName")
         private String patchName;
 
         /**
          * Name of the patch recommendation.
-         *
          * @param patchName the value to set
          * @return this builder
-         */
+         **/
         public Builder patchName(String patchName) {
             this.patchName = patchName;
             this.__explicitlySet__.add("patchName");
             return this;
         }
-        /** Description of the patch recommendation. */
+        /**
+         * Description of the patch recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("abstractText")
         private String abstractText;
 
         /**
          * Description of the patch recommendation.
-         *
          * @param abstractText the value to set
          * @return this builder
-         */
+         **/
         public Builder abstractText(String abstractText) {
             this.abstractText = abstractText;
             this.__explicitlySet__.add("abstractText");
             return this;
         }
-        /** Classification of the patch recommendation. */
+        /**
+         * Classification of the patch recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classificationName")
         private String classificationName;
 
         /**
          * Classification of the patch recommendation.
-         *
          * @param classificationName the value to set
          * @return this builder
-         */
+         **/
         public Builder classificationName(String classificationName) {
             this.classificationName = classificationName;
             this.__explicitlySet__.add("classificationName");
             return this;
         }
-        /** Evaluation date for the patch recommendation. */
+        /**
+         * Evaluation date for the patch recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEvaluated")
         private java.util.Date timeEvaluated;
 
         /**
          * Evaluation date for the patch recommendation.
-         *
          * @param timeEvaluated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEvaluated(java.util.Date timeEvaluated) {
             this.timeEvaluated = timeEvaluated;
             this.__explicitlySet__.add("timeEvaluated");
             return this;
         }
-        /** If the patch has a fix for a CVE. */
+        /**
+         * If the patch has a fix for a CVE.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hasFixForCve")
         private Boolean hasFixForCve;
 
         /**
          * If the patch has a fix for a CVE.
-         *
          * @param hasFixForCve the value to set
          * @return this builder
-         */
+         **/
         public Builder hasFixForCve(Boolean hasFixForCve) {
             this.hasFixForCve = hasFixForCve;
             this.__explicitlySet__.add("hasFixForCve");
             return this;
         }
-        /** Release date for the patch. */
+        /**
+         * Release date for the patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
          * Release date for the patch.
-         *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
@@ -182,7 +187,9 @@ public final class PatchRecommendationsDetailsSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class PatchRecommendationsDetailsSummary
         return new Builder().copy(this);
     }
 
-    /** Name of the patch recommendation. */
+    /**
+     * Name of the patch recommendation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchName")
     private final String patchName;
 
     /**
      * Name of the patch recommendation.
-     *
      * @return the value
-     */
+     **/
     public String getPatchName() {
         return patchName;
     }
 
-    /** Description of the patch recommendation. */
+    /**
+     * Description of the patch recommendation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("abstractText")
     private final String abstractText;
 
     /**
      * Description of the patch recommendation.
-     *
      * @return the value
-     */
+     **/
     public String getAbstractText() {
         return abstractText;
     }
 
-    /** Classification of the patch recommendation. */
+    /**
+     * Classification of the patch recommendation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classificationName")
     private final String classificationName;
 
     /**
      * Classification of the patch recommendation.
-     *
      * @return the value
-     */
+     **/
     public String getClassificationName() {
         return classificationName;
     }
 
-    /** Evaluation date for the patch recommendation. */
+    /**
+     * Evaluation date for the patch recommendation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEvaluated")
     private final java.util.Date timeEvaluated;
 
     /**
      * Evaluation date for the patch recommendation.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEvaluated() {
         return timeEvaluated;
     }
 
-    /** If the patch has a fix for a CVE. */
+    /**
+     * If the patch has a fix for a CVE.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hasFixForCve")
     private final Boolean hasFixForCve;
 
     /**
      * If the patch has a fix for a CVE.
-     *
      * @return the value
-     */
+     **/
     public Boolean getHasFixForCve() {
         return hasFixForCve;
     }
 
-    /** Release date for the patch. */
+    /**
+     * Release date for the patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
      * Release date for the patch.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
@@ -276,7 +289,6 @@ public final class PatchRecommendationsDetailsSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

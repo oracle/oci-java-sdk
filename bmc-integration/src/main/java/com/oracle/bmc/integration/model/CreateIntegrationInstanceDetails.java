@@ -5,26 +5,26 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * The information about new IntegrationInstance. Some properties may not be applicable to specific
- * integration types, see [Differences in Instance
- * Management](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=INTOO-GUID-931B5E33-4FE6-4997-93E5-8748516F46AA__GUID-176E43D5-4116-4828-8120-B929DF2A6B5E)
- * for details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+ * The information about new IntegrationInstance.
+ * Some properties may not be applicable to specific integration types,
+ * see [Differences in Instance Management](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=INTOO-GUID-931B5E33-4FE6-4997-93E5-8748516F46AA__GUID-176E43D5-4116-4828-8120-B929DF2A6B5E)
+ * for details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateIntegrationInstanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateIntegrationInstanceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateIntegrationInstanceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -85,153 +85,164 @@ public final class CreateIntegrationInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Integration Instance Identifier. */
+        /**
+         * Integration Instance Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Integration Instance Identifier.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and
-         * STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-         */
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
         private IntegrationInstanceType integrationInstanceType;
 
         /**
-         * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and
-         * STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
          *
          * @param integrationInstanceType the value to set
          * @return this builder
-         */
+         **/
         public Builder integrationInstanceType(IntegrationInstanceType integrationInstanceType) {
             this.integrationInstanceType = integrationInstanceType;
             this.__explicitlySet__.add("integrationInstanceType");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name,
+         * type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name,
+         * type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Usage of predefined tag keys. These predefined keys are scoped to
+         * namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to
+         * namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** Bring your own license. */
+        /**
+         * Bring your own license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isByol")
         private Boolean isByol;
 
         /**
          * Bring your own license.
-         *
          * @param isByol the value to set
          * @return this builder
-         */
+         **/
         public Builder isByol(Boolean isByol) {
             this.isByol = isByol;
             this.__explicitlySet__.add("isByol");
             return this;
         }
         /**
-         * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its
-         * not required for non IDCS realms.
-         */
+         * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAt")
         private String idcsAt;
 
         /**
-         * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its
-         * not required for non IDCS realms.
-         *
+         * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
          * @param idcsAt the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAt(String idcsAt) {
             this.idcsAt = idcsAt;
             this.__explicitlySet__.add("idcsAt");
             return this;
         }
-        /** The number of configured message packs */
+        /**
+         * The number of configured message packs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
         private Integer messagePacks;
 
         /**
          * The number of configured message packs
-         *
          * @param messagePacks the value to set
          * @return this builder
-         */
+         **/
         public Builder messagePacks(Integer messagePacks) {
             this.messagePacks = messagePacks;
             this.__explicitlySet__.add("messagePacks");
             return this;
         }
-        /** Visual Builder is enabled or not. */
+        /**
+         * Visual Builder is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
         private Boolean isVisualBuilderEnabled;
 
         /**
          * Visual Builder is enabled or not.
-         *
          * @param isVisualBuilderEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             this.isVisualBuilderEnabled = isVisualBuilderEnabled;
             this.__explicitlySet__.add("isVisualBuilderEnabled");
@@ -247,19 +258,20 @@ public final class CreateIntegrationInstanceDetails
             return this;
         }
         /**
-         * A list of alternate custom endpoints to be used for the integration instance URL (contact
-         * Oracle for alternateCustomEndpoints availability for a specific instance).
-         */
+         * A list of alternate custom endpoints to be used for the integration instance URL
+         * (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
         private java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints;
 
         /**
-         * A list of alternate custom endpoints to be used for the integration instance URL (contact
-         * Oracle for alternateCustomEndpoints availability for a specific instance).
+         * A list of alternate custom endpoints to be used for the integration instance URL
+         * (contact Oracle for alternateCustomEndpoints availability for a specific instance).
          *
          * @param alternateCustomEndpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder alternateCustomEndpoints(
                 java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints) {
             this.alternateCustomEndpoints = alternateCustomEndpoints;
@@ -267,49 +279,48 @@ public final class CreateIntegrationInstanceDetails
             return this;
         }
         /**
-         * Optional parameter specifying which entitlement to use for billing purposes. Only
-         * required if the account possesses more than one entitlement.
-         */
+         * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
         private ConsumptionModel consumptionModel;
 
         /**
-         * Optional parameter specifying which entitlement to use for billing purposes. Only
-         * required if the account possesses more than one entitlement.
-         *
+         * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
          * @param consumptionModel the value to set
          * @return this builder
-         */
+         **/
         public Builder consumptionModel(ConsumptionModel consumptionModel) {
             this.consumptionModel = consumptionModel;
             this.__explicitlySet__.add("consumptionModel");
             return this;
         }
-        /** The file server is enabled or not. */
+        /**
+         * The file server is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
         private Boolean isFileServerEnabled;
 
         /**
          * The file server is enabled or not.
-         *
          * @param isFileServerEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
             this.isFileServerEnabled = isFileServerEnabled;
             this.__explicitlySet__.add("isFileServerEnabled");
             return this;
         }
-        /** Is Disaster Recovery enabled or not. */
+        /**
+         * Is Disaster Recovery enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
         private Boolean isDisasterRecoveryEnabled;
 
         /**
          * Is Disaster Recovery enabled or not.
-         *
          * @param isDisasterRecoveryEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
             this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
             this.__explicitlySet__.add("isDisasterRecoveryEnabled");
@@ -324,37 +335,41 @@ public final class CreateIntegrationInstanceDetails
             this.__explicitlySet__.add("networkEndpointDetails");
             return this;
         }
-        /** Shape */
+        /**
+         * Shape
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private Shape shape;
 
         /**
          * Shape
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(Shape shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * The OCID of the identity domain, that will be used to determine the corresponding Idcs
-         * Stripe and create an Idcs application within the stripe. This parameter is mutually
-         * exclusive with parameter: idcsAt, i.e only one of two parameters should be specified.
-         */
+         * The OCID of the identity domain, that will be used to determine the
+         * corresponding Idcs Stripe and create an Idcs application within the stripe.
+         * This parameter is mutually exclusive with parameter: idcsAt, i.e only one of
+         * two parameters should be specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
         /**
-         * The OCID of the identity domain, that will be used to determine the corresponding Idcs
-         * Stripe and create an Idcs application within the stripe. This parameter is mutually
-         * exclusive with parameter: idcsAt, i.e only one of two parameters should be specified.
+         * The OCID of the identity domain, that will be used to determine the
+         * corresponding Idcs Stripe and create an Idcs application within the stripe.
+         * This parameter is mutually exclusive with parameter: idcsAt, i.e only one of
+         * two parameters should be specified.
          *
          * @param domainId the value to set
          * @return this builder
-         */
+         **/
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
@@ -447,7 +462,9 @@ public final class CreateIntegrationInstanceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -456,37 +473,41 @@ public final class CreateIntegrationInstanceDetails
         return new Builder().copy(this);
     }
 
-    /** Integration Instance Identifier. */
+    /**
+     * Integration Instance Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Integration Instance Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
      * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-     */
-    public enum IntegrationInstanceType implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum IntegrationInstanceType {
         Standard("STANDARD"),
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
@@ -522,108 +543,117 @@ public final class CreateIntegrationInstanceDetails
         }
     };
     /**
-     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
      * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
     private final IntegrationInstanceType integrationInstanceType;
 
     /**
-     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
      * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      *
      * @return the value
-     */
+     **/
     public IntegrationInstanceType getIntegrationInstanceType() {
         return integrationInstanceType;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name,
+     * type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name,
+     * type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Usage of predefined tag keys. These predefined keys are scoped to
+     * namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to
+     * namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** Bring your own license. */
+    /**
+     * Bring your own license.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
     private final Boolean isByol;
 
     /**
      * Bring your own license.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsByol() {
         return isByol;
     }
 
     /**
-     * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not
-     * required for non IDCS realms.
-     */
+     * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAt")
     private final String idcsAt;
 
     /**
-     * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not
-     * required for non IDCS realms.
-     *
+     * IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      * @return the value
-     */
+     **/
     public String getIdcsAt() {
         return idcsAt;
     }
 
-    /** The number of configured message packs */
+    /**
+     * The number of configured message packs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
     private final Integer messagePacks;
 
     /**
      * The number of configured message packs
-     *
      * @return the value
-     */
+     **/
     public Integer getMessagePacks() {
         return messagePacks;
     }
 
-    /** Visual Builder is enabled or not. */
+    /**
+     * Visual Builder is enabled or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
     private final Boolean isVisualBuilderEnabled;
 
     /**
      * Visual Builder is enabled or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsVisualBuilderEnabled() {
         return isVisualBuilderEnabled;
     }
@@ -636,27 +666,27 @@ public final class CreateIntegrationInstanceDetails
     }
 
     /**
-     * A list of alternate custom endpoints to be used for the integration instance URL (contact
-     * Oracle for alternateCustomEndpoints availability for a specific instance).
-     */
+     * A list of alternate custom endpoints to be used for the integration instance URL
+     * (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
     private final java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints;
 
     /**
-     * A list of alternate custom endpoints to be used for the integration instance URL (contact
-     * Oracle for alternateCustomEndpoints availability for a specific instance).
+     * A list of alternate custom endpoints to be used for the integration instance URL
+     * (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      *
      * @return the value
-     */
+     **/
     public java.util.List<CreateCustomEndpointDetails> getAlternateCustomEndpoints() {
         return alternateCustomEndpoints;
     }
 
     /**
-     * Optional parameter specifying which entitlement to use for billing purposes. Only required if
-     * the account possesses more than one entitlement.
-     */
-    public enum ConsumptionModel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+     **/
+    public enum ConsumptionModel {
         Ucm("UCM"),
         Gov("GOV"),
         Oic4Saas("OIC4SAAS"),
@@ -690,44 +720,43 @@ public final class CreateIntegrationInstanceDetails
         }
     };
     /**
-     * Optional parameter specifying which entitlement to use for billing purposes. Only required if
-     * the account possesses more than one entitlement.
-     */
+     * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
     private final ConsumptionModel consumptionModel;
 
     /**
-     * Optional parameter specifying which entitlement to use for billing purposes. Only required if
-     * the account possesses more than one entitlement.
-     *
+     * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      * @return the value
-     */
+     **/
     public ConsumptionModel getConsumptionModel() {
         return consumptionModel;
     }
 
-    /** The file server is enabled or not. */
+    /**
+     * The file server is enabled or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
     private final Boolean isFileServerEnabled;
 
     /**
      * The file server is enabled or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFileServerEnabled() {
         return isFileServerEnabled;
     }
 
-    /** Is Disaster Recovery enabled or not. */
+    /**
+     * Is Disaster Recovery enabled or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
     private final Boolean isDisasterRecoveryEnabled;
 
     /**
      * Is Disaster Recovery enabled or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDisasterRecoveryEnabled() {
         return isDisasterRecoveryEnabled;
     }
@@ -739,8 +768,10 @@ public final class CreateIntegrationInstanceDetails
         return networkEndpointDetails;
     }
 
-    /** Shape */
-    public enum Shape implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Shape
+     **/
+    public enum Shape {
         Development("DEVELOPMENT"),
         Production("PRODUCTION"),
         ;
@@ -772,34 +803,38 @@ public final class CreateIntegrationInstanceDetails
             throw new IllegalArgumentException("Invalid Shape: " + key);
         }
     };
-    /** Shape */
+    /**
+     * Shape
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final Shape shape;
 
     /**
      * Shape
-     *
      * @return the value
-     */
+     **/
     public Shape getShape() {
         return shape;
     }
 
     /**
-     * The OCID of the identity domain, that will be used to determine the corresponding Idcs Stripe
-     * and create an Idcs application within the stripe. This parameter is mutually exclusive with
-     * parameter: idcsAt, i.e only one of two parameters should be specified.
-     */
+     * The OCID of the identity domain, that will be used to determine the
+     * corresponding Idcs Stripe and create an Idcs application within the stripe.
+     * This parameter is mutually exclusive with parameter: idcsAt, i.e only one of
+     * two parameters should be specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
     /**
-     * The OCID of the identity domain, that will be used to determine the corresponding Idcs Stripe
-     * and create an Idcs application within the stripe. This parameter is mutually exclusive with
-     * parameter: idcsAt, i.e only one of two parameters should be specified.
+     * The OCID of the identity domain, that will be used to determine the
+     * corresponding Idcs Stripe and create an Idcs application within the stripe.
+     * This parameter is mutually exclusive with parameter: idcsAt, i.e only one of
+     * two parameters should be specified.
      *
      * @return the value
-     */
+     **/
     public String getDomainId() {
         return domainId;
     }
@@ -811,7 +846,6 @@ public final class CreateIntegrationInstanceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

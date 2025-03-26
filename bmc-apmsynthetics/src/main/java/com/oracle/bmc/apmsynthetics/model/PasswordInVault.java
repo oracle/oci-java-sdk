@@ -5,38 +5,39 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Vault secret OCID for password that can be used with monitor Resource Principal. Example,
- * ocid1.vaultsecret.oc1.iad.amaaaaaagpihjxqadwyc4kjhpeis2bylhzmp5r2si6mz2h4eujevnmf3zoca. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Vault secret OCID for password that can be used with monitor Resource Principal.
+ * Example, ocid1.vaultsecret.oc1.iad.amaaaaaagpihjxqadwyc4kjhpeis2bylhzmp5r2si6mz2h4eujevnmf3zoca.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PasswordInVault.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "passwordType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "passwordType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PasswordInVault extends Password {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Vault secret OCID. */
+        /**
+         * Vault secret OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
         private String vaultSecretId;
 
         /**
          * Vault secret OCID.
-         *
          * @param vaultSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultSecretId(String vaultSecretId) {
             this.vaultSecretId = vaultSecretId;
             this.__explicitlySet__.add("vaultSecretId");
@@ -63,7 +64,9 @@ public final class PasswordInVault extends Password {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,15 +81,16 @@ public final class PasswordInVault extends Password {
         this.vaultSecretId = vaultSecretId;
     }
 
-    /** Vault secret OCID. */
+    /**
+     * Vault secret OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
     private final String vaultSecretId;
 
     /**
      * Vault secret OCID.
-     *
      * @return the value
-     */
+     **/
     public String getVaultSecretId() {
         return vaultSecretId;
     }
@@ -98,7 +102,6 @@ public final class PasswordInVault extends Password {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

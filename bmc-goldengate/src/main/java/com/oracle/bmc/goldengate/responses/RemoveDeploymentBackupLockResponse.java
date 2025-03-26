@@ -6,17 +6,18 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** etag for the returned DeploymentBackup resource. */
+    /**
+     * etag for the returned DeploymentBackup resource.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /** The returned {@code DeploymentBackup} instance. */
+    /**
+     * The returned DeploymentBackup instance.
+     */
     private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
     /**
-     * The returned {@code DeploymentBackup} instance.
-     *
+     * The returned DeploymentBackup instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.DeploymentBackup getDeploymentBackup() {
@@ -57,7 +62,7 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
     })
     private RemoveDeploymentBackupLockResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup) {
@@ -67,34 +72,31 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
         this.deploymentBackup = deploymentBackup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    RemoveDeploymentBackupLockResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -104,7 +106,10 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** etag for the returned DeploymentBackup resource. */
+        /**
+         * etag for the returned DeploymentBackup resource.
+         *
+         */
         private String etag;
 
         /**
@@ -118,12 +123,13 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned {@code DeploymentBackup} instance. */
+        /**
+         * The returned DeploymentBackup instance.
+         */
         private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
         /**
-         * The returned {@code DeploymentBackup} instance.
-         *
+         * The returned DeploymentBackup instance.
          * @param deploymentBackup the value to set
          * @return this builder
          */
@@ -135,10 +141,8 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RemoveDeploymentBackupLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +155,8 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RemoveDeploymentBackupLockResponse build() {
             return new RemoveDeploymentBackupLockResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, deploymentBackup);
@@ -163,7 +165,6 @@ public class RemoveDeploymentBackupLockResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

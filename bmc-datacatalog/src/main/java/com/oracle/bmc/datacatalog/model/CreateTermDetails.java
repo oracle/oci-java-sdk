@@ -5,23 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Properties used in term create operations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Properties used in term create operations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateTermDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateTermDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateTermDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateTermDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -53,113 +51,116 @@ public final class CreateTermDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly display name. Is changeable. The combination of 'displayName' and
-         * 'parentTermKey' must be unique. Avoid entering confidential information.
-         */
+         * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+         * must be unique. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Is changeable. The combination of 'displayName' and
-         * 'parentTermKey' must be unique. Avoid entering confidential information.
+         * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+         * must be unique. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Detailed description of the term. */
+        /**
+         * Detailed description of the term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the term.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Indicates whether a term may contain child terms. */
+        /**
+         * Indicates whether a term may contain child terms.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAllowedToHaveChildTerms")
         private Boolean isAllowedToHaveChildTerms;
 
         /**
          * Indicates whether a term may contain child terms.
-         *
          * @param isAllowedToHaveChildTerms the value to set
          * @return this builder
-         */
+         **/
         public Builder isAllowedToHaveChildTerms(Boolean isAllowedToHaveChildTerms) {
             this.isAllowedToHaveChildTerms = isAllowedToHaveChildTerms;
             this.__explicitlySet__.add("isAllowedToHaveChildTerms");
             return this;
         }
         /**
-         * The parent key of the term. In the case of a root-level category only, the term would
-         * have no parent and this should be left unset.
-         */
+         * The parent key of the term. In the case of a root-level category only, the term would have no parent and this should be left unset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
         private String parentTermKey;
 
         /**
-         * The parent key of the term. In the case of a root-level category only, the term would
-         * have no parent and this should be left unset.
-         *
+         * The parent key of the term. In the case of a root-level category only, the term would have no parent and this should be left unset.
          * @param parentTermKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermKey(String parentTermKey) {
             this.parentTermKey = parentTermKey;
             this.__explicitlySet__.add("parentTermKey");
             return this;
         }
-        /** OCID of the user who is the owner of this business terminology. */
+        /**
+         * OCID of the user who is the owner of this business terminology.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * OCID of the user who is the owner of this business terminology.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** Status of the approval process workflow for this business term in the glossary. */
+        /**
+         * Status of the approval process workflow for this business term in the glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
         private TermWorkflowStatus workflowStatus;
 
         /**
          * Status of the approval process workflow for this business term in the glossary.
-         *
          * @param workflowStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder workflowStatus(TermWorkflowStatus workflowStatus) {
             this.workflowStatus = workflowStatus;
             this.__explicitlySet__.add("workflowStatus");
             return this;
         }
-        /** The list of customized properties along with the values for this object */
+        /**
+         * The list of customized properties along with the values for this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
         private java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
         /**
          * The list of customized properties along with the values for this object
-         *
          * @param customPropertyMembers the value to set
          * @return this builder
-         */
+         **/
         public Builder customPropertyMembers(
                 java.util.List<CustomPropertySetUsage> customPropertyMembers) {
             this.customPropertyMembers = customPropertyMembers;
@@ -213,7 +214,9 @@ public final class CreateTermDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -223,100 +226,103 @@ public final class CreateTermDetails
     }
 
     /**
-     * A user-friendly display name. Is changeable. The combination of 'displayName' and
-     * 'parentTermKey' must be unique. Avoid entering confidential information.
-     */
+     * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+     * must be unique. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Is changeable. The combination of 'displayName' and
-     * 'parentTermKey' must be unique. Avoid entering confidential information.
+     * A user-friendly display name. Is changeable. The combination of 'displayName' and 'parentTermKey'
+     * must be unique. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Detailed description of the term. */
+    /**
+     * Detailed description of the term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the term.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Indicates whether a term may contain child terms. */
+    /**
+     * Indicates whether a term may contain child terms.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAllowedToHaveChildTerms")
     private final Boolean isAllowedToHaveChildTerms;
 
     /**
      * Indicates whether a term may contain child terms.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAllowedToHaveChildTerms() {
         return isAllowedToHaveChildTerms;
     }
 
     /**
-     * The parent key of the term. In the case of a root-level category only, the term would have no
-     * parent and this should be left unset.
-     */
+     * The parent key of the term. In the case of a root-level category only, the term would have no parent and this should be left unset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
     private final String parentTermKey;
 
     /**
-     * The parent key of the term. In the case of a root-level category only, the term would have no
-     * parent and this should be left unset.
-     *
+     * The parent key of the term. In the case of a root-level category only, the term would have no parent and this should be left unset.
      * @return the value
-     */
+     **/
     public String getParentTermKey() {
         return parentTermKey;
     }
 
-    /** OCID of the user who is the owner of this business terminology. */
+    /**
+     * OCID of the user who is the owner of this business terminology.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * OCID of the user who is the owner of this business terminology.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** Status of the approval process workflow for this business term in the glossary. */
+    /**
+     * Status of the approval process workflow for this business term in the glossary.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
     private final TermWorkflowStatus workflowStatus;
 
     /**
      * Status of the approval process workflow for this business term in the glossary.
-     *
      * @return the value
-     */
+     **/
     public TermWorkflowStatus getWorkflowStatus() {
         return workflowStatus;
     }
 
-    /** The list of customized properties along with the values for this object */
+    /**
+     * The list of customized properties along with the values for this object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * The list of customized properties along with the values for this object
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
         return customPropertyMembers;
     }
@@ -328,7 +334,6 @@ public final class CreateTermDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

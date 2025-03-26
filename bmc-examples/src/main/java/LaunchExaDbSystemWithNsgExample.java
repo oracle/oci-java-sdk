@@ -30,30 +30,26 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * This class provides a basic example of how to launch a DB system with Exadata shape using the
- * Java SDK. This will cover:
- *
- * <p>
- *
+ * This class provides a basic example of how to launch a DB system with Exadata shape using the Java SDK. This will cover:
+ * <p></p>
  * <ul>
- *   <li>Create a VCN and subnets needed for the DB system and its related resources
- *   <li>Launch a DB system with Exadata shape and sparse disk group option. See: <a
- *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a>
+ *   <li>Create a VCN and subnets needed for the DB system and its related resources</li>
+ *   <li>
+ *     Launch a DB system with Exadata shape and sparse disk group option. See:
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a>
  *       for more information
  * </ul>
- *
- * <p>Resources created by this class will be removed when this example is done.
- *
- * <p>This class also makes assumptions on the following database parameters:
- *
- * <p>
- *
+ * <p></p>
+ * Resources created by this class will be removed when this example is done.
+ * <p></p>
+ * This class also makes assumptions on the following database parameters:
+ * <p></p>
  * <ul>
- *   <li>DB system shape
- *   <li>Core count
- *   <li>DB edition
- *   <li>DB version
- *   <li>CIDR block for VCN
+ *   <li>DB system shape</li>
+ *   <li>Core count</li>
+ *   <li>DB edition</li>
+ *   <li>DB version</li>
+ *   <li>CIDR block for VCN</li>
  * </ul>
  */
 public class LaunchExaDbSystemWithNsgExample {
@@ -71,14 +67,13 @@ public class LaunchExaDbSystemWithNsgExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment which owns the DB system
-     *       <li>The availability domain where the DB system will be launched
-     *       <li>Sparse DiskGroup option: True, if Sparse Diskgroup is configured for Exadata
-     *           dbsystem, False, if Sparse diskgroup was not configured.
-     *       <li>Database admin password
-     *       <li>Full path to SSH public key file
-     *     </ul>
+     *             <ul>
+     *             <li>The OCID of the compartment which owns the DB system</li>
+     *             <li>The availability domain where the DB system will be launched</li>
+     *             <li>Sparse DiskGroup option: True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.</li>
+     *             <li>Database admin password</li>
+     *             <li>Full path to SSH public key file</li>
+     *             </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -89,19 +84,16 @@ public class LaunchExaDbSystemWithNsgExample {
         final String availabilityDomain = args[1];
         final String adminPassword = DATABASE_ADMIN_PASSWORD;
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = DatabaseClient.builder().build(provider);
-        final VirtualNetworkClient virtualNetworkClient =
-                VirtualNetworkClient.builder().build(provider);
+        databaseClient = new DatabaseClient(provider);
+        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

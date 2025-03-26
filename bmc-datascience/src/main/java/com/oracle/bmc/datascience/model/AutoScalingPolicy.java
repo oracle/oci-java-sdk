@@ -5,69 +5,71 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The scaling policy to enable autoscaling on the model deployment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The scaling policy to enable autoscaling on the model deployment.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutoScalingPolicy.Builder.class)
+    builder = AutoScalingPolicy.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "policyType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "policyType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutoScalingPolicy extends ScalingPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * For threshold-based autoscaling policies, this value is the minimum period of time to
-         * wait between scaling actions. The cooldown period gives the system time to stabilize
-         * before rescaling. The minimum value is 600 seconds, which is also the default. The
-         * cooldown period starts when the model deployment becomes ACTIVE after the scaling
-         * operation.
-         */
+         * For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+         * The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which
+         * is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
         private Integer coolDownInSeconds;
 
         /**
-         * For threshold-based autoscaling policies, this value is the minimum period of time to
-         * wait between scaling actions. The cooldown period gives the system time to stabilize
-         * before rescaling. The minimum value is 600 seconds, which is also the default. The
-         * cooldown period starts when the model deployment becomes ACTIVE after the scaling
-         * operation.
+         * For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+         * The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which
+         * is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
          *
          * @param coolDownInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder coolDownInSeconds(Integer coolDownInSeconds) {
             this.coolDownInSeconds = coolDownInSeconds;
             this.__explicitlySet__.add("coolDownInSeconds");
             return this;
         }
-        /** Whether the autoscaling policy is enabled. */
+        /**
+         * Whether the autoscaling policy is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Whether the autoscaling policy is enabled.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** The list of autoscaling policy details. */
+        /**
+         * The list of autoscaling policy details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoScalingPolicies")
         private java.util.List<AutoScalingPolicyDetails> autoScalingPolicies;
 
@@ -76,7 +78,7 @@ public final class AutoScalingPolicy extends ScalingPolicy {
          *
          * @param autoScalingPolicies the value to set
          * @return this builder
-         */
+         **/
         public Builder autoScalingPolicies(
                 java.util.List<AutoScalingPolicyDetails> autoScalingPolicies) {
             this.autoScalingPolicies = autoScalingPolicies;
@@ -112,7 +114,9 @@ public final class AutoScalingPolicy extends ScalingPolicy {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,40 +137,43 @@ public final class AutoScalingPolicy extends ScalingPolicy {
     }
 
     /**
-     * For threshold-based autoscaling policies, this value is the minimum period of time to wait
-     * between scaling actions. The cooldown period gives the system time to stabilize before
-     * rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period
-     * starts when the model deployment becomes ACTIVE after the scaling operation.
-     */
+     * For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+     * The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which
+     * is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
     private final Integer coolDownInSeconds;
 
     /**
-     * For threshold-based autoscaling policies, this value is the minimum period of time to wait
-     * between scaling actions. The cooldown period gives the system time to stabilize before
-     * rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period
-     * starts when the model deployment becomes ACTIVE after the scaling operation.
+     * For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+     * The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which
+     * is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
      *
      * @return the value
-     */
+     **/
     public Integer getCoolDownInSeconds() {
         return coolDownInSeconds;
     }
 
-    /** Whether the autoscaling policy is enabled. */
+    /**
+     * Whether the autoscaling policy is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Whether the autoscaling policy is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** The list of autoscaling policy details. */
+    /**
+     * The list of autoscaling policy details.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoScalingPolicies")
     private final java.util.List<AutoScalingPolicyDetails> autoScalingPolicies;
 
@@ -174,7 +181,7 @@ public final class AutoScalingPolicy extends ScalingPolicy {
      * The list of autoscaling policy details.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AutoScalingPolicyDetails> getAutoScalingPolicies() {
         return autoScalingPolicies;
     }
@@ -186,7 +193,6 @@ public final class AutoScalingPolicy extends ScalingPolicy {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

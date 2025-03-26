@@ -6,14 +6,15 @@ package com.oracle.bmc.filestorage.responses;
 
 import com.oracle.bmc.filestorage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -21,14 +22,17 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned {@code MountTarget} instance. */
+    /**
+     * The returned MountTarget instance.
+     */
     private com.oracle.bmc.filestorage.model.MountTarget mountTarget;
 
     /**
-     * The returned {@code MountTarget} instance.
-     *
+     * The returned MountTarget instance.
      * @return the value
      */
     public com.oracle.bmc.filestorage.model.MountTarget getMountTarget() {
@@ -57,7 +62,7 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
     })
     private AddMountTargetLockResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.filestorage.model.MountTarget mountTarget) {
@@ -67,30 +72,28 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
         this.mountTarget = mountTarget;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<AddMountTargetLockResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -100,14 +103,17 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code MountTarget} instance. */
+        /**
+         * The returned MountTarget instance.
+         */
         private com.oracle.bmc.filestorage.model.MountTarget mountTarget;
 
         /**
-         * The returned {@code MountTarget} instance.
-         *
+         * The returned MountTarget instance.
          * @param mountTarget the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(AddMountTargetLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public AddMountTargetLockResponse build() {
             return new AddMountTargetLockResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, mountTarget);
@@ -161,7 +164,6 @@ public class AddMountTargetLockResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

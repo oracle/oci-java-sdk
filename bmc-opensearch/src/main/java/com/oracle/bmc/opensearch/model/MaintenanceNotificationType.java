@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/** Maintenance Notification Type */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum MaintenanceNotificationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Maintenance Notification Type
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+public enum MaintenanceNotificationType {
     ScheduledMaintenanceWithReleaseNotes("SCHEDULED_MAINTENANCE_WITH_RELEASE_NOTES"),
     ScheduledMaintenanceWithoutReleaseNotes("SCHEDULED_MAINTENANCE_WITHOUT_RELEASE_NOTES"),
     RescheduledMaintenance("RESCHEDULED_MAINTENANCE"),

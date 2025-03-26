@@ -5,23 +5,21 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Monitored resource credential property. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Monitored resource credential property.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CredentialProperty.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CredentialProperty
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CredentialProperty.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CredentialProperty extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "value"})
     public CredentialProperty(String name, String value) {
@@ -33,40 +31,40 @@ public final class CredentialProperty
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the credential property, should confirm with names of properties of this
-         * credential's type. Example: For JMXCreds type, credential property name for weblogic user
-         * is 'Username'.
-         */
+         * The name of the credential property, should confirm with names of properties of this credential's type.
+         * Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the credential property, should confirm with names of properties of this
-         * credential's type. Example: For JMXCreds type, credential property name for weblogic user
-         * is 'Username'.
+         * The name of the credential property, should confirm with names of properties of this credential's type.
+         * Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The value of the credential property name. Example: For JMXCreds type, credential
-         * property value for 'Username' property is 'weblogic'.
-         */
+         * The value of the credential property name.
+         * Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The value of the credential property name. Example: For JMXCreds type, credential
-         * property value for 'Username' property is 'weblogic'.
+         * The value of the credential property name.
+         * Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -96,7 +94,9 @@ public final class CredentialProperty
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,37 +106,37 @@ public final class CredentialProperty
     }
 
     /**
-     * The name of the credential property, should confirm with names of properties of this
-     * credential's type. Example: For JMXCreds type, credential property name for weblogic user is
-     * 'Username'.
-     */
+     * The name of the credential property, should confirm with names of properties of this credential's type.
+     * Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the credential property, should confirm with names of properties of this
-     * credential's type. Example: For JMXCreds type, credential property name for weblogic user is
-     * 'Username'.
+     * The name of the credential property, should confirm with names of properties of this credential's type.
+     * Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The value of the credential property name. Example: For JMXCreds type, credential property
-     * value for 'Username' property is 'weblogic'.
-     */
+     * The value of the credential property name.
+     * Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The value of the credential property name. Example: For JMXCreds type, credential property
-     * value for 'Username' property is 'weblogic'.
+     * The value of the credential property name.
+     * Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
@@ -148,7 +148,6 @@ public final class CredentialProperty
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

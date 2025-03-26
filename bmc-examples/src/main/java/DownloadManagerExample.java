@@ -19,11 +19,11 @@ import com.oracle.bmc.objectstorage.transfer.DownloadManager;
 
 /**
  * Example of using the DownloadManager to download objects.
+ * <p>
+ * DownloadManager can be configured to control how/when it does parallel uploads,
+ * and manages the underlying get requests and possible retries.
  *
- * <p>DownloadManager can be configured to control how/when it does parallel uploads, and manages
- * the underlying get requests and possible retries.
- *
- * <p>Clients construct a GetObjectRequest similar to what they normally would.
+ * Clients construct a GetObjectRequest similar to what they normally would.
  */
 public class DownloadManagerExample {
 
@@ -43,10 +43,8 @@ public class DownloadManagerExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -54,8 +52,8 @@ public class DownloadManagerExample {
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage client =
-                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        ObjectStorage client = new ObjectStorageClient(provider);
+        client.setRegion(Region.US_PHOENIX_1);
 
         // configure download settings as desired
         DownloadConfiguration downloadConfiguration =

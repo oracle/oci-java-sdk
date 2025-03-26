@@ -5,26 +5,25 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of WLP agent. Example: {@code {"id":
- * "ocid1.wlpagent.oc1..exampleawwcufihrc62gpbcvbjizswgoj4w7rg5q4fwbg", "compartmentId":
- * "ocid1.compartment.oc1..exampleawwcufihrc62gpbcvbjizswgoj4w7rg5q4fwbg2fauxvlcxbtliaa",
- * "agentVersion": "1.0.11", "certificateId":
- * "ocid1.certificate.oc1..exampleawwcufihrc62gpbcvbjizswgoj4w7oj4w7rg5q4fwbg2fauxv"
- * "certificateSignedRequest": "MIIGwjCCBaqgAwIBAgIVAK8hJCS/5Hu0dEMQ2ud"}} <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Details of WLP agent.
+ * Example: {@code {"id": "ocid1.wlpagent.oc1..exampleawwcufihrc62gpbcvbjizswgoj4w7rg5q4fwbg",
+ *           "compartmentId": "ocid1.compartment.oc1..exampleawwcufihrc62gpbcvbjizswgoj4w7rg5q4fwbg2fauxvlcxbtliaa",
+ *           "agentVersion": "1.0.11",
+ *           "certificateId": "ocid1.certificate.oc1..exampleawwcufihrc62gpbcvbjizswgoj4w7oj4w7rg5q4fwbg2fauxv"
+ *           "certificateSignedRequest": "MIIGwjCCBaqgAwIBAgIVAK8hJCS/5Hu0dEMQ2ud"}}
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WlpAgent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WlpAgent extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WlpAgent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -73,174 +72,185 @@ public final class WlpAgent extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID for WlpAgent */
+        /**
+         * OCID for WlpAgent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID for WlpAgent
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID for instance in which WlpAgent is installed */
+        /**
+         * OCID for instance in which WlpAgent is installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostId")
         private String hostId;
 
         /**
          * OCID for instance in which WlpAgent is installed
-         *
          * @param hostId the value to set
          * @return this builder
-         */
+         **/
         public Builder hostId(String hostId) {
             this.hostId = hostId;
             this.__explicitlySet__.add("hostId");
             return this;
         }
-        /** TenantId of the host */
+        /**
+         * TenantId of the host
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * TenantId of the host
-         *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** Compartment OCID of WlpAgent. */
+        /**
+         * Compartment OCID of WlpAgent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment OCID of WlpAgent.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The version of the agent */
+        /**
+         * The version of the agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
         private String agentVersion;
 
         /**
          * The version of the agent
-         *
          * @param agentVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder agentVersion(String agentVersion) {
             this.agentVersion = agentVersion;
             this.__explicitlySet__.add("agentVersion");
             return this;
         }
-        /** The certificate ID returned by OCI certificates service */
+        /**
+         * The certificate ID returned by OCI certificates service
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
          * The certificate ID returned by OCI certificates service
-         *
          * @param certificateId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
             return this;
         }
-        /** The updated certificate signing request */
+        /**
+         * The updated certificate signing request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSignedRequest")
         private String certificateSignedRequest;
 
         /**
          * The updated certificate signing request
-         *
          * @param certificateSignedRequest the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateSignedRequest(String certificateSignedRequest) {
             this.certificateSignedRequest = certificateSignedRequest;
             this.__explicitlySet__.add("certificateSignedRequest");
             return this;
         }
-        /** The date and time the WlpAgent was created. Format defined by RFC3339. */
+        /**
+         * The date and time the WlpAgent was created. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the WlpAgent was created. Format defined by RFC3339.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the WlpAgent was updated. Format defined by RFC3339. */
+        /**
+         * The date and time the WlpAgent was updated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the WlpAgent was updated. Format defined by RFC3339.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
          *
-         * <p>Avoid entering confidential information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         *
-         * <p>Avoid entering confidential information.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         * <p>
+         * Avoid entering confidential information.
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -249,7 +259,8 @@ public final class WlpAgent extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -259,7 +270,7 @@ public final class WlpAgent extends com.oracle.bmc.http.client.internal.Explicit
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -267,27 +278,26 @@ public final class WlpAgent extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -364,7 +374,9 @@ public final class WlpAgent extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -373,195 +385,206 @@ public final class WlpAgent extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** OCID for WlpAgent */
+    /**
+     * OCID for WlpAgent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID for WlpAgent
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OCID for instance in which WlpAgent is installed */
+    /**
+     * OCID for instance in which WlpAgent is installed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostId")
     private final String hostId;
 
     /**
      * OCID for instance in which WlpAgent is installed
-     *
      * @return the value
-     */
+     **/
     public String getHostId() {
         return hostId;
     }
 
-    /** TenantId of the host */
+    /**
+     * TenantId of the host
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * TenantId of the host
-     *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** Compartment OCID of WlpAgent. */
+    /**
+     * Compartment OCID of WlpAgent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment OCID of WlpAgent.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The version of the agent */
+    /**
+     * The version of the agent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
     private final String agentVersion;
 
     /**
      * The version of the agent
-     *
      * @return the value
-     */
+     **/
     public String getAgentVersion() {
         return agentVersion;
     }
 
-    /** The certificate ID returned by OCI certificates service */
+    /**
+     * The certificate ID returned by OCI certificates service
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * The certificate ID returned by OCI certificates service
-     *
      * @return the value
-     */
+     **/
     public String getCertificateId() {
         return certificateId;
     }
 
-    /** The updated certificate signing request */
+    /**
+     * The updated certificate signing request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSignedRequest")
     private final String certificateSignedRequest;
 
     /**
      * The updated certificate signing request
-     *
      * @return the value
-     */
+     **/
     public String getCertificateSignedRequest() {
         return certificateSignedRequest;
     }
 
-    /** The date and time the WlpAgent was created. Format defined by RFC3339. */
+    /**
+     * The date and time the WlpAgent was created. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the WlpAgent was created. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time the WlpAgent was updated. Format defined by RFC3339. */
+    /**
+     * The date and time the WlpAgent was updated. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the WlpAgent was updated. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
-     * <p>Avoid entering confidential information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     *
-     * <p>Avoid entering confidential information.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -573,7 +596,6 @@ public final class WlpAgent extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

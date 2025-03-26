@@ -5,23 +5,22 @@
 package com.oracle.bmc.streaming.model;
 
 /**
- * Object used to create a group cursor. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+ * Object used to create a group cursor.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateGroupCursorDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateGroupCursorDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateGroupCursorDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -49,103 +48,101 @@ public final class CreateGroupCursorDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the cursor. This value is only used when the group is created. */
+        /**
+         * The type of the cursor. This value is only used when the group is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of the cursor. This value is only used when the group is created.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The time to consume from if type is AT_TIME. */
+        /**
+         * The time to consume from if type is AT_TIME.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private java.util.Date time;
 
         /**
          * The time to consume from if type is AT_TIME.
-         *
          * @param time the value to set
          * @return this builder
-         */
+         **/
         public Builder time(java.util.Date time) {
             this.time = time;
             this.__explicitlySet__.add("time");
             return this;
         }
-        /** Name of the consumer group. */
+        /**
+         * Name of the consumer group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupName")
         private String groupName;
 
         /**
          * Name of the consumer group.
-         *
          * @param groupName the value to set
          * @return this builder
-         */
+         **/
         public Builder groupName(String groupName) {
             this.groupName = groupName;
             this.__explicitlySet__.add("groupName");
             return this;
         }
         /**
-         * A unique identifier for the instance joining the consumer group. If an instanceName is
-         * not provided, a UUID will be generated and used.
-         */
+         * A unique identifier for the instance joining the consumer group. If an instanceName is not provided, a UUID will be generated and used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
         /**
-         * A unique identifier for the instance joining the consumer group. If an instanceName is
-         * not provided, a UUID will be generated and used.
-         *
+         * A unique identifier for the instance joining the consumer group. If an instanceName is not provided, a UUID will be generated and used.
          * @param instanceName the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
         /**
-         * The amount of a consumer instance inactivity time, before partition reservations are
-         * released.
-         */
+         * The amount of a consumer instance inactivity time, before partition reservations are released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
         private Integer timeoutInMs;
 
         /**
-         * The amount of a consumer instance inactivity time, before partition reservations are
-         * released.
-         *
+         * The amount of a consumer instance inactivity time, before partition reservations are released.
          * @param timeoutInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder timeoutInMs(Integer timeoutInMs) {
             this.timeoutInMs = timeoutInMs;
             this.__explicitlySet__.add("timeoutInMs");
             return this;
         }
         /**
-         * When using consumer-groups, the default commit-on-get behaviour can be overriden by
-         * setting this value to false. If disabled, a consumer must manually commit their cursors.
-         */
+         * When using consumer-groups, the default commit-on-get behaviour can be overriden by setting this value to false.
+         * If disabled, a consumer must manually commit their cursors.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitOnGet")
         private Boolean commitOnGet;
 
         /**
-         * When using consumer-groups, the default commit-on-get behaviour can be overriden by
-         * setting this value to false. If disabled, a consumer must manually commit their cursors.
+         * When using consumer-groups, the default commit-on-get behaviour can be overriden by setting this value to false.
+         * If disabled, a consumer must manually commit their cursors.
          *
          * @param commitOnGet the value to set
          * @return this builder
-         */
+         **/
         public Builder commitOnGet(Boolean commitOnGet) {
             this.commitOnGet = commitOnGet;
             this.__explicitlySet__.add("commitOnGet");
@@ -194,7 +191,9 @@ public final class CreateGroupCursorDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -203,8 +202,10 @@ public final class CreateGroupCursorDetails
         return new Builder().copy(this);
     }
 
-    /** The type of the cursor. This value is only used when the group is created. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the cursor. This value is only used when the group is created.
+     **/
+    public enum Type {
         AtTime("AT_TIME"),
         Latest("LATEST"),
         TrimHorizon("TRIM_HORIZON"),
@@ -237,92 +238,90 @@ public final class CreateGroupCursorDetails
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /** The type of the cursor. This value is only used when the group is created. */
+    /**
+     * The type of the cursor. This value is only used when the group is created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of the cursor. This value is only used when the group is created.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** The time to consume from if type is AT_TIME. */
+    /**
+     * The time to consume from if type is AT_TIME.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final java.util.Date time;
 
     /**
      * The time to consume from if type is AT_TIME.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTime() {
         return time;
     }
 
-    /** Name of the consumer group. */
+    /**
+     * Name of the consumer group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
     private final String groupName;
 
     /**
      * Name of the consumer group.
-     *
      * @return the value
-     */
+     **/
     public String getGroupName() {
         return groupName;
     }
 
     /**
-     * A unique identifier for the instance joining the consumer group. If an instanceName is not
-     * provided, a UUID will be generated and used.
-     */
+     * A unique identifier for the instance joining the consumer group. If an instanceName is not provided, a UUID will be generated and used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
     /**
-     * A unique identifier for the instance joining the consumer group. If an instanceName is not
-     * provided, a UUID will be generated and used.
-     *
+     * A unique identifier for the instance joining the consumer group. If an instanceName is not provided, a UUID will be generated and used.
      * @return the value
-     */
+     **/
     public String getInstanceName() {
         return instanceName;
     }
 
     /**
-     * The amount of a consumer instance inactivity time, before partition reservations are
-     * released.
-     */
+     * The amount of a consumer instance inactivity time, before partition reservations are released.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
     private final Integer timeoutInMs;
 
     /**
-     * The amount of a consumer instance inactivity time, before partition reservations are
-     * released.
-     *
+     * The amount of a consumer instance inactivity time, before partition reservations are released.
      * @return the value
-     */
+     **/
     public Integer getTimeoutInMs() {
         return timeoutInMs;
     }
 
     /**
-     * When using consumer-groups, the default commit-on-get behaviour can be overriden by setting
-     * this value to false. If disabled, a consumer must manually commit their cursors.
-     */
+     * When using consumer-groups, the default commit-on-get behaviour can be overriden by setting this value to false.
+     * If disabled, a consumer must manually commit their cursors.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitOnGet")
     private final Boolean commitOnGet;
 
     /**
-     * When using consumer-groups, the default commit-on-get behaviour can be overriden by setting
-     * this value to false. If disabled, a consumer must manually commit their cursors.
+     * When using consumer-groups, the default commit-on-get behaviour can be overriden by setting this value to false.
+     * If disabled, a consumer must manually commit their cursors.
      *
      * @return the value
-     */
+     **/
     public Boolean getCommitOnGet() {
         return commitOnGet;
     }
@@ -334,7 +333,6 @@ public final class CreateGroupCursorDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

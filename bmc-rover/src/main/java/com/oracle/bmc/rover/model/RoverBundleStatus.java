@@ -5,23 +5,21 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * The status of the rover bundle status by a specified work request id. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * The status of the rover bundle status by a specified work request id.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RoverBundleStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RoverBundleStatus
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = RoverBundleStatus.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RoverBundleStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "status",
@@ -52,37 +50,42 @@ public final class RoverBundleStatus
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The progress of the workflow. */
+        /**
+         * The progress of the workflow.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The progress of the workflow.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Percentage of the work request completed. */
+        /**
+         * Percentage of the work request completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
          * Percentage of the work request completed.
-         *
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-        /** The date and time the work request was created. An RFC3339 formatted datetime string. */
+        /**
+         * The date and time the work request was created. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
@@ -91,13 +94,16 @@ public final class RoverBundleStatus
          *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** The date and time the work request was started. An RFC3339 formatted datetime string. */
+        /**
+         * The date and time the work request was started. An RFC3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
@@ -106,7 +112,7 @@ public final class RoverBundleStatus
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -114,7 +120,8 @@ public final class RoverBundleStatus
         }
         /**
          * The date and time the work request was finished. An RFC3339 formatted datetime string.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
@@ -123,37 +130,39 @@ public final class RoverBundleStatus
          *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** The full name of the bundle. */
+        /**
+         * The full name of the bundle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bundleName")
         private String bundleName;
 
         /**
          * The full name of the bundle.
-         *
          * @param bundleName the value to set
          * @return this builder
-         */
+         **/
         public Builder bundleName(String bundleName) {
             this.bundleName = bundleName;
             this.__explicitlySet__.add("bundleName");
             return this;
         }
-        /** The error message if work request fails. */
+        /**
+         * The error message if work request fails.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * The error message if work request fails.
-         *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -206,7 +215,9 @@ public final class RoverBundleStatus
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -215,8 +226,10 @@ public final class RoverBundleStatus
         return new Builder().copy(this);
     }
 
-    /** The progress of the workflow. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The progress of the workflow.
+     **/
+    public enum Status {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
@@ -225,8 +238,8 @@ public final class RoverBundleStatus
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -264,33 +277,38 @@ public final class RoverBundleStatus
             return UnknownEnumValue;
         }
     };
-    /** The progress of the workflow. */
+    /**
+     * The progress of the workflow.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The progress of the workflow.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** Percentage of the work request completed. */
+    /**
+     * Percentage of the work request completed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
      * Percentage of the work request completed.
-     *
      * @return the value
-     */
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
 
-    /** The date and time the work request was created. An RFC3339 formatted datetime string. */
+    /**
+     * The date and time the work request was created. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
@@ -298,12 +316,15 @@ public final class RoverBundleStatus
      * The date and time the work request was created. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** The date and time the work request was started. An RFC3339 formatted datetime string. */
+    /**
+     * The date and time the work request was started. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
@@ -311,12 +332,15 @@ public final class RoverBundleStatus
      * The date and time the work request was started. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The date and time the work request was finished. An RFC3339 formatted datetime string. */
+    /**
+     * The date and time the work request was finished. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
@@ -324,33 +348,35 @@ public final class RoverBundleStatus
      * The date and time the work request was finished. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** The full name of the bundle. */
+    /**
+     * The full name of the bundle.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bundleName")
     private final String bundleName;
 
     /**
      * The full name of the bundle.
-     *
      * @return the value
-     */
+     **/
     public String getBundleName() {
         return bundleName;
     }
 
-    /** The error message if work request fails. */
+    /**
+     * The error message if work request fails.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * The error message if work request fails.
-     *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -362,7 +388,6 @@ public final class RoverBundleStatus
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

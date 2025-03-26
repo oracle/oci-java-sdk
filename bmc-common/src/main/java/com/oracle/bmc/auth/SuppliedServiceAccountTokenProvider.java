@@ -6,6 +6,7 @@ package com.oracle.bmc.auth;
 
 import com.oracle.bmc.auth.internal.JwtClaimsSet;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.time.Instant;
 import java.util.Date;

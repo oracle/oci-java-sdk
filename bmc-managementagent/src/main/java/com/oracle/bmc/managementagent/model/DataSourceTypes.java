@@ -5,11 +5,13 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * Type of the data source KUBERNETES_CLUSTER represents an Kubernetes cluster. PROMETHEUS_EMITTER
- * represents a Prometheus metric collector.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum DataSourceTypes implements com.oracle.bmc.http.internal.BmcEnum {
+ * Type of the data source
+ * KUBERNETES_CLUSTER represents an Kubernetes cluster.
+ * PROMETHEUS_EMITTER represents a Prometheus metric collector.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+public enum DataSourceTypes {
     KubernetesCluster("KUBERNETES_CLUSTER"),
     PrometheusEmitter("PROMETHEUS_EMITTER"),
 

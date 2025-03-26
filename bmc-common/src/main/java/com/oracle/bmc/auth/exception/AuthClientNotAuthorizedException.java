@@ -8,8 +8,7 @@ import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.util.internal.Validate;
 
 /**
- * Exception thrown when the client failed to authenticate to the auth service using configured key
- * suppliers.
+ * Exception thrown when the client failed to authenticate to the auth service using configured key suppliers.
  */
 public class AuthClientNotAuthorizedException extends AuthClientException {
     private static final int STATUS_CODE_UNAUTHORIZED = 401;
@@ -38,7 +37,6 @@ public class AuthClientNotAuthorizedException extends AuthClientException {
 
     /**
      * Return true if the exception is a "client unauthorized" exception.
-     *
      * @param cause BMC exception to check
      * @return true if the exception is a "client unauthorized" exception
      */

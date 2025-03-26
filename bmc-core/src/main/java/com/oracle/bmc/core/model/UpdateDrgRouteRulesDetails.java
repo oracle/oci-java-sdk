@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details used to update route rules in a DRG route table. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details used to update route rules in a DRG route table.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDrgRouteRulesDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateDrgRouteRulesDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDrgRouteRulesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"routeRules"})
     public UpdateDrgRouteRulesDetails(java.util.List<UpdateDrgRouteRuleDetails> routeRules) {
@@ -31,16 +31,17 @@ public final class UpdateDrgRouteRulesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The DRG rute rules to update. */
+        /**
+         * The DRG rute rules to update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
         private java.util.List<UpdateDrgRouteRuleDetails> routeRules;
 
         /**
          * The DRG rute rules to update.
-         *
          * @param routeRules the value to set
          * @return this builder
-         */
+         **/
         public Builder routeRules(java.util.List<UpdateDrgRouteRuleDetails> routeRules) {
             this.routeRules = routeRules;
             this.__explicitlySet__.add("routeRules");
@@ -67,7 +68,9 @@ public final class UpdateDrgRouteRulesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +79,16 @@ public final class UpdateDrgRouteRulesDetails
         return new Builder().copy(this);
     }
 
-    /** The DRG rute rules to update. */
+    /**
+     * The DRG rute rules to update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
     private final java.util.List<UpdateDrgRouteRuleDetails> routeRules;
 
     /**
      * The DRG rute rules to update.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UpdateDrgRouteRuleDetails> getRouteRules() {
         return routeRules;
     }
@@ -96,7 +100,6 @@ public final class UpdateDrgRouteRulesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

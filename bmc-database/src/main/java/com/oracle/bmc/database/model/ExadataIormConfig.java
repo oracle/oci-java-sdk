@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The IORM settings of the Exadata DB system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The IORM settings of the Exadata DB system.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExadataIormConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExadataIormConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ExadataIormConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExadataIormConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -43,7 +42,10 @@ public final class ExadataIormConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The current state of IORM configuration for the Exadata DB system. */
+        /**
+         * The current state of IORM configuration for the Exadata DB system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -52,13 +54,16 @@ public final class ExadataIormConfig
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Additional information about the current {@code lifecycleState}. */
+        /**
+         * Additional information about the current {@code lifecycleState}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -67,37 +72,47 @@ public final class ExadataIormConfig
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The current value for the IORM objective. The default is {@code AUTO}. */
+        /**
+         * The current value for the IORM objective.
+         * The default is {@code AUTO}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objective")
         private Objective objective;
 
         /**
-         * The current value for the IORM objective. The default is {@code AUTO}.
+         * The current value for the IORM objective.
+         * The default is {@code AUTO}.
          *
          * @param objective the value to set
          * @return this builder
-         */
+         **/
         public Builder objective(Objective objective) {
             this.objective = objective;
             this.__explicitlySet__.add("objective");
             return this;
         }
-        /** An array of IORM settings for all the database in the Exadata DB system. */
+        /**
+         * An array of IORM settings for all the database in
+         * the Exadata DB system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
         private java.util.List<DbIormConfig> dbPlans;
 
         /**
-         * An array of IORM settings for all the database in the Exadata DB system.
+         * An array of IORM settings for all the database in
+         * the Exadata DB system.
          *
          * @param dbPlans the value to set
          * @return this builder
-         */
+         **/
         public Builder dbPlans(java.util.List<DbIormConfig> dbPlans) {
             this.dbPlans = dbPlans;
             this.__explicitlySet__.add("dbPlans");
@@ -138,7 +153,9 @@ public final class ExadataIormConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,8 +164,11 @@ public final class ExadataIormConfig
         return new Builder().copy(this);
     }
 
-    /** The current state of IORM configuration for the Exadata DB system. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of IORM configuration for the Exadata DB system.
+     *
+     **/
+    public enum LifecycleState {
         Bootstrapping("BOOTSTRAPPING"),
         Enabled("ENABLED"),
         Disabled("DISABLED"),
@@ -156,8 +176,8 @@ public final class ExadataIormConfig
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -196,7 +216,10 @@ public final class ExadataIormConfig
             return UnknownEnumValue;
         }
     };
-    /** The current state of IORM configuration for the Exadata DB system. */
+    /**
+     * The current state of IORM configuration for the Exadata DB system.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -204,12 +227,15 @@ public final class ExadataIormConfig
      * The current state of IORM configuration for the Exadata DB system.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional information about the current {@code lifecycleState}. */
+    /**
+     * Additional information about the current {@code lifecycleState}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -217,13 +243,17 @@ public final class ExadataIormConfig
      * Additional information about the current {@code lifecycleState}.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The current value for the IORM objective. The default is {@code AUTO}. */
-    public enum Objective implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current value for the IORM objective.
+     * The default is {@code AUTO}.
+     *
+     **/
+    public enum Objective {
         LowLatency("LOW_LATENCY"),
         HighThroughput("HIGH_THROUGHPUT"),
         Balanced("BALANCED"),
@@ -231,8 +261,8 @@ public final class ExadataIormConfig
         Basic("BASIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -271,28 +301,38 @@ public final class ExadataIormConfig
             return UnknownEnumValue;
         }
     };
-    /** The current value for the IORM objective. The default is {@code AUTO}. */
+    /**
+     * The current value for the IORM objective.
+     * The default is {@code AUTO}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objective")
     private final Objective objective;
 
     /**
-     * The current value for the IORM objective. The default is {@code AUTO}.
+     * The current value for the IORM objective.
+     * The default is {@code AUTO}.
      *
      * @return the value
-     */
+     **/
     public Objective getObjective() {
         return objective;
     }
 
-    /** An array of IORM settings for all the database in the Exadata DB system. */
+    /**
+     * An array of IORM settings for all the database in
+     * the Exadata DB system.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")
     private final java.util.List<DbIormConfig> dbPlans;
 
     /**
-     * An array of IORM settings for all the database in the Exadata DB system.
+     * An array of IORM settings for all the database in
+     * the Exadata DB system.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DbIormConfig> getDbPlans() {
         return dbPlans;
     }
@@ -304,7 +344,6 @@ public final class ExadataIormConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

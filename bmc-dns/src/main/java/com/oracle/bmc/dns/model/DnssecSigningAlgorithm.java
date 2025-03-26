@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.dns.model;
 
-/** The signing algorithm that will be used for a {@code DnssecKeyVersion}. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-public enum DnssecSigningAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The signing algorithm that will be used for a {@code DnssecKeyVersion}.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+public enum DnssecSigningAlgorithm {
     Rsasha256("RSASHA256"),
 
     /**

@@ -5,21 +5,19 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the network node. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the network node.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Node.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -59,151 +57,161 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ID of the network node. */
+        /**
+         * ID of the network node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * ID of the network node.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** IP address of the network node. */
+        /**
+         * IP address of the network node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * IP address of the network node.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** Display name of the network node. */
+        /**
+         * Display name of the network node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the network node.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Geographical information of the network node. */
+        /**
+         * Geographical information of the network node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
         private String geoInfo;
 
         /**
          * Geographical information of the network node.
-         *
          * @param geoInfo the value to set
          * @return this builder
-         */
+         **/
         public Builder geoInfo(String geoInfo) {
             this.geoInfo = geoInfo;
             this.__explicitlySet__.add("geoInfo");
             return this;
         }
-        /** Outgoing links from the network node. */
+        /**
+         * Outgoing links from the network node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
         private java.util.List<String> outgoingLinks;
 
         /**
          * Outgoing links from the network node.
-         *
          * @param outgoingLinks the value to set
          * @return this builder
-         */
+         **/
         public Builder outgoingLinks(java.util.List<String> outgoingLinks) {
             this.outgoingLinks = outgoingLinks;
             this.__explicitlySet__.add("outgoingLinks");
             return this;
         }
-        /** Number of consecutive anonymous network nodes. */
+        /**
+         * Number of consecutive anonymous network nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consecutiveAnonymousCount")
         private Integer consecutiveAnonymousCount;
 
         /**
          * Number of consecutive anonymous network nodes.
-         *
          * @param consecutiveAnonymousCount the value to set
          * @return this builder
-         */
+         **/
         public Builder consecutiveAnonymousCount(Integer consecutiveAnonymousCount) {
             this.consecutiveAnonymousCount = consecutiveAnonymousCount;
             this.__explicitlySet__.add("consecutiveAnonymousCount");
             return this;
         }
-        /** Level of the network node. */
+        /**
+         * Level of the network node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Integer level;
 
         /**
          * Level of the network node.
-         *
          * @param level the value to set
          * @return this builder
-         */
+         **/
         public Builder level(Integer level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
-        /** Average packet response time in milliseconds. */
+        /**
+         * Average packet response time in milliseconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgPacketResponseTimeInMs")
         private Double avgPacketResponseTimeInMs;
 
         /**
          * Average packet response time in milliseconds.
-         *
          * @param avgPacketResponseTimeInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder avgPacketResponseTimeInMs(Double avgPacketResponseTimeInMs) {
             this.avgPacketResponseTimeInMs = avgPacketResponseTimeInMs;
             this.__explicitlySet__.add("avgPacketResponseTimeInMs");
             return this;
         }
-        /** Percentage of the average packet loss. */
+        /**
+         * Percentage of the average packet loss.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgPacketLossPercent")
         private Double avgPacketLossPercent;
 
         /**
          * Percentage of the average packet loss.
-         *
          * @param avgPacketLossPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder avgPacketLossPercent(Double avgPacketLossPercent) {
             this.avgPacketLossPercent = avgPacketLossPercent;
             this.__explicitlySet__.add("avgPacketLossPercent");
             return this;
         }
-        /** Type of network node. */
+        /**
+         * Type of network node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of network node.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -268,7 +276,9 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -277,125 +287,136 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** ID of the network node. */
+    /**
+     * ID of the network node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * ID of the network node.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** IP address of the network node. */
+    /**
+     * IP address of the network node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * IP address of the network node.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** Display name of the network node. */
+    /**
+     * Display name of the network node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the network node.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Geographical information of the network node. */
+    /**
+     * Geographical information of the network node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
     private final String geoInfo;
 
     /**
      * Geographical information of the network node.
-     *
      * @return the value
-     */
+     **/
     public String getGeoInfo() {
         return geoInfo;
     }
 
-    /** Outgoing links from the network node. */
+    /**
+     * Outgoing links from the network node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
     private final java.util.List<String> outgoingLinks;
 
     /**
      * Outgoing links from the network node.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getOutgoingLinks() {
         return outgoingLinks;
     }
 
-    /** Number of consecutive anonymous network nodes. */
+    /**
+     * Number of consecutive anonymous network nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consecutiveAnonymousCount")
     private final Integer consecutiveAnonymousCount;
 
     /**
      * Number of consecutive anonymous network nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getConsecutiveAnonymousCount() {
         return consecutiveAnonymousCount;
     }
 
-    /** Level of the network node. */
+    /**
+     * Level of the network node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Integer level;
 
     /**
      * Level of the network node.
-     *
      * @return the value
-     */
+     **/
     public Integer getLevel() {
         return level;
     }
 
-    /** Average packet response time in milliseconds. */
+    /**
+     * Average packet response time in milliseconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("avgPacketResponseTimeInMs")
     private final Double avgPacketResponseTimeInMs;
 
     /**
      * Average packet response time in milliseconds.
-     *
      * @return the value
-     */
+     **/
     public Double getAvgPacketResponseTimeInMs() {
         return avgPacketResponseTimeInMs;
     }
 
-    /** Percentage of the average packet loss. */
+    /**
+     * Percentage of the average packet loss.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("avgPacketLossPercent")
     private final Double avgPacketLossPercent;
 
     /**
      * Percentage of the average packet loss.
-     *
      * @return the value
-     */
+     **/
     public Double getAvgPacketLossPercent() {
         return avgPacketLossPercent;
     }
 
-    /** Type of network node. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of network node.
+     **/
+    public enum Type {
         Source("SOURCE"),
         Destination("DESTINATION"),
         Anonymous("ANONYMOUS"),
@@ -403,8 +424,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         Dangling("DANGLING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -441,15 +462,16 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** Type of network node. */
+    /**
+     * Type of network node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of network node.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
@@ -461,7 +483,6 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

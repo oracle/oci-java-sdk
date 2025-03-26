@@ -5,34 +5,34 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Model specific properties to use with Oracle model for TTS. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Model specific properties to use with Oracle model for TTS.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelName",
-        defaultImpl = TtsOracleModelDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelName",
+    defaultImpl = TtsOracleModelDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TtsOracleTts2NaturalModelDetails.class,
-            name = "TTS_2_NATURAL"),
+        value = TtsOracleTts2NaturalModelDetails.class,
+        name = "TTS_2_NATURAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TtsOracleTts1StandardModelDetails.class,
-            name = "TTS_1_STANDARD")
+        value = TtsOracleTts1StandardModelDetails.class,
+        name = "TTS_1_STANDARD"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class TtsOracleModelDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class TtsOracleModelDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected TtsOracleModelDetails() {
@@ -46,7 +46,6 @@ public class TtsOracleModelDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -80,10 +79,12 @@ public class TtsOracleModelDetails
     }
 
     /**
-     * The fully qualified name of model to use for speech generation. The available models are: -
-     * TTS_1_STANDARD - TTS_2_NATURAL
-     */
-    public enum ModelName implements com.oracle.bmc.http.internal.BmcEnum {
+     * The fully qualified name of model to use for speech generation. The available models are:
+     * - TTS_1_STANDARD
+     * - TTS_2_NATURAL
+     *
+     **/
+    public enum ModelName {
         Tts1Standard("TTS_1_STANDARD"),
         Tts2Natural("TTS_2_NATURAL"),
         ;

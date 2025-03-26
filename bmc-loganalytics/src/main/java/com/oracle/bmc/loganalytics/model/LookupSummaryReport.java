@@ -5,23 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Summary report of lookups in the tenancy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Summary report of lookups in the tenancy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LookupSummaryReport.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LookupSummaryReport
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = LookupSummaryReport.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LookupSummaryReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userCreatedCount", "oracleDefinedCount", "totalCount"})
     public LookupSummaryReport(
@@ -34,46 +32,49 @@ public final class LookupSummaryReport
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of user created lookups. */
+        /**
+         * The number of user created lookups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userCreatedCount")
         private Integer userCreatedCount;
 
         /**
          * The number of user created lookups.
-         *
          * @param userCreatedCount the value to set
          * @return this builder
-         */
+         **/
         public Builder userCreatedCount(Integer userCreatedCount) {
             this.userCreatedCount = userCreatedCount;
             this.__explicitlySet__.add("userCreatedCount");
             return this;
         }
-        /** The number of oracle defined lookups. */
+        /**
+         * The number of oracle defined lookups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedCount")
         private Integer oracleDefinedCount;
 
         /**
          * The number of oracle defined lookups.
-         *
          * @param oracleDefinedCount the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleDefinedCount(Integer oracleDefinedCount) {
             this.oracleDefinedCount = oracleDefinedCount;
             this.__explicitlySet__.add("oracleDefinedCount");
             return this;
         }
-        /** The total number of lookups. */
+        /**
+         * The total number of lookups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
         private Integer totalCount;
 
         /**
          * The total number of lookups.
-         *
          * @param totalCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalCount(Integer totalCount) {
             this.totalCount = totalCount;
             this.__explicitlySet__.add("totalCount");
@@ -108,7 +109,9 @@ public final class LookupSummaryReport
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +120,44 @@ public final class LookupSummaryReport
         return new Builder().copy(this);
     }
 
-    /** The number of user created lookups. */
+    /**
+     * The number of user created lookups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userCreatedCount")
     private final Integer userCreatedCount;
 
     /**
      * The number of user created lookups.
-     *
      * @return the value
-     */
+     **/
     public Integer getUserCreatedCount() {
         return userCreatedCount;
     }
 
-    /** The number of oracle defined lookups. */
+    /**
+     * The number of oracle defined lookups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedCount")
     private final Integer oracleDefinedCount;
 
     /**
      * The number of oracle defined lookups.
-     *
      * @return the value
-     */
+     **/
     public Integer getOracleDefinedCount() {
         return oracleDefinedCount;
     }
 
-    /** The total number of lookups. */
+    /**
+     * The total number of lookups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCount")
     private final Integer totalCount;
 
     /**
      * The total number of lookups.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -163,7 +169,6 @@ public final class LookupSummaryReport
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

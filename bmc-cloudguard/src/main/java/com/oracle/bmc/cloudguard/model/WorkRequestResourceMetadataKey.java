@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Metadata key for WorkRequest resource */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Metadata key for WorkRequest resource
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum WorkRequestResourceMetadataKey {
     IsDryRun("IS_DRY_RUN"),
 
     /**

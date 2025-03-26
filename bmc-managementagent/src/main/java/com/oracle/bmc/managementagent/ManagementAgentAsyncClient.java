@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.managementagent;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.managementagent.internal.http.*;
 import com.oracle.bmc.managementagent.requests.*;
 import com.oracle.bmc.managementagent.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for ManagementAgent service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for ManagementAgent service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements ManagementAgentAsync {
-    /** Service instance for ManagementAgent. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+public class ManagementAgentAsyncClient implements ManagementAgentAsync {
+    /**
+     * Service instance for ManagementAgent.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MANAGEMENTAGENT")
@@ -40,1238 +37,112 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ManagementAgentAsyncClient.class);
 
-    ManagementAgentAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        this(builder, authenticationDetailsProvider, true);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
 
-    ManagementAgentAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            boolean isStreamWarningEnabled) {
-        super(builder, authenticationDetailsProvider);
-
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
-                            "ManagementAgentAsyncClient", "getManagementAgentInstallKeyContent"));
-        }
-    }
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, ManagementAgentAsyncClient> {
-        private boolean isStreamWarningEnabled = true;
-
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "managementagent";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public ManagementAgentAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new ManagementAgentAsyncClient(
-                    this, authenticationDetailsProvider, isStreamWarningEnabled);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateDataSourceResponse> createDataSource(
-            CreateDataSourceRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateDataSourceRequest, CreateDataSourceResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-        Objects.requireNonNull(
-                request.getCreateDataSourceDetails(), "createDataSourceDetails is required");
-
-        return clientCall(request, CreateDataSourceResponse::builder)
-                .logger(LOG, "createDataSource")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "CreateDataSource",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/CreateDataSource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDataSourceRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .appendPathParam("dataSources")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateDataSourceResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDataSourceResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateManagementAgentInstallKeyResponse>
-            createManagementAgentInstallKey(
-                    CreateManagementAgentInstallKeyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateManagementAgentInstallKeyRequest,
-                                    CreateManagementAgentInstallKeyResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateManagementAgentInstallKeyDetails(),
-                "createManagementAgentInstallKeyDetails is required");
-
-        return clientCall(request, CreateManagementAgentInstallKeyResponse::builder)
-                .logger(LOG, "createManagementAgentInstallKey")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "CreateManagementAgentInstallKey",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/CreateManagementAgentInstallKey")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateManagementAgentInstallKeyRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentInstallKeys")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.ManagementAgentInstallKey.class,
-                        CreateManagementAgentInstallKeyResponse.Builder::managementAgentInstallKey)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateManagementAgentInstallKeyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateManagementAgentInstallKeyResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteDataSourceResponse> deleteDataSource(
-            DeleteDataSourceRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteDataSourceRequest, DeleteDataSourceResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-
-        Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
-
-        return clientCall(request, DeleteDataSourceResponse::builder)
-                .logger(LOG, "deleteDataSource")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "DeleteDataSource",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteDataSource")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDataSourceRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .appendPathParam("dataSources")
-                .appendPathParam(request.getDataSourceKey())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDataSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteDataSourceResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteManagementAgentResponse> deleteManagementAgent(
-            DeleteManagementAgentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteManagementAgentRequest, DeleteManagementAgentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-
-        return clientCall(request, DeleteManagementAgentResponse::builder)
-                .logger(LOG, "deleteManagementAgent")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "DeleteManagementAgent",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteManagementAgent")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteManagementAgentRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteManagementAgentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteManagementAgentInstallKeyResponse>
-            deleteManagementAgentInstallKey(
-                    DeleteManagementAgentInstallKeyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteManagementAgentInstallKeyRequest,
-                                    DeleteManagementAgentInstallKeyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getManagementAgentInstallKeyId(),
-                "managementAgentInstallKeyId must not be blank");
-
-        return clientCall(request, DeleteManagementAgentInstallKeyResponse::builder)
-                .logger(LOG, "deleteManagementAgentInstallKey")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "DeleteManagementAgentInstallKey",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/DeleteManagementAgentInstallKey")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteManagementAgentInstallKeyRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentInstallKeys")
-                .appendPathParam(request.getManagementAgentInstallKeyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteManagementAgentInstallKeyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteWorkRequestResponse> deleteWorkRequest(
-            DeleteWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteWorkRequestRequest, DeleteWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, DeleteWorkRequestResponse::builder)
-                .logger(LOG, "deleteWorkRequest")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "DeleteWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/DeleteWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteWorkRequestRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteWorkRequestResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeployPluginsResponse> deployPlugins(
-            DeployPluginsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeployPluginsRequest, DeployPluginsResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getDeployPluginsDetails(), "deployPluginsDetails is required");
-
-        return clientCall(request, DeployPluginsResponse::builder)
-                .logger(LOG, "deployPlugins")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "DeployPlugins",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeployPlugins")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DeployPluginsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam("actions")
-                .appendPathParam("deployPlugins")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeployPluginsResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeployPluginsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAutoUpgradableConfigResponse> getAutoUpgradableConfig(
-            GetAutoUpgradableConfigRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, GetAutoUpgradableConfigResponse::builder)
-                .logger(LOG, "getAutoUpgradableConfig")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "GetAutoUpgradableConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetAutoUpgradableConfig")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAutoUpgradableConfigRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam("actions")
-                .appendPathParam("getAutoUpgradableConfig")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.AutoUpgradableConfig.class,
-                        GetAutoUpgradableConfigResponse.Builder::autoUpgradableConfig)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetAutoUpgradableConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetDataSourceResponse> getDataSource(
-            GetDataSourceRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-
-        Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
-
-        return clientCall(request, GetDataSourceResponse::builder)
-                .logger(LOG, "getDataSource")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "GetDataSource",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetDataSource")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDataSourceRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .appendPathParam("dataSources")
-                .appendPathParam(request.getDataSourceKey())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.DataSource.class,
-                        GetDataSourceResponse.Builder::dataSource)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDataSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetDataSourceResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetManagementAgentResponse> getManagementAgent(
-            GetManagementAgentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetManagementAgentRequest, GetManagementAgentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-
-        return clientCall(request, GetManagementAgentResponse::builder)
-                .logger(LOG, "getManagementAgent")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "GetManagementAgent",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetManagementAgent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetManagementAgentRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.ManagementAgent.class,
-                        GetManagementAgentResponse.Builder::managementAgent)
-                .handleResponseHeaderString("etag", GetManagementAgentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetManagementAgentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetManagementAgentInstallKeyResponse>
-            getManagementAgentInstallKey(
-                    GetManagementAgentInstallKeyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetManagementAgentInstallKeyRequest,
-                                    GetManagementAgentInstallKeyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getManagementAgentInstallKeyId(),
-                "managementAgentInstallKeyId must not be blank");
-
-        return clientCall(request, GetManagementAgentInstallKeyResponse::builder)
-                .logger(LOG, "getManagementAgentInstallKey")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "GetManagementAgentInstallKey",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKey")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetManagementAgentInstallKeyRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentInstallKeys")
-                .appendPathParam(request.getManagementAgentInstallKeyId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.ManagementAgentInstallKey.class,
-                        GetManagementAgentInstallKeyResponse.Builder::managementAgentInstallKey)
-                .handleResponseHeaderString(
-                        "etag", GetManagementAgentInstallKeyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetManagementAgentInstallKeyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetManagementAgentInstallKeyContentResponse>
-            getManagementAgentInstallKeyContent(
-                    GetManagementAgentInstallKeyContentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetManagementAgentInstallKeyContentRequest,
-                                    GetManagementAgentInstallKeyContentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getManagementAgentInstallKeyId(),
-                "managementAgentInstallKeyId must not be blank");
-
-        return clientCall(request, GetManagementAgentInstallKeyContentResponse::builder)
-                .logger(LOG, "getManagementAgentInstallKeyContent")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "GetManagementAgentInstallKeyContent",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKeyContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetManagementAgentInstallKeyContentRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentInstallKeys")
-                .appendPathParam(request.getManagementAgentInstallKeyId())
-                .appendPathParam("content")
-                .appendListQueryParam(
-                        "pluginName",
-                        request.getPluginName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/octet-stream")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetManagementAgentInstallKeyContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetManagementAgentInstallKeyContentResponse.Builder::opcRequestId)
-                .handleResponseHeaderLong(
-                        "content-length",
-                        GetManagementAgentInstallKeyContentResponse.Builder::contentLength)
-                .handleResponseHeaderString(
-                        "content-type",
-                        GetManagementAgentInstallKeyContentResponse.Builder::contentType)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
-            GetWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWorkRequestRequest, GetWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderBigDecimal(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAvailabilityHistoriesResponse> listAvailabilityHistories(
-            ListAvailabilityHistoriesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-
-        return clientCall(request, ListAvailabilityHistoriesResponse::builder)
-                .logger(LOG, "listAvailabilityHistories")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListAvailabilityHistories",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListAvailabilityHistories")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAvailabilityHistoriesRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .appendPathParam("availabilityHistories")
-                .appendQueryParam(
-                        "timeAvailabilityStatusEndedGreaterThan",
-                        request.getTimeAvailabilityStatusEndedGreaterThan())
-                .appendQueryParam(
-                        "timeAvailabilityStatusStartedLessThan",
-                        request.getTimeAvailabilityStatusStartedLessThan())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.AvailabilityHistorySummary.class,
-                        ListAvailabilityHistoriesResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAvailabilityHistoriesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAvailabilityHistoriesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListDataSourcesResponse> listDataSources(
-            ListDataSourcesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListDataSourcesRequest, ListDataSourcesResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-
-        return clientCall(request, ListDataSourcesResponse::builder)
-                .logger(LOG, "listDataSources")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListDataSources",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListDataSources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDataSourcesRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .appendPathParam("dataSources")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendListQueryParam(
-                        "name",
-                        request.getName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.DataSourceSummary.class,
-                        ListDataSourcesResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDataSourcesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDataSourcesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListManagementAgentImagesResponse> listManagementAgentImages(
-            ListManagementAgentImagesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListManagementAgentImagesRequest, ListManagementAgentImagesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListManagementAgentImagesResponse::builder)
-                .logger(LOG, "listManagementAgentImages")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListManagementAgentImages",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentImage/ListManagementAgentImages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagementAgentImagesRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentImages")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("installType", request.getInstallType())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.ManagementAgentImageSummary.class,
-                        ListManagementAgentImagesResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListManagementAgentImagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListManagementAgentImagesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListManagementAgentInstallKeysResponse>
-            listManagementAgentInstallKeys(
-                    ListManagementAgentInstallKeysRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListManagementAgentInstallKeysRequest,
-                                    ListManagementAgentInstallKeysResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListManagementAgentInstallKeysResponse::builder)
-                .logger(LOG, "listManagementAgentInstallKeys")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListManagementAgentInstallKeys",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/ListManagementAgentInstallKeys")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagementAgentInstallKeysRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentInstallKeys")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
-                .appendQueryParam("accessLevel", request.getAccessLevel())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary.class,
-                        ListManagementAgentInstallKeysResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagementAgentInstallKeysResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagementAgentInstallKeysResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListManagementAgentPluginsResponse>
-            listManagementAgentPlugins(
-                    ListManagementAgentPluginsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListManagementAgentPluginsRequest,
-                                    ListManagementAgentPluginsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListManagementAgentPluginsResponse::builder)
-                .logger(LOG, "listManagementAgentPlugins")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListManagementAgentPlugins",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentPlugin/ListManagementAgentPlugins")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagementAgentPluginsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentPlugins")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendListQueryParam(
-                        "platformType",
-                        request.getPlatformType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("agentId", request.getAgentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.ManagementAgentPluginSummary.class,
-                        ListManagementAgentPluginsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListManagementAgentPluginsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListManagementAgentPluginsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListManagementAgentsResponse> listManagementAgents(
-            ListManagementAgentsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListManagementAgentsRequest, ListManagementAgentsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListManagementAgentsResponse::builder)
-                .logger(LOG, "listManagementAgents")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListManagementAgents",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListManagementAgents")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagementAgentsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "pluginName",
-                        request.getPluginName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "version",
-                        request.getVersion(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("availabilityStatus", request.getAvailabilityStatus())
-                .appendQueryParam("hostId", request.getHostId())
-                .appendListQueryParam(
-                        "platformType",
-                        request.getPlatformType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("isCustomerDeployed", request.getIsCustomerDeployed())
-                .appendEnumQueryParam("installType", request.getInstallType())
-                .appendListQueryParam(
-                        "gatewayId",
-                        request.getGatewayId(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
-                .appendQueryParam("accessLevel", request.getAccessLevel())
-                .appendEnumQueryParam("dataSourceType", request.getDataSourceType())
-                .appendListQueryParam(
-                        "dataSourceName",
-                        request.getDataSourceName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.ManagementAgentSummary.class,
-                        ListManagementAgentsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListManagementAgentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListManagementAgentsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
-            ListWorkRequestErrorsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.WorkRequestError.class,
-                        ListWorkRequestErrorsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
-            ListWorkRequestLogsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.WorkRequestLogEntry.class,
-                        ListWorkRequestLogsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
-            ListWorkRequestsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestsRequest, ListWorkRequestsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("agentId", request.getAgentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendListQueryParam(
-                        "type",
-                        request.getType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam(
-                        "timeCreatedGreaterThanOrEqualTo",
-                        request.getTimeCreatedGreaterThanOrEqualTo())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.managementagent.model.WorkRequestSummary.class,
-                        ListWorkRequestsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SetAutoUpgradableConfigResponse> setAutoUpgradableConfig(
-            SetAutoUpgradableConfigRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getSetAutoUpgradableConfigDetails(),
-                "setAutoUpgradableConfigDetails is required");
-
-        return clientCall(request, SetAutoUpgradableConfigResponse::builder)
-                .logger(LOG, "setAutoUpgradableConfig")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "SetAutoUpgradableConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SetAutoUpgradableConfig")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SetAutoUpgradableConfigRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam("actions")
-                .appendPathParam("setAutoUpgradableConfig")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.AutoUpgradableConfig.class,
-                        SetAutoUpgradableConfigResponse.Builder::autoUpgradableConfig)
-                .handleResponseHeaderString(
-                        "opc-request-id", SetAutoUpgradableConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SummarizeManagementAgentCountsResponse>
-            summarizeManagementAgentCounts(
-                    SummarizeManagementAgentCountsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    SummarizeManagementAgentCountsRequest,
-                                    SummarizeManagementAgentCountsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getGroupBy(), "groupBy is required");
-
-        return clientCall(request, SummarizeManagementAgentCountsResponse::builder)
-                .logger(LOG, "summarizeManagementAgentCounts")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "SummarizeManagementAgentCounts",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentCounts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(SummarizeManagementAgentCountsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentCounts")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "groupBy",
-                        request.getGroupBy(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("hasPlugins", request.getHasPlugins())
-                .appendEnumQueryParam("installType", request.getInstallType())
-                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
-                                .class,
-                        SummarizeManagementAgentCountsResponse.Builder
-                                ::managementAgentAggregationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SummarizeManagementAgentCountsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        SummarizeManagementAgentCountsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SummarizeManagementAgentPluginCountsResponse>
-            summarizeManagementAgentPluginCounts(
-                    SummarizeManagementAgentPluginCountsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    SummarizeManagementAgentPluginCountsRequest,
-                                    SummarizeManagementAgentPluginCountsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getGroupBy(), "groupBy is required");
-
-        return clientCall(request, SummarizeManagementAgentPluginCountsResponse::builder)
-                .logger(LOG, "summarizeManagementAgentPluginCounts")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "SummarizeManagementAgentPluginCounts",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentPluginCounts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(SummarizeManagementAgentPluginCountsRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentPluginCounts")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("groupBy", request.getGroupBy())
-                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.managementagent.model
-                                .ManagementAgentPluginAggregationCollection.class,
-                        SummarizeManagementAgentPluginCountsResponse.Builder
-                                ::managementAgentPluginAggregationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SummarizeManagementAgentPluginCountsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        SummarizeManagementAgentPluginCountsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateDataSourceResponse> updateDataSource(
-            UpdateDataSourceRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateDataSourceRequest, UpdateDataSourceResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-
-        Validate.notBlank(request.getDataSourceKey(), "dataSourceKey must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDataSourceDetails(), "updateDataSourceDetails is required");
-
-        return clientCall(request, UpdateDataSourceResponse::builder)
-                .logger(LOG, "updateDataSource")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "UpdateDataSource",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateDataSource")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDataSourceRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .appendPathParam("dataSources")
-                .appendPathParam(request.getDataSourceKey())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateDataSourceResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDataSourceResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateManagementAgentResponse> updateManagementAgent(
-            UpdateManagementAgentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateManagementAgentRequest, UpdateManagementAgentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getManagementAgentId(), "managementAgentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateManagementAgentDetails(),
-                "updateManagementAgentDetails is required");
-
-        return clientCall(request, UpdateManagementAgentResponse::builder)
-                .logger(LOG, "updateManagementAgent")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "UpdateManagementAgent",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateManagementAgent")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateManagementAgentRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgents")
-                .appendPathParam(request.getManagementAgentId())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.ManagementAgent.class,
-                        UpdateManagementAgentResponse.Builder::managementAgent)
-                .handleResponseHeaderString("etag", UpdateManagementAgentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateManagementAgentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateManagementAgentInstallKeyResponse>
-            updateManagementAgentInstallKey(
-                    UpdateManagementAgentInstallKeyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateManagementAgentInstallKeyRequest,
-                                    UpdateManagementAgentInstallKeyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getManagementAgentInstallKeyId(),
-                "managementAgentInstallKeyId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateManagementAgentInstallKeyDetails(),
-                "updateManagementAgentInstallKeyDetails is required");
-
-        return clientCall(request, UpdateManagementAgentInstallKeyResponse::builder)
-                .logger(LOG, "updateManagementAgentInstallKey")
-                .serviceDetails(
-                        "ManagementAgent",
-                        "UpdateManagementAgentInstallKey",
-                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/UpdateManagementAgentInstallKey")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateManagementAgentInstallKeyRequest::builder)
-                .basePath("/20200202")
-                .appendPathParam("managementAgentInstallKeys")
-                .appendPathParam(request.getManagementAgentInstallKeyId())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.managementagent.model.ManagementAgentInstallKey.class,
-                        UpdateManagementAgentInstallKeyResponse.Builder::managementAgentInstallKey)
-                .handleResponseHeaderString(
-                        "etag", UpdateManagementAgentInstallKeyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateManagementAgentInstallKeyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public ManagementAgentAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public ManagementAgentAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public ManagementAgentAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public ManagementAgentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public ManagementAgentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1279,26 +150,26 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ManagementAgentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1307,29 +178,29 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ManagementAgentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1342,14 +213,1655 @@ public class ManagementAgentAsyncClient extends com.oracle.bmc.http.internal.Bas
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public ManagementAgentAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "ManagementAgentAsyncClient", "getManagementAgentInstallKeyContent"));
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, ManagementAgentAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public ManagementAgentAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new ManagementAgentAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataSourceResponse> createDataSource(
+            CreateDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDataSourceRequest, CreateDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async createDataSource");
+        final CreateDataSourceRequest interceptedRequest =
+                CreateDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "CreateDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/CreateDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataSourceResponse>
+                transformer =
+                        CreateDataSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateDataSourceRequest, CreateDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDataSourceRequest, CreateDataSourceResponse>,
+                        java.util.concurrent.Future<CreateDataSourceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataSourceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDataSourceRequest, CreateDataSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateManagementAgentInstallKeyResponse>
+            createManagementAgentInstallKey(
+                    CreateManagementAgentInstallKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateManagementAgentInstallKeyRequest,
+                                    CreateManagementAgentInstallKeyResponse>
+                            handler) {
+        LOG.trace("Called async createManagementAgentInstallKey");
+        final CreateManagementAgentInstallKeyRequest interceptedRequest =
+                CreateManagementAgentInstallKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateManagementAgentInstallKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "CreateManagementAgentInstallKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/CreateManagementAgentInstallKey");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateManagementAgentInstallKeyResponse>
+                transformer =
+                        CreateManagementAgentInstallKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateManagementAgentInstallKeyRequest,
+                        CreateManagementAgentInstallKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateManagementAgentInstallKeyRequest,
+                                CreateManagementAgentInstallKeyResponse>,
+                        java.util.concurrent.Future<CreateManagementAgentInstallKeyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateManagementAgentInstallKeyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateManagementAgentInstallKeyRequest,
+                    CreateManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResponse> deleteDataSource(
+            DeleteDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDataSourceRequest, DeleteDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async deleteDataSource");
+        final DeleteDataSourceRequest interceptedRequest =
+                DeleteDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "DeleteDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataSourceResponse>
+                transformer =
+                        DeleteDataSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDataSourceRequest, DeleteDataSourceResponse>,
+                        java.util.concurrent.Future<DeleteDataSourceResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDataSourceRequest, DeleteDataSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteManagementAgentResponse> deleteManagementAgent(
+            DeleteManagementAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteManagementAgentRequest, DeleteManagementAgentResponse>
+                    handler) {
+        LOG.trace("Called async deleteManagementAgent");
+        final DeleteManagementAgentRequest interceptedRequest =
+                DeleteManagementAgentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteManagementAgentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "DeleteManagementAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteManagementAgent");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteManagementAgentResponse>
+                transformer =
+                        DeleteManagementAgentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteManagementAgentRequest, DeleteManagementAgentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteManagementAgentRequest, DeleteManagementAgentResponse>,
+                        java.util.concurrent.Future<DeleteManagementAgentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteManagementAgentRequest, DeleteManagementAgentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteManagementAgentInstallKeyResponse>
+            deleteManagementAgentInstallKey(
+                    DeleteManagementAgentInstallKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteManagementAgentInstallKeyRequest,
+                                    DeleteManagementAgentInstallKeyResponse>
+                            handler) {
+        LOG.trace("Called async deleteManagementAgentInstallKey");
+        final DeleteManagementAgentInstallKeyRequest interceptedRequest =
+                DeleteManagementAgentInstallKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteManagementAgentInstallKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "DeleteManagementAgentInstallKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/DeleteManagementAgentInstallKey");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteManagementAgentInstallKeyResponse>
+                transformer =
+                        DeleteManagementAgentInstallKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteManagementAgentInstallKeyRequest,
+                        DeleteManagementAgentInstallKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteManagementAgentInstallKeyRequest,
+                                DeleteManagementAgentInstallKeyResponse>,
+                        java.util.concurrent.Future<DeleteManagementAgentInstallKeyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteManagementAgentInstallKeyRequest,
+                    DeleteManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkRequestResponse> deleteWorkRequest(
+            DeleteWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWorkRequestRequest, DeleteWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async deleteWorkRequest");
+        final DeleteWorkRequestRequest interceptedRequest =
+                DeleteWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "DeleteWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/DeleteWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+                transformer =
+                        DeleteWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteWorkRequestRequest, DeleteWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWorkRequestRequest, DeleteWorkRequestResponse>,
+                        java.util.concurrent.Future<DeleteWorkRequestResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWorkRequestRequest, DeleteWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeployPluginsResponse> deployPlugins(
+            DeployPluginsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeployPluginsRequest, DeployPluginsResponse>
+                    handler) {
+        LOG.trace("Called async deployPlugins");
+        final DeployPluginsRequest interceptedRequest =
+                DeployPluginsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeployPluginsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "DeployPlugins",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeployPlugins");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeployPluginsResponse>
+                transformer =
+                        DeployPluginsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeployPluginsRequest, DeployPluginsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeployPluginsRequest, DeployPluginsResponse>,
+                        java.util.concurrent.Future<DeployPluginsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDeployPluginsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeployPluginsRequest, DeployPluginsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutoUpgradableConfigResponse> getAutoUpgradableConfig(
+            GetAutoUpgradableConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>
+                    handler) {
+        LOG.trace("Called async getAutoUpgradableConfig");
+        final GetAutoUpgradableConfigRequest interceptedRequest =
+                GetAutoUpgradableConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutoUpgradableConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetAutoUpgradableConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetAutoUpgradableConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAutoUpgradableConfigResponse>
+                transformer =
+                        GetAutoUpgradableConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>,
+                        java.util.concurrent.Future<GetAutoUpgradableConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResponse> getDataSource(
+            GetDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async getDataSource");
+        final GetDataSourceRequest interceptedRequest =
+                GetDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDataSourceResponse>
+                transformer =
+                        GetDataSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDataSourceRequest, GetDataSourceResponse>,
+                        java.util.concurrent.Future<GetDataSourceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDataSourceRequest, GetDataSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagementAgentResponse> getManagementAgent(
+            GetManagementAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetManagementAgentRequest, GetManagementAgentResponse>
+                    handler) {
+        LOG.trace("Called async getManagementAgent");
+        final GetManagementAgentRequest interceptedRequest =
+                GetManagementAgentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetManagementAgentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetManagementAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetManagementAgent");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetManagementAgentResponse>
+                transformer =
+                        GetManagementAgentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetManagementAgentRequest, GetManagementAgentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetManagementAgentRequest, GetManagementAgentResponse>,
+                        java.util.concurrent.Future<GetManagementAgentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetManagementAgentRequest, GetManagementAgentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagementAgentInstallKeyResponse>
+            getManagementAgentInstallKey(
+                    GetManagementAgentInstallKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetManagementAgentInstallKeyRequest,
+                                    GetManagementAgentInstallKeyResponse>
+                            handler) {
+        LOG.trace("Called async getManagementAgentInstallKey");
+        final GetManagementAgentInstallKeyRequest interceptedRequest =
+                GetManagementAgentInstallKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetManagementAgentInstallKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetManagementAgentInstallKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKey");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetManagementAgentInstallKeyResponse>
+                transformer =
+                        GetManagementAgentInstallKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetManagementAgentInstallKeyRequest, GetManagementAgentInstallKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetManagementAgentInstallKeyRequest,
+                                GetManagementAgentInstallKeyResponse>,
+                        java.util.concurrent.Future<GetManagementAgentInstallKeyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetManagementAgentInstallKeyRequest, GetManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagementAgentInstallKeyContentResponse>
+            getManagementAgentInstallKeyContent(
+                    GetManagementAgentInstallKeyContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetManagementAgentInstallKeyContentRequest,
+                                    GetManagementAgentInstallKeyContentResponse>
+                            handler) {
+        LOG.trace("Called async getManagementAgentInstallKeyContent");
+        final GetManagementAgentInstallKeyContentRequest interceptedRequest =
+                GetManagementAgentInstallKeyContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetManagementAgentInstallKeyContentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetManagementAgentInstallKeyContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKeyContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetManagementAgentInstallKeyContentResponse>
+                transformer =
+                        GetManagementAgentInstallKeyContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetManagementAgentInstallKeyContentRequest,
+                        GetManagementAgentInstallKeyContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetManagementAgentInstallKeyContentRequest,
+                                GetManagementAgentInstallKeyContentResponse>,
+                        java.util.concurrent.Future<GetManagementAgentInstallKeyContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetManagementAgentInstallKeyContentRequest,
+                    GetManagementAgentInstallKeyContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/GetWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkRequestRequest, GetWorkRequestResponse>,
+                        java.util.concurrent.Future<GetWorkRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAvailabilityHistoriesResponse> listAvailabilityHistories(
+            ListAvailabilityHistoriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>
+                    handler) {
+        LOG.trace("Called async listAvailabilityHistories");
+        final ListAvailabilityHistoriesRequest interceptedRequest =
+                ListAvailabilityHistoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailabilityHistoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListAvailabilityHistories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListAvailabilityHistories");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAvailabilityHistoriesResponse>
+                transformer =
+                        ListAvailabilityHistoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAvailabilityHistoriesRequest,
+                                ListAvailabilityHistoriesResponse>,
+                        java.util.concurrent.Future<ListAvailabilityHistoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResponse> listDataSources(
+            ListDataSourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDataSourcesRequest, ListDataSourcesResponse>
+                    handler) {
+        LOG.trace("Called async listDataSources");
+        final ListDataSourcesRequest interceptedRequest =
+                ListDataSourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataSourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListDataSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListDataSources");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDataSourcesResponse>
+                transformer =
+                        ListDataSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataSourcesRequest, ListDataSourcesResponse>,
+                        java.util.concurrent.Future<ListDataSourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataSourcesRequest, ListDataSourcesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagementAgentImagesResponse> listManagementAgentImages(
+            ListManagementAgentImagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListManagementAgentImagesRequest, ListManagementAgentImagesResponse>
+                    handler) {
+        LOG.trace("Called async listManagementAgentImages");
+        final ListManagementAgentImagesRequest interceptedRequest =
+                ListManagementAgentImagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagementAgentImagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListManagementAgentImages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentImage/ListManagementAgentImages");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagementAgentImagesResponse>
+                transformer =
+                        ListManagementAgentImagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagementAgentImagesRequest, ListManagementAgentImagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagementAgentImagesRequest,
+                                ListManagementAgentImagesResponse>,
+                        java.util.concurrent.Future<ListManagementAgentImagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagementAgentImagesRequest, ListManagementAgentImagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagementAgentInstallKeysResponse>
+            listManagementAgentInstallKeys(
+                    ListManagementAgentInstallKeysRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagementAgentInstallKeysRequest,
+                                    ListManagementAgentInstallKeysResponse>
+                            handler) {
+        LOG.trace("Called async listManagementAgentInstallKeys");
+        final ListManagementAgentInstallKeysRequest interceptedRequest =
+                ListManagementAgentInstallKeysConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagementAgentInstallKeysConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListManagementAgentInstallKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/ListManagementAgentInstallKeys");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagementAgentInstallKeysResponse>
+                transformer =
+                        ListManagementAgentInstallKeysConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagementAgentInstallKeysRequest,
+                        ListManagementAgentInstallKeysResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagementAgentInstallKeysRequest,
+                                ListManagementAgentInstallKeysResponse>,
+                        java.util.concurrent.Future<ListManagementAgentInstallKeysResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagementAgentInstallKeysRequest, ListManagementAgentInstallKeysResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagementAgentPluginsResponse>
+            listManagementAgentPlugins(
+                    ListManagementAgentPluginsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagementAgentPluginsRequest,
+                                    ListManagementAgentPluginsResponse>
+                            handler) {
+        LOG.trace("Called async listManagementAgentPlugins");
+        final ListManagementAgentPluginsRequest interceptedRequest =
+                ListManagementAgentPluginsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagementAgentPluginsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListManagementAgentPlugins",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentPlugin/ListManagementAgentPlugins");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagementAgentPluginsResponse>
+                transformer =
+                        ListManagementAgentPluginsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagementAgentPluginsRequest, ListManagementAgentPluginsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagementAgentPluginsRequest,
+                                ListManagementAgentPluginsResponse>,
+                        java.util.concurrent.Future<ListManagementAgentPluginsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagementAgentPluginsRequest, ListManagementAgentPluginsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagementAgentsResponse> listManagementAgents(
+            ListManagementAgentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListManagementAgentsRequest, ListManagementAgentsResponse>
+                    handler) {
+        LOG.trace("Called async listManagementAgents");
+        final ListManagementAgentsRequest interceptedRequest =
+                ListManagementAgentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagementAgentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListManagementAgents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListManagementAgents");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListManagementAgentsResponse>
+                transformer =
+                        ListManagementAgentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagementAgentsRequest, ListManagementAgentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagementAgentsRequest, ListManagementAgentsResponse>,
+                        java.util.concurrent.Future<ListManagementAgentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagementAgentsRequest, ListManagementAgentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestError/ListWorkRequestErrors");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestLogEntry/ListWorkRequestLogs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/ListWorkRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetAutoUpgradableConfigResponse> setAutoUpgradableConfig(
+            SetAutoUpgradableConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>
+                    handler) {
+        LOG.trace("Called async setAutoUpgradableConfig");
+        final SetAutoUpgradableConfigRequest interceptedRequest =
+                SetAutoUpgradableConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetAutoUpgradableConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "SetAutoUpgradableConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SetAutoUpgradableConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SetAutoUpgradableConfigResponse>
+                transformer =
+                        SetAutoUpgradableConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>,
+                        java.util.concurrent.Future<SetAutoUpgradableConfigResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSetAutoUpgradableConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeManagementAgentCountsResponse>
+            summarizeManagementAgentCounts(
+                    SummarizeManagementAgentCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagementAgentCountsRequest,
+                                    SummarizeManagementAgentCountsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeManagementAgentCounts");
+        final SummarizeManagementAgentCountsRequest interceptedRequest =
+                SummarizeManagementAgentCountsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagementAgentCountsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "SummarizeManagementAgentCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentCounts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeManagementAgentCountsResponse>
+                transformer =
+                        SummarizeManagementAgentCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeManagementAgentCountsRequest,
+                        SummarizeManagementAgentCountsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeManagementAgentCountsRequest,
+                                SummarizeManagementAgentCountsResponse>,
+                        java.util.concurrent.Future<SummarizeManagementAgentCountsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeManagementAgentCountsRequest, SummarizeManagementAgentCountsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeManagementAgentPluginCountsResponse>
+            summarizeManagementAgentPluginCounts(
+                    SummarizeManagementAgentPluginCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagementAgentPluginCountsRequest,
+                                    SummarizeManagementAgentPluginCountsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeManagementAgentPluginCounts");
+        final SummarizeManagementAgentPluginCountsRequest interceptedRequest =
+                SummarizeManagementAgentPluginCountsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagementAgentPluginCountsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "SummarizeManagementAgentPluginCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentPluginCounts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeManagementAgentPluginCountsResponse>
+                transformer =
+                        SummarizeManagementAgentPluginCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeManagementAgentPluginCountsRequest,
+                        SummarizeManagementAgentPluginCountsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeManagementAgentPluginCountsRequest,
+                                SummarizeManagementAgentPluginCountsResponse>,
+                        java.util.concurrent.Future<SummarizeManagementAgentPluginCountsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeManagementAgentPluginCountsRequest,
+                    SummarizeManagementAgentPluginCountsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResponse> updateDataSource(
+            UpdateDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataSourceRequest, UpdateDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async updateDataSource");
+        final UpdateDataSourceRequest interceptedRequest =
+                UpdateDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "UpdateDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataSourceResponse>
+                transformer =
+                        UpdateDataSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDataSourceRequest, UpdateDataSourceResponse>,
+                        java.util.concurrent.Future<UpdateDataSourceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataSourceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDataSourceRequest, UpdateDataSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateManagementAgentResponse> updateManagementAgent(
+            UpdateManagementAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateManagementAgentRequest, UpdateManagementAgentResponse>
+                    handler) {
+        LOG.trace("Called async updateManagementAgent");
+        final UpdateManagementAgentRequest interceptedRequest =
+                UpdateManagementAgentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateManagementAgentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "UpdateManagementAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateManagementAgent");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateManagementAgentResponse>
+                transformer =
+                        UpdateManagementAgentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateManagementAgentRequest, UpdateManagementAgentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateManagementAgentRequest, UpdateManagementAgentResponse>,
+                        java.util.concurrent.Future<UpdateManagementAgentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagementAgentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateManagementAgentRequest, UpdateManagementAgentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateManagementAgentInstallKeyResponse>
+            updateManagementAgentInstallKey(
+                    UpdateManagementAgentInstallKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateManagementAgentInstallKeyRequest,
+                                    UpdateManagementAgentInstallKeyResponse>
+                            handler) {
+        LOG.trace("Called async updateManagementAgentInstallKey");
+        final UpdateManagementAgentInstallKeyRequest interceptedRequest =
+                UpdateManagementAgentInstallKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateManagementAgentInstallKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "UpdateManagementAgentInstallKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/UpdateManagementAgentInstallKey");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateManagementAgentInstallKeyResponse>
+                transformer =
+                        UpdateManagementAgentInstallKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateManagementAgentInstallKeyRequest,
+                        UpdateManagementAgentInstallKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateManagementAgentInstallKeyRequest,
+                                UpdateManagementAgentInstallKeyResponse>,
+                        java.util.concurrent.Future<UpdateManagementAgentInstallKeyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateManagementAgentInstallKeyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateManagementAgentInstallKeyRequest,
+                    UpdateManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

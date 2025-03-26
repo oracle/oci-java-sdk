@@ -6,47 +6,68 @@ package com.oracle.bmc.database.model;
 
 /**
  * Connection strings to connect to an Oracle Autonomous Database.
+ * <p>
+ * Example output for connection strings. See {@link #databaseConnectionStringProfile(DatabaseConnectionStringProfileRequest) databaseConnectionStringProfile} for additional details:
+ * <p>
+ * "connectionStrings": {
+ *         "allConnectionStrings": {
+ *           "HIGH": "adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com",
+ *           "LOW": "adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com",
+ *           "MEDIUM": "adb.region.oraclecloud.com:1522/unique_id_databasename_medium.adwc.oraclecloud.com"
+ *         },
+ *         "profiles": [
+ *           {
+ *             "displayName": "databasename_high",
+ *             "value": "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_high.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))",
+ *             "consumerGroup": "HIGH",
+ *             "protocol": "TCPS",
+ *             "tlsAuthentication": "MUTUAL",
+ *             "hostFormat": "FQDN",
+ *             "sessionMode": "DIRECT",
+ *             "syntaxFormat": "LONG"
+ *           },
+ *           {
+ *             "displayName": "databasename_low",
+ *             "value": "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))",
+ *             "consumerGroup": "LOW",
+ *             "protocol": "TCPS",
+ *             "tlsAuthentication": "MUTUAL",
+ *             "hostFormat": "FQDN",
+ *             "sessionMode": "DIRECT",
+ *             "syntaxFormat": "LONG"
+ *           },
+ *           {
+ *             "displayName": "databasename_medium",
+ *             "value": "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_medium.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))",
+ *             "consumerGroup": "MEDIUM",
+ *             "protocol": "TCPS",
+ *             "tlsAuthentication": "MUTUAL",
+ *             "hostFormat": "FQDN",
+ *             "sessionMode": "DIRECT",
+ *             "syntaxFormat": "LONG"
+ *           }
+ *         ],
+ *         "dedicated": null,
+ *         "high": "adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com",
+ *         "low": "adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com",
+ *         "medium": "adb.region.oraclecloud.com:1522/unique_id_databasename_medium.adwc.oraclecloud.com"
+ *       }
  *
- * <p>Example output for connection strings. See {@link
- * #databaseConnectionStringProfile(DatabaseConnectionStringProfileRequest)
- * databaseConnectionStringProfile} for additional details:
- *
- * <p>"connectionStrings": { "allConnectionStrings": { "HIGH":
- * "adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com", "LOW":
- * "adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com", "MEDIUM":
- * "adb.region.oraclecloud.com:1522/unique_id_databasename_medium.adwc.oraclecloud.com" },
- * "profiles": [ { "displayName": "databasename_high", "value": "(description=
- * (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_high.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle
- * BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))", "consumerGroup": "HIGH",
- * "protocol": "TCPS", "tlsAuthentication": "MUTUAL", "hostFormat": "FQDN", "sessionMode": "DIRECT",
- * "syntaxFormat": "LONG" }, { "displayName": "databasename_low", "value": "(description=
- * (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle
- * BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))", "consumerGroup": "LOW",
- * "protocol": "TCPS", "tlsAuthentication": "MUTUAL", "hostFormat": "FQDN", "sessionMode": "DIRECT",
- * "syntaxFormat": "LONG" }, { "displayName": "databasename_medium", "value": "(description=
- * (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_medium.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle
- * BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))", "consumerGroup": "MEDIUM",
- * "protocol": "TCPS", "tlsAuthentication": "MUTUAL", "hostFormat": "FQDN", "sessionMode": "DIRECT",
- * "syntaxFormat": "LONG" } ], "dedicated": null, "high":
- * "adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com", "low":
- * "adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com", "medium":
- * "adb.region.oraclecloud.com:1522/unique_id_databasename_medium.adwc.oraclecloud.com" } <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDatabaseConnectionStrings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousDatabaseConnectionStrings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseConnectionStrings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "high",
@@ -75,80 +96,64 @@ public final class AutonomousDatabaseConnectionStrings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The High database service provides the highest level of resources to each SQL statement
-         * resulting in the highest performance, but supports the fewest number of concurrent SQL
-         * statements.
-         */
+         * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
 
         /**
-         * The High database service provides the highest level of resources to each SQL statement
-         * resulting in the highest performance, but supports the fewest number of concurrent SQL
-         * statements.
-         *
+         * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
          * @param high the value to set
          * @return this builder
-         */
+         **/
         public Builder high(String high) {
             this.high = high;
             this.__explicitlySet__.add("high");
             return this;
         }
         /**
-         * The Medium database service provides a lower level of resources to each SQL statement
-         * potentially resulting a lower level of performance, but supports more concurrent SQL
-         * statements.
-         */
+         * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("medium")
         private String medium;
 
         /**
-         * The Medium database service provides a lower level of resources to each SQL statement
-         * potentially resulting a lower level of performance, but supports more concurrent SQL
-         * statements.
-         *
+         * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
          * @param medium the value to set
          * @return this builder
-         */
+         **/
         public Builder medium(String medium) {
             this.medium = medium;
             this.__explicitlySet__.add("medium");
             return this;
         }
         /**
-         * The Low database service provides the least level of resources to each SQL statement, but
-         * supports the most number of concurrent SQL statements.
-         */
+         * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private String low;
 
         /**
-         * The Low database service provides the least level of resources to each SQL statement, but
-         * supports the most number of concurrent SQL statements.
-         *
+         * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
          * @param low the value to set
          * @return this builder
-         */
+         **/
         public Builder low(String low) {
             this.low = low;
             this.__explicitlySet__.add("low");
             return this;
         }
         /**
-         * The database service provides the least level of resources to each SQL statement, but
-         * supports the most number of concurrent SQL statements.
-         */
+         * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicated")
         private String dedicated;
 
         /**
-         * The database service provides the least level of resources to each SQL statement, but
-         * supports the most number of concurrent SQL statements.
-         *
+         * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
          * @param dedicated the value to set
          * @return this builder
-         */
+         **/
         public Builder dedicated(String dedicated) {
             this.dedicated = dedicated;
             this.__explicitlySet__.add("dedicated");
@@ -156,41 +161,37 @@ public final class AutonomousDatabaseConnectionStrings
         }
         /**
          * Returns all connection strings that can be used to connect to the Autonomous Database.
-         * For more information, please see [Predefined Database Service Names for Autonomous
-         * Transaction
-         * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
-         */
+         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
         /**
          * Returns all connection strings that can be used to connect to the Autonomous Database.
-         * For more information, please see [Predefined Database Service Names for Autonomous
-         * Transaction
-         * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          *
          * @param allConnectionStrings the value to set
          * @return this builder
-         */
+         **/
         public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             this.__explicitlySet__.add("allConnectionStrings");
             return this;
         }
         /**
-         * A list of connection string profiles to allow clients to group, filter and select
-         * connection string values based on structured metadata.
-         */
+         * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profiles")
         private java.util.List<DatabaseConnectionStringProfile> profiles;
 
         /**
-         * A list of connection string profiles to allow clients to group, filter and select
-         * connection string values based on structured metadata.
+         * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
          *
          * @param profiles the value to set
          * @return this builder
-         */
+         **/
         public Builder profiles(java.util.List<DatabaseConnectionStringProfile> profiles) {
             this.profiles = profiles;
             this.__explicitlySet__.add("profiles");
@@ -239,7 +240,9 @@ public final class AutonomousDatabaseConnectionStrings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -249,109 +252,91 @@ public final class AutonomousDatabaseConnectionStrings
     }
 
     /**
-     * The High database service provides the highest level of resources to each SQL statement
-     * resulting in the highest performance, but supports the fewest number of concurrent SQL
-     * statements.
-     */
+     * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final String high;
 
     /**
-     * The High database service provides the highest level of resources to each SQL statement
-     * resulting in the highest performance, but supports the fewest number of concurrent SQL
-     * statements.
-     *
+     * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      * @return the value
-     */
+     **/
     public String getHigh() {
         return high;
     }
 
     /**
-     * The Medium database service provides a lower level of resources to each SQL statement
-     * potentially resulting a lower level of performance, but supports more concurrent SQL
-     * statements.
-     */
+     * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("medium")
     private final String medium;
 
     /**
-     * The Medium database service provides a lower level of resources to each SQL statement
-     * potentially resulting a lower level of performance, but supports more concurrent SQL
-     * statements.
-     *
+     * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
      * @return the value
-     */
+     **/
     public String getMedium() {
         return medium;
     }
 
     /**
-     * The Low database service provides the least level of resources to each SQL statement, but
-     * supports the most number of concurrent SQL statements.
-     */
+     * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final String low;
 
     /**
-     * The Low database service provides the least level of resources to each SQL statement, but
-     * supports the most number of concurrent SQL statements.
-     *
+     * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * @return the value
-     */
+     **/
     public String getLow() {
         return low;
     }
 
     /**
-     * The database service provides the least level of resources to each SQL statement, but
-     * supports the most number of concurrent SQL statements.
-     */
+     * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicated")
     private final String dedicated;
 
     /**
-     * The database service provides the least level of resources to each SQL statement, but
-     * supports the most number of concurrent SQL statements.
-     *
+     * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * @return the value
-     */
+     **/
     public String getDedicated() {
         return dedicated;
     }
 
     /**
-     * Returns all connection strings that can be used to connect to the Autonomous Database. For
-     * more information, please see [Predefined Database Service Names for Autonomous Transaction
-     * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
-     */
+     * Returns all connection strings that can be used to connect to the Autonomous Database.
+     * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
     /**
-     * Returns all connection strings that can be used to connect to the Autonomous Database. For
-     * more information, please see [Predefined Database Service Names for Autonomous Transaction
-     * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     * Returns all connection strings that can be used to connect to the Autonomous Database.
+     * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAllConnectionStrings() {
         return allConnectionStrings;
     }
 
     /**
-     * A list of connection string profiles to allow clients to group, filter and select connection
-     * string values based on structured metadata.
-     */
+     * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profiles")
     private final java.util.List<DatabaseConnectionStringProfile> profiles;
 
     /**
-     * A list of connection string profiles to allow clients to group, filter and select connection
-     * string values based on structured metadata.
+     * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DatabaseConnectionStringProfile> getProfiles() {
         return profiles;
     }
@@ -363,7 +348,6 @@ public final class AutonomousDatabaseConnectionStrings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

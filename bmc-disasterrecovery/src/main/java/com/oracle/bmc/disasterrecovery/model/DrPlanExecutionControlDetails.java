@@ -5,37 +5,39 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for controlling plan execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details for controlling plan execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "actionType",
-        defaultImpl = DrPlanExecutionControlDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "actionType",
+    defaultImpl = DrPlanExecutionControlDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PauseDrPlanExecutionDetails.class,
-            name = "PAUSE"),
+        value = PauseDrPlanExecutionDetails.class,
+        name = "PAUSE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CancelDrPlanExecutionDetails.class,
-            name = "CANCEL"),
+        value = CancelDrPlanExecutionDetails.class,
+        name = "CANCEL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ResumeDrPlanExecutionDetails.class,
-            name = "RESUME")
+        value = ResumeDrPlanExecutionDetails.class,
+        name = "RESUME"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DrPlanExecutionControlDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected DrPlanExecutionControlDetails() {
@@ -49,7 +51,6 @@ public class DrPlanExecutionControlDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -82,8 +83,11 @@ public class DrPlanExecutionControlDetails
         return result;
     }
 
-    /** The type of control action. */
-    public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of control action.
+     *
+     **/
+    public enum ActionType {
         Cancel("CANCEL"),
         Pause("PAUSE"),
         Resume("RESUME"),

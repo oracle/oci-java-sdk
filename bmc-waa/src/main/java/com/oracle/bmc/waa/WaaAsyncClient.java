@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.waa;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.waa.internal.http.*;
 import com.oracle.bmc.waa.requests.*;
 import com.oracle.bmc.waa.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for Waa service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Waa service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
-public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements WaaAsync {
-    /** Service instance for Waa. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+public class WaaAsyncClient implements WaaAsync {
+    /**
+     * Service instance for Waa.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("WAA")
@@ -39,649 +36,112 @@ public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(WaaAsyncClient.class);
 
-    WaaAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, WaaAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "waa";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public WaaAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new WaaAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeWebAppAccelerationCompartmentResponse>
-            changeWebAppAccelerationCompartment(
-                    ChangeWebAppAccelerationCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeWebAppAccelerationCompartmentRequest,
-                                    ChangeWebAppAccelerationCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationId(), "webAppAccelerationId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeWebAppAccelerationCompartmentDetails(),
-                "changeWebAppAccelerationCompartmentDetails is required");
-
-        return clientCall(request, ChangeWebAppAccelerationCompartmentResponse::builder)
-                .logger(LOG, "changeWebAppAccelerationCompartment")
-                .serviceDetails(
-                        "Waa",
-                        "ChangeWebAppAccelerationCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ChangeWebAppAccelerationCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeWebAppAccelerationCompartmentRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerations")
-                .appendPathParam(request.getWebAppAccelerationId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeWebAppAccelerationCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeWebAppAccelerationCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeWebAppAccelerationPolicyCompartmentResponse>
-            changeWebAppAccelerationPolicyCompartment(
-                    ChangeWebAppAccelerationPolicyCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeWebAppAccelerationPolicyCompartmentRequest,
-                                    ChangeWebAppAccelerationPolicyCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationPolicyId(),
-                "webAppAccelerationPolicyId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeWebAppAccelerationPolicyCompartmentDetails(),
-                "changeWebAppAccelerationPolicyCompartmentDetails is required");
-
-        return clientCall(request, ChangeWebAppAccelerationPolicyCompartmentResponse::builder)
-                .logger(LOG, "changeWebAppAccelerationPolicyCompartment")
-                .serviceDetails(
-                        "Waa",
-                        "ChangeWebAppAccelerationPolicyCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ChangeWebAppAccelerationPolicyCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeWebAppAccelerationPolicyCompartmentRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerationPolicies")
-                .appendPathParam(request.getWebAppAccelerationPolicyId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeWebAppAccelerationPolicyCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeWebAppAccelerationPolicyCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateWebAppAccelerationResponse> createWebAppAcceleration(
-            CreateWebAppAccelerationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateWebAppAccelerationRequest, CreateWebAppAccelerationResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateWebAppAccelerationDetails(),
-                "createWebAppAccelerationDetails is required");
-
-        return clientCall(request, CreateWebAppAccelerationResponse::builder)
-                .logger(LOG, "createWebAppAcceleration")
-                .serviceDetails(
-                        "Waa",
-                        "CreateWebAppAcceleration",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/CreateWebAppAcceleration")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateWebAppAccelerationRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerations")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.waa.model.WebAppAcceleration.class,
-                        CreateWebAppAccelerationResponse.Builder::webAppAcceleration)
-                .handleResponseHeaderString("etag", CreateWebAppAccelerationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateWebAppAccelerationResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateWebAppAccelerationResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateWebAppAccelerationResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location",
-                        CreateWebAppAccelerationResponse.Builder::contentLocation)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateWebAppAccelerationPolicyResponse>
-            createWebAppAccelerationPolicy(
-                    CreateWebAppAccelerationPolicyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateWebAppAccelerationPolicyRequest,
-                                    CreateWebAppAccelerationPolicyResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateWebAppAccelerationPolicyDetails(),
-                "createWebAppAccelerationPolicyDetails is required");
-
-        return clientCall(request, CreateWebAppAccelerationPolicyResponse::builder)
-                .logger(LOG, "createWebAppAccelerationPolicy")
-                .serviceDetails(
-                        "Waa",
-                        "CreateWebAppAccelerationPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/CreateWebAppAccelerationPolicy")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateWebAppAccelerationPolicyRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerationPolicies")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.waa.model.WebAppAccelerationPolicy.class,
-                        CreateWebAppAccelerationPolicyResponse.Builder::webAppAccelerationPolicy)
-                .handleResponseHeaderString(
-                        "etag", CreateWebAppAccelerationPolicyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateWebAppAccelerationPolicyResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateWebAppAccelerationPolicyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateWebAppAccelerationPolicyResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location",
-                        CreateWebAppAccelerationPolicyResponse.Builder::contentLocation)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteWebAppAccelerationResponse> deleteWebAppAcceleration(
-            DeleteWebAppAccelerationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteWebAppAccelerationRequest, DeleteWebAppAccelerationResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationId(), "webAppAccelerationId must not be blank");
-
-        return clientCall(request, DeleteWebAppAccelerationResponse::builder)
-                .logger(LOG, "deleteWebAppAcceleration")
-                .serviceDetails(
-                        "Waa",
-                        "DeleteWebAppAcceleration",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/DeleteWebAppAcceleration")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteWebAppAccelerationRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerations")
-                .appendPathParam(request.getWebAppAccelerationId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteWebAppAccelerationResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteWebAppAccelerationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteWebAppAccelerationPolicyResponse>
-            deleteWebAppAccelerationPolicy(
-                    DeleteWebAppAccelerationPolicyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteWebAppAccelerationPolicyRequest,
-                                    DeleteWebAppAccelerationPolicyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationPolicyId(),
-                "webAppAccelerationPolicyId must not be blank");
-
-        return clientCall(request, DeleteWebAppAccelerationPolicyResponse::builder)
-                .logger(LOG, "deleteWebAppAccelerationPolicy")
-                .serviceDetails(
-                        "Waa",
-                        "DeleteWebAppAccelerationPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/DeleteWebAppAccelerationPolicy")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteWebAppAccelerationPolicyRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerationPolicies")
-                .appendPathParam(request.getWebAppAccelerationPolicyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteWebAppAccelerationPolicyResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteWebAppAccelerationPolicyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWebAppAccelerationResponse> getWebAppAcceleration(
-            GetWebAppAccelerationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWebAppAccelerationRequest, GetWebAppAccelerationResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationId(), "webAppAccelerationId must not be blank");
-
-        return clientCall(request, GetWebAppAccelerationResponse::builder)
-                .logger(LOG, "getWebAppAcceleration")
-                .serviceDetails(
-                        "Waa",
-                        "GetWebAppAcceleration",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/GetWebAppAcceleration")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWebAppAccelerationRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerations")
-                .appendPathParam(request.getWebAppAccelerationId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waa.model.WebAppAcceleration.class,
-                        GetWebAppAccelerationResponse.Builder::webAppAcceleration)
-                .handleResponseHeaderString("etag", GetWebAppAccelerationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWebAppAccelerationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWebAppAccelerationPolicyResponse>
-            getWebAppAccelerationPolicy(
-                    GetWebAppAccelerationPolicyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetWebAppAccelerationPolicyRequest,
-                                    GetWebAppAccelerationPolicyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationPolicyId(),
-                "webAppAccelerationPolicyId must not be blank");
-
-        return clientCall(request, GetWebAppAccelerationPolicyResponse::builder)
-                .logger(LOG, "getWebAppAccelerationPolicy")
-                .serviceDetails(
-                        "Waa",
-                        "GetWebAppAccelerationPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/GetWebAppAccelerationPolicy")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWebAppAccelerationPolicyRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerationPolicies")
-                .appendPathParam(request.getWebAppAccelerationPolicyId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waa.model.WebAppAccelerationPolicy.class,
-                        GetWebAppAccelerationPolicyResponse.Builder::webAppAccelerationPolicy)
-                .handleResponseHeaderString(
-                        "etag", GetWebAppAccelerationPolicyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWebAppAccelerationPolicyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWebAppAccelerationPoliciesResponse>
-            listWebAppAccelerationPolicies(
-                    ListWebAppAccelerationPoliciesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListWebAppAccelerationPoliciesRequest,
-                                    ListWebAppAccelerationPoliciesResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWebAppAccelerationPoliciesResponse::builder)
-                .logger(LOG, "listWebAppAccelerationPolicies")
-                .serviceDetails(
-                        "Waa",
-                        "ListWebAppAccelerationPolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ListWebAppAccelerationPolicies")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWebAppAccelerationPoliciesRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerationPolicies")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waa.model.WebAppAccelerationPolicyCollection.class,
-                        ListWebAppAccelerationPoliciesResponse.Builder
-                                ::webAppAccelerationPolicyCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListWebAppAccelerationPoliciesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListWebAppAccelerationPoliciesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWebAppAccelerationsResponse> listWebAppAccelerations(
-            ListWebAppAccelerationsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWebAppAccelerationsRequest, ListWebAppAccelerationsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWebAppAccelerationsResponse::builder)
-                .logger(LOG, "listWebAppAccelerations")
-                .serviceDetails(
-                        "Waa",
-                        "ListWebAppAccelerations",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ListWebAppAccelerations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWebAppAccelerationsRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerations")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam(
-                        "webAppAccelerationPolicyId", request.getWebAppAccelerationPolicyId())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.waa.model.WebAppAccelerationCollection.class,
-                        ListWebAppAccelerationsResponse.Builder::webAppAccelerationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWebAppAccelerationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWebAppAccelerationsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PurgeWebAppAccelerationCacheResponse>
-            purgeWebAppAccelerationCache(
-                    PurgeWebAppAccelerationCacheRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    PurgeWebAppAccelerationCacheRequest,
-                                    PurgeWebAppAccelerationCacheResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationId(), "webAppAccelerationId must not be blank");
-        Objects.requireNonNull(
-                request.getPurgeWebAppAccelerationCacheDetails(),
-                "purgeWebAppAccelerationCacheDetails is required");
-
-        return clientCall(request, PurgeWebAppAccelerationCacheResponse::builder)
-                .logger(LOG, "purgeWebAppAccelerationCache")
-                .serviceDetails(
-                        "Waa",
-                        "PurgeWebAppAccelerationCache",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/PurgeWebAppAccelerationCache")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PurgeWebAppAccelerationCacheRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerations")
-                .appendPathParam(request.getWebAppAccelerationId())
-                .appendPathParam("actions")
-                .appendPathParam("purgeCache")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PurgeWebAppAccelerationCacheResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PurgeWebAppAccelerationCacheResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateWebAppAccelerationResponse> updateWebAppAcceleration(
-            UpdateWebAppAccelerationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateWebAppAccelerationRequest, UpdateWebAppAccelerationResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationId(), "webAppAccelerationId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateWebAppAccelerationDetails(),
-                "updateWebAppAccelerationDetails is required");
-
-        return clientCall(request, UpdateWebAppAccelerationResponse::builder)
-                .logger(LOG, "updateWebAppAcceleration")
-                .serviceDetails(
-                        "Waa",
-                        "UpdateWebAppAcceleration",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/UpdateWebAppAcceleration")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateWebAppAccelerationRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerations")
-                .appendPathParam(request.getWebAppAccelerationId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateWebAppAccelerationResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateWebAppAccelerationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateWebAppAccelerationPolicyResponse>
-            updateWebAppAccelerationPolicy(
-                    UpdateWebAppAccelerationPolicyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateWebAppAccelerationPolicyRequest,
-                                    UpdateWebAppAccelerationPolicyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getWebAppAccelerationPolicyId(),
-                "webAppAccelerationPolicyId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateWebAppAccelerationPolicyDetails(),
-                "updateWebAppAccelerationPolicyDetails is required");
-
-        return clientCall(request, UpdateWebAppAccelerationPolicyResponse::builder)
-                .logger(LOG, "updateWebAppAccelerationPolicy")
-                .serviceDetails(
-                        "Waa",
-                        "UpdateWebAppAccelerationPolicy",
-                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/UpdateWebAppAccelerationPolicy")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateWebAppAccelerationPolicyRequest::builder)
-                .basePath("/20211230")
-                .appendPathParam("webAppAccelerationPolicies")
-                .appendPathParam(request.getWebAppAccelerationPolicyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateWebAppAccelerationPolicyResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateWebAppAccelerationPolicyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public WaaAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public WaaAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public WaaAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public WaaAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public WaaAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -689,26 +149,26 @@ public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public WaaAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -717,29 +177,29 @@ public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public WaaAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -752,14 +212,945 @@ public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public WaaAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, WaaAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public WaaAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new WaaAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeWebAppAccelerationCompartmentResponse>
+            changeWebAppAccelerationCompartment(
+                    ChangeWebAppAccelerationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeWebAppAccelerationCompartmentRequest,
+                                    ChangeWebAppAccelerationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeWebAppAccelerationCompartment");
+        final ChangeWebAppAccelerationCompartmentRequest interceptedRequest =
+                ChangeWebAppAccelerationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeWebAppAccelerationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "ChangeWebAppAccelerationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ChangeWebAppAccelerationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeWebAppAccelerationCompartmentResponse>
+                transformer =
+                        ChangeWebAppAccelerationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeWebAppAccelerationCompartmentRequest,
+                        ChangeWebAppAccelerationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeWebAppAccelerationCompartmentRequest,
+                                ChangeWebAppAccelerationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeWebAppAccelerationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeWebAppAccelerationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeWebAppAccelerationCompartmentRequest,
+                    ChangeWebAppAccelerationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeWebAppAccelerationPolicyCompartmentResponse>
+            changeWebAppAccelerationPolicyCompartment(
+                    ChangeWebAppAccelerationPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeWebAppAccelerationPolicyCompartmentRequest,
+                                    ChangeWebAppAccelerationPolicyCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeWebAppAccelerationPolicyCompartment");
+        final ChangeWebAppAccelerationPolicyCompartmentRequest interceptedRequest =
+                ChangeWebAppAccelerationPolicyCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeWebAppAccelerationPolicyCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "ChangeWebAppAccelerationPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ChangeWebAppAccelerationPolicyCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeWebAppAccelerationPolicyCompartmentResponse>
+                transformer =
+                        ChangeWebAppAccelerationPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeWebAppAccelerationPolicyCompartmentRequest,
+                        ChangeWebAppAccelerationPolicyCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeWebAppAccelerationPolicyCompartmentRequest,
+                                ChangeWebAppAccelerationPolicyCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeWebAppAccelerationPolicyCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeWebAppAccelerationPolicyCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeWebAppAccelerationPolicyCompartmentRequest,
+                    ChangeWebAppAccelerationPolicyCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWebAppAccelerationResponse> createWebAppAcceleration(
+            CreateWebAppAccelerationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateWebAppAccelerationRequest, CreateWebAppAccelerationResponse>
+                    handler) {
+        LOG.trace("Called async createWebAppAcceleration");
+        final CreateWebAppAccelerationRequest interceptedRequest =
+                CreateWebAppAccelerationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateWebAppAccelerationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "CreateWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/CreateWebAppAcceleration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateWebAppAccelerationResponse>
+                transformer =
+                        CreateWebAppAccelerationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateWebAppAccelerationRequest, CreateWebAppAccelerationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateWebAppAccelerationRequest, CreateWebAppAccelerationResponse>,
+                        java.util.concurrent.Future<CreateWebAppAccelerationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWebAppAccelerationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateWebAppAccelerationRequest, CreateWebAppAccelerationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWebAppAccelerationPolicyResponse>
+            createWebAppAccelerationPolicy(
+                    CreateWebAppAccelerationPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateWebAppAccelerationPolicyRequest,
+                                    CreateWebAppAccelerationPolicyResponse>
+                            handler) {
+        LOG.trace("Called async createWebAppAccelerationPolicy");
+        final CreateWebAppAccelerationPolicyRequest interceptedRequest =
+                CreateWebAppAccelerationPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateWebAppAccelerationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "CreateWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/CreateWebAppAccelerationPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateWebAppAccelerationPolicyResponse>
+                transformer =
+                        CreateWebAppAccelerationPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateWebAppAccelerationPolicyRequest,
+                        CreateWebAppAccelerationPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateWebAppAccelerationPolicyRequest,
+                                CreateWebAppAccelerationPolicyResponse>,
+                        java.util.concurrent.Future<CreateWebAppAccelerationPolicyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWebAppAccelerationPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateWebAppAccelerationPolicyRequest, CreateWebAppAccelerationPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebAppAccelerationResponse> deleteWebAppAcceleration(
+            DeleteWebAppAccelerationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWebAppAccelerationRequest, DeleteWebAppAccelerationResponse>
+                    handler) {
+        LOG.trace("Called async deleteWebAppAcceleration");
+        final DeleteWebAppAccelerationRequest interceptedRequest =
+                DeleteWebAppAccelerationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWebAppAccelerationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "DeleteWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/DeleteWebAppAcceleration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteWebAppAccelerationResponse>
+                transformer =
+                        DeleteWebAppAccelerationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteWebAppAccelerationRequest, DeleteWebAppAccelerationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWebAppAccelerationRequest, DeleteWebAppAccelerationResponse>,
+                        java.util.concurrent.Future<DeleteWebAppAccelerationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWebAppAccelerationRequest, DeleteWebAppAccelerationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebAppAccelerationPolicyResponse>
+            deleteWebAppAccelerationPolicy(
+                    DeleteWebAppAccelerationPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteWebAppAccelerationPolicyRequest,
+                                    DeleteWebAppAccelerationPolicyResponse>
+                            handler) {
+        LOG.trace("Called async deleteWebAppAccelerationPolicy");
+        final DeleteWebAppAccelerationPolicyRequest interceptedRequest =
+                DeleteWebAppAccelerationPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWebAppAccelerationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "DeleteWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/DeleteWebAppAccelerationPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteWebAppAccelerationPolicyResponse>
+                transformer =
+                        DeleteWebAppAccelerationPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteWebAppAccelerationPolicyRequest,
+                        DeleteWebAppAccelerationPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWebAppAccelerationPolicyRequest,
+                                DeleteWebAppAccelerationPolicyResponse>,
+                        java.util.concurrent.Future<DeleteWebAppAccelerationPolicyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWebAppAccelerationPolicyRequest, DeleteWebAppAccelerationPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWebAppAccelerationResponse> getWebAppAcceleration(
+            GetWebAppAccelerationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWebAppAccelerationRequest, GetWebAppAccelerationResponse>
+                    handler) {
+        LOG.trace("Called async getWebAppAcceleration");
+        final GetWebAppAccelerationRequest interceptedRequest =
+                GetWebAppAccelerationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWebAppAccelerationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "GetWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/GetWebAppAcceleration");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWebAppAccelerationResponse>
+                transformer =
+                        GetWebAppAccelerationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetWebAppAccelerationRequest, GetWebAppAccelerationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWebAppAccelerationRequest, GetWebAppAccelerationResponse>,
+                        java.util.concurrent.Future<GetWebAppAccelerationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWebAppAccelerationRequest, GetWebAppAccelerationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWebAppAccelerationPolicyResponse>
+            getWebAppAccelerationPolicy(
+                    GetWebAppAccelerationPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetWebAppAccelerationPolicyRequest,
+                                    GetWebAppAccelerationPolicyResponse>
+                            handler) {
+        LOG.trace("Called async getWebAppAccelerationPolicy");
+        final GetWebAppAccelerationPolicyRequest interceptedRequest =
+                GetWebAppAccelerationPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWebAppAccelerationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "GetWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/GetWebAppAccelerationPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetWebAppAccelerationPolicyResponse>
+                transformer =
+                        GetWebAppAccelerationPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetWebAppAccelerationPolicyRequest, GetWebAppAccelerationPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWebAppAccelerationPolicyRequest,
+                                GetWebAppAccelerationPolicyResponse>,
+                        java.util.concurrent.Future<GetWebAppAccelerationPolicyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWebAppAccelerationPolicyRequest, GetWebAppAccelerationPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebAppAccelerationPoliciesResponse>
+            listWebAppAccelerationPolicies(
+                    ListWebAppAccelerationPoliciesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListWebAppAccelerationPoliciesRequest,
+                                    ListWebAppAccelerationPoliciesResponse>
+                            handler) {
+        LOG.trace("Called async listWebAppAccelerationPolicies");
+        final ListWebAppAccelerationPoliciesRequest interceptedRequest =
+                ListWebAppAccelerationPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWebAppAccelerationPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "ListWebAppAccelerationPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ListWebAppAccelerationPolicies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListWebAppAccelerationPoliciesResponse>
+                transformer =
+                        ListWebAppAccelerationPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWebAppAccelerationPoliciesRequest,
+                        ListWebAppAccelerationPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWebAppAccelerationPoliciesRequest,
+                                ListWebAppAccelerationPoliciesResponse>,
+                        java.util.concurrent.Future<ListWebAppAccelerationPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWebAppAccelerationPoliciesRequest, ListWebAppAccelerationPoliciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebAppAccelerationsResponse> listWebAppAccelerations(
+            ListWebAppAccelerationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWebAppAccelerationsRequest, ListWebAppAccelerationsResponse>
+                    handler) {
+        LOG.trace("Called async listWebAppAccelerations");
+        final ListWebAppAccelerationsRequest interceptedRequest =
+                ListWebAppAccelerationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWebAppAccelerationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "ListWebAppAccelerations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ListWebAppAccelerations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListWebAppAccelerationsResponse>
+                transformer =
+                        ListWebAppAccelerationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWebAppAccelerationsRequest, ListWebAppAccelerationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWebAppAccelerationsRequest, ListWebAppAccelerationsResponse>,
+                        java.util.concurrent.Future<ListWebAppAccelerationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWebAppAccelerationsRequest, ListWebAppAccelerationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurgeWebAppAccelerationCacheResponse>
+            purgeWebAppAccelerationCache(
+                    PurgeWebAppAccelerationCacheRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PurgeWebAppAccelerationCacheRequest,
+                                    PurgeWebAppAccelerationCacheResponse>
+                            handler) {
+        LOG.trace("Called async purgeWebAppAccelerationCache");
+        final PurgeWebAppAccelerationCacheRequest interceptedRequest =
+                PurgeWebAppAccelerationCacheConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PurgeWebAppAccelerationCacheConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "PurgeWebAppAccelerationCache",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/PurgeWebAppAccelerationCache");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PurgeWebAppAccelerationCacheResponse>
+                transformer =
+                        PurgeWebAppAccelerationCacheConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PurgeWebAppAccelerationCacheRequest, PurgeWebAppAccelerationCacheResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PurgeWebAppAccelerationCacheRequest,
+                                PurgeWebAppAccelerationCacheResponse>,
+                        java.util.concurrent.Future<PurgeWebAppAccelerationCacheResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPurgeWebAppAccelerationCacheDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PurgeWebAppAccelerationCacheRequest, PurgeWebAppAccelerationCacheResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWebAppAccelerationResponse> updateWebAppAcceleration(
+            UpdateWebAppAccelerationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWebAppAccelerationRequest, UpdateWebAppAccelerationResponse>
+                    handler) {
+        LOG.trace("Called async updateWebAppAcceleration");
+        final UpdateWebAppAccelerationRequest interceptedRequest =
+                UpdateWebAppAccelerationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWebAppAccelerationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "UpdateWebAppAcceleration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/UpdateWebAppAcceleration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateWebAppAccelerationResponse>
+                transformer =
+                        UpdateWebAppAccelerationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateWebAppAccelerationRequest, UpdateWebAppAccelerationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateWebAppAccelerationRequest, UpdateWebAppAccelerationResponse>,
+                        java.util.concurrent.Future<UpdateWebAppAccelerationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWebAppAccelerationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateWebAppAccelerationRequest, UpdateWebAppAccelerationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWebAppAccelerationPolicyResponse>
+            updateWebAppAccelerationPolicy(
+                    UpdateWebAppAccelerationPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateWebAppAccelerationPolicyRequest,
+                                    UpdateWebAppAccelerationPolicyResponse>
+                            handler) {
+        LOG.trace("Called async updateWebAppAccelerationPolicy");
+        final UpdateWebAppAccelerationPolicyRequest interceptedRequest =
+                UpdateWebAppAccelerationPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWebAppAccelerationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Waa",
+                        "UpdateWebAppAccelerationPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/UpdateWebAppAccelerationPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateWebAppAccelerationPolicyResponse>
+                transformer =
+                        UpdateWebAppAccelerationPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateWebAppAccelerationPolicyRequest,
+                        UpdateWebAppAccelerationPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateWebAppAccelerationPolicyRequest,
+                                UpdateWebAppAccelerationPolicyResponse>,
+                        java.util.concurrent.Future<UpdateWebAppAccelerationPolicyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWebAppAccelerationPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateWebAppAccelerationPolicyRequest, UpdateWebAppAccelerationPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

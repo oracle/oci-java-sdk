@@ -5,24 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Specifies the mapping between external identity source attributes and Oracle Identity Cloud
- * Service complex attributes (e.g. email => emails[work].value) <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Specifies the mapping between external identity source attributes and Oracle Identity Cloud Service complex attributes (e.g. email => emails[work].value)
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SchemaIdcsComplexAttributeNameMappings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SchemaIdcsComplexAttributeNameMappings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SchemaIdcsComplexAttributeNameMappings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "mapsTo", "idcsRtsaHideAttribute"})
     public SchemaIdcsComplexAttributeNameMappings(
@@ -37,22 +35,33 @@ public final class SchemaIdcsComplexAttributeNameMappings
     public static class Builder {
         /**
          * The attribute that represents the display name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: true - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The attribute that represents the display name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: true - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -60,22 +69,33 @@ public final class SchemaIdcsComplexAttributeNameMappings
         }
         /**
          * The attribute that is mapped to the attribute mapping
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: true - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mapsTo")
         private String mapsTo;
 
         /**
          * The attribute that is mapped to the attribute mapping
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-         * required: true - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mapsTo the value to set
          * @return this builder
-         */
+         **/
         public Builder mapsTo(String mapsTo) {
             this.mapsTo = mapsTo;
             this.__explicitlySet__.add("mapsTo");
@@ -83,22 +103,33 @@ public final class SchemaIdcsComplexAttributeNameMappings
         }
         /**
          * Specifies if the attributes that is mapped should be hidden externally
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsRtsaHideAttribute")
         private Boolean idcsRtsaHideAttribute;
 
         /**
          * Specifies if the attributes that is mapped should be hidden externally
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param idcsRtsaHideAttribute the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsRtsaHideAttribute(Boolean idcsRtsaHideAttribute) {
             this.idcsRtsaHideAttribute = idcsRtsaHideAttribute;
             this.__explicitlySet__.add("idcsRtsaHideAttribute");
@@ -133,7 +164,9 @@ public final class SchemaIdcsComplexAttributeNameMappings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,63 +177,96 @@ public final class SchemaIdcsComplexAttributeNameMappings
 
     /**
      * The attribute that represents the display name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The attribute that represents the display name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * The attribute that is mapped to the attribute mapping
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: true - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mapsTo")
     private final String mapsTo;
 
     /**
      * The attribute that is mapped to the attribute mapping
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readOnly -
-     * required: true - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMapsTo() {
         return mapsTo;
     }
 
     /**
      * Specifies if the attributes that is mapped should be hidden externally
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsRtsaHideAttribute")
     private final Boolean idcsRtsaHideAttribute;
 
     /**
      * Specifies if the attributes that is mapped should be hidden externally
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIdcsRtsaHideAttribute() {
         return idcsRtsaHideAttribute;
     }
@@ -212,7 +278,6 @@ public final class SchemaIdcsComplexAttributeNameMappings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

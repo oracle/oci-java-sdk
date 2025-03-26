@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Collection of log analytics enterprise manager bridges. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Collection of log analytics enterprise manager bridges.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsEmBridgeCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsEmBridgeCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsEmBridgeCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public LogAnalyticsEmBridgeCollection(java.util.List<LogAnalyticsEmBridgeSummary> items) {
@@ -31,16 +31,17 @@ public final class LogAnalyticsEmBridgeCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Array of log analytics enterprise manager bridges. */
+        /**
+         * Array of log analytics enterprise manager bridges.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsEmBridgeSummary> items;
 
         /**
          * Array of log analytics enterprise manager bridges.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<LogAnalyticsEmBridgeSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -67,7 +68,9 @@ public final class LogAnalyticsEmBridgeCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +79,16 @@ public final class LogAnalyticsEmBridgeCollection
         return new Builder().copy(this);
     }
 
-    /** Array of log analytics enterprise manager bridges. */
+    /**
+     * Array of log analytics enterprise manager bridges.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsEmBridgeSummary> items;
 
     /**
      * Array of log analytics enterprise manager bridges.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LogAnalyticsEmBridgeSummary> getItems() {
         return items;
     }
@@ -96,7 +100,6 @@ public final class LogAnalyticsEmBridgeCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

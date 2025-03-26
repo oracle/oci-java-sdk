@@ -6,60 +6,67 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateRecommendedVmClusterNetworkExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GenerateRecommendedVmClusterNetworkRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateRecommendedVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateRecommendedVmClusterNetworkRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GenerateRecommendedVmClusterNetworkRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails> {
 
     /**
-     * The Exadata infrastructure
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String exadataInfrastructureId;
 
     /**
-     * The Exadata infrastructure
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
-    /** Request to generate a recommended Cloud@Customer VM cluster network configuration. */
+    /**
+     * Request to generate a recommended Cloud@Customer VM cluster network configuration.
+     */
     private com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails
             generateRecommendedNetworkDetails;
 
-    /** Request to generate a recommended Cloud@Customer VM cluster network configuration. */
+    /**
+     * Request to generate a recommended Cloud@Customer VM cluster network configuration.
+     */
     public com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails
             getGenerateRecommendedNetworkDetails() {
         return generateRecommendedNetworkDetails;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -67,7 +74,6 @@ public class GenerateRecommendedVmClusterNetworkRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -80,19 +86,17 @@ public class GenerateRecommendedVmClusterNetworkRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GenerateRecommendedVmClusterNetworkRequest,
                     com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Exadata infrastructure
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String exadataInfrastructureId = null;
 
         /**
-         * The Exadata infrastructure
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The Exadata infrastructure [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param exadataInfrastructureId the value to set
          * @return this builder instance
          */
@@ -101,13 +105,14 @@ public class GenerateRecommendedVmClusterNetworkRequest
             return this;
         }
 
-        /** Request to generate a recommended Cloud@Customer VM cluster network configuration. */
+        /**
+         * Request to generate a recommended Cloud@Customer VM cluster network configuration.
+         */
         private com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails
                 generateRecommendedNetworkDetails = null;
 
         /**
          * Request to generate a recommended Cloud@Customer VM cluster network configuration.
-         *
          * @param generateRecommendedNetworkDetails the value to set
          * @return this builder instance
          */
@@ -118,7 +123,10 @@ public class GenerateRecommendedVmClusterNetworkRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -134,19 +142,20 @@ public class GenerateRecommendedVmClusterNetworkRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -158,19 +167,18 @@ public class GenerateRecommendedVmClusterNetworkRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -182,7 +190,6 @@ public class GenerateRecommendedVmClusterNetworkRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GenerateRecommendedVmClusterNetworkRequest o) {
@@ -196,14 +203,12 @@ public class GenerateRecommendedVmClusterNetworkRequest
         }
 
         /**
-         * Build the instance of GenerateRecommendedVmClusterNetworkRequest as configured by this
-         * builder
+         * Build the instance of GenerateRecommendedVmClusterNetworkRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GenerateRecommendedVmClusterNetworkRequest
          */
@@ -216,7 +221,6 @@ public class GenerateRecommendedVmClusterNetworkRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -227,11 +231,9 @@ public class GenerateRecommendedVmClusterNetworkRequest
         }
 
         /**
-         * Build the instance of GenerateRecommendedVmClusterNetworkRequest as configured by this
-         * builder
+         * Build the instance of GenerateRecommendedVmClusterNetworkRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GenerateRecommendedVmClusterNetworkRequest
@@ -244,14 +246,12 @@ public class GenerateRecommendedVmClusterNetworkRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new GenerateRecommendedVmClusterNetworkRequest(exadataInfrastructureId,
-            // generateRecommendedNetworkDetails, opcRequestId, opcRetryToken);
+            // new GenerateRecommendedVmClusterNetworkRequest(exadataInfrastructureId, generateRecommendedNetworkDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -264,7 +264,6 @@ public class GenerateRecommendedVmClusterNetworkRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -6,140 +6,155 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightStorageUsageTrendExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeHostInsightStorageUsageTrendRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightStorageUsageTrendExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeHostInsightStorageUsageTrendRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class SummarizeHostInsightStorageUsageTrendRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     *
      */
     private String id;
 
     /**
-     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     *
      */
     public String getId() {
         return id;
     }
     /**
-     * Specify time period in ISO 8601 format with respect to current time. Default is last 30 days
-     * represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd
-     * will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y
-     * (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
      */
     private String analysisTimeInterval;
 
     /**
-     * Specify time period in ISO 8601 format with respect to current time. Default is last 30 days
-     * represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd
-     * will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y
-     * (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     * Specify time period in ISO 8601 format with respect to current time.
+     * Default is last 30 days represented by P30D.
+     * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+     * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+     *
      */
     public String getAnalysisTimeInterval() {
         return analysisTimeInterval;
     }
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
-     * is specified, this parameter is ignored.
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
      */
     private java.util.Date timeIntervalStart;
 
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
-     * is specified, this parameter is ignored.
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
      */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
      */
     private java.util.Date timeIntervalEnd;
 
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
      */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
     /**
-     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+     *
      */
     private String hostId;
 
     /**
-     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+     *
      */
     public String getHostId() {
         return hostId;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
-    /** Choose the type of statistic metric data to be used for forecasting. */
+    /**
+     * Choose the type of statistic metric data to be used for forecasting.
+     */
     private Statistic statistic;
 
-    /** Choose the type of statistic metric data to be used for forecasting. */
-    public enum Statistic implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Choose the type of statistic metric data to be used for forecasting.
+     **/
+    public enum Statistic {
         Avg("AVG"),
         Max("MAX"),
         ;
@@ -172,27 +187,35 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
     };
 
-    /** Choose the type of statistic metric data to be used for forecasting. */
+    /**
+     * Choose the type of statistic metric data to be used for forecasting.
+     */
     public Statistic getStatistic() {
         return statistic;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Resource Status */
+    /**
+     * Resource Status
+     */
     private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
 
-    /** Resource Status */
+    /**
+     * Resource Status
+     */
     public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
         return status;
     }
@@ -200,19 +223,17 @@ public class SummarizeHostInsightStorageUsageTrendRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeHostInsightStorageUsageTrendRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -222,14 +243,13 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the host insight resource.
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+         *
          */
         private String id = null;
 
         /**
-         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the host insight resource.
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
          *
          * @param id the value to set
          * @return this builder instance
@@ -240,20 +260,19 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Specify time period in ISO 8601 format with respect to current time. Default is last 30
-         * days represented by P30D. If timeInterval is specified, then timeIntervalStart and
-         * timeIntervalEnd will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M
-         * (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to
-         * current time (P25M).
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+         *
          */
         private String analysisTimeInterval = null;
 
         /**
-         * Specify time period in ISO 8601 format with respect to current time. Default is last 30
-         * days represented by P30D. If timeInterval is specified, then timeIntervalStart and
-         * timeIntervalEnd will be ignored. Examples P90D (last 90 days), P4W (last 4 weeks), P2M
-         * (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to
-         * current time (P25M).
+         * Specify time period in ISO 8601 format with respect to current time.
+         * Default is last 30 days represented by P30D.
+         * If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+         * Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
          *
          * @param analysisTimeInterval the value to set
          * @return this builder instance
@@ -264,18 +283,21 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together. If
-         * analysisTimeInterval is specified, this parameter is ignored.
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
          */
         private java.util.Date timeIntervalStart = null;
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together. If
-         * analysisTimeInterval is specified, this parameter is ignored.
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
          *
          * @param timeIntervalStart the value to set
          * @return this builder instance
@@ -286,16 +308,19 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
          */
         private java.util.Date timeIntervalEnd = null;
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
          * @param timeIntervalEnd the value to set
          * @return this builder instance
@@ -306,14 +331,13 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the host (Compute Id)
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+         *
          */
         private String hostId = null;
 
         /**
-         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the host (Compute Id)
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
          *
          * @param hostId the value to set
          * @return this builder instance
@@ -324,16 +348,17 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -344,17 +369,20 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -365,12 +393,13 @@ public class SummarizeHostInsightStorageUsageTrendRequest
             return this;
         }
 
-        /** Choose the type of statistic metric data to be used for forecasting. */
+        /**
+         * Choose the type of statistic metric data to be used for forecasting.
+         */
         private Statistic statistic = null;
 
         /**
          * Choose the type of statistic metric data to be used for forecasting.
-         *
          * @param statistic the value to set
          * @return this builder instance
          */
@@ -380,14 +409,15 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -397,12 +427,13 @@ public class SummarizeHostInsightStorageUsageTrendRequest
             return this;
         }
 
-        /** Resource Status */
+        /**
+         * Resource Status
+         */
         private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
 
         /**
          * Resource Status
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -413,7 +444,6 @@ public class SummarizeHostInsightStorageUsageTrendRequest
 
         /**
          * Singular setter. Resource Status
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -423,19 +453,18 @@ public class SummarizeHostInsightStorageUsageTrendRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -447,7 +476,6 @@ public class SummarizeHostInsightStorageUsageTrendRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeHostInsightStorageUsageTrendRequest o) {
@@ -468,14 +496,12 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Build the instance of SummarizeHostInsightStorageUsageTrendRequest as configured by this
-         * builder
+         * Build the instance of SummarizeHostInsightStorageUsageTrendRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeHostInsightStorageUsageTrendRequest
          */
@@ -487,11 +513,9 @@ public class SummarizeHostInsightStorageUsageTrendRequest
         }
 
         /**
-         * Build the instance of SummarizeHostInsightStorageUsageTrendRequest as configured by this
-         * builder
+         * Build the instance of SummarizeHostInsightStorageUsageTrendRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeHostInsightStorageUsageTrendRequest
@@ -511,15 +535,12 @@ public class SummarizeHostInsightStorageUsageTrendRequest
             request.opcRequestId = opcRequestId;
             request.status = status;
             return request;
-            // new SummarizeHostInsightStorageUsageTrendRequest(compartmentId, id,
-            // analysisTimeInterval, timeIntervalStart, timeIntervalEnd, hostId, page, limit,
-            // statistic, opcRequestId, status);
+            // new SummarizeHostInsightStorageUsageTrendRequest(compartmentId, id, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, hostId, page, limit, statistic, opcRequestId, status);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -539,7 +560,6 @@ public class SummarizeHostInsightStorageUsageTrendRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

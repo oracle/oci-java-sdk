@@ -5,15 +5,19 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The lifecycle states of a DR protection group. - CREATING - DR protection group is being created.
- * - ACTIVE - DR protection group is active and available for operations. - UPDATING - DR protection
- * group is being updated and is not available for operations. - INACTIVE - The DR protection group
- * is locked because a DR Drill is in progress. - NEEDS_ATTENTION - DR protection group needs user
- * attention. - DELETING - DR protection group is being deleted. - DELETED - DR protection group has
- * been deleted. - FAILED - DR protection group is in a failed state.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DrProtectionGroupLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+ * The lifecycle states of a DR protection group.
+ * - CREATING - DR protection group is being created.
+ * - ACTIVE - DR protection group is active and available for operations.
+ * - UPDATING - DR protection group is being updated and is not available for operations.
+ * - INACTIVE - The DR protection group is locked because a DR Drill is in progress.
+ * - NEEDS_ATTENTION - DR protection group needs user attention.
+ * - DELETING - DR protection group is being deleted.
+ * - DELETED - DR protection group has been deleted.
+ * - FAILED - DR protection group is in a failed state.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum DrProtectionGroupLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

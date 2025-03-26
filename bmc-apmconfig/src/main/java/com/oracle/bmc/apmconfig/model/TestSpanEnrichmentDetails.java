@@ -5,74 +5,77 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * Run a set of span enrichment rules on a given span to see the result. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * Run a set of span enrichment rules on a given span to see the result.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TestSpanEnrichmentDetails.Builder.class)
+    builder = TestSpanEnrichmentDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "testType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "testType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TestSpanEnrichmentDetails extends TestDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The span enrichment rules to test in the format of an Options resource. */
+        /**
+         * The span enrichment rules to test in the format of an Options resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private Object options;
 
         /**
          * The span enrichment rules to test in the format of an Options resource.
-         *
          * @param options the value to set
          * @return this builder
-         */
+         **/
         public Builder options(Object options) {
             this.options = options;
             this.__explicitlySet__.add("options");
             return this;
         }
-        /** A list of filters to try against the given span. */
+        /**
+         * A list of filters to try against the given span.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<FilterTextOrId> filters;
 
         /**
          * A list of filters to try against the given span.
-         *
          * @param filters the value to set
          * @return this builder
-         */
+         **/
         public Builder filters(java.util.List<FilterTextOrId> filters) {
             this.filters = filters;
             this.__explicitlySet__.add("filters");
             return this;
         }
         /**
-         * The span to test the rules on. This should be a valid JSON object that follows one of the
-         * formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or Oracle
-         * Application Performance Monitoring.
-         */
+         * The span to test the rules on. This should be a valid JSON object that follows one
+         * of the formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or
+         * Oracle Application Performance Monitoring.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private Object span;
 
         /**
-         * The span to test the rules on. This should be a valid JSON object that follows one of the
-         * formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or Oracle
-         * Application Performance Monitoring.
+         * The span to test the rules on. This should be a valid JSON object that follows one
+         * of the formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or
+         * Oracle Application Performance Monitoring.
          *
          * @param span the value to set
          * @return this builder
-         */
+         **/
         public Builder span(Object span) {
             this.span = span;
             this.__explicitlySet__.add("span");
@@ -106,7 +109,9 @@ public final class TestSpanEnrichmentDetails extends TestDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,47 +129,50 @@ public final class TestSpanEnrichmentDetails extends TestDetails {
         this.span = span;
     }
 
-    /** The span enrichment rules to test in the format of an Options resource. */
+    /**
+     * The span enrichment rules to test in the format of an Options resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final Object options;
 
     /**
      * The span enrichment rules to test in the format of an Options resource.
-     *
      * @return the value
-     */
+     **/
     public Object getOptions() {
         return options;
     }
 
-    /** A list of filters to try against the given span. */
+    /**
+     * A list of filters to try against the given span.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final java.util.List<FilterTextOrId> filters;
 
     /**
      * A list of filters to try against the given span.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FilterTextOrId> getFilters() {
         return filters;
     }
 
     /**
-     * The span to test the rules on. This should be a valid JSON object that follows one of the
-     * formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or Oracle
-     * Application Performance Monitoring.
-     */
+     * The span to test the rules on. This should be a valid JSON object that follows one
+     * of the formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or
+     * Oracle Application Performance Monitoring.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final Object span;
 
     /**
-     * The span to test the rules on. This should be a valid JSON object that follows one of the
-     * formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or Oracle
-     * Application Performance Monitoring.
+     * The span to test the rules on. This should be a valid JSON object that follows one
+     * of the formats used by distributed tracing frameworks, such as OpenTelemetry, Zipkin, or
+     * Oracle Application Performance Monitoring.
      *
      * @return the value
-     */
+     **/
     public Object getSpan() {
         return span;
     }
@@ -176,7 +184,6 @@ public final class TestSpanEnrichmentDetails extends TestDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

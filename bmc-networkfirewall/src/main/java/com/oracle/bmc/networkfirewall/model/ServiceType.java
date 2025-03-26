@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkfirewall.model;
 
-/** Possible service types supported for Network Firewall Policy. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum ServiceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible service types supported for Network Firewall Policy.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum ServiceType {
     TcpService("TCP_SERVICE"),
     UdpService("UDP_SERVICE"),
 

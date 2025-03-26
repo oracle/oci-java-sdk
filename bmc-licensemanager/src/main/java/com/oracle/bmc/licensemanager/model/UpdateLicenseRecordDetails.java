@@ -5,23 +5,22 @@
 package com.oracle.bmc.licensemanager.model;
 
 /**
- * The details about updates in the license record. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+ * The details about updates in the license record.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateLicenseRecordDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateLicenseRecordDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateLicenseRecordDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -58,7 +57,10 @@ public final class UpdateLicenseRecordDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** License record name. */
+        /**
+         * License record name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -67,41 +69,45 @@ public final class UpdateLicenseRecordDetails
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Specifies if the license record term is perpertual. */
+        /**
+         * Specifies if the license record term is perpertual.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPerpetual")
         private Boolean isPerpetual;
 
         /**
          * Specifies if the license record term is perpertual.
-         *
          * @param isPerpetual the value to set
          * @return this builder
-         */
+         **/
         public Builder isPerpetual(Boolean isPerpetual) {
             this.isPerpetual = isPerpetual;
             this.__explicitlySet__.add("isPerpetual");
             return this;
         }
         /**
-         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-         * format. Example: {@code 2018-09-12}
-         */
+         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * date format.
+         * Example: {@code 2018-09-12}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expirationDate")
         private java.util.Date expirationDate;
 
         /**
-         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-         * format. Example: {@code 2018-09-12}
+         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * date format.
+         * Example: {@code 2018-09-12}
          *
          * @param expirationDate the value to set
          * @return this builder
-         */
+         **/
         public Builder expirationDate(java.util.Date expirationDate) {
             this.expirationDate = expirationDate;
             this.__explicitlySet__.add("expirationDate");
@@ -109,82 +115,93 @@ public final class UpdateLicenseRecordDetails
         }
         /**
          * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * date format. Example: {@code 2018-09-12}
-         */
+         * date format.
+         * Example: {@code 2018-09-12}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportEndDate")
         private java.util.Date supportEndDate;
 
         /**
          * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * date format. Example: {@code 2018-09-12}
+         * date format.
+         * Example: {@code 2018-09-12}
          *
          * @param supportEndDate the value to set
          * @return this builder
-         */
+         **/
         public Builder supportEndDate(java.util.Date supportEndDate) {
             this.supportEndDate = supportEndDate;
             this.__explicitlySet__.add("supportEndDate");
             return this;
         }
-        /** Specifies if the license count is unlimited. */
+        /**
+         * Specifies if the license count is unlimited.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
         private Boolean isUnlimited;
 
         /**
          * Specifies if the license count is unlimited.
-         *
          * @param isUnlimited the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = isUnlimited;
             this.__explicitlySet__.add("isUnlimited");
             return this;
         }
-        /** The number of license units added by a user in a license record. Default 1 */
+        /**
+         * The number of license units added by a user in a license record.
+         * Default 1
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseCount")
         private Integer licenseCount;
 
         /**
-         * The number of license units added by a user in a license record. Default 1
+         * The number of license units added by a user in a license record.
+         * Default 1
          *
          * @param licenseCount the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseCount(Integer licenseCount) {
             this.licenseCount = licenseCount;
             this.__explicitlySet__.add("licenseCount");
             return this;
         }
-        /** The license record product ID. */
+        /**
+         * The license record product ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productId")
         private String productId;
 
         /**
          * The license record product ID.
-         *
          * @param productId the value to set
          * @return this builder
-         */
+         **/
         public Builder productId(String productId) {
             this.productId = productId;
             this.__explicitlySet__.add("productId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -193,7 +210,8 @@ public final class UpdateLicenseRecordDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -203,7 +221,7 @@ public final class UpdateLicenseRecordDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -265,7 +283,9 @@ public final class UpdateLicenseRecordDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -274,7 +294,10 @@ public final class UpdateLicenseRecordDetails
         return new Builder().copy(this);
     }
 
-    /** License record name. */
+    /**
+     * License record name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -282,127 +305,143 @@ public final class UpdateLicenseRecordDetails
      * License record name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Specifies if the license record term is perpertual. */
+    /**
+     * Specifies if the license record term is perpertual.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPerpetual")
     private final Boolean isPerpetual;
 
     /**
      * Specifies if the license record term is perpertual.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPerpetual() {
         return isPerpetual;
     }
 
     /**
-     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format.
+     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
      * Example: {@code 2018-09-12}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expirationDate")
     private final java.util.Date expirationDate;
 
     /**
-     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format.
+     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
      * Example: {@code 2018-09-12}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getExpirationDate() {
         return expirationDate;
     }
 
     /**
-     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-     * format. Example: {@code 2018-09-12}
-     */
+     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
+     * Example: {@code 2018-09-12}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportEndDate")
     private final java.util.Date supportEndDate;
 
     /**
-     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-     * format. Example: {@code 2018-09-12}
+     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
+     * Example: {@code 2018-09-12}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getSupportEndDate() {
         return supportEndDate;
     }
 
-    /** Specifies if the license count is unlimited. */
+    /**
+     * Specifies if the license count is unlimited.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
     private final Boolean isUnlimited;
 
     /**
      * Specifies if the license count is unlimited.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUnlimited() {
         return isUnlimited;
     }
 
-    /** The number of license units added by a user in a license record. Default 1 */
+    /**
+     * The number of license units added by a user in a license record.
+     * Default 1
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseCount")
     private final Integer licenseCount;
 
     /**
-     * The number of license units added by a user in a license record. Default 1
+     * The number of license units added by a user in a license record.
+     * Default 1
      *
      * @return the value
-     */
+     **/
     public Integer getLicenseCount() {
         return licenseCount;
     }
 
-    /** The license record product ID. */
+    /**
+     * The license record product ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productId")
     private final String productId;
 
     /**
      * The license record product ID.
-     *
      * @return the value
-     */
+     **/
     public String getProductId() {
         return productId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -414,7 +453,6 @@ public final class UpdateLicenseRecordDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * Details of the Objectstorage object <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * Details of the Objectstorage object
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ObjectDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ObjectDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "objectNamespace",
@@ -44,76 +42,81 @@ public final class ObjectDetails extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Objectstorage namespace reference providing the original location of this object */
+        /**
+         * Objectstorage namespace reference providing the original location of this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNamespace")
         private String objectNamespace;
 
         /**
          * Objectstorage namespace reference providing the original location of this object
-         *
          * @param objectNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder objectNamespace(String objectNamespace) {
             this.objectNamespace = objectNamespace;
             this.__explicitlySet__.add("objectNamespace");
             return this;
         }
-        /** Objectstorage bucket reference providing the original location of this object */
+        /**
+         * Objectstorage bucket reference providing the original location of this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectBucket")
         private String objectBucket;
 
         /**
          * Objectstorage bucket reference providing the original location of this object
-         *
          * @param objectBucket the value to set
          * @return this builder
-         */
+         **/
         public Builder objectBucket(String objectBucket) {
             this.objectBucket = objectBucket;
             this.__explicitlySet__.add("objectBucket");
             return this;
         }
-        /** Objectstorage object name reference providing the original location of this object */
+        /**
+         * Objectstorage object name reference providing the original location of this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * Objectstorage object name reference providing the original location of this object
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** Object storage URL for download */
+        /**
+         * Object storage URL for download
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectUrl")
         private String objectUrl;
 
         /**
          * Object storage URL for download
-         *
          * @param objectUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder objectUrl(String objectUrl) {
             this.objectUrl = objectUrl;
             this.__explicitlySet__.add("objectUrl");
             return this;
         }
-        /** Object content SHA256 Hash */
+        /**
+         * Object content SHA256 Hash
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksum")
         private String checksum;
 
         /**
          * Object content SHA256 Hash
-         *
          * @param checksum the value to set
          * @return this builder
-         */
+         **/
         public Builder checksum(String checksum) {
             this.checksum = checksum;
             this.__explicitlySet__.add("checksum");
@@ -158,7 +161,9 @@ public final class ObjectDetails extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,67 +172,72 @@ public final class ObjectDetails extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Objectstorage namespace reference providing the original location of this object */
+    /**
+     * Objectstorage namespace reference providing the original location of this object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNamespace")
     private final String objectNamespace;
 
     /**
      * Objectstorage namespace reference providing the original location of this object
-     *
      * @return the value
-     */
+     **/
     public String getObjectNamespace() {
         return objectNamespace;
     }
 
-    /** Objectstorage bucket reference providing the original location of this object */
+    /**
+     * Objectstorage bucket reference providing the original location of this object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectBucket")
     private final String objectBucket;
 
     /**
      * Objectstorage bucket reference providing the original location of this object
-     *
      * @return the value
-     */
+     **/
     public String getObjectBucket() {
         return objectBucket;
     }
 
-    /** Objectstorage object name reference providing the original location of this object */
+    /**
+     * Objectstorage object name reference providing the original location of this object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * Objectstorage object name reference providing the original location of this object
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** Object storage URL for download */
+    /**
+     * Object storage URL for download
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectUrl")
     private final String objectUrl;
 
     /**
      * Object storage URL for download
-     *
      * @return the value
-     */
+     **/
     public String getObjectUrl() {
         return objectUrl;
     }
 
-    /** Object content SHA256 Hash */
+    /**
+     * Object content SHA256 Hash
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
     private final String checksum;
 
     /**
      * Object content SHA256 Hash
-     *
      * @return the value
-     */
+     **/
     public String getChecksum() {
         return checksum;
     }
@@ -239,7 +249,6 @@ public final class ObjectDetails extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

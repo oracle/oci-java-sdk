@@ -6,43 +6,51 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateDiscoveryReportForDownloadExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GenerateDiscoveryReportForDownloadRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateDiscoveryReportForDownloadExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateDiscoveryReportForDownloadRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GenerateDiscoveryReportForDownloadRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.GenerateDiscoveryReportForDownloadDetails> {
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     private String sensitiveDataModelId;
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
-    /** Details to generate a downloadable discovery report. */
+    /**
+     * Details to generate a downloadable discovery report.
+     */
     private com.oracle.bmc.datasafe.model.GenerateDiscoveryReportForDownloadDetails
             generateDiscoveryReportForDownloadDetails;
 
-    /** Details to generate a downloadable discovery report. */
+    /**
+     * Details to generate a downloadable discovery report.
+     */
     public com.oracle.bmc.datasafe.model.GenerateDiscoveryReportForDownloadDetails
             getGenerateDiscoveryReportForDownloadDetails() {
         return generateDiscoveryReportForDownloadDetails;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -55,15 +63,17 @@ public class GenerateDiscoveryReportForDownloadRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GenerateDiscoveryReportForDownloadRequest,
                     com.oracle.bmc.datasafe.model.GenerateDiscoveryReportForDownloadDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the sensitive data model. */
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
@@ -72,13 +82,14 @@ public class GenerateDiscoveryReportForDownloadRequest
             return this;
         }
 
-        /** Details to generate a downloadable discovery report. */
+        /**
+         * Details to generate a downloadable discovery report.
+         */
         private com.oracle.bmc.datasafe.model.GenerateDiscoveryReportForDownloadDetails
                 generateDiscoveryReportForDownloadDetails = null;
 
         /**
          * Details to generate a downloadable discovery report.
-         *
          * @param generateDiscoveryReportForDownloadDetails the value to set
          * @return this builder instance
          */
@@ -90,12 +101,13 @@ public class GenerateDiscoveryReportForDownloadRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -106,19 +118,18 @@ public class GenerateDiscoveryReportForDownloadRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -130,7 +141,6 @@ public class GenerateDiscoveryReportForDownloadRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GenerateDiscoveryReportForDownloadRequest o) {
@@ -144,14 +154,12 @@ public class GenerateDiscoveryReportForDownloadRequest
         }
 
         /**
-         * Build the instance of GenerateDiscoveryReportForDownloadRequest as configured by this
-         * builder
+         * Build the instance of GenerateDiscoveryReportForDownloadRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GenerateDiscoveryReportForDownloadRequest
          */
@@ -164,7 +172,6 @@ public class GenerateDiscoveryReportForDownloadRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -176,11 +183,9 @@ public class GenerateDiscoveryReportForDownloadRequest
         }
 
         /**
-         * Build the instance of GenerateDiscoveryReportForDownloadRequest as configured by this
-         * builder
+         * Build the instance of GenerateDiscoveryReportForDownloadRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GenerateDiscoveryReportForDownloadRequest
@@ -193,14 +198,12 @@ public class GenerateDiscoveryReportForDownloadRequest
                     generateDiscoveryReportForDownloadDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GenerateDiscoveryReportForDownloadRequest(sensitiveDataModelId,
-            // generateDiscoveryReportForDownloadDetails, opcRequestId);
+            // new GenerateDiscoveryReportForDownloadRequest(sensitiveDataModelId, generateDiscoveryReportForDownloadDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -213,7 +216,6 @@ public class GenerateDiscoveryReportForDownloadRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

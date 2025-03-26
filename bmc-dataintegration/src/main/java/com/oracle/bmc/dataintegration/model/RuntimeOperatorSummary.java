@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about RuntimeOperator. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The information about RuntimeOperator.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RuntimeOperatorSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RuntimeOperatorSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RuntimeOperatorSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -97,110 +96,113 @@ public final class RuntimeOperatorSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The RuntimeOperator key. */
+        /**
+         * The RuntimeOperator key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The RuntimeOperator key.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The TaskRun key. */
+        /**
+         * The TaskRun key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskRunKey")
         private String taskRunKey;
 
         /**
          * The TaskRun key.
-         *
          * @param taskRunKey the value to set
          * @return this builder
-         */
+         **/
         public Builder taskRunKey(String taskRunKey) {
             this.taskRunKey = taskRunKey;
             this.__explicitlySet__.add("taskRunKey");
             return this;
         }
-        /** The runtime operator start time. */
+        /**
+         * The runtime operator start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimeInMillis")
         private Long startTimeInMillis;
 
         /**
          * The runtime operator start time.
-         *
          * @param startTimeInMillis the value to set
          * @return this builder
-         */
+         **/
         public Builder startTimeInMillis(Long startTimeInMillis) {
             this.startTimeInMillis = startTimeInMillis;
             this.__explicitlySet__.add("startTimeInMillis");
             return this;
         }
-        /** The runtime operator end time. */
+        /**
+         * The runtime operator end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimeInMillis")
         private Long endTimeInMillis;
 
         /**
          * The runtime operator end time.
-         *
          * @param endTimeInMillis the value to set
          * @return this builder
-         */
+         **/
         public Builder endTimeInMillis(Long endTimeInMillis) {
             this.endTimeInMillis = endTimeInMillis;
             this.__explicitlySet__.add("endTimeInMillis");
             return this;
         }
         /**
-         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
-         * field instead.
-         */
+         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState field instead.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
-         * field instead.
-         *
+         * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState field instead.
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The type of the object. */
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The type of the object.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** The model version of an object. */
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -216,108 +218,96 @@ public final class RuntimeOperatorSummary
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The version of the object that is used to track changes in the object instance. */
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
-         *
          * @param objectVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         */
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         *
+         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** status */
+        /**
+         * status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionState")
         private ExecutionState executionState;
 
         /**
          * status
-         *
          * @param executionState the value to set
          * @return this builder
-         */
+         **/
         public Builder executionState(ExecutionState executionState) {
             this.executionState = executionState;
             this.__explicitlySet__.add("executionState");
             return this;
         }
         /**
-         * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be
-         * configured when the pipeline is executed.
-         */
+         * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<Parameter> parameters;
 
         /**
-         * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be
-         * configured when the pipeline is executed.
-         *
+         * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
          * @param parameters the value to set
          * @return this builder
-         */
+         **/
         public Builder parameters(java.util.List<Parameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -341,46 +331,49 @@ public final class RuntimeOperatorSummary
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /** The configuration provider bindings. */
+        /**
+         * The configuration provider bindings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputs")
         private java.util.Map<String, ParameterValue> inputs;
 
         /**
          * The configuration provider bindings.
-         *
          * @param inputs the value to set
          * @return this builder
-         */
+         **/
         public Builder inputs(java.util.Map<String, ParameterValue> inputs) {
             this.inputs = inputs;
             this.__explicitlySet__.add("inputs");
             return this;
         }
-        /** The configuration provider bindings. */
+        /**
+         * The configuration provider bindings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputs")
         private java.util.Map<String, ParameterValue> outputs;
 
         /**
          * The configuration provider bindings.
-         *
          * @param outputs the value to set
          * @return this builder
-         */
+         **/
         public Builder outputs(java.util.Map<String, ParameterValue> outputs) {
             this.outputs = outputs;
             this.__explicitlySet__.add("outputs");
             return this;
         }
-        /** The type of task run. */
+        /**
+         * The type of task run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskType")
         private TaskType taskType;
 
         /**
          * The type of task run.
-         *
          * @param taskType the value to set
          * @return this builder
-         */
+         **/
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
@@ -395,31 +388,33 @@ public final class RuntimeOperatorSummary
             this.__explicitlySet__.add("configProvider");
             return this;
         }
-        /** The type of Runtime Operator */
+        /**
+         * The type of Runtime Operator
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatorType")
         private OperatorType operatorType;
 
         /**
          * The type of Runtime Operator
-         *
          * @param operatorType the value to set
          * @return this builder
-         */
+         **/
         public Builder operatorType(OperatorType operatorType) {
             this.operatorType = operatorType;
             this.__explicitlySet__.add("operatorType");
             return this;
         }
-        /** A map metrics for the task run. */
+        /**
+         * A map metrics for the task run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.Map<String, Float> metrics;
 
         /**
          * A map metrics for the task run.
-         *
          * @param metrics the value to set
          * @return this builder
-         */
+         **/
         public Builder metrics(java.util.Map<String, Float> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -532,7 +527,9 @@ public final class RuntimeOperatorSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -541,63 +538,66 @@ public final class RuntimeOperatorSummary
         return new Builder().copy(this);
     }
 
-    /** The RuntimeOperator key. */
+    /**
+     * The RuntimeOperator key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The RuntimeOperator key.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The TaskRun key. */
+    /**
+     * The TaskRun key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskRunKey")
     private final String taskRunKey;
 
     /**
      * The TaskRun key.
-     *
      * @return the value
-     */
+     **/
     public String getTaskRunKey() {
         return taskRunKey;
     }
 
-    /** The runtime operator start time. */
+    /**
+     * The runtime operator start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeInMillis")
     private final Long startTimeInMillis;
 
     /**
      * The runtime operator start time.
-     *
      * @return the value
-     */
+     **/
     public Long getStartTimeInMillis() {
         return startTimeInMillis;
     }
 
-    /** The runtime operator end time. */
+    /**
+     * The runtime operator end time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeInMillis")
     private final Long endTimeInMillis;
 
     /**
      * The runtime operator end time.
-     *
      * @return the value
-     */
+     **/
     public Long getEndTimeInMillis() {
         return endTimeInMillis;
     }
 
     /**
-     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
-     * field instead.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState field instead.
+     **/
+    public enum Status {
         NotStarted("NOT_STARTED"),
         Queued("QUEUED"),
         Running("RUNNING"),
@@ -607,8 +607,8 @@ public final class RuntimeOperatorSummary
         Error("ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -647,44 +647,43 @@ public final class RuntimeOperatorSummary
         }
     };
     /**
-     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
-     * field instead.
-     */
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState field instead.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState
-     * field instead.
-     *
+     * Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState field instead.
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The type of the object. */
+    /**
+     * The type of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The type of the object.
-     *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -697,54 +696,51 @@ public final class RuntimeOperatorSummary
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The version of the object that is used to track changes in the object instance. */
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper
-     * case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper
-     * case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** status */
-    public enum ExecutionState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * status
+     **/
+    public enum ExecutionState {
         NotStarted("NOT_STARTED"),
         Running("RUNNING"),
         Terminated("TERMINATED"),
@@ -755,8 +751,8 @@ public final class RuntimeOperatorSummary
         Ignored("IGNORED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -795,49 +791,44 @@ public final class RuntimeOperatorSummary
             return UnknownEnumValue;
         }
     };
-    /** status */
+    /**
+     * status
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionState")
     private final ExecutionState executionState;
 
     /**
      * status
-     *
      * @return the value
-     */
+     **/
     public ExecutionState getExecutionState() {
         return executionState;
     }
 
     /**
-     * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be
-     * configured when the pipeline is executed.
-     */
+     * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
     /**
-     * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be
-     * configured when the pipeline is executed.
-     *
+     * A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
      * @return the value
-     */
+     **/
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -856,34 +847,38 @@ public final class RuntimeOperatorSummary
         return operator;
     }
 
-    /** The configuration provider bindings. */
+    /**
+     * The configuration provider bindings.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputs")
     private final java.util.Map<String, ParameterValue> inputs;
 
     /**
      * The configuration provider bindings.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, ParameterValue> getInputs() {
         return inputs;
     }
 
-    /** The configuration provider bindings. */
+    /**
+     * The configuration provider bindings.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputs")
     private final java.util.Map<String, ParameterValue> outputs;
 
     /**
      * The configuration provider bindings.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, ParameterValue> getOutputs() {
         return outputs;
     }
 
-    /** The type of task run. */
-    public enum TaskType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of task run.
+     **/
+    public enum TaskType {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
         PipelineTask("PIPELINE_TASK"),
@@ -892,8 +887,8 @@ public final class RuntimeOperatorSummary
         RestTask("REST_TASK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -932,15 +927,16 @@ public final class RuntimeOperatorSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of task run. */
+    /**
+     * The type of task run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final TaskType taskType;
 
     /**
      * The type of task run.
-     *
      * @return the value
-     */
+     **/
     public TaskType getTaskType() {
         return taskType;
     }
@@ -952,8 +948,10 @@ public final class RuntimeOperatorSummary
         return configProvider;
     }
 
-    /** The type of Runtime Operator */
-    public enum OperatorType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of Runtime Operator
+     **/
+    public enum OperatorType {
         BashOperator("BASH_OPERATOR"),
         TaskOperator("TASK_OPERATOR"),
         RestOperator("REST_OPERATOR"),
@@ -966,8 +964,8 @@ public final class RuntimeOperatorSummary
         ActualEndOperator("ACTUAL_END_OPERATOR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1006,28 +1004,30 @@ public final class RuntimeOperatorSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of Runtime Operator */
+    /**
+     * The type of Runtime Operator
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatorType")
     private final OperatorType operatorType;
 
     /**
      * The type of Runtime Operator
-     *
      * @return the value
-     */
+     **/
     public OperatorType getOperatorType() {
         return operatorType;
     }
 
-    /** A map metrics for the task run. */
+    /**
+     * A map metrics for the task run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.Map<String, Float> metrics;
 
     /**
      * A map metrics for the task run.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Float> getMetrics() {
         return metrics;
     }
@@ -1039,7 +1039,6 @@ public final class RuntimeOperatorSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

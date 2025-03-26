@@ -5,34 +5,34 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The details of the volume to attach. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The details of the volume to attach.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = LaunchAttachVolumeDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = LaunchAttachVolumeDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LaunchAttachParavirtualizedVolumeDetails.class,
-            name = "paravirtualized"),
+        value = LaunchAttachParavirtualizedVolumeDetails.class,
+        name = "paravirtualized"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LaunchAttachIScsiVolumeDetails.class,
-            name = "iscsi")
+        value = LaunchAttachIScsiVolumeDetails.class,
+        name = "iscsi"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class LaunchAttachVolumeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class LaunchAttachVolumeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "device",
@@ -59,86 +59,85 @@ public class LaunchAttachVolumeDetails
     }
 
     /**
-     * The device name. To retrieve a list of devices for a given instance, see {@link
-     * #listInstanceDevices(ListInstanceDevicesRequest) listInstanceDevices}.
-     */
+     * The device name. To retrieve a list of devices for a given instance, see {@link #listInstanceDevices(ListInstanceDevicesRequest) listInstanceDevices}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("device")
     private final String device;
 
     /**
-     * The device name. To retrieve a list of devices for a given instance, see {@link
-     * #listInstanceDevices(ListInstanceDevicesRequest) listInstanceDevices}.
-     *
+     * The device name. To retrieve a list of devices for a given instance, see {@link #listInstanceDevices(ListInstanceDevicesRequest) listInstanceDevices}.
      * @return the value
-     */
+     **/
     public String getDevice() {
         return device;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Whether the attachment was created in read-only mode. */
+    /**
+     * Whether the attachment was created in read-only mode.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     private final Boolean isReadOnly;
 
     /**
      * Whether the attachment was created in read-only mode.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsReadOnly() {
         return isReadOnly;
     }
 
     /**
-     * Whether the attachment should be created in shareable mode. If an attachment is created in
-     * shareable mode, then other instances can attach the same volume, provided that they also
-     * create their attachments in shareable mode. Only certain volume types can be attached in
-     * shareable mode. Defaults to false if not specified.
-     */
+     * Whether the attachment should be created in shareable mode. If an attachment
+     * is created in shareable mode, then other instances can attach the same volume, provided
+     * that they also create their attachments in shareable mode. Only certain volume types can
+     * be attached in shareable mode. Defaults to false if not specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
     private final Boolean isShareable;
 
     /**
-     * Whether the attachment should be created in shareable mode. If an attachment is created in
-     * shareable mode, then other instances can attach the same volume, provided that they also
-     * create their attachments in shareable mode. Only certain volume types can be attached in
-     * shareable mode. Defaults to false if not specified.
+     * Whether the attachment should be created in shareable mode. If an attachment
+     * is created in shareable mode, then other instances can attach the same volume, provided
+     * that they also create their attachments in shareable mode. Only certain volume types can
+     * be attached in shareable mode. Defaults to false if not specified.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsShareable() {
         return isShareable;
     }
 
     /**
-     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from
-     * the request.
-     */
+     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
     /**
-     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from
-     * the request.
+     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
      *
      * @return the value
-     */
+     **/
     public String getVolumeId() {
         return volumeId;
     }
@@ -157,7 +156,6 @@ public class LaunchAttachVolumeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

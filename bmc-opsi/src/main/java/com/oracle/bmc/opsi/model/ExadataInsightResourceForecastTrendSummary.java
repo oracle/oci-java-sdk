@@ -6,23 +6,21 @@ package com.oracle.bmc.opsi.model;
 
 /**
  * List of resource id, name , capacity insight value, pattern, historical usage and projected data.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExadataInsightResourceForecastTrendSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExadataInsightResourceForecastTrendSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExadataInsightResourceForecastTrendSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -54,109 +52,112 @@ public final class ExadataInsightResourceForecastTrendSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database insight resource.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database insight resource.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the resource. */
+        /**
+         * The name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the resource.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Days to reach capacity for a storage server */
+        /**
+         * Days to reach capacity for a storage server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReachCapacity")
         private Integer daysToReachCapacity;
 
         /**
          * Days to reach capacity for a storage server
-         *
          * @param daysToReachCapacity the value to set
          * @return this builder
-         */
+         **/
         public Builder daysToReachCapacity(Integer daysToReachCapacity) {
             this.daysToReachCapacity = daysToReachCapacity;
             this.__explicitlySet__.add("daysToReachCapacity");
             return this;
         }
-        /** Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast. */
+        /**
+         * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
         private String selectedForecastAlgorithm;
 
         /**
          * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
-         *
          * @param selectedForecastAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder selectedForecastAlgorithm(String selectedForecastAlgorithm) {
             this.selectedForecastAlgorithm = selectedForecastAlgorithm;
             this.__explicitlySet__.add("selectedForecastAlgorithm");
             return this;
         }
-        /** Time series patterns used in the forecasting. */
+        /**
+         * Time series patterns used in the forecasting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private Pattern pattern;
 
         /**
          * Time series patterns used in the forecasting.
-         *
          * @param pattern the value to set
          * @return this builder
-         */
+         **/
         public Builder pattern(Pattern pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
             return this;
         }
-        /** Time series data used for the forecast analysis. */
+        /**
+         * Time series data used for the forecast analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
         private java.util.List<HistoricalDataItem> historicalData;
 
         /**
          * Time series data used for the forecast analysis.
-         *
          * @param historicalData the value to set
          * @return this builder
-         */
+         **/
         public Builder historicalData(java.util.List<HistoricalDataItem> historicalData) {
             this.historicalData = historicalData;
             this.__explicitlySet__.add("historicalData");
             return this;
         }
-        /** Time series data result of the forecasting analysis. */
+        /**
+         * Time series data result of the forecasting analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
         private java.util.List<ProjectedDataItem> projectedData;
 
         /**
          * Time series data result of the forecasting analysis.
-         *
          * @param projectedData the value to set
          * @return this builder
-         */
+         **/
         public Builder projectedData(java.util.List<ProjectedDataItem> projectedData) {
             this.projectedData = projectedData;
             this.__explicitlySet__.add("projectedData");
@@ -209,7 +210,9 @@ public final class ExadataInsightResourceForecastTrendSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -219,63 +222,65 @@ public final class ExadataInsightResourceForecastTrendSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database insight resource.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database insight resource.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the resource. */
+    /**
+     * The name of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Days to reach capacity for a storage server */
+    /**
+     * Days to reach capacity for a storage server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReachCapacity")
     private final Integer daysToReachCapacity;
 
     /**
      * Days to reach capacity for a storage server
-     *
      * @return the value
-     */
+     **/
     public Integer getDaysToReachCapacity() {
         return daysToReachCapacity;
     }
 
-    /** Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast. */
+    /**
+     * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
     private final String selectedForecastAlgorithm;
 
     /**
      * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
-     *
      * @return the value
-     */
+     **/
     public String getSelectedForecastAlgorithm() {
         return selectedForecastAlgorithm;
     }
 
-    /** Time series patterns used in the forecasting. */
-    public enum Pattern implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Time series patterns used in the forecasting.
+     **/
+    public enum Pattern {
         Linear("LINEAR"),
         MonthlySeasons("MONTHLY_SEASONS"),
         MonthlyAndYearlySeasons("MONTHLY_AND_YEARLY_SEASONS"),
@@ -286,8 +291,8 @@ public final class ExadataInsightResourceForecastTrendSummary
         YearlySeasons("YEARLY_SEASONS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -326,41 +331,44 @@ public final class ExadataInsightResourceForecastTrendSummary
             return UnknownEnumValue;
         }
     };
-    /** Time series patterns used in the forecasting. */
+    /**
+     * Time series patterns used in the forecasting.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final Pattern pattern;
 
     /**
      * Time series patterns used in the forecasting.
-     *
      * @return the value
-     */
+     **/
     public Pattern getPattern() {
         return pattern;
     }
 
-    /** Time series data used for the forecast analysis. */
+    /**
+     * Time series data used for the forecast analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("historicalData")
     private final java.util.List<HistoricalDataItem> historicalData;
 
     /**
      * Time series data used for the forecast analysis.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HistoricalDataItem> getHistoricalData() {
         return historicalData;
     }
 
-    /** Time series data result of the forecasting analysis. */
+    /**
+     * Time series data result of the forecasting analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectedData")
     private final java.util.List<ProjectedDataItem> projectedData;
 
     /**
      * Time series data result of the forecasting analysis.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ProjectedDataItem> getProjectedData() {
         return projectedData;
     }
@@ -372,7 +380,6 @@ public final class ExadataInsightResourceForecastTrendSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

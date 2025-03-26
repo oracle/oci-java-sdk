@@ -6,143 +6,160 @@ package com.oracle.bmc.capacitymanagement.requests;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlocksExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListInternalOccHandoverResourceBlocksRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlocksExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInternalOccHandoverResourceBlocksRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class ListInternalOccHandoverResourceBlocksRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The namespace enum value that needs to be passed as a required query parameter. */
+    /**
+     * The namespace enum value that needs to be passed as a required query parameter.
+     *
+     */
     private com.oracle.bmc.capacitymanagement.model.Namespace namespace;
 
-    /** The namespace enum value that needs to be passed as a required query parameter. */
+    /**
+     * The namespace enum value that needs to be passed as a required query parameter.
+     *
+     */
     public com.oracle.bmc.capacitymanagement.model.Namespace getNamespace() {
         return namespace;
     }
     /**
-     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be
-     * used for authorization purposes.
+     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     private String compartmentId;
 
     /**
-     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be
-     * used for authorization purposes.
+     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The customer group ocid by which we would filter the list. */
+    /**
+     * The customer group ocid by which we would filter the list.
+     */
     private String occCustomerGroupId;
 
-    /** The customer group ocid by which we would filter the list. */
+    /**
+     * The customer group ocid by which we would filter the list.
+     */
     public String getOccCustomerGroupId() {
         return occCustomerGroupId;
     }
     /**
      * A filter to return only the list of resources that match the name provided in this filter.
+     *
      */
     private String handoverResourceName;
 
     /**
      * A filter to return only the list of resources that match the name provided in this filter.
+     *
      */
     public String getHandoverResourceName() {
         return handoverResourceName;
     }
     /**
-     * This filter helps in fetching all handed over resources for which the recordDate is greater
-     * than or equal to the startDate.
+     * This filter helps in fetching all handed over resources for which the recordDate is greater than or equal to the startDate.
+     *
      */
     private java.util.Date handoverDateGreaterThanOrEqualTo;
 
     /**
-     * This filter helps in fetching all handed over resources for which the recordDate is greater
-     * than or equal to the startDate.
+     * This filter helps in fetching all handed over resources for which the recordDate is greater than or equal to the startDate.
+     *
      */
     public java.util.Date getHandoverDateGreaterThanOrEqualTo() {
         return handoverDateGreaterThanOrEqualTo;
     }
     /**
-     * This filter helps in fetching all handed over resources for which the recordDate is less than
-     * or equal to the endDate.
+     * This filter helps in fetching all handed over resources for which the recordDate is less than or equal to the endDate.
+     *
      */
     private java.util.Date handoverDateLessThanOrEqualTo;
 
     /**
-     * This filter helps in fetching all handed over resources for which the recordDate is less than
-     * or equal to the endDate.
+     * This filter helps in fetching all handed over resources for which the recordDate is less than or equal to the endDate.
+     *
      */
     public java.util.Date getHandoverDateLessThanOrEqualTo() {
         return handoverDateLessThanOrEqualTo;
     }
     /**
-     * This filter helps in fetching the handed over resource for which the occHandoverResourceId is
-     * equal to the one provided here.
+     * This filter helps in fetching the handed over resource for which the occHandoverResourceId is equal to the one provided here.
+     *
      */
     private String occHandoverResourceBlockId;
 
     /**
-     * This filter helps in fetching the handed over resource for which the occHandoverResourceId is
-     * equal to the one provided here.
+     * This filter helps in fetching the handed over resource for which the occHandoverResourceId is equal to the one provided here.
+     *
      */
     public String getOccHandoverResourceBlockId() {
         return occHandoverResourceBlockId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.capacitymanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for handoverDate
-     * is chronological order(latest date item at the end).
+     * The field to sort by. Only one sort order may be provided.
+     * The default order for handoverDate is chronological order(latest date item at the end).
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for handoverDate
-     * is chronological order(latest date item at the end).
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided.
+     * The default order for handoverDate is chronological order(latest date item at the end).
+     *
+     **/
+    public enum SortBy {
         HandoverDate("handoverDate"),
         ;
 
@@ -175,8 +192,9 @@ public class ListInternalOccHandoverResourceBlocksRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for handoverDate
-     * is chronological order(latest date item at the end).
+     * The field to sort by. Only one sort order may be provided.
+     * The default order for handoverDate is chronological order(latest date item at the end).
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -185,10 +203,14 @@ public class ListInternalOccHandoverResourceBlocksRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListInternalOccHandoverResourceBlocksRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The namespace enum value that needs to be passed as a required query parameter. */
+        /**
+         * The namespace enum value that needs to be passed as a required query parameter.
+         *
+         */
         private com.oracle.bmc.capacitymanagement.model.Namespace namespace = null;
 
         /**
@@ -203,15 +225,12 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * The ocid of the compartment or tenancy in which resources are to be listed. This will
-         * also be used for authorization purposes.
+         * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
          */
         private String compartmentId = null;
 
         /**
-         * The ocid of the compartment or tenancy in which resources are to be listed. This will
-         * also be used for authorization purposes.
-         *
+         * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -220,12 +239,13 @@ public class ListInternalOccHandoverResourceBlocksRequest
             return this;
         }
 
-        /** The customer group ocid by which we would filter the list. */
+        /**
+         * The customer group ocid by which we would filter the list.
+         */
         private String occCustomerGroupId = null;
 
         /**
          * The customer group ocid by which we would filter the list.
-         *
          * @param occCustomerGroupId the value to set
          * @return this builder instance
          */
@@ -235,14 +255,13 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * A filter to return only the list of resources that match the name provided in this
-         * filter.
+         * A filter to return only the list of resources that match the name provided in this filter.
+         *
          */
         private String handoverResourceName = null;
 
         /**
-         * A filter to return only the list of resources that match the name provided in this
-         * filter.
+         * A filter to return only the list of resources that match the name provided in this filter.
          *
          * @param handoverResourceName the value to set
          * @return this builder instance
@@ -253,14 +272,13 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * This filter helps in fetching all handed over resources for which the recordDate is
-         * greater than or equal to the startDate.
+         * This filter helps in fetching all handed over resources for which the recordDate is greater than or equal to the startDate.
+         *
          */
         private java.util.Date handoverDateGreaterThanOrEqualTo = null;
 
         /**
-         * This filter helps in fetching all handed over resources for which the recordDate is
-         * greater than or equal to the startDate.
+         * This filter helps in fetching all handed over resources for which the recordDate is greater than or equal to the startDate.
          *
          * @param handoverDateGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -272,14 +290,13 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * This filter helps in fetching all handed over resources for which the recordDate is less
-         * than or equal to the endDate.
+         * This filter helps in fetching all handed over resources for which the recordDate is less than or equal to the endDate.
+         *
          */
         private java.util.Date handoverDateLessThanOrEqualTo = null;
 
         /**
-         * This filter helps in fetching all handed over resources for which the recordDate is less
-         * than or equal to the endDate.
+         * This filter helps in fetching all handed over resources for which the recordDate is less than or equal to the endDate.
          *
          * @param handoverDateLessThanOrEqualTo the value to set
          * @return this builder instance
@@ -290,14 +307,13 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * This filter helps in fetching the handed over resource for which the
-         * occHandoverResourceId is equal to the one provided here.
+         * This filter helps in fetching the handed over resource for which the occHandoverResourceId is equal to the one provided here.
+         *
          */
         private String occHandoverResourceBlockId = null;
 
         /**
-         * This filter helps in fetching the handed over resource for which the
-         * occHandoverResourceId is equal to the one provided here.
+         * This filter helps in fetching the handed over resource for which the occHandoverResourceId is equal to the one provided here.
          *
          * @param occHandoverResourceBlockId the value to set
          * @return this builder instance
@@ -307,12 +323,13 @@ public class ListInternalOccHandoverResourceBlocksRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -322,15 +339,12 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -340,14 +354,15 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -357,12 +372,13 @@ public class ListInternalOccHandoverResourceBlocksRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -372,14 +388,15 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * handoverDate is chronological order(latest date item at the end).
+         * The field to sort by. Only one sort order may be provided.
+         * The default order for handoverDate is chronological order(latest date item at the end).
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * handoverDate is chronological order(latest date item at the end).
+         * The field to sort by. Only one sort order may be provided.
+         * The default order for handoverDate is chronological order(latest date item at the end).
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -391,19 +408,18 @@ public class ListInternalOccHandoverResourceBlocksRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -415,7 +431,6 @@ public class ListInternalOccHandoverResourceBlocksRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListInternalOccHandoverResourceBlocksRequest o) {
@@ -437,14 +452,12 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * Build the instance of ListInternalOccHandoverResourceBlocksRequest as configured by this
-         * builder
+         * Build the instance of ListInternalOccHandoverResourceBlocksRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListInternalOccHandoverResourceBlocksRequest
          */
@@ -456,11 +469,9 @@ public class ListInternalOccHandoverResourceBlocksRequest
         }
 
         /**
-         * Build the instance of ListInternalOccHandoverResourceBlocksRequest as configured by this
-         * builder
+         * Build the instance of ListInternalOccHandoverResourceBlocksRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListInternalOccHandoverResourceBlocksRequest
@@ -481,16 +492,12 @@ public class ListInternalOccHandoverResourceBlocksRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListInternalOccHandoverResourceBlocksRequest(namespace, compartmentId,
-            // occCustomerGroupId, handoverResourceName, handoverDateGreaterThanOrEqualTo,
-            // handoverDateLessThanOrEqualTo, occHandoverResourceBlockId, limit, page, opcRequestId,
-            // sortOrder, sortBy);
+            // new ListInternalOccHandoverResourceBlocksRequest(namespace, compartmentId, occCustomerGroupId, handoverResourceName, handoverDateGreaterThanOrEqualTo, handoverDateLessThanOrEqualTo, occHandoverResourceBlockId, limit, page, opcRequestId, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -511,7 +518,6 @@ public class ListInternalOccHandoverResourceBlocksRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

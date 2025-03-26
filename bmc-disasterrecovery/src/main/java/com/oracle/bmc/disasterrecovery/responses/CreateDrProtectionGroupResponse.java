@@ -6,14 +6,15 @@ package com.oracle.bmc.disasterrecovery.responses;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** A URI for the new resource which was created by the request. */
+    /**
+     * A URI for the new resource which was created by the request.
+     */
     private String location;
 
     /**
      * A URI for the new resource which was created by the request.
-     *
      * @return the value
      */
     public String getLocation() {
@@ -21,14 +22,13 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -37,16 +37,13 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this to
-     * query status of the asynchronous operation. Use {@link #getWorkRequest(GetWorkRequestRequest)
-     * getWorkRequest} with this OCID to track the status of the request.
+     * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this to query status of the asynchronous operation. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this to
-     * query status of the asynchronous operation. Use {@link #getWorkRequest(GetWorkRequestRequest)
-     * getWorkRequest} with this OCID to track the status of the request.
+     * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this to query status of the asynchronous operation. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
      *
      * @return the value
      */
@@ -55,14 +52,15 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -70,12 +68,13 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned {@code DrProtectionGroup} instance. */
+    /**
+     * The returned DrProtectionGroup instance.
+     */
     private com.oracle.bmc.disasterrecovery.model.DrProtectionGroup drProtectionGroup;
 
     /**
-     * The returned {@code DrProtectionGroup} instance.
-     *
+     * The returned DrProtectionGroup instance.
      * @return the value
      */
     public com.oracle.bmc.disasterrecovery.model.DrProtectionGroup getDrProtectionGroup() {
@@ -93,7 +92,7 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateDrProtectionGroupResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcWorkRequestId,
@@ -107,31 +106,28 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
         this.drProtectionGroup = drProtectionGroup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateDrProtectionGroupResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** A URI for the new resource which was created by the request. */
+        /**
+         * A URI for the new resource which was created by the request.
+         */
         private String location;
 
         /**
          * A URI for the new resource which was created by the request.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -141,16 +137,13 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -161,18 +154,13 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this
-         * to query status of the asynchronous operation. Use {@link
-         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status
-         * of the request.
+         * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this to query status of the asynchronous operation. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this
-         * to query status of the asynchronous operation. Use {@link
-         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status
-         * of the request.
+         * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this to query status of the asynchronous operation. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -183,14 +171,15 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -200,12 +189,13 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code DrProtectionGroup} instance. */
+        /**
+         * The returned DrProtectionGroup instance.
+         */
         private com.oracle.bmc.disasterrecovery.model.DrProtectionGroup drProtectionGroup;
 
         /**
-         * The returned {@code DrProtectionGroup} instance.
-         *
+         * The returned DrProtectionGroup instance.
          * @param drProtectionGroup the value to set
          * @return this builder
          */
@@ -217,10 +207,8 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateDrProtectionGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -235,10 +223,8 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateDrProtectionGroupResponse build() {
             return new CreateDrProtectionGroupResponse(
                     __httpStatusCode__,
@@ -253,7 +239,6 @@ public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

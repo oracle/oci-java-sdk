@@ -5,45 +5,45 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * An object that represents the action of configuring an IP max connection rule which specifies how
- * many connections IPs can make to a listener. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * An object that represents the action of configuring an IP max connection rule which specifies
+ * how many connections IPs can make to a listener.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IpBasedMaxConnectionsRule.Builder.class)
+    builder = IpBasedMaxConnectionsRule.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "action")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "action"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IpBasedMaxConnectionsRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The maximum number of connections that the any IP can make to a listener unless the IP is
-         * mentioned in maxConnections. If no defaultMaxConnections is specified the default is
-         * unlimited.
-         */
+         * The maximum number of connections that the any IP can make to a listener unless the IP is mentioned
+         * in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMaxConnections")
         private Integer defaultMaxConnections;
 
         /**
-         * The maximum number of connections that the any IP can make to a listener unless the IP is
-         * mentioned in maxConnections. If no defaultMaxConnections is specified the default is
-         * unlimited.
+         * The maximum number of connections that the any IP can make to a listener unless the IP is mentioned
+         * in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
          *
          * @param defaultMaxConnections the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultMaxConnections(Integer defaultMaxConnections) {
             this.defaultMaxConnections = defaultMaxConnections;
             this.__explicitlySet__.add("defaultMaxConnections");
@@ -52,7 +52,8 @@ public final class IpBasedMaxConnectionsRule extends Rule {
         /**
          * An array of IPs that have a maxConnection setting different than the default and what
          * that maxConnection setting is
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipMaxConnections")
         private java.util.List<IpMaxConnections> ipMaxConnections;
 
@@ -62,7 +63,7 @@ public final class IpBasedMaxConnectionsRule extends Rule {
          *
          * @param ipMaxConnections the value to set
          * @return this builder
-         */
+         **/
         public Builder ipMaxConnections(java.util.List<IpMaxConnections> ipMaxConnections) {
             this.ipMaxConnections = ipMaxConnections;
             this.__explicitlySet__.add("ipMaxConnections");
@@ -94,7 +95,9 @@ public final class IpBasedMaxConnectionsRule extends Rule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,37 +115,37 @@ public final class IpBasedMaxConnectionsRule extends Rule {
     }
 
     /**
-     * The maximum number of connections that the any IP can make to a listener unless the IP is
-     * mentioned in maxConnections. If no defaultMaxConnections is specified the default is
-     * unlimited.
-     */
+     * The maximum number of connections that the any IP can make to a listener unless the IP is mentioned
+     * in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMaxConnections")
     private final Integer defaultMaxConnections;
 
     /**
-     * The maximum number of connections that the any IP can make to a listener unless the IP is
-     * mentioned in maxConnections. If no defaultMaxConnections is specified the default is
-     * unlimited.
+     * The maximum number of connections that the any IP can make to a listener unless the IP is mentioned
+     * in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
      *
      * @return the value
-     */
+     **/
     public Integer getDefaultMaxConnections() {
         return defaultMaxConnections;
     }
 
     /**
-     * An array of IPs that have a maxConnection setting different than the default and what that
-     * maxConnection setting is
-     */
+     * An array of IPs that have a maxConnection setting different than the default and what
+     * that maxConnection setting is
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipMaxConnections")
     private final java.util.List<IpMaxConnections> ipMaxConnections;
 
     /**
-     * An array of IPs that have a maxConnection setting different than the default and what that
-     * maxConnection setting is
+     * An array of IPs that have a maxConnection setting different than the default and what
+     * that maxConnection setting is
      *
      * @return the value
-     */
+     **/
     public java.util.List<IpMaxConnections> getIpMaxConnections() {
         return ipMaxConnections;
     }
@@ -154,7 +157,6 @@ public final class IpBasedMaxConnectionsRule extends Rule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

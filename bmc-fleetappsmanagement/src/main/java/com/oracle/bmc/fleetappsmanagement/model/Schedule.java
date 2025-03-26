@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Schedule Information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Schedule Information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Schedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -44,76 +42,81 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Schedule Type */
+        /**
+         * Schedule Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Schedule Type
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Start Date for the schedule. An RFC3339 formatted datetime string */
+        /**
+         * Start Date for the schedule. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionStartdate")
         private java.util.Date executionStartdate;
 
         /**
          * Start Date for the schedule. An RFC3339 formatted datetime string
-         *
          * @param executionStartdate the value to set
          * @return this builder
-         */
+         **/
         public Builder executionStartdate(java.util.Date executionStartdate) {
             this.executionStartdate = executionStartdate;
             this.__explicitlySet__.add("executionStartdate");
             return this;
         }
-        /** Provide MaintenanceWindowId if Schedule Type is Maintenance Window */
+        /**
+         * Provide MaintenanceWindowId if Schedule Type is Maintenance Window
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowId")
         private String maintenanceWindowId;
 
         /**
          * Provide MaintenanceWindowId if Schedule Type is Maintenance Window
-         *
          * @param maintenanceWindowId the value to set
          * @return this builder
-         */
+         **/
         public Builder maintenanceWindowId(String maintenanceWindowId) {
             this.maintenanceWindowId = maintenanceWindowId;
             this.__explicitlySet__.add("maintenanceWindowId");
             return this;
         }
-        /** Recurrence rule specification if Schedule Type is Custom and Recurring */
+        /**
+         * Recurrence rule specification if Schedule Type is Custom and Recurring
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recurrences")
         private String recurrences;
 
         /**
          * Recurrence rule specification if Schedule Type is Custom and Recurring
-         *
          * @param recurrences the value to set
          * @return this builder
-         */
+         **/
         public Builder recurrences(String recurrences) {
             this.recurrences = recurrences;
             this.__explicitlySet__.add("recurrences");
             return this;
         }
-        /** Duration if schedule type is Custom */
+        /**
+         * Duration if schedule type is Custom
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private String duration;
 
         /**
          * Duration if schedule type is Custom
-         *
          * @param duration the value to set
          * @return this builder
-         */
+         **/
         public Builder duration(String duration) {
             this.duration = duration;
             this.__explicitlySet__.add("duration");
@@ -158,7 +161,9 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,14 +172,16 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** Schedule Type */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Schedule Type
+     **/
+    public enum Type {
         Custom("CUSTOM"),
         MaintenanceWindow("MAINTENANCE_WINDOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -211,67 +218,72 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** Schedule Type */
+    /**
+     * Schedule Type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Schedule Type
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** Start Date for the schedule. An RFC3339 formatted datetime string */
+    /**
+     * Start Date for the schedule. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionStartdate")
     private final java.util.Date executionStartdate;
 
     /**
      * Start Date for the schedule. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getExecutionStartdate() {
         return executionStartdate;
     }
 
-    /** Provide MaintenanceWindowId if Schedule Type is Maintenance Window */
+    /**
+     * Provide MaintenanceWindowId if Schedule Type is Maintenance Window
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowId")
     private final String maintenanceWindowId;
 
     /**
      * Provide MaintenanceWindowId if Schedule Type is Maintenance Window
-     *
      * @return the value
-     */
+     **/
     public String getMaintenanceWindowId() {
         return maintenanceWindowId;
     }
 
-    /** Recurrence rule specification if Schedule Type is Custom and Recurring */
+    /**
+     * Recurrence rule specification if Schedule Type is Custom and Recurring
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recurrences")
     private final String recurrences;
 
     /**
      * Recurrence rule specification if Schedule Type is Custom and Recurring
-     *
      * @return the value
-     */
+     **/
     public String getRecurrences() {
         return recurrences;
     }
 
-    /** Duration if schedule type is Custom */
+    /**
+     * Duration if schedule type is Custom
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final String duration;
 
     /**
      * Duration if schedule type is Custom
-     *
      * @return the value
-     */
+     **/
     public String getDuration() {
         return duration;
     }
@@ -283,7 +295,6 @@ public final class Schedule extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,9 +6,12 @@ package com.oracle.bmc.core.responses;
 
 import com.oracle.bmc.core.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,17 +41,16 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -56,7 +59,10 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
         return opcWorkRequestId;
     }
 
-    /** Location of the resource. */
+    /**
+     * Location of the resource.
+     *
+     */
     private String location;
 
     /**
@@ -68,7 +74,10 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
         return location;
     }
 
-    /** Location of the resource. */
+    /**
+     * Location of the resource.
+     *
+     */
     private String contentLocation;
 
     /**
@@ -80,12 +89,13 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
         return contentLocation;
     }
 
-    /** The returned {@code VolumeBackup} instance. */
+    /**
+     * The returned VolumeBackup instance.
+     */
     private com.oracle.bmc.core.model.VolumeBackup volumeBackup;
 
     /**
-     * The returned {@code VolumeBackup} instance.
-     *
+     * The returned VolumeBackup instance.
      * @return the value
      */
     public com.oracle.bmc.core.model.VolumeBackup getVolumeBackup() {
@@ -104,7 +114,7 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CopyVolumeBackupResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -120,25 +130,25 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
         this.volumeBackup = volumeBackup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CopyVolumeBackupResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -153,14 +163,15 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -171,17 +182,16 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
@@ -192,7 +202,10 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Location of the resource. */
+        /**
+         * Location of the resource.
+         *
+         */
         private String location;
 
         /**
@@ -206,7 +219,10 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Location of the resource. */
+        /**
+         * Location of the resource.
+         *
+         */
         private String contentLocation;
 
         /**
@@ -220,12 +236,13 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code VolumeBackup} instance. */
+        /**
+         * The returned VolumeBackup instance.
+         */
         private com.oracle.bmc.core.model.VolumeBackup volumeBackup;
 
         /**
-         * The returned {@code VolumeBackup} instance.
-         *
+         * The returned VolumeBackup instance.
          * @param volumeBackup the value to set
          * @return this builder
          */
@@ -236,10 +253,8 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CopyVolumeBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -255,10 +270,8 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CopyVolumeBackupResponse build() {
             return new CopyVolumeBackupResponse(
                     __httpStatusCode__,
@@ -274,7 +287,6 @@ public class CopyVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

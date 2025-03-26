@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.marketplace.model;
 
-/** Possible values for the pricing currency code. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-public enum PricingCurrencyEnum implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible values for the pricing currency code.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+public enum PricingCurrencyEnum {
     Usd("USD"),
     Cad("CAD"),
     Inr("INR"),

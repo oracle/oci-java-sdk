@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details of the user configured settings for viewing the metrics at project level. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Details of the user configured settings for viewing the metrics at project level.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SummarizeProjectRepositoryAnalyticsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SummarizeProjectRepositoryAnalyticsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeProjectRepositoryAnalyticsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "authorEmail",
@@ -49,91 +48,97 @@ public final class SummarizeProjectRepositoryAnalyticsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Email address of the author. */
+        /**
+         * Email address of the author.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authorEmail")
         private String authorEmail;
 
         /**
          * Email address of the author.
-         *
          * @param authorEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder authorEmail(String authorEmail) {
             this.authorEmail = authorEmail;
             this.__explicitlySet__.add("authorEmail");
             return this;
         }
-        /** The name of the metric to be filtered. */
+        /**
+         * The name of the metric to be filtered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryMetrics")
         private java.util.List<MetricName> repositoryMetrics;
 
         /**
          * The name of the metric to be filtered.
-         *
          * @param repositoryMetrics the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryMetrics(java.util.List<MetricName> repositoryMetrics) {
             this.repositoryMetrics = repositoryMetrics;
             this.__explicitlySet__.add("repositoryMetrics");
             return this;
         }
-        /** Metrics aggregated for the defined period. */
+        /**
+         * Metrics aggregated for the defined period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregationDuration")
         private AggregationDuration aggregationDuration;
 
         /**
          * Metrics aggregated for the defined period.
-         *
          * @param aggregationDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregationDuration(AggregationDuration aggregationDuration) {
             this.aggregationDuration = aggregationDuration;
             this.__explicitlySet__.add("aggregationDuration");
             return this;
         }
-        /** The beginning of the metric data query time range. */
+        /**
+         * The beginning of the metric data query time range.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private java.util.Date startTime;
 
         /**
          * The beginning of the metric data query time range.
-         *
          * @param startTime the value to set
          * @return this builder
-         */
+         **/
         public Builder startTime(java.util.Date startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
-        /** The end of the metric data query time range. */
+        /**
+         * The end of the metric data query time range.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTime")
         private java.util.Date endTime;
 
         /**
          * The end of the metric data query time range.
-         *
          * @param endTime the value to set
          * @return this builder
-         */
+         **/
         public Builder endTime(java.util.Date endTime) {
             this.endTime = endTime;
             this.__explicitlySet__.add("endTime");
             return this;
         }
-        /** Attribute by which metric data has to be grouped */
+        /**
+         * Attribute by which metric data has to be grouped
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private GroupBy groupBy;
 
         /**
          * Attribute by which metric data has to be grouped
-         *
          * @param groupBy the value to set
          * @return this builder
-         */
+         **/
         public Builder groupBy(GroupBy groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
@@ -182,7 +187,9 @@ public final class SummarizeProjectRepositoryAnalyticsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,34 +198,38 @@ public final class SummarizeProjectRepositoryAnalyticsDetails
         return new Builder().copy(this);
     }
 
-    /** Email address of the author. */
+    /**
+     * Email address of the author.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorEmail")
     private final String authorEmail;
 
     /**
      * Email address of the author.
-     *
      * @return the value
-     */
+     **/
     public String getAuthorEmail() {
         return authorEmail;
     }
 
-    /** The name of the metric to be filtered. */
+    /**
+     * The name of the metric to be filtered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryMetrics")
     private final java.util.List<MetricName> repositoryMetrics;
 
     /**
      * The name of the metric to be filtered.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MetricName> getRepositoryMetrics() {
         return repositoryMetrics;
     }
 
-    /** Metrics aggregated for the defined period. */
-    public enum AggregationDuration implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Metrics aggregated for the defined period.
+     **/
+    public enum AggregationDuration {
         Daily("DAILY"),
         Weekly("WEEKLY"),
         Monthly("MONTHLY"),
@@ -252,47 +263,52 @@ public final class SummarizeProjectRepositoryAnalyticsDetails
             throw new IllegalArgumentException("Invalid AggregationDuration: " + key);
         }
     };
-    /** Metrics aggregated for the defined period. */
+    /**
+     * Metrics aggregated for the defined period.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregationDuration")
     private final AggregationDuration aggregationDuration;
 
     /**
      * Metrics aggregated for the defined period.
-     *
      * @return the value
-     */
+     **/
     public AggregationDuration getAggregationDuration() {
         return aggregationDuration;
     }
 
-    /** The beginning of the metric data query time range. */
+    /**
+     * The beginning of the metric data query time range.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final java.util.Date startTime;
 
     /**
      * The beginning of the metric data query time range.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getStartTime() {
         return startTime;
     }
 
-    /** The end of the metric data query time range. */
+    /**
+     * The end of the metric data query time range.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
     private final java.util.Date endTime;
 
     /**
      * The end of the metric data query time range.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getEndTime() {
         return endTime;
     }
 
-    /** Attribute by which metric data has to be grouped */
-    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Attribute by which metric data has to be grouped
+     **/
+    public enum GroupBy {
         Author("AUTHOR"),
         ;
 
@@ -323,15 +339,16 @@ public final class SummarizeProjectRepositoryAnalyticsDetails
             throw new IllegalArgumentException("Invalid GroupBy: " + key);
         }
     };
-    /** Attribute by which metric data has to be grouped */
+    /**
+     * Attribute by which metric data has to be grouped
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final GroupBy groupBy;
 
     /**
      * Attribute by which metric data has to be grouped
-     *
      * @return the value
-     */
+     **/
     public GroupBy getGroupBy() {
         return groupBy;
     }
@@ -343,7 +360,6 @@ public final class SummarizeProjectRepositoryAnalyticsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

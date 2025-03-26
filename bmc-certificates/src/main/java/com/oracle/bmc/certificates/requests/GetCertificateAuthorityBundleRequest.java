@@ -6,62 +6,71 @@ package com.oracle.bmc.certificates.requests;
 
 import com.oracle.bmc.certificates.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/GetCertificateAuthorityBundleExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetCertificateAuthorityBundleRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificates/GetCertificateAuthorityBundleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCertificateAuthorityBundleRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class GetCertificateAuthorityBundleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the certificate authority (CA). */
+    /**
+     * The OCID of the certificate authority (CA).
+     */
     private String certificateAuthorityId;
 
-    /** The OCID of the certificate authority (CA). */
+    /**
+     * The OCID of the certificate authority (CA).
+     */
     public String getCertificateAuthorityId() {
         return certificateAuthorityId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The version number of the certificate authority (CA). */
+    /**
+     * The version number of the certificate authority (CA).
+     */
     private Long versionNumber;
 
-    /** The version number of the certificate authority (CA). */
+    /**
+     * The version number of the certificate authority (CA).
+     */
     public Long getVersionNumber() {
         return versionNumber;
     }
     /**
-     * The name of the certificate authority (CA). (This might be referred to as the name of the CA
-     * version, as every CA consists of at least one version.) Names are unique across versions of a
-     * given CA.
+     * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
+     *
      */
     private String certificateAuthorityVersionName;
 
     /**
-     * The name of the certificate authority (CA). (This might be referred to as the name of the CA
-     * version, as every CA consists of at least one version.) Names are unique across versions of a
-     * given CA.
+     * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
+     *
      */
     public String getCertificateAuthorityVersionName() {
         return certificateAuthorityVersionName;
     }
-    /** The rotation state of the certificate version. */
+    /**
+     * The rotation state of the certificate version.
+     */
     private Stage stage;
 
-    /** The rotation state of the certificate version. */
-    public enum Stage implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The rotation state of the certificate version.
+     **/
+    public enum Stage {
         Current("CURRENT"),
         Pending("PENDING"),
         Latest("LATEST"),
@@ -97,7 +106,9 @@ public class GetCertificateAuthorityBundleRequest
         }
     };
 
-    /** The rotation state of the certificate version. */
+    /**
+     * The rotation state of the certificate version.
+     */
     public Stage getStage() {
         return stage;
     }
@@ -105,15 +116,17 @@ public class GetCertificateAuthorityBundleRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetCertificateAuthorityBundleRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the certificate authority (CA). */
+        /**
+         * The OCID of the certificate authority (CA).
+         */
         private String certificateAuthorityId = null;
 
         /**
          * The OCID of the certificate authority (CA).
-         *
          * @param certificateAuthorityId the value to set
          * @return this builder instance
          */
@@ -123,14 +136,15 @@ public class GetCertificateAuthorityBundleRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -140,12 +154,13 @@ public class GetCertificateAuthorityBundleRequest
             return this;
         }
 
-        /** The version number of the certificate authority (CA). */
+        /**
+         * The version number of the certificate authority (CA).
+         */
         private Long versionNumber = null;
 
         /**
          * The version number of the certificate authority (CA).
-         *
          * @param versionNumber the value to set
          * @return this builder instance
          */
@@ -155,16 +170,13 @@ public class GetCertificateAuthorityBundleRequest
         }
 
         /**
-         * The name of the certificate authority (CA). (This might be referred to as the name of the
-         * CA version, as every CA consists of at least one version.) Names are unique across
-         * versions of a given CA.
+         * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
+         *
          */
         private String certificateAuthorityVersionName = null;
 
         /**
-         * The name of the certificate authority (CA). (This might be referred to as the name of the
-         * CA version, as every CA consists of at least one version.) Names are unique across
-         * versions of a given CA.
+         * The name of the certificate authority (CA). (This might be referred to as the name of the CA version, as every CA consists of at least one version.) Names are unique across versions of a given CA.
          *
          * @param certificateAuthorityVersionName the value to set
          * @return this builder instance
@@ -174,12 +186,13 @@ public class GetCertificateAuthorityBundleRequest
             return this;
         }
 
-        /** The rotation state of the certificate version. */
+        /**
+         * The rotation state of the certificate version.
+         */
         private Stage stage = null;
 
         /**
          * The rotation state of the certificate version.
-         *
          * @param stage the value to set
          * @return this builder instance
          */
@@ -190,19 +203,18 @@ public class GetCertificateAuthorityBundleRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -214,7 +226,6 @@ public class GetCertificateAuthorityBundleRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetCertificateAuthorityBundleRequest o) {
@@ -231,11 +242,10 @@ public class GetCertificateAuthorityBundleRequest
         /**
          * Build the instance of GetCertificateAuthorityBundleRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetCertificateAuthorityBundleRequest
          */
@@ -249,8 +259,7 @@ public class GetCertificateAuthorityBundleRequest
         /**
          * Build the instance of GetCertificateAuthorityBundleRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetCertificateAuthorityBundleRequest
@@ -264,14 +273,12 @@ public class GetCertificateAuthorityBundleRequest
             request.certificateAuthorityVersionName = certificateAuthorityVersionName;
             request.stage = stage;
             return request;
-            // new GetCertificateAuthorityBundleRequest(certificateAuthorityId, opcRequestId,
-            // versionNumber, certificateAuthorityVersionName, stage);
+            // new GetCertificateAuthorityBundleRequest(certificateAuthorityId, opcRequestId, versionNumber, certificateAuthorityVersionName, stage);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -285,7 +292,6 @@ public class GetCertificateAuthorityBundleRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

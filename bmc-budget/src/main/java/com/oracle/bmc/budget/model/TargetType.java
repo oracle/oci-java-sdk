@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.budget.model;
 
-/** The type of target on which the budget is applied. Valid values are COMPARTMENT or TAG. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public enum TargetType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of target on which the budget is applied. Valid values are COMPARTMENT or TAG.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+public enum TargetType {
     Compartment("COMPARTMENT"),
     Tag("TAG"),
 

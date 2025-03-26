@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** Size of Oracle database blocks in KB. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum DataPumpTablespaceBlockSizesInKb implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Size of Oracle database blocks in KB.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum DataPumpTablespaceBlockSizesInKb {
     Size2K("SIZE_2K"),
     Size8K("SIZE_8K"),
     Size16K("SIZE_16K"),

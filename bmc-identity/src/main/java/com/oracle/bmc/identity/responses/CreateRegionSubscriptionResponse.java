@@ -6,11 +6,12 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,12 +25,13 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned {@code RegionSubscription} instance. */
+    /**
+     * The returned RegionSubscription instance.
+     */
     private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
     /**
-     * The returned {@code RegionSubscription} instance.
-     *
+     * The returned RegionSubscription instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.RegionSubscription getRegionSubscription() {
@@ -44,7 +46,7 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
     })
     private CreateRegionSubscriptionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identity.model.RegionSubscription regionSubscription) {
         super(__httpStatusCode__, headers);
@@ -52,21 +54,17 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
         this.regionSubscription = regionSubscription;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateRegionSubscriptionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -74,6 +72,7 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -89,12 +88,13 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned {@code RegionSubscription} instance. */
+        /**
+         * The returned RegionSubscription instance.
+         */
         private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
         /**
-         * The returned {@code RegionSubscription} instance.
-         *
+         * The returned RegionSubscription instance.
          * @param regionSubscription the value to set
          * @return this builder
          */
@@ -106,10 +106,8 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateRegionSubscriptionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -121,10 +119,8 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateRegionSubscriptionResponse build() {
             return new CreateRegionSubscriptionResponse(
                     __httpStatusCode__, headers, opcRequestId, regionSubscription);
@@ -133,7 +129,6 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

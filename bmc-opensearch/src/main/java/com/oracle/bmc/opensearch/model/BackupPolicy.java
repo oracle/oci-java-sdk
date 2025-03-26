@@ -5,21 +5,20 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * Backup policy as optionally used for Opensearch cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * Backup policy as optionally used for Opensearch cluster.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackupPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BackupPolicy extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BackupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "retentionInDays", "frequencyInHours"})
     public BackupPolicy(Boolean isEnabled, Integer retentionInDays, Integer frequencyInHours) {
@@ -31,46 +30,49 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Specifies if automatic backups are enabled. */
+        /**
+         * Specifies if automatic backups are enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Specifies if automatic backups are enabled.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** Specifies how long backup copy should remain on Storage in days */
+        /**
+         * Specifies how long backup copy should remain on Storage in days
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
         private Integer retentionInDays;
 
         /**
          * Specifies how long backup copy should remain on Storage in days
-         *
          * @param retentionInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionInDays(Integer retentionInDays) {
             this.retentionInDays = retentionInDays;
             this.__explicitlySet__.add("retentionInDays");
             return this;
         }
-        /** Specifies how often backup should be performed */
+        /**
+         * Specifies how often backup should be performed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("frequencyInHours")
         private Integer frequencyInHours;
 
         /**
          * Specifies how often backup should be performed
-         *
          * @param frequencyInHours the value to set
          * @return this builder
-         */
+         **/
         public Builder frequencyInHours(Integer frequencyInHours) {
             this.frequencyInHours = frequencyInHours;
             this.__explicitlySet__.add("frequencyInHours");
@@ -104,7 +106,9 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +117,44 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Specifies if automatic backups are enabled. */
+    /**
+     * Specifies if automatic backups are enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Specifies if automatic backups are enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** Specifies how long backup copy should remain on Storage in days */
+    /**
+     * Specifies how long backup copy should remain on Storage in days
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
     private final Integer retentionInDays;
 
     /**
      * Specifies how long backup copy should remain on Storage in days
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionInDays() {
         return retentionInDays;
     }
 
-    /** Specifies how often backup should be performed */
+    /**
+     * Specifies how often backup should be performed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequencyInHours")
     private final Integer frequencyInHours;
 
     /**
      * Specifies how often backup should be performed
-     *
      * @return the value
-     */
+     **/
     public Integer getFrequencyInHours() {
         return frequencyInHours;
     }
@@ -159,7 +166,6 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

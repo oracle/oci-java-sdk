@@ -6,20 +6,30 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** */
+    /**
+     *
+     */
     private String etag;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
@@ -27,7 +37,7 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "etag"})
     private AttachDevicesToTransferPackageResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag) {
         super(__httpStatusCode__, headers);
@@ -35,29 +45,28 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
         this.etag = etag;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    AttachDevicesToTransferPackageResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -66,10 +75,13 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String etag;
 
         /**
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -80,10 +92,8 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(AttachDevicesToTransferPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -95,10 +105,8 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public AttachDevicesToTransferPackageResponse build() {
             return new AttachDevicesToTransferPackageResponse(
                     __httpStatusCode__, headers, opcRequestId, etag);
@@ -107,7 +115,6 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

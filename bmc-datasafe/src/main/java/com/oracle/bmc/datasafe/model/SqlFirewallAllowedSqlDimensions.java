@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The dimensions available for SQL Firewall allow SQL analytics. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The dimensions available for SQL Firewall allow SQL analytics.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlFirewallAllowedSqlDimensions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlFirewallAllowedSqlDimensions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlFirewallAllowedSqlDimensions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlFirewallPolicyId",
@@ -43,67 +42,71 @@ public final class SqlFirewallAllowedSqlDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL. */
+        /**
+         * The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlFirewallPolicyId")
         private String sqlFirewallPolicyId;
 
         /**
          * The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
-         *
          * @param sqlFirewallPolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlFirewallPolicyId(String sqlFirewallPolicyId) {
             this.sqlFirewallPolicyId = sqlFirewallPolicyId;
             this.__explicitlySet__.add("sqlFirewallPolicyId");
             return this;
         }
         /**
-         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
-         * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
-         * issued inside PL/SQL units.
-         */
+         * Specifies the level of SQL included for this SQL Firewall policy.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
         private SqlLevel sqlLevel;
 
         /**
-         * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
-         * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
-         * issued inside PL/SQL units.
+         * Specifies the level of SQL included for this SQL Firewall policy.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
          *
          * @param sqlLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlLevel(SqlLevel sqlLevel) {
             this.sqlLevel = sqlLevel;
             this.__explicitlySet__.add("sqlLevel");
             return this;
         }
-        /** The database user name. */
+        /**
+         * The database user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private String dbUserName;
 
         /**
          * The database user name.
-         *
          * @param dbUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUserName(String dbUserName) {
             this.dbUserName = dbUserName;
             this.__explicitlySet__.add("dbUserName");
             return this;
         }
-        /** The current state of the SQL Firewall allowed SQL. */
+        /**
+         * The current state of the SQL Firewall allowed SQL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SqlFirewallAllowedSqlLifecycleState lifecycleState;
 
         /**
          * The current state of the SQL Firewall allowed SQL.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(SqlFirewallAllowedSqlLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -144,7 +147,9 @@ public final class SqlFirewallAllowedSqlDimensions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,31 +158,33 @@ public final class SqlFirewallAllowedSqlDimensions
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL. */
+    /**
+     * The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlFirewallPolicyId")
     private final String sqlFirewallPolicyId;
 
     /**
      * The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
-     *
      * @return the value
-     */
+     **/
     public String getSqlFirewallPolicyId() {
         return sqlFirewallPolicyId;
     }
 
     /**
-     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
-     * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
-     * issued inside PL/SQL units.
-     */
-    public enum SqlLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the level of SQL included for this SQL Firewall policy.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
+    public enum SqlLevel {
         UserIssuedSql("USER_ISSUED_SQL"),
         AllSql("ALL_SQL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -217,46 +224,49 @@ public final class SqlFirewallAllowedSqlDimensions
         }
     };
     /**
-     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
-     * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
-     * issued inside PL/SQL units.
-     */
+     * Specifies the level of SQL included for this SQL Firewall policy.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
     private final SqlLevel sqlLevel;
 
     /**
-     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User
-     * issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement
-     * issued inside PL/SQL units.
+     * Specifies the level of SQL included for this SQL Firewall policy.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      *
      * @return the value
-     */
+     **/
     public SqlLevel getSqlLevel() {
         return sqlLevel;
     }
 
-    /** The database user name. */
+    /**
+     * The database user name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final String dbUserName;
 
     /**
      * The database user name.
-     *
      * @return the value
-     */
+     **/
     public String getDbUserName() {
         return dbUserName;
     }
 
-    /** The current state of the SQL Firewall allowed SQL. */
+    /**
+     * The current state of the SQL Firewall allowed SQL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SqlFirewallAllowedSqlLifecycleState lifecycleState;
 
     /**
      * The current state of the SQL Firewall allowed SQL.
-     *
      * @return the value
-     */
+     **/
     public SqlFirewallAllowedSqlLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -268,7 +278,6 @@ public final class SqlFirewallAllowedSqlDimensions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

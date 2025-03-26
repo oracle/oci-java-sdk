@@ -6,18 +6,15 @@ package com.oracle.bmc.cims.responses;
 
 import com.oracle.bmc.cims.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
@@ -25,17 +22,12 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * @return the value
      */
     public String getOpcNextPage() {
@@ -43,17 +35,12 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results can
-     * be queried. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results can
-     * be queried. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * @return the value
      */
     public String getOpcPrevPage() {
@@ -61,27 +48,25 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * Returns the age of the incidents in the response in epoch milliseconds. This is used because
-     * the incidents might be cached.
+     * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
      */
     private String asOfTime;
 
     /**
-     * Returns the age of the incidents in the response in epoch milliseconds. This is used because
-     * the incidents might be cached.
-     *
+     * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
      * @return the value
      */
     public String getAsOfTime() {
         return asOfTime;
     }
 
-    /** A list of {@code com.oracle.bmc.cims.model.IncidentSummary} instances. */
+    /**
+     * A list of com.oracle.bmc.cims.model.IncidentSummary instances.
+     */
     private java.util.List<com.oracle.bmc.cims.model.IncidentSummary> items;
 
     /**
-     * A list of {@code com.oracle.bmc.cims.model.IncidentSummary} instances.
-     *
+     * A list of com.oracle.bmc.cims.model.IncidentSummary instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.cims.model.IncidentSummary> getItems() {
@@ -99,7 +84,7 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private ListIncidentsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -113,34 +98,28 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListIncidentsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -150,17 +129,12 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -170,17 +144,12 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results
-         * can be queried. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results
-         * can be queried. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param opcPrevPage the value to set
          * @return this builder
          */
@@ -190,15 +159,12 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * Returns the age of the incidents in the response in epoch milliseconds. This is used
-         * because the incidents might be cached.
+         * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
          */
         private String asOfTime;
 
         /**
-         * Returns the age of the incidents in the response in epoch milliseconds. This is used
-         * because the incidents might be cached.
-         *
+         * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
          * @param asOfTime the value to set
          * @return this builder
          */
@@ -207,12 +173,13 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of {@code com.oracle.bmc.cims.model.IncidentSummary} instances. */
+        /**
+         * A list of com.oracle.bmc.cims.model.IncidentSummary instances.
+         */
         private java.util.List<com.oracle.bmc.cims.model.IncidentSummary> items;
 
         /**
-         * A list of {@code com.oracle.bmc.cims.model.IncidentSummary} instances.
-         *
+         * A list of com.oracle.bmc.cims.model.IncidentSummary instances.
          * @param items the value to set
          * @return this builder
          */
@@ -223,10 +190,8 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListIncidentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -241,10 +206,8 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListIncidentsResponse build() {
             return new ListIncidentsResponse(
                     __httpStatusCode__,
@@ -259,7 +222,6 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,24 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Property overrides at the scope of objects. For example, if you want to use logSourceName as
- * 'xyz' for all objects that conatins string 'abc/' then define matchType as 'contains', matchValue
- * as 'abc/', propertyName as 'logSourceName' and propertyValue as 'xyz'. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Property overrides at the scope of objects.
+ * For example, if you want to use logSourceName as 'xyz' for all objects that conatins string 'abc/' then
+ * define matchType as 'contains', matchValue as 'abc/', propertyName as 'logSourceName' and propertyValue as 'xyz'.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PropertyOverride.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PropertyOverride
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PropertyOverride extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchType", "matchValue", "propertyName", "propertyValue"})
     public PropertyOverride(
@@ -36,7 +34,10 @@ public final class PropertyOverride
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Match Type. Accepted values are: contains. */
+        /**
+         * Match Type. Accepted values are: contains.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchType")
         private String matchType;
 
@@ -45,28 +46,32 @@ public final class PropertyOverride
          *
          * @param matchType the value to set
          * @return this builder
-         */
+         **/
         public Builder matchType(String matchType) {
             this.matchType = matchType;
             this.__explicitlySet__.add("matchType");
             return this;
         }
-        /** Match Value. */
+        /**
+         * Match Value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchValue")
         private String matchValue;
 
         /**
          * Match Value.
-         *
          * @param matchValue the value to set
          * @return this builder
-         */
+         **/
         public Builder matchValue(String matchValue) {
             this.matchValue = matchValue;
             this.__explicitlySet__.add("matchValue");
             return this;
         }
-        /** Property to override. Accepted values are: logSourceName, charEncoding. */
+        /**
+         * Property to override. Accepted values are: logSourceName, charEncoding.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
         private String propertyName;
 
@@ -75,22 +80,23 @@ public final class PropertyOverride
          *
          * @param propertyName the value to set
          * @return this builder
-         */
+         **/
         public Builder propertyName(String propertyName) {
             this.propertyName = propertyName;
             this.__explicitlySet__.add("propertyName");
             return this;
         }
-        /** Value of the property. */
+        /**
+         * Value of the property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("propertyValue")
         private String propertyValue;
 
         /**
          * Value of the property.
-         *
          * @param propertyValue the value to set
          * @return this builder
-         */
+         **/
         public Builder propertyValue(String propertyValue) {
             this.propertyValue = propertyValue;
             this.__explicitlySet__.add("propertyValue");
@@ -128,7 +134,9 @@ public final class PropertyOverride
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,7 +145,10 @@ public final class PropertyOverride
         return new Builder().copy(this);
     }
 
-    /** Match Type. Accepted values are: contains. */
+    /**
+     * Match Type. Accepted values are: contains.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
     private final String matchType;
 
@@ -145,25 +156,29 @@ public final class PropertyOverride
      * Match Type. Accepted values are: contains.
      *
      * @return the value
-     */
+     **/
     public String getMatchType() {
         return matchType;
     }
 
-    /** Match Value. */
+    /**
+     * Match Value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchValue")
     private final String matchValue;
 
     /**
      * Match Value.
-     *
      * @return the value
-     */
+     **/
     public String getMatchValue() {
         return matchValue;
     }
 
-    /** Property to override. Accepted values are: logSourceName, charEncoding. */
+    /**
+     * Property to override. Accepted values are: logSourceName, charEncoding.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("propertyName")
     private final String propertyName;
 
@@ -171,20 +186,21 @@ public final class PropertyOverride
      * Property to override. Accepted values are: logSourceName, charEncoding.
      *
      * @return the value
-     */
+     **/
     public String getPropertyName() {
         return propertyName;
     }
 
-    /** Value of the property. */
+    /**
+     * Value of the property.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("propertyValue")
     private final String propertyValue;
 
     /**
      * Value of the property.
-     *
      * @return the value
-     */
+     **/
     public String getPropertyValue() {
         return propertyValue;
     }
@@ -196,7 +212,6 @@ public final class PropertyOverride
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

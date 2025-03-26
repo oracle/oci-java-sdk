@@ -5,24 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The resource represents the SQL violations collected from the target database by Oracle Data
- * Safe. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The resource represents the SQL violations collected from the target database by Oracle Data Safe.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlFirewallViolationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlFirewallViolationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlFirewallViolationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -83,274 +81,279 @@ public final class SqlFirewallViolationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the SQL violation. */
+        /**
+         * The OCID of the SQL violation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the SQL violation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment containing the SQL violation. */
+        /**
+         * The OCID of the compartment containing the SQL violation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the SQL violation.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of the database user. */
+        /**
+         * The name of the database user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private String dbUserName;
 
         /**
          * The name of the database user.
-         *
          * @param dbUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUserName(String dbUserName) {
             this.dbUserName = dbUserName;
             this.__explicitlySet__.add("dbUserName");
             return this;
         }
-        /** The OCID of the target database. */
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The name of the target database. */
+        /**
+         * The name of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetName")
         private String targetName;
 
         /**
          * The name of the target database.
-         *
          * @param targetName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetName(String targetName) {
             this.targetName = targetName;
             this.__explicitlySet__.add("targetName");
             return this;
         }
-        /** The time of the SQL violation occurrence in the target database. */
+        /**
+         * The time of the SQL violation occurrence in the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationTime")
         private java.util.Date operationTime;
 
         /**
          * The time of the SQL violation occurrence in the target database.
-         *
          * @param operationTime the value to set
          * @return this builder
-         */
+         **/
         public Builder operationTime(java.util.Date operationTime) {
             this.operationTime = operationTime;
             this.__explicitlySet__.add("operationTime");
             return this;
         }
         /**
-         * The timestamp when this SQL violation was collected from the target database by Data
-         * Safe.
-         */
+         * The timestamp when this SQL violation was collected from the target database by Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
         /**
-         * The timestamp when this SQL violation was collected from the target database by Data
-         * Safe.
-         *
+         * The timestamp when this SQL violation was collected from the target database by Data Safe.
          * @param timeCollected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCollected(java.util.Date timeCollected) {
             this.timeCollected = timeCollected;
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** The name of the operating system user for the database session. */
+        /**
+         * The name of the operating system user for the database session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientOsUserName")
         private String clientOsUserName;
 
         /**
          * The name of the operating system user for the database session.
-         *
          * @param clientOsUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder clientOsUserName(String clientOsUserName) {
             this.clientOsUserName = clientOsUserName;
             this.__explicitlySet__.add("clientOsUserName");
             return this;
         }
         /**
-         * The name of the action executed by the user on the target database. For example, ALTER,
-         * CREATE, DROP.
-         */
+         * The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
-         * The name of the action executed by the user on the target database. For example, ALTER,
-         * CREATE, DROP.
-         *
+         * The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(String operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-        /** The SQL text caught by the firewall. */
+        /**
+         * The SQL text caught by the firewall.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
         /**
          * The SQL text caught by the firewall.
-         *
          * @param sqlText the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-        /** The objects accessed by the SQL. */
+        /**
+         * The objects accessed by the SQL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlAccessedObjects")
         private String sqlAccessedObjects;
 
         /**
          * The objects accessed by the SQL.
-         *
          * @param sqlAccessedObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlAccessedObjects(String sqlAccessedObjects) {
             this.sqlAccessedObjects = sqlAccessedObjects;
             this.__explicitlySet__.add("sqlAccessedObjects");
             return this;
         }
-        /** The name of the user that SQL was executed as. */
+        /**
+         * The name of the user that SQL was executed as.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentDbUserName")
         private String currentDbUserName;
 
         /**
          * The name of the user that SQL was executed as.
-         *
          * @param currentDbUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder currentDbUserName(String currentDbUserName) {
             this.currentDbUserName = currentDbUserName;
             this.__explicitlySet__.add("currentDbUserName");
             return this;
         }
         /**
-         * Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL
-         * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued
-         * inside PL/SQL units.
-         */
+         * Specifies the level of SQL for this violation.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
         private SqlLevel sqlLevel;
 
         /**
-         * Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL
-         * statements only. ALL_SQL - Includes all SQL statements including SQL statement issued
-         * inside PL/SQL units.
+         * Specifies the level of SQL for this violation.
+         * USER_ISSUED_SQL - User issued SQL statements only.
+         * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
          *
          * @param sqlLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlLevel(SqlLevel sqlLevel) {
             this.sqlLevel = sqlLevel;
             this.__explicitlySet__.add("sqlLevel");
             return this;
         }
-        /** The IP address of the host machine from which the session was generated. */
+        /**
+         * The IP address of the host machine from which the session was generated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientIp")
         private String clientIp;
 
         /**
          * The IP address of the host machine from which the session was generated.
-         *
          * @param clientIp the value to set
          * @return this builder
-         */
+         **/
         public Builder clientIp(String clientIp) {
             this.clientIp = clientIp;
             this.__explicitlySet__.add("clientIp");
             return this;
         }
         /**
-         * The application from which the SQL violation was generated. Examples include SQL Plus or
-         * SQL Developer.
-         */
+         * The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
         private String clientProgram;
 
         /**
-         * The application from which the SQL violation was generated. Examples include SQL Plus or
-         * SQL Developer.
-         *
+         * The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
          * @param clientProgram the value to set
          * @return this builder
-         */
+         **/
         public Builder clientProgram(String clientProgram) {
             this.clientProgram = clientProgram;
             this.__explicitlySet__.add("clientProgram");
             return this;
         }
-        /** Indicates whether SQL or context violation. */
+        /**
+         * Indicates whether SQL or context violation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("violationCause")
         private String violationCause;
 
         /**
          * Indicates whether SQL or context violation.
-         *
          * @param violationCause the value to set
          * @return this builder
-         */
+         **/
         public Builder violationCause(String violationCause) {
             this.violationCause = violationCause;
             this.__explicitlySet__.add("violationCause");
             return this;
         }
-        /** The action taken for this SQL violation. */
+        /**
+         * The action taken for this SQL violation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
         private ViolationAction violationAction;
 
         /**
          * The action taken for this SQL violation.
-         *
          * @param violationAction the value to set
          * @return this builder
-         */
+         **/
         public Builder violationAction(ViolationAction violationAction) {
             this.violationAction = violationAction;
             this.__explicitlySet__.add("violationAction");
@@ -443,7 +446,9 @@ public final class SqlFirewallViolationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -452,180 +457,187 @@ public final class SqlFirewallViolationSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the SQL violation. */
+    /**
+     * The OCID of the SQL violation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the SQL violation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment containing the SQL violation. */
+    /**
+     * The OCID of the compartment containing the SQL violation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the SQL violation.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of the database user. */
+    /**
+     * The name of the database user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final String dbUserName;
 
     /**
      * The name of the database user.
-     *
      * @return the value
-     */
+     **/
     public String getDbUserName() {
         return dbUserName;
     }
 
-    /** The OCID of the target database. */
+    /**
+     * The OCID of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** The name of the target database. */
+    /**
+     * The name of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetName")
     private final String targetName;
 
     /**
      * The name of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetName() {
         return targetName;
     }
 
-    /** The time of the SQL violation occurrence in the target database. */
+    /**
+     * The time of the SQL violation occurrence in the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationTime")
     private final java.util.Date operationTime;
 
     /**
      * The time of the SQL violation occurrence in the target database.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getOperationTime() {
         return operationTime;
     }
 
     /**
      * The timestamp when this SQL violation was collected from the target database by Data Safe.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
     /**
      * The timestamp when this SQL violation was collected from the target database by Data Safe.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
 
-    /** The name of the operating system user for the database session. */
+    /**
+     * The name of the operating system user for the database session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientOsUserName")
     private final String clientOsUserName;
 
     /**
      * The name of the operating system user for the database session.
-     *
      * @return the value
-     */
+     **/
     public String getClientOsUserName() {
         return clientOsUserName;
     }
 
     /**
-     * The name of the action executed by the user on the target database. For example, ALTER,
-     * CREATE, DROP.
-     */
+     * The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
-     * The name of the action executed by the user on the target database. For example, ALTER,
-     * CREATE, DROP.
-     *
+     * The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
      * @return the value
-     */
+     **/
     public String getOperation() {
         return operation;
     }
 
-    /** The SQL text caught by the firewall. */
+    /**
+     * The SQL text caught by the firewall.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
     /**
      * The SQL text caught by the firewall.
-     *
      * @return the value
-     */
+     **/
     public String getSqlText() {
         return sqlText;
     }
 
-    /** The objects accessed by the SQL. */
+    /**
+     * The objects accessed by the SQL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlAccessedObjects")
     private final String sqlAccessedObjects;
 
     /**
      * The objects accessed by the SQL.
-     *
      * @return the value
-     */
+     **/
     public String getSqlAccessedObjects() {
         return sqlAccessedObjects;
     }
 
-    /** The name of the user that SQL was executed as. */
+    /**
+     * The name of the user that SQL was executed as.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentDbUserName")
     private final String currentDbUserName;
 
     /**
      * The name of the user that SQL was executed as.
-     *
      * @return the value
-     */
+     **/
     public String getCurrentDbUserName() {
         return currentDbUserName;
     }
 
     /**
-     * Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements
-     * only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL
-     * units.
-     */
-    public enum SqlLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the level of SQL for this violation.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
+    public enum SqlLevel {
         UserIssuedSql("USER_ISSUED_SQL"),
         AllSql("ALL_SQL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -665,75 +677,77 @@ public final class SqlFirewallViolationSummary
         }
     };
     /**
-     * Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements
-     * only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL
-     * units.
-     */
+     * Specifies the level of SQL for this violation.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlLevel")
     private final SqlLevel sqlLevel;
 
     /**
-     * Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements
-     * only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL
-     * units.
+     * Specifies the level of SQL for this violation.
+     * USER_ISSUED_SQL - User issued SQL statements only.
+     * ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      *
      * @return the value
-     */
+     **/
     public SqlLevel getSqlLevel() {
         return sqlLevel;
     }
 
-    /** The IP address of the host machine from which the session was generated. */
+    /**
+     * The IP address of the host machine from which the session was generated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientIp")
     private final String clientIp;
 
     /**
      * The IP address of the host machine from which the session was generated.
-     *
      * @return the value
-     */
+     **/
     public String getClientIp() {
         return clientIp;
     }
 
     /**
-     * The application from which the SQL violation was generated. Examples include SQL Plus or SQL
-     * Developer.
-     */
+     * The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientProgram")
     private final String clientProgram;
 
     /**
-     * The application from which the SQL violation was generated. Examples include SQL Plus or SQL
-     * Developer.
-     *
+     * The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
      * @return the value
-     */
+     **/
     public String getClientProgram() {
         return clientProgram;
     }
 
-    /** Indicates whether SQL or context violation. */
+    /**
+     * Indicates whether SQL or context violation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("violationCause")
     private final String violationCause;
 
     /**
      * Indicates whether SQL or context violation.
-     *
      * @return the value
-     */
+     **/
     public String getViolationCause() {
         return violationCause;
     }
 
-    /** The action taken for this SQL violation. */
-    public enum ViolationAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The action taken for this SQL violation.
+     **/
+    public enum ViolationAction {
         Blocked("BLOCKED"),
         Allowed("ALLOWED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -772,15 +786,16 @@ public final class SqlFirewallViolationSummary
             return UnknownEnumValue;
         }
     };
-    /** The action taken for this SQL violation. */
+    /**
+     * The action taken for this SQL violation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
     private final ViolationAction violationAction;
 
     /**
      * The action taken for this SQL violation.
-     *
      * @return the value
-     */
+     **/
     public ViolationAction getViolationAction() {
         return violationAction;
     }
@@ -792,7 +807,6 @@ public final class SqlFirewallViolationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

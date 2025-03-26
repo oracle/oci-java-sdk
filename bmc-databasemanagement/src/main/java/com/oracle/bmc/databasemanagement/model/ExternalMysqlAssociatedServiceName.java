@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The name of the eMysql Associated Service. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum ExternalMysqlAssociatedServiceName implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The name of the eMysql Associated Service.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum ExternalMysqlAssociatedServiceName {
     OperationsInsights("OPERATIONS_INSIGHTS"),
     ;
 

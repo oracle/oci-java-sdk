@@ -5,21 +5,19 @@
 package com.oracle.bmc.aidocument.model;
 
 /**
- * Details of a processor job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+ * Details of a processor job.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProcessorJob.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProcessorJob extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProcessorJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -65,46 +63,49 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the processor job. */
+        /**
+         * The id of the processor job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The id of the processor job.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The compartment identifier. */
+        /**
+         * The compartment identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The display name of the processor job. */
+        /**
+         * The display name of the processor job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the processor job.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -128,65 +129,65 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("inputLocation");
             return this;
         }
-        /** The job acceptance time. */
+        /**
+         * The job acceptance time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The job acceptance time.
-         *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** The job start time. */
+        /**
+         * The job start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The job start time.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The job finish time. */
+        /**
+         * The job finish time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The job finish time.
-         *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /**
-         * How much progress the operation has made, compared to the total amount of work to be
-         * performed.
-         */
+         * How much progress the operation has made, compared to the total amount of work to be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
-         * How much progress the operation has made, compared to the total amount of work to be
-         * performed.
-         *
+         * How much progress the operation has made, compared to the total amount of work to be performed.
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -201,31 +202,33 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-        /** The current state of the processor job. */
+        /**
+         * The current state of the processor job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the processor job.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The detailed status of FAILED state. */
+        /**
+         * The detailed status of FAILED state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
         /**
          * The detailed status of FAILED state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -298,7 +301,9 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -307,41 +312,44 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The id of the processor job. */
+    /**
+     * The id of the processor job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The id of the processor job.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The compartment identifier. */
+    /**
+     * The compartment identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartment identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The display name of the processor job. */
+    /**
+     * The display name of the processor job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the processor job.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -360,58 +368,58 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
         return inputLocation;
     }
 
-    /** The job acceptance time. */
+    /**
+     * The job acceptance time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The job acceptance time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** The job start time. */
+    /**
+     * The job start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The job start time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The job finish time. */
+    /**
+     * The job finish time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The job finish time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
     /**
-     * How much progress the operation has made, compared to the total amount of work to be
-     * performed.
-     */
+     * How much progress the operation has made, compared to the total amount of work to be performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
-     * How much progress the operation has made, compared to the total amount of work to be
-     * performed.
-     *
+     * How much progress the operation has made, compared to the total amount of work to be performed.
      * @return the value
-     */
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -423,8 +431,10 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
         return outputLocation;
     }
 
-    /** The current state of the processor job. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the processor job.
+     **/
+    public enum LifecycleState {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
         Accepted("ACCEPTED"),
@@ -433,8 +443,8 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
         Canceling("CANCELING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -473,27 +483,30 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** The current state of the processor job. */
+    /**
+     * The current state of the processor job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the processor job.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The detailed status of FAILED state. */
-    public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The detailed status of FAILED state.
+     **/
+    public enum LifecycleDetails {
         PartiallySucceeded("PARTIALLY_SUCCEEDED"),
         CompletelyFailed("COMPLETELY_FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -532,15 +545,16 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** The detailed status of FAILED state. */
+    /**
+     * The detailed status of FAILED state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
     /**
      * The detailed status of FAILED state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -552,7 +566,6 @@ public final class ProcessorJob extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

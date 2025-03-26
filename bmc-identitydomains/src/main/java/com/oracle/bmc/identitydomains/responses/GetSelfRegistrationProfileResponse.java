@@ -6,30 +6,28 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GetSelfRegistrationProfileResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code SelfRegistrationProfile} instance. */
+    /**
+     * The returned SelfRegistrationProfile instance.
+     */
     private com.oracle.bmc.identitydomains.model.SelfRegistrationProfile selfRegistrationProfile;
 
     /**
-     * The returned {@code SelfRegistrationProfile} instance.
-     *
+     * The returned SelfRegistrationProfile instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.SelfRegistrationProfile
@@ -45,7 +43,7 @@ public class GetSelfRegistrationProfileResponse extends com.oracle.bmc.responses
     })
     private GetSelfRegistrationProfileResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identitydomains.model.SelfRegistrationProfile selfRegistrationProfile) {
         super(__httpStatusCode__, headers);
@@ -53,35 +51,28 @@ public class GetSelfRegistrationProfileResponse extends com.oracle.bmc.responses
         this.selfRegistrationProfile = selfRegistrationProfile;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetSelfRegistrationProfileResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -90,13 +81,14 @@ public class GetSelfRegistrationProfileResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned {@code SelfRegistrationProfile} instance. */
+        /**
+         * The returned SelfRegistrationProfile instance.
+         */
         private com.oracle.bmc.identitydomains.model.SelfRegistrationProfile
                 selfRegistrationProfile;
 
         /**
-         * The returned {@code SelfRegistrationProfile} instance.
-         *
+         * The returned SelfRegistrationProfile instance.
          * @param selfRegistrationProfile the value to set
          * @return this builder
          */
@@ -109,10 +101,8 @@ public class GetSelfRegistrationProfileResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetSelfRegistrationProfileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -124,10 +114,8 @@ public class GetSelfRegistrationProfileResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetSelfRegistrationProfileResponse build() {
             return new GetSelfRegistrationProfileResponse(
                     __httpStatusCode__, headers, opcRequestId, selfRegistrationProfile);
@@ -136,7 +124,6 @@ public class GetSelfRegistrationProfileResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,21 +6,16 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Multiple OCID values are returned in a comma-separated list. Use {@link
-     * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
-     * status of the request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Multiple OCID values are returned in a comma-separated list. Use {@link
-     * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
-     * status of the request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
      *
      * @return the value
      */
@@ -28,12 +23,13 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         return opcWorkRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -41,14 +37,15 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -56,12 +53,13 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned {@code DbSystem} instance. */
+    /**
+     * The returned DbSystem instance.
+     */
     private com.oracle.bmc.database.model.DbSystem dbSystem;
 
     /**
-     * The returned {@code DbSystem} instance.
-     *
+     * The returned DbSystem instance.
      * @return the value
      */
     public com.oracle.bmc.database.model.DbSystem getDbSystem() {
@@ -78,7 +76,7 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private LaunchDbSystemResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String etag,
             String opcRequestId,
@@ -90,37 +88,29 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         this.dbSystem = dbSystem;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<LaunchDbSystemResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
-         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
-         * the status of the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
-         * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
-         * the status of the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -130,12 +120,13 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -145,14 +136,15 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -162,12 +154,13 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code DbSystem} instance. */
+        /**
+         * The returned DbSystem instance.
+         */
         private com.oracle.bmc.database.model.DbSystem dbSystem;
 
         /**
-         * The returned {@code DbSystem} instance.
-         *
+         * The returned DbSystem instance.
          * @param dbSystem the value to set
          * @return this builder
          */
@@ -178,10 +171,8 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(LaunchDbSystemResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -195,10 +186,8 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public LaunchDbSystemResponse build() {
             return new LaunchDbSystemResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, etag, opcRequestId, dbSystem);
@@ -207,7 +196,6 @@ public class LaunchDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

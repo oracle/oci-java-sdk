@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** The field to sort the Java download aggregation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum AggregationSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field to sort the Java download aggregation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum AggregationSortBy {
     FamilyVersion("FAMILY_VERSION"),
     DownloadCount("DOWNLOAD_COUNT"),
     ;

@@ -5,21 +5,19 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * A load balancer IP address. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * A load balancer IP address.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IpAddress.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IpAddress extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IpAddress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipAddress", "isPublic", "reservedIp"})
     public IpAddress(String ipAddress, Boolean isPublic, ReservedIP reservedIp) {
@@ -33,20 +31,21 @@ public final class IpAddress extends com.oracle.bmc.http.client.internal.Explici
     public static class Builder {
         /**
          * An IP address.
+         * <p>
+         * Example: {@code 192.168.0.3}
          *
-         * <p>Example: {@code 192.168.0.3}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * An IP address.
-         *
-         * <p>Example: {@code 192.168.0.3}
+         * <p>
+         * Example: {@code 192.168.0.3}
          *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
@@ -54,26 +53,25 @@ public final class IpAddress extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Whether the IP address is public or private.
+         * <p>
+         * If "true", the IP address is public and accessible from the internet.
+         * <p>
+         * If "false", the IP address is private and accessible only from within the associated VCN.
          *
-         * <p>If "true", the IP address is public and accessible from the internet.
-         *
-         * <p>If "false", the IP address is private and accessible only from within the associated
-         * VCN.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
         /**
          * Whether the IP address is public or private.
-         *
-         * <p>If "true", the IP address is public and accessible from the internet.
-         *
-         * <p>If "false", the IP address is private and accessible only from within the associated
-         * VCN.
+         * <p>
+         * If "true", the IP address is public and accessible from the internet.
+         * <p>
+         * If "false", the IP address is private and accessible only from within the associated VCN.
          *
          * @param isPublic the value to set
          * @return this builder
-         */
+         **/
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
@@ -115,7 +113,9 @@ public final class IpAddress extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,42 +126,44 @@ public final class IpAddress extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * An IP address.
+     * <p>
+     * Example: {@code 192.168.0.3}
      *
-     * <p>Example: {@code 192.168.0.3}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * An IP address.
-     *
-     * <p>Example: {@code 192.168.0.3}
+     * <p>
+     * Example: {@code 192.168.0.3}
      *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
      * Whether the IP address is public or private.
+     * <p>
+     * If "true", the IP address is public and accessible from the internet.
+     * <p>
+     * If "false", the IP address is private and accessible only from within the associated VCN.
      *
-     * <p>If "true", the IP address is public and accessible from the internet.
-     *
-     * <p>If "false", the IP address is private and accessible only from within the associated VCN.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
     /**
      * Whether the IP address is public or private.
-     *
-     * <p>If "true", the IP address is public and accessible from the internet.
-     *
-     * <p>If "false", the IP address is private and accessible only from within the associated VCN.
+     * <p>
+     * If "true", the IP address is public and accessible from the internet.
+     * <p>
+     * If "false", the IP address is private and accessible only from within the associated VCN.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -180,7 +182,6 @@ public final class IpAddress extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

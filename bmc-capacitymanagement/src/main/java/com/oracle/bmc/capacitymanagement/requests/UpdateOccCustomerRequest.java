@@ -6,64 +6,84 @@ package com.oracle.bmc.capacitymanagement.requests;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCustomerExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateOccCustomerRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCustomerExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateOccCustomerRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class UpdateOccCustomerRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.capacitymanagement.model.UpdateOccCustomerDetails> {
 
-    /** Request to update the properties of the customer group. */
+    /**
+     * Request to update the properties of the customer group.
+     */
     private com.oracle.bmc.capacitymanagement.model.UpdateOccCustomerDetails
             updateOccCustomerDetails;
 
-    /** Request to update the properties of the customer group. */
+    /**
+     * Request to update the properties of the customer group.
+     */
     public com.oracle.bmc.capacitymanagement.model.UpdateOccCustomerDetails
             getUpdateOccCustomerDetails() {
         return updateOccCustomerDetails;
     }
-    /** The OCID of the customer group. */
+    /**
+     * The OCID of the customer group.
+     *
+     */
     private String occCustomerGroupId;
 
-    /** The OCID of the customer group. */
+    /**
+     * The OCID of the customer group.
+     *
+     */
     public String getOccCustomerGroupId() {
         return occCustomerGroupId;
     }
-    /** The tenancy id of the customer. */
+    /**
+     * The tenancy id of the customer.
+     *
+     */
     private String occCustomerId;
 
-    /** The tenancy id of the customer. */
+    /**
+     * The tenancy id of the customer.
+     *
+     */
     public String getOccCustomerId() {
         return occCustomerId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -71,7 +91,6 @@ public class UpdateOccCustomerRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -84,16 +103,18 @@ public class UpdateOccCustomerRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateOccCustomerRequest,
                     com.oracle.bmc.capacitymanagement.model.UpdateOccCustomerDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to update the properties of the customer group. */
+        /**
+         * Request to update the properties of the customer group.
+         */
         private com.oracle.bmc.capacitymanagement.model.UpdateOccCustomerDetails
                 updateOccCustomerDetails = null;
 
         /**
          * Request to update the properties of the customer group.
-         *
          * @param updateOccCustomerDetails the value to set
          * @return this builder instance
          */
@@ -104,7 +125,10 @@ public class UpdateOccCustomerRequest
             return this;
         }
 
-        /** The OCID of the customer group. */
+        /**
+         * The OCID of the customer group.
+         *
+         */
         private String occCustomerGroupId = null;
 
         /**
@@ -118,7 +142,10 @@ public class UpdateOccCustomerRequest
             return this;
         }
 
-        /** The tenancy id of the customer. */
+        /**
+         * The tenancy id of the customer.
+         *
+         */
         private String occCustomerId = null;
 
         /**
@@ -133,18 +160,21 @@ public class UpdateOccCustomerRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -155,14 +185,15 @@ public class UpdateOccCustomerRequest
         }
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -174,19 +205,18 @@ public class UpdateOccCustomerRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -198,7 +228,6 @@ public class UpdateOccCustomerRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateOccCustomerRequest o) {
@@ -215,11 +244,10 @@ public class UpdateOccCustomerRequest
         /**
          * Build the instance of UpdateOccCustomerRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateOccCustomerRequest
          */
@@ -232,7 +260,6 @@ public class UpdateOccCustomerRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -246,8 +273,7 @@ public class UpdateOccCustomerRequest
         /**
          * Build the instance of UpdateOccCustomerRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateOccCustomerRequest
@@ -260,14 +286,12 @@ public class UpdateOccCustomerRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateOccCustomerRequest(updateOccCustomerDetails, occCustomerGroupId,
-            // occCustomerId, ifMatch, opcRequestId);
+            // new UpdateOccCustomerRequest(updateOccCustomerDetails, occCustomerGroupId, occCustomerId, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -281,7 +305,6 @@ public class UpdateOccCustomerRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Details for auto-created entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Details for auto-created entity.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreationSource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreationSource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreationSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "details"})
     public CreationSource(CreationSourceType type, String details) {
@@ -31,37 +29,39 @@ public final class CreationSource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Source that auto-created the entity. */
+        /**
+         * Source that auto-created the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private CreationSourceType type;
 
         /**
          * Source that auto-created the entity.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(CreationSourceType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * This will provide additional details for source of auto-creation. For example, if entity
-         * is auto-created by enterprise manager bridge, this field provides additional detail on
-         * enterprise manager that contributed to the entity auto-creation.
-         */
+         * This will provide additional details for source of auto-creation. For example, if entity is auto-created
+         * by enterprise manager bridge, this field provides additional detail on enterprise manager that contributed
+         * to the entity auto-creation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
-         * This will provide additional details for source of auto-creation. For example, if entity
-         * is auto-created by enterprise manager bridge, this field provides additional detail on
-         * enterprise manager that contributed to the entity auto-creation.
+         * This will provide additional details for source of auto-creation. For example, if entity is auto-created
+         * by enterprise manager bridge, this field provides additional detail on enterprise manager that contributed
+         * to the entity auto-creation.
          *
          * @param details the value to set
          * @return this builder
-         */
+         **/
         public Builder details(String details) {
             this.details = details;
             this.__explicitlySet__.add("details");
@@ -91,7 +91,9 @@ public final class CreationSource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,34 +102,36 @@ public final class CreationSource
         return new Builder().copy(this);
     }
 
-    /** Source that auto-created the entity. */
+    /**
+     * Source that auto-created the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final CreationSourceType type;
 
     /**
      * Source that auto-created the entity.
-     *
      * @return the value
-     */
+     **/
     public CreationSourceType getType() {
         return type;
     }
 
     /**
-     * This will provide additional details for source of auto-creation. For example, if entity is
-     * auto-created by enterprise manager bridge, this field provides additional detail on
-     * enterprise manager that contributed to the entity auto-creation.
-     */
+     * This will provide additional details for source of auto-creation. For example, if entity is auto-created
+     * by enterprise manager bridge, this field provides additional detail on enterprise manager that contributed
+     * to the entity auto-creation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
-     * This will provide additional details for source of auto-creation. For example, if entity is
-     * auto-created by enterprise manager bridge, this field provides additional detail on
-     * enterprise manager that contributed to the entity auto-creation.
+     * This will provide additional details for source of auto-creation. For example, if entity is auto-created
+     * by enterprise manager bridge, this field provides additional detail on enterprise manager that contributed
+     * to the entity auto-creation.
      *
      * @return the value
-     */
+     **/
     public String getDetails() {
         return details;
     }
@@ -139,7 +143,6 @@ public final class CreationSource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

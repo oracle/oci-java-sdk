@@ -5,25 +5,25 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties to update a Twilio channel. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Properties to update a Twilio channel.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateTwilioChannelDetails.Builder.class)
+    builder = UpdateTwilioChannelDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -73,91 +73,97 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The Account SID for the Twilio number. */
+        /**
+         * The Account SID for the Twilio number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountSID")
         private String accountSID;
 
         /**
          * The Account SID for the Twilio number.
-         *
          * @param accountSID the value to set
          * @return this builder
-         */
+         **/
         public Builder accountSID(String accountSID) {
             this.accountSID = accountSID;
             this.__explicitlySet__.add("accountSID");
             return this;
         }
-        /** The Twilio phone number. */
+        /**
+         * The Twilio phone number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
         private String phoneNumber;
 
         /**
          * The Twilio phone number.
-         *
          * @param phoneNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder phoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
             this.__explicitlySet__.add("phoneNumber");
             return this;
         }
-        /** The Auth Token for the Twilio number. */
+        /**
+         * The Auth Token for the Twilio number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authToken")
         private String authToken;
 
         /**
          * The Auth Token for the Twilio number.
-         *
          * @param authToken the value to set
          * @return this builder
-         */
+         **/
         public Builder authToken(String authToken) {
             this.authToken = authToken;
             this.__explicitlySet__.add("authToken");
             return this;
         }
-        /** Whether MMS is enabled for this channel or not. */
+        /**
+         * Whether MMS is enabled for this channel or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMmsEnabled")
         private Boolean isMmsEnabled;
 
         /**
          * Whether MMS is enabled for this channel or not.
-         *
          * @param isMmsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isMmsEnabled(Boolean isMmsEnabled) {
             this.isMmsEnabled = isMmsEnabled;
             this.__explicitlySet__.add("isMmsEnabled");
             return this;
         }
-        /** The original connectors URL (used for backward compatibility). */
+        /**
+         * The original connectors URL (used for backward compatibility).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalConnectorsUrl")
         private String originalConnectorsUrl;
 
         /**
          * The original connectors URL (used for backward compatibility).
-         *
          * @param originalConnectorsUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder originalConnectorsUrl(String originalConnectorsUrl) {
             this.originalConnectorsUrl = originalConnectorsUrl;
             this.__explicitlySet__.add("originalConnectorsUrl");
             return this;
         }
-        /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
-         *
          * @param botId the value to set
          * @return this builder
-         */
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -227,7 +233,9 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -258,80 +266,86 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
         this.botId = botId;
     }
 
-    /** The Account SID for the Twilio number. */
+    /**
+     * The Account SID for the Twilio number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountSID")
     private final String accountSID;
 
     /**
      * The Account SID for the Twilio number.
-     *
      * @return the value
-     */
+     **/
     public String getAccountSID() {
         return accountSID;
     }
 
-    /** The Twilio phone number. */
+    /**
+     * The Twilio phone number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
     private final String phoneNumber;
 
     /**
      * The Twilio phone number.
-     *
      * @return the value
-     */
+     **/
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    /** The Auth Token for the Twilio number. */
+    /**
+     * The Auth Token for the Twilio number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authToken")
     private final String authToken;
 
     /**
      * The Auth Token for the Twilio number.
-     *
      * @return the value
-     */
+     **/
     public String getAuthToken() {
         return authToken;
     }
 
-    /** Whether MMS is enabled for this channel or not. */
+    /**
+     * Whether MMS is enabled for this channel or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMmsEnabled")
     private final Boolean isMmsEnabled;
 
     /**
      * Whether MMS is enabled for this channel or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMmsEnabled() {
         return isMmsEnabled;
     }
 
-    /** The original connectors URL (used for backward compatibility). */
+    /**
+     * The original connectors URL (used for backward compatibility).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalConnectorsUrl")
     private final String originalConnectorsUrl;
 
     /**
      * The original connectors URL (used for backward compatibility).
-     *
      * @return the value
-     */
+     **/
     public String getOriginalConnectorsUrl() {
         return originalConnectorsUrl;
     }
 
-    /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
-     *
      * @return the value
-     */
+     **/
     public String getBotId() {
         return botId;
     }
@@ -343,7 +357,6 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Details used when adding a ULA or private IPv6 prefix or an IPv6 GUA assigned by Oracle or a
- * BYOIPv6 prefix. You can add only one of these per request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details used when adding a ULA or private IPv6 prefix or an IPv6 GUA assigned by Oracle or a BYOIPv6 prefix. You can add only one of these per request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddVcnIpv6CidrDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddVcnIpv6CidrDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddVcnIpv6CidrDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ipv6PrivateCidrBlock",
@@ -42,44 +40,42 @@ public final class AddVcnIpv6CidrDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This field is not required and should only be specified if a ULA or private IPv6 prefix
-         * is desired for VCN's private IP address space. See[IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * This field is not required and should only be specified if a ULA or private IPv6 prefix is desired for VCN's private IP address space.
+         * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
          *
-         * <p>Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlock")
         private String ipv6PrivateCidrBlock;
 
         /**
-         * This field is not required and should only be specified if a ULA or private IPv6 prefix
-         * is desired for VCN's private IP address space. See[IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         *
-         * <p>Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
+         * This field is not required and should only be specified if a ULA or private IPv6 prefix is desired for VCN's private IP address space.
+         * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
          *
          * @param ipv6PrivateCidrBlock the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6PrivateCidrBlock(String ipv6PrivateCidrBlock) {
             this.ipv6PrivateCidrBlock = ipv6PrivateCidrBlock;
             this.__explicitlySet__.add("ipv6PrivateCidrBlock");
             return this;
         }
         /**
-         * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be
-         * allocated by Oracle as a GUA.
-         */
+         * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be allocated by Oracle as a GUA.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOracleGuaAllocationEnabled")
         private Boolean isOracleGuaAllocationEnabled;
 
         /**
-         * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be
-         * allocated by Oracle as a GUA.
+         * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be allocated by Oracle as a GUA.
          *
          * @param isOracleGuaAllocationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
             this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
             this.__explicitlySet__.add("isOracleGuaAllocationEnabled");
@@ -125,7 +121,9 @@ public final class AddVcnIpv6CidrDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,41 +133,39 @@ public final class AddVcnIpv6CidrDetails
     }
 
     /**
-     * This field is not required and should only be specified if a ULA or private IPv6 prefix is
-     * desired for VCN's private IP address space. See[IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * This field is not required and should only be specified if a ULA or private IPv6 prefix is desired for VCN's private IP address space.
+     * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
      *
-     * <p>Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlock")
     private final String ipv6PrivateCidrBlock;
 
     /**
-     * This field is not required and should only be specified if a ULA or private IPv6 prefix is
-     * desired for VCN's private IP address space. See[IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     *
-     * <p>Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
+     * This field is not required and should only be specified if a ULA or private IPv6 prefix is desired for VCN's private IP address space.
+     * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code 2001:0db8:0123::/48} or {@code fd00:1000:0:1::/64}
      *
      * @return the value
-     */
+     **/
     public String getIpv6PrivateCidrBlock() {
         return ipv6PrivateCidrBlock;
     }
 
     /**
-     * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be
-     * allocated by Oracle as a GUA.
-     */
+     * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be allocated by Oracle as a GUA.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOracleGuaAllocationEnabled")
     private final Boolean isOracleGuaAllocationEnabled;
 
     /**
-     * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be
-     * allocated by Oracle as a GUA.
+     * Indicates whether Oracle will allocate an IPv6 GUA. Only one prefix of /56 size can be allocated by Oracle as a GUA.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsOracleGuaAllocationEnabled() {
         return isOracleGuaAllocationEnabled;
     }
@@ -188,7 +184,6 @@ public final class AddVcnIpv6CidrDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

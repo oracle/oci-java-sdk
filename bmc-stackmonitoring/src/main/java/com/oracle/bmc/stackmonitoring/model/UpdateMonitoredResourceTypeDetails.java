@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information to be updated for the monitored resource type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The information to be updated for the monitored resource type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMonitoredResourceTypeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateMonitoredResourceTypeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMonitoredResourceTypeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -55,71 +54,76 @@ public final class UpdateMonitoredResourceTypeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Monitored resource type display name. */
+        /**
+         * Monitored resource type display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Monitored resource type display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A friendly description. */
+        /**
+         * A friendly description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A friendly description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Metric namespace for resource type. */
+        /**
+         * Metric namespace for resource type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
         private String metricNamespace;
 
         /**
          * Metric namespace for resource type.
-         *
          * @param metricNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder metricNamespace(String metricNamespace) {
             this.metricNamespace = metricNamespace;
             this.__explicitlySet__.add("metricNamespace");
             return this;
         }
         /**
-         * Source type to indicate if the resource is stack monitoring discovered, OCI native
-         * resource, etc.
-         */
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
         /**
-         * Source type to indicate if the resource is stack monitoring discovered, OCI native
-         * resource, etc.
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
          *
          * @param sourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-        /** Resource Category to indicate the kind of resource type. */
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
         private ResourceCategory resourceCategory;
 
@@ -128,7 +132,7 @@ public final class UpdateMonitoredResourceTypeDetails
          *
          * @param resourceCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceCategory(ResourceCategory resourceCategory) {
             this.resourceCategory = resourceCategory;
             this.__explicitlySet__.add("resourceCategory");
@@ -144,19 +148,20 @@ public final class UpdateMonitoredResourceTypeDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -165,7 +170,8 @@ public final class UpdateMonitoredResourceTypeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -175,7 +181,7 @@ public final class UpdateMonitoredResourceTypeDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -233,7 +239,9 @@ public final class UpdateMonitoredResourceTypeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -242,63 +250,68 @@ public final class UpdateMonitoredResourceTypeDetails
         return new Builder().copy(this);
     }
 
-    /** Monitored resource type display name. */
+    /**
+     * Monitored resource type display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Monitored resource type display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A friendly description. */
+    /**
+     * A friendly description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A friendly description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Metric namespace for resource type. */
+    /**
+     * Metric namespace for resource type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
     private final String metricNamespace;
 
     /**
      * Metric namespace for resource type.
-     *
      * @return the value
-     */
+     **/
     public String getMetricNamespace() {
         return metricNamespace;
     }
 
     /**
-     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
-     * etc.
-     */
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
     /**
-     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
-     * etc.
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
      *
      * @return the value
-     */
+     **/
     public SourceType getSourceType() {
         return sourceType;
     }
 
-    /** Resource Category to indicate the kind of resource type. */
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
     private final ResourceCategory resourceCategory;
 
@@ -306,7 +319,7 @@ public final class UpdateMonitoredResourceTypeDetails
      * Resource Category to indicate the kind of resource type.
      *
      * @return the value
-     */
+     **/
     public ResourceCategory getResourceCategory() {
         return resourceCategory;
     }
@@ -319,35 +332,37 @@ public final class UpdateMonitoredResourceTypeDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -359,7 +374,6 @@ public final class UpdateMonitoredResourceTypeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

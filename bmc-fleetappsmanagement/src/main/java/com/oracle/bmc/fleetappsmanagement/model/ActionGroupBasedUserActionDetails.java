@@ -5,25 +5,26 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details for a user action to be performed on an action group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details for a user action to be performed on an action group.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ActionGroupBasedUserActionDetails.Builder.class)
+    builder = ActionGroupBasedUserActionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "level")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "level"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ActionGroupBasedUserActionDetails extends UserActionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,16 +36,17 @@ public final class ActionGroupBasedUserActionDetails extends UserActionDetails {
             this.__explicitlySet__.add("action");
             return this;
         }
-        /** Unique identifier for the action group. */
+        /**
+         * Unique identifier for the action group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionGroupId")
         private String actionGroupId;
 
         /**
          * Unique identifier for the action group.
-         *
          * @param actionGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder actionGroupId(String actionGroupId) {
             this.actionGroupId = actionGroupId;
             this.__explicitlySet__.add("actionGroupId");
@@ -75,7 +77,9 @@ public final class ActionGroupBasedUserActionDetails extends UserActionDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -90,15 +94,16 @@ public final class ActionGroupBasedUserActionDetails extends UserActionDetails {
         this.actionGroupId = actionGroupId;
     }
 
-    /** Unique identifier for the action group. */
+    /**
+     * Unique identifier for the action group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionGroupId")
     private final String actionGroupId;
 
     /**
      * Unique identifier for the action group.
-     *
      * @return the value
-     */
+     **/
     public String getActionGroupId() {
         return actionGroupId;
     }
@@ -110,7 +115,6 @@ public final class ActionGroupBasedUserActionDetails extends UserActionDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

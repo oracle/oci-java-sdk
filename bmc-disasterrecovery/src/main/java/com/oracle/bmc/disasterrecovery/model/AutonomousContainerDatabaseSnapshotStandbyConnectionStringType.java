@@ -5,16 +5,14 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The type of connection strings used to connect to an Autonomous Container Database snapshot
- * standby created during a DR Drill operation. See
- * https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for
- * information about these service types. - SNAPSHOT_SERVICE - Connect to the snapshot standby using
- * new services that are active only in snapshot standby mode. - PRIMARY_SERVICE - Connect to the
- * snapshot standby database using the same services as the primary database.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum AutonomousContainerDatabaseSnapshotStandbyConnectionStringType
-        implements com.oracle.bmc.http.internal.BmcEnum {
+ * The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation.
+ * See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+ * - SNAPSHOT_SERVICE - Connect to the snapshot standby using new services that are active only in snapshot standby mode.
+ * - PRIMARY_SERVICE - Connect to the snapshot standby database using the same services as the primary database.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum AutonomousContainerDatabaseSnapshotStandbyConnectionStringType {
     SnapshotService("SNAPSHOT_SERVICE"),
     PrimaryService("PRIMARY_SERVICE"),
 

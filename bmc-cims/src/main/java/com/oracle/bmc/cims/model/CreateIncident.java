@@ -5,22 +5,20 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details gathered during the creation of the support ticket. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+ * Details gathered during the creation of the support ticket.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateIncident.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateIncident
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateIncident extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -51,16 +49,17 @@ public final class CreateIncident
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the tenancy. */
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the tenancy.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -76,103 +75,100 @@ public final class CreateIncident
             return this;
         }
         /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
-         */
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is optional for all support request types.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
-         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is optional for all support request types.
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is optional for all support request types.
          *
          * @param csi the value to set
          * @return this builder
-         */
+         **/
         public Builder csi(String csi) {
             this.csi = csi;
             this.__explicitlySet__.add("csi");
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
-         */
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
         private String userGroupId;
 
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
          *
          * @param userGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder userGroupId(String userGroupId) {
             this.userGroupId = userGroupId;
             this.__explicitlySet__.add("userGroupId");
             return this;
         }
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
-         * Increase
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
-         */
+         * The kind of support ticket (type of support request).
+         * For information about {@code ACCOUNT} support tickets, see
+         * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * For information about {@code LIMIT} support tickets, see
+         * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+         * For information about {@code TECH} support tickets, see
+         * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
-         * Increase
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+         * The kind of support ticket (type of support request).
+         * For information about {@code ACCOUNT} support tickets, see
+         * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * For information about {@code LIMIT} support tickets, see
+         * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+         * For information about {@code TECH} support tickets, see
+         * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
          * @return this builder
-         */
+         **/
         public Builder problemType(ProblemType problemType) {
             this.problemType = problemType;
             this.__explicitlySet__.add("problemType");
             return this;
         }
-        /** The list of contacts. */
+        /**
+         * The list of contacts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contacts")
         private java.util.List<Contact> contacts;
 
         /**
          * The list of contacts.
-         *
          * @param contacts the value to set
          * @return this builder
-         */
+         **/
         public Builder contacts(java.util.List<Contact> contacts) {
             this.contacts = contacts;
             this.__explicitlySet__.add("contacts");
             return this;
         }
         /**
-         * The incident referrer. This value is often the URL that the customer used when creating
-         * the support ticket.
-         */
+         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referrer")
         private String referrer;
 
         /**
-         * The incident referrer. This value is often the URL that the customer used when creating
-         * the support ticket.
-         *
+         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
          * @param referrer the value to set
          * @return this builder
-         */
+         **/
         public Builder referrer(String referrer) {
             this.referrer = referrer;
             this.__explicitlySet__.add("referrer");
@@ -225,7 +221,9 @@ public final class CreateIncident
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -234,15 +232,16 @@ public final class CreateIncident
         return new Builder().copy(this);
     }
 
-    /** The OCID of the tenancy. */
+    /**
+     * The OCID of the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -255,92 +254,91 @@ public final class CreateIncident
     }
 
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
-     */
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is optional for all support request types.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
-     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * optional for all support request types.
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is optional for all support request types.
      *
      * @return the value
-     */
+     **/
     public String getCsi() {
         return csi;
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
-     */
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
     private final String userGroupId;
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
      *
      * @return the value
-     */
+     **/
     public String getUserGroupId() {
         return userGroupId;
     }
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
-     */
+     * The kind of support ticket (type of support request).
+     * For information about {@code ACCOUNT} support tickets, see
+     * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+     * For information about {@code LIMIT} support tickets, see
+     * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+     * For information about {@code TECH} support tickets, see
+     * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+     * The kind of support ticket (type of support request).
+     * For information about {@code ACCOUNT} support tickets, see
+     * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+     * For information about {@code LIMIT} support tickets, see
+     * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+     * For information about {@code TECH} support tickets, see
+     * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value
-     */
+     **/
     public ProblemType getProblemType() {
         return problemType;
     }
 
-    /** The list of contacts. */
+    /**
+     * The list of contacts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     private final java.util.List<Contact> contacts;
 
     /**
      * The list of contacts.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Contact> getContacts() {
         return contacts;
     }
 
     /**
-     * The incident referrer. This value is often the URL that the customer used when creating the
-     * support ticket.
-     */
+     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
     private final String referrer;
 
     /**
-     * The incident referrer. This value is often the URL that the customer used when creating the
-     * support ticket.
-     *
+     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
      * @return the value
-     */
+     **/
     public String getReferrer() {
         return referrer;
     }
@@ -352,7 +350,6 @@ public final class CreateIncident
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

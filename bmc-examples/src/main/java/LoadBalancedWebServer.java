@@ -208,8 +208,10 @@ public class LoadBalancedWebServer {
     private static final List<Long> destroyTimes = new ArrayList<>();
 
     /**
-     * This program will: - create two instances with basic HTTP server - create two block volumes
-     * and attach them to the instances - create a load balancer in front of the two instances
+     * This program will:
+     * - create two instances with basic HTTP server
+     * - create two block volumes and attach them to the instances
+     * - create a load balancer in front of the two instances
      */
     public static void main(String[] args) throws Exception {
         if (args.length < 4 || args.length > 5) {
@@ -229,14 +231,12 @@ public class LoadBalancedWebServer {
         Region region = Region.fromRegionCodeOrId(regionName);
         int numRuns = 1;
         if (args.length == 5) {
-            // if the number of runs was specified, don't wait after creating the resources, tear
-            // down immediately
+            // if the number of runs was specified, don't wait after creating the resources, tear down immediately
             Integer.valueOf(args[4]);
             shouldPause = false;
         }
 
-        // Read config from the profile DEFAULT in the file "~/.oci/config". You can switch to
-        // different profile.
+        // Read config from the profile DEFAULT in the file "~/.oci/config". You can switch to different profile.
         AuthenticationDetailsProvider authenticationDetailsProvider =
                 new ConfigFileAuthenticationDetailsProvider(args[0], PROFILE_DEFAULT);
 
@@ -379,18 +379,14 @@ public class LoadBalancedWebServer {
             //
             vcn = createVcn(virtualNetworkClient, compartmentId, networkCidrBlock);
 
-            // The Internet Gateway with updated Route Rules will enable the instance to connect to
-            // the public
-            // internet. If it is not desired, remove the following two lines below that create an
-            // internet
+            // The Internet Gateway with updated Route Rules will enable the instance to connect to the public
+            // internet. If it is not desired, remove the following two lines below that create an internet
             // gateway and add that internet gateway to the VCN route table.
             internetGateway = createInternetGateway(virtualNetworkClient, compartmentId, vcn);
             addInternetGatewayToDefaultRouteTable(virtualNetworkClient, vcn, internetGateway);
 
-            // The Network Security Group with Security Rules will allow external HTTP traffic go to
-            // the instance
-            // through port 80. The HTTP server hosted on the instance will be open to the public.
-            // You update
+            // The Network Security Group with Security Rules will allow external HTTP traffic go to the instance
+            // through port 80. The HTTP server hosted on the instance will be open to the public. You update
             // the Security Rules with your need accordingly.
             networkSecurityGroup =
                     createNetworkSecurityGroup(virtualNetworkClient, compartmentId, vcn);
@@ -765,8 +761,7 @@ public class LoadBalancedWebServer {
         if (vmShapes.isEmpty()) {
             throw new IllegalStateException("No available VM shape was found.");
         }
-        // For demonstration, we just return the first shape but for Production code you should have
-        // a better
+        // For demonstration, we just return the first shape but for Production code you should have a better
         // way of determining what is needed
         Shape shape = vmShapes.get(0);
 
@@ -789,8 +784,7 @@ public class LoadBalancedWebServer {
             throw new IllegalStateException("No available image was found.");
         }
 
-        // For demonstration, we just return the first image but for Production code you should have
-        // a better
+        // For demonstration, we just return the first image but for Production code you should have a better
         // way of determining what is needed.
         //
         // Note the latest version of the images for the same operating system is returned firstly.
@@ -1336,7 +1330,8 @@ public class LoadBalancedWebServer {
                     CreateLoadBalancerDetails.builder()
                             .compartmentId(compartmentId)
                             .subnetIds(
-                                    subnets.values().stream()
+                                    subnets.values()
+                                            .stream()
                                             .map(sn -> sn.getId())
                                             .collect(Collectors.toList()))
                             .displayName(LoadBalancedWebServer.class.getSimpleName() + "Lb")
@@ -1377,12 +1372,10 @@ public class LoadBalancedWebServer {
      * Creates a backend set in a given load balancer.
      *
      * @param loadBalancerClient the client used to communicate with the service
-     * @param loadBalancerId the OCID of the load balancer we're adding the backend set to
+     * @param loadBalancerId  the OCID of the load balancer we're adding the backend set to
      * @param backendSetName a string display name for the backend set
-     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN,
-     *     LEAST_CONNECTIONS, etc)
-     * @param healthChecker a healthCheckerDetails object describing the health check parameters for
-     *     the backends
+     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN, LEAST_CONNECTIONS, etc)
+     * @param healthChecker a healthCheckerDetails object describing the health check parameters for the backends
      */
     private static String createBackendSet(
             VirtualNetworkClient virtualNetworkClient,
@@ -1400,8 +1393,7 @@ public class LoadBalancedWebServer {
                 Subnet subnet = subnets.get(instance.getAvailabilityDomain());
 
                 String privateIp = null;
-                // seems like there is no good way to find the subnet or VNIC of an instance if the
-                // instance is created
+                // seems like there is no good way to find the subnet or VNIC of an instance if the instance is created
                 // using LaunchInstanceDetails.createVnicDetails.
                 for (PrivateIp pip :
                         virtualNetworkClient
@@ -1470,7 +1462,7 @@ public class LoadBalancedWebServer {
      * Updates a backend set in a given load balancer.
      *
      * @param loadBalancerClient the client used to communicate with the service
-     * @param loadBalancerId the OCID of the load balancer that contains the backend set to delete
+     * @param loadBalancerId  the OCID of the load balancer that contains the backend set to delete
      * @param backendSetName the name of the backend set to delete
      */
     private static void deleteBackendSet(
@@ -1580,6 +1572,7 @@ public class LoadBalancedWebServer {
      * @param compartmentId the compartment in which to create the volume
      * @param availabilityDomain the availability domain in which to create the volume
      * @param displayName the display name of the volume
+     *
      * @return the created volume
      */
     protected static Volume createVolume(
@@ -1635,6 +1628,7 @@ public class LoadBalancedWebServer {
      *
      * @param blockStorageClient the client used to communicate with the service
      * @param volume the volume to delete
+     *
      * @throws Exception if there was an error waiting for the volume to be deleted
      */
     protected static void deleteVolume(
@@ -1664,9 +1658,10 @@ public class LoadBalancedWebServer {
      * @param computeClient the client used to communicate with the service
      * @param volume the volume to attach
      * @param instance the instance to attach the volume to
-     * @return the volume attachment. Note that this is actually an {@link
-     *     com.oracle.bmc.core.model.IScsiVolumeAttachment}, which is a subclass of {@link
-     *     com.oracle.bmc.core.model.VolumeAttachment}
+     *
+     * @return the volume attachment. Note that this is actually an {@link com.oracle.bmc.core.model.IScsiVolumeAttachment}, which is a subclass
+     * of {@link com.oracle.bmc.core.model.VolumeAttachment}
+     *
      * @throws Exception if there was an error waiting for the volume attachment
      */
     protected static VolumeAttachment attachIscsiVolume(
@@ -1704,18 +1699,17 @@ public class LoadBalancedWebServer {
     }
 
     /**
-     * Attaches a volume using the given volume attachment details and waits for the attachment to
-     * become available
+     * Attaches a volume using the given volume attachment details and waits for the attachment to become available
      *
      * @param computeClient the client used to communicate with the service
-     * @param attachVolumeDetails the details of the volume attachment. This should be one of the
-     *     subclasses of {@link com.oracle.bmc.core.model.AttachVolumeDetails}
-     * @return the volume attachment. Note that this will be a subclass of {@link
-     *     com.oracle.bmc.core.model.VolumeAttachment}. Which subclass it is will depend on what
-     *     type of {@link com.oracle.bmc.core.model.AttachVolumeDetails} was passed to this method.
-     *     For example if an {@link com.oracle.bmc.core.model.AttachIScsiVolumeDetails} was used
-     *     then the returned {@link com.oracle.bmc.core.model.VolumeAttachment} will be an {@link
-     *     com.oracle.bmc.core.model.IScsiVolumeAttachment}
+     * @param attachVolumeDetails the details of the volume attachment. This should be one of the subclasses of
+     * {@link com.oracle.bmc.core.model.AttachVolumeDetails}
+     *
+     * @return the volume attachment. Note that this will be a subclass of {@link com.oracle.bmc.core.model.VolumeAttachment}. Which
+     * subclass it is will depend on what type of {@link com.oracle.bmc.core.model.AttachVolumeDetails} was passed to this method. For
+     * example if an {@link com.oracle.bmc.core.model.AttachIScsiVolumeDetails} was used then the returned  {@link com.oracle.bmc.core.model.VolumeAttachment}
+     * will be an {@link com.oracle.bmc.core.model.IScsiVolumeAttachment}
+     *
      * @throws Exception if there was an error waiting for the volume attachment
      */
     protected static VolumeAttachment attachVolume(
@@ -1751,6 +1745,7 @@ public class LoadBalancedWebServer {
      *
      * @param computeClient the client used to communicate with the service
      * @param volumeAttachment the details of the volume to detach
+     *
      * @throws Exception if there was an error waiting for the volume to detach
      */
     protected static void detachVolume(

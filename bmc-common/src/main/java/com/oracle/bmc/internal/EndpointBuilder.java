@@ -4,21 +4,29 @@
  */
 package com.oracle.bmc.internal;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 
-import com.oracle.bmc.http.client.Options;
+import com.oracle.bmc.http.internal.RestClient;
+import com.oracle.bmc.http.internal.WrappedWebTarget;
+import com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.StringUtils;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 /**
- * EndpointBuilder provides a wrapper to construct the appropriate endpoint for a service. The
- * service may override the endpoint template, but if not, a default template will be used.
+ * EndpointBuilder provides a wrapper to construct the appropriate
+ * endpoint for a service.  The service may override the endpoint template, but
+ * if not, a default template will be used.
  */
 public class EndpointBuilder {
     private static final org.slf4j.Logger LOG =
@@ -32,7 +40,8 @@ public class EndpointBuilder {
     private static final Map<String, String> OVERRIDE_REGION_IDS = new HashMap<>();
 
     /**
-     * Creates the service endpoint using the {@link DefaultEndpointConfiguration} method.
+     * Creates the service endpoint using the {@link DefaultEndpointConfiguration}
+     * method.
      *
      * @param service The service
      * @param regionId The regionId
@@ -56,8 +65,7 @@ public class EndpointBuilder {
         }
 
         // Do not append any other endpoint suffix like '.service.oci.oraclecloud.com` at the end
-        // Ex: If regionId is 'broom6.us.oracle.com', then endpoint should be
-        // 'https://{service}.broom6.us.oracle.com'
+        // Ex: If regionId is 'broom6.us.oracle.com', then endpoint should be 'https://{service}.broom6.us.oracle.com'
         if (StringUtils.isNotBlank(regionId) && regionId.contains(".")) {
             final String endpoint;
             if (StringUtils.isNotBlank(service.getEndpointServiceName())) {
@@ -103,7 +111,7 @@ public class EndpointBuilder {
         }
 
         boolean useOfRealmSpecificEndpointTemplateEnabled =
-                Options.getUseOfRealmSpecificEndpointTemplateByDefault();
+                RealmSpecificEndpointTemplateUtils.getUseOfRealmSpecificEndpointTemplateByDefault();
         boolean realmSpecificEndpointTemplateDefined =
                 service.getServiceEndpointTemplateForRealmMap() != null
                         && service.getServiceEndpointTemplateForRealmMap()
@@ -153,7 +161,7 @@ public class EndpointBuilder {
         } else {
             endpointTemplateToUse = DEFAULT_ENDPOINT_TEMPLATE;
         }
-        LOG.debug("Setting endpoint template to: {}", endpointTemplateToUse);
+
         return DefaultEndpointConfiguration.builder(endpointTemplateToUse)
                 .regionId(regionId)
                 .serviceEndpointPrefix(service.getServiceEndpointPrefix())
@@ -175,7 +183,8 @@ public class EndpointBuilder {
     }
 
     /**
-     * Creates the service endpoint using the {@link DefaultEndpointConfiguration} method.
+     * Creates the service endpoint using the {@link DefaultEndpointConfiguration}
+     * method.
      *
      * @param service The service
      * @param region The region
@@ -193,10 +202,9 @@ public class EndpointBuilder {
 
     /**
      * Temporary ability to override the region for a given regionId.
-     *
-     * <p>This will most likely be removed at a later point in time. It is not intended for use
-     * outside of the SDK.
-     *
+     * <p>
+     * This will most likely be removed at a later point in time.  It is not intended
+     * for use outside of the SDK.
      * @param regionId The value obtained from {@link Region#getRegionId()}.
      * @param overrideRegionId The alternative regionId to use.
      */
@@ -216,6 +224,83 @@ public class EndpointBuilder {
                     overrideRegionId);
             OVERRIDE_REGION_IDS.put(regionId, overrideRegionId);
         }
+    }
+
+    /**
+     * Populate the parameters in the endpoint with its corresponding value and update the base
+     * endpoint. The value will be populated iff the parameter in endpoint is a required request
+     * path parameter or a required request query parameter. If not, the parameter in the endpoint
+     * will be ignored and left blank.
+     *
+     * @param client The RestClient in use
+     * @param requiredParametersMap Map of parameter name as key and value set in request path or
+     *     query parameter as value
+     */
+    public static final WrappedWebTarget populateServiceParametersInEndpoint(
+            RestClient client, Map<String, Object> requiredParametersMap) {
+        String endpointTemplate = client.getBaseTarget().getUriBuilder().toTemplate();
+        if (!endpointTemplate.contains("{")) {
+            return client.getBaseTarget();
+        }
+        String endpoint =
+                getEndpointWithPopulatedServiceParams(endpointTemplate, requiredParametersMap);
+        return new WrappedWebTarget(client.getClient().target(endpoint));
+    }
+
+    @VisibleForTesting
+    protected static String getEndpointWithPopulatedServiceParams(
+            String endpointTemplate, Map<String, Object> requiredParametersMap) {
+        List<String> parameters = parseEndpointForParams(endpointTemplate);
+        String updatedEndpoint = endpointTemplate;
+        if (parameters != null && parameters.size() > 0 && requiredParametersMap.isEmpty()) {
+            updatedEndpoint = endpointTemplate.replaceAll("\\{.*?\\}", "");
+            return updatedEndpoint;
+        }
+
+        for (String parameter : parameters) {
+            boolean appendDot = false;
+            String paramName;
+
+            // If the parameter is defined with a "+Dot" string, it means we need to append a "."
+            // after populating the paramName value
+            if (parameter.endsWith("+Dot}")) {
+                appendDot = true;
+                paramName = parameter.substring(1, parameter.indexOf("+"));
+            } else {
+                paramName = parameter.substring(1, parameter.length() - 1);
+            }
+
+            if (requiredParametersMap.containsKey(paramName)) {
+                if (!(requiredParametersMap.get(paramName) instanceof String)) {
+                    LOG.debug(
+                            "The parameter for {} cannot be populated since the value is not of type String",
+                            paramName);
+                    updatedEndpoint = updatedEndpoint.replace(parameter, "");
+                    continue;
+                }
+                if (appendDot) {
+                    updatedEndpoint =
+                            updatedEndpoint.replace(
+                                    parameter, requiredParametersMap.get(paramName) + ".");
+                } else {
+                    updatedEndpoint =
+                            updatedEndpoint.replace(
+                                    parameter, requiredParametersMap.get(paramName).toString());
+                }
+            } else {
+                updatedEndpoint = updatedEndpoint.replace(parameter, "");
+            }
+        }
+        return updatedEndpoint;
+    }
+
+    private static List<String> parseEndpointForParams(String endpointTemplate) {
+        List<String> parsedParams = new ArrayList<>();
+        Matcher matcher = Pattern.compile("\\{(.*?)\\}").matcher(endpointTemplate);
+        while (matcher.find()) {
+            parsedParams.add(matcher.group());
+        }
+        return parsedParams;
     }
 
     private EndpointBuilder() {}

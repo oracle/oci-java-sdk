@@ -5,24 +5,24 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Metadata about the Git configuration source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Metadata about the Git configuration source.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GitConfigSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GitConfigSource extends ConfigSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,49 +35,50 @@ public final class GitConfigSource extends ConfigSource {
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Git configuration source.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git configuration source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
         private String configurationSourceProviderId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Git configuration source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git configuration source.
          *
          * @param configurationSourceProviderId the value to set
          * @return this builder
-         */
+         **/
         public Builder configurationSourceProviderId(String configurationSourceProviderId) {
             this.configurationSourceProviderId = configurationSourceProviderId;
             this.__explicitlySet__.add("configurationSourceProviderId");
             return this;
         }
-        /** The URL of the Git repository for the configuration source. */
+        /**
+         * The URL of the Git repository for the configuration source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
         /**
          * The URL of the Git repository for the configuration source.
-         *
          * @param repositoryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
             return this;
         }
-        /** The name of the branch in the Git repository for the configuration source. */
+        /**
+         * The name of the branch in the Git repository for the configuration source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("branchName")
         private String branchName;
 
         /**
          * The name of the branch in the Git repository for the configuration source.
-         *
          * @param branchName the value to set
          * @return this builder
-         */
+         **/
         public Builder branchName(String branchName) {
             this.branchName = branchName;
             this.__explicitlySet__.add("branchName");
@@ -118,7 +119,9 @@ public final class GitConfigSource extends ConfigSource {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,44 +143,45 @@ public final class GitConfigSource extends ConfigSource {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git
-     * configuration source.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git configuration source.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
     private final String configurationSourceProviderId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git
-     * configuration source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Git configuration source.
      *
      * @return the value
-     */
+     **/
     public String getConfigurationSourceProviderId() {
         return configurationSourceProviderId;
     }
 
-    /** The URL of the Git repository for the configuration source. */
+    /**
+     * The URL of the Git repository for the configuration source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
     /**
      * The URL of the Git repository for the configuration source.
-     *
      * @return the value
-     */
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
 
-    /** The name of the branch in the Git repository for the configuration source. */
+    /**
+     * The name of the branch in the Git repository for the configuration source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("branchName")
     private final String branchName;
 
     /**
      * The name of the branch in the Git repository for the configuration source.
-     *
      * @return the value
-     */
+     **/
     public String getBranchName() {
         return branchName;
     }
@@ -189,7 +193,6 @@ public final class GitConfigSource extends ConfigSource {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

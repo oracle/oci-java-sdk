@@ -6,17 +6,16 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +23,14 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned {@code ValidateLabelConditionResult} instance. */
+    /**
+     * The returned ValidateLabelConditionResult instance.
+     */
     private com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult
             validateLabelConditionResult;
 
     /**
-     * The returned {@code ValidateLabelConditionResult} instance.
-     *
+     * The returned ValidateLabelConditionResult instance.
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult
@@ -46,7 +46,7 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
     })
     private ValidateLabelConditionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult
                     validateLabelConditionResult) {
@@ -55,34 +55,29 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
         this.validateLabelConditionResult = validateLabelConditionResult;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ValidateLabelConditionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,13 +87,14 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code ValidateLabelConditionResult} instance. */
+        /**
+         * The returned ValidateLabelConditionResult instance.
+         */
         private com.oracle.bmc.loganalytics.model.ValidateLabelConditionResult
                 validateLabelConditionResult;
 
         /**
-         * The returned {@code ValidateLabelConditionResult} instance.
-         *
+         * The returned ValidateLabelConditionResult instance.
          * @param validateLabelConditionResult the value to set
          * @return this builder
          */
@@ -111,10 +107,8 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ValidateLabelConditionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -126,10 +120,8 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ValidateLabelConditionResponse build() {
             return new ValidateLabelConditionResponse(
                     __httpStatusCode__, headers, opcRequestId, validateLabelConditionResult);
@@ -138,7 +130,6 @@ public class ValidateLabelConditionResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

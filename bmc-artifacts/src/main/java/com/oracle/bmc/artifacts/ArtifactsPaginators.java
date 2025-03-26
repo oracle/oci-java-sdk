@@ -9,31 +9,23 @@ import com.oracle.bmc.artifacts.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Artifacts where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Artifacts where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ArtifactsPaginators {
     private final Artifacts client;
 
@@ -42,20 +34,17 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listContainerImageSignatures operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listContainerImageSignatures operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListContainerImageSignaturesResponse>
             listContainerImageSignaturesResponseIterator(
                     final ListContainerImageSignaturesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListContainerImageSignaturesRequest.Builder,
-                ListContainerImageSignaturesRequest,
+                ListContainerImageSignaturesRequest.Builder, ListContainerImageSignaturesRequest,
                 ListContainerImageSignaturesResponse>(
                 new java.util.function.Supplier<ListContainerImageSignaturesRequest.Builder>() {
                     @Override
@@ -99,22 +88,19 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary} objects contained in responses
-     * from the listContainerImageSignatures operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary} objects
+     * contained in responses from the listContainerImageSignatures operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>
             listContainerImageSignaturesRecordIterator(
                     final ListContainerImageSignaturesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListContainerImageSignaturesRequest.Builder,
-                ListContainerImageSignaturesRequest,
+                ListContainerImageSignaturesRequest.Builder, ListContainerImageSignaturesRequest,
                 ListContainerImageSignaturesResponse,
                 com.oracle.bmc.artifacts.model.ContainerImageSignatureSummary>(
                 new java.util.function.Supplier<ListContainerImageSignaturesRequest.Builder>() {
@@ -170,18 +156,16 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listContainerImages operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listContainerImages operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListContainerImagesResponse> listContainerImagesResponseIterator(
             final ListContainerImagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListContainerImagesRequest.Builder,
-                ListContainerImagesRequest,
+                ListContainerImagesRequest.Builder, ListContainerImagesRequest,
                 ListContainerImagesResponse>(
                 new java.util.function.Supplier<ListContainerImagesRequest.Builder>() {
                     @Override
@@ -223,22 +207,19 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.artifacts.model.ContainerImageSummary} objects contained in responses from the
-     * listContainerImages operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.ContainerImageSummary} objects
+     * contained in responses from the listContainerImages operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.artifacts.model.ContainerImageSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.ContainerImageSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.artifacts.model.ContainerImageSummary>
             listContainerImagesRecordIterator(final ListContainerImagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListContainerImagesRequest.Builder,
-                ListContainerImagesRequest,
-                ListContainerImagesResponse,
-                com.oracle.bmc.artifacts.model.ContainerImageSummary>(
+                ListContainerImagesRequest.Builder, ListContainerImagesRequest,
+                ListContainerImagesResponse, com.oracle.bmc.artifacts.model.ContainerImageSummary>(
                 new java.util.function.Supplier<ListContainerImagesRequest.Builder>() {
                     @Override
                     public ListContainerImagesRequest.Builder get() {
@@ -288,19 +269,16 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listContainerRepositories operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listContainerRepositories operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListContainerRepositoriesResponse> listContainerRepositoriesResponseIterator(
             final ListContainerRepositoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListContainerRepositoriesRequest.Builder,
-                ListContainerRepositoriesRequest,
+                ListContainerRepositoriesRequest.Builder, ListContainerRepositoriesRequest,
                 ListContainerRepositoriesResponse>(
                 new java.util.function.Supplier<ListContainerRepositoriesRequest.Builder>() {
                     @Override
@@ -343,22 +321,19 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.artifacts.model.ContainerRepositorySummary} objects contained in responses
-     * from the listContainerRepositories operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.ContainerRepositorySummary} objects
+     * contained in responses from the listContainerRepositories operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.artifacts.model.ContainerRepositorySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.ContainerRepositorySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.artifacts.model.ContainerRepositorySummary>
             listContainerRepositoriesRecordIterator(
                     final ListContainerRepositoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListContainerRepositoriesRequest.Builder,
-                ListContainerRepositoriesRequest,
+                ListContainerRepositoriesRequest.Builder, ListContainerRepositoriesRequest,
                 ListContainerRepositoriesResponse,
                 com.oracle.bmc.artifacts.model.ContainerRepositorySummary>(
                 new java.util.function.Supplier<ListContainerRepositoriesRequest.Builder>() {
@@ -412,18 +387,16 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listGenericArtifacts operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listGenericArtifacts operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListGenericArtifactsResponse> listGenericArtifactsResponseIterator(
             final ListGenericArtifactsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListGenericArtifactsRequest.Builder,
-                ListGenericArtifactsRequest,
+                ListGenericArtifactsRequest.Builder, ListGenericArtifactsRequest,
                 ListGenericArtifactsResponse>(
                 new java.util.function.Supplier<ListGenericArtifactsRequest.Builder>() {
                     @Override
@@ -465,21 +438,18 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.artifacts.model.GenericArtifactSummary} objects contained in responses from
-     * the listGenericArtifacts operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.GenericArtifactSummary} objects
+     * contained in responses from the listGenericArtifacts operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.artifacts.model.GenericArtifactSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.GenericArtifactSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.artifacts.model.GenericArtifactSummary>
             listGenericArtifactsRecordIterator(final ListGenericArtifactsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListGenericArtifactsRequest.Builder,
-                ListGenericArtifactsRequest,
+                ListGenericArtifactsRequest.Builder, ListGenericArtifactsRequest,
                 ListGenericArtifactsResponse,
                 com.oracle.bmc.artifacts.model.GenericArtifactSummary>(
                 new java.util.function.Supplier<ListGenericArtifactsRequest.Builder>() {
@@ -531,12 +501,11 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listRepositories operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listRepositories operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRepositoriesResponse> listRepositoriesResponseIterator(
             final ListRepositoriesRequest request) {
@@ -582,21 +551,18 @@ public class ArtifactsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.artifacts.model.RepositorySummary} objects contained in responses from the
-     * listRepositories operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.artifacts.model.RepositorySummary} objects
+     * contained in responses from the listRepositories operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.artifacts.model.RepositorySummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.artifacts.model.RepositorySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.artifacts.model.RepositorySummary>
             listRepositoriesRecordIterator(final ListRepositoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRepositoriesRequest.Builder,
-                ListRepositoriesRequest,
-                ListRepositoriesResponse,
+                ListRepositoriesRequest.Builder, ListRepositoriesRequest, ListRepositoriesResponse,
                 com.oracle.bmc.artifacts.model.RepositorySummary>(
                 new java.util.function.Supplier<ListRepositoriesRequest.Builder>() {
                     @Override

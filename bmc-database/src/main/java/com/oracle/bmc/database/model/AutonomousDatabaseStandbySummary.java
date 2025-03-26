@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Autonomous Data Guard standby database details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Autonomous Data Guard standby database details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDatabaseStandbySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousDatabaseStandbySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseStandbySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lagTimeInSeconds",
@@ -59,154 +59,145 @@ public final class AutonomousDatabaseStandbySummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The amount of time, in seconds, that the data of the standby database lags the data of
-         * the primary database. Can be used to determine the potential data loss in the event of a
-         * failover.
-         */
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lagTimeInSeconds")
         private Integer lagTimeInSeconds;
 
         /**
-         * The amount of time, in seconds, that the data of the standby database lags the data of
-         * the primary database. Can be used to determine the potential data loss in the event of a
-         * failover.
-         *
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
          * @param lagTimeInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder lagTimeInSeconds(Integer lagTimeInSeconds) {
             this.lagTimeInSeconds = lagTimeInSeconds;
             this.__explicitlySet__.add("lagTimeInSeconds");
             return this;
         }
-        /** The current state of the Autonomous Database. */
+        /**
+         * The current state of the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Autonomous Database.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Additional information about the current lifecycle state. */
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous
-         * Database.
-         */
+         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
         private java.util.Date timeDataGuardRoleChanged;
 
         /**
-         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous
-         * Database.
-         *
+         * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
          * @param timeDataGuardRoleChanged the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataGuardRoleChanged(java.util.Date timeDataGuardRoleChanged) {
             this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             this.__explicitlySet__.add("timeDataGuardRoleChanged");
             return this;
         }
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous
-         * Database.
-         */
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
         private java.util.Date timeDisasterRecoveryRoleChanged;
 
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous
-         * Database.
-         *
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
          * @param timeDisasterRecoveryRoleChanged the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDisasterRecoveryRoleChanged(
                 java.util.Date timeDisasterRecoveryRoleChanged) {
             this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             this.__explicitlySet__.add("timeDisasterRecoveryRoleChanged");
             return this;
         }
-        /** The date and time when maintenance will begin. */
+        /**
+         * The date and time when maintenance will begin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
         private java.util.Date timeMaintenanceBegin;
 
         /**
          * The date and time when maintenance will begin.
-         *
          * @param timeMaintenanceBegin the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMaintenanceBegin(java.util.Date timeMaintenanceBegin) {
             this.timeMaintenanceBegin = timeMaintenanceBegin;
             this.__explicitlySet__.add("timeMaintenanceBegin");
             return this;
         }
-        /** The date and time when maintenance will end. */
+        /**
+         * The date and time when maintenance will end.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
         private java.util.Date timeMaintenanceEnd;
 
         /**
          * The date and time when maintenance will end.
-         *
          * @param timeMaintenanceEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMaintenanceEnd(java.util.Date timeMaintenanceEnd) {
             this.timeMaintenanceEnd = timeMaintenanceEnd;
             this.__explicitlySet__.add("timeMaintenanceEnd");
             return this;
         }
-        /** The component chosen for maintenance. */
+        /**
+         * The component chosen for maintenance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
         private String maintenanceTargetComponent;
 
         /**
          * The component chosen for maintenance.
-         *
          * @param maintenanceTargetComponent the value to set
          * @return this builder
-         */
+         **/
         public Builder maintenanceTargetComponent(String maintenanceTargetComponent) {
             this.maintenanceTargetComponent = maintenanceTargetComponent;
             this.__explicitlySet__.add("maintenanceTargetComponent");
             return this;
         }
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an
-         * Autonomous Database Serverless instance.
-         */
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an
-         * Autonomous Database Serverless instance.
-         *
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
@@ -267,7 +258,9 @@ public final class AutonomousDatabaseStandbySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -277,26 +270,23 @@ public final class AutonomousDatabaseStandbySummary
     }
 
     /**
-     * The amount of time, in seconds, that the data of the standby database lags the data of the
-     * primary database. Can be used to determine the potential data loss in the event of a
-     * failover.
-     */
+     * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lagTimeInSeconds")
     private final Integer lagTimeInSeconds;
 
     /**
-     * The amount of time, in seconds, that the data of the standby database lags the data of the
-     * primary database. Can be used to determine the potential data loss in the event of a
-     * failover.
-     *
+     * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * @return the value
-     */
+     **/
     public Integer getLagTimeInSeconds() {
         return lagTimeInSeconds;
     }
 
-    /** The current state of the Autonomous Database. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Autonomous Database.
+     **/
+    public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Stopping("STOPPING"),
@@ -320,8 +310,8 @@ public final class AutonomousDatabaseStandbySummary
         Standby("STANDBY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -360,118 +350,114 @@ public final class AutonomousDatabaseStandbySummary
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Autonomous Database. */
+    /**
+     * The current state of the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional information about the current lifecycle state. */
+    /**
+     * Additional information about the current lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous
-     * Database.
-     */
+     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataGuardRoleChanged")
     private final java.util.Date timeDataGuardRoleChanged;
 
     /**
-     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous
-     * Database.
-     *
+     * The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataGuardRoleChanged() {
         return timeDataGuardRoleChanged;
     }
 
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous
-     * Database.
-     */
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
     private final java.util.Date timeDisasterRecoveryRoleChanged;
 
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous
-     * Database.
-     *
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDisasterRecoveryRoleChanged() {
         return timeDisasterRecoveryRoleChanged;
     }
 
-    /** The date and time when maintenance will begin. */
+    /**
+     * The date and time when maintenance will begin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
     private final java.util.Date timeMaintenanceBegin;
 
     /**
      * The date and time when maintenance will begin.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMaintenanceBegin() {
         return timeMaintenanceBegin;
     }
 
-    /** The date and time when maintenance will end. */
+    /**
+     * The date and time when maintenance will end.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
     private final java.util.Date timeMaintenanceEnd;
 
     /**
      * The date and time when maintenance will end.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMaintenanceEnd() {
         return timeMaintenanceEnd;
     }
 
-    /** The component chosen for maintenance. */
+    /**
+     * The component chosen for maintenance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
     private final String maintenanceTargetComponent;
 
     /**
      * The component chosen for maintenance.
-     *
      * @return the value
-     */
+     **/
     public String getMaintenanceTargetComponent() {
         return maintenanceTargetComponent;
     }
 
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous
-     * Database Serverless instance.
-     */
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous
-     * Database Serverless instance.
-     *
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
@@ -483,7 +469,6 @@ public final class AutonomousDatabaseStandbySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

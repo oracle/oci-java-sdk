@@ -5,24 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Log Analytics entity relationship link used in hierarchical representation of entity
- * relationships topology. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Log Analytics entity relationship link used in hierarchical representation of entity relationships topology.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsEntityTopologyLink.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsEntityTopologyLink.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsEntityTopologyLink
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceEntityId", "destinationEntityId"})
     public LogAnalyticsEntityTopologyLink(String sourceEntityId, String destinationEntityId) {
@@ -34,42 +33,40 @@ public final class LogAnalyticsEntityTopologyLink
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and
-         * it represents a resource that is provisioned and managed by the customer on their
-         * premises or on the cloud.
-         */
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceEntityId")
         private String sourceEntityId;
 
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and
-         * it represents a resource that is provisioned and managed by the customer on their
-         * premises or on the cloud.
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
          *
          * @param sourceEntityId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceEntityId(String sourceEntityId) {
             this.sourceEntityId = sourceEntityId;
             this.__explicitlySet__.add("sourceEntityId");
             return this;
         }
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and
-         * it represents a resource that is provisioned and managed by the customer on their
-         * premises or on the cloud.
-         */
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationEntityId")
         private String destinationEntityId;
 
         /**
-         * The log analytics entity OCID. This ID is a reference used by log analytics features and
-         * it represents a resource that is provisioned and managed by the customer on their
-         * premises or on the cloud.
+         * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+         * a resource that is provisioned and managed by the customer on their premises or on the cloud.
          *
          * @param destinationEntityId the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationEntityId(String destinationEntityId) {
             this.destinationEntityId = destinationEntityId;
             this.__explicitlySet__.add("destinationEntityId");
@@ -101,7 +98,9 @@ public final class LogAnalyticsEntityTopologyLink
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,39 +110,37 @@ public final class LogAnalyticsEntityTopologyLink
     }
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
-     * represents a resource that is provisioned and managed by the customer on their premises or on
-     * the cloud.
-     */
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEntityId")
     private final String sourceEntityId;
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
-     * represents a resource that is provisioned and managed by the customer on their premises or on
-     * the cloud.
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
      *
      * @return the value
-     */
+     **/
     public String getSourceEntityId() {
         return sourceEntityId;
     }
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
-     * represents a resource that is provisioned and managed by the customer on their premises or on
-     * the cloud.
-     */
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationEntityId")
     private final String destinationEntityId;
 
     /**
-     * The log analytics entity OCID. This ID is a reference used by log analytics features and it
-     * represents a resource that is provisioned and managed by the customer on their premises or on
-     * the cloud.
+     * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+     * a resource that is provisioned and managed by the customer on their premises or on the cloud.
      *
      * @return the value
-     */
+     **/
     public String getDestinationEntityId() {
         return destinationEntityId;
     }
@@ -155,7 +152,6 @@ public final class LogAnalyticsEntityTopologyLink
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

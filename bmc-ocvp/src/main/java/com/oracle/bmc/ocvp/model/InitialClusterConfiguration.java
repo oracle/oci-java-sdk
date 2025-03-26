@@ -5,23 +5,22 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * Details of the initial Cluster of SDDC. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+ * Details of the initial Cluster of SDDC.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InitialClusterConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InitialClusterConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InitialClusterConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vsphereType",
@@ -70,7 +69,10 @@ public final class InitialClusterConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** vSphere Cluster types. */
+        /**
+         * vSphere Cluster types.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vsphereType")
         private VsphereTypes vsphereType;
 
@@ -79,101 +81,105 @@ public final class InitialClusterConfiguration
          *
          * @param vsphereType the value to set
          * @return this builder
-         */
+         **/
         public Builder vsphereType(VsphereTypes vsphereType) {
             this.vsphereType = vsphereType;
             this.__explicitlySet__.add("vsphereType");
             return this;
         }
         /**
-         * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster
-         * deployment, set to {@code multi-AD}.
-         */
+         * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to {@code multi-AD}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
         private String computeAvailabilityDomain;
 
         /**
-         * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster
-         * deployment, set to {@code multi-AD}.
+         * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to {@code multi-AD}.
          *
          * @param computeAvailabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             this.__explicitlySet__.add("computeAvailabilityDomain");
             return this;
         }
         /**
-         * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
-         * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
-         * hyphens, Must be unique within the region. Avoid entering confidential information.
-         */
+         * A descriptive name for the Cluster.
+         * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
-         * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
-         * hyphens, Must be unique within the region. Avoid entering confidential information.
+         * A descriptive name for the Cluster.
+         * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this
-         * isn't set, the Cluster's {@code displayName} is used as the prefix.
+         * A prefix used in the name of each ESXi host and Compute instance in the Cluster.
+         * If this isn't set, the Cluster's {@code displayName} is used as the prefix.
+         * <p>
+         * For example, if the value is {@code myCluster}, the ESXi hosts are named {@code myCluster-1},
+         * {@code myCluster-2}, and so on.
          *
-         * <p>For example, if the value is {@code myCluster}, the ESXi hosts are named {@code
-         * myCluster-1}, {@code myCluster-2}, and so on.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNamePrefix")
         private String instanceDisplayNamePrefix;
 
         /**
-         * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this
-         * isn't set, the Cluster's {@code displayName} is used as the prefix.
-         *
-         * <p>For example, if the value is {@code myCluster}, the ESXi hosts are named {@code
-         * myCluster-1}, {@code myCluster-2}, and so on.
+         * A prefix used in the name of each ESXi host and Compute instance in the Cluster.
+         * If this isn't set, the Cluster's {@code displayName} is used as the prefix.
+         * <p>
+         * For example, if the value is {@code myCluster}, the ESXi hosts are named {@code myCluster-1},
+         * {@code myCluster-2}, and so on.
          *
          * @param instanceDisplayNamePrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
             this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             this.__explicitlySet__.add("instanceDisplayNamePrefix");
             return this;
         }
         /**
-         * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see
-         * {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating a Cluster with a
-         * ESXi host count of 1 will be considered a single ESXi host Cluster.
+         * The number of ESXi hosts to create in the Cluster. You can add more hosts later
+         * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+         * a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+         * <p>
+         **Note:** If you later delete EXSi hosts from a production Cluster to total less
+         * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
+         * you cannot add more VMware workloads to the Cluster until it again has at least
+         * 3 ESXi hosts.
          *
-         * <p>*Note:** If you later delete EXSi hosts from a production Cluster to total less than
-         * 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add
-         * more VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
         private Integer esxiHostsCount;
 
         /**
-         * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see
-         * {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating a Cluster with a
-         * ESXi host count of 1 will be considered a single ESXi host Cluster.
-         *
-         * <p>*Note:** If you later delete EXSi hosts from a production Cluster to total less than
-         * 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add
-         * more VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
+         * The number of ESXi hosts to create in the Cluster. You can add more hosts later
+         * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+         * a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+         * <p>
+         **Note:** If you later delete EXSi hosts from a production Cluster to total less
+         * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
+         * you cannot add more VMware workloads to the Cluster until it again has at least
+         * 3 ESXi hosts.
          *
          * @param esxiHostsCount the value to set
          * @return this builder
-         */
+         **/
         public Builder esxiHostsCount(Integer esxiHostsCount) {
             this.esxiHostsCount = esxiHostsCount;
             this.__explicitlySet__.add("esxiHostsCount");
@@ -189,19 +195,20 @@ public final class InitialClusterConfiguration
             return this;
         }
         /**
-         * The billing option selected during Cluster creation. {@link
-         * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
-         */
+         * The billing option selected during Cluster creation.
+         * {@link #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialCommitment")
         private Commitment initialCommitment;
 
         /**
-         * The billing option selected during Cluster creation. {@link
-         * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
+         * The billing option selected during Cluster creation.
+         * {@link #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
          *
          * @param initialCommitment the value to set
          * @return this builder
-         */
+         **/
         public Builder initialCommitment(Commitment initialCommitment) {
             this.initialCommitment = initialCommitment;
             this.__explicitlySet__.add("initialCommitment");
@@ -210,7 +217,8 @@ public final class InitialClusterConfiguration
         /**
          * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application
          * workloads.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadNetworkCidr")
         private String workloadNetworkCidr;
 
@@ -220,32 +228,36 @@ public final class InitialClusterConfiguration
          *
          * @param workloadNetworkCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder workloadNetworkCidr(String workloadNetworkCidr) {
             this.workloadNetworkCidr = workloadNetworkCidr;
             this.__explicitlySet__.add("workloadNetworkCidr");
             return this;
         }
         /**
-         * The initial compute shape of the Cluster's ESXi hosts. {@link
-         * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-         */
+         * The initial compute shape of the Cluster's ESXi hosts.
+         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
         private String initialHostShapeName;
 
         /**
-         * The initial compute shape of the Cluster's ESXi hosts. {@link
-         * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+         * The initial compute shape of the Cluster's ESXi hosts.
+         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
          *
          * @param initialHostShapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder initialHostShapeName(String initialHostShapeName) {
             this.initialHostShapeName = initialHostShapeName;
             this.__explicitlySet__.add("initialHostShapeName");
             return this;
         }
-        /** The initial OCPU count of the Cluster's ESXi hosts. */
+        /**
+         * The initial OCPU count of the Cluster's ESXi hosts.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
         private Float initialHostOcpuCount;
 
@@ -254,13 +266,16 @@ public final class InitialClusterConfiguration
          *
          * @param initialHostOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder initialHostOcpuCount(Float initialHostOcpuCount) {
             this.initialHostOcpuCount = initialHostOcpuCount;
             this.__explicitlySet__.add("initialHostOcpuCount");
             return this;
         }
-        /** Indicates whether shielded instance is enabled for this Cluster. */
+        /**
+         * Indicates whether shielded instance is enabled for this Cluster.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
         private Boolean isShieldedInstanceEnabled;
 
@@ -269,45 +284,45 @@ public final class InitialClusterConfiguration
          *
          * @param isShieldedInstanceEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
             this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             this.__explicitlySet__.add("isShieldedInstanceEnabled");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Capacity Reservation.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Capacity Reservation.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
          *
          * @param capacityReservationId the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
         /**
-         * A list of datastore info for the Cluster. This value is required only when {@code
-         * initialHostShapeName} is a standard shape.
-         */
+         * A list of datastore info for the Cluster.
+         * This value is required only when {@code initialHostShapeName} is a standard shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datastores")
         private java.util.List<DatastoreInfo> datastores;
 
         /**
-         * A list of datastore info for the Cluster. This value is required only when {@code
-         * initialHostShapeName} is a standard shape.
+         * A list of datastore info for the Cluster.
+         * This value is required only when {@code initialHostShapeName} is a standard shape.
          *
          * @param datastores the value to set
          * @return this builder
-         */
+         **/
         public Builder datastores(java.util.List<DatastoreInfo> datastores) {
             this.datastores = datastores;
             this.__explicitlySet__.add("datastores");
@@ -384,7 +399,9 @@ public final class InitialClusterConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -393,7 +410,10 @@ public final class InitialClusterConfiguration
         return new Builder().copy(this);
     }
 
-    /** vSphere Cluster types. */
+    /**
+     * vSphere Cluster types.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereType")
     private final VsphereTypes vsphereType;
 
@@ -401,93 +421,97 @@ public final class InitialClusterConfiguration
      * vSphere Cluster types.
      *
      * @return the value
-     */
+     **/
     public VsphereTypes getVsphereType() {
         return vsphereType;
     }
 
     /**
-     * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster
-     * deployment, set to {@code multi-AD}.
-     */
+     * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to {@code multi-AD}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
     private final String computeAvailabilityDomain;
 
     /**
-     * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster
-     * deployment, set to {@code multi-AD}.
+     * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to {@code multi-AD}.
      *
      * @return the value
-     */
+     **/
     public String getComputeAvailabilityDomain() {
         return computeAvailabilityDomain;
     }
 
     /**
-     * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
-     * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
-     * hyphens, Must be unique within the region. Avoid entering confidential information.
-     */
+     * A descriptive name for the Cluster.
+     * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length
-     * limit, Must start with a letter, Must be English letters, numbers, - only, No repeating
-     * hyphens, Must be unique within the region. Avoid entering confidential information.
+     * A descriptive name for the Cluster.
+     * Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this
-     * isn't set, the Cluster's {@code displayName} is used as the prefix.
+     * A prefix used in the name of each ESXi host and Compute instance in the Cluster.
+     * If this isn't set, the Cluster's {@code displayName} is used as the prefix.
+     * <p>
+     * For example, if the value is {@code myCluster}, the ESXi hosts are named {@code myCluster-1},
+     * {@code myCluster-2}, and so on.
      *
-     * <p>For example, if the value is {@code myCluster}, the ESXi hosts are named {@code
-     * myCluster-1}, {@code myCluster-2}, and so on.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNamePrefix")
     private final String instanceDisplayNamePrefix;
 
     /**
-     * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this
-     * isn't set, the Cluster's {@code displayName} is used as the prefix.
-     *
-     * <p>For example, if the value is {@code myCluster}, the ESXi hosts are named {@code
-     * myCluster-1}, {@code myCluster-2}, and so on.
+     * A prefix used in the name of each ESXi host and Compute instance in the Cluster.
+     * If this isn't set, the Cluster's {@code displayName} is used as the prefix.
+     * <p>
+     * For example, if the value is {@code myCluster}, the ESXi hosts are named {@code myCluster-1},
+     * {@code myCluster-2}, and so on.
      *
      * @return the value
-     */
+     **/
     public String getInstanceDisplayNamePrefix() {
         return instanceDisplayNamePrefix;
     }
 
     /**
-     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see {@link
-     * #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating a Cluster with a ESXi host
-     * count of 1 will be considered a single ESXi host Cluster.
+     * The number of ESXi hosts to create in the Cluster. You can add more hosts later
+     * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+     * a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+     * <p>
+     **Note:** If you later delete EXSi hosts from a production Cluster to total less
+     * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
+     * you cannot add more VMware workloads to the Cluster until it again has at least
+     * 3 ESXi hosts.
      *
-     * <p>*Note:** If you later delete EXSi hosts from a production Cluster to total less than 3,
-     * you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more
-     * VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
     private final Integer esxiHostsCount;
 
     /**
-     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see {@link
-     * #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating a Cluster with a ESXi host
-     * count of 1 will be considered a single ESXi host Cluster.
-     *
-     * <p>*Note:** If you later delete EXSi hosts from a production Cluster to total less than 3,
-     * you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more
-     * VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
+     * The number of ESXi hosts to create in the Cluster. You can add more hosts later
+     * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+     * a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+     * <p>
+     **Note:** If you later delete EXSi hosts from a production Cluster to total less
+     * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
+     * you cannot add more VMware workloads to the Cluster until it again has at least
+     * 3 ESXi hosts.
      *
      * @return the value
-     */
+     **/
     public Integer getEsxiHostsCount() {
         return esxiHostsCount;
     }
@@ -500,18 +524,19 @@ public final class InitialClusterConfiguration
     }
 
     /**
-     * The billing option selected during Cluster creation. {@link
-     * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
-     */
+     * The billing option selected during Cluster creation.
+     * {@link #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialCommitment")
     private final Commitment initialCommitment;
 
     /**
-     * The billing option selected during Cluster creation. {@link
-     * #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
+     * The billing option selected during Cluster creation.
+     * {@link #listSupportedCommitments(ListSupportedCommitmentsRequest) listSupportedCommitments}.
      *
      * @return the value
-     */
+     **/
     public Commitment getInitialCommitment() {
         return initialCommitment;
     }
@@ -519,7 +544,8 @@ public final class InitialClusterConfiguration
     /**
      * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application
      * workloads.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadNetworkCidr")
     private final String workloadNetworkCidr;
 
@@ -528,29 +554,33 @@ public final class InitialClusterConfiguration
      * workloads.
      *
      * @return the value
-     */
+     **/
     public String getWorkloadNetworkCidr() {
         return workloadNetworkCidr;
     }
 
     /**
-     * The initial compute shape of the Cluster's ESXi hosts. {@link
-     * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-     */
+     * The initial compute shape of the Cluster's ESXi hosts.
+     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
     private final String initialHostShapeName;
 
     /**
-     * The initial compute shape of the Cluster's ESXi hosts. {@link
-     * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     * The initial compute shape of the Cluster's ESXi hosts.
+     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
      *
      * @return the value
-     */
+     **/
     public String getInitialHostShapeName() {
         return initialHostShapeName;
     }
 
-    /** The initial OCPU count of the Cluster's ESXi hosts. */
+    /**
+     * The initial OCPU count of the Cluster's ESXi hosts.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
     private final Float initialHostOcpuCount;
 
@@ -558,12 +588,15 @@ public final class InitialClusterConfiguration
      * The initial OCPU count of the Cluster's ESXi hosts.
      *
      * @return the value
-     */
+     **/
     public Float getInitialHostOcpuCount() {
         return initialHostOcpuCount;
     }
 
-    /** Indicates whether shielded instance is enabled for this Cluster. */
+    /**
+     * Indicates whether shielded instance is enabled for this Cluster.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
     private final Boolean isShieldedInstanceEnabled;
 
@@ -571,41 +604,41 @@ public final class InitialClusterConfiguration
      * Indicates whether shielded instance is enabled for this Cluster.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsShieldedInstanceEnabled() {
         return isShieldedInstanceEnabled;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Capacity Reservation.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Capacity Reservation.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      *
      * @return the value
-     */
+     **/
     public String getCapacityReservationId() {
         return capacityReservationId;
     }
 
     /**
-     * A list of datastore info for the Cluster. This value is required only when {@code
-     * initialHostShapeName} is a standard shape.
-     */
+     * A list of datastore info for the Cluster.
+     * This value is required only when {@code initialHostShapeName} is a standard shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("datastores")
     private final java.util.List<DatastoreInfo> datastores;
 
     /**
-     * A list of datastore info for the Cluster. This value is required only when {@code
-     * initialHostShapeName} is a standard shape.
+     * A list of datastore info for the Cluster.
+     * This value is required only when {@code initialHostShapeName} is a standard shape.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DatastoreInfo> getDatastores() {
         return datastores;
     }
@@ -617,7 +650,6 @@ public final class InitialClusterConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

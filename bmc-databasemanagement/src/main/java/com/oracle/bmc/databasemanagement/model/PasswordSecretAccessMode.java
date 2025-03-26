@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The principal used while accessing the password value from the Vault service. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum PasswordSecretAccessMode implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The principal used while accessing the password value from the Vault service.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum PasswordSecretAccessMode {
     UserPrincipal("USER_PRINCIPAL"),
     ResourcePrincipal("RESOURCE_PRINCIPAL"),
 

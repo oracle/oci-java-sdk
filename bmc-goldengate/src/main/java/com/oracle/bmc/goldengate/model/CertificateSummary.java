@@ -5,23 +5,21 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the Certificates. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the Certificates.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CertificateSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CertificateSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CertificateSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CertificateSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -50,27 +48,29 @@ public final class CertificateSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier key (unique name in the scope of the deployment) of the certificate being
-         * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters
-         * and must start with a letter.
-         */
+         * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+         * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * The identifier key (unique name in the scope of the deployment) of the certificate being
-         * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters
-         * and must start with a letter.
+         * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+         * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Possible certificate lifecycle states. */
+        /**
+         * Possible certificate lifecycle states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private CertificateLifecycleState lifecycleState;
 
@@ -79,13 +79,16 @@ public final class CertificateSummary
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(CertificateLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The Certificate subject. */
+        /**
+         * The Certificate subject.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subject")
         private String subject;
 
@@ -94,13 +97,16 @@ public final class CertificateSummary
          *
          * @param subject the value to set
          * @return this builder
-         */
+         **/
         public Builder subject(String subject) {
             this.subject = subject;
             this.__explicitlySet__.add("subject");
             return this;
         }
-        /** Indicates if the certificate is self signed. */
+        /**
+         * Indicates if the certificate is self signed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSelfSigned")
         private Boolean isSelfSigned;
 
@@ -109,7 +115,7 @@ public final class CertificateSummary
          *
          * @param isSelfSigned the value to set
          * @return this builder
-         */
+         **/
         public Builder isSelfSigned(Boolean isSelfSigned) {
             this.isSelfSigned = isSelfSigned;
             this.__explicitlySet__.add("isSelfSigned");
@@ -118,7 +124,8 @@ public final class CertificateSummary
         /**
          * The time the certificate is valid to. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeValidTo")
         private java.util.Date timeValidTo;
 
@@ -128,7 +135,7 @@ public final class CertificateSummary
          *
          * @param timeValidTo the value to set
          * @return this builder
-         */
+         **/
         public Builder timeValidTo(java.util.Date timeValidTo) {
             this.timeValidTo = timeValidTo;
             this.__explicitlySet__.add("timeValidTo");
@@ -137,7 +144,8 @@ public final class CertificateSummary
         /**
          * The time the resource was created. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -147,7 +155,7 @@ public final class CertificateSummary
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -196,7 +204,9 @@ public final class CertificateSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -206,25 +216,27 @@ public final class CertificateSummary
     }
 
     /**
-     * The identifier key (unique name in the scope of the deployment) of the certificate being
-     * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters and
-     * must start with a letter.
-     */
+     * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+     * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * The identifier key (unique name in the scope of the deployment) of the certificate being
-     * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters and
-     * must start with a letter.
+     * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+     * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Possible certificate lifecycle states. */
+    /**
+     * Possible certificate lifecycle states.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final CertificateLifecycleState lifecycleState;
 
@@ -232,12 +244,15 @@ public final class CertificateSummary
      * Possible certificate lifecycle states.
      *
      * @return the value
-     */
+     **/
     public CertificateLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The Certificate subject. */
+    /**
+     * The Certificate subject.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
     private final String subject;
 
@@ -245,12 +260,15 @@ public final class CertificateSummary
      * The Certificate subject.
      *
      * @return the value
-     */
+     **/
     public String getSubject() {
         return subject;
     }
 
-    /** Indicates if the certificate is self signed. */
+    /**
+     * Indicates if the certificate is self signed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSelfSigned")
     private final Boolean isSelfSigned;
 
@@ -258,7 +276,7 @@ public final class CertificateSummary
      * Indicates if the certificate is self signed.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSelfSigned() {
         return isSelfSigned;
     }
@@ -266,7 +284,8 @@ public final class CertificateSummary
     /**
      * The time the certificate is valid to. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeValidTo")
     private final java.util.Date timeValidTo;
 
@@ -275,7 +294,7 @@ public final class CertificateSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeValidTo() {
         return timeValidTo;
     }
@@ -283,7 +302,8 @@ public final class CertificateSummary
     /**
      * The time the resource was created. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -292,7 +312,7 @@ public final class CertificateSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -304,7 +324,6 @@ public final class CertificateSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

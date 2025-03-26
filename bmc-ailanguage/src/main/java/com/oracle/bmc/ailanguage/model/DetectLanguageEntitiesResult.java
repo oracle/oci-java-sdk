@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Result of entities detect call. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Result of entities detect call.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DetectLanguageEntitiesResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DetectLanguageEntitiesResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DetectLanguageEntitiesResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entities"})
     public DetectLanguageEntitiesResult(java.util.List<Entity> entities) {
@@ -31,16 +30,17 @@ public final class DetectLanguageEntitiesResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of detected entities. */
+        /**
+         * List of detected entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entities")
         private java.util.List<Entity> entities;
 
         /**
          * List of detected entities.
-         *
          * @param entities the value to set
          * @return this builder
-         */
+         **/
         public Builder entities(java.util.List<Entity> entities) {
             this.entities = entities;
             this.__explicitlySet__.add("entities");
@@ -67,7 +67,9 @@ public final class DetectLanguageEntitiesResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +78,16 @@ public final class DetectLanguageEntitiesResult
         return new Builder().copy(this);
     }
 
-    /** List of detected entities. */
+    /**
+     * List of detected entities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<Entity> entities;
 
     /**
      * List of detected entities.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Entity> getEntities() {
         return entities;
     }
@@ -96,7 +99,6 @@ public final class DetectLanguageEntitiesResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,67 +6,83 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamPackagingConfigExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateStreamPackagingConfigRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateStreamPackagingConfigRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class UpdateStreamPackagingConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mediaservices.model.UpdateStreamPackagingConfigDetails> {
 
-    /** Unique Stream Packaging Configuration path identifier. */
+    /**
+     * Unique Stream Packaging Configuration path identifier.
+     */
     private String streamPackagingConfigId;
 
-    /** Unique Stream Packaging Configuration path identifier. */
+    /**
+     * Unique Stream Packaging Configuration path identifier.
+     */
     public String getStreamPackagingConfigId() {
         return streamPackagingConfigId;
     }
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     private com.oracle.bmc.mediaservices.model.UpdateStreamPackagingConfigDetails
             updateStreamPackagingConfigDetails;
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.mediaservices.model.UpdateStreamPackagingConfigDetails
             getUpdateStreamPackagingConfigDetails() {
         return updateStreamPackagingConfigDetails;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -79,15 +95,17 @@ public class UpdateStreamPackagingConfigRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateStreamPackagingConfigRequest,
                     com.oracle.bmc.mediaservices.model.UpdateStreamPackagingConfigDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Stream Packaging Configuration path identifier. */
+        /**
+         * Unique Stream Packaging Configuration path identifier.
+         */
         private String streamPackagingConfigId = null;
 
         /**
          * Unique Stream Packaging Configuration path identifier.
-         *
          * @param streamPackagingConfigId the value to set
          * @return this builder instance
          */
@@ -96,13 +114,14 @@ public class UpdateStreamPackagingConfigRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.mediaservices.model.UpdateStreamPackagingConfigDetails
                 updateStreamPackagingConfigDetails = null;
 
         /**
          * The information to be updated.
-         *
          * @param updateStreamPackagingConfigDetails the value to set
          * @return this builder instance
          */
@@ -113,12 +132,13 @@ public class UpdateStreamPackagingConfigRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -128,18 +148,21 @@ public class UpdateStreamPackagingConfigRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -149,12 +172,13 @@ public class UpdateStreamPackagingConfigRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -165,19 +189,18 @@ public class UpdateStreamPackagingConfigRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -189,7 +212,6 @@ public class UpdateStreamPackagingConfigRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateStreamPackagingConfigRequest o) {
@@ -206,11 +228,10 @@ public class UpdateStreamPackagingConfigRequest
         /**
          * Build the instance of UpdateStreamPackagingConfigRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateStreamPackagingConfigRequest
          */
@@ -223,7 +244,6 @@ public class UpdateStreamPackagingConfigRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -237,8 +257,7 @@ public class UpdateStreamPackagingConfigRequest
         /**
          * Build the instance of UpdateStreamPackagingConfigRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateStreamPackagingConfigRequest
@@ -251,14 +270,12 @@ public class UpdateStreamPackagingConfigRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateStreamPackagingConfigRequest(streamPackagingConfigId,
-            // updateStreamPackagingConfigDetails, isLockOverride, ifMatch, opcRequestId);
+            // new UpdateStreamPackagingConfigRequest(streamPackagingConfigId, updateStreamPackagingConfigDetails, isLockOverride, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -272,7 +289,6 @@ public class UpdateStreamPackagingConfigRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

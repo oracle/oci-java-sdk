@@ -5,39 +5,42 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Detail of each StepRun. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Detail of each StepRun.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "stepType",
-        defaultImpl = PipelineStepRun.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "stepType",
+    defaultImpl = PipelineStepRun.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineContainerStepRun.class,
-            name = "CONTAINER"),
+        value = PipelineContainerStepRun.class,
+        name = "CONTAINER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineCustomScriptStepRun.class,
-            name = "CUSTOM_SCRIPT"),
+        value = PipelineCustomScriptStepRun.class,
+        name = "CUSTOM_SCRIPT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineMLJobStepRun.class,
-            name = "ML_JOB"),
+        value = PipelineMLJobStepRun.class,
+        name = "ML_JOB"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineDataflowStepRun.class,
-            name = "DATAFLOW")
+        value = PipelineDataflowStepRun.class,
+        name = "DATAFLOW"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PipelineStepRun extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PipelineStepRun extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeStarted",
@@ -61,54 +64,51 @@ public class PipelineStepRun extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The date and time the pipeline step run was started in the timestamp format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the pipeline step run was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time the pipeline step run was started in the timestamp format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * The date and time the pipeline step run was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * The date and time the pipeline step run finshed executing in the timestamp format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the pipeline step run finshed executing in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the pipeline step run finshed executing in the timestamp format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * The date and time the pipeline step run finshed executing in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** The name of the step. */
+    /**
+     * The name of the step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
      * The name of the step.
-     *
      * @return the value
-     */
+     **/
     public String getStepName() {
         return stepName;
     }
 
-    /** The state of the step run. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the step run.
+     **/
+    public enum LifecycleState {
         Waiting("WAITING"),
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
@@ -120,8 +120,8 @@ public class PipelineStepRun extends com.oracle.bmc.http.client.internal.Explici
         Skipped("SKIPPED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -160,28 +160,30 @@ public class PipelineStepRun extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** The state of the step run. */
+    /**
+     * The state of the step run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the step run.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Details of the state of the step run. */
+    /**
+     * Details of the state of the step run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details of the state of the step run.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -193,7 +195,6 @@ public class PipelineStepRun extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -245,16 +246,18 @@ public class PipelineStepRun extends com.oracle.bmc.http.client.internal.Explici
         return result;
     }
 
-    /** The type of step. */
-    public enum StepType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of step.
+     **/
+    public enum StepType {
         MlJob("ML_JOB"),
         CustomScript("CUSTOM_SCRIPT"),
         Container("CONTAINER"),
         Dataflow("DATAFLOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

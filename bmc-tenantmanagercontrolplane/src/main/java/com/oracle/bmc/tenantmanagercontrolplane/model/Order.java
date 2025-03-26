@@ -5,21 +5,19 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Order details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * Order details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Order.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Order extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Order extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "orderNumber",
@@ -44,76 +42,81 @@ public final class Order extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Immutable and unique order number holding customer subscription information. */
+        /**
+         * Immutable and unique order number holding customer subscription information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
         private String orderNumber;
 
         /**
          * Immutable and unique order number holding customer subscription information.
-         *
          * @param orderNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder orderNumber(String orderNumber) {
             this.orderNumber = orderNumber;
             this.__explicitlySet__.add("orderNumber");
             return this;
         }
-        /** Order's data center region. */
+        /**
+         * Order's data center region.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
         private String dataCenterRegion;
 
         /**
          * Order's data center region.
-         *
          * @param dataCenterRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder dataCenterRegion(String dataCenterRegion) {
             this.dataCenterRegion = dataCenterRegion;
             this.__explicitlySet__.add("dataCenterRegion");
             return this;
         }
-        /** Email address of the administrator who owns the subscription. */
+        /**
+         * Email address of the administrator who owns the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
         private String adminEmail;
 
         /**
          * Email address of the administrator who owns the subscription.
-         *
          * @param adminEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder adminEmail(String adminEmail) {
             this.adminEmail = adminEmail;
             this.__explicitlySet__.add("adminEmail");
             return this;
         }
-        /** State of the order. */
+        /**
+         * State of the order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderState")
         private String orderState;
 
         /**
          * State of the order.
-         *
          * @param orderState the value to set
          * @return this builder
-         */
+         **/
         public Builder orderState(String orderState) {
             this.orderState = orderState;
             this.__explicitlySet__.add("orderState");
             return this;
         }
-        /** Array of subscriptions associated with the order. */
+        /**
+         * Array of subscriptions associated with the order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptions")
         private java.util.List<SubscriptionInfo> subscriptions;
 
         /**
          * Array of subscriptions associated with the order.
-         *
          * @param subscriptions the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptions(java.util.List<SubscriptionInfo> subscriptions) {
             this.subscriptions = subscriptions;
             this.__explicitlySet__.add("subscriptions");
@@ -158,7 +161,9 @@ public final class Order extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,67 +172,72 @@ public final class Order extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** Immutable and unique order number holding customer subscription information. */
+    /**
+     * Immutable and unique order number holding customer subscription information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
     private final String orderNumber;
 
     /**
      * Immutable and unique order number holding customer subscription information.
-     *
      * @return the value
-     */
+     **/
     public String getOrderNumber() {
         return orderNumber;
     }
 
-    /** Order's data center region. */
+    /**
+     * Order's data center region.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
     private final String dataCenterRegion;
 
     /**
      * Order's data center region.
-     *
      * @return the value
-     */
+     **/
     public String getDataCenterRegion() {
         return dataCenterRegion;
     }
 
-    /** Email address of the administrator who owns the subscription. */
+    /**
+     * Email address of the administrator who owns the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     private final String adminEmail;
 
     /**
      * Email address of the administrator who owns the subscription.
-     *
      * @return the value
-     */
+     **/
     public String getAdminEmail() {
         return adminEmail;
     }
 
-    /** State of the order. */
+    /**
+     * State of the order.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderState")
     private final String orderState;
 
     /**
      * State of the order.
-     *
      * @return the value
-     */
+     **/
     public String getOrderState() {
         return orderState;
     }
 
-    /** Array of subscriptions associated with the order. */
+    /**
+     * Array of subscriptions associated with the order.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptions")
     private final java.util.List<SubscriptionInfo> subscriptions;
 
     /**
      * Array of subscriptions associated with the order.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SubscriptionInfo> getSubscriptions() {
         return subscriptions;
     }
@@ -239,7 +249,6 @@ public final class Order extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

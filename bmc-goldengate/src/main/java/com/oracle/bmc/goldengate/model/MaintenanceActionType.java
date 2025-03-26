@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The of maintenance action. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum MaintenanceActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The of maintenance action.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum MaintenanceActionType {
     Upgrade("UPGRADE"),
 
     /**

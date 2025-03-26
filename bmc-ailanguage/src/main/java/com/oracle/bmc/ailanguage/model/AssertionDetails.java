@@ -5,22 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The assertion details for health ner. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * The assertion details for health ner.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AssertionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AssertionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AssertionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "type", "value", "score"})
     public AssertionDetails(String id, String type, String value, Double score) {
@@ -33,61 +30,65 @@ public final class AssertionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** id of the relation */
+        /**
+         * id of the relation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * id of the relation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** type of assertion ex, Status, Certainty, Temporality, Actor, etc. */
+        /**
+         * type of assertion ex, Status, Certainty, Temporality, Actor, etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * type of assertion ex, Status, Certainty, Temporality, Actor, etc.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Possible value for assertion type */
+        /**
+         * Possible value for assertion type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Possible value for assertion type
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Score or confidence for health detected entity. */
+        /**
+         * Score or confidence for health detected entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
          * Score or confidence for health detected entity.
-         *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -124,7 +125,9 @@ public final class AssertionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,54 +136,58 @@ public final class AssertionDetails
         return new Builder().copy(this);
     }
 
-    /** id of the relation */
+    /**
+     * id of the relation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * id of the relation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** type of assertion ex, Status, Certainty, Temporality, Actor, etc. */
+    /**
+     * type of assertion ex, Status, Certainty, Temporality, Actor, etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * type of assertion ex, Status, Certainty, Temporality, Actor, etc.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** Possible value for assertion type */
+    /**
+     * Possible value for assertion type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Possible value for assertion type
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Score or confidence for health detected entity. */
+    /**
+     * Score or confidence for health detected entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
      * Score or confidence for health detected entity.
-     *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
@@ -192,7 +199,6 @@ public final class AssertionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

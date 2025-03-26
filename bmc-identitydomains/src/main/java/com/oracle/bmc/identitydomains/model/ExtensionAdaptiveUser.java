@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes to manage user's risk score. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines attributes to manage user's risk score.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionAdaptiveUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionAdaptiveUser.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionAdaptiveUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"riskLevel", "riskScores"})
     public ExtensionAdaptiveUser(
@@ -35,26 +34,37 @@ public final class ExtensionAdaptiveUser
     public static class Builder {
         /**
          * Risk Level
-         *
-         * <p>*Added In:** 18.1.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.1.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
          * Risk Level
-         *
-         * <p>*Added In:** 18.1.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.1.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param riskLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder riskLevel(RiskLevel riskLevel) {
             this.riskLevel = riskLevel;
             this.__explicitlySet__.add("riskLevel");
@@ -62,28 +72,39 @@ public final class ExtensionAdaptiveUser
         }
         /**
          * The risk score pertaining to the user.
-         *
-         * <p>*Added In:** 18.1.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - multiValued:
-         * true - mutability: readWrite - required: false - returned: request - type: complex -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.1.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskScores")
         private java.util.List<UserExtRiskScores> riskScores;
 
         /**
          * The risk score pertaining to the user.
-         *
-         * <p>*Added In:** 18.1.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - multiValued:
-         * true - mutability: readWrite - required: false - returned: request - type: complex -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.1.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param riskScores the value to set
          * @return this builder
-         */
+         **/
         public Builder riskScores(java.util.List<UserExtRiskScores> riskScores) {
             this.riskScores = riskScores;
             this.__explicitlySet__.add("riskScores");
@@ -114,7 +135,9 @@ public final class ExtensionAdaptiveUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,20 +148,26 @@ public final class ExtensionAdaptiveUser
 
     /**
      * Risk Level
-     *
-     * <p>*Added In:** 18.1.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
-    public enum RiskLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 18.1.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum RiskLevel {
         Low("LOW"),
         Medium("MEDIUM"),
         High("HIGH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -179,52 +208,74 @@ public final class ExtensionAdaptiveUser
     };
     /**
      * Risk Level
-     *
-     * <p>*Added In:** 18.1.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.1.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
      * Risk Level
-     *
-     * <p>*Added In:** 18.1.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.1.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public RiskLevel getRiskLevel() {
         return riskLevel;
     }
 
     /**
      * The risk score pertaining to the user.
-     *
-     * <p>*Added In:** 18.1.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - multiValued: true -
-     * mutability: readWrite - required: false - returned: request - type: complex - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 18.1.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScores")
     private final java.util.List<UserExtRiskScores> riskScores;
 
     /**
      * The risk score pertaining to the user.
-     *
-     * <p>*Added In:** 18.1.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - multiValued: true -
-     * mutability: readWrite - required: false - returned: request - type: complex - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 18.1.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtRiskScores> getRiskScores() {
         return riskScores;
     }
@@ -236,7 +287,6 @@ public final class ExtensionAdaptiveUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

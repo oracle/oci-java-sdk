@@ -9,8 +9,9 @@ import java.security.Provider;
 import java.security.Security;
 
 /**
- * Provider for the OCI Sasl Client. Call the {@link #initialize()} method to register it as a
- * security provider. It is automatically called if using one of our {@link OciLoginModule}.
+ * Provider for the OCI Sasl Client.
+ * Call the {@link #initialize()} method to register it as a security provider.
+ * It is automatically called if using one of our {@link OciLoginModule}.
  */
 public class OciSaslClientProvider extends Provider {
 
@@ -25,8 +26,8 @@ public class OciSaslClientProvider extends Provider {
     }
 
     /**
-     * Registers a new {@link OciSaslClientProvider} as a security provider. That method is
-     * automatically called if using one of our {@link javax.security.auth.spi.LoginModule}.
+     * Registers a new {@link OciSaslClientProvider} as a security provider.
+     * That method is automatically called if using one of our {@link javax.security.auth.spi.LoginModule}.
      */
     public static void initialize() {
         Security.addProvider(new OciSaslClientProvider());

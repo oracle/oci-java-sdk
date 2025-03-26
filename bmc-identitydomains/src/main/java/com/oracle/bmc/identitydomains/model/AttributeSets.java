@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.identitydomains.model;
 
-/** Enum for attributeSets. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
-public enum AttributeSets implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Enum for attributeSets.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+public enum AttributeSets {
     All("all"),
     Always("always"),
     Never("never"),

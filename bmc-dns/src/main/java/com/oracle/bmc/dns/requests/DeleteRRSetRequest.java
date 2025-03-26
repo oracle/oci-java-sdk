@@ -6,112 +6,140 @@ package com.oracle.bmc.dns.requests;
 
 import com.oracle.bmc.dns.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteRRSetExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteRRSetRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteRRSetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteRRSetRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The name or OCID of the target zone. */
+    /**
+     * The name or OCID of the target zone.
+     */
     private String zoneNameOrId;
 
-    /** The name or OCID of the target zone. */
+    /**
+     * The name or OCID of the target zone.
+     */
     public String getZoneNameOrId() {
         return zoneNameOrId;
     }
-    /** The target fully-qualified domain name (FQDN) within the target zone. */
+    /**
+     * The target fully-qualified domain name (FQDN) within the target zone.
+     */
     private String domain;
 
-    /** The target fully-qualified domain name (FQDN) within the target zone. */
+    /**
+     * The target fully-qualified domain name (FQDN) within the target zone.
+     */
     public String getDomain() {
         return domain;
     }
-    /** The type of the target RRSet within the target zone. */
+    /**
+     * The type of the target RRSet within the target zone.
+     */
     private String rtype;
 
-    /** The type of the target RRSet within the target zone. */
+    /**
+     * The type of the target RRSet within the target zone.
+     */
     public String getRtype() {
         return rtype;
     }
     /**
-     * The {@code If-Match} header field makes the request method conditional on the existence of at
-     * least one current representation of the target resource, when the field-value is {@code *},
-     * or having a current representation of the target resource that has an entity-tag matching a
-     * member of the list of entity-tags provided in the field-value.
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
      */
     private String ifMatch;
 
     /**
-     * The {@code If-Match} header field makes the request method conditional on the existence of at
-     * least one current representation of the target resource, when the field-value is {@code *},
-     * or having a current representation of the target resource that has an entity-tag matching a
-     * member of the list of entity-tags provided in the field-value.
+     * The {@code If-Match} header field makes the request method conditional on the
+     * existence of at least one current representation of the target resource,
+     * when the field-value is {@code *}, or having a current representation of the
+     * target resource that has an entity-tag matching a member of the list of
+     * entity-tags provided in the field-value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The {@code If-Unmodified-Since} header field makes the request method conditional on the
-     * selected representation's last modification date being earlier than or equal to the date
-     * provided in the field-value. This field accomplishes the same purpose as If-Match for cases
-     * where the user agent does not have an entity-tag for the representation.
+     * The {@code If-Unmodified-Since} header field makes the request method
+     * conditional on the selected representation's last modification date being
+     * earlier than or equal to the date provided in the field-value.  This
+     * field accomplishes the same purpose as If-Match for cases where the user
+     * agent does not have an entity-tag for the representation.
+     *
      */
     private String ifUnmodifiedSince;
 
     /**
-     * The {@code If-Unmodified-Since} header field makes the request method conditional on the
-     * selected representation's last modification date being earlier than or equal to the date
-     * provided in the field-value. This field accomplishes the same purpose as If-Match for cases
-     * where the user agent does not have an entity-tag for the representation.
+     * The {@code If-Unmodified-Since} header field makes the request method
+     * conditional on the selected representation's last modification date being
+     * earlier than or equal to the date provided in the field-value.  This
+     * field accomplishes the same purpose as If-Match for cases where the user
+     * agent does not have an entity-tag for the representation.
+     *
      */
     public String getIfUnmodifiedSince() {
         return ifUnmodifiedSince;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
      *
-     * <p>This parameter is deprecated and should be omitted.
      */
     private String compartmentId;
 
     /**
      * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
      *
-     * <p>This parameter is deprecated and should be omitted.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     private com.oracle.bmc.dns.model.Scope scope;
 
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
     /**
-     * The OCID of the view the zone is associated with. Required when accessing a private zone by
-     * name.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     private String viewId;
 
     /**
-     * The OCID of the view the zone is associated with. Required when accessing a private zone by
-     * name.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     public String getViewId() {
         return viewId;
@@ -120,15 +148,17 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteRRSetRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The name or OCID of the target zone. */
+        /**
+         * The name or OCID of the target zone.
+         */
         private String zoneNameOrId = null;
 
         /**
          * The name or OCID of the target zone.
-         *
          * @param zoneNameOrId the value to set
          * @return this builder instance
          */
@@ -137,12 +167,13 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The target fully-qualified domain name (FQDN) within the target zone. */
+        /**
+         * The target fully-qualified domain name (FQDN) within the target zone.
+         */
         private String domain = null;
 
         /**
          * The target fully-qualified domain name (FQDN) within the target zone.
-         *
          * @param domain the value to set
          * @return this builder instance
          */
@@ -151,12 +182,13 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The type of the target RRSet within the target zone. */
+        /**
+         * The type of the target RRSet within the target zone.
+         */
         private String rtype = null;
 
         /**
          * The type of the target RRSet within the target zone.
-         *
          * @param rtype the value to set
          * @return this builder instance
          */
@@ -166,18 +198,21 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The {@code If-Match} header field makes the request method conditional on the existence
-         * of at least one current representation of the target resource, when the field-value is
-         * {@code *}, or having a current representation of the target resource that has an
-         * entity-tag matching a member of the list of entity-tags provided in the field-value.
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * The {@code If-Match} header field makes the request method conditional on the existence
-         * of at least one current representation of the target resource, when the field-value is
-         * {@code *}, or having a current representation of the target resource that has an
-         * entity-tag matching a member of the list of entity-tags provided in the field-value.
+         * The {@code If-Match} header field makes the request method conditional on the
+         * existence of at least one current representation of the target resource,
+         * when the field-value is {@code *}, or having a current representation of the
+         * target resource that has an entity-tag matching a member of the list of
+         * entity-tags provided in the field-value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -188,18 +223,21 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The {@code If-Unmodified-Since} header field makes the request method conditional on the
-         * selected representation's last modification date being earlier than or equal to the date
-         * provided in the field-value. This field accomplishes the same purpose as If-Match for
-         * cases where the user agent does not have an entity-tag for the representation.
+         * The {@code If-Unmodified-Since} header field makes the request method
+         * conditional on the selected representation's last modification date being
+         * earlier than or equal to the date provided in the field-value.  This
+         * field accomplishes the same purpose as If-Match for cases where the user
+         * agent does not have an entity-tag for the representation.
+         *
          */
         private String ifUnmodifiedSince = null;
 
         /**
-         * The {@code If-Unmodified-Since} header field makes the request method conditional on the
-         * selected representation's last modification date being earlier than or equal to the date
-         * provided in the field-value. This field accomplishes the same purpose as If-Match for
-         * cases where the user agent does not have an entity-tag for the representation.
+         * The {@code If-Unmodified-Since} header field makes the request method
+         * conditional on the selected representation's last modification date being
+         * earlier than or equal to the date provided in the field-value.  This
+         * field accomplishes the same purpose as If-Match for cases where the user
+         * agent does not have an entity-tag for the representation.
          *
          * @param ifUnmodifiedSince the value to set
          * @return this builder instance
@@ -210,14 +248,17 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -229,15 +270,16 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
          *
-         * <p>This parameter is deprecated and should be omitted.
          */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the zone belongs to.
-         *
-         * <p>This parameter is deprecated and should be omitted.
+         * <p>
+         * This parameter is deprecated and should be omitted.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -247,7 +289,10 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Specifies to operate only on resources that have a matching DNS scope. */
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
@@ -262,15 +307,12 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The OCID of the view the zone is associated with. Required when accessing a private zone
-         * by name.
+         * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          */
         private String viewId = null;
 
         /**
-         * The OCID of the view the zone is associated with. Required when accessing a private zone
-         * by name.
-         *
+         * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * @param viewId the value to set
          * @return this builder instance
          */
@@ -281,19 +323,18 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -305,7 +346,6 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteRRSetRequest o) {
@@ -326,11 +366,10 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of DeleteRRSetRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteRRSetRequest
          */
@@ -344,8 +383,7 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of DeleteRRSetRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteRRSetRequest
@@ -362,14 +400,12 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.scope = scope;
             request.viewId = viewId;
             return request;
-            // new DeleteRRSetRequest(zoneNameOrId, domain, rtype, ifMatch, ifUnmodifiedSince,
-            // opcRequestId, compartmentId, scope, viewId);
+            // new DeleteRRSetRequest(zoneNameOrId, domain, rtype, ifMatch, ifUnmodifiedSince, opcRequestId, compartmentId, scope, viewId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -387,7 +423,6 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

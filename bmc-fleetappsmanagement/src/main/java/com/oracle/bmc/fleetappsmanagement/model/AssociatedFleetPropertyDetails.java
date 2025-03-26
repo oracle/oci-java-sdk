@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information about associated FleetProperty. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The information about associated FleetProperty.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedFleetPropertyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssociatedFleetPropertyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociatedFleetPropertyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -46,84 +45,89 @@ public final class AssociatedFleetPropertyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Tenancy OCID */
+        /**
+         * Tenancy OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Tenancy OCID
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Type of the FleetProperty. */
+        /**
+         * Type of the FleetProperty.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetPropertyType")
         private FleetPropertyType fleetPropertyType;
 
         /**
          * Type of the FleetProperty.
-         *
          * @param fleetPropertyType the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetPropertyType(FleetPropertyType fleetPropertyType) {
             this.fleetPropertyType = fleetPropertyType;
             this.__explicitlySet__.add("fleetPropertyType");
             return this;
         }
-        /** Value of the Property. */
+        /**
+         * Value of the Property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Value of the Property.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Property is required or not. */
+        /**
+         * Property is required or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
          * Property is required or not.
-         *
          * @param isRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
@@ -168,7 +172,9 @@ public final class AssociatedFleetPropertyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,48 +183,52 @@ public final class AssociatedFleetPropertyDetails
         return new Builder().copy(this);
     }
 
-    /** Tenancy OCID */
+    /**
+     * Tenancy OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Tenancy OCID
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Type of the FleetProperty. */
-    public enum FleetPropertyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the FleetProperty.
+     **/
+    public enum FleetPropertyType {
         String("STRING"),
         Number("NUMBER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -257,41 +267,44 @@ public final class AssociatedFleetPropertyDetails
             return UnknownEnumValue;
         }
     };
-    /** Type of the FleetProperty. */
+    /**
+     * Type of the FleetProperty.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetPropertyType")
     private final FleetPropertyType fleetPropertyType;
 
     /**
      * Type of the FleetProperty.
-     *
      * @return the value
-     */
+     **/
     public FleetPropertyType getFleetPropertyType() {
         return fleetPropertyType;
     }
 
-    /** Value of the Property. */
+    /**
+     * Value of the Property.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Value of the Property.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Property is required or not. */
+    /**
+     * Property is required or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
      * Property is required or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
@@ -303,7 +316,6 @@ public final class AssociatedFleetPropertyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

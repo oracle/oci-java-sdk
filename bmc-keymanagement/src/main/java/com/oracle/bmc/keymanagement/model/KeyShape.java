@@ -5,21 +5,19 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The cryptographic properties of a key. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * The cryptographic properties of a key.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KeyShape.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class KeyShape extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class KeyShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"algorithm", "length", "curveId"})
     public KeyShape(Algorithm algorithm, Integer length, CurveId curveId) {
@@ -32,53 +30,56 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
-         * supported for {@code External} keys.
-         */
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
 
         /**
-         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
-         * supported for {@code External} keys.
-         *
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
          * @param algorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder algorithm(Algorithm algorithm) {
             this.algorithm = algorithm;
             this.__explicitlySet__.add("algorithm");
             return this;
         }
         /**
-         * The length of the key in bytes, expressed as an integer. Supported values include the
-         * following: - AES: 16, 24, or 32 - RSA: 256, 384, or 512 - ECDSA: 32, 48, or 66
-         */
+         * The length of the key in bytes, expressed as an integer. Supported values include the following:
+         *   - AES: 16, 24, or 32
+         *   - RSA: 256, 384, or 512
+         *   - ECDSA: 32, 48, or 66
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
         /**
-         * The length of the key in bytes, expressed as an integer. Supported values include the
-         * following: - AES: 16, 24, or 32 - RSA: 256, 384, or 512 - ECDSA: 32, 48, or 66
+         * The length of the key in bytes, expressed as an integer. Supported values include the following:
+         *   - AES: 16, 24, or 32
+         *   - RSA: 256, 384, or 512
+         *   - ECDSA: 32, 48, or 66
          *
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-        /** Supported curve IDs for ECDSA keys. */
+        /**
+         * Supported curve IDs for ECDSA keys.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("curveId")
         private CurveId curveId;
 
         /**
          * Supported curve IDs for ECDSA keys.
-         *
          * @param curveId the value to set
          * @return this builder
-         */
+         **/
         public Builder curveId(CurveId curveId) {
             this.curveId = curveId;
             this.__explicitlySet__.add("curveId");
@@ -111,7 +112,9 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,17 +124,16 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
-     * supported for {@code External} keys.
-     */
-    public enum Algorithm implements com.oracle.bmc.http.internal.BmcEnum {
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
+     **/
+    public enum Algorithm {
         Aes("AES"),
         Rsa("RSA"),
         Ecdsa("ECDSA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -171,48 +173,52 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
         }
     };
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
-     * supported for {@code External} keys.
-     */
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final Algorithm algorithm;
 
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is
-     * supported for {@code External} keys.
-     *
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
      * @return the value
-     */
+     **/
     public Algorithm getAlgorithm() {
         return algorithm;
     }
 
     /**
-     * The length of the key in bytes, expressed as an integer. Supported values include the
-     * following: - AES: 16, 24, or 32 - RSA: 256, 384, or 512 - ECDSA: 32, 48, or 66
-     */
+     * The length of the key in bytes, expressed as an integer. Supported values include the following:
+     *   - AES: 16, 24, or 32
+     *   - RSA: 256, 384, or 512
+     *   - ECDSA: 32, 48, or 66
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
     /**
-     * The length of the key in bytes, expressed as an integer. Supported values include the
-     * following: - AES: 16, 24, or 32 - RSA: 256, 384, or 512 - ECDSA: 32, 48, or 66
+     * The length of the key in bytes, expressed as an integer. Supported values include the following:
+     *   - AES: 16, 24, or 32
+     *   - RSA: 256, 384, or 512
+     *   - ECDSA: 32, 48, or 66
      *
      * @return the value
-     */
+     **/
     public Integer getLength() {
         return length;
     }
 
-    /** Supported curve IDs for ECDSA keys. */
-    public enum CurveId implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Supported curve IDs for ECDSA keys.
+     **/
+    public enum CurveId {
         NistP256("NIST_P256"),
         NistP384("NIST_P384"),
         NistP521("NIST_P521"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -251,15 +257,16 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** Supported curve IDs for ECDSA keys. */
+    /**
+     * Supported curve IDs for ECDSA keys.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("curveId")
     private final CurveId curveId;
 
     /**
      * Supported curve IDs for ECDSA keys.
-     *
      * @return the value
-     */
+     **/
     public CurveId getCurveId() {
         return curveId;
     }
@@ -271,7 +278,6 @@ public final class KeyShape extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

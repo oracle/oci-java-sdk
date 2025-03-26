@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The lifecycle state of a pipeline. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum PipelineLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The lifecycle state of a pipeline.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum PipelineLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** Possible lifecycle substates for JavaDownloadToken. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum TokenLifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible lifecycle substates for JavaDownloadToken.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum TokenLifecycleDetails {
     Expired("EXPIRED"),
     Revoking("REVOKING"),
     Revoked("REVOKED"),

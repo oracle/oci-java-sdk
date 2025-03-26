@@ -5,23 +5,21 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about monitored resource association. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The information about monitored resource association.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AssociationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AssociationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AssociationDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceResourceId", "associationType"})
     public AssociationDetails(String sourceResourceId, String associationType) {
@@ -33,25 +31,27 @@ public final class AssociationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Source Monitored Resource Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Source Monitored Resource Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
-         * Source Monitored Resource Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Source Monitored Resource Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param sourceResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceResourceId(String sourceResourceId) {
             this.sourceResourceId = sourceResourceId;
             this.__explicitlySet__.add("sourceResourceId");
             return this;
         }
-        /** Association Type. */
+        /**
+         * Association Type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
 
@@ -60,7 +60,7 @@ public final class AssociationDetails
          *
          * @param associationType the value to set
          * @return this builder
-         */
+         **/
         public Builder associationType(String associationType) {
             this.associationType = associationType;
             this.__explicitlySet__.add("associationType");
@@ -91,7 +91,9 @@ public final class AssociationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,23 +103,25 @@ public final class AssociationDetails
     }
 
     /**
-     * Source Monitored Resource Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Source Monitored Resource Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
-     * Source Monitored Resource Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Source Monitored Resource Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getSourceResourceId() {
         return sourceResourceId;
     }
 
-    /** Association Type. */
+    /**
+     * Association Type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final String associationType;
 
@@ -125,7 +129,7 @@ public final class AssociationDetails
      * Association Type.
      *
      * @return the value
-     */
+     **/
     public String getAssociationType() {
         return associationType;
     }
@@ -137,7 +141,6 @@ public final class AssociationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

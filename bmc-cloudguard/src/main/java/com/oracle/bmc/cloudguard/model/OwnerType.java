@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Owner of the recipe. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum OwnerType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Owner of the recipe.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum OwnerType {
     Customer("CUSTOMER"),
     Oracle("ORACLE"),
 

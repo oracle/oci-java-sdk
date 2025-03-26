@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible source major versions for a GI Exadata Fleet Update Collection. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum GiSourceMajorVersions implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible source major versions for a GI Exadata Fleet Update Collection.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum GiSourceMajorVersions {
     Gi18("GI_18"),
     Gi19("GI_19"),
     Gi23("GI_23"),

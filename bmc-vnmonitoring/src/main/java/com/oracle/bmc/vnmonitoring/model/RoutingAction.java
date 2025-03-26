@@ -5,36 +5,38 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the details for routing actions taken on the traffic flow. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Defines the details for routing actions taken on the traffic flow.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "action",
-        defaultImpl = RoutingAction.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "action",
+    defaultImpl = RoutingAction.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = NoRouteRoutingAction.class,
-            name = "NO_ROUTE"),
+        value = NoRouteRoutingAction.class,
+        name = "NO_ROUTE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = IndeterminateRoutingAction.class,
-            name = "INDETERMINATE"),
+        value = IndeterminateRoutingAction.class,
+        name = "INDETERMINATE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ForwardedRoutingAction.class,
-            name = "FORWARDED")
+        value = ForwardedRoutingAction.class,
+        name = "FORWARDED"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class RoutingAction extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class RoutingAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"actionType"})
     protected RoutingAction(ActionType actionType) {
@@ -42,15 +44,17 @@ public class RoutingAction extends com.oracle.bmc.http.client.internal.Explicitl
         this.actionType = actionType;
     }
 
-    /** The type of the routing support for the traffic flow. */
-    public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the routing support for the traffic flow.
+     **/
+    public enum ActionType {
         Explicit("EXPLICIT"),
         Implicit("IMPLICIT"),
         NotSupported("NOT_SUPPORTED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -89,15 +93,16 @@ public class RoutingAction extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** The type of the routing support for the traffic flow. */
+    /**
+     * The type of the routing support for the traffic flow.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
     /**
      * The type of the routing support for the traffic flow.
-     *
      * @return the value
-     */
+     **/
     public ActionType getActionType() {
         return actionType;
     }
@@ -109,7 +114,6 @@ public class RoutingAction extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -144,15 +148,17 @@ public class RoutingAction extends com.oracle.bmc.http.client.internal.Explicitl
         return result;
     }
 
-    /** The routing action taken on the traffic flow. */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The routing action taken on the traffic flow.
+     **/
+    public enum Action {
         Forwarded("FORWARDED"),
         NoRoute("NO_ROUTE"),
         Indeterminate("INDETERMINATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

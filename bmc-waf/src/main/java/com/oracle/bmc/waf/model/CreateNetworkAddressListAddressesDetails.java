@@ -5,25 +5,25 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * The information about new NetworkAddressListAddresses. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * The information about new NetworkAddressListAddresses.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateNetworkAddressListAddressesDetails.Builder.class)
+    builder = CreateNetworkAddressListAddressesDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateNetworkAddressListAddressesDetails
         extends CreateNetworkAddressListDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -74,19 +74,20 @@ public final class CreateNetworkAddressListAddressesDetails
             return this;
         }
         /**
-         * A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0"
-         * for IPv4 and "::/0" for IPv6.
-         */
+         * A list of IP address prefixes in CIDR notation.
+         * To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private java.util.List<String> addresses;
 
         /**
-         * A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0"
-         * for IPv4 and "::/0" for IPv6.
+         * A list of IP address prefixes in CIDR notation.
+         * To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
          *
          * @param addresses the value to set
          * @return this builder
-         */
+         **/
         public Builder addresses(java.util.List<String> addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
@@ -135,7 +136,9 @@ public final class CreateNetworkAddressListAddressesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,18 +160,19 @@ public final class CreateNetworkAddressListAddressesDetails
     }
 
     /**
-     * A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for
-     * IPv4 and "::/0" for IPv6.
-     */
+     * A list of IP address prefixes in CIDR notation.
+     * To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final java.util.List<String> addresses;
 
     /**
-     * A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for
-     * IPv4 and "::/0" for IPv6.
+     * A list of IP address prefixes in CIDR notation.
+     * To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAddresses() {
         return addresses;
     }
@@ -180,7 +184,6 @@ public final class CreateNetworkAddressListAddressesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

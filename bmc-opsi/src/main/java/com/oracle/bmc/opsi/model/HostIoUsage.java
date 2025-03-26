@@ -5,24 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Host IO Performance Metrics <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Host IO Performance Metrics
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostIoUsage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostIoUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -34,91 +34,97 @@ public final class HostIoUsage extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** Mount point */
+        /**
+         * Mount point
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mountPoint")
         private String mountPoint;
 
         /**
          * Mount point
-         *
          * @param mountPoint the value to set
          * @return this builder
-         */
+         **/
         public Builder mountPoint(String mountPoint) {
             this.mountPoint = mountPoint;
             this.__explicitlySet__.add("mountPoint");
             return this;
         }
-        /** Bytes Read */
+        /**
+         * Bytes Read
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskBytesRead")
         private Double diskBytesRead;
 
         /**
          * Bytes Read
-         *
          * @param diskBytesRead the value to set
          * @return this builder
-         */
+         **/
         public Builder diskBytesRead(Double diskBytesRead) {
             this.diskBytesRead = diskBytesRead;
             this.__explicitlySet__.add("diskBytesRead");
             return this;
         }
-        /** Bytes Written */
+        /**
+         * Bytes Written
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskBytesWritten")
         private Double diskBytesWritten;
 
         /**
          * Bytes Written
-         *
          * @param diskBytesWritten the value to set
          * @return this builder
-         */
+         **/
         public Builder diskBytesWritten(Double diskBytesWritten) {
             this.diskBytesWritten = diskBytesWritten;
             this.__explicitlySet__.add("diskBytesWritten");
             return this;
         }
-        /** Read transactions per second */
+        /**
+         * Read transactions per second
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskIopsRead")
         private Double diskIopsRead;
 
         /**
          * Read transactions per second
-         *
          * @param diskIopsRead the value to set
          * @return this builder
-         */
+         **/
         public Builder diskIopsRead(Double diskIopsRead) {
             this.diskIopsRead = diskIopsRead;
             this.__explicitlySet__.add("diskIopsRead");
             return this;
         }
-        /** Write transactions per second */
+        /**
+         * Write transactions per second
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskIopsWritten")
         private Double diskIopsWritten;
 
         /**
          * Write transactions per second
-         *
          * @param diskIopsWritten the value to set
          * @return this builder
-         */
+         **/
         public Builder diskIopsWritten(Double diskIopsWritten) {
             this.diskIopsWritten = diskIopsWritten;
             this.__explicitlySet__.add("diskIopsWritten");
             return this;
         }
-        /** IO Transactions per second */
+        /**
+         * IO Transactions per second
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
         private Double diskIops;
 
         /**
          * IO Transactions per second
-         *
          * @param diskIops the value to set
          * @return this builder
-         */
+         **/
         public Builder diskIops(Double diskIops) {
             this.diskIops = diskIops;
             this.__explicitlySet__.add("diskIops");
@@ -171,7 +177,9 @@ public final class HostIoUsage extends HostPerformanceMetricGroup {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -198,80 +206,86 @@ public final class HostIoUsage extends HostPerformanceMetricGroup {
         this.diskIops = diskIops;
     }
 
-    /** Mount point */
+    /**
+     * Mount point
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mountPoint")
     private final String mountPoint;
 
     /**
      * Mount point
-     *
      * @return the value
-     */
+     **/
     public String getMountPoint() {
         return mountPoint;
     }
 
-    /** Bytes Read */
+    /**
+     * Bytes Read
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskBytesRead")
     private final Double diskBytesRead;
 
     /**
      * Bytes Read
-     *
      * @return the value
-     */
+     **/
     public Double getDiskBytesRead() {
         return diskBytesRead;
     }
 
-    /** Bytes Written */
+    /**
+     * Bytes Written
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskBytesWritten")
     private final Double diskBytesWritten;
 
     /**
      * Bytes Written
-     *
      * @return the value
-     */
+     **/
     public Double getDiskBytesWritten() {
         return diskBytesWritten;
     }
 
-    /** Read transactions per second */
+    /**
+     * Read transactions per second
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskIopsRead")
     private final Double diskIopsRead;
 
     /**
      * Read transactions per second
-     *
      * @return the value
-     */
+     **/
     public Double getDiskIopsRead() {
         return diskIopsRead;
     }
 
-    /** Write transactions per second */
+    /**
+     * Write transactions per second
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskIopsWritten")
     private final Double diskIopsWritten;
 
     /**
      * Write transactions per second
-     *
      * @return the value
-     */
+     **/
     public Double getDiskIopsWritten() {
         return diskIopsWritten;
     }
 
-    /** IO Transactions per second */
+    /**
+     * IO Transactions per second
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskIops")
     private final Double diskIops;
 
     /**
      * IO Transactions per second
-     *
      * @return the value
-     */
+     **/
     public Double getDiskIops() {
         return diskIops;
     }
@@ -283,7 +297,6 @@ public final class HostIoUsage extends HostPerformanceMetricGroup {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

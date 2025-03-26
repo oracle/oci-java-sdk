@@ -6,45 +6,48 @@ package com.oracle.bmc.adm.requests;
 
 import com.oracle.bmc.adm.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRecipesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListRemediationRecipesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRecipesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRemediationRecipesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ListRemediationRecipesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * A filter to return only resources that match the specified identifier. Required only if the
-     * compartmentId query parameter is not specified.
+     * A filter to return only resources that match the specified identifier.
+     * Required only if the compartmentId query parameter is not specified.
+     *
      */
     private String id;
 
     /**
-     * A filter to return only resources that match the specified identifier. Required only if the
-     * compartmentId query parameter is not specified.
+     * A filter to return only resources that match the specified identifier.
+     * Required only if the compartmentId query parameter is not specified.
+     *
      */
     public String getId() {
         return id;
     }
     /**
-     * The field used to sort Remediation Recipes. Only one sort order is allowed. Default order for
-     * _displayName_ is **ascending alphabetical order**. Default order for _lifecyleState_ is the
-     * following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
-     * Default order for _timeCreated_ is **descending**. Default order for _timeUpdated_ is
-     * **descending**. Default order for _type_ is the following sequence: **ADM**.
+     * The field used to sort Remediation Recipes. Only one sort order is allowed.
+     * Default order for _displayName_ is **ascending alphabetical order**.
+     * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeUpdated_ is **descending**.
+     * Default order for _type_ is the following sequence: **ADM**.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field used to sort Remediation Recipes. Only one sort order is allowed. Default order for
-     * _displayName_ is **ascending alphabetical order**. Default order for _lifecyleState_ is the
-     * following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
-     * Default order for _timeCreated_ is **descending**. Default order for _timeUpdated_ is
-     * **descending**. Default order for _type_ is the following sequence: **ADM**.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field used to sort Remediation Recipes. Only one sort order is allowed.
+     * Default order for _displayName_ is **ascending alphabetical order**.
+     * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeUpdated_ is **descending**.
+     * Default order for _type_ is the following sequence: **ADM**.
+     *
+     **/
+    public enum SortBy {
         DisplayName("DISPLAY_NAME"),
         LifecycleState("LIFECYCLE_STATE"),
         TimeCreated("TIME_CREATED"),
@@ -81,52 +84,68 @@ public class ListRemediationRecipesRequest
     };
 
     /**
-     * The field used to sort Remediation Recipes. Only one sort order is allowed. Default order for
-     * _displayName_ is **ascending alphabetical order**. Default order for _lifecyleState_ is the
-     * following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
-     * Default order for _timeCreated_ is **descending**. Default order for _timeUpdated_ is
-     * **descending**. Default order for _type_ is the following sequence: **ADM**.
+     * The field used to sort Remediation Recipes. Only one sort order is allowed.
+     * Default order for _displayName_ is **ascending alphabetical order**.
+     * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
+     * Default order for _timeCreated_ is **descending**.
+     * Default order for _timeUpdated_ is **descending**.
+     * Default order for _type_ is the following sequence: **ADM**.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** A filter to return only Remediation Recipes that match the specified lifecycleState. */
+    /**
+     * A filter to return only Remediation Recipes that match the specified lifecycleState.
+     */
     private com.oracle.bmc.adm.model.RemediationRecipe.LifecycleState lifecycleState;
 
-    /** A filter to return only Remediation Recipes that match the specified lifecycleState. */
+    /**
+     * A filter to return only Remediation Recipes that match the specified lifecycleState.
+     */
     public com.oracle.bmc.adm.model.RemediationRecipe.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
@@ -134,20 +153,26 @@ public class ListRemediationRecipesRequest
     /**
      * A filter to return only resources that belong to the specified compartment identifier.
      * Required only if the id query param is not specified.
+     *
      */
     private String compartmentId;
 
     /**
      * A filter to return only resources that belong to the specified compartment identifier.
      * Required only if the id query param is not specified.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -155,18 +180,20 @@ public class ListRemediationRecipesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListRemediationRecipesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * A filter to return only resources that match the specified identifier. Required only if
-         * the compartmentId query parameter is not specified.
+         * A filter to return only resources that match the specified identifier.
+         * Required only if the compartmentId query parameter is not specified.
+         *
          */
         private String id = null;
 
         /**
-         * A filter to return only resources that match the specified identifier. Required only if
-         * the compartmentId query parameter is not specified.
+         * A filter to return only resources that match the specified identifier.
+         * Required only if the compartmentId query parameter is not specified.
          *
          * @param id the value to set
          * @return this builder instance
@@ -177,22 +204,23 @@ public class ListRemediationRecipesRequest
         }
 
         /**
-         * The field used to sort Remediation Recipes. Only one sort order is allowed. Default order
-         * for _displayName_ is **ascending alphabetical order**. Default order for _lifecyleState_
-         * is the following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and
-         * DELETED**. Default order for _timeCreated_ is **descending**. Default order for
-         * _timeUpdated_ is **descending**. Default order for _type_ is the following sequence:
-         * **ADM**.
+         * The field used to sort Remediation Recipes. Only one sort order is allowed.
+         * Default order for _displayName_ is **ascending alphabetical order**.
+         * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
+         * Default order for _timeCreated_ is **descending**.
+         * Default order for _timeUpdated_ is **descending**.
+         * Default order for _type_ is the following sequence: **ADM**.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used to sort Remediation Recipes. Only one sort order is allowed. Default order
-         * for _displayName_ is **ascending alphabetical order**. Default order for _lifecyleState_
-         * is the following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and
-         * DELETED**. Default order for _timeCreated_ is **descending**. Default order for
-         * _timeUpdated_ is **descending**. Default order for _type_ is the following sequence:
-         * **ADM**.
+         * The field used to sort Remediation Recipes. Only one sort order is allowed.
+         * Default order for _displayName_ is **ascending alphabetical order**.
+         * Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, INACTIVE, FAILED, DELETING, and DELETED**.
+         * Default order for _timeCreated_ is **descending**.
+         * Default order for _timeUpdated_ is **descending**.
+         * Default order for _type_ is the following sequence: **ADM**.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -202,12 +230,13 @@ public class ListRemediationRecipesRequest
             return this;
         }
 
-        /** A filter to return only Remediation Recipes that match the specified lifecycleState. */
+        /**
+         * A filter to return only Remediation Recipes that match the specified lifecycleState.
+         */
         private com.oracle.bmc.adm.model.RemediationRecipe.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only Remediation Recipes that match the specified lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -217,12 +246,13 @@ public class ListRemediationRecipesRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -231,12 +261,13 @@ public class ListRemediationRecipesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -245,12 +276,13 @@ public class ListRemediationRecipesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -260,15 +292,12 @@ public class ListRemediationRecipesRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -280,6 +309,7 @@ public class ListRemediationRecipesRequest
         /**
          * A filter to return only resources that belong to the specified compartment identifier.
          * Required only if the id query param is not specified.
+         *
          */
         private String compartmentId = null;
 
@@ -295,12 +325,13 @@ public class ListRemediationRecipesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -311,19 +342,18 @@ public class ListRemediationRecipesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -335,7 +365,6 @@ public class ListRemediationRecipesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListRemediationRecipesRequest o) {
@@ -356,11 +385,10 @@ public class ListRemediationRecipesRequest
         /**
          * Build the instance of ListRemediationRecipesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListRemediationRecipesRequest
          */
@@ -374,8 +402,7 @@ public class ListRemediationRecipesRequest
         /**
          * Build the instance of ListRemediationRecipesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListRemediationRecipesRequest
@@ -392,14 +419,12 @@ public class ListRemediationRecipesRequest
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListRemediationRecipesRequest(id, sortBy, lifecycleState, sortOrder, displayName,
-            // limit, page, compartmentId, opcRequestId);
+            // new ListRemediationRecipesRequest(id, sortBy, lifecycleState, sortOrder, displayName, limit, page, compartmentId, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -417,7 +442,6 @@ public class ListRemediationRecipesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

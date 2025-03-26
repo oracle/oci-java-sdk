@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudmigrations.model;
 
-/** Metric type for the recommendation process. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
-public enum MetricType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Metric type for the recommendation process.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+public enum MetricType {
     Auto("AUTO"),
     Historical("HISTORICAL"),
     Runtime("RUNTIME"),

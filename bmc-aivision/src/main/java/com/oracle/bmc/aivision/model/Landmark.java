@@ -5,21 +5,19 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The landmark on the face. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The landmark on the face.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Landmark.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Landmark extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Landmark extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "x", "y"})
     public Landmark(Type type, Float x, Float y) {
@@ -31,46 +29,49 @@ public final class Landmark extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The face landmark type */
+        /**
+         * The face landmark type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The face landmark type
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The X-axis normalized coordinate. */
+        /**
+         * The X-axis normalized coordinate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("x")
         private Float x;
 
         /**
          * The X-axis normalized coordinate.
-         *
          * @param x the value to set
          * @return this builder
-         */
+         **/
         public Builder x(Float x) {
             this.x = x;
             this.__explicitlySet__.add("x");
             return this;
         }
-        /** The Y-axis normalized coordinate. */
+        /**
+         * The Y-axis normalized coordinate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("y")
         private Float y;
 
         /**
          * The Y-axis normalized coordinate.
-         *
          * @param y the value to set
          * @return this builder
-         */
+         **/
         public Builder y(Float y) {
             this.y = y;
             this.__explicitlySet__.add("y");
@@ -103,7 +104,9 @@ public final class Landmark extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,8 +115,10 @@ public final class Landmark extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The face landmark type */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The face landmark type
+     **/
+    public enum Type {
         LeftEye("LEFT_EYE"),
         RightEye("RIGHT_EYE"),
         NoseTip("NOSE_TIP"),
@@ -121,8 +126,8 @@ public final class Landmark extends com.oracle.bmc.http.client.internal.Explicit
         RightEdgeOfMouth("RIGHT_EDGE_OF_MOUTH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -159,41 +164,44 @@ public final class Landmark extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The face landmark type */
+    /**
+     * The face landmark type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The face landmark type
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** The X-axis normalized coordinate. */
+    /**
+     * The X-axis normalized coordinate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("x")
     private final Float x;
 
     /**
      * The X-axis normalized coordinate.
-     *
      * @return the value
-     */
+     **/
     public Float getX() {
         return x;
     }
 
-    /** The Y-axis normalized coordinate. */
+    /**
+     * The Y-axis normalized coordinate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("y")
     private final Float y;
 
     /**
      * The Y-axis normalized coordinate.
-     *
      * @return the value
-     */
+     **/
     public Float getY() {
         return y;
     }
@@ -205,7 +213,6 @@ public final class Landmark extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

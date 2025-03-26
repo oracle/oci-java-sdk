@@ -6,55 +6,56 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExascaleDbStorageVaultsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListExascaleDbStorageVaultsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExascaleDbStorageVaultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListExascaleDbStorageVaultsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListExascaleDbStorageVaultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     private String page;
 
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -88,18 +89,21 @@ public class ListExascaleDbStorageVaultsRequest
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -132,19 +136,19 @@ public class ListExascaleDbStorageVaultsRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state
-     * exactly.
+     * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
      */
     private com.oracle.bmc.database.model.ExascaleDbStorageVault.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state
-     * exactly.
+     * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
      */
     public com.oracle.bmc.database.model.ExascaleDbStorageVault.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -161,29 +165,37 @@ public class ListExascaleDbStorageVaultsRequest
         return clusterPlacementGroupId;
     }
     /**
-     * A filter to return only resources that match the entire display name given. The match is not
-     * case sensitive.
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     private String displayName;
 
     /**
-     * A filter to return only resources that match the entire display name given. The match is not
-     * case sensitive.
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     public String getDisplayName() {
         return displayName;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only list of Vaults that are linked to the exadata infrastructure Id. */
+    /**
+     * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     */
     private String exadataInfrastructureId;
 
-    /** A filter to return only list of Vaults that are linked to the exadata infrastructure Id. */
+    /**
+     * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+     */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
@@ -191,19 +203,17 @@ public class ListExascaleDbStorageVaultsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListExascaleDbStorageVaultsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -212,12 +222,13 @@ public class ListExascaleDbStorageVaultsRequest
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -226,12 +237,13 @@ public class ListExascaleDbStorageVaultsRequest
             return this;
         }
 
-        /** The pagination token to continue listing from. */
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -241,16 +253,13 @@ public class ListExascaleDbStorageVaultsRequest
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -260,12 +269,13 @@ public class ListExascaleDbStorageVaultsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -275,16 +285,13 @@ public class ListExascaleDbStorageVaultsRequest
         }
 
         /**
-         * A filter to return only Exadata Database Storage Vaults that match the given lifecycle
-         * state exactly.
+         * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
          */
         private com.oracle.bmc.database.model.ExascaleDbStorageVault.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only Exadata Database Storage Vaults that match the given lifecycle
-         * state exactly.
-         *
+         * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -296,15 +303,12 @@ public class ListExascaleDbStorageVaultsRequest
         }
 
         /**
-         * A filter to return only resources that match the given cluster placement group ID
-         * exactly.
+         * A filter to return only resources that match the given cluster placement group ID exactly.
          */
         private String clusterPlacementGroupId = null;
 
         /**
-         * A filter to return only resources that match the given cluster placement group ID
-         * exactly.
-         *
+         * A filter to return only resources that match the given cluster placement group ID exactly.
          * @param clusterPlacementGroupId the value to set
          * @return this builder instance
          */
@@ -314,15 +318,12 @@ public class ListExascaleDbStorageVaultsRequest
         }
 
         /**
-         * A filter to return only resources that match the entire display name given. The match is
-         * not case sensitive.
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
          */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the entire display name given. The match is
-         * not case sensitive.
-         *
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -331,7 +332,10 @@ public class ListExascaleDbStorageVaultsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -352,7 +356,6 @@ public class ListExascaleDbStorageVaultsRequest
 
         /**
          * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
-         *
          * @param exadataInfrastructureId the value to set
          * @return this builder instance
          */
@@ -363,19 +366,18 @@ public class ListExascaleDbStorageVaultsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -387,7 +389,6 @@ public class ListExascaleDbStorageVaultsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListExascaleDbStorageVaultsRequest o) {
@@ -409,11 +410,10 @@ public class ListExascaleDbStorageVaultsRequest
         /**
          * Build the instance of ListExascaleDbStorageVaultsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListExascaleDbStorageVaultsRequest
          */
@@ -427,8 +427,7 @@ public class ListExascaleDbStorageVaultsRequest
         /**
          * Build the instance of ListExascaleDbStorageVaultsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListExascaleDbStorageVaultsRequest
@@ -446,15 +445,12 @@ public class ListExascaleDbStorageVaultsRequest
             request.opcRequestId = opcRequestId;
             request.exadataInfrastructureId = exadataInfrastructureId;
             return request;
-            // new ListExascaleDbStorageVaultsRequest(compartmentId, limit, page, sortBy, sortOrder,
-            // lifecycleState, clusterPlacementGroupId, displayName, opcRequestId,
-            // exadataInfrastructureId);
+            // new ListExascaleDbStorageVaultsRequest(compartmentId, limit, page, sortBy, sortOrder, lifecycleState, clusterPlacementGroupId, displayName, opcRequestId, exadataInfrastructureId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -473,7 +469,6 @@ public class ListExascaleDbStorageVaultsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

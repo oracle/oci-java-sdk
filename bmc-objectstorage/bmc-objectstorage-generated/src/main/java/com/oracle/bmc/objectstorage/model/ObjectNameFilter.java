@@ -5,26 +5,23 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * A filter that compares object names to a set of prefixes or patterns to determine if a rule
- * applies to a given object. The filter can contain include glob patterns, exclude glob patterns
- * and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is
- * recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over
- * inclusions. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a
+ * given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes.
+ * The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns
+ * instead of prefixes. Exclusions take precedence over inclusions.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectNameFilter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ObjectNameFilter
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ObjectNameFilter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inclusionPrefixes",
@@ -44,109 +41,130 @@ public final class ObjectNameFilter
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An array of object name prefixes that the rule will apply to. An empty array means to
-         * include all objects.
-         */
+         * An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inclusionPrefixes")
         private java.util.List<String> inclusionPrefixes;
 
         /**
-         * An array of object name prefixes that the rule will apply to. An empty array means to
-         * include all objects.
+         * An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
          *
          * @param inclusionPrefixes the value to set
          * @return this builder
-         */
+         **/
         public Builder inclusionPrefixes(java.util.List<String> inclusionPrefixes) {
             this.inclusionPrefixes = inclusionPrefixes;
             this.__explicitlySet__.add("inclusionPrefixes");
             return this;
         }
         /**
-         * An array of glob patterns to match the object names to include. An empty array includes
-         * all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A
-         * Glob pattern is a sequence of characters to match text. Any character that appears in the
-         * pattern, other than the special pattern characters described below, matches itself. Glob
-         * patterns must be between 1 and 1024 characters.
+         * An array of glob patterns to match the object names to include. An empty array includes all objects in the
+         * bucket. Exclusion patterns take precedence over inclusion patterns.
+         * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+         * than the special pattern characters described below, matches itself.
+         *     Glob patterns must be between 1 and 1024 characters.
+         * <p>
+         * The special pattern characters have the following meanings:
+         * <p>
+         * \\           Escapes the following character
+         *     *           Matches any string of characters.
+         *     ?           Matches any single character .
+         *     [...]       Matches a group of characters. A group of characters can be:
+         *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+         *                     A range of characters, for example: [a-z]. This matches any character in the range.
+         *                         [a-f] is equivalent to [abcdef].
+         *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+         *                             [ab-yz] is not valid
+         *                             [a-mn-z] is not valid
+         *                         Character ranges can not start with ^ or :
+         *                         To include a '-' in the range, make it the first or last character.
          *
-         * <p>The special pattern characters have the following meanings:
-         *
-         * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-         * single character . [...] Matches a group of characters. A group of characters can be: A
-         * set of characters, for example: [Zafg9@]. This matches any character in the brackets. A
-         * range of characters, for example: [a-z]. This matches any character in the range. [a-f]
-         * is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is
-         * supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with
-         * ^ or : To include a '-' in the range, make it the first or last character.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inclusionPatterns")
         private java.util.List<String> inclusionPatterns;
 
         /**
-         * An array of glob patterns to match the object names to include. An empty array includes
-         * all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A
-         * Glob pattern is a sequence of characters to match text. Any character that appears in the
-         * pattern, other than the special pattern characters described below, matches itself. Glob
-         * patterns must be between 1 and 1024 characters.
-         *
-         * <p>The special pattern characters have the following meanings:
-         *
-         * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-         * single character . [...] Matches a group of characters. A group of characters can be: A
-         * set of characters, for example: [Zafg9@]. This matches any character in the brackets. A
-         * range of characters, for example: [a-z]. This matches any character in the range. [a-f]
-         * is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is
-         * supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with
-         * ^ or : To include a '-' in the range, make it the first or last character.
+         * An array of glob patterns to match the object names to include. An empty array includes all objects in the
+         * bucket. Exclusion patterns take precedence over inclusion patterns.
+         * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+         * than the special pattern characters described below, matches itself.
+         *     Glob patterns must be between 1 and 1024 characters.
+         * <p>
+         * The special pattern characters have the following meanings:
+         * <p>
+         * \\           Escapes the following character
+         *     *           Matches any string of characters.
+         *     ?           Matches any single character .
+         *     [...]       Matches a group of characters. A group of characters can be:
+         *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+         *                     A range of characters, for example: [a-z]. This matches any character in the range.
+         *                         [a-f] is equivalent to [abcdef].
+         *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+         *                             [ab-yz] is not valid
+         *                             [a-mn-z] is not valid
+         *                         Character ranges can not start with ^ or :
+         *                         To include a '-' in the range, make it the first or last character.
          *
          * @param inclusionPatterns the value to set
          * @return this builder
-         */
+         **/
         public Builder inclusionPatterns(java.util.List<String> inclusionPatterns) {
             this.inclusionPatterns = inclusionPatterns;
             this.__explicitlySet__.add("inclusionPatterns");
             return this;
         }
         /**
-         * An array of glob patterns to match the object names to exclude. An empty array is
-         * ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a
-         * sequence of characters to match text. Any character that appears in the pattern, other
-         * than the special pattern characters described below, matches itself. Glob patterns must
-         * be between 1 and 1024 characters.
+         * An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion
+         * patterns take precedence over inclusion patterns.
+         * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+         * than the special pattern characters described below, matches itself.
+         *     Glob patterns must be between 1 and 1024 characters.
+         * <p>
+         * The special pattern characters have the following meanings:
+         * <p>
+         * \\           Escapes the following character
+         *     *           Matches any string of characters.
+         *     ?           Matches any single character .
+         *     [...]       Matches a group of characters. A group of characters can be:
+         *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+         *                     A range of characters, for example: [a-z]. This matches any character in the range.
+         *                         [a-f] is equivalent to [abcdef].
+         *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+         *                             [ab-yz] is not valid
+         *                             [a-mn-z] is not valid
+         *                         Character ranges can not start with ^ or :
+         *                         To include a '-' in the range, make it the first or last character.
          *
-         * <p>The special pattern characters have the following meanings:
-         *
-         * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-         * single character . [...] Matches a group of characters. A group of characters can be: A
-         * set of characters, for example: [Zafg9@]. This matches any character in the brackets. A
-         * range of characters, for example: [a-z]. This matches any character in the range. [a-f]
-         * is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is
-         * supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with
-         * ^ or : To include a '-' in the range, make it the first or last character.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exclusionPatterns")
         private java.util.List<String> exclusionPatterns;
 
         /**
-         * An array of glob patterns to match the object names to exclude. An empty array is
-         * ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a
-         * sequence of characters to match text. Any character that appears in the pattern, other
-         * than the special pattern characters described below, matches itself. Glob patterns must
-         * be between 1 and 1024 characters.
-         *
-         * <p>The special pattern characters have the following meanings:
-         *
-         * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-         * single character . [...] Matches a group of characters. A group of characters can be: A
-         * set of characters, for example: [Zafg9@]. This matches any character in the brackets. A
-         * range of characters, for example: [a-z]. This matches any character in the range. [a-f]
-         * is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is
-         * supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with
-         * ^ or : To include a '-' in the range, make it the first or last character.
+         * An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion
+         * patterns take precedence over inclusion patterns.
+         * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+         * than the special pattern characters described below, matches itself.
+         *     Glob patterns must be between 1 and 1024 characters.
+         * <p>
+         * The special pattern characters have the following meanings:
+         * <p>
+         * \\           Escapes the following character
+         *     *           Matches any string of characters.
+         *     ?           Matches any single character .
+         *     [...]       Matches a group of characters. A group of characters can be:
+         *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+         *                     A range of characters, for example: [a-z]. This matches any character in the range.
+         *                         [a-f] is equivalent to [abcdef].
+         *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+         *                             [ab-yz] is not valid
+         *                             [a-mn-z] is not valid
+         *                         Character ranges can not start with ^ or :
+         *                         To include a '-' in the range, make it the first or last character.
          *
          * @param exclusionPatterns the value to set
          * @return this builder
-         */
+         **/
         public Builder exclusionPatterns(java.util.List<String> exclusionPatterns) {
             this.exclusionPatterns = exclusionPatterns;
             this.__explicitlySet__.add("exclusionPatterns");
@@ -181,7 +199,9 @@ public final class ObjectNameFilter
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,104 +211,125 @@ public final class ObjectNameFilter
     }
 
     /**
-     * An array of object name prefixes that the rule will apply to. An empty array means to include
-     * all objects.
-     */
+     * An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inclusionPrefixes")
     private final java.util.List<String> inclusionPrefixes;
 
     /**
-     * An array of object name prefixes that the rule will apply to. An empty array means to include
-     * all objects.
+     * An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getInclusionPrefixes() {
         return inclusionPrefixes;
     }
 
     /**
-     * An array of glob patterns to match the object names to include. An empty array includes all
-     * objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob
-     * pattern is a sequence of characters to match text. Any character that appears in the pattern,
-     * other than the special pattern characters described below, matches itself. Glob patterns must
-     * be between 1 and 1024 characters.
+     * An array of glob patterns to match the object names to include. An empty array includes all objects in the
+     * bucket. Exclusion patterns take precedence over inclusion patterns.
+     * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+     * than the special pattern characters described below, matches itself.
+     *     Glob patterns must be between 1 and 1024 characters.
+     * <p>
+     * The special pattern characters have the following meanings:
+     * <p>
+     * \\           Escapes the following character
+     *     *           Matches any string of characters.
+     *     ?           Matches any single character .
+     *     [...]       Matches a group of characters. A group of characters can be:
+     *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+     *                     A range of characters, for example: [a-z]. This matches any character in the range.
+     *                         [a-f] is equivalent to [abcdef].
+     *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+     *                             [ab-yz] is not valid
+     *                             [a-mn-z] is not valid
+     *                         Character ranges can not start with ^ or :
+     *                         To include a '-' in the range, make it the first or last character.
      *
-     * <p>The special pattern characters have the following meanings:
-     *
-     * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-     * single character . [...] Matches a group of characters. A group of characters can be: A set
-     * of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of
-     * characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent
-     * to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz]
-     * is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a
-     * '-' in the range, make it the first or last character.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inclusionPatterns")
     private final java.util.List<String> inclusionPatterns;
 
     /**
-     * An array of glob patterns to match the object names to include. An empty array includes all
-     * objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob
-     * pattern is a sequence of characters to match text. Any character that appears in the pattern,
-     * other than the special pattern characters described below, matches itself. Glob patterns must
-     * be between 1 and 1024 characters.
-     *
-     * <p>The special pattern characters have the following meanings:
-     *
-     * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-     * single character . [...] Matches a group of characters. A group of characters can be: A set
-     * of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of
-     * characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent
-     * to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz]
-     * is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a
-     * '-' in the range, make it the first or last character.
+     * An array of glob patterns to match the object names to include. An empty array includes all objects in the
+     * bucket. Exclusion patterns take precedence over inclusion patterns.
+     * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+     * than the special pattern characters described below, matches itself.
+     *     Glob patterns must be between 1 and 1024 characters.
+     * <p>
+     * The special pattern characters have the following meanings:
+     * <p>
+     * \\           Escapes the following character
+     *     *           Matches any string of characters.
+     *     ?           Matches any single character .
+     *     [...]       Matches a group of characters. A group of characters can be:
+     *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+     *                     A range of characters, for example: [a-z]. This matches any character in the range.
+     *                         [a-f] is equivalent to [abcdef].
+     *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+     *                             [ab-yz] is not valid
+     *                             [a-mn-z] is not valid
+     *                         Character ranges can not start with ^ or :
+     *                         To include a '-' in the range, make it the first or last character.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getInclusionPatterns() {
         return inclusionPatterns;
     }
 
     /**
-     * An array of glob patterns to match the object names to exclude. An empty array is ignored.
-     * Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of
-     * characters to match text. Any character that appears in the pattern, other than the special
-     * pattern characters described below, matches itself. Glob patterns must be between 1 and 1024
-     * characters.
+     * An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion
+     * patterns take precedence over inclusion patterns.
+     * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+     * than the special pattern characters described below, matches itself.
+     *     Glob patterns must be between 1 and 1024 characters.
+     * <p>
+     * The special pattern characters have the following meanings:
+     * <p>
+     * \\           Escapes the following character
+     *     *           Matches any string of characters.
+     *     ?           Matches any single character .
+     *     [...]       Matches a group of characters. A group of characters can be:
+     *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+     *                     A range of characters, for example: [a-z]. This matches any character in the range.
+     *                         [a-f] is equivalent to [abcdef].
+     *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+     *                             [ab-yz] is not valid
+     *                             [a-mn-z] is not valid
+     *                         Character ranges can not start with ^ or :
+     *                         To include a '-' in the range, make it the first or last character.
      *
-     * <p>The special pattern characters have the following meanings:
-     *
-     * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-     * single character . [...] Matches a group of characters. A group of characters can be: A set
-     * of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of
-     * characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent
-     * to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz]
-     * is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a
-     * '-' in the range, make it the first or last character.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exclusionPatterns")
     private final java.util.List<String> exclusionPatterns;
 
     /**
-     * An array of glob patterns to match the object names to exclude. An empty array is ignored.
-     * Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of
-     * characters to match text. Any character that appears in the pattern, other than the special
-     * pattern characters described below, matches itself. Glob patterns must be between 1 and 1024
-     * characters.
-     *
-     * <p>The special pattern characters have the following meanings:
-     *
-     * <p>\\ Escapes the following character * Matches any string of characters. ? Matches any
-     * single character . [...] Matches a group of characters. A group of characters can be: A set
-     * of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of
-     * characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent
-     * to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz]
-     * is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a
-     * '-' in the range, make it the first or last character.
+     * An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion
+     * patterns take precedence over inclusion patterns.
+     * A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other
+     * than the special pattern characters described below, matches itself.
+     *     Glob patterns must be between 1 and 1024 characters.
+     * <p>
+     * The special pattern characters have the following meanings:
+     * <p>
+     * \\           Escapes the following character
+     *     *           Matches any string of characters.
+     *     ?           Matches any single character .
+     *     [...]       Matches a group of characters. A group of characters can be:
+     *                     A set of characters, for example: [Zafg9@]. This matches any character in the brackets.
+     *                     A range of characters, for example: [a-z]. This matches any character in the range.
+     *                         [a-f] is equivalent to [abcdef].
+     *                         For character ranges only the CHARACTER-CHARACTER pattern is supported.
+     *                             [ab-yz] is not valid
+     *                             [a-mn-z] is not valid
+     *                         Character ranges can not start with ^ or :
+     *                         To include a '-' in the range, make it the first or last character.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getExclusionPatterns() {
         return exclusionPatterns;
     }
@@ -300,7 +341,6 @@ public final class ObjectNameFilter
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

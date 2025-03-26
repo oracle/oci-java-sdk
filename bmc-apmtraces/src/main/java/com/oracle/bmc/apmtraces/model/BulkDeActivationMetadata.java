@@ -5,27 +5,26 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Metadata about the bulk deactivation operation. The bulk deactivation operation is atomic and
- * binary. If the processing of any of the attributes in the bulk deactivation request results in a
- * processing or validation error, then none of the attributes in the request are deactivated. The
- * bulk deactivation request succeeds only when all the attributes in the bulk deactivation request
- * are processed and they get a successful attributeStatus back. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Metadata about the bulk deactivation operation.  The bulk deactivation operation is atomic and binary.  If the processing of any of the attributes
+ * in the bulk deactivation request results in a processing or validation error, then none of the attributes in the request are deactivated.
+ * The bulk deactivation request succeeds only when all the attributes in the bulk deactivation request are processed and they get a successful
+ * attributeStatus back.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkDeActivationMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkDeActivationMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkDeActivationMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationStatus",
@@ -60,53 +59,45 @@ public final class BulkDeActivationMetadata
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Operation status of the bulk deactivation operation. The bulk deactivation operation
-         * could have either a success or an error status as defined below. Note that if a bulk
-         * operation has not succeeded, we do not deactivate any tags in the request set. SUCCESS -
-         * The bulk deactivation operation has succeeded and all the attributes in the bulk
-         * deactivation request have been deactivated by this operation or deactivated earlier. The
-         * following are error statuses for the bulk deactivation operation. Note that none of the
-         * attributes (string or numeric) in the bulk request have been deactivated by this bulk
-         * deactivation operation if any of the below statuses are returned. EMPTY_ATTRIBUTE_LIST -
-         * The bulk deactivation request object was empty and did not contain any attributes to be
-         * deactivated. NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the
-         * bulk request exceeded the maximum limit (100) of numeric attributes that could be present
-         * in the APM Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in
-         * the bulk request exceeded the maximum limit (700) of string attributes that could be
-         * present in the APM Domain. INVALID_BULK_REQUEST - The bulk request contains invalid
-         * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-         * resulted in a processing error.
-         */
+         * Operation status of the bulk deactivation operation.  The bulk deactivation operation could have either a success or an error status as defined below.  Note that
+         * if a bulk operation has not succeeded, we do not deactivate any tags in the request set.
+         * SUCCESS - The bulk deactivation operation has succeeded and all the attributes in the bulk deactivation request have been deactivated by this operation or deactivated earlier.
+         * The following are error statuses for the bulk deactivation operation.  Note that none of the attributes (string or numeric) in the bulk request have been deactivated by this bulk
+         * deactivation operation if any of the below statuses are returned.
+         * EMPTY_ATTRIBUTE_LIST - The bulk deactivation request object was empty and did not contain any attributes to be deactivated.
+         * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be present in the APM Domain.
+         * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be present in the APM Domain.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
         /**
-         * Operation status of the bulk deactivation operation. The bulk deactivation operation
-         * could have either a success or an error status as defined below. Note that if a bulk
-         * operation has not succeeded, we do not deactivate any tags in the request set. SUCCESS -
-         * The bulk deactivation operation has succeeded and all the attributes in the bulk
-         * deactivation request have been deactivated by this operation or deactivated earlier. The
-         * following are error statuses for the bulk deactivation operation. Note that none of the
-         * attributes (string or numeric) in the bulk request have been deactivated by this bulk
-         * deactivation operation if any of the below statuses are returned. EMPTY_ATTRIBUTE_LIST -
-         * The bulk deactivation request object was empty and did not contain any attributes to be
-         * deactivated. NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the
-         * bulk request exceeded the maximum limit (100) of numeric attributes that could be present
-         * in the APM Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in
-         * the bulk request exceeded the maximum limit (700) of string attributes that could be
-         * present in the APM Domain. INVALID_BULK_REQUEST - The bulk request contains invalid
-         * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-         * resulted in a processing error.
+         * Operation status of the bulk deactivation operation.  The bulk deactivation operation could have either a success or an error status as defined below.  Note that
+         * if a bulk operation has not succeeded, we do not deactivate any tags in the request set.
+         * SUCCESS - The bulk deactivation operation has succeeded and all the attributes in the bulk deactivation request have been deactivated by this operation or deactivated earlier.
+         * The following are error statuses for the bulk deactivation operation.  Note that none of the attributes (string or numeric) in the bulk request have been deactivated by this bulk
+         * deactivation operation if any of the below statuses are returned.
+         * EMPTY_ATTRIBUTE_LIST - The bulk deactivation request object was empty and did not contain any attributes to be deactivated.
+         * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be present in the APM Domain.
+         * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be present in the APM Domain.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
          *
          * @param operationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-        /** Type of operation. */
+        /**
+         * Type of operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -115,102 +106,97 @@ public final class BulkDeActivationMetadata
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
         /**
-         * Total number attributes (both string and numeric) in TRACES namespace that were
-         * deactivated.
-         */
+         * Total number attributes (both string and numeric) in TRACES namespace that were deactivated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributesDeActivated")
         private Integer attributesDeActivated;
 
         /**
-         * Total number attributes (both string and numeric) in TRACES namespace that were
-         * deactivated.
+         * Total number attributes (both string and numeric) in TRACES namespace that were deactivated.
          *
          * @param attributesDeActivated the value to set
          * @return this builder
-         */
+         **/
         public Builder attributesDeActivated(Integer attributesDeActivated) {
             this.attributesDeActivated = attributesDeActivated;
             this.__explicitlySet__.add("attributesDeActivated");
             return this;
         }
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * deactivated.
-         */
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were deactivated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesDeActivated")
         private Integer syntheticAttributesDeActivated;
 
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * deactivated.
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were deactivated.
          *
          * @param syntheticAttributesDeActivated the value to set
          * @return this builder
-         */
+         **/
         public Builder syntheticAttributesDeActivated(Integer syntheticAttributesDeActivated) {
             this.syntheticAttributesDeActivated = syntheticAttributesDeActivated;
             this.__explicitlySet__.add("syntheticAttributesDeActivated");
             return this;
         }
         /**
-         * Total number of free slots available for activation of additional string attributes in
-         * TRACES namespace in the APM Domain.
-         */
+         * Total number of free slots available for activation of additional string attributes in TRACES namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableStringAttributes")
         private Integer availableStringAttributes;
 
         /**
-         * Total number of free slots available for activation of additional string attributes in
-         * TRACES namespace in the APM Domain.
+         * Total number of free slots available for activation of additional string attributes in TRACES namespace in the APM Domain.
          *
          * @param availableStringAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableStringAttributes(Integer availableStringAttributes) {
             this.availableStringAttributes = availableStringAttributes;
             this.__explicitlySet__.add("availableStringAttributes");
             return this;
         }
         /**
-         * Total number of free slots available for activation of additional numeric attributes in
-         * TRACES namespace in the APM Domain.
-         */
+         * Total number of free slots available for activation of additional numeric attributes in TRACES namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableNumericAttributes")
         private Integer availableNumericAttributes;
 
         /**
-         * Total number of free slots available for activation of additional numeric attributes in
-         * TRACES namespace in the APM Domain.
+         * Total number of free slots available for activation of additional numeric attributes in TRACES namespace in the APM Domain.
          *
          * @param availableNumericAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableNumericAttributes(Integer availableNumericAttributes) {
             this.availableNumericAttributes = availableNumericAttributes;
             this.__explicitlySet__.add("availableNumericAttributes");
             return this;
         }
         /**
-         * Total number of free slots available for activation of additional string attributes in
-         * SYNTHETIC namespace in the APM Domain.
-         */
+         * Total number of free slots available for activation of additional string attributes in SYNTHETIC namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticStringAttributes")
         private Integer availableSyntheticStringAttributes;
 
         /**
-         * Total number of free slots available for activation of additional string attributes in
-         * SYNTHETIC namespace in the APM Domain.
+         * Total number of free slots available for activation of additional string attributes in SYNTHETIC namespace in the APM Domain.
          *
          * @param availableSyntheticStringAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableSyntheticStringAttributes(
                 Integer availableSyntheticStringAttributes) {
             this.availableSyntheticStringAttributes = availableSyntheticStringAttributes;
@@ -218,19 +204,18 @@ public final class BulkDeActivationMetadata
             return this;
         }
         /**
-         * Total number of free slots available for activation of additional numeric attributes in
-         * SYNTHETIC namespace in the APM Domain.
-         */
+         * Total number of free slots available for activation of additional numeric attributes in SYNTHETIC namespace in the APM Domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticNumericAttributes")
         private Integer availableSyntheticNumericAttributes;
 
         /**
-         * Total number of free slots available for activation of additional numeric attributes in
-         * SYNTHETIC namespace in the APM Domain.
+         * Total number of free slots available for activation of additional numeric attributes in SYNTHETIC namespace in the APM Domain.
          *
          * @param availableSyntheticNumericAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder availableSyntheticNumericAttributes(
                 Integer availableSyntheticNumericAttributes) {
             this.availableSyntheticNumericAttributes = availableSyntheticNumericAttributes;
@@ -290,7 +275,9 @@ public final class BulkDeActivationMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -300,24 +287,19 @@ public final class BulkDeActivationMetadata
     }
 
     /**
-     * Operation status of the bulk deactivation operation. The bulk deactivation operation could
-     * have either a success or an error status as defined below. Note that if a bulk operation has
-     * not succeeded, we do not deactivate any tags in the request set. SUCCESS - The bulk
-     * deactivation operation has succeeded and all the attributes in the bulk deactivation request
-     * have been deactivated by this operation or deactivated earlier. The following are error
-     * statuses for the bulk deactivation operation. Note that none of the attributes (string or
-     * numeric) in the bulk request have been deactivated by this bulk deactivation operation if any
-     * of the below statuses are returned. EMPTY_ATTRIBUTE_LIST - The bulk deactivation request
-     * object was empty and did not contain any attributes to be deactivated.
-     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request
-     * exceeded the maximum limit (100) of numeric attributes that could be present in the APM
-     * Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request
-     * exceeded the maximum limit (700) of string attributes that could be present in the APM
-     * Domain. INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or
-     * attribute(s) that resulted in a validation error, or an attribute that resulted in a
-     * processing error.
-     */
-    public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * Operation status of the bulk deactivation operation.  The bulk deactivation operation could have either a success or an error status as defined below.  Note that
+     * if a bulk operation has not succeeded, we do not deactivate any tags in the request set.
+     * SUCCESS - The bulk deactivation operation has succeeded and all the attributes in the bulk deactivation request have been deactivated by this operation or deactivated earlier.
+     * The following are error statuses for the bulk deactivation operation.  Note that none of the attributes (string or numeric) in the bulk request have been deactivated by this bulk
+     * deactivation operation if any of the below statuses are returned.
+     * EMPTY_ATTRIBUTE_LIST - The bulk deactivation request object was empty and did not contain any attributes to be deactivated.
+     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be present in the APM Domain.
+     * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be present in the APM Domain.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
+    public enum OperationStatus {
         Success("SUCCESS"),
         EmptyAttributeList("EMPTY_ATTRIBUTE_LIST"),
         NumericAttributeLimitExceeded("NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED"),
@@ -325,8 +307,8 @@ public final class BulkDeActivationMetadata
         InvalidBulkRequest("INVALID_BULK_REQUEST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -366,57 +348,49 @@ public final class BulkDeActivationMetadata
         }
     };
     /**
-     * Operation status of the bulk deactivation operation. The bulk deactivation operation could
-     * have either a success or an error status as defined below. Note that if a bulk operation has
-     * not succeeded, we do not deactivate any tags in the request set. SUCCESS - The bulk
-     * deactivation operation has succeeded and all the attributes in the bulk deactivation request
-     * have been deactivated by this operation or deactivated earlier. The following are error
-     * statuses for the bulk deactivation operation. Note that none of the attributes (string or
-     * numeric) in the bulk request have been deactivated by this bulk deactivation operation if any
-     * of the below statuses are returned. EMPTY_ATTRIBUTE_LIST - The bulk deactivation request
-     * object was empty and did not contain any attributes to be deactivated.
-     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request
-     * exceeded the maximum limit (100) of numeric attributes that could be present in the APM
-     * Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request
-     * exceeded the maximum limit (700) of string attributes that could be present in the APM
-     * Domain. INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or
-     * attribute(s) that resulted in a validation error, or an attribute that resulted in a
-     * processing error.
-     */
+     * Operation status of the bulk deactivation operation.  The bulk deactivation operation could have either a success or an error status as defined below.  Note that
+     * if a bulk operation has not succeeded, we do not deactivate any tags in the request set.
+     * SUCCESS - The bulk deactivation operation has succeeded and all the attributes in the bulk deactivation request have been deactivated by this operation or deactivated earlier.
+     * The following are error statuses for the bulk deactivation operation.  Note that none of the attributes (string or numeric) in the bulk request have been deactivated by this bulk
+     * deactivation operation if any of the below statuses are returned.
+     * EMPTY_ATTRIBUTE_LIST - The bulk deactivation request object was empty and did not contain any attributes to be deactivated.
+     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be present in the APM Domain.
+     * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be present in the APM Domain.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
     /**
-     * Operation status of the bulk deactivation operation. The bulk deactivation operation could
-     * have either a success or an error status as defined below. Note that if a bulk operation has
-     * not succeeded, we do not deactivate any tags in the request set. SUCCESS - The bulk
-     * deactivation operation has succeeded and all the attributes in the bulk deactivation request
-     * have been deactivated by this operation or deactivated earlier. The following are error
-     * statuses for the bulk deactivation operation. Note that none of the attributes (string or
-     * numeric) in the bulk request have been deactivated by this bulk deactivation operation if any
-     * of the below statuses are returned. EMPTY_ATTRIBUTE_LIST - The bulk deactivation request
-     * object was empty and did not contain any attributes to be deactivated.
-     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request
-     * exceeded the maximum limit (100) of numeric attributes that could be present in the APM
-     * Domain. STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request
-     * exceeded the maximum limit (700) of string attributes that could be present in the APM
-     * Domain. INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or
-     * attribute(s) that resulted in a validation error, or an attribute that resulted in a
-     * processing error.
+     * Operation status of the bulk deactivation operation.  The bulk deactivation operation could have either a success or an error status as defined below.  Note that
+     * if a bulk operation has not succeeded, we do not deactivate any tags in the request set.
+     * SUCCESS - The bulk deactivation operation has succeeded and all the attributes in the bulk deactivation request have been deactivated by this operation or deactivated earlier.
+     * The following are error statuses for the bulk deactivation operation.  Note that none of the attributes (string or numeric) in the bulk request have been deactivated by this bulk
+     * deactivation operation if any of the below statuses are returned.
+     * EMPTY_ATTRIBUTE_LIST - The bulk deactivation request object was empty and did not contain any attributes to be deactivated.
+     * NUMERIC_ATTRIBUTE_LIMIT_EXCEEDED - The number of numeric attributes in the bulk request exceeded the maximum limit (100) of numeric attributes that could be present in the APM Domain.
+     * STRING_ATTRIBUTE_LIMIT_EXCEEDED - The number of string attributes in the bulk request exceeded the maximum limit (700) of string attributes that could be present in the APM Domain.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
      *
      * @return the value
-     */
+     **/
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
 
-    /** Type of operation. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation.
+     *
+     **/
+    public enum OperationType {
         Deactivate("DEACTIVATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -455,7 +429,10 @@ public final class BulkDeActivationMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type of operation. */
+    /**
+     * Type of operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -463,14 +440,15 @@ public final class BulkDeActivationMetadata
      * Type of operation.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
     /**
      * Total number attributes (both string and numeric) in TRACES namespace that were deactivated.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributesDeActivated")
     private final Integer attributesDeActivated;
 
@@ -478,92 +456,87 @@ public final class BulkDeActivationMetadata
      * Total number attributes (both string and numeric) in TRACES namespace that were deactivated.
      *
      * @return the value
-     */
+     **/
     public Integer getAttributesDeActivated() {
         return attributesDeActivated;
     }
 
     /**
-     * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-     * deactivated.
-     */
+     * Total number attributes (both string and numeric) in SYNTHETIC namespace that were deactivated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesDeActivated")
     private final Integer syntheticAttributesDeActivated;
 
     /**
-     * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-     * deactivated.
+     * Total number attributes (both string and numeric) in SYNTHETIC namespace that were deactivated.
      *
      * @return the value
-     */
+     **/
     public Integer getSyntheticAttributesDeActivated() {
         return syntheticAttributesDeActivated;
     }
 
     /**
-     * Total number of free slots available for activation of additional string attributes in TRACES
-     * namespace in the APM Domain.
-     */
+     * Total number of free slots available for activation of additional string attributes in TRACES namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableStringAttributes")
     private final Integer availableStringAttributes;
 
     /**
-     * Total number of free slots available for activation of additional string attributes in TRACES
-     * namespace in the APM Domain.
+     * Total number of free slots available for activation of additional string attributes in TRACES namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableStringAttributes() {
         return availableStringAttributes;
     }
 
     /**
-     * Total number of free slots available for activation of additional numeric attributes in
-     * TRACES namespace in the APM Domain.
-     */
+     * Total number of free slots available for activation of additional numeric attributes in TRACES namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableNumericAttributes")
     private final Integer availableNumericAttributes;
 
     /**
-     * Total number of free slots available for activation of additional numeric attributes in
-     * TRACES namespace in the APM Domain.
+     * Total number of free slots available for activation of additional numeric attributes in TRACES namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableNumericAttributes() {
         return availableNumericAttributes;
     }
 
     /**
-     * Total number of free slots available for activation of additional string attributes in
-     * SYNTHETIC namespace in the APM Domain.
-     */
+     * Total number of free slots available for activation of additional string attributes in SYNTHETIC namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticStringAttributes")
     private final Integer availableSyntheticStringAttributes;
 
     /**
-     * Total number of free slots available for activation of additional string attributes in
-     * SYNTHETIC namespace in the APM Domain.
+     * Total number of free slots available for activation of additional string attributes in SYNTHETIC namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableSyntheticStringAttributes() {
         return availableSyntheticStringAttributes;
     }
 
     /**
-     * Total number of free slots available for activation of additional numeric attributes in
-     * SYNTHETIC namespace in the APM Domain.
-     */
+     * Total number of free slots available for activation of additional numeric attributes in SYNTHETIC namespace in the APM Domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableSyntheticNumericAttributes")
     private final Integer availableSyntheticNumericAttributes;
 
     /**
-     * Total number of free slots available for activation of additional numeric attributes in
-     * SYNTHETIC namespace in the APM Domain.
+     * Total number of free slots available for activation of additional numeric attributes in SYNTHETIC namespace in the APM Domain.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailableSyntheticNumericAttributes() {
         return availableSyntheticNumericAttributes;
     }
@@ -575,7 +548,6 @@ public final class BulkDeActivationMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The description of a SQL Endpoint. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * The description of a SQL Endpoint.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlEndpoint.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -107,37 +105,42 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The provision identifier that is immutable on creation. */
+        /**
+         * The provision identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The provision identifier that is immutable on creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The SQL Endpoint name, which can be changed. */
+        /**
+         * The SQL Endpoint name, which can be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The SQL Endpoint name, which can be changed.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of a compartment. */
+        /**
+         * The OCID of a compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -146,122 +149,119 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The JDBC URL field. For example,
-         * jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-         */
+         * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jdbcEndpointUrl")
         private String jdbcEndpointUrl;
 
         /**
-         * The JDBC URL field. For example,
-         * jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-         *
+         * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
          * @param jdbcEndpointUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder jdbcEndpointUrl(String jdbcEndpointUrl) {
             this.jdbcEndpointUrl = jdbcEndpointUrl;
             this.__explicitlySet__.add("jdbcEndpointUrl");
             return this;
         }
-        /** The time the Sql Endpoint was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Sql Endpoint was updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the Sql Endpoint. */
+        /**
+         * The current state of the Sql Endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SqlEndpointLifecycleState lifecycleState;
 
         /**
          * The current state of the Sql Endpoint.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(SqlEndpointLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the reason why the resource is in it's current state. Helps bubble
-         * up errors in state changes. For example, it can be used to provide actionable information
-         * for a resource in the Failed state.
-         */
+         * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
         private String stateMessage;
 
         /**
-         * A message describing the reason why the resource is in it's current state. Helps bubble
-         * up errors in state changes. For example, it can be used to provide actionable information
-         * for a resource in the Failed state.
-         *
+         * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
          * @param stateMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = stateMessage;
             this.__explicitlySet__.add("stateMessage");
             return this;
         }
-        /** The version of SQL Endpoint. */
+        /**
+         * The version of SQL Endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlEndpointVersion")
         private String sqlEndpointVersion;
 
         /**
          * The version of SQL Endpoint.
-         *
          * @param sqlEndpointVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlEndpointVersion(String sqlEndpointVersion) {
             this.sqlEndpointVersion = sqlEndpointVersion;
             this.__explicitlySet__.add("sqlEndpointVersion");
             return this;
         }
-        /** The shape of the SQL Endpoint driver instance. */
+        /**
+         * The shape of the SQL Endpoint driver instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
         private String driverShape;
 
         /**
          * The shape of the SQL Endpoint driver instance.
-         *
          * @param driverShape the value to set
          * @return this builder
-         */
+         **/
         public Builder driverShape(String driverShape) {
             this.driverShape = driverShape;
             this.__explicitlySet__.add("driverShape");
@@ -276,16 +276,17 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("driverShapeConfig");
             return this;
         }
-        /** The shape of the SQL Endpoint executor instance. */
+        /**
+         * The shape of the SQL Endpoint executor instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
         private String executorShape;
 
         /**
          * The shape of the SQL Endpoint executor instance.
-         *
          * @param executorShape the value to set
          * @return this builder
-         */
+         **/
         public Builder executorShape(String executorShape) {
             this.executorShape = executorShape;
             this.__explicitlySet__.add("executorShape");
@@ -300,37 +301,42 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("executorShapeConfig");
             return this;
         }
-        /** The minimum number of executors. */
+        /**
+         * The minimum number of executors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minExecutorCount")
         private Integer minExecutorCount;
 
         /**
          * The minimum number of executors.
-         *
          * @param minExecutorCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minExecutorCount(Integer minExecutorCount) {
             this.minExecutorCount = minExecutorCount;
             this.__explicitlySet__.add("minExecutorCount");
             return this;
         }
-        /** The maximum number of executors. */
+        /**
+         * The maximum number of executors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxExecutorCount")
         private Integer maxExecutorCount;
 
         /**
          * The maximum number of executors.
-         *
          * @param maxExecutorCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maxExecutorCount(Integer maxExecutorCount) {
             this.maxExecutorCount = maxExecutorCount;
             this.__explicitlySet__.add("maxExecutorCount");
             return this;
         }
-        /** The OCID of OCI Hive Metastore. */
+        /**
+         * The OCID of OCI Hive Metastore.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
@@ -339,123 +345,113 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param metastoreId the value to set
          * @return this builder
-         */
+         **/
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-        /** The OCID of OCI Lake. */
+        /**
+         * The OCID of OCI Lake.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lakeId")
         private String lakeId;
 
         /**
          * The OCID of OCI Lake.
-         *
          * @param lakeId the value to set
          * @return this builder
-         */
+         **/
         public Builder lakeId(String lakeId) {
             this.lakeId = lakeId;
             this.__explicitlySet__.add("lakeId");
             return this;
         }
         /**
-         * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI
-         * as defined here
-         * https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-         */
+         * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
         private String warehouseBucketUri;
 
         /**
-         * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI
-         * as defined here
-         * https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-         *
+         * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
          * @param warehouseBucketUri the value to set
          * @return this builder
-         */
+         **/
         public Builder warehouseBucketUri(String warehouseBucketUri) {
             this.warehouseBucketUri = warehouseBucketUri;
             this.__explicitlySet__.add("warehouseBucketUri");
             return this;
         }
-        /** The description of the SQL Endpoint. */
+        /**
+         * The description of the SQL Endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the SQL Endpoint.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * This token is used by Splat, and indicates that the service accepts the request, and that
-         * the request is currently being processed.
-         */
+         * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastAcceptedRequestToken")
         private String lastAcceptedRequestToken;
 
         /**
-         * This token is used by Splat, and indicates that the service accepts the request, and that
-         * the request is currently being processed.
-         *
+         * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
          * @param lastAcceptedRequestToken the value to set
          * @return this builder
-         */
+         **/
         public Builder lastAcceptedRequestToken(String lastAcceptedRequestToken) {
             this.lastAcceptedRequestToken = lastAcceptedRequestToken;
             this.__explicitlySet__.add("lastAcceptedRequestToken");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -463,50 +459,48 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle
-         * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {orcl-cloud: {free-tier-retain: true}}}
-         */
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle
-         * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {orcl-cloud: {free-tier-retain: true}}}
+         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
-         * The Spark configuration passed to the running process. See
-         * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-         * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all
-         * Spark properties are permitted to be set. Attempting to set a property that is not
-         * allowed to be overwritten will cause a 400 status to be returned.
-         */
+         * The Spark configuration passed to the running process.
+         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+         * not allowed to be overwritten will cause a 400 status to be returned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sparkAdvancedConfigurations")
         private java.util.Map<String, String> sparkAdvancedConfigurations;
 
         /**
-         * The Spark configuration passed to the running process. See
-         * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-         * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all
-         * Spark properties are permitted to be set. Attempting to set a property that is not
-         * allowed to be overwritten will cause a 400 status to be returned.
+         * The Spark configuration passed to the running process.
+         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+         * not allowed to be overwritten will cause a 400 status to be returned.
          *
          * @param sparkAdvancedConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder sparkAdvancedConfigurations(
                 java.util.Map<String, String> sparkAdvancedConfigurations) {
             this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
@@ -514,19 +508,16 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The SQL Endpoint message displayed as a banner to provide user with any action items
-         * required on the resource.
-         */
+         * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bannerMessage")
         private String bannerMessage;
 
         /**
-         * The SQL Endpoint message displayed as a banner to provide user with any action items
-         * required on the resource.
-         *
+         * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
          * @param bannerMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder bannerMessage(String bannerMessage) {
             this.bannerMessage = bannerMessage;
             this.__explicitlySet__.add("bannerMessage");
@@ -664,7 +655,9 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -673,33 +666,38 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The provision identifier that is immutable on creation. */
+    /**
+     * The provision identifier that is immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The provision identifier that is immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The SQL Endpoint name, which can be changed. */
+    /**
+     * The SQL Endpoint name, which can be changed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The SQL Endpoint name, which can be changed.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of a compartment. */
+    /**
+     * The OCID of a compartment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -707,106 +705,105 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
      * The OCID of a compartment.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jdbcEndpointUrl")
     private final String jdbcEndpointUrl;
 
     /**
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-     *
      * @return the value
-     */
+     **/
     public String getJdbcEndpointUrl() {
         return jdbcEndpointUrl;
     }
 
-    /** The time the Sql Endpoint was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the Sql Endpoint was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the Sql Endpoint. */
+    /**
+     * The current state of the Sql Endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SqlEndpointLifecycleState lifecycleState;
 
     /**
      * The current state of the Sql Endpoint.
-     *
      * @return the value
-     */
+     **/
     public SqlEndpointLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the reason why the resource is in it's current state. Helps bubble up
-     * errors in state changes. For example, it can be used to provide actionable information for a
-     * resource in the Failed state.
-     */
+     * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
     private final String stateMessage;
 
     /**
-     * A message describing the reason why the resource is in it's current state. Helps bubble up
-     * errors in state changes. For example, it can be used to provide actionable information for a
-     * resource in the Failed state.
-     *
+     * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      * @return the value
-     */
+     **/
     public String getStateMessage() {
         return stateMessage;
     }
 
-    /** The version of SQL Endpoint. */
+    /**
+     * The version of SQL Endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlEndpointVersion")
     private final String sqlEndpointVersion;
 
     /**
      * The version of SQL Endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getSqlEndpointVersion() {
         return sqlEndpointVersion;
     }
 
-    /** The shape of the SQL Endpoint driver instance. */
+    /**
+     * The shape of the SQL Endpoint driver instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
     private final String driverShape;
 
     /**
      * The shape of the SQL Endpoint driver instance.
-     *
      * @return the value
-     */
+     **/
     public String getDriverShape() {
         return driverShape;
     }
@@ -818,15 +815,16 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         return driverShapeConfig;
     }
 
-    /** The shape of the SQL Endpoint executor instance. */
+    /**
+     * The shape of the SQL Endpoint executor instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
     private final String executorShape;
 
     /**
      * The shape of the SQL Endpoint executor instance.
-     *
      * @return the value
-     */
+     **/
     public String getExecutorShape() {
         return executorShape;
     }
@@ -838,33 +836,38 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
         return executorShapeConfig;
     }
 
-    /** The minimum number of executors. */
+    /**
+     * The minimum number of executors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minExecutorCount")
     private final Integer minExecutorCount;
 
     /**
      * The minimum number of executors.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinExecutorCount() {
         return minExecutorCount;
     }
 
-    /** The maximum number of executors. */
+    /**
+     * The maximum number of executors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxExecutorCount")
     private final Integer maxExecutorCount;
 
     /**
      * The maximum number of executors.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxExecutorCount() {
         return maxExecutorCount;
     }
 
-    /** The OCID of OCI Hive Metastore. */
+    /**
+     * The OCID of OCI Hive Metastore.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
@@ -872,172 +875,159 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
      * The OCID of OCI Hive Metastore.
      *
      * @return the value
-     */
+     **/
     public String getMetastoreId() {
         return metastoreId;
     }
 
-    /** The OCID of OCI Lake. */
+    /**
+     * The OCID of OCI Lake.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lakeId")
     private final String lakeId;
 
     /**
      * The OCID of OCI Lake.
-     *
      * @return the value
-     */
+     **/
     public String getLakeId() {
         return lakeId;
     }
 
     /**
-     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as
-     * defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-     */
+     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
     private final String warehouseBucketUri;
 
     /**
-     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as
-     * defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-     *
+     * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      * @return the value
-     */
+     **/
     public String getWarehouseBucketUri() {
         return warehouseBucketUri;
     }
 
-    /** The description of the SQL Endpoint. */
+    /**
+     * The description of the SQL Endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the SQL Endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * This token is used by Splat, and indicates that the service accepts the request, and that the
-     * request is currently being processed.
-     */
+     * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastAcceptedRequestToken")
     private final String lastAcceptedRequestToken;
 
     /**
-     * This token is used by Splat, and indicates that the service accepts the request, and that the
-     * request is currently being processed.
-     *
+     * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      * @return the value
-     */
+     **/
     public String getLastAcceptedRequestToken() {
         return lastAcceptedRequestToken;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {orcl-cloud: {free-tier-retain: true}}}
-     */
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {orcl-cloud: {free-tier-retain: true}}}
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
     /**
-     * The Spark configuration passed to the running process. See
-     * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-     * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark
-     * properties are permitted to be set. Attempting to set a property that is not allowed to be
-     * overwritten will cause a 400 status to be returned.
-     */
+     * The Spark configuration passed to the running process.
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+     * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+     * not allowed to be overwritten will cause a 400 status to be returned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sparkAdvancedConfigurations")
     private final java.util.Map<String, String> sparkAdvancedConfigurations;
 
     /**
-     * The Spark configuration passed to the running process. See
-     * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-     * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark
-     * properties are permitted to be set. Attempting to set a property that is not allowed to be
-     * overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process.
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+     * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+     * not allowed to be overwritten will cause a 400 status to be returned.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getSparkAdvancedConfigurations() {
         return sparkAdvancedConfigurations;
     }
 
     /**
-     * The SQL Endpoint message displayed as a banner to provide user with any action items required
-     * on the resource.
-     */
+     * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bannerMessage")
     private final String bannerMessage;
 
     /**
-     * The SQL Endpoint message displayed as a banner to provide user with any action items required
-     * on the resource.
-     *
+     * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
      * @return the value
-     */
+     **/
     public String getBannerMessage() {
         return bannerMessage;
     }
@@ -1056,7 +1046,6 @@ public final class SqlEndpoint extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

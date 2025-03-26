@@ -5,33 +5,33 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User
- * Agents to authenticate users. A User Agent is software application that a user uses to issue
- * requests. For example, a User Agent could be a particular browser (possibly one of several
- * executing on a desktop or laptop) or a particular mobile application (again, oneof several
- * executing on a particular mobile device). A User Agent is trusted once the Multi-Factor
- * Authentication has verified it in some way.
- *
- * <p>*Added In:** 18.3.6
- *
- * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - multiValued: true - mutability: readWrite
- * - required: false - returned: request - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+ * <p>
+ **Added In:** 18.3.6
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsCompositeKey: [value]
+ *  - multiValued: true
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: request
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UserExtTrustedUserAgents.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UserExtTrustedUserAgents.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UserExtTrustedUserAgents
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "ref", "display"})
     public UserExtTrustedUserAgents(String value, String ref, String display) {
@@ -45,28 +45,39 @@ public final class UserExtTrustedUserAgents
     public static class Builder {
         /**
          * The user's trusted user agent identifier.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The user's trusted user agent identifier.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: true - returned: always - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -74,55 +85,75 @@ public final class UserExtTrustedUserAgents
         }
         /**
          * The URI of the corresponding trusted user agent resource.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
 
         /**
          * The URI of the corresponding trusted user agent resource.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: reference - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: reference
+         *  - uniqueness: none
          * @param ref the value to set
          * @return this builder
-         */
+         **/
         public Builder ref(String ref) {
             this.ref = ref;
             this.__explicitlySet__.add("ref");
             return this;
         }
         /**
-         * A human-readable identifier for this trusted user agent, used primarily for display
-         * purposes. READ-ONLY.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         */
+         * A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("display")
         private String display;
 
         /**
-         * A human-readable identifier for this trusted user agent, used primarily for display
-         * purposes. READ-ONLY.
-         *
-         * <p>*Added In:** 18.3.6
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: string - uniqueness: none
-         *
+         * A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+         * <p>
+         **Added In:** 18.3.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param display the value to set
          * @return this builder
-         */
+         **/
         public Builder display(String display) {
             this.display = display;
             this.__explicitlySet__.add("display");
@@ -156,7 +187,9 @@ public final class UserExtTrustedUserAgents
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,77 +200,110 @@ public final class UserExtTrustedUserAgents
 
     /**
      * The user's trusted user agent identifier.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The user's trusted user agent identifier.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: true - returned: always - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * The URI of the corresponding trusted user agent resource.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
 
     /**
      * The URI of the corresponding trusted user agent resource.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: reference - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: reference
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRef() {
         return ref;
     }
 
     /**
-     * A human-readable identifier for this trusted user agent, used primarily for display purposes.
-     * READ-ONLY.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("display")
     private final String display;
 
     /**
-     * A human-readable identifier for this trusted user agent, used primarily for display purposes.
-     * READ-ONLY.
-     *
-     * <p>*Added In:** 18.3.6
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+     * <p>
+     **Added In:** 18.3.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDisplay() {
         return display;
     }
@@ -249,7 +315,6 @@ public final class UserExtTrustedUserAgents
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

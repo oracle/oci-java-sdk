@@ -5,21 +5,20 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+ * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Capacity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Capacity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"capacityType", "capacityValue"})
     public Capacity(CapacityType capacityType, Integer capacityValue) {
@@ -30,37 +29,43 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT */
+        /**
+         * The capacity model to use.
+         * Accepted values are:
+         * OLPU_COUNT, USER_COUNT
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
         private CapacityType capacityType;
 
         /**
-         * The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
+         * The capacity model to use.
+         * Accepted values are:
+         * OLPU_COUNT, USER_COUNT
          *
          * @param capacityType the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityType(CapacityType capacityType) {
             this.capacityType = capacityType;
             this.__explicitlySet__.add("capacityType");
             return this;
         }
         /**
-         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of
-         * users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and
-         * other resources allocated to the instance.
-         */
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
+         * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
         private Integer capacityValue;
 
         /**
-         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of
-         * users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and
-         * other resources allocated to the instance.
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
+         * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
          *
          * @param capacityValue the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityValue(Integer capacityValue) {
             this.capacityValue = capacityValue;
             this.__explicitlySet__.add("capacityValue");
@@ -90,7 +95,9 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,34 +106,40 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT */
+    /**
+     * The capacity model to use.
+     * Accepted values are:
+     * OLPU_COUNT, USER_COUNT
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
     private final CapacityType capacityType;
 
     /**
-     * The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
+     * The capacity model to use.
+     * Accepted values are:
+     * OLPU_COUNT, USER_COUNT
      *
      * @return the value
-     */
+     **/
     public CapacityType getCapacityType() {
         return capacityType;
     }
 
     /**
-     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users
-     * (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other
-     * resources allocated to the instance.
-     */
+     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
+     * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
     private final Integer capacityValue;
 
     /**
-     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users
-     * (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other
-     * resources allocated to the instance.
+     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
+     * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
      *
      * @return the value
-     */
+     **/
     public Integer getCapacityValue() {
         return capacityValue;
     }
@@ -138,7 +151,6 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

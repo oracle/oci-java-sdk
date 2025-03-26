@@ -5,24 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to drop a Sql tuning set. It takes either credentialDetails or
- * databaseCredential. It's recommended to provide databaseCredential <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details required to drop a Sql tuning set.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DropSqlTuningSetDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DropSqlTuningSetDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DropSqlTuningSetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -65,50 +65,51 @@ public final class DropSqlTuningSetDetails
             this.__explicitlySet__.add("databaseCredential");
             return this;
         }
-        /** A unique Sql tuning set name. */
+        /**
+         * A unique Sql tuning set name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * A unique Sql tuning set name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Owner of the Sql tuning set. */
+        /**
+         * Owner of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * Owner of the Sql tuning set.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
         /**
-         * Flag to indicate whether to drop the Sql tuning set or just display the plsql used to
-         * drop Sql tuning set.
-         */
+         * Flag to indicate whether to drop  the Sql tuning set or just display the plsql used to drop Sql tuning set.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("showSqlOnly")
         private Integer showSqlOnly;
 
         /**
-         * Flag to indicate whether to drop the Sql tuning set or just display the plsql used to
-         * drop Sql tuning set.
+         * Flag to indicate whether to drop  the Sql tuning set or just display the plsql used to drop Sql tuning set.
          *
          * @param showSqlOnly the value to set
          * @return this builder
-         */
+         **/
         public Builder showSqlOnly(Integer showSqlOnly) {
             this.showSqlOnly = showSqlOnly;
             this.__explicitlySet__.add("showSqlOnly");
@@ -153,7 +154,9 @@ public final class DropSqlTuningSetDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,45 +179,46 @@ public final class DropSqlTuningSetDetails
         return databaseCredential;
     }
 
-    /** A unique Sql tuning set name. */
+    /**
+     * A unique Sql tuning set name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * A unique Sql tuning set name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Owner of the Sql tuning set. */
+    /**
+     * Owner of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * Owner of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
     /**
-     * Flag to indicate whether to drop the Sql tuning set or just display the plsql used to drop
-     * Sql tuning set.
-     */
+     * Flag to indicate whether to drop  the Sql tuning set or just display the plsql used to drop Sql tuning set.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("showSqlOnly")
     private final Integer showSqlOnly;
 
     /**
-     * Flag to indicate whether to drop the Sql tuning set or just display the plsql used to drop
-     * Sql tuning set.
+     * Flag to indicate whether to drop  the Sql tuning set or just display the plsql used to drop Sql tuning set.
      *
      * @return the value
-     */
+     **/
     public Integer getShowSqlOnly() {
         return showSqlOnly;
     }
@@ -226,7 +230,6 @@ public final class DropSqlTuningSetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

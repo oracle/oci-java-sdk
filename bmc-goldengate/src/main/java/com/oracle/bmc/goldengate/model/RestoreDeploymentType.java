@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The deployment restore type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum RestoreDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The deployment restore type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum RestoreDeploymentType {
     Default("DEFAULT"),
     ;
 

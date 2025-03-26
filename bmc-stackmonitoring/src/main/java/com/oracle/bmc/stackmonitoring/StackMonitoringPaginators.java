@@ -9,31 +9,23 @@ import com.oracle.bmc.stackmonitoring.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of StackMonitoring where multiple pages of data may be fetched. Two styles
- * of iteration are supported:
+ * to any list operations of StackMonitoring where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class StackMonitoringPaginators {
     private final StackMonitoring client;
 
@@ -42,18 +34,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAlarmConditions operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAlarmConditions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAlarmConditionsResponse> listAlarmConditionsResponseIterator(
             final ListAlarmConditionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAlarmConditionsRequest.Builder,
-                ListAlarmConditionsRequest,
+                ListAlarmConditionsRequest.Builder, ListAlarmConditionsRequest,
                 ListAlarmConditionsResponse>(
                 new java.util.function.Supplier<ListAlarmConditionsRequest.Builder>() {
                     @Override
@@ -95,21 +85,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary} objects contained in responses
-     * from the listAlarmConditions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary} objects
+     * contained in responses from the listAlarmConditions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary>
             listAlarmConditionsRecordIterator(final ListAlarmConditionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAlarmConditionsRequest.Builder,
-                ListAlarmConditionsRequest,
+                ListAlarmConditionsRequest.Builder, ListAlarmConditionsRequest,
                 ListAlarmConditionsResponse,
                 com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary>(
                 new java.util.function.Supplier<ListAlarmConditionsRequest.Builder>() {
@@ -163,19 +150,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBaselineableMetrics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listBaselineableMetrics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBaselineableMetricsResponse> listBaselineableMetricsResponseIterator(
             final ListBaselineableMetricsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBaselineableMetricsRequest.Builder,
-                ListBaselineableMetricsRequest,
+                ListBaselineableMetricsRequest.Builder, ListBaselineableMetricsRequest,
                 ListBaselineableMetricsResponse>(
                 new java.util.function.Supplier<ListBaselineableMetricsRequest.Builder>() {
                     @Override
@@ -218,21 +202,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary} objects contained in
-     * responses from the listBaselineableMetrics operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary} objects
+     * contained in responses from the listBaselineableMetrics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary>
             listBaselineableMetricsRecordIterator(final ListBaselineableMetricsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBaselineableMetricsRequest.Builder,
-                ListBaselineableMetricsRequest,
+                ListBaselineableMetricsRequest.Builder, ListBaselineableMetricsRequest,
                 ListBaselineableMetricsResponse,
                 com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary>(
                 new java.util.function.Supplier<ListBaselineableMetricsRequest.Builder>() {
@@ -287,12 +268,11 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listConfigs
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listConfigs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListConfigsResponse> listConfigsResponseIterator(
             final ListConfigsRequest request) {
@@ -337,21 +317,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects contained in responses from the
-     * listConfigs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects
+     * contained in responses from the listConfigs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.ConfigSummary> listConfigsRecordIterator(
             final ListConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListConfigsRequest.Builder,
-                ListConfigsRequest,
-                ListConfigsResponse,
+                ListConfigsRequest.Builder, ListConfigsRequest, ListConfigsResponse,
                 com.oracle.bmc.stackmonitoring.model.ConfigSummary>(
                 new java.util.function.Supplier<ListConfigsRequest.Builder>() {
                     @Override
@@ -401,21 +378,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDefinedMonitoringTemplates operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDefinedMonitoringTemplates operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDefinedMonitoringTemplatesResponse>
             listDefinedMonitoringTemplatesResponseIterator(
                     final ListDefinedMonitoringTemplatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDefinedMonitoringTemplatesRequest.Builder,
-                ListDefinedMonitoringTemplatesRequest,
-                ListDefinedMonitoringTemplatesResponse>(
+                ListDefinedMonitoringTemplatesRequest, ListDefinedMonitoringTemplatesResponse>(
                 new java.util.function.Supplier<ListDefinedMonitoringTemplatesRequest.Builder>() {
                     @Override
                     public ListDefinedMonitoringTemplatesRequest.Builder get() {
@@ -458,23 +432,20 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary} objects contained in
-     * responses from the listDefinedMonitoringTemplates operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary} objects
+     * contained in responses from the listDefinedMonitoringTemplates operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary>
             listDefinedMonitoringTemplatesRecordIterator(
                     final ListDefinedMonitoringTemplatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDefinedMonitoringTemplatesRequest.Builder,
-                ListDefinedMonitoringTemplatesRequest,
-                ListDefinedMonitoringTemplatesResponse,
+                ListDefinedMonitoringTemplatesRequest, ListDefinedMonitoringTemplatesResponse,
                 com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary>(
                 new java.util.function.Supplier<ListDefinedMonitoringTemplatesRequest.Builder>() {
                     @Override
@@ -531,18 +502,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDiscoveryJobLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDiscoveryJobLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDiscoveryJobLogsResponse> listDiscoveryJobLogsResponseIterator(
             final ListDiscoveryJobLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDiscoveryJobLogsRequest.Builder,
-                ListDiscoveryJobLogsRequest,
+                ListDiscoveryJobLogsRequest.Builder, ListDiscoveryJobLogsRequest,
                 ListDiscoveryJobLogsResponse>(
                 new java.util.function.Supplier<ListDiscoveryJobLogsRequest.Builder>() {
                     @Override
@@ -584,21 +553,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogSummary} objects contained in responses
-     * from the listDiscoveryJobLogs operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogSummary} objects
+     * contained in responses from the listDiscoveryJobLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogSummary>
             listDiscoveryJobLogsRecordIterator(final ListDiscoveryJobLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDiscoveryJobLogsRequest.Builder,
-                ListDiscoveryJobLogsRequest,
+                ListDiscoveryJobLogsRequest.Builder, ListDiscoveryJobLogsRequest,
                 ListDiscoveryJobLogsResponse,
                 com.oracle.bmc.stackmonitoring.model.DiscoveryJobLogSummary>(
                 new java.util.function.Supplier<ListDiscoveryJobLogsRequest.Builder>() {
@@ -652,18 +618,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDiscoveryJobs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDiscoveryJobs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDiscoveryJobsResponse> listDiscoveryJobsResponseIterator(
             final ListDiscoveryJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDiscoveryJobsRequest.Builder,
-                ListDiscoveryJobsRequest,
+                ListDiscoveryJobsRequest.Builder, ListDiscoveryJobsRequest,
                 ListDiscoveryJobsResponse>(
                 new java.util.function.Supplier<ListDiscoveryJobsRequest.Builder>() {
                     @Override
@@ -705,21 +669,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.DiscoveryJobSummary} objects contained in responses from
-     * the listDiscoveryJobs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.DiscoveryJobSummary} objects
+     * contained in responses from the listDiscoveryJobs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.DiscoveryJobSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.DiscoveryJobSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.DiscoveryJobSummary>
             listDiscoveryJobsRecordIterator(final ListDiscoveryJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDiscoveryJobsRequest.Builder,
-                ListDiscoveryJobsRequest,
+                ListDiscoveryJobsRequest.Builder, ListDiscoveryJobsRequest,
                 ListDiscoveryJobsResponse,
                 com.oracle.bmc.stackmonitoring.model.DiscoveryJobSummary>(
                 new java.util.function.Supplier<ListDiscoveryJobsRequest.Builder>() {
@@ -772,19 +733,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaintenanceWindows operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaintenanceWindows operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaintenanceWindowsResponse> listMaintenanceWindowsResponseIterator(
             final ListMaintenanceWindowsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaintenanceWindowsRequest.Builder,
-                ListMaintenanceWindowsRequest,
+                ListMaintenanceWindowsRequest.Builder, ListMaintenanceWindowsRequest,
                 ListMaintenanceWindowsResponse>(
                 new java.util.function.Supplier<ListMaintenanceWindowsRequest.Builder>() {
                     @Override
@@ -827,21 +785,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary} objects contained in responses
-     * from the listMaintenanceWindows operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary} objects
+     * contained in responses from the listMaintenanceWindows operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary>
             listMaintenanceWindowsRecordIterator(final ListMaintenanceWindowsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaintenanceWindowsRequest.Builder,
-                ListMaintenanceWindowsRequest,
+                ListMaintenanceWindowsRequest.Builder, ListMaintenanceWindowsRequest,
                 ListMaintenanceWindowsResponse,
                 com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary>(
                 new java.util.function.Supplier<ListMaintenanceWindowsRequest.Builder>() {
@@ -896,18 +851,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMetricExtensions operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMetricExtensions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMetricExtensionsResponse> listMetricExtensionsResponseIterator(
             final ListMetricExtensionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMetricExtensionsRequest.Builder,
-                ListMetricExtensionsRequest,
+                ListMetricExtensionsRequest.Builder, ListMetricExtensionsRequest,
                 ListMetricExtensionsResponse>(
                 new java.util.function.Supplier<ListMetricExtensionsRequest.Builder>() {
                     @Override
@@ -949,21 +902,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary} objects contained in responses
-     * from the listMetricExtensions operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary} objects
+     * contained in responses from the listMetricExtensions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary>
             listMetricExtensionsRecordIterator(final ListMetricExtensionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMetricExtensionsRequest.Builder,
-                ListMetricExtensionsRequest,
+                ListMetricExtensionsRequest.Builder, ListMetricExtensionsRequest,
                 ListMetricExtensionsResponse,
                 com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary>(
                 new java.util.function.Supplier<ListMetricExtensionsRequest.Builder>() {
@@ -1017,19 +967,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMonitoredResourceTasks operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listMonitoredResourceTasks operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMonitoredResourceTasksResponse> listMonitoredResourceTasksResponseIterator(
             final ListMonitoredResourceTasksRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMonitoredResourceTasksRequest.Builder,
-                ListMonitoredResourceTasksRequest,
+                ListMonitoredResourceTasksRequest.Builder, ListMonitoredResourceTasksRequest,
                 ListMonitoredResourceTasksResponse>(
                 new java.util.function.Supplier<ListMonitoredResourceTasksRequest.Builder>() {
                     @Override
@@ -1072,22 +1019,19 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary} objects contained in
-     * responses from the listMonitoredResourceTasks operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary} objects
+     * contained in responses from the listMonitoredResourceTasks operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary>
             listMonitoredResourceTasksRecordIterator(
                     final ListMonitoredResourceTasksRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMonitoredResourceTasksRequest.Builder,
-                ListMonitoredResourceTasksRequest,
+                ListMonitoredResourceTasksRequest.Builder, ListMonitoredResourceTasksRequest,
                 ListMonitoredResourceTasksResponse,
                 com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary>(
                 new java.util.function.Supplier<ListMonitoredResourceTasksRequest.Builder>() {
@@ -1144,19 +1088,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMonitoredResourceTypes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listMonitoredResourceTypes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMonitoredResourceTypesResponse> listMonitoredResourceTypesResponseIterator(
             final ListMonitoredResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMonitoredResourceTypesRequest.Builder,
-                ListMonitoredResourceTypesRequest,
+                ListMonitoredResourceTypesRequest.Builder, ListMonitoredResourceTypesRequest,
                 ListMonitoredResourceTypesResponse>(
                 new java.util.function.Supplier<ListMonitoredResourceTypesRequest.Builder>() {
                     @Override
@@ -1199,22 +1140,19 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary} objects contained in
-     * responses from the listMonitoredResourceTypes operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary} objects
+     * contained in responses from the listMonitoredResourceTypes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary>
             listMonitoredResourceTypesRecordIterator(
                     final ListMonitoredResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMonitoredResourceTypesRequest.Builder,
-                ListMonitoredResourceTypesRequest,
+                ListMonitoredResourceTypesRequest.Builder, ListMonitoredResourceTypesRequest,
                 ListMonitoredResourceTypesResponse,
                 com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary>(
                 new java.util.function.Supplier<ListMonitoredResourceTypesRequest.Builder>() {
@@ -1271,19 +1209,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMonitoredResources operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listMonitoredResources operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMonitoredResourcesResponse> listMonitoredResourcesResponseIterator(
             final ListMonitoredResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMonitoredResourcesRequest.Builder,
-                ListMonitoredResourcesRequest,
+                ListMonitoredResourcesRequest.Builder, ListMonitoredResourcesRequest,
                 ListMonitoredResourcesResponse>(
                 new java.util.function.Supplier<ListMonitoredResourcesRequest.Builder>() {
                     @Override
@@ -1326,21 +1261,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary} objects contained in responses
-     * from the listMonitoredResources operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary} objects
+     * contained in responses from the listMonitoredResources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary>
             listMonitoredResourcesRecordIterator(final ListMonitoredResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMonitoredResourcesRequest.Builder,
-                ListMonitoredResourcesRequest,
+                ListMonitoredResourcesRequest.Builder, ListMonitoredResourcesRequest,
                 ListMonitoredResourcesResponse,
                 com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary>(
                 new java.util.function.Supplier<ListMonitoredResourcesRequest.Builder>() {
@@ -1395,19 +1327,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMonitoringTemplates operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listMonitoringTemplates operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMonitoringTemplatesResponse> listMonitoringTemplatesResponseIterator(
             final ListMonitoringTemplatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMonitoringTemplatesRequest.Builder,
-                ListMonitoringTemplatesRequest,
+                ListMonitoringTemplatesRequest.Builder, ListMonitoringTemplatesRequest,
                 ListMonitoringTemplatesResponse>(
                 new java.util.function.Supplier<ListMonitoringTemplatesRequest.Builder>() {
                     @Override
@@ -1450,21 +1379,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary} objects contained in
-     * responses from the listMonitoringTemplates operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary} objects
+     * contained in responses from the listMonitoringTemplates operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary>
             listMonitoringTemplatesRecordIterator(final ListMonitoringTemplatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMonitoringTemplatesRequest.Builder,
-                ListMonitoringTemplatesRequest,
+                ListMonitoringTemplatesRequest.Builder, ListMonitoringTemplatesRequest,
                 ListMonitoringTemplatesResponse,
                 com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary>(
                 new java.util.function.Supplier<ListMonitoringTemplatesRequest.Builder>() {
@@ -1519,12 +1445,11 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listProcessSets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProcessSets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProcessSetsResponse> listProcessSetsResponseIterator(
             final ListProcessSetsRequest request) {
@@ -1569,21 +1494,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects contained in responses from
-     * the listProcessSets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects
+     * contained in responses from the listProcessSets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>
             listProcessSetsRecordIterator(final ListProcessSetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProcessSetsRequest.Builder,
-                ListProcessSetsRequest,
-                ListProcessSetsResponse,
+                ListProcessSetsRequest.Builder, ListProcessSetsRequest, ListProcessSetsResponse,
                 com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>(
                 new java.util.function.Supplier<ListProcessSetsRequest.Builder>() {
                     @Override
@@ -1633,19 +1555,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1688,21 +1607,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.WorkRequestError} objects contained in responses from
-     * the listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.WorkRequestError} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.stackmonitoring.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
@@ -1755,18 +1671,16 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1808,21 +1722,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.WorkRequestLogEntry} objects contained in responses from
-     * the listWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.WorkRequestLogEntry} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.stackmonitoring.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
@@ -1875,12 +1786,11 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1926,21 +1836,18 @@ public class StackMonitoringPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.stackmonitoring.model.WorkRequestSummary} objects contained in responses from
-     * the listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.stackmonitoring.model.WorkRequestSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.stackmonitoring.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.stackmonitoring.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

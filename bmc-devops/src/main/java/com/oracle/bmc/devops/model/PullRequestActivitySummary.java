@@ -5,43 +5,46 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Summary of an activity record in a pull request <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Summary of an activity record in a pull request
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "activityType",
-        defaultImpl = PullRequestActivitySummary.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "activityType",
+    defaultImpl = PullRequestActivitySummary.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CommitActivitySummary.class,
-            name = "COMMIT"),
+        value = CommitActivitySummary.class,
+        name = "COMMIT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CommentActivitySummary.class,
-            name = "COMMENT"),
+        value = CommentActivitySummary.class,
+        name = "COMMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ApprovalActivitySummary.class,
-            name = "APPROVAL"),
+        value = ApprovalActivitySummary.class,
+        name = "APPROVAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ReviewerActivitySummary.class,
-            name = "REVIEWER"),
+        value = ReviewerActivitySummary.class,
+        name = "REVIEWER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PullRequestLifecycleActivitySummary.class,
-            name = "LIFECYCLE")
+        value = PullRequestLifecycleActivitySummary.class,
+        name = "LIFECYCLE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PullRequestActivitySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PullRequestActivitySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "principal", "pullRequestId", "timeOccurred"})
     protected PullRequestActivitySummary(
@@ -56,15 +59,16 @@ public class PullRequestActivitySummary
         this.timeOccurred = timeOccurred;
     }
 
-    /** activity identifier */
+    /**
+     * activity identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * activity identifier
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
@@ -76,28 +80,30 @@ public class PullRequestActivitySummary
         return principal;
     }
 
-    /** pullRequest OCID */
+    /**
+     * pullRequest OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pullRequestId")
     private final String pullRequestId;
 
     /**
      * pullRequest OCID
-     *
      * @return the value
-     */
+     **/
     public String getPullRequestId() {
         return pullRequestId;
     }
 
-    /** The time the action was performed. An RFC3339 formatted datetime string */
+    /**
+     * The time the action was performed. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOccurred")
     private final java.util.Date timeOccurred;
 
     /**
      * The time the action was performed. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOccurred() {
         return timeOccurred;
     }
@@ -109,7 +115,6 @@ public class PullRequestActivitySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -156,8 +161,10 @@ public class PullRequestActivitySummary
         return result;
     }
 
-    /** The type of activity performed */
-    public enum ActivityType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of activity performed
+     **/
+    public enum ActivityType {
         Lifecycle("LIFECYCLE"),
         Approval("APPROVAL"),
         Commit("COMMIT"),
@@ -165,8 +172,8 @@ public class PullRequestActivitySummary
         Comment("COMMENT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

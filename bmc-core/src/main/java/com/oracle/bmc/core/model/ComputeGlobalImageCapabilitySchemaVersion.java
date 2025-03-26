@@ -5,24 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Compute Global Image Capability Schema Version is a set of all possible capabilities for a
- * collection of images. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Compute Global Image Capability Schema Version is a set of all possible capabilities for a collection of images.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComputeGlobalImageCapabilitySchemaVersion.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComputeGlobalImageCapabilitySchemaVersion.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComputeGlobalImageCapabilitySchemaVersion
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -47,7 +46,10 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the compute global image capability schema version */
+        /**
+         * The name of the compute global image capability schema version
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -56,13 +58,16 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The ocid of the compute global image capability schema */
+        /**
+         * The ocid of the compute global image capability schema
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeGlobalImageCapabilitySchemaId")
         private String computeGlobalImageCapabilitySchemaId;
 
@@ -71,7 +76,7 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
          *
          * @param computeGlobalImageCapabilitySchemaId the value to set
          * @return this builder
-         */
+         **/
         public Builder computeGlobalImageCapabilitySchemaId(
                 String computeGlobalImageCapabilitySchemaId) {
             this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
@@ -79,34 +84,36 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The map of each capability name to its ImageCapabilityDescriptor. */
+        /**
+         * The map of each capability name to its ImageCapabilityDescriptor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaData")
         private java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
 
         /**
          * The map of each capability name to its ImageCapabilityDescriptor.
-         *
          * @param schemaData the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaData(
                 java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData) {
             this.schemaData = schemaData;
@@ -114,23 +121,24 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
             return this;
         }
         /**
-         * The date and time the compute global image capability schema version was created, in the
-         * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the compute global image capability schema version was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the compute global image capability schema version was created, in the
-         * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the compute global image capability schema version was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -176,7 +184,9 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,7 +195,10 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
         return new Builder().copy(this);
     }
 
-    /** The name of the compute global image capability schema version */
+    /**
+     * The name of the compute global image capability schema version
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -193,12 +206,15 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
      * The name of the compute global image capability schema version
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The ocid of the compute global image capability schema */
+    /**
+     * The ocid of the compute global image capability schema
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeGlobalImageCapabilitySchemaId")
     private final String computeGlobalImageCapabilitySchemaId;
 
@@ -206,58 +222,61 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
      * The ocid of the compute global image capability schema
      *
      * @return the value
-     */
+     **/
     public String getComputeGlobalImageCapabilitySchemaId() {
         return computeGlobalImageCapabilitySchemaId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The map of each capability name to its ImageCapabilityDescriptor. */
+    /**
+     * The map of each capability name to its ImageCapabilityDescriptor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaData")
     private final java.util.Map<String, ImageCapabilitySchemaDescriptor> schemaData;
 
     /**
      * The map of each capability name to its ImageCapabilityDescriptor.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, ImageCapabilitySchemaDescriptor> getSchemaData() {
         return schemaData;
     }
 
     /**
-     * The date and time the compute global image capability schema version was created, in the
-     * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the compute global image capability schema version was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the compute global image capability schema version was created, in the
-     * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the compute global image capability schema version was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -269,7 +288,6 @@ public final class ComputeGlobalImageCapabilitySchemaVersion
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

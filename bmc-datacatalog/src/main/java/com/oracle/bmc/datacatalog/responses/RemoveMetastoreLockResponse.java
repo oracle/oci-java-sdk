@@ -6,17 +6,18 @@ package com.oracle.bmc.datacatalog.responses;
 
 import com.oracle.bmc.datacatalog.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** etag for the returned Metastore resource. */
+    /**
+     * etag for the returned Metastore resource.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /** The returned {@code Metastore} instance. */
+    /**
+     * The returned Metastore instance.
+     */
     private com.oracle.bmc.datacatalog.model.Metastore metastore;
 
     /**
-     * The returned {@code Metastore} instance.
-     *
+     * The returned Metastore instance.
      * @return the value
      */
     public com.oracle.bmc.datacatalog.model.Metastore getMetastore() {
@@ -57,7 +62,7 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
     })
     private RemoveMetastoreLockResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.datacatalog.model.Metastore metastore) {
@@ -67,33 +72,31 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
         this.metastore = metastore;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<RemoveMetastoreLockResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +106,10 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** etag for the returned Metastore resource. */
+        /**
+         * etag for the returned Metastore resource.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code Metastore} instance. */
+        /**
+         * The returned Metastore instance.
+         */
         private com.oracle.bmc.datacatalog.model.Metastore metastore;
 
         /**
-         * The returned {@code Metastore} instance.
-         *
+         * The returned Metastore instance.
          * @param metastore the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RemoveMetastoreLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RemoveMetastoreLockResponse build() {
             return new RemoveMetastoreLockResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, metastore);
@@ -161,7 +164,6 @@ public class RemoveMetastoreLockResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

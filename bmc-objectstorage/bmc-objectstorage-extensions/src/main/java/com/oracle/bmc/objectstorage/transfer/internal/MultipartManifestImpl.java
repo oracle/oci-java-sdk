@@ -15,7 +15,9 @@ import com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 import com.oracle.bmc.objectstorage.transfer.MultipartManifest;
 
-/** Manifest impl that provides thread-safe access to an ongoing manifest upload. */
+/**
+ * Manifest impl that provides thread-safe access to an ongoing manifest upload.
+ */
 public class MultipartManifestImpl implements MultipartManifest {
     private final String uploadId;
 
@@ -28,7 +30,8 @@ public class MultipartManifestImpl implements MultipartManifest {
     /**
      * Register a part that will will be uploaded using the given part number.
      *
-     * @param partNumber The part number that will be uploaded.
+     * @param partNumber
+     *            The part number that will be uploaded.
      */
     public synchronized void registerTransfer(int partNumber) {
         PartAndStatus partAndStatus = parts.get(partNumber);
@@ -40,8 +43,8 @@ public class MultipartManifestImpl implements MultipartManifest {
 
     /**
      * Register a successful upload.
-     *
-     * <p>Must have called {@link #registerTransfer(int)} first.
+     * <p>
+     * Must have called {@link #registerTransfer(int)} first.
      *
      * @param partNumber The part number of the successful upload
      * @param part
@@ -60,9 +63,10 @@ public class MultipartManifestImpl implements MultipartManifest {
     }
 
     /**
-     * Register a upload that was previously completed (ie, to backfill previously completed parts).
-     *
-     * <p>Do not have to call {@link #registerTransfer(int)} first.
+     * Register a upload that was previously completed (ie, to backfill
+     * previously completed parts).
+     * <p>
+     * Do not have to call {@link #registerTransfer(int)} first.
      *
      * @param part
      */
@@ -82,8 +86,8 @@ public class MultipartManifestImpl implements MultipartManifest {
 
     /**
      * Register a failed upload.
-     *
-     * <p>Must have called {@link #registerTransfer(int)} first.
+     * <p>
+     * Must have called {@link #registerTransfer(int)} first.
      *
      * @param partNumber The failed part number
      */
@@ -93,8 +97,8 @@ public class MultipartManifestImpl implements MultipartManifest {
 
     /**
      * Register a failed upload and the failure cause.
-     *
-     * <p>Must have called {@link #registerTransfer(int)} first.
+     * <p>
+     * Must have called {@link #registerTransfer(int)} first.
      *
      * @param partNumber The failed part number
      */
@@ -183,8 +187,8 @@ public class MultipartManifestImpl implements MultipartManifest {
 
     /**
      * Gets the next part number that should be assigned to an upload part.
-     *
-     * <p>The returned part number will not be assigned again by this manifest.
+     * <p>
+     * The returned part number will not be assigned again by this manifest.
      *
      * @return The next part number to assign.
      */

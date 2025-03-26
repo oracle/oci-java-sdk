@@ -5,21 +5,19 @@
 package com.oracle.bmc.aidocument.model;
 
 /**
- * One page document analysis result. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+ * One page document analysis result.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Page.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Page extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "pageNumber",
@@ -53,16 +51,17 @@ public final class Page extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The document page number. */
+        /**
+         * The document page number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
         private Integer pageNumber;
 
         /**
          * The document page number.
-         *
          * @param pageNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder pageNumber(Integer pageNumber) {
             this.pageNumber = pageNumber;
             this.__explicitlySet__.add("pageNumber");
@@ -77,92 +76,98 @@ public final class Page extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /** An array of detected document types. */
+        /**
+         * An array of detected document types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectedDocumentTypes")
         private java.util.List<DetectedDocumentType> detectedDocumentTypes;
 
         /**
          * An array of detected document types.
-         *
          * @param detectedDocumentTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder detectedDocumentTypes(
                 java.util.List<DetectedDocumentType> detectedDocumentTypes) {
             this.detectedDocumentTypes = detectedDocumentTypes;
             this.__explicitlySet__.add("detectedDocumentTypes");
             return this;
         }
-        /** An array of detected languages. */
+        /**
+         * An array of detected languages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectedLanguages")
         private java.util.List<DetectedLanguage> detectedLanguages;
 
         /**
          * An array of detected languages.
-         *
          * @param detectedLanguages the value to set
          * @return this builder
-         */
+         **/
         public Builder detectedLanguages(java.util.List<DetectedLanguage> detectedLanguages) {
             this.detectedLanguages = detectedLanguages;
             this.__explicitlySet__.add("detectedLanguages");
             return this;
         }
-        /** The words detected on the page. */
+        /**
+         * The words detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("words")
         private java.util.List<Word> words;
 
         /**
          * The words detected on the page.
-         *
          * @param words the value to set
          * @return this builder
-         */
+         **/
         public Builder words(java.util.List<Word> words) {
             this.words = words;
             this.__explicitlySet__.add("words");
             return this;
         }
-        /** The lines of text detected on the page. */
+        /**
+         * The lines of text detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<Line> lines;
 
         /**
          * The lines of text detected on the page.
-         *
          * @param lines the value to set
          * @return this builder
-         */
+         **/
         public Builder lines(java.util.List<Line> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
             return this;
         }
-        /** The tables detected on the page. */
+        /**
+         * The tables detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tables")
         private java.util.List<Table> tables;
 
         /**
          * The tables detected on the page.
-         *
          * @param tables the value to set
          * @return this builder
-         */
+         **/
         public Builder tables(java.util.List<Table> tables) {
             this.tables = tables;
             this.__explicitlySet__.add("tables");
             return this;
         }
-        /** The form fields detected on the page. */
+        /**
+         * The form fields detected on the page.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentFields")
         private java.util.List<DocumentField> documentFields;
 
         /**
          * The form fields detected on the page.
-         *
          * @param documentFields the value to set
          * @return this builder
-         */
+         **/
         public Builder documentFields(java.util.List<DocumentField> documentFields) {
             this.documentFields = documentFields;
             this.__explicitlySet__.add("documentFields");
@@ -219,7 +224,9 @@ public final class Page extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -228,15 +235,16 @@ public final class Page extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** The document page number. */
+    /**
+     * The document page number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
     private final Integer pageNumber;
 
     /**
      * The document page number.
-     *
      * @return the value
-     */
+     **/
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -248,80 +256,86 @@ public final class Page extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return dimensions;
     }
 
-    /** An array of detected document types. */
+    /**
+     * An array of detected document types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectedDocumentTypes")
     private final java.util.List<DetectedDocumentType> detectedDocumentTypes;
 
     /**
      * An array of detected document types.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DetectedDocumentType> getDetectedDocumentTypes() {
         return detectedDocumentTypes;
     }
 
-    /** An array of detected languages. */
+    /**
+     * An array of detected languages.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectedLanguages")
     private final java.util.List<DetectedLanguage> detectedLanguages;
 
     /**
      * An array of detected languages.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DetectedLanguage> getDetectedLanguages() {
         return detectedLanguages;
     }
 
-    /** The words detected on the page. */
+    /**
+     * The words detected on the page.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("words")
     private final java.util.List<Word> words;
 
     /**
      * The words detected on the page.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Word> getWords() {
         return words;
     }
 
-    /** The lines of text detected on the page. */
+    /**
+     * The lines of text detected on the page.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<Line> lines;
 
     /**
      * The lines of text detected on the page.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Line> getLines() {
         return lines;
     }
 
-    /** The tables detected on the page. */
+    /**
+     * The tables detected on the page.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tables")
     private final java.util.List<Table> tables;
 
     /**
      * The tables detected on the page.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Table> getTables() {
         return tables;
     }
 
-    /** The form fields detected on the page. */
+    /**
+     * The form fields detected on the page.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentFields")
     private final java.util.List<DocumentField> documentFields;
 
     /**
      * The form fields detected on the page.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DocumentField> getDocumentFields() {
         return documentFields;
     }
@@ -333,7 +347,6 @@ public final class Page extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

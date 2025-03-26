@@ -5,23 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the Deployment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the Deployment.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeploymentSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DeploymentSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DeploymentSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -125,25 +124,27 @@ public final class DeploymentSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -152,13 +153,16 @@ public final class DeploymentSummary
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Metadata about this specific object. */
+        /**
+         * Metadata about this specific object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -167,26 +171,25 @@ public final class DeploymentSummary
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -195,7 +198,8 @@ public final class DeploymentSummary
         /**
          * The time the resource was created. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -205,7 +209,7 @@ public final class DeploymentSummary
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -214,7 +218,8 @@ public final class DeploymentSummary
         /**
          * The time the resource was last updated. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -224,13 +229,16 @@ public final class DeploymentSummary
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Possible lifecycle states. */
+        /**
+         * Possible lifecycle states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -239,13 +247,16 @@ public final class DeploymentSummary
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Possible GGS lifecycle sub-states. */
+        /**
+         * Possible GGS lifecycle sub-states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
         private LifecycleSubState lifecycleSubState;
 
@@ -254,7 +265,7 @@ public final class DeploymentSummary
          *
          * @param lifecycleSubState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleSubState(LifecycleSubState lifecycleSubState) {
             this.lifecycleSubState = lifecycleSubState;
             this.__explicitlySet__.add("lifecycleSubState");
@@ -263,7 +274,8 @@ public final class DeploymentSummary
         /**
          * Describes the object's current state in detail. For example, it can be used to provide
          * actionable information for a resource in a Failed state.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -273,30 +285,31 @@ public final class DeploymentSummary
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
-         * <p>Example: {@code {"bar-key": "value"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only.
-         *
-         * <p>Example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -304,20 +317,21 @@ public final class DeploymentSummary
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -325,75 +339,73 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
-         * backward compatibility, public subnets are allowed until May 31 2025, after which the
-         * private subnet will be enforced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+         * after which the private subnet will be enforced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
-         * backward compatibility, public subnets are allowed until May 31 2025, after which the
-         * private subnet will be enforced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+         * after which the private subnet will be enforced.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * public subnet in the customer tenancy. Can be provided only for public deployments. If
-         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for
-         * public deployments after October 1, 2024.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
         private String loadBalancerSubnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * public subnet in the customer tenancy. Can be provided only for public deployments. If
-         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatibility, this is an optional property. It will become mandatory for
-         * public deployments after October 1, 2024.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
             this.loadBalancerSubnetId = loadBalancerSubnetId;
             this.__explicitlySet__.add("loadBalancerSubnetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
-         * in the customer subnet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+         * The loadbalancer of the public deployment created in the customer subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created
-         * in the customer subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+         * The loadbalancer of the public deployment created in the customer subnet.
          *
          * @param loadBalancerId the value to set
          * @return this builder
-         */
+         **/
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
             return this;
         }
-        /** The Oracle license model that applies to a Deployment. */
+        /**
+         * The Oracle license model that applies to a Deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -402,53 +414,54 @@ public final class DeploymentSummary
          *
          * @param licenseModel the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
         /**
-         * Specifies whether the deployment is used in a production or development/testing
-         * environment.
-         */
+         * Specifies whether the deployment is used in a production or development/testing environment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private EnvironmentType environmentType;
 
         /**
-         * Specifies whether the deployment is used in a production or development/testing
-         * environment.
+         * Specifies whether the deployment is used in a production or development/testing environment.
          *
          * @param environmentType the value to set
          * @return this builder
-         */
+         **/
         public Builder environmentType(EnvironmentType environmentType) {
             this.environmentType = environmentType;
             this.__explicitlySet__.add("environmentType");
             return this;
         }
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
-         */
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
          *
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(DeploymentCategory category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
+        /**
+         * A three-label Fully Qualified Domain Name (FQDN) for a resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
 
@@ -457,13 +470,16 @@ public final class DeploymentSummary
          *
          * @param fqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder fqdn(String fqdn) {
             this.fqdn = fqdn;
             this.__explicitlySet__.add("fqdn");
             return this;
         }
-        /** The Minimum number of OCPUs to be made available for this Deployment. */
+        /**
+         * The Minimum number of OCPUs to be made available for this Deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
@@ -472,13 +488,16 @@ public final class DeploymentSummary
          *
          * @param cpuCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-        /** Indicates if auto scaling is enabled for the Deployment's CPU core count. */
+        /**
+         * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
@@ -487,13 +506,16 @@ public final class DeploymentSummary
          *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
-        /** True if this object is publicly available. */
+        /**
+         * True if this object is publicly available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
@@ -502,13 +524,16 @@ public final class DeploymentSummary
          *
          * @param isPublic the value to set
          * @return this builder
-         */
+         **/
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
             return this;
         }
-        /** The public IP address representing the access point for the Deployment. */
+        /**
+         * The public IP address representing the access point for the Deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpAddress")
         private String publicIpAddress;
 
@@ -517,7 +542,7 @@ public final class DeploymentSummary
          *
          * @param publicIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder publicIpAddress(String publicIpAddress) {
             this.publicIpAddress = publicIpAddress;
             this.__explicitlySet__.add("publicIpAddress");
@@ -526,7 +551,8 @@ public final class DeploymentSummary
         /**
          * The private IP address in the customer's VCN representing the access point for the
          * associated endpoint service in the GoldenGate service VCN.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpAddress")
         private String privateIpAddress;
 
@@ -536,13 +562,16 @@ public final class DeploymentSummary
          *
          * @param privateIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIpAddress(String privateIpAddress) {
             this.privateIpAddress = privateIpAddress;
             this.__explicitlySet__.add("privateIpAddress");
             return this;
         }
-        /** The URL of a resource. */
+        /**
+         * The URL of a resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentUrl")
         private String deploymentUrl;
 
@@ -551,7 +580,7 @@ public final class DeploymentSummary
          *
          * @param deploymentUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentUrl(String deploymentUrl) {
             this.deploymentUrl = deploymentUrl;
             this.__explicitlySet__.add("deploymentUrl");
@@ -559,32 +588,34 @@ public final class DeploymentSummary
         }
         /**
          * The system tags associated with this resource, if any. The system tags are set by Oracle
-         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
-         * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * The system tags associated with this resource, if any. The system tags are set by Oracle
-         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Indicates if the resource is the the latest available version. */
+        /**
+         * Indicates if the resource is the the latest available version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
         private Boolean isLatestVersion;
 
@@ -593,61 +624,68 @@ public final class DeploymentSummary
          *
          * @param isLatestVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder isLatestVersion(Boolean isLatestVersion) {
             this.isLatestVersion = isLatestVersion;
             this.__explicitlySet__.add("isLatestVersion");
             return this;
         }
         /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-         * when deployment will be forced to upgrade to a newer version. Old description: The date
-         * the existing version in use will no longer be considered as usable and an upgrade will be
-         * required. This date is typically 6 months after the version was released for use by GGS.
-         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
-         */
+         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+         * to check, when deployment will be forced to upgrade to a newer version.
+         * Old description:
+         * The date the existing version in use will no longer be considered as usable
+         * and an upgrade will be required.  This date is typically 6 months after the
+         * version was released for use by GGS.  The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
         private java.util.Date timeUpgradeRequired;
 
         /**
-         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-         * when deployment will be forced to upgrade to a newer version. Old description: The date
-         * the existing version in use will no longer be considered as usable and an upgrade will be
-         * required. This date is typically 6 months after the version was released for use by GGS.
-         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-         * 2016-08-25T21:10:29.600Z}.
+         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+         * to check, when deployment will be forced to upgrade to a newer version.
+         * Old description:
+         * The date the existing version in use will no longer be considered as usable
+         * and an upgrade will be required.  This date is typically 6 months after the
+         * version was released for use by GGS.  The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeUpgradeRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpgradeRequired(java.util.Date timeUpgradeRequired) {
             this.timeUpgradeRequired = timeUpgradeRequired;
             this.__explicitlySet__.add("timeUpgradeRequired");
             return this;
         }
         /**
-         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
-         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
-         * favor of 'DATABASE_ORACLE'.
-         */
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
         /**
-         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
-         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
-         * favor of 'DATABASE_ORACLE'.
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
          *
          * @param deploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-        /** The amount of storage being utilized (in bytes) */
+        /**
+         * The amount of storage being utilized (in bytes)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
         private Long storageUtilizationInBytes;
 
@@ -656,50 +694,44 @@ public final class DeploymentSummary
          *
          * @param storageUtilizationInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder storageUtilizationInBytes(Long storageUtilizationInBytes) {
             this.storageUtilizationInBytes = storageUtilizationInBytes;
             this.__explicitlySet__.add("storageUtilizationInBytes");
             return this;
         }
         /**
-         * Deprecated: This field is not updated and will be removed in future versions. If storage
-         * utilization exceeds the limit, the respective warning message will appear in deployment
-         * messages, which can be accessed through /messages?deploymentId=. Indicator will be true
-         * if the amount of storage being utilized exceeds the allowable storage utilization limit.
-         * Exceeding the limit may be an indication of a misconfiguration of the deployment's
-         * GoldenGate service.
-         */
+         * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
+         * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
         private Boolean isStorageUtilizationLimitExceeded;
 
         /**
-         * Deprecated: This field is not updated and will be removed in future versions. If storage
-         * utilization exceeds the limit, the respective warning message will appear in deployment
-         * messages, which can be accessed through /messages?deploymentId=. Indicator will be true
-         * if the amount of storage being utilized exceeds the allowable storage utilization limit.
-         * Exceeding the limit may be an indication of a misconfiguration of the deployment's
-         * GoldenGate service.
+         * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
+         * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
          *
          * @param isStorageUtilizationLimitExceeded the value to set
          * @return this builder
-         */
+         **/
         public Builder isStorageUtilizationLimitExceeded(
                 Boolean isStorageUtilizationLimitExceeded) {
             this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
             this.__explicitlySet__.add("isStorageUtilizationLimitExceeded");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
@@ -849,7 +881,9 @@ public final class DeploymentSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -859,23 +893,25 @@ public final class DeploymentSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -883,12 +919,15 @@ public final class DeploymentSummary
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Metadata about this specific object. */
+    /**
+     * Metadata about this specific object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -896,24 +935,23 @@ public final class DeploymentSummary
      * Metadata about this specific object.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -921,7 +959,8 @@ public final class DeploymentSummary
     /**
      * The time the resource was created. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -930,7 +969,7 @@ public final class DeploymentSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -938,7 +977,8 @@ public final class DeploymentSummary
     /**
      * The time the resource was last updated. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -947,12 +987,15 @@ public final class DeploymentSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Possible lifecycle states. */
+    /**
+     * Possible lifecycle states.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -960,12 +1003,15 @@ public final class DeploymentSummary
      * Possible lifecycle states.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Possible GGS lifecycle sub-states. */
+    /**
+     * Possible GGS lifecycle sub-states.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
     private final LifecycleSubState lifecycleSubState;
 
@@ -973,7 +1019,7 @@ public final class DeploymentSummary
      * Possible GGS lifecycle sub-states.
      *
      * @return the value
-     */
+     **/
     public LifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
@@ -981,7 +1027,8 @@ public final class DeploymentSummary
     /**
      * Describes the object's current state in detail. For example, it can be used to provide
      * actionable information for a resource in a Failed state.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -990,7 +1037,7 @@ public final class DeploymentSummary
      * actionable information for a resource in a Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -998,107 +1045,107 @@ public final class DeploymentSummary
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
-     * <p>Example: {@code {"bar-key": "value"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
-     *
-     * <p>Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
-     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
-     * subnet will be enforced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+     * after which the private subnet will be enforced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
-     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
-     * subnet will be enforced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+     * after which the private subnet will be enforced.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
-     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
-     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
-     * compatibility, this is an optional property. It will become mandatory for public deployments
-     * after October 1, 2024.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
     private final String loadBalancerSubnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public
-     * subnet in the customer tenancy. Can be provided only for public deployments. If provided, the
-     * loadbalancer will be created in this subnet instead of the service tenancy. For backward
-     * compatibility, this is an optional property. It will become mandatory for public deployments
-     * after October 1, 2024.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      *
      * @return the value
-     */
+     **/
     public String getLoadBalancerSubnetId() {
         return loadBalancerSubnetId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
-     * the customer subnet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+     * The loadbalancer of the public deployment created in the customer subnet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in
-     * the customer subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+     * The loadbalancer of the public deployment created in the customer subnet.
      *
      * @return the value
-     */
+     **/
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
 
-    /** The Oracle license model that applies to a Deployment. */
+    /**
+     * The Oracle license model that applies to a Deployment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
@@ -1106,14 +1153,15 @@ public final class DeploymentSummary
      * The Oracle license model that applies to a Deployment.
      *
      * @return the value
-     */
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
     /**
      * Specifies whether the deployment is used in a production or development/testing environment.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final EnvironmentType environmentType;
 
@@ -1121,31 +1169,33 @@ public final class DeploymentSummary
      * Specifies whether the deployment is used in a production or development/testing environment.
      *
      * @return the value
-     */
+     **/
     public EnvironmentType getEnvironmentType() {
         return environmentType;
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
-     */
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      *
      * @return the value
-     */
+     **/
     public DeploymentCategory getCategory() {
         return category;
     }
 
-    /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
+    /**
+     * A three-label Fully Qualified Domain Name (FQDN) for a resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
 
@@ -1153,12 +1203,15 @@ public final class DeploymentSummary
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      *
      * @return the value
-     */
+     **/
     public String getFqdn() {
         return fqdn;
     }
 
-    /** The Minimum number of OCPUs to be made available for this Deployment. */
+    /**
+     * The Minimum number of OCPUs to be made available for this Deployment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
@@ -1166,12 +1219,15 @@ public final class DeploymentSummary
      * The Minimum number of OCPUs to be made available for this Deployment.
      *
      * @return the value
-     */
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
-    /** Indicates if auto scaling is enabled for the Deployment's CPU core count. */
+    /**
+     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
@@ -1179,12 +1235,15 @@ public final class DeploymentSummary
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
 
-    /** True if this object is publicly available. */
+    /**
+     * True if this object is publicly available.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
@@ -1192,12 +1251,15 @@ public final class DeploymentSummary
      * True if this object is publicly available.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPublic() {
         return isPublic;
     }
 
-    /** The public IP address representing the access point for the Deployment. */
+    /**
+     * The public IP address representing the access point for the Deployment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpAddress")
     private final String publicIpAddress;
 
@@ -1205,29 +1267,33 @@ public final class DeploymentSummary
      * The public IP address representing the access point for the Deployment.
      *
      * @return the value
-     */
+     **/
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
 
     /**
-     * The private IP address in the customer's VCN representing the access point for the associated
-     * endpoint service in the GoldenGate service VCN.
-     */
+     * The private IP address in the customer's VCN representing the access point for the
+     * associated endpoint service in the GoldenGate service VCN.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpAddress")
     private final String privateIpAddress;
 
     /**
-     * The private IP address in the customer's VCN representing the access point for the associated
-     * endpoint service in the GoldenGate service VCN.
+     * The private IP address in the customer's VCN representing the access point for the
+     * associated endpoint service in the GoldenGate service VCN.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
 
-    /** The URL of a resource. */
+    /**
+     * The URL of a resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentUrl")
     private final String deploymentUrl;
 
@@ -1235,37 +1301,39 @@ public final class DeploymentSummary
      * The URL of a resource.
      *
      * @return the value
-     */
+     **/
     public String getDeploymentUrl() {
         return deploymentUrl;
     }
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
-     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
-     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** Indicates if the resource is the the latest available version. */
+    /**
+     * Indicates if the resource is the the latest available version.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
     private final Boolean isLatestVersion;
 
@@ -1273,56 +1341,63 @@ public final class DeploymentSummary
      * Indicates if the resource is the the latest available version.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsLatestVersion() {
         return isLatestVersion;
     }
 
     /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-     * when deployment will be forced to upgrade to a newer version. Old description: The date the
-     * existing version in use will no longer be considered as usable and an upgrade will be
-     * required. This date is typically 6 months after the version was released for use by GGS. The
-     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
-     */
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+     * to check, when deployment will be forced to upgrade to a newer version.
+     * Old description:
+     * The date the existing version in use will no longer be considered as usable
+     * and an upgrade will be required.  This date is typically 6 months after the
+     * version was released for use by GGS.  The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
     private final java.util.Date timeUpgradeRequired;
 
     /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
-     * when deployment will be forced to upgrade to a newer version. Old description: The date the
-     * existing version in use will no longer be considered as usable and an upgrade will be
-     * required. This date is typically 6 months after the version was released for use by GGS. The
-     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
-     * 2016-08-25T21:10:29.600Z}.
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+     * to check, when deployment will be forced to upgrade to a newer version.
+     * Old description:
+     * The date the existing version in use will no longer be considered as usable
+     * and an upgrade will be required.  This date is typically 6 months after the
+     * version was released for use by GGS.  The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpgradeRequired() {
         return timeUpgradeRequired;
     }
 
     /**
-     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
-     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
-     * 'DATABASE_ORACLE'.
-     */
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
     /**
-     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
-     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
-     * 'DATABASE_ORACLE'.
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
      *
      * @return the value
-     */
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
 
-    /** The amount of storage being utilized (in bytes) */
+    /**
+     * The amount of storage being utilized (in bytes)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
     private final Long storageUtilizationInBytes;
 
@@ -1330,45 +1405,39 @@ public final class DeploymentSummary
      * The amount of storage being utilized (in bytes)
      *
      * @return the value
-     */
+     **/
     public Long getStorageUtilizationInBytes() {
         return storageUtilizationInBytes;
     }
 
     /**
-     * Deprecated: This field is not updated and will be removed in future versions. If storage
-     * utilization exceeds the limit, the respective warning message will appear in deployment
-     * messages, which can be accessed through /messages?deploymentId=. Indicator will be true if
-     * the amount of storage being utilized exceeds the allowable storage utilization limit.
-     * Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate
-     * service.
-     */
+     * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
+     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
     private final Boolean isStorageUtilizationLimitExceeded;
 
     /**
-     * Deprecated: This field is not updated and will be removed in future versions. If storage
-     * utilization exceeds the limit, the respective warning message will appear in deployment
-     * messages, which can be accessed through /messages?deploymentId=. Indicator will be true if
-     * the amount of storage being utilized exceeds the allowable storage utilization limit.
-     * Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate
-     * service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
+     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsStorageUtilizationLimitExceeded() {
         return isStorageUtilizationLimitExceeded;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
@@ -1380,7 +1449,6 @@ public final class DeploymentSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information about a package. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information about a package.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PackageNameSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PackageNameSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PackageNameSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PackageNameSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "name", "type", "version", "architecture"})
     public PackageNameSummary(
@@ -36,76 +34,81 @@ public final class PackageNameSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Full package name in NERVA format. This value should be unique. */
+        /**
+         * Full package name in NERVA format. This value should be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Full package name in NERVA format. This value should be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The name of the software package. */
+        /**
+         * The name of the software package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the software package.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of the package. */
+        /**
+         * Type of the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Type of the package.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The version of the software package. */
+        /**
+         * The version of the software package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of the software package.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The CPU architecture type for which this package was built. */
+        /**
+         * The CPU architecture type for which this package was built.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private ArchType architecture;
 
         /**
          * The CPU architecture type for which this package was built.
-         *
          * @param architecture the value to set
          * @return this builder
-         */
+         **/
         public Builder architecture(ArchType architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
@@ -150,7 +153,9 @@ public final class PackageNameSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,67 +164,72 @@ public final class PackageNameSummary
         return new Builder().copy(this);
     }
 
-    /** Full package name in NERVA format. This value should be unique. */
+    /**
+     * Full package name in NERVA format. This value should be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Full package name in NERVA format. This value should be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The name of the software package. */
+    /**
+     * The name of the software package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the software package.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of the package. */
+    /**
+     * Type of the package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of the package.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** The version of the software package. */
+    /**
+     * The version of the software package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the software package.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The CPU architecture type for which this package was built. */
+    /**
+     * The CPU architecture type for which this package was built.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final ArchType architecture;
 
     /**
      * The CPU architecture type for which this package was built.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchitecture() {
         return architecture;
     }
@@ -231,7 +241,6 @@ public final class PackageNameSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

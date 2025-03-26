@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of an external ASM disk group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of an external ASM disk group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalAsmDiskGroupSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalAsmDiskGroupSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalAsmDiskGroupSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -58,136 +57,145 @@ public final class ExternalAsmDiskGroupSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the ASM disk group. */
+        /**
+         * The name of the ASM disk group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the ASM disk group.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The number of ASM instances that have the disk group in mounted state. */
+        /**
+         * The number of ASM instances that have the disk group in mounted state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mountingInstanceCount")
         private Integer mountingInstanceCount;
 
         /**
          * The number of ASM instances that have the disk group in mounted state.
-         *
          * @param mountingInstanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder mountingInstanceCount(Integer mountingInstanceCount) {
             this.mountingInstanceCount = mountingInstanceCount;
             this.__explicitlySet__.add("mountingInstanceCount");
             return this;
         }
-        /** The number of ASM instances that have the disk group in dismounted state. */
+        /**
+         * The number of ASM instances that have the disk group in dismounted state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dismountingInstanceCount")
         private Integer dismountingInstanceCount;
 
         /**
          * The number of ASM instances that have the disk group in dismounted state.
-         *
          * @param dismountingInstanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder dismountingInstanceCount(Integer dismountingInstanceCount) {
             this.dismountingInstanceCount = dismountingInstanceCount;
             this.__explicitlySet__.add("dismountingInstanceCount");
             return this;
         }
-        /** The redundancy type of the disk group. */
+        /**
+         * The redundancy type of the disk group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redundancyType")
         private RedundancyType redundancyType;
 
         /**
          * The redundancy type of the disk group.
-         *
          * @param redundancyType the value to set
          * @return this builder
-         */
+         **/
         public Builder redundancyType(RedundancyType redundancyType) {
             this.redundancyType = redundancyType;
             this.__explicitlySet__.add("redundancyType");
             return this;
         }
-        /** Indicates whether the disk group is a sparse disk group or not. */
+        /**
+         * Indicates whether the disk group is a sparse disk group or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSparse")
         private Boolean isSparse;
 
         /**
          * Indicates whether the disk group is a sparse disk group or not.
-         *
          * @param isSparse the value to set
          * @return this builder
-         */
+         **/
         public Builder isSparse(Boolean isSparse) {
             this.isSparse = isSparse;
             this.__explicitlySet__.add("isSparse");
             return this;
         }
-        /** The unique names of the databases using the disk group. */
+        /**
+         * The unique names of the databases using the disk group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databases")
         private java.util.List<String> databases;
 
         /**
          * The unique names of the databases using the disk group.
-         *
          * @param databases the value to set
          * @return this builder
-         */
+         **/
         public Builder databases(java.util.List<String> databases) {
             this.databases = databases;
             this.__explicitlySet__.add("databases");
             return this;
         }
-        /** The total capacity of the disk group (in megabytes). */
+        /**
+         * The total capacity of the disk group (in megabytes).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSizeInMBs")
         private Long totalSizeInMBs;
 
         /**
          * The total capacity of the disk group (in megabytes).
-         *
          * @param totalSizeInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder totalSizeInMBs(Long totalSizeInMBs) {
             this.totalSizeInMBs = totalSizeInMBs;
             this.__explicitlySet__.add("totalSizeInMBs");
             return this;
         }
-        /** The used capacity of the disk group (in megabytes). */
+        /**
+         * The used capacity of the disk group (in megabytes).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedSizeInMBs")
         private Long usedSizeInMBs;
 
         /**
          * The used capacity of the disk group (in megabytes).
-         *
          * @param usedSizeInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder usedSizeInMBs(Long usedSizeInMBs) {
             this.usedSizeInMBs = usedSizeInMBs;
             this.__explicitlySet__.add("usedSizeInMBs");
             return this;
         }
-        /** The percentage of used space in the disk group. */
+        /**
+         * The percentage of used space in the disk group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedPercent")
         private Float usedPercent;
 
         /**
          * The percentage of used space in the disk group.
-         *
          * @param usedPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder usedPercent(Float usedPercent) {
             this.usedPercent = usedPercent;
             this.__explicitlySet__.add("usedPercent");
@@ -248,7 +256,9 @@ public final class ExternalAsmDiskGroupSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -257,47 +267,52 @@ public final class ExternalAsmDiskGroupSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the ASM disk group. */
+    /**
+     * The name of the ASM disk group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the ASM disk group.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The number of ASM instances that have the disk group in mounted state. */
+    /**
+     * The number of ASM instances that have the disk group in mounted state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mountingInstanceCount")
     private final Integer mountingInstanceCount;
 
     /**
      * The number of ASM instances that have the disk group in mounted state.
-     *
      * @return the value
-     */
+     **/
     public Integer getMountingInstanceCount() {
         return mountingInstanceCount;
     }
 
-    /** The number of ASM instances that have the disk group in dismounted state. */
+    /**
+     * The number of ASM instances that have the disk group in dismounted state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dismountingInstanceCount")
     private final Integer dismountingInstanceCount;
 
     /**
      * The number of ASM instances that have the disk group in dismounted state.
-     *
      * @return the value
-     */
+     **/
     public Integer getDismountingInstanceCount() {
         return dismountingInstanceCount;
     }
 
-    /** The redundancy type of the disk group. */
-    public enum RedundancyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The redundancy type of the disk group.
+     **/
+    public enum RedundancyType {
         Extend("EXTEND"),
         Extern("EXTERN"),
         Flex("FLEX"),
@@ -305,8 +320,8 @@ public final class ExternalAsmDiskGroupSummary
         Normal("NORMAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -345,80 +360,86 @@ public final class ExternalAsmDiskGroupSummary
             return UnknownEnumValue;
         }
     };
-    /** The redundancy type of the disk group. */
+    /**
+     * The redundancy type of the disk group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redundancyType")
     private final RedundancyType redundancyType;
 
     /**
      * The redundancy type of the disk group.
-     *
      * @return the value
-     */
+     **/
     public RedundancyType getRedundancyType() {
         return redundancyType;
     }
 
-    /** Indicates whether the disk group is a sparse disk group or not. */
+    /**
+     * Indicates whether the disk group is a sparse disk group or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSparse")
     private final Boolean isSparse;
 
     /**
      * Indicates whether the disk group is a sparse disk group or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSparse() {
         return isSparse;
     }
 
-    /** The unique names of the databases using the disk group. */
+    /**
+     * The unique names of the databases using the disk group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databases")
     private final java.util.List<String> databases;
 
     /**
      * The unique names of the databases using the disk group.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDatabases() {
         return databases;
     }
 
-    /** The total capacity of the disk group (in megabytes). */
+    /**
+     * The total capacity of the disk group (in megabytes).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSizeInMBs")
     private final Long totalSizeInMBs;
 
     /**
      * The total capacity of the disk group (in megabytes).
-     *
      * @return the value
-     */
+     **/
     public Long getTotalSizeInMBs() {
         return totalSizeInMBs;
     }
 
-    /** The used capacity of the disk group (in megabytes). */
+    /**
+     * The used capacity of the disk group (in megabytes).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedSizeInMBs")
     private final Long usedSizeInMBs;
 
     /**
      * The used capacity of the disk group (in megabytes).
-     *
      * @return the value
-     */
+     **/
     public Long getUsedSizeInMBs() {
         return usedSizeInMBs;
     }
 
-    /** The percentage of used space in the disk group. */
+    /**
+     * The percentage of used space in the disk group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercent")
     private final Float usedPercent;
 
     /**
      * The percentage of used space in the disk group.
-     *
      * @return the value
-     */
+     **/
     public Float getUsedPercent() {
         return usedPercent;
     }
@@ -430,7 +451,6 @@ public final class ExternalAsmDiskGroupSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

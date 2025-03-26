@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Supported platform architecture types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum PlatformArchitectureType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported platform architecture types.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum PlatformArchitectureType {
     X8664("X86_64"),
     X86("X86"),
     Aarch64("AARCH64"),

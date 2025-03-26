@@ -6,9 +6,12 @@ package com.oracle.bmc.capacitymanagement.responses;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,16 +24,17 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcRequestId;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -39,27 +43,25 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      * @return the value
      */
     public Integer getRetryAfter() {
         return retryAfter;
     }
 
-    /** The returned {@code OccCustomerGroup} instance. */
+    /**
+     * The returned OccCustomerGroup instance.
+     */
     private com.oracle.bmc.capacitymanagement.model.OccCustomerGroup occCustomerGroup;
 
     /**
-     * The returned {@code OccCustomerGroup} instance.
-     *
+     * The returned OccCustomerGroup instance.
      * @return the value
      */
     public com.oracle.bmc.capacitymanagement.model.OccCustomerGroup getOccCustomerGroup() {
@@ -76,7 +78,7 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
     })
     private CreateOccCustomerGroupResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Integer retryAfter,
@@ -88,26 +90,25 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
         this.occCustomerGroup = occCustomerGroup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateOccCustomerGroupResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -122,16 +123,17 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcRequestId;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -142,15 +144,12 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          */
         private Integer retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -159,12 +158,13 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code OccCustomerGroup} instance. */
+        /**
+         * The returned OccCustomerGroup instance.
+         */
         private com.oracle.bmc.capacitymanagement.model.OccCustomerGroup occCustomerGroup;
 
         /**
-         * The returned {@code OccCustomerGroup} instance.
-         *
+         * The returned OccCustomerGroup instance.
          * @param occCustomerGroup the value to set
          * @return this builder
          */
@@ -176,10 +176,8 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateOccCustomerGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -193,10 +191,8 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateOccCustomerGroupResponse build() {
             return new CreateOccCustomerGroupResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, retryAfter, occCustomerGroup);
@@ -205,7 +201,6 @@ public class CreateOccCustomerGroupResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

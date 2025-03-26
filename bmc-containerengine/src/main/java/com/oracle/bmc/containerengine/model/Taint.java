@@ -5,21 +5,19 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * taints <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * taints
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Taint.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Taint extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Taint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "value", "effect"})
     public Taint(String key, String value, String effect) {
@@ -31,46 +29,49 @@ public final class Taint extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The key of the pair. */
+        /**
+         * The key of the pair.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key of the pair.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The value of the pair. */
+        /**
+         * The value of the pair.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value of the pair.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** The effect of the pair. */
+        /**
+         * The effect of the pair.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("effect")
         private String effect;
 
         /**
          * The effect of the pair.
-         *
          * @param effect the value to set
          * @return this builder
-         */
+         **/
         public Builder effect(String effect) {
             this.effect = effect;
             this.__explicitlySet__.add("effect");
@@ -103,7 +104,9 @@ public final class Taint extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,41 +115,44 @@ public final class Taint extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** The key of the pair. */
+    /**
+     * The key of the pair.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the pair.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The value of the pair. */
+    /**
+     * The value of the pair.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value of the pair.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** The effect of the pair. */
+    /**
+     * The effect of the pair.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("effect")
     private final String effect;
 
     /**
      * The effect of the pair.
-     *
      * @return the value
-     */
+     **/
     public String getEffect() {
         return effect;
     }
@@ -158,7 +164,6 @@ public final class Taint extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,23 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * The mTLS authentication mode to use when receiving requests from other virtual services or
- * ingress gateways within the mesh. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VirtualServiceMutualTransportLayerSecurityDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VirtualServiceMutualTransportLayerSecurityDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VirtualServiceMutualTransportLayerSecurityDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"maximumValidity", "mode"})
     public VirtualServiceMutualTransportLayerSecurityDetails(
@@ -35,46 +34,46 @@ public final class VirtualServiceMutualTransportLayerSecurityDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The number of days the mTLS certificate is valid. This value should be less than the
-         * Maximum Validity Duration for Certificates (Days) setting on the Certificate Authority
-         * associated with this Mesh. The certificate will be automatically renewed after 2/3 of the
-         * validity period, so a certificate with a maximum validity of 45 days will be renewed
-         * every 30 days.
-         */
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
+         * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
+         * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
+         * will be renewed every 30 days.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
         private Integer maximumValidity;
 
         /**
-         * The number of days the mTLS certificate is valid. This value should be less than the
-         * Maximum Validity Duration for Certificates (Days) setting on the Certificate Authority
-         * associated with this Mesh. The certificate will be automatically renewed after 2/3 of the
-         * validity period, so a certificate with a maximum validity of 45 days will be renewed
-         * every 30 days.
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
+         * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
+         * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
+         * will be renewed every 30 days.
          *
          * @param maximumValidity the value to set
          * @return this builder
-         */
+         **/
         public Builder maximumValidity(Integer maximumValidity) {
             this.maximumValidity = maximumValidity;
             this.__explicitlySet__.add("maximumValidity");
             return this;
         }
         /**
-         * DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or
-         * an mTLS tunnel. STRICT: Connection is an mTLS tunnel. Clients without a valid certificate
-         * will be rejected.
-         */
+         * DISABLED: Connection is not tunneled.
+         * PERMISSIVE: Connection can be either plaintext or an mTLS tunnel.
+         * STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private MutualTransportLayerSecurity.Mode mode;
 
         /**
-         * DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or
-         * an mTLS tunnel. STRICT: Connection is an mTLS tunnel. Clients without a valid certificate
-         * will be rejected.
+         * DISABLED: Connection is not tunneled.
+         * PERMISSIVE: Connection can be either plaintext or an mTLS tunnel.
+         * STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
          *
          * @param mode the value to set
          * @return this builder
-         */
+         **/
         public Builder mode(MutualTransportLayerSecurity.Mode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -106,7 +105,9 @@ public final class VirtualServiceMutualTransportLayerSecurityDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +117,43 @@ public final class VirtualServiceMutualTransportLayerSecurityDetails
     }
 
     /**
-     * The number of days the mTLS certificate is valid. This value should be less than the Maximum
-     * Validity Duration for Certificates (Days) setting on the Certificate Authority associated
-     * with this Mesh. The certificate will be automatically renewed after 2/3 of the validity
-     * period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-     */
+     * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
+     * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
+     * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
+     * will be renewed every 30 days.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumValidity")
     private final Integer maximumValidity;
 
     /**
-     * The number of days the mTLS certificate is valid. This value should be less than the Maximum
-     * Validity Duration for Certificates (Days) setting on the Certificate Authority associated
-     * with this Mesh. The certificate will be automatically renewed after 2/3 of the validity
-     * period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+     * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration
+     * for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will
+     * be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days
+     * will be renewed every 30 days.
      *
      * @return the value
-     */
+     **/
     public Integer getMaximumValidity() {
         return maximumValidity;
     }
 
     /**
-     * DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an
-     * mTLS tunnel. STRICT: Connection is an mTLS tunnel. Clients without a valid certificate will
-     * be rejected.
-     */
+     * DISABLED: Connection is not tunneled.
+     * PERMISSIVE: Connection can be either plaintext or an mTLS tunnel.
+     * STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final MutualTransportLayerSecurity.Mode mode;
 
     /**
-     * DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an
-     * mTLS tunnel. STRICT: Connection is an mTLS tunnel. Clients without a valid certificate will
-     * be rejected.
+     * DISABLED: Connection is not tunneled.
+     * PERMISSIVE: Connection can be either plaintext or an mTLS tunnel.
+     * STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
      *
      * @return the value
-     */
+     **/
     public MutualTransportLayerSecurity.Mode getMode() {
         return mode;
     }
@@ -162,7 +165,6 @@ public final class VirtualServiceMutualTransportLayerSecurityDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

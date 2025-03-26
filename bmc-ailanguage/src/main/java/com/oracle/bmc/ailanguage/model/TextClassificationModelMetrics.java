@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Model level text classification metrics <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Model level text classification metrics
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TextClassificationModelMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TextClassificationModelMetrics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TextClassificationModelMetrics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "accuracy",
@@ -61,181 +60,161 @@ public final class TextClassificationModelMetrics
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The fraction of the labels that were correctly recognised . */
+        /**
+         * The fraction of the labels that were correctly recognised .
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accuracy")
         private Float accuracy;
 
         /**
          * The fraction of the labels that were correctly recognised .
-         *
          * @param accuracy the value to set
          * @return this builder
-         */
+         **/
         public Builder accuracy(Float accuracy) {
             this.accuracy = accuracy;
             this.__explicitlySet__.add("accuracy");
             return this;
         }
-        /** F1-score, is a measure of a model\u2019s accuracy on a dataset */
+        /**
+         * F1-score, is a measure of a model\u2019s accuracy on a dataset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("microF1")
         private Float microF1;
 
         /**
          * F1-score, is a measure of a model\u2019s accuracy on a dataset
-         *
          * @param microF1 the value to set
          * @return this builder
-         */
+         **/
         public Builder microF1(Float microF1) {
             this.microF1 = microF1;
             this.__explicitlySet__.add("microF1");
             return this;
         }
         /**
-         * Precision refers to the number of true positives divided by the total number of positive
-         * predictions (i.e., the number of true positives plus the number of false positives)
-         */
+         * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("microPrecision")
         private Float microPrecision;
 
         /**
-         * Precision refers to the number of true positives divided by the total number of positive
-         * predictions (i.e., the number of true positives plus the number of false positives)
-         *
+         * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
          * @param microPrecision the value to set
          * @return this builder
-         */
+         **/
         public Builder microPrecision(Float microPrecision) {
             this.microPrecision = microPrecision;
             this.__explicitlySet__.add("microPrecision");
             return this;
         }
         /**
-         * Measures the model's ability to predict actual positive classes. It is the ratio between
-         * the predicted true positives and what was actually tagged. The recall metric reveals how
-         * many of the predicted classes are correct.
-         */
+         * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("microRecall")
         private Float microRecall;
 
         /**
-         * Measures the model's ability to predict actual positive classes. It is the ratio between
-         * the predicted true positives and what was actually tagged. The recall metric reveals how
-         * many of the predicted classes are correct.
-         *
+         * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
          * @param microRecall the value to set
          * @return this builder
-         */
+         **/
         public Builder microRecall(Float microRecall) {
             this.microRecall = microRecall;
             this.__explicitlySet__.add("microRecall");
             return this;
         }
-        /** F1-score, is a measure of a model\u2019s accuracy on a dataset */
+        /**
+         * F1-score, is a measure of a model\u2019s accuracy on a dataset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macroF1")
         private Float macroF1;
 
         /**
          * F1-score, is a measure of a model\u2019s accuracy on a dataset
-         *
          * @param macroF1 the value to set
          * @return this builder
-         */
+         **/
         public Builder macroF1(Float macroF1) {
             this.macroF1 = macroF1;
             this.__explicitlySet__.add("macroF1");
             return this;
         }
         /**
-         * Precision refers to the number of true positives divided by the total number of positive
-         * predictions (i.e., the number of true positives plus the number of false positives)
-         */
+         * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macroPrecision")
         private Float macroPrecision;
 
         /**
-         * Precision refers to the number of true positives divided by the total number of positive
-         * predictions (i.e., the number of true positives plus the number of false positives)
-         *
+         * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
          * @param macroPrecision the value to set
          * @return this builder
-         */
+         **/
         public Builder macroPrecision(Float macroPrecision) {
             this.macroPrecision = macroPrecision;
             this.__explicitlySet__.add("macroPrecision");
             return this;
         }
         /**
-         * Measures the model's ability to predict actual positive classes. It is the ratio between
-         * the predicted true positives and what was actually tagged. The recall metric reveals how
-         * many of the predicted classes are correct.
-         */
+         * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macroRecall")
         private Float macroRecall;
 
         /**
-         * Measures the model's ability to predict actual positive classes. It is the ratio between
-         * the predicted true positives and what was actually tagged. The recall metric reveals how
-         * many of the predicted classes are correct.
-         *
+         * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
          * @param macroRecall the value to set
          * @return this builder
-         */
+         **/
         public Builder macroRecall(Float macroRecall) {
             this.macroRecall = macroRecall;
             this.__explicitlySet__.add("macroRecall");
             return this;
         }
-        /** F1-score, is a measure of a model\u2019s accuracy on a dataset */
+        /**
+         * F1-score, is a measure of a model\u2019s accuracy on a dataset
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weightedF1")
         private Float weightedF1;
 
         /**
          * F1-score, is a measure of a model\u2019s accuracy on a dataset
-         *
          * @param weightedF1 the value to set
          * @return this builder
-         */
+         **/
         public Builder weightedF1(Float weightedF1) {
             this.weightedF1 = weightedF1;
             this.__explicitlySet__.add("weightedF1");
             return this;
         }
         /**
-         * Precision refers to the number of true positives divided by the total number of positive
-         * predictions (i.e., the number of true positives plus the number of false positives)
-         */
+         * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weightedPrecision")
         private Float weightedPrecision;
 
         /**
-         * Precision refers to the number of true positives divided by the total number of positive
-         * predictions (i.e., the number of true positives plus the number of false positives)
-         *
+         * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
          * @param weightedPrecision the value to set
          * @return this builder
-         */
+         **/
         public Builder weightedPrecision(Float weightedPrecision) {
             this.weightedPrecision = weightedPrecision;
             this.__explicitlySet__.add("weightedPrecision");
             return this;
         }
         /**
-         * Measures the model's ability to predict actual positive classes. It is the ratio between
-         * the predicted true positives and what was actually tagged. The recall metric reveals how
-         * many of the predicted classes are correct.
-         */
+         * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weightedRecall")
         private Float weightedRecall;
 
         /**
-         * Measures the model's ability to predict actual positive classes. It is the ratio between
-         * the predicted true positives and what was actually tagged. The recall metric reveals how
-         * many of the predicted classes are correct.
-         *
+         * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
          * @param weightedRecall the value to set
          * @return this builder
-         */
+         **/
         public Builder weightedRecall(Float weightedRecall) {
             this.weightedRecall = weightedRecall;
             this.__explicitlySet__.add("weightedRecall");
@@ -300,7 +279,9 @@ public final class TextClassificationModelMetrics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -309,162 +290,142 @@ public final class TextClassificationModelMetrics
         return new Builder().copy(this);
     }
 
-    /** The fraction of the labels that were correctly recognised . */
+    /**
+     * The fraction of the labels that were correctly recognised .
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accuracy")
     private final Float accuracy;
 
     /**
      * The fraction of the labels that were correctly recognised .
-     *
      * @return the value
-     */
+     **/
     public Float getAccuracy() {
         return accuracy;
     }
 
-    /** F1-score, is a measure of a model\u2019s accuracy on a dataset */
+    /**
+     * F1-score, is a measure of a model\u2019s accuracy on a dataset
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("microF1")
     private final Float microF1;
 
     /**
      * F1-score, is a measure of a model\u2019s accuracy on a dataset
-     *
      * @return the value
-     */
+     **/
     public Float getMicroF1() {
         return microF1;
     }
 
     /**
-     * Precision refers to the number of true positives divided by the total number of positive
-     * predictions (i.e., the number of true positives plus the number of false positives)
-     */
+     * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("microPrecision")
     private final Float microPrecision;
 
     /**
-     * Precision refers to the number of true positives divided by the total number of positive
-     * predictions (i.e., the number of true positives plus the number of false positives)
-     *
+     * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * @return the value
-     */
+     **/
     public Float getMicroPrecision() {
         return microPrecision;
     }
 
     /**
-     * Measures the model's ability to predict actual positive classes. It is the ratio between the
-     * predicted true positives and what was actually tagged. The recall metric reveals how many of
-     * the predicted classes are correct.
-     */
+     * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("microRecall")
     private final Float microRecall;
 
     /**
-     * Measures the model's ability to predict actual positive classes. It is the ratio between the
-     * predicted true positives and what was actually tagged. The recall metric reveals how many of
-     * the predicted classes are correct.
-     *
+     * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * @return the value
-     */
+     **/
     public Float getMicroRecall() {
         return microRecall;
     }
 
-    /** F1-score, is a measure of a model\u2019s accuracy on a dataset */
+    /**
+     * F1-score, is a measure of a model\u2019s accuracy on a dataset
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macroF1")
     private final Float macroF1;
 
     /**
      * F1-score, is a measure of a model\u2019s accuracy on a dataset
-     *
      * @return the value
-     */
+     **/
     public Float getMacroF1() {
         return macroF1;
     }
 
     /**
-     * Precision refers to the number of true positives divided by the total number of positive
-     * predictions (i.e., the number of true positives plus the number of false positives)
-     */
+     * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macroPrecision")
     private final Float macroPrecision;
 
     /**
-     * Precision refers to the number of true positives divided by the total number of positive
-     * predictions (i.e., the number of true positives plus the number of false positives)
-     *
+     * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * @return the value
-     */
+     **/
     public Float getMacroPrecision() {
         return macroPrecision;
     }
 
     /**
-     * Measures the model's ability to predict actual positive classes. It is the ratio between the
-     * predicted true positives and what was actually tagged. The recall metric reveals how many of
-     * the predicted classes are correct.
-     */
+     * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macroRecall")
     private final Float macroRecall;
 
     /**
-     * Measures the model's ability to predict actual positive classes. It is the ratio between the
-     * predicted true positives and what was actually tagged. The recall metric reveals how many of
-     * the predicted classes are correct.
-     *
+     * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * @return the value
-     */
+     **/
     public Float getMacroRecall() {
         return macroRecall;
     }
 
-    /** F1-score, is a measure of a model\u2019s accuracy on a dataset */
+    /**
+     * F1-score, is a measure of a model\u2019s accuracy on a dataset
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weightedF1")
     private final Float weightedF1;
 
     /**
      * F1-score, is a measure of a model\u2019s accuracy on a dataset
-     *
      * @return the value
-     */
+     **/
     public Float getWeightedF1() {
         return weightedF1;
     }
 
     /**
-     * Precision refers to the number of true positives divided by the total number of positive
-     * predictions (i.e., the number of true positives plus the number of false positives)
-     */
+     * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weightedPrecision")
     private final Float weightedPrecision;
 
     /**
-     * Precision refers to the number of true positives divided by the total number of positive
-     * predictions (i.e., the number of true positives plus the number of false positives)
-     *
+     * Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * @return the value
-     */
+     **/
     public Float getWeightedPrecision() {
         return weightedPrecision;
     }
 
     /**
-     * Measures the model's ability to predict actual positive classes. It is the ratio between the
-     * predicted true positives and what was actually tagged. The recall metric reveals how many of
-     * the predicted classes are correct.
-     */
+     * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weightedRecall")
     private final Float weightedRecall;
 
     /**
-     * Measures the model's ability to predict actual positive classes. It is the ratio between the
-     * predicted true positives and what was actually tagged. The recall metric reveals how many of
-     * the predicted classes are correct.
-     *
+     * Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * @return the value
-     */
+     **/
     public Float getWeightedRecall() {
         return weightedRecall;
     }
@@ -476,7 +437,6 @@ public final class TextClassificationModelMetrics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible Exadata Fleet Update Cycle types to specify. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum CycleTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Exadata Fleet Update Cycle types to specify.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum CycleTypes {
     Patch("PATCH"),
 
     /**

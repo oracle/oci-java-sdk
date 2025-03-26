@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.model;
 
 /**
  * Possible operation types.
+ * <p>
+ * Deprecated value: GoldengateConnectionAssigmnentDelete
  *
- * <p>Deprecated value: GoldengateConnectionAssigmnentDelete
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum OperationType {
     GoldengateDatabaseRegistrationCreate("GOLDENGATE_DATABASE_REGISTRATION_CREATE"),
     GoldengateDatabaseRegistrationUpdate("GOLDENGATE_DATABASE_REGISTRATION_UPDATE"),
     GoldengateDatabaseRegistrationDelete("GOLDENGATE_DATABASE_REGISTRATION_DELETE"),

@@ -5,22 +5,19 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Cost estimation description <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * Cost estimation description
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CostEstimation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CostEstimation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CostEstimation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compute",
@@ -78,62 +75,66 @@ public final class CostEstimation
             this.__explicitlySet__.add("osImage");
             return this;
         }
-        /** Currency code in the ISO format. */
+        /**
+         * Currency code in the ISO format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
         /**
          * Currency code in the ISO format.
-         *
          * @param currencyCode the value to set
          * @return this builder
-         */
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-        /** Total estimation per month */
+        /**
+         * Total estimation per month
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalEstimationPerMonth")
         private java.math.BigDecimal totalEstimationPerMonth;
 
         /**
          * Total estimation per month
-         *
          * @param totalEstimationPerMonth the value to set
          * @return this builder
-         */
+         **/
         public Builder totalEstimationPerMonth(java.math.BigDecimal totalEstimationPerMonth) {
             this.totalEstimationPerMonth = totalEstimationPerMonth;
             this.__explicitlySet__.add("totalEstimationPerMonth");
             return this;
         }
-        /** Total estimation per month by subscription. */
+        /**
+         * Total estimation per month by subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalEstimationPerMonthBySubscription")
         private java.math.BigDecimal totalEstimationPerMonthBySubscription;
 
         /**
          * Total estimation per month by subscription.
-         *
          * @param totalEstimationPerMonthBySubscription the value to set
          * @return this builder
-         */
+         **/
         public Builder totalEstimationPerMonthBySubscription(
                 java.math.BigDecimal totalEstimationPerMonthBySubscription) {
             this.totalEstimationPerMonthBySubscription = totalEstimationPerMonthBySubscription;
             this.__explicitlySet__.add("totalEstimationPerMonthBySubscription");
             return this;
         }
-        /** Subscription ID */
+        /**
+         * Subscription ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
          * Subscription ID
-         *
          * @param subscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
@@ -187,7 +188,9 @@ public final class CostEstimation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -217,54 +220,58 @@ public final class CostEstimation
         return osImage;
     }
 
-    /** Currency code in the ISO format. */
+    /**
+     * Currency code in the ISO format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
     /**
      * Currency code in the ISO format.
-     *
      * @return the value
-     */
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
 
-    /** Total estimation per month */
+    /**
+     * Total estimation per month
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalEstimationPerMonth")
     private final java.math.BigDecimal totalEstimationPerMonth;
 
     /**
      * Total estimation per month
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getTotalEstimationPerMonth() {
         return totalEstimationPerMonth;
     }
 
-    /** Total estimation per month by subscription. */
+    /**
+     * Total estimation per month by subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalEstimationPerMonthBySubscription")
     private final java.math.BigDecimal totalEstimationPerMonthBySubscription;
 
     /**
      * Total estimation per month by subscription.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getTotalEstimationPerMonthBySubscription() {
         return totalEstimationPerMonthBySubscription;
     }
 
-    /** Subscription ID */
+    /**
+     * Subscription ID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
      * Subscription ID
-     *
      * @return the value
-     */
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -276,7 +283,6 @@ public final class CostEstimation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

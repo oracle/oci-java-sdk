@@ -48,8 +48,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class provides an example on how to use tagging in the Java SDK to manage tags and tag
- * namespaces, as well as how to apply freeform and defined tags to a resource.
+ * This class provides an example on how to use tagging in the Java SDK to manage tags and tag namespaces, as
+ * well as how to apply freeform and defined tags to a resource.
  */
 public class TaggingExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -59,9 +59,9 @@ public class TaggingExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where a VCN will be created for tagging.
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of the compartment where a VCN will be created for tagging.</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
@@ -71,20 +71,19 @@ public class TaggingExample {
 
         final String compartmentId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final IdentityClient identityClient =
-                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final VirtualNetworkClient virtualNetworkClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
+        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
+
+        identityClient.setRegion(Region.US_PHOENIX_1);
+        virtualNetworkClient.setRegion(Region.US_PHOENIX_1);
 
         SecureRandom rnd = SecureRandom.getInstance("SHA1PRNG");
         final String exampleNamespaceName = "examplens_" + rnd.nextInt(1000000);
@@ -312,8 +311,7 @@ public class TaggingExample {
                                 .build());
         System.out.println("Updated tags on VCN: " + updateVcnResponse.getVcn());
 
-        // We can also totally remove tags on a resource by passing in an empty dictionary for those
-        // tagging parameters
+        // We can also totally remove tags on a resource by passing in an empty dictionary for those tagging parameters
         updateVcnResponse =
                 virtualNetworkClient.updateVcn(
                         UpdateVcnRequest.builder()
@@ -327,8 +325,7 @@ public class TaggingExample {
                                 .build());
         System.out.println("Removed tags from VCN: " + updateVcnResponse.getVcn());
 
-        // Previously we saw retiring a tag. We can also retire a tag namespace - this will also
-        // retire any tags in that namespace
+        // Previously we saw retiring a tag. We can also retire a tag namespace - this will also retire any tags in that namespace
         UpdateTagNamespaceResponse updateTagNamespaceResponse =
                 identityClient.updateTagNamespace(
                         UpdateTagNamespaceRequest.builder()

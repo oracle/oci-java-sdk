@@ -6,18 +6,15 @@ package com.oracle.bmc.waas.responses;
 
 import com.oracle.bmc.waas.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
@@ -25,29 +22,25 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the page
-     * parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the page parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the page
-     * parameter for the subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the page parameter for the subsequent GET request to get the next batch of items.
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
     }
 
-    /** A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances. */
+    /**
+     * A list of com.oracle.bmc.waas.model.WafBlockedRequest instances.
+     */
     private java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> items;
 
     /**
-     * A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances.
-     *
+     * A list of com.oracle.bmc.waas.model.WafBlockedRequest instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> getItems() {
@@ -63,7 +56,7 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListWafBlockedRequestsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> items) {
@@ -73,35 +66,28 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListWafBlockedRequestsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -111,17 +97,12 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * page parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the page parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * page parameter for the subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the page parameter for the subsequent GET request to get the next batch of items.
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -130,12 +111,13 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances. */
+        /**
+         * A list of com.oracle.bmc.waas.model.WafBlockedRequest instances.
+         */
         private java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> items;
 
         /**
-         * A list of {@code com.oracle.bmc.waas.model.WafBlockedRequest} instances.
-         *
+         * A list of com.oracle.bmc.waas.model.WafBlockedRequest instances.
          * @param items the value to set
          * @return this builder
          */
@@ -146,10 +128,8 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListWafBlockedRequestsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,10 +142,8 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListWafBlockedRequestsResponse build() {
             return new ListWafBlockedRequestsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
@@ -174,7 +152,6 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

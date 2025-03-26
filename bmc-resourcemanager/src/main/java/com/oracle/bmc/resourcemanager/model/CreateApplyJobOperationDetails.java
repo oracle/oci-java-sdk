@@ -5,25 +5,26 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Job details that are specific to apply operations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Job details that are specific to apply operations.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateApplyJobOperationDetails.Builder.class)
+    builder = CreateApplyJobOperationDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "operation")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "operation"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -45,19 +46,20 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
             return this;
         }
         /**
-         * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the
-         * job without an execution plan.
-         */
+         * Specifies the source of the execution plan to apply.
+         * Use {@code AUTO_APPROVED} to run the job without an execution plan.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
         private ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
         /**
-         * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the
-         * job without an execution plan.
+         * Specifies the source of the execution plan to apply.
+         * Use {@code AUTO_APPROVED} to run the job without an execution plan.
          *
          * @param executionPlanStrategy the value to set
          * @return this builder
-         */
+         **/
         public Builder executionPlanStrategy(
                 ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy) {
             this.executionPlanStrategy = executionPlanStrategy;
@@ -65,21 +67,18 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
-         * executionPlanStrategy}.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
         private String executionPlanJobId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
-         * executionPlanStrategy}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
          *
          * @param executionPlanJobId the value to set
          * @return this builder
-         */
+         **/
         public Builder executionPlanJobId(String executionPlanJobId) {
             this.executionPlanJobId = executionPlanJobId;
             this.__explicitlySet__.add("executionPlanJobId");
@@ -120,7 +119,9 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,35 +150,35 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
     }
 
     /**
-     * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the job
-     * without an execution plan.
-     */
+     * Specifies the source of the execution plan to apply.
+     * Use {@code AUTO_APPROVED} to run the job without an execution plan.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanStrategy")
     private final ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
     /**
-     * Specifies the source of the execution plan to apply. Use {@code AUTO_APPROVED} to run the job
-     * without an execution plan.
+     * Specifies the source of the execution plan to apply.
+     * Use {@code AUTO_APPROVED} to run the job without an execution plan.
      *
      * @return the value
-     */
+     **/
     public ApplyJobOperationDetails.ExecutionPlanStrategy getExecutionPlanStrategy() {
         return executionPlanStrategy;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
-     * job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
     private final String executionPlanJobId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
-     * job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
      *
      * @return the value
-     */
+     **/
     public String getExecutionPlanJobId() {
         return executionPlanJobId;
     }
@@ -189,7 +190,6 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

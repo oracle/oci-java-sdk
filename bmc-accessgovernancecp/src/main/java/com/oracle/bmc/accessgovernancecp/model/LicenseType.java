@@ -5,11 +5,11 @@
 package com.oracle.bmc.accessgovernancecp.model;
 
 /**
- * The license type of the instance. The NEW_LICENSE and BRING_YOUR_OWN_LICENSE cannot be used for
- * create/update but those who are using this will be able to retrieve their old license.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
-public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The license type of the instance. The NEW_LICENSE and BRING_YOUR_OWN_LICENSE cannot be used for create/update but those who are using this will be able to retrieve their old license.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
+public enum LicenseType {
     NewLicense("NEW_LICENSE"),
     BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
     AgOracleWorkloads("AG_ORACLE_WORKLOADS"),

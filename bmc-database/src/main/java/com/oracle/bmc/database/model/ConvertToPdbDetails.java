@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for converting a non-container database to pluggable database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details for converting a non-container database to pluggable database.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConvertToPdbDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ConvertToPdbDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ConvertToPdbDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ConvertToPdbDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"action", "convertToPdbTargetDetails"})
     public ConvertToPdbDetails(Action action, ConvertToPdbTargetBase convertToPdbTargetDetails) {
@@ -33,35 +32,26 @@ public final class ConvertToPdbDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The operations used to convert a non-container database to a pluggable database. - Use
-         * {@code PRECHECK} to run a pre-check operation on non-container database prior to
-         * converting it into a pluggable database. - Use {@code CONVERT} to convert a non-container
-         * database into a pluggable database. - Use {@code SYNC} if the non-container database was
-         * manually converted into a pluggable database using the dbcli command-line utility.
-         * Databases may need to be converted manually if the CONVERT action fails when converting a
-         * non-container database using the API. - Use {@code SYNC_ROLLBACK} if the conversion of a
-         * non-container database into a pluggable database was manually rolled back using the dbcli
-         * command line utility. Conversions may need to be manually rolled back if the CONVERT
-         * action fails when converting a non-container database using the API.
-         */
+         * The operations used to convert a non-container database to a pluggable database.
+         * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+         * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+         * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+         * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
-         * The operations used to convert a non-container database to a pluggable database. - Use
-         * {@code PRECHECK} to run a pre-check operation on non-container database prior to
-         * converting it into a pluggable database. - Use {@code CONVERT} to convert a non-container
-         * database into a pluggable database. - Use {@code SYNC} if the non-container database was
-         * manually converted into a pluggable database using the dbcli command-line utility.
-         * Databases may need to be converted manually if the CONVERT action fails when converting a
-         * non-container database using the API. - Use {@code SYNC_ROLLBACK} if the conversion of a
-         * non-container database into a pluggable database was manually rolled back using the dbcli
-         * command line utility. Conversions may need to be manually rolled back if the CONVERT
-         * action fails when converting a non-container database using the API.
+         * The operations used to convert a non-container database to a pluggable database.
+         * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+         * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+         * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+         * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
          *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -101,7 +91,9 @@ public final class ConvertToPdbDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,18 +103,14 @@ public final class ConvertToPdbDetails
     }
 
     /**
-     * The operations used to convert a non-container database to a pluggable database. - Use {@code
-     * PRECHECK} to run a pre-check operation on non-container database prior to converting it into
-     * a pluggable database. - Use {@code CONVERT} to convert a non-container database into a
-     * pluggable database. - Use {@code SYNC} if the non-container database was manually converted
-     * into a pluggable database using the dbcli command-line utility. Databases may need to be
-     * converted manually if the CONVERT action fails when converting a non-container database using
-     * the API. - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a
-     * pluggable database was manually rolled back using the dbcli command line utility. Conversions
-     * may need to be manually rolled back if the CONVERT action fails when converting a
-     * non-container database using the API.
-     */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+     * The operations used to convert a non-container database to a pluggable database.
+     * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+     * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+     * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+     * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+     *
+     **/
+    public enum Action {
         Precheck("PRECHECK"),
         Convert("CONVERT"),
         Sync("SYNC"),
@@ -157,34 +145,25 @@ public final class ConvertToPdbDetails
         }
     };
     /**
-     * The operations used to convert a non-container database to a pluggable database. - Use {@code
-     * PRECHECK} to run a pre-check operation on non-container database prior to converting it into
-     * a pluggable database. - Use {@code CONVERT} to convert a non-container database into a
-     * pluggable database. - Use {@code SYNC} if the non-container database was manually converted
-     * into a pluggable database using the dbcli command-line utility. Databases may need to be
-     * converted manually if the CONVERT action fails when converting a non-container database using
-     * the API. - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a
-     * pluggable database was manually rolled back using the dbcli command line utility. Conversions
-     * may need to be manually rolled back if the CONVERT action fails when converting a
-     * non-container database using the API.
-     */
+     * The operations used to convert a non-container database to a pluggable database.
+     * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+     * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+     * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+     * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
-     * The operations used to convert a non-container database to a pluggable database. - Use {@code
-     * PRECHECK} to run a pre-check operation on non-container database prior to converting it into
-     * a pluggable database. - Use {@code CONVERT} to convert a non-container database into a
-     * pluggable database. - Use {@code SYNC} if the non-container database was manually converted
-     * into a pluggable database using the dbcli command-line utility. Databases may need to be
-     * converted manually if the CONVERT action fails when converting a non-container database using
-     * the API. - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a
-     * pluggable database was manually rolled back using the dbcli command line utility. Conversions
-     * may need to be manually rolled back if the CONVERT action fails when converting a
-     * non-container database using the API.
+     * The operations used to convert a non-container database to a pluggable database.
+     * - Use {@code PRECHECK} to run a pre-check operation on non-container database prior to converting it into a pluggable database.
+     * - Use {@code CONVERT} to convert a non-container database into a pluggable database.
+     * - Use {@code SYNC} if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
+     * - Use {@code SYNC_ROLLBACK} if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
      *
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
@@ -203,7 +182,6 @@ public final class ConvertToPdbDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

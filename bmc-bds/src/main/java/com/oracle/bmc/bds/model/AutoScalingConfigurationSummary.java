@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the autoscale configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The information about the autoscale configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutoScalingConfigurationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutoScalingConfigurationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutoScalingConfigurationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -55,103 +54,99 @@ public final class AutoScalingConfigurationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the autoscale configuration. */
+        /**
+         * The OCID of the autoscale configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the autoscale configuration.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid
-         * entering confidential information.
-         */
+         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid
-         * entering confidential information.
-         *
+         * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The state of the autoscale configuration. */
+        /**
+         * The state of the autoscale configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AutoScalingConfiguration.LifecycleState lifecycleState;
 
         /**
          * The state of the autoscale configuration.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(AutoScalingConfiguration.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A node type that is managed by an autoscale configuration. The only supported types are
-         * WORKER and COMPUTE_ONLY_WORKER.
-         */
+         * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private Node.NodeType nodeType;
 
         /**
-         * A node type that is managed by an autoscale configuration. The only supported types are
-         * WORKER and COMPUTE_ONLY_WORKER.
-         *
+         * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
          * @param nodeType the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeType(Node.NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
             return this;
         }
-        /** The time the cluster was created, shown as an RFC 3339 formatted datetime string. */
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime
-         * string.
-         */
+         * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime
-         * string.
+         * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -226,7 +221,9 @@ public final class AutoScalingConfigurationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -235,92 +232,88 @@ public final class AutoScalingConfigurationSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the autoscale configuration. */
+    /**
+     * The OCID of the autoscale configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the autoscale configuration.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid
-     * entering confidential information.
-     */
+     * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid
-     * entering confidential information.
-     *
+     * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The state of the autoscale configuration. */
+    /**
+     * The state of the autoscale configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AutoScalingConfiguration.LifecycleState lifecycleState;
 
     /**
      * The state of the autoscale configuration.
-     *
      * @return the value
-     */
+     **/
     public AutoScalingConfiguration.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are
-     * WORKER and COMPUTE_ONLY_WORKER.
-     */
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final Node.NodeType nodeType;
 
     /**
-     * A node type that is managed by an autoscale configuration. The only supported types are
-     * WORKER and COMPUTE_ONLY_WORKER.
-     *
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * @return the value
-     */
+     **/
     public Node.NodeType getNodeType() {
         return nodeType;
     }
 
-    /** The time the cluster was created, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime
-     * string.
-     */
+     * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime
-     * string.
+     * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -346,7 +339,6 @@ public final class AutoScalingConfigurationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

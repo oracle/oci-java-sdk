@@ -6,17 +6,16 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -24,24 +23,26 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** Deleted log records count. */
+    /**
+     * Deleted log records count.
+     */
     private Long opcDeletedLogCount;
 
     /**
      * Deleted log records count.
-     *
      * @return the value
      */
     public Long getOpcDeletedLogCount() {
         return opcDeletedLogCount;
     }
 
-    /** Deleted log files count. */
+    /**
+     * Deleted log files count.
+     */
     private Long opcDeletedLogfileCount;
 
     /**
      * Deleted log files count.
-     *
      * @return the value
      */
     public Long getOpcDeletedLogfileCount() {
@@ -57,7 +58,7 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private DeleteUploadResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Long opcDeletedLogCount,
             Long opcDeletedLogfileCount) {
@@ -67,33 +68,29 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
         this.opcDeletedLogfileCount = opcDeletedLogfileCount;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<DeleteUploadResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,12 +100,13 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** Deleted log records count. */
+        /**
+         * Deleted log records count.
+         */
         private Long opcDeletedLogCount;
 
         /**
          * Deleted log records count.
-         *
          * @param opcDeletedLogCount the value to set
          * @return this builder
          */
@@ -117,12 +115,13 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** Deleted log files count. */
+        /**
+         * Deleted log files count.
+         */
         private Long opcDeletedLogfileCount;
 
         /**
          * Deleted log files count.
-         *
          * @param opcDeletedLogfileCount the value to set
          * @return this builder
          */
@@ -133,10 +132,8 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DeleteUploadResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +146,8 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DeleteUploadResponse build() {
             return new DeleteUploadResponse(
                     __httpStatusCode__,
@@ -165,7 +160,6 @@ public class DeleteUploadResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

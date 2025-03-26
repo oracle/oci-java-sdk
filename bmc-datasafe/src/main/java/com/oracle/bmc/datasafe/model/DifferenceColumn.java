@@ -5,26 +5,23 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A SDM masking policy difference column. It can be one of the following three types: NEW: A new
- * column in the sensitive data model that is not in the masking policy. DELETED: A column that is
- * present in the masking policy but has been deleted from the sensitive data model. MODIFIED: A
- * column that is present in the masking policy as well as the sensitive data model but some of its
- * attributes have been modified. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * A SDM masking policy difference column. It can be one of the following three types:
+ * NEW: A new column in the sensitive data model that is not in the masking policy.
+ * DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model.
+ * MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DifferenceColumn.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DifferenceColumn
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DifferenceColumn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -67,208 +64,197 @@ public final class DifferenceColumn
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique key that identifies the SDM masking policy difference column. */
+        /**
+         * The unique key that identifies the SDM masking policy difference column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The unique key that identifies the SDM masking policy difference column.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * The type of the SDM masking policy difference column. It can be one of the following
-         * three types: NEW: A new sensitive column in the sensitive data model that is not in the
-         * masking policy. DELETED: A column that is present in the masking policy but has been
-         * deleted from the sensitive data model. MODIFIED: A column that is present in the masking
-         * policy as well as the sensitive data model but some of its attributes have been modified.
-         */
+         * The type of the SDM masking policy difference column. It can be one of the following three types:
+         * NEW: A new sensitive column in the sensitive data model that is not in the masking policy.
+         * DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model.
+         * MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("differenceType")
         private DifferenceType differenceType;
 
         /**
-         * The type of the SDM masking policy difference column. It can be one of the following
-         * three types: NEW: A new sensitive column in the sensitive data model that is not in the
-         * masking policy. DELETED: A column that is present in the masking policy but has been
-         * deleted from the sensitive data model. MODIFIED: A column that is present in the masking
-         * policy as well as the sensitive data model but some of its attributes have been modified.
+         * The type of the SDM masking policy difference column. It can be one of the following three types:
+         * NEW: A new sensitive column in the sensitive data model that is not in the masking policy.
+         * DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model.
+         * MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
          *
          * @param differenceType the value to set
          * @return this builder
-         */
+         **/
         public Builder differenceType(DifferenceType differenceType) {
             this.differenceType = differenceType;
             this.__explicitlySet__.add("differenceType");
             return this;
         }
         /**
-         * The unique key that identifies the sensitive column represented by the SDM masking policy
-         * difference column.
-         */
+         * The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveColumnkey")
         private String sensitiveColumnkey;
 
         /**
-         * The unique key that identifies the sensitive column represented by the SDM masking policy
-         * difference column.
-         *
+         * The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
          * @param sensitiveColumnkey the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveColumnkey(String sensitiveColumnkey) {
             this.sensitiveColumnkey = sensitiveColumnkey;
             this.__explicitlySet__.add("sensitiveColumnkey");
             return this;
         }
         /**
-         * The unique key that identifies the masking column represented by the SDM masking policy
-         * difference column.
-         */
+         * The unique key that identifies the masking column represented by the SDM masking policy difference column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingColumnkey")
         private String maskingColumnkey;
 
         /**
-         * The unique key that identifies the masking column represented by the SDM masking policy
-         * difference column.
-         *
+         * The unique key that identifies the masking column represented by the SDM masking policy difference column.
          * @param maskingColumnkey the value to set
          * @return this builder
-         */
+         **/
         public Builder maskingColumnkey(String maskingColumnkey) {
             this.maskingColumnkey = maskingColumnkey;
             this.__explicitlySet__.add("maskingColumnkey");
             return this;
         }
-        /** The database schema that contains the difference column. */
+        /**
+         * The database schema that contains the difference column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
          * The database schema that contains the difference column.
-         *
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The database object that contains the difference column. */
+        /**
+         * The database object that contains the difference column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The database object that contains the difference column.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** The name of the difference column. */
+        /**
+         * The name of the difference column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
         /**
          * The name of the difference column.
-         *
          * @param columnName the value to set
          * @return this builder
-         */
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-        /** The OCID of the sensitive type associated with the difference column. */
+        /**
+         * The OCID of the sensitive type associated with the difference column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
         private String sensitiveTypeId;
 
         /**
          * The OCID of the sensitive type associated with the difference column.
-         *
          * @param sensitiveTypeId the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             this.__explicitlySet__.add("sensitiveTypeId");
             return this;
         }
         /**
-         * Specifies how to process the difference column. It's set to SYNC by default. Use the
-         * PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose
-         * one of the following options: SYNC: To sync the difference column and update the masking
-         * policy to reflect the changes. NO_SYNC: To not sync the difference column so that it
-         * doesn't change the masking policy. After specifying the planned action, you can use the
-         * ApplySdmMaskingPolicyDifference operation to automatically process the difference
-         * columns.
-         */
+         * Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options:
+         * SYNC: To sync the difference column and update the masking policy to reflect the changes.
+         * NO_SYNC: To not sync the difference column so that it doesn't change the masking policy.
+         * After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("plannedAction")
         private PlannedAction plannedAction;
 
         /**
-         * Specifies how to process the difference column. It's set to SYNC by default. Use the
-         * PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose
-         * one of the following options: SYNC: To sync the difference column and update the masking
-         * policy to reflect the changes. NO_SYNC: To not sync the difference column so that it
-         * doesn't change the masking policy. After specifying the planned action, you can use the
-         * ApplySdmMaskingPolicyDifference operation to automatically process the difference
-         * columns.
+         * Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options:
+         * SYNC: To sync the difference column and update the masking policy to reflect the changes.
+         * NO_SYNC: To not sync the difference column so that it doesn't change the masking policy.
+         * After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
          *
          * @param plannedAction the value to set
          * @return this builder
-         */
+         **/
         public Builder plannedAction(PlannedAction plannedAction) {
             this.plannedAction = plannedAction;
             this.__explicitlySet__.add("plannedAction");
             return this;
         }
         /**
-         * Indicates if the difference column has been processed. Use GetDifferenceColumn operation
-         * to track whether the difference column has already been processed and applied to the
-         * masking policy.
-         */
+         * Indicates if the difference column has been processed. Use GetDifferenceColumn operation to
+         * track whether the difference column has already been processed and applied to the masking policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syncStatus")
         private SyncStatus syncStatus;
 
         /**
-         * Indicates if the difference column has been processed. Use GetDifferenceColumn operation
-         * to track whether the difference column has already been processed and applied to the
-         * masking policy.
+         * Indicates if the difference column has been processed. Use GetDifferenceColumn operation to
+         * track whether the difference column has already been processed and applied to the masking policy.
          *
          * @param syncStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder syncStatus(SyncStatus syncStatus) {
             this.syncStatus = syncStatus;
             this.__explicitlySet__.add("syncStatus");
             return this;
         }
         /**
-         * The date and time the SDM masking policy difference column was last synced, in the format
-         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
         private java.util.Date timeLastSynced;
 
         /**
-         * The date and time the SDM masking policy difference column was last synced, in the format
-         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
+         * The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * @param timeLastSynced the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSynced(java.util.Date timeLastSynced) {
             this.timeLastSynced = timeLastSynced;
             this.__explicitlySet__.add("timeLastSynced");
@@ -337,7 +323,9 @@ public final class DifferenceColumn
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -346,34 +334,35 @@ public final class DifferenceColumn
         return new Builder().copy(this);
     }
 
-    /** The unique key that identifies the SDM masking policy difference column. */
+    /**
+     * The unique key that identifies the SDM masking policy difference column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The unique key that identifies the SDM masking policy difference column.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * The type of the SDM masking policy difference column. It can be one of the following three
-     * types: NEW: A new sensitive column in the sensitive data model that is not in the masking
-     * policy. DELETED: A column that is present in the masking policy but has been deleted from the
-     * sensitive data model. MODIFIED: A column that is present in the masking policy as well as the
-     * sensitive data model but some of its attributes have been modified.
-     */
-    public enum DifferenceType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of the SDM masking policy difference column. It can be one of the following three types:
+     * NEW: A new sensitive column in the sensitive data model that is not in the masking policy.
+     * DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model.
+     * MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
+     *
+     **/
+    public enum DifferenceType {
         New("NEW"),
         Modified("MODIFIED"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -413,129 +402,125 @@ public final class DifferenceColumn
         }
     };
     /**
-     * The type of the SDM masking policy difference column. It can be one of the following three
-     * types: NEW: A new sensitive column in the sensitive data model that is not in the masking
-     * policy. DELETED: A column that is present in the masking policy but has been deleted from the
-     * sensitive data model. MODIFIED: A column that is present in the masking policy as well as the
-     * sensitive data model but some of its attributes have been modified.
-     */
+     * The type of the SDM masking policy difference column. It can be one of the following three types:
+     * NEW: A new sensitive column in the sensitive data model that is not in the masking policy.
+     * DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model.
+     * MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("differenceType")
     private final DifferenceType differenceType;
 
     /**
-     * The type of the SDM masking policy difference column. It can be one of the following three
-     * types: NEW: A new sensitive column in the sensitive data model that is not in the masking
-     * policy. DELETED: A column that is present in the masking policy but has been deleted from the
-     * sensitive data model. MODIFIED: A column that is present in the masking policy as well as the
-     * sensitive data model but some of its attributes have been modified.
+     * The type of the SDM masking policy difference column. It can be one of the following three types:
+     * NEW: A new sensitive column in the sensitive data model that is not in the masking policy.
+     * DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model.
+     * MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
      *
      * @return the value
-     */
+     **/
     public DifferenceType getDifferenceType() {
         return differenceType;
     }
 
     /**
-     * The unique key that identifies the sensitive column represented by the SDM masking policy
-     * difference column.
-     */
+     * The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveColumnkey")
     private final String sensitiveColumnkey;
 
     /**
-     * The unique key that identifies the sensitive column represented by the SDM masking policy
-     * difference column.
-     *
+     * The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
      * @return the value
-     */
+     **/
     public String getSensitiveColumnkey() {
         return sensitiveColumnkey;
     }
 
     /**
-     * The unique key that identifies the masking column represented by the SDM masking policy
-     * difference column.
-     */
+     * The unique key that identifies the masking column represented by the SDM masking policy difference column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingColumnkey")
     private final String maskingColumnkey;
 
     /**
-     * The unique key that identifies the masking column represented by the SDM masking policy
-     * difference column.
-     *
+     * The unique key that identifies the masking column represented by the SDM masking policy difference column.
      * @return the value
-     */
+     **/
     public String getMaskingColumnkey() {
         return maskingColumnkey;
     }
 
-    /** The database schema that contains the difference column. */
+    /**
+     * The database schema that contains the difference column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
      * The database schema that contains the difference column.
-     *
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** The database object that contains the difference column. */
+    /**
+     * The database object that contains the difference column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The database object that contains the difference column.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** The name of the difference column. */
+    /**
+     * The name of the difference column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
     /**
      * The name of the difference column.
-     *
      * @return the value
-     */
+     **/
     public String getColumnName() {
         return columnName;
     }
 
-    /** The OCID of the sensitive type associated with the difference column. */
+    /**
+     * The OCID of the sensitive type associated with the difference column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
     private final String sensitiveTypeId;
 
     /**
      * The OCID of the sensitive type associated with the difference column.
-     *
      * @return the value
-     */
+     **/
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
 
     /**
-     * Specifies how to process the difference column. It's set to SYNC by default. Use the
-     * PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one
-     * of the following options: SYNC: To sync the difference column and update the masking policy
-     * to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change
-     * the masking policy. After specifying the planned action, you can use the
-     * ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
-     */
-    public enum PlannedAction implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options:
+     * SYNC: To sync the difference column and update the masking policy to reflect the changes.
+     * NO_SYNC: To not sync the difference column so that it doesn't change the masking policy.
+     * After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
+     *
+     **/
+    public enum PlannedAction {
         Sync("SYNC"),
         NoSync("NO_SYNC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -575,42 +560,39 @@ public final class DifferenceColumn
         }
     };
     /**
-     * Specifies how to process the difference column. It's set to SYNC by default. Use the
-     * PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one
-     * of the following options: SYNC: To sync the difference column and update the masking policy
-     * to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change
-     * the masking policy. After specifying the planned action, you can use the
-     * ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
-     */
+     * Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options:
+     * SYNC: To sync the difference column and update the masking policy to reflect the changes.
+     * NO_SYNC: To not sync the difference column so that it doesn't change the masking policy.
+     * After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("plannedAction")
     private final PlannedAction plannedAction;
 
     /**
-     * Specifies how to process the difference column. It's set to SYNC by default. Use the
-     * PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one
-     * of the following options: SYNC: To sync the difference column and update the masking policy
-     * to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change
-     * the masking policy. After specifying the planned action, you can use the
-     * ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
+     * Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options:
+     * SYNC: To sync the difference column and update the masking policy to reflect the changes.
+     * NO_SYNC: To not sync the difference column so that it doesn't change the masking policy.
+     * After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
      *
      * @return the value
-     */
+     **/
     public PlannedAction getPlannedAction() {
         return plannedAction;
     }
 
     /**
      * Indicates if the difference column has been processed. Use GetDifferenceColumn operation to
-     * track whether the difference column has already been processed and applied to the masking
-     * policy.
-     */
-    public enum SyncStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * track whether the difference column has already been processed and applied to the masking policy.
+     *
+     **/
+    public enum SyncStatus {
         Synced("SYNCED"),
         NotSynced("NOT_SYNCED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -651,36 +633,32 @@ public final class DifferenceColumn
     };
     /**
      * Indicates if the difference column has been processed. Use GetDifferenceColumn operation to
-     * track whether the difference column has already been processed and applied to the masking
-     * policy.
-     */
+     * track whether the difference column has already been processed and applied to the masking policy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syncStatus")
     private final SyncStatus syncStatus;
 
     /**
      * Indicates if the difference column has been processed. Use GetDifferenceColumn operation to
-     * track whether the difference column has already been processed and applied to the masking
-     * policy.
+     * track whether the difference column has already been processed and applied to the masking policy.
      *
      * @return the value
-     */
+     **/
     public SyncStatus getSyncStatus() {
         return syncStatus;
     }
 
     /**
-     * The date and time the SDM masking policy difference column was last synced, in the format
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
     private final java.util.Date timeLastSynced;
 
     /**
-     * The date and time the SDM masking policy difference column was last synced, in the format
-     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
+     * The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSynced() {
         return timeLastSynced;
     }
@@ -692,7 +670,6 @@ public final class DifferenceColumn
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

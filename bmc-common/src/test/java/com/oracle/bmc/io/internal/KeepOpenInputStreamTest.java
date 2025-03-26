@@ -12,13 +12,14 @@ import org.mockito.MockitoAnnotations;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static org.mockito.Mockito.ignoreStubs;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-/** Tests for {@link KeepOpenInputStream}. */
+/**
+ * Tests for {@link KeepOpenInputStream}.
+ */
 public class KeepOpenInputStreamTest {
     @Mock private InputStream is;
 
@@ -62,6 +63,7 @@ public class KeepOpenInputStreamTest {
         when(is.markSupported()).thenReturn(true);
         InputStream is2 = mock(InputStream.class);
         KeepOpenInputStream keepOpenInputStream = new KeepOpenInputStream(is);
+
         verify(is).markSupported();
         KeepOpenInputStream.closeStream(is2);
         verify(is2).close();

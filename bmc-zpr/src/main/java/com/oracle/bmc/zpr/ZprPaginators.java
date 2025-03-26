@@ -9,31 +9,23 @@ import com.oracle.bmc.zpr.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Zpr where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Zpr where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
 public class ZprPaginators {
     private final Zpr client;
 
@@ -42,13 +34,11 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listZprConfigurationWorkRequestErrors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listZprConfigurationWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListZprConfigurationWorkRequestErrorsResponse>
             listZprConfigurationWorkRequestErrorsResponseIterator(
@@ -101,15 +91,13 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.zpr.model.WorkRequestError} objects contained in responses from the
-     * listZprConfigurationWorkRequestErrors operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestError} objects
+     * contained in responses from the listZprConfigurationWorkRequestErrors operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.zpr.model.WorkRequestError} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.zpr.model.WorkRequestError>
             listZprConfigurationWorkRequestErrorsRecordIterator(
@@ -172,13 +160,11 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listZprConfigurationWorkRequestLogs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listZprConfigurationWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListZprConfigurationWorkRequestLogsResponse>
             listZprConfigurationWorkRequestLogsResponseIterator(
@@ -231,15 +217,13 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects contained in responses from the
-     * listZprConfigurationWorkRequestLogs operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects
+     * contained in responses from the listZprConfigurationWorkRequestLogs operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.zpr.model.WorkRequestLogEntry>
             listZprConfigurationWorkRequestLogsRecordIterator(
@@ -302,21 +286,18 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listZprConfigurationWorkRequests operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listZprConfigurationWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListZprConfigurationWorkRequestsResponse>
             listZprConfigurationWorkRequestsResponseIterator(
                     final ListZprConfigurationWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListZprConfigurationWorkRequestsRequest.Builder,
-                ListZprConfigurationWorkRequestsRequest,
-                ListZprConfigurationWorkRequestsResponse>(
+                ListZprConfigurationWorkRequestsRequest, ListZprConfigurationWorkRequestsResponse>(
                 new java.util.function.Supplier<ListZprConfigurationWorkRequestsRequest.Builder>() {
                     @Override
                     public ListZprConfigurationWorkRequestsRequest.Builder get() {
@@ -360,23 +341,20 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.zpr.model.WorkRequestSummary} objects contained in responses from the
-     * listZprConfigurationWorkRequests operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestSummary} objects
+     * contained in responses from the listZprConfigurationWorkRequests operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.zpr.model.WorkRequestSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.zpr.model.WorkRequestSummary>
             listZprConfigurationWorkRequestsRecordIterator(
                     final ListZprConfigurationWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListZprConfigurationWorkRequestsRequest.Builder,
-                ListZprConfigurationWorkRequestsRequest,
-                ListZprConfigurationWorkRequestsResponse,
+                ListZprConfigurationWorkRequestsRequest, ListZprConfigurationWorkRequestsResponse,
                 com.oracle.bmc.zpr.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListZprConfigurationWorkRequestsRequest.Builder>() {
                     @Override
@@ -430,12 +408,11 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listZprPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listZprPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListZprPoliciesResponse> listZprPoliciesResponseIterator(
             final ListZprPoliciesRequest request) {
@@ -480,21 +457,18 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.zpr.model.ZprPolicySummary} objects contained in responses from the
-     * listZprPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.zpr.model.ZprPolicySummary} objects
+     * contained in responses from the listZprPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.zpr.model.ZprPolicySummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.zpr.model.ZprPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.zpr.model.ZprPolicySummary> listZprPoliciesRecordIterator(
             final ListZprPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListZprPoliciesRequest.Builder,
-                ListZprPoliciesRequest,
-                ListZprPoliciesResponse,
+                ListZprPoliciesRequest.Builder, ListZprPoliciesRequest, ListZprPoliciesResponse,
                 com.oracle.bmc.zpr.model.ZprPolicySummary>(
                 new java.util.function.Supplier<ListZprPoliciesRequest.Builder>() {
                     @Override
@@ -544,21 +518,18 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listZprPolicyWorkRequestErrors operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listZprPolicyWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListZprPolicyWorkRequestErrorsResponse>
             listZprPolicyWorkRequestErrorsResponseIterator(
                     final ListZprPolicyWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListZprPolicyWorkRequestErrorsRequest.Builder,
-                ListZprPolicyWorkRequestErrorsRequest,
-                ListZprPolicyWorkRequestErrorsResponse>(
+                ListZprPolicyWorkRequestErrorsRequest, ListZprPolicyWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListZprPolicyWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListZprPolicyWorkRequestErrorsRequest.Builder get() {
@@ -601,23 +572,20 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.zpr.model.WorkRequestError} objects contained in responses from the
-     * listZprPolicyWorkRequestErrors operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestError} objects
+     * contained in responses from the listZprPolicyWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.zpr.model.WorkRequestError} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.zpr.model.WorkRequestError>
             listZprPolicyWorkRequestErrorsRecordIterator(
                     final ListZprPolicyWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListZprPolicyWorkRequestErrorsRequest.Builder,
-                ListZprPolicyWorkRequestErrorsRequest,
-                ListZprPolicyWorkRequestErrorsResponse,
+                ListZprPolicyWorkRequestErrorsRequest, ListZprPolicyWorkRequestErrorsResponse,
                 com.oracle.bmc.zpr.model.WorkRequestError>(
                 new java.util.function.Supplier<ListZprPolicyWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -670,20 +638,17 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listZprPolicyWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listZprPolicyWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListZprPolicyWorkRequestLogsResponse>
             listZprPolicyWorkRequestLogsResponseIterator(
                     final ListZprPolicyWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListZprPolicyWorkRequestLogsRequest.Builder,
-                ListZprPolicyWorkRequestLogsRequest,
+                ListZprPolicyWorkRequestLogsRequest.Builder, ListZprPolicyWorkRequestLogsRequest,
                 ListZprPolicyWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListZprPolicyWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -727,24 +692,20 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects contained in responses from the
-     * listZprPolicyWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects
+     * contained in responses from the listZprPolicyWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.zpr.model.WorkRequestLogEntry>
             listZprPolicyWorkRequestLogsRecordIterator(
                     final ListZprPolicyWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListZprPolicyWorkRequestLogsRequest.Builder,
-                ListZprPolicyWorkRequestLogsRequest,
-                ListZprPolicyWorkRequestLogsResponse,
-                com.oracle.bmc.zpr.model.WorkRequestLogEntry>(
+                ListZprPolicyWorkRequestLogsRequest.Builder, ListZprPolicyWorkRequestLogsRequest,
+                ListZprPolicyWorkRequestLogsResponse, com.oracle.bmc.zpr.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListZprPolicyWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListZprPolicyWorkRequestLogsRequest.Builder get() {
@@ -796,19 +757,16 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listZprPolicyWorkRequests operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listZprPolicyWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListZprPolicyWorkRequestsResponse> listZprPolicyWorkRequestsResponseIterator(
             final ListZprPolicyWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListZprPolicyWorkRequestsRequest.Builder,
-                ListZprPolicyWorkRequestsRequest,
+                ListZprPolicyWorkRequestsRequest.Builder, ListZprPolicyWorkRequestsRequest,
                 ListZprPolicyWorkRequestsResponse>(
                 new java.util.function.Supplier<ListZprPolicyWorkRequestsRequest.Builder>() {
                     @Override
@@ -851,24 +809,20 @@ public class ZprPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.zpr.model.WorkRequestSummary} objects contained in responses from the
-     * listZprPolicyWorkRequests operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestSummary} objects
+     * contained in responses from the listZprPolicyWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.zpr.model.WorkRequestSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.zpr.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.zpr.model.WorkRequestSummary>
             listZprPolicyWorkRequestsRecordIterator(
                     final ListZprPolicyWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListZprPolicyWorkRequestsRequest.Builder,
-                ListZprPolicyWorkRequestsRequest,
-                ListZprPolicyWorkRequestsResponse,
-                com.oracle.bmc.zpr.model.WorkRequestSummary>(
+                ListZprPolicyWorkRequestsRequest.Builder, ListZprPolicyWorkRequestsRequest,
+                ListZprPolicyWorkRequestsResponse, com.oracle.bmc.zpr.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListZprPolicyWorkRequestsRequest.Builder>() {
                     @Override
                     public ListZprPolicyWorkRequestsRequest.Builder get() {

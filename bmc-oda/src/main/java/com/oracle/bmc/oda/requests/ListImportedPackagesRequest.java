@@ -6,77 +6,83 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListImportedPackagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListImportedPackagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListImportedPackagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListImportedPackagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ListImportedPackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     private String odaInstanceId;
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
     /**
-     * List only the information for the package with this name. Package names are unique to a
-     * publisher and may not change.
+     * List only the information for the package with this name. Package names are unique to a publisher and may not change.
+     * <p>
+     * Example: {@code My Package}
      *
-     * <p>Example: {@code My Package}
      */
     private String name;
 
     /**
-     * List only the information for the package with this name. Package names are unique to a
-     * publisher and may not change.
+     * List only the information for the package with this name. Package names are unique to a publisher and may not change.
+     * <p>
+     * Example: {@code My Package}
      *
-     * <p>Example: {@code My Package}
      */
     public String getName() {
         return name;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
      *
-     * <p>You get this value from the {@code opc-next-page} header in a previous list request. To
-     * retireve the first page, omit this query parameter.
-     *
-     * <p>Example: {@code MToxMA==}
      */
     private String page;
 
     /**
      * The page at which to start retrieving results.
+     * <p>
+     * You get this value from the {@code opc-next-page} header in a previous list request.
+     * To retireve the first page, omit this query parameter.
+     * <p>
+     * Example: {@code MToxMA==}
      *
-     * <p>You get this value from the {@code opc-next-page} header in a previous list request. To
-     * retireve the first page, omit this query parameter.
-     *
-     * <p>Example: {@code MToxMA==}
      */
     public String getPage() {
         return page;
     }
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
-     * (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
      */
     private SortOrder sortOrder;
 
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
-     * (descending).
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -110,29 +116,26 @@ public class ListImportedPackagesRequest
     };
 
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
-     * (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code
-     * TIMECREATED}.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+     * <p>
+     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
      *
-     * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort order
-     * for {@code DISPLAYNAME} is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code
-     * TIMECREATED}.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+     * <p>
+     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
      *
-     * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort order
-     * for {@code DISPLAYNAME} is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -166,24 +169,21 @@ public class ListImportedPackagesRequest
     };
 
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code
-     * TIMECREATED}.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+     * <p>
+     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
      *
-     * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort order
-     * for {@code DISPLAYNAME} is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -192,15 +192,17 @@ public class ListImportedPackagesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListImportedPackagesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Digital Assistant instance identifier. */
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
-         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -210,18 +212,17 @@ public class ListImportedPackagesRequest
         }
 
         /**
-         * List only the information for the package with this name. Package names are unique to a
-         * publisher and may not change.
+         * List only the information for the package with this name. Package names are unique to a publisher and may not change.
+         * <p>
+         * Example: {@code My Package}
          *
-         * <p>Example: {@code My Package}
          */
         private String name = null;
 
         /**
-         * List only the information for the package with this name. Package names are unique to a
-         * publisher and may not change.
-         *
-         * <p>Example: {@code My Package}
+         * List only the information for the package with this name. Package names are unique to a publisher and may not change.
+         * <p>
+         * Example: {@code My Package}
          *
          * @param name the value to set
          * @return this builder instance
@@ -231,12 +232,13 @@ public class ListImportedPackagesRequest
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -247,21 +249,22 @@ public class ListImportedPackagesRequest
 
         /**
          * The page at which to start retrieving results.
-         *
-         * <p>You get this value from the {@code opc-next-page} header in a previous list request.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
          * To retireve the first page, omit this query parameter.
+         * <p>
+         * Example: {@code MToxMA==}
          *
-         * <p>Example: {@code MToxMA==}
          */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
-         *
-         * <p>You get this value from the {@code opc-next-page} header in a previous list request.
+         * <p>
+         * You get this value from the {@code opc-next-page} header in a previous list request.
          * To retireve the first page, omit this query parameter.
-         *
-         * <p>Example: {@code MToxMA==}
+         * <p>
+         * Example: {@code MToxMA==}
          *
          * @param page the value to set
          * @return this builder instance
@@ -272,15 +275,12 @@ public class ListImportedPackagesRequest
         }
 
         /**
-         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
-         * (descending).
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
          */
         private SortOrder sortOrder = null;
 
         /**
-         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
-         * (descending).
-         *
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -290,20 +290,17 @@ public class ListImportedPackagesRequest
         }
 
         /**
-         * Sort on this field. You can specify one sort order only. The default sort field is {@code
-         * TIMECREATED}.
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+         * <p>
+         * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
          *
-         * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort
-         * order for {@code DISPLAYNAME} is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * Sort on this field. You can specify one sort order only. The default sort field is {@code
-         * TIMECREATED}.
-         *
-         * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort
-         * order for {@code DISPLAYNAME} is ascending.
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
+         * <p>
+         * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -314,15 +311,12 @@ public class ListImportedPackagesRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -333,19 +327,18 @@ public class ListImportedPackagesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -357,7 +350,6 @@ public class ListImportedPackagesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListImportedPackagesRequest o) {
@@ -376,11 +368,10 @@ public class ListImportedPackagesRequest
         /**
          * Build the instance of ListImportedPackagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListImportedPackagesRequest
          */
@@ -394,8 +385,7 @@ public class ListImportedPackagesRequest
         /**
          * Build the instance of ListImportedPackagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListImportedPackagesRequest
@@ -410,14 +400,12 @@ public class ListImportedPackagesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListImportedPackagesRequest(odaInstanceId, name, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // new ListImportedPackagesRequest(odaInstanceId, name, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -433,7 +421,6 @@ public class ListImportedPackagesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

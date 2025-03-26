@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.logging.model;
 
-/** The types of work request operations. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The types of work request operations.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+public enum OperationTypes {
     CreateLog("CREATE_LOG"),
     UpdateLog("UPDATE_LOG"),
     DeleteLog("DELETE_LOG"),

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.logging.model;
 
-/** Type of Unified Agent monitoring source. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-public enum UnifiedAgentMonitoringSourceTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of Unified Agent monitoring source.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+public enum UnifiedAgentMonitoringSourceTypes {
     Kubernetes("KUBERNETES"),
     Tail("TAIL"),
     Url("URL"),

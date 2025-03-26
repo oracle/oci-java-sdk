@@ -6,17 +6,18 @@ package com.oracle.bmc.bds.responses;
 
 import com.oracle.bmc.bds.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /** The returned {@code NodeBackupConfiguration} instance. */
+    /**
+     * The returned NodeBackupConfiguration instance.
+     */
     private com.oracle.bmc.bds.model.NodeBackupConfiguration nodeBackupConfiguration;
 
     /**
-     * The returned {@code NodeBackupConfiguration} instance.
-     *
+     * The returned NodeBackupConfiguration instance.
      * @return the value
      */
     public com.oracle.bmc.bds.model.NodeBackupConfiguration getNodeBackupConfiguration() {
@@ -57,7 +62,7 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
     })
     private GetNodeBackupConfigurationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.bds.model.NodeBackupConfiguration nodeBackupConfiguration) {
@@ -67,34 +72,31 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
         this.nodeBackupConfiguration = nodeBackupConfiguration;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetNodeBackupConfigurationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -104,7 +106,10 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -118,12 +123,13 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned {@code NodeBackupConfiguration} instance. */
+        /**
+         * The returned NodeBackupConfiguration instance.
+         */
         private com.oracle.bmc.bds.model.NodeBackupConfiguration nodeBackupConfiguration;
 
         /**
-         * The returned {@code NodeBackupConfiguration} instance.
-         *
+         * The returned NodeBackupConfiguration instance.
          * @param nodeBackupConfiguration the value to set
          * @return this builder
          */
@@ -135,10 +141,8 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetNodeBackupConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +155,8 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetNodeBackupConfigurationResponse build() {
             return new GetNodeBackupConfigurationResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, nodeBackupConfiguration);
@@ -163,7 +165,6 @@ public class GetNodeBackupConfigurationResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

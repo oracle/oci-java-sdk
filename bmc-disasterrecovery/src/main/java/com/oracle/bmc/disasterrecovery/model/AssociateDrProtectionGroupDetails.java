@@ -5,23 +5,22 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for associating a DR protection group with a peer DR protection group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details for associating a DR protection group with a peer DR protection group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociateDrProtectionGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssociateDrProtectionGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociateDrProtectionGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"peerId", "peerRegion", "role"})
     public AssociateDrProtectionGroupDetails(
@@ -36,20 +35,21 @@ public final class AssociateDrProtectionGroupDetails
     public static class Builder {
         /**
          * The OCID of the peer DR protection group.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerId")
         private String peerId;
 
         /**
          * The OCID of the peer DR protection group.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param peerId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerId(String peerId) {
             this.peerId = peerId;
             this.__explicitlySet__.add("peerId");
@@ -57,20 +57,21 @@ public final class AssociateDrProtectionGroupDetails
         }
         /**
          * The region of the peer DR protection group.
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
-         * <p>Example: {@code us-ashburn-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerRegion")
         private String peerRegion;
 
         /**
          * The region of the peer DR protection group.
-         *
-         * <p>Example: {@code us-ashburn-1}
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
          * @param peerRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder peerRegion(String peerRegion) {
             this.peerRegion = peerRegion;
             this.__explicitlySet__.add("peerRegion");
@@ -78,20 +79,21 @@ public final class AssociateDrProtectionGroupDetails
         }
         /**
          * The role of the DR protection group.
+         * <p>
+         * Example: {@code STANDBY}
          *
-         * <p>Example: {@code STANDBY}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private DrProtectionGroupRole role;
 
         /**
          * The role of the DR protection group.
-         *
-         * <p>Example: {@code STANDBY}
+         * <p>
+         * Example: {@code STANDBY}
          *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(DrProtectionGroupRole role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -125,7 +127,9 @@ public final class AssociateDrProtectionGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,57 +140,60 @@ public final class AssociateDrProtectionGroupDetails
 
     /**
      * The OCID of the peer DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     private final String peerId;
 
     /**
      * The OCID of the peer DR protection group.
-     *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getPeerId() {
         return peerId;
     }
 
     /**
      * The region of the peer DR protection group.
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
-     * <p>Example: {@code us-ashburn-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRegion")
     private final String peerRegion;
 
     /**
      * The region of the peer DR protection group.
-     *
-     * <p>Example: {@code us-ashburn-1}
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
      * @return the value
-     */
+     **/
     public String getPeerRegion() {
         return peerRegion;
     }
 
     /**
      * The role of the DR protection group.
+     * <p>
+     * Example: {@code STANDBY}
      *
-     * <p>Example: {@code STANDBY}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final DrProtectionGroupRole role;
 
     /**
      * The role of the DR protection group.
-     *
-     * <p>Example: {@code STANDBY}
+     * <p>
+     * Example: {@code STANDBY}
      *
      * @return the value
-     */
+     **/
     public DrProtectionGroupRole getRole() {
         return role;
     }
@@ -198,7 +205,6 @@ public final class AssociateDrProtectionGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

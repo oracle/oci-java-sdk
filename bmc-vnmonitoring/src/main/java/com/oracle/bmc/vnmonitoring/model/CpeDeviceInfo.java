@@ -5,21 +5,19 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Basic information about a particular CPE device type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Basic information about a particular CPE device type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CpeDeviceInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CpeDeviceInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CpeDeviceInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"vendor", "platformSoftwareVersion"})
     public CpeDeviceInfo(String vendor, String platformSoftwareVersion) {
@@ -30,31 +28,33 @@ public final class CpeDeviceInfo extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The vendor that makes the CPE device. */
+        /**
+         * The vendor that makes the CPE device.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
         /**
          * The vendor that makes the CPE device.
-         *
          * @param vendor the value to set
          * @return this builder
-         */
+         **/
         public Builder vendor(String vendor) {
             this.vendor = vendor;
             this.__explicitlySet__.add("vendor");
             return this;
         }
-        /** The platform or software version of the CPE device. */
+        /**
+         * The platform or software version of the CPE device.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformSoftwareVersion")
         private String platformSoftwareVersion;
 
         /**
          * The platform or software version of the CPE device.
-         *
          * @param platformSoftwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder platformSoftwareVersion(String platformSoftwareVersion) {
             this.platformSoftwareVersion = platformSoftwareVersion;
             this.__explicitlySet__.add("platformSoftwareVersion");
@@ -84,7 +84,9 @@ public final class CpeDeviceInfo extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,28 +95,30 @@ public final class CpeDeviceInfo extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The vendor that makes the CPE device. */
+    /**
+     * The vendor that makes the CPE device.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendor")
     private final String vendor;
 
     /**
      * The vendor that makes the CPE device.
-     *
      * @return the value
-     */
+     **/
     public String getVendor() {
         return vendor;
     }
 
-    /** The platform or software version of the CPE device. */
+    /**
+     * The platform or software version of the CPE device.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformSoftwareVersion")
     private final String platformSoftwareVersion;
 
     /**
      * The platform or software version of the CPE device.
-     *
      * @return the value
-     */
+     **/
     public String getPlatformSoftwareVersion() {
         return platformSoftwareVersion;
     }
@@ -126,7 +130,6 @@ public final class CpeDeviceInfo extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

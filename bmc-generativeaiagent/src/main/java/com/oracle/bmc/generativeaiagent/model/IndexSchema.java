@@ -5,21 +5,20 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * The index schema details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * The index schema details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IndexSchema.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IndexSchema extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IndexSchema extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bodyKey", "urlKey", "titleKey", "embeddingBodyKey"})
     public IndexSchema(String bodyKey, String urlKey, String titleKey, String embeddingBodyKey) {
@@ -32,65 +31,65 @@ public final class IndexSchema extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Body key name. */
+        /**
+         * Body key name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bodyKey")
         private String bodyKey;
 
         /**
          * Body key name.
-         *
          * @param bodyKey the value to set
          * @return this builder
-         */
+         **/
         public Builder bodyKey(String bodyKey) {
             this.bodyKey = bodyKey;
             this.__explicitlySet__.add("bodyKey");
             return this;
         }
-        /** URL key that stores the URL of a document, if available. */
+        /**
+         * URL key that stores the URL of a document, if available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("urlKey")
         private String urlKey;
 
         /**
          * URL key that stores the URL of a document, if available.
-         *
          * @param urlKey the value to set
          * @return this builder
-         */
+         **/
         public Builder urlKey(String urlKey) {
             this.urlKey = urlKey;
             this.__explicitlySet__.add("urlKey");
             return this;
         }
-        /** Title key that stores the Title of a document, if available. */
+        /**
+         * Title key that stores the Title of a document, if available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("titleKey")
         private String titleKey;
 
         /**
          * Title key that stores the Title of a document, if available.
-         *
          * @param titleKey the value to set
          * @return this builder
-         */
+         **/
         public Builder titleKey(String titleKey) {
             this.titleKey = titleKey;
             this.__explicitlySet__.add("titleKey");
             return this;
         }
         /**
-         * Field within customer managed OCI OpenSearch document containing the vector embedding for
-         * queries.
-         */
+         * Field within customer managed OCI OpenSearch document containing the vector embedding for queries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("embeddingBodyKey")
         private String embeddingBodyKey;
 
         /**
-         * Field within customer managed OCI OpenSearch document containing the vector embedding for
-         * queries.
-         *
+         * Field within customer managed OCI OpenSearch document containing the vector embedding for queries.
          * @param embeddingBodyKey the value to set
          * @return this builder
-         */
+         **/
         public Builder embeddingBodyKey(String embeddingBodyKey) {
             this.embeddingBodyKey = embeddingBodyKey;
             this.__explicitlySet__.add("embeddingBodyKey");
@@ -128,7 +127,9 @@ public final class IndexSchema extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,58 +138,58 @@ public final class IndexSchema extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Body key name. */
+    /**
+     * Body key name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bodyKey")
     private final String bodyKey;
 
     /**
      * Body key name.
-     *
      * @return the value
-     */
+     **/
     public String getBodyKey() {
         return bodyKey;
     }
 
-    /** URL key that stores the URL of a document, if available. */
+    /**
+     * URL key that stores the URL of a document, if available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("urlKey")
     private final String urlKey;
 
     /**
      * URL key that stores the URL of a document, if available.
-     *
      * @return the value
-     */
+     **/
     public String getUrlKey() {
         return urlKey;
     }
 
-    /** Title key that stores the Title of a document, if available. */
+    /**
+     * Title key that stores the Title of a document, if available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("titleKey")
     private final String titleKey;
 
     /**
      * Title key that stores the Title of a document, if available.
-     *
      * @return the value
-     */
+     **/
     public String getTitleKey() {
         return titleKey;
     }
 
     /**
-     * Field within customer managed OCI OpenSearch document containing the vector embedding for
-     * queries.
-     */
+     * Field within customer managed OCI OpenSearch document containing the vector embedding for queries.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("embeddingBodyKey")
     private final String embeddingBodyKey;
 
     /**
-     * Field within customer managed OCI OpenSearch document containing the vector embedding for
-     * queries.
-     *
+     * Field within customer managed OCI OpenSearch document containing the vector embedding for queries.
      * @return the value
-     */
+     **/
     public String getEmbeddingBodyKey() {
         return embeddingBodyKey;
     }
@@ -200,7 +201,6 @@ public final class IndexSchema extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

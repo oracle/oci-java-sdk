@@ -4,47 +4,336 @@
  */
 package com.oracle.bmc.devops;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.devops.internal.http.*;
 import com.oracle.bmc.devops.requests.*;
 import com.oracle.bmc.devops.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Devops {
-    /** Service instance for Devops. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+public class DevopsClient implements Devops {
+    /**
+     * Service instance for Devops.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DEVOPS")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://devops.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DevopsClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final DevopsWaiters waiters;
 
     private final DevopsPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    DevopsClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        this(builder, authenticationDetailsProvider, executorService, true);
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
     }
 
-    DevopsClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService,
-            boolean isStreamWarningEnabled) {
-        super(
-                builder,
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public DevopsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected DevopsClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -66,9 +355,28 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
         this.waiters = new DevopsWaiters(executorService, this);
 
         this.paginators = new DevopsPaginators(this);
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DevopsClient",
                             "getObjectContent,getPullRequestAttachmentContent,getRepositoryArchiveContent,unsubscribePullRequest"));
         }
@@ -76,7 +384,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -84,18 +391,15 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DevopsClient> {
-        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "devops";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -103,7 +407,6 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -113,4861 +416,5657 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
         }
 
         /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public DevopsClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new DevopsClient(
-                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public ApproveDeploymentResponse approveDeployment(ApproveDeploymentRequest request) {
+        LOG.trace("Called approveDeployment");
+        final ApproveDeploymentRequest interceptedRequest =
+                ApproveDeploymentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ApproveDeploymentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
-        Objects.requireNonNull(
-                request.getApproveDeploymentDetails(), "approveDeploymentDetails is required");
-
-        return clientCall(request, ApproveDeploymentResponse::builder)
-                .logger(LOG, "approveDeployment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ApproveDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ApproveDeploymentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployments")
-                .appendPathParam(request.getDeploymentId())
-                .appendPathParam("actions")
-                .appendPathParam("approve")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Deployment.class,
-                        ApproveDeploymentResponse.Builder::deployment)
-                .handleResponseHeaderString("etag", ApproveDeploymentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ApproveDeploymentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment");
+        java.util.function.Function<javax.ws.rs.core.Response, ApproveDeploymentResponse>
+                transformer =
+                        ApproveDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getApproveDeploymentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelBuildRunResponse cancelBuildRun(CancelBuildRunRequest request) {
-        Objects.requireNonNull(
-                request.getCancelBuildRunDetails(), "cancelBuildRunDetails is required");
+        LOG.trace("Called cancelBuildRun");
+        final CancelBuildRunRequest interceptedRequest =
+                CancelBuildRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelBuildRunConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getBuildRunId(), "buildRunId must not be blank");
-
-        return clientCall(request, CancelBuildRunResponse::builder)
-                .logger(LOG, "cancelBuildRun")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CancelBuildRun",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelBuildRunRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildRuns")
-                .appendPathParam(request.getBuildRunId())
-                .appendPathParam("actions")
-                .appendPathParam("cancel")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildRun.class,
-                        CancelBuildRunResponse.Builder::buildRun)
-                .handleResponseHeaderString("etag", CancelBuildRunResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelBuildRunResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelBuildRunResponse> transformer =
+                CancelBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCancelBuildRunDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelDeploymentResponse cancelDeployment(CancelDeploymentRequest request) {
+        LOG.trace("Called cancelDeployment");
+        final CancelDeploymentRequest interceptedRequest =
+                CancelDeploymentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDeploymentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
-        Objects.requireNonNull(
-                request.getCancelDeploymentDetails(), "cancelDeploymentDetails is required");
-
-        return clientCall(request, CancelDeploymentResponse::builder)
-                .logger(LOG, "cancelDeployment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CancelDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelDeploymentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployments")
-                .appendPathParam(request.getDeploymentId())
-                .appendPathParam("actions")
-                .appendPathParam("cancel")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Deployment.class,
-                        CancelDeploymentResponse.Builder::deployment)
-                .handleResponseHeaderString("etag", CancelDeploymentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelDeploymentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelDeploymentResponse>
+                transformer =
+                        CancelDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCancelDeploymentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelScheduledCascadingProjectDeletionResponse cancelScheduledCascadingProjectDeletion(
             CancelScheduledCascadingProjectDeletionRequest request) {
+        LOG.trace("Called cancelScheduledCascadingProjectDeletion");
+        final CancelScheduledCascadingProjectDeletionRequest interceptedRequest =
+                CancelScheduledCascadingProjectDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelScheduledCascadingProjectDeletionConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        return clientCall(request, CancelScheduledCascadingProjectDeletionResponse::builder)
-                .logger(LOG, "cancelScheduledCascadingProjectDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CancelScheduledCascadingProjectDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CancelScheduledCascadingProjectDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelScheduledCascadingProjectDeletionRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelScheduledCascadingProjectDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CancelScheduledCascadingProjectDeletionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CancelScheduledCascadingProjectDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CancelScheduledCascadingProjectDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelScheduledCascadingProjectDeletionResponse>
+                transformer =
+                        CancelScheduledCascadingProjectDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeProjectCompartmentResponse changeProjectCompartment(
             ChangeProjectCompartmentRequest request) {
+        LOG.trace("Called changeProjectCompartment");
+        final ChangeProjectCompartmentRequest interceptedRequest =
+                ChangeProjectCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeProjectCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeProjectCompartmentDetails(),
-                "changeProjectCompartmentDetails is required");
-
-        return clientCall(request, ChangeProjectCompartmentResponse::builder)
-                .logger(LOG, "changeProjectCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ChangeProjectCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeProjectCompartmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeProjectCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
+                transformer =
+                        ChangeProjectCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeProjectCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateBuildPipelineResponse createBuildPipeline(CreateBuildPipelineRequest request) {
-        Objects.requireNonNull(
-                request.getCreateBuildPipelineDetails(), "createBuildPipelineDetails is required");
+        LOG.trace("Called createBuildPipeline");
+        final CreateBuildPipelineRequest interceptedRequest =
+                CreateBuildPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBuildPipelineConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateBuildPipelineResponse::builder)
-                .logger(LOG, "createBuildPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateBuildPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateBuildPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelines")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipeline.class,
-                        CreateBuildPipelineResponse.Builder::buildPipeline)
-                .handleResponseHeaderString("etag", CreateBuildPipelineResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateBuildPipelineResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateBuildPipelineResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateBuildPipelineResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBuildPipelineResponse>
+                transformer =
+                        CreateBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBuildPipelineDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateBuildPipelineStageResponse createBuildPipelineStage(
             CreateBuildPipelineStageRequest request) {
-        Objects.requireNonNull(
-                request.getCreateBuildPipelineStageDetails(),
-                "createBuildPipelineStageDetails is required");
+        LOG.trace("Called createBuildPipelineStage");
+        final CreateBuildPipelineStageRequest interceptedRequest =
+                CreateBuildPipelineStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateBuildPipelineStageResponse::builder)
-                .logger(LOG, "createBuildPipelineStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateBuildPipelineStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateBuildPipelineStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelineStages")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipelineStage.class,
-                        CreateBuildPipelineStageResponse.Builder::buildPipelineStage)
-                .handleResponseHeaderString("etag", CreateBuildPipelineStageResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateBuildPipelineStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateBuildPipelineStageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateBuildPipelineStageResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBuildPipelineStageResponse>
+                transformer =
+                        CreateBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBuildPipelineStageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateBuildRunResponse createBuildRun(CreateBuildRunRequest request) {
-        Objects.requireNonNull(
-                request.getCreateBuildRunDetails(), "createBuildRunDetails is required");
+        LOG.trace("Called createBuildRun");
+        final CreateBuildRunRequest interceptedRequest =
+                CreateBuildRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBuildRunConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateBuildRunResponse::builder)
-                .logger(LOG, "createBuildRun")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateBuildRun",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateBuildRunRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildRuns")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildRun.class,
-                        CreateBuildRunResponse.Builder::buildRun)
-                .handleResponseHeaderString("etag", CreateBuildRunResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateBuildRunResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("location", CreateBuildRunResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBuildRunResponse> transformer =
+                CreateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBuildRunDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
-        Objects.requireNonNull(
-                request.getCreateConnectionDetails(), "createConnectionDetails is required");
+        LOG.trace("Called createConnection");
+        final CreateConnectionRequest interceptedRequest =
+                CreateConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateConnectionConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateConnectionResponse::builder)
-                .logger(LOG, "createConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateConnectionRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("connections")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Connection.class,
-                        CreateConnectionResponse.Builder::connection)
-                .handleResponseHeaderString("etag", CreateConnectionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateConnectionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateConnectionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("location", CreateConnectionResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
+                transformer =
+                        CreateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDeployArtifactResponse createDeployArtifact(CreateDeployArtifactRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDeployArtifactDetails(),
-                "createDeployArtifactDetails is required");
+        LOG.trace("Called createDeployArtifact");
+        final CreateDeployArtifactRequest interceptedRequest =
+                CreateDeployArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDeployArtifactConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDeployArtifactResponse::builder)
-                .logger(LOG, "createDeployArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateDeployArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDeployArtifactRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployArtifacts")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployArtifact.class,
-                        CreateDeployArtifactResponse.Builder::deployArtifact)
-                .handleResponseHeaderString(
-                        "location", CreateDeployArtifactResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateDeployArtifactResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDeployArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDeployArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployArtifactResponse>
+                transformer =
+                        CreateDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDeployArtifactDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDeployEnvironmentResponse createDeployEnvironment(
             CreateDeployEnvironmentRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDeployEnvironmentDetails(),
-                "createDeployEnvironmentDetails is required");
+        LOG.trace("Called createDeployEnvironment");
+        final CreateDeployEnvironmentRequest interceptedRequest =
+                CreateDeployEnvironmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDeployEnvironmentResponse::builder)
-                .logger(LOG, "createDeployEnvironment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateDeployEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDeployEnvironmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployEnvironments")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployEnvironment.class,
-                        CreateDeployEnvironmentResponse.Builder::deployEnvironment)
-                .handleResponseHeaderString(
-                        "location", CreateDeployEnvironmentResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateDeployEnvironmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDeployEnvironmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDeployEnvironmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployEnvironmentResponse>
+                transformer =
+                        CreateDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDeployEnvironmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDeployPipelineResponse createDeployPipeline(CreateDeployPipelineRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDeployPipelineDetails(),
-                "createDeployPipelineDetails is required");
+        LOG.trace("Called createDeployPipeline");
+        final CreateDeployPipelineRequest interceptedRequest =
+                CreateDeployPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDeployPipelineConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDeployPipelineResponse::builder)
-                .logger(LOG, "createDeployPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateDeployPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDeployPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployPipelines")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployPipeline.class,
-                        CreateDeployPipelineResponse.Builder::deployPipeline)
-                .handleResponseHeaderString(
-                        "location", CreateDeployPipelineResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateDeployPipelineResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString("etag", CreateDeployPipelineResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDeployPipelineResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployPipelineResponse>
+                transformer =
+                        CreateDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDeployPipelineDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDeployStageResponse createDeployStage(CreateDeployStageRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDeployStageDetails(), "createDeployStageDetails is required");
+        LOG.trace("Called createDeployStage");
+        final CreateDeployStageRequest interceptedRequest =
+                CreateDeployStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDeployStageConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDeployStageResponse::builder)
-                .logger(LOG, "createDeployStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateDeployStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDeployStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployStages")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployStage.class,
-                        CreateDeployStageResponse.Builder::deployStage)
-                .handleResponseHeaderString("location", CreateDeployStageResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateDeployStageResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateDeployStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDeployStageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeployStageResponse>
+                transformer =
+                        CreateDeployStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDeployStageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateDeploymentResponse createDeployment(CreateDeploymentRequest request) {
-        Objects.requireNonNull(
-                request.getCreateDeploymentDetails(), "createDeploymentDetails is required");
+        LOG.trace("Called createDeployment");
+        final CreateDeploymentRequest interceptedRequest =
+                CreateDeploymentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDeploymentConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateDeploymentResponse::builder)
-                .logger(LOG, "createDeployment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDeploymentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployments")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Deployment.class,
-                        CreateDeploymentResponse.Builder::deployment)
-                .handleResponseHeaderString("etag", CreateDeploymentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDeploymentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
+                transformer =
+                        CreateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDeploymentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateOrUpdateGitRefResponse createOrUpdateGitRef(CreateOrUpdateGitRefRequest request) {
+        LOG.trace("Called createOrUpdateGitRef");
+        final CreateOrUpdateGitRefRequest interceptedRequest =
+                CreateOrUpdateGitRefConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOrUpdateGitRefConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(
-                request.getCreateOrUpdateGitRefDetails(),
-                "createOrUpdateGitRefDetails is required");
-
-        return clientCall(request, CreateOrUpdateGitRefResponse::builder)
-                .logger(LOG, "createOrUpdateGitRef")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateOrUpdateGitRef",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateOrUpdateGitRef")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateOrUpdateGitRefRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("actions")
-                .appendPathParam("createOrUpdateGitRef")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryRef.class,
-                        CreateOrUpdateGitRefResponse.Builder::repositoryRef)
-                .handleResponseHeaderString(
-                        "location", CreateOrUpdateGitRefResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateOrUpdateGitRefResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateOrUpdateGitRefResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateOrUpdateGitRefResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateOrUpdateGitRef");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOrUpdateGitRefResponse>
+                transformer =
+                        CreateOrUpdateGitRefConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOrUpdateGitRefDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateOrUpdateProtectedBranchResponse createOrUpdateProtectedBranch(
             CreateOrUpdateProtectedBranchRequest request) {
+        LOG.trace("Called createOrUpdateProtectedBranch");
+        final CreateOrUpdateProtectedBranchRequest interceptedRequest =
+                CreateOrUpdateProtectedBranchConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOrUpdateProtectedBranchConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(
-                request.getCreateOrUpdateProtectedBranchDetails(),
-                "createOrUpdateProtectedBranchDetails is required");
-
-        return clientCall(request, CreateOrUpdateProtectedBranchResponse::builder)
-                .logger(LOG, "createOrUpdateProtectedBranch")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateOrUpdateProtectedBranch",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProtectedBranch/CreateOrUpdateProtectedBranch")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateOrUpdateProtectedBranchRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("actions")
-                .appendPathParam("createOrUpdateProtectedBranch")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ProtectedBranch.class,
-                        CreateOrUpdateProtectedBranchResponse.Builder::protectedBranch)
-                .handleResponseHeaderString(
-                        "location", CreateOrUpdateProtectedBranchResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "etag", CreateOrUpdateProtectedBranchResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateOrUpdateProtectedBranchResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProtectedBranch/CreateOrUpdateProtectedBranch");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateOrUpdateProtectedBranchResponse>
+                transformer =
+                        CreateOrUpdateProtectedBranchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateOrUpdateProtectedBranchDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateProjectResponse createProject(CreateProjectRequest request) {
-        Objects.requireNonNull(
-                request.getCreateProjectDetails(), "createProjectDetails is required");
+        LOG.trace("Called createProject");
+        final CreateProjectRequest interceptedRequest =
+                CreateProjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateProjectConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateProjectResponse::builder)
-                .logger(LOG, "createProject")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateProject",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateProjectRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Project.class,
-                        CreateProjectResponse.Builder::project)
-                .handleResponseHeaderString("location", CreateProjectResponse.Builder::location)
-                .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateProjectResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse> transformer =
+                CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateProjectDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreatePullRequestResponse createPullRequest(CreatePullRequestRequest request) {
-        Objects.requireNonNull(
-                request.getCreatePullRequestDetails(), "createPullRequestDetails is required");
+        LOG.trace("Called createPullRequest");
+        final CreatePullRequestRequest interceptedRequest =
+                CreatePullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePullRequestConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreatePullRequestResponse::builder)
-                .logger(LOG, "createPullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreatePullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/CreatePullRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreatePullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        CreatePullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString("location", CreatePullRequestResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location", CreatePullRequestResponse.Builder::contentLocation)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreatePullRequestResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreatePullRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreatePullRequestResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/CreatePullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePullRequestResponse>
+                transformer =
+                        CreatePullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreatePullRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreatePullRequestAttachmentResponse createPullRequestAttachment(
             CreatePullRequestAttachmentRequest request) {
-
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-        Objects.requireNonNull(request.getContentDisposition(), "contentDisposition is required");
-
-        Objects.requireNonNull(
-                request.getCreatePullRequestAttachmentBody(),
-                "createPullRequestAttachmentBody is required");
-
-        return clientCall(request, CreatePullRequestAttachmentResponse::builder)
-                .logger(LOG, "createPullRequestAttachment")
-                .serviceDetails(
-                        "Devops",
-                        "CreatePullRequestAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/CreatePullRequestAttachment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreatePullRequestAttachmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("attachments")
-                .accept("application/json")
-                .appendHeader("content-disposition", request.getContentDisposition())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestAttachment.class,
-                        CreatePullRequestAttachmentResponse.Builder::pullRequestAttachment)
-                .handleResponseHeaderString(
-                        "content-location",
-                        CreatePullRequestAttachmentResponse.Builder::contentLocation)
-                .handleResponseHeaderString(
-                        "location", CreatePullRequestAttachmentResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreatePullRequestAttachmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreatePullRequestAttachmentResponse.Builder::etag)
-                .callSync();
+        LOG.trace("Called createPullRequestAttachment");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, CreatePullRequestAttachmentRequest.builder());
+            }
+            final CreatePullRequestAttachmentRequest interceptedRequest =
+                    CreatePullRequestAttachmentConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    CreatePullRequestAttachmentConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "Devops",
+                            "CreatePullRequestAttachment",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/CreatePullRequestAttachment");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, CreatePullRequestAttachmentResponse>
+                    transformer =
+                            CreatePullRequestAttachmentConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getCreatePullRequestAttachmentBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getCreatePullRequestAttachmentBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getCreatePullRequestAttachmentBody());
+        }
     }
 
     @Override
     public CreatePullRequestCommentResponse createPullRequestComment(
             CreatePullRequestCommentRequest request) {
+        LOG.trace("Called createPullRequestComment");
+        final CreatePullRequestCommentRequest interceptedRequest =
+                CreatePullRequestCommentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePullRequestCommentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getCreatePullRequestCommentDetails(),
-                "createPullRequestCommentDetails is required");
-
-        return clientCall(request, CreatePullRequestCommentResponse::builder)
-                .logger(LOG, "createPullRequestComment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreatePullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/CreatePullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreatePullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestComment.class,
-                        CreatePullRequestCommentResponse.Builder::pullRequestComment)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreatePullRequestCommentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreatePullRequestCommentResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/CreatePullRequestComment");
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePullRequestCommentResponse>
+                transformer =
+                        CreatePullRequestCommentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreatePullRequestCommentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateRepositoryResponse createRepository(CreateRepositoryRequest request) {
-        Objects.requireNonNull(
-                request.getCreateRepositoryDetails(), "createRepositoryDetails is required");
+        LOG.trace("Called createRepository");
+        final CreateRepositoryRequest interceptedRequest =
+                CreateRepositoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRepositoryConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateRepositoryResponse::builder)
-                .logger(LOG, "createRepository")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateRepository",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateRepositoryRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Repository.class,
-                        CreateRepositoryResponse.Builder::repository)
-                .handleResponseHeaderString("location", CreateRepositoryResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateRepositoryResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateRepositoryResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateRepositoryResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
+                transformer =
+                        CreateRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateRepositoryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateTriggerResponse createTrigger(CreateTriggerRequest request) {
-        Objects.requireNonNull(
-                request.getCreateTriggerDetails(), "createTriggerDetails is required");
+        LOG.trace("Called createTrigger");
+        final CreateTriggerRequest interceptedRequest =
+                CreateTriggerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTriggerConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateTriggerResponse::builder)
-                .logger(LOG, "createTrigger")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "CreateTrigger",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateTriggerRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("triggers")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.TriggerCreateResult.class,
-                        CreateTriggerResponse.Builder::triggerCreateResult)
-                .handleResponseHeaderString("etag", CreateTriggerResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateTriggerResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateTriggerResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("location", CreateTriggerResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTriggerResponse> transformer =
+                CreateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateTriggerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeclinePullRequestResponse declinePullRequest(DeclinePullRequestRequest request) {
+        LOG.trace("Called declinePullRequest");
+        final DeclinePullRequestRequest interceptedRequest =
+                DeclinePullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeclinePullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, DeclinePullRequestResponse::builder)
-                .logger(LOG, "declinePullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeclinePullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeclinePullRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DeclinePullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("decline")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        DeclinePullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString(
-                        "location", DeclinePullRequestResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeclinePullRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", DeclinePullRequestResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeclinePullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, DeclinePullRequestResponse>
+                transformer =
+                        DeclinePullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteBuildPipelineResponse deleteBuildPipeline(DeleteBuildPipelineRequest request) {
+        LOG.trace("Called deleteBuildPipeline");
+        final DeleteBuildPipelineRequest interceptedRequest =
+                DeleteBuildPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBuildPipelineConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getBuildPipelineId(), "buildPipelineId must not be blank");
-
-        return clientCall(request, DeleteBuildPipelineResponse::builder)
-                .logger(LOG, "deleteBuildPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteBuildPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteBuildPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelines")
-                .appendPathParam(request.getBuildPipelineId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteBuildPipelineResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteBuildPipelineResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBuildPipelineResponse>
+                transformer =
+                        DeleteBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteBuildPipelineStageResponse deleteBuildPipelineStage(
             DeleteBuildPipelineStageRequest request) {
+        LOG.trace("Called deleteBuildPipelineStage");
+        final DeleteBuildPipelineStageRequest interceptedRequest =
+                DeleteBuildPipelineStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getBuildPipelineStageId(), "buildPipelineStageId must not be blank");
-
-        return clientCall(request, DeleteBuildPipelineStageResponse::builder)
-                .logger(LOG, "deleteBuildPipelineStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteBuildPipelineStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteBuildPipelineStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelineStages")
-                .appendPathParam(request.getBuildPipelineStageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteBuildPipelineStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteBuildPipelineStageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBuildPipelineStageResponse>
+                transformer =
+                        DeleteBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request) {
+        LOG.trace("Called deleteConnection");
+        final DeleteConnectionRequest interceptedRequest =
+                DeleteConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
-
-        return clientCall(request, DeleteConnectionResponse::builder)
-                .logger(LOG, "deleteConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteConnectionRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("connections")
-                .appendPathParam(request.getConnectionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteConnectionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteConnectionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
+                transformer =
+                        DeleteConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDeployArtifactResponse deleteDeployArtifact(DeleteDeployArtifactRequest request) {
+        LOG.trace("Called deleteDeployArtifact");
+        final DeleteDeployArtifactRequest interceptedRequest =
+                DeleteDeployArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDeployArtifactConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployArtifactId(), "deployArtifactId must not be blank");
-
-        return clientCall(request, DeleteDeployArtifactResponse::builder)
-                .logger(LOG, "deleteDeployArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteDeployArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDeployArtifactRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployArtifacts")
-                .appendPathParam(request.getDeployArtifactId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDeployArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDeployArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployArtifactResponse>
+                transformer =
+                        DeleteDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDeployEnvironmentResponse deleteDeployEnvironment(
             DeleteDeployEnvironmentRequest request) {
+        LOG.trace("Called deleteDeployEnvironment");
+        final DeleteDeployEnvironmentRequest interceptedRequest =
+                DeleteDeployEnvironmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDeployEnvironmentId(), "deployEnvironmentId must not be blank");
-
-        return clientCall(request, DeleteDeployEnvironmentResponse::builder)
-                .logger(LOG, "deleteDeployEnvironment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteDeployEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDeployEnvironmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployEnvironments")
-                .appendPathParam(request.getDeployEnvironmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDeployEnvironmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDeployEnvironmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployEnvironmentResponse>
+                transformer =
+                        DeleteDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDeployPipelineResponse deleteDeployPipeline(DeleteDeployPipelineRequest request) {
+        LOG.trace("Called deleteDeployPipeline");
+        final DeleteDeployPipelineRequest interceptedRequest =
+                DeleteDeployPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDeployPipelineConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployPipelineId(), "deployPipelineId must not be blank");
-
-        return clientCall(request, DeleteDeployPipelineResponse::builder)
-                .logger(LOG, "deleteDeployPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteDeployPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDeployPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployPipelines")
-                .appendPathParam(request.getDeployPipelineId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteDeployPipelineResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDeployPipelineResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployPipelineResponse>
+                transformer =
+                        DeleteDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteDeployStageResponse deleteDeployStage(DeleteDeployStageRequest request) {
+        LOG.trace("Called deleteDeployStage");
+        final DeleteDeployStageRequest interceptedRequest =
+                DeleteDeployStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDeployStageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployStageId(), "deployStageId must not be blank");
-
-        return clientCall(request, DeleteDeployStageResponse::builder)
-                .logger(LOG, "deleteDeployStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteDeployStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDeployStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployStages")
-                .appendPathParam(request.getDeployStageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteDeployStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDeployStageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDeployStageResponse>
+                transformer =
+                        DeleteDeployStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteGitRefResponse deleteGitRef(DeleteGitRefRequest request) {
+        LOG.trace("Called deleteGitRef");
+        final DeleteGitRefRequest interceptedRequest =
+                DeleteGitRefConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteGitRefConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(request.getDeleteGitRefDetails(), "deleteGitRefDetails is required");
-
-        return clientCall(request, DeleteGitRefResponse::builder)
-                .logger(LOG, "deleteGitRef")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteGitRef",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteGitRef")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DeleteGitRefRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("actions")
-                .appendPathParam("deleteGitRef")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteGitRefResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteGitRefResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteGitRef");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteGitRefResponse> transformer =
+                DeleteGitRefConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDeleteGitRefDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteProjectResponse deleteProject(DeleteProjectRequest request) {
+        LOG.trace("Called deleteProject");
+        final DeleteProjectRequest interceptedRequest =
+                DeleteProjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteProjectConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        return clientCall(request, DeleteProjectResponse::builder)
-                .logger(LOG, "deleteProject")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteProject",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteProjectRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse> transformer =
+                DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteProjectRepositorySettingsResponse deleteProjectRepositorySettings(
             DeleteProjectRepositorySettingsRequest request) {
+        LOG.trace("Called deleteProjectRepositorySettings");
+        final DeleteProjectRepositorySettingsRequest interceptedRequest =
+                DeleteProjectRepositorySettingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteProjectRepositorySettingsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        return clientCall(request, DeleteProjectRepositorySettingsResponse::builder)
-                .logger(LOG, "deleteProjectRepositorySettings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteProjectRepositorySettings",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectRepositorySettings/DeleteProjectRepositorySettings")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteProjectRepositorySettingsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("repositorySettings")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteProjectRepositorySettingsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectRepositorySettings/DeleteProjectRepositorySettings");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteProjectRepositorySettingsResponse>
+                transformer =
+                        DeleteProjectRepositorySettingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteProtectedBranchResponse deleteProtectedBranch(
             DeleteProtectedBranchRequest request) {
+        LOG.trace("Called deleteProtectedBranch");
+        final DeleteProtectedBranchRequest interceptedRequest =
+                DeleteProtectedBranchConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteProtectedBranchConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(
-                request.getDeleteProtectedBranchDetails(),
-                "deleteProtectedBranchDetails is required");
-
-        return clientCall(request, DeleteProtectedBranchResponse::builder)
-                .logger(LOG, "deleteProtectedBranch")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteProtectedBranch",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProtectedBranch/DeleteProtectedBranch")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DeleteProtectedBranchRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("actions")
-                .appendPathParam("deleteProtectedBranch")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteProtectedBranchResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProtectedBranch/DeleteProtectedBranch");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteProtectedBranchResponse>
+                transformer =
+                        DeleteProtectedBranchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDeleteProtectedBranchDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeletePullRequestResponse deletePullRequest(DeletePullRequestRequest request) {
+        LOG.trace("Called deletePullRequest");
+        final DeletePullRequestRequest interceptedRequest =
+                DeletePullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, DeletePullRequestResponse::builder)
-                .logger(LOG, "deletePullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeletePullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeletePullRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeletePullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeletePullRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeletePullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePullRequestResponse>
+                transformer =
+                        DeletePullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeletePullRequestAttachmentResponse deletePullRequestAttachment(
             DeletePullRequestAttachmentRequest request) {
+        LOG.trace("Called deletePullRequestAttachment");
+        final DeletePullRequestAttachmentRequest interceptedRequest =
+                DeletePullRequestAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePullRequestAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getAttachmentId(), "attachmentId must not be blank");
-
-        return clientCall(request, DeletePullRequestAttachmentResponse::builder)
-                .logger(LOG, "deletePullRequestAttachment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeletePullRequestAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeletePullRequestAttachment")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeletePullRequestAttachmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("attachments")
-                .appendPathParam(request.getAttachmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeletePullRequestAttachmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeletePullRequestAttachment");
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePullRequestAttachmentResponse>
+                transformer =
+                        DeletePullRequestAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeletePullRequestCommentResponse deletePullRequestComment(
             DeletePullRequestCommentRequest request) {
+        LOG.trace("Called deletePullRequestComment");
+        final DeletePullRequestCommentRequest interceptedRequest =
+                DeletePullRequestCommentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePullRequestCommentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
-
-        return clientCall(request, DeletePullRequestCommentResponse::builder)
-                .logger(LOG, "deletePullRequestComment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeletePullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeletePullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeletePullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendPathParam(request.getCommentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeletePullRequestCommentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/DeletePullRequestComment");
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePullRequestCommentResponse>
+                transformer =
+                        DeletePullRequestCommentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteRefResponse deleteRef(DeleteRefRequest request) {
+        LOG.trace("Called deleteRef");
+        final DeleteRefRequest interceptedRequest = DeleteRefConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRefConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getRefName(), "refName must not be blank");
-
-        return clientCall(request, DeleteRefResponse::builder)
-                .logger(LOG, "deleteRef")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteRef",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteRefRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("refs")
-                .appendPathParam(request.getRefName())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteRefResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteRefResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("Sunset", DeleteRefResponse.Builder::sunset)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRefResponse> transformer =
+                DeleteRefConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteRepositoryResponse deleteRepository(DeleteRepositoryRequest request) {
+        LOG.trace("Called deleteRepository");
+        final DeleteRepositoryRequest interceptedRequest =
+                DeleteRepositoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRepositoryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, DeleteRepositoryResponse::builder)
-                .logger(LOG, "deleteRepository")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteRepository",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteRepositoryRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteRepositoryResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteRepositoryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
+                transformer =
+                        DeleteRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteRepositorySettingsResponse deleteRepositorySettings(
             DeleteRepositorySettingsRequest request) {
+        LOG.trace("Called deleteRepositorySettings");
+        final DeleteRepositorySettingsRequest interceptedRequest =
+                DeleteRepositorySettingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRepositorySettingsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, DeleteRepositorySettingsResponse::builder)
-                .logger(LOG, "deleteRepositorySettings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteRepositorySettings",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositorySettings/DeleteRepositorySettings")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteRepositorySettingsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("repositorySettings")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteRepositorySettingsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositorySettings/DeleteRepositorySettings");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRepositorySettingsResponse>
+                transformer =
+                        DeleteRepositorySettingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteTriggerResponse deleteTrigger(DeleteTriggerRequest request) {
+        LOG.trace("Called deleteTrigger");
+        final DeleteTriggerRequest interceptedRequest =
+                DeleteTriggerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTriggerConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTriggerId(), "triggerId must not be blank");
-
-        return clientCall(request, DeleteTriggerResponse::builder)
-                .logger(LOG, "deleteTrigger")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "DeleteTrigger",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteTriggerRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("triggers")
-                .appendPathParam(request.getTriggerId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteTriggerResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteTriggerResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTriggerResponse> transformer =
+                DeleteTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetBuildPipelineResponse getBuildPipeline(GetBuildPipelineRequest request) {
+        LOG.trace("Called getBuildPipeline");
+        final GetBuildPipelineRequest interceptedRequest =
+                GetBuildPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBuildPipelineConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getBuildPipelineId(), "buildPipelineId must not be blank");
-
-        return clientCall(request, GetBuildPipelineResponse::builder)
-                .logger(LOG, "getBuildPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetBuildPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetBuildPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelines")
-                .appendPathParam(request.getBuildPipelineId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipeline.class,
-                        GetBuildPipelineResponse.Builder::buildPipeline)
-                .handleResponseHeaderString("etag", GetBuildPipelineResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetBuildPipelineResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, GetBuildPipelineResponse>
+                transformer =
+                        GetBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetBuildPipelineStageResponse getBuildPipelineStage(
             GetBuildPipelineStageRequest request) {
+        LOG.trace("Called getBuildPipelineStage");
+        final GetBuildPipelineStageRequest interceptedRequest =
+                GetBuildPipelineStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getBuildPipelineStageId(), "buildPipelineStageId must not be blank");
-
-        return clientCall(request, GetBuildPipelineStageResponse::builder)
-                .logger(LOG, "getBuildPipelineStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetBuildPipelineStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetBuildPipelineStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelineStages")
-                .appendPathParam(request.getBuildPipelineStageId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipelineStage.class,
-                        GetBuildPipelineStageResponse.Builder::buildPipelineStage)
-                .handleResponseHeaderString("etag", GetBuildPipelineStageResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetBuildPipelineStageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage");
+        java.util.function.Function<javax.ws.rs.core.Response, GetBuildPipelineStageResponse>
+                transformer =
+                        GetBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetBuildRunResponse getBuildRun(GetBuildRunRequest request) {
+        LOG.trace("Called getBuildRun");
+        final GetBuildRunRequest interceptedRequest =
+                GetBuildRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBuildRunConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getBuildRunId(), "buildRunId must not be blank");
-
-        return clientCall(request, GetBuildRunResponse::builder)
-                .logger(LOG, "getBuildRun")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetBuildRun",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetBuildRunRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildRuns")
-                .appendPathParam(request.getBuildRunId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildRun.class,
-                        GetBuildRunResponse.Builder::buildRun)
-                .handleResponseHeaderString("etag", GetBuildRunResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetBuildRunResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun");
+        java.util.function.Function<javax.ws.rs.core.Response, GetBuildRunResponse> transformer =
+                GetBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCommitResponse getCommit(GetCommitRequest request) {
+        LOG.trace("Called getCommit");
+        final GetCommitRequest interceptedRequest = GetCommitConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCommitConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getCommitId(), "commitId must not be blank");
-
-        return clientCall(request, GetCommitResponse::builder)
-                .logger(LOG, "getCommit")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetCommit",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCommitRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("commits")
-                .appendPathParam(request.getCommitId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryCommit.class,
-                        GetCommitResponse.Builder::repositoryCommit)
-                .handleResponseHeaderString("etag", GetCommitResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCommitResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCommitResponse> transformer =
+                GetCommitConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCommitDiffResponse getCommitDiff(GetCommitDiffRequest request) {
+        LOG.trace("Called getCommitDiff");
+        final GetCommitDiffRequest interceptedRequest =
+                GetCommitDiffConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCommitDiffConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(request.getTargetVersion(), "targetVersion is required");
-
-        return clientCall(request, GetCommitDiffResponse::builder)
-                .logger(LOG, "getCommitDiff")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetCommitDiff",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCommitDiffRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("diff")
-                .appendQueryParam("baseVersion", request.getBaseVersion())
-                .appendQueryParam("targetVersion", request.getTargetVersion())
-                .appendQueryParam("targetRepositoryId", request.getTargetRepositoryId())
-                .appendQueryParam(
-                        "isComparisonFromMergeBase", request.getIsComparisonFromMergeBase())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DiffResponse.class,
-                        GetCommitDiffResponse.Builder::diffResponse)
-                .handleResponseHeaderString("etag", GetCommitDiffResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCommitDiffResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCommitDiffResponse> transformer =
+                GetCommitDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetConnectionResponse getConnection(GetConnectionRequest request) {
+        LOG.trace("Called getConnection");
+        final GetConnectionRequest interceptedRequest =
+                GetConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
-
-        return clientCall(request, GetConnectionResponse::builder)
-                .logger(LOG, "getConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetConnectionRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("connections")
-                .appendPathParam(request.getConnectionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Connection.class,
-                        GetConnectionResponse.Builder::connection)
-                .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, GetConnectionResponse> transformer =
+                GetConnectionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDeployArtifactResponse getDeployArtifact(GetDeployArtifactRequest request) {
+        LOG.trace("Called getDeployArtifact");
+        final GetDeployArtifactRequest interceptedRequest =
+                GetDeployArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDeployArtifactConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployArtifactId(), "deployArtifactId must not be blank");
-
-        return clientCall(request, GetDeployArtifactResponse::builder)
-                .logger(LOG, "getDeployArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetDeployArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDeployArtifactRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployArtifacts")
-                .appendPathParam(request.getDeployArtifactId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployArtifact.class,
-                        GetDeployArtifactResponse.Builder::deployArtifact)
-                .handleResponseHeaderString("etag", GetDeployArtifactResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDeployArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployArtifactResponse>
+                transformer =
+                        GetDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDeployEnvironmentResponse getDeployEnvironment(GetDeployEnvironmentRequest request) {
+        LOG.trace("Called getDeployEnvironment");
+        final GetDeployEnvironmentRequest interceptedRequest =
+                GetDeployEnvironmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDeployEnvironmentId(), "deployEnvironmentId must not be blank");
-
-        return clientCall(request, GetDeployEnvironmentResponse::builder)
-                .logger(LOG, "getDeployEnvironment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetDeployEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDeployEnvironmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployEnvironments")
-                .appendPathParam(request.getDeployEnvironmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployEnvironment.class,
-                        GetDeployEnvironmentResponse.Builder::deployEnvironment)
-                .handleResponseHeaderString("etag", GetDeployEnvironmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDeployEnvironmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployEnvironmentResponse>
+                transformer =
+                        GetDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDeployPipelineResponse getDeployPipeline(GetDeployPipelineRequest request) {
+        LOG.trace("Called getDeployPipeline");
+        final GetDeployPipelineRequest interceptedRequest =
+                GetDeployPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDeployPipelineConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployPipelineId(), "deployPipelineId must not be blank");
-
-        return clientCall(request, GetDeployPipelineResponse::builder)
-                .logger(LOG, "getDeployPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetDeployPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDeployPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployPipelines")
-                .appendPathParam(request.getDeployPipelineId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployPipeline.class,
-                        GetDeployPipelineResponse.Builder::deployPipeline)
-                .handleResponseHeaderString("etag", GetDeployPipelineResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDeployPipelineResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployPipelineResponse>
+                transformer =
+                        GetDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDeployStageResponse getDeployStage(GetDeployStageRequest request) {
+        LOG.trace("Called getDeployStage");
+        final GetDeployStageRequest interceptedRequest =
+                GetDeployStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDeployStageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployStageId(), "deployStageId must not be blank");
-
-        return clientCall(request, GetDeployStageResponse::builder)
-                .logger(LOG, "getDeployStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetDeployStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDeployStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployStages")
-                .appendPathParam(request.getDeployStageId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployStage.class,
-                        GetDeployStageResponse.Builder::deployStage)
-                .handleResponseHeaderString("etag", GetDeployStageResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDeployStageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeployStageResponse> transformer =
+                GetDeployStageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetDeploymentResponse getDeployment(GetDeploymentRequest request) {
+        LOG.trace("Called getDeployment");
+        final GetDeploymentRequest interceptedRequest =
+                GetDeploymentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDeploymentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
-
-        return clientCall(request, GetDeploymentResponse::builder)
-                .logger(LOG, "getDeployment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDeploymentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployments")
-                .appendPathParam(request.getDeploymentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Deployment.class,
-                        GetDeploymentResponse.Builder::deployment)
-                .handleResponseHeaderString("etag", GetDeploymentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDeploymentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDeploymentResponse> transformer =
+                GetDeploymentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetFileDiffResponse getFileDiff(GetFileDiffRequest request) {
+        LOG.trace("Called getFileDiff");
+        final GetFileDiffRequest interceptedRequest =
+                GetFileDiffConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFileDiffConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getFilePath(), "filePath must not be blank");
-        Objects.requireNonNull(request.getBaseVersion(), "baseVersion is required");
-
-        Objects.requireNonNull(request.getTargetVersion(), "targetVersion is required");
-
-        return clientCall(request, GetFileDiffResponse::builder)
-                .logger(LOG, "getFileDiff")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetFileDiff",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetFileDiffRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("diffs")
-                .appendPathParam(request.getFilePath())
-                .appendQueryParam("baseVersion", request.getBaseVersion())
-                .appendQueryParam("targetVersion", request.getTargetVersion())
-                .appendQueryParam(
-                        "isComparisonFromMergeBase", request.getIsComparisonFromMergeBase())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.FileDiffResponse.class,
-                        GetFileDiffResponse.Builder::fileDiffResponse)
-                .handleResponseHeaderString("etag", GetFileDiffResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetFileDiffResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("Sunset", GetFileDiffResponse.Builder::sunset)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFileDiffResponse> transformer =
+                GetFileDiffConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetMirrorRecordResponse getMirrorRecord(GetMirrorRecordRequest request) {
+        LOG.trace("Called getMirrorRecord");
+        final GetMirrorRecordRequest interceptedRequest =
+                GetMirrorRecordConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMirrorRecordConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(
-                request.getMirrorRecordType().getValue(), "mirrorRecordType must not be blank");
-
-        return clientCall(request, GetMirrorRecordResponse::builder)
-                .logger(LOG, "getMirrorRecord")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetMirrorRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMirrorRecordRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("mirrorRecords")
-                .appendPathParam(request.getMirrorRecordType().getValue())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryMirrorRecord.class,
-                        GetMirrorRecordResponse.Builder::repositoryMirrorRecord)
-                .handleResponseHeaderString("etag", GetMirrorRecordResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMirrorRecordResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMirrorRecordResponse>
+                transformer =
+                        GetMirrorRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetObjectResponse getObject(GetObjectRequest request) {
+        LOG.trace("Called getObject");
+        final GetObjectRequest interceptedRequest = GetObjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetObjectConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, GetObjectResponse::builder)
-                .logger(LOG, "getObject")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetObject",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetObjectRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("object")
-                .appendQueryParam("filePath", request.getFilePath())
-                .appendQueryParam("refName", request.getRefName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryObject.class,
-                        GetObjectResponse.Builder::repositoryObject)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetObjectResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetObjectResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject");
+        java.util.function.Function<javax.ws.rs.core.Response, GetObjectResponse> transformer =
+                GetObjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetObjectContentResponse getObjectContent(GetObjectContentRequest request) {
+        LOG.trace("Called getObjectContent");
+        final GetObjectContentRequest interceptedRequest =
+                GetObjectContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetObjectContentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getSha(), "sha must not be blank");
-
-        return clientCall(request, GetObjectContentResponse::builder)
-                .logger(LOG, "getObjectContent")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetObjectContent",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetObjectContentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("objects")
-                .appendPathParam(request.getSha())
-                .appendPathParam("content")
-                .appendQueryParam("filePath", request.getFilePath())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class, GetObjectContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetObjectContentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "Content-Type", GetObjectContentResponse.Builder::contentType)
-                .handleResponseHeaderString(
-                        "Content-Disposition", GetObjectContentResponse.Builder::contentDisposition)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent");
+        java.util.function.Function<javax.ws.rs.core.Response, GetObjectContentResponse>
+                transformer =
+                        GetObjectContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetProjectResponse getProject(GetProjectRequest request) {
+        LOG.trace("Called getProject");
+        final GetProjectRequest interceptedRequest = GetProjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProjectConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        return clientCall(request, GetProjectResponse::builder)
-                .logger(LOG, "getProject")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetProject",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetProjectRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Project.class,
-                        GetProjectResponse.Builder::project)
-                .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetProjectResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject");
+        java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
+                GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetProjectNotificationPreferenceResponse getProjectNotificationPreference(
             GetProjectNotificationPreferenceRequest request) {
+        LOG.trace("Called getProjectNotificationPreference");
+        final GetProjectNotificationPreferenceRequest interceptedRequest =
+                GetProjectNotificationPreferenceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProjectNotificationPreferenceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        Validate.notBlank(request.getPrincipalId(), "principalId must not be blank");
-
-        return clientCall(request, GetProjectNotificationPreferenceResponse::builder)
-                .logger(LOG, "getProjectNotificationPreference")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetProjectNotificationPreference",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectNotificationPreference/GetProjectNotificationPreference")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetProjectNotificationPreferenceRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("principals")
-                .appendPathParam(request.getPrincipalId())
-                .appendPathParam("pullRequestNotificationPreference")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ProjectNotificationPreference.class,
-                        GetProjectNotificationPreferenceResponse.Builder
-                                ::projectNotificationPreference)
-                .handleResponseHeaderString(
-                        "etag", GetProjectNotificationPreferenceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetProjectNotificationPreferenceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectNotificationPreference/GetProjectNotificationPreference");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetProjectNotificationPreferenceResponse>
+                transformer =
+                        GetProjectNotificationPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetProjectRepositorySettingsResponse getProjectRepositorySettings(
             GetProjectRepositorySettingsRequest request) {
+        LOG.trace("Called getProjectRepositorySettings");
+        final GetProjectRepositorySettingsRequest interceptedRequest =
+                GetProjectRepositorySettingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProjectRepositorySettingsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        return clientCall(request, GetProjectRepositorySettingsResponse::builder)
-                .logger(LOG, "getProjectRepositorySettings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetProjectRepositorySettings",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectRepositorySettings/GetProjectRepositorySettings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetProjectRepositorySettingsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("repositorySettings")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ProjectRepositorySettings.class,
-                        GetProjectRepositorySettingsResponse.Builder::projectRepositorySettings)
-                .handleResponseHeaderString(
-                        "etag", GetProjectRepositorySettingsResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetProjectRepositorySettingsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectRepositorySettings/GetProjectRepositorySettings");
+        java.util.function.Function<javax.ws.rs.core.Response, GetProjectRepositorySettingsResponse>
+                transformer =
+                        GetProjectRepositorySettingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPullRequestResponse getPullRequest(GetPullRequestRequest request) {
+        LOG.trace("Called getPullRequest");
+        final GetPullRequestRequest interceptedRequest =
+                GetPullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, GetPullRequestResponse::builder)
-                .logger(LOG, "getPullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetPullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        GetPullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString("etag", GetPullRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPullRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPullRequestResponse> transformer =
+                GetPullRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPullRequestAttachmentResponse getPullRequestAttachment(
             GetPullRequestAttachmentRequest request) {
+        LOG.trace("Called getPullRequestAttachment");
+        final GetPullRequestAttachmentRequest interceptedRequest =
+                GetPullRequestAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPullRequestAttachmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getAttachmentId(), "attachmentId must not be blank");
-
-        return clientCall(request, GetPullRequestAttachmentResponse::builder)
-                .logger(LOG, "getPullRequestAttachment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetPullRequestAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestAttachment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPullRequestAttachmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("attachments")
-                .appendPathParam(request.getAttachmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestAttachment.class,
-                        GetPullRequestAttachmentResponse.Builder::pullRequestAttachment)
-                .handleResponseHeaderString("etag", GetPullRequestAttachmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPullRequestAttachmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestAttachment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPullRequestAttachmentResponse>
+                transformer =
+                        GetPullRequestAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPullRequestAttachmentContentResponse getPullRequestAttachmentContent(
             GetPullRequestAttachmentContentRequest request) {
+        LOG.trace("Called getPullRequestAttachmentContent");
+        final GetPullRequestAttachmentContentRequest interceptedRequest =
+                GetPullRequestAttachmentContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPullRequestAttachmentContentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getAttachmentId(), "attachmentId must not be blank");
-
-        return clientCall(request, GetPullRequestAttachmentContentResponse::builder)
-                .logger(LOG, "getPullRequestAttachmentContent")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetPullRequestAttachmentContent",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestAttachmentContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPullRequestAttachmentContentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("attachments")
-                .appendPathParam(request.getAttachmentId())
-                .appendPathParam("content")
-                .accept("application/octet-stream")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetPullRequestAttachmentContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "etag", GetPullRequestAttachmentContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetPullRequestAttachmentContentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestAttachmentContent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetPullRequestAttachmentContentResponse>
+                transformer =
+                        GetPullRequestAttachmentContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPullRequestChangeSummaryMetricsResponse getPullRequestChangeSummaryMetrics(
             GetPullRequestChangeSummaryMetricsRequest request) {
+        LOG.trace("Called getPullRequestChangeSummaryMetrics");
+        final GetPullRequestChangeSummaryMetricsRequest interceptedRequest =
+                GetPullRequestChangeSummaryMetricsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPullRequestChangeSummaryMetricsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, GetPullRequestChangeSummaryMetricsResponse::builder)
-                .logger(LOG, "getPullRequestChangeSummaryMetrics")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetPullRequestChangeSummaryMetrics",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestChangeSummaryMetrics")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPullRequestChangeSummaryMetricsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("changeSummaryMetrics")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestChangeSummaryMetrics.class,
-                        GetPullRequestChangeSummaryMetricsResponse.Builder
-                                ::pullRequestChangeSummaryMetrics)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetPullRequestChangeSummaryMetricsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestChangeSummaryMetrics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetPullRequestChangeSummaryMetricsResponse>
+                transformer =
+                        GetPullRequestChangeSummaryMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPullRequestCommentResponse getPullRequestComment(
             GetPullRequestCommentRequest request) {
+        LOG.trace("Called getPullRequestComment");
+        final GetPullRequestCommentRequest interceptedRequest =
+                GetPullRequestCommentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPullRequestCommentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
-
-        return clientCall(request, GetPullRequestCommentResponse::builder)
-                .logger(LOG, "getPullRequestComment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetPullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendPathParam(request.getCommentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestComment.class,
-                        GetPullRequestCommentResponse.Builder::pullRequestComment)
-                .handleResponseHeaderString("etag", GetPullRequestCommentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPullRequestCommentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/GetPullRequestComment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPullRequestCommentResponse>
+                transformer =
+                        GetPullRequestCommentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPullRequestNotificationPreferenceResponse getPullRequestNotificationPreference(
             GetPullRequestNotificationPreferenceRequest request) {
+        LOG.trace("Called getPullRequestNotificationPreference");
+        final GetPullRequestNotificationPreferenceRequest interceptedRequest =
+                GetPullRequestNotificationPreferenceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPullRequestNotificationPreferenceConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getPrincipalId(), "principalId must not be blank");
-
-        return clientCall(request, GetPullRequestNotificationPreferenceResponse::builder)
-                .logger(LOG, "getPullRequestNotificationPreference")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetPullRequestNotificationPreference",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequestNotificationPreference/GetPullRequestNotificationPreference")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPullRequestNotificationPreferenceRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("principals")
-                .appendPathParam(request.getPrincipalId())
-                .appendPathParam("pullRequestNotificationPreference")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestNotificationPreference.class,
-                        GetPullRequestNotificationPreferenceResponse.Builder
-                                ::pullRequestNotificationPreference)
-                .handleResponseHeaderString(
-                        "etag", GetPullRequestNotificationPreferenceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetPullRequestNotificationPreferenceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequestNotificationPreference/GetPullRequestNotificationPreference");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetPullRequestNotificationPreferenceResponse>
+                transformer =
+                        GetPullRequestNotificationPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRefResponse getRef(GetRefRequest request) {
+        LOG.trace("Called getRef");
+        final GetRefRequest interceptedRequest = GetRefConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRefConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getRefName(), "refName must not be blank");
-
-        return clientCall(request, GetRefResponse::builder)
-                .logger(LOG, "getRef")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRef",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRefRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("refs")
-                .appendPathParam(request.getRefName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryRef.class,
-                        GetRefResponse.Builder::repositoryRef)
-                .handleResponseHeaderString("etag", GetRefResponse.Builder::etag)
-                .handleResponseHeaderString("opc-request-id", GetRefResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("Sunset", GetRefResponse.Builder::sunset)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRefResponse> transformer =
+                GetRefConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRepoFileDiffResponse getRepoFileDiff(GetRepoFileDiffRequest request) {
+        LOG.trace("Called getRepoFileDiff");
+        final GetRepoFileDiffRequest interceptedRequest =
+                GetRepoFileDiffConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepoFileDiffConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(request.getBaseVersion(), "baseVersion is required");
-
-        Objects.requireNonNull(request.getTargetVersion(), "targetVersion is required");
-
-        return clientCall(request, GetRepoFileDiffResponse::builder)
-                .logger(LOG, "getRepoFileDiff")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRepoFileDiff",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRepoFileDiffRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("file")
-                .appendPathParam("diffs")
-                .appendQueryParam("filePath", request.getFilePath())
-                .appendQueryParam("baseVersion", request.getBaseVersion())
-                .appendQueryParam("targetVersion", request.getTargetVersion())
-                .appendQueryParam(
-                        "isComparisonFromMergeBase", request.getIsComparisonFromMergeBase())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.FileDiffResponse.class,
-                        GetRepoFileDiffResponse.Builder::fileDiffResponse)
-                .handleResponseHeaderString("etag", GetRepoFileDiffResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRepoFileDiffResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepoFileDiffResponse>
+                transformer =
+                        GetRepoFileDiffConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRepoFileLinesResponse getRepoFileLines(GetRepoFileLinesRequest request) {
+        LOG.trace("Called getRepoFileLines");
+        final GetRepoFileLinesRequest interceptedRequest =
+                GetRepoFileLinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepoFileLinesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(request.getRevision(), "revision is required");
-
-        return clientCall(request, GetRepoFileLinesResponse::builder)
-                .logger(LOG, "getRepoFileLines")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRepoFileLines",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRepoFileLinesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("file")
-                .appendPathParam("lines")
-                .appendQueryParam("filePath", request.getFilePath())
-                .appendQueryParam("revision", request.getRevision())
-                .appendQueryParam("startLineNumber", request.getStartLineNumber())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryFileLines.class,
-                        GetRepoFileLinesResponse.Builder::repositoryFileLines)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRepoFileLinesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetRepoFileLinesResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepoFileLinesResponse>
+                transformer =
+                        GetRepoFileLinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRepositoryResponse getRepository(GetRepositoryRequest request) {
+        LOG.trace("Called getRepository");
+        final GetRepositoryRequest interceptedRequest =
+                GetRepositoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepositoryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, GetRepositoryResponse::builder)
-                .logger(LOG, "getRepository")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRepository",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRepositoryRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendListQueryParam(
-                        "fields",
-                        request.getFields(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Repository.class,
-                        GetRepositoryResponse.Builder::repository)
-                .handleResponseHeaderString("etag", GetRepositoryResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRepositoryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryResponse> transformer =
+                GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRepositoryArchiveContentResponse getRepositoryArchiveContent(
             GetRepositoryArchiveContentRequest request) {
+        LOG.trace("Called getRepositoryArchiveContent");
+        final GetRepositoryArchiveContentRequest interceptedRequest =
+                GetRepositoryArchiveContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepositoryArchiveContentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, GetRepositoryArchiveContentResponse::builder)
-                .logger(LOG, "getRepositoryArchiveContent")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRepositoryArchiveContent",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRepositoryArchiveContentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("archive")
-                .appendPathParam("content")
-                .appendQueryParam("refName", request.getRefName())
-                .appendQueryParam("format", request.getFormat())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetRepositoryArchiveContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRepositoryArchiveContentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "Content-Type", GetRepositoryArchiveContentResponse.Builder::contentType)
-                .handleResponseHeaderString(
-                        "Content-Disposition",
-                        GetRepositoryArchiveContentResponse.Builder::contentDisposition)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryArchiveContentResponse>
+                transformer =
+                        GetRepositoryArchiveContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRepositoryFileLinesResponse getRepositoryFileLines(
             GetRepositoryFileLinesRequest request) {
+        LOG.trace("Called getRepositoryFileLines");
+        final GetRepositoryFileLinesRequest interceptedRequest =
+                GetRepositoryFileLinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepositoryFileLinesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getFilePath(), "filePath must not be blank");
-        Objects.requireNonNull(request.getRevision(), "revision is required");
-
-        return clientCall(request, GetRepositoryFileLinesResponse::builder)
-                .logger(LOG, "getRepositoryFileLines")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRepositoryFileLines",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRepositoryFileLinesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("files")
-                .appendPathParam(request.getFilePath())
-                .appendPathParam("lines")
-                .appendQueryParam("revision", request.getRevision())
-                .appendQueryParam("startLineNumber", request.getStartLineNumber())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryFileLines.class,
-                        GetRepositoryFileLinesResponse.Builder::repositoryFileLines)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRepositoryFileLinesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetRepositoryFileLinesResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "Sunset", GetRepositoryFileLinesResponse.Builder::sunset)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryFileLinesResponse>
+                transformer =
+                        GetRepositoryFileLinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRepositoryNotificationPreferenceResponse getRepositoryNotificationPreference(
             GetRepositoryNotificationPreferenceRequest request) {
+        LOG.trace("Called getRepositoryNotificationPreference");
+        final GetRepositoryNotificationPreferenceRequest interceptedRequest =
+                GetRepositoryNotificationPreferenceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepositoryNotificationPreferenceConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getPrincipalId(), "principalId must not be blank");
-
-        return clientCall(request, GetRepositoryNotificationPreferenceResponse::builder)
-                .logger(LOG, "getRepositoryNotificationPreference")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRepositoryNotificationPreference",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryNotificationPreference/GetRepositoryNotificationPreference")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRepositoryNotificationPreferenceRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("principals")
-                .appendPathParam(request.getPrincipalId())
-                .appendPathParam("pullRequestNotificationPreference")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryNotificationPreference.class,
-                        GetRepositoryNotificationPreferenceResponse.Builder
-                                ::repositoryNotificationPreference)
-                .handleResponseHeaderString(
-                        "etag", GetRepositoryNotificationPreferenceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetRepositoryNotificationPreferenceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryNotificationPreference/GetRepositoryNotificationPreference");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetRepositoryNotificationPreferenceResponse>
+                transformer =
+                        GetRepositoryNotificationPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetRepositorySettingsResponse getRepositorySettings(
             GetRepositorySettingsRequest request) {
+        LOG.trace("Called getRepositorySettings");
+        final GetRepositorySettingsRequest interceptedRequest =
+                GetRepositorySettingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepositorySettingsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, GetRepositorySettingsResponse::builder)
-                .logger(LOG, "getRepositorySettings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetRepositorySettings",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositorySettings/GetRepositorySettings")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetRepositorySettingsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("repositorySettings")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositorySettings.class,
-                        GetRepositorySettingsResponse.Builder::repositorySettings)
-                .handleResponseHeaderString("etag", GetRepositorySettingsResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetRepositorySettingsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositorySettings/GetRepositorySettings");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRepositorySettingsResponse>
+                transformer =
+                        GetRepositorySettingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetTriggerResponse getTrigger(GetTriggerRequest request) {
+        LOG.trace("Called getTrigger");
+        final GetTriggerRequest interceptedRequest = GetTriggerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTriggerConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTriggerId(), "triggerId must not be blank");
-
-        return clientCall(request, GetTriggerResponse::builder)
-                .logger(LOG, "getTrigger")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetTrigger",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTriggerRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("triggers")
-                .appendPathParam(request.getTriggerId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Trigger.class,
-                        GetTriggerResponse.Builder::trigger)
-                .handleResponseHeaderString("etag", GetTriggerResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTriggerResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger");
+        java.util.function.Function<javax.ws.rs.core.Response, GetTriggerResponse> transformer =
+                GetTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderFloat(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public LikePullRequestCommentResponse likePullRequestComment(
             LikePullRequestCommentRequest request) {
+        LOG.trace("Called likePullRequestComment");
+        final LikePullRequestCommentRequest interceptedRequest =
+                LikePullRequestCommentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                LikePullRequestCommentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
-
-        return clientCall(request, LikePullRequestCommentResponse::builder)
-                .logger(LOG, "likePullRequestComment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "LikePullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/LikePullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(LikePullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendPathParam(request.getCommentId())
-                .appendPathParam("actions")
-                .appendPathParam("like")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestComment.class,
-                        LikePullRequestCommentResponse.Builder::pullRequestComment)
-                .handleResponseHeaderString(
-                        "opc-request-id", LikePullRequestCommentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", LikePullRequestCommentResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/LikePullRequestComment");
+        java.util.function.Function<javax.ws.rs.core.Response, LikePullRequestCommentResponse>
+                transformer =
+                        LikePullRequestCommentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListAuthorsResponse listAuthors(ListAuthorsRequest request) {
+        LOG.trace("Called listAuthors");
+        final ListAuthorsRequest interceptedRequest =
+                ListAuthorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAuthorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListAuthorsResponse::builder)
-                .logger(LOG, "listAuthors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListAuthors",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAuthorsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("authors")
-                .appendQueryParam("refName", request.getRefName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryAuthorCollection.class,
-                        ListAuthorsResponse.Builder::repositoryAuthorCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAuthorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAuthorsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAuthorsResponse> transformer =
+                ListAuthorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListBuildPipelineStagesResponse listBuildPipelineStages(
             ListBuildPipelineStagesRequest request) {
+        LOG.trace("Called listBuildPipelineStages");
+        final ListBuildPipelineStagesRequest interceptedRequest =
+                ListBuildPipelineStagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBuildPipelineStagesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListBuildPipelineStagesResponse::builder)
-                .logger(LOG, "listBuildPipelineStages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListBuildPipelineStages",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListBuildPipelineStagesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelineStages")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("buildPipelineId", request.getBuildPipelineId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipelineStageCollection.class,
-                        ListBuildPipelineStagesResponse.Builder::buildPipelineStageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListBuildPipelineStagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListBuildPipelineStagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListBuildPipelineStagesResponse>
+                transformer =
+                        ListBuildPipelineStagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListBuildPipelinesResponse listBuildPipelines(ListBuildPipelinesRequest request) {
+        LOG.trace("Called listBuildPipelines");
+        final ListBuildPipelinesRequest interceptedRequest =
+                ListBuildPipelinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBuildPipelinesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListBuildPipelinesResponse::builder)
-                .logger(LOG, "listBuildPipelines")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListBuildPipelines",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListBuildPipelinesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelines")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipelineCollection.class,
-                        ListBuildPipelinesResponse.Builder::buildPipelineCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListBuildPipelinesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListBuildPipelinesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines");
+        java.util.function.Function<javax.ws.rs.core.Response, ListBuildPipelinesResponse>
+                transformer =
+                        ListBuildPipelinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListBuildRunSnapshotsResponse listBuildRunSnapshots(
             ListBuildRunSnapshotsRequest request) {
+        LOG.trace("Called listBuildRunSnapshots");
+        final ListBuildRunSnapshotsRequest interceptedRequest =
+                ListBuildRunSnapshotsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBuildRunSnapshotsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListBuildRunSnapshotsResponse::builder)
-                .logger(LOG, "listBuildRunSnapshots")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListBuildRunSnapshots",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListBuildRunSnapshots")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListBuildRunSnapshotsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("buildRunSnapshots")
-                .appendQueryParam("pipelineId", request.getPipelineId())
-                .appendQueryParam("buildRunId", request.getBuildRunId())
-                .appendQueryParam("commitId", request.getCommitId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildRunSnapshotCollection.class,
-                        ListBuildRunSnapshotsResponse.Builder::buildRunSnapshotCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListBuildRunSnapshotsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListBuildRunSnapshotsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListBuildRunSnapshots");
+        java.util.function.Function<javax.ws.rs.core.Response, ListBuildRunSnapshotsResponse>
+                transformer =
+                        ListBuildRunSnapshotsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListBuildRunsResponse listBuildRuns(ListBuildRunsRequest request) {
+        LOG.trace("Called listBuildRuns");
+        final ListBuildRunsRequest interceptedRequest =
+                ListBuildRunsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBuildRunsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListBuildRunsResponse::builder)
-                .logger(LOG, "listBuildRuns")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListBuildRuns",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListBuildRunsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildRuns")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("buildPipelineId", request.getBuildPipelineId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildRunSummaryCollection.class,
-                        ListBuildRunsResponse.Builder::buildRunSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListBuildRunsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListBuildRunsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns");
+        java.util.function.Function<javax.ws.rs.core.Response, ListBuildRunsResponse> transformer =
+                ListBuildRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCommitDiffsResponse listCommitDiffs(ListCommitDiffsRequest request) {
+        LOG.trace("Called listCommitDiffs");
+        final ListCommitDiffsRequest interceptedRequest =
+                ListCommitDiffsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCommitDiffsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(request.getBaseVersion(), "baseVersion is required");
-
-        Objects.requireNonNull(request.getTargetVersion(), "targetVersion is required");
-
-        return clientCall(request, ListCommitDiffsResponse::builder)
-                .logger(LOG, "listCommitDiffs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListCommitDiffs",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCommitDiffsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("diffs")
-                .appendQueryParam("baseVersion", request.getBaseVersion())
-                .appendQueryParam("targetVersion", request.getTargetVersion())
-                .appendQueryParam("targetRepositoryId", request.getTargetRepositoryId())
-                .appendQueryParam(
-                        "isComparisonFromMergeBase", request.getIsComparisonFromMergeBase())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DiffCollection.class,
-                        ListCommitDiffsResponse.Builder::diffCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCommitDiffsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCommitDiffsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCommitDiffsResponse>
+                transformer =
+                        ListCommitDiffsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCommitsResponse listCommits(ListCommitsRequest request) {
+        LOG.trace("Called listCommits");
+        final ListCommitsRequest interceptedRequest =
+                ListCommitsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCommitsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListCommitsResponse::builder)
-                .logger(LOG, "listCommits")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListCommits",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCommitsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("commits")
-                .appendQueryParam("refName", request.getRefName())
-                .appendQueryParam("excludeRefName", request.getExcludeRefName())
-                .appendQueryParam("filePath", request.getFilePath())
-                .appendQueryParam(
-                        "timestampGreaterThanOrEqualTo", request.getTimestampGreaterThanOrEqualTo())
-                .appendQueryParam(
-                        "timestampLessThanOrEqualTo", request.getTimestampLessThanOrEqualTo())
-                .appendQueryParam("commitMessage", request.getCommitMessage())
-                .appendQueryParam("authorName", request.getAuthorName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryCommitCollection.class,
-                        ListCommitsResponse.Builder::repositoryCommitCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCommitsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCommitsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCommitsResponse> transformer =
+                ListCommitsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListConnectionsResponse listConnections(ListConnectionsRequest request) {
+        LOG.trace("Called listConnections");
+        final ListConnectionsRequest interceptedRequest =
+                ListConnectionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListConnectionsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListConnectionsResponse::builder)
-                .logger(LOG, "listConnections")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListConnections",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListConnectionsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("connections")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("connectionType", request.getConnectionType())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ConnectionCollection.class,
-                        ListConnectionsResponse.Builder::connectionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections");
+        java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
+                transformer =
+                        ListConnectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDeployArtifactsResponse listDeployArtifacts(ListDeployArtifactsRequest request) {
+        LOG.trace("Called listDeployArtifacts");
+        final ListDeployArtifactsRequest interceptedRequest =
+                ListDeployArtifactsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeployArtifactsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDeployArtifactsResponse::builder)
-                .logger(LOG, "listDeployArtifacts")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListDeployArtifacts",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDeployArtifactsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployArtifacts")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployArtifactCollection.class,
-                        ListDeployArtifactsResponse.Builder::deployArtifactCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDeployArtifactsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDeployArtifactsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployArtifactsResponse>
+                transformer =
+                        ListDeployArtifactsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDeployEnvironmentsResponse listDeployEnvironments(
             ListDeployEnvironmentsRequest request) {
+        LOG.trace("Called listDeployEnvironments");
+        final ListDeployEnvironmentsRequest interceptedRequest =
+                ListDeployEnvironmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeployEnvironmentsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDeployEnvironmentsResponse::builder)
-                .logger(LOG, "listDeployEnvironments")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListDeployEnvironments",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDeployEnvironmentsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployEnvironments")
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("id", request.getId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployEnvironmentCollection.class,
-                        ListDeployEnvironmentsResponse.Builder::deployEnvironmentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDeployEnvironmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDeployEnvironmentsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployEnvironmentsResponse>
+                transformer =
+                        ListDeployEnvironmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDeployPipelinesResponse listDeployPipelines(ListDeployPipelinesRequest request) {
+        LOG.trace("Called listDeployPipelines");
+        final ListDeployPipelinesRequest interceptedRequest =
+                ListDeployPipelinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeployPipelinesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDeployPipelinesResponse::builder)
-                .logger(LOG, "listDeployPipelines")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListDeployPipelines",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDeployPipelinesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployPipelines")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployPipelineCollection.class,
-                        ListDeployPipelinesResponse.Builder::deployPipelineCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDeployPipelinesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDeployPipelinesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployPipelinesResponse>
+                transformer =
+                        ListDeployPipelinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDeployStagesResponse listDeployStages(ListDeployStagesRequest request) {
+        LOG.trace("Called listDeployStages");
+        final ListDeployStagesRequest interceptedRequest =
+                ListDeployStagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeployStagesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDeployStagesResponse::builder)
-                .logger(LOG, "listDeployStages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListDeployStages",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDeployStagesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployStages")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("deployPipelineId", request.getDeployPipelineId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployStageCollection.class,
-                        ListDeployStagesResponse.Builder::deployStageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDeployStagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDeployStagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeployStagesResponse>
+                transformer =
+                        ListDeployStagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListDeploymentsResponse listDeployments(ListDeploymentsRequest request) {
+        LOG.trace("Called listDeployments");
+        final ListDeploymentsRequest interceptedRequest =
+                ListDeploymentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeploymentsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListDeploymentsResponse::builder)
-                .logger(LOG, "listDeployments")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListDeployments",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDeploymentsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployments")
-                .appendQueryParam("deployPipelineId", request.getDeployPipelineId())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
-                .appendQueryParam(
-                        "timeCreatedGreaterThanOrEqualTo",
-                        request.getTimeCreatedGreaterThanOrEqualTo())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeploymentCollection.class,
-                        ListDeploymentsResponse.Builder::deploymentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDeploymentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDeploymentsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
+                transformer =
+                        ListDeploymentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListForkSyncStatusesResponse listForkSyncStatuses(ListForkSyncStatusesRequest request) {
+        LOG.trace("Called listForkSyncStatuses");
+        final ListForkSyncStatusesRequest interceptedRequest =
+                ListForkSyncStatusesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListForkSyncStatusesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(
-                request.getBranchNameQueryParam(), "branchNameQueryParam is required");
-
-        return clientCall(request, ListForkSyncStatusesResponse::builder)
-                .logger(LOG, "listForkSyncStatuses")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListForkSyncStatuses",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListForkSyncStatuses")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListForkSyncStatusesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("forkSyncStatuses")
-                .appendQueryParam("branchNameQueryParam", request.getBranchNameQueryParam())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ForkSyncStatusCollection.class,
-                        ListForkSyncStatusesResponse.Builder::forkSyncStatusCollection)
-                .handleResponseHeaderString("etag", ListForkSyncStatusesResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListForkSyncStatusesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListForkSyncStatuses");
+        java.util.function.Function<javax.ws.rs.core.Response, ListForkSyncStatusesResponse>
+                transformer =
+                        ListForkSyncStatusesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListMirrorRecordsResponse listMirrorRecords(ListMirrorRecordsRequest request) {
+        LOG.trace("Called listMirrorRecords");
+        final ListMirrorRecordsRequest interceptedRequest =
+                ListMirrorRecordsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMirrorRecordsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListMirrorRecordsResponse::builder)
-                .logger(LOG, "listMirrorRecords")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListMirrorRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMirrorRecordsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("mirrorRecords")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryMirrorRecordCollection.class,
-                        ListMirrorRecordsResponse.Builder::repositoryMirrorRecordCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMirrorRecordsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMirrorRecordsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMirrorRecordsResponse>
+                transformer =
+                        ListMirrorRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPathsResponse listPaths(ListPathsRequest request) {
+        LOG.trace("Called listPaths");
+        final ListPathsRequest interceptedRequest = ListPathsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPathsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListPathsResponse::builder)
-                .logger(LOG, "listPaths")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPaths",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPathsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("paths")
-                .appendQueryParam("ref", request.getRef())
-                .appendQueryParam("pathsInSubtree", request.getPathsInSubtree())
-                .appendQueryParam("folderPath", request.getFolderPath())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryPathCollection.class,
-                        ListPathsResponse.Builder::repositoryPathCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPathsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("opc-next-page", ListPathsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPathsResponse> transformer =
+                ListPathsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListProjectCommitAnalyticsAuthorsResponse listProjectCommitAnalyticsAuthors(
             ListProjectCommitAnalyticsAuthorsRequest request) {
+        LOG.trace("Called listProjectCommitAnalyticsAuthors");
+        final ListProjectCommitAnalyticsAuthorsRequest interceptedRequest =
+                ListProjectCommitAnalyticsAuthorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProjectCommitAnalyticsAuthorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        return clientCall(request, ListProjectCommitAnalyticsAuthorsResponse::builder)
-                .logger(LOG, "listProjectCommitAnalyticsAuthors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListProjectCommitAnalyticsAuthors",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListProjectCommitAnalyticsAuthors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListProjectCommitAnalyticsAuthorsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("commitAnalyticsAuthors")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.CommitAnalyticsAuthorCollection.class,
-                        ListProjectCommitAnalyticsAuthorsResponse.Builder
-                                ::commitAnalyticsAuthorCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListProjectCommitAnalyticsAuthorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListProjectCommitAnalyticsAuthorsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListProjectCommitAnalyticsAuthors");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListProjectCommitAnalyticsAuthorsResponse>
+                transformer =
+                        ListProjectCommitAnalyticsAuthorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListProjectsResponse listProjects(ListProjectsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listProjects");
+        final ListProjectsRequest interceptedRequest =
+                ListProjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProjectsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListProjectsResponse::builder)
-                .logger(LOG, "listProjects")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListProjects",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListProjectsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ProjectCollection.class,
-                        ListProjectsResponse.Builder::projectCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects");
+        java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse> transformer =
+                ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListProtectedBranchesResponse listProtectedBranches(
             ListProtectedBranchesRequest request) {
+        LOG.trace("Called listProtectedBranches");
+        final ListProtectedBranchesRequest interceptedRequest =
+                ListProtectedBranchesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProtectedBranchesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListProtectedBranchesResponse::builder)
-                .logger(LOG, "listProtectedBranches")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListProtectedBranches",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProtectedBranchCollection/ListProtectedBranches")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListProtectedBranchesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("protectedBranches")
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ProtectedBranchCollection.class,
-                        ListProtectedBranchesResponse.Builder::protectedBranchCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListProtectedBranchesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListProtectedBranchesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProtectedBranchCollection/ListProtectedBranches");
+        java.util.function.Function<javax.ws.rs.core.Response, ListProtectedBranchesResponse>
+                transformer =
+                        ListProtectedBranchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPullRequestActivitiesResponse listPullRequestActivities(
             ListPullRequestActivitiesRequest request) {
+        LOG.trace("Called listPullRequestActivities");
+        final ListPullRequestActivitiesRequest interceptedRequest =
+                ListPullRequestActivitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPullRequestActivitiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListPullRequestActivitiesResponse::builder)
-                .logger(LOG, "listPullRequestActivities")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPullRequestActivities",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestActivities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestActivitiesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("activities")
-                .appendEnumQueryParam("activityType", request.getActivityType())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestActivityCollection.class,
-                        ListPullRequestActivitiesResponse.Builder::pullRequestActivityCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestActivitiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestActivitiesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestActivities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestActivitiesResponse>
+                transformer =
+                        ListPullRequestActivitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPullRequestAttachmentsResponse listPullRequestAttachments(
             ListPullRequestAttachmentsRequest request) {
+        LOG.trace("Called listPullRequestAttachments");
+        final ListPullRequestAttachmentsRequest interceptedRequest =
+                ListPullRequestAttachmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPullRequestAttachmentsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListPullRequestAttachmentsResponse::builder)
-                .logger(LOG, "listPullRequestAttachments")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPullRequestAttachments",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestAttachments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestAttachmentsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("attachments")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("fileName", request.getFileName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestAttachmentCollection.class,
-                        ListPullRequestAttachmentsResponse.Builder::pullRequestAttachmentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestAttachmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestAttachmentsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestAttachments");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestAttachmentsResponse>
+                transformer =
+                        ListPullRequestAttachmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPullRequestAuthorsResponse listPullRequestAuthors(
             ListPullRequestAuthorsRequest request) {
+        LOG.trace("Called listPullRequestAuthors");
+        final ListPullRequestAuthorsRequest interceptedRequest =
+                ListPullRequestAuthorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPullRequestAuthorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListPullRequestAuthorsResponse::builder)
-                .logger(LOG, "listPullRequestAuthors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPullRequestAuthors",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListPullRequestAuthors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestAuthorsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("pullRequestAuthors")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestAuthorCollection.class,
-                        ListPullRequestAuthorsResponse.Builder::pullRequestAuthorCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestAuthorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestAuthorsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListPullRequestAuthors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestAuthorsResponse>
+                transformer =
+                        ListPullRequestAuthorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPullRequestCommentsResponse listPullRequestComments(
             ListPullRequestCommentsRequest request) {
+        LOG.trace("Called listPullRequestComments");
+        final ListPullRequestCommentsRequest interceptedRequest =
+                ListPullRequestCommentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPullRequestCommentsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListPullRequestCommentsResponse::builder)
-                .logger(LOG, "listPullRequestComments")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPullRequestComments",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestComments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestCommentsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("commentId", request.getCommentId())
-                .appendQueryParam("commitId", request.getCommitId())
-                .appendQueryParam("filePath", request.getFilePath())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestCommentCollection.class,
-                        ListPullRequestCommentsResponse.Builder::pullRequestCommentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestCommentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestCommentsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestComments");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestCommentsResponse>
+                transformer =
+                        ListPullRequestCommentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPullRequestCommitsResponse listPullRequestCommits(
             ListPullRequestCommitsRequest request) {
+        LOG.trace("Called listPullRequestCommits");
+        final ListPullRequestCommitsRequest interceptedRequest =
+                ListPullRequestCommitsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPullRequestCommitsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListPullRequestCommitsResponse::builder)
-                .logger(LOG, "listPullRequestCommits")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPullRequestCommits",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestCommits")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestCommitsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("commits")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryCommitCollection.class,
-                        ListPullRequestCommitsResponse.Builder::repositoryCommitCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestCommitsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestCommitsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestCommits");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestCommitsResponse>
+                transformer =
+                        ListPullRequestCommitsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPullRequestFileChangesResponse listPullRequestFileChanges(
             ListPullRequestFileChangesRequest request) {
+        LOG.trace("Called listPullRequestFileChanges");
+        final ListPullRequestFileChangesRequest interceptedRequest =
+                ListPullRequestFileChangesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPullRequestFileChangesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ListPullRequestFileChangesResponse::builder)
-                .logger(LOG, "listPullRequestFileChanges")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPullRequestFileChanges",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestFileChanges")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestFileChangesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("fileChanges")
-                .appendQueryParam("filePath", request.getFilePath())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestFileChangeCollection.class,
-                        ListPullRequestFileChangesResponse.Builder::pullRequestFileChangeCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestFileChangesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestFileChangesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ListPullRequestFileChanges");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestFileChangesResponse>
+                transformer =
+                        ListPullRequestFileChangesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPullRequestsResponse listPullRequests(ListPullRequestsRequest request) {
+        LOG.trace("Called listPullRequests");
+        final ListPullRequestsRequest interceptedRequest =
+                ListPullRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPullRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListPullRequestsResponse::builder)
-                .logger(LOG, "listPullRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListPullRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequestCollection/ListPullRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPullRequestsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("lifecycleDetails", request.getLifecycleDetails())
-                .appendQueryParam("repositoryId", request.getRepositoryId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("createdBy", request.getCreatedBy())
-                .appendQueryParam("destinationBranch", request.getDestinationBranch())
-                .appendQueryParam("sourceBranch", request.getSourceBranch())
-                .appendQueryParam("reviewerPrincipalId", request.getReviewerPrincipalId())
-                .appendQueryParam("sourceRepositoryId", request.getSourceRepositoryId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestCollection.class,
-                        ListPullRequestsResponse.Builder::pullRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPullRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPullRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequestCollection/ListPullRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPullRequestsResponse>
+                transformer =
+                        ListPullRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListRefsResponse listRefs(ListRefsRequest request) {
+        LOG.trace("Called listRefs");
+        final ListRefsRequest interceptedRequest = ListRefsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRefsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListRefsResponse::builder)
-                .logger(LOG, "listRefs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListRefs",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListRefsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("refs")
-                .appendEnumQueryParam("refType", request.getRefType())
-                .appendQueryParam("commitId", request.getCommitId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("refName", request.getRefName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryRefCollection.class,
-                        ListRefsResponse.Builder::repositoryRefCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListRefsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("opc-next-page", ListRefsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRefsResponse> transformer =
+                ListRefsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListRepositoriesResponse listRepositories(ListRepositoriesRequest request) {
+        LOG.trace("Called listRepositories");
+        final ListRepositoriesRequest interceptedRequest =
+                ListRepositoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRepositoriesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListRepositoriesResponse::builder)
-                .logger(LOG, "listRepositories")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListRepositories",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListRepositoriesRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendQueryParam("repositoryId", request.getRepositoryId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryCollection.class,
-                        ListRepositoriesResponse.Builder::repositoryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListRepositoriesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListRepositoriesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
+                transformer =
+                        ListRepositoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListRepositoryCommitAnalyticsAuthorsResponse listRepositoryCommitAnalyticsAuthors(
             ListRepositoryCommitAnalyticsAuthorsRequest request) {
+        LOG.trace("Called listRepositoryCommitAnalyticsAuthors");
+        final ListRepositoryCommitAnalyticsAuthorsRequest interceptedRequest =
+                ListRepositoryCommitAnalyticsAuthorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRepositoryCommitAnalyticsAuthorsConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, ListRepositoryCommitAnalyticsAuthorsResponse::builder)
-                .logger(LOG, "listRepositoryCommitAnalyticsAuthors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListRepositoryCommitAnalyticsAuthors",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositoryCommitAnalyticsAuthors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListRepositoryCommitAnalyticsAuthorsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("commitAnalyticsAuthors")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.CommitAnalyticsAuthorCollection.class,
-                        ListRepositoryCommitAnalyticsAuthorsResponse.Builder
-                                ::commitAnalyticsAuthorCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListRepositoryCommitAnalyticsAuthorsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListRepositoryCommitAnalyticsAuthorsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositoryCommitAnalyticsAuthors");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListRepositoryCommitAnalyticsAuthorsResponse>
+                transformer =
+                        ListRepositoryCommitAnalyticsAuthorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListTriggersResponse listTriggers(ListTriggersRequest request) {
+        LOG.trace("Called listTriggers");
+        final ListTriggersRequest interceptedRequest =
+                ListTriggersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTriggersConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListTriggersResponse::builder)
-                .logger(LOG, "listTriggers")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListTriggers",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTriggersRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("triggers")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("projectId", request.getProjectId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.TriggerCollection.class,
-                        ListTriggersResponse.Builder::triggerCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTriggersResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTriggersResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers");
+        java.util.function.Function<javax.ws.rs.core.Response, ListTriggersResponse> transformer =
+                ListTriggersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.WorkRequestLogEntryCollection.class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendListQueryParam(
-                        "operationTypeMultiValueQuery",
-                        request.getOperationTypeMultiValueQuery(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.WorkRequestCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public MergePullRequestResponse mergePullRequest(MergePullRequestRequest request) {
+        LOG.trace("Called mergePullRequest");
+        final MergePullRequestRequest interceptedRequest =
+                MergePullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MergePullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getMergePullRequestDetails(), "mergePullRequestDetails is required");
-
-        return clientCall(request, MergePullRequestResponse::builder)
-                .logger(LOG, "mergePullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "MergePullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/MergePullRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(MergePullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("merge")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        MergePullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString(
-                        "content-location", MergePullRequestResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", MergePullRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", MergePullRequestResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", MergePullRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/MergePullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, MergePullRequestResponse>
+                transformer =
+                        MergePullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getMergePullRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public MirrorRepositoryResponse mirrorRepository(MirrorRepositoryRequest request) {
+        LOG.trace("Called mirrorRepository");
+        final MirrorRepositoryRequest interceptedRequest =
+                MirrorRepositoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MirrorRepositoryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        return clientCall(request, MirrorRepositoryResponse::builder)
-                .logger(LOG, "mirrorRepository")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "MirrorRepository",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(MirrorRepositoryRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("actions")
-                .appendPathParam("mirror")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", MirrorRepositoryResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", MirrorRepositoryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository");
+        java.util.function.Function<javax.ws.rs.core.Response, MirrorRepositoryResponse>
+                transformer =
+                        MirrorRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PatchPullRequestResponse patchPullRequest(PatchPullRequestRequest request) {
+        LOG.trace("Called patchPullRequest");
+        final PatchPullRequestRequest interceptedRequest =
+                PatchPullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchPullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getPatchPullRequestDetails(), "patchPullRequestDetails is required");
-
-        return clientCall(request, PatchPullRequestResponse::builder)
-                .logger(LOG, "patchPullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "PatchPullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/PatchPullRequest")
-                .method(com.oracle.bmc.http.client.Method.PATCH)
-                .requestBuilder(PatchPullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        PatchPullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString("location", PatchPullRequestResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-request-id", PatchPullRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", PatchPullRequestResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/PatchPullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, PatchPullRequestResponse>
+                transformer =
+                        PatchPullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib,
+                                                retriedRequest.getPatchPullRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public PutRepositoryRefResponse putRepositoryRef(PutRepositoryRefRequest request) {
+        LOG.trace("Called putRepositoryRef");
+        final PutRepositoryRefRequest interceptedRequest =
+                PutRepositoryRefConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutRepositoryRefConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getRefName(), "refName must not be blank");
-        Objects.requireNonNull(
-                request.getPutRepositoryRefDetails(), "putRepositoryRefDetails is required");
-
-        return clientCall(request, PutRepositoryRefResponse::builder)
-                .logger(LOG, "putRepositoryRef")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "PutRepositoryRef",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(PutRepositoryRefRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("refs")
-                .appendPathParam(request.getRefName())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryRef.class,
-                        PutRepositoryRefResponse.Builder::repositoryRef)
-                .handleResponseHeaderString("location", PutRepositoryRefResponse.Builder::location)
-                .handleResponseHeaderString("etag", PutRepositoryRefResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", PutRepositoryRefResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", PutRepositoryRefResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("Sunset", PutRepositoryRefResponse.Builder::sunset)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef");
+        java.util.function.Function<javax.ws.rs.core.Response, PutRepositoryRefResponse>
+                transformer =
+                        PutRepositoryRefConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getPutRepositoryRefDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ReopenPullRequestResponse reopenPullRequest(ReopenPullRequestRequest request) {
+        LOG.trace("Called reopenPullRequest");
+        final ReopenPullRequestRequest interceptedRequest =
+                ReopenPullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReopenPullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        return clientCall(request, ReopenPullRequestResponse::builder)
-                .logger(LOG, "reopenPullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ReopenPullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ReopenPullRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ReopenPullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("reopen")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        ReopenPullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString("location", ReopenPullRequestResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-request-id", ReopenPullRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", ReopenPullRequestResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ReopenPullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, ReopenPullRequestResponse>
+                transformer =
+                        ReopenPullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ReviewPullRequestResponse reviewPullRequest(ReviewPullRequestRequest request) {
+        LOG.trace("Called reviewPullRequest");
+        final ReviewPullRequestRequest interceptedRequest =
+                ReviewPullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReviewPullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getReviewPullRequestDetails(), "reviewPullRequestDetails is required");
-
-        return clientCall(request, ReviewPullRequestResponse::builder)
-                .logger(LOG, "reviewPullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ReviewPullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ReviewPullRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ReviewPullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("review")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        ReviewPullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString("location", ReviewPullRequestResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-request-id", ReviewPullRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", ReviewPullRequestResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/ReviewPullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, ReviewPullRequestResponse>
+                transformer =
+                        ReviewPullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getReviewPullRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ScheduleCascadingProjectDeletionResponse scheduleCascadingProjectDeletion(
             ScheduleCascadingProjectDeletionRequest request) {
+        LOG.trace("Called scheduleCascadingProjectDeletion");
+        final ScheduleCascadingProjectDeletionRequest interceptedRequest =
+                ScheduleCascadingProjectDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCascadingProjectDeletionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        return clientCall(request, ScheduleCascadingProjectDeletionResponse::builder)
-                .logger(LOG, "scheduleCascadingProjectDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ScheduleCascadingProjectDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ScheduleCascadingProjectDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCascadingProjectDeletionRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleCascadingProjectDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ScheduleCascadingProjectDeletionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleCascadingProjectDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ScheduleCascadingProjectDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleCascadingProjectDeletionResponse>
+                transformer =
+                        ScheduleCascadingProjectDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SummarizeProjectRepositoryAnalyticsResponse summarizeProjectRepositoryAnalytics(
             SummarizeProjectRepositoryAnalyticsRequest request) {
+        LOG.trace("Called summarizeProjectRepositoryAnalytics");
+        final SummarizeProjectRepositoryAnalyticsRequest interceptedRequest =
+                SummarizeProjectRepositoryAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeProjectRepositoryAnalyticsConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-        Objects.requireNonNull(
-                request.getSummarizeProjectRepositoryAnalyticsDetails(),
-                "summarizeProjectRepositoryAnalyticsDetails is required");
-
-        return clientCall(request, SummarizeProjectRepositoryAnalyticsResponse::builder)
-                .logger(LOG, "summarizeProjectRepositoryAnalytics")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "SummarizeProjectRepositoryAnalytics",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryMetricAggregation/SummarizeProjectRepositoryAnalytics")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SummarizeProjectRepositoryAnalyticsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("repositoryAnalytics")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryMetricAggregation.class,
-                        SummarizeProjectRepositoryAnalyticsResponse.Builder
-                                ::repositoryMetricAggregation)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SummarizeProjectRepositoryAnalyticsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        SummarizeProjectRepositoryAnalyticsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryMetricAggregation/SummarizeProjectRepositoryAnalytics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeProjectRepositoryAnalyticsResponse>
+                transformer =
+                        SummarizeProjectRepositoryAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSummarizeProjectRepositoryAnalyticsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SummarizeRepositoryAnalyticsResponse summarizeRepositoryAnalytics(
             SummarizeRepositoryAnalyticsRequest request) {
+        LOG.trace("Called summarizeRepositoryAnalytics");
+        final SummarizeRepositoryAnalyticsRequest interceptedRequest =
+                SummarizeRepositoryAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeRepositoryAnalyticsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(
-                request.getSummarizeRepositoryAnalyticsDetails(),
-                "summarizeRepositoryAnalyticsDetails is required");
-
-        return clientCall(request, SummarizeRepositoryAnalyticsResponse::builder)
-                .logger(LOG, "summarizeRepositoryAnalytics")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "SummarizeRepositoryAnalytics",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryMetricAggregation/SummarizeRepositoryAnalytics")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SummarizeRepositoryAnalyticsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repository")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("repositoryAnalytics")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryMetricAggregation.class,
-                        SummarizeRepositoryAnalyticsResponse.Builder::repositoryMetricAggregation)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SummarizeRepositoryAnalyticsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", SummarizeRepositoryAnalyticsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryMetricAggregation/SummarizeRepositoryAnalytics");
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeRepositoryAnalyticsResponse>
+                transformer =
+                        SummarizeRepositoryAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSummarizeRepositoryAnalyticsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SyncRepositoryResponse syncRepository(SyncRepositoryRequest request) {
+        LOG.trace("Called syncRepository");
+        final SyncRepositoryRequest interceptedRequest =
+                SyncRepositoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SyncRepositoryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(request.getSyncMergeStrategy(), "syncMergeStrategy is required");
-
-        Objects.requireNonNull(
-                request.getSyncRepositoryDetails(), "syncRepositoryDetails is required");
-
-        return clientCall(request, SyncRepositoryResponse::builder)
-                .logger(LOG, "syncRepository")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "SyncRepository",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/SyncRepository")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SyncRepositoryRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("actions")
-                .appendPathParam("sync")
-                .appendEnumQueryParam("syncMergeStrategy", request.getSyncMergeStrategy())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", SyncRepositoryResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", SyncRepositoryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/SyncRepository");
+        java.util.function.Function<javax.ws.rs.core.Response, SyncRepositoryResponse> transformer =
+                SyncRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getSyncRepositoryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UnlikePullRequestCommentResponse unlikePullRequestComment(
             UnlikePullRequestCommentRequest request) {
+        LOG.trace("Called unlikePullRequestComment");
+        final UnlikePullRequestCommentRequest interceptedRequest =
+                UnlikePullRequestCommentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnlikePullRequestCommentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
-
-        return clientCall(request, UnlikePullRequestCommentResponse::builder)
-                .logger(LOG, "unlikePullRequestComment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UnlikePullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UnlikePullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UnlikePullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendPathParam(request.getCommentId())
-                .appendPathParam("actions")
-                .appendPathParam("unlike")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestComment.class,
-                        UnlikePullRequestCommentResponse.Builder::pullRequestComment)
-                .handleResponseHeaderString(
-                        "opc-request-id", UnlikePullRequestCommentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UnlikePullRequestCommentResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UnlikePullRequestComment");
+        java.util.function.Function<javax.ws.rs.core.Response, UnlikePullRequestCommentResponse>
+                transformer =
+                        UnlikePullRequestCommentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UnsubscribePullRequestResponse unsubscribePullRequest(
             UnsubscribePullRequestRequest request) {
+        LOG.trace("Called unsubscribePullRequest");
+        final UnsubscribePullRequestRequest interceptedRequest =
+                UnsubscribePullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnsubscribePullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-        Objects.requireNonNull(request.getToken(), "token is required");
-
-        return clientCall(request, UnsubscribePullRequestResponse::builder)
-                .logger(LOG, "unsubscribePullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UnsubscribePullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UnsubscribePullRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(UnsubscribePullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("actions")
-                .appendPathParam("unsubscribe")
-                .appendQueryParam("token", request.getToken())
-                .accept("text/html")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class,
-                        UnsubscribePullRequestResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "content-location", UnsubscribePullRequestResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", UnsubscribePullRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UnsubscribePullRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UnsubscribePullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, UnsubscribePullRequestResponse>
+                transformer =
+                        UnsubscribePullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateBuildPipelineResponse updateBuildPipeline(UpdateBuildPipelineRequest request) {
+        LOG.trace("Called updateBuildPipeline");
+        final UpdateBuildPipelineRequest interceptedRequest =
+                UpdateBuildPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBuildPipelineConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getBuildPipelineId(), "buildPipelineId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateBuildPipelineDetails(), "updateBuildPipelineDetails is required");
-
-        return clientCall(request, UpdateBuildPipelineResponse::builder)
-                .logger(LOG, "updateBuildPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateBuildPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateBuildPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelines")
-                .appendPathParam(request.getBuildPipelineId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipeline.class,
-                        UpdateBuildPipelineResponse.Builder::buildPipeline)
-                .handleResponseHeaderString("etag", UpdateBuildPipelineResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateBuildPipelineResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateBuildPipelineResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "location", UpdateBuildPipelineResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBuildPipelineResponse>
+                transformer =
+                        UpdateBuildPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBuildPipelineDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateBuildPipelineStageResponse updateBuildPipelineStage(
             UpdateBuildPipelineStageRequest request) {
+        LOG.trace("Called updateBuildPipelineStage");
+        final UpdateBuildPipelineStageRequest interceptedRequest =
+                UpdateBuildPipelineStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBuildPipelineStageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getBuildPipelineStageId(), "buildPipelineStageId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateBuildPipelineStageDetails(),
-                "updateBuildPipelineStageDetails is required");
-
-        return clientCall(request, UpdateBuildPipelineStageResponse::builder)
-                .logger(LOG, "updateBuildPipelineStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateBuildPipelineStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateBuildPipelineStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildPipelineStages")
-                .appendPathParam(request.getBuildPipelineStageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildPipelineStage.class,
-                        UpdateBuildPipelineStageResponse.Builder::buildPipelineStage)
-                .handleResponseHeaderString("etag", UpdateBuildPipelineStageResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateBuildPipelineStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateBuildPipelineStageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", UpdateBuildPipelineStageResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBuildPipelineStageResponse>
+                transformer =
+                        UpdateBuildPipelineStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBuildPipelineStageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateBuildRunResponse updateBuildRun(UpdateBuildRunRequest request) {
+        LOG.trace("Called updateBuildRun");
+        final UpdateBuildRunRequest interceptedRequest =
+                UpdateBuildRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBuildRunConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getBuildRunId(), "buildRunId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateBuildRunDetails(), "updateBuildRunDetails is required");
-
-        return clientCall(request, UpdateBuildRunResponse::builder)
-                .logger(LOG, "updateBuildRun")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateBuildRun",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateBuildRunRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("buildRuns")
-                .appendPathParam(request.getBuildRunId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.BuildRun.class,
-                        UpdateBuildRunResponse.Builder::buildRun)
-                .handleResponseHeaderString("etag", UpdateBuildRunResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateBuildRunResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("location", UpdateBuildRunResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBuildRunResponse> transformer =
+                UpdateBuildRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBuildRunDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateConnectionResponse updateConnection(UpdateConnectionRequest request) {
+        LOG.trace("Called updateConnection");
+        final UpdateConnectionRequest interceptedRequest =
+                UpdateConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateConnectionDetails(), "updateConnectionDetails is required");
-
-        return clientCall(request, UpdateConnectionResponse::builder)
-                .logger(LOG, "updateConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateConnectionRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("connections")
-                .appendPathParam(request.getConnectionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Connection.class,
-                        UpdateConnectionResponse.Builder::connection)
-                .handleResponseHeaderString("etag", UpdateConnectionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateConnectionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateConnectionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString("location", UpdateConnectionResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
+                transformer =
+                        UpdateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDeployArtifactResponse updateDeployArtifact(UpdateDeployArtifactRequest request) {
+        LOG.trace("Called updateDeployArtifact");
+        final UpdateDeployArtifactRequest interceptedRequest =
+                UpdateDeployArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDeployArtifactConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployArtifactId(), "deployArtifactId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDeployArtifactDetails(),
-                "updateDeployArtifactDetails is required");
-
-        return clientCall(request, UpdateDeployArtifactResponse::builder)
-                .logger(LOG, "updateDeployArtifact")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateDeployArtifact",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDeployArtifactRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployArtifacts")
-                .appendPathParam(request.getDeployArtifactId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployArtifact.class,
-                        UpdateDeployArtifactResponse.Builder::deployArtifact)
-                .handleResponseHeaderString(
-                        "location", UpdateDeployArtifactResponse.Builder::location)
-                .handleResponseHeaderString("etag", UpdateDeployArtifactResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDeployArtifactResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDeployArtifactResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployArtifactResponse>
+                transformer =
+                        UpdateDeployArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDeployArtifactDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDeployEnvironmentResponse updateDeployEnvironment(
             UpdateDeployEnvironmentRequest request) {
+        LOG.trace("Called updateDeployEnvironment");
+        final UpdateDeployEnvironmentRequest interceptedRequest =
+                UpdateDeployEnvironmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDeployEnvironmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getDeployEnvironmentId(), "deployEnvironmentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDeployEnvironmentDetails(),
-                "updateDeployEnvironmentDetails is required");
-
-        return clientCall(request, UpdateDeployEnvironmentResponse::builder)
-                .logger(LOG, "updateDeployEnvironment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateDeployEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDeployEnvironmentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployEnvironments")
-                .appendPathParam(request.getDeployEnvironmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployEnvironment.class,
-                        UpdateDeployEnvironmentResponse.Builder::deployEnvironment)
-                .handleResponseHeaderString(
-                        "location", UpdateDeployEnvironmentResponse.Builder::location)
-                .handleResponseHeaderString("etag", UpdateDeployEnvironmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDeployEnvironmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDeployEnvironmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployEnvironmentResponse>
+                transformer =
+                        UpdateDeployEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDeployEnvironmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDeployPipelineResponse updateDeployPipeline(UpdateDeployPipelineRequest request) {
+        LOG.trace("Called updateDeployPipeline");
+        final UpdateDeployPipelineRequest interceptedRequest =
+                UpdateDeployPipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDeployPipelineConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployPipelineId(), "deployPipelineId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDeployPipelineDetails(),
-                "updateDeployPipelineDetails is required");
-
-        return clientCall(request, UpdateDeployPipelineResponse::builder)
-                .logger(LOG, "updateDeployPipeline")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateDeployPipeline",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDeployPipelineRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployPipelines")
-                .appendPathParam(request.getDeployPipelineId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployPipeline.class,
-                        UpdateDeployPipelineResponse.Builder::deployPipeline)
-                .handleResponseHeaderString(
-                        "location", UpdateDeployPipelineResponse.Builder::location)
-                .handleResponseHeaderString("etag", UpdateDeployPipelineResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateDeployPipelineResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDeployPipelineResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployPipelineResponse>
+                transformer =
+                        UpdateDeployPipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDeployPipelineDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDeployStageResponse updateDeployStage(UpdateDeployStageRequest request) {
+        LOG.trace("Called updateDeployStage");
+        final UpdateDeployStageRequest interceptedRequest =
+                UpdateDeployStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDeployStageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeployStageId(), "deployStageId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDeployStageDetails(), "updateDeployStageDetails is required");
-
-        return clientCall(request, UpdateDeployStageResponse::builder)
-                .logger(LOG, "updateDeployStage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateDeployStage",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDeployStageRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployStages")
-                .appendPathParam(request.getDeployStageId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.DeployStage.class,
-                        UpdateDeployStageResponse.Builder::deployStage)
-                .handleResponseHeaderString("location", UpdateDeployStageResponse.Builder::location)
-                .handleResponseHeaderString("etag", UpdateDeployStageResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateDeployStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDeployStageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeployStageResponse>
+                transformer =
+                        UpdateDeployStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDeployStageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateDeploymentResponse updateDeployment(UpdateDeploymentRequest request) {
+        LOG.trace("Called updateDeployment");
+        final UpdateDeploymentRequest interceptedRequest =
+                UpdateDeploymentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDeploymentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDeploymentDetails(), "updateDeploymentDetails is required");
-
-        return clientCall(request, UpdateDeploymentResponse::builder)
-                .logger(LOG, "updateDeployment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateDeployment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDeploymentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("deployments")
-                .appendPathParam(request.getDeploymentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Deployment.class,
-                        UpdateDeploymentResponse.Builder::deployment)
-                .handleResponseHeaderString("etag", UpdateDeploymentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDeploymentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
+                transformer =
+                        UpdateDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDeploymentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateProjectResponse updateProject(UpdateProjectRequest request) {
+        LOG.trace("Called updateProject");
+        final UpdateProjectRequest interceptedRequest =
+                UpdateProjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateProjectConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateProjectDetails(), "updateProjectDetails is required");
-
-        return clientCall(request, UpdateProjectResponse::builder)
-                .logger(LOG, "updateProject")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateProject",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateProjectRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Project.class,
-                        UpdateProjectResponse.Builder::project)
-                .handleResponseHeaderString("location", UpdateProjectResponse.Builder::location)
-                .handleResponseHeaderString("etag", UpdateProjectResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateProjectResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse> transformer =
+                UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateProjectDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateProjectNotificationPreferenceResponse updateProjectNotificationPreference(
             UpdateProjectNotificationPreferenceRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateProjectNotificationPreferenceDetails(),
-                "updateProjectNotificationPreferenceDetails is required");
+        LOG.trace("Called updateProjectNotificationPreference");
+        final UpdateProjectNotificationPreferenceRequest interceptedRequest =
+                UpdateProjectNotificationPreferenceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateProjectNotificationPreferenceConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-
-        Validate.notBlank(request.getPrincipalId(), "principalId must not be blank");
-
-        return clientCall(request, UpdateProjectNotificationPreferenceResponse::builder)
-                .logger(LOG, "updateProjectNotificationPreference")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateProjectNotificationPreference",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectNotificationPreference/UpdateProjectNotificationPreference")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateProjectNotificationPreferenceRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("principals")
-                .appendPathParam(request.getPrincipalId())
-                .appendPathParam("pullRequestNotificationPreference")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ProjectNotificationPreference.class,
-                        UpdateProjectNotificationPreferenceResponse.Builder
-                                ::projectNotificationPreference)
-                .handleResponseHeaderString(
-                        "location", UpdateProjectNotificationPreferenceResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "etag", UpdateProjectNotificationPreferenceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateProjectNotificationPreferenceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectNotificationPreference/UpdateProjectNotificationPreference");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateProjectNotificationPreferenceResponse>
+                transformer =
+                        UpdateProjectNotificationPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateProjectNotificationPreferenceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateProjectRepositorySettingsResponse updateProjectRepositorySettings(
             UpdateProjectRepositorySettingsRequest request) {
+        LOG.trace("Called updateProjectRepositorySettings");
+        final UpdateProjectRepositorySettingsRequest interceptedRequest =
+                UpdateProjectRepositorySettingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateProjectRepositorySettingsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateProjectRepositorySettingsDetails(),
-                "updateProjectRepositorySettingsDetails is required");
-
-        return clientCall(request, UpdateProjectRepositorySettingsResponse::builder)
-                .logger(LOG, "updateProjectRepositorySettings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateProjectRepositorySettings",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectRepositorySettings/UpdateProjectRepositorySettings")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateProjectRepositorySettingsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("projects")
-                .appendPathParam(request.getProjectId())
-                .appendPathParam("repositorySettings")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.ProjectRepositorySettings.class,
-                        UpdateProjectRepositorySettingsResponse.Builder::projectRepositorySettings)
-                .handleResponseHeaderString(
-                        "location", UpdateProjectRepositorySettingsResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "etag", UpdateProjectRepositorySettingsResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateProjectRepositorySettingsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectRepositorySettings/UpdateProjectRepositorySettings");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateProjectRepositorySettingsResponse>
+                transformer =
+                        UpdateProjectRepositorySettingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateProjectRepositorySettingsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdatePullRequestResponse updatePullRequest(UpdatePullRequestRequest request) {
+        LOG.trace("Called updatePullRequest");
+        final UpdatePullRequestRequest interceptedRequest =
+                UpdatePullRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePullRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdatePullRequestDetails(), "updatePullRequestDetails is required");
-
-        return clientCall(request, UpdatePullRequestResponse::builder)
-                .logger(LOG, "updatePullRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdatePullRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UpdatePullRequest")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdatePullRequestRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequest.class,
-                        UpdatePullRequestResponse.Builder::pullRequest)
-                .handleResponseHeaderString(
-                        "content-location", UpdatePullRequestResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", UpdatePullRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdatePullRequestResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdatePullRequestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UpdatePullRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePullRequestResponse>
+                transformer =
+                        UpdatePullRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdatePullRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdatePullRequestCommentResponse updatePullRequestComment(
             UpdatePullRequestCommentRequest request) {
+        LOG.trace("Called updatePullRequestComment");
+        final UpdatePullRequestCommentRequest interceptedRequest =
+                UpdatePullRequestCommentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePullRequestCommentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getCommentId(), "commentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdatePullRequestCommentDetails(),
-                "updatePullRequestCommentDetails is required");
-
-        return clientCall(request, UpdatePullRequestCommentResponse::builder)
-                .logger(LOG, "updatePullRequestComment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdatePullRequestComment",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UpdatePullRequestComment")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdatePullRequestCommentRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("comments")
-                .appendPathParam(request.getCommentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestComment.class,
-                        UpdatePullRequestCommentResponse.Builder::pullRequestComment)
-                .handleResponseHeaderString("etag", UpdatePullRequestCommentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdatePullRequestCommentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequest/UpdatePullRequestComment");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePullRequestCommentResponse>
+                transformer =
+                        UpdatePullRequestCommentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdatePullRequestCommentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdatePullRequestNotificationPreferenceResponse updatePullRequestNotificationPreference(
             UpdatePullRequestNotificationPreferenceRequest request) {
-        Objects.requireNonNull(
-                request.getUpdatePullRequestNotificationPreferenceDetails(),
-                "updatePullRequestNotificationPreferenceDetails is required");
+        LOG.trace("Called updatePullRequestNotificationPreference");
+        final UpdatePullRequestNotificationPreferenceRequest interceptedRequest =
+                UpdatePullRequestNotificationPreferenceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePullRequestNotificationPreferenceConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getPullRequestId(), "pullRequestId must not be blank");
-
-        Validate.notBlank(request.getPrincipalId(), "principalId must not be blank");
-
-        return clientCall(request, UpdatePullRequestNotificationPreferenceResponse::builder)
-                .logger(LOG, "updatePullRequestNotificationPreference")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdatePullRequestNotificationPreference",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequestNotificationPreference/UpdatePullRequestNotificationPreference")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdatePullRequestNotificationPreferenceRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("pullRequests")
-                .appendPathParam(request.getPullRequestId())
-                .appendPathParam("principals")
-                .appendPathParam(request.getPrincipalId())
-                .appendPathParam("pullRequestNotificationPreference")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.PullRequestNotificationPreference.class,
-                        UpdatePullRequestNotificationPreferenceResponse.Builder
-                                ::pullRequestNotificationPreference)
-                .handleResponseHeaderString(
-                        "location",
-                        UpdatePullRequestNotificationPreferenceResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "etag", UpdatePullRequestNotificationPreferenceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdatePullRequestNotificationPreferenceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/PullRequestNotificationPreference/UpdatePullRequestNotificationPreference");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdatePullRequestNotificationPreferenceResponse>
+                transformer =
+                        UpdatePullRequestNotificationPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdatePullRequestNotificationPreferenceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateRepositoryResponse updateRepository(UpdateRepositoryRequest request) {
+        LOG.trace("Called updateRepository");
+        final UpdateRepositoryRequest interceptedRequest =
+                UpdateRepositoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRepositoryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateRepositoryDetails(), "updateRepositoryDetails is required");
-
-        return clientCall(request, UpdateRepositoryResponse::builder)
-                .logger(LOG, "updateRepository")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateRepository",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateRepositoryRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Repository.class,
-                        UpdateRepositoryResponse.Builder::repository)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateRepositoryResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateRepositoryResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateRepositoryResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
+                transformer =
+                        UpdateRepositoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRepositoryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateRepositoryNotificationPreferenceResponse updateRepositoryNotificationPreference(
             UpdateRepositoryNotificationPreferenceRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateRepositoryNotificationPreferenceDetails(),
-                "updateRepositoryNotificationPreferenceDetails is required");
+        LOG.trace("Called updateRepositoryNotificationPreference");
+        final UpdateRepositoryNotificationPreferenceRequest interceptedRequest =
+                UpdateRepositoryNotificationPreferenceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRepositoryNotificationPreferenceConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-
-        Validate.notBlank(request.getPrincipalId(), "principalId must not be blank");
-
-        return clientCall(request, UpdateRepositoryNotificationPreferenceResponse::builder)
-                .logger(LOG, "updateRepositoryNotificationPreference")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateRepositoryNotificationPreference",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryNotificationPreference/UpdateRepositoryNotificationPreference")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateRepositoryNotificationPreferenceRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("principals")
-                .appendPathParam(request.getPrincipalId())
-                .appendPathParam("pullRequestNotificationPreference")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositoryNotificationPreference.class,
-                        UpdateRepositoryNotificationPreferenceResponse.Builder
-                                ::repositoryNotificationPreference)
-                .handleResponseHeaderString(
-                        "location",
-                        UpdateRepositoryNotificationPreferenceResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "etag", UpdateRepositoryNotificationPreferenceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateRepositoryNotificationPreferenceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryNotificationPreference/UpdateRepositoryNotificationPreference");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateRepositoryNotificationPreferenceResponse>
+                transformer =
+                        UpdateRepositoryNotificationPreferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateRepositoryNotificationPreferenceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateRepositorySettingsResponse updateRepositorySettings(
             UpdateRepositorySettingsRequest request) {
+        LOG.trace("Called updateRepositorySettings");
+        final UpdateRepositorySettingsRequest interceptedRequest =
+                UpdateRepositorySettingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRepositorySettingsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateRepositorySettingsDetails(),
-                "updateRepositorySettingsDetails is required");
-
-        return clientCall(request, UpdateRepositorySettingsResponse::builder)
-                .logger(LOG, "updateRepositorySettings")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateRepositorySettings",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositorySettings/UpdateRepositorySettings")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateRepositorySettingsRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("repositories")
-                .appendPathParam(request.getRepositoryId())
-                .appendPathParam("repositorySettings")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.RepositorySettings.class,
-                        UpdateRepositorySettingsResponse.Builder::repositorySettings)
-                .handleResponseHeaderString(
-                        "location", UpdateRepositorySettingsResponse.Builder::location)
-                .handleResponseHeaderString("etag", UpdateRepositorySettingsResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateRepositorySettingsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositorySettings/UpdateRepositorySettings");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRepositorySettingsResponse>
+                transformer =
+                        UpdateRepositorySettingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRepositorySettingsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateTriggerResponse updateTrigger(UpdateTriggerRequest request) {
+        LOG.trace("Called updateTrigger");
+        final UpdateTriggerRequest interceptedRequest =
+                UpdateTriggerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTriggerConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getTriggerId(), "triggerId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateTriggerDetails(), "updateTriggerDetails is required");
-
-        return clientCall(request, UpdateTriggerResponse::builder)
-                .logger(LOG, "updateTrigger")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "UpdateTrigger",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateTriggerRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("triggers")
-                .appendPathParam(request.getTriggerId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Trigger.class,
-                        UpdateTriggerResponse.Builder::trigger)
-                .handleResponseHeaderString("etag", UpdateTriggerResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateTriggerResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateTriggerResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("location", UpdateTriggerResponse.Builder::location)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTriggerResponse> transformer =
+                UpdateTriggerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateTriggerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ValidateConnectionResponse validateConnection(ValidateConnectionRequest request) {
+        LOG.trace("Called validateConnection");
+        final ValidateConnectionRequest interceptedRequest =
+                ValidateConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateConnectionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
-
-        return clientCall(request, ValidateConnectionResponse::builder)
-                .logger(LOG, "validateConnection")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "Devops",
                         "ValidateConnection",
-                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/ValidateConnection")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ValidateConnectionRequest::builder)
-                .basePath("/20210630")
-                .appendPathParam("connections")
-                .appendPathParam(request.getConnectionId())
-                .appendPathParam("actions")
-                .appendPathParam("validate")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.devops.model.Connection.class,
-                        ValidateConnectionResponse.Builder::connection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ValidateConnectionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", ValidateConnectionResponse.Builder::etag)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/ValidateConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateConnectionResponse>
+                transformer =
+                        ValidateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -4980,207 +6079,29 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
         return paginators;
     }
 
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public DevopsClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

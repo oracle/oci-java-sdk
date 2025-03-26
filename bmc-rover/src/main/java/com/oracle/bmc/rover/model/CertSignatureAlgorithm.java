@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.rover.model;
 
-/** Possible signature algorithms for leaf certificate. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-public enum CertSignatureAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible signature algorithms for leaf certificate.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+public enum CertSignatureAlgorithm {
     Sha256WithRsa("SHA256_WITH_RSA"),
     Sha384WithRsa("SHA384_WITH_RSA"),
     Sha512WithRsa("SHA512_WITH_RSA"),

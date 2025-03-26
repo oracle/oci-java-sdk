@@ -6,85 +6,96 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunHistoryExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListMaintenanceRunHistoryRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunHistoryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaintenanceRunHistoryRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListMaintenanceRunHistoryRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The target resource ID. */
+    /**
+     * The target resource ID.
+     */
     private String targetResourceId;
 
-    /** The target resource ID. */
+    /**
+     * The target resource ID.
+     */
     public String getTargetResourceId() {
         return targetResourceId;
     }
-    /** The type of the target resource. */
+    /**
+     * The type of the target resource.
+     */
     private com.oracle.bmc.database.model.MaintenanceRunSummary.TargetResourceType
             targetResourceType;
 
-    /** The type of the target resource. */
+    /**
+     * The type of the target resource.
+     */
     public com.oracle.bmc.database.model.MaintenanceRunSummary.TargetResourceType
             getTargetResourceType() {
         return targetResourceType;
     }
-    /** The maintenance type. */
+    /**
+     * The maintenance type.
+     */
     private com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceType maintenanceType;
 
-    /** The maintenance type. */
+    /**
+     * The maintenance type.
+     */
     public com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceType
             getMaintenanceType() {
         return maintenanceType;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     private String page;
 
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The
-     * DISPLAYNAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * <p>
+     **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** If you do not include the availability domain filter, the resources are grouped
-     * by availability domain, then sorted.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The
-     * DISPLAYNAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * <p>
+     **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** If you do not include the availability domain filter, the resources are grouped
-     * by availability domain, then sorted.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         TimeScheduled("TIME_SCHEDULED"),
         TimeEnded("TIME_ENDED"),
         Displayname("DISPLAYNAME"),
@@ -119,21 +130,23 @@ public class ListMaintenanceRunHistoryRequest
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The
-     * DISPLAYNAME sort order is case sensitive.
+     * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     * <p>
+     **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** If you do not include the availability domain filter, the resources are grouped
-     * by availability domain, then sorted.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -166,29 +179,43 @@ public class ListMaintenanceRunHistoryRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The state of the maintenance run history. */
+    /**
+     * The state of the maintenance run history.
+     */
     private com.oracle.bmc.database.model.MaintenanceRunSummary.LifecycleState lifecycleState;
 
-    /** The state of the maintenance run history. */
+    /**
+     * The state of the maintenance run history.
+     */
     public com.oracle.bmc.database.model.MaintenanceRunSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the given availability domain exactly. */
+    /**
+     * A filter to return only resources that match the given availability domain exactly.
+     */
     private String availabilityDomain;
 
-    /** A filter to return only resources that match the given availability domain exactly. */
+    /**
+     * A filter to return only resources that match the given availability domain exactly.
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
-    /** The sub-type of the maintenance run. */
+    /**
+     * The sub-type of the maintenance run.
+     */
     private com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceSubtype
             maintenanceSubtype;
 
-    /** The sub-type of the maintenance run. */
+    /**
+     * The sub-type of the maintenance run.
+     */
     public com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceSubtype
             getMaintenanceSubtype() {
         return maintenanceSubtype;
@@ -197,19 +224,17 @@ public class ListMaintenanceRunHistoryRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMaintenanceRunHistoryRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -218,12 +243,13 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The target resource ID. */
+        /**
+         * The target resource ID.
+         */
         private String targetResourceId = null;
 
         /**
          * The target resource ID.
-         *
          * @param targetResourceId the value to set
          * @return this builder instance
          */
@@ -232,13 +258,14 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The type of the target resource. */
+        /**
+         * The type of the target resource.
+         */
         private com.oracle.bmc.database.model.MaintenanceRunSummary.TargetResourceType
                 targetResourceType = null;
 
         /**
          * The type of the target resource.
-         *
          * @param targetResourceType the value to set
          * @return this builder instance
          */
@@ -249,13 +276,14 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The maintenance type. */
+        /**
+         * The maintenance type.
+         */
         private com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceType
                 maintenanceType = null;
 
         /**
          * The maintenance type.
-         *
          * @param maintenanceType the value to set
          * @return this builder instance
          */
@@ -266,12 +294,13 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -280,12 +309,13 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The pagination token to continue listing from. */
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -295,22 +325,17 @@ public class ListMaintenanceRunHistoryRequest
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is
-         * ascending. The DISPLAYNAME sort order is case sensitive.
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+         * <p>
+         **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
          *
-         * <p>*Note:** If you do not include the availability domain filter, the resources are
-         * grouped by availability domain, then sorted.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is
-         * ascending. The DISPLAYNAME sort order is case sensitive.
-         *
-         * <p>*Note:** If you do not include the availability domain filter, the resources are
-         * grouped by availability domain, then sorted.
+         * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+         * <p>
+         **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -320,12 +345,13 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -334,13 +360,14 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The state of the maintenance run history. */
+        /**
+         * The state of the maintenance run history.
+         */
         private com.oracle.bmc.database.model.MaintenanceRunSummary.LifecycleState lifecycleState =
                 null;
 
         /**
          * The state of the maintenance run history.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -350,12 +377,13 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** A filter to return only resources that match the given availability domain exactly. */
+        /**
+         * A filter to return only resources that match the given availability domain exactly.
+         */
         private String availabilityDomain = null;
 
         /**
          * A filter to return only resources that match the given availability domain exactly.
-         *
          * @param availabilityDomain the value to set
          * @return this builder instance
          */
@@ -364,13 +392,14 @@ public class ListMaintenanceRunHistoryRequest
             return this;
         }
 
-        /** The sub-type of the maintenance run. */
+        /**
+         * The sub-type of the maintenance run.
+         */
         private com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceSubtype
                 maintenanceSubtype = null;
 
         /**
          * The sub-type of the maintenance run.
-         *
          * @param maintenanceSubtype the value to set
          * @return this builder instance
          */
@@ -383,19 +412,18 @@ public class ListMaintenanceRunHistoryRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -407,7 +435,6 @@ public class ListMaintenanceRunHistoryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMaintenanceRunHistoryRequest o) {
@@ -430,11 +457,10 @@ public class ListMaintenanceRunHistoryRequest
         /**
          * Build the instance of ListMaintenanceRunHistoryRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMaintenanceRunHistoryRequest
          */
@@ -448,8 +474,7 @@ public class ListMaintenanceRunHistoryRequest
         /**
          * Build the instance of ListMaintenanceRunHistoryRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMaintenanceRunHistoryRequest
@@ -468,15 +493,12 @@ public class ListMaintenanceRunHistoryRequest
             request.availabilityDomain = availabilityDomain;
             request.maintenanceSubtype = maintenanceSubtype;
             return request;
-            // new ListMaintenanceRunHistoryRequest(compartmentId, targetResourceId,
-            // targetResourceType, maintenanceType, limit, page, sortBy, sortOrder, lifecycleState,
-            // availabilityDomain, maintenanceSubtype);
+            // new ListMaintenanceRunHistoryRequest(compartmentId, targetResourceId, targetResourceType, maintenanceType, limit, page, sortBy, sortOrder, lifecycleState, availabilityDomain, maintenanceSubtype);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -496,7 +518,6 @@ public class ListMaintenanceRunHistoryRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

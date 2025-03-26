@@ -6,105 +6,121 @@ package com.oracle.bmc.cloudmigrations.requests;
 
 import com.oracle.bmc.cloudmigrations.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The ID of the asynchronous work request. */
+    /**
+     * The ID of the asynchronous work request.
+     */
     private String workRequestId;
 
-    /** The ID of the asynchronous work request. */
+    /**
+     * The ID of the asynchronous work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
     /**
-     * A filter to return only resources where the resource's lifecycle state matches the given
-     * operation status.
+     * A filter to return only resources where the resource's lifecycle state matches the given operation status.
      */
     private com.oracle.bmc.cloudmigrations.model.OperationStatus status;
 
     /**
-     * A filter to return only resources where the resource's lifecycle state matches the given
-     * operation status.
+     * A filter to return only resources where the resource's lifecycle state matches the given operation status.
      */
     public com.oracle.bmc.cloudmigrations.model.OperationStatus getStatus() {
         return status;
     }
     /**
-     * A filter to return only resources where the resource's lifecycle state matches the given
-     * operation type.
+     * A filter to return only resources where the resource's lifecycle state matches the given operation type.
      */
     private com.oracle.bmc.cloudmigrations.model.OperationType operationType;
 
     /**
-     * A filter to return only resources where the resource's lifecycle state matches the given
-     * operation type.
+     * A filter to return only resources where the resource's lifecycle state matches the given operation type.
      */
     public com.oracle.bmc.cloudmigrations.model.OperationType getOperationType() {
         return operationType;
     }
-    /** The ID of the resource affected by the work request. */
+    /**
+     * The ID of the resource affected by the work request.
+     */
     private String resourceId;
 
-    /** The ID of the resource affected by the work request. */
+    /**
+     * The ID of the resource affected by the work request.
+     */
     public String getResourceId() {
         return resourceId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of the previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of the previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of the previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of the previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.cloudmigrations.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.cloudmigrations.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for
-     * 'timeAccepted' is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for 'timeAccepted' is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for
-     * 'timeAccepted' is descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. The default order for 'timeAccepted' is descending.
+     *
+     **/
+    public enum SortBy {
         TimeAccepted("timeAccepted"),
         ;
 
@@ -137,8 +153,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for
-     * 'timeAccepted' is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for 'timeAccepted' is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -147,15 +163,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -164,12 +182,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The ID of the asynchronous work request. */
+        /**
+         * The ID of the asynchronous work request.
+         */
         private String workRequestId = null;
 
         /**
          * The ID of the asynchronous work request.
-         *
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -179,15 +198,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only resources where the resource's lifecycle state matches the given
-         * operation status.
+         * A filter to return only resources where the resource's lifecycle state matches the given operation status.
          */
         private com.oracle.bmc.cloudmigrations.model.OperationStatus status = null;
 
         /**
-         * A filter to return only resources where the resource's lifecycle state matches the given
-         * operation status.
-         *
+         * A filter to return only resources where the resource's lifecycle state matches the given operation status.
          * @param status the value to set
          * @return this builder instance
          */
@@ -197,15 +213,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only resources where the resource's lifecycle state matches the given
-         * operation type.
+         * A filter to return only resources where the resource's lifecycle state matches the given operation type.
          */
         private com.oracle.bmc.cloudmigrations.model.OperationType operationType = null;
 
         /**
-         * A filter to return only resources where the resource's lifecycle state matches the given
-         * operation type.
-         *
+         * A filter to return only resources where the resource's lifecycle state matches the given operation type.
          * @param operationType the value to set
          * @return this builder instance
          */
@@ -215,12 +228,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The ID of the resource affected by the work request. */
+        /**
+         * The ID of the resource affected by the work request.
+         */
         private String resourceId = null;
 
         /**
          * The ID of the resource affected by the work request.
-         *
          * @param resourceId the value to set
          * @return this builder instance
          */
@@ -229,12 +243,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -244,15 +259,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of the previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of the previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of the previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of the previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -261,12 +273,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -275,12 +288,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.cloudmigrations.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -290,14 +304,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * 'timeAccepted' is descending.
+         * The field to sort by. Only one sort order may be provided. The default order for 'timeAccepted' is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * 'timeAccepted' is descending.
+         * The field to sort by. Only one sort order may be provided. The default order for 'timeAccepted' is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -309,19 +322,18 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -333,7 +345,6 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestsRequest o) {
@@ -355,11 +366,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestsRequest
          */
@@ -373,8 +383,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestsRequest
@@ -392,14 +401,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, workRequestId, status, operationType,
-            // resourceId, opcRequestId, page, limit, sortOrder, sortBy);
+            // new ListWorkRequestsRequest(compartmentId, workRequestId, status, operationType, resourceId, opcRequestId, page, limit, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -418,7 +425,6 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

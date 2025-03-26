@@ -5,21 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The metric type: COMMITS - Represents the number of commits. LINES_ADDED - Represents the number
- * of lines of code added. LINES_DELETED - Represents the number of lines of code deleted.
+ * The metric type:
+ * COMMITS - Represents the number of commits.
+ * LINES_ADDED - Represents the number of lines of code added.
+ * LINES_DELETED - Represents the number of lines of code deleted.
  * PULL_REQUEST_CREATED - Represents the number of pull requests which is in created/ open state.
  * PULL_REQUEST_MERGED - Represents the number of pull requests which is in merging/ merged state.
  * PULL_REQUEST_DECLINED - Represents the number of pull requests which is in declined state.
- * PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS - Represents the time from when a pull request is
- * created to the first comment on the pull request. PULL_REQUEST_REVIEW_DURATION_IN_DAYS -
- * Represents the time from the first comment on the pull request to when the pull request is merged
- * or closed. PULL_REQUEST_APPROVED - Represents the number of pull requests which is approved by
- * the user when the pull request is merged. PULL_REQUEST_REVIEWED - Represents the number of pull
- * requests which has been commented on. PULL_REQUEST_COMMENTS - Represents the total number of
- * comments given across different pull requests.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-public enum MetricName implements com.oracle.bmc.http.internal.BmcEnum {
+ * PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS - Represents the time from when a pull request is created to the first comment on the pull request.
+ * PULL_REQUEST_REVIEW_DURATION_IN_DAYS - Represents the time from the first comment on the pull request to when the pull request is merged or closed.
+ * PULL_REQUEST_APPROVED - Represents the number of pull requests which is approved by the user when the pull request is merged.
+ * PULL_REQUEST_REVIEWED - Represents the number of pull requests which has been commented on.
+ * PULL_REQUEST_COMMENTS - Represents the total number of comments given across different pull requests.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+public enum MetricName {
     Commits("COMMITS"),
     LinesAdded("LINES_ADDED"),
     LinesDeleted("LINES_DELETED"),

@@ -6,121 +6,165 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPatchesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPatchesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPatchesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPatchesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Product platformConfigurationId associated with the Patch. */
+    /**
+     * Product platformConfigurationId associated with the Patch.
+     */
     private String productId;
 
-    /** Product platformConfigurationId associated with the Patch. */
+    /**
+     * Product platformConfigurationId associated with the Patch.
+     */
     public String getProductId() {
         return productId;
     }
-    /** Product version */
+    /**
+     * Product version
+     */
     private String version;
 
-    /** Product version */
+    /**
+     * Product version
+     */
     public String getVersion() {
         return version;
     }
-    /** DefinedBy type. */
+    /**
+     * DefinedBy type.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.Patch.Type type;
 
-    /** DefinedBy type. */
+    /**
+     * DefinedBy type.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.Patch.Type getType() {
         return type;
     }
-    /** Patch Type platformConfigurationId associated with the Patch. */
+    /**
+     * Patch Type platformConfigurationId associated with the Patch.
+     */
     private String patchTypeId;
 
-    /** Patch Type platformConfigurationId associated with the Patch. */
+    /**
+     * Patch Type platformConfigurationId associated with the Patch.
+     */
     public String getPatchTypeId() {
         return patchTypeId;
     }
-    /** A filter to return only resources that match the entire name given. */
+    /**
+     * A filter to return only resources that match the entire name given.
+     */
     private String name;
 
-    /** A filter to return only resources that match the entire name given. */
+    /**
+     * A filter to return only resources that match the entire name given.
+     */
     public String getName() {
         return name;
     }
-    /** unique Patch identifier */
+    /**
+     * unique Patch identifier
+     */
     private String id;
 
-    /** unique Patch identifier */
+    /**
+     * unique Patch identifier
+     */
     public String getId() {
         return id;
     }
-    /** Patch Released Date */
+    /**
+     * Patch Released Date
+     */
     private java.util.Date timeReleasedGreaterThanOrEqualTo;
 
-    /** Patch Released Date */
+    /**
+     * Patch Released Date
+     */
     public java.util.Date getTimeReleasedGreaterThanOrEqualTo() {
         return timeReleasedGreaterThanOrEqualTo;
     }
-    /** Patch Released Date */
+    /**
+     * Patch Released Date
+     */
     private java.util.Date timeReleasedLessThan;
 
-    /** Patch Released Date */
+    /**
+     * Patch Released Date
+     */
     public java.util.Date getTimeReleasedLessThan() {
         return timeReleasedLessThan;
     }
-    /** Filter patch based on compliance policy rules for the Product */
+    /**
+     * Filter patch based on compliance policy rules for the Product
+     */
     private Boolean shouldCompliancePolicyRulesBeApplied;
 
-    /** Filter patch based on compliance policy rules for the Product */
+    /**
+     * Filter patch based on compliance policy rules for the Product
+     */
     public Boolean getShouldCompliancePolicyRulesBeApplied() {
         return shouldCompliancePolicyRulesBeApplied;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The current state of the Patch. */
+    /**
+     * The current state of the Patch.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.Patch.LifecycleState lifecycleState;
 
-    /** The current state of the Patch. */
+    /**
+     * The current state of the Patch.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.Patch.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -154,23 +198,31 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -178,15 +230,17 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPatchesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -195,12 +249,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Product platformConfigurationId associated with the Patch. */
+        /**
+         * Product platformConfigurationId associated with the Patch.
+         */
         private String productId = null;
 
         /**
          * Product platformConfigurationId associated with the Patch.
-         *
          * @param productId the value to set
          * @return this builder instance
          */
@@ -209,12 +264,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Product version */
+        /**
+         * Product version
+         */
         private String version = null;
 
         /**
          * Product version
-         *
          * @param version the value to set
          * @return this builder instance
          */
@@ -223,12 +279,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** DefinedBy type. */
+        /**
+         * DefinedBy type.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.Patch.Type type = null;
 
         /**
          * DefinedBy type.
-         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -237,12 +294,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Patch Type platformConfigurationId associated with the Patch. */
+        /**
+         * Patch Type platformConfigurationId associated with the Patch.
+         */
         private String patchTypeId = null;
 
         /**
          * Patch Type platformConfigurationId associated with the Patch.
-         *
          * @param patchTypeId the value to set
          * @return this builder instance
          */
@@ -251,12 +309,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that match the entire name given. */
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name given.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -265,12 +324,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** unique Patch identifier */
+        /**
+         * unique Patch identifier
+         */
         private String id = null;
 
         /**
          * unique Patch identifier
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -279,12 +339,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Patch Released Date */
+        /**
+         * Patch Released Date
+         */
         private java.util.Date timeReleasedGreaterThanOrEqualTo = null;
 
         /**
          * Patch Released Date
-         *
          * @param timeReleasedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -294,12 +355,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Patch Released Date */
+        /**
+         * Patch Released Date
+         */
         private java.util.Date timeReleasedLessThan = null;
 
         /**
          * Patch Released Date
-         *
          * @param timeReleasedLessThan the value to set
          * @return this builder instance
          */
@@ -308,12 +370,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Filter patch based on compliance policy rules for the Product */
+        /**
+         * Filter patch based on compliance policy rules for the Product
+         */
         private Boolean shouldCompliancePolicyRulesBeApplied = null;
 
         /**
          * Filter patch based on compliance policy rules for the Product
-         *
          * @param shouldCompliancePolicyRulesBeApplied the value to set
          * @return this builder instance
          */
@@ -323,12 +386,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -338,15 +402,12 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -355,12 +416,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The current state of the Patch. */
+        /**
+         * The current state of the Patch.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.Patch.LifecycleState lifecycleState = null;
 
         /**
          * The current state of the Patch.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -371,14 +433,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -388,12 +449,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -402,12 +464,13 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -418,19 +481,18 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -442,7 +504,6 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPatchesRequest o) {
@@ -470,11 +531,10 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListPatchesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPatchesRequest
          */
@@ -488,8 +548,7 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListPatchesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPatchesRequest
@@ -513,16 +572,12 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPatchesRequest(compartmentId, productId, version, type, patchTypeId, name,
-            // id, timeReleasedGreaterThanOrEqualTo, timeReleasedLessThan,
-            // shouldCompliancePolicyRulesBeApplied, limit, page, lifecycleState, sortBy, sortOrder,
-            // opcRequestId);
+            // new ListPatchesRequest(compartmentId, productId, version, type, patchTypeId, name, id, timeReleasedGreaterThanOrEqualTo, timeReleasedLessThan, shouldCompliancePolicyRulesBeApplied, limit, page, lifecycleState, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -547,7 +602,6 @@ public class ListPatchesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,24 +5,23 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Represents the audit data volume collected by Data Safe from the target database for the
- * specified audit profile. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Represents the audit data volume collected by Data Safe from the target database for the specified audit profile.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AvailableAuditVolumeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AvailableAuditVolumeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AvailableAuditVolumeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditProfileId",
@@ -50,107 +49,105 @@ public final class AvailableAuditVolumeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the audit profile resource. */
+        /**
+         * The OCID of the audit profile resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
         private String auditProfileId;
 
         /**
          * The OCID of the audit profile resource.
-         *
          * @param auditProfileId the value to set
          * @return this builder
-         */
+         **/
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = auditProfileId;
             this.__explicitlySet__.add("auditProfileId");
             return this;
         }
-        /** The OCID of the audit trail. */
+        /**
+         * The OCID of the audit trail.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditTrailId")
         private String auditTrailId;
 
         /**
          * The OCID of the audit trail.
-         *
          * @param auditTrailId the value to set
          * @return this builder
-         */
+         **/
         public Builder auditTrailId(String auditTrailId) {
             this.auditTrailId = auditTrailId;
             this.__explicitlySet__.add("auditTrailId");
             return this;
         }
-        /** Unique name of the database associated to the peer target database. */
+        /**
+         * Unique name of the database associated to the peer target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
         private String databaseUniqueName;
 
         /**
          * Unique name of the database associated to the peer target database.
-         *
          * @param databaseUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseUniqueName(String databaseUniqueName) {
             this.databaseUniqueName = databaseUniqueName;
             this.__explicitlySet__.add("databaseUniqueName");
             return this;
         }
         /**
-         * Audit trail location on the target database from where the audit data is being collected
-         * by Data Safe.
-         */
+         * Audit trail location on the target database from where the audit data is being collected by Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trailLocation")
         private String trailLocation;
 
         /**
-         * Audit trail location on the target database from where the audit data is being collected
-         * by Data Safe.
-         *
+         * Audit trail location on the target database from where the audit data is being collected by Data Safe.
          * @param trailLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder trailLocation(String trailLocation) {
             this.trailLocation = trailLocation;
             this.__explicitlySet__.add("trailLocation");
             return this;
         }
         /**
-         * Represents the month under consideration for which aggregated audit data volume available
-         * at the target is computed. This field will be the UTC start of the day of the first day
-         * of the month for which the aggregate count corresponds to, in the format defined by
-         * RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
-         */
+         * Represents the month under consideration for which aggregated audit data volume available at the target is computed.
+         * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+         * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monthInConsideration")
         private java.util.Date monthInConsideration;
 
         /**
-         * Represents the month under consideration for which aggregated audit data volume available
-         * at the target is computed. This field will be the UTC start of the day of the first day
-         * of the month for which the aggregate count corresponds to, in the format defined by
-         * RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+         * Represents the month under consideration for which aggregated audit data volume available at the target is computed.
+         * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+         * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
          *
          * @param monthInConsideration the value to set
          * @return this builder
-         */
+         **/
         public Builder monthInConsideration(java.util.Date monthInConsideration) {
             this.monthInConsideration = monthInConsideration;
             this.__explicitlySet__.add("monthInConsideration");
             return this;
         }
         /**
-         * Represents the aggregated audit data volume available in the audit trails on the target
-         * database which is yet to be collected by Data Safe for the specified month.
-         */
+         * Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volume")
         private Long volume;
 
         /**
-         * Represents the aggregated audit data volume available in the audit trails on the target
-         * database which is yet to be collected by Data Safe for the specified month.
+         * Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
          *
          * @param volume the value to set
          * @return this builder
-         */
+         **/
         public Builder volume(Long volume) {
             this.volume = volume;
             this.__explicitlySet__.add("volume");
@@ -199,7 +196,9 @@ public final class AvailableAuditVolumeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -208,96 +207,94 @@ public final class AvailableAuditVolumeSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the audit profile resource. */
+    /**
+     * The OCID of the audit profile resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditProfileId")
     private final String auditProfileId;
 
     /**
      * The OCID of the audit profile resource.
-     *
      * @return the value
-     */
+     **/
     public String getAuditProfileId() {
         return auditProfileId;
     }
 
-    /** The OCID of the audit trail. */
+    /**
+     * The OCID of the audit trail.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditTrailId")
     private final String auditTrailId;
 
     /**
      * The OCID of the audit trail.
-     *
      * @return the value
-     */
+     **/
     public String getAuditTrailId() {
         return auditTrailId;
     }
 
-    /** Unique name of the database associated to the peer target database. */
+    /**
+     * Unique name of the database associated to the peer target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
     private final String databaseUniqueName;
 
     /**
      * Unique name of the database associated to the peer target database.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseUniqueName() {
         return databaseUniqueName;
     }
 
     /**
-     * Audit trail location on the target database from where the audit data is being collected by
-     * Data Safe.
-     */
+     * Audit trail location on the target database from where the audit data is being collected by Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trailLocation")
     private final String trailLocation;
 
     /**
-     * Audit trail location on the target database from where the audit data is being collected by
-     * Data Safe.
-     *
+     * Audit trail location on the target database from where the audit data is being collected by Data Safe.
      * @return the value
-     */
+     **/
     public String getTrailLocation() {
         return trailLocation;
     }
 
     /**
-     * Represents the month under consideration for which aggregated audit data volume available at
-     * the target is computed. This field will be the UTC start of the day of the first day of the
-     * month for which the aggregate count corresponds to, in the format defined by RFC3339.. For
-     * instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
-     */
+     * Represents the month under consideration for which aggregated audit data volume available at the target is computed.
+     * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+     * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("monthInConsideration")
     private final java.util.Date monthInConsideration;
 
     /**
-     * Represents the month under consideration for which aggregated audit data volume available at
-     * the target is computed. This field will be the UTC start of the day of the first day of the
-     * month for which the aggregate count corresponds to, in the format defined by RFC3339.. For
-     * instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+     * Represents the month under consideration for which aggregated audit data volume available at the target is computed.
+     * This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339..
+     * For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getMonthInConsideration() {
         return monthInConsideration;
     }
 
     /**
-     * Represents the aggregated audit data volume available in the audit trails on the target
-     * database which is yet to be collected by Data Safe for the specified month.
-     */
+     * Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volume")
     private final Long volume;
 
     /**
-     * Represents the aggregated audit data volume available in the audit trails on the target
-     * database which is yet to be collected by Data Safe for the specified month.
+     * Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
      *
      * @return the value
-     */
+     **/
     public Long getVolume() {
         return volume;
     }
@@ -309,7 +306,6 @@ public final class AvailableAuditVolumeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

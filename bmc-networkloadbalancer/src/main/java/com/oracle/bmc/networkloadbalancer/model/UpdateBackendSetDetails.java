@@ -5,28 +5,27 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * The configuration details for updating a load balancer backend set. For more information about
- * backend set configuration, see [Backend Sets for Network Load
- * Balancers](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
+ * The configuration details for updating a load balancer backend set.
+ * For more information about backend set configuration, see
+ * [Backend Sets for Network Load Balancers](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
+ * <p>
+ **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Caution:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateBackendSetDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateBackendSetDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateBackendSetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "policy",
@@ -64,163 +63,153 @@ public final class UpdateBackendSetDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The network load balancer policy for the backend set. To get a list of available
-         * policies, use the {@link
-         * #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest)
-         * listNetworkLoadBalancersPolicies} operation.
+         * The network load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
+         * <p>
+         * Example: {@code FIVE_TUPLE}
          *
-         * <p>Example: {@code FIVE_TUPLE}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
         /**
-         * The network load balancer policy for the backend set. To get a list of available
-         * policies, use the {@link
-         * #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest)
-         * listNetworkLoadBalancersPolicies} operation.
-         *
-         * <p>Example: {@code FIVE_TUPLE}
+         * The network load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
+         * <p>
+         * Example: {@code FIVE_TUPLE}
          *
          * @param policy the value to set
          * @return this builder
-         */
+         **/
         public Builder policy(String policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
         /**
-         * If this parameter is enabled, then the network load balancer preserves the source IP of
-         * the packet when it is forwarded to backends. Backends see the original source IP. If the
-         * isPreserveSourceDestination parameter is enabled for the network load balancer resource,
-         * then this parameter cannot be disabled. The value is true by default.
-         */
+         * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
+         * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+         * The value is true by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
         private Boolean isPreserveSource;
 
         /**
-         * If this parameter is enabled, then the network load balancer preserves the source IP of
-         * the packet when it is forwarded to backends. Backends see the original source IP. If the
-         * isPreserveSourceDestination parameter is enabled for the network load balancer resource,
-         * then this parameter cannot be disabled. The value is true by default.
+         * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
+         * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+         * The value is true by default.
          *
          * @param isPreserveSource the value to set
          * @return this builder
-         */
+         **/
         public Builder isPreserveSource(Boolean isPreserveSource) {
             this.isPreserveSource = isPreserveSource;
             this.__explicitlySet__.add("isPreserveSource");
             return this;
         }
         /**
-         * If enabled, the network load balancer will continue to distribute traffic in the
-         * configured distribution in the event all backends are unhealthy. The value is false by
-         * default.
-         */
+         * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+         * The value is false by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFailOpen")
         private Boolean isFailOpen;
 
         /**
-         * If enabled, the network load balancer will continue to distribute traffic in the
-         * configured distribution in the event all backends are unhealthy. The value is false by
-         * default.
+         * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+         * The value is false by default.
          *
          * @param isFailOpen the value to set
          * @return this builder
-         */
+         **/
         public Builder isFailOpen(Boolean isFailOpen) {
             this.isFailOpen = isFailOpen;
             this.__explicitlySet__.add("isFailOpen");
             return this;
         }
         /**
-         * If enabled existing connections will be forwarded to an alternative healthy backend as
-         * soon as current backend becomes unhealthy.
-         */
+         * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverEnabled")
         private Boolean isInstantFailoverEnabled;
 
         /**
-         * If enabled existing connections will be forwarded to an alternative healthy backend as
-         * soon as current backend becomes unhealthy.
+         * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
          *
          * @param isInstantFailoverEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isInstantFailoverEnabled(Boolean isInstantFailoverEnabled) {
             this.isInstantFailoverEnabled = isInstantFailoverEnabled;
             this.__explicitlySet__.add("isInstantFailoverEnabled");
             return this;
         }
         /**
-         * If enabled along with instant failover, the network load balancer will send TCP RST to
-         * the clients for the existing connections instead of failing over to a healthy backend.
-         * This only applies when using the instant failover.
-         */
+         * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverTcpResetEnabled")
         private Boolean isInstantFailoverTcpResetEnabled;
 
         /**
-         * If enabled along with instant failover, the network load balancer will send TCP RST to
-         * the clients for the existing connections instead of failing over to a healthy backend.
-         * This only applies when using the instant failover.
+         * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
          *
          * @param isInstantFailoverTcpResetEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isInstantFailoverTcpResetEnabled(Boolean isInstantFailoverTcpResetEnabled) {
             this.isInstantFailoverTcpResetEnabled = isInstantFailoverTcpResetEnabled;
             this.__explicitlySet__.add("isInstantFailoverTcpResetEnabled");
             return this;
         }
         /**
-         * If enabled, NLB supports active-standby backends. The standby backend takes over the
-         * traffic when the active node fails, and continues to serve the traffic even when the old
-         * active node is back healthy.
-         */
+         * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areOperationallyActiveBackendsPreferred")
         private Boolean areOperationallyActiveBackendsPreferred;
 
         /**
-         * If enabled, NLB supports active-standby backends. The standby backend takes over the
-         * traffic when the active node fails, and continues to serve the traffic even when the old
-         * active node is back healthy.
+         * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
          *
          * @param areOperationallyActiveBackendsPreferred the value to set
          * @return this builder
-         */
+         **/
         public Builder areOperationallyActiveBackendsPreferred(
                 Boolean areOperationallyActiveBackendsPreferred) {
             this.areOperationallyActiveBackendsPreferred = areOperationallyActiveBackendsPreferred;
             this.__explicitlySet__.add("areOperationallyActiveBackendsPreferred");
             return this;
         }
-        /** The IP version associated with the backend set. */
+        /**
+         * The IP version associated with the backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
         private IpVersion ipVersion;
 
         /**
          * The IP version associated with the backend set.
-         *
          * @param ipVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder ipVersion(IpVersion ipVersion) {
             this.ipVersion = ipVersion;
             this.__explicitlySet__.add("ipVersion");
             return this;
         }
-        /** An array of backends associated with the backend set. */
+        /**
+         * An array of backends associated with the backend set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<BackendDetails> backends;
 
         /**
          * An array of backends associated with the backend set.
-         *
          * @param backends the value to set
          * @return this builder
-         */
+         **/
         public Builder backends(java.util.List<BackendDetails> backends) {
             this.backends = backends;
             this.__explicitlySet__.add("backends");
@@ -291,7 +280,9 @@ public final class UpdateBackendSetDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -301,143 +292,137 @@ public final class UpdateBackendSetDetails
     }
 
     /**
-     * The network load balancer policy for the backend set. To get a list of available policies,
-     * use the {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest)
-     * listNetworkLoadBalancersPolicies} operation.
+     * The network load balancer policy for the backend set. To get a list of available policies, use the
+     * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
+     * <p>
+     * Example: {@code FIVE_TUPLE}
      *
-     * <p>Example: {@code FIVE_TUPLE}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final String policy;
 
     /**
-     * The network load balancer policy for the backend set. To get a list of available policies,
-     * use the {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest)
-     * listNetworkLoadBalancersPolicies} operation.
-     *
-     * <p>Example: {@code FIVE_TUPLE}
+     * The network load balancer policy for the backend set. To get a list of available policies, use the
+     * {@link #listNetworkLoadBalancersPolicies(ListNetworkLoadBalancersPoliciesRequest) listNetworkLoadBalancersPolicies} operation.
+     * <p>
+     * Example: {@code FIVE_TUPLE}
      *
      * @return the value
-     */
+     **/
     public String getPolicy() {
         return policy;
     }
 
     /**
-     * If this parameter is enabled, then the network load balancer preserves the source IP of the
-     * packet when it is forwarded to backends. Backends see the original source IP. If the
-     * isPreserveSourceDestination parameter is enabled for the network load balancer resource, then
-     * this parameter cannot be disabled. The value is true by default.
-     */
+     * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
+     * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+     * The value is true by default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
     private final Boolean isPreserveSource;
 
     /**
-     * If this parameter is enabled, then the network load balancer preserves the source IP of the
-     * packet when it is forwarded to backends. Backends see the original source IP. If the
-     * isPreserveSourceDestination parameter is enabled for the network load balancer resource, then
-     * this parameter cannot be disabled. The value is true by default.
+     * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
+     * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+     * The value is true by default.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPreserveSource() {
         return isPreserveSource;
     }
 
     /**
-     * If enabled, the network load balancer will continue to distribute traffic in the configured
-     * distribution in the event all backends are unhealthy. The value is false by default.
-     */
+     * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+     * The value is false by default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFailOpen")
     private final Boolean isFailOpen;
 
     /**
-     * If enabled, the network load balancer will continue to distribute traffic in the configured
-     * distribution in the event all backends are unhealthy. The value is false by default.
+     * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+     * The value is false by default.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFailOpen() {
         return isFailOpen;
     }
 
     /**
-     * If enabled existing connections will be forwarded to an alternative healthy backend as soon
-     * as current backend becomes unhealthy.
-     */
+     * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverEnabled")
     private final Boolean isInstantFailoverEnabled;
 
     /**
-     * If enabled existing connections will be forwarded to an alternative healthy backend as soon
-     * as current backend becomes unhealthy.
+     * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsInstantFailoverEnabled() {
         return isInstantFailoverEnabled;
     }
 
     /**
-     * If enabled along with instant failover, the network load balancer will send TCP RST to the
-     * clients for the existing connections instead of failing over to a healthy backend. This only
-     * applies when using the instant failover.
-     */
+     * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverTcpResetEnabled")
     private final Boolean isInstantFailoverTcpResetEnabled;
 
     /**
-     * If enabled along with instant failover, the network load balancer will send TCP RST to the
-     * clients for the existing connections instead of failing over to a healthy backend. This only
-     * applies when using the instant failover.
+     * If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsInstantFailoverTcpResetEnabled() {
         return isInstantFailoverTcpResetEnabled;
     }
 
     /**
-     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic
-     * when the active node fails, and continues to serve the traffic even when the old active node
-     * is back healthy.
-     */
+     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areOperationallyActiveBackendsPreferred")
     private final Boolean areOperationallyActiveBackendsPreferred;
 
     /**
-     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic
-     * when the active node fails, and continues to serve the traffic even when the old active node
-     * is back healthy.
+     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
      *
      * @return the value
-     */
+     **/
     public Boolean getAreOperationallyActiveBackendsPreferred() {
         return areOperationallyActiveBackendsPreferred;
     }
 
-    /** The IP version associated with the backend set. */
+    /**
+     * The IP version associated with the backend set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
     private final IpVersion ipVersion;
 
     /**
      * The IP version associated with the backend set.
-     *
      * @return the value
-     */
+     **/
     public IpVersion getIpVersion() {
         return ipVersion;
     }
 
-    /** An array of backends associated with the backend set. */
+    /**
+     * An array of backends associated with the backend set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backends")
     private final java.util.List<BackendDetails> backends;
 
     /**
      * An array of backends associated with the backend set.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<BackendDetails> getBackends() {
         return backends;
     }
@@ -456,7 +441,6 @@ public final class UpdateBackendSetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

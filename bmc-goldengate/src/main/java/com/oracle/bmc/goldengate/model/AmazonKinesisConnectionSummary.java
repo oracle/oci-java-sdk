@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the Amazon Kinesis Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the Amazon Kinesis Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AmazonKinesisConnectionSummary.Builder.class)
+    builder = AmazonKinesisConnectionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,22 +199,26 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Amazon Kinesis technology type. */
+        /**
+         * The Amazon Kinesis technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private AmazonKinesisConnection.TechnologyType technologyType;
 
         /**
          * The Amazon Kinesis technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(AmazonKinesisConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** Access key ID to access the Amazon Kinesis. */
+        /**
+         * Access key ID to access the Amazon Kinesis.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
 
@@ -222,28 +227,27 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
          *
          * @param accessKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder accessKeyId(String accessKeyId) {
             this.accessKeyId = accessKeyId;
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
         private String secretAccessKeySecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
          *
          * @param secretAccessKeySecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
             this.secretAccessKeySecretId = secretAccessKeySecretId;
             this.__explicitlySet__.add("secretAccessKeySecretId");
@@ -356,7 +360,9 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -414,20 +420,24 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
         this.secretAccessKeySecretId = secretAccessKeySecretId;
     }
 
-    /** The Amazon Kinesis technology type. */
+    /**
+     * The Amazon Kinesis technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final AmazonKinesisConnection.TechnologyType technologyType;
 
     /**
      * The Amazon Kinesis technology type.
-     *
      * @return the value
-     */
+     **/
     public AmazonKinesisConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** Access key ID to access the Amazon Kinesis. */
+    /**
+     * Access key ID to access the Amazon Kinesis.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
     private final String accessKeyId;
 
@@ -435,26 +445,25 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
      * Access key ID to access the Amazon Kinesis.
      *
      * @return the value
-     */
+     **/
     public String getAccessKeyId() {
         return accessKeyId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field
-     * must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
     private final String secretAccessKeySecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field
-     * must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSecretAccessKeySecretId() {
         return secretAccessKeySecretId;
     }
@@ -466,7 +475,6 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

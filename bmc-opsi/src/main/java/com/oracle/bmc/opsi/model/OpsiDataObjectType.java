@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Type of OPSI data object. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OpsiDataObjectType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of OPSI data object.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OpsiDataObjectType {
     DatabaseInsightsDataObject("DATABASE_INSIGHTS_DATA_OBJECT"),
     HostInsightsDataObject("HOST_INSIGHTS_DATA_OBJECT"),
     ExadataInsightsDataObject("EXADATA_INSIGHTS_DATA_OBJECT"),

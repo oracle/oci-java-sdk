@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * training model details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * training model details
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ConfigurationDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"configurationMap"})
     public ConfigurationDetails(java.util.Map<String, String> configurationMap) {
@@ -32,33 +31,78 @@ public final class ConfigurationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * model configuration details For PII : ConfigurationDetails will be PiiEntityMasking can
-         * be anyone of the following ex.{ "mode" : "MASK","maskingCharacter" :
-         * "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true } { "mode" :
-         * "MASK","replaceWith" : "&" } { "mode" : "REPLACE" } For language translation : {
-         * "languageCodes" : ["cs", "ar"]} Language code supported Automatically detect language -
-         * auto Arabic - ar Brazilian Portuguese - pt-BR Czech - cs Danish - da Dutch - nl English -
-         * en Finnish - fi French - fr Canadian French - fr-CA German - de Italian - it Japanese -
-         * ja Korean - ko Norwegian - no Polish - pl Romanian - ro Simplified Chinese - zh-CN
-         * Spanish - es Swedish - sv Traditional Chinese - zh-TW Turkish - tr Greek - el Hebrew - he
-         */
+         * model configuration details
+         * For PII : ConfigurationDetails will be PiiEntityMasking can be anyone of the following
+         * ex.{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+         *    { "mode" : "MASK","replaceWith" : "&"  }
+         *    { "mode" : "REPLACE" }
+         * For language translation :  { "languageCodes" : ["cs", "ar"]}
+         * Language code supported
+         *           Automatically detect language - auto
+         *           Arabic - ar
+         *           Brazilian Portuguese -  pt-BR
+         *           Czech - cs
+         *           Danish - da
+         *           Dutch - nl
+         *           English - en
+         *           Finnish - fi
+         *           French - fr
+         *           Canadian French - fr-CA
+         *           German - de
+         *           Italian - it
+         *           Japanese - ja
+         *           Korean - ko
+         *           Norwegian - no
+         *           Polish - pl
+         *           Romanian - ro
+         *           Simplified Chinese - zh-CN
+         *           Spanish - es
+         *           Swedish - sv
+         *           Traditional Chinese - zh-TW
+         *           Turkish - tr
+         *           Greek - el
+         *           Hebrew - he
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationMap")
         private java.util.Map<String, String> configurationMap;
 
         /**
-         * model configuration details For PII : ConfigurationDetails will be PiiEntityMasking can
-         * be anyone of the following ex.{ "mode" : "MASK","maskingCharacter" :
-         * "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true } { "mode" :
-         * "MASK","replaceWith" : "&" } { "mode" : "REPLACE" } For language translation : {
-         * "languageCodes" : ["cs", "ar"]} Language code supported Automatically detect language -
-         * auto Arabic - ar Brazilian Portuguese - pt-BR Czech - cs Danish - da Dutch - nl English -
-         * en Finnish - fi French - fr Canadian French - fr-CA German - de Italian - it Japanese -
-         * ja Korean - ko Norwegian - no Polish - pl Romanian - ro Simplified Chinese - zh-CN
-         * Spanish - es Swedish - sv Traditional Chinese - zh-TW Turkish - tr Greek - el Hebrew - he
+         * model configuration details
+         * For PII : ConfigurationDetails will be PiiEntityMasking can be anyone of the following
+         * ex.{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+         *    { "mode" : "MASK","replaceWith" : "&"  }
+         *    { "mode" : "REPLACE" }
+         * For language translation :  { "languageCodes" : ["cs", "ar"]}
+         * Language code supported
+         *           Automatically detect language - auto
+         *           Arabic - ar
+         *           Brazilian Portuguese -  pt-BR
+         *           Czech - cs
+         *           Danish - da
+         *           Dutch - nl
+         *           English - en
+         *           Finnish - fi
+         *           French - fr
+         *           Canadian French - fr-CA
+         *           German - de
+         *           Italian - it
+         *           Japanese - ja
+         *           Korean - ko
+         *           Norwegian - no
+         *           Polish - pl
+         *           Romanian - ro
+         *           Simplified Chinese - zh-CN
+         *           Spanish - es
+         *           Swedish - sv
+         *           Traditional Chinese - zh-TW
+         *           Turkish - tr
+         *           Greek - el
+         *           Hebrew - he
          *
          * @param configurationMap the value to set
          * @return this builder
-         */
+         **/
         public Builder configurationMap(java.util.Map<String, String> configurationMap) {
             this.configurationMap = configurationMap;
             this.__explicitlySet__.add("configurationMap");
@@ -85,7 +129,9 @@ public final class ConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,32 +141,77 @@ public final class ConfigurationDetails
     }
 
     /**
-     * model configuration details For PII : ConfigurationDetails will be PiiEntityMasking can be
-     * anyone of the following ex.{ "mode" : "MASK","maskingCharacter" :
-     * "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true } { "mode" : "MASK","replaceWith"
-     * : "&" } { "mode" : "REPLACE" } For language translation : { "languageCodes" : ["cs", "ar"]}
-     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
-     * - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr Canadian
-     * French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl
-     * Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv Traditional Chinese -
-     * zh-TW Turkish - tr Greek - el Hebrew - he
-     */
+     * model configuration details
+     * For PII : ConfigurationDetails will be PiiEntityMasking can be anyone of the following
+     * ex.{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+     *    { "mode" : "MASK","replaceWith" : "&"  }
+     *    { "mode" : "REPLACE" }
+     * For language translation :  { "languageCodes" : ["cs", "ar"]}
+     * Language code supported
+     *           Automatically detect language - auto
+     *           Arabic - ar
+     *           Brazilian Portuguese -  pt-BR
+     *           Czech - cs
+     *           Danish - da
+     *           Dutch - nl
+     *           English - en
+     *           Finnish - fi
+     *           French - fr
+     *           Canadian French - fr-CA
+     *           German - de
+     *           Italian - it
+     *           Japanese - ja
+     *           Korean - ko
+     *           Norwegian - no
+     *           Polish - pl
+     *           Romanian - ro
+     *           Simplified Chinese - zh-CN
+     *           Spanish - es
+     *           Swedish - sv
+     *           Traditional Chinese - zh-TW
+     *           Turkish - tr
+     *           Greek - el
+     *           Hebrew - he
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationMap")
     private final java.util.Map<String, String> configurationMap;
 
     /**
-     * model configuration details For PII : ConfigurationDetails will be PiiEntityMasking can be
-     * anyone of the following ex.{ "mode" : "MASK","maskingCharacter" :
-     * "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true } { "mode" : "MASK","replaceWith"
-     * : "&" } { "mode" : "REPLACE" } For language translation : { "languageCodes" : ["cs", "ar"]}
-     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
-     * - pt-BR Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr Canadian
-     * French - fr-CA German - de Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl
-     * Romanian - ro Simplified Chinese - zh-CN Spanish - es Swedish - sv Traditional Chinese -
-     * zh-TW Turkish - tr Greek - el Hebrew - he
+     * model configuration details
+     * For PII : ConfigurationDetails will be PiiEntityMasking can be anyone of the following
+     * ex.{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+     *    { "mode" : "MASK","replaceWith" : "&"  }
+     *    { "mode" : "REPLACE" }
+     * For language translation :  { "languageCodes" : ["cs", "ar"]}
+     * Language code supported
+     *           Automatically detect language - auto
+     *           Arabic - ar
+     *           Brazilian Portuguese -  pt-BR
+     *           Czech - cs
+     *           Danish - da
+     *           Dutch - nl
+     *           English - en
+     *           Finnish - fi
+     *           French - fr
+     *           Canadian French - fr-CA
+     *           German - de
+     *           Italian - it
+     *           Japanese - ja
+     *           Korean - ko
+     *           Norwegian - no
+     *           Polish - pl
+     *           Romanian - ro
+     *           Simplified Chinese - zh-CN
+     *           Spanish - es
+     *           Swedish - sv
+     *           Traditional Chinese - zh-TW
+     *           Turkish - tr
+     *           Greek - el
+     *           Hebrew - he
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getConfigurationMap() {
         return configurationMap;
     }
@@ -132,7 +223,6 @@ public final class ConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

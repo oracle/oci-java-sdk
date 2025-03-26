@@ -5,25 +5,25 @@
 package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
- * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is
- * from the infrastructure. The information will only be available after the connectionState is
- * transitioned to CONNECTED. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * Inventory for a Compute Cloud@Customer infrastructure. This information
+ * cannot be updated and is from the infrastructure. The information will only be available
+ * after the connectionState is transitioned to CONNECTED.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CccInfrastructureInventory.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CccInfrastructureInventory.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CccInfrastructureInventory
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "serialNumber",
@@ -48,7 +48,10 @@ public final class CccInfrastructureInventory
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The serial number of the Compute Cloud@Customer infrastructure rack. */
+        /**
+         * The serial number of the Compute Cloud@Customer infrastructure rack.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
         private String serialNumber;
 
@@ -57,83 +60,81 @@ public final class CccInfrastructureInventory
          *
          * @param serialNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = serialNumber;
             this.__explicitlySet__.add("serialNumber");
             return this;
         }
         /**
-         * The number of management nodes that are available and in active use on the Compute
-         * Cloud@Customer infrastructure rack.
-         */
+         * The number of management nodes that are available and in active use
+         * on the Compute Cloud@Customer infrastructure rack.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementNodeCount")
         private Integer managementNodeCount;
 
         /**
-         * The number of management nodes that are available and in active use on the Compute
-         * Cloud@Customer infrastructure rack.
+         * The number of management nodes that are available and in active use
+         * on the Compute Cloud@Customer infrastructure rack.
          *
          * @param managementNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder managementNodeCount(Integer managementNodeCount) {
             this.managementNodeCount = managementNodeCount;
             this.__explicitlySet__.add("managementNodeCount");
             return this;
         }
         /**
-         * The number of compute nodes that are available and usable on the Compute Cloud@Customer
-         * infrastructure rack. There is no distinction of compute node type in this information.
-         */
+         * The number of compute nodes that are available and usable
+         * on the Compute Cloud@Customer infrastructure rack. There is no distinction
+         * of compute node type in this information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeNodeCount")
         private Integer computeNodeCount;
 
         /**
-         * The number of compute nodes that are available and usable on the Compute Cloud@Customer
-         * infrastructure rack. There is no distinction of compute node type in this information.
+         * The number of compute nodes that are available and usable
+         * on the Compute Cloud@Customer infrastructure rack. There is no distinction
+         * of compute node type in this information.
          *
          * @param computeNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder computeNodeCount(Integer computeNodeCount) {
             this.computeNodeCount = computeNodeCount;
             this.__explicitlySet__.add("computeNodeCount");
             return this;
         }
         /**
-         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-         * designated for capacity storage.
-         */
+         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityStorageTrayCount")
         private Integer capacityStorageTrayCount;
 
         /**
-         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-         * designated for capacity storage.
-         *
+         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
          * @param capacityStorageTrayCount the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityStorageTrayCount(Integer capacityStorageTrayCount) {
             this.capacityStorageTrayCount = capacityStorageTrayCount;
             this.__explicitlySet__.add("capacityStorageTrayCount");
             return this;
         }
         /**
-         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-         * designated for performance storage.
-         */
+         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("performanceStorageTrayCount")
         private Integer performanceStorageTrayCount;
 
         /**
-         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-         * designated for performance storage.
-         *
+         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
          * @param performanceStorageTrayCount the value to set
          * @return this builder
-         */
+         **/
         public Builder performanceStorageTrayCount(Integer performanceStorageTrayCount) {
             this.performanceStorageTrayCount = performanceStorageTrayCount;
             this.__explicitlySet__.add("performanceStorageTrayCount");
@@ -178,7 +179,9 @@ public final class CccInfrastructureInventory
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -187,7 +190,10 @@ public final class CccInfrastructureInventory
         return new Builder().copy(this);
     }
 
-    /** The serial number of the Compute Cloud@Customer infrastructure rack. */
+    /**
+     * The serial number of the Compute Cloud@Customer infrastructure rack.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     private final String serialNumber;
 
@@ -195,75 +201,73 @@ public final class CccInfrastructureInventory
      * The serial number of the Compute Cloud@Customer infrastructure rack.
      *
      * @return the value
-     */
+     **/
     public String getSerialNumber() {
         return serialNumber;
     }
 
     /**
-     * The number of management nodes that are available and in active use on the Compute
-     * Cloud@Customer infrastructure rack.
-     */
+     * The number of management nodes that are available and in active use
+     * on the Compute Cloud@Customer infrastructure rack.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementNodeCount")
     private final Integer managementNodeCount;
 
     /**
-     * The number of management nodes that are available and in active use on the Compute
-     * Cloud@Customer infrastructure rack.
+     * The number of management nodes that are available and in active use
+     * on the Compute Cloud@Customer infrastructure rack.
      *
      * @return the value
-     */
+     **/
     public Integer getManagementNodeCount() {
         return managementNodeCount;
     }
 
     /**
-     * The number of compute nodes that are available and usable on the Compute Cloud@Customer
-     * infrastructure rack. There is no distinction of compute node type in this information.
-     */
+     * The number of compute nodes that are available and usable
+     * on the Compute Cloud@Customer infrastructure rack. There is no distinction
+     * of compute node type in this information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeNodeCount")
     private final Integer computeNodeCount;
 
     /**
-     * The number of compute nodes that are available and usable on the Compute Cloud@Customer
-     * infrastructure rack. There is no distinction of compute node type in this information.
+     * The number of compute nodes that are available and usable
+     * on the Compute Cloud@Customer infrastructure rack. There is no distinction
+     * of compute node type in this information.
      *
      * @return the value
-     */
+     **/
     public Integer getComputeNodeCount() {
         return computeNodeCount;
     }
 
     /**
-     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-     * designated for capacity storage.
-     */
+     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityStorageTrayCount")
     private final Integer capacityStorageTrayCount;
 
     /**
-     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-     * designated for capacity storage.
-     *
+     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
      * @return the value
-     */
+     **/
     public Integer getCapacityStorageTrayCount() {
         return capacityStorageTrayCount;
     }
 
     /**
-     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-     * designated for performance storage.
-     */
+     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("performanceStorageTrayCount")
     private final Integer performanceStorageTrayCount;
 
     /**
-     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are
-     * designated for performance storage.
-     *
+     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
      * @return the value
-     */
+     **/
     public Integer getPerformanceStorageTrayCount() {
         return performanceStorageTrayCount;
     }
@@ -275,7 +279,6 @@ public final class CccInfrastructureInventory
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/** The lifecycle state of a private endpoint. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum PrivateEndpointLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The lifecycle state of a private endpoint.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+public enum PrivateEndpointLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

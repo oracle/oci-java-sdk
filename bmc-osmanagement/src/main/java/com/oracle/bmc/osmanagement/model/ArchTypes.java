@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagement.model;
 
-/** Possible CPU architecture types */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum ArchTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible CPU architecture types
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+public enum ArchTypes {
     Ia32("IA_32"),
     X8664("X86_64"),
     Aarch64("AARCH64"),

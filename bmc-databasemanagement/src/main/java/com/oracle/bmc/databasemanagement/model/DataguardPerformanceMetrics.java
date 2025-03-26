@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of Data Guard performance metrics for Managed Databases. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A summary of Data Guard performance metrics for Managed Databases.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataguardPerformanceMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DataguardPerformanceMetrics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataguardPerformanceMetrics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metricsData"})
     public DataguardPerformanceMetrics(java.util.List<PerformanceMetricsData> metricsData) {
@@ -32,19 +31,16 @@ public final class DataguardPerformanceMetrics
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and
-         * RedoApplyRate, for Managed Databases.
-         */
+         * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate, for Managed Databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricsData")
         private java.util.List<PerformanceMetricsData> metricsData;
 
         /**
-         * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and
-         * RedoApplyRate, for Managed Databases.
-         *
+         * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate, for Managed Databases.
          * @param metricsData the value to set
          * @return this builder
-         */
+         **/
         public Builder metricsData(java.util.List<PerformanceMetricsData> metricsData) {
             this.metricsData = metricsData;
             this.__explicitlySet__.add("metricsData");
@@ -71,7 +67,9 @@ public final class DataguardPerformanceMetrics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -81,18 +79,15 @@ public final class DataguardPerformanceMetrics
     }
 
     /**
-     * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate,
-     * for Managed Databases.
-     */
+     * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate, for Managed Databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricsData")
     private final java.util.List<PerformanceMetricsData> metricsData;
 
     /**
-     * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate,
-     * for Managed Databases.
-     *
+     * A summary of Data Guard performance metrics such as ApplyLag, TransportLag and RedoApplyRate, for Managed Databases.
      * @return the value
-     */
+     **/
     public java.util.List<PerformanceMetricsData> getMetricsData() {
         return metricsData;
     }
@@ -104,7 +99,6 @@ public final class DataguardPerformanceMetrics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

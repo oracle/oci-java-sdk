@@ -6,23 +6,21 @@ package com.oracle.bmc.capacitymanagement.model;
 
 /**
  * The details of the create capacity request. This model serves as a base for different namespaces.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OccCapacityRequestBaseDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OccCapacityRequestBaseDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OccCapacityRequestBaseDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceType",
@@ -66,61 +64,65 @@ public final class OccCapacityRequestBaseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the resource against which the user wants to place a capacity request. */
+        /**
+         * The type of the resource against which the user wants to place a capacity request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The type of the resource against which the user wants to place a capacity request.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The type of the workload (Generic/ROW). */
+        /**
+         * The type of the workload (Generic/ROW).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
         private String workloadType;
 
         /**
          * The type of the workload (Generic/ROW).
-         *
          * @param workloadType the value to set
          * @return this builder
-         */
+         **/
         public Builder workloadType(String workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
             return this;
         }
-        /** The WorkloadType from where capacity request are to be transferred. */
+        /**
+         * The WorkloadType from where capacity request are to be transferred.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceWorkloadType")
         private String sourceWorkloadType;
 
         /**
          * The WorkloadType from where capacity request are to be transferred.
-         *
          * @param sourceWorkloadType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceWorkloadType(String sourceWorkloadType) {
             this.sourceWorkloadType = sourceWorkloadType;
             this.__explicitlySet__.add("sourceWorkloadType");
             return this;
         }
-        /** The incremental quantity of resources supplied as the provisioning is underway. */
+        /**
+         * The incremental quantity of resources supplied as the provisioning is underway.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expectedHandoverQuantity")
         private Long expectedHandoverQuantity;
 
         /**
          * The incremental quantity of resources supplied as the provisioning is underway.
-         *
          * @param expectedHandoverQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder expectedHandoverQuantity(Long expectedHandoverQuantity) {
             this.expectedHandoverQuantity = expectedHandoverQuantity;
             this.__explicitlySet__.add("expectedHandoverQuantity");
@@ -128,85 +130,82 @@ public final class OccCapacityRequestBaseDetails
         }
         /**
          * The date on which the latest increment to supplied quantity of resources was delivered.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dateExpectedHandover")
         private java.util.Date dateExpectedHandover;
 
         /**
          * The date on which the latest increment to supplied quantity of resources was delivered.
-         *
          * @param dateExpectedHandover the value to set
          * @return this builder
-         */
+         **/
         public Builder dateExpectedHandover(java.util.Date dateExpectedHandover) {
             this.dateExpectedHandover = dateExpectedHandover;
             this.__explicitlySet__.add("dateExpectedHandover");
             return this;
         }
-        /** The actual handed over quantity of resources at the time of request resolution. */
+        /**
+         * The actual handed over quantity of resources at the time of request resolution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actualHandoverQuantity")
         private Long actualHandoverQuantity;
 
         /**
          * The actual handed over quantity of resources at the time of request resolution.
-         *
          * @param actualHandoverQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder actualHandoverQuantity(Long actualHandoverQuantity) {
             this.actualHandoverQuantity = actualHandoverQuantity;
             this.__explicitlySet__.add("actualHandoverQuantity");
             return this;
         }
-        /** The date on which the actual handover quantity of resources is delivered. */
+        /**
+         * The date on which the actual handover quantity of resources is delivered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dateActualHandover")
         private java.util.Date dateActualHandover;
 
         /**
          * The date on which the actual handover quantity of resources is delivered.
-         *
          * @param dateActualHandover the value to set
          * @return this builder
-         */
+         **/
         public Builder dateActualHandover(java.util.Date dateActualHandover) {
             this.dateActualHandover = dateActualHandover;
             this.__explicitlySet__.add("dateActualHandover");
             return this;
         }
         /**
-         * The availability domain of the resource which is to be transferred. Note that this is
-         * only required for Capacity Request Transfer requests.
-         */
+         * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain of the resource which is to be transferred. Note that this is
-         * only required for Capacity Request Transfer requests.
-         *
+         * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * A list containing details about occHandoverResourceBlocks which were handed over for the
-         * corresponding resource name.
-         */
+         * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedOccHandoverResourceBlockList")
         private java.util.List<AssociatedOccHandoverResourceBlock>
                 associatedOccHandoverResourceBlockList;
 
         /**
-         * A list containing details about occHandoverResourceBlocks which were handed over for the
-         * corresponding resource name.
+         * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
          *
          * @param associatedOccHandoverResourceBlockList the value to set
          * @return this builder
-         */
+         **/
         public Builder associatedOccHandoverResourceBlockList(
                 java.util.List<AssociatedOccHandoverResourceBlock>
                         associatedOccHandoverResourceBlockList) {
@@ -215,34 +214,32 @@ public final class OccCapacityRequestBaseDetails
             return this;
         }
         /**
-         * The name of the COMPUTE server shape for which the request is made. Do not use
-         * CAPACITY_CONSTRAINT as the resource name.
-         */
+         * The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
-         * The name of the COMPUTE server shape for which the request is made. Do not use
-         * CAPACITY_CONSTRAINT as the resource name.
-         *
+         * The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** The number of compute server's with name <resourceName> required by the user. */
+        /**
+         * The number of compute server's with name <resourceName> required by the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("demandQuantity")
         private Long demandQuantity;
 
         /**
          * The number of compute server's with name <resourceName> required by the user.
-         *
          * @param demandQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder demandQuantity(Long demandQuantity) {
             this.demandQuantity = demandQuantity;
             this.__explicitlySet__.add("demandQuantity");
@@ -312,7 +309,9 @@ public final class OccCapacityRequestBaseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -321,159 +320,160 @@ public final class OccCapacityRequestBaseDetails
         return new Builder().copy(this);
     }
 
-    /** The type of the resource against which the user wants to place a capacity request. */
+    /**
+     * The type of the resource against which the user wants to place a capacity request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The type of the resource against which the user wants to place a capacity request.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** The type of the workload (Generic/ROW). */
+    /**
+     * The type of the workload (Generic/ROW).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
     private final String workloadType;
 
     /**
      * The type of the workload (Generic/ROW).
-     *
      * @return the value
-     */
+     **/
     public String getWorkloadType() {
         return workloadType;
     }
 
-    /** The WorkloadType from where capacity request are to be transferred. */
+    /**
+     * The WorkloadType from where capacity request are to be transferred.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceWorkloadType")
     private final String sourceWorkloadType;
 
     /**
      * The WorkloadType from where capacity request are to be transferred.
-     *
      * @return the value
-     */
+     **/
     public String getSourceWorkloadType() {
         return sourceWorkloadType;
     }
 
-    /** The incremental quantity of resources supplied as the provisioning is underway. */
+    /**
+     * The incremental quantity of resources supplied as the provisioning is underway.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedHandoverQuantity")
     private final Long expectedHandoverQuantity;
 
     /**
      * The incremental quantity of resources supplied as the provisioning is underway.
-     *
      * @return the value
-     */
+     **/
     public Long getExpectedHandoverQuantity() {
         return expectedHandoverQuantity;
     }
 
-    /** The date on which the latest increment to supplied quantity of resources was delivered. */
+    /**
+     * The date on which the latest increment to supplied quantity of resources was delivered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateExpectedHandover")
     private final java.util.Date dateExpectedHandover;
 
     /**
      * The date on which the latest increment to supplied quantity of resources was delivered.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getDateExpectedHandover() {
         return dateExpectedHandover;
     }
 
-    /** The actual handed over quantity of resources at the time of request resolution. */
+    /**
+     * The actual handed over quantity of resources at the time of request resolution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualHandoverQuantity")
     private final Long actualHandoverQuantity;
 
     /**
      * The actual handed over quantity of resources at the time of request resolution.
-     *
      * @return the value
-     */
+     **/
     public Long getActualHandoverQuantity() {
         return actualHandoverQuantity;
     }
 
-    /** The date on which the actual handover quantity of resources is delivered. */
+    /**
+     * The date on which the actual handover quantity of resources is delivered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateActualHandover")
     private final java.util.Date dateActualHandover;
 
     /**
      * The date on which the actual handover quantity of resources is delivered.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getDateActualHandover() {
         return dateActualHandover;
     }
 
     /**
-     * The availability domain of the resource which is to be transferred. Note that this is only
-     * required for Capacity Request Transfer requests.
-     */
+     * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain of the resource which is to be transferred. Note that this is only
-     * required for Capacity Request Transfer requests.
-     *
+     * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * A list containing details about occHandoverResourceBlocks which were handed over for the
-     * corresponding resource name.
-     */
+     * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedOccHandoverResourceBlockList")
     private final java.util.List<AssociatedOccHandoverResourceBlock>
             associatedOccHandoverResourceBlockList;
 
     /**
-     * A list containing details about occHandoverResourceBlocks which were handed over for the
-     * corresponding resource name.
+     * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AssociatedOccHandoverResourceBlock>
             getAssociatedOccHandoverResourceBlockList() {
         return associatedOccHandoverResourceBlockList;
     }
 
     /**
-     * The name of the COMPUTE server shape for which the request is made. Do not use
-     * CAPACITY_CONSTRAINT as the resource name.
-     */
+     * The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
-     * The name of the COMPUTE server shape for which the request is made. Do not use
-     * CAPACITY_CONSTRAINT as the resource name.
-     *
+     * The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** The number of compute server's with name <resourceName> required by the user. */
+    /**
+     * The number of compute server's with name <resourceName> required by the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("demandQuantity")
     private final Long demandQuantity;
 
     /**
      * The number of compute server's with name <resourceName> required by the user.
-     *
      * @return the value
-     */
+     **/
     public Long getDemandQuantity() {
         return demandQuantity;
     }
@@ -485,7 +485,6 @@ public final class OccCapacityRequestBaseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

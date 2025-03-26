@@ -5,23 +5,21 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the message that you want to verify. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * The details of the message that you want to verify.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VerifyDataDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VerifyDataDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VerifyDataDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VerifyDataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "keyId",
@@ -49,50 +47,51 @@ public final class VerifyDataDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the key used to sign the message. */
+        /**
+         * The OCID of the key used to sign the message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
          * The OCID of the key used to sign the message.
-         *
          * @param keyId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-        /** The OCID of the key version used to sign the message. */
+        /**
+         * The OCID of the key version used to sign the message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
 
         /**
          * The OCID of the key version used to sign the message.
-         *
          * @param keyVersionId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyVersionId(String keyVersionId) {
             this.keyVersionId = keyVersionId;
             this.__explicitlySet__.add("keyVersionId");
             return this;
         }
         /**
-         * The base64-encoded binary data object denoting the cryptographic signature generated for
-         * the message.
-         */
+         * The base64-encoded binary data object denoting the cryptographic signature generated for the message.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
         /**
-         * The base64-encoded binary data object denoting the cryptographic signature generated for
-         * the message.
+         * The base64-encoded binary data object denoting the cryptographic signature generated for the message.
          *
          * @param signature the value to set
          * @return this builder
-         */
+         **/
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
@@ -100,66 +99,63 @@ public final class VerifyDataDetails
         }
         /**
          * Denotes whether the value of the message parameter is a raw message or a message digest.
-         * The default value, {@code RAW}, indicates a message. To indicate a message digest, use
-         * {@code DIGEST}.
-         */
+         * The default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code DIGEST}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageType")
         private MessageType messageType;
 
         /**
          * Denotes whether the value of the message parameter is a raw message or a message digest.
-         * The default value, {@code RAW}, indicates a message. To indicate a message digest, use
-         * {@code DIGEST}.
+         * The default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code DIGEST}.
          *
          * @param messageType the value to set
          * @return this builder
-         */
+         **/
         public Builder messageType(MessageType messageType) {
             this.messageType = messageType;
             this.__explicitlySet__.add("messageType");
             return this;
         }
         /**
-         * The base64-encoded binary data object denoting the message or message digest to sign. You
-         * can have a message up to 4096 bytes in size. To sign a larger message, provide the
-         * message digest.
-         */
+         * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * The base64-encoded binary data object denoting the message or message digest to sign. You
-         * can have a message up to 4096 bytes in size. To sign a larger message, provide the
-         * message digest.
-         *
+         * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
         /**
-         * The algorithm to use to sign the message or message digest. For RSA keys, supported
-         * signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing
-         * algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different
-         * hashing algorithms. When you pass a message digest for signing, ensure that you specify
-         * the same hashing algorithm as used when creating the message digest.
-         */
+         * The algorithm to use to sign the message or message digest.
+         * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+         * different hashing algorithms.
+         * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+         * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+         * as used when creating the message digest.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
         private SigningAlgorithm signingAlgorithm;
 
         /**
-         * The algorithm to use to sign the message or message digest. For RSA keys, supported
-         * signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing
-         * algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different
-         * hashing algorithms. When you pass a message digest for signing, ensure that you specify
-         * the same hashing algorithm as used when creating the message digest.
+         * The algorithm to use to sign the message or message digest.
+         * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+         * different hashing algorithms.
+         * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+         * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+         * as used when creating the message digest.
          *
          * @param signingAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder signingAlgorithm(SigningAlgorithm signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             this.__explicitlySet__.add("signingAlgorithm");
@@ -208,7 +204,9 @@ public final class VerifyDataDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -217,55 +215,56 @@ public final class VerifyDataDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the key used to sign the message. */
+    /**
+     * The OCID of the key used to sign the message.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
      * The OCID of the key used to sign the message.
-     *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
-    /** The OCID of the key version used to sign the message. */
+    /**
+     * The OCID of the key version used to sign the message.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     private final String keyVersionId;
 
     /**
      * The OCID of the key version used to sign the message.
-     *
      * @return the value
-     */
+     **/
     public String getKeyVersionId() {
         return keyVersionId;
     }
 
     /**
-     * The base64-encoded binary data object denoting the cryptographic signature generated for the
-     * message.
-     */
+     * The base64-encoded binary data object denoting the cryptographic signature generated for the message.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
     /**
-     * The base64-encoded binary data object denoting the cryptographic signature generated for the
-     * message.
+     * The base64-encoded binary data object denoting the cryptographic signature generated for the message.
      *
      * @return the value
-     */
+     **/
     public String getSignature() {
         return signature;
     }
 
     /**
-     * Denotes whether the value of the message parameter is a raw message or a message digest. The
-     * default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code
-     * DIGEST}.
-     */
-    public enum MessageType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Denotes whether the value of the message parameter is a raw message or a message digest.
+     * The default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code DIGEST}.
+     *
+     **/
+    public enum MessageType {
         Raw("RAW"),
         Digest("DIGEST"),
         ;
@@ -298,51 +297,47 @@ public final class VerifyDataDetails
         }
     };
     /**
-     * Denotes whether the value of the message parameter is a raw message or a message digest. The
-     * default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code
-     * DIGEST}.
-     */
+     * Denotes whether the value of the message parameter is a raw message or a message digest.
+     * The default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code DIGEST}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageType")
     private final MessageType messageType;
 
     /**
-     * Denotes whether the value of the message parameter is a raw message or a message digest. The
-     * default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code
-     * DIGEST}.
+     * Denotes whether the value of the message parameter is a raw message or a message digest.
+     * The default value, {@code RAW}, indicates a message. To indicate a message digest, use {@code DIGEST}.
      *
      * @return the value
-     */
+     **/
     public MessageType getMessageType() {
         return messageType;
     }
 
     /**
-     * The base64-encoded binary data object denoting the message or message digest to sign. You can
-     * have a message up to 4096 bytes in size. To sign a larger message, provide the message
-     * digest.
-     */
+     * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * The base64-encoded binary data object denoting the message or message digest to sign. You can
-     * have a message up to 4096 bytes in size. To sign a larger message, provide the message
-     * digest.
-     *
+     * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
     /**
-     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature
-     * schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA
-     * keys, ECDSA is the supported signature scheme with different hashing algorithms. When you
-     * pass a message digest for signing, ensure that you specify the same hashing algorithm as used
-     * when creating the message digest.
-     */
-    public enum SigningAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+     * The algorithm to use to sign the message or message digest.
+     * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+     * different hashing algorithms.
+     * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+     * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+     * as used when creating the message digest.
+     *
+     **/
+    public enum SigningAlgorithm {
         Sha224RsaPkcsPss("SHA_224_RSA_PKCS_PSS"),
         Sha256RsaPkcsPss("SHA_256_RSA_PKCS_PSS"),
         Sha384RsaPkcsPss("SHA_384_RSA_PKCS_PSS"),
@@ -384,24 +379,27 @@ public final class VerifyDataDetails
         }
     };
     /**
-     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature
-     * schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA
-     * keys, ECDSA is the supported signature scheme with different hashing algorithms. When you
-     * pass a message digest for signing, ensure that you specify the same hashing algorithm as used
-     * when creating the message digest.
-     */
+     * The algorithm to use to sign the message or message digest.
+     * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+     * different hashing algorithms.
+     * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+     * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+     * as used when creating the message digest.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
     private final SigningAlgorithm signingAlgorithm;
 
     /**
-     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature
-     * schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA
-     * keys, ECDSA is the supported signature scheme with different hashing algorithms. When you
-     * pass a message digest for signing, ensure that you specify the same hashing algorithm as used
-     * when creating the message digest.
+     * The algorithm to use to sign the message or message digest.
+     * For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+     * different hashing algorithms.
+     * For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
+     * When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+     * as used when creating the message digest.
      *
      * @return the value
-     */
+     **/
     public SigningAlgorithm getSigningAlgorithm() {
         return signingAlgorithm;
     }
@@ -413,7 +411,6 @@ public final class VerifyDataDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

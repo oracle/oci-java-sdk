@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The type of Service Cloud clients. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum ServiceCloudClientType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of Service Cloud clients.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum ServiceCloudClientType {
     Wsdl("WSDL"),
     Rest("REST"),
 

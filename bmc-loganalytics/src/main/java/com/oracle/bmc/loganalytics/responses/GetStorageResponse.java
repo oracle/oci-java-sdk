@@ -6,17 +6,16 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +23,10 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +38,13 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /** The returned {@code Storage} instance. */
+    /**
+     * The returned Storage instance.
+     */
     private com.oracle.bmc.loganalytics.model.Storage storage;
 
     /**
-     * The returned {@code Storage} instance.
-     *
+     * The returned Storage instance.
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.Storage getStorage() {
@@ -57,7 +60,7 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetStorageResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.loganalytics.model.Storage storage) {
@@ -67,33 +70,29 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
         this.storage = storage;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetStorageResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +102,10 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +119,13 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code Storage} instance. */
+        /**
+         * The returned Storage instance.
+         */
         private com.oracle.bmc.loganalytics.model.Storage storage;
 
         /**
-         * The returned {@code Storage} instance.
-         *
+         * The returned Storage instance.
          * @param storage the value to set
          * @return this builder
          */
@@ -133,10 +136,8 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetStorageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +150,8 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetStorageResponse build() {
             return new GetStorageResponse(__httpStatusCode__, headers, opcRequestId, etag, storage);
         }
@@ -160,7 +159,6 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

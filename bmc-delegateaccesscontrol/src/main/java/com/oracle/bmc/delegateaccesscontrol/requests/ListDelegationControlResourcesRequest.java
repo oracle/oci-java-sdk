@@ -6,46 +6,53 @@ package com.oracle.bmc.delegateaccesscontrol.requests;
 
 import com.oracle.bmc.delegateaccesscontrol.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationControlResourcesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDelegationControlResourcesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationControlResourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDelegationControlResourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 public class ListDelegationControlResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Delegation Control identifier */
+    /**
+     * unique Delegation Control identifier
+     */
     private String delegationControlId;
 
-    /** unique Delegation Control identifier */
+    /**
+     * unique Delegation Control identifier
+     */
     public String getDelegationControlId() {
         return delegationControlId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -53,15 +60,17 @@ public class ListDelegationControlResourcesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDelegationControlResourcesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Delegation Control identifier */
+        /**
+         * unique Delegation Control identifier
+         */
         private String delegationControlId = null;
 
         /**
          * unique Delegation Control identifier
-         *
          * @param delegationControlId the value to set
          * @return this builder instance
          */
@@ -70,12 +79,13 @@ public class ListDelegationControlResourcesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -85,15 +95,12 @@ public class ListDelegationControlResourcesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -102,12 +109,13 @@ public class ListDelegationControlResourcesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -118,19 +126,18 @@ public class ListDelegationControlResourcesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -142,7 +149,6 @@ public class ListDelegationControlResourcesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDelegationControlResourcesRequest o) {
@@ -158,11 +164,10 @@ public class ListDelegationControlResourcesRequest
         /**
          * Build the instance of ListDelegationControlResourcesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDelegationControlResourcesRequest
          */
@@ -176,8 +181,7 @@ public class ListDelegationControlResourcesRequest
         /**
          * Build the instance of ListDelegationControlResourcesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDelegationControlResourcesRequest
@@ -190,14 +194,12 @@ public class ListDelegationControlResourcesRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDelegationControlResourcesRequest(delegationControlId, limit, page,
-            // opcRequestId);
+            // new ListDelegationControlResourcesRequest(delegationControlId, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -210,7 +212,6 @@ public class ListDelegationControlResourcesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

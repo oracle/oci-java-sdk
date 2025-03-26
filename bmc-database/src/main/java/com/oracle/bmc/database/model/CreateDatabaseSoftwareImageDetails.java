@@ -6,25 +6,24 @@ package com.oracle.bmc.database.model;
 
 /**
  * Parameters for creating a database software image in the specified compartment.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDatabaseSoftwareImageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDatabaseSoftwareImageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDatabaseSoftwareImageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -68,179 +67,173 @@ public final class CreateDatabaseSoftwareImageDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment the database software image belongs in.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment the database software image belongs in.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The database version with which the database software image is to be built. */
+        /**
+         * The database version with which the database software image is to be built.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
         /**
          * The database version with which the database software image is to be built.
-         *
          * @param databaseVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
             return this;
         }
         /**
-         * The user-friendly name for the database software image. The name does not have to be
-         * unique.
-         */
+         * The user-friendly name for the database software image. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the database software image. The name does not have to be
-         * unique.
-         *
+         * The user-friendly name for the database software image. The name does not have to be unique.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** To what shape the image is meant for. */
+        /**
+         * To what shape the image is meant for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageShapeFamily")
         private ImageShapeFamily imageShapeFamily;
 
         /**
          * To what shape the image is meant for.
-         *
          * @param imageShapeFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder imageShapeFamily(ImageShapeFamily imageShapeFamily) {
             this.imageShapeFamily = imageShapeFamily;
             this.__explicitlySet__.add("imageShapeFamily");
             return this;
         }
-        /** The type of software image. Can be grid or database. */
+        /**
+         * The type of software image. Can be grid or database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageType")
         private ImageType imageType;
 
         /**
          * The type of software image. Can be grid or database.
-         *
          * @param imageType the value to set
          * @return this builder
-         */
+         **/
         public Builder imageType(ImageType imageType) {
             this.imageType = imageType;
             this.__explicitlySet__.add("imageType");
             return this;
         }
         /**
-         * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link
-         * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
-         */
+         * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchSet")
         private String patchSet;
 
         /**
-         * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link
-         * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
-         *
+         * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
          * @param patchSet the value to set
          * @return this builder
-         */
+         **/
         public Builder patchSet(String patchSet) {
             this.patchSet = patchSet;
             this.__explicitlySet__.add("patchSet");
             return this;
         }
-        /** List of one-off patches for Database Homes. */
+        /**
+         * List of one-off patches for Database Homes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageOneOffPatches")
         private java.util.List<String> databaseSoftwareImageOneOffPatches;
 
         /**
          * List of one-off patches for Database Homes.
-         *
          * @param databaseSoftwareImageOneOffPatches the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSoftwareImageOneOffPatches(
                 java.util.List<String> databaseSoftwareImageOneOffPatches) {
             this.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
             this.__explicitlySet__.add("databaseSoftwareImageOneOffPatches");
             return this;
         }
-        /** The output from the OPatch lsInventory command, which is passed as a string. */
+        /**
+         * The output from the OPatch lsInventory command, which is passed as a string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lsInventory")
         private String lsInventory;
 
         /**
          * The output from the OPatch lsInventory command, which is passed as a string.
-         *
          * @param lsInventory the value to set
          * @return this builder
-         */
+         **/
         public Builder lsInventory(String lsInventory) {
             this.lsInventory = lsInventory;
             this.__explicitlySet__.add("lsInventory");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -248,19 +241,16 @@ public final class CreateDatabaseSoftwareImageDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Home.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
         private String sourceDbHomeId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database Home.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
          * @param sourceDbHomeId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceDbHomeId(String sourceDbHomeId) {
             this.sourceDbHomeId = sourceDbHomeId;
             this.__explicitlySet__.add("sourceDbHomeId");
@@ -330,7 +320,9 @@ public final class CreateDatabaseSoftwareImageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -340,52 +332,51 @@ public final class CreateDatabaseSoftwareImageDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment the database software image belongs in.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment the database software image belongs in.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The database version with which the database software image is to be built. */
+    /**
+     * The database version with which the database software image is to be built.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
     /**
      * The database version with which the database software image is to be built.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseVersion() {
         return databaseVersion;
     }
 
     /**
      * The user-friendly name for the database software image. The name does not have to be unique.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the database software image. The name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** To what shape the image is meant for. */
-    public enum ImageShapeFamily implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * To what shape the image is meant for.
+     **/
+    public enum ImageShapeFamily {
         VmBmShape("VM_BM_SHAPE"),
         ExadataShape("EXADATA_SHAPE"),
         ExaccShape("EXACC_SHAPE"),
@@ -419,21 +410,24 @@ public final class CreateDatabaseSoftwareImageDetails
             throw new IllegalArgumentException("Invalid ImageShapeFamily: " + key);
         }
     };
-    /** To what shape the image is meant for. */
+    /**
+     * To what shape the image is meant for.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageShapeFamily")
     private final ImageShapeFamily imageShapeFamily;
 
     /**
      * To what shape the image is meant for.
-     *
      * @return the value
-     */
+     **/
     public ImageShapeFamily getImageShapeFamily() {
         return imageShapeFamily;
     }
 
-    /** The type of software image. Can be grid or database. */
-    public enum ImageType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of software image. Can be grid or database.
+     **/
+    public enum ImageType {
         GridImage("GRID_IMAGE"),
         DatabaseImage("DATABASE_IMAGE"),
         ;
@@ -465,117 +459,112 @@ public final class CreateDatabaseSoftwareImageDetails
             throw new IllegalArgumentException("Invalid ImageType: " + key);
         }
     };
-    /** The type of software image. Can be grid or database. */
+    /**
+     * The type of software image. Can be grid or database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageType")
     private final ImageType imageType;
 
     /**
      * The type of software image. Can be grid or database.
-     *
      * @return the value
-     */
+     **/
     public ImageType getImageType() {
         return imageType;
     }
 
     /**
-     * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link
-     * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
-     */
+     * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchSet")
     private final String patchSet;
 
     /**
-     * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link
-     * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
-     *
+     * The PSU or PBP or Release Updates. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
      * @return the value
-     */
+     **/
     public String getPatchSet() {
         return patchSet;
     }
 
-    /** List of one-off patches for Database Homes. */
+    /**
+     * List of one-off patches for Database Homes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageOneOffPatches")
     private final java.util.List<String> databaseSoftwareImageOneOffPatches;
 
     /**
      * List of one-off patches for Database Homes.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDatabaseSoftwareImageOneOffPatches() {
         return databaseSoftwareImageOneOffPatches;
     }
 
-    /** The output from the OPatch lsInventory command, which is passed as a string. */
+    /**
+     * The output from the OPatch lsInventory command, which is passed as a string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lsInventory")
     private final String lsInventory;
 
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
-     *
      * @return the value
-     */
+     **/
     public String getLsInventory() {
         return lsInventory;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Home.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbHomeId")
     private final String sourceDbHomeId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database Home.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * @return the value
-     */
+     **/
     public String getSourceDbHomeId() {
         return sourceDbHomeId;
     }
@@ -587,7 +576,6 @@ public final class CreateDatabaseSoftwareImageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

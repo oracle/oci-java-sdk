@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Logging Analytics rule kinds. Supported values are INGEST_TIME and SAVED_SEARCH. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum RuleKind implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Logging Analytics rule kinds. Supported values are INGEST_TIME and SAVED_SEARCH.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum RuleKind {
     IngestTime("INGEST_TIME"),
     SavedSearch("SAVED_SEARCH"),
 

@@ -6,25 +6,23 @@ package com.oracle.bmc.database.model;
 
 /**
  * A maintenance update for a cloud VM cluster. Applies to Exadata Cloud Service instances only.
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access,
+ * see [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpdateSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UpdateSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -62,49 +60,48 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance update.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance update.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Details of the maintenance update package. */
+        /**
+         * Details of the maintenance update package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Details of the maintenance update package.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The previous update action performed. */
+        /**
+         * The previous update action performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
         private LastAction lastAction;
 
         /**
          * The previous update action performed.
-         *
          * @param lastAction the value to set
          * @return this builder
-         */
+         **/
         public Builder lastAction(LastAction lastAction) {
             this.lastAction = lastAction;
             this.__explicitlySet__.add("lastAction");
@@ -112,37 +109,40 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The possible actions performed by the update operation on the infrastructure components.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
         private java.util.List<AvailableActions> availableActions;
 
         /**
          * The possible actions performed by the update operation on the infrastructure components.
-         *
          * @param availableActions the value to set
          * @return this builder
-         */
+         **/
         public Builder availableActions(java.util.List<AvailableActions> availableActions) {
             this.availableActions = availableActions;
             this.__explicitlySet__.add("availableActions");
             return this;
         }
-        /** The type of cloud VM cluster maintenance update. */
+        /**
+         * The type of cloud VM cluster maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateType updateType;
 
         /**
          * The type of cloud VM cluster maintenance update.
-         *
          * @param updateType the value to set
          * @return this builder
-         */
+         **/
         public Builder updateType(UpdateType updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /** Descriptive text providing additional details about the lifecycle state. */
+        /**
+         * Descriptive text providing additional details about the lifecycle state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -151,7 +151,7 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -159,46 +159,47 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The current state of the maintenance update. Dependent on value of {@code lastAction}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the maintenance update. Dependent on value of {@code lastAction}.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The date and time the maintenance update was released. */
+        /**
+         * The date and time the maintenance update was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
          * The date and time the maintenance update was released.
-         *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-        /** The version of the maintenance update package. */
+        /**
+         * The version of the maintenance update package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of the maintenance update package.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -259,7 +260,9 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -269,45 +272,45 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance update.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance update.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Details of the maintenance update package. */
+    /**
+     * Details of the maintenance update package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Details of the maintenance update package.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The previous update action performed. */
-    public enum LastAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The previous update action performed.
+     **/
+    public enum LastAction {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
         Precheck("PRECHECK"),
         Rollback("ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -346,29 +349,31 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The previous update action performed. */
+    /**
+     * The previous update action performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
     private final LastAction lastAction;
 
     /**
      * The previous update action performed.
-     *
      * @return the value
-     */
+     **/
     public LastAction getLastAction() {
         return lastAction;
     }
 
-    /** */
-    public enum AvailableActions implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum AvailableActions {
         RollingApply("ROLLING_APPLY"),
         NonRollingApply("NON_ROLLING_APPLY"),
         Precheck("PRECHECK"),
         Rollback("ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -407,28 +412,31 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The possible actions performed by the update operation on the infrastructure components. */
+    /**
+     * The possible actions performed by the update operation on the infrastructure components.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
     private final java.util.List<AvailableActions> availableActions;
 
     /**
      * The possible actions performed by the update operation on the infrastructure components.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AvailableActions> getAvailableActions() {
         return availableActions;
     }
 
-    /** The type of cloud VM cluster maintenance update. */
-    public enum UpdateType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of cloud VM cluster maintenance update.
+     **/
+    public enum UpdateType {
         GiUpgrade("GI_UPGRADE"),
         GiPatch("GI_PATCH"),
         OsUpdate("OS_UPDATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -467,20 +475,24 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The type of cloud VM cluster maintenance update. */
+    /**
+     * The type of cloud VM cluster maintenance update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateType updateType;
 
     /**
      * The type of cloud VM cluster maintenance update.
-     *
      * @return the value
-     */
+     **/
     public UpdateType getUpdateType() {
         return updateType;
     }
 
-    /** Descriptive text providing additional details about the lifecycle state. */
+    /**
+     * Descriptive text providing additional details about the lifecycle state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -488,21 +500,23 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
      * Descriptive text providing additional details about the lifecycle state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The current state of the maintenance update. Dependent on value of {@code lastAction}. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the maintenance update. Dependent on value of {@code lastAction}.
+     **/
+    public enum LifecycleState {
         Available("AVAILABLE"),
         Success("SUCCESS"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -541,41 +555,44 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The current state of the maintenance update. Dependent on value of {@code lastAction}. */
+    /**
+     * The current state of the maintenance update. Dependent on value of {@code lastAction}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the maintenance update. Dependent on value of {@code lastAction}.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The date and time the maintenance update was released. */
+    /**
+     * The date and time the maintenance update was released.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
      * The date and time the maintenance update was released.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
 
-    /** The version of the maintenance update package. */
+    /**
+     * The version of the maintenance update package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the maintenance update package.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
@@ -587,7 +604,6 @@ public final class UpdateSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

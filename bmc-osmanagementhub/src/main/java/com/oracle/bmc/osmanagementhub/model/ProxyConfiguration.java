@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Proxy information used for the management station configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Proxy information used for the management station configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProxyConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProxyConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ProxyConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProxyConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "hosts", "port", "forward"})
     public ProxyConfiguration(
@@ -35,61 +33,65 @@ public final class ProxyConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Indicates if the proxy should be enabled or disabled. Default is enabled. */
+        /**
+         * Indicates if the proxy should be enabled or disabled. Default is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Indicates if the proxy should be enabled or disabled. Default is enabled.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** List of hosts. */
+        /**
+         * List of hosts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<String> hosts;
 
         /**
          * List of hosts.
-         *
          * @param hosts the value to set
          * @return this builder
-         */
+         **/
         public Builder hosts(java.util.List<String> hosts) {
             this.hosts = hosts;
             this.__explicitlySet__.add("hosts");
             return this;
         }
-        /** Listening port used for the proxy. */
+        /**
+         * Listening port used for the proxy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
         /**
          * Listening port used for the proxy.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The URL the proxy will forward to. */
+        /**
+         * The URL the proxy will forward to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("forward")
         private String forward;
 
         /**
          * The URL the proxy will forward to.
-         *
          * @param forward the value to set
          * @return this builder
-         */
+         **/
         public Builder forward(String forward) {
             this.forward = forward;
             this.__explicitlySet__.add("forward");
@@ -126,7 +128,9 @@ public final class ProxyConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,54 +139,58 @@ public final class ProxyConfiguration
         return new Builder().copy(this);
     }
 
-    /** Indicates if the proxy should be enabled or disabled. Default is enabled. */
+    /**
+     * Indicates if the proxy should be enabled or disabled. Default is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Indicates if the proxy should be enabled or disabled. Default is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** List of hosts. */
+    /**
+     * List of hosts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<String> hosts;
 
     /**
      * List of hosts.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getHosts() {
         return hosts;
     }
 
-    /** Listening port used for the proxy. */
+    /**
+     * Listening port used for the proxy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
      * Listening port used for the proxy.
-     *
      * @return the value
-     */
+     **/
     public String getPort() {
         return port;
     }
 
-    /** The URL the proxy will forward to. */
+    /**
+     * The URL the proxy will forward to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("forward")
     private final String forward;
 
     /**
      * The URL the proxy will forward to.
-     *
      * @return the value
-     */
+     **/
     public String getForward() {
         return forward;
     }
@@ -194,7 +202,6 @@ public final class ProxyConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

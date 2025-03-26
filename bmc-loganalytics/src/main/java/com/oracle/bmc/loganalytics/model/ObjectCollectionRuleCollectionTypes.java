@@ -5,17 +5,14 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The type of Object Collection Rule that needs to be performed with the rule being created. LIVE :
- * Using this type will prompt the process to collect all the logs that gets uploaded to the object
- * store bucket from the time the rule gets registered HISTORIC: This specifies that it is a one off
- * collection request from one time (pollSince) to a second time period (pollTill). In this
- * colletion the pollTill >pollSince HISTORIC_LIVE: This specifies that the collection of objects
- * from the object store bucket needs to be started from a specific time stamp (pollSince) and
- * should collect all the objects that ever gets into this bucket till this rule is configured and
- * active.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum ObjectCollectionRuleCollectionTypes implements com.oracle.bmc.http.internal.BmcEnum {
+ * The type of Object Collection Rule that needs to be performed with the rule being created.
+ * LIVE : Using this type will prompt the process to collect all the logs that gets uploaded to the object store bucket from the time the rule gets registered
+ * HISTORIC: This specifies that it is a one off collection request from one time (pollSince) to a second time period (pollTill). In this colletion the pollTill >pollSince
+ * HISTORIC_LIVE: This specifies that the collection of objects from the object store bucket needs to be started from a specific time stamp (pollSince) and should collect all the objects that ever gets into this bucket till this rule is configured and active.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum ObjectCollectionRuleCollectionTypes {
     Live("LIVE"),
     Historic("HISTORIC"),
     HistoricLive("HISTORIC_LIVE"),

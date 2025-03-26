@@ -5,23 +5,22 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * A segment of a tracked object in a video. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * A segment of a tracked object in a video.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VideoTrackedObjectSegment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VideoTrackedObjectSegment.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VideoTrackedObjectSegment
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"videoSegment", "confidence", "frames"})
     public VideoTrackedObjectSegment(
@@ -45,31 +44,33 @@ public final class VideoTrackedObjectSegment
             this.__explicitlySet__.add("videoSegment");
             return this;
         }
-        /** The confidence score, between 0 and 1. */
+        /**
+         * The confidence score, between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * The confidence score, between 0 and 1.
-         *
          * @param confidence the value to set
          * @return this builder
-         */
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /** Frames within the segment. */
+        /**
+         * Frames within the segment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("frames")
         private java.util.List<VideoTrackingFrame> frames;
 
         /**
          * Frames within the segment.
-         *
          * @param frames the value to set
          * @return this builder
-         */
+         **/
         public Builder frames(java.util.List<VideoTrackingFrame> frames) {
             this.frames = frames;
             this.__explicitlySet__.add("frames");
@@ -103,7 +104,9 @@ public final class VideoTrackedObjectSegment
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,28 +122,30 @@ public final class VideoTrackedObjectSegment
         return videoSegment;
     }
 
-    /** The confidence score, between 0 and 1. */
+    /**
+     * The confidence score, between 0 and 1.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * The confidence score, between 0 and 1.
-     *
      * @return the value
-     */
+     **/
     public Float getConfidence() {
         return confidence;
     }
 
-    /** Frames within the segment. */
+    /**
+     * Frames within the segment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frames")
     private final java.util.List<VideoTrackingFrame> frames;
 
     /**
      * Frames within the segment.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VideoTrackingFrame> getFrames() {
         return frames;
     }
@@ -152,7 +157,6 @@ public final class VideoTrackedObjectSegment
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

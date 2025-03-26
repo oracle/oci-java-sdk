@@ -4,9 +4,13 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** The type of database connection. Example: ORACLE or MYSQL */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of database connection.
+ * Example: ORACLE or MYSQL
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum ConnectionType {
     Mysql("MYSQL"),
     Oracle("ORACLE"),
 

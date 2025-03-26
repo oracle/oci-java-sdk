@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details of aggregation dimensions used for summarizing audit policies. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Details of aggregation dimensions used for summarizing audit policies.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AuditPolicyDimensions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AuditPolicyDimensions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AuditPolicyDimensions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"auditPolicyCategory", "auditPolicyName", "targetId"})
     public AuditPolicyDimensions(
@@ -34,54 +33,51 @@ public final class AuditPolicyDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The category to which the audit policy belongs. */
+        /**
+         * The category to which the audit policy belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyCategory")
         private AuditPolicyCategory auditPolicyCategory;
 
         /**
          * The category to which the audit policy belongs.
-         *
          * @param auditPolicyCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder auditPolicyCategory(AuditPolicyCategory auditPolicyCategory) {
             this.auditPolicyCategory = auditPolicyCategory;
             this.__explicitlySet__.add("auditPolicyCategory");
             return this;
         }
         /**
-         * The name of the audit policy. Refer to the
-         * [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
-         * for seeded audit policy names. For custom policies, refer to the user-defined policy name
-         * created in the target database.
-         */
+         * The name of the audit policy. Refer to the [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
         private String auditPolicyName;
 
         /**
-         * The name of the audit policy. Refer to the
-         * [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
-         * for seeded audit policy names. For custom policies, refer to the user-defined policy name
-         * created in the target database.
+         * The name of the audit policy. Refer to the [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
          *
          * @param auditPolicyName the value to set
          * @return this builder
-         */
+         **/
         public Builder auditPolicyName(String auditPolicyName) {
             this.auditPolicyName = auditPolicyName;
             this.__explicitlySet__.add("auditPolicyName");
             return this;
         }
-        /** The OCID of the target database for which the audit policy will be created. */
+        /**
+         * The OCID of the target database for which the audit policy will be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database for which the audit policy will be created.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
@@ -116,7 +112,9 @@ public final class AuditPolicyDimensions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,49 +123,46 @@ public final class AuditPolicyDimensions
         return new Builder().copy(this);
     }
 
-    /** The category to which the audit policy belongs. */
+    /**
+     * The category to which the audit policy belongs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyCategory")
     private final AuditPolicyCategory auditPolicyCategory;
 
     /**
      * The category to which the audit policy belongs.
-     *
      * @return the value
-     */
+     **/
     public AuditPolicyCategory getAuditPolicyCategory() {
         return auditPolicyCategory;
     }
 
     /**
-     * The name of the audit policy. Refer to the
-     * [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
-     * for seeded audit policy names. For custom policies, refer to the user-defined policy name
-     * created in the target database.
-     */
+     * The name of the audit policy. Refer to the [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
     private final String auditPolicyName;
 
     /**
-     * The name of the audit policy. Refer to the
-     * [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
-     * for seeded audit policy names. For custom policies, refer to the user-defined policy name
-     * created in the target database.
+     * The name of the audit policy. Refer to the [documentation](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      *
      * @return the value
-     */
+     **/
     public String getAuditPolicyName() {
         return auditPolicyName;
     }
 
-    /** The OCID of the target database for which the audit policy will be created. */
+    /**
+     * The OCID of the target database for which the audit policy will be created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database for which the audit policy will be created.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -179,7 +174,6 @@ public final class AuditPolicyDimensions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

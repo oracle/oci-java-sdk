@@ -5,23 +5,21 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * The status of the cross-connect. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The status of the cross-connect.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CrossConnectStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CrossConnectStatus
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CrossConnectStatus.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CrossConnectStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "crossConnectId",
@@ -50,34 +48,32 @@ public final class CrossConnectStatus
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cross-connect.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cross-connect.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
          * @param crossConnectId the value to set
          * @return this builder
-         */
+         **/
         public Builder crossConnectId(String crossConnectId) {
             this.crossConnectId = crossConnectId;
             this.__explicitlySet__.add("crossConnectId");
             return this;
         }
-        /** Indicates whether Oracle's side of the interface is up or down. */
+        /**
+         * Indicates whether Oracle's side of the interface is up or down.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interfaceState")
         private InterfaceState interfaceState;
 
         /**
          * Indicates whether Oracle's side of the interface is up or down.
-         *
          * @param interfaceState the value to set
          * @return this builder
-         */
+         **/
         public Builder interfaceState(InterfaceState interfaceState) {
             this.interfaceState = interfaceState;
             this.__explicitlySet__.add("interfaceState");
@@ -85,20 +81,21 @@ public final class CrossConnectStatus
         }
         /**
          * The light level of the cross-connect (in dBm).
+         * <p>
+         * Example: {@code 14.0}
          *
-         * <p>Example: {@code 14.0}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndBm")
         private Float lightLevelIndBm;
 
         /**
          * The light level of the cross-connect (in dBm).
-         *
-         * <p>Example: {@code 14.0}
+         * <p>
+         * Example: {@code 14.0}
          *
          * @param lightLevelIndBm the value to set
          * @return this builder
-         */
+         **/
         public Builder lightLevelIndBm(Float lightLevelIndBm) {
             this.lightLevelIndBm = lightLevelIndBm;
             this.__explicitlySet__.add("lightLevelIndBm");
@@ -106,24 +103,29 @@ public final class CrossConnectStatus
         }
         /**
          * Status indicator corresponding to the light level.
+         * <p>
+         * **NO_LIGHT:** No measurable light
+         *   * **LOW_WARN:** There's measurable light but it's too low
+         *   * **HIGH_WARN:** Light level is too high
+         *   * **BAD:** There's measurable light but the signal-to-noise ratio is bad
+         *   * **GOOD:** Good light level
          *
-         * <p>**NO_LIGHT:** No measurable light * **LOW_WARN:** There's measurable light but it's
-         * too low * **HIGH_WARN:** Light level is too high * **BAD:** There's measurable light but
-         * the signal-to-noise ratio is bad * **GOOD:** Good light level
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
         private LightLevelIndicator lightLevelIndicator;
 
         /**
          * Status indicator corresponding to the light level.
-         *
-         * <p>**NO_LIGHT:** No measurable light * **LOW_WARN:** There's measurable light but it's
-         * too low * **HIGH_WARN:** Light level is too high * **BAD:** There's measurable light but
-         * the signal-to-noise ratio is bad * **GOOD:** Good light level
+         * <p>
+         * **NO_LIGHT:** No measurable light
+         *   * **LOW_WARN:** There's measurable light but it's too low
+         *   * **HIGH_WARN:** Light level is too high
+         *   * **BAD:** There's measurable light but the signal-to-noise ratio is bad
+         *   * **GOOD:** Good light level
          *
          * @param lightLevelIndicator the value to set
          * @return this builder
-         */
+         **/
         public Builder lightLevelIndicator(LightLevelIndicator lightLevelIndicator) {
             this.lightLevelIndicator = lightLevelIndicator;
             this.__explicitlySet__.add("lightLevelIndicator");
@@ -131,30 +133,31 @@ public final class CrossConnectStatus
         }
         /**
          * Encryption status of this cross connect.
+         * <p>
+         * Possible values:
+         * * **UP:** Traffic is encrypted over this cross-connect
+         * * **DOWN:** Traffic is not encrypted over this cross-connect
+         * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+         * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+         * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
          *
-         * <p>Possible values: * **UP:** Traffic is encrypted over this cross-connect * **DOWN:**
-         * Traffic is not encrypted over this cross-connect * **CIPHER_MISMATCH:** The MACsec
-         * encryption cipher doesn't match the cipher on the CPE * **CKN_MISMATCH:** The MACsec
-         * Connectivity association Key Name (CKN) doesn't match the CKN on the CPE *
-         * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on
-         * the CPE
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionStatus")
         private EncryptionStatus encryptionStatus;
 
         /**
          * Encryption status of this cross connect.
-         *
-         * <p>Possible values: * **UP:** Traffic is encrypted over this cross-connect * **DOWN:**
-         * Traffic is not encrypted over this cross-connect * **CIPHER_MISMATCH:** The MACsec
-         * encryption cipher doesn't match the cipher on the CPE * **CKN_MISMATCH:** The MACsec
-         * Connectivity association Key Name (CKN) doesn't match the CKN on the CPE *
-         * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on
-         * the CPE
+         * <p>
+         * Possible values:
+         * * **UP:** Traffic is encrypted over this cross-connect
+         * * **DOWN:** Traffic is not encrypted over this cross-connect
+         * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+         * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+         * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
          *
          * @param encryptionStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionStatus(EncryptionStatus encryptionStatus) {
             this.encryptionStatus = encryptionStatus;
             this.__explicitlySet__.add("encryptionStatus");
@@ -162,20 +165,21 @@ public final class CrossConnectStatus
         }
         /**
          * The light levels of the cross-connect (in dBm).
+         * <p>
+         * Example: {@code [14.0, -14.0, 2.1, -10.1]}
          *
-         * <p>Example: {@code [14.0, -14.0, 2.1, -10.1]}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lightLevelsInDBm")
         private java.util.List<Float> lightLevelsInDBm;
 
         /**
          * The light levels of the cross-connect (in dBm).
-         *
-         * <p>Example: {@code [14.0, -14.0, 2.1, -10.1]}
+         * <p>
+         * Example: {@code [14.0, -14.0, 2.1, -10.1]}
          *
          * @param lightLevelsInDBm the value to set
          * @return this builder
-         */
+         **/
         public Builder lightLevelsInDBm(java.util.List<Float> lightLevelsInDBm) {
             this.lightLevelsInDBm = lightLevelsInDBm;
             this.__explicitlySet__.add("lightLevelsInDBm");
@@ -224,7 +228,9 @@ public final class CrossConnectStatus
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -234,24 +240,23 @@ public final class CrossConnectStatus
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cross-connect.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
     private final String crossConnectId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cross-connect.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      * @return the value
-     */
+     **/
     public String getCrossConnectId() {
         return crossConnectId;
     }
 
-    /** Indicates whether Oracle's side of the interface is up or down. */
-    public enum InterfaceState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether Oracle's side of the interface is up or down.
+     **/
+    public enum InterfaceState {
         Up("UP"),
         Down("DOWN"),
         ;
@@ -283,46 +288,51 @@ public final class CrossConnectStatus
             throw new IllegalArgumentException("Invalid InterfaceState: " + key);
         }
     };
-    /** Indicates whether Oracle's side of the interface is up or down. */
+    /**
+     * Indicates whether Oracle's side of the interface is up or down.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("interfaceState")
     private final InterfaceState interfaceState;
 
     /**
      * Indicates whether Oracle's side of the interface is up or down.
-     *
      * @return the value
-     */
+     **/
     public InterfaceState getInterfaceState() {
         return interfaceState;
     }
 
     /**
      * The light level of the cross-connect (in dBm).
+     * <p>
+     * Example: {@code 14.0}
      *
-     * <p>Example: {@code 14.0}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndBm")
     private final Float lightLevelIndBm;
 
     /**
      * The light level of the cross-connect (in dBm).
-     *
-     * <p>Example: {@code 14.0}
+     * <p>
+     * Example: {@code 14.0}
      *
      * @return the value
-     */
+     **/
     public Float getLightLevelIndBm() {
         return lightLevelIndBm;
     }
 
     /**
      * Status indicator corresponding to the light level.
+     * <p>
+     * **NO_LIGHT:** No measurable light
+     *   * **LOW_WARN:** There's measurable light but it's too low
+     *   * **HIGH_WARN:** Light level is too high
+     *   * **BAD:** There's measurable light but the signal-to-noise ratio is bad
+     *   * **GOOD:** Good light level
      *
-     * <p>**NO_LIGHT:** No measurable light * **LOW_WARN:** There's measurable light but it's too
-     * low * **HIGH_WARN:** Light level is too high * **BAD:** There's measurable light but the
-     * signal-to-noise ratio is bad * **GOOD:** Good light level
-     */
-    public enum LightLevelIndicator implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum LightLevelIndicator {
         NoLight("NO_LIGHT"),
         LowWarn("LOW_WARN"),
         HighWarn("HIGH_WARN"),
@@ -359,37 +369,44 @@ public final class CrossConnectStatus
     };
     /**
      * Status indicator corresponding to the light level.
+     * <p>
+     * **NO_LIGHT:** No measurable light
+     *   * **LOW_WARN:** There's measurable light but it's too low
+     *   * **HIGH_WARN:** Light level is too high
+     *   * **BAD:** There's measurable light but the signal-to-noise ratio is bad
+     *   * **GOOD:** Good light level
      *
-     * <p>**NO_LIGHT:** No measurable light * **LOW_WARN:** There's measurable light but it's too
-     * low * **HIGH_WARN:** Light level is too high * **BAD:** There's measurable light but the
-     * signal-to-noise ratio is bad * **GOOD:** Good light level
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
     private final LightLevelIndicator lightLevelIndicator;
 
     /**
      * Status indicator corresponding to the light level.
-     *
-     * <p>**NO_LIGHT:** No measurable light * **LOW_WARN:** There's measurable light but it's too
-     * low * **HIGH_WARN:** Light level is too high * **BAD:** There's measurable light but the
-     * signal-to-noise ratio is bad * **GOOD:** Good light level
+     * <p>
+     * **NO_LIGHT:** No measurable light
+     *   * **LOW_WARN:** There's measurable light but it's too low
+     *   * **HIGH_WARN:** Light level is too high
+     *   * **BAD:** There's measurable light but the signal-to-noise ratio is bad
+     *   * **GOOD:** Good light level
      *
      * @return the value
-     */
+     **/
     public LightLevelIndicator getLightLevelIndicator() {
         return lightLevelIndicator;
     }
 
     /**
      * Encryption status of this cross connect.
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
      *
-     * <p>Possible values: * **UP:** Traffic is encrypted over this cross-connect * **DOWN:**
-     * Traffic is not encrypted over this cross-connect * **CIPHER_MISMATCH:** The MACsec encryption
-     * cipher doesn't match the cipher on the CPE * **CKN_MISMATCH:** The MACsec Connectivity
-     * association Key Name (CKN) doesn't match the CKN on the CPE * **CAK_MISMATCH:** The MACsec
-     * Connectivity Association Key (CAK) doesn't match the CAK on the CPE
-     */
-    public enum EncryptionStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum EncryptionStatus {
         Up("UP"),
         Down("DOWN"),
         CipherMismatch("CIPHER_MISMATCH"),
@@ -426,46 +443,50 @@ public final class CrossConnectStatus
     };
     /**
      * Encryption status of this cross connect.
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
      *
-     * <p>Possible values: * **UP:** Traffic is encrypted over this cross-connect * **DOWN:**
-     * Traffic is not encrypted over this cross-connect * **CIPHER_MISMATCH:** The MACsec encryption
-     * cipher doesn't match the cipher on the CPE * **CKN_MISMATCH:** The MACsec Connectivity
-     * association Key Name (CKN) doesn't match the CKN on the CPE * **CAK_MISMATCH:** The MACsec
-     * Connectivity Association Key (CAK) doesn't match the CAK on the CPE
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionStatus")
     private final EncryptionStatus encryptionStatus;
 
     /**
      * Encryption status of this cross connect.
-     *
-     * <p>Possible values: * **UP:** Traffic is encrypted over this cross-connect * **DOWN:**
-     * Traffic is not encrypted over this cross-connect * **CIPHER_MISMATCH:** The MACsec encryption
-     * cipher doesn't match the cipher on the CPE * **CKN_MISMATCH:** The MACsec Connectivity
-     * association Key Name (CKN) doesn't match the CKN on the CPE * **CAK_MISMATCH:** The MACsec
-     * Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
      *
      * @return the value
-     */
+     **/
     public EncryptionStatus getEncryptionStatus() {
         return encryptionStatus;
     }
 
     /**
      * The light levels of the cross-connect (in dBm).
+     * <p>
+     * Example: {@code [14.0, -14.0, 2.1, -10.1]}
      *
-     * <p>Example: {@code [14.0, -14.0, 2.1, -10.1]}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelsInDBm")
     private final java.util.List<Float> lightLevelsInDBm;
 
     /**
      * The light levels of the cross-connect (in dBm).
-     *
-     * <p>Example: {@code [14.0, -14.0, 2.1, -10.1]}
+     * <p>
+     * Example: {@code [14.0, -14.0, 2.1, -10.1]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<Float> getLightLevelsInDBm() {
         return lightLevelsInDBm;
     }
@@ -477,7 +498,6 @@ public final class CrossConnectStatus
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

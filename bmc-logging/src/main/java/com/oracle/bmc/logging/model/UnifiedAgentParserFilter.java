@@ -5,25 +5,27 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Logging parser filter object. Ref: https://docs.fluentd.org/filter/parser <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Logging parser filter object.
+ * Ref: https://docs.fluentd.org/filter/parser
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentParserFilter.Builder.class)
+    builder = UnifiedAgentParserFilter.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "filterType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "filterType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentParserFilter extends UnifiedAgentLoggingFilter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,127 +46,135 @@ public final class UnifiedAgentParserFilter extends UnifiedAgentLoggingFilter {
             this.__explicitlySet__.add("parser");
             return this;
         }
-        /** The field name in the record to parse. */
+        /**
+         * The field name in the record to parse.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyName")
         private String keyName;
 
         /**
          * The field name in the record to parse.
-         *
          * @param keyName the value to set
          * @return this builder
-         */
+         **/
         public Builder keyName(String keyName) {
             this.keyName = keyName;
             this.__explicitlySet__.add("keyName");
             return this;
         }
-        /** If true, keep the original event time in the parsed result. */
+        /**
+         * If true, keep the original event time in the parsed result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reserveTime")
         private Boolean reserveTime;
 
         /**
          * If true, keep the original event time in the parsed result.
-         *
          * @param reserveTime the value to set
          * @return this builder
-         */
+         **/
         public Builder reserveTime(Boolean reserveTime) {
             this.reserveTime = reserveTime;
             this.__explicitlySet__.add("reserveTime");
             return this;
         }
-        /** If true, keep the original key-value pair in the parsed result. */
+        /**
+         * If true, keep the original key-value pair in the parsed result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reserveData")
         private Boolean reserveData;
 
         /**
          * If true, keep the original key-value pair in the parsed result.
-         *
          * @param reserveData the value to set
          * @return this builder
-         */
+         **/
         public Builder reserveData(Boolean reserveData) {
             this.reserveData = reserveData;
             this.__explicitlySet__.add("reserveData");
             return this;
         }
-        /** If true, remove the keyName field when parsing is succeeded. */
+        /**
+         * If true, remove the keyName field when parsing is succeeded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("removeKeyNameField")
         private Boolean removeKeyNameField;
 
         /**
          * If true, remove the keyName field when parsing is succeeded.
-         *
          * @param removeKeyNameField the value to set
          * @return this builder
-         */
+         **/
         public Builder removeKeyNameField(Boolean removeKeyNameField) {
             this.removeKeyNameField = removeKeyNameField;
             this.__explicitlySet__.add("removeKeyNameField");
             return this;
         }
-        /** If true, the invalid string is replaced with safe characters and is re-parsed. */
+        /**
+         * If true, the invalid string is replaced with safe characters and is re-parsed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replaceInvalidSequence")
         private Boolean replaceInvalidSequence;
 
         /**
          * If true, the invalid string is replaced with safe characters and is re-parsed.
-         *
          * @param replaceInvalidSequence the value to set
          * @return this builder
-         */
+         **/
         public Builder replaceInvalidSequence(Boolean replaceInvalidSequence) {
             this.replaceInvalidSequence = replaceInvalidSequence;
             this.__explicitlySet__.add("replaceInvalidSequence");
             return this;
         }
-        /** Store the parsed values with the specified key name prefix. */
+        /**
+         * Store the parsed values with the specified key name prefix.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("injectKeyPrefix")
         private String injectKeyPrefix;
 
         /**
          * Store the parsed values with the specified key name prefix.
-         *
          * @param injectKeyPrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder injectKeyPrefix(String injectKeyPrefix) {
             this.injectKeyPrefix = injectKeyPrefix;
             this.__explicitlySet__.add("injectKeyPrefix");
             return this;
         }
-        /** Store the parsed values as a hash value in a field. */
+        /**
+         * Store the parsed values as a hash value in a field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hashValueField")
         private String hashValueField;
 
         /**
          * Store the parsed values as a hash value in a field.
-         *
          * @param hashValueField the value to set
          * @return this builder
-         */
+         **/
         public Builder hashValueField(String hashValueField) {
             this.hashValueField = hashValueField;
             this.__explicitlySet__.add("hashValueField");
             return this;
         }
         /**
-         * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist;
-         * 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format
-         * logs in the @ERROR lable. If you want to ignore these errors, set this to false.
-         */
+         * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format
+         * does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable.
+         * If you want to ignore these errors, set this to false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emitInvalidRecordToError")
         private Boolean emitInvalidRecordToError;
 
         /**
-         * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist;
-         * 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format
-         * logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+         * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format
+         * does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable.
+         * If you want to ignore these errors, set this to false.
          *
          * @param emitInvalidRecordToError the value to set
          * @return this builder
-         */
+         **/
         public Builder emitInvalidRecordToError(Boolean emitInvalidRecordToError) {
             this.emitInvalidRecordToError = emitInvalidRecordToError;
             this.__explicitlySet__.add("emitInvalidRecordToError");
@@ -229,7 +239,9 @@ public final class UnifiedAgentParserFilter extends UnifiedAgentLoggingFilter {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -269,112 +281,120 @@ public final class UnifiedAgentParserFilter extends UnifiedAgentLoggingFilter {
         return parser;
     }
 
-    /** The field name in the record to parse. */
+    /**
+     * The field name in the record to parse.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyName")
     private final String keyName;
 
     /**
      * The field name in the record to parse.
-     *
      * @return the value
-     */
+     **/
     public String getKeyName() {
         return keyName;
     }
 
-    /** If true, keep the original event time in the parsed result. */
+    /**
+     * If true, keep the original event time in the parsed result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reserveTime")
     private final Boolean reserveTime;
 
     /**
      * If true, keep the original event time in the parsed result.
-     *
      * @return the value
-     */
+     **/
     public Boolean getReserveTime() {
         return reserveTime;
     }
 
-    /** If true, keep the original key-value pair in the parsed result. */
+    /**
+     * If true, keep the original key-value pair in the parsed result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reserveData")
     private final Boolean reserveData;
 
     /**
      * If true, keep the original key-value pair in the parsed result.
-     *
      * @return the value
-     */
+     **/
     public Boolean getReserveData() {
         return reserveData;
     }
 
-    /** If true, remove the keyName field when parsing is succeeded. */
+    /**
+     * If true, remove the keyName field when parsing is succeeded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("removeKeyNameField")
     private final Boolean removeKeyNameField;
 
     /**
      * If true, remove the keyName field when parsing is succeeded.
-     *
      * @return the value
-     */
+     **/
     public Boolean getRemoveKeyNameField() {
         return removeKeyNameField;
     }
 
-    /** If true, the invalid string is replaced with safe characters and is re-parsed. */
+    /**
+     * If true, the invalid string is replaced with safe characters and is re-parsed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replaceInvalidSequence")
     private final Boolean replaceInvalidSequence;
 
     /**
      * If true, the invalid string is replaced with safe characters and is re-parsed.
-     *
      * @return the value
-     */
+     **/
     public Boolean getReplaceInvalidSequence() {
         return replaceInvalidSequence;
     }
 
-    /** Store the parsed values with the specified key name prefix. */
+    /**
+     * Store the parsed values with the specified key name prefix.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("injectKeyPrefix")
     private final String injectKeyPrefix;
 
     /**
      * Store the parsed values with the specified key name prefix.
-     *
      * @return the value
-     */
+     **/
     public String getInjectKeyPrefix() {
         return injectKeyPrefix;
     }
 
-    /** Store the parsed values as a hash value in a field. */
+    /**
+     * Store the parsed values as a hash value in a field.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hashValueField")
     private final String hashValueField;
 
     /**
      * Store the parsed values as a hash value in a field.
-     *
      * @return the value
-     */
+     **/
     public String getHashValueField() {
         return hashValueField;
     }
 
     /**
-     * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2)
-     * the format does not match; or 3) an unexpected error. You can rescue unexpected format logs
-     * in the @ERROR lable. If you want to ignore these errors, set this to false.
-     */
+     * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format
+     * does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable.
+     * If you want to ignore these errors, set this to false.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emitInvalidRecordToError")
     private final Boolean emitInvalidRecordToError;
 
     /**
-     * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2)
-     * the format does not match; or 3) an unexpected error. You can rescue unexpected format logs
-     * in the @ERROR lable. If you want to ignore these errors, set this to false.
+     * If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format
+     * does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable.
+     * If you want to ignore these errors, set this to false.
      *
      * @return the value
-     */
+     **/
     public Boolean getEmitInvalidRecordToError() {
         return emitInvalidRecordToError;
     }
@@ -386,7 +406,6 @@ public final class UnifiedAgentParserFilter extends UnifiedAgentLoggingFilter {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

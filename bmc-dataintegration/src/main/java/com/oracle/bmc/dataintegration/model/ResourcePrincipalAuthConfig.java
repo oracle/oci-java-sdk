@@ -6,25 +6,24 @@ package com.oracle.bmc.dataintegration.model;
 
 /**
  * Authentication configuration that uses OCI Resource Principal Auth for Generic REST invocation.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourcePrincipalAuthConfig.Builder.class)
+    builder = ResourcePrincipalAuthConfig.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourcePrincipalAuthConfig extends AuthConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -54,16 +53,17 @@ public final class ResourcePrincipalAuthConfig extends AuthConfig {
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-        /** The OCI resource type that will supply the authentication token */
+        /**
+         * The OCI resource type that will supply the authentication token
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalSource")
         private ResourcePrincipalSource resourcePrincipalSource;
 
         /**
          * The OCI resource type that will supply the authentication token
-         *
          * @param resourcePrincipalSource the value to set
          * @return this builder
-         */
+         **/
         public Builder resourcePrincipalSource(ResourcePrincipalSource resourcePrincipalSource) {
             this.resourcePrincipalSource = resourcePrincipalSource;
             this.__explicitlySet__.add("resourcePrincipalSource");
@@ -104,7 +104,9 @@ public final class ResourcePrincipalAuthConfig extends AuthConfig {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,14 +125,16 @@ public final class ResourcePrincipalAuthConfig extends AuthConfig {
         this.resourcePrincipalSource = resourcePrincipalSource;
     }
 
-    /** The OCI resource type that will supply the authentication token */
-    public enum ResourcePrincipalSource implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The OCI resource type that will supply the authentication token
+     **/
+    public enum ResourcePrincipalSource {
         Workspace("WORKSPACE"),
         Application("APPLICATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -169,15 +173,16 @@ public final class ResourcePrincipalAuthConfig extends AuthConfig {
             return UnknownEnumValue;
         }
     };
-    /** The OCI resource type that will supply the authentication token */
+    /**
+     * The OCI resource type that will supply the authentication token
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalSource")
     private final ResourcePrincipalSource resourcePrincipalSource;
 
     /**
      * The OCI resource type that will supply the authentication token
-     *
      * @return the value
-     */
+     **/
     public ResourcePrincipalSource getResourcePrincipalSource() {
         return resourcePrincipalSource;
     }
@@ -189,7 +194,6 @@ public final class ResourcePrincipalAuthConfig extends AuthConfig {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

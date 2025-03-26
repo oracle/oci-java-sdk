@@ -5,27 +5,27 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A metric group defines a set of metrics to collect from a span. It uses a span filter to specify
- * which spans to process. The set is then published to a namespace, which is a product level
- * subdivision of metrics. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * A metric group defines a set of metrics to collect from a span. It uses a span filter to specify which spans to
+ * process. The set is then published to a namespace, which is a product level subdivision of metrics.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMetricGroupDetails.Builder.class)
+    builder = UpdateMetricGroupDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -47,77 +47,80 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The name by which a configuration entity is displayed to the end user. */
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name by which a configuration entity is displayed to the end user.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is
-         * generated when a Span Filter is created.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
+         * of MetricGroups. A filterId is generated when a Span Filter is created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is
-         * generated when a Span Filter is created.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
+         * of MetricGroups. A filterId is generated when a Span Filter is created.
          *
          * @param filterId the value to set
          * @return this builder
-         */
+         **/
         public Builder filterId(String filterId) {
             this.filterId = filterId;
             this.__explicitlySet__.add("filterId");
             return this;
         }
         /**
-         * The namespace to which the metrics are published. It must be one of several predefined
-         * namespaces.
-         */
+         * The namespace to which the metrics are published. It must be one of several predefined namespaces.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The namespace to which the metrics are published. It must be one of several predefined
-         * namespaces.
+         * The namespace to which the metrics are published. It must be one of several predefined namespaces.
          *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** A list of dimensions for the metric. This variable should not be used. */
+        /**
+         * A list of dimensions for the metric. This variable should not be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<Dimension> dimensions;
 
         /**
          * A list of dimensions for the metric. This variable should not be used.
-         *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.List<Dimension> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /** The list of metrics in this group. */
+        /**
+         * The list of metrics in this group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<Metric> metrics;
 
@@ -126,7 +129,7 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
          *
          * @param metrics the value to set
          * @return this builder
-         */
+         **/
         public Builder metrics(java.util.List<Metric> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -179,7 +182,9 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -205,69 +210,72 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
         this.metrics = metrics;
     }
 
-    /** The name by which a configuration entity is displayed to the end user. */
+    /**
+     * The name by which a configuration entity is displayed to the end user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name by which a configuration entity is displayed to the end user.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span
-     * Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated
-     * when a Span Filter is created.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
+     * of MetricGroups. A filterId is generated when a Span Filter is created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span
-     * Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated
-     * when a Span Filter is created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
+     * of MetricGroups. A filterId is generated when a Span Filter is created.
      *
      * @return the value
-     */
+     **/
     public String getFilterId() {
         return filterId;
     }
 
     /**
-     * The namespace to which the metrics are published. It must be one of several predefined
-     * namespaces.
-     */
+     * The namespace to which the metrics are published. It must be one of several predefined namespaces.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The namespace to which the metrics are published. It must be one of several predefined
-     * namespaces.
+     * The namespace to which the metrics are published. It must be one of several predefined namespaces.
      *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** A list of dimensions for the metric. This variable should not be used. */
+    /**
+     * A list of dimensions for the metric. This variable should not be used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<Dimension> dimensions;
 
     /**
      * A list of dimensions for the metric. This variable should not be used.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Dimension> getDimensions() {
         return dimensions;
     }
 
-    /** The list of metrics in this group. */
+    /**
+     * The list of metrics in this group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<Metric> metrics;
 
@@ -275,7 +283,7 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
      * The list of metrics in this group.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Metric> getMetrics() {
         return metrics;
     }
@@ -287,7 +295,6 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

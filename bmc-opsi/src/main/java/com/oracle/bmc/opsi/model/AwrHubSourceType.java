@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** source types of the databases */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum AwrHubSourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * source types of the databases
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum AwrHubSourceType {
     AdwS("ADW_S"),
     AtpS("ATP_S"),
     AdwD("ADW_D"),

@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ListCostTrackingTagsExample {
 
-    static final RetryPolicy RETRY_POLICY =
+    final static RetryPolicy RETRY_POLICY =
             new RetryPolicy()
                     .retryOn(new RetryPredicate())
                     .withDelay(1, TimeUnit.SECONDS)
@@ -35,10 +35,8 @@ public class ListCostTrackingTagsExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -48,8 +46,8 @@ public class ListCostTrackingTagsExample {
 
         String compartmentId = provider.getTenantId();
         final String tenantId = provider.getTenantId();
-        final Identity identityClient =
-                IdentityClient.builder().region(Region.US_ASHBURN_1).build(provider);
+        final Identity identityClient = new IdentityClient(provider);
+        identityClient.setRegion(Region.US_ASHBURN_1);
 
         final TagNamespace tagNamespace1 =
                 createTagNamespace(
@@ -57,8 +55,7 @@ public class ListCostTrackingTagsExample {
                         tenantId,
                         "SDK-Sample-NS",
                         "Sample Tag Namespace in Tenancy");
-        // If we create/update and then try to use tagNamespaces straight away, sometimes we can get
-        // a 404. To avoid this,
+        // If we create/update and then try to use tagNamespaces straight away, sometimes we can get a 404. To avoid this,
         // Following code will retry till it gets the newly created tagNamespace.
         final GetTagNamespaceRequest getTagNamespaceRequest =
                 GetTagNamespaceRequest.builder().tagNamespaceId(tagNamespace1.getId()).build();
@@ -95,7 +92,7 @@ public class ListCostTrackingTagsExample {
             System.out.println(tag);
         }
 
-        // Updating the tags created in sample, setting isCostTrackingTag flag to false.
+        //Updating the tags created in sample, setting isCostTrackingTag flag to false.
         updateTag(identityClient, tagNamespace1.getId(), tag1.getName(), "Sample Tag", false);
     }
 

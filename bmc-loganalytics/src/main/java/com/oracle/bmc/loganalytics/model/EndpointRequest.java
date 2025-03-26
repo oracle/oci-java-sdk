@@ -5,22 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * An object containing details to make a REST request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * An object containing details to make a REST request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EndpointRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EndpointRequest
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EndpointRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "method",
@@ -48,91 +45,97 @@ public final class EndpointRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The endpoint method - GET or POST. */
+        /**
+         * The endpoint method - GET or POST.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("method")
         private Method method;
 
         /**
          * The endpoint method - GET or POST.
-         *
          * @param method the value to set
          * @return this builder
-         */
+         **/
         public Builder method(Method method) {
             this.method = method;
             this.__explicitlySet__.add("method");
             return this;
         }
-        /** The request URL. */
+        /**
+         * The request URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The request URL.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The request content type. */
+        /**
+         * The request content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private String contentType;
 
         /**
          * The request content type.
-         *
          * @param contentType the value to set
          * @return this builder
-         */
+         **/
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             this.__explicitlySet__.add("contentType");
             return this;
         }
-        /** The request payload, applicable for POST requests. */
+        /**
+         * The request payload, applicable for POST requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("payload")
         private String payload;
 
         /**
          * The request payload, applicable for POST requests.
-         *
          * @param payload the value to set
          * @return this builder
-         */
+         **/
         public Builder payload(String payload) {
             this.payload = payload;
             this.__explicitlySet__.add("payload");
             return this;
         }
-        /** The request headers represented as a list of name-value pairs. */
+        /**
+         * The request headers represented as a list of name-value pairs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<NameValuePair> headers;
 
         /**
          * The request headers represented as a list of name-value pairs.
-         *
          * @param headers the value to set
          * @return this builder
-         */
+         **/
         public Builder headers(java.util.List<NameValuePair> headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
             return this;
         }
-        /** The request form parameters represented as a list of name-value pairs. */
+        /**
+         * The request form parameters represented as a list of name-value pairs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formParameters")
         private java.util.List<NameValuePair> formParameters;
 
         /**
          * The request form parameters represented as a list of name-value pairs.
-         *
          * @param formParameters the value to set
          * @return this builder
-         */
+         **/
         public Builder formParameters(java.util.List<NameValuePair> formParameters) {
             this.formParameters = formParameters;
             this.__explicitlySet__.add("formParameters");
@@ -181,7 +184,9 @@ public final class EndpointRequest
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -190,14 +195,16 @@ public final class EndpointRequest
         return new Builder().copy(this);
     }
 
-    /** The endpoint method - GET or POST. */
-    public enum Method implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The endpoint method - GET or POST.
+     **/
+    public enum Method {
         Get("GET"),
         Post("POST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -235,80 +242,86 @@ public final class EndpointRequest
             return UnknownEnumValue;
         }
     };
-    /** The endpoint method - GET or POST. */
+    /**
+     * The endpoint method - GET or POST.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("method")
     private final Method method;
 
     /**
      * The endpoint method - GET or POST.
-     *
      * @return the value
-     */
+     **/
     public Method getMethod() {
         return method;
     }
 
-    /** The request URL. */
+    /**
+     * The request URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The request URL.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** The request content type. */
+    /**
+     * The request content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     private final String contentType;
 
     /**
      * The request content type.
-     *
      * @return the value
-     */
+     **/
     public String getContentType() {
         return contentType;
     }
 
-    /** The request payload, applicable for POST requests. */
+    /**
+     * The request payload, applicable for POST requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     private final String payload;
 
     /**
      * The request payload, applicable for POST requests.
-     *
      * @return the value
-     */
+     **/
     public String getPayload() {
         return payload;
     }
 
-    /** The request headers represented as a list of name-value pairs. */
+    /**
+     * The request headers represented as a list of name-value pairs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<NameValuePair> headers;
 
     /**
      * The request headers represented as a list of name-value pairs.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NameValuePair> getHeaders() {
         return headers;
     }
 
-    /** The request form parameters represented as a list of name-value pairs. */
+    /**
+     * The request form parameters represented as a list of name-value pairs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formParameters")
     private final java.util.List<NameValuePair> formParameters;
 
     /**
      * The request form parameters represented as a list of name-value pairs.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NameValuePair> getFormParameters() {
         return formParameters;
     }
@@ -320,7 +333,6 @@ public final class EndpointRequest
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

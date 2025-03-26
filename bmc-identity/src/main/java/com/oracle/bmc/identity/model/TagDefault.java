@@ -5,32 +5,30 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Tag defaults let you specify a default tag (tagnamespace.tag="value") to apply to all resource
- * types in a specified compartment. The tag default is applied at the time the resource is created.
- * Resources that exist in the compartment before you create the tag default are not tagged. The
- * {@code TagDefault} object specifies the tag and compartment details.
+ * Tag defaults let you specify a default tag (tagnamespace.tag="value") to apply to all resource types
+ * in a specified compartment. The tag default is applied at the time the resource is created. Resources
+ * that exist in the compartment before you create the tag default are not tagged. The {@code TagDefault} object
+ * specifies the tag and compartment details.
+ * <p>
+ * Tag defaults are inherited by child compartments. This means that if you set a tag default on the root compartment
+ * for a tenancy, all resources that are created in the tenancy are tagged. For more information about
+ * using tag defaults, see [Managing Tag Defaults](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagdefaults.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator.
  *
- * <p>Tag defaults are inherited by child compartments. This means that if you set a tag default on
- * the root compartment for a tenancy, all resources that are created in the tenancy are tagged. For
- * more information about using tag defaults, see [Managing Tag
- * Defaults](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagdefaults.htm).
- *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TagDefault.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TagDefault extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TagDefault extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -70,43 +68,46 @@ public final class TagDefault extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the tag default. */
+        /**
+         * The OCID of the tag default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the tag default.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The OCID of the compartment. The tag default applies to all new resources that get
-         * created in the compartment. Resources that existed before the tag default was created are
-         * not tagged.
-         */
+         * The OCID of the compartment. The tag default applies to all new resources that get created in the
+         * compartment. Resources that existed before the tag default was created are not tagged.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment. The tag default applies to all new resources that get
-         * created in the compartment. Resources that existed before the tag default was created are
-         * not tagged.
+         * The OCID of the compartment. The tag default applies to all new resources that get created in the
+         * compartment. Resources that existed before the tag default was created are not tagged.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the tag namespace that contains the tag definition. */
+        /**
+         * The OCID of the tag namespace that contains the tag definition.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagNamespaceId")
         private String tagNamespaceId;
 
@@ -115,154 +116,149 @@ public final class TagDefault extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param tagNamespaceId the value to set
          * @return this builder
-         */
+         **/
         public Builder tagNamespaceId(String tagNamespaceId) {
             this.tagNamespaceId = tagNamespaceId;
             this.__explicitlySet__.add("tagNamespaceId");
             return this;
         }
         /**
-         * The OCID of the tag definition. The tag default will always assign a default value for
-         * this tag definition.
-         */
+         * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionId")
         private String tagDefinitionId;
 
         /**
-         * The OCID of the tag definition. The tag default will always assign a default value for
-         * this tag definition.
+         * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
          *
          * @param tagDefinitionId the value to set
          * @return this builder
-         */
+         **/
         public Builder tagDefinitionId(String tagDefinitionId) {
             this.tagDefinitionId = tagDefinitionId;
             this.__explicitlySet__.add("tagDefinitionId");
             return this;
         }
         /**
-         * The name used in the tag definition. This field is informational in the context of the
-         * tag default.
-         */
+         * The name used in the tag definition. This field is informational in the context of the tag default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
         private String tagDefinitionName;
 
         /**
-         * The name used in the tag definition. This field is informational in the context of the
-         * tag default.
+         * The name used in the tag definition. This field is informational in the context of the tag default.
          *
          * @param tagDefinitionName the value to set
          * @return this builder
-         */
+         **/
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = tagDefinitionName;
             this.__explicitlySet__.add("tagDefinitionName");
             return this;
         }
         /**
-         * The default value for the tag definition. This will be applied to all resources created
-         * in the compartment.
-         */
+         * The default value for the tag definition. This will be applied to all resources created in the compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The default value for the tag definition. This will be applied to all resources created
-         * in the compartment.
+         * The default value for the tag definition. This will be applied to all resources created in the compartment.
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
         /**
-         * Date and time the {@code TagDefault} object was created, in the format defined by
-         * RFC3339.
+         * Date and time the {@code TagDefault} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Date and time the {@code TagDefault} object was created, in the format defined by
-         * RFC3339.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * Date and time the {@code TagDefault} object was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The tag default's current state. After creating a {@code TagDefault}, make sure its
-         * {@code lifecycleState} is ACTIVE before using it.
-         */
+         * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The tag default's current state. After creating a {@code TagDefault}, make sure its
-         * {@code lifecycleState} is ACTIVE before using it.
+         * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * If you specify that a value is required, a value is set during resource creation (either
-         * by the user creating the resource or another tag defualt). If no value is set, resource
-         * creation is blocked.
+         * If you specify that a value is required, a value is set during resource creation (either by the
+         * user creating the resource or another tag defualt). If no value is set, resource creation is
+         * blocked.
+         * <p>
+         * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+         * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
+         * <p>
+         * Example: {@code false}
          *
-         * <p>If the {@code isRequired} flag is set to "true", the value is set during resource
-         * creation. * If the {@code isRequired} flag is set to "false", the value you enter is set
-         * during resource creation.
-         *
-         * <p>Example: {@code false}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
-         * If you specify that a value is required, a value is set during resource creation (either
-         * by the user creating the resource or another tag defualt). If no value is set, resource
-         * creation is blocked.
-         *
-         * <p>If the {@code isRequired} flag is set to "true", the value is set during resource
-         * creation. * If the {@code isRequired} flag is set to "false", the value you enter is set
-         * during resource creation.
-         *
-         * <p>Example: {@code false}
+         * If you specify that a value is required, a value is set during resource creation (either by the
+         * user creating the resource or another tag defualt). If no value is set, resource creation is
+         * blocked.
+         * <p>
+         * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+         * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
+         * <p>
+         * Example: {@code false}
          *
          * @param isRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
@@ -327,7 +323,9 @@ public final class TagDefault extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -336,37 +334,42 @@ public final class TagDefault extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The OCID of the tag default. */
+    /**
+     * The OCID of the tag default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the tag default.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The OCID of the compartment. The tag default applies to all new resources that get created in
-     * the compartment. Resources that existed before the tag default was created are not tagged.
-     */
+     * The OCID of the compartment. The tag default applies to all new resources that get created in the
+     * compartment. Resources that existed before the tag default was created are not tagged.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment. The tag default applies to all new resources that get created in
-     * the compartment. Resources that existed before the tag default was created are not tagged.
+     * The OCID of the compartment. The tag default applies to all new resources that get created in the
+     * compartment. Resources that existed before the tag default was created are not tagged.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the tag namespace that contains the tag definition. */
+    /**
+     * The OCID of the tag namespace that contains the tag definition.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagNamespaceId")
     private final String tagNamespaceId;
 
@@ -374,91 +377,89 @@ public final class TagDefault extends com.oracle.bmc.http.client.internal.Explic
      * The OCID of the tag namespace that contains the tag definition.
      *
      * @return the value
-     */
+     **/
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
 
     /**
-     * The OCID of the tag definition. The tag default will always assign a default value for this
-     * tag definition.
-     */
+     * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionId")
     private final String tagDefinitionId;
 
     /**
-     * The OCID of the tag definition. The tag default will always assign a default value for this
-     * tag definition.
+     * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      *
      * @return the value
-     */
+     **/
     public String getTagDefinitionId() {
         return tagDefinitionId;
     }
 
     /**
-     * The name used in the tag definition. This field is informational in the context of the tag
-     * default.
-     */
+     * The name used in the tag definition. This field is informational in the context of the tag default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
     private final String tagDefinitionName;
 
     /**
-     * The name used in the tag definition. This field is informational in the context of the tag
-     * default.
+     * The name used in the tag definition. This field is informational in the context of the tag default.
      *
      * @return the value
-     */
+     **/
     public String getTagDefinitionName() {
         return tagDefinitionName;
     }
 
     /**
-     * The default value for the tag definition. This will be applied to all resources created in
-     * the compartment.
-     */
+     * The default value for the tag definition. This will be applied to all resources created in the compartment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The default value for the tag definition. This will be applied to all resources created in
-     * the compartment.
+     * The default value for the tag definition. This will be applied to all resources created in the compartment.
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * Date and time the {@code TagDefault} object was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the {@code TagDefault} object was created, in the format defined by RFC3339.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code
-     * lifecycleState} is ACTIVE before using it.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
+     *
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -498,62 +499,61 @@ public final class TagDefault extends com.oracle.bmc.http.client.internal.Explic
         }
     };
     /**
-     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code
-     * lifecycleState} is ACTIVE before using it.
-     */
+     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code
-     * lifecycleState} is ACTIVE before using it.
+     * The tag default's current state. After creating a {@code TagDefault}, make sure its {@code lifecycleState} is ACTIVE before using it.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * If you specify that a value is required, a value is set during resource creation (either by
-     * the user creating the resource or another tag defualt). If no value is set, resource creation
-     * is blocked.
+     * If you specify that a value is required, a value is set during resource creation (either by the
+     * user creating the resource or another tag defualt). If no value is set, resource creation is
+     * blocked.
+     * <p>
+     * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+     * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
+     * <p>
+     * Example: {@code false}
      *
-     * <p>If the {@code isRequired} flag is set to "true", the value is set during resource
-     * creation. * If the {@code isRequired} flag is set to "false", the value you enter is set
-     * during resource creation.
-     *
-     * <p>Example: {@code false}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
-     * If you specify that a value is required, a value is set during resource creation (either by
-     * the user creating the resource or another tag defualt). If no value is set, resource creation
-     * is blocked.
-     *
-     * <p>If the {@code isRequired} flag is set to "true", the value is set during resource
-     * creation. * If the {@code isRequired} flag is set to "false", the value you enter is set
-     * during resource creation.
-     *
-     * <p>Example: {@code false}
+     * If you specify that a value is required, a value is set during resource creation (either by the
+     * user creating the resource or another tag defualt). If no value is set, resource creation is
+     * blocked.
+     * <p>
+     * If the {@code isRequired} flag is set to "true", the value is set during resource creation.
+     * * If the {@code isRequired} flag is set to "false", the value you enter is set during resource creation.
+     * <p>
+     * Example: {@code false}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
@@ -565,7 +565,6 @@ public final class TagDefault extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

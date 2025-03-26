@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The set of rules governing what traffic the VCN flow log collects. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The set of rules governing what traffic the VCN flow log collects.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FlowLogCaptureFilterRuleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FlowLogCaptureFilterRuleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FlowLogCaptureFilterRuleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -64,7 +64,10 @@ public final class FlowLogCaptureFilterRuleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Indicates whether a VCN flow log capture filter rule is enabled. */
+        /**
+         * Indicates whether a VCN flow log capture filter rule is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -73,51 +76,52 @@ public final class FlowLogCaptureFilterRuleDetails
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct
-         * priority.
-         */
+         * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
         /**
-         * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct
-         * priority.
+         * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
          *
          * @param priority the value to set
          * @return this builder
-         */
+         **/
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
         /**
-         * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater
-         * than {@code 100000}.
-         */
+         * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater than {@code 100000}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("samplingRate")
         private Integer samplingRate;
 
         /**
-         * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater
-         * than {@code 100000}.
+         * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater than {@code 100000}.
          *
          * @param samplingRate the value to set
          * @return this builder
-         */
+         **/
         public Builder samplingRate(Integer samplingRate) {
             this.samplingRate = samplingRate;
             this.__explicitlySet__.add("samplingRate");
             return this;
         }
-        /** Traffic from this CIDR will be captured in the VCN flow log. */
+        /**
+         * Traffic from this CIDR will be captured in the VCN flow log.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceCidr")
         private String sourceCidr;
 
@@ -126,13 +130,16 @@ public final class FlowLogCaptureFilterRuleDetails
          *
          * @param sourceCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceCidr(String sourceCidr) {
             this.sourceCidr = sourceCidr;
             this.__explicitlySet__.add("sourceCidr");
             return this;
         }
-        /** Traffic to this CIDR will be captured in the VCN flow log. */
+        /**
+         * Traffic to this CIDR will be captured in the VCN flow log.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCidr")
         private String destinationCidr;
 
@@ -141,13 +148,16 @@ public final class FlowLogCaptureFilterRuleDetails
          *
          * @param destinationCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationCidr(String destinationCidr) {
             this.destinationCidr = destinationCidr;
             this.__explicitlySet__.add("destinationCidr");
             return this;
         }
-        /** The transport protocol the filter uses. */
+        /**
+         * The transport protocol the filter uses.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
@@ -156,7 +166,7 @@ public final class FlowLogCaptureFilterRuleDetails
          *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
@@ -190,25 +200,29 @@ public final class FlowLogCaptureFilterRuleDetails
             return this;
         }
         /**
-         * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted
-         * traffic and rejected traffic.
-         */
+         * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted traffic and
+         * rejected traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flowLogType")
         private FlowLogType flowLogType;
 
         /**
-         * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted
-         * traffic and rejected traffic.
+         * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted traffic and
+         * rejected traffic.
          *
          * @param flowLogType the value to set
          * @return this builder
-         */
+         **/
         public Builder flowLogType(FlowLogType flowLogType) {
             this.flowLogType = flowLogType;
             this.__explicitlySet__.add("flowLogType");
             return this;
         }
-        /** Include or exclude a {@code ruleAction} object. */
+        /**
+         * Include or exclude a {@code ruleAction} object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
         private RuleAction ruleAction;
 
@@ -217,7 +231,7 @@ public final class FlowLogCaptureFilterRuleDetails
          *
          * @param ruleAction the value to set
          * @return this builder
-         */
+         **/
         public Builder ruleAction(RuleAction ruleAction) {
             this.ruleAction = ruleAction;
             this.__explicitlySet__.add("ruleAction");
@@ -286,7 +300,9 @@ public final class FlowLogCaptureFilterRuleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -295,7 +311,10 @@ public final class FlowLogCaptureFilterRuleDetails
         return new Builder().copy(this);
     }
 
-    /** Indicates whether a VCN flow log capture filter rule is enabled. */
+    /**
+     * Indicates whether a VCN flow log capture filter rule is enabled.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -303,46 +322,47 @@ public final class FlowLogCaptureFilterRuleDetails
      * Indicates whether a VCN flow log capture filter rule is enabled.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct
-     * priority.
-     */
+     * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
     /**
-     * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct
-     * priority.
+     * A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
      *
      * @return the value
-     */
+     **/
     public Integer getPriority() {
         return priority;
     }
 
     /**
-     * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater than
-     * {@code 100000}.
-     */
+     * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater than {@code 100000}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("samplingRate")
     private final Integer samplingRate;
 
     /**
-     * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater than
-     * {@code 100000}.
+     * Sampling interval as {@code 1} of {@code X}, where {@code X} is an integer not greater than {@code 100000}.
      *
      * @return the value
-     */
+     **/
     public Integer getSamplingRate() {
         return samplingRate;
     }
 
-    /** Traffic from this CIDR will be captured in the VCN flow log. */
+    /**
+     * Traffic from this CIDR will be captured in the VCN flow log.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceCidr")
     private final String sourceCidr;
 
@@ -350,12 +370,15 @@ public final class FlowLogCaptureFilterRuleDetails
      * Traffic from this CIDR will be captured in the VCN flow log.
      *
      * @return the value
-     */
+     **/
     public String getSourceCidr() {
         return sourceCidr;
     }
 
-    /** Traffic to this CIDR will be captured in the VCN flow log. */
+    /**
+     * Traffic to this CIDR will be captured in the VCN flow log.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCidr")
     private final String destinationCidr;
 
@@ -363,12 +386,15 @@ public final class FlowLogCaptureFilterRuleDetails
      * Traffic to this CIDR will be captured in the VCN flow log.
      *
      * @return the value
-     */
+     **/
     public String getDestinationCidr() {
         return destinationCidr;
     }
 
-    /** The transport protocol the filter uses. */
+    /**
+     * The transport protocol the filter uses.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
@@ -376,7 +402,7 @@ public final class FlowLogCaptureFilterRuleDetails
      * The transport protocol the filter uses.
      *
      * @return the value
-     */
+     **/
     public String getProtocol() {
         return protocol;
     }
@@ -403,17 +429,18 @@ public final class FlowLogCaptureFilterRuleDetails
     }
 
     /**
-     * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted
-     * traffic and rejected traffic.
-     */
-    public enum FlowLogType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted traffic and
+     * rejected traffic.
+     *
+     **/
+    public enum FlowLogType {
         All("ALL"),
         Reject("REJECT"),
         Accept("ACCEPT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -453,30 +480,34 @@ public final class FlowLogCaptureFilterRuleDetails
         }
     };
     /**
-     * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted
-     * traffic and rejected traffic.
-     */
+     * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted traffic and
+     * rejected traffic.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flowLogType")
     private final FlowLogType flowLogType;
 
     /**
-     * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted
-     * traffic and rejected traffic.
+     * Type or types of VCN flow logs to store. {@code ALL} includes records for both accepted traffic and
+     * rejected traffic.
      *
      * @return the value
-     */
+     **/
     public FlowLogType getFlowLogType() {
         return flowLogType;
     }
 
-    /** Include or exclude a {@code ruleAction} object. */
-    public enum RuleAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Include or exclude a {@code ruleAction} object.
+     *
+     **/
+    public enum RuleAction {
         Include("INCLUDE"),
         Exclude("EXCLUDE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -515,7 +546,10 @@ public final class FlowLogCaptureFilterRuleDetails
             return UnknownEnumValue;
         }
     };
-    /** Include or exclude a {@code ruleAction} object. */
+    /**
+     * Include or exclude a {@code ruleAction} object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
     private final RuleAction ruleAction;
 
@@ -523,7 +557,7 @@ public final class FlowLogCaptureFilterRuleDetails
      * Include or exclude a {@code ruleAction} object.
      *
      * @return the value
-     */
+     **/
     public RuleAction getRuleAction() {
         return ruleAction;
     }
@@ -535,7 +569,6 @@ public final class FlowLogCaptureFilterRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

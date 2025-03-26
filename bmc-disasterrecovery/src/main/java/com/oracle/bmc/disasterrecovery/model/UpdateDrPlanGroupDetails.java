@@ -5,23 +5,22 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a group in a DR plan. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details for updating a group in a DR plan.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDrPlanGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateDrPlanGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDrPlanGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "displayName", "type", "isPauseEnabled", "steps"})
     public UpdateDrPlanGroupDetails(
@@ -42,20 +41,21 @@ public final class UpdateDrPlanGroupDetails
     public static class Builder {
         /**
          * The unique id of the group. Must not be modified by user.
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
-         * <p>Example: {@code sgid1.group..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique id of the group. Must not be modified by user.
-         *
-         * <p>Example: {@code sgid1.group..uniqueID}
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -63,20 +63,21 @@ public final class UpdateDrPlanGroupDetails
         }
         /**
          * The display name of the group.
+         * <p>
+         * Example: {@code My_GROUP_3 - EBS Start}
          *
-         * <p>Example: {@code My_GROUP_3 - EBS Start}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the group.
-         *
-         * <p>Example: {@code My_GROUP_3 - EBS Start}
+         * <p>
+         * Example: {@code My_GROUP_3 - EBS Start}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -84,51 +85,54 @@ public final class UpdateDrPlanGroupDetails
         }
         /**
          * The group type.
+         * <p>
+         * Example: {@code BUILT_IN}
          *
-         * <p>Example: {@code BUILT_IN}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanGroupType type;
 
         /**
          * The group type.
-         *
-         * <p>Example: {@code BUILT_IN}
+         * <p>
+         * Example: {@code BUILT_IN}
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(DrPlanGroupType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * A flag indicating whether this group should be enabled for execution. This flag is only
-         * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the
-         * remaining group types.
+         * A flag indicating whether this group should be enabled for execution.
+         * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+         * <p>
+         * Example: {@code true}
          *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
         private Boolean isPauseEnabled;
 
         /**
-         * A flag indicating whether this group should be enabled for execution. This flag is only
-         * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the
-         * remaining group types.
-         *
-         * <p>Example: {@code true}
+         * A flag indicating whether this group should be enabled for execution.
+         * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+         * <p>
+         * Example: {@code true}
          *
          * @param isPauseEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPauseEnabled(Boolean isPauseEnabled) {
             this.isPauseEnabled = isPauseEnabled;
             this.__explicitlySet__.add("isPauseEnabled");
             return this;
         }
-        /** The list of steps in this group. */
+        /**
+         * The list of steps in this group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<UpdateDrPlanStepDetails> steps;
 
@@ -137,7 +141,7 @@ public final class UpdateDrPlanGroupDetails
          *
          * @param steps the value to set
          * @return this builder
-         */
+         **/
         public Builder steps(java.util.List<UpdateDrPlanStepDetails> steps) {
             this.steps = steps;
             this.__explicitlySet__.add("steps");
@@ -178,7 +182,9 @@ public final class UpdateDrPlanGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,85 +195,90 @@ public final class UpdateDrPlanGroupDetails
 
     /**
      * The unique id of the group. Must not be modified by user.
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
-     * <p>Example: {@code sgid1.group..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique id of the group. Must not be modified by user.
-     *
-     * <p>Example: {@code sgid1.group..uniqueID}
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The display name of the group.
+     * <p>
+     * Example: {@code My_GROUP_3 - EBS Start}
      *
-     * <p>Example: {@code My_GROUP_3 - EBS Start}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the group.
-     *
-     * <p>Example: {@code My_GROUP_3 - EBS Start}
+     * <p>
+     * Example: {@code My_GROUP_3 - EBS Start}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * The group type.
+     * <p>
+     * Example: {@code BUILT_IN}
      *
-     * <p>Example: {@code BUILT_IN}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanGroupType type;
 
     /**
      * The group type.
-     *
-     * <p>Example: {@code BUILT_IN}
+     * <p>
+     * Example: {@code BUILT_IN}
      *
      * @return the value
-     */
+     **/
     public DrPlanGroupType getType() {
         return type;
     }
 
     /**
-     * A flag indicating whether this group should be enabled for execution. This flag is only
-     * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining
-     * group types.
+     * A flag indicating whether this group should be enabled for execution.
+     * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+     * <p>
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
     private final Boolean isPauseEnabled;
 
     /**
-     * A flag indicating whether this group should be enabled for execution. This flag is only
-     * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining
-     * group types.
-     *
-     * <p>Example: {@code true}
+     * A flag indicating whether this group should be enabled for execution.
+     * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPauseEnabled() {
         return isPauseEnabled;
     }
 
-    /** The list of steps in this group. */
+    /**
+     * The list of steps in this group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<UpdateDrPlanStepDetails> steps;
 
@@ -275,7 +286,7 @@ public final class UpdateDrPlanGroupDetails
      * The list of steps in this group.
      *
      * @return the value
-     */
+     **/
     public java.util.List<UpdateDrPlanStepDetails> getSteps() {
         return steps;
     }
@@ -287,7 +298,6 @@ public final class UpdateDrPlanGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

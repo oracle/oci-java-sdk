@@ -5,26 +5,23 @@
 package com.oracle.bmc.ons.model;
 
 /**
- * The backoff retry portion of the subscription delivery policy. For information about retry
- * durations for subscriptions, see [How Notifications
- * Works](https://docs.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm#how).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The backoff retry portion of the subscription delivery policy. For information about retry durations for subscriptions, see
+ * [How Notifications Works](https://docs.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm#how).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BackoffRetryPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BackoffRetryPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = BackoffRetryPolicy.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BackoffRetryPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"maxRetryDuration", "policyType"})
     public BackoffRetryPolicy(Integer maxRetryDuration, PolicyType policyType) {
@@ -37,22 +34,24 @@ public final class BackoffRetryPolicy
     public static class Builder {
         /**
          * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
         private Integer maxRetryDuration;
 
         /**
          * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
-         *
          * @param maxRetryDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder maxRetryDuration(Integer maxRetryDuration) {
             this.maxRetryDuration = maxRetryDuration;
             this.__explicitlySet__.add("maxRetryDuration");
             return this;
         }
-        /** The type of delivery policy. */
+        /**
+         * The type of delivery policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyType")
         private PolicyType policyType;
 
@@ -61,7 +60,7 @@ public final class BackoffRetryPolicy
          *
          * @param policyType the value to set
          * @return this builder
-         */
+         **/
         public Builder policyType(PolicyType policyType) {
             this.policyType = policyType;
             this.__explicitlySet__.add("policyType");
@@ -92,7 +91,9 @@ public final class BackoffRetryPolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,26 +102,30 @@ public final class BackoffRetryPolicy
         return new Builder().copy(this);
     }
 
-    /** The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours). */
+    /**
+     * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
     private final Integer maxRetryDuration;
 
     /**
      * The maximum retry duration in milliseconds. Default value is {@code 7200000} (2 hours).
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxRetryDuration() {
         return maxRetryDuration;
     }
 
-    /** The type of delivery policy. */
-    public enum PolicyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of delivery policy.
+     *
+     **/
+    public enum PolicyType {
         Exponential("EXPONENTIAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -159,7 +164,10 @@ public final class BackoffRetryPolicy
             return UnknownEnumValue;
         }
     };
-    /** The type of delivery policy. */
+    /**
+     * The type of delivery policy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     private final PolicyType policyType;
 
@@ -167,7 +175,7 @@ public final class BackoffRetryPolicy
      * The type of delivery policy.
      *
      * @return the value
-     */
+     **/
     public PolicyType getPolicyType() {
         return policyType;
     }
@@ -179,7 +187,6 @@ public final class BackoffRetryPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

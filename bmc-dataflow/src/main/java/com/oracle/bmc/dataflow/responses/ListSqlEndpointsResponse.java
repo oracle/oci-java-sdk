@@ -6,19 +6,18 @@ package com.oracle.bmc.dataflow.responses;
 
 import com.oracle.bmc.dataflow.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional
-     * pages of results remain. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response,
+     * additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional
-     * pages of results remain. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response,
+     * additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -27,14 +26,15 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -42,12 +42,13 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** The returned {@code SqlEndpointCollection} instance. */
+    /**
+     * The returned SqlEndpointCollection instance.
+     */
     private com.oracle.bmc.dataflow.model.SqlEndpointCollection sqlEndpointCollection;
 
     /**
-     * The returned {@code SqlEndpointCollection} instance.
-     *
+     * The returned SqlEndpointCollection instance.
      * @return the value
      */
     public com.oracle.bmc.dataflow.model.SqlEndpointCollection getSqlEndpointCollection() {
@@ -63,7 +64,7 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListSqlEndpointsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.dataflow.model.SqlEndpointCollection sqlEndpointCollection) {
@@ -73,35 +74,31 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
         this.sqlEndpointCollection = sqlEndpointCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListSqlEndpointsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional
-         * pages of results remain. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response,
+         * additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional
-         * pages of results remain. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response,
+         * additional pages of results remain. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -112,14 +109,15 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -129,12 +127,13 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code SqlEndpointCollection} instance. */
+        /**
+         * The returned SqlEndpointCollection instance.
+         */
         private com.oracle.bmc.dataflow.model.SqlEndpointCollection sqlEndpointCollection;
 
         /**
-         * The returned {@code SqlEndpointCollection} instance.
-         *
+         * The returned SqlEndpointCollection instance.
          * @param sqlEndpointCollection the value to set
          * @return this builder
          */
@@ -146,10 +145,8 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListSqlEndpointsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,10 +159,8 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListSqlEndpointsResponse build() {
             return new ListSqlEndpointsResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, sqlEndpointCollection);
@@ -174,7 +169,6 @@ public class ListSqlEndpointsResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

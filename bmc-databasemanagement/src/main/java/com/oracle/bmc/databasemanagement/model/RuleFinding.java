@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of the Optimizer Statistics Advisor findings and recommendations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of the Optimizer Statistics Advisor findings and recommendations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuleFinding.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RuleFinding extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RuleFinding extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"message", "details", "recommendations"})
     public RuleFinding(
@@ -34,46 +32,49 @@ public final class RuleFinding extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A high-level overview of the findings of the Optimizer Statistics Advisor. */
+        /**
+         * A high-level overview of the findings of the Optimizer Statistics Advisor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A high-level overview of the findings of the Optimizer Statistics Advisor.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The details of the schema or operation. */
+        /**
+         * The details of the schema or operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private java.util.List<FindingSchemaOrOperation> details;
 
         /**
          * The details of the schema or operation.
-         *
          * @param details the value to set
          * @return this builder
-         */
+         **/
         public Builder details(java.util.List<FindingSchemaOrOperation> details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
-        /** The list of recommendations. */
+        /**
+         * The list of recommendations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendations")
         private java.util.List<Recommendation> recommendations;
 
         /**
          * The list of recommendations.
-         *
          * @param recommendations the value to set
          * @return this builder
-         */
+         **/
         public Builder recommendations(java.util.List<Recommendation> recommendations) {
             this.recommendations = recommendations;
             this.__explicitlySet__.add("recommendations");
@@ -106,7 +107,9 @@ public final class RuleFinding extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class RuleFinding extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** A high-level overview of the findings of the Optimizer Statistics Advisor. */
+    /**
+     * A high-level overview of the findings of the Optimizer Statistics Advisor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A high-level overview of the findings of the Optimizer Statistics Advisor.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
-    /** The details of the schema or operation. */
+    /**
+     * The details of the schema or operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final java.util.List<FindingSchemaOrOperation> details;
 
     /**
      * The details of the schema or operation.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FindingSchemaOrOperation> getDetails() {
         return details;
     }
 
-    /** The list of recommendations. */
+    /**
+     * The list of recommendations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendations")
     private final java.util.List<Recommendation> recommendations;
 
     /**
      * The list of recommendations.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Recommendation> getRecommendations() {
         return recommendations;
     }
@@ -161,7 +167,6 @@ public final class RuleFinding extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,26 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Command descriptor for querylanguage HIGHLIGHTROWS command. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Command descriptor for querylanguage HIGHLIGHTROWS command.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HighlightRowsCommandDescriptor.Builder.class)
+    builder = HighlightRowsCommandDescriptor.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "name")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "name"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HighlightRowsCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -80,7 +81,10 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /** User specified color to highlight matches with if found. */
+        /**
+         * User specified color to highlight matches with if found.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("color")
         private String color;
 
@@ -89,13 +93,16 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
          *
          * @param color the value to set
          * @return this builder
-         */
+         **/
         public Builder color(String color) {
             this.color = color;
             this.__explicitlySet__.add("color");
             return this;
         }
-        /** List of terms or phrases to find to mark the result row as highlighted. */
+        /**
+         * List of terms or phrases to find to mark the result row as highlighted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keywords")
         private java.util.List<String> keywords;
 
@@ -104,7 +111,7 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
          *
          * @param keywords the value to set
          * @return this builder
-         */
+         **/
         public Builder keywords(java.util.List<String> keywords) {
             this.keywords = keywords;
             this.__explicitlySet__.add("keywords");
@@ -161,7 +168,9 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,7 +200,10 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
         this.keywords = keywords;
     }
 
-    /** User specified color to highlight matches with if found. */
+    /**
+     * User specified color to highlight matches with if found.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("color")
     private final String color;
 
@@ -199,12 +211,15 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
      * User specified color to highlight matches with if found.
      *
      * @return the value
-     */
+     **/
     public String getColor() {
         return color;
     }
 
-    /** List of terms or phrases to find to mark the result row as highlighted. */
+    /**
+     * List of terms or phrases to find to mark the result row as highlighted.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keywords")
     private final java.util.List<String> keywords;
 
@@ -212,7 +227,7 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
      * List of terms or phrases to find to mark the result row as highlighted.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getKeywords() {
         return keywords;
     }
@@ -224,7 +239,6 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

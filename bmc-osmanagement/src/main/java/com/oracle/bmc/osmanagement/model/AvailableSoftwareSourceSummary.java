@@ -5,24 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * A software source which can be added to a managed instance. Once a software source is added,
- * packages from that software source can be installed on that managed instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+ * A software source which can be added to a managed instance. Once a software source is added, packages from that software source can be installed on that managed instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AvailableSoftwareSourceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AvailableSoftwareSourceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AvailableSoftwareSourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -47,76 +45,81 @@ public final class AvailableSoftwareSourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** unique identifier that is immutable on creation */
+        /**
+         * unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * unique identifier that is immutable on creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID for the Compartment */
+        /**
+         * OCID for the Compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID for the Compartment
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** User friendly name for the software source */
+        /**
+         * User friendly name for the software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * User friendly name for the software source
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** OCID for the parent software source, if there is one */
+        /**
+         * OCID for the parent software source, if there is one
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
          * OCID for the parent software source, if there is one
-         *
          * @param parentId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
-        /** Display name of the parent software source, if there is one */
+        /**
+         * Display name of the parent software source, if there is one
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentName")
         private String parentName;
 
         /**
          * Display name of the parent software source, if there is one
-         *
          * @param parentName the value to set
          * @return this builder
-         */
+         **/
         public Builder parentName(String parentName) {
             this.parentName = parentName;
             this.__explicitlySet__.add("parentName");
@@ -161,7 +164,9 @@ public final class AvailableSoftwareSourceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -170,67 +175,72 @@ public final class AvailableSoftwareSourceSummary
         return new Builder().copy(this);
     }
 
-    /** unique identifier that is immutable on creation */
+    /**
+     * unique identifier that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * unique identifier that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OCID for the Compartment */
+    /**
+     * OCID for the Compartment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID for the Compartment
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** User friendly name for the software source */
+    /**
+     * User friendly name for the software source
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * User friendly name for the software source
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** OCID for the parent software source, if there is one */
+    /**
+     * OCID for the parent software source, if there is one
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
      * OCID for the parent software source, if there is one
-     *
      * @return the value
-     */
+     **/
     public String getParentId() {
         return parentId;
     }
 
-    /** Display name of the parent software source, if there is one */
+    /**
+     * Display name of the parent software source, if there is one
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentName")
     private final String parentName;
 
     /**
      * Display name of the parent software source, if there is one
-     *
      * @return the value
-     */
+     **/
     public String getParentName() {
         return parentName;
     }
@@ -242,7 +252,6 @@ public final class AvailableSoftwareSourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

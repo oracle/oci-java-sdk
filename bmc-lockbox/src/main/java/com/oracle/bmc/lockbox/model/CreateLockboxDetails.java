@@ -5,23 +5,21 @@
 package com.oracle.bmc.lockbox.model;
 
 /**
- * The information about new Lockbox. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+ * The information about new Lockbox.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateLockboxDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateLockboxDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateLockboxDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -64,61 +62,65 @@ public final class CreateLockboxDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Lockbox Identifier */
+        /**
+         * Lockbox Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Lockbox Identifier
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The unique identifier (OCID) of the customer's resource. */
+        /**
+         * The unique identifier (OCID) of the customer's resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The unique identifier (OCID) of the customer's resource.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** The partner using this lockbox to lock a resource. */
+        /**
+         * The partner using this lockbox to lock a resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lockboxPartner")
         private LockboxPartner lockboxPartner;
 
         /**
          * The partner using this lockbox to lock a resource.
-         *
          * @param lockboxPartner the value to set
          * @return this builder
-         */
+         **/
         public Builder lockboxPartner(LockboxPartner lockboxPartner) {
             this.lockboxPartner = lockboxPartner;
             this.__explicitlySet__.add("lockboxPartner");
             return this;
         }
-        /** The unique identifier (OCID) of the compartment where the resource is located. */
+        /**
+         * The unique identifier (OCID) of the compartment where the resource is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The unique identifier (OCID) of the compartment where the resource is located.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -126,61 +128,63 @@ public final class CreateLockboxDetails
         }
         /**
          * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
         private String partnerId;
 
         /**
          * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
-         *
          * @param partnerId the value to set
          * @return this builder
-         */
+         **/
         public Builder partnerId(String partnerId) {
             this.partnerId = partnerId;
             this.__explicitlySet__.add("partnerId");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partnerCompartmentId")
         private String partnerCompartmentId;
 
         /**
          * Compartment Identifier
-         *
          * @param partnerCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder partnerCompartmentId(String partnerCompartmentId) {
             this.partnerCompartmentId = partnerCompartmentId;
             this.__explicitlySet__.add("partnerCompartmentId");
             return this;
         }
-        /** Approval template ID */
+        /**
+         * Approval template ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approvalTemplateId")
         private String approvalTemplateId;
 
         /**
          * Approval template ID
-         *
          * @param approvalTemplateId the value to set
          * @return this builder
-         */
+         **/
         public Builder approvalTemplateId(String approvalTemplateId) {
             this.approvalTemplateId = approvalTemplateId;
             this.__explicitlySet__.add("approvalTemplateId");
             return this;
         }
-        /** The maximum amount of time operator has access to associated resources. */
+        /**
+         * The maximum amount of time operator has access to associated resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxAccessDuration")
         private String maxAccessDuration;
 
         /**
          * The maximum amount of time operator has access to associated resources.
-         *
          * @param maxAccessDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder maxAccessDuration(String maxAccessDuration) {
             this.maxAccessDuration = maxAccessDuration;
             this.__explicitlySet__.add("maxAccessDuration");
@@ -197,19 +201,20 @@ public final class CreateLockboxDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -218,7 +223,8 @@ public final class CreateLockboxDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -228,7 +234,7 @@ public final class CreateLockboxDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -298,7 +304,9 @@ public final class CreateLockboxDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -307,106 +315,114 @@ public final class CreateLockboxDetails
         return new Builder().copy(this);
     }
 
-    /** Lockbox Identifier */
+    /**
+     * Lockbox Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Lockbox Identifier
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The unique identifier (OCID) of the customer's resource. */
+    /**
+     * The unique identifier (OCID) of the customer's resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The unique identifier (OCID) of the customer's resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** The partner using this lockbox to lock a resource. */
+    /**
+     * The partner using this lockbox to lock a resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lockboxPartner")
     private final LockboxPartner lockboxPartner;
 
     /**
      * The partner using this lockbox to lock a resource.
-     *
      * @return the value
-     */
+     **/
     public LockboxPartner getLockboxPartner() {
         return lockboxPartner;
     }
 
-    /** The unique identifier (OCID) of the compartment where the resource is located. */
+    /**
+     * The unique identifier (OCID) of the compartment where the resource is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The unique identifier (OCID) of the compartment where the resource is located.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The unique identifier (OCID) of partner resource using this lockbox to lock a resource */
+    /**
+     * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
     private final String partnerId;
 
     /**
      * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
-     *
      * @return the value
-     */
+     **/
     public String getPartnerId() {
         return partnerId;
     }
 
-    /** Compartment Identifier */
+    /**
+     * Compartment Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partnerCompartmentId")
     private final String partnerCompartmentId;
 
     /**
      * Compartment Identifier
-     *
      * @return the value
-     */
+     **/
     public String getPartnerCompartmentId() {
         return partnerCompartmentId;
     }
 
-    /** Approval template ID */
+    /**
+     * Approval template ID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approvalTemplateId")
     private final String approvalTemplateId;
 
     /**
      * Approval template ID
-     *
      * @return the value
-     */
+     **/
     public String getApprovalTemplateId() {
         return approvalTemplateId;
     }
 
-    /** The maximum amount of time operator has access to associated resources. */
+    /**
+     * The maximum amount of time operator has access to associated resources.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxAccessDuration")
     private final String maxAccessDuration;
 
     /**
      * The maximum amount of time operator has access to associated resources.
-     *
      * @return the value
-     */
+     **/
     public String getMaxAccessDuration() {
         return maxAccessDuration;
     }
@@ -419,35 +435,37 @@ public final class CreateLockboxDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -459,7 +477,6 @@ public final class CreateLockboxDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

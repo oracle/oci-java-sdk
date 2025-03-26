@@ -69,28 +69,47 @@ import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 
 /**
  * Sample to demonstrate setting up VCN Transit Routing
+ * <p>
+ * The sample relies on the correct IAM policies already being in place for a given compartment ID.
+ * <p/>
  *
- * <p>The sample relies on the correct IAM policies already being in place for a given compartment
- * ID.
+ *                                              TOPOLOGY
+ *                 spokeVcn                                                   hubVcn
+ *               11.0.0.0/16                                               10.0.0.0/16
+ *      +----------------------------+                              +-------------------- +
+ *      |                            |                              |                     |
+ *      |                            |                           +---------------+        |
+ *      |                            |                           |  |            |        |
+ *      |  +-----------+             |                           v  |            |        |
+ *      |  |           +----+        +-----+                  +-----+----+       |        |
+ *      |  |  SUBNET   | RT |------->| LPG +------------------+ LPG | RT |       |        |
+ *      |  |           +----+        +-----+                  +-----+--+-+       |        |
+ *      |  +-----------+             |                              |  |         |        |
+ *      |                            |                              |  |    +----+---+    |
+ *      |                            |                              |  |    |   RT   |    |
+ *      |                            |                              +--|----+--------+----+
+ *      +----------------------------+                                 |    | DrgAtt |
+ *                                                                     |    +----+---+
+ *                                                                     |         |
+ *                                                                     |    +----+---+
+ *                                                                     +--->|   DRG  |
+ *                                                                          +----+---+
+ *                                                                               |
+ *                                                                               |
+ *                                                                               +
+ *                                                                to OnPrem Network 172.16.0.0/16
  *
- * <p>TOPOLOGY spokeVcn hubVcn 11.0.0.0/16 10.0.0.0/16 +----------------------------+
- * +-------------------- + | | | | | | +---------------+ | | | | | | | | +-----------+ | v | | | | |
- * +----+ +-----+ +-----+----+ | | | | SUBNET | RT |------->| LPG +------------------+ LPG | RT | |
- * | | | +----+ +-----+ +-----+--+-+ | | | +-----------+ | | | | | | | | | +----+---+ | | | | | | RT
- * | | | | +--|----+--------+----+ +----------------------------+ | | DrgAtt | | +----+---+ | | |
- * +----+---+ +--->| DRG | +----+---+ | | + to OnPrem Network 172.16.0.0/16
+ *  Vcn Transit Routing allows your OnPrem network to access your connected VCN as well as any
+ *  Peered VCN(s). VCN Transit Routing is achieved through the use of LocalPeeringGateway in conjunction
+ *  with a dynamically routing gateway (or DRG).
  *
- * <p>Vcn Transit Routing allows your OnPrem network to access your connected VCN as well as any
- * Peered VCN(s). VCN Transit Routing is achieved through the use of LocalPeeringGateway in
- * conjunction with a dynamically routing gateway (or DRG).
+ *  The order of operations and waiting for the appropriate state is important. This sample
+ *  demonstrates the creation of resources on a single thread to more clearly demonstrate the
+ *  setup for VCN Transit Routing.
  *
- * <p>The order of operations and waiting for the appropriate state is important. This sample
- * demonstrates the creation of resources on a single thread to more clearly demonstrate the setup
- * for VCN Transit Routing.
- *
- * <p>It is also worth noting that the Hub VCN utilizes a dynamic routing gateway. DRGs are a finite
- * resource and may require contacting customer support if limits have been exceeded for a given
- * tenancy.
+ *  It is also worth noting that the Hub VCN utilizes a dynamic routing gateway. DRGs are a
+ *  finite resource and may require contacting customer support if limits have been exceeded
+ *  for a given tenancy.
  */
 public class VcnTransitRouting {
     // Set this with your own compartment ID
@@ -117,10 +136,8 @@ public class VcnTransitRouting {
             throw new IllegalStateException("A compartment ID must be defined");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -128,12 +145,12 @@ public class VcnTransitRouting {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient phxVirtualNetworkClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
+        final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
+        phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);
         final VcnTransitRouting example =
                 new VcnTransitRouting(phxVirtualNetworkClient, Region.US_PHOENIX_1);
-        final IdentityClient identityClient =
-                IdentityClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
+        final IdentityClient identityClient = new IdentityClient(authProvider);
+        identityClient.setRegion(Region.US_PHOENIX_1);
 
         example.run(identityClient);
     }
@@ -348,7 +365,8 @@ public class VcnTransitRouting {
                                         .displayName(
                                                 String.format(
                                                         "Drg-%s-%s",
-                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(),
+                                                        TIMESTAMP_SUFFIX))
                                         .build())
                         .build();
 
@@ -373,7 +391,8 @@ public class VcnTransitRouting {
                                         .displayName(
                                                 String.format(
                                                         "DrgAttachment-%s-%s",
-                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(),
+                                                        TIMESTAMP_SUFFIX))
                                         .drgId(drg.getId())
                                         .vcnId(vcn.getId())
                                         .build())

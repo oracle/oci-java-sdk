@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Stack trace element. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Stack trace element.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = StackTraceElement.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class StackTraceElement
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = StackTraceElement.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class StackTraceElement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "methodName",
@@ -46,7 +45,10 @@ public final class StackTraceElement
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the method containing the execution point. */
+        /**
+         * Name of the method containing the execution point.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("methodName")
         private String methodName;
 
@@ -55,13 +57,16 @@ public final class StackTraceElement
          *
          * @param methodName the value to set
          * @return this builder
-         */
+         **/
         public Builder methodName(String methodName) {
             this.methodName = methodName;
             this.__explicitlySet__.add("methodName");
             return this;
         }
-        /** Name of the source file containing the execution point. */
+        /**
+         * Name of the source file containing the execution point.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileName")
         private String fileName;
 
@@ -70,13 +75,16 @@ public final class StackTraceElement
          *
          * @param fileName the value to set
          * @return this builder
-         */
+         **/
         public Builder fileName(String fileName) {
             this.fileName = fileName;
             this.__explicitlySet__.add("fileName");
             return this;
         }
-        /** Line number of the source line containing the execution point. */
+        /**
+         * Line number of the source line containing the execution point.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
         private Integer lineNumber;
 
@@ -85,13 +93,16 @@ public final class StackTraceElement
          *
          * @param lineNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder lineNumber(Integer lineNumber) {
             this.lineNumber = lineNumber;
             this.__explicitlySet__.add("lineNumber");
             return this;
         }
-        /** Name of the class containing the execution point. */
+        /**
+         * Name of the class containing the execution point.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("className")
         private String className;
 
@@ -100,26 +111,25 @@ public final class StackTraceElement
          *
          * @param className the value to set
          * @return this builder
-         */
+         **/
         public Builder className(String className) {
             this.className = className;
             this.__explicitlySet__.add("className");
             return this;
         }
         /**
-         * The weight distribution that denotes the percentage occurrence of a method in the
-         * captured snapshots.
-         */
+         * The weight distribution that denotes the percentage occurrence of a method in the captured snapshots.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weightage")
         private Float weightage;
 
         /**
-         * The weight distribution that denotes the percentage occurrence of a method in the
-         * captured snapshots.
+         * The weight distribution that denotes the percentage occurrence of a method in the captured snapshots.
          *
          * @param weightage the value to set
          * @return this builder
-         */
+         **/
         public Builder weightage(Float weightage) {
             this.weightage = weightage;
             this.__explicitlySet__.add("weightage");
@@ -164,7 +174,9 @@ public final class StackTraceElement
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,7 +185,10 @@ public final class StackTraceElement
         return new Builder().copy(this);
     }
 
-    /** Name of the method containing the execution point. */
+    /**
+     * Name of the method containing the execution point.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("methodName")
     private final String methodName;
 
@@ -181,12 +196,15 @@ public final class StackTraceElement
      * Name of the method containing the execution point.
      *
      * @return the value
-     */
+     **/
     public String getMethodName() {
         return methodName;
     }
 
-    /** Name of the source file containing the execution point. */
+    /**
+     * Name of the source file containing the execution point.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileName")
     private final String fileName;
 
@@ -194,12 +212,15 @@ public final class StackTraceElement
      * Name of the source file containing the execution point.
      *
      * @return the value
-     */
+     **/
     public String getFileName() {
         return fileName;
     }
 
-    /** Line number of the source line containing the execution point. */
+    /**
+     * Line number of the source line containing the execution point.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
     private final Integer lineNumber;
 
@@ -207,12 +228,15 @@ public final class StackTraceElement
      * Line number of the source line containing the execution point.
      *
      * @return the value
-     */
+     **/
     public Integer getLineNumber() {
         return lineNumber;
     }
 
-    /** Name of the class containing the execution point. */
+    /**
+     * Name of the class containing the execution point.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("className")
     private final String className;
 
@@ -220,24 +244,23 @@ public final class StackTraceElement
      * Name of the class containing the execution point.
      *
      * @return the value
-     */
+     **/
     public String getClassName() {
         return className;
     }
 
     /**
-     * The weight distribution that denotes the percentage occurrence of a method in the captured
-     * snapshots.
-     */
+     * The weight distribution that denotes the percentage occurrence of a method in the captured snapshots.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weightage")
     private final Float weightage;
 
     /**
-     * The weight distribution that denotes the percentage occurrence of a method in the captured
-     * snapshots.
+     * The weight distribution that denotes the percentage occurrence of a method in the captured snapshots.
      *
      * @return the value
-     */
+     **/
     public Float getWeightage() {
         return weightage;
     }
@@ -249,7 +272,6 @@ public final class StackTraceElement
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

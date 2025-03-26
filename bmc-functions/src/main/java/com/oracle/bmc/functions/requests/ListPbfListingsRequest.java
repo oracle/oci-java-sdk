@@ -6,102 +6,124 @@ package com.oracle.bmc.functions.requests;
 
 import com.oracle.bmc.functions.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPbfListingsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPbfListingsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique PbfListing identifier */
+    /**
+     * unique PbfListing identifier
+     */
     private String pbfListingId;
 
-    /** unique PbfListing identifier */
+    /**
+     * unique PbfListing identifier
+     */
     public String getPbfListingId() {
         return pbfListingId;
     }
-    /** A filter to return only resources that match the entire PBF name given. */
+    /**
+     * A filter to return only resources that match the entire PBF name given.
+     */
     private String name;
 
-    /** A filter to return only resources that match the entire PBF name given. */
+    /**
+     * A filter to return only resources that match the entire PBF name given.
+     */
     public String getName() {
         return name;
     }
     /**
-     * A filter to return only resources that contain the supplied filter text in the PBF name
-     * given.
+     * A filter to return only resources that contain the supplied filter text in the PBF name given.
      */
     private String nameContains;
 
     /**
-     * A filter to return only resources that contain the supplied filter text in the PBF name
-     * given.
+     * A filter to return only resources that contain the supplied filter text in the PBF name given.
      */
     public String getNameContains() {
         return nameContains;
     }
     /**
-     * A filter to return only resources that start with the supplied filter text in the PBF name
-     * given.
+     * A filter to return only resources that start with the supplied filter text in the PBF name given.
      */
     private String nameStartsWith;
 
     /**
-     * A filter to return only resources that start with the supplied filter text in the PBF name
-     * given.
+     * A filter to return only resources that start with the supplied filter text in the PBF name given.
      */
     public String getNameStartsWith() {
         return nameStartsWith;
     }
-    /** A filter to return only resources that match the service trigger sources of a PBF. */
+    /**
+     * A filter to return only resources that match the service trigger sources of a PBF.
+     */
     private java.util.List<String> trigger;
 
-    /** A filter to return only resources that match the service trigger sources of a PBF. */
+    /**
+     * A filter to return only resources that match the service trigger sources of a PBF.
+     */
     public java.util.List<String> getTrigger() {
         return trigger;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     private com.oracle.bmc.functions.model.PbfListing.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.functions.model.PbfListing.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     private String page;
 
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     private SortOrder sortOrder;
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -136,23 +158,25 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for name is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for name is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         Name("name"),
         ;
@@ -186,8 +210,8 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for name is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -195,12 +219,14 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -209,15 +235,17 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPbfListingsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique PbfListing identifier */
+        /**
+         * unique PbfListing identifier
+         */
         private String pbfListingId = null;
 
         /**
          * unique PbfListing identifier
-         *
          * @param pbfListingId the value to set
          * @return this builder instance
          */
@@ -226,12 +254,13 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** A filter to return only resources that match the entire PBF name given. */
+        /**
+         * A filter to return only resources that match the entire PBF name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire PBF name given.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -241,15 +270,12 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A filter to return only resources that contain the supplied filter text in the PBF name
-         * given.
+         * A filter to return only resources that contain the supplied filter text in the PBF name given.
          */
         private String nameContains = null;
 
         /**
-         * A filter to return only resources that contain the supplied filter text in the PBF name
-         * given.
-         *
+         * A filter to return only resources that contain the supplied filter text in the PBF name given.
          * @param nameContains the value to set
          * @return this builder instance
          */
@@ -259,15 +285,12 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A filter to return only resources that start with the supplied filter text in the PBF
-         * name given.
+         * A filter to return only resources that start with the supplied filter text in the PBF name given.
          */
         private String nameStartsWith = null;
 
         /**
-         * A filter to return only resources that start with the supplied filter text in the PBF
-         * name given.
-         *
+         * A filter to return only resources that start with the supplied filter text in the PBF name given.
          * @param nameStartsWith the value to set
          * @return this builder instance
          */
@@ -276,12 +299,13 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** A filter to return only resources that match the service trigger sources of a PBF. */
+        /**
+         * A filter to return only resources that match the service trigger sources of a PBF.
+         */
         private java.util.List<String> trigger = null;
 
         /**
          * A filter to return only resources that match the service trigger sources of a PBF.
-         *
          * @param trigger the value to set
          * @return this builder instance
          */
@@ -291,9 +315,7 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Singular setter. A filter to return only resources that match the service trigger sources
-         * of a PBF.
-         *
+         * Singular setter. A filter to return only resources that match the service trigger sources of a PBF.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -308,7 +330,6 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -320,15 +341,16 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+         * <p>
+         * Default: 10
          *
-         * <p>Default: 10
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-         *
-         * <p>Default: 10
+         * <p>
+         * Default: 10
          *
          * @param limit the value to set
          * @return this builder instance
@@ -338,7 +360,10 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The pagination token for a list query returned by a previous operation */
+        /**
+         * The pagination token for a list query returned by a previous operation
+         *
+         */
         private String page = null;
 
         /**
@@ -354,15 +379,18 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Specifies sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
          */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order.
-         *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -373,14 +401,13 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for name is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for name is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -391,14 +418,15 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -410,19 +438,18 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -434,7 +461,6 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPbfListingsRequest o) {
@@ -457,11 +483,10 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListPbfListingsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPbfListingsRequest
          */
@@ -475,8 +500,7 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListPbfListingsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPbfListingsRequest
@@ -495,14 +519,12 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPbfListingsRequest(pbfListingId, name, nameContains, nameStartsWith, trigger,
-            // lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListPbfListingsRequest(pbfListingId, name, nameContains, nameStartsWith, trigger, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -522,7 +544,6 @@ public class ListPbfListingsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

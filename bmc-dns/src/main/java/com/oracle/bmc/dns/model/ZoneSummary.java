@@ -6,23 +6,21 @@ package com.oracle.bmc.dns.model;
 
 /**
  * A DNS zone.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ZoneSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ZoneSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -80,134 +78,141 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the zone. */
+        /**
+         * The name of the zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the zone.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code
-         * SECONDARY} is only supported for GLOBAL zones.
-         */
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
         private ZoneType zoneType;
 
         /**
-         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code
-         * SECONDARY} is only supported for GLOBAL zones.
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
          *
          * @param zoneType the value to set
          * @return this builder
-         */
+         **/
         public Builder zoneType(ZoneType zoneType) {
             this.zoneType = zoneType;
             this.__explicitlySet__.add("zoneType");
             return this;
         }
-        /** The OCID of the compartment containing the zone. */
+        /**
+         * The OCID of the compartment containing the zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the zone.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The OCID of the private view containing the zone. This value will be null for zones in
-         * the global DNS, which are publicly resolvable and not part of a private view.
-         */
+         * The OCID of the private view containing the zone. This value will
+         * be null for zones in the global DNS, which are publicly resolvable and
+         * not part of a private view.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("viewId")
         private String viewId;
 
         /**
-         * The OCID of the private view containing the zone. This value will be null for zones in
-         * the global DNS, which are publicly resolvable and not part of a private view.
+         * The OCID of the private view containing the zone. This value will
+         * be null for zones in the global DNS, which are publicly resolvable and
+         * not part of a private view.
          *
          * @param viewId the value to set
          * @return this builder
-         */
+         **/
         public Builder viewId(String viewId) {
             this.viewId = viewId;
             this.__explicitlySet__.add("viewId");
             return this;
         }
-        /** The scope of the zone. */
+        /**
+         * The scope of the zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
         /**
          * The scope of the zone.
-         *
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          *
-         * <p>**Example:** {@code {"Department": "Finance"}}
-         */
+         * **Example:** {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          *
-         * <p>**Example:** {@code {"Department": "Finance"}}
+         * **Example:** {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          *
-         * <p>**Example:** {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          *
-         * <p>**Example:** {@code {"Operations": {"CostCenter": "42"}}}
+         * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -216,152 +221,152 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The state of DNSSEC on the zone.
+         * <p>
+         * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+         * trust anchor) must also have DNSSEC correctly set up.
+         * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+         * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+         * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+         * <p>
+         * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+         * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+         * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+         * <p>
+         * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+         * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+         * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+         * <p>
+         * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+         * days are left until expiration.
+         * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+         * <p>
+         * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+         * cause higher response latency.
+         * <p>
+         * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
          *
-         * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain
-         * (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling
-         * DNSSEC, you must add a DS record to the zone's parent zone containing the {@code
-         * KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of
-         * the {@code KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion}
-         * operation to promote the {@code KskDnssecKeyVersion}.
-         *
-         * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing
-         * {@code KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you
-         * must replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion}
-         * data with the data from the new {@code KskDnssecKeyVersion}.
-         *
-         * <p>To remove the old DS record without causing service disruption, wait until the old DS
-         * record's TTL has expired, and the new DS record has propagated. After the DS replacement
-         * has been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be
-         * called.
-         *
-         * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-         * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend
-         * that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
-         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion}
-         * operation can be called.
-         *
-         * <p>Enabling DNSSEC results in additional records in DNS responses which increases their
-         * size and can cause higher response latency.
-         *
-         * <p>For more information, see
-         * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
         private ZoneDnssecState dnssecState;
 
         /**
          * The state of DNSSEC on the zone.
-         *
-         * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain
-         * (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling
-         * DNSSEC, you must add a DS record to the zone's parent zone containing the {@code
-         * KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of
-         * the {@code KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion}
-         * operation to promote the {@code KskDnssecKeyVersion}.
-         *
-         * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing
-         * {@code KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you
-         * must replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion}
-         * data with the data from the new {@code KskDnssecKeyVersion}.
-         *
-         * <p>To remove the old DS record without causing service disruption, wait until the old DS
-         * record's TTL has expired, and the new DS record has propagated. After the DS replacement
-         * has been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be
-         * called.
-         *
-         * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-         * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend
-         * that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
-         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion}
-         * operation can be called.
-         *
-         * <p>Enabling DNSSEC results in additional records in DNS responses which increases their
-         * size and can cause higher response latency.
-         *
-         * <p>For more information, see
-         * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+         * <p>
+         * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+         * trust anchor) must also have DNSSEC correctly set up.
+         * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+         * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+         * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+         * <p>
+         * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+         * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+         * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+         * <p>
+         * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+         * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+         * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+         * <p>
+         * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+         * days are left until expiration.
+         * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+         * <p>
+         * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+         * cause higher response latency.
+         * <p>
+         * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
          *
          * @param dnssecState the value to set
          * @return this builder
-         */
+         **/
         public Builder dnssecState(ZoneDnssecState dnssecState) {
             this.dnssecState = dnssecState;
             this.__explicitlySet__.add("dnssecState");
             return this;
         }
-        /** The canonical absolute URL of the resource. */
+        /**
+         * The canonical absolute URL of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("self")
         private String self;
 
         /**
          * The canonical absolute URL of the resource.
-         *
          * @param self the value to set
          * @return this builder
-         */
+         **/
         public Builder self(String self) {
             this.self = self;
             this.__explicitlySet__.add("self");
             return this;
         }
-        /** The OCID of the zone. */
+        /**
+         * The OCID of the zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the zone.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z
-         * offset, as defined by RFC 3339.
+         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
+         * with a Z offset, as defined by RFC 3339.
+         * <p>
+         **Example:** {@code 2016-07-22T17:23:59:60Z}
          *
-         * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z
-         * offset, as defined by RFC 3339.
-         *
-         * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
+         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
+         * with a Z offset, as defined by RFC 3339.
+         * <p>
+         **Example:** {@code 2016-07-22T17:23:59:60Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Version is the never-repeating, totally-orderable, version of the zone, from which the
-         * serial field of the zone's SOA record is derived.
-         */
+         * Version is the never-repeating, totally-orderable, version of the
+         * zone, from which the serial field of the zone's SOA record is
+         * derived.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Version is the never-repeating, totally-orderable, version of the zone, from which the
-         * serial field of the zone's SOA record is derived.
+         * Version is the never-repeating, totally-orderable, version of the
+         * zone, from which the serial field of the zone's SOA record is
+         * derived.
          *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The current serial of the zone. As seen in the zone's SOA record. */
+        /**
+         * The current serial of the zone. As seen in the zone's SOA record.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serial")
         private Long serial;
 
@@ -370,41 +375,41 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param serial the value to set
          * @return this builder
-         */
+         **/
         public Builder serial(Long serial) {
             this.serial = serial;
             this.__explicitlySet__.add("serial");
             return this;
         }
-        /** The current state of the zone resource. */
+        /**
+         * The current state of the zone resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the zone resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A Boolean flag indicating whether or not parts of the resource are unable to be
-         * explicitly managed.
-         */
+         * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
         private Boolean isProtected;
 
         /**
-         * A Boolean flag indicating whether or not parts of the resource are unable to be
-         * explicitly managed.
+         * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
          *
          * @param isProtected the value to set
          * @return this builder
-         */
+         **/
         public Builder isProtected(Boolean isProtected) {
             this.isProtected = isProtected;
             this.__explicitlySet__.add("isProtected");
@@ -502,7 +507,9 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -511,30 +518,31 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The name of the zone. */
+    /**
+     * The name of the zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the zone.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
-     * is only supported for GLOBAL zones.
-     */
-    public enum ZoneType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
+     *
+     **/
+    public enum ZoneType {
         Primary("PRIMARY"),
         Secondary("SECONDARY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -574,247 +582,255 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     };
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
-     * is only supported for GLOBAL zones.
-     */
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
     private final ZoneType zoneType;
 
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
-     * is only supported for GLOBAL zones.
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL zones.
      *
      * @return the value
-     */
+     **/
     public ZoneType getZoneType() {
         return zoneType;
     }
 
-    /** The OCID of the compartment containing the zone. */
+    /**
+     * The OCID of the compartment containing the zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the zone.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The OCID of the private view containing the zone. This value will be null for zones in the
-     * global DNS, which are publicly resolvable and not part of a private view.
-     */
+     * The OCID of the private view containing the zone. This value will
+     * be null for zones in the global DNS, which are publicly resolvable and
+     * not part of a private view.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("viewId")
     private final String viewId;
 
     /**
-     * The OCID of the private view containing the zone. This value will be null for zones in the
-     * global DNS, which are publicly resolvable and not part of a private view.
+     * The OCID of the private view containing the zone. This value will
+     * be null for zones in the global DNS, which are publicly resolvable and
+     * not part of a private view.
      *
      * @return the value
-     */
+     **/
     public String getViewId() {
         return viewId;
     }
 
-    /** The scope of the zone. */
+    /**
+     * The scope of the zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
     /**
      * The scope of the zone.
-     *
      * @return the value
-     */
+     **/
     public Scope getScope() {
         return scope;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      *
-     * <p>**Example:** {@code {"Department": "Finance"}}
-     */
+     * **Example:** {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      *
-     * <p>**Example:** {@code {"Department": "Finance"}}
+     * **Example:** {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      *
-     * <p>**Example:** {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      *
-     * <p>**Example:** {@code {"Operations": {"CostCenter": "42"}}}
+     * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * The state of DNSSEC on the zone.
+     * <p>
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+     * trust anchor) must also have DNSSEC correctly set up.
+     * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+     * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+     * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+     * <p>
+     * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+     * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+     * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+     * <p>
+     * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+     * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+     * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+     * <p>
+     * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+     * days are left until expiration.
+     * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+     * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+     * <p>
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+     * cause higher response latency.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      *
-     * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or
-     * an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC,
-     * you must add a DS record to the zone's parent zone containing the {@code KskDnssecKeyVersion}
-     * data. You can find the DS data in the {@code dsData} attribute of the {@code
-     * KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote
-     * the {@code KskDnssecKeyVersion}.
-     *
-     * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code
-     * KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you must
-     * replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion} data with
-     * the data from the new {@code KskDnssecKeyVersion}.
-     *
-     * <p>To remove the old DS record without causing service disruption, wait until the old DS
-     * record's TTL has expired, and the new DS record has propagated. After the DS replacement has
-     * been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be called.
-     *
-     * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-     * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend that
-     * you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary
-     * parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be
-     * called.
-     *
-     * <p>Enabling DNSSEC results in additional records in DNS responses which increases their size
-     * and can cause higher response latency.
-     *
-     * <p>For more information, see
-     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
     private final ZoneDnssecState dnssecState;
 
     /**
      * The state of DNSSEC on the zone.
-     *
-     * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or
-     * an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC,
-     * you must add a DS record to the zone's parent zone containing the {@code KskDnssecKeyVersion}
-     * data. You can find the DS data in the {@code dsData} attribute of the {@code
-     * KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote
-     * the {@code KskDnssecKeyVersion}.
-     *
-     * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code
-     * KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you must
-     * replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion} data with
-     * the data from the new {@code KskDnssecKeyVersion}.
-     *
-     * <p>To remove the old DS record without causing service disruption, wait until the old DS
-     * record's TTL has expired, and the new DS record has propagated. After the DS replacement has
-     * been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be called.
-     *
-     * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-     * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend that
-     * you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary
-     * parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be
-     * called.
-     *
-     * <p>Enabling DNSSEC results in additional records in DNS responses which increases their size
-     * and can cause higher response latency.
-     *
-     * <p>For more information, see
-     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * <p>
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+     * trust anchor) must also have DNSSEC correctly set up.
+     * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+     * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+     * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+     * <p>
+     * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+     * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+     * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+     * <p>
+     * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+     * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+     * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+     * <p>
+     * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+     * days are left until expiration.
+     * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+     * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+     * <p>
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+     * cause higher response latency.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      *
      * @return the value
-     */
+     **/
     public ZoneDnssecState getDnssecState() {
         return dnssecState;
     }
 
-    /** The canonical absolute URL of the resource. */
+    /**
+     * The canonical absolute URL of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("self")
     private final String self;
 
     /**
      * The canonical absolute URL of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getSelf() {
         return self;
     }
 
-    /** The OCID of the zone. */
+    /**
+     * The OCID of the zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the zone.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset,
-     * as defined by RFC 3339.
+     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
+     * with a Z offset, as defined by RFC 3339.
+     * <p>
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
-     * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset,
-     * as defined by RFC 3339.
-     *
-     * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
+     * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format
+     * with a Z offset, as defined by RFC 3339.
+     * <p>
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Version is the never-repeating, totally-orderable, version of the zone, from which the serial
-     * field of the zone's SOA record is derived.
-     */
+     * Version is the never-repeating, totally-orderable, version of the
+     * zone, from which the serial field of the zone's SOA record is
+     * derived.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Version is the never-repeating, totally-orderable, version of the zone, from which the serial
-     * field of the zone's SOA record is derived.
+     * Version is the never-repeating, totally-orderable, version of the
+     * zone, from which the serial field of the zone's SOA record is
+     * derived.
      *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The current serial of the zone. As seen in the zone's SOA record. */
+    /**
+     * The current serial of the zone. As seen in the zone's SOA record.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serial")
     private final Long serial;
 
@@ -822,13 +838,15 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
      * The current serial of the zone. As seen in the zone's SOA record.
      *
      * @return the value
-     */
+     **/
     public Long getSerial() {
         return serial;
     }
 
-    /** The current state of the zone resource. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the zone resource.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleted("DELETED"),
@@ -837,8 +855,8 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
         Updating("UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -877,32 +895,32 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The current state of the zone resource. */
+    /**
+     * The current state of the zone resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the zone resource.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly
-     * managed.
-     */
+     * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
     private final Boolean isProtected;
 
     /**
-     * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly
-     * managed.
+     * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsProtected() {
         return isProtected;
     }
@@ -921,7 +939,6 @@ public final class ZoneSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

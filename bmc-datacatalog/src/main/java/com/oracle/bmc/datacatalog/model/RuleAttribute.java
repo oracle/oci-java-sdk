@@ -5,22 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Object that defines a usage of an attribute in the context of a rule. Example: For a UNIQUEKEY
- * rule, declares the attribute in a table whose value must be unique. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Object that defines a usage of an attribute in the context of a rule.
+ * Example: For a UNIQUEKEY rule, declares the attribute in a table whose value must be unique.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuleAttribute.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RuleAttribute extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RuleAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "displayName", "position"})
     public RuleAttribute(String key, String displayName, Integer position) {
@@ -32,50 +31,53 @@ public final class RuleAttribute extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Immutable unique key of the attribute. */
+        /**
+         * Immutable unique key of the attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Immutable unique key of the attribute.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
-         */
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Position of the attribute in the record definition. */
+        /**
+         * Position of the attribute in the record definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
         /**
          * Position of the attribute in the record definition.
-         *
          * @param position the value to set
          * @return this builder
-         */
+         **/
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
@@ -108,7 +110,9 @@ public final class RuleAttribute extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,45 +121,48 @@ public final class RuleAttribute extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Immutable unique key of the attribute. */
+    /**
+     * Immutable unique key of the attribute.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Immutable unique key of the attribute.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Position of the attribute in the record definition. */
+    /**
+     * Position of the attribute in the record definition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
     /**
      * Position of the attribute in the record definition.
-     *
      * @return the value
-     */
+     **/
     public Integer getPosition() {
         return position;
     }
@@ -167,7 +174,6 @@ public final class RuleAttribute extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

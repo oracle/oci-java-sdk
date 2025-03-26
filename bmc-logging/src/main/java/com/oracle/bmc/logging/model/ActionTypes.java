@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.logging.model;
 
-/** Possible types of actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-public enum ActionTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible types of actions.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+public enum ActionTypes {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Pluggable Database Node Level Details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Pluggable Database Node Level Details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PluggableDatabaseNodeLevelDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PluggableDatabaseNodeLevelDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PluggableDatabaseNodeLevelDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nodeName", "openMode"})
     public PluggableDatabaseNodeLevelDetails(String nodeName, OpenMode openMode) {
@@ -32,35 +31,35 @@ public final class PluggableDatabaseNodeLevelDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Node name of the Database Instance. */
+        /**
+         * The Node name of the Database Instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeName")
         private String nodeName;
 
         /**
          * The Node name of the Database Instance.
-         *
          * @param nodeName the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeName(String nodeName) {
             this.nodeName = nodeName;
             this.__explicitlySet__.add("nodeName");
             return this;
         }
         /**
-         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or
-         * MIGRATE directly from the backend (within the Oracle Database software).
-         */
+         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("openMode")
         private OpenMode openMode;
 
         /**
-         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or
-         * MIGRATE directly from the backend (within the Oracle Database software).
+         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
          *
          * @param openMode the value to set
          * @return this builder
-         */
+         **/
         public Builder openMode(OpenMode openMode) {
             this.openMode = openMode;
             this.__explicitlySet__.add("openMode");
@@ -91,7 +90,9 @@ public final class PluggableDatabaseNodeLevelDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,32 +101,33 @@ public final class PluggableDatabaseNodeLevelDetails
         return new Builder().copy(this);
     }
 
-    /** The Node name of the Database Instance. */
+    /**
+     * The Node name of the Database Instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeName")
     private final String nodeName;
 
     /**
      * The Node name of the Database Instance.
-     *
      * @return the value
-     */
+     **/
     public String getNodeName() {
         return nodeName;
     }
 
     /**
-     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE
-     * directly from the backend (within the Oracle Database software).
-     */
-    public enum OpenMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+     *
+     **/
+    public enum OpenMode {
         ReadOnly("READ_ONLY"),
         ReadWrite("READ_WRITE"),
         Mounted("MOUNTED"),
         Migrate("MIGRATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -165,18 +167,17 @@ public final class PluggableDatabaseNodeLevelDetails
         }
     };
     /**
-     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE
-     * directly from the backend (within the Oracle Database software).
-     */
+     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     private final OpenMode openMode;
 
     /**
-     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE
-     * directly from the backend (within the Oracle Database software).
+     * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      *
      * @return the value
-     */
+     **/
     public OpenMode getOpenMode() {
         return openMode;
     }
@@ -188,7 +189,6 @@ public final class PluggableDatabaseNodeLevelDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

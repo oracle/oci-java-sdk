@@ -5,24 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Initialization parameters for a database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Initialization parameters for a database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DBParameters.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DBParameters extends DatabaseConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -34,91 +33,97 @@ public final class DBParameters extends DatabaseConfigurationMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** Database instance number. */
+        /**
+         * Database instance number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
         private Integer instanceNumber;
 
         /**
          * Database instance number.
-         *
          * @param instanceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceNumber(Integer instanceNumber) {
             this.instanceNumber = instanceNumber;
             this.__explicitlySet__.add("instanceNumber");
             return this;
         }
-        /** Database parameter name. */
+        /**
+         * Database parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterName")
         private String parameterName;
 
         /**
          * Database parameter name.
-         *
          * @param parameterName the value to set
          * @return this builder
-         */
+         **/
         public Builder parameterName(String parameterName) {
             this.parameterName = parameterName;
             this.__explicitlySet__.add("parameterName");
             return this;
         }
-        /** Database parameter value. */
+        /**
+         * Database parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterValue")
         private String parameterValue;
 
         /**
          * Database parameter value.
-         *
          * @param parameterValue the value to set
          * @return this builder
-         */
+         **/
         public Builder parameterValue(String parameterValue) {
             this.parameterValue = parameterValue;
             this.__explicitlySet__.add("parameterValue");
             return this;
         }
-        /** AWR snapshot id for the parameter value */
+        /**
+         * AWR snapshot id for the parameter value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotId")
         private Integer snapshotId;
 
         /**
          * AWR snapshot id for the parameter value
-         *
          * @param snapshotId the value to set
          * @return this builder
-         */
+         **/
         public Builder snapshotId(Integer snapshotId) {
             this.snapshotId = snapshotId;
             this.__explicitlySet__.add("snapshotId");
             return this;
         }
-        /** Indicates whether the parameter's value changed in given snapshot or not. */
+        /**
+         * Indicates whether the parameter's value changed in given snapshot or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isChanged")
         private String isChanged;
 
         /**
          * Indicates whether the parameter's value changed in given snapshot or not.
-         *
          * @param isChanged the value to set
          * @return this builder
-         */
+         **/
         public Builder isChanged(String isChanged) {
             this.isChanged = isChanged;
             this.__explicitlySet__.add("isChanged");
             return this;
         }
-        /** Indicates whether this value is the default value or not. */
+        /**
+         * Indicates whether this value is the default value or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private String isDefault;
 
         /**
          * Indicates whether this value is the default value or not.
-         *
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(String isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -171,7 +176,9 @@ public final class DBParameters extends DatabaseConfigurationMetricGroup {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -198,80 +205,86 @@ public final class DBParameters extends DatabaseConfigurationMetricGroup {
         this.isDefault = isDefault;
     }
 
-    /** Database instance number. */
+    /**
+     * Database instance number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
     private final Integer instanceNumber;
 
     /**
      * Database instance number.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstanceNumber() {
         return instanceNumber;
     }
 
-    /** Database parameter name. */
+    /**
+     * Database parameter name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameterName")
     private final String parameterName;
 
     /**
      * Database parameter name.
-     *
      * @return the value
-     */
+     **/
     public String getParameterName() {
         return parameterName;
     }
 
-    /** Database parameter value. */
+    /**
+     * Database parameter value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValue")
     private final String parameterValue;
 
     /**
      * Database parameter value.
-     *
      * @return the value
-     */
+     **/
     public String getParameterValue() {
         return parameterValue;
     }
 
-    /** AWR snapshot id for the parameter value */
+    /**
+     * AWR snapshot id for the parameter value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotId")
     private final Integer snapshotId;
 
     /**
      * AWR snapshot id for the parameter value
-     *
      * @return the value
-     */
+     **/
     public Integer getSnapshotId() {
         return snapshotId;
     }
 
-    /** Indicates whether the parameter's value changed in given snapshot or not. */
+    /**
+     * Indicates whether the parameter's value changed in given snapshot or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isChanged")
     private final String isChanged;
 
     /**
      * Indicates whether the parameter's value changed in given snapshot or not.
-     *
      * @return the value
-     */
+     **/
     public String getIsChanged() {
         return isChanged;
     }
 
-    /** Indicates whether this value is the default value or not. */
+    /**
+     * Indicates whether this value is the default value or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final String isDefault;
 
     /**
      * Indicates whether this value is the default value or not.
-     *
      * @return the value
-     */
+     **/
     public String getIsDefault() {
         return isDefault;
     }
@@ -283,7 +296,6 @@ public final class DBParameters extends DatabaseConfigurationMetricGroup {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

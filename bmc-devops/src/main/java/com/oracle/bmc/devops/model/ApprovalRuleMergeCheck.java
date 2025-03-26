@@ -5,113 +5,119 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The status of the approval rules. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The status of the approval rules.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApprovalRuleMergeCheck.Builder.class)
+    builder = ApprovalRuleMergeCheck.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApprovalRuleMergeCheck extends MergeCheck {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the rule. */
+        /**
+         * The name of the rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
         private String ruleName;
 
         /**
          * The name of the rule.
-         *
          * @param ruleName the value to set
          * @return this builder
-         */
+         **/
         public Builder ruleName(String ruleName) {
             this.ruleName = ruleName;
             this.__explicitlySet__.add("ruleName");
             return this;
         }
-        /** The status of the approval rule. */
+        /**
+         * The status of the approval rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the approval rule.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The number of total approvals needed. */
+        /**
+         * The number of total approvals needed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalApprovalCount")
         private Integer totalApprovalCount;
 
         /**
          * The number of total approvals needed.
-         *
          * @param totalApprovalCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalApprovalCount(Integer totalApprovalCount) {
             this.totalApprovalCount = totalApprovalCount;
             this.__explicitlySet__.add("totalApprovalCount");
             return this;
         }
-        /** The current number of approvals. */
+        /**
+         * The current number of approvals.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentApprovalCount")
         private Integer currentApprovalCount;
 
         /**
          * The current number of approvals.
-         *
          * @param currentApprovalCount the value to set
          * @return this builder
-         */
+         **/
         public Builder currentApprovalCount(Integer currentApprovalCount) {
             this.currentApprovalCount = currentApprovalCount;
             this.__explicitlySet__.add("currentApprovalCount");
             return this;
         }
-        /** The list of default reviewers. */
+        /**
+         * The list of default reviewers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reviewers")
         private java.util.List<PrincipalDetails> reviewers;
 
         /**
          * The list of default reviewers.
-         *
          * @param reviewers the value to set
          * @return this builder
-         */
+         **/
         public Builder reviewers(java.util.List<PrincipalDetails> reviewers) {
             this.reviewers = reviewers;
             this.__explicitlySet__.add("reviewers");
             return this;
         }
-        /** The level of rule. */
+        /**
+         * The level of rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Level level;
 
         /**
          * The level of rule.
-         *
          * @param level the value to set
          * @return this builder
-         */
+         **/
         public Builder level(Level level) {
             this.level = level;
             this.__explicitlySet__.add("level");
@@ -160,7 +166,9 @@ public final class ApprovalRuleMergeCheck extends MergeCheck {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -186,27 +194,30 @@ public final class ApprovalRuleMergeCheck extends MergeCheck {
         this.level = level;
     }
 
-    /** The name of the rule. */
+    /**
+     * The name of the rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
     private final String ruleName;
 
     /**
      * The name of the rule.
-     *
      * @return the value
-     */
+     **/
     public String getRuleName() {
         return ruleName;
     }
 
-    /** The status of the approval rule. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the approval rule.
+     **/
+    public enum Status {
         NeedsApproval("NEEDS_APPROVAL"),
         Succeeded("SUCCEEDED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -244,66 +255,72 @@ public final class ApprovalRuleMergeCheck extends MergeCheck {
             return UnknownEnumValue;
         }
     };
-    /** The status of the approval rule. */
+    /**
+     * The status of the approval rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the approval rule.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The number of total approvals needed. */
+    /**
+     * The number of total approvals needed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalApprovalCount")
     private final Integer totalApprovalCount;
 
     /**
      * The number of total approvals needed.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalApprovalCount() {
         return totalApprovalCount;
     }
 
-    /** The current number of approvals. */
+    /**
+     * The current number of approvals.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentApprovalCount")
     private final Integer currentApprovalCount;
 
     /**
      * The current number of approvals.
-     *
      * @return the value
-     */
+     **/
     public Integer getCurrentApprovalCount() {
         return currentApprovalCount;
     }
 
-    /** The list of default reviewers. */
+    /**
+     * The list of default reviewers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reviewers")
     private final java.util.List<PrincipalDetails> reviewers;
 
     /**
      * The list of default reviewers.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PrincipalDetails> getReviewers() {
         return reviewers;
     }
 
-    /** The level of rule. */
-    public enum Level implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The level of rule.
+     **/
+    public enum Level {
         Project("PROJECT"),
         Repository("REPOSITORY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -341,15 +358,16 @@ public final class ApprovalRuleMergeCheck extends MergeCheck {
             return UnknownEnumValue;
         }
     };
-    /** The level of rule. */
+    /**
+     * The level of rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Level level;
 
     /**
      * The level of rule.
-     *
      * @return the value
-     */
+     **/
     public Level getLevel() {
         return level;
     }
@@ -361,7 +379,6 @@ public final class ApprovalRuleMergeCheck extends MergeCheck {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

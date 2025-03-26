@@ -5,23 +5,21 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Summary object for service list in the network firewall policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Summary object for service list in the network firewall policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ServiceListSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ServiceListSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ServiceListSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ServiceListSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "totalServices", "parentResourceId"})
     public ServiceListSummary(String name, Integer totalServices, String parentResourceId) {
@@ -33,46 +31,49 @@ public final class ServiceListSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the service groups. */
+        /**
+         * Name of the service groups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the service groups.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Count of total services in the given service List. */
+        /**
+         * Count of total services in the given service List.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalServices")
         private Integer totalServices;
 
         /**
          * Count of total services in the given service List.
-         *
          * @param totalServices the value to set
          * @return this builder
-         */
+         **/
         public Builder totalServices(Integer totalServices) {
             this.totalServices = totalServices;
             this.__explicitlySet__.add("totalServices");
             return this;
         }
-        /** OCID of the Network Firewall Policy this application belongs to. */
+        /**
+         * OCID of the Network Firewall Policy this application belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
         private String parentResourceId;
 
         /**
          * OCID of the Network Firewall Policy this application belongs to.
-         *
          * @param parentResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
@@ -106,7 +107,9 @@ public final class ServiceListSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class ServiceListSummary
         return new Builder().copy(this);
     }
 
-    /** Name of the service groups. */
+    /**
+     * Name of the service groups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the service groups.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Count of total services in the given service List. */
+    /**
+     * Count of total services in the given service List.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalServices")
     private final Integer totalServices;
 
     /**
      * Count of total services in the given service List.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalServices() {
         return totalServices;
     }
 
-    /** OCID of the Network Firewall Policy this application belongs to. */
+    /**
+     * OCID of the Network Firewall Policy this application belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
     private final String parentResourceId;
 
     /**
      * OCID of the Network Firewall Policy this application belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getParentResourceId() {
         return parentResourceId;
     }
@@ -161,7 +167,6 @@ public final class ServiceListSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

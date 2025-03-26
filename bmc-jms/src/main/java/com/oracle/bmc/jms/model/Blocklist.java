@@ -5,21 +5,19 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The blocklist record to prevent a target resource from certain operation with reason. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The blocklist record to prevent a target resource from certain operation with reason.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Blocklist.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Blocklist extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Blocklist extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "target", "operation", "reason"})
     public Blocklist(String key, BlocklistTarget target, OperationType operation, String reason) {
@@ -32,16 +30,17 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier of this blocklist record. */
+        /**
+         * The unique identifier of this blocklist record.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The unique identifier of this blocklist record.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -56,31 +55,33 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("target");
             return this;
         }
-        /** The operation type */
+        /**
+         * The operation type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private OperationType operation;
 
         /**
          * The operation type
-         *
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(OperationType operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-        /** The reason why the operation is blocklisted. */
+        /**
+         * The reason why the operation is blocklisted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
          * The reason why the operation is blocklisted.
-         *
          * @param reason the value to set
          * @return this builder
-         */
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -116,7 +117,9 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,15 +128,16 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The unique identifier of this blocklist record. */
+    /**
+     * The unique identifier of this blocklist record.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The unique identifier of this blocklist record.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
@@ -145,28 +149,30 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
         return target;
     }
 
-    /** The operation type */
+    /**
+     * The operation type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final OperationType operation;
 
     /**
      * The operation type
-     *
      * @return the value
-     */
+     **/
     public OperationType getOperation() {
         return operation;
     }
 
-    /** The reason why the operation is blocklisted. */
+    /**
+     * The reason why the operation is blocklisted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
      * The reason why the operation is blocklisted.
-     *
      * @return the value
-     */
+     **/
     public String getReason() {
         return reason;
     }
@@ -178,7 +184,6 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -7,7 +7,9 @@ package com.oracle.bmc.http.signing;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 
-/** Factory class to create RequestSigner instances. */
+/**
+ * Factory class to create RequestSigner instances.
+ */
 public interface RequestSignerFactory {
 
     /**

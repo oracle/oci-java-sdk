@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.marketplace.model;
 
-/** Possible work request resource actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-public enum WorkRequestActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible work request resource actions.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+public enum WorkRequestActionType {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Waiting("WAITING"),

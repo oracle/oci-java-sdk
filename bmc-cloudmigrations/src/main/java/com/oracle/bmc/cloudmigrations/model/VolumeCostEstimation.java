@@ -5,23 +5,21 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Cost estimation for volume <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * Cost estimation for volume
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VolumeCostEstimation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VolumeCostEstimation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VolumeCostEstimation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VolumeCostEstimation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "capacityGb",
@@ -43,61 +41,65 @@ public final class VolumeCostEstimation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Gigabyte storage capacity */
+        /**
+         * Gigabyte storage capacity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityGb")
         private java.math.BigDecimal capacityGb;
 
         /**
          * Gigabyte storage capacity
-         *
          * @param capacityGb the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityGb(java.math.BigDecimal capacityGb) {
             this.capacityGb = capacityGb;
             this.__explicitlySet__.add("capacityGb");
             return this;
         }
-        /** Volume description */
+        /**
+         * Volume description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Volume description
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Gigabyte storage capacity per month. */
+        /**
+         * Gigabyte storage capacity per month.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonth")
         private java.math.BigDecimal totalGbPerMonth;
 
         /**
          * Gigabyte storage capacity per month.
-         *
          * @param totalGbPerMonth the value to set
          * @return this builder
-         */
+         **/
         public Builder totalGbPerMonth(java.math.BigDecimal totalGbPerMonth) {
             this.totalGbPerMonth = totalGbPerMonth;
             this.__explicitlySet__.add("totalGbPerMonth");
             return this;
         }
-        /** Gigabyte storage capacity per month by subscription */
+        /**
+         * Gigabyte storage capacity per month by subscription
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonthBySubscription")
         private java.math.BigDecimal totalGbPerMonthBySubscription;
 
         /**
          * Gigabyte storage capacity per month by subscription
-         *
          * @param totalGbPerMonthBySubscription the value to set
          * @return this builder
-         */
+         **/
         public Builder totalGbPerMonthBySubscription(
                 java.math.BigDecimal totalGbPerMonthBySubscription) {
             this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
@@ -139,7 +141,9 @@ public final class VolumeCostEstimation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -148,54 +152,58 @@ public final class VolumeCostEstimation
         return new Builder().copy(this);
     }
 
-    /** Gigabyte storage capacity */
+    /**
+     * Gigabyte storage capacity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityGb")
     private final java.math.BigDecimal capacityGb;
 
     /**
      * Gigabyte storage capacity
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getCapacityGb() {
         return capacityGb;
     }
 
-    /** Volume description */
+    /**
+     * Volume description
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Volume description
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Gigabyte storage capacity per month. */
+    /**
+     * Gigabyte storage capacity per month.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonth")
     private final java.math.BigDecimal totalGbPerMonth;
 
     /**
      * Gigabyte storage capacity per month.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getTotalGbPerMonth() {
         return totalGbPerMonth;
     }
 
-    /** Gigabyte storage capacity per month by subscription */
+    /**
+     * Gigabyte storage capacity per month by subscription
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonthBySubscription")
     private final java.math.BigDecimal totalGbPerMonthBySubscription;
 
     /**
      * Gigabyte storage capacity per month by subscription
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getTotalGbPerMonthBySubscription() {
         return totalGbPerMonthBySubscription;
     }
@@ -207,7 +215,6 @@ public final class VolumeCostEstimation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

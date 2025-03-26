@@ -5,32 +5,29 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The properties that define a load balancer. For more information, see [Managing a Load
- * Balancer](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingloadbalancer.htm).
+ * The properties that define a load balancer. For more information, see
+ * [Managing a Load Balancer](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingloadbalancer.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * <p>
+ * For information about endpoints and signing API requests, see
+ * [About the API](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+ * [SDKS and Other Tools](https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- *
- * <p>For information about endpoints and signing API requests, see [About the
- * API](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
- * available SDKs and tools, see [SDKS and Other
- * Tools](https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LoadBalancer.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LoadBalancer extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -119,38 +116,32 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * load balancer.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * load balancer.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the load balancer.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the load balancer.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -158,26 +149,30 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * A user-friendly name. It does not have to be unique, and it is changeable.
+         * <p>
+         * Example: {@code example_load_balancer}
          *
-         * <p>Example: {@code example_load_balancer}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name. It does not have to be unique, and it is changeable.
-         *
-         * <p>Example: {@code example_load_balancer}
+         * <p>
+         * Example: {@code example_load_balancer}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The current state of the load balancer. */
+        /**
+         * The current state of the load balancer.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -186,7 +181,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -194,26 +189,30 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The date and time the load balancer was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the load balancer was created, in the format defined by RFC3339.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** An array of IP addresses. */
+        /**
+         * An array of IP addresses.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
         private java.util.List<IpAddress> ipAddresses;
 
@@ -222,32 +221,33 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param ipAddresses the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddresses(java.util.List<IpAddress> ipAddresses) {
             this.ipAddresses = ipAddresses;
             this.__explicitlySet__.add("ipAddresses");
             return this;
         }
         /**
-         * A template that determines the total pre-provisioned bandwidth (ingress plus egress). To
-         * get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
+         * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
+         * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
          * operation.
+         * <p>
+         * Example: {@code 100Mbps}
          *
-         * <p>Example: {@code 100Mbps}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
-         * A template that determines the total pre-provisioned bandwidth (ingress plus egress). To
-         * get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
+         * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
+         * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
          * operation.
-         *
-         * <p>Example: {@code 100Mbps}
+         * <p>
+         * Example: {@code 100Mbps}
          *
          * @param shapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
@@ -264,40 +264,37 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * Whether the load balancer has a VCN-local (private) IP address.
+         * <p>
+         * If "true", the service assigns a private IP address to the load balancer.
+         * <p>
+         * If "false", the service assigns a public IP address to the load balancer.
+         * <p>
+         * A public load balancer is accessible from the internet, depending on your VCN's
+         * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+         * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * <p>
+         * Example: {@code true}
          *
-         * <p>If "true", the service assigns a private IP address to the load balancer.
-         *
-         * <p>If "false", the service assigns a public IP address to the load balancer.
-         *
-         * <p>A public load balancer is accessible from the internet, depending on your VCN's
-         * [security list
-         * rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more
-         * information about public and private load balancers, see [How Load Balancing
-         * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-         *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
         /**
          * Whether the load balancer has a VCN-local (private) IP address.
-         *
-         * <p>If "true", the service assigns a private IP address to the load balancer.
-         *
-         * <p>If "false", the service assigns a public IP address to the load balancer.
-         *
-         * <p>A public load balancer is accessible from the internet, depending on your VCN's
-         * [security list
-         * rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more
-         * information about public and private load balancers, see [How Load Balancing
-         * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-         *
-         * <p>Example: {@code true}
+         * <p>
+         * If "true", the service assigns a private IP address to the load balancer.
+         * <p>
+         * If "false", the service assigns a public IP address to the load balancer.
+         * <p>
+         * A public load balancer is accessible from the internet, depending on your VCN's
+         * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+         * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * <p>
+         * Example: {@code true}
          *
          * @param isPrivate the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = isPrivate;
             this.__explicitlySet__.add("isPrivate");
@@ -305,32 +302,31 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * Whether or not the load balancer has delete protection enabled.
+         * <p>
+         * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+         * <p>
+         * If "false", the loadbalancer will not be protected against deletion.
+         * <p>
+         * Delete protection is not be enabled unless this field is set to "true".
+         * Example: {@code true}
          *
-         * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
-         * traffic.
-         *
-         * <p>If "false", the loadbalancer will not be protected against deletion.
-         *
-         * <p>Delete protection is not be enabled unless this field is set to "true". Example:
-         * {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtectionEnabled")
         private Boolean isDeleteProtectionEnabled;
 
         /**
          * Whether or not the load balancer has delete protection enabled.
-         *
-         * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
-         * traffic.
-         *
-         * <p>If "false", the loadbalancer will not be protected against deletion.
-         *
-         * <p>Delete protection is not be enabled unless this field is set to "true". Example:
-         * {@code true}
+         * <p>
+         * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+         * <p>
+         * If "false", the loadbalancer will not be protected against deletion.
+         * <p>
+         * Delete protection is not be enabled unless this field is set to "true".
+         * Example: {@code true}
          *
          * @param isDeleteProtectionEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDeleteProtectionEnabled(Boolean isDeleteProtectionEnabled) {
             this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
             this.__explicitlySet__.add("isDeleteProtectionEnabled");
@@ -338,139 +334,131 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
-         *
-         * <p>If "true", the load balancer will attach a unique request id header to every request
+         * <p>
+         * If "true", the load balancer will attach a unique request id header to every request
          * passed through from the load balancer to load balancer backends. This same request id
-         * header also will be added to the response the lb received from the backend handling the
-         * request before the load balancer returns the response to the requestor. The name of the
-         * unique request id header is set the by value of requestIdHeader.
+         * header also will be added to the response the lb received from the backend handling
+         * the request before the load balancer returns the response to the requestor. The name
+         * of the unique request id header is set the by value of requestIdHeader.
+         * <p>
+         * If "false", the loadbalancer not add this unique request id header to either the request
+         * passed through to the load balancer backends nor to the reponse returned to the user.
+         * <p>
+         * Example: {@code true}
          *
-         * <p>If "false", the loadbalancer not add this unique request id header to either the
-         * request passed through to the load balancer backends nor to the reponse returned to the
-         * user.
-         *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequestIdEnabled")
         private Boolean isRequestIdEnabled;
 
         /**
          * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
-         *
-         * <p>If "true", the load balancer will attach a unique request id header to every request
+         * <p>
+         * If "true", the load balancer will attach a unique request id header to every request
          * passed through from the load balancer to load balancer backends. This same request id
-         * header also will be added to the response the lb received from the backend handling the
-         * request before the load balancer returns the response to the requestor. The name of the
-         * unique request id header is set the by value of requestIdHeader.
-         *
-         * <p>If "false", the loadbalancer not add this unique request id header to either the
-         * request passed through to the load balancer backends nor to the reponse returned to the
-         * user.
-         *
-         * <p>Example: {@code true}
+         * header also will be added to the response the lb received from the backend handling
+         * the request before the load balancer returns the response to the requestor. The name
+         * of the unique request id header is set the by value of requestIdHeader.
+         * <p>
+         * If "false", the loadbalancer not add this unique request id header to either the request
+         * passed through to the load balancer backends nor to the reponse returned to the user.
+         * <p>
+         * Example: {@code true}
          *
          * @param isRequestIdEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isRequestIdEnabled(Boolean isRequestIdEnabled) {
             this.isRequestIdEnabled = isRequestIdEnabled;
             this.__explicitlySet__.add("isRequestIdEnabled");
             return this;
         }
         /**
-         * If isRequestIdEnabled is true then this field contains the name of the header field that
-         * contains the unique request id that is attached to every request from the load balancer
-         * to the load balancer backends and to every response from the load balancer.
+         * If isRequestIdEnabled is true then this field contains the name of the header field
+         * that contains the unique request id that is attached to every request from
+         * the load balancer to the load balancer backends and to every response from the load
+         * balancer.
+         * <p>
+         * If a request to the load balancer already contains a header with same name as specified
+         * in requestIdHeader then the load balancer will not change the value of that field.
+         * <p>
+         * If this field is set to "" this field defaults to X-Request-Id.
          *
-         * <p>If a request to the load balancer already contains a header with same name as
-         * specified in requestIdHeader then the load balancer will not change the value of that
-         * field.
-         *
-         * <p>If this field is set to "" this field defaults to X-Request-Id.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestIdHeader")
         private String requestIdHeader;
 
         /**
-         * If isRequestIdEnabled is true then this field contains the name of the header field that
-         * contains the unique request id that is attached to every request from the load balancer
-         * to the load balancer backends and to every response from the load balancer.
-         *
-         * <p>If a request to the load balancer already contains a header with same name as
-         * specified in requestIdHeader then the load balancer will not change the value of that
-         * field.
-         *
-         * <p>If this field is set to "" this field defaults to X-Request-Id.
+         * If isRequestIdEnabled is true then this field contains the name of the header field
+         * that contains the unique request id that is attached to every request from
+         * the load balancer to the load balancer backends and to every response from the load
+         * balancer.
+         * <p>
+         * If a request to the load balancer already contains a header with same name as specified
+         * in requestIdHeader then the load balancer will not change the value of that field.
+         * <p>
+         * If this field is set to "" this field defaults to X-Request-Id.
          *
          * @param requestIdHeader the value to set
          * @return this builder
-         */
+         **/
         public Builder requestIdHeader(String requestIdHeader) {
             this.requestIdHeader = requestIdHeader;
             this.__explicitlySet__.add("requestIdHeader");
             return this;
         }
         /**
-         * An array of subnet
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
         /**
-         * An array of subnet
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param subnetIds the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetIds(java.util.List<String> subnetIds) {
             this.subnetIds = subnetIds;
             this.__explicitlySet__.add("subnetIds");
             return this;
         }
         /**
-         * An array of NSG
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with the load balancer.
-         *
-         * <p>During the load balancer's creation, the service adds the new load balancer to the
-         * specified NSGs.
-         *
-         * <p>The benefits of associating the load balancer with NSGs include:
-         *
-         * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+         * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
          * balancer.
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of associating the load balancer with NSGs include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
+         * <p>
+         * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
          *
-         * <p>The network security rules of other resources can reference the NSGs associated with
-         * the load balancer to ensure access.
-         *
-         * <p>Example: ["ocid1.nsg.oc1.phx.unique_ID"]
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
         /**
-         * An array of NSG
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with the load balancer.
-         *
-         * <p>During the load balancer's creation, the service adds the new load balancer to the
-         * specified NSGs.
-         *
-         * <p>The benefits of associating the load balancer with NSGs include:
-         *
-         * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+         * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
          * balancer.
-         *
-         * <p>The network security rules of other resources can reference the NSGs associated with
-         * the load balancer to ensure access.
-         *
-         * <p>Example: ["ocid1.nsg.oc1.phx.unique_ID"]
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of associating the load balancer with NSGs include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
+         * <p>
+         * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
          *
          * @param networkSecurityGroupIds the value to set
          * @return this builder
-         */
+         **/
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
@@ -531,50 +519,48 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -582,25 +568,22 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
-         * namespace.
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
          *
-         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
-         * "usagetype" : "zpr"}}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
-         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
-         * namespace.
-         *
-         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
-         * "usagetype" : "zpr"}}}}
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributes(
                 java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
             this.securityAttributes = securityAttributes;
@@ -608,27 +591,26 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -775,7 +757,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -785,60 +769,58 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
-     * balancer.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
-     * balancer.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the load balancer.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the load balancer.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
+     * <p>
+     * Example: {@code example_load_balancer}
      *
-     * <p>Example: {@code example_load_balancer}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
-     *
-     * <p>Example: {@code example_load_balancer}
+     * <p>
+     * Example: {@code example_load_balancer}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The current state of the load balancer. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the load balancer.
+     *
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Failed("FAILED"),
         Active("ACTIVE"),
@@ -846,8 +828,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -886,7 +868,10 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** The current state of the load balancer. */
+    /**
+     * The current state of the load balancer.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
@@ -894,31 +879,35 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
      * The current state of the load balancer.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** An array of IP addresses. */
+    /**
+     * An array of IP addresses.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
     private final java.util.List<IpAddress> ipAddresses;
 
@@ -926,30 +915,31 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
      * An array of IP addresses.
      *
      * @return the value
-     */
+     **/
     public java.util.List<IpAddress> getIpAddresses() {
         return ipAddresses;
     }
 
     /**
-     * A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get
-     * a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
+     * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
+     * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
      * operation.
+     * <p>
+     * Example: {@code 100Mbps}
      *
-     * <p>Example: {@code 100Mbps}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
-     * A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get
-     * a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
+     * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
+     * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
      * operation.
-     *
-     * <p>Example: {@code 100Mbps}
+     * <p>
+     * Example: {@code 100Mbps}
      *
      * @return the value
-     */
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -963,196 +953,190 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
+     * <p>
+     * If "true", the service assigns a private IP address to the load balancer.
+     * <p>
+     * If "false", the service assigns a public IP address to the load balancer.
+     * <p>
+     * A public load balancer is accessible from the internet, depending on your VCN's
+     * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+     * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * <p>
+     * Example: {@code true}
      *
-     * <p>If "true", the service assigns a private IP address to the load balancer.
-     *
-     * <p>If "false", the service assigns a public IP address to the load balancer.
-     *
-     * <p>A public load balancer is accessible from the internet, depending on your VCN's [security
-     * list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For
-     * more information about public and private load balancers, see [How Load Balancing
-     * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-     *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     private final Boolean isPrivate;
 
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
-     *
-     * <p>If "true", the service assigns a private IP address to the load balancer.
-     *
-     * <p>If "false", the service assigns a public IP address to the load balancer.
-     *
-     * <p>A public load balancer is accessible from the internet, depending on your VCN's [security
-     * list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For
-     * more information about public and private load balancers, see [How Load Balancing
-     * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-     *
-     * <p>Example: {@code true}
+     * <p>
+     * If "true", the service assigns a private IP address to the load balancer.
+     * <p>
+     * If "false", the service assigns a public IP address to the load balancer.
+     * <p>
+     * A public load balancer is accessible from the internet, depending on your VCN's
+     * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+     * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPrivate() {
         return isPrivate;
     }
 
     /**
      * Whether or not the load balancer has delete protection enabled.
+     * <p>
+     * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+     * <p>
+     * If "false", the loadbalancer will not be protected against deletion.
+     * <p>
+     * Delete protection is not be enabled unless this field is set to "true".
+     * Example: {@code true}
      *
-     * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
-     * traffic.
-     *
-     * <p>If "false", the loadbalancer will not be protected against deletion.
-     *
-     * <p>Delete protection is not be enabled unless this field is set to "true". Example: {@code
-     * true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtectionEnabled")
     private final Boolean isDeleteProtectionEnabled;
 
     /**
      * Whether or not the load balancer has delete protection enabled.
-     *
-     * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
-     * traffic.
-     *
-     * <p>If "false", the loadbalancer will not be protected against deletion.
-     *
-     * <p>Delete protection is not be enabled unless this field is set to "true". Example: {@code
-     * true}
+     * <p>
+     * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+     * <p>
+     * If "false", the loadbalancer will not be protected against deletion.
+     * <p>
+     * Delete protection is not be enabled unless this field is set to "true".
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDeleteProtectionEnabled() {
         return isDeleteProtectionEnabled;
     }
 
     /**
      * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
-     *
-     * <p>If "true", the load balancer will attach a unique request id header to every request
-     * passed through from the load balancer to load balancer backends. This same request id header
-     * also will be added to the response the lb received from the backend handling the request
-     * before the load balancer returns the response to the requestor. The name of the unique
-     * request id header is set the by value of requestIdHeader.
-     *
-     * <p>If "false", the loadbalancer not add this unique request id header to either the request
+     * <p>
+     * If "true", the load balancer will attach a unique request id header to every request
+     * passed through from the load balancer to load balancer backends. This same request id
+     * header also will be added to the response the lb received from the backend handling
+     * the request before the load balancer returns the response to the requestor. The name
+     * of the unique request id header is set the by value of requestIdHeader.
+     * <p>
+     * If "false", the loadbalancer not add this unique request id header to either the request
      * passed through to the load balancer backends nor to the reponse returned to the user.
+     * <p>
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequestIdEnabled")
     private final Boolean isRequestIdEnabled;
 
     /**
      * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
-     *
-     * <p>If "true", the load balancer will attach a unique request id header to every request
-     * passed through from the load balancer to load balancer backends. This same request id header
-     * also will be added to the response the lb received from the backend handling the request
-     * before the load balancer returns the response to the requestor. The name of the unique
-     * request id header is set the by value of requestIdHeader.
-     *
-     * <p>If "false", the loadbalancer not add this unique request id header to either the request
+     * <p>
+     * If "true", the load balancer will attach a unique request id header to every request
+     * passed through from the load balancer to load balancer backends. This same request id
+     * header also will be added to the response the lb received from the backend handling
+     * the request before the load balancer returns the response to the requestor. The name
+     * of the unique request id header is set the by value of requestIdHeader.
+     * <p>
+     * If "false", the loadbalancer not add this unique request id header to either the request
      * passed through to the load balancer backends nor to the reponse returned to the user.
-     *
-     * <p>Example: {@code true}
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRequestIdEnabled() {
         return isRequestIdEnabled;
     }
 
     /**
-     * If isRequestIdEnabled is true then this field contains the name of the header field that
-     * contains the unique request id that is attached to every request from the load balancer to
-     * the load balancer backends and to every response from the load balancer.
+     * If isRequestIdEnabled is true then this field contains the name of the header field
+     * that contains the unique request id that is attached to every request from
+     * the load balancer to the load balancer backends and to every response from the load
+     * balancer.
+     * <p>
+     * If a request to the load balancer already contains a header with same name as specified
+     * in requestIdHeader then the load balancer will not change the value of that field.
+     * <p>
+     * If this field is set to "" this field defaults to X-Request-Id.
      *
-     * <p>If a request to the load balancer already contains a header with same name as specified in
-     * requestIdHeader then the load balancer will not change the value of that field.
-     *
-     * <p>If this field is set to "" this field defaults to X-Request-Id.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestIdHeader")
     private final String requestIdHeader;
 
     /**
-     * If isRequestIdEnabled is true then this field contains the name of the header field that
-     * contains the unique request id that is attached to every request from the load balancer to
-     * the load balancer backends and to every response from the load balancer.
-     *
-     * <p>If a request to the load balancer already contains a header with same name as specified in
-     * requestIdHeader then the load balancer will not change the value of that field.
-     *
-     * <p>If this field is set to "" this field defaults to X-Request-Id.
+     * If isRequestIdEnabled is true then this field contains the name of the header field
+     * that contains the unique request id that is attached to every request from
+     * the load balancer to the load balancer backends and to every response from the load
+     * balancer.
+     * <p>
+     * If a request to the load balancer already contains a header with same name as specified
+     * in requestIdHeader then the load balancer will not change the value of that field.
+     * <p>
+     * If this field is set to "" this field defaults to X-Request-Id.
      *
      * @return the value
-     */
+     **/
     public String getRequestIdHeader() {
         return requestIdHeader;
     }
 
     /**
-     * An array of subnet
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
     /**
-     * An array of subnet
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public java.util.List<String> getSubnetIds() {
         return subnetIds;
     }
 
     /**
-     * An array of NSG
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with the load balancer.
-     *
-     * <p>During the load balancer's creation, the service adds the new load balancer to the
-     * specified NSGs.
-     *
-     * <p>The benefits of associating the load balancer with NSGs include:
-     *
-     * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+     * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
      * balancer.
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of associating the load balancer with NSGs include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
+     * <p>
+     * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      *
-     * <p>The network security rules of other resources can reference the NSGs associated with the
-     * load balancer to ensure access.
-     *
-     * <p>Example: ["ocid1.nsg.oc1.phx.unique_ID"]
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
     /**
-     * An array of NSG
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with the load balancer.
-     *
-     * <p>During the load balancer's creation, the service adds the new load balancer to the
-     * specified NSGs.
-     *
-     * <p>The benefits of associating the load balancer with NSGs include:
-     *
-     * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+     * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
      * balancer.
-     *
-     * <p>The network security rules of other resources can reference the NSGs associated with the
-     * load balancer to ensure access.
-     *
-     * <p>Example: ["ocid1.nsg.oc1.phx.unique_ID"]
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of associating the load balancer with NSGs include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
+     * <p>
+     * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }
@@ -1200,95 +1184,89 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
-     * namespace.
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
      *
-     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
-     * "usagetype" : "zpr"}}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
-     * namespace.
-     *
-     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
-     * "usagetype" : "zpr"}}}}
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
         return securityAttributes;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -1314,7 +1292,6 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * The model for an Oracle Cloud Infrastructure Marketplace Publisher listing revision. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The model for an Oracle Cloud Infrastructure Marketplace Publisher listing revision.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateListingRevisionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateListingRevisionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateListingRevisionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -91,31 +90,33 @@ public final class CreateListingRevisionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name for the listing revision. */
+        /**
+         * The name for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name for the listing revision.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The unique identifier for the listing this revision belongs to. */
+        /**
+         * The unique identifier for the listing this revision belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
         /**
          * The unique identifier for the listing this revision belongs to.
-         *
          * @param listingId the value to set
          * @return this builder
-         */
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
@@ -130,136 +131,145 @@ public final class CreateListingRevisionDetails
             this.__explicitlySet__.add("versionDetails");
             return this;
         }
-        /** Single line introduction for the listing revision. */
+        /**
+         * Single line introduction for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headline")
         private String headline;
 
         /**
          * Single line introduction for the listing revision.
-         *
          * @param headline the value to set
          * @return this builder
-         */
+         **/
         public Builder headline(String headline) {
             this.headline = headline;
             this.__explicitlySet__.add("headline");
             return this;
         }
-        /** The tagline for the listing revision. */
+        /**
+         * The tagline for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagline")
         private String tagline;
 
         /**
          * The tagline for the listing revision.
-         *
          * @param tagline the value to set
          * @return this builder
-         */
+         **/
         public Builder tagline(String tagline) {
             this.tagline = tagline;
             this.__explicitlySet__.add("tagline");
             return this;
         }
-        /** Keywords associated with the listing revision. */
+        /**
+         * Keywords associated with the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keywords")
         private String keywords;
 
         /**
          * Keywords associated with the listing revision.
-         *
          * @param keywords the value to set
          * @return this builder
-         */
+         **/
         public Builder keywords(String keywords) {
             this.keywords = keywords;
             this.__explicitlySet__.add("keywords");
             return this;
         }
-        /** A short description for the listing revision. */
+        /**
+         * A short description for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
 
         /**
          * A short description for the listing revision.
-         *
          * @param shortDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = shortDescription;
             this.__explicitlySet__.add("shortDescription");
             return this;
         }
-        /** Usage information for the listing revision. */
+        /**
+         * Usage information for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageInformation")
         private String usageInformation;
 
         /**
          * Usage information for the listing revision.
-         *
          * @param usageInformation the value to set
          * @return this builder
-         */
+         **/
         public Builder usageInformation(String usageInformation) {
             this.usageInformation = usageInformation;
             this.__explicitlySet__.add("usageInformation");
             return this;
         }
-        /** A long description for the listing revision. */
+        /**
+         * A long description for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
         private String longDescription;
 
         /**
          * A long description for the listing revision.
-         *
          * @param longDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder longDescription(String longDescription) {
             this.longDescription = longDescription;
             this.__explicitlySet__.add("longDescription");
             return this;
         }
-        /** System requirements for the listing revision. */
+        /**
+         * System requirements for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemRequirements")
         private String systemRequirements;
 
         /**
          * System requirements for the listing revision.
-         *
          * @param systemRequirements the value to set
          * @return this builder
-         */
+         **/
         public Builder systemRequirements(String systemRequirements) {
             this.systemRequirements = systemRequirements;
             this.__explicitlySet__.add("systemRequirements");
             return this;
         }
-        /** The categories for the listing revision. */
+        /**
+         * The categories for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<String> categories;
 
         /**
          * The categories for the listing revision.
-         *
          * @param categories the value to set
          * @return this builder
-         */
+         **/
         public Builder categories(java.util.List<String> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
             return this;
         }
-        /** The markets supported by the listing revision. */
+        /**
+         * The markets supported by the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("markets")
         private java.util.List<String> markets;
 
         /**
          * The markets supported by the listing revision.
-         *
          * @param markets the value to set
          * @return this builder
-         */
+         **/
         public Builder markets(java.util.List<String> markets) {
             this.markets = markets;
             this.__explicitlySet__.add("markets");
@@ -274,16 +284,17 @@ public final class CreateListingRevisionDetails
             this.__explicitlySet__.add("contentLanguage");
             return this;
         }
-        /** Languages supported by the publisher for the listing revision. */
+        /**
+         * Languages supported by the publisher for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedlanguages")
         private java.util.List<LanguageItem> supportedlanguages;
 
         /**
          * Languages supported by the publisher for the listing revision.
-         *
          * @param supportedlanguages the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedlanguages(java.util.List<LanguageItem> supportedlanguages) {
             this.supportedlanguages = supportedlanguages;
             this.__explicitlySet__.add("supportedlanguages");
@@ -291,80 +302,83 @@ public final class CreateListingRevisionDetails
         }
         /**
          * Contact information to use to get support from the publisher for the listing revision.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
         private java.util.List<SupportContact> supportContacts;
 
         /**
          * Contact information to use to get support from the publisher for the listing revision.
-         *
          * @param supportContacts the value to set
          * @return this builder
-         */
+         **/
         public Builder supportContacts(java.util.List<SupportContact> supportContacts) {
             this.supportContacts = supportContacts;
             this.__explicitlySet__.add("supportContacts");
             return this;
         }
-        /** Links to support resources for the listing revision. */
+        /**
+         * Links to support resources for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportLinks")
         private java.util.List<NamedLink> supportLinks;
 
         /**
          * Links to support resources for the listing revision.
-         *
          * @param supportLinks the value to set
          * @return this builder
-         */
+         **/
         public Builder supportLinks(java.util.List<NamedLink> supportLinks) {
             this.supportLinks = supportLinks;
             this.__explicitlySet__.add("supportLinks");
             return this;
         }
-        /** The current status of the Listing revision. */
+        /**
+         * The current status of the Listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ListingRevision.Status status;
 
         /**
          * The current status of the Listing revision.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(ListingRevision.Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The pricing model for the listing revision. */
+        /**
+         * The pricing model for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
         private ListingRevision.PricingType pricingType;
 
         /**
          * The pricing model for the listing revision.
-         *
          * @param pricingType the value to set
          * @return this builder
-         */
+         **/
         public Builder pricingType(ListingRevision.PricingType pricingType) {
             this.pricingType = pricingType;
             this.__explicitlySet__.add("pricingType");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -373,7 +387,8 @@ public final class CreateListingRevisionDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -383,7 +398,7 @@ public final class CreateListingRevisionDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -489,7 +504,9 @@ public final class CreateListingRevisionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -498,28 +515,30 @@ public final class CreateListingRevisionDetails
         return new Builder().copy(this);
     }
 
-    /** The name for the listing revision. */
+    /**
+     * The name for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The unique identifier for the listing this revision belongs to. */
+    /**
+     * The unique identifier for the listing this revision belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
     /**
      * The unique identifier for the listing this revision belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getListingId() {
         return listingId;
     }
@@ -531,119 +550,128 @@ public final class CreateListingRevisionDetails
         return versionDetails;
     }
 
-    /** Single line introduction for the listing revision. */
+    /**
+     * Single line introduction for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headline")
     private final String headline;
 
     /**
      * Single line introduction for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getHeadline() {
         return headline;
     }
 
-    /** The tagline for the listing revision. */
+    /**
+     * The tagline for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagline")
     private final String tagline;
 
     /**
      * The tagline for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getTagline() {
         return tagline;
     }
 
-    /** Keywords associated with the listing revision. */
+    /**
+     * Keywords associated with the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keywords")
     private final String keywords;
 
     /**
      * Keywords associated with the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getKeywords() {
         return keywords;
     }
 
-    /** A short description for the listing revision. */
+    /**
+     * A short description for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
 
     /**
      * A short description for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getShortDescription() {
         return shortDescription;
     }
 
-    /** Usage information for the listing revision. */
+    /**
+     * Usage information for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageInformation")
     private final String usageInformation;
 
     /**
      * Usage information for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getUsageInformation() {
         return usageInformation;
     }
 
-    /** A long description for the listing revision. */
+    /**
+     * A long description for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     private final String longDescription;
 
     /**
      * A long description for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getLongDescription() {
         return longDescription;
     }
 
-    /** System requirements for the listing revision. */
+    /**
+     * System requirements for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemRequirements")
     private final String systemRequirements;
 
     /**
      * System requirements for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public String getSystemRequirements() {
         return systemRequirements;
     }
 
-    /** The categories for the listing revision. */
+    /**
+     * The categories for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<String> categories;
 
     /**
      * The categories for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getCategories() {
         return categories;
     }
 
-    /** The markets supported by the listing revision. */
+    /**
+     * The markets supported by the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("markets")
     private final java.util.List<String> markets;
 
     /**
      * The markets supported by the listing revision.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getMarkets() {
         return markets;
     }
@@ -655,101 +683,108 @@ public final class CreateListingRevisionDetails
         return contentLanguage;
     }
 
-    /** Languages supported by the publisher for the listing revision. */
+    /**
+     * Languages supported by the publisher for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedlanguages")
     private final java.util.List<LanguageItem> supportedlanguages;
 
     /**
      * Languages supported by the publisher for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LanguageItem> getSupportedlanguages() {
         return supportedlanguages;
     }
 
-    /** Contact information to use to get support from the publisher for the listing revision. */
+    /**
+     * Contact information to use to get support from the publisher for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
     private final java.util.List<SupportContact> supportContacts;
 
     /**
      * Contact information to use to get support from the publisher for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SupportContact> getSupportContacts() {
         return supportContacts;
     }
 
-    /** Links to support resources for the listing revision. */
+    /**
+     * Links to support resources for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportLinks")
     private final java.util.List<NamedLink> supportLinks;
 
     /**
      * Links to support resources for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NamedLink> getSupportLinks() {
         return supportLinks;
     }
 
-    /** The current status of the Listing revision. */
+    /**
+     * The current status of the Listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ListingRevision.Status status;
 
     /**
      * The current status of the Listing revision.
-     *
      * @return the value
-     */
+     **/
     public ListingRevision.Status getStatus() {
         return status;
     }
 
-    /** The pricing model for the listing revision. */
+    /**
+     * The pricing model for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
     private final ListingRevision.PricingType pricingType;
 
     /**
      * The pricing model for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public ListingRevision.PricingType getPricingType() {
         return pricingType;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -761,7 +796,6 @@ public final class CreateListingRevisionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

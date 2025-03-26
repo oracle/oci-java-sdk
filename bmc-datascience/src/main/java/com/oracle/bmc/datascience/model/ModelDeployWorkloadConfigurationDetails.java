@@ -5,105 +5,101 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The model deployment workload configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The model deployment workload configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ModelDeployWorkloadConfigurationDetails.Builder.class)
+    builder = ModelDeployWorkloadConfigurationDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "workloadType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "workloadType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ModelDeployWorkloadConfigurationDetails extends WorkloadConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a
-         * list of strings. Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only
-         * command to run in the absence of an {@code ENTRYPOINT}. The combined size of {@code CMD}
-         * and {@code ENTRYPOINT} must be less than 2048 bytes.
-         */
+         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings.
+         * Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only command to run in the absence of an {@code ENTRYPOINT}.
+         * The combined size of {@code CMD} and {@code ENTRYPOINT} must be less than 2048 bytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cmd")
         private String cmd;
 
         /**
-         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a
-         * list of strings. Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only
-         * command to run in the absence of an {@code ENTRYPOINT}. The combined size of {@code CMD}
-         * and {@code ENTRYPOINT} must be less than 2048 bytes.
+         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings.
+         * Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only command to run in the absence of an {@code ENTRYPOINT}.
+         * The combined size of {@code CMD} and {@code ENTRYPOINT} must be less than 2048 bytes.
          *
          * @param cmd the value to set
          * @return this builder
-         */
+         **/
         public Builder cmd(String cmd) {
             this.cmd = cmd;
             this.__explicitlySet__.add("cmd");
             return this;
         }
         /**
-         * The port on which the web server serving the inference is running. The port can be
-         * anything between {@code 1024} and {@code 65535}. The following ports cannot be used
-         * {@code 24224}, {@code 8446}, {@code 8447}.
-         */
+         * The port on which the web server serving the inference is running.
+         * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serverPort")
         private Integer serverPort;
 
         /**
-         * The port on which the web server serving the inference is running. The port can be
-         * anything between {@code 1024} and {@code 65535}. The following ports cannot be used
-         * {@code 24224}, {@code 8446}, {@code 8447}.
+         * The port on which the web server serving the inference is running.
+         * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
          *
          * @param serverPort the value to set
          * @return this builder
-         */
+         **/
         public Builder serverPort(Integer serverPort) {
             this.serverPort = serverPort;
             this.__explicitlySet__.add("serverPort");
             return this;
         }
         /**
-         * The port on which the container
-         * [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would
-         * listen. The port can be anything between {@code 1024} and {@code 65535}. The following
-         * ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
-         */
+         * The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen.
+         * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckPort")
         private Integer healthCheckPort;
 
         /**
-         * The port on which the container
-         * [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would
-         * listen. The port can be anything between {@code 1024} and {@code 65535}. The following
-         * ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
+         * The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen.
+         * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
          *
          * @param healthCheckPort the value to set
          * @return this builder
-         */
+         **/
         public Builder healthCheckPort(Integer healthCheckPort) {
             this.healthCheckPort = healthCheckPort;
             this.__explicitlySet__.add("healthCheckPort");
             return this;
         }
-        /** The additional configurations */
+        /**
+         * The additional configurations
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalConfigurations")
         private java.util.Map<String, String> additionalConfigurations;
 
         /**
          * The additional configurations
-         *
          * @param additionalConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalConfigurations(
                 java.util.Map<String, String> additionalConfigurations) {
             this.additionalConfigurations = additionalConfigurations;
@@ -145,7 +141,9 @@ public final class ModelDeployWorkloadConfigurationDetails extends WorkloadConfi
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,75 +166,71 @@ public final class ModelDeployWorkloadConfigurationDetails extends WorkloadConfi
     }
 
     /**
-     * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a
-     * list of strings. Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only command
-     * to run in the absence of an {@code ENTRYPOINT}. The combined size of {@code CMD} and {@code
-     * ENTRYPOINT} must be less than 2048 bytes.
-     */
+     * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings.
+     * Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only command to run in the absence of an {@code ENTRYPOINT}.
+     * The combined size of {@code CMD} and {@code ENTRYPOINT} must be less than 2048 bytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cmd")
     private final String cmd;
 
     /**
-     * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a
-     * list of strings. Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only command
-     * to run in the absence of an {@code ENTRYPOINT}. The combined size of {@code CMD} and {@code
-     * ENTRYPOINT} must be less than 2048 bytes.
+     * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings.
+     * Use {@code CMD} as arguments to the {@code ENTRYPOINT} or the only command to run in the absence of an {@code ENTRYPOINT}.
+     * The combined size of {@code CMD} and {@code ENTRYPOINT} must be less than 2048 bytes.
      *
      * @return the value
-     */
+     **/
     public String getCmd() {
         return cmd;
     }
 
     /**
-     * The port on which the web server serving the inference is running. The port can be anything
-     * between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224},
-     * {@code 8446}, {@code 8447}.
-     */
+     * The port on which the web server serving the inference is running.
+     * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverPort")
     private final Integer serverPort;
 
     /**
-     * The port on which the web server serving the inference is running. The port can be anything
-     * between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224},
-     * {@code 8446}, {@code 8447}.
+     * The port on which the web server serving the inference is running.
+     * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
      *
      * @return the value
-     */
+     **/
     public Integer getServerPort() {
         return serverPort;
     }
 
     /**
-     * The port on which the container
-     * [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen.
-     * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot
-     * be used {@code 24224}, {@code 8446}, {@code 8447}.
-     */
+     * The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen.
+     * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckPort")
     private final Integer healthCheckPort;
 
     /**
-     * The port on which the container
-     * [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen.
-     * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot
-     * be used {@code 24224}, {@code 8446}, {@code 8447}.
+     * The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen.
+     * The port can be anything between {@code 1024} and {@code 65535}. The following ports cannot be used {@code 24224}, {@code 8446}, {@code 8447}.
      *
      * @return the value
-     */
+     **/
     public Integer getHealthCheckPort() {
         return healthCheckPort;
     }
 
-    /** The additional configurations */
+    /**
+     * The additional configurations
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalConfigurations")
     private final java.util.Map<String, String> additionalConfigurations;
 
     /**
      * The additional configurations
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdditionalConfigurations() {
         return additionalConfigurations;
     }
@@ -248,7 +242,6 @@ public final class ModelDeployWorkloadConfigurationDetails extends WorkloadConfi
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

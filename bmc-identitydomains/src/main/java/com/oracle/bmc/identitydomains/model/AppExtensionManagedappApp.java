@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Managed App <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Managed App
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppExtensionManagedappApp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppExtensionManagedappApp.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppExtensionManagedappApp
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "connected",
@@ -106,24 +105,35 @@ public final class AppExtensionManagedappApp
     public static class Builder {
         /**
          * If true, the accounts of the application are managed through an ICF connector bundle
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connected")
         private Boolean connected;
 
         /**
          * If true, the accounts of the application are managed through an ICF connector bundle
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param connected the value to set
          * @return this builder
-         */
+         **/
         public Builder connected(Boolean connected) {
             this.connected = connected;
             this.__explicitlySet__.add("connected");
@@ -131,28 +141,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, the managed app can be authoritative.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canBeAuthoritative")
         private Boolean canBeAuthoritative;
 
         /**
          * If true, the managed app can be authoritative.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param canBeAuthoritative the value to set
          * @return this builder
-         */
+         **/
         public Builder canBeAuthoritative(Boolean canBeAuthoritative) {
             this.canBeAuthoritative = canBeAuthoritative;
             this.__explicitlySet__.add("canBeAuthoritative");
@@ -160,28 +181,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, sync from the managed app will be performed as authoritative sync.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAuthoritative")
         private Boolean isAuthoritative;
 
         /**
          * If true, sync from the managed app will be performed as authoritative sync.
-         *
-         * <p>*Added In:** 17.4.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 17.4.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isAuthoritative the value to set
          * @return this builder
-         */
+         **/
         public Builder isAuthoritative(Boolean isAuthoritative) {
             this.isAuthoritative = isAuthoritative;
             this.__explicitlySet__.add("isAuthoritative");
@@ -189,28 +221,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, the managed app is an On-Premise app.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOnPremiseApp")
         private Boolean isOnPremiseApp;
 
         /**
          * If true, the managed app is an On-Premise app.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isOnPremiseApp the value to set
          * @return this builder
-         */
+         **/
         public Builder isOnPremiseApp(Boolean isOnPremiseApp) {
             this.isOnPremiseApp = isOnPremiseApp;
             this.__explicitlySet__.add("isOnPremiseApp");
@@ -218,28 +261,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, the managed app is a directory.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDirectory")
         private Boolean isDirectory;
 
         /**
          * If true, the managed app is a directory.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder isDirectory(Boolean isDirectory) {
             this.isDirectory = isDirectory;
             this.__explicitlySet__.add("isDirectory");
@@ -247,28 +301,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, the managed app supports schema discovery.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSchemaDiscoverySupported")
         private Boolean isSchemaDiscoverySupported;
 
         /**
          * If true, the managed app supports schema discovery.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isSchemaDiscoverySupported the value to set
          * @return this builder
-         */
+         **/
         public Builder isSchemaDiscoverySupported(Boolean isSchemaDiscoverySupported) {
             this.isSchemaDiscoverySupported = isSchemaDiscoverySupported;
             this.__explicitlySet__.add("isSchemaDiscoverySupported");
@@ -276,28 +341,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, the managed app supports schema customization.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSchemaCustomizationSupported")
         private Boolean isSchemaCustomizationSupported;
 
         /**
          * If true, the managed app supports schema customization.
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isSchemaCustomizationSupported the value to set
          * @return this builder
-         */
+         **/
         public Builder isSchemaCustomizationSupported(Boolean isSchemaCustomizationSupported) {
             this.isSchemaCustomizationSupported = isSchemaCustomizationSupported;
             this.__explicitlySet__.add("isSchemaCustomizationSupported");
@@ -305,24 +381,35 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, sync run-time operations are enabled for this App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableSync")
         private Boolean enableSync;
 
         /**
          * If true, sync run-time operations are enabled for this App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param enableSync the value to set
          * @return this builder
-         */
+         **/
         public Builder enableSync(Boolean enableSync) {
             this.enableSync = enableSync;
             this.__explicitlySet__.add("enableSync");
@@ -330,28 +417,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, send sync summary as notification upon job completion.
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableSyncSummaryReportNotification")
         private Boolean enableSyncSummaryReportNotification;
 
         /**
          * If true, send sync summary as notification upon job completion.
-         *
-         * <p>*Added In:** 20.1.3
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 20.1.3
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param enableSyncSummaryReportNotification the value to set
          * @return this builder
-         */
+         **/
         public Builder enableSyncSummaryReportNotification(
                 Boolean enableSyncSummaryReportNotification) {
             this.enableSyncSummaryReportNotification = enableSyncSummaryReportNotification;
@@ -360,28 +458,39 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, send activation email to new users created from authoritative sync.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableAuthSyncNewUserNotification")
         private Boolean enableAuthSyncNewUserNotification;
 
         /**
          * If true, send activation email to new users created from authoritative sync.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param enableAuthSyncNewUserNotification the value to set
          * @return this builder
-         */
+         **/
         public Builder enableAuthSyncNewUserNotification(
                 Boolean enableAuthSyncNewUserNotification) {
             this.enableAuthSyncNewUserNotification = enableAuthSyncNewUserNotification;
@@ -390,24 +499,35 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, admin has granted consent to perform managed app run-time operations.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminConsentGranted")
         private Boolean adminConsentGranted;
 
         /**
          * If true, admin has granted consent to perform managed app run-time operations.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param adminConsentGranted the value to set
          * @return this builder
-         */
+         **/
         public Builder adminConsentGranted(Boolean adminConsentGranted) {
             this.adminConsentGranted = adminConsentGranted;
             this.__explicitlySet__.add("adminConsentGranted");
@@ -415,55 +535,75 @@ public final class AppExtensionManagedappApp
         }
         /**
          * If true, the managed app requires 3-legged OAuth for authorization.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isThreeLeggedOAuthEnabled")
         private Boolean isThreeLeggedOAuthEnabled;
 
         /**
          * If true, the managed app requires 3-legged OAuth for authorization.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isThreeLeggedOAuthEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isThreeLeggedOAuthEnabled(Boolean isThreeLeggedOAuthEnabled) {
             this.isThreeLeggedOAuthEnabled = isThreeLeggedOAuthEnabled;
             this.__explicitlySet__.add("isThreeLeggedOAuthEnabled");
             return this;
         }
         /**
-         * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect
-         * to this ManagedApp.
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTwoLeggedOAuthEnabled")
         private Boolean isTwoLeggedOAuthEnabled;
 
         /**
-         * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect
-         * to this ManagedApp.
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isTwoLeggedOAuthEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isTwoLeggedOAuthEnabled(Boolean isTwoLeggedOAuthEnabled) {
             this.isTwoLeggedOAuthEnabled = isTwoLeggedOAuthEnabled;
             this.__explicitlySet__.add("isTwoLeggedOAuthEnabled");
@@ -471,90 +611,113 @@ public final class AppExtensionManagedappApp
         }
         /**
          * Three legged OAuth provider name in Oracle Identity Cloud Service.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("threeLeggedOAuthProviderName")
         private String threeLeggedOAuthProviderName;
 
         /**
          * Three legged OAuth provider name in Oracle Identity Cloud Service.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param threeLeggedOAuthProviderName the value to set
          * @return this builder
-         */
+         **/
         public Builder threeLeggedOAuthProviderName(String threeLeggedOAuthProviderName) {
             this.threeLeggedOAuthProviderName = threeLeggedOAuthProviderName;
             this.__explicitlySet__.add("threeLeggedOAuthProviderName");
             return this;
         }
         /**
-         * The most recent DateTime that the configuration of this App was updated. AppServices
-         * updates this timestamp whenever AppServices updates an App's configuration with respect
-         * to synchronization.
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: request - type: dateTime - uniqueness:
-         * none
-         */
+         * The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App's configuration with respect to synchronization.
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syncConfigLastModified")
         private String syncConfigLastModified;
 
         /**
-         * The most recent DateTime that the configuration of this App was updated. AppServices
-         * updates this timestamp whenever AppServices updates an App's configuration with respect
-         * to synchronization.
-         *
-         * <p>*Added In:** 18.2.6
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: request - type: dateTime - uniqueness:
-         * none
-         *
+         * The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App's configuration with respect to synchronization.
+         * <p>
+         **Added In:** 18.2.6
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param syncConfigLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder syncConfigLastModified(String syncConfigLastModified) {
             this.syncConfigLastModified = syncConfigLastModified;
             this.__explicitlySet__.add("syncConfigLastModified");
             return this;
         }
         /**
-         * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI
-         * to interactively create or update an account for this App. If a value is not specified
-         * for this attribute, a default value of \\"false\\" will be assumed as the value for this
-         * attribute.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         */
+         * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountFormVisible")
         private Boolean accountFormVisible;
 
         /**
-         * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI
-         * to interactively create or update an account for this App. If a value is not specified
-         * for this attribute, a default value of \\"false\\" will be assumed as the value for this
-         * attribute.
-         *
-         * <p>*Added In:** 18.4.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: boolean -
-         * uniqueness: none
-         *
+         * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
+         * <p>
+         **Added In:** 18.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param accountFormVisible the value to set
          * @return this builder
-         */
+         **/
         public Builder accountFormVisible(Boolean accountFormVisible) {
             this.accountFormVisible = accountFormVisible;
             this.__explicitlySet__.add("accountFormVisible");
@@ -562,26 +725,37 @@ public final class AppExtensionManagedappApp
         }
         /**
          * IdentityBridges associated with this App
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityBridges")
         private java.util.List<AppIdentityBridges> identityBridges;
 
         /**
          * IdentityBridges associated with this App
-         *
-         * <p>*Added In:** 19.1.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.1.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param identityBridges the value to set
          * @return this builder
-         */
+         **/
         public Builder identityBridges(java.util.List<AppIdentityBridges> identityBridges) {
             this.identityBridges = identityBridges;
             this.__explicitlySet__.add("identityBridges");
@@ -598,24 +772,35 @@ public final class AppExtensionManagedappApp
         }
         /**
          * ConnectorBundle configuration properties
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bundleConfigurationProperties")
         private java.util.List<AppBundleConfigurationProperties> bundleConfigurationProperties;
 
         /**
          * ConnectorBundle configuration properties
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param bundleConfigurationProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder bundleConfigurationProperties(
                 java.util.List<AppBundleConfigurationProperties> bundleConfigurationProperties) {
             this.bundleConfigurationProperties = bundleConfigurationProperties;
@@ -624,24 +809,35 @@ public final class AppExtensionManagedappApp
         }
         /**
          * Object classes
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: default - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectClasses")
         private java.util.List<AppObjectClasses> objectClasses;
 
         /**
          * Object classes
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true -
-         * multiValued: true - mutability: readOnly - required: false - returned: default - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param objectClasses the value to set
          * @return this builder
-         */
+         **/
         public Builder objectClasses(java.util.List<AppObjectClasses> objectClasses) {
             this.objectClasses = objectClasses;
             this.__explicitlySet__.add("objectClasses");
@@ -667,25 +863,36 @@ public final class AppExtensionManagedappApp
         }
         /**
          * Flat file connector bundle configuration properties
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flatFileBundleConfigurationProperties")
         private java.util.List<AppFlatFileBundleConfigurationProperties>
                 flatFileBundleConfigurationProperties;
 
         /**
          * Flat file connector bundle configuration properties
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-         * true - mutability: readWrite - required: false - returned: default - type: complex -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [name]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param flatFileBundleConfigurationProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder flatFileBundleConfigurationProperties(
                 java.util.List<AppFlatFileBundleConfigurationProperties>
                         flatFileBundleConfigurationProperties) {
@@ -821,7 +1028,9 @@ public final class AppExtensionManagedappApp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -832,429 +1041,622 @@ public final class AppExtensionManagedappApp
 
     /**
      * If true, the accounts of the application are managed through an ICF connector bundle
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connected")
     private final Boolean connected;
 
     /**
      * If true, the accounts of the application are managed through an ICF connector bundle
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getConnected() {
         return connected;
     }
 
     /**
      * If true, the managed app can be authoritative.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canBeAuthoritative")
     private final Boolean canBeAuthoritative;
 
     /**
      * If true, the managed app can be authoritative.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCanBeAuthoritative() {
         return canBeAuthoritative;
     }
 
     /**
      * If true, sync from the managed app will be performed as authoritative sync.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAuthoritative")
     private final Boolean isAuthoritative;
 
     /**
      * If true, sync from the managed app will be performed as authoritative sync.
-     *
-     * <p>*Added In:** 17.4.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 17.4.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsAuthoritative() {
         return isAuthoritative;
     }
 
     /**
      * If true, the managed app is an On-Premise app.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOnPremiseApp")
     private final Boolean isOnPremiseApp;
 
     /**
      * If true, the managed app is an On-Premise app.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsOnPremiseApp() {
         return isOnPremiseApp;
     }
 
     /**
      * If true, the managed app is a directory.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDirectory")
     private final Boolean isDirectory;
 
     /**
      * If true, the managed app is a directory.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsDirectory() {
         return isDirectory;
     }
 
     /**
      * If true, the managed app supports schema discovery.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSchemaDiscoverySupported")
     private final Boolean isSchemaDiscoverySupported;
 
     /**
      * If true, the managed app supports schema discovery.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsSchemaDiscoverySupported() {
         return isSchemaDiscoverySupported;
     }
 
     /**
      * If true, the managed app supports schema customization.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSchemaCustomizationSupported")
     private final Boolean isSchemaCustomizationSupported;
 
     /**
      * If true, the managed app supports schema customization.
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsSchemaCustomizationSupported() {
         return isSchemaCustomizationSupported;
     }
 
     /**
      * If true, sync run-time operations are enabled for this App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableSync")
     private final Boolean enableSync;
 
     /**
      * If true, sync run-time operations are enabled for this App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getEnableSync() {
         return enableSync;
     }
 
     /**
      * If true, send sync summary as notification upon job completion.
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableSyncSummaryReportNotification")
     private final Boolean enableSyncSummaryReportNotification;
 
     /**
      * If true, send sync summary as notification upon job completion.
-     *
-     * <p>*Added In:** 20.1.3
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 20.1.3
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getEnableSyncSummaryReportNotification() {
         return enableSyncSummaryReportNotification;
     }
 
     /**
      * If true, send activation email to new users created from authoritative sync.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableAuthSyncNewUserNotification")
     private final Boolean enableAuthSyncNewUserNotification;
 
     /**
      * If true, send activation email to new users created from authoritative sync.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getEnableAuthSyncNewUserNotification() {
         return enableAuthSyncNewUserNotification;
     }
 
     /**
      * If true, admin has granted consent to perform managed app run-time operations.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminConsentGranted")
     private final Boolean adminConsentGranted;
 
     /**
      * If true, admin has granted consent to perform managed app run-time operations.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: boolean - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAdminConsentGranted() {
         return adminConsentGranted;
     }
 
     /**
      * If true, the managed app requires 3-legged OAuth for authorization.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isThreeLeggedOAuthEnabled")
     private final Boolean isThreeLeggedOAuthEnabled;
 
     /**
      * If true, the managed app requires 3-legged OAuth for authorization.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsThreeLeggedOAuthEnabled() {
         return isThreeLeggedOAuthEnabled;
     }
 
     /**
-     * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to
-     * this ManagedApp.
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTwoLeggedOAuthEnabled")
     private final Boolean isTwoLeggedOAuthEnabled;
 
     /**
-     * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to
-     * this ManagedApp.
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsTwoLeggedOAuthEnabled() {
         return isTwoLeggedOAuthEnabled;
     }
 
     /**
      * Three legged OAuth provider name in Oracle Identity Cloud Service.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("threeLeggedOAuthProviderName")
     private final String threeLeggedOAuthProviderName;
 
     /**
      * Three legged OAuth provider name in Oracle Identity Cloud Service.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getThreeLeggedOAuthProviderName() {
         return threeLeggedOAuthProviderName;
     }
 
     /**
-     * The most recent DateTime that the configuration of this App was updated. AppServices updates
-     * this timestamp whenever AppServices updates an App's configuration with respect to
-     * synchronization.
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: dateTime - uniqueness:
-     * none
-     */
+     * The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App's configuration with respect to synchronization.
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syncConfigLastModified")
     private final String syncConfigLastModified;
 
     /**
-     * The most recent DateTime that the configuration of this App was updated. AppServices updates
-     * this timestamp whenever AppServices updates an App's configuration with respect to
-     * synchronization.
-     *
-     * <p>*Added In:** 18.2.6
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: dateTime - uniqueness:
-     * none
-     *
+     * The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App's configuration with respect to synchronization.
+     * <p>
+     **Added In:** 18.2.6
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getSyncConfigLastModified() {
         return syncConfigLastModified;
     }
 
     /**
-     * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to
-     * interactively create or update an account for this App. If a value is not specified for this
-     * attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountFormVisible")
     private final Boolean accountFormVisible;
 
     /**
-     * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to
-     * interactively create or update an account for this App. If a value is not specified for this
-     * attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
-     *
-     * <p>*Added In:** 18.4.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \\"false\\" will be assumed as the value for this attribute.
+     * <p>
+     **Added In:** 18.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getAccountFormVisible() {
         return accountFormVisible;
     }
 
     /**
      * IdentityBridges associated with this App
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: complex - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityBridges")
     private final java.util.List<AppIdentityBridges> identityBridges;
 
     /**
      * IdentityBridges associated with this App
-     *
-     * <p>*Added In:** 19.1.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: complex - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.1.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppIdentityBridges> getIdentityBridges() {
         return identityBridges;
     }
@@ -1268,46 +1670,68 @@ public final class AppExtensionManagedappApp
 
     /**
      * ConnectorBundle configuration properties
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bundleConfigurationProperties")
     private final java.util.List<AppBundleConfigurationProperties> bundleConfigurationProperties;
 
     /**
      * ConnectorBundle configuration properties
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppBundleConfigurationProperties> getBundleConfigurationProperties() {
         return bundleConfigurationProperties;
     }
 
     /**
      * Object classes
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectClasses")
     private final java.util.List<AppObjectClasses> objectClasses;
 
     /**
      * Object classes
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [value] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppObjectClasses> getObjectClasses() {
         return objectClasses;
     }
@@ -1328,24 +1752,35 @@ public final class AppExtensionManagedappApp
 
     /**
      * Flat file connector bundle configuration properties
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flatFileBundleConfigurationProperties")
     private final java.util.List<AppFlatFileBundleConfigurationProperties>
             flatFileBundleConfigurationProperties;
 
     /**
      * Flat file connector bundle configuration properties
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued:
-     * true - mutability: readWrite - required: false - returned: default - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [name]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppFlatFileBundleConfigurationProperties>
             getFlatFileBundleConfigurationProperties() {
         return flatFileBundleConfigurationProperties;
@@ -1365,7 +1800,6 @@ public final class AppExtensionManagedappApp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

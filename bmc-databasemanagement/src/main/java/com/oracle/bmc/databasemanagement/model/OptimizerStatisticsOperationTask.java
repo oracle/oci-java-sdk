@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the Optimizer Statistics Collection task. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the Optimizer Statistics Collection task.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OptimizerStatisticsOperationTask.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OptimizerStatisticsOperationTask.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OptimizerStatisticsOperationTask
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"target", "targetType", "timeStart", "timeEnd", "status"})
     public OptimizerStatisticsOperationTask(
@@ -40,76 +39,81 @@ public final class OptimizerStatisticsOperationTask
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the target object for which statistics are gathered. */
+        /**
+         * The name of the target object for which statistics are gathered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
         /**
          * The name of the target object for which statistics are gathered.
-         *
          * @param target the value to set
          * @return this builder
-         */
+         **/
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
-        /** The type of target object. */
+        /**
+         * The type of target object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetType")
         private TargetType targetType;
 
         /**
          * The type of target object.
-         *
          * @param targetType the value to set
          * @return this builder
-         */
+         **/
         public Builder targetType(TargetType targetType) {
             this.targetType = targetType;
             this.__explicitlySet__.add("targetType");
             return this;
         }
-        /** The start time of the Optimizer Statistics Collection task. */
+        /**
+         * The start time of the Optimizer Statistics Collection task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
          * The start time of the Optimizer Statistics Collection task.
-         *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** The end time of the Optimizer Statistics Collection task. */
+        /**
+         * The end time of the Optimizer Statistics Collection task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
          * The end time of the Optimizer Statistics Collection task.
-         *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** The status of the Optimizer Statistics Collection task. */
+        /**
+         * The status of the Optimizer Statistics Collection task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the Optimizer Statistics Collection task.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -154,7 +158,9 @@ public final class OptimizerStatisticsOperationTask
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -163,21 +169,24 @@ public final class OptimizerStatisticsOperationTask
         return new Builder().copy(this);
     }
 
-    /** The name of the target object for which statistics are gathered. */
+    /**
+     * The name of the target object for which statistics are gathered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
     /**
      * The name of the target object for which statistics are gathered.
-     *
      * @return the value
-     */
+     **/
     public String getTarget() {
         return target;
     }
 
-    /** The type of target object. */
-    public enum TargetType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of target object.
+     **/
+    public enum TargetType {
         Table("TABLE"),
         GlobalTable("GLOBAL_TABLE"),
         CoordinatorTable("COORDINATOR_TABLE"),
@@ -188,8 +197,8 @@ public final class OptimizerStatisticsOperationTask
         IndexSubpartition("INDEX_SUBPARTITION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -228,47 +237,52 @@ public final class OptimizerStatisticsOperationTask
             return UnknownEnumValue;
         }
     };
-    /** The type of target object. */
+    /**
+     * The type of target object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetType")
     private final TargetType targetType;
 
     /**
      * The type of target object.
-     *
      * @return the value
-     */
+     **/
     public TargetType getTargetType() {
         return targetType;
     }
 
-    /** The start time of the Optimizer Statistics Collection task. */
+    /**
+     * The start time of the Optimizer Statistics Collection task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
      * The start time of the Optimizer Statistics Collection task.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** The end time of the Optimizer Statistics Collection task. */
+    /**
+     * The end time of the Optimizer Statistics Collection task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
      * The end time of the Optimizer Statistics Collection task.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** The status of the Optimizer Statistics Collection task. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the Optimizer Statistics Collection task.
+     **/
+    public enum Status {
         Pending("PENDING"),
         InProgress("IN_PROGRESS"),
         Skipped("SKIPPED"),
@@ -277,8 +291,8 @@ public final class OptimizerStatisticsOperationTask
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -316,15 +330,16 @@ public final class OptimizerStatisticsOperationTask
             return UnknownEnumValue;
         }
     };
-    /** The status of the Optimizer Statistics Collection task. */
+    /**
+     * The status of the Optimizer Statistics Collection task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the Optimizer Statistics Collection task.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
@@ -336,7 +351,6 @@ public final class OptimizerStatisticsOperationTask
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

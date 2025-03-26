@@ -5,12 +5,15 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * Status of Management Agent Plugin. RUNNING - The plugin is running. STOPPED - The plugin is
- * stopped. INVALID - The plugin status is not recognized. FAILED - The plugin deployment has
- * failed.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum PluginStatus implements com.oracle.bmc.http.internal.BmcEnum {
+ * Status of Management Agent Plugin.
+ * RUNNING - The plugin is running.
+ * STOPPED - The plugin is stopped.
+ * INVALID - The plugin status is not recognized.
+ * FAILED - The plugin deployment has failed.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+public enum PluginStatus {
     Running("RUNNING"),
     Stopped("STOPPED"),
     Invalid("INVALID"),

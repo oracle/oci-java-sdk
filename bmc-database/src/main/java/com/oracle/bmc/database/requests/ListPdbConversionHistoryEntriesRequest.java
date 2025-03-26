@@ -6,12 +6,9 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPdbConversionHistoryEntriesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListPdbConversionHistoryEntriesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPdbConversionHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPdbConversionHistoryEntriesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListPdbConversionHistoryEntriesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -27,50 +24,42 @@ public class ListPdbConversionHistoryEntriesRequest
         return databaseId;
     }
     /**
-     * A filter to return only the pluggable database conversion history entries that match the
-     * specified conversion action. For example, you can use this filter to return only entries for
-     * the precheck operation.
+     * A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
      */
     private com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary.Action
             pdbConversionAction;
 
     /**
-     * A filter to return only the pluggable database conversion history entries that match the
-     * specified conversion action. For example, you can use this filter to return only entries for
-     * the precheck operation.
+     * A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
      */
     public com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary.Action
             getPdbConversionAction() {
         return pdbConversionAction;
     }
     /**
-     * A filter to return only the pluggable database conversion history entries that match the
-     * specified lifecycle state. For example, you can use this filter to return only entries in the
-     * "failed" lifecycle state.
+     * A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
      */
     private com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary.LifecycleState
             lifecycleState;
 
     /**
-     * A filter to return only the pluggable database conversion history entries that match the
-     * specified lifecycle state. For example, you can use this filter to return only entries in the
-     * "failed" lifecycle state.
+     * A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
      */
     public com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order
-     * for {@code TIMECREATED} is ascending.
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order for {@code TIMECREATED} is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order
-     * for {@code TIMECREATED} is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order for {@code TIMECREATED} is ascending.
+     *
+     **/
+    public enum SortBy {
         Timestarted("TIMESTARTED"),
         ;
 
@@ -103,17 +92,21 @@ public class ListPdbConversionHistoryEntriesRequest
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order
-     * for {@code TIMECREATED} is ascending.
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order for {@code TIMECREATED} is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -146,28 +139,44 @@ public class ListPdbConversionHistoryEntriesRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     private String page;
 
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -175,19 +184,17 @@ public class ListPdbConversionHistoryEntriesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPdbConversionHistoryEntriesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String databaseId = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param databaseId the value to set
          * @return this builder instance
          */
@@ -197,18 +204,13 @@ public class ListPdbConversionHistoryEntriesRequest
         }
 
         /**
-         * A filter to return only the pluggable database conversion history entries that match the
-         * specified conversion action. For example, you can use this filter to return only entries
-         * for the precheck operation.
+         * A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
          */
         private com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary.Action
                 pdbConversionAction = null;
 
         /**
-         * A filter to return only the pluggable database conversion history entries that match the
-         * specified conversion action. For example, you can use this filter to return only entries
-         * for the precheck operation.
-         *
+         * A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
          * @param pdbConversionAction the value to set
          * @return this builder instance
          */
@@ -220,18 +222,13 @@ public class ListPdbConversionHistoryEntriesRequest
         }
 
         /**
-         * A filter to return only the pluggable database conversion history entries that match the
-         * specified lifecycle state. For example, you can use this filter to return only entries in
-         * the "failed" lifecycle state.
+         * A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
          */
         private com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only the pluggable database conversion history entries that match the
-         * specified lifecycle state. For example, you can use this filter to return only entries in
-         * the "failed" lifecycle state.
-         *
+         * A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -243,14 +240,13 @@ public class ListPdbConversionHistoryEntriesRequest
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). The default
-         * order for {@code TIMECREATED} is ascending.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order for {@code TIMECREATED} is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). The default
-         * order for {@code TIMECREATED} is ascending.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). The default order for {@code TIMECREATED} is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -260,12 +256,13 @@ public class ListPdbConversionHistoryEntriesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -274,7 +271,10 @@ public class ListPdbConversionHistoryEntriesRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -288,12 +288,13 @@ public class ListPdbConversionHistoryEntriesRequest
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -302,12 +303,13 @@ public class ListPdbConversionHistoryEntriesRequest
             return this;
         }
 
-        /** The pagination token to continue listing from. */
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -318,19 +320,18 @@ public class ListPdbConversionHistoryEntriesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -342,7 +343,6 @@ public class ListPdbConversionHistoryEntriesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPdbConversionHistoryEntriesRequest o) {
@@ -360,14 +360,12 @@ public class ListPdbConversionHistoryEntriesRequest
         }
 
         /**
-         * Build the instance of ListPdbConversionHistoryEntriesRequest as configured by this
-         * builder
+         * Build the instance of ListPdbConversionHistoryEntriesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPdbConversionHistoryEntriesRequest
          */
@@ -379,11 +377,9 @@ public class ListPdbConversionHistoryEntriesRequest
         }
 
         /**
-         * Build the instance of ListPdbConversionHistoryEntriesRequest as configured by this
-         * builder
+         * Build the instance of ListPdbConversionHistoryEntriesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPdbConversionHistoryEntriesRequest
@@ -400,14 +396,12 @@ public class ListPdbConversionHistoryEntriesRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListPdbConversionHistoryEntriesRequest(databaseId, pdbConversionAction,
-            // lifecycleState, sortBy, sortOrder, opcRequestId, limit, page);
+            // new ListPdbConversionHistoryEntriesRequest(databaseId, pdbConversionAction, lifecycleState, sortBy, sortOrder, opcRequestId, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -424,7 +418,6 @@ public class ListPdbConversionHistoryEntriesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

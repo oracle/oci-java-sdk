@@ -5,25 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Trigger specific to Bitbucket Server <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Trigger specific to Bitbucket Server
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BitbucketServerTrigger.Builder.class)
+    builder = BitbucketServerTrigger.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "triggerSource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "triggerSource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BitbucketServerTrigger extends Trigger {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -144,16 +144,17 @@ public final class BitbucketServerTrigger extends Trigger {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The endpoint that listens to trigger events. */
+        /**
+         * The endpoint that listens to trigger events.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
         private String triggerUrl;
 
         /**
          * The endpoint that listens to trigger events.
-         *
          * @param triggerUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder triggerUrl(String triggerUrl) {
             this.triggerUrl = triggerUrl;
             this.__explicitlySet__.add("triggerUrl");
@@ -234,7 +235,9 @@ public final class BitbucketServerTrigger extends Trigger {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -276,15 +279,16 @@ public final class BitbucketServerTrigger extends Trigger {
         this.triggerUrl = triggerUrl;
     }
 
-    /** The endpoint that listens to trigger events. */
+    /**
+     * The endpoint that listens to trigger events.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
     private final String triggerUrl;
 
     /**
      * The endpoint that listens to trigger events.
-     *
      * @return the value
-     */
+     **/
     public String getTriggerUrl() {
         return triggerUrl;
     }
@@ -296,7 +300,6 @@ public final class BitbucketServerTrigger extends Trigger {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

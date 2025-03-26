@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The metric statistics values with dimension details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The metric statistics values with dimension details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MetricStatisticsDefinition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MetricStatisticsDefinition.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MetricStatisticsDefinition
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "min",
@@ -52,106 +51,113 @@ public final class MetricStatisticsDefinition
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The minimum value of the metric. */
+        /**
+         * The minimum value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Double min;
 
         /**
          * The minimum value of the metric.
-         *
          * @param min the value to set
          * @return this builder
-         */
+         **/
         public Builder min(Double min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-        /** The maximum value of the metric. */
+        /**
+         * The maximum value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Double max;
 
         /**
          * The maximum value of the metric.
-         *
          * @param max the value to set
          * @return this builder
-         */
+         **/
         public Builder max(Double max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-        /** The median value of the metric. */
+        /**
+         * The median value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("median")
         private Double median;
 
         /**
          * The median value of the metric.
-         *
          * @param median the value to set
          * @return this builder
-         */
+         **/
         public Builder median(Double median) {
             this.median = median;
             this.__explicitlySet__.add("median");
             return this;
         }
-        /** The first quartile value of the metric. */
+        /**
+         * The first quartile value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lowerQuartile")
         private Double lowerQuartile;
 
         /**
          * The first quartile value of the metric.
-         *
          * @param lowerQuartile the value to set
          * @return this builder
-         */
+         **/
         public Builder lowerQuartile(Double lowerQuartile) {
             this.lowerQuartile = lowerQuartile;
             this.__explicitlySet__.add("lowerQuartile");
             return this;
         }
-        /** The third quartile value of the metric. */
+        /**
+         * The third quartile value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upperQuartile")
         private Double upperQuartile;
 
         /**
          * The third quartile value of the metric.
-         *
          * @param upperQuartile the value to set
          * @return this builder
-         */
+         **/
         public Builder upperQuartile(Double upperQuartile) {
             this.upperQuartile = upperQuartile;
             this.__explicitlySet__.add("upperQuartile");
             return this;
         }
-        /** The unit of the metric value. */
+        /**
+         * The unit of the metric value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * The unit of the metric value.
-         *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-        /** The dimensions of the metric. */
+        /**
+         * The dimensions of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.List<MetricDimensionDefinition> dimensions;
 
         /**
          * The dimensions of the metric.
-         *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.List<MetricDimensionDefinition> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -204,7 +210,9 @@ public final class MetricStatisticsDefinition
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,93 +221,100 @@ public final class MetricStatisticsDefinition
         return new Builder().copy(this);
     }
 
-    /** The minimum value of the metric. */
+    /**
+     * The minimum value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Double min;
 
     /**
      * The minimum value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Double getMin() {
         return min;
     }
 
-    /** The maximum value of the metric. */
+    /**
+     * The maximum value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Double max;
 
     /**
      * The maximum value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Double getMax() {
         return max;
     }
 
-    /** The median value of the metric. */
+    /**
+     * The median value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("median")
     private final Double median;
 
     /**
      * The median value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Double getMedian() {
         return median;
     }
 
-    /** The first quartile value of the metric. */
+    /**
+     * The first quartile value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lowerQuartile")
     private final Double lowerQuartile;
 
     /**
      * The first quartile value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Double getLowerQuartile() {
         return lowerQuartile;
     }
 
-    /** The third quartile value of the metric. */
+    /**
+     * The third quartile value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upperQuartile")
     private final Double upperQuartile;
 
     /**
      * The third quartile value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Double getUpperQuartile() {
         return upperQuartile;
     }
 
-    /** The unit of the metric value. */
+    /**
+     * The unit of the metric value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * The unit of the metric value.
-     *
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
 
-    /** The dimensions of the metric. */
+    /**
+     * The dimensions of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.List<MetricDimensionDefinition> dimensions;
 
     /**
      * The dimensions of the metric.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MetricDimensionDefinition> getDimensions() {
         return dimensions;
     }
@@ -311,7 +326,6 @@ public final class MetricStatisticsDefinition
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

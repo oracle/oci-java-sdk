@@ -6,33 +6,42 @@ package com.oracle.bmc.cloudguard.requests;
 
 import com.oracle.bmc.cloudguard.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetResponderRecipeExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetTargetResponderRecipeRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTargetResponderRecipeRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetTargetResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of the target */
+    /**
+     * OCID of the target
+     */
     private String targetId;
 
-    /** OCID of the target */
+    /**
+     * OCID of the target
+     */
     public String getTargetId() {
         return targetId;
     }
-    /** OCID of the target responder recipe. */
+    /**
+     * OCID of the target responder recipe.
+     */
     private String targetResponderRecipeId;
 
-    /** OCID of the target responder recipe. */
+    /**
+     * OCID of the target responder recipe.
+     */
     public String getTargetResponderRecipeId() {
         return targetResponderRecipeId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -40,15 +49,17 @@ public class GetTargetResponderRecipeRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetTargetResponderRecipeRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of the target */
+        /**
+         * OCID of the target
+         */
         private String targetId = null;
 
         /**
          * OCID of the target
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -57,12 +68,13 @@ public class GetTargetResponderRecipeRequest
             return this;
         }
 
-        /** OCID of the target responder recipe. */
+        /**
+         * OCID of the target responder recipe.
+         */
         private String targetResponderRecipeId = null;
 
         /**
          * OCID of the target responder recipe.
-         *
          * @param targetResponderRecipeId the value to set
          * @return this builder instance
          */
@@ -71,12 +83,13 @@ public class GetTargetResponderRecipeRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -87,19 +100,18 @@ public class GetTargetResponderRecipeRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -111,7 +123,6 @@ public class GetTargetResponderRecipeRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetTargetResponderRecipeRequest o) {
@@ -126,11 +137,10 @@ public class GetTargetResponderRecipeRequest
         /**
          * Build the instance of GetTargetResponderRecipeRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetTargetResponderRecipeRequest
          */
@@ -144,8 +154,7 @@ public class GetTargetResponderRecipeRequest
         /**
          * Build the instance of GetTargetResponderRecipeRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetTargetResponderRecipeRequest
@@ -162,7 +171,6 @@ public class GetTargetResponderRecipeRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -174,7 +182,6 @@ public class GetTargetResponderRecipeRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

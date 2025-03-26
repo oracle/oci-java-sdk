@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Lifecycle Detail value of Metric Extension like DRAFT or PUBLISHED */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MetricExtensionLifeCycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle Detail value of Metric Extension like DRAFT or PUBLISHED
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MetricExtensionLifeCycleDetails {
     Draft("DRAFT"),
     Published("PUBLISHED"),
 

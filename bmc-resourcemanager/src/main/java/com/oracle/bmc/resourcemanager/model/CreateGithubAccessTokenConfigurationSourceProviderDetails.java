@@ -6,26 +6,26 @@ package com.oracle.bmc.resourcemanager.model;
 
 /**
  * Creation details for a configuration source provider of the type {@code GITHUB_ACCESS_TOKEN}.
- * This type corresponds to a configuration source provider in GitHub that is authenticated with a
- * personal access token. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * This type corresponds to a configuration source provider in GitHub that is authenticated with a personal access token.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateGithubAccessTokenConfigurationSourceProviderDetails.Builder.class)
+    builder = CreateGithubAccessTokenConfigurationSourceProviderDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configSourceProviderType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configSourceProviderType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
         extends CreateConfigurationSourceProviderDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -85,35 +85,37 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The GitHub service endpoint. Example: {@code https://github.com/} */
+        /**
+         * The GitHub service endpoint.
+         * Example: {@code https://github.com/}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
         private String apiEndpoint;
 
         /**
-         * The GitHub service endpoint. Example: {@code https://github.com/}
+         * The GitHub service endpoint.
+         * Example: {@code https://github.com/}
          *
          * @param apiEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder apiEndpoint(String apiEndpoint) {
             this.apiEndpoint = apiEndpoint;
             this.__explicitlySet__.add("apiEndpoint");
             return this;
         }
         /**
-         * The personal access token to be configured on the GitHub repository. Avoid entering
-         * confidential information.
-         */
+         * The personal access token to be configured on the GitHub repository. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
-         * The personal access token to be configured on the GitHub repository. Avoid entering
-         * confidential information.
-         *
+         * The personal access token to be configured on the GitHub repository. Avoid entering confidential information.
          * @param accessToken the value to set
          * @return this builder
-         */
+         **/
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
@@ -170,7 +172,9 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -200,32 +204,34 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
         this.accessToken = accessToken;
     }
 
-    /** The GitHub service endpoint. Example: {@code https://github.com/} */
+    /**
+     * The GitHub service endpoint.
+     * Example: {@code https://github.com/}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
     private final String apiEndpoint;
 
     /**
-     * The GitHub service endpoint. Example: {@code https://github.com/}
+     * The GitHub service endpoint.
+     * Example: {@code https://github.com/}
      *
      * @return the value
-     */
+     **/
     public String getApiEndpoint() {
         return apiEndpoint;
     }
 
     /**
-     * The personal access token to be configured on the GitHub repository. Avoid entering
-     * confidential information.
-     */
+     * The personal access token to be configured on the GitHub repository. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
-     * The personal access token to be configured on the GitHub repository. Avoid entering
-     * confidential information.
-     *
+     * The personal access token to be configured on the GitHub repository. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getAccessToken() {
         return accessToken;
     }
@@ -237,7 +243,6 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -25,15 +25,14 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * This class provides an example of using object lifecycle policies in the Java SDK. Lifecycle
- * policies are an object storage featuring enabling automatic archival and deletion of objects
- * after they reach a desired age.
+ * This class provides an example of using object lifecycle policies in the Java SDK.
+ * Lifecycle policies are an object storage featuring enabling automatic archival and deletion of objects after they
+ * reach a desired age.
  *
- * <p>This example will start by retrieving your object storage namespace, then it will create a new
- * bucket (continuing if the bucket exists), write a lifecycle policy to the bucket, retrieve the
- * policy, delete the policy, and delete the bucket. If you pass this example the name of a bucket
- * that already exists, a policy will be active on the bucket briefly and your old objects may be
- * archived. Deleting a policy immediately cancels its execution.
+ * This example will start by retrieving your object storage namespace, then it will create a new bucket (continuing if
+ * the bucket exists), write a lifecycle policy to the bucket, retrieve the policy, delete the policy, and delete the
+ * bucket.  If you pass this example the name of a bucket that already exists, a policy will be active on the bucket
+ * briefly and your old objects may be archived.  Deleting a policy immediately cancels its execution.
  */
 public class ObjectLifecyclePolicyExample {
 
@@ -44,12 +43,12 @@ public class ObjectLifecyclePolicyExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The first argument is the OCID of the compartment where we'll create a bucket
-     *       <li>The second is the name of the bucket to create
-     *       <li>The third parameter controls how many years to wait before objects will be
-     *           archived. The API also accepts time periods specified in days
-     *     </ul>
+     * <ul>
+     *   <li>The first argument is the OCID of the compartment where we'll create a bucket</li>
+     *   <li>The second is the name of the bucket to create</li>
+     *   <li>The third parameter controls how many years to wait before objects will be archived.  The API also accepts
+     *            time periods specified in days</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
@@ -60,18 +59,16 @@ public class ObjectLifecyclePolicyExample {
         final String bucketName = args[1];
         final Long yearsToWaitBeforeArchival = Long.parseLong(args[2]);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final ObjectStorage client =
-                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final ObjectStorage client = new ObjectStorageClient(provider);
+        client.setRegion(Region.US_PHOENIX_1);
 
         System.out.println("Fetching namespace");
         final GetNamespaceResponse namespaceResponse =
@@ -122,8 +119,7 @@ public class ObjectLifecyclePolicyExample {
                         // Allowed time units are days and years.
                         .timeUnit(ObjectLifecycleRule.TimeUnit.Years)
                         .isEnabled(true)
-                        // Use an ObjectNameFilter to filter objects by name before applying the
-                        // rule.  For example,
+                        // Use an ObjectNameFilter to filter objects by name before applying the rule.  For example,
                         // this ObjectNameFilter would exclude all objects ending with .log
                         // and only archive objects whose names start with "/data/".
                         .objectNameFilter(
@@ -134,8 +130,7 @@ public class ObjectLifecyclePolicyExample {
                         .build();
         final PutObjectLifecyclePolicyDetails objectLifecyclePolicyDetails =
                 PutObjectLifecyclePolicyDetails.builder()
-                        // Multiple rules are allowed.  You may, for example, archive objects after
-                        // 30 days and delete them
+                        // Multiple rules are allowed.  You may, for example, archive objects after 30 days and delete them
                         // after 120 days.  If an object matches both rules, it will be deleted.
                         .items(Arrays.asList(objectLifecycleRule))
                         .build();
@@ -175,8 +170,7 @@ public class ObjectLifecyclePolicyExample {
         client.getObjectLifecyclePolicy(getObjectLifecyclePolicyRequest);
         System.out.println("Retrieved object lifecycle policy");
 
-        // Overwriting or deleting a lifecycle policy immediately cancels any in-progress execution
-        // of the old policy.
+        // Overwriting or deleting a lifecycle policy immediately cancels any in-progress execution of the old policy.
         final DeleteObjectLifecyclePolicyRequest deleteObjectLifecyclePolicyRequest =
                 DeleteObjectLifecyclePolicyRequest.builder()
                         .namespaceName(namespaceName)

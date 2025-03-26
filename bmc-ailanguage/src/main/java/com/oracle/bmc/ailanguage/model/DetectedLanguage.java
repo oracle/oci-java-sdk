@@ -5,22 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Attributes to the detected language. Contains Language Name , Code, and Confidence Score. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Attributes to the detected language. Contains Language Name , Code, and Confidence Score.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DetectedLanguage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DetectedLanguage
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DetectedLanguage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "code", "score"})
     public DetectedLanguage(String name, String code, Double score) {
@@ -32,52 +29,61 @@ public final class DetectedLanguage
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Full language name. Example: {@code English, Hindi, and so on} */
+        /**
+         * Full language name.
+         * Example: {@code English, Hindi, and so on}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Full language name. Example: {@code English, Hindi, and so on}
+         * Full language name.
+         * Example: {@code English, Hindi, and so on}
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Detected language code as per [ISO
-         * 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. Example: {@code
-         * en, fr, hi etc}.
-         */
+         * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Example: {@code en, fr, hi etc}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * Detected language code as per [ISO
-         * 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. Example: {@code
-         * en, fr, hi etc}.
+         * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Example: {@code en, fr, hi etc}.
          *
          * @param code the value to set
          * @return this builder
-         */
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** Score or confidence of detected language code. Example: {@code 0.9999856066867399} */
+        /**
+         * Score or confidence of detected language code.
+         * Example: {@code 0.9999856066867399}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
-         * Score or confidence of detected language code. Example: {@code 0.9999856066867399}
+         * Score or confidence of detected language code.
+         * Example: {@code 0.9999856066867399}
          *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -110,7 +116,9 @@ public final class DetectedLanguage
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,47 +127,56 @@ public final class DetectedLanguage
         return new Builder().copy(this);
     }
 
-    /** Full language name. Example: {@code English, Hindi, and so on} */
+    /**
+     * Full language name.
+     * Example: {@code English, Hindi, and so on}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Full language name. Example: {@code English, Hindi, and so on}
+     * Full language name.
+     * Example: {@code English, Hindi, and so on}
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Detected language code as per [ISO
-     * 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. Example: {@code en,
-     * fr, hi etc}.
-     */
+     * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Example: {@code en, fr, hi etc}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * Detected language code as per [ISO
-     * 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. Example: {@code en,
-     * fr, hi etc}.
+     * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Example: {@code en, fr, hi etc}.
      *
      * @return the value
-     */
+     **/
     public String getCode() {
         return code;
     }
 
-    /** Score or confidence of detected language code. Example: {@code 0.9999856066867399} */
+    /**
+     * Score or confidence of detected language code.
+     * Example: {@code 0.9999856066867399}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
-     * Score or confidence of detected language code. Example: {@code 0.9999856066867399}
+     * Score or confidence of detected language code.
+     * Example: {@code 0.9999856066867399}
      *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
@@ -171,7 +188,6 @@ public final class DetectedLanguage
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

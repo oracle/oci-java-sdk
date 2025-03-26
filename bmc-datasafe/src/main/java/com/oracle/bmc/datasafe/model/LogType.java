@@ -4,9 +4,13 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The type of log to be added as an allowed sql. Allowed values are - VIOLATION_LOG */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum LogType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of log to be added as an allowed sql. Allowed values are
+ *   - VIOLATION_LOG
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum LogType {
     ViolationLog("VIOLATION_LOG"),
     ;
 

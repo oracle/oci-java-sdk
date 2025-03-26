@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The set of aggregated data returned for a metric. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The set of aggregated data returned for a metric.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MetricsAggregationRange.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MetricsAggregationRange.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MetricsAggregationRange
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "header",
@@ -53,63 +52,66 @@ public final class MetricsAggregationRange
             return this;
         }
         /**
-         * The list of metrics returned for the specified request. Each of the metrics has a {@code
-         * metricName} and additional properties like {@code metadata}, {@code dimensions}. If a
-         * property is not set, then use the value from {@code header}.
+         * The list of metrics returned for the specified request. Each of the metrics
+         * has a {@code metricName} and additional properties like {@code metadata}, {@code dimensions}.
+         * If a property is not set, then use the value from {@code header}.
+         * <p>
+         * Suppose {@code m} be an item in the {@code metrics} array:
+         * - If {@code m.metricName} is not set, use {@code header.metricName} instead
+         * - If {@code m.durationInSeconds} is not set, use {@code header.durationInSeconds} instead
+         * - If {@code m.dimensions} is not set, use {@code header.dimensions} instead
+         * - If {@code m.metadata} is not set, use {@code header.metadata} instead
          *
-         * <p>Suppose {@code m} be an item in the {@code metrics} array: - If {@code m.metricName}
-         * is not set, use {@code header.metricName} instead - If {@code m.durationInSeconds} is not
-         * set, use {@code header.durationInSeconds} instead - If {@code m.dimensions} is not set,
-         * use {@code header.dimensions} instead - If {@code m.metadata} is not set, use {@code
-         * header.metadata} instead
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<DbManagementAnalyticsMetric> metrics;
 
         /**
-         * The list of metrics returned for the specified request. Each of the metrics has a {@code
-         * metricName} and additional properties like {@code metadata}, {@code dimensions}. If a
-         * property is not set, then use the value from {@code header}.
-         *
-         * <p>Suppose {@code m} be an item in the {@code metrics} array: - If {@code m.metricName}
-         * is not set, use {@code header.metricName} instead - If {@code m.durationInSeconds} is not
-         * set, use {@code header.durationInSeconds} instead - If {@code m.dimensions} is not set,
-         * use {@code header.dimensions} instead - If {@code m.metadata} is not set, use {@code
-         * header.metadata} instead
+         * The list of metrics returned for the specified request. Each of the metrics
+         * has a {@code metricName} and additional properties like {@code metadata}, {@code dimensions}.
+         * If a property is not set, then use the value from {@code header}.
+         * <p>
+         * Suppose {@code m} be an item in the {@code metrics} array:
+         * - If {@code m.metricName} is not set, use {@code header.metricName} instead
+         * - If {@code m.durationInSeconds} is not set, use {@code header.durationInSeconds} instead
+         * - If {@code m.dimensions} is not set, use {@code header.dimensions} instead
+         * - If {@code m.metadata} is not set, use {@code header.metadata} instead
          *
          * @param metrics the value to set
          * @return this builder
-         */
+         **/
         public Builder metrics(java.util.List<DbManagementAnalyticsMetric> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
             return this;
         }
-        /** The beginning of the time range (inclusive) of the returned metric data. */
+        /**
+         * The beginning of the time range (inclusive) of the returned metric data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeStartTimeInEpochSeconds")
         private Long rangeStartTimeInEpochSeconds;
 
         /**
          * The beginning of the time range (inclusive) of the returned metric data.
-         *
          * @param rangeStartTimeInEpochSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder rangeStartTimeInEpochSeconds(Long rangeStartTimeInEpochSeconds) {
             this.rangeStartTimeInEpochSeconds = rangeStartTimeInEpochSeconds;
             this.__explicitlySet__.add("rangeStartTimeInEpochSeconds");
             return this;
         }
-        /** The end of the time range (exclusive) of the returned metric data. */
+        /**
+         * The end of the time range (exclusive) of the returned metric data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeEndTimeInEpochSeconds")
         private Long rangeEndTimeInEpochSeconds;
 
         /**
          * The end of the time range (exclusive) of the returned metric data.
-         *
          * @param rangeEndTimeInEpochSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder rangeEndTimeInEpochSeconds(Long rangeEndTimeInEpochSeconds) {
             this.rangeEndTimeInEpochSeconds = rangeEndTimeInEpochSeconds;
             this.__explicitlySet__.add("rangeEndTimeInEpochSeconds");
@@ -150,7 +152,9 @@ public final class MetricsAggregationRange
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,58 +171,61 @@ public final class MetricsAggregationRange
     }
 
     /**
-     * The list of metrics returned for the specified request. Each of the metrics has a {@code
-     * metricName} and additional properties like {@code metadata}, {@code dimensions}. If a
-     * property is not set, then use the value from {@code header}.
+     * The list of metrics returned for the specified request. Each of the metrics
+     * has a {@code metricName} and additional properties like {@code metadata}, {@code dimensions}.
+     * If a property is not set, then use the value from {@code header}.
+     * <p>
+     * Suppose {@code m} be an item in the {@code metrics} array:
+     * - If {@code m.metricName} is not set, use {@code header.metricName} instead
+     * - If {@code m.durationInSeconds} is not set, use {@code header.durationInSeconds} instead
+     * - If {@code m.dimensions} is not set, use {@code header.dimensions} instead
+     * - If {@code m.metadata} is not set, use {@code header.metadata} instead
      *
-     * <p>Suppose {@code m} be an item in the {@code metrics} array: - If {@code m.metricName} is
-     * not set, use {@code header.metricName} instead - If {@code m.durationInSeconds} is not set,
-     * use {@code header.durationInSeconds} instead - If {@code m.dimensions} is not set, use {@code
-     * header.dimensions} instead - If {@code m.metadata} is not set, use {@code header.metadata}
-     * instead
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<DbManagementAnalyticsMetric> metrics;
 
     /**
-     * The list of metrics returned for the specified request. Each of the metrics has a {@code
-     * metricName} and additional properties like {@code metadata}, {@code dimensions}. If a
-     * property is not set, then use the value from {@code header}.
-     *
-     * <p>Suppose {@code m} be an item in the {@code metrics} array: - If {@code m.metricName} is
-     * not set, use {@code header.metricName} instead - If {@code m.durationInSeconds} is not set,
-     * use {@code header.durationInSeconds} instead - If {@code m.dimensions} is not set, use {@code
-     * header.dimensions} instead - If {@code m.metadata} is not set, use {@code header.metadata}
-     * instead
+     * The list of metrics returned for the specified request. Each of the metrics
+     * has a {@code metricName} and additional properties like {@code metadata}, {@code dimensions}.
+     * If a property is not set, then use the value from {@code header}.
+     * <p>
+     * Suppose {@code m} be an item in the {@code metrics} array:
+     * - If {@code m.metricName} is not set, use {@code header.metricName} instead
+     * - If {@code m.durationInSeconds} is not set, use {@code header.durationInSeconds} instead
+     * - If {@code m.dimensions} is not set, use {@code header.dimensions} instead
+     * - If {@code m.metadata} is not set, use {@code header.metadata} instead
      *
      * @return the value
-     */
+     **/
     public java.util.List<DbManagementAnalyticsMetric> getMetrics() {
         return metrics;
     }
 
-    /** The beginning of the time range (inclusive) of the returned metric data. */
+    /**
+     * The beginning of the time range (inclusive) of the returned metric data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeStartTimeInEpochSeconds")
     private final Long rangeStartTimeInEpochSeconds;
 
     /**
      * The beginning of the time range (inclusive) of the returned metric data.
-     *
      * @return the value
-     */
+     **/
     public Long getRangeStartTimeInEpochSeconds() {
         return rangeStartTimeInEpochSeconds;
     }
 
-    /** The end of the time range (exclusive) of the returned metric data. */
+    /**
+     * The end of the time range (exclusive) of the returned metric data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeEndTimeInEpochSeconds")
     private final Long rangeEndTimeInEpochSeconds;
 
     /**
      * The end of the time range (exclusive) of the returned metric data.
-     *
      * @return the value
-     */
+     **/
     public Long getRangeEndTimeInEpochSeconds() {
         return rangeEndTimeInEpochSeconds;
     }
@@ -230,7 +237,6 @@ public final class MetricsAggregationRange
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

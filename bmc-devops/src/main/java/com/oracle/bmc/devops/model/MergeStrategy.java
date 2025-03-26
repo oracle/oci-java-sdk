@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.devops.model;
 
-/** Merge strategies which can be enabled or disabled for a repository or project. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-public enum MergeStrategy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Merge strategies which can be enabled or disabled for a repository or project.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+public enum MergeStrategy {
     MergeCommit("MERGE_COMMIT"),
     FastForward("FAST_FORWARD"),
     FastForwardOnly("FAST_FORWARD_ONLY"),

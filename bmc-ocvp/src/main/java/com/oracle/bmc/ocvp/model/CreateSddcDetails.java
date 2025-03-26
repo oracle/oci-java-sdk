@@ -5,23 +5,21 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * Details of the SDDC. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+ * Details of the SDDC.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateSddcDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateSddcDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateSddcDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateSddcDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -62,94 +60,95 @@ public final class CreateSddcDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit,
-         * Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens,
-         * Must be unique within the region. Avoid entering confidential information.
-         */
+         * A descriptive name for the SDDC.
+         * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit,
-         * Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens,
-         * Must be unique within the region. Avoid entering confidential information.
+         * A descriptive name for the SDDC.
+         * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the
-         * available versions, use {@link
-         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-         * listSupportedVmwareSoftwareVersions}.
-         */
+         * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a
+         * list of the available versions, use
+         * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
         private String vmwareSoftwareVersion;
 
         /**
-         * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the
-         * available versions, use {@link
-         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-         * listSupportedVmwareSoftwareVersions}.
+         * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a
+         * list of the available versions, use
+         * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
          *
          * @param vmwareSoftwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
             this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             this.__explicitlySet__.add("vmwareSoftwareVersion");
             return this;
         }
         /**
-         * The ESXi software bundle to install on the ESXi hosts in the SDDC. Only versions under
-         * the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution
-         * will be accepted. To get a list of the available versions, use {@link
-         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-         * listSupportedVmwareSoftwareVersions}.
-         */
+         * The ESXi software bundle to install on the ESXi hosts in the SDDC.
+         * Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted.
+         * To get a list of the available versions, use
+         * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
         private String esxiSoftwareVersion;
 
         /**
-         * The ESXi software bundle to install on the ESXi hosts in the SDDC. Only versions under
-         * the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution
-         * will be accepted. To get a list of the available versions, use {@link
-         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-         * listSupportedVmwareSoftwareVersions}.
+         * The ESXi software bundle to install on the ESXi hosts in the SDDC.
+         * Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted.
+         * To get a list of the available versions, use
+         * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
          *
          * @param esxiSoftwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
             this.esxiSoftwareVersion = esxiSoftwareVersion;
             this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to contain the SDDC.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to contain the SDDC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** HCX configuration of the SDDC. */
+        /**
+         * HCX configuration of the SDDC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hcxMode")
         private HcxModes hcxMode;
 
@@ -158,7 +157,7 @@ public final class CreateSddcDetails
          *
          * @param hcxMode the value to set
          * @return this builder
-         */
+         **/
         public Builder hcxMode(HcxModes hcxMode) {
             this.hcxMode = hcxMode;
             this.__explicitlySet__.add("hcxMode");
@@ -173,16 +172,17 @@ public final class CreateSddcDetails
             this.__explicitlySet__.add("initialConfiguration");
             return this;
         }
-        /** Indicates whether this SDDC is designated for only single ESXi host. */
+        /**
+         * Indicates whether this SDDC is designated for only single ESXi host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
         private Boolean isSingleHostSddc;
 
         /**
          * Indicates whether this SDDC is designated for only single ESXi host.
-         *
          * @param isSingleHostSddc the value to set
          * @return this builder
-         */
+         **/
         public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
             this.isSingleHostSddc = isSingleHostSddc;
             this.__explicitlySet__.add("isSingleHostSddc");
@@ -192,7 +192,8 @@ public final class CreateSddcDetails
          * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
          * the default user on each ESXi host. Use a newline character to separate multiple keys.
          * The SSH keys must be in the format required for the {@code authorized_keys} file
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
         private String sshAuthorizedKeys;
 
@@ -203,57 +204,55 @@ public final class CreateSddcDetails
          *
          * @param sshAuthorizedKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder sshAuthorizedKeys(String sshAuthorizedKeys) {
             this.sshAuthorizedKeys = sshAuthorizedKeys;
             this.__explicitlySet__.add("sshAuthorizedKeys");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -319,7 +318,9 @@ public final class CreateSddcDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -329,86 +330,87 @@ public final class CreateSddcDetails
     }
 
     /**
-     * A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must
-     * start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be
-     * unique within the region. Avoid entering confidential information.
-     */
+     * A descriptive name for the SDDC.
+     * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must
-     * start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be
-     * unique within the region. Avoid entering confidential information.
+     * A descriptive name for the SDDC.
+     * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the
-     * available versions, use {@link
-     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-     * listSupportedVmwareSoftwareVersions}.
-     */
+     * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a
+     * list of the available versions, use
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
     private final String vmwareSoftwareVersion;
 
     /**
-     * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the
-     * available versions, use {@link
-     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-     * listSupportedVmwareSoftwareVersions}.
+     * The VMware software bundle to install on the ESXi hosts in the SDDC. To get a
+     * list of the available versions, use
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
      *
      * @return the value
-     */
+     **/
     public String getVmwareSoftwareVersion() {
         return vmwareSoftwareVersion;
     }
 
     /**
-     * The ESXi software bundle to install on the ESXi hosts in the SDDC. Only versions under the
-     * same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be
-     * accepted. To get a list of the available versions, use {@link
-     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-     * listSupportedVmwareSoftwareVersions}.
-     */
+     * The ESXi software bundle to install on the ESXi hosts in the SDDC.
+     * Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted.
+     * To get a list of the available versions, use
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
     private final String esxiSoftwareVersion;
 
     /**
-     * The ESXi software bundle to install on the ESXi hosts in the SDDC. Only versions under the
-     * same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be
-     * accepted. To get a list of the available versions, use {@link
-     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
-     * listSupportedVmwareSoftwareVersions}.
+     * The ESXi software bundle to install on the ESXi hosts in the SDDC.
+     * Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted.
+     * To get a list of the available versions, use
+     * {@link #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest) listSupportedVmwareSoftwareVersions}.
      *
      * @return the value
-     */
+     **/
     public String getEsxiSoftwareVersion() {
         return esxiSoftwareVersion;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to contain the SDDC.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to contain the SDDC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** HCX configuration of the SDDC. */
+    /**
+     * HCX configuration of the SDDC.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hcxMode")
     private final HcxModes hcxMode;
 
@@ -416,7 +418,7 @@ public final class CreateSddcDetails
      * HCX configuration of the SDDC.
      *
      * @return the value
-     */
+     **/
     public HcxModes getHcxMode() {
         return hcxMode;
     }
@@ -428,80 +430,80 @@ public final class CreateSddcDetails
         return initialConfiguration;
     }
 
-    /** Indicates whether this SDDC is designated for only single ESXi host. */
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
     private final Boolean isSingleHostSddc;
 
     /**
      * Indicates whether this SDDC is designated for only single ESXi host.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSingleHostSddc() {
         return isSingleHostSddc;
     }
 
     /**
-     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for the
-     * default user on each ESXi host. Use a newline character to separate multiple keys. The SSH
-     * keys must be in the format required for the {@code authorized_keys} file
-     */
+     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
+     * the default user on each ESXi host. Use a newline character to separate multiple keys.
+     * The SSH keys must be in the format required for the {@code authorized_keys} file
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
     private final String sshAuthorizedKeys;
 
     /**
-     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for the
-     * default user on each ESXi host. Use a newline character to separate multiple keys. The SSH
-     * keys must be in the format required for the {@code authorized_keys} file
+     * One or more public SSH keys to be included in the {@code ~/.ssh/authorized_keys} file for
+     * the default user on each ESXi host. Use a newline character to separate multiple keys.
+     * The SSH keys must be in the format required for the {@code authorized_keys} file
      *
      * @return the value
-     */
+     **/
     public String getSshAuthorizedKeys() {
         return sshAuthorizedKeys;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -513,7 +515,6 @@ public final class CreateSddcDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/** Supported platform types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum PlatformTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported platform types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+public enum PlatformTypes {
     Linux("LINUX"),
     Windows("WINDOWS"),
     Solaris("SOLARIS"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Name of the company in different locales <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Name of the company in different locales
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BrandingSettingsCompanyNames.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BrandingSettingsCompanyNames.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BrandingSettingsCompanyNames
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "locale"})
     public BrandingSettingsCompanyNames(String value, String locale) {
@@ -34,22 +33,29 @@ public final class BrandingSettingsCompanyNames
     public static class Builder {
         /**
          * Company name
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Company name
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -57,22 +63,29 @@ public final class BrandingSettingsCompanyNames
         }
         /**
          * Locale
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: string
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locale")
         private String locale;
 
         /**
          * Locale
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: string
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
          * @param locale the value to set
          * @return this builder
-         */
+         **/
         public Builder locale(String locale) {
             this.locale = locale;
             this.__explicitlySet__.add("locale");
@@ -103,7 +116,9 @@ public final class BrandingSettingsCompanyNames
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,42 +129,56 @@ public final class BrandingSettingsCompanyNames
 
     /**
      * Company name
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Company name
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * Locale
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: string
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locale")
     private final String locale;
 
     /**
      * Locale
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: string
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getLocale() {
         return locale;
     }
@@ -161,7 +190,6 @@ public final class BrandingSettingsCompanyNames
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

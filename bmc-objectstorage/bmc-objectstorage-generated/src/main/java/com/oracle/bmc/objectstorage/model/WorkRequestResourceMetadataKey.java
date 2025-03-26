@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-/** The keys of WorkRequestResource metadata. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The keys of WorkRequestResource metadata.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum WorkRequestResourceMetadataKey {
     Region("REGION"),
     Namespace("NAMESPACE"),
     Bucket("BUCKET"),

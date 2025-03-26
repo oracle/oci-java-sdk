@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.licensemanager.model;
 
-/** Possible category of oracle product licenses. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-public enum ProductCategory implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible category of oracle product licenses.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+public enum ProductCategory {
     Base("BASE"),
     Option("OPTION"),
 

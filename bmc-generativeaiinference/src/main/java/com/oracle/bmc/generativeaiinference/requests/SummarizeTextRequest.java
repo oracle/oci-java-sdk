@@ -6,19 +6,21 @@ package com.oracle.bmc.generativeaiinference.requests;
 
 import com.oracle.bmc.generativeaiinference.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/SummarizeTextExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeTextRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/SummarizeTextExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeTextRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public class SummarizeTextRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.generativeaiinference.model.SummarizeTextDetails> {
 
-    /** Details for summarizing the text. */
+    /**
+     * Details for summarizing the text.
+     */
     private com.oracle.bmc.generativeaiinference.model.SummarizeTextDetails summarizeTextDetails;
 
-    /** Details for summarizing the text. */
+    /**
+     * Details for summarizing the text.
+     */
     public com.oracle.bmc.generativeaiinference.model.SummarizeTextDetails
             getSummarizeTextDetails() {
         return summarizeTextDetails;
@@ -26,33 +28,36 @@ public class SummarizeTextRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before that, in case of conflicting operations. For example, if
-     * a resource is deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+     * is rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before that, in case of conflicting operations. For example, if
-     * a resource is deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+     * is rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -65,16 +70,18 @@ public class SummarizeTextRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeTextRequest,
                     com.oracle.bmc.generativeaiinference.model.SummarizeTextDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for summarizing the text. */
+        /**
+         * Details for summarizing the text.
+         */
         private com.oracle.bmc.generativeaiinference.model.SummarizeTextDetails
                 summarizeTextDetails = null;
 
         /**
          * Details for summarizing the text.
-         *
          * @param summarizeTextDetails the value to set
          * @return this builder instance
          */
@@ -87,19 +94,18 @@ public class SummarizeTextRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before that, in case of conflicting operations. For
-         * example, if a resource is deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+         * is rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before that, in case of conflicting operations. For
-         * example, if a resource is deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+         * is rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -109,12 +115,13 @@ public class SummarizeTextRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -125,19 +132,18 @@ public class SummarizeTextRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -149,7 +155,6 @@ public class SummarizeTextRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeTextRequest o) {
@@ -164,11 +169,10 @@ public class SummarizeTextRequest
         /**
          * Build the instance of SummarizeTextRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeTextRequest
          */
@@ -181,7 +185,6 @@ public class SummarizeTextRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -194,8 +197,7 @@ public class SummarizeTextRequest
         /**
          * Build the instance of SummarizeTextRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeTextRequest
@@ -212,7 +214,6 @@ public class SummarizeTextRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -224,7 +225,6 @@ public class SummarizeTextRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

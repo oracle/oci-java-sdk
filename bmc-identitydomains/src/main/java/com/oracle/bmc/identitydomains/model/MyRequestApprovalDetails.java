@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Approvals created for this request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Approvals created for this request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MyRequestApprovalDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MyRequestApprovalDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MyRequestApprovalDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "approverId",
@@ -54,26 +53,35 @@ public final class MyRequestApprovalDetails
     public static class Builder {
         /**
          * Approver Id
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         */
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverId")
         private String approverId;
 
         /**
          * Approver Id
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         *
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
          * @param approverId the value to set
          * @return this builder
-         */
+         **/
         public Builder approverId(String approverId) {
             this.approverId = approverId;
             this.__explicitlySet__.add("approverId");
@@ -81,26 +89,35 @@ public final class MyRequestApprovalDetails
         }
         /**
          * Approver display name
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         */
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverDisplayName")
         private String approverDisplayName;
 
         /**
          * Approver display name
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         *
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
          * @param approverDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder approverDisplayName(String approverDisplayName) {
             this.approverDisplayName = approverDisplayName;
             this.__explicitlySet__.add("approverDisplayName");
@@ -108,26 +125,35 @@ public final class MyRequestApprovalDetails
         }
         /**
          * Approval Justification
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         */
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - idcsSearchable: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("justification")
         private String justification;
 
         /**
          * Approval Justification
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         *
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - idcsSearchable: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
          * @param justification the value to set
          * @return this builder
-         */
+         **/
         public Builder justification(String justification) {
             this.justification = justification;
             this.__explicitlySet__.add("justification");
@@ -135,26 +161,35 @@ public final class MyRequestApprovalDetails
         }
         /**
          * Approval Status
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         */
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * Approval Status
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         *
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -162,26 +197,35 @@ public final class MyRequestApprovalDetails
         }
         /**
          * Approval Order
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: integer - uniqueness: none - mutability: readOnly
-         */
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         *  - mutability: readOnly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("order")
         private Integer order;
 
         /**
          * Approval Order
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: integer - uniqueness: none - mutability: readOnly
-         *
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         *  - mutability: readOnly
          * @param order the value to set
          * @return this builder
-         */
+         **/
         public Builder order(Integer order) {
             this.order = order;
             this.__explicitlySet__.add("order");
@@ -189,26 +233,35 @@ public final class MyRequestApprovalDetails
         }
         /**
          * Approval Type (Escalation or Regular)
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         */
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approvalType")
         private String approvalType;
 
         /**
          * Approval Type (Escalation or Regular)
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default
-         * - type: string - uniqueness: none - mutability: readOnly
-         *
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         *  - mutability: readOnly
          * @param approvalType the value to set
          * @return this builder
-         */
+         **/
         public Builder approvalType(String approvalType) {
             this.approvalType = approvalType;
             this.__explicitlySet__.add("approvalType");
@@ -216,26 +269,35 @@ public final class MyRequestApprovalDetails
         }
         /**
          * Approval Update Time
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default
-         * - type: dateTime - uniqueness: none - mutability: readOnly
-         */
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - idcsSearchable: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
+         *  - mutability: readOnly
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private String timeUpdated;
 
         /**
          * Approval Update Time
-         *
-         * <p>*Added In:** 2307071836
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default
-         * - type: dateTime - uniqueness: none - mutability: readOnly
-         *
+         * <p>
+         **Added In:** 2307071836
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - idcsSearchable: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
+         *  - mutability: readOnly
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -288,7 +350,9 @@ public final class MyRequestApprovalDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -299,175 +363,238 @@ public final class MyRequestApprovalDetails
 
     /**
      * Approver Id
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     */
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverId")
     private final String approverId;
 
     /**
      * Approver Id
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     *
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
      * @return the value
-     */
+     **/
     public String getApproverId() {
         return approverId;
     }
 
     /**
      * Approver display name
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     */
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverDisplayName")
     private final String approverDisplayName;
 
     /**
      * Approver display name
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     *
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
      * @return the value
-     */
+     **/
     public String getApproverDisplayName() {
         return approverDisplayName;
     }
 
     /**
      * Approval Justification
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     */
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - idcsSearchable: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("justification")
     private final String justification;
 
     /**
      * Approval Justification
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     *
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - idcsSearchable: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
      * @return the value
-     */
+     **/
     public String getJustification() {
         return justification;
     }
 
     /**
      * Approval Status
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     */
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * Approval Status
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     *
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
     /**
      * Approval Order
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: integer - uniqueness: none - mutability: readOnly
-     */
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     *  - mutability: readOnly
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("order")
     private final Integer order;
 
     /**
      * Approval Order
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: integer - uniqueness: none - mutability: readOnly
-     *
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     *  - mutability: readOnly
      * @return the value
-     */
+     **/
     public Integer getOrder() {
         return order;
     }
 
     /**
      * Approval Type (Escalation or Regular)
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     */
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approvalType")
     private final String approvalType;
 
     /**
      * Approval Type (Escalation or Regular)
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - returned: default -
-     * type: string - uniqueness: none - mutability: readOnly
-     *
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     *  - mutability: readOnly
      * @return the value
-     */
+     **/
     public String getApprovalType() {
         return approvalType;
     }
 
     /**
      * Approval Update Time
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default -
-     * type: dateTime - uniqueness: none - mutability: readOnly
-     */
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - idcsSearchable: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
+     *  - mutability: readOnly
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final String timeUpdated;
 
     /**
      * Approval Update Time
-     *
-     * <p>*Added In:** 2307071836
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - idcsSearchable: false - returned: default -
-     * type: dateTime - uniqueness: none - mutability: readOnly
-     *
+     * <p>
+     **Added In:** 2307071836
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - idcsSearchable: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
+     *  - mutability: readOnly
      * @return the value
-     */
+     **/
     public String getTimeUpdated() {
         return timeUpdated;
     }
@@ -479,7 +606,6 @@ public final class MyRequestApprovalDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

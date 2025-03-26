@@ -6,84 +6,81 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDatabaseTableAccessEntriesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDatabaseTableAccessEntriesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDatabaseTableAccessEntriesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabaseTableAccessEntriesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListDatabaseTableAccessEntriesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the security policy report resource. */
+    /**
+     * The OCID of the security policy report resource.
+     */
     private String securityPolicyReportId;
 
-    /** The OCID of the security policy report resource. */
+    /**
+     * The OCID of the security policy report resource.
+     */
     public String getSecurityPolicyReportId() {
         return securityPolicyReportId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
      *
-     * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
      */
     private String scimQuery;
 
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
      *
-     * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
      */
     public String getScimQuery() {
         return scimQuery;
     }
-    /** The field to sort by. Only one sort parameter should be provided. */
+    /**
+     * The field to sort by. Only one sort parameter should be provided.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. Only one sort parameter should be provided. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. Only one sort parameter should be provided.
+     *
+     **/
+    public enum SortBy {
         Key("key"),
         Grantee("grantee"),
         AccessType("accessType"),
@@ -136,15 +133,22 @@ public class ListDatabaseTableAccessEntriesRequest
         }
     };
 
-    /** The field to sort by. Only one sort parameter should be provided. */
+    /**
+     * The field to sort by. Only one sort parameter should be provided.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -177,14 +181,20 @@ public class ListDatabaseTableAccessEntriesRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -192,15 +202,17 @@ public class ListDatabaseTableAccessEntriesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDatabaseTableAccessEntriesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the security policy report resource. */
+        /**
+         * The OCID of the security policy report resource.
+         */
         private String securityPolicyReportId = null;
 
         /**
          * The OCID of the security policy report resource.
-         *
          * @param securityPolicyReportId the value to set
          * @return this builder instance
          */
@@ -210,17 +222,12 @@ public class ListDatabaseTableAccessEntriesRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -230,19 +237,12 @@ public class ListDatabaseTableAccessEntriesRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -252,26 +252,25 @@ public class ListDatabaseTableAccessEntriesRequest
         }
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
          *
-         * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
          */
         private String scimQuery = null;
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
-         *
-         * <p>*Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(accessType eq 'SELECT') and (grantee eq 'ADMIN')
          *
          * @param scimQuery the value to set
          * @return this builder instance
@@ -281,7 +280,10 @@ public class ListDatabaseTableAccessEntriesRequest
             return this;
         }
 
-        /** The field to sort by. Only one sort parameter should be provided. */
+        /**
+         * The field to sort by. Only one sort parameter should be provided.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -295,12 +297,13 @@ public class ListDatabaseTableAccessEntriesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -309,12 +312,13 @@ public class ListDatabaseTableAccessEntriesRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -325,19 +329,18 @@ public class ListDatabaseTableAccessEntriesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -349,7 +352,6 @@ public class ListDatabaseTableAccessEntriesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDatabaseTableAccessEntriesRequest o) {
@@ -368,11 +370,10 @@ public class ListDatabaseTableAccessEntriesRequest
         /**
          * Build the instance of ListDatabaseTableAccessEntriesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDatabaseTableAccessEntriesRequest
          */
@@ -386,8 +387,7 @@ public class ListDatabaseTableAccessEntriesRequest
         /**
          * Build the instance of ListDatabaseTableAccessEntriesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDatabaseTableAccessEntriesRequest
@@ -403,14 +403,12 @@ public class ListDatabaseTableAccessEntriesRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDatabaseTableAccessEntriesRequest(securityPolicyReportId, limit, page,
-            // scimQuery, sortBy, sortOrder, opcRequestId);
+            // new ListDatabaseTableAccessEntriesRequest(securityPolicyReportId, limit, page, scimQuery, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -426,7 +424,6 @@ public class ListDatabaseTableAccessEntriesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

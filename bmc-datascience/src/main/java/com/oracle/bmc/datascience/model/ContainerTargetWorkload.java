@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The target workload of the container. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ContainerTargetWorkload implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The target workload of the container.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ContainerTargetWorkload {
     ModelDeployment("MODEL_DEPLOYMENT"),
     JobRun("JOB_RUN"),
     ;

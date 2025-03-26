@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible rollback cycle states for the Exadata Fleet Update Cycle resource. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum RollbackCycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible rollback cycle states for the Exadata Fleet Update Cycle resource.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum RollbackCycleStates {
     AbleToExecute("ABLE_TO_EXECUTE"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

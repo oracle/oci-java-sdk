@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Summary of a sensitive column present in a sensitive data model. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Summary of a sensitive column present in a sensitive data model.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SensitiveColumnSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SensitiveColumnSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SensitiveColumnSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -89,341 +88,340 @@ public final class SensitiveColumnSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique key that identifies the sensitive column. It's numeric and unique within a
-         * sensitive data model.
-         */
+         * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * The unique key that identifies the sensitive column. It's numeric and unique within a
-         * sensitive data model.
-         *
+         * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The OCID of the sensitive data model that contains the sensitive column. */
+        /**
+         * The OCID of the sensitive data model that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
         private String sensitiveDataModelId;
 
         /**
          * The OCID of the sensitive data model that contains the sensitive column.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             this.__explicitlySet__.add("sensitiveDataModelId");
             return this;
         }
-        /** The current state of the sensitive column. */
+        /**
+         * The current state of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private SensitiveColumnLifecycleState lifecycleState;
 
         /**
          * The current state of the sensitive column.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(SensitiveColumnLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Details about the current state of the sensitive column. */
+        /**
+         * Details about the current state of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details about the current state of the sensitive column.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The date and time, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the
-         * sensitive data model.
-         */
+         * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+         * the sensitive column was created in the sensitive data model.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the
-         * sensitive data model.
+         * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+         * the sensitive column was created in the sensitive data model.
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in
-         * the sensitive data model.
-         */
+         * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+         * the sensitive column was last updated in the sensitive data model.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in
-         * the sensitive data model.
+         * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+         * the sensitive column was last updated in the sensitive data model.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The name of the application associated with the sensitive column. It's useful when the
-         * application name is different from the schema name. Otherwise, it can be ignored.
-         */
+         * The name of the application associated with the sensitive column. It's useful when the application name is
+         * different from the schema name. Otherwise, it can be ignored.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appName")
         private String appName;
 
         /**
-         * The name of the application associated with the sensitive column. It's useful when the
-         * application name is different from the schema name. Otherwise, it can be ignored.
+         * The name of the application associated with the sensitive column. It's useful when the application name is
+         * different from the schema name. Otherwise, it can be ignored.
          *
          * @param appName the value to set
          * @return this builder
-         */
+         **/
         public Builder appName(String appName) {
             this.appName = appName;
             this.__explicitlySet__.add("appName");
             return this;
         }
-        /** The database schema that contains the sensitive column. */
+        /**
+         * The database schema that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
          * The database schema that contains the sensitive column.
-         *
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The database object that contains the sensitive column. */
+        /**
+         * The database object that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The database object that contains the sensitive column.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** The name of the sensitive column. */
+        /**
+         * The name of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
         /**
          * The name of the sensitive column.
-         *
          * @param columnName the value to set
          * @return this builder
-         */
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-        /** The type of the database object that contains the sensitive column. */
+        /**
+         * The type of the database object that contains the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private ObjectType objectType;
 
         /**
          * The type of the database object that contains the sensitive column.
-         *
          * @param objectType the value to set
          * @return this builder
-         */
+         **/
         public Builder objectType(ObjectType objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-        /** The data type of the sensitive column. */
+        /**
+         * The data type of the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * The data type of the sensitive column.
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
         /**
-         * The status of the sensitive column. VALID means the column is considered sensitive.
-         * INVALID means the column is not considered sensitive. Tracking invalid columns in a
-         * sensitive data model helps ensure that an incremental data discovery job does not
-         * identify these columns as sensitive again.
-         */
+         * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+         * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an
+         * incremental data discovery job does not identify these columns as sensitive again.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The status of the sensitive column. VALID means the column is considered sensitive.
-         * INVALID means the column is not considered sensitive. Tracking invalid columns in a
-         * sensitive data model helps ensure that an incremental data discovery job does not
-         * identify these columns as sensitive again.
+         * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+         * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an
+         * incremental data discovery job does not identify these columns as sensitive again.
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The OCID of the sensitive type associated with the sensitive column. */
+        /**
+         * The OCID of the sensitive type associated with the sensitive column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
         private String sensitiveTypeId;
 
         /**
          * The OCID of the sensitive type associated with the sensitive column.
-         *
          * @param sensitiveTypeId the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             this.__explicitlySet__.add("sensitiveTypeId");
             return this;
         }
         /**
-         * The source of the sensitive column. DISCOVERY indicates that the column was added to the
-         * sensitive data model using a data discovery job. MANUAL indicates that the column was
-         * added manually.
-         */
+         * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model
+         * using a data discovery job. MANUAL indicates that the column was added manually.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private Source source;
 
         /**
-         * The source of the sensitive column. DISCOVERY indicates that the column was added to the
-         * sensitive data model using a data discovery job. MANUAL indicates that the column was
-         * added manually.
+         * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model
+         * using a data discovery job. MANUAL indicates that the column was added manually.
          *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(Source source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
         /**
-         * Unique keys identifying the columns that are parents of the sensitive column. At present,
-         * it tracks a single parent only.
-         */
+         * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
         private java.util.List<String> parentColumnKeys;
 
         /**
-         * Unique keys identifying the columns that are parents of the sensitive column. At present,
-         * it tracks a single parent only.
-         *
+         * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
          * @param parentColumnKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder parentColumnKeys(java.util.List<String> parentColumnKeys) {
             this.parentColumnKeys = parentColumnKeys;
             this.__explicitlySet__.add("parentColumnKeys");
             return this;
         }
         /**
-         * The type of referential relationship the sensitive column has with its parent. NONE
-         * indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the
-         * relationship is defined in the database dictionary. APP_DEFINED indicates that the
-         * relationship is defined at the application level and not in the database dictionary.
-         */
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+         * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+         * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relationType")
         private RelationType relationType;
 
         /**
-         * The type of referential relationship the sensitive column has with its parent. NONE
-         * indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the
-         * relationship is defined in the database dictionary. APP_DEFINED indicates that the
-         * relationship is defined at the application level and not in the database dictionary.
+         * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+         * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+         * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
          *
          * @param relationType the value to set
          * @return this builder
-         */
+         **/
         public Builder relationType(RelationType relationType) {
             this.relationType = relationType;
             this.__explicitlySet__.add("relationType");
             return this;
         }
-        /** The estimated number of data values the column has in the associated database. */
+        /**
+         * The estimated number of data values the column has in the associated database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedDataValueCount")
         private Long estimatedDataValueCount;
 
         /**
          * The estimated number of data values the column has in the associated database.
-         *
          * @param estimatedDataValueCount the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedDataValueCount(Long estimatedDataValueCount) {
             this.estimatedDataValueCount = estimatedDataValueCount;
             this.__explicitlySet__.add("estimatedDataValueCount");
             return this;
         }
         /**
-         * Original data values collected for the sensitive column from the associated database.
-         * Sample data helps review the column and ensure that it actually contains sensitive data.
-         * Note that sample data is retrieved by a data discovery job only if the
-         * isSampleDataCollectionEnabled attribute is set to true. At present, only one data value
-         * is collected per sensitive column.
-         */
+         * Original data values collected for the sensitive column from the associated database. Sample data helps review
+         * the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data
+         * discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data
+         * value is collected per sensitive column.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleDataValues")
         private java.util.List<String> sampleDataValues;
 
         /**
-         * Original data values collected for the sensitive column from the associated database.
-         * Sample data helps review the column and ensure that it actually contains sensitive data.
-         * Note that sample data is retrieved by a data discovery job only if the
-         * isSampleDataCollectionEnabled attribute is set to true. At present, only one data value
-         * is collected per sensitive column.
+         * Original data values collected for the sensitive column from the associated database. Sample data helps review
+         * the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data
+         * discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data
+         * value is collected per sensitive column.
          *
          * @param sampleDataValues the value to set
          * @return this builder
-         */
+         **/
         public Builder sampleDataValues(java.util.List<String> sampleDataValues) {
             this.sampleDataValues = sampleDataValues;
             this.__explicitlySet__.add("sampleDataValues");
@@ -524,7 +522,9 @@ public final class SensitiveColumnSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -534,57 +534,57 @@ public final class SensitiveColumnSummary
     }
 
     /**
-     * The unique key that identifies the sensitive column. It's numeric and unique within a
-     * sensitive data model.
-     */
+     * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * The unique key that identifies the sensitive column. It's numeric and unique within a
-     * sensitive data model.
-     *
+     * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The OCID of the sensitive data model that contains the sensitive column. */
+    /**
+     * The OCID of the sensitive data model that contains the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveDataModelId")
     private final String sensitiveDataModelId;
 
     /**
      * The OCID of the sensitive data model that contains the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
 
-    /** The current state of the sensitive column. */
+    /**
+     * The current state of the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final SensitiveColumnLifecycleState lifecycleState;
 
     /**
      * The current state of the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public SensitiveColumnLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Details about the current state of the sensitive column. */
+    /**
+     * Details about the current state of the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details about the current state of the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -592,7 +592,8 @@ public final class SensitiveColumnSummary
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
      * the sensitive column was created in the sensitive data model.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -601,7 +602,7 @@ public final class SensitiveColumnSummary
      * the sensitive column was created in the sensitive data model.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -609,7 +610,8 @@ public final class SensitiveColumnSummary
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
      * the sensitive column was last updated in the sensitive data model.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -618,75 +620,81 @@ public final class SensitiveColumnSummary
      * the sensitive column was last updated in the sensitive data model.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The name of the application associated with the sensitive column. It's useful when the
-     * application name is different from the schema name. Otherwise, it can be ignored.
-     */
+     * The name of the application associated with the sensitive column. It's useful when the application name is
+     * different from the schema name. Otherwise, it can be ignored.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appName")
     private final String appName;
 
     /**
-     * The name of the application associated with the sensitive column. It's useful when the
-     * application name is different from the schema name. Otherwise, it can be ignored.
+     * The name of the application associated with the sensitive column. It's useful when the application name is
+     * different from the schema name. Otherwise, it can be ignored.
      *
      * @return the value
-     */
+     **/
     public String getAppName() {
         return appName;
     }
 
-    /** The database schema that contains the sensitive column. */
+    /**
+     * The database schema that contains the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
      * The database schema that contains the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** The database object that contains the sensitive column. */
+    /**
+     * The database object that contains the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The database object that contains the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** The name of the sensitive column. */
+    /**
+     * The name of the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
     /**
      * The name of the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getColumnName() {
         return columnName;
     }
 
-    /** The type of the database object that contains the sensitive column. */
-    public enum ObjectType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the database object that contains the sensitive column.
+     **/
+    public enum ObjectType {
         Table("TABLE"),
         EditioningView("EDITIONING_VIEW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -725,45 +733,47 @@ public final class SensitiveColumnSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of the database object that contains the sensitive column. */
+    /**
+     * The type of the database object that contains the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final ObjectType objectType;
 
     /**
      * The type of the database object that contains the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public ObjectType getObjectType() {
         return objectType;
     }
 
-    /** The data type of the sensitive column. */
+    /**
+     * The data type of the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * The data type of the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getDataType() {
         return dataType;
     }
 
     /**
-     * The status of the sensitive column. VALID means the column is considered sensitive. INVALID
-     * means the column is not considered sensitive. Tracking invalid columns in a sensitive data
-     * model helps ensure that an incremental data discovery job does not identify these columns as
-     * sensitive again.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+     * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an
+     * incremental data discovery job does not identify these columns as sensitive again.
+     *
+     **/
+    public enum Status {
         Valid("VALID"),
         Invalid("INVALID"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -802,51 +812,51 @@ public final class SensitiveColumnSummary
         }
     };
     /**
-     * The status of the sensitive column. VALID means the column is considered sensitive. INVALID
-     * means the column is not considered sensitive. Tracking invalid columns in a sensitive data
-     * model helps ensure that an incremental data discovery job does not identify these columns as
-     * sensitive again.
-     */
+     * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+     * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an
+     * incremental data discovery job does not identify these columns as sensitive again.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The status of the sensitive column. VALID means the column is considered sensitive. INVALID
-     * means the column is not considered sensitive. Tracking invalid columns in a sensitive data
-     * model helps ensure that an incremental data discovery job does not identify these columns as
-     * sensitive again.
+     * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column
+     * is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an
+     * incremental data discovery job does not identify these columns as sensitive again.
      *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The OCID of the sensitive type associated with the sensitive column. */
+    /**
+     * The OCID of the sensitive type associated with the sensitive column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
     private final String sensitiveTypeId;
 
     /**
      * The OCID of the sensitive type associated with the sensitive column.
-     *
      * @return the value
-     */
+     **/
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
 
     /**
-     * The source of the sensitive column. DISCOVERY indicates that the column was added to the
-     * sensitive data model using a data discovery job. MANUAL indicates that the column was added
-     * manually.
-     */
-    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
+     * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model
+     * using a data discovery job. MANUAL indicates that the column was added manually.
+     *
+     **/
+    public enum Source {
         Manual("MANUAL"),
         Discovery("DISCOVERY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -885,55 +895,51 @@ public final class SensitiveColumnSummary
         }
     };
     /**
-     * The source of the sensitive column. DISCOVERY indicates that the column was added to the
-     * sensitive data model using a data discovery job. MANUAL indicates that the column was added
-     * manually.
-     */
+     * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model
+     * using a data discovery job. MANUAL indicates that the column was added manually.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final Source source;
 
     /**
-     * The source of the sensitive column. DISCOVERY indicates that the column was added to the
-     * sensitive data model using a data discovery job. MANUAL indicates that the column was added
-     * manually.
+     * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model
+     * using a data discovery job. MANUAL indicates that the column was added manually.
      *
      * @return the value
-     */
+     **/
     public Source getSource() {
         return source;
     }
 
     /**
-     * Unique keys identifying the columns that are parents of the sensitive column. At present, it
-     * tracks a single parent only.
-     */
+     * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentColumnKeys")
     private final java.util.List<String> parentColumnKeys;
 
     /**
-     * Unique keys identifying the columns that are parents of the sensitive column. At present, it
-     * tracks a single parent only.
-     *
+     * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * @return the value
-     */
+     **/
     public java.util.List<String> getParentColumnKeys() {
         return parentColumnKeys;
     }
 
     /**
-     * The type of referential relationship the sensitive column has with its parent. NONE indicates
-     * that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship
-     * is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined
-     * at the application level and not in the database dictionary.
-     */
-    public enum RelationType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+     * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+     * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+     *
+     **/
+    public enum RelationType {
         None("NONE"),
         AppDefined("APP_DEFINED"),
         DbDefined("DB_DEFINED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -973,56 +979,57 @@ public final class SensitiveColumnSummary
         }
     };
     /**
-     * The type of referential relationship the sensitive column has with its parent. NONE indicates
-     * that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship
-     * is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined
-     * at the application level and not in the database dictionary.
-     */
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+     * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+     * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relationType")
     private final RelationType relationType;
 
     /**
-     * The type of referential relationship the sensitive column has with its parent. NONE indicates
-     * that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship
-     * is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined
-     * at the application level and not in the database dictionary.
+     * The type of referential relationship the sensitive column has with its parent. NONE indicates that the
+     * sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database
+     * dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      *
      * @return the value
-     */
+     **/
     public RelationType getRelationType() {
         return relationType;
     }
 
-    /** The estimated number of data values the column has in the associated database. */
+    /**
+     * The estimated number of data values the column has in the associated database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedDataValueCount")
     private final Long estimatedDataValueCount;
 
     /**
      * The estimated number of data values the column has in the associated database.
-     *
      * @return the value
-     */
+     **/
     public Long getEstimatedDataValueCount() {
         return estimatedDataValueCount;
     }
 
     /**
-     * Original data values collected for the sensitive column from the associated database. Sample
-     * data helps review the column and ensure that it actually contains sensitive data. Note that
-     * sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled
-     * attribute is set to true. At present, only one data value is collected per sensitive column.
-     */
+     * Original data values collected for the sensitive column from the associated database. Sample data helps review
+     * the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data
+     * discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data
+     * value is collected per sensitive column.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataValues")
     private final java.util.List<String> sampleDataValues;
 
     /**
-     * Original data values collected for the sensitive column from the associated database. Sample
-     * data helps review the column and ensure that it actually contains sensitive data. Note that
-     * sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled
-     * attribute is set to true. At present, only one data value is collected per sensitive column.
+     * Original data values collected for the sensitive column from the associated database. Sample data helps review
+     * the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data
+     * discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data
+     * value is collected per sensitive column.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSampleDataValues() {
         return sampleDataValues;
     }
@@ -1034,7 +1041,6 @@ public final class SensitiveColumnSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

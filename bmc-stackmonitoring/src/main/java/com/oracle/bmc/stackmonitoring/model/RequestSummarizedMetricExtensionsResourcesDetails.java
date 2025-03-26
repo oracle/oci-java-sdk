@@ -5,24 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Filtering criteria data to be specified in the request. Either metricExtensionId or compartmentId
- * must be passed even when no other filter property is passed. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Filtering criteria data to be specified in the request. Either metricExtensionId or compartmentId must be passed even when no other filter property is passed.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RequestSummarizedMetricExtensionsResourcesDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RequestSummarizedMetricExtensionsResourcesDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RequestSummarizedMetricExtensionsResourcesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metricExtensionId",
@@ -57,132 +55,128 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Metric Extension resource
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricExtensionId")
         private String metricExtensionId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Metric Extension resource
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
          * @param metricExtensionId the value to set
          * @return this builder
-         */
+         **/
         public Builder metricExtensionId(String metricExtensionId) {
             this.metricExtensionId = metricExtensionId;
             this.__explicitlySet__.add("metricExtensionId");
             return this;
         }
-        /** Resource type to which Metric Extension applies */
+        /**
+         * Resource type to which Metric Extension applies
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * Resource type to which Metric Extension applies
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         */
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         *
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Filter to return metric extensions based on input enable status i.e. Enabled/Disabled */
+        /**
+         * Filter to return metric extensions based on input enable status i.e. Enabled/Disabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationStatus")
         private AssociationStatus associationStatus;
 
         /**
          * Filter to return metric extensions based on input enable status i.e. Enabled/Disabled
-         *
          * @param associationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder associationStatus(AssociationStatus associationStatus) {
             this.associationStatus = associationStatus;
             this.__explicitlySet__.add("associationStatus");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Monitored Resource
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Monitored Resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Monitored Resource
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Monitored Resource
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** The field to group by */
+        /**
+         * The field to group by
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private GroupBy groupBy;
 
         /**
          * The field to group by
-         *
          * @param groupBy the value to set
          * @return this builder
-         */
+         **/
         public Builder groupBy(GroupBy groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
             return this;
         }
-        /** Result will ne sorted by this parameter value */
+        /**
+         * Result will ne sorted by this parameter value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private SortBy sortBy;
 
         /**
          * Result will ne sorted by this parameter value
-         *
          * @param sortBy the value to set
          * @return this builder
-         */
+         **/
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-        /** Sort orders */
+        /**
+         * Sort orders
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
          * Sort orders
-         *
          * @param sortOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
@@ -239,7 +233,9 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -249,54 +245,51 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric
-     * Extension resource
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricExtensionId")
     private final String metricExtensionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric
-     * Extension resource
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
      * @return the value
-     */
+     **/
     public String getMetricExtensionId() {
         return metricExtensionId;
     }
 
-    /** Resource type to which Metric Extension applies */
+    /**
+     * Resource type to which Metric Extension applies
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * Resource type to which Metric Extension applies
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     */
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     *
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Filter to return metric extensions based on input enable status i.e. Enabled/Disabled */
-    public enum AssociationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Filter to return metric extensions based on input enable status i.e. Enabled/Disabled
+     **/
+    public enum AssociationStatus {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         ;
@@ -328,38 +321,38 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
             throw new IllegalArgumentException("Invalid AssociationStatus: " + key);
         }
     };
-    /** Filter to return metric extensions based on input enable status i.e. Enabled/Disabled */
+    /**
+     * Filter to return metric extensions based on input enable status i.e. Enabled/Disabled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationStatus")
     private final AssociationStatus associationStatus;
 
     /**
      * Filter to return metric extensions based on input enable status i.e. Enabled/Disabled
-     *
      * @return the value
-     */
+     **/
     public AssociationStatus getAssociationStatus() {
         return associationStatus;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * Monitored Resource
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Monitored Resource
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * Monitored Resource
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Monitored Resource
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** The field to group by */
-    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to group by
+     **/
+    public enum GroupBy {
         MetricExtensionId("METRIC_EXTENSION_ID"),
         ;
 
@@ -390,21 +383,24 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
             throw new IllegalArgumentException("Invalid GroupBy: " + key);
         }
     };
-    /** The field to group by */
+    /**
+     * The field to group by
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final GroupBy groupBy;
 
     /**
      * The field to group by
-     *
      * @return the value
-     */
+     **/
     public GroupBy getGroupBy() {
         return groupBy;
     }
 
-    /** Result will ne sorted by this parameter value */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Result will ne sorted by this parameter value
+     **/
+    public enum SortBy {
         Count("COUNT"),
         ;
 
@@ -435,21 +431,24 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-    /** Result will ne sorted by this parameter value */
+    /**
+     * Result will ne sorted by this parameter value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final SortBy sortBy;
 
     /**
      * Result will ne sorted by this parameter value
-     *
      * @return the value
-     */
+     **/
     public SortBy getSortBy() {
         return sortBy;
     }
 
-    /** Sort orders */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Sort orders
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -481,15 +480,16 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-    /** Sort orders */
+    /**
+     * Sort orders
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
      * Sort orders
-     *
      * @return the value
-     */
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -501,7 +501,6 @@ public final class RequestSummarizedMetricExtensionsResourcesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

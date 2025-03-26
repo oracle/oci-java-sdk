@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** The source of encryption key. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum EncryptionKeySource implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The source of encryption key.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum EncryptionKeySource {
     OracleManaged("ORACLE_MANAGED"),
     CustomerManaged("CUSTOMER_MANAGED"),
 

@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The information about all updatable parameters of a SQL Endpoint. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * The information about all updatable parameters of a SQL Endpoint.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateSqlEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateSqlEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateSqlEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -71,23 +70,20 @@ public final class UpdateSqlEndpointDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -95,68 +91,70 @@ public final class UpdateSqlEndpointDetails
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** The SQL Endpoint name, which can be changed. */
+        /**
+         * The SQL Endpoint name, which can be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The SQL Endpoint name, which can be changed.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of CreateSQLEndpointDetails. */
+        /**
+         * The description of CreateSQLEndpointDetails.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of CreateSQLEndpointDetails.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The shape of the SQL Endpoint driver instance. */
+        /**
+         * The shape of the SQL Endpoint driver instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
         private String driverShape;
 
         /**
          * The shape of the SQL Endpoint driver instance.
-         *
          * @param driverShape the value to set
          * @return this builder
-         */
+         **/
         public Builder driverShape(String driverShape) {
             this.driverShape = driverShape;
             this.__explicitlySet__.add("driverShape");
@@ -171,16 +169,17 @@ public final class UpdateSqlEndpointDetails
             this.__explicitlySet__.add("driverShapeConfig");
             return this;
         }
-        /** The shape of the SQL Endpoint worker instance. */
+        /**
+         * The shape of the SQL Endpoint worker instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
         private String executorShape;
 
         /**
          * The shape of the SQL Endpoint worker instance.
-         *
          * @param executorShape the value to set
          * @return this builder
-         */
+         **/
         public Builder executorShape(String executorShape) {
             this.executorShape = executorShape;
             this.__explicitlySet__.add("executorShape");
@@ -195,86 +194,91 @@ public final class UpdateSqlEndpointDetails
             this.__explicitlySet__.add("executorShapeConfig");
             return this;
         }
-        /** The minimum number of executors. */
+        /**
+         * The minimum number of executors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minExecutorCount")
         private Integer minExecutorCount;
 
         /**
          * The minimum number of executors.
-         *
          * @param minExecutorCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minExecutorCount(Integer minExecutorCount) {
             this.minExecutorCount = minExecutorCount;
             this.__explicitlySet__.add("minExecutorCount");
             return this;
         }
-        /** The maximum number of executors. */
+        /**
+         * The maximum number of executors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxExecutorCount")
         private Integer maxExecutorCount;
 
         /**
          * The maximum number of executors.
-         *
          * @param maxExecutorCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maxExecutorCount(Integer maxExecutorCount) {
             this.maxExecutorCount = maxExecutorCount;
             this.__explicitlySet__.add("maxExecutorCount");
             return this;
         }
-        /** Metastore OCID */
+        /**
+         * Metastore OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
         /**
          * Metastore OCID
-         *
          * @param metastoreId the value to set
          * @return this builder
-         */
+         **/
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-        /** OCI lake OCID */
+        /**
+         * OCI lake OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lakeId")
         private String lakeId;
 
         /**
          * OCI lake OCID
-         *
          * @param lakeId the value to set
          * @return this builder
-         */
+         **/
         public Builder lakeId(String lakeId) {
             this.lakeId = lakeId;
             this.__explicitlySet__.add("lakeId");
             return this;
         }
         /**
-         * The Spark configuration passed to the running process. See
-         * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-         * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all
-         * Spark properties are permitted to be set. Attempting to set a property that is not
-         * allowed to be overwritten will cause a 400 status to be returned.
-         */
+         * The Spark configuration passed to the running process.
+         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+         * not allowed to be overwritten will cause a 400 status to be returned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sparkAdvancedConfigurations")
         private java.util.Map<String, String> sparkAdvancedConfigurations;
 
         /**
-         * The Spark configuration passed to the running process. See
-         * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-         * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all
-         * Spark properties are permitted to be set. Attempting to set a property that is not
-         * allowed to be overwritten will cause a 400 status to be returned.
+         * The Spark configuration passed to the running process.
+         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+         * not allowed to be overwritten will cause a 400 status to be returned.
          *
          * @param sparkAdvancedConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder sparkAdvancedConfigurations(
                 java.util.Map<String, String> sparkAdvancedConfigurations) {
             this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
@@ -352,7 +356,9 @@ public final class UpdateSqlEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -362,82 +368,81 @@ public final class UpdateSqlEndpointDetails
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /** The SQL Endpoint name, which can be changed. */
+    /**
+     * The SQL Endpoint name, which can be changed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The SQL Endpoint name, which can be changed.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description of CreateSQLEndpointDetails. */
+    /**
+     * The description of CreateSQLEndpointDetails.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of CreateSQLEndpointDetails.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The shape of the SQL Endpoint driver instance. */
+    /**
+     * The shape of the SQL Endpoint driver instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
     private final String driverShape;
 
     /**
      * The shape of the SQL Endpoint driver instance.
-     *
      * @return the value
-     */
+     **/
     public String getDriverShape() {
         return driverShape;
     }
@@ -449,15 +454,16 @@ public final class UpdateSqlEndpointDetails
         return driverShapeConfig;
     }
 
-    /** The shape of the SQL Endpoint worker instance. */
+    /**
+     * The shape of the SQL Endpoint worker instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
     private final String executorShape;
 
     /**
      * The shape of the SQL Endpoint worker instance.
-     *
      * @return the value
-     */
+     **/
     public String getExecutorShape() {
         return executorShape;
     }
@@ -469,77 +475,82 @@ public final class UpdateSqlEndpointDetails
         return executorShapeConfig;
     }
 
-    /** The minimum number of executors. */
+    /**
+     * The minimum number of executors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minExecutorCount")
     private final Integer minExecutorCount;
 
     /**
      * The minimum number of executors.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinExecutorCount() {
         return minExecutorCount;
     }
 
-    /** The maximum number of executors. */
+    /**
+     * The maximum number of executors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxExecutorCount")
     private final Integer maxExecutorCount;
 
     /**
      * The maximum number of executors.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxExecutorCount() {
         return maxExecutorCount;
     }
 
-    /** Metastore OCID */
+    /**
+     * Metastore OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
     /**
      * Metastore OCID
-     *
      * @return the value
-     */
+     **/
     public String getMetastoreId() {
         return metastoreId;
     }
 
-    /** OCI lake OCID */
+    /**
+     * OCI lake OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lakeId")
     private final String lakeId;
 
     /**
      * OCI lake OCID
-     *
      * @return the value
-     */
+     **/
     public String getLakeId() {
         return lakeId;
     }
 
     /**
-     * The Spark configuration passed to the running process. See
-     * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-     * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark
-     * properties are permitted to be set. Attempting to set a property that is not allowed to be
-     * overwritten will cause a 400 status to be returned.
-     */
+     * The Spark configuration passed to the running process.
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+     * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+     * not allowed to be overwritten will cause a 400 status to be returned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sparkAdvancedConfigurations")
     private final java.util.Map<String, String> sparkAdvancedConfigurations;
 
     /**
-     * The Spark configuration passed to the running process. See
-     * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
-     * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark
-     * properties are permitted to be set. Attempting to set a property that is not allowed to be
-     * overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process.
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
+     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
+     * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
+     * not allowed to be overwritten will cause a 400 status to be returned.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getSparkAdvancedConfigurations() {
         return sparkAdvancedConfigurations;
     }
@@ -551,7 +562,6 @@ public final class UpdateSqlEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

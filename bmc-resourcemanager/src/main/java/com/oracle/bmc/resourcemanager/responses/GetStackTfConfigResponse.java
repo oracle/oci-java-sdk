@@ -6,26 +6,28 @@ package com.oracle.bmc.resourcemanager.responses;
 
 import com.oracle.bmc.resourcemanager.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
     /**
      * Unique identifier for the request.
-     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code java.io.InputStream} instance. */
+    /**
+     * The returned java.io.InputStream instance.
+     */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned {@code java.io.InputStream} instance.
-     *
+     * The returned java.io.InputStream instance.
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -40,7 +42,7 @@ public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetStackTfConfigResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             java.io.InputStream inputStream) {
         super(__httpStatusCode__, headers);
@@ -48,30 +50,28 @@ public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcRespon
         this.inputStream = inputStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetStackTfConfigResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -80,12 +80,13 @@ public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code java.io.InputStream} instance. */
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned {@code java.io.InputStream} instance.
-         *
+         * The returned java.io.InputStream instance.
          * @param inputStream the value to set
          * @return this builder
          */
@@ -96,10 +97,8 @@ public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetStackTfConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -111,10 +110,8 @@ public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetStackTfConfigResponse build() {
             return new GetStackTfConfigResponse(
                     __httpStatusCode__, headers, opcRequestId, inputStream);
@@ -123,7 +120,6 @@ public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

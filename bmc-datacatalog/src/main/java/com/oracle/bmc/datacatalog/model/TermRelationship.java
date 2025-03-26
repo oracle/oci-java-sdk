@@ -5,23 +5,20 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Full term relationship definition. Business term relationship between two terms in a business
- * glossary. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Full term relationship definition. Business term relationship between two terms in a business glossary.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TermRelationship.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TermRelationship
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TermRelationship extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -79,37 +76,37 @@ public final class TermRelationship
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique term relationship key that is immutable. */
+        /**
+         * Unique term relationship key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique term relationship key that is immutable.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.This is the same as relationshipType for
-         * termRelationship
-         */
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.This is the same as relationshipType for termRelationship
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.This is the same as relationshipType for
-         * termRelationship
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.This is the same as relationshipType for termRelationship
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -117,215 +114,227 @@ public final class TermRelationship
         }
         /**
          * Detailed description of the term relationship usually defined at the time of creation.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the term relationship usually defined at the time of creation.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Unique id of the related term. */
+        /**
+         * Unique id of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedTermKey")
         private String relatedTermKey;
 
         /**
          * Unique id of the related term.
-         *
          * @param relatedTermKey the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedTermKey(String relatedTermKey) {
             this.relatedTermKey = relatedTermKey;
             this.__explicitlySet__.add("relatedTermKey");
             return this;
         }
-        /** Name of the related term. */
+        /**
+         * Name of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedTermDisplayName")
         private String relatedTermDisplayName;
 
         /**
          * Name of the related term.
-         *
          * @param relatedTermDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedTermDisplayName(String relatedTermDisplayName) {
             this.relatedTermDisplayName = relatedTermDisplayName;
             this.__explicitlySet__.add("relatedTermDisplayName");
             return this;
         }
-        /** Description of the related term. */
+        /**
+         * Description of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedTermDescription")
         private String relatedTermDescription;
 
         /**
          * Description of the related term.
-         *
          * @param relatedTermDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedTermDescription(String relatedTermDescription) {
             this.relatedTermDescription = relatedTermDescription;
             this.__explicitlySet__.add("relatedTermDescription");
             return this;
         }
-        /** Full path of the related term. */
+        /**
+         * Full path of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedTermPath")
         private String relatedTermPath;
 
         /**
          * Full path of the related term.
-         *
          * @param relatedTermPath the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedTermPath(String relatedTermPath) {
             this.relatedTermPath = relatedTermPath;
             this.__explicitlySet__.add("relatedTermPath");
             return this;
         }
-        /** Glossary key of the related term. */
+        /**
+         * Glossary key of the related term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedTermGlossaryKey")
         private String relatedTermGlossaryKey;
 
         /**
          * Glossary key of the related term.
-         *
          * @param relatedTermGlossaryKey the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedTermGlossaryKey(String relatedTermGlossaryKey) {
             this.relatedTermGlossaryKey = relatedTermGlossaryKey;
             this.__explicitlySet__.add("relatedTermGlossaryKey");
             return this;
         }
-        /** URI to the term relationship instance in the API. */
+        /**
+         * URI to the term relationship instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
          * URI to the term relationship instance in the API.
-         *
          * @param uri the value to set
          * @return this builder
-         */
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-        /** This relationships parent term key. */
+        /**
+         * This relationships parent term key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
         private String parentTermKey;
 
         /**
          * This relationships parent term key.
-         *
          * @param parentTermKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermKey(String parentTermKey) {
             this.parentTermKey = parentTermKey;
             this.__explicitlySet__.add("parentTermKey");
             return this;
         }
-        /** Name of the parent term. */
+        /**
+         * Name of the parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermDisplayName")
         private String parentTermDisplayName;
 
         /**
          * Name of the parent term.
-         *
          * @param parentTermDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermDisplayName(String parentTermDisplayName) {
             this.parentTermDisplayName = parentTermDisplayName;
             this.__explicitlySet__.add("parentTermDisplayName");
             return this;
         }
-        /** Description of the parent term. */
+        /**
+         * Description of the parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermDescription")
         private String parentTermDescription;
 
         /**
          * Description of the parent term.
-         *
          * @param parentTermDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermDescription(String parentTermDescription) {
             this.parentTermDescription = parentTermDescription;
             this.__explicitlySet__.add("parentTermDescription");
             return this;
         }
-        /** Full path of the parent term. */
+        /**
+         * Full path of the parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermPath")
         private String parentTermPath;
 
         /**
          * Full path of the parent term.
-         *
          * @param parentTermPath the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermPath(String parentTermPath) {
             this.parentTermPath = parentTermPath;
             this.__explicitlySet__.add("parentTermPath");
             return this;
         }
-        /** Glossary key of the parent term. */
+        /**
+         * Glossary key of the parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermGlossaryKey")
         private String parentTermGlossaryKey;
 
         /**
          * Glossary key of the parent term.
-         *
          * @param parentTermGlossaryKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermGlossaryKey(String parentTermGlossaryKey) {
             this.parentTermGlossaryKey = parentTermGlossaryKey;
             this.__explicitlySet__.add("parentTermGlossaryKey");
             return this;
         }
         /**
-         * The date and time the term relationship was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-         */
+         * The date and time the term relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the term relationship was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+         * The date and time the term relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** State of the term relationship. */
+        /**
+         * State of the term relationship.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * State of the term relationship.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -414,7 +423,9 @@ public final class TermRelationship
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -423,218 +434,234 @@ public final class TermRelationship
         return new Builder().copy(this);
     }
 
-    /** Unique term relationship key that is immutable. */
+    /**
+     * Unique term relationship key that is immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique term relationship key that is immutable.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.This is the same as relationshipType for termRelationship
-     */
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.This is the same as relationshipType for termRelationship
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.This is the same as relationshipType for termRelationship
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.This is the same as relationshipType for termRelationship
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Detailed description of the term relationship usually defined at the time of creation. */
+    /**
+     * Detailed description of the term relationship usually defined at the time of creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the term relationship usually defined at the time of creation.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Unique id of the related term. */
+    /**
+     * Unique id of the related term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermKey")
     private final String relatedTermKey;
 
     /**
      * Unique id of the related term.
-     *
      * @return the value
-     */
+     **/
     public String getRelatedTermKey() {
         return relatedTermKey;
     }
 
-    /** Name of the related term. */
+    /**
+     * Name of the related term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermDisplayName")
     private final String relatedTermDisplayName;
 
     /**
      * Name of the related term.
-     *
      * @return the value
-     */
+     **/
     public String getRelatedTermDisplayName() {
         return relatedTermDisplayName;
     }
 
-    /** Description of the related term. */
+    /**
+     * Description of the related term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermDescription")
     private final String relatedTermDescription;
 
     /**
      * Description of the related term.
-     *
      * @return the value
-     */
+     **/
     public String getRelatedTermDescription() {
         return relatedTermDescription;
     }
 
-    /** Full path of the related term. */
+    /**
+     * Full path of the related term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermPath")
     private final String relatedTermPath;
 
     /**
      * Full path of the related term.
-     *
      * @return the value
-     */
+     **/
     public String getRelatedTermPath() {
         return relatedTermPath;
     }
 
-    /** Glossary key of the related term. */
+    /**
+     * Glossary key of the related term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedTermGlossaryKey")
     private final String relatedTermGlossaryKey;
 
     /**
      * Glossary key of the related term.
-     *
      * @return the value
-     */
+     **/
     public String getRelatedTermGlossaryKey() {
         return relatedTermGlossaryKey;
     }
 
-    /** URI to the term relationship instance in the API. */
+    /**
+     * URI to the term relationship instance in the API.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
      * URI to the term relationship instance in the API.
-     *
      * @return the value
-     */
+     **/
     public String getUri() {
         return uri;
     }
 
-    /** This relationships parent term key. */
+    /**
+     * This relationships parent term key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
     private final String parentTermKey;
 
     /**
      * This relationships parent term key.
-     *
      * @return the value
-     */
+     **/
     public String getParentTermKey() {
         return parentTermKey;
     }
 
-    /** Name of the parent term. */
+    /**
+     * Name of the parent term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermDisplayName")
     private final String parentTermDisplayName;
 
     /**
      * Name of the parent term.
-     *
      * @return the value
-     */
+     **/
     public String getParentTermDisplayName() {
         return parentTermDisplayName;
     }
 
-    /** Description of the parent term. */
+    /**
+     * Description of the parent term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermDescription")
     private final String parentTermDescription;
 
     /**
      * Description of the parent term.
-     *
      * @return the value
-     */
+     **/
     public String getParentTermDescription() {
         return parentTermDescription;
     }
 
-    /** Full path of the parent term. */
+    /**
+     * Full path of the parent term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermPath")
     private final String parentTermPath;
 
     /**
      * Full path of the parent term.
-     *
      * @return the value
-     */
+     **/
     public String getParentTermPath() {
         return parentTermPath;
     }
 
-    /** Glossary key of the parent term. */
+    /**
+     * Glossary key of the parent term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermGlossaryKey")
     private final String parentTermGlossaryKey;
 
     /**
      * Glossary key of the parent term.
-     *
      * @return the value
-     */
+     **/
     public String getParentTermGlossaryKey() {
         return parentTermGlossaryKey;
     }
 
     /**
-     * The date and time the term relationship was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-     */
+     * The date and time the term relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the term relationship was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+     * The date and time the term relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** State of the term relationship. */
+    /**
+     * State of the term relationship.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * State of the term relationship.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -646,7 +673,6 @@ public final class TermRelationship
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

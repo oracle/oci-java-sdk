@@ -6,153 +6,170 @@ package com.oracle.bmc.objectstorage.requests;
 
 import com.oracle.bmc.objectstorage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateMultipartUploadExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateMultipartUploadRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateMultipartUploadExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateMultipartUploadRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateMultipartUploadRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails> {
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     private String namespaceName;
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     private String bucketName;
 
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     public String getBucketName() {
         return bucketName;
     }
-    /** Request object for creating a multipart upload. */
+    /**
+     * Request object for creating a multipart upload.
+     */
     private com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails
             createMultipartUploadDetails;
 
-    /** Request object for creating a multipart upload. */
+    /**
+     * Request object for creating a multipart upload.
+     */
     public com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails
             getCreateMultipartUploadDetails() {
         return createMultipartUploadDetails;
     }
     /**
-     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag
-     * matches the ETag of the existing resource, GET and HEAD requests will return the resource and
-     * PUT and POST requests will upload the resource.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
      */
     private String ifMatch;
 
     /**
-     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag
-     * matches the ETag of the existing resource, GET and HEAD requests will return the resource and
-     * PUT and POST requests will upload the resource.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that
-     * the request should fail if the resource already exists.
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+     * fail if the resource already exists.
+     *
      */
     private String ifNoneMatch;
 
     /**
-     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that
-     * the request should fail if the resource already exists.
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+     * fail if the resource already exists.
+     *
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcClientRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
     /**
-     * The optional header that specifies "AES256" as the encryption algorithm. For more
-     * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     private String opcSseCustomerAlgorithm;
 
     /**
-     * The optional header that specifies "AES256" as the encryption algorithm. For more
-     * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     public String getOpcSseCustomerAlgorithm() {
         return opcSseCustomerAlgorithm;
     }
     /**
-     * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-     * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+     * decrypt the data. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     private String opcSseCustomerKey;
 
     /**
-     * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-     * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+     * decrypt the data. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     public String getOpcSseCustomerKey() {
         return opcSseCustomerKey;
     }
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-     * value is used to check the integrity of the encryption key. For more information, see [Using
-     * Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * value is used to check the integrity of the encryption key. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     private String opcSseCustomerKeySha256;
 
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-     * value is used to check the integrity of the encryption key. For more information, see [Using
-     * Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * value is used to check the integrity of the encryption key. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     public String getOpcSseCustomerKeySha256() {
         return opcSseCustomerKeySha256;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
-     * encryption key used to call the Key Management service to generate a data encryption key or
-     * to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+     *
      */
     private String opcSseKmsKeyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
-     * encryption key used to call the Key Management service to generate a data encryption key or
-     * to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+     *
      */
     public String getOpcSseKmsKeyId() {
         return opcSseKmsKeyId;
     }
     /**
-     * The optional checksum algorithm to use to compute and store the checksum of the body of the
-     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
-     * checksum.
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+     * in addition to the default MD5 checksum.
+     *
      */
     private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm;
 
     /**
-     * The optional checksum algorithm to use to compute and store the checksum of the body of the
-     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
-     * checksum.
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+     * in addition to the default MD5 checksum.
+     *
      */
     public com.oracle.bmc.objectstorage.model.ChecksumAlgorithm getOpcChecksumAlgorithm() {
         return opcChecksumAlgorithm;
@@ -160,7 +177,6 @@ public class CreateMultipartUploadRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -173,15 +189,17 @@ public class CreateMultipartUploadRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateMultipartUploadRequest,
                     com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Object Storage namespace used for the request. */
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
-         *
          * @param namespaceName the value to set
          * @return this builder instance
          */
@@ -191,14 +209,15 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
          */
         private String bucketName = null;
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
          *
          * @param bucketName the value to set
          * @return this builder instance
@@ -208,13 +227,14 @@ public class CreateMultipartUploadRequest
             return this;
         }
 
-        /** Request object for creating a multipart upload. */
+        /**
+         * Request object for creating a multipart upload.
+         */
         private com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails
                 createMultipartUploadDetails = null;
 
         /**
          * Request object for creating a multipart upload.
-         *
          * @param createMultipartUploadDetails the value to set
          * @return this builder instance
          */
@@ -226,16 +246,17 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified
-         * ETag matches the ETag of the existing resource, GET and HEAD requests will return the
-         * resource and PUT and POST requests will upload the resource.
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified
-         * ETag matches the ETag of the existing resource, GET and HEAD requests will return the
-         * resource and PUT and POST requests will upload the resource.
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -246,14 +267,15 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates
-         * that the request should fail if the resource already exists.
+         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+         * fail if the resource already exists.
+         *
          */
         private String ifNoneMatch = null;
 
         /**
-         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates
-         * that the request should fail if the resource already exists.
+         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+         * fail if the resource already exists.
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -263,12 +285,13 @@ public class CreateMultipartUploadRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcClientRequestId the value to set
          * @return this builder instance
          */
@@ -278,16 +301,15 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The optional header that specifies "AES256" as the encryption algorithm. For more
-         * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
          */
         private String opcSseCustomerAlgorithm = null;
 
         /**
-         * The optional header that specifies "AES256" as the encryption algorithm. For more
-         * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerAlgorithm the value to set
          * @return this builder instance
@@ -298,18 +320,17 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-         * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
-         * Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+         * decrypt the data. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
          */
         private String opcSseCustomerKey = null;
 
         /**
-         * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-         * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
-         * Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+         * decrypt the data. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKey the value to set
          * @return this builder instance
@@ -320,18 +341,17 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
-         * This value is used to check the integrity of the encryption key. For more information,
-         * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+         * value is used to check the integrity of the encryption key. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
          */
         private String opcSseCustomerKeySha256 = null;
 
         /**
-         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
-         * This value is used to check the integrity of the encryption key. For more information,
-         * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+         * value is used to check the integrity of the encryption key. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKeySha256 the value to set
          * @return this builder instance
@@ -342,16 +362,15 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * master encryption key used to call the Key Management service to generate a data
-         * encryption key or to encrypt or decrypt a data encryption key.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+         * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+         *
          */
         private String opcSseKmsKeyId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * master encryption key used to call the Key Management service to generate a data
-         * encryption key or to encrypt or decrypt a data encryption key.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+         * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
          *
          * @param opcSseKmsKeyId the value to set
          * @return this builder instance
@@ -362,16 +381,15 @@ public class CreateMultipartUploadRequest
         }
 
         /**
-         * The optional checksum algorithm to use to compute and store the checksum of the body of
-         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
-         * MD5 checksum.
+         * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+         * in addition to the default MD5 checksum.
+         *
          */
         private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm = null;
 
         /**
-         * The optional checksum algorithm to use to compute and store the checksum of the body of
-         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
-         * MD5 checksum.
+         * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+         * in addition to the default MD5 checksum.
          *
          * @param opcChecksumAlgorithm the value to set
          * @return this builder instance
@@ -384,19 +402,18 @@ public class CreateMultipartUploadRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -408,7 +425,6 @@ public class CreateMultipartUploadRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateMultipartUploadRequest o) {
@@ -431,11 +447,10 @@ public class CreateMultipartUploadRequest
         /**
          * Build the instance of CreateMultipartUploadRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateMultipartUploadRequest
          */
@@ -448,7 +463,6 @@ public class CreateMultipartUploadRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -461,8 +475,7 @@ public class CreateMultipartUploadRequest
         /**
          * Build the instance of CreateMultipartUploadRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateMultipartUploadRequest
@@ -481,16 +494,12 @@ public class CreateMultipartUploadRequest
             request.opcSseKmsKeyId = opcSseKmsKeyId;
             request.opcChecksumAlgorithm = opcChecksumAlgorithm;
             return request;
-            // new CreateMultipartUploadRequest(namespaceName, bucketName,
-            // createMultipartUploadDetails, ifMatch, ifNoneMatch, opcClientRequestId,
-            // opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSseKmsKeyId,
-            // opcChecksumAlgorithm);
+            // new CreateMultipartUploadRequest(namespaceName, bucketName, createMultipartUploadDetails, ifMatch, ifNoneMatch, opcClientRequestId, opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSseKmsKeyId, opcChecksumAlgorithm);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -510,7 +519,6 @@ public class CreateMultipartUploadRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

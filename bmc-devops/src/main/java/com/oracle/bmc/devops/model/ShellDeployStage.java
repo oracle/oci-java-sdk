@@ -5,24 +5,23 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the shell stage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies the shell stage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShellDeployStage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "deployStageType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "deployStageType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ShellDeployStage extends DeployStage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -162,31 +161,33 @@ public final class ShellDeployStage extends DeployStage {
             this.__explicitlySet__.add("containerConfig");
             return this;
         }
-        /** The OCID of the artifact that contains the command specification. */
+        /**
+         * The OCID of the artifact that contains the command specification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commandSpecDeployArtifactId")
         private String commandSpecDeployArtifactId;
 
         /**
          * The OCID of the artifact that contains the command specification.
-         *
          * @param commandSpecDeployArtifactId the value to set
          * @return this builder
-         */
+         **/
         public Builder commandSpecDeployArtifactId(String commandSpecDeployArtifactId) {
             this.commandSpecDeployArtifactId = commandSpecDeployArtifactId;
             this.__explicitlySet__.add("commandSpecDeployArtifactId");
             return this;
         }
-        /** Time to wait for execution of a shell stage. Defaults to 36000 seconds. */
+        /**
+         * Time to wait for execution of a shell stage. Defaults to 36000 seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
         /**
          * Time to wait for execution of a shell stage. Defaults to 36000 seconds.
-         *
          * @param timeoutInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             this.__explicitlySet__.add("timeoutInSeconds");
@@ -279,7 +280,9 @@ public final class ShellDeployStage extends DeployStage {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -334,28 +337,30 @@ public final class ShellDeployStage extends DeployStage {
         return containerConfig;
     }
 
-    /** The OCID of the artifact that contains the command specification. */
+    /**
+     * The OCID of the artifact that contains the command specification.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commandSpecDeployArtifactId")
     private final String commandSpecDeployArtifactId;
 
     /**
      * The OCID of the artifact that contains the command specification.
-     *
      * @return the value
-     */
+     **/
     public String getCommandSpecDeployArtifactId() {
         return commandSpecDeployArtifactId;
     }
 
-    /** Time to wait for execution of a shell stage. Defaults to 36000 seconds. */
+    /**
+     * Time to wait for execution of a shell stage. Defaults to 36000 seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
      * Time to wait for execution of a shell stage. Defaults to 36000 seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
@@ -367,7 +372,6 @@ public final class ShellDeployStage extends DeployStage {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

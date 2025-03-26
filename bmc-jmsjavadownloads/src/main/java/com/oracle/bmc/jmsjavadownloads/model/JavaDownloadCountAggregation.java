@@ -5,23 +5,22 @@
 package com.oracle.bmc.jmsjavadownloads.model;
 
 /**
- * Count of Java downloads aggregated by the specified type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+ * Count of Java downloads aggregated by the specified type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JavaDownloadCountAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = JavaDownloadCountAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JavaDownloadCountAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "downloadCount",
@@ -55,137 +54,129 @@ public final class JavaDownloadCountAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Count of Java downloads. */
+        /**
+         * Count of Java downloads.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("downloadCount")
         private Long downloadCount;
 
         /**
          * Count of Java downloads.
-         *
          * @param downloadCount the value to set
          * @return this builder
-         */
+         **/
         public Builder downloadCount(Long downloadCount) {
             this.downloadCount = downloadCount;
             this.__explicitlySet__.add("downloadCount");
             return this;
         }
-        /** The Java family version. */
+        /**
+         * The Java family version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
         private String familyVersion;
 
         /**
          * The Java family version.
-         *
          * @param familyVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder familyVersion(String familyVersion) {
             this.familyVersion = familyVersion;
             this.__explicitlySet__.add("familyVersion");
             return this;
         }
-        /** The Java family display name. */
+        /**
+         * The Java family display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyDisplayName")
         private String familyDisplayName;
 
         /**
          * The Java family display name.
-         *
          * @param familyDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder familyDisplayName(String familyDisplayName) {
             this.familyDisplayName = familyDisplayName;
             this.__explicitlySet__.add("familyDisplayName");
             return this;
         }
-        /** The Java release version. Applicable only to {@code JAVA_RELEASE} aggregationType. */
+        /**
+         * The Java release version. Applicable only to {@code JAVA_RELEASE} aggregationType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
         private String releaseVersion;
 
         /**
          * The Java release version. Applicable only to {@code JAVA_RELEASE} aggregationType.
-         *
          * @param releaseVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseVersion(String releaseVersion) {
             this.releaseVersion = releaseVersion;
             this.__explicitlySet__.add("releaseVersion");
             return this;
         }
         /**
-         * The target Operating System family for the artifact. Applicable only to {@code PLATFORM}
-         * aggregationType.
-         */
+         * The target Operating System family for the artifact. Applicable only to {@code PLATFORM} aggregationType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private String osFamily;
 
         /**
-         * The target Operating System family for the artifact. Applicable only to {@code PLATFORM}
-         * aggregationType.
-         *
+         * The target Operating System family for the artifact. Applicable only to {@code PLATFORM} aggregationType.
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(String osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
         /**
-         * The target Operating System architecture for the artifact. Applicable only to {@code
-         * PLATFORM} aggregationType.
-         */
+         * The target Operating System architecture for the artifact. Applicable only to {@code PLATFORM} aggregationType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
         /**
-         * The target Operating System architecture for the artifact. Applicable only to {@code
-         * PLATFORM} aggregationType.
-         *
+         * The target Operating System architecture for the artifact. Applicable only to {@code PLATFORM} aggregationType.
          * @param architecture the value to set
          * @return this builder
-         */
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
         /**
-         * The package type (typically the file extension) of the artifact. Applicable only to
-         * {@code PLATFORM} aggregationType.
-         */
+         * The package type (typically the file extension) of the artifact. Applicable only to {@code PLATFORM} aggregationType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private String packageType;
 
         /**
-         * The package type (typically the file extension) of the artifact. Applicable only to
-         * {@code PLATFORM} aggregationType.
-         *
+         * The package type (typically the file extension) of the artifact. Applicable only to {@code PLATFORM} aggregationType.
          * @param packageType the value to set
          * @return this builder
-         */
+         **/
         public Builder packageType(String packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
             return this;
         }
         /**
-         * Additional information about the package type. Applicable only to {@code PLATFORM}
-         * aggregationType.
-         */
+         * Additional information about the package type. Applicable only to {@code PLATFORM} aggregationType.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageTypeDetail")
         private String packageTypeDetail;
 
         /**
-         * Additional information about the package type. Applicable only to {@code PLATFORM}
-         * aggregationType.
-         *
+         * Additional information about the package type. Applicable only to {@code PLATFORM} aggregationType.
          * @param packageTypeDetail the value to set
          * @return this builder
-         */
+         **/
         public Builder packageTypeDetail(String packageTypeDetail) {
             this.packageTypeDetail = packageTypeDetail;
             this.__explicitlySet__.add("packageTypeDetail");
@@ -242,7 +233,9 @@ public final class JavaDownloadCountAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -251,122 +244,114 @@ public final class JavaDownloadCountAggregation
         return new Builder().copy(this);
     }
 
-    /** Count of Java downloads. */
+    /**
+     * Count of Java downloads.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("downloadCount")
     private final Long downloadCount;
 
     /**
      * Count of Java downloads.
-     *
      * @return the value
-     */
+     **/
     public Long getDownloadCount() {
         return downloadCount;
     }
 
-    /** The Java family version. */
+    /**
+     * The Java family version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
     private final String familyVersion;
 
     /**
      * The Java family version.
-     *
      * @return the value
-     */
+     **/
     public String getFamilyVersion() {
         return familyVersion;
     }
 
-    /** The Java family display name. */
+    /**
+     * The Java family display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyDisplayName")
     private final String familyDisplayName;
 
     /**
      * The Java family display name.
-     *
      * @return the value
-     */
+     **/
     public String getFamilyDisplayName() {
         return familyDisplayName;
     }
 
-    /** The Java release version. Applicable only to {@code JAVA_RELEASE} aggregationType. */
+    /**
+     * The Java release version. Applicable only to {@code JAVA_RELEASE} aggregationType.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
     private final String releaseVersion;
 
     /**
      * The Java release version. Applicable only to {@code JAVA_RELEASE} aggregationType.
-     *
      * @return the value
-     */
+     **/
     public String getReleaseVersion() {
         return releaseVersion;
     }
 
     /**
-     * The target Operating System family for the artifact. Applicable only to {@code PLATFORM}
-     * aggregationType.
-     */
+     * The target Operating System family for the artifact. Applicable only to {@code PLATFORM} aggregationType.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final String osFamily;
 
     /**
-     * The target Operating System family for the artifact. Applicable only to {@code PLATFORM}
-     * aggregationType.
-     *
+     * The target Operating System family for the artifact. Applicable only to {@code PLATFORM} aggregationType.
      * @return the value
-     */
+     **/
     public String getOsFamily() {
         return osFamily;
     }
 
     /**
-     * The target Operating System architecture for the artifact. Applicable only to {@code
-     * PLATFORM} aggregationType.
-     */
+     * The target Operating System architecture for the artifact. Applicable only to {@code PLATFORM} aggregationType.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
     /**
-     * The target Operating System architecture for the artifact. Applicable only to {@code
-     * PLATFORM} aggregationType.
-     *
+     * The target Operating System architecture for the artifact. Applicable only to {@code PLATFORM} aggregationType.
      * @return the value
-     */
+     **/
     public String getArchitecture() {
         return architecture;
     }
 
     /**
-     * The package type (typically the file extension) of the artifact. Applicable only to {@code
-     * PLATFORM} aggregationType.
-     */
+     * The package type (typically the file extension) of the artifact. Applicable only to {@code PLATFORM} aggregationType.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final String packageType;
 
     /**
-     * The package type (typically the file extension) of the artifact. Applicable only to {@code
-     * PLATFORM} aggregationType.
-     *
+     * The package type (typically the file extension) of the artifact. Applicable only to {@code PLATFORM} aggregationType.
      * @return the value
-     */
+     **/
     public String getPackageType() {
         return packageType;
     }
 
     /**
-     * Additional information about the package type. Applicable only to {@code PLATFORM}
-     * aggregationType.
-     */
+     * Additional information about the package type. Applicable only to {@code PLATFORM} aggregationType.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageTypeDetail")
     private final String packageTypeDetail;
 
     /**
-     * Additional information about the package type. Applicable only to {@code PLATFORM}
-     * aggregationType.
-     *
+     * Additional information about the package type. Applicable only to {@code PLATFORM} aggregationType.
      * @return the value
-     */
+     **/
     public String getPackageTypeDetail() {
         return packageTypeDetail;
     }
@@ -378,7 +363,6 @@ public final class JavaDownloadCountAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

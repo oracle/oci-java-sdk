@@ -4,12 +4,15 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Resource Category. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum ResourceCategory implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Resource Category.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum ResourceCategory {
     Application("APPLICATION"),
     Database("DATABASE"),
     Middleware("MIDDLEWARE"),
+    Infrastructure("INFRASTRUCTURE"),
     Unknown("UNKNOWN"),
 
     /**

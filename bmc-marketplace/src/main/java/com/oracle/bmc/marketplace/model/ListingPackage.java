@@ -5,39 +5,42 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A base object for all types of listing packages. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * A base object for all types of listing packages.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "packageType",
-        defaultImpl = ListingPackage.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "packageType",
+    defaultImpl = ListingPackage.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ContainerListingPackage.class,
-            name = "CONTAINER"),
+        value = ContainerListingPackage.class,
+        name = "CONTAINER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OrchestrationListingPackage.class,
-            name = "ORCHESTRATION"),
+        value = OrchestrationListingPackage.class,
+        name = "ORCHESTRATION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ImageListingPackage.class,
-            name = "IMAGE"),
+        value = ImageListingPackage.class,
+        name = "IMAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = KubernetesListingPackage.class,
-            name = "KUBERNETES")
+        value = KubernetesListingPackage.class,
+        name = "KUBERNETES"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ListingPackage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ListingPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -69,41 +72,44 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
         this.regions = regions;
     }
 
-    /** Description of this package. */
+    /**
+     * Description of this package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of this package.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The ID of the listing this package belongs to. */
+    /**
+     * The ID of the listing this package belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
     /**
      * The ID of the listing this package belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getListingId() {
         return listingId;
     }
 
-    /** The package version. */
+    /**
+     * The package version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The package version.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
@@ -115,36 +121,38 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
         return pricing;
     }
 
-    /** The unique identifier for the package resource. */
+    /**
+     * The unique identifier for the package resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The unique identifier for the package resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
     /**
-     * The date and time this listing package was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time this listing package was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -157,18 +165,17 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The regions where you can deploy the listing package. (Some packages have restrictions that
-     * limit their deployment to United States regions only.)
-     */
+     * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<Region> regions;
 
     /**
-     * The regions where you can deploy the listing package. (Some packages have restrictions that
-     * limit their deployment to United States regions only.)
+     * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
      *
      * @return the value
-     */
+     **/
     public java.util.List<Region> getRegions() {
         return regions;
     }
@@ -180,7 +187,6 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

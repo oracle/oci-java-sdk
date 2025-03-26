@@ -5,21 +5,19 @@
 package com.oracle.bmc.licensemanager.model;
 
 /**
- * License record summary. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+ * License record summary.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LicenseRecord.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LicenseRecord extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LicenseRecord extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -84,67 +82,57 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The license record
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * The license record [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The license record
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The license record [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The product license
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which
-         * the license record is associated.
-         */
+         * The product license [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productLicenseId")
         private String productLicenseId;
 
         /**
-         * The product license
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which
-         * the license record is associated.
-         *
+         * The product license [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
          * @param productLicenseId the value to set
          * @return this builder
-         */
+         **/
         public Builder productLicenseId(String productLicenseId) {
             this.productLicenseId = productLicenseId;
             this.__explicitlySet__.add("productLicenseId");
             return this;
         }
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the
-         * license record is created.
-         */
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the
-         * license record is created.
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The license record display name. Avoid entering confidential information. */
+        /**
+         * The license record display name. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -153,56 +141,65 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The license record product ID. */
+        /**
+         * The license record product ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productId")
         private String productId;
 
         /**
          * The license record product ID.
-         *
          * @param productId the value to set
          * @return this builder
-         */
+         **/
         public Builder productId(String productId) {
             this.productId = productId;
             this.__explicitlySet__.add("productId");
             return this;
         }
-        /** The number of license units added by the user for the given license record. Default 1 */
+        /**
+         * The number of license units added by the user for the given license record.
+         * Default 1
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseCount")
         private Integer licenseCount;
 
         /**
-         * The number of license units added by the user for the given license record. Default 1
+         * The number of license units added by the user for the given license record.
+         * Default 1
          *
          * @param licenseCount the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseCount(Integer licenseCount) {
             this.licenseCount = licenseCount;
             this.__explicitlySet__.add("licenseCount");
             return this;
         }
         /**
-         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-         * format. Example: {@code 2018-09-12}
-         */
+         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * date format.
+         * Example: {@code 2018-09-12}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expirationDate")
         private java.util.Date expirationDate;
 
         /**
-         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-         * format. Example: {@code 2018-09-12}
+         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * date format.
+         * Example: {@code 2018-09-12}
          *
          * @param expirationDate the value to set
          * @return this builder
-         */
+         **/
         public Builder expirationDate(java.util.Date expirationDate) {
             this.expirationDate = expirationDate;
             this.__explicitlySet__.add("expirationDate");
@@ -210,150 +207,153 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * date format. Example: {@code 2018-09-12}
-         */
+         * date format.
+         * Example: {@code 2018-09-12}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportEndDate")
         private java.util.Date supportEndDate;
 
         /**
          * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * date format. Example: {@code 2018-09-12}
+         * date format.
+         * Example: {@code 2018-09-12}
          *
          * @param supportEndDate the value to set
          * @return this builder
-         */
+         **/
         public Builder supportEndDate(java.util.Date supportEndDate) {
             this.supportEndDate = supportEndDate;
             this.__explicitlySet__.add("supportEndDate");
             return this;
         }
-        /** Specifies if the license count is unlimited. */
+        /**
+         * Specifies if the license count is unlimited.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
         private Boolean isUnlimited;
 
         /**
          * Specifies if the license count is unlimited.
-         *
          * @param isUnlimited the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = isUnlimited;
             this.__explicitlySet__.add("isUnlimited");
             return this;
         }
-        /** Specifies if the license record term is perpertual. */
+        /**
+         * Specifies if the license record term is perpertual.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPerpetual")
         private Boolean isPerpetual;
 
         /**
          * Specifies if the license record term is perpertual.
-         *
          * @param isPerpetual the value to set
          * @return this builder
-         */
+         **/
         public Builder isPerpetual(Boolean isPerpetual) {
             this.isPerpetual = isPerpetual;
             this.__explicitlySet__.add("isPerpetual");
             return this;
         }
         /**
-         * The time the license record was created. An [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-         */
+         * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the license record was created. An [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-         *
+         * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the license record was updated. An [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-         */
+         * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the license record was updated. An [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-         *
+         * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current license record state. */
+        /**
+         * The current license record state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifeCycleState lifecycleState;
 
         /**
          * The current license record state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifeCycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The product license unit. */
+        /**
+         * The product license unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseUnit")
         private LicenseUnit licenseUnit;
 
         /**
          * The product license unit.
-         *
          * @param licenseUnit the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseUnit(LicenseUnit licenseUnit) {
             this.licenseUnit = licenseUnit;
             this.__explicitlySet__.add("licenseUnit");
             return this;
         }
-        /** The product license name with which the license record is associated. */
+        /**
+         * The product license name with which the license record is associated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productLicense")
         private String productLicense;
 
         /**
          * The product license name with which the license record is associated.
-         *
          * @param productLicense the value to set
          * @return this builder
-         */
+         **/
         public Builder productLicense(String productLicense) {
             this.productLicense = productLicense;
             this.__explicitlySet__.add("productLicense");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -362,7 +362,8 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -372,7 +373,7 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -380,19 +381,20 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -489,7 +491,9 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -499,59 +503,51 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The license record
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * The license record [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The license record
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * The license record [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The product license
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the
-     * license record is associated.
-     */
+     * The product license [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productLicenseId")
     private final String productLicenseId;
 
     /**
-     * The product license
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the
-     * license record is associated.
-     *
+     * The product license [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
      * @return the value
-     */
+     **/
     public String getProductLicenseId() {
         return productLicenseId;
     }
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * where the license record is created.
-     */
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * where the license record is created.
-     *
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The license record display name. Avoid entering confidential information. */
+    /**
+     * The license record display name. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -559,217 +555,231 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
      * The license record display name. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The license record product ID. */
+    /**
+     * The license record product ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productId")
     private final String productId;
 
     /**
      * The license record product ID.
-     *
      * @return the value
-     */
+     **/
     public String getProductId() {
         return productId;
     }
 
-    /** The number of license units added by the user for the given license record. Default 1 */
+    /**
+     * The number of license units added by the user for the given license record.
+     * Default 1
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseCount")
     private final Integer licenseCount;
 
     /**
-     * The number of license units added by the user for the given license record. Default 1
+     * The number of license units added by the user for the given license record.
+     * Default 1
      *
      * @return the value
-     */
+     **/
     public Integer getLicenseCount() {
         return licenseCount;
     }
 
     /**
-     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format.
+     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
      * Example: {@code 2018-09-12}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expirationDate")
     private final java.util.Date expirationDate;
 
     /**
-     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format.
+     * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
      * Example: {@code 2018-09-12}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getExpirationDate() {
         return expirationDate;
     }
 
     /**
-     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-     * format. Example: {@code 2018-09-12}
-     */
+     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
+     * Example: {@code 2018-09-12}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportEndDate")
     private final java.util.Date supportEndDate;
 
     /**
-     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date
-     * format. Example: {@code 2018-09-12}
+     * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * date format.
+     * Example: {@code 2018-09-12}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getSupportEndDate() {
         return supportEndDate;
     }
 
-    /** Specifies if the license count is unlimited. */
+    /**
+     * Specifies if the license count is unlimited.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
     private final Boolean isUnlimited;
 
     /**
      * Specifies if the license count is unlimited.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUnlimited() {
         return isUnlimited;
     }
 
-    /** Specifies if the license record term is perpertual. */
+    /**
+     * Specifies if the license record term is perpertual.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPerpetual")
     private final Boolean isPerpetual;
 
     /**
      * Specifies if the license record term is perpertual.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPerpetual() {
         return isPerpetual;
     }
 
     /**
-     * The time the license record was created. An [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-     */
+     * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the license record was created. An [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-     *
+     * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the license record was updated. An [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-     */
+     * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the license record was updated. An [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-     *
+     * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current license record state. */
+    /**
+     * The current license record state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifeCycleState lifecycleState;
 
     /**
      * The current license record state.
-     *
      * @return the value
-     */
+     **/
     public LifeCycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The product license unit. */
+    /**
+     * The product license unit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseUnit")
     private final LicenseUnit licenseUnit;
 
     /**
      * The product license unit.
-     *
      * @return the value
-     */
+     **/
     public LicenseUnit getLicenseUnit() {
         return licenseUnit;
     }
 
-    /** The product license name with which the license record is associated. */
+    /**
+     * The product license name with which the license record is associated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productLicense")
     private final String productLicense;
 
     /**
      * The product license name with which the license record is associated.
-     *
      * @return the value
-     */
+     **/
     public String getProductLicense() {
         return productLicense;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -781,7 +791,6 @@ public final class LicenseRecord extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

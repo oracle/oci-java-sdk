@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** Possible values for compliance level. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum ComplianceLevel implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible values for compliance level.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum ComplianceLevel {
     Fleet("FLEET"),
     Target("TARGET"),
 

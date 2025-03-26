@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Current status of a recipe step. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum StepStatusType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Current status of a recipe step.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum StepStatusType {
     Pending("PENDING"),
     InProgress("IN_PROGRESS"),
     Completed("COMPLETED"),

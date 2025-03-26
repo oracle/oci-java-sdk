@@ -5,23 +5,21 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the monitor assigned to an On-premise vantage point worker. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the monitor assigned to an On-premise vantage point worker.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WorkerMonitorList.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkerMonitorList
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = WorkerMonitorList.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkerMonitorList extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -47,19 +45,16 @@ public final class WorkerMonitorList
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * monitor.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * monitor.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -67,67 +62,69 @@ public final class WorkerMonitorList
         }
         /**
          * Unique name that can be edited. The name should not contain any confidential information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Unique name that can be edited. The name should not contain any confidential information.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Type of monitor. */
+        /**
+         * Type of monitor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitorType")
         private MonitorTypes monitorType;
 
         /**
          * Type of monitor.
-         *
          * @param monitorType the value to set
          * @return this builder
-         */
+         **/
         public Builder monitorType(MonitorTypes monitorType) {
             this.monitorType = monitorType;
             this.__explicitlySet__.add("monitorType");
             return this;
         }
-        /** If isRunNow is enabled, then the monitor will run immediately. */
+        /**
+         * If isRunNow is enabled, then the monitor will run immediately.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
         private Boolean isRunNow;
 
         /**
          * If isRunNow is enabled, then the monitor will run immediately.
-         *
          * @param isRunNow the value to set
          * @return this builder
-         */
+         **/
         public Builder isRunNow(Boolean isRunNow) {
             this.isRunNow = isRunNow;
             this.__explicitlySet__.add("isRunNow");
             return this;
         }
         /**
-         * The time the resource was last assigned to an On-premise vantage point worker, expressed
-         * in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
-         */
+         * The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAssigned")
         private java.util.Date timeAssigned;
 
         /**
-         * The time the resource was last assigned to an On-premise vantage point worker, expressed
-         * in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2020-02-12T22:47:12.613Z}
+         * The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+         * timestamp format.
+         * Example: {@code 2020-02-12T22:47:12.613Z}
          *
          * @param timeAssigned the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAssigned(java.util.Date timeAssigned) {
             this.timeAssigned = timeAssigned;
             this.__explicitlySet__.add("timeAssigned");
@@ -172,7 +169,9 @@ public final class WorkerMonitorList
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -182,76 +181,77 @@ public final class WorkerMonitorList
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * monitor.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * monitor.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Unique name that can be edited. The name should not contain any confidential information. */
+    /**
+     * Unique name that can be edited. The name should not contain any confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Type of monitor. */
+    /**
+     * Type of monitor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("monitorType")
     private final MonitorTypes monitorType;
 
     /**
      * Type of monitor.
-     *
      * @return the value
-     */
+     **/
     public MonitorTypes getMonitorType() {
         return monitorType;
     }
 
-    /** If isRunNow is enabled, then the monitor will run immediately. */
+    /**
+     * If isRunNow is enabled, then the monitor will run immediately.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
     private final Boolean isRunNow;
 
     /**
      * If isRunNow is enabled, then the monitor will run immediately.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRunNow() {
         return isRunNow;
     }
 
     /**
-     * The time the resource was last assigned to an On-premise vantage point worker, expressed in
-     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
-     */
+     * The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAssigned")
     private final java.util.Date timeAssigned;
 
     /**
-     * The time the resource was last assigned to an On-premise vantage point worker, expressed in
-     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2020-02-12T22:47:12.613Z}
+     * The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
+     * timestamp format.
+     * Example: {@code 2020-02-12T22:47:12.613Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAssigned() {
         return timeAssigned;
     }
@@ -263,7 +263,6 @@ public final class WorkerMonitorList
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

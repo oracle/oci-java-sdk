@@ -5,26 +5,26 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Note that a valid {@code dbSystemId} value must be supplied for the {@code
- * CreateDbHomeWithDbSystemId} API operation to successfully complete. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Note that a valid {@code dbSystemId} value must be supplied for the {@code CreateDbHomeWithDbSystemId} API operation to successfully complete.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDbHomeWithDbSystemIdDetails.Builder.class)
+    builder = CreateDbHomeWithDbSystemIdDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "source")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "source"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -101,50 +101,38 @@ public final class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB system.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB system.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
         /**
-         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions
-         * operation.
+         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
-         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-         * isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel,
-         * nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails,
-         * isLocalDataGuardEnabled, or isFreeTier.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
-         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions
-         * operation.
-         *
-         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-         * isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel,
-         * nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails,
-         * isLocalDataGuardEnabled, or isFreeTier.
+         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
@@ -222,7 +210,9 @@ public final class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -259,47 +249,35 @@ public final class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * system.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * system.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
 
     /**
-     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions
-     * operation.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
-     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-     * isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel,
-     * nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled,
-     * or isFreeTier.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions
-     * operation.
-     *
-     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
-     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
-     * isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel,
-     * nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled,
-     * or isFreeTier.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
@@ -318,7 +296,6 @@ public final class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

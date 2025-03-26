@@ -6,11 +6,12 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,12 +25,13 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code Tenancy} instance. */
+    /**
+     * The returned Tenancy instance.
+     */
     private com.oracle.bmc.identity.model.Tenancy tenancy;
 
     /**
-     * The returned {@code Tenancy} instance.
-     *
+     * The returned Tenancy instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.Tenancy getTenancy() {
@@ -39,7 +41,7 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "tenancy"})
     private GetTenancyResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identity.model.Tenancy tenancy) {
         super(__httpStatusCode__, headers);
@@ -47,20 +49,17 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
         this.tenancy = tenancy;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetTenancyResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -68,6 +67,7 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -83,12 +83,13 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code Tenancy} instance. */
+        /**
+         * The returned Tenancy instance.
+         */
         private com.oracle.bmc.identity.model.Tenancy tenancy;
 
         /**
-         * The returned {@code Tenancy} instance.
-         *
+         * The returned Tenancy instance.
          * @param tenancy the value to set
          * @return this builder
          */
@@ -99,10 +100,8 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetTenancyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -114,10 +113,8 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetTenancyResponse build() {
             return new GetTenancyResponse(__httpStatusCode__, headers, opcRequestId, tenancy);
         }
@@ -125,7 +122,6 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

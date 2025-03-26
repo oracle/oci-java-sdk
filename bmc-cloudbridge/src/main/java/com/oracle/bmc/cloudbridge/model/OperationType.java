@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudbridge.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+public enum OperationType {
     CreateEnvironment("CREATE_ENVIRONMENT"),
     UpdateEnvironment("UPDATE_ENVIRONMENT"),
     DeleteEnvironment("DELETE_ENVIRONMENT"),

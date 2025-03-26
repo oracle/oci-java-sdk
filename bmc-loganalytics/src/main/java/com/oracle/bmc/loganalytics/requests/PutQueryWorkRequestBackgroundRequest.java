@@ -6,57 +6,64 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PutQueryWorkRequestBackgroundExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * PutQueryWorkRequestBackgroundRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PutQueryWorkRequestBackgroundExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutQueryWorkRequestBackgroundRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class PutQueryWorkRequestBackgroundRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * Work Request Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous
-     * request.
+     * Work Request Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
     private String workRequestId;
 
     /**
-     * Work Request Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous
-     * request.
+     * Work Request Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -65,10 +72,14 @@ public class PutQueryWorkRequestBackgroundRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PutQueryWorkRequestBackgroundRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -83,17 +94,12 @@ public class PutQueryWorkRequestBackgroundRequest
         }
 
         /**
-         * Work Request Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * asynchronous request.
+         * Work Request Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
          */
         private String workRequestId = null;
 
         /**
-         * Work Request Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * asynchronous request.
-         *
+         * Work Request Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -102,12 +108,13 @@ public class PutQueryWorkRequestBackgroundRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -117,18 +124,21 @@ public class PutQueryWorkRequestBackgroundRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -140,19 +150,18 @@ public class PutQueryWorkRequestBackgroundRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -164,7 +173,6 @@ public class PutQueryWorkRequestBackgroundRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PutQueryWorkRequestBackgroundRequest o) {
@@ -180,11 +188,10 @@ public class PutQueryWorkRequestBackgroundRequest
         /**
          * Build the instance of PutQueryWorkRequestBackgroundRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PutQueryWorkRequestBackgroundRequest
          */
@@ -198,8 +205,7 @@ public class PutQueryWorkRequestBackgroundRequest
         /**
          * Build the instance of PutQueryWorkRequestBackgroundRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PutQueryWorkRequestBackgroundRequest
@@ -212,14 +218,12 @@ public class PutQueryWorkRequestBackgroundRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new PutQueryWorkRequestBackgroundRequest(namespaceName, workRequestId, opcRequestId,
-            // ifMatch);
+            // new PutQueryWorkRequestBackgroundRequest(namespaceName, workRequestId, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -232,7 +236,6 @@ public class PutQueryWorkRequestBackgroundRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

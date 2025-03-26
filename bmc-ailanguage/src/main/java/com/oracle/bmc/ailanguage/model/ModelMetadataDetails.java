@@ -5,25 +5,24 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * training model details For this release only one model is allowed to be input here. One of the
- * three modelType, ModelId, endpointId should be given other wise error will be thrown from API
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * training model details
+ * For this release only one model is allowed to be input here.
+ * One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ModelMetadataDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ModelMetadataDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ModelMetadataDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ModelMetadataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "modelType",
@@ -49,99 +48,154 @@ public final class ModelMetadataDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * model type to used for inference allowed values are - LANGUAGE_SENTIMENT_ANALYSIS -
-         * LANGUAGE_DETECTION - TEXT_CLASSIFICATION - NAMED_ENTITY_RECOGNITION -
-         * KEY_PHRASE_EXTRACTION - LANGUAGE_PII_ENTITIES - LANGUAGE_TRANSLATION
-         */
+         * model type to used for inference allowed values are
+         * - LANGUAGE_SENTIMENT_ANALYSIS
+         * - LANGUAGE_DETECTION
+         * - TEXT_CLASSIFICATION
+         * - NAMED_ENTITY_RECOGNITION
+         * - KEY_PHRASE_EXTRACTION
+         * - LANGUAGE_PII_ENTITIES
+         * - LANGUAGE_TRANSLATION
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
-         * model type to used for inference allowed values are - LANGUAGE_SENTIMENT_ANALYSIS -
-         * LANGUAGE_DETECTION - TEXT_CLASSIFICATION - NAMED_ENTITY_RECOGNITION -
-         * KEY_PHRASE_EXTRACTION - LANGUAGE_PII_ENTITIES - LANGUAGE_TRANSLATION
+         * model type to used for inference allowed values are
+         * - LANGUAGE_SENTIMENT_ANALYSIS
+         * - LANGUAGE_DETECTION
+         * - TEXT_CLASSIFICATION
+         * - NAMED_ENTITY_RECOGNITION
+         * - KEY_PHRASE_EXTRACTION
+         * - LANGUAGE_PII_ENTITIES
+         * - LANGUAGE_TRANSLATION
          *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** Unique identifier model OCID that should be used for inference */
+        /**
+         * Unique identifier model OCID that should be used for inference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
          * Unique identifier model OCID that should be used for inference
-         *
          * @param modelId the value to set
          * @return this builder
-         */
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
             return this;
         }
-        /** Unique identifier endpoint OCID that should be used for inference */
+        /**
+         * Unique identifier endpoint OCID that should be used for inference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private String endpointId;
 
         /**
          * Unique identifier endpoint OCID that should be used for inference
-         *
          * @param endpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointId(String endpointId) {
             this.endpointId = endpointId;
             this.__explicitlySet__.add("endpointId");
             return this;
         }
         /**
-         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
-         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
-         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
-         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
-         * Turkish - el : Greek - he : Hebrew
-         */
+         * Language code supported
+         * - auto : Automatically detect language
+         * - ar : Arabic
+         * - pt-BR : Brazilian Portuguese
+         * - cs : Czech
+         * - da : Danish
+         * - nl : Dutch
+         * - en : English
+         * - fi : Finnish
+         * - fr : French
+         * - fr-CA : Canadian French
+         * - de : German
+         * - it : Italian
+         * - ja : Japanese
+         * - ko : Korean
+         * - no : Norwegian
+         * - pl : Polish
+         * - ro : Romanian
+         * - zh-CN : Simplified Chinese
+         * - es : Spanish
+         * - sv : Swedish
+         * - zh-TW : Traditional Chinese
+         * - tr : Turkish
+         * - el : Greek
+         * - he : Hebrew
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
-         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
-         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
-         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
-         * Turkish - el : Greek - he : Hebrew
+         * Language code supported
+         * - auto : Automatically detect language
+         * - ar : Arabic
+         * - pt-BR : Brazilian Portuguese
+         * - cs : Czech
+         * - da : Danish
+         * - nl : Dutch
+         * - en : English
+         * - fi : Finnish
+         * - fr : French
+         * - fr-CA : Canadian French
+         * - de : German
+         * - it : Italian
+         * - ja : Japanese
+         * - ko : Korean
+         * - no : Norwegian
+         * - pl : Polish
+         * - ro : Romanian
+         * - zh-CN : Simplified Chinese
+         * - es : Spanish
+         * - sv : Swedish
+         * - zh-TW : Traditional Chinese
+         * - tr : Turkish
+         * - el : Greek
+         * - he : Hebrew
          *
          * @param languageCode the value to set
          * @return this builder
-         */
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
         /**
-         * model configuration details For PII : < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{
-         * "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd"
-         * : true } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
-         */
+         * model configuration details
+         * For PII :  < ENTITY_TYPE , ConfigurationDetails>
+         * ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+         * For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configuration")
         private java.util.Map<String, ConfigurationDetails> configuration;
 
         /**
-         * model configuration details For PII : < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{
-         * "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd"
-         * : true } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+         * model configuration details
+         * For PII :  < ENTITY_TYPE , ConfigurationDetails>
+         * ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+         * For language translation : { "targetLanguageCodes" : ConfigurationDetails}
          *
          * @param configuration the value to set
          * @return this builder
-         */
+         **/
         public Builder configuration(java.util.Map<String, ConfigurationDetails> configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
@@ -186,7 +240,9 @@ public final class ModelMetadataDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -196,90 +252,145 @@ public final class ModelMetadataDetails
     }
 
     /**
-     * model type to used for inference allowed values are - LANGUAGE_SENTIMENT_ANALYSIS -
-     * LANGUAGE_DETECTION - TEXT_CLASSIFICATION - NAMED_ENTITY_RECOGNITION - KEY_PHRASE_EXTRACTION -
-     * LANGUAGE_PII_ENTITIES - LANGUAGE_TRANSLATION
-     */
+     * model type to used for inference allowed values are
+     * - LANGUAGE_SENTIMENT_ANALYSIS
+     * - LANGUAGE_DETECTION
+     * - TEXT_CLASSIFICATION
+     * - NAMED_ENTITY_RECOGNITION
+     * - KEY_PHRASE_EXTRACTION
+     * - LANGUAGE_PII_ENTITIES
+     * - LANGUAGE_TRANSLATION
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
-     * model type to used for inference allowed values are - LANGUAGE_SENTIMENT_ANALYSIS -
-     * LANGUAGE_DETECTION - TEXT_CLASSIFICATION - NAMED_ENTITY_RECOGNITION - KEY_PHRASE_EXTRACTION -
-     * LANGUAGE_PII_ENTITIES - LANGUAGE_TRANSLATION
+     * model type to used for inference allowed values are
+     * - LANGUAGE_SENTIMENT_ANALYSIS
+     * - LANGUAGE_DETECTION
+     * - TEXT_CLASSIFICATION
+     * - NAMED_ENTITY_RECOGNITION
+     * - KEY_PHRASE_EXTRACTION
+     * - LANGUAGE_PII_ENTITIES
+     * - LANGUAGE_TRANSLATION
      *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** Unique identifier model OCID that should be used for inference */
+    /**
+     * Unique identifier model OCID that should be used for inference
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
      * Unique identifier model OCID that should be used for inference
-     *
      * @return the value
-     */
+     **/
     public String getModelId() {
         return modelId;
     }
 
-    /** Unique identifier endpoint OCID that should be used for inference */
+    /**
+     * Unique identifier endpoint OCID that should be used for inference
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
     private final String endpointId;
 
     /**
      * Unique identifier endpoint OCID that should be used for inference
-     *
      * @return the value
-     */
+     **/
     public String getEndpointId() {
         return endpointId;
     }
 
     /**
-     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
-     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
-     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
-     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
-     * Hebrew
-     */
+     * Language code supported
+     * - auto : Automatically detect language
+     * - ar : Arabic
+     * - pt-BR : Brazilian Portuguese
+     * - cs : Czech
+     * - da : Danish
+     * - nl : Dutch
+     * - en : English
+     * - fi : Finnish
+     * - fr : French
+     * - fr-CA : Canadian French
+     * - de : German
+     * - it : Italian
+     * - ja : Japanese
+     * - ko : Korean
+     * - no : Norwegian
+     * - pl : Polish
+     * - ro : Romanian
+     * - zh-CN : Simplified Chinese
+     * - es : Spanish
+     * - sv : Swedish
+     * - zh-TW : Traditional Chinese
+     * - tr : Turkish
+     * - el : Greek
+     * - he : Hebrew
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
-     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
-     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
-     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
-     * Hebrew
+     * Language code supported
+     * - auto : Automatically detect language
+     * - ar : Arabic
+     * - pt-BR : Brazilian Portuguese
+     * - cs : Czech
+     * - da : Danish
+     * - nl : Dutch
+     * - en : English
+     * - fi : Finnish
+     * - fr : French
+     * - fr-CA : Canadian French
+     * - de : German
+     * - it : Italian
+     * - ja : Japanese
+     * - ko : Korean
+     * - no : Norwegian
+     * - pl : Polish
+     * - ro : Romanian
+     * - zh-CN : Simplified Chinese
+     * - es : Spanish
+     * - sv : Swedish
+     * - zh-TW : Traditional Chinese
+     * - tr : Turkish
+     * - el : Greek
+     * - he : Hebrew
      *
      * @return the value
-     */
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
 
     /**
-     * model configuration details For PII : < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{
-     * "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" :
-     * true } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
-     */
+     * model configuration details
+     * For PII :  < ENTITY_TYPE , ConfigurationDetails>
+     * ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+     * For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
     private final java.util.Map<String, ConfigurationDetails> configuration;
 
     /**
-     * model configuration details For PII : < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{
-     * "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" :
-     * true } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+     * model configuration details
+     * For PII :  < ENTITY_TYPE , ConfigurationDetails>
+     * ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  }
+     * For language translation : { "targetLanguageCodes" : ConfigurationDetails}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, ConfigurationDetails> getConfiguration() {
         return configuration;
     }
@@ -291,7 +402,6 @@ public final class ModelMetadataDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

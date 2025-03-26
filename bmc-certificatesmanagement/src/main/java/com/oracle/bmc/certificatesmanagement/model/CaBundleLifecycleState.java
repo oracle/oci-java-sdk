@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.certificatesmanagement.model;
 
-/** The current lifecycle state of the CA bundle. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public enum CaBundleLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current lifecycle state of the CA bundle.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+public enum CaBundleLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

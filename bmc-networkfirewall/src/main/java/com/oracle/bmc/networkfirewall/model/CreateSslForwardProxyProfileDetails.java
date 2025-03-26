@@ -5,25 +5,25 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Request for creating SSLForwardProxy used on the firewall policy rules. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Request for creating SSLForwardProxy used on the firewall policy rules.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateSslForwardProxyProfileDetails.Builder.class)
+    builder = CreateSslForwardProxyProfileDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionProfileDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,122 +35,117 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Whether to block sessions if server's certificate is expired. */
+        /**
+         * Whether to block sessions if server's certificate is expired.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isExpiredCertificateBlocked")
         private Boolean isExpiredCertificateBlocked;
 
         /**
          * Whether to block sessions if server's certificate is expired.
-         *
          * @param isExpiredCertificateBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isExpiredCertificateBlocked(Boolean isExpiredCertificateBlocked) {
             this.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
             this.__explicitlySet__.add("isExpiredCertificateBlocked");
             return this;
         }
         /**
-         * Whether to block sessions if server's certificate is issued by an untrusted certificate
-         * authority (CA).
-         */
+         * Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUntrustedIssuerBlocked")
         private Boolean isUntrustedIssuerBlocked;
 
         /**
-         * Whether to block sessions if server's certificate is issued by an untrusted certificate
-         * authority (CA).
-         *
+         * Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
          * @param isUntrustedIssuerBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isUntrustedIssuerBlocked(Boolean isUntrustedIssuerBlocked) {
             this.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
             this.__explicitlySet__.add("isUntrustedIssuerBlocked");
             return this;
         }
         /**
-         * Whether to block sessions if the revocation status check for server's certificate does
-         * not succeed within the maximum allowed time (defaulting to 5 seconds).
-         */
+         * Whether to block sessions if the revocation status check for server's certificate
+         * does not succeed within the maximum allowed time (defaulting to 5 seconds).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRevocationStatusTimeoutBlocked")
         private Boolean isRevocationStatusTimeoutBlocked;
 
         /**
-         * Whether to block sessions if the revocation status check for server's certificate does
-         * not succeed within the maximum allowed time (defaulting to 5 seconds).
+         * Whether to block sessions if the revocation status check for server's certificate
+         * does not succeed within the maximum allowed time (defaulting to 5 seconds).
          *
          * @param isRevocationStatusTimeoutBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isRevocationStatusTimeoutBlocked(Boolean isRevocationStatusTimeoutBlocked) {
             this.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;
             this.__explicitlySet__.add("isRevocationStatusTimeoutBlocked");
             return this;
         }
-        /** Whether to block sessions if SSL version is not supported. */
+        /**
+         * Whether to block sessions if SSL version is not supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedVersionBlocked")
         private Boolean isUnsupportedVersionBlocked;
 
         /**
          * Whether to block sessions if SSL version is not supported.
-         *
          * @param isUnsupportedVersionBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnsupportedVersionBlocked(Boolean isUnsupportedVersionBlocked) {
             this.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
             this.__explicitlySet__.add("isUnsupportedVersionBlocked");
             return this;
         }
-        /** Whether to block sessions if SSL cipher suite is not supported. */
+        /**
+         * Whether to block sessions if SSL cipher suite is not supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedCipherBlocked")
         private Boolean isUnsupportedCipherBlocked;
 
         /**
          * Whether to block sessions if SSL cipher suite is not supported.
-         *
          * @param isUnsupportedCipherBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnsupportedCipherBlocked(Boolean isUnsupportedCipherBlocked) {
             this.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
             this.__explicitlySet__.add("isUnsupportedCipherBlocked");
             return this;
         }
         /**
-         * Whether to block sessions if the revocation status check for server's certificate results
-         * in "unknown".
-         */
+         * Whether to block sessions if the revocation status check for server's certificate results in "unknown".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnknownRevocationStatusBlocked")
         private Boolean isUnknownRevocationStatusBlocked;
 
         /**
-         * Whether to block sessions if the revocation status check for server's certificate results
-         * in "unknown".
-         *
+         * Whether to block sessions if the revocation status check for server's certificate results in "unknown".
          * @param isUnknownRevocationStatusBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnknownRevocationStatusBlocked(Boolean isUnknownRevocationStatusBlocked) {
             this.isUnknownRevocationStatusBlocked = isUnknownRevocationStatusBlocked;
             this.__explicitlySet__.add("isUnknownRevocationStatusBlocked");
             return this;
         }
         /**
-         * Whether to block sessions if the server's certificate uses extensions other than key
-         * usage and/or extended key usage.
-         */
+         * Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areCertificateExtensionsRestricted")
         private Boolean areCertificateExtensionsRestricted;
 
         /**
-         * Whether to block sessions if the server's certificate uses extensions other than key
-         * usage and/or extended key usage.
-         *
+         * Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
          * @param areCertificateExtensionsRestricted the value to set
          * @return this builder
-         */
+         **/
         public Builder areCertificateExtensionsRestricted(
                 Boolean areCertificateExtensionsRestricted) {
             this.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
@@ -158,19 +153,16 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
             return this;
         }
         /**
-         * Whether to automatically append SAN to impersonating certificate if server certificate is
-         * missing SAN.
-         */
+         * Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoIncludeAltName")
         private Boolean isAutoIncludeAltName;
 
         /**
-         * Whether to automatically append SAN to impersonating certificate if server certificate is
-         * missing SAN.
-         *
+         * Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
          * @param isAutoIncludeAltName the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoIncludeAltName(Boolean isAutoIncludeAltName) {
             this.isAutoIncludeAltName = isAutoIncludeAltName;
             this.__explicitlySet__.add("isAutoIncludeAltName");
@@ -178,16 +170,15 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
         }
         /**
          * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOutOfCapacityBlocked")
         private Boolean isOutOfCapacityBlocked;
 
         /**
          * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-         *
          * @param isOutOfCapacityBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isOutOfCapacityBlocked(Boolean isOutOfCapacityBlocked) {
             this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
             this.__explicitlySet__.add("isOutOfCapacityBlocked");
@@ -253,7 +244,9 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -286,139 +279,132 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
         this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
     }
 
-    /** Whether to block sessions if server's certificate is expired. */
+    /**
+     * Whether to block sessions if server's certificate is expired.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isExpiredCertificateBlocked")
     private final Boolean isExpiredCertificateBlocked;
 
     /**
      * Whether to block sessions if server's certificate is expired.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsExpiredCertificateBlocked() {
         return isExpiredCertificateBlocked;
     }
 
     /**
-     * Whether to block sessions if server's certificate is issued by an untrusted certificate
-     * authority (CA).
-     */
+     * Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUntrustedIssuerBlocked")
     private final Boolean isUntrustedIssuerBlocked;
 
     /**
-     * Whether to block sessions if server's certificate is issued by an untrusted certificate
-     * authority (CA).
-     *
+     * Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
      * @return the value
-     */
+     **/
     public Boolean getIsUntrustedIssuerBlocked() {
         return isUntrustedIssuerBlocked;
     }
 
     /**
-     * Whether to block sessions if the revocation status check for server's certificate does not
-     * succeed within the maximum allowed time (defaulting to 5 seconds).
-     */
+     * Whether to block sessions if the revocation status check for server's certificate
+     * does not succeed within the maximum allowed time (defaulting to 5 seconds).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRevocationStatusTimeoutBlocked")
     private final Boolean isRevocationStatusTimeoutBlocked;
 
     /**
-     * Whether to block sessions if the revocation status check for server's certificate does not
-     * succeed within the maximum allowed time (defaulting to 5 seconds).
+     * Whether to block sessions if the revocation status check for server's certificate
+     * does not succeed within the maximum allowed time (defaulting to 5 seconds).
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRevocationStatusTimeoutBlocked() {
         return isRevocationStatusTimeoutBlocked;
     }
 
-    /** Whether to block sessions if SSL version is not supported. */
+    /**
+     * Whether to block sessions if SSL version is not supported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedVersionBlocked")
     private final Boolean isUnsupportedVersionBlocked;
 
     /**
      * Whether to block sessions if SSL version is not supported.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUnsupportedVersionBlocked() {
         return isUnsupportedVersionBlocked;
     }
 
-    /** Whether to block sessions if SSL cipher suite is not supported. */
+    /**
+     * Whether to block sessions if SSL cipher suite is not supported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedCipherBlocked")
     private final Boolean isUnsupportedCipherBlocked;
 
     /**
      * Whether to block sessions if SSL cipher suite is not supported.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUnsupportedCipherBlocked() {
         return isUnsupportedCipherBlocked;
     }
 
     /**
-     * Whether to block sessions if the revocation status check for server's certificate results in
-     * "unknown".
-     */
+     * Whether to block sessions if the revocation status check for server's certificate results in "unknown".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnknownRevocationStatusBlocked")
     private final Boolean isUnknownRevocationStatusBlocked;
 
     /**
-     * Whether to block sessions if the revocation status check for server's certificate results in
-     * "unknown".
-     *
+     * Whether to block sessions if the revocation status check for server's certificate results in "unknown".
      * @return the value
-     */
+     **/
     public Boolean getIsUnknownRevocationStatusBlocked() {
         return isUnknownRevocationStatusBlocked;
     }
 
     /**
-     * Whether to block sessions if the server's certificate uses extensions other than key usage
-     * and/or extended key usage.
-     */
+     * Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areCertificateExtensionsRestricted")
     private final Boolean areCertificateExtensionsRestricted;
 
     /**
-     * Whether to block sessions if the server's certificate uses extensions other than key usage
-     * and/or extended key usage.
-     *
+     * Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      * @return the value
-     */
+     **/
     public Boolean getAreCertificateExtensionsRestricted() {
         return areCertificateExtensionsRestricted;
     }
 
     /**
-     * Whether to automatically append SAN to impersonating certificate if server certificate is
-     * missing SAN.
-     */
+     * Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoIncludeAltName")
     private final Boolean isAutoIncludeAltName;
 
     /**
-     * Whether to automatically append SAN to impersonating certificate if server certificate is
-     * missing SAN.
-     *
+     * Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * @return the value
-     */
+     **/
     public Boolean getIsAutoIncludeAltName() {
         return isAutoIncludeAltName;
     }
 
-    /** Whether to block sessions if the firewall is temporarily unable to decrypt their traffic. */
+    /**
+     * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutOfCapacityBlocked")
     private final Boolean isOutOfCapacityBlocked;
 
     /**
      * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOutOfCapacityBlocked() {
         return isOutOfCapacityBlocked;
     }
@@ -430,7 +416,6 @@ public final class CreateSslForwardProxyProfileDetails extends CreateDecryptionP
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

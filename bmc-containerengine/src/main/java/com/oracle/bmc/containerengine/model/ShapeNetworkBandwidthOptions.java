@@ -5,23 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * Properties of network bandwidth. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * Properties of network bandwidth.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ShapeNetworkBandwidthOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ShapeNetworkBandwidthOptions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ShapeNetworkBandwidthOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"minInGbps", "maxInGbps", "defaultPerOcpuInGbps"})
     public ShapeNetworkBandwidthOptions(
@@ -34,46 +33,49 @@ public final class ShapeNetworkBandwidthOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The minimum amount of networking bandwidth, in gigabits per second. */
+        /**
+         * The minimum amount of networking bandwidth, in gigabits per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minInGbps")
         private Float minInGbps;
 
         /**
          * The minimum amount of networking bandwidth, in gigabits per second.
-         *
          * @param minInGbps the value to set
          * @return this builder
-         */
+         **/
         public Builder minInGbps(Float minInGbps) {
             this.minInGbps = minInGbps;
             this.__explicitlySet__.add("minInGbps");
             return this;
         }
-        /** The maximum amount of networking bandwidth, in gigabits per second. */
+        /**
+         * The maximum amount of networking bandwidth, in gigabits per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInGbps")
         private Float maxInGbps;
 
         /**
          * The maximum amount of networking bandwidth, in gigabits per second.
-         *
          * @param maxInGbps the value to set
          * @return this builder
-         */
+         **/
         public Builder maxInGbps(Float maxInGbps) {
             this.maxInGbps = maxInGbps;
             this.__explicitlySet__.add("maxInGbps");
             return this;
         }
-        /** The default amount of networking bandwidth per OCPU, in gigabits per second. */
+        /**
+         * The default amount of networking bandwidth per OCPU, in gigabits per second.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGbps")
         private Float defaultPerOcpuInGbps;
 
         /**
          * The default amount of networking bandwidth per OCPU, in gigabits per second.
-         *
          * @param defaultPerOcpuInGbps the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultPerOcpuInGbps(Float defaultPerOcpuInGbps) {
             this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
             this.__explicitlySet__.add("defaultPerOcpuInGbps");
@@ -108,7 +110,9 @@ public final class ShapeNetworkBandwidthOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +121,44 @@ public final class ShapeNetworkBandwidthOptions
         return new Builder().copy(this);
     }
 
-    /** The minimum amount of networking bandwidth, in gigabits per second. */
+    /**
+     * The minimum amount of networking bandwidth, in gigabits per second.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minInGbps")
     private final Float minInGbps;
 
     /**
      * The minimum amount of networking bandwidth, in gigabits per second.
-     *
      * @return the value
-     */
+     **/
     public Float getMinInGbps() {
         return minInGbps;
     }
 
-    /** The maximum amount of networking bandwidth, in gigabits per second. */
+    /**
+     * The maximum amount of networking bandwidth, in gigabits per second.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGbps")
     private final Float maxInGbps;
 
     /**
      * The maximum amount of networking bandwidth, in gigabits per second.
-     *
      * @return the value
-     */
+     **/
     public Float getMaxInGbps() {
         return maxInGbps;
     }
 
-    /** The default amount of networking bandwidth per OCPU, in gigabits per second. */
+    /**
+     * The default amount of networking bandwidth per OCPU, in gigabits per second.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGbps")
     private final Float defaultPerOcpuInGbps;
 
     /**
      * The default amount of networking bandwidth per OCPU, in gigabits per second.
-     *
      * @return the value
-     */
+     **/
     public Float getDefaultPerOcpuInGbps() {
         return defaultPerOcpuInGbps;
     }
@@ -163,7 +170,6 @@ public final class ShapeNetworkBandwidthOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The details of the task. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The details of the task.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Details.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Details extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Details extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "executionDetails",
@@ -59,46 +57,49 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("executionDetails");
             return this;
         }
-        /** The platform of the runbook. */
+        /**
+         * The platform of the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platform")
         private String platform;
 
         /**
          * The platform of the runbook.
-         *
          * @param platform the value to set
          * @return this builder
-         */
+         **/
         public Builder platform(String platform) {
             this.platform = platform;
             this.__explicitlySet__.add("platform");
             return this;
         }
-        /** The OS for the task */
+        /**
+         * The OS for the task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osType")
         private OsType osType;
 
         /**
          * The OS for the task
-         *
          * @param osType the value to set
          * @return this builder
-         */
+         **/
         public Builder osType(OsType osType) {
             this.osType = osType;
             this.__explicitlySet__.add("osType");
             return this;
         }
-        /** The scope of the task */
+        /**
+         * The scope of the task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private TaskScope scope;
 
         /**
          * The scope of the task
-         *
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(TaskScope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
@@ -113,35 +114,37 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** Is this a discovery output task? */
+        /**
+         * Is this a discovery output task?
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
         private Boolean isDiscoveryOutputTask;
 
         /**
          * Is this a discovery output task?
-         *
          * @param isDiscoveryOutputTask the value to set
          * @return this builder
-         */
+         **/
         public Builder isDiscoveryOutputTask(Boolean isDiscoveryOutputTask) {
             this.isDiscoveryOutputTask = isDiscoveryOutputTask;
             this.__explicitlySet__.add("isDiscoveryOutputTask");
             return this;
         }
         /**
-         * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
-         * patches(subjects) on a target.
-         */
+         * Is this an Apply Subject Task?
+         * Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
         private Boolean isApplySubjectTask;
 
         /**
-         * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
-         * patches(subjects) on a target.
+         * Is this an Apply Subject Task?
+         * Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
          *
          * @param isApplySubjectTask the value to set
          * @return this builder
-         */
+         **/
         public Builder isApplySubjectTask(Boolean isApplySubjectTask) {
             this.isApplySubjectTask = isApplySubjectTask;
             this.__explicitlySet__.add("isApplySubjectTask");
@@ -194,7 +197,9 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -210,41 +215,44 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         return executionDetails;
     }
 
-    /** The platform of the runbook. */
+    /**
+     * The platform of the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platform")
     private final String platform;
 
     /**
      * The platform of the runbook.
-     *
      * @return the value
-     */
+     **/
     public String getPlatform() {
         return platform;
     }
 
-    /** The OS for the task */
+    /**
+     * The OS for the task
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osType")
     private final OsType osType;
 
     /**
      * The OS for the task
-     *
      * @return the value
-     */
+     **/
     public OsType getOsType() {
         return osType;
     }
 
-    /** The scope of the task */
+    /**
+     * The scope of the task
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final TaskScope scope;
 
     /**
      * The scope of the task
-     *
      * @return the value
-     */
+     **/
     public TaskScope getScope() {
         return scope;
     }
@@ -256,32 +264,34 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         return properties;
     }
 
-    /** Is this a discovery output task? */
+    /**
+     * Is this a discovery output task?
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
     private final Boolean isDiscoveryOutputTask;
 
     /**
      * Is this a discovery output task?
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDiscoveryOutputTask() {
         return isDiscoveryOutputTask;
     }
 
     /**
-     * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
-     * patches(subjects) on a target.
-     */
+     * Is this an Apply Subject Task?
+     * Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
     private final Boolean isApplySubjectTask;
 
     /**
-     * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
-     * patches(subjects) on a target.
+     * Is this an Apply Subject Task?
+     * Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsApplySubjectTask() {
         return isApplySubjectTask;
     }
@@ -293,7 +303,6 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

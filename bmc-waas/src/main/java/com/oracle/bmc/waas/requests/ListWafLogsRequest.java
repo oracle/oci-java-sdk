@@ -6,106 +6,108 @@ package com.oracle.bmc.waas.requests;
 
 import com.oracle.bmc.waas.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafLogsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWafLogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWafLogsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
-     * policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
     private String waasPolicyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
-     * policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
-     * 20}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 20}.
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
-     * 20}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 20}.
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous paginated call.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * A filter that matches log entries where the observed event occurred on or after a date and
-     * time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of
-     * the request.
+     * A filter that matches log entries where the observed event occurred on or after a date and time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of the request.
      */
     private java.util.Date timeObservedGreaterThanOrEqualTo;
 
     /**
-     * A filter that matches log entries where the observed event occurred on or after a date and
-     * time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of
-     * the request.
+     * A filter that matches log entries where the observed event occurred on or after a date and time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of the request.
      */
     public java.util.Date getTimeObservedGreaterThanOrEqualTo() {
         return timeObservedGreaterThanOrEqualTo;
     }
     /**
-     * A filter that matches log entries where the observed event occurred before a date and time,
-     * specified in RFC 3339 format.
+     * A filter that matches log entries where the observed event occurred before a date and time, specified in RFC 3339 format.
      */
     private java.util.Date timeObservedLessThan;
 
     /**
-     * A filter that matches log entries where the observed event occurred before a date and time,
-     * specified in RFC 3339 format.
+     * A filter that matches log entries where the observed event occurred before a date and time, specified in RFC 3339 format.
      */
     public java.util.Date getTimeObservedLessThan() {
         return timeObservedLessThan;
     }
-    /** A full text search for logs. */
+    /**
+     * A full text search for logs.
+     */
     private String textContains;
 
-    /** A full text search for logs. */
+    /**
+     * A full text search for logs.
+     */
     public String getTextContains() {
         return textContains;
     }
-    /** Filters logs by access rule key. */
+    /**
+     * Filters logs by access rule key.
+     */
     private java.util.List<String> accessRuleKey;
 
-    /** Filters logs by access rule key. */
+    /**
+     * Filters logs by access rule key.
+     */
     public java.util.List<String> getAccessRuleKey() {
         return accessRuleKey;
     }
-    /** Filters logs by Web Application Firewall action. */
+    /**
+     * Filters logs by Web Application Firewall action.
+     */
     private java.util.List<Action> action;
 
-    /** Filters logs by Web Application Firewall action. */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Filters logs by Web Application Firewall action.
+     **/
+    public enum Action {
         Block("BLOCK"),
         Detect("DETECT"),
         Bypass("BYPASS"),
@@ -141,49 +143,65 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /** Filters logs by Web Application Firewall action. */
+    /**
+     * Filters logs by Web Application Firewall action.
+     */
     public java.util.List<Action> getAction() {
         return action;
     }
-    /** Filters logs by client IP address. */
+    /**
+     * Filters logs by client IP address.
+     */
     private java.util.List<String> clientAddress;
 
-    /** Filters logs by client IP address. */
+    /**
+     * Filters logs by client IP address.
+     */
     public java.util.List<String> getClientAddress() {
         return clientAddress;
     }
     /**
-     * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of
-     * codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
      */
     private java.util.List<String> countryCode;
 
     /**
-     * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of
-     * codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
      */
     public java.util.List<String> getCountryCode() {
         return countryCode;
     }
-    /** Filter logs by country name. */
+    /**
+     * Filter logs by country name.
+     */
     private java.util.List<String> countryName;
 
-    /** Filter logs by country name. */
+    /**
+     * Filter logs by country name.
+     */
     public java.util.List<String> getCountryName() {
         return countryName;
     }
-    /** Filter logs by device fingerprint. */
+    /**
+     * Filter logs by device fingerprint.
+     */
     private java.util.List<String> fingerprint;
 
-    /** Filter logs by device fingerprint. */
+    /**
+     * Filter logs by device fingerprint.
+     */
     public java.util.List<String> getFingerprint() {
         return fingerprint;
     }
-    /** Filter logs by HTTP method. */
+    /**
+     * Filter logs by HTTP method.
+     */
     private java.util.List<HttpMethod> httpMethod;
 
-    /** Filter logs by HTTP method. */
-    public enum HttpMethod implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Filter logs by HTTP method.
+     **/
+    public enum HttpMethod {
         Options("OPTIONS"),
         Get("GET"),
         Head("HEAD"),
@@ -222,28 +240,32 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /** Filter logs by HTTP method. */
+    /**
+     * Filter logs by HTTP method.
+     */
     public java.util.List<HttpMethod> getHttpMethod() {
         return httpMethod;
     }
-    /** Filter logs by incident key. */
+    /**
+     * Filter logs by incident key.
+     */
     private java.util.List<String> incidentKey;
 
-    /** Filter logs by incident key. */
+    /**
+     * Filter logs by incident key.
+     */
     public java.util.List<String> getIncidentKey() {
         return incidentKey;
     }
     /**
-     * Filter by log type. For more information about WAF logs, see
-     * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+     * Filter by log type. For more information about WAF logs, see [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      */
     private java.util.List<LogType> logType;
 
     /**
-     * Filter by log type. For more information about WAF logs, see
-     * [Logs](/iaas/Content/WAF/Tasks/logs.htm).
-     */
-    public enum LogType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Filter by log type. For more information about WAF logs, see [Logs](/iaas/Content/WAF/Tasks/logs.htm).
+     **/
+    public enum LogType {
         Access("ACCESS"),
         ProtectionRules("PROTECTION_RULES"),
         JsChallenge("JS_CHALLENGE"),
@@ -284,58 +306,85 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * Filter by log type. For more information about WAF logs, see
-     * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+     * Filter by log type. For more information about WAF logs, see [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      */
     public java.util.List<LogType> getLogType() {
         return logType;
     }
-    /** Filter by origin IP address. */
+    /**
+     * Filter by origin IP address.
+     */
     private java.util.List<String> originAddress;
 
-    /** Filter by origin IP address. */
+    /**
+     * Filter by origin IP address.
+     */
     public java.util.List<String> getOriginAddress() {
         return originAddress;
     }
-    /** Filter by referrer. */
+    /**
+     * Filter by referrer.
+     */
     private java.util.List<String> referrer;
 
-    /** Filter by referrer. */
+    /**
+     * Filter by referrer.
+     */
     public java.util.List<String> getReferrer() {
         return referrer;
     }
-    /** Filter by request URL. */
+    /**
+     * Filter by request URL.
+     */
     private java.util.List<String> requestUrl;
 
-    /** Filter by request URL. */
+    /**
+     * Filter by request URL.
+     */
     public java.util.List<String> getRequestUrl() {
         return requestUrl;
     }
-    /** Filter by response code. */
+    /**
+     * Filter by response code.
+     */
     private java.util.List<Integer> responseCode;
 
-    /** Filter by response code. */
+    /**
+     * Filter by response code.
+     */
     public java.util.List<Integer> getResponseCode() {
         return responseCode;
     }
-    /** Filter by threat feed key. */
+    /**
+     * Filter by threat feed key.
+     */
     private java.util.List<String> threatFeedKey;
 
-    /** Filter by threat feed key. */
+    /**
+     * Filter by threat feed key.
+     */
     public java.util.List<String> getThreatFeedKey() {
         return threatFeedKey;
     }
-    /** Filter by user agent. */
+    /**
+     * Filter by user agent.
+     */
     private java.util.List<String> userAgent;
 
-    /** Filter by user agent. */
+    /**
+     * Filter by user agent.
+     */
     public java.util.List<String> getUserAgent() {
         return userAgent;
     }
-    /** Filter by protection rule key. */
+    /**
+     * Filter by protection rule key.
+     */
     private java.util.List<String> protectionRuleKey;
 
-    /** Filter by protection rule key. */
+    /**
+     * Filter by protection rule key.
+     */
     public java.util.List<String> getProtectionRuleKey() {
         return protectionRuleKey;
     }
@@ -343,19 +392,17 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWafLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * WAAS policy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
          */
         private String waasPolicyId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * WAAS policy.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
          * @param waasPolicyId the value to set
          * @return this builder instance
          */
@@ -365,15 +412,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -383,15 +427,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to
-         * {@code 20}.
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 20}.
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to
-         * {@code 20}.
-         *
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 20}.
          * @param limit the value to set
          * @return this builder instance
          */
@@ -407,7 +448,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -417,17 +457,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A filter that matches log entries where the observed event occurred on or after a date
-         * and time specified in RFC 3339 format. If unspecified, defaults to two hours before
-         * receipt of the request.
+         * A filter that matches log entries where the observed event occurred on or after a date and time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of the request.
          */
         private java.util.Date timeObservedGreaterThanOrEqualTo = null;
 
         /**
-         * A filter that matches log entries where the observed event occurred on or after a date
-         * and time specified in RFC 3339 format. If unspecified, defaults to two hours before
-         * receipt of the request.
-         *
+         * A filter that matches log entries where the observed event occurred on or after a date and time specified in RFC 3339 format. If unspecified, defaults to two hours before receipt of the request.
          * @param timeObservedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -438,15 +473,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A filter that matches log entries where the observed event occurred before a date and
-         * time, specified in RFC 3339 format.
+         * A filter that matches log entries where the observed event occurred before a date and time, specified in RFC 3339 format.
          */
         private java.util.Date timeObservedLessThan = null;
 
         /**
-         * A filter that matches log entries where the observed event occurred before a date and
-         * time, specified in RFC 3339 format.
-         *
+         * A filter that matches log entries where the observed event occurred before a date and time, specified in RFC 3339 format.
          * @param timeObservedLessThan the value to set
          * @return this builder instance
          */
@@ -455,12 +487,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A full text search for logs. */
+        /**
+         * A full text search for logs.
+         */
         private String textContains = null;
 
         /**
          * A full text search for logs.
-         *
          * @param textContains the value to set
          * @return this builder instance
          */
@@ -469,12 +502,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Filters logs by access rule key. */
+        /**
+         * Filters logs by access rule key.
+         */
         private java.util.List<String> accessRuleKey = null;
 
         /**
          * Filters logs by access rule key.
-         *
          * @param accessRuleKey the value to set
          * @return this builder instance
          */
@@ -485,7 +519,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filters logs by access rule key.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -493,12 +526,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.accessRuleKey(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filters logs by Web Application Firewall action. */
+        /**
+         * Filters logs by Web Application Firewall action.
+         */
         private java.util.List<Action> action = null;
 
         /**
          * Filters logs by Web Application Firewall action.
-         *
          * @param action the value to set
          * @return this builder instance
          */
@@ -509,7 +543,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filters logs by Web Application Firewall action.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -517,12 +550,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.action(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filters logs by client IP address. */
+        /**
+         * Filters logs by client IP address.
+         */
         private java.util.List<String> clientAddress = null;
 
         /**
          * Filters logs by client IP address.
-         *
          * @param clientAddress the value to set
          * @return this builder instance
          */
@@ -533,7 +567,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filters logs by client IP address.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -542,15 +575,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list
-         * of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+         * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
          */
         private java.util.List<String> countryCode = null;
 
         /**
-         * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list
-         * of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-         *
+         * Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
          * @param countryCode the value to set
          * @return this builder instance
          */
@@ -560,10 +590,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Singular setter. Filters logs by country code. Country codes are in ISO 3166-1 alpha-2
-         * format. For a list of codes, see [ISO's
-         * website](https://www.iso.org/obp/ui/#search/code/).
-         *
+         * Singular setter. Filters logs by country code. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -571,12 +598,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.countryCode(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter logs by country name. */
+        /**
+         * Filter logs by country name.
+         */
         private java.util.List<String> countryName = null;
 
         /**
          * Filter logs by country name.
-         *
          * @param countryName the value to set
          * @return this builder instance
          */
@@ -587,7 +615,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by country name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -595,12 +622,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.countryName(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter logs by device fingerprint. */
+        /**
+         * Filter logs by device fingerprint.
+         */
         private java.util.List<String> fingerprint = null;
 
         /**
          * Filter logs by device fingerprint.
-         *
          * @param fingerprint the value to set
          * @return this builder instance
          */
@@ -611,7 +639,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by device fingerprint.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -619,12 +646,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.fingerprint(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter logs by HTTP method. */
+        /**
+         * Filter logs by HTTP method.
+         */
         private java.util.List<HttpMethod> httpMethod = null;
 
         /**
          * Filter logs by HTTP method.
-         *
          * @param httpMethod the value to set
          * @return this builder instance
          */
@@ -635,7 +663,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by HTTP method.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -643,12 +670,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.httpMethod(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter logs by incident key. */
+        /**
+         * Filter logs by incident key.
+         */
         private java.util.List<String> incidentKey = null;
 
         /**
          * Filter logs by incident key.
-         *
          * @param incidentKey the value to set
          * @return this builder instance
          */
@@ -659,7 +687,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter logs by incident key.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -668,15 +695,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Filter by log type. For more information about WAF logs, see
-         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * Filter by log type. For more information about WAF logs, see [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          */
         private java.util.List<LogType> logType = null;
 
         /**
-         * Filter by log type. For more information about WAF logs, see
-         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
-         *
+         * Filter by log type. For more information about WAF logs, see [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          * @param logType the value to set
          * @return this builder instance
          */
@@ -686,9 +710,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Singular setter. Filter by log type. For more information about WAF logs, see
-         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
-         *
+         * Singular setter. Filter by log type. For more information about WAF logs, see [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -696,12 +718,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.logType(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by origin IP address. */
+        /**
+         * Filter by origin IP address.
+         */
         private java.util.List<String> originAddress = null;
 
         /**
          * Filter by origin IP address.
-         *
          * @param originAddress the value to set
          * @return this builder instance
          */
@@ -712,7 +735,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by origin IP address.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -720,12 +742,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.originAddress(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by referrer. */
+        /**
+         * Filter by referrer.
+         */
         private java.util.List<String> referrer = null;
 
         /**
          * Filter by referrer.
-         *
          * @param referrer the value to set
          * @return this builder instance
          */
@@ -736,7 +759,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by referrer.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -744,12 +766,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.referrer(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by request URL. */
+        /**
+         * Filter by request URL.
+         */
         private java.util.List<String> requestUrl = null;
 
         /**
          * Filter by request URL.
-         *
          * @param requestUrl the value to set
          * @return this builder instance
          */
@@ -760,7 +783,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by request URL.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -768,12 +790,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.requestUrl(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by response code. */
+        /**
+         * Filter by response code.
+         */
         private java.util.List<Integer> responseCode = null;
 
         /**
          * Filter by response code.
-         *
          * @param responseCode the value to set
          * @return this builder instance
          */
@@ -784,7 +807,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by response code.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -792,12 +814,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.responseCode(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by threat feed key. */
+        /**
+         * Filter by threat feed key.
+         */
         private java.util.List<String> threatFeedKey = null;
 
         /**
          * Filter by threat feed key.
-         *
          * @param threatFeedKey the value to set
          * @return this builder instance
          */
@@ -808,7 +831,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by threat feed key.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -816,12 +838,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.threatFeedKey(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by user agent. */
+        /**
+         * Filter by user agent.
+         */
         private java.util.List<String> userAgent = null;
 
         /**
          * Filter by user agent.
-         *
          * @param userAgent the value to set
          * @return this builder instance
          */
@@ -832,7 +855,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by user agent.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -840,12 +862,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this.userAgent(java.util.Arrays.asList(singularValue));
         }
 
-        /** Filter by protection rule key. */
+        /**
+         * Filter by protection rule key.
+         */
         private java.util.List<String> protectionRuleKey = null;
 
         /**
          * Filter by protection rule key.
-         *
          * @param protectionRuleKey the value to set
          * @return this builder instance
          */
@@ -856,7 +879,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by protection rule key.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -866,19 +888,18 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -890,7 +911,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWafLogsRequest o) {
@@ -925,11 +945,10 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListWafLogsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWafLogsRequest
          */
@@ -943,8 +962,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListWafLogsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWafLogsRequest
@@ -975,17 +993,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.userAgent = userAgent;
             request.protectionRuleKey = protectionRuleKey;
             return request;
-            // new ListWafLogsRequest(waasPolicyId, opcRequestId, limit, page,
-            // timeObservedGreaterThanOrEqualTo, timeObservedLessThan, textContains, accessRuleKey,
-            // action, clientAddress, countryCode, countryName, fingerprint, httpMethod,
-            // incidentKey, logType, originAddress, referrer, requestUrl, responseCode,
-            // threatFeedKey, userAgent, protectionRuleKey);
+            // new ListWafLogsRequest(waasPolicyId, opcRequestId, limit, page, timeObservedGreaterThanOrEqualTo, timeObservedLessThan, textContains, accessRuleKey, action, clientAddress, countryCode, countryName, fingerprint, httpMethod, incidentKey, logType, originAddress, referrer, requestUrl, responseCode, threatFeedKey, userAgent, protectionRuleKey);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -1017,7 +1030,6 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

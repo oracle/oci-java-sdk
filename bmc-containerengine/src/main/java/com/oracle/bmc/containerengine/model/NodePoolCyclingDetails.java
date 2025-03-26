@@ -5,23 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * Node Pool Cycling Details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * Node Pool Cycling Details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NodePoolCyclingDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NodePoolCyclingDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NodePoolCyclingDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "maximumUnavailable",
@@ -39,57 +38,60 @@ public final class NodePoolCyclingDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Maximum active nodes that would be terminated from nodepool during the cycling nodepool
-         * process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to
-         * Nodepool size or 0% to 100%
-         */
+         * Maximum active nodes that would be terminated from nodepool during the cycling nodepool process.
+         * OKE supports both integer and percentage input.
+         * Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumUnavailable")
         private String maximumUnavailable;
 
         /**
-         * Maximum active nodes that would be terminated from nodepool during the cycling nodepool
-         * process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to
-         * Nodepool size or 0% to 100%
+         * Maximum active nodes that would be terminated from nodepool during the cycling nodepool process.
+         * OKE supports both integer and percentage input.
+         * Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
          *
          * @param maximumUnavailable the value to set
          * @return this builder
-         */
+         **/
         public Builder maximumUnavailable(String maximumUnavailable) {
             this.maximumUnavailable = maximumUnavailable;
             this.__explicitlySet__.add("maximumUnavailable");
             return this;
         }
         /**
-         * Maximum additional new compute instances that would be temporarily created and added to
-         * nodepool during the cycling nodepool process. OKE supports both integer and percentage
-         * input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-         */
+         * Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process.
+         * OKE supports both integer and percentage input.
+         * Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumSurge")
         private String maximumSurge;
 
         /**
-         * Maximum additional new compute instances that would be temporarily created and added to
-         * nodepool during the cycling nodepool process. OKE supports both integer and percentage
-         * input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+         * Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process.
+         * OKE supports both integer and percentage input.
+         * Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
          *
          * @param maximumSurge the value to set
          * @return this builder
-         */
+         **/
         public Builder maximumSurge(String maximumSurge) {
             this.maximumSurge = maximumSurge;
             this.__explicitlySet__.add("maximumSurge");
             return this;
         }
-        /** If nodes in the nodepool will be cycled to have new changes. */
+        /**
+         * If nodes in the nodepool will be cycled to have new changes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNodeCyclingEnabled")
         private Boolean isNodeCyclingEnabled;
 
         /**
          * If nodes in the nodepool will be cycled to have new changes.
-         *
          * @param isNodeCyclingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isNodeCyclingEnabled(Boolean isNodeCyclingEnabled) {
             this.isNodeCyclingEnabled = isNodeCyclingEnabled;
             this.__explicitlySet__.add("isNodeCyclingEnabled");
@@ -124,7 +126,9 @@ public final class NodePoolCyclingDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,52 +138,55 @@ public final class NodePoolCyclingDetails
     }
 
     /**
-     * Maximum active nodes that would be terminated from nodepool during the cycling nodepool
-     * process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to
-     * Nodepool size or 0% to 100%
-     */
+     * Maximum active nodes that would be terminated from nodepool during the cycling nodepool process.
+     * OKE supports both integer and percentage input.
+     * Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumUnavailable")
     private final String maximumUnavailable;
 
     /**
-     * Maximum active nodes that would be terminated from nodepool during the cycling nodepool
-     * process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to
-     * Nodepool size or 0% to 100%
+     * Maximum active nodes that would be terminated from nodepool during the cycling nodepool process.
+     * OKE supports both integer and percentage input.
+     * Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
      *
      * @return the value
-     */
+     **/
     public String getMaximumUnavailable() {
         return maximumUnavailable;
     }
 
     /**
-     * Maximum additional new compute instances that would be temporarily created and added to
-     * nodepool during the cycling nodepool process. OKE supports both integer and percentage input.
+     * Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process.
+     * OKE supports both integer and percentage input.
      * Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumSurge")
     private final String maximumSurge;
 
     /**
-     * Maximum additional new compute instances that would be temporarily created and added to
-     * nodepool during the cycling nodepool process. OKE supports both integer and percentage input.
+     * Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process.
+     * OKE supports both integer and percentage input.
      * Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
      *
      * @return the value
-     */
+     **/
     public String getMaximumSurge() {
         return maximumSurge;
     }
 
-    /** If nodes in the nodepool will be cycled to have new changes. */
+    /**
+     * If nodes in the nodepool will be cycled to have new changes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNodeCyclingEnabled")
     private final Boolean isNodeCyclingEnabled;
 
     /**
      * If nodes in the nodepool will be cycled to have new changes.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsNodeCyclingEnabled() {
         return isNodeCyclingEnabled;
     }
@@ -191,7 +198,6 @@ public final class NodePoolCyclingDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

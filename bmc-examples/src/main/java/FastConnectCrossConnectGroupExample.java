@@ -45,18 +45,18 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Sample to demonstrate setting up FastConnect CrossConnectGroup
+ * <p>
  *
- * <p>Oracle Cloud Infrastructure FastConnect provides an easy way to create a dedicated, private
- * connection between your data center and Oracle Cloud Infrastructure.
  *
- * <p>FastConnect provides higher-bandwidth options, and a more reliable and consistent networking
- * experience compared to internet-based connections.
+ *  Oracle Cloud Infrastructure FastConnect provides an easy way to create a dedicated,
+ *  private connection between your data center and Oracle Cloud Infrastructure.
  *
- * <p>Details information on FastConnect:
- * https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+ *  FastConnect provides higher-bandwidth options, and a more reliable and consistent
+ *  networking experience compared to internet-based connections.
  *
- * <p>Details CrossConnectGroup API:
- * https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup
+ *  Details information on FastConnect: https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+ *
+ *  Details CrossConnectGroup API: https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup
  */
 public class FastConnectCrossConnectGroupExample {
     // Set this with your own compartment ID
@@ -80,10 +80,8 @@ public class FastConnectCrossConnectGroupExample {
             throw new IllegalStateException("A compartment ID must be defined");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -91,11 +89,12 @@ public class FastConnectCrossConnectGroupExample {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient phxVirtualNetworkClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
-        final FastConnectCrossConnectExample example =
-                new FastConnectCrossConnectExample(phxVirtualNetworkClient, Region.US_PHOENIX_1);
-        final IdentityClient identityClient = IdentityClient.builder().build(authProvider);
+        final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
+        phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);
+        final FastConnectCrossConnectGroupExample example =
+                new FastConnectCrossConnectGroupExample(
+                        phxVirtualNetworkClient, Region.US_PHOENIX_1);
+        final IdentityClient identityClient = new IdentityClient(authProvider);
 
         example.run(identityClient);
     }

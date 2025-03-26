@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * References to various images <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * References to various images
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SettingsDefaultImages.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SettingsDefaultImages.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SettingsDefaultImages
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "type", "display"})
     public SettingsDefaultImages(String value, String type, String display) {
@@ -35,26 +34,33 @@ public final class SettingsDefaultImages
     public static class Builder {
         /**
          * Image URI
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: reference
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: reference
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Image URI
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: reference
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: reference
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -62,26 +68,33 @@ public final class SettingsDefaultImages
         }
         /**
          * Indicates the image type
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: string
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Indicates the image type
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-         * returned: default - type: string
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: true
+         *  - returned: default
+         *  - type: string
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -89,26 +102,33 @@ public final class SettingsDefaultImages
         }
         /**
          * A human-readable name, primarily used for display purposes
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: string
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("display")
         private String display;
 
         /**
          * A human-readable name, primarily used for display purposes
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-         * returned: default - type: string
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
          * @param display the value to set
          * @return this builder
-         */
+         **/
         public Builder display(String display) {
             this.display = display;
             this.__explicitlySet__.add("display");
@@ -142,7 +162,9 @@ public final class SettingsDefaultImages
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,75 +175,96 @@ public final class SettingsDefaultImages
 
     /**
      * Image URI
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: reference
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: reference
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Image URI
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: reference
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: reference
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
     /**
      * Indicates the image type
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: string
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Indicates the image type
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: true -
-     * returned: default - type: string
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: true
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
      * A human-readable name, primarily used for display purposes
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: string
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("display")
     private final String display;
 
     /**
      * A human-readable name, primarily used for display purposes
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readOnly - required: false -
-     * returned: default - type: string
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getDisplay() {
         return display;
     }
@@ -233,7 +276,6 @@ public final class SettingsDefaultImages
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

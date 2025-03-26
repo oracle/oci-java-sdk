@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for the long-term backup schedule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details for the long-term backup schedule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LongTermBackUpScheduleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LongTermBackUpScheduleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LongTermBackUpScheduleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "repeatCadence",
@@ -43,71 +42,67 @@ public final class LongTermBackUpScheduleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The frequency of the long-term backup schedule */
+        /**
+         * The frequency of the long-term backup schedule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repeatCadence")
         private RepeatCadence repeatCadence;
 
         /**
          * The frequency of the long-term backup schedule
-         *
          * @param repeatCadence the value to set
          * @return this builder
-         */
+         **/
         public Builder repeatCadence(RepeatCadence repeatCadence) {
             this.repeatCadence = repeatCadence;
             this.__explicitlySet__.add("repeatCadence");
             return this;
         }
         /**
-         * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having
-         * fewer days than the provided date will have the backup taken on the last day of that
-         * month.
-         */
+         * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfBackup")
         private java.util.Date timeOfBackup;
 
         /**
-         * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having
-         * fewer days than the provided date will have the backup taken on the last day of that
-         * month.
-         *
+         * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
          * @param timeOfBackup the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfBackup(java.util.Date timeOfBackup) {
             this.timeOfBackup = timeOfBackup;
             this.__explicitlySet__.add("timeOfBackup");
             return this;
         }
-        /** Retention period, in days, for long-term backups */
+        /**
+         * Retention period, in days, for long-term backups
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
         private Integer retentionPeriodInDays;
 
         /**
          * Retention period, in days, for long-term backups
-         *
          * @param retentionPeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
             this.retentionPeriodInDays = retentionPeriodInDays;
             this.__explicitlySet__.add("retentionPeriodInDays");
             return this;
         }
         /**
-         * Indicates if the long-term backup schedule should be deleted. The default value is {@code
-         * FALSE}.
-         */
+         * Indicates if the long-term backup schedule should be deleted. The default value is {@code FALSE}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisabled")
         private Boolean isDisabled;
 
         /**
-         * Indicates if the long-term backup schedule should be deleted. The default value is {@code
-         * FALSE}.
+         * Indicates if the long-term backup schedule should be deleted. The default value is {@code FALSE}.
          *
          * @param isDisabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDisabled(Boolean isDisabled) {
             this.isDisabled = isDisabled;
             this.__explicitlySet__.add("isDisabled");
@@ -148,7 +143,9 @@ public final class LongTermBackUpScheduleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,16 +154,18 @@ public final class LongTermBackUpScheduleDetails
         return new Builder().copy(this);
     }
 
-    /** The frequency of the long-term backup schedule */
-    public enum RepeatCadence implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The frequency of the long-term backup schedule
+     **/
+    public enum RepeatCadence {
         OneTime("ONE_TIME"),
         Weekly("WEEKLY"),
         Monthly("MONTHLY"),
         Yearly("YEARLY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -205,62 +204,60 @@ public final class LongTermBackUpScheduleDetails
             return UnknownEnumValue;
         }
     };
-    /** The frequency of the long-term backup schedule */
+    /**
+     * The frequency of the long-term backup schedule
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatCadence")
     private final RepeatCadence repeatCadence;
 
     /**
      * The frequency of the long-term backup schedule
-     *
      * @return the value
-     */
+     **/
     public RepeatCadence getRepeatCadence() {
         return repeatCadence;
     }
 
     /**
-     * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer
-     * days than the provided date will have the backup taken on the last day of that month.
-     */
+     * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfBackup")
     private final java.util.Date timeOfBackup;
 
     /**
-     * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer
-     * days than the provided date will have the backup taken on the last day of that month.
-     *
+     * The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfBackup() {
         return timeOfBackup;
     }
 
-    /** Retention period, in days, for long-term backups */
+    /**
+     * Retention period, in days, for long-term backups
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
     private final Integer retentionPeriodInDays;
 
     /**
      * Retention period, in days, for long-term backups
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionPeriodInDays() {
         return retentionPeriodInDays;
     }
 
     /**
-     * Indicates if the long-term backup schedule should be deleted. The default value is {@code
-     * FALSE}.
-     */
+     * Indicates if the long-term backup schedule should be deleted. The default value is {@code FALSE}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDisabled")
     private final Boolean isDisabled;
 
     /**
-     * Indicates if the long-term backup schedule should be deleted. The default value is {@code
-     * FALSE}.
+     * Indicates if the long-term backup schedule should be deleted. The default value is {@code FALSE}.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDisabled() {
         return isDisabled;
     }
@@ -272,7 +269,6 @@ public final class LongTermBackUpScheduleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

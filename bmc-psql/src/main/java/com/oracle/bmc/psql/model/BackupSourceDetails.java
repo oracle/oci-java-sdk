@@ -5,59 +5,57 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Restoring to a new database system from the backup. The database system details that are part of
- * the CreateDbSystem request are not required, but if present will override the details from the
- * backup's database system snapshot. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Restoring to a new database system from the backup.
+ * The database system details that are part of the CreateDbSystem request are not required, but if present will override the details from the backup's database system snapshot.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BackupSourceDetails.Builder.class)
+    builder = BackupSourceDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "sourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "sourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BackupSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database system backup.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database system backup.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
          * @param backupId the value to set
          * @return this builder
-         */
+         **/
         public Builder backupId(String backupId) {
             this.backupId = backupId;
             this.__explicitlySet__.add("backupId");
             return this;
         }
-        /** Deprecated. Don't use. */
+        /**
+         * Deprecated. Don't use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHavingRestoreConfigOverrides")
         private Boolean isHavingRestoreConfigOverrides;
 
         /**
          * Deprecated. Don't use.
-         *
          * @param isHavingRestoreConfigOverrides the value to set
          * @return this builder
-         */
+         **/
         public Builder isHavingRestoreConfigOverrides(Boolean isHavingRestoreConfigOverrides) {
             this.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
             this.__explicitlySet__.add("isHavingRestoreConfigOverrides");
@@ -88,7 +86,9 @@ public final class BackupSourceDetails extends SourceDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,31 +105,29 @@ public final class BackupSourceDetails extends SourceDetails {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database system backup.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database system backup.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
      * @return the value
-     */
+     **/
     public String getBackupId() {
         return backupId;
     }
 
-    /** Deprecated. Don't use. */
+    /**
+     * Deprecated. Don't use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHavingRestoreConfigOverrides")
     private final Boolean isHavingRestoreConfigOverrides;
 
     /**
      * Deprecated. Don't use.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHavingRestoreConfigOverrides() {
         return isHavingRestoreConfigOverrides;
     }
@@ -141,7 +139,6 @@ public final class BackupSourceDetails extends SourceDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

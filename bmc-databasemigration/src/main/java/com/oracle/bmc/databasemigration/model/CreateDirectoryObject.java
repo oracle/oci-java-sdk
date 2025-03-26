@@ -5,26 +5,25 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Directory object details, used to define either import or export directory objects in Data Pump
- * Settings. Import directory is required for Non-Autonomous target connections. If specified for an
- * autonomous target, it will show an error. Export directory will error if there are database link
- * details specified. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Directory object details, used to define either import or export directory objects in Data Pump Settings.
+ * Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error.
+ * Export directory will error if there are database link details specified.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDirectoryObject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDirectoryObject.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDirectoryObject
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "path"})
     public CreateDirectoryObject(String name, String path) {
@@ -35,31 +34,33 @@ public final class CreateDirectoryObject
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of directory object in database */
+        /**
+         * Name of directory object in database
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of directory object in database
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Absolute path of directory on database server */
+        /**
+         * Absolute path of directory on database server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Absolute path of directory on database server
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
@@ -89,7 +90,9 @@ public final class CreateDirectoryObject
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +101,30 @@ public final class CreateDirectoryObject
         return new Builder().copy(this);
     }
 
-    /** Name of directory object in database */
+    /**
+     * Name of directory object in database
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of directory object in database
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Absolute path of directory on database server */
+    /**
+     * Absolute path of directory on database server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Absolute path of directory on database server
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
@@ -131,7 +136,6 @@ public final class CreateDirectoryObject
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.email.model;
 
-/** The current domain verification status. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-public enum DomainVerificationStatusType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current domain verification status.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+public enum DomainVerificationStatusType {
     None("NONE"),
     Domainid("DOMAINID"),
     Other("OTHER"),

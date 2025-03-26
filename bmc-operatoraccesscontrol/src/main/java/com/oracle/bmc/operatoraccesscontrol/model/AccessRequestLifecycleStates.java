@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
 
-/** Possible lifecycle states for an access request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum AccessRequestLifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible lifecycle states for an access request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum AccessRequestLifecycleStates {
     Created("CREATED"),
     Approvalwaiting("APPROVALWAITING"),
     Preapproved("PREAPPROVED"),

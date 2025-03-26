@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsSourceFunction <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * LogAnalyticsSourceFunction
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsSourceFunction.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsSourceFunction.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsSourceFunction
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "arguments",
@@ -79,22 +78,26 @@ public final class LogAnalyticsSourceFunction
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The function argument. */
+        /**
+         * The function argument.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<LogAnalyticsMetaFunctionArgument> arguments;
 
         /**
          * The function argument.
-         *
          * @param arguments the value to set
          * @return this builder
-         */
+         **/
         public Builder arguments(java.util.List<LogAnalyticsMetaFunctionArgument> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
             return this;
         }
-        /** A flag inidcating whether or not the source function is enabled. */
+        /**
+         * A flag inidcating whether or not the source function is enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -103,7 +106,7 @@ public final class LogAnalyticsSourceFunction
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -118,200 +121,213 @@ public final class LogAnalyticsSourceFunction
             this.__explicitlySet__.add("function");
             return this;
         }
-        /** The source function name */
+        /**
+         * The source function name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionName")
         private FunctionName functionName;
 
         /**
          * The source function name
-         *
          * @param functionName the value to set
          * @return this builder
-         */
+         **/
         public Builder functionName(FunctionName functionName) {
             this.functionName = functionName;
             this.__explicitlySet__.add("functionName");
             return this;
         }
-        /** The source function unique identifier as a string. */
+        /**
+         * The source function unique identifier as a string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionReference")
         private String functionReference;
 
         /**
          * The source function unique identifier as a string.
-         *
          * @param functionReference the value to set
          * @return this builder
-         */
+         **/
         public Builder functionReference(String functionReference) {
             this.functionReference = functionReference;
             this.__explicitlySet__.add("functionReference");
             return this;
         }
-        /** The source unique identifier as a string. */
+        /**
+         * The source unique identifier as a string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceReference")
         private String sourceReference;
 
         /**
          * The source unique identifier as a string.
-         *
          * @param sourceReference the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceReference(String sourceReference) {
             this.sourceReference = sourceReference;
             this.__explicitlySet__.add("sourceReference");
             return this;
         }
-        /** Features of the source function to use for enrichment. */
+        /**
+         * Features of the source function to use for enrichment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<String> features;
 
         /**
          * Features of the source function to use for enrichment.
-         *
          * @param features the value to set
          * @return this builder
-         */
+         **/
         public Builder features(java.util.List<String> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
             return this;
         }
-        /** The source function unique identifier. */
+        /**
+         * The source function unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private Long functionId;
 
         /**
          * The source function unique identifier.
-         *
          * @param functionId the value to set
          * @return this builder
-         */
+         **/
         public Builder functionId(Long functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
             return this;
         }
-        /** The source function order. */
+        /**
+         * The source function order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("order")
         private Long order;
 
         /**
          * The source function order.
-         *
          * @param order the value to set
          * @return this builder
-         */
+         **/
         public Builder order(Long order) {
             this.order = order;
             this.__explicitlySet__.add("order");
             return this;
         }
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
-         */
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /** The lookup column. */
+        /**
+         * The lookup column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupColumn")
         private String lookupColumn;
 
         /**
          * The lookup column.
-         *
          * @param lookupColumn the value to set
          * @return this builder
-         */
+         **/
         public Builder lookupColumn(String lookupColumn) {
             this.lookupColumn = lookupColumn;
             this.__explicitlySet__.add("lookupColumn");
             return this;
         }
-        /** The lookup column position. */
+        /**
+         * The lookup column position.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupColumnPosition")
         private Long lookupColumnPosition;
 
         /**
          * The lookup column position.
-         *
          * @param lookupColumnPosition the value to set
          * @return this builder
-         */
+         **/
         public Builder lookupColumnPosition(Long lookupColumnPosition) {
             this.lookupColumnPosition = lookupColumnPosition;
             this.__explicitlySet__.add("lookupColumnPosition");
             return this;
         }
-        /** The lookup display name. */
+        /**
+         * The lookup display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
         private String lookupDisplayName;
 
         /**
          * The lookup display name.
-         *
          * @param lookupDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder lookupDisplayName(String lookupDisplayName) {
             this.lookupDisplayName = lookupDisplayName;
             this.__explicitlySet__.add("lookupDisplayName");
             return this;
         }
-        /** The lookup mode. */
+        /**
+         * The lookup  mode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupMode")
         private Long lookupMode;
 
         /**
-         * The lookup mode.
-         *
+         * The lookup  mode.
          * @param lookupMode the value to set
          * @return this builder
-         */
+         **/
         public Builder lookupMode(Long lookupMode) {
             this.lookupMode = lookupMode;
             this.__explicitlySet__.add("lookupMode");
             return this;
         }
-        /** The lookup table. */
+        /**
+         * The lookup table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lookupTable")
         private String lookupTable;
 
         /**
          * The lookup table.
-         *
          * @param lookupTable the value to set
          * @return this builder
-         */
+         **/
         public Builder lookupTable(String lookupTable) {
             this.lookupTable = lookupTable;
             this.__explicitlySet__.add("lookupTable");
             return this;
         }
-        /** The source unique identifier. */
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
         /**
          * The source unique identifier.
-         *
          * @param sourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
@@ -400,7 +416,9 @@ public final class LogAnalyticsSourceFunction
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -409,20 +427,24 @@ public final class LogAnalyticsSourceFunction
         return new Builder().copy(this);
     }
 
-    /** The function argument. */
+    /**
+     * The function argument.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<LogAnalyticsMetaFunctionArgument> arguments;
 
     /**
      * The function argument.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LogAnalyticsMetaFunctionArgument> getArguments() {
         return arguments;
     }
 
-    /** A flag inidcating whether or not the source function is enabled. */
+    /**
+     * A flag inidcating whether or not the source function is enabled.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -430,7 +452,7 @@ public final class LogAnalyticsSourceFunction
      * A flag inidcating whether or not the source function is enabled.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -442,14 +464,16 @@ public final class LogAnalyticsSourceFunction
         return function;
     }
 
-    /** The source function name */
-    public enum FunctionName implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The source function name
+     **/
+    public enum FunctionName {
         Geolocation("GEOLOCATION"),
         Lookup("LOOKUP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -488,175 +512,188 @@ public final class LogAnalyticsSourceFunction
             return UnknownEnumValue;
         }
     };
-    /** The source function name */
+    /**
+     * The source function name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionName")
     private final FunctionName functionName;
 
     /**
      * The source function name
-     *
      * @return the value
-     */
+     **/
     public FunctionName getFunctionName() {
         return functionName;
     }
 
-    /** The source function unique identifier as a string. */
+    /**
+     * The source function unique identifier as a string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionReference")
     private final String functionReference;
 
     /**
      * The source function unique identifier as a string.
-     *
      * @return the value
-     */
+     **/
     public String getFunctionReference() {
         return functionReference;
     }
 
-    /** The source unique identifier as a string. */
+    /**
+     * The source unique identifier as a string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceReference")
     private final String sourceReference;
 
     /**
      * The source unique identifier as a string.
-     *
      * @return the value
-     */
+     **/
     public String getSourceReference() {
         return sourceReference;
     }
 
-    /** Features of the source function to use for enrichment. */
+    /**
+     * Features of the source function to use for enrichment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<String> features;
 
     /**
      * Features of the source function to use for enrichment.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getFeatures() {
         return features;
     }
 
-    /** The source function unique identifier. */
+    /**
+     * The source function unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final Long functionId;
 
     /**
      * The source function unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getFunctionId() {
         return functionId;
     }
 
-    /** The source function order. */
+    /**
+     * The source function order.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("order")
     private final Long order;
 
     /**
      * The source function order.
-     *
      * @return the value
-     */
+     **/
     public Long getOrder() {
         return order;
     }
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
-     */
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /** The lookup column. */
+    /**
+     * The lookup column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupColumn")
     private final String lookupColumn;
 
     /**
      * The lookup column.
-     *
      * @return the value
-     */
+     **/
     public String getLookupColumn() {
         return lookupColumn;
     }
 
-    /** The lookup column position. */
+    /**
+     * The lookup column position.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupColumnPosition")
     private final Long lookupColumnPosition;
 
     /**
      * The lookup column position.
-     *
      * @return the value
-     */
+     **/
     public Long getLookupColumnPosition() {
         return lookupColumnPosition;
     }
 
-    /** The lookup display name. */
+    /**
+     * The lookup display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
     private final String lookupDisplayName;
 
     /**
      * The lookup display name.
-     *
      * @return the value
-     */
+     **/
     public String getLookupDisplayName() {
         return lookupDisplayName;
     }
 
-    /** The lookup mode. */
+    /**
+     * The lookup  mode.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupMode")
     private final Long lookupMode;
 
     /**
-     * The lookup mode.
-     *
+     * The lookup  mode.
      * @return the value
-     */
+     **/
     public Long getLookupMode() {
         return lookupMode;
     }
 
-    /** The lookup table. */
+    /**
+     * The lookup table.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupTable")
     private final String lookupTable;
 
     /**
      * The lookup table.
-     *
      * @return the value
-     */
+     **/
     public String getLookupTable() {
         return lookupTable;
     }
 
-    /** The source unique identifier. */
+    /**
+     * The source unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
     /**
      * The source unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getSourceId() {
         return sourceId;
     }
@@ -668,7 +705,6 @@ public final class LogAnalyticsSourceFunction
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

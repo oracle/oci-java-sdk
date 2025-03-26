@@ -6,60 +6,71 @@ package com.oracle.bmc.generativeaiagentruntime.requests;
 
 import com.oracle.bmc.generativeaiagentruntime.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/CreateSessionExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateSessionRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/CreateSessionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateSessionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 public class CreateSessionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.generativeaiagentruntime.model.CreateSessionDetails> {
 
-    /** Details for the new agent session. */
+    /**
+     * Details for the new agent session.
+     */
     private com.oracle.bmc.generativeaiagentruntime.model.CreateSessionDetails createSessionDetails;
 
-    /** Details for the new agent session. */
+    /**
+     * Details for the new agent session.
+     */
     public com.oracle.bmc.generativeaiagentruntime.model.CreateSessionDetails
             getCreateSessionDetails() {
         return createSessionDetails;
     }
-    /** A unique ID for the endpoint. */
+    /**
+     * A unique ID for the endpoint.
+     */
     private String agentEndpointId;
 
-    /** A unique ID for the endpoint. */
+    /**
+     * A unique ID for the endpoint.
+     */
     public String getAgentEndpointId() {
         return agentEndpointId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,16 +83,18 @@ public class CreateSessionRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateSessionRequest,
                     com.oracle.bmc.generativeaiagentruntime.model.CreateSessionDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new agent session. */
+        /**
+         * Details for the new agent session.
+         */
         private com.oracle.bmc.generativeaiagentruntime.model.CreateSessionDetails
                 createSessionDetails = null;
 
         /**
          * Details for the new agent session.
-         *
          * @param createSessionDetails the value to set
          * @return this builder instance
          */
@@ -92,12 +105,13 @@ public class CreateSessionRequest
             return this;
         }
 
-        /** A unique ID for the endpoint. */
+        /**
+         * A unique ID for the endpoint.
+         */
         private String agentEndpointId = null;
 
         /**
          * A unique ID for the endpoint.
-         *
          * @param agentEndpointId the value to set
          * @return this builder instance
          */
@@ -108,19 +122,20 @@ public class CreateSessionRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -130,12 +145,13 @@ public class CreateSessionRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -146,19 +162,18 @@ public class CreateSessionRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -170,7 +185,6 @@ public class CreateSessionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateSessionRequest o) {
@@ -186,11 +200,10 @@ public class CreateSessionRequest
         /**
          * Build the instance of CreateSessionRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateSessionRequest
          */
@@ -203,7 +216,6 @@ public class CreateSessionRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -217,8 +229,7 @@ public class CreateSessionRequest
         /**
          * Build the instance of CreateSessionRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateSessionRequest
@@ -230,14 +241,12 @@ public class CreateSessionRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateSessionRequest(createSessionDetails, agentEndpointId, opcRetryToken,
-            // opcRequestId);
+            // new CreateSessionRequest(createSessionDetails, agentEndpointId, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -250,7 +259,6 @@ public class CreateSessionRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

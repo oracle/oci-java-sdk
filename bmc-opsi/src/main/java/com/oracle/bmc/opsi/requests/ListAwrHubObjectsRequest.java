@@ -6,132 +6,142 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrHubObjectsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAwrHubObjectsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrHubObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAwrHubObjectsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Awr Hub Source identifier */
+    /**
+     * Unique Awr Hub Source identifier
+     */
     private String awrHubSourceId;
 
-    /** Unique Awr Hub Source identifier */
+    /**
+     * Unique Awr Hub Source identifier
+     */
     public String getAwrHubSourceId() {
         return awrHubSourceId;
     }
     /**
-     * The string to use for matching against the start of object names in a Awr Hub list objects
-     * query.
+     * The string to use for matching against the start of object names in a Awr Hub list objects query.
      */
     private String prefix;
 
     /**
-     * The string to use for matching against the start of object names in a Awr Hub list objects
-     * query.
+     * The string to use for matching against the start of object names in a Awr Hub list objects query.
      */
     public String getPrefix() {
         return prefix;
     }
     /**
-     * Object names returned by Awr Hub list objects query must be greater or equal to this
-     * parameter.
+     * Object names returned by Awr Hub list objects query must be greater or equal to this parameter.
      */
     private String start;
 
     /**
-     * Object names returned by Awr Hub list objects query must be greater or equal to this
-     * parameter.
+     * Object names returned by Awr Hub list objects query must be greater or equal to this parameter.
      */
     public String getStart() {
         return start;
     }
     /**
-     * Object names returned by Awr Hub list objects query must be strictly less than this
-     * parameter.
+     * Object names returned by Awr Hub list objects query must be strictly less than this parameter.
      */
     private String end;
 
     /**
-     * Object names returned by Awr Hub list objects query must be strictly less than this
-     * parameter.
+     * Object names returned by Awr Hub list objects query must be strictly less than this parameter.
      */
     public String getEnd() {
         return end;
     }
     /**
      * When this parameter is set, only objects whose names do not contain the delimiter character
-     * (after an optionally specified prefix) are returned in the Awr Hub list objects key of the
-     * response body. Scanned objects whose names contain the delimiter have the part of their name
-     * up to the first occurrence of the delimiter (including the optional prefix) returned as a set
-     * of prefixes. Note that only '/' is a supported delimiter character at this time.
+     * (after an optionally specified prefix) are returned in the Awr Hub list objects key of the response body.
+     * Scanned objects whose names contain the delimiter have the part of their name up to the first
+     * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+     * Note that only '/' is a supported delimiter character at this time.
+     *
      */
     private String delimiter;
 
     /**
      * When this parameter is set, only objects whose names do not contain the delimiter character
-     * (after an optionally specified prefix) are returned in the Awr Hub list objects key of the
-     * response body. Scanned objects whose names contain the delimiter have the part of their name
-     * up to the first occurrence of the delimiter (including the optional prefix) returned as a set
-     * of prefixes. Note that only '/' is a supported delimiter character at this time.
+     * (after an optionally specified prefix) are returned in the Awr Hub list objects key of the response body.
+     * Scanned objects whose names contain the delimiter have the part of their name up to the first
+     * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+     * Note that only '/' is a supported delimiter character at this time.
+     *
      */
     public String getDelimiter() {
         return delimiter;
     }
-    /** Awr Hub Object name after which remaining objects are listed */
+    /**
+     * Awr Hub Object name after which remaining objects are listed
+     */
     private String startAfter;
 
-    /** Awr Hub Object name after which remaining objects are listed */
+    /**
+     * Awr Hub Object name after which remaining objects are listed
+     */
     public String getStartAfter() {
         return startAfter;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * By default all the fields are returned. Use this parameter to fetch specific fields 'size',
-     * 'etag', 'md5', 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List
-     * the names of those fields in a comma-separated, case-insensitive list as the value of this
-     * parameter. For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     * By default all the fields are returned. Use this parameter to fetch specific fields 'size', 'etag', 'md5',
+     * 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List the names of those fields
+     * in a comma-separated, case-insensitive list as the value of this parameter.
+     * For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     *
      */
     private Fields fields;
 
     /**
-     * By default all the fields are returned. Use this parameter to fetch specific fields 'size',
-     * 'etag', 'md5', 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List
-     * the names of those fields in a comma-separated, case-insensitive list as the value of this
-     * parameter. For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
-     */
-    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
+     * By default all the fields are returned. Use this parameter to fetch specific fields 'size', 'etag', 'md5',
+     * 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List the names of those fields
+     * in a comma-separated, case-insensitive list as the value of this parameter.
+     * For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     *
+     **/
+    public enum Fields {
         Name("name"),
         Size("size"),
         Etag("etag"),
@@ -171,23 +181,26 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * By default all the fields are returned. Use this parameter to fetch specific fields 'size',
-     * 'etag', 'md5', 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List
-     * the names of those fields in a comma-separated, case-insensitive list as the value of this
-     * parameter. For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     * By default all the fields are returned. Use this parameter to fetch specific fields 'size', 'etag', 'md5',
+     * 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List the names of those fields
+     * in a comma-separated, case-insensitive list as the value of this parameter.
+     * For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     *
      */
     public Fields getFields() {
         return fields;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -196,15 +209,17 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAwrHubObjectsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Awr Hub Source identifier */
+        /**
+         * Unique Awr Hub Source identifier
+         */
         private String awrHubSourceId = null;
 
         /**
          * Unique Awr Hub Source identifier
-         *
          * @param awrHubSourceId the value to set
          * @return this builder instance
          */
@@ -214,15 +229,12 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The string to use for matching against the start of object names in a Awr Hub list
-         * objects query.
+         * The string to use for matching against the start of object names in a Awr Hub list objects query.
          */
         private String prefix = null;
 
         /**
-         * The string to use for matching against the start of object names in a Awr Hub list
-         * objects query.
-         *
+         * The string to use for matching against the start of object names in a Awr Hub list objects query.
          * @param prefix the value to set
          * @return this builder instance
          */
@@ -232,15 +244,12 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Object names returned by Awr Hub list objects query must be greater or equal to this
-         * parameter.
+         * Object names returned by Awr Hub list objects query must be greater or equal to this parameter.
          */
         private String start = null;
 
         /**
-         * Object names returned by Awr Hub list objects query must be greater or equal to this
-         * parameter.
-         *
+         * Object names returned by Awr Hub list objects query must be greater or equal to this parameter.
          * @param start the value to set
          * @return this builder instance
          */
@@ -250,15 +259,12 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Object names returned by Awr Hub list objects query must be strictly less than this
-         * parameter.
+         * Object names returned by Awr Hub list objects query must be strictly less than this parameter.
          */
         private String end = null;
 
         /**
-         * Object names returned by Awr Hub list objects query must be strictly less than this
-         * parameter.
-         *
+         * Object names returned by Awr Hub list objects query must be strictly less than this parameter.
          * @param end the value to set
          * @return this builder instance
          */
@@ -268,22 +274,21 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * When this parameter is set, only objects whose names do not contain the delimiter
-         * character (after an optionally specified prefix) are returned in the Awr Hub list objects
-         * key of the response body. Scanned objects whose names contain the delimiter have the part
-         * of their name up to the first occurrence of the delimiter (including the optional prefix)
-         * returned as a set of prefixes. Note that only '/' is a supported delimiter character at
-         * this time.
+         * When this parameter is set, only objects whose names do not contain the delimiter character
+         * (after an optionally specified prefix) are returned in the Awr Hub list objects key of the response body.
+         * Scanned objects whose names contain the delimiter have the part of their name up to the first
+         * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+         * Note that only '/' is a supported delimiter character at this time.
+         *
          */
         private String delimiter = null;
 
         /**
-         * When this parameter is set, only objects whose names do not contain the delimiter
-         * character (after an optionally specified prefix) are returned in the Awr Hub list objects
-         * key of the response body. Scanned objects whose names contain the delimiter have the part
-         * of their name up to the first occurrence of the delimiter (including the optional prefix)
-         * returned as a set of prefixes. Note that only '/' is a supported delimiter character at
-         * this time.
+         * When this parameter is set, only objects whose names do not contain the delimiter character
+         * (after an optionally specified prefix) are returned in the Awr Hub list objects key of the response body.
+         * Scanned objects whose names contain the delimiter have the part of their name up to the first
+         * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+         * Note that only '/' is a supported delimiter character at this time.
          *
          * @param delimiter the value to set
          * @return this builder instance
@@ -293,12 +298,13 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Awr Hub Object name after which remaining objects are listed */
+        /**
+         * Awr Hub Object name after which remaining objects are listed
+         */
         private String startAfter = null;
 
         /**
          * Awr Hub Object name after which remaining objects are listed
-         *
          * @param startAfter the value to set
          * @return this builder instance
          */
@@ -308,16 +314,17 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -328,17 +335,20 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -350,20 +360,19 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * By default all the fields are returned. Use this parameter to fetch specific fields
-         * 'size', 'etag', 'md5', 'timeCreated', 'timeModified', 'storageTier' and 'archivalState'
-         * fields. List the names of those fields in a comma-separated, case-insensitive list as the
-         * value of this parameter. For example:
-         * 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+         * By default all the fields are returned. Use this parameter to fetch specific fields 'size', 'etag', 'md5',
+         * 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List the names of those fields
+         * in a comma-separated, case-insensitive list as the value of this parameter.
+         * For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+         *
          */
         private Fields fields = null;
 
         /**
-         * By default all the fields are returned. Use this parameter to fetch specific fields
-         * 'size', 'etag', 'md5', 'timeCreated', 'timeModified', 'storageTier' and 'archivalState'
-         * fields. List the names of those fields in a comma-separated, case-insensitive list as the
-         * value of this parameter. For example:
-         * 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+         * By default all the fields are returned. Use this parameter to fetch specific fields 'size', 'etag', 'md5',
+         * 'timeCreated', 'timeModified', 'storageTier' and 'archivalState' fields. List the names of those fields
+         * in a comma-separated, case-insensitive list as the value of this parameter.
+         * For example: 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -374,14 +383,15 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -393,19 +403,18 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -417,7 +426,6 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAwrHubObjectsRequest o) {
@@ -439,11 +447,10 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListAwrHubObjectsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAwrHubObjectsRequest
          */
@@ -457,8 +464,7 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListAwrHubObjectsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAwrHubObjectsRequest
@@ -476,14 +482,12 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
             request.fields = fields;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAwrHubObjectsRequest(awrHubSourceId, prefix, start, end, delimiter,
-            // startAfter, page, limit, fields, opcRequestId);
+            // new ListAwrHubObjectsRequest(awrHubSourceId, prefix, start, end, delimiter, startAfter, page, limit, fields, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -502,7 +506,6 @@ public class ListAwrHubObjectsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

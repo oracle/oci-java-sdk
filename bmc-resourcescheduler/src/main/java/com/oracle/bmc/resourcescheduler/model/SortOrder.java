@@ -5,11 +5,12 @@
 package com.oracle.bmc.resourcescheduler.model;
 
 /**
- * This sets the sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
- * {@code displayName} sort order is case sensitive.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
-public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+ * This sets the sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The {@code displayName}
+ * sort order is case sensitive.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),
     ;

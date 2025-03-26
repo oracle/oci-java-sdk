@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The configuration variables for a MySQL Database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The configuration variables for a MySQL Database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MySqlConfigurationDataSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MySqlConfigurationDataSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MySqlConfigurationDataSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -82,140 +81,145 @@ public final class MySqlConfigurationDataSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the configuration variable */
+        /**
+         * The name of the configuration variable
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the configuration variable
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The value of the variable. */
+        /**
+         * The value of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The value of the variable.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** The source from which the variable was most recently set. */
+        /**
+         * The source from which the variable was most recently set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private Source source;
 
         /**
          * The source from which the variable was most recently set.
-         *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(Source source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-        /** The minimum value of the variable. */
+        /**
+         * The minimum value of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minValue")
         private java.math.BigDecimal minValue;
 
         /**
          * The minimum value of the variable.
-         *
          * @param minValue the value to set
          * @return this builder
-         */
+         **/
         public Builder minValue(java.math.BigDecimal minValue) {
             this.minValue = minValue;
             this.__explicitlySet__.add("minValue");
             return this;
         }
-        /** The maximum value of the variable. */
+        /**
+         * The maximum value of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
         private java.math.BigDecimal maxValue;
 
         /**
          * The maximum value of the variable.
-         *
          * @param maxValue the value to set
          * @return this builder
-         */
+         **/
         public Builder maxValue(java.math.BigDecimal maxValue) {
             this.maxValue = maxValue;
             this.__explicitlySet__.add("maxValue");
             return this;
         }
-        /** The type of variable. */
+        /**
+         * The type of variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of variable.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The default value of the variable. */
+        /**
+         * The default value of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
          * The default value of the variable.
-         *
          * @param defaultValue the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-        /** The time when the value of the variable was set. */
+        /**
+         * The time when the value of the variable was set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSet")
         private java.util.Date timeSet;
 
         /**
          * The time when the value of the variable was set.
-         *
          * @param timeSet the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSet(java.util.Date timeSet) {
             this.timeSet = timeSet;
             this.__explicitlySet__.add("timeSet");
             return this;
         }
         /**
-         * The host from where the value of the variable was set. This is empty for a MySQL Database
-         * System.
-         */
+         * The host from where the value of the variable was set. This is empty for a MySQL Database System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostSet")
         private String hostSet;
 
         /**
-         * The host from where the value of the variable was set. This is empty for a MySQL Database
-         * System.
-         *
+         * The host from where the value of the variable was set. This is empty for a MySQL Database System.
          * @param hostSet the value to set
          * @return this builder
-         */
+         **/
         public Builder hostSet(String hostSet) {
             this.hostSet = hostSet;
             this.__explicitlySet__.add("hostSet");
@@ -223,129 +227,127 @@ public final class MySqlConfigurationDataSummary
         }
         /**
          * The user who sets the value of the variable. This is empty for a MySQL Database System.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userSet")
         private String userSet;
 
         /**
          * The user who sets the value of the variable. This is empty for a MySQL Database System.
-         *
          * @param userSet the value to set
          * @return this builder
-         */
+         **/
         public Builder userSet(String userSet) {
             this.userSet = userSet;
             this.__explicitlySet__.add("userSet");
             return this;
         }
-        /** Indicates whether the variable can be set dynamically or not. */
+        /**
+         * Indicates whether the variable can be set dynamically or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDynamic")
         private Boolean isDynamic;
 
         /**
          * Indicates whether the variable can be set dynamically or not.
-         *
          * @param isDynamic the value to set
          * @return this builder
-         */
+         **/
         public Builder isDynamic(Boolean isDynamic) {
             this.isDynamic = isDynamic;
             this.__explicitlySet__.add("isDynamic");
             return this;
         }
-        /** Indicates whether the variable is set at server startup. */
+        /**
+         * Indicates whether the variable is set at server startup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInit")
         private Boolean isInit;
 
         /**
          * Indicates whether the variable is set at server startup.
-         *
          * @param isInit the value to set
          * @return this builder
-         */
+         **/
         public Builder isInit(Boolean isInit) {
             this.isInit = isInit;
             this.__explicitlySet__.add("isInit");
             return this;
         }
-        /** Indicates whether the variable is configurable. */
+        /**
+         * Indicates whether the variable is configurable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConfigurable")
         private Boolean isConfigurable;
 
         /**
          * Indicates whether the variable is configurable.
-         *
          * @param isConfigurable the value to set
          * @return this builder
-         */
+         **/
         public Builder isConfigurable(Boolean isConfigurable) {
             this.isConfigurable = isConfigurable;
             this.__explicitlySet__.add("isConfigurable");
             return this;
         }
         /**
-         * The path name of the option file (VARIABLE_PATH), if the variable was set in an option
-         * file. If the variable was not set in an
-         */
+         * The path name of the option file (VARIABLE_PATH), if the variable was set in an option file. If the variable was not set in an
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
-         * The path name of the option file (VARIABLE_PATH), if the variable was set in an option
-         * file. If the variable was not set in an
-         *
+         * The path name of the option file (VARIABLE_PATH), if the variable was set in an option file. If the variable was not set in an
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** The description of the variable. */
+        /**
+         * The description of the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the variable.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The comma-separated list of possible values for the variable in value:valueDescription
-         * format.
-         */
+         * The comma-separated list of possible values for the variable in value:valueDescription format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
         private String possibleValues;
 
         /**
-         * The comma-separated list of possible values for the variable in value:valueDescription
-         * format.
-         *
+         * The comma-separated list of possible values for the variable in value:valueDescription format.
          * @param possibleValues the value to set
          * @return this builder
-         */
+         **/
         public Builder possibleValues(String possibleValues) {
             this.possibleValues = possibleValues;
             this.__explicitlySet__.add("possibleValues");
             return this;
         }
-        /** The comma-separated list of MySQL versions that support the variable. */
+        /**
+         * The comma-separated list of MySQL versions that support the variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedVersions")
         private String supportedVersions;
 
         /**
          * The comma-separated list of MySQL versions that support the variable.
-         *
          * @param supportedVersions the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedVersions(String supportedVersions) {
             this.supportedVersions = supportedVersions;
             this.__explicitlySet__.add("supportedVersions");
@@ -438,7 +440,9 @@ public final class MySqlConfigurationDataSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -447,34 +451,38 @@ public final class MySqlConfigurationDataSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the configuration variable */
+    /**
+     * The name of the configuration variable
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the configuration variable
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The value of the variable. */
+    /**
+     * The value of the variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The value of the variable.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** The source from which the variable was most recently set. */
-    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The source from which the variable was most recently set.
+     **/
+    public enum Source {
         Compiled("COMPILED"),
         Global("GLOBAL"),
         Server("SERVER"),
@@ -487,8 +495,8 @@ public final class MySqlConfigurationDataSummary
         Dynamic("DYNAMIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -526,209 +534,212 @@ public final class MySqlConfigurationDataSummary
             return UnknownEnumValue;
         }
     };
-    /** The source from which the variable was most recently set. */
+    /**
+     * The source from which the variable was most recently set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final Source source;
 
     /**
      * The source from which the variable was most recently set.
-     *
      * @return the value
-     */
+     **/
     public Source getSource() {
         return source;
     }
 
-    /** The minimum value of the variable. */
+    /**
+     * The minimum value of the variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minValue")
     private final java.math.BigDecimal minValue;
 
     /**
      * The minimum value of the variable.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getMinValue() {
         return minValue;
     }
 
-    /** The maximum value of the variable. */
+    /**
+     * The maximum value of the variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
     private final java.math.BigDecimal maxValue;
 
     /**
      * The maximum value of the variable.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getMaxValue() {
         return maxValue;
     }
 
-    /** The type of variable. */
+    /**
+     * The type of variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of variable.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** The default value of the variable. */
+    /**
+     * The default value of the variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
      * The default value of the variable.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }
 
-    /** The time when the value of the variable was set. */
+    /**
+     * The time when the value of the variable was set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSet")
     private final java.util.Date timeSet;
 
     /**
      * The time when the value of the variable was set.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSet() {
         return timeSet;
     }
 
     /**
-     * The host from where the value of the variable was set. This is empty for a MySQL Database
-     * System.
-     */
+     * The host from where the value of the variable was set. This is empty for a MySQL Database System.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostSet")
     private final String hostSet;
 
     /**
-     * The host from where the value of the variable was set. This is empty for a MySQL Database
-     * System.
-     *
+     * The host from where the value of the variable was set. This is empty for a MySQL Database System.
      * @return the value
-     */
+     **/
     public String getHostSet() {
         return hostSet;
     }
 
-    /** The user who sets the value of the variable. This is empty for a MySQL Database System. */
+    /**
+     * The user who sets the value of the variable. This is empty for a MySQL Database System.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userSet")
     private final String userSet;
 
     /**
      * The user who sets the value of the variable. This is empty for a MySQL Database System.
-     *
      * @return the value
-     */
+     **/
     public String getUserSet() {
         return userSet;
     }
 
-    /** Indicates whether the variable can be set dynamically or not. */
+    /**
+     * Indicates whether the variable can be set dynamically or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDynamic")
     private final Boolean isDynamic;
 
     /**
      * Indicates whether the variable can be set dynamically or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDynamic() {
         return isDynamic;
     }
 
-    /** Indicates whether the variable is set at server startup. */
+    /**
+     * Indicates whether the variable is set at server startup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInit")
     private final Boolean isInit;
 
     /**
      * Indicates whether the variable is set at server startup.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsInit() {
         return isInit;
     }
 
-    /** Indicates whether the variable is configurable. */
+    /**
+     * Indicates whether the variable is configurable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConfigurable")
     private final Boolean isConfigurable;
 
     /**
      * Indicates whether the variable is configurable.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsConfigurable() {
         return isConfigurable;
     }
 
     /**
-     * The path name of the option file (VARIABLE_PATH), if the variable was set in an option file.
-     * If the variable was not set in an
-     */
+     * The path name of the option file (VARIABLE_PATH), if the variable was set in an option file. If the variable was not set in an
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
-     * The path name of the option file (VARIABLE_PATH), if the variable was set in an option file.
-     * If the variable was not set in an
-     *
+     * The path name of the option file (VARIABLE_PATH), if the variable was set in an option file. If the variable was not set in an
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** The description of the variable. */
+    /**
+     * The description of the variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the variable.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The comma-separated list of possible values for the variable in value:valueDescription
-     * format.
-     */
+     * The comma-separated list of possible values for the variable in value:valueDescription format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
     private final String possibleValues;
 
     /**
-     * The comma-separated list of possible values for the variable in value:valueDescription
-     * format.
-     *
+     * The comma-separated list of possible values for the variable in value:valueDescription format.
      * @return the value
-     */
+     **/
     public String getPossibleValues() {
         return possibleValues;
     }
 
-    /** The comma-separated list of MySQL versions that support the variable. */
+    /**
+     * The comma-separated list of MySQL versions that support the variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedVersions")
     private final String supportedVersions;
 
     /**
      * The comma-separated list of MySQL versions that support the variable.
-     *
      * @return the value
-     */
+     **/
     public String getSupportedVersions() {
         return supportedVersions;
     }
@@ -740,7 +751,6 @@ public final class MySqlConfigurationDataSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The agent image installation package type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum PackageType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The agent image installation package type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum PackageType {
     Rpm("RPM"),
     Zip("ZIP"),
 

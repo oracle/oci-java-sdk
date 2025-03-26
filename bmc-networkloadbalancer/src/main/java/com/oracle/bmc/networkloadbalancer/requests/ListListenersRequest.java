@@ -6,22 +6,18 @@ package com.oracle.bmc.networkloadbalancer.requests;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListListenersExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListListenersRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListListenersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListListenersRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network load balancer to update.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
     private String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network load balancer to update.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
@@ -29,87 +25,95 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The system returns the requested resource, with a 200 status, only if the resource has no
-     * etag matching the one specified. If the condition fails for the GET and HEAD methods, then
-     * the system returns the HTTP status code {@code 304 (Not Modified)}.
+     * The system returns the requested resource, with a 200 status, only if the resource has no etag
+     * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+     * HTTP status code {@code 304 (Not Modified)}.
+     * <p>
+     * Example: {@code example-etag}
      *
-     * <p>Example: {@code example-etag}
      */
     private String ifNoneMatch;
 
     /**
-     * The system returns the requested resource, with a 200 status, only if the resource has no
-     * etag matching the one specified. If the condition fails for the GET and HEAD methods, then
-     * the system returns the HTTP status code {@code 304 (Not Modified)}.
+     * The system returns the requested resource, with a 200 status, only if the resource has no etag
+     * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+     * HTTP status code {@code 304 (Not Modified)}.
+     * <p>
+     * Example: {@code example-etag}
      *
-     * <p>Example: {@code example-etag}
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
     /**
-     * For list pagination. The maximum number of results per page or items to return, in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page or items to return, in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page from which to start retrieving results. For list
-     * pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The page token representing the page from which to start retrieving results.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from which to start retrieving results. For list
-     * pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The page token representing the page from which to start retrieving results.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' (ascending) or 'desc' (descending). */
+    /**
+     * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
+     */
     private com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' (ascending) or 'desc' (descending). */
+    /**
+     * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
+     */
     public com.oracle.bmc.networkloadbalancer.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified, then
-     * timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified, then
-     * timeCreated is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -143,9 +147,9 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified, then
-     * timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -154,19 +158,17 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListListenersRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network load balancer to update.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
          */
         private String networkLoadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network load balancer to update.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
          * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
@@ -178,6 +180,7 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
+         *
          */
         private String opcRequestId = null;
 
@@ -194,20 +197,21 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The system returns the requested resource, with a 200 status, only if the resource has no
-         * etag matching the one specified. If the condition fails for the GET and HEAD methods,
-         * then the system returns the HTTP status code {@code 304 (Not Modified)}.
+         * The system returns the requested resource, with a 200 status, only if the resource has no etag
+         * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+         * HTTP status code {@code 304 (Not Modified)}.
+         * <p>
+         * Example: {@code example-etag}
          *
-         * <p>Example: {@code example-etag}
          */
         private String ifNoneMatch = null;
 
         /**
-         * The system returns the requested resource, with a 200 status, only if the resource has no
-         * etag matching the one specified. If the condition fails for the GET and HEAD methods,
-         * then the system returns the HTTP status code {@code 304 (Not Modified)}.
-         *
-         * <p>Example: {@code example-etag}
+         * The system returns the requested resource, with a 200 status, only if the resource has no etag
+         * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
+         * HTTP status code {@code 304 (Not Modified)}.
+         * <p>
+         * Example: {@code example-etag}
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -218,16 +222,15 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * For list pagination. The maximum number of results per page or items to return, in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page or items to return, in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -238,18 +241,17 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The page token representing the page from which to start retrieving results. For list
-         * pagination. The value of the {@code opc-next-page} response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The page token representing the page from which to start retrieving results.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from which to start retrieving results. For list
-         * pagination. The value of the {@code opc-next-page} response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The page token representing the page from which to start retrieving results.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -259,12 +261,13 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The sort order to use, either 'asc' (ascending) or 'desc' (descending). */
+        /**
+         * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
+         */
         private com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' (ascending) or 'desc' (descending).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -274,16 +277,15 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. The default order for
-         * timeCreated is descending. The default order for displayName is ascending. If no value is
-         * specified, then timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+         * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. The default order for
-         * timeCreated is descending. The default order for displayName is ascending. If no value is
-         * specified, then timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+         * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -295,19 +297,18 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -319,7 +320,6 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListListenersRequest o) {
@@ -338,11 +338,10 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListListenersRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListListenersRequest
          */
@@ -356,8 +355,7 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListListenersRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListListenersRequest
@@ -372,14 +370,12 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListListenersRequest(networkLoadBalancerId, opcRequestId, ifNoneMatch, limit,
-            // page, sortOrder, sortBy);
+            // new ListListenersRequest(networkLoadBalancerId, opcRequestId, ifNoneMatch, limit, page, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -395,7 +391,6 @@ public class ListListenersRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

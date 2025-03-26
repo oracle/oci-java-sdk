@@ -5,58 +5,66 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of monitor configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of monitor configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType",
-        defaultImpl = MonitorConfiguration.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType",
+    defaultImpl = MonitorConfiguration.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = FtpMonitorConfiguration.class,
-            name = "FTP_CONFIG"),
+        value = FtpMonitorConfiguration.class,
+        name = "FTP_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DnsSecMonitorConfiguration.class,
-            name = "DNSSEC_CONFIG"),
+        value = DnsSecMonitorConfiguration.class,
+        name = "DNSSEC_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DnsTraceMonitorConfiguration.class,
-            name = "DNS_TRACE_CONFIG"),
+        value = DnsTraceMonitorConfiguration.class,
+        name = "DNS_TRACE_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = SqlMonitorConfiguration.class,
-            name = "SQL_CONFIG"),
+        value = SqlMonitorConfiguration.class,
+        name = "SQL_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ScriptedRestMonitorConfiguration.class,
-            name = "SCRIPTED_REST_CONFIG"),
+        value = ScriptedRestMonitorConfiguration.class,
+        name = "SCRIPTED_REST_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DnsServerMonitorConfiguration.class,
-            name = "DNS_SERVER_CONFIG"),
+        value = DnsServerMonitorConfiguration.class,
+        name = "DNS_SERVER_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ScriptedBrowserMonitorConfiguration.class,
-            name = "SCRIPTED_BROWSER_CONFIG"),
+        value = ScriptedBrowserMonitorConfiguration.class,
+        name = "SCRIPTED_BROWSER_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = RestMonitorConfiguration.class,
-            name = "REST_CONFIG"),
+        value = RestMonitorConfiguration.class,
+        name = "REST_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BrowserMonitorConfiguration.class,
-            name = "BROWSER_CONFIG"),
+        value = BrowserMonitorConfiguration.class,
+        name = "BROWSER_CONFIG"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = NetworkMonitorConfiguration.class,
-            name = "NETWORK_CONFIG")
+        value = NetworkMonitorConfiguration.class,
+        name = "NETWORK_CONFIG"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class MonitorConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class MonitorConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isFailureRetried", "dnsConfiguration"})
     protected MonitorConfiguration(Boolean isFailureRetried, DnsConfiguration dnsConfiguration) {
@@ -65,15 +73,16 @@ public class MonitorConfiguration
         this.dnsConfiguration = dnsConfiguration;
     }
 
-    /** If isFailureRetried is enabled, then a failed call will be retried. */
+    /**
+     * If isFailureRetried is enabled, then a failed call will be retried.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFailureRetried")
     private final Boolean isFailureRetried;
 
     /**
      * If isFailureRetried is enabled, then a failed call will be retried.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFailureRetried() {
         return isFailureRetried;
     }
@@ -92,7 +101,6 @@ public class MonitorConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -135,8 +143,10 @@ public class MonitorConfiguration
         return result;
     }
 
-    /** Type of configuration. */
-    public enum ConfigType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of configuration.
+     **/
+    public enum ConfigType {
         BrowserConfig("BROWSER_CONFIG"),
         ScriptedBrowserConfig("SCRIPTED_BROWSER_CONFIG"),
         RestConfig("REST_CONFIG"),
@@ -149,8 +159,8 @@ public class MonitorConfiguration
         SqlConfig("SQL_CONFIG"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

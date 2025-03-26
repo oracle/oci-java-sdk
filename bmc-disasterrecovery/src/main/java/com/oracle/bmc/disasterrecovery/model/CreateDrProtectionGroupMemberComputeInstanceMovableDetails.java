@@ -5,25 +5,25 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Create properties for a movable compute instance member. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Create properties for a movable compute instance member.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDrProtectionGroupMemberComputeInstanceMovableDetails.Builder.class)
+    builder = CreateDrProtectionGroupMemberComputeInstanceMovableDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "memberType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "memberType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
         extends CreateDrProtectionGroupMemberDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -37,25 +37,26 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             return this;
         }
         /**
-         * A flag indicating if the compute instance should be moved to the same fault domain in the
-         * destination region. The compute instance launch will fail if this flag is set to true and
-         * capacity is not available in the specified fault domain in the destination region.
+         * A flag indicating if the compute instance should be moved to the same fault domain in the destination region.
+         * The compute instance launch will fail if this flag is set to true and capacity is not available in the
+         * specified fault domain in the destination region.
+         * <p>
+         * Example: {@code false}
          *
-         * <p>Example: {@code false}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRetainFaultDomain")
         private Boolean isRetainFaultDomain;
 
         /**
-         * A flag indicating if the compute instance should be moved to the same fault domain in the
-         * destination region. The compute instance launch will fail if this flag is set to true and
-         * capacity is not available in the specified fault domain in the destination region.
-         *
-         * <p>Example: {@code false}
+         * A flag indicating if the compute instance should be moved to the same fault domain in the destination region.
+         * The compute instance launch will fail if this flag is set to true and capacity is not available in the
+         * specified fault domain in the destination region.
+         * <p>
+         * Example: {@code false}
          *
          * @param isRetainFaultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder isRetainFaultDomain(Boolean isRetainFaultDomain) {
             this.isRetainFaultDomain = isRetainFaultDomain;
             this.__explicitlySet__.add("isRetainFaultDomain");
@@ -64,27 +65,31 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
         /**
          * The OCID of a capacity reservation in the destination region which will be used to launch
          * the compute instance.
+         * <p>
+         * Example: {@code ocid1.capacityreservation.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCapacityReservationId")
         private String destinationCapacityReservationId;
 
         /**
          * The OCID of a capacity reservation in the destination region which will be used to launch
          * the compute instance.
-         *
-         * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.capacityreservation.oc1..uniqueID}
          *
          * @param destinationCapacityReservationId the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationCapacityReservationId(String destinationCapacityReservationId) {
             this.destinationCapacityReservationId = destinationCapacityReservationId;
             this.__explicitlySet__.add("destinationCapacityReservationId");
             return this;
         }
-        /** A list of compute instance VNIC mappings. */
+        /**
+         * A list of compute instance VNIC mappings.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicMappings")
         private java.util.List<ComputeInstanceMovableVnicMappingDetails> vnicMappings;
 
@@ -93,7 +98,7 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
          *
          * @param vnicMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder vnicMappings(
                 java.util.List<ComputeInstanceMovableVnicMappingDetails> vnicMappings) {
             this.vnicMappings = vnicMappings;
@@ -101,23 +106,24 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
             return this;
         }
         /**
-         * The OCID of a compartment in the destination region in which the compute instance should
-         * be launched.
+         * The OCID of a compartment in the destination region in which the compute instance
+         * should be launched.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
         private String destinationCompartmentId;
 
         /**
-         * The OCID of a compartment in the destination region in which the compute instance should
-         * be launched.
-         *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         * The OCID of a compartment in the destination region in which the compute instance
+         * should be launched.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param destinationCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationCompartmentId(String destinationCompartmentId) {
             this.destinationCompartmentId = destinationCompartmentId;
             this.__explicitlySet__.add("destinationCompartmentId");
@@ -126,27 +132,31 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
         /**
          * The OCID of a dedicated VM host in the destination region where the compute instance
          * should be launched.
+         * <p>
+         * Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
         private String destinationDedicatedVmHostId;
 
         /**
          * The OCID of a dedicated VM host in the destination region where the compute instance
          * should be launched.
-         *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
          *
          * @param destinationDedicatedVmHostId the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationDedicatedVmHostId(String destinationDedicatedVmHostId) {
             this.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
             this.__explicitlySet__.add("destinationDedicatedVmHostId");
             return this;
         }
-        /** A list of operations performed on file systems used by the compute instance. */
+        /**
+         * A list of operations performed on file systems used by the compute instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemOperations")
         private java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
                 fileSystemOperations;
@@ -156,7 +166,7 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
          *
          * @param fileSystemOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder fileSystemOperations(
                 java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
                         fileSystemOperations) {
@@ -211,7 +221,9 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -240,50 +252,55 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
     }
 
     /**
-     * A flag indicating if the compute instance should be moved to the same fault domain in the
-     * destination region. The compute instance launch will fail if this flag is set to true and
-     * capacity is not available in the specified fault domain in the destination region.
+     * A flag indicating if the compute instance should be moved to the same fault domain in the destination region.
+     * The compute instance launch will fail if this flag is set to true and capacity is not available in the
+     * specified fault domain in the destination region.
+     * <p>
+     * Example: {@code false}
      *
-     * <p>Example: {@code false}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetainFaultDomain")
     private final Boolean isRetainFaultDomain;
 
     /**
-     * A flag indicating if the compute instance should be moved to the same fault domain in the
-     * destination region. The compute instance launch will fail if this flag is set to true and
-     * capacity is not available in the specified fault domain in the destination region.
-     *
-     * <p>Example: {@code false}
+     * A flag indicating if the compute instance should be moved to the same fault domain in the destination region.
+     * The compute instance launch will fail if this flag is set to true and capacity is not available in the
+     * specified fault domain in the destination region.
+     * <p>
+     * Example: {@code false}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRetainFaultDomain() {
         return isRetainFaultDomain;
     }
 
     /**
-     * The OCID of a capacity reservation in the destination region which will be used to launch the
-     * compute instance.
+     * The OCID of a capacity reservation in the destination region which will be used to launch
+     * the compute instance.
+     * <p>
+     * Example: {@code ocid1.capacityreservation.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCapacityReservationId")
     private final String destinationCapacityReservationId;
 
     /**
-     * The OCID of a capacity reservation in the destination region which will be used to launch the
-     * compute instance.
-     *
-     * <p>Example: {@code ocid1.capacityreservation.oc1..uniqueID}
+     * The OCID of a capacity reservation in the destination region which will be used to launch
+     * the compute instance.
+     * <p>
+     * Example: {@code ocid1.capacityreservation.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getDestinationCapacityReservationId() {
         return destinationCapacityReservationId;
     }
 
-    /** A list of compute instance VNIC mappings. */
+    /**
+     * A list of compute instance VNIC mappings.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicMappings")
     private final java.util.List<ComputeInstanceMovableVnicMappingDetails> vnicMappings;
 
@@ -291,54 +308,59 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
      * A list of compute instance VNIC mappings.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ComputeInstanceMovableVnicMappingDetails> getVnicMappings() {
         return vnicMappings;
     }
 
     /**
-     * The OCID of a compartment in the destination region in which the compute instance should be
-     * launched.
+     * The OCID of a compartment in the destination region in which the compute instance
+     * should be launched.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
     private final String destinationCompartmentId;
 
     /**
-     * The OCID of a compartment in the destination region in which the compute instance should be
-     * launched.
-     *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     * The OCID of a compartment in the destination region in which the compute instance
+     * should be launched.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getDestinationCompartmentId() {
         return destinationCompartmentId;
     }
 
     /**
-     * The OCID of a dedicated VM host in the destination region where the compute instance should
-     * be launched.
+     * The OCID of a dedicated VM host in the destination region where the compute instance
+     * should be launched.
+     * <p>
+     * Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
     private final String destinationDedicatedVmHostId;
 
     /**
-     * The OCID of a dedicated VM host in the destination region where the compute instance should
-     * be launched.
-     *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
+     * The OCID of a dedicated VM host in the destination region where the compute instance
+     * should be launched.
+     * <p>
+     * Example: {@code ocid1.dedicatedvmhost.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getDestinationDedicatedVmHostId() {
         return destinationDedicatedVmHostId;
     }
 
-    /** A list of operations performed on file systems used by the compute instance. */
+    /**
+     * A list of operations performed on file systems used by the compute instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemOperations")
     private final java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
             fileSystemOperations;
@@ -347,7 +369,7 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
      * A list of operations performed on file systems used by the compute instance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CreateComputeInstanceMovableFileSystemOperationDetails>
             getFileSystemOperations() {
         return fileSystemOperations;
@@ -360,7 +382,6 @@ public final class CreateDrProtectionGroupMemberComputeInstanceMovableDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

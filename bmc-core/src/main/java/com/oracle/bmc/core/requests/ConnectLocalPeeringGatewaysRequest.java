@@ -6,34 +6,33 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectLocalPeeringGatewaysExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ConnectLocalPeeringGatewaysRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectLocalPeeringGatewaysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ConnectLocalPeeringGatewaysRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ConnectLocalPeeringGatewaysRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * local peering gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
      */
     private String localPeeringGatewayId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * local peering gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
      */
     public String getLocalPeeringGatewayId() {
         return localPeeringGatewayId;
     }
-    /** Details regarding the local peering gateway to connect. */
+    /**
+     * Details regarding the local peering gateway to connect.
+     */
     private com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails
             connectLocalPeeringGatewaysDetails;
 
-    /** Details regarding the local peering gateway to connect. */
+    /**
+     * Details regarding the local peering gateway to connect.
+     */
     public com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails
             getConnectLocalPeeringGatewaysDetails() {
         return connectLocalPeeringGatewaysDetails;
@@ -41,7 +40,6 @@ public class ConnectLocalPeeringGatewaysRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -54,19 +52,17 @@ public class ConnectLocalPeeringGatewaysRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ConnectLocalPeeringGatewaysRequest,
                     com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * local peering gateway.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
          */
         private String localPeeringGatewayId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * local peering gateway.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the local peering gateway.
          * @param localPeeringGatewayId the value to set
          * @return this builder instance
          */
@@ -75,13 +71,14 @@ public class ConnectLocalPeeringGatewaysRequest
             return this;
         }
 
-        /** Details regarding the local peering gateway to connect. */
+        /**
+         * Details regarding the local peering gateway to connect.
+         */
         private com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails
                 connectLocalPeeringGatewaysDetails = null;
 
         /**
          * Details regarding the local peering gateway to connect.
-         *
          * @param connectLocalPeeringGatewaysDetails the value to set
          * @return this builder instance
          */
@@ -94,19 +91,18 @@ public class ConnectLocalPeeringGatewaysRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -118,7 +114,6 @@ public class ConnectLocalPeeringGatewaysRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ConnectLocalPeeringGatewaysRequest o) {
@@ -132,11 +127,10 @@ public class ConnectLocalPeeringGatewaysRequest
         /**
          * Build the instance of ConnectLocalPeeringGatewaysRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ConnectLocalPeeringGatewaysRequest
          */
@@ -149,7 +143,6 @@ public class ConnectLocalPeeringGatewaysRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -162,8 +155,7 @@ public class ConnectLocalPeeringGatewaysRequest
         /**
          * Build the instance of ConnectLocalPeeringGatewaysRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ConnectLocalPeeringGatewaysRequest
@@ -173,14 +165,12 @@ public class ConnectLocalPeeringGatewaysRequest
             request.localPeeringGatewayId = localPeeringGatewayId;
             request.connectLocalPeeringGatewaysDetails = connectLocalPeeringGatewaysDetails;
             return request;
-            // new ConnectLocalPeeringGatewaysRequest(localPeeringGatewayId,
-            // connectLocalPeeringGatewaysDetails);
+            // new ConnectLocalPeeringGatewaysRequest(localPeeringGatewayId, connectLocalPeeringGatewaysDetails);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -191,7 +181,6 @@ public class ConnectLocalPeeringGatewaysRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

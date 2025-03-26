@@ -5,21 +5,19 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The job details for a batch document analysis. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The job details for a batch document analysis.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentJob.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DocumentJob extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DocumentJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -74,91 +72,97 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The job id. */
+        /**
+         * The job id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The job id.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment that starts the job. */
+        /**
+         * The OCID of the compartment that starts the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that starts the job.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The document job display name. */
+        /**
+         * The document job display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The document job display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The list of requested document analysis types. */
+        /**
+         * The list of requested document analysis types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<DocumentFeature> features;
 
         /**
          * The list of requested document analysis types.
-         *
          * @param features the value to set
          * @return this builder
-         */
+         **/
         public Builder features(java.util.List<DocumentFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
             return this;
         }
-        /** The document language, abbreviated according to ISO 639-2. */
+        /**
+         * The document language, abbreviated according to ISO 639-2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private DocumentLanguage language;
 
         /**
          * The document language, abbreviated according to ISO 639-2.
-         *
          * @param language the value to set
          * @return this builder
-         */
+         **/
         public Builder language(DocumentLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-        /** The type of document. */
+        /**
+         * The type of document.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentType")
         private DocumentType documentType;
 
         /**
          * The type of document.
-         *
          * @param documentType the value to set
          * @return this builder
-         */
+         **/
         public Builder documentType(DocumentType documentType) {
             this.documentType = documentType;
             this.__explicitlySet__.add("documentType");
@@ -173,65 +177,65 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("inputLocation");
             return this;
         }
-        /** The job acceptance time. */
+        /**
+         * The job acceptance time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The job acceptance time.
-         *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** The job start time. */
+        /**
+         * The job start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The job start time.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The job finish time. */
+        /**
+         * The job finish time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The job finish time.
-         *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /**
-         * How much progress the operation has made, compared to the total amount of work to be
-         * performed.
-         */
+         * How much progress the operation has made, compared to the total amount of work to be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
-         * How much progress the operation has made, compared to the total amount of work to be
-         * performed.
-         *
+         * How much progress the operation has made, compared to the total amount of work to be performed.
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -246,46 +250,49 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-        /** The current state of the batch document job. */
+        /**
+         * The current state of the batch document job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the batch document job.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Whether or not to generate a ZIP file containing the results. */
+        /**
+         * Whether or not to generate a ZIP file containing the results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
         private Boolean isZipOutputEnabled;
 
         /**
          * Whether or not to generate a ZIP file containing the results.
-         *
          * @param isZipOutputEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isZipOutputEnabled(Boolean isZipOutputEnabled) {
             this.isZipOutputEnabled = isZipOutputEnabled;
             this.__explicitlySet__.add("isZipOutputEnabled");
             return this;
         }
-        /** The detailed status of FAILED state. */
+        /**
+         * The detailed status of FAILED state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
         /**
          * The detailed status of FAILED state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -370,7 +377,9 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -379,80 +388,86 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The job id. */
+    /**
+     * The job id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The job id.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment that starts the job. */
+    /**
+     * The OCID of the compartment that starts the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that starts the job.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The document job display name. */
+    /**
+     * The document job display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The document job display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The list of requested document analysis types. */
+    /**
+     * The list of requested document analysis types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<DocumentFeature> features;
 
     /**
      * The list of requested document analysis types.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DocumentFeature> getFeatures() {
         return features;
     }
 
-    /** The document language, abbreviated according to ISO 639-2. */
+    /**
+     * The document language, abbreviated according to ISO 639-2.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final DocumentLanguage language;
 
     /**
      * The document language, abbreviated according to ISO 639-2.
-     *
      * @return the value
-     */
+     **/
     public DocumentLanguage getLanguage() {
         return language;
     }
 
-    /** The type of document. */
+    /**
+     * The type of document.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     private final DocumentType documentType;
 
     /**
      * The type of document.
-     *
      * @return the value
-     */
+     **/
     public DocumentType getDocumentType() {
         return documentType;
     }
@@ -464,58 +479,58 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
         return inputLocation;
     }
 
-    /** The job acceptance time. */
+    /**
+     * The job acceptance time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The job acceptance time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** The job start time. */
+    /**
+     * The job start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The job start time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The job finish time. */
+    /**
+     * The job finish time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The job finish time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
     /**
-     * How much progress the operation has made, compared to the total amount of work to be
-     * performed.
-     */
+     * How much progress the operation has made, compared to the total amount of work to be performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
-     * How much progress the operation has made, compared to the total amount of work to be
-     * performed.
-     *
+     * How much progress the operation has made, compared to the total amount of work to be performed.
      * @return the value
-     */
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -527,8 +542,10 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
         return outputLocation;
     }
 
-    /** The current state of the batch document job. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the batch document job.
+     **/
+    public enum LifecycleState {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
         Accepted("ACCEPTED"),
@@ -537,8 +554,8 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
         Canceling("CANCELING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -577,40 +594,44 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The current state of the batch document job. */
+    /**
+     * The current state of the batch document job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the batch document job.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Whether or not to generate a ZIP file containing the results. */
+    /**
+     * Whether or not to generate a ZIP file containing the results.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     private final Boolean isZipOutputEnabled;
 
     /**
      * Whether or not to generate a ZIP file containing the results.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsZipOutputEnabled() {
         return isZipOutputEnabled;
     }
 
-    /** The detailed status of FAILED state. */
-    public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The detailed status of FAILED state.
+     **/
+    public enum LifecycleDetails {
         PartiallySucceeded("PARTIALLY_SUCCEEDED"),
         CompletelyFailed("COMPLETELY_FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -649,15 +670,16 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The detailed status of FAILED state. */
+    /**
+     * The detailed status of FAILED state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
     /**
      * The detailed status of FAILED state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -669,7 +691,6 @@ public final class DocumentJob extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,62 +6,72 @@ package com.oracle.bmc.fusionapps.requests;
 
 import com.oracle.bmc.fusionapps.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/CreateServiceAttachmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateServiceAttachmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/CreateServiceAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateServiceAttachmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class CreateServiceAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fusionapps.model.CreateServiceAttachmentDetails> {
 
-    /** Details for the service attachment. */
+    /**
+     * Details for the service attachment.
+     */
     private com.oracle.bmc.fusionapps.model.CreateServiceAttachmentDetails
             createServiceAttachmentDetails;
 
-    /** Details for the service attachment. */
+    /**
+     * Details for the service attachment.
+     */
     public com.oracle.bmc.fusionapps.model.CreateServiceAttachmentDetails
             getCreateServiceAttachmentDetails() {
         return createServiceAttachmentDetails;
     }
-    /** unique FusionEnvironment identifier */
+    /**
+     * unique FusionEnvironment identifier
+     */
     private String fusionEnvironmentId;
 
-    /** unique FusionEnvironment identifier */
+    /**
+     * unique FusionEnvironment identifier
+     */
     public String getFusionEnvironmentId() {
         return fusionEnvironmentId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -74,16 +84,18 @@ public class CreateServiceAttachmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateServiceAttachmentRequest,
                     com.oracle.bmc.fusionapps.model.CreateServiceAttachmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the service attachment. */
+        /**
+         * Details for the service attachment.
+         */
         private com.oracle.bmc.fusionapps.model.CreateServiceAttachmentDetails
                 createServiceAttachmentDetails = null;
 
         /**
          * Details for the service attachment.
-         *
          * @param createServiceAttachmentDetails the value to set
          * @return this builder instance
          */
@@ -94,12 +106,13 @@ public class CreateServiceAttachmentRequest
             return this;
         }
 
-        /** unique FusionEnvironment identifier */
+        /**
+         * unique FusionEnvironment identifier
+         */
         private String fusionEnvironmentId = null;
 
         /**
          * unique FusionEnvironment identifier
-         *
          * @param fusionEnvironmentId the value to set
          * @return this builder instance
          */
@@ -110,19 +123,20 @@ public class CreateServiceAttachmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -132,12 +146,13 @@ public class CreateServiceAttachmentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -148,19 +163,18 @@ public class CreateServiceAttachmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -172,7 +186,6 @@ public class CreateServiceAttachmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateServiceAttachmentRequest o) {
@@ -188,11 +201,10 @@ public class CreateServiceAttachmentRequest
         /**
          * Build the instance of CreateServiceAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateServiceAttachmentRequest
          */
@@ -205,7 +217,6 @@ public class CreateServiceAttachmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -218,8 +229,7 @@ public class CreateServiceAttachmentRequest
         /**
          * Build the instance of CreateServiceAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateServiceAttachmentRequest
@@ -231,14 +241,12 @@ public class CreateServiceAttachmentRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateServiceAttachmentRequest(createServiceAttachmentDetails,
-            // fusionEnvironmentId, opcRetryToken, opcRequestId);
+            // new CreateServiceAttachmentRequest(createServiceAttachmentDetails, fusionEnvironmentId, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -251,7 +259,6 @@ public class CreateServiceAttachmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

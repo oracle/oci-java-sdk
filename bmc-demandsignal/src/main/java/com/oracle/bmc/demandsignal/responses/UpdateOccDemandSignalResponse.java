@@ -6,25 +6,25 @@ package com.oracle.bmc.demandsignal.responses;
 
 import com.oracle.bmc.demandsignal.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      * @return the value
      */
     public Integer getRetryAfter() {
         return retryAfter;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -37,14 +37,15 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -52,12 +53,13 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned {@code OccDemandSignal} instance. */
+    /**
+     * The returned OccDemandSignal instance.
+     */
     private com.oracle.bmc.demandsignal.model.OccDemandSignal occDemandSignal;
 
     /**
-     * The returned {@code OccDemandSignal} instance.
-     *
+     * The returned OccDemandSignal instance.
      * @return the value
      */
     public com.oracle.bmc.demandsignal.model.OccDemandSignal getOccDemandSignal() {
@@ -74,7 +76,7 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
     })
     private UpdateOccDemandSignalResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             Integer retryAfter,
             String etag,
             String opcRequestId,
@@ -86,34 +88,28 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
         this.occDemandSignal = occDemandSignal;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateOccDemandSignalResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          */
         private Integer retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -122,7 +118,10 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -137,14 +136,15 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -154,12 +154,13 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code OccDemandSignal} instance. */
+        /**
+         * The returned OccDemandSignal instance.
+         */
         private com.oracle.bmc.demandsignal.model.OccDemandSignal occDemandSignal;
 
         /**
-         * The returned {@code OccDemandSignal} instance.
-         *
+         * The returned OccDemandSignal instance.
          * @param occDemandSignal the value to set
          * @return this builder
          */
@@ -171,10 +172,8 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateOccDemandSignalResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -188,10 +187,8 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateOccDemandSignalResponse build() {
             return new UpdateOccDemandSignalResponse(
                     __httpStatusCode__, headers, retryAfter, etag, opcRequestId, occDemandSignal);
@@ -200,7 +197,6 @@ public class UpdateOccDemandSignalResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

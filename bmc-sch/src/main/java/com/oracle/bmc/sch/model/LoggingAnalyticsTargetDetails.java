@@ -5,65 +5,66 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The destination log group for data transferred from the source. For configuration instructions,
- * see [Creating a
- * Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+ * The destination log group for data transferred from the source.
+ * For configuration instructions, see
+ * [Creating a Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LoggingAnalyticsTargetDetails.Builder.class)
+    builder = LoggingAnalyticsTargetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LoggingAnalyticsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Logging Analytics log group.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Logging Analytics log group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
          *
          * @param logGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
         /**
-         * Identifier of the log source that you want to use for processing data received from the
-         * connector source. Applies to {@code StreamingSource} only. Equivalent to {@code name} at
-         * {@link LogAnalyticsSource}.
-         */
+         * Identifier of the log source that you want to use for processing data received from the connector source.
+         * Applies to {@code StreamingSource} only.
+         * Equivalent to {@code name} at {@link LogAnalyticsSource}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logSourceIdentifier")
         private String logSourceIdentifier;
 
         /**
-         * Identifier of the log source that you want to use for processing data received from the
-         * connector source. Applies to {@code StreamingSource} only. Equivalent to {@code name} at
-         * {@link LogAnalyticsSource}.
+         * Identifier of the log source that you want to use for processing data received from the connector source.
+         * Applies to {@code StreamingSource} only.
+         * Equivalent to {@code name} at {@link LogAnalyticsSource}.
          *
          * @param logSourceIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder logSourceIdentifier(String logSourceIdentifier) {
             this.logSourceIdentifier = logSourceIdentifier;
             this.__explicitlySet__.add("logSourceIdentifier");
@@ -94,7 +95,9 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,37 +114,37 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Logging Analytics log group.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Logging Analytics log group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      *
      * @return the value
-     */
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
 
     /**
-     * Identifier of the log source that you want to use for processing data received from the
-     * connector source. Applies to {@code StreamingSource} only. Equivalent to {@code name} at
-     * {@link LogAnalyticsSource}.
-     */
+     * Identifier of the log source that you want to use for processing data received from the connector source.
+     * Applies to {@code StreamingSource} only.
+     * Equivalent to {@code name} at {@link LogAnalyticsSource}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSourceIdentifier")
     private final String logSourceIdentifier;
 
     /**
-     * Identifier of the log source that you want to use for processing data received from the
-     * connector source. Applies to {@code StreamingSource} only. Equivalent to {@code name} at
-     * {@link LogAnalyticsSource}.
+     * Identifier of the log source that you want to use for processing data received from the connector source.
+     * Applies to {@code StreamingSource} only.
+     * Equivalent to {@code name} at {@link LogAnalyticsSource}.
      *
      * @return the value
-     */
+     **/
     public String getLogSourceIdentifier() {
         return logSourceIdentifier;
     }
@@ -153,7 +156,6 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

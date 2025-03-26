@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ospgateway.model;
 
-/** Credit card type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-public enum CreditCardType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Credit card type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+public enum CreditCardType {
     Visa("VISA"),
     Amex("AMEX"),
     Mastercard("MASTERCARD"),

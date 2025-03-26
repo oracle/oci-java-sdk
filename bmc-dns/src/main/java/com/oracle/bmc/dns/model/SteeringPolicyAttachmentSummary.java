@@ -5,23 +5,22 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * An attachment between a steering policy and a domain. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ * An attachment between a steering policy and a domain.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SteeringPolicyAttachmentSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SteeringPolicyAttachmentSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SteeringPolicyAttachmentSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "steeringPolicyId",
@@ -61,65 +60,71 @@ public final class SteeringPolicyAttachmentSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the attached steering policy. */
+        /**
+         * The OCID of the attached steering policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
         private String steeringPolicyId;
 
         /**
          * The OCID of the attached steering policy.
-         *
          * @param steeringPolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder steeringPolicyId(String steeringPolicyId) {
             this.steeringPolicyId = steeringPolicyId;
             this.__explicitlySet__.add("steeringPolicyId");
             return this;
         }
-        /** The OCID of the attached zone. */
+        /**
+         * The OCID of the attached zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
         private String zoneId;
 
         /**
          * The OCID of the attached zone.
-         *
          * @param zoneId the value to set
          * @return this builder
-         */
+         **/
         public Builder zoneId(String zoneId) {
             this.zoneId = zoneId;
             this.__explicitlySet__.add("zoneId");
             return this;
         }
-        /** The attached domain within the attached zone. */
+        /**
+         * The attached domain within the attached zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainName")
         private String domainName;
 
         /**
          * The attached domain within the attached zone.
-         *
          * @param domainName the value to set
          * @return this builder
-         */
+         **/
         public Builder domainName(String domainName) {
             this.domainName = domainName;
             this.__explicitlySet__.add("domainName");
             return this;
         }
         /**
-         * A user-friendly name for the steering policy attachment. Does not have to be unique and
-         * can be changed. Avoid entering confidential information.
-         */
+         * A user-friendly name for the steering policy attachment.
+         * Does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the steering policy attachment. Does not have to be unique and
-         * can be changed. Avoid entering confidential information.
+         * A user-friendly name for the steering policy attachment.
+         * Does not have to be unique and can be changed.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -129,7 +134,8 @@ public final class SteeringPolicyAttachmentSummary
          * The record types covered by the attachment at the domain. The set of record types is
          * determined by aggregating the record types from the answers defined in the steering
          * policy.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rtypes")
         private java.util.List<String> rtypes;
 
@@ -140,52 +146,55 @@ public final class SteeringPolicyAttachmentSummary
          *
          * @param rtypes the value to set
          * @return this builder
-         */
+         **/
         public Builder rtypes(java.util.List<String> rtypes) {
             this.rtypes = rtypes;
             this.__explicitlySet__.add("rtypes");
             return this;
         }
-        /** The OCID of the compartment containing the steering policy attachment. */
+        /**
+         * The OCID of the compartment containing the steering policy attachment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the steering policy attachment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The canonical absolute URL of the resource. */
+        /**
+         * The canonical absolute URL of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("self")
         private String self;
 
         /**
          * The canonical absolute URL of the resource.
-         *
          * @param self the value to set
          * @return this builder
-         */
+         **/
         public Builder self(String self) {
             this.self = self;
             this.__explicitlySet__.add("self");
             return this;
         }
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -193,35 +202,37 @@ public final class SteeringPolicyAttachmentSummary
         }
         /**
          * The date and time the resource was created, expressed in RFC 3339 timestamp format.
+         * <p>
+         **Example:** {@code 2016-07-22T17:23:59:60Z}
          *
-         * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the resource was created, expressed in RFC 3339 timestamp format.
-         *
-         * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
+         * <p>
+         **Example:** {@code 2016-07-22T17:23:59:60Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current state of the resource. */
+        /**
+         * The current state of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -286,7 +297,9 @@ public final class SteeringPolicyAttachmentSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -295,146 +308,161 @@ public final class SteeringPolicyAttachmentSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the attached steering policy. */
+    /**
+     * The OCID of the attached steering policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
     private final String steeringPolicyId;
 
     /**
      * The OCID of the attached steering policy.
-     *
      * @return the value
-     */
+     **/
     public String getSteeringPolicyId() {
         return steeringPolicyId;
     }
 
-    /** The OCID of the attached zone. */
+    /**
+     * The OCID of the attached zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
     private final String zoneId;
 
     /**
      * The OCID of the attached zone.
-     *
      * @return the value
-     */
+     **/
     public String getZoneId() {
         return zoneId;
     }
 
-    /** The attached domain within the attached zone. */
+    /**
+     * The attached domain within the attached zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
     private final String domainName;
 
     /**
      * The attached domain within the attached zone.
-     *
      * @return the value
-     */
+     **/
     public String getDomainName() {
         return domainName;
     }
 
     /**
-     * A user-friendly name for the steering policy attachment. Does not have to be unique and can
-     * be changed. Avoid entering confidential information.
-     */
+     * A user-friendly name for the steering policy attachment.
+     * Does not have to be unique and can be changed.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the steering policy attachment. Does not have to be unique and can
-     * be changed. Avoid entering confidential information.
+     * A user-friendly name for the steering policy attachment.
+     * Does not have to be unique and can be changed.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * The record types covered by the attachment at the domain. The set of record types is
-     * determined by aggregating the record types from the answers defined in the steering policy.
-     */
+     * determined by aggregating the record types from the answers defined in the steering
+     * policy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtypes")
     private final java.util.List<String> rtypes;
 
     /**
      * The record types covered by the attachment at the domain. The set of record types is
-     * determined by aggregating the record types from the answers defined in the steering policy.
+     * determined by aggregating the record types from the answers defined in the steering
+     * policy.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRtypes() {
         return rtypes;
     }
 
-    /** The OCID of the compartment containing the steering policy attachment. */
+    /**
+     * The OCID of the compartment containing the steering policy attachment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the steering policy attachment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The canonical absolute URL of the resource. */
+    /**
+     * The canonical absolute URL of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("self")
     private final String self;
 
     /**
      * The canonical absolute URL of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getSelf() {
         return self;
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
+     * <p>
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
-     * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
-     *
-     * <p>*Example:** {@code 2016-07-22T17:23:59:60Z}
+     * <p>
+     **Example:** {@code 2016-07-22T17:23:59:60Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The current state of the resource. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the resource.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -473,15 +501,16 @@ public final class SteeringPolicyAttachmentSummary
             return UnknownEnumValue;
         }
     };
-    /** The current state of the resource. */
+    /**
+     * The current state of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the resource.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -493,7 +522,6 @@ public final class SteeringPolicyAttachmentSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

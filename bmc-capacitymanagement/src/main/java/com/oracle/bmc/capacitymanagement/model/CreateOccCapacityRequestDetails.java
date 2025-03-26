@@ -5,23 +5,23 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * Details about the create request for the capacity request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * Details about the create request for the capacity request.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateOccCapacityRequestDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateOccCapacityRequestDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateOccCapacityRequestDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -74,34 +74,32 @@ public final class CreateOccCapacityRequestDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Since all resources are at tenancy level hence this will be the ocid of the tenancy where
-         * operation is to be performed.
-         */
+         * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Since all resources are at tenancy level hence this will be the ocid of the tenancy where
-         * operation is to be performed.
-         *
+         * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the availability catalog against which capacity request is made. */
+        /**
+         * The OCID of the availability catalog against which capacity request is made.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("occAvailabilityCatalogId")
         private String occAvailabilityCatalogId;
 
         /**
          * The OCID of the availability catalog against which capacity request is made.
-         *
          * @param occAvailabilityCatalogId the value to set
          * @return this builder
-         */
+         **/
         public Builder occAvailabilityCatalogId(String occAvailabilityCatalogId) {
             this.occAvailabilityCatalogId = occAvailabilityCatalogId;
             this.__explicitlySet__.add("occAvailabilityCatalogId");
@@ -109,99 +107,99 @@ public final class CreateOccCapacityRequestDetails
         }
         /**
          * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private Namespace namespace;
 
         /**
          * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(Namespace namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The name of the region for which the capacity request is made. */
+        /**
+         * The name of the region for which the capacity request is made.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The name of the region for which the capacity request is made.
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
         /**
-         * An user-friendly name for the capacity request. Does not have to be unique, and it's
-         * changeable. Avoid entering confidential information.
-         */
+         * An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * An user-friendly name for the capacity request. Does not have to be unique, and it's
-         * changeable. Avoid entering confidential information.
-         *
+         * An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Type of Capacity Request(New or Transfer) */
+        /**
+         * Type of Capacity Request(New or Transfer)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestType")
         private OccCapacityRequest.RequestType requestType;
 
         /**
          * Type of Capacity Request(New or Transfer)
-         *
          * @param requestType the value to set
          * @return this builder
-         */
+         **/
         public Builder requestType(OccCapacityRequest.RequestType requestType) {
             this.requestType = requestType;
             this.__explicitlySet__.add("requestType");
             return this;
         }
-        /** Meaningful text about the capacity request. */
+        /**
+         * Meaningful text about the capacity request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Meaningful text about the capacity request.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -210,7 +208,8 @@ public final class CreateOccCapacityRequestDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -220,7 +219,7 @@ public final class CreateOccCapacityRequestDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -228,89 +227,80 @@ public final class CreateOccCapacityRequestDetails
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in a Failed State.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in a Failed State.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The availability domain (AD) in which the new resource is to be placed. If this is
-         * specified then the capacity will be validated and fulfilled within the scope of this AD.
-         * Note that this field is NOT required for Capacity request Transfer requests.
-         */
+         * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain (AD) in which the new resource is to be placed. If this is
-         * specified then the capacity will be validated and fulfilled within the scope of this AD.
-         * Note that this field is NOT required for Capacity request Transfer requests.
-         *
+         * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs
-         * to be fulfilled.
-         */
+         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dateExpectedCapacityHandover")
         private java.util.Date dateExpectedCapacityHandover;
 
         /**
-         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs
-         * to be fulfilled.
-         *
+         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
          * @param dateExpectedCapacityHandover the value to set
          * @return this builder
-         */
+         **/
         public Builder dateExpectedCapacityHandover(java.util.Date dateExpectedCapacityHandover) {
             this.dateExpectedCapacityHandover = dateExpectedCapacityHandover;
             this.__explicitlySet__.add("dateExpectedCapacityHandover");
             return this;
         }
-        /** The subset of request states available for creating the capacity request. */
+        /**
+         * The subset of request states available for creating the capacity request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestState")
         private RequestState requestState;
 
         /**
          * The subset of request states available for creating the capacity request.
-         *
          * @param requestState the value to set
          * @return this builder
-         */
+         **/
         public Builder requestState(RequestState requestState) {
             this.requestState = requestState;
             this.__explicitlySet__.add("requestState");
             return this;
         }
-        /** A list of different resources requested by the user. */
+        /**
+         * A list of different resources requested by the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private java.util.List<OccCapacityRequestBaseDetails> details;
 
         /**
          * A list of different resources requested by the user.
-         *
          * @param details the value to set
          * @return this builder
-         */
+         **/
         public Builder details(java.util.List<OccCapacityRequestBaseDetails> details) {
             this.details = details;
             this.__explicitlySet__.add("details");
@@ -391,7 +381,9 @@ public final class CreateOccCapacityRequestDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -401,193 +393,185 @@ public final class CreateOccCapacityRequestDetails
     }
 
     /**
-     * Since all resources are at tenancy level hence this will be the ocid of the tenancy where
-     * operation is to be performed.
-     */
+     * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Since all resources are at tenancy level hence this will be the ocid of the tenancy where
-     * operation is to be performed.
-     *
+     * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the availability catalog against which capacity request is made. */
+    /**
+     * The OCID of the availability catalog against which capacity request is made.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("occAvailabilityCatalogId")
     private final String occAvailabilityCatalogId;
 
     /**
      * The OCID of the availability catalog against which capacity request is made.
-     *
      * @return the value
-     */
+     **/
     public String getOccAvailabilityCatalogId() {
         return occAvailabilityCatalogId;
     }
 
-    /** The name of the OCI service in consideration. For example, Compute, Exadata, and so on. */
+    /**
+     * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final Namespace namespace;
 
     /**
      * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
-     *
      * @return the value
-     */
+     **/
     public Namespace getNamespace() {
         return namespace;
     }
 
-    /** The name of the region for which the capacity request is made. */
+    /**
+     * The name of the region for which the capacity request is made.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The name of the region for which the capacity request is made.
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
     /**
-     * An user-friendly name for the capacity request. Does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
-     */
+     * An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * An user-friendly name for the capacity request. Does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
-     *
+     * An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Type of Capacity Request(New or Transfer) */
+    /**
+     * Type of Capacity Request(New or Transfer)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestType")
     private final OccCapacityRequest.RequestType requestType;
 
     /**
      * Type of Capacity Request(New or Transfer)
-     *
      * @return the value
-     */
+     **/
     public OccCapacityRequest.RequestType getRequestType() {
         return requestType;
     }
 
-    /** Meaningful text about the capacity request. */
+    /**
+     * Meaningful text about the capacity request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Meaningful text about the capacity request.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in a Failed State.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in a Failed State.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The availability domain (AD) in which the new resource is to be placed. If this is specified
-     * then the capacity will be validated and fulfilled within the scope of this AD. Note that this
-     * field is NOT required for Capacity request Transfer requests.
-     */
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain (AD) in which the new resource is to be placed. If this is specified
-     * then the capacity will be validated and fulfilled within the scope of this AD. Note that this
-     * field is NOT required for Capacity request Transfer requests.
-     *
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to
-     * be fulfilled.
-     */
+     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateExpectedCapacityHandover")
     private final java.util.Date dateExpectedCapacityHandover;
 
     /**
-     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to
-     * be fulfilled.
-     *
+     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
      * @return the value
-     */
+     **/
     public java.util.Date getDateExpectedCapacityHandover() {
         return dateExpectedCapacityHandover;
     }
 
-    /** The subset of request states available for creating the capacity request. */
-    public enum RequestState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The subset of request states available for creating the capacity request.
+     **/
+    public enum RequestState {
         Created("CREATED"),
         Submitted("SUBMITTED"),
         ;
@@ -619,28 +603,30 @@ public final class CreateOccCapacityRequestDetails
             throw new IllegalArgumentException("Invalid RequestState: " + key);
         }
     };
-    /** The subset of request states available for creating the capacity request. */
+    /**
+     * The subset of request states available for creating the capacity request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestState")
     private final RequestState requestState;
 
     /**
      * The subset of request states available for creating the capacity request.
-     *
      * @return the value
-     */
+     **/
     public RequestState getRequestState() {
         return requestState;
     }
 
-    /** A list of different resources requested by the user. */
+    /**
+     * A list of different resources requested by the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final java.util.List<OccCapacityRequestBaseDetails> details;
 
     /**
      * A list of different resources requested by the user.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OccCapacityRequestBaseDetails> getDetails() {
         return details;
     }
@@ -652,7 +638,6 @@ public final class CreateOccCapacityRequestDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

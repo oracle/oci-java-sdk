@@ -5,23 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * An object containing credential details to authenticate/authorize a REST request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * An object containing credential details to authenticate/authorize a REST request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EndpointCredentials.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EndpointCredentials
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = EndpointCredentials.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EndpointCredentials extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentialType", "credentialName", "credentialEndpoint"})
     public EndpointCredentials(
@@ -38,37 +36,37 @@ public final class EndpointCredentials
     public static class Builder {
         /**
          * The credential type. NONE indicates credentials are not needed to access the endpoint.
-         * BASIC_AUTH represents a username and password based model. TOKEN could be static or
-         * dynamic. In case of dynamic tokens, also specify the endpoint from which the token must
-         * be fetched.
-         */
+         * BASIC_AUTH represents a username and password based model. TOKEN could be static or dynamic.
+         * In case of dynamic tokens, also specify the endpoint from which the token must be fetched.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
         private CredentialType credentialType;
 
         /**
          * The credential type. NONE indicates credentials are not needed to access the endpoint.
-         * BASIC_AUTH represents a username and password based model. TOKEN could be static or
-         * dynamic. In case of dynamic tokens, also specify the endpoint from which the token must
-         * be fetched.
+         * BASIC_AUTH represents a username and password based model. TOKEN could be static or dynamic.
+         * In case of dynamic tokens, also specify the endpoint from which the token must be fetched.
          *
          * @param credentialType the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialType(CredentialType credentialType) {
             this.credentialType = credentialType;
             this.__explicitlySet__.add("credentialType");
             return this;
         }
-        /** The named credential name on the management agent. */
+        /**
+         * The named credential name on the management agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
 
         /**
          * The named credential name on the management agent.
-         *
          * @param credentialName the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialName(String credentialName) {
             this.credentialName = credentialName;
             this.__explicitlySet__.add("credentialName");
@@ -112,7 +110,9 @@ public final class EndpointCredentials
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,16 +125,17 @@ public final class EndpointCredentials
      * The credential type. NONE indicates credentials are not needed to access the endpoint.
      * BASIC_AUTH represents a username and password based model. TOKEN could be static or dynamic.
      * In case of dynamic tokens, also specify the endpoint from which the token must be fetched.
-     */
-    public enum CredentialType implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum CredentialType {
         None("NONE"),
         BasicAuth("BASIC_AUTH"),
         StaticToken("STATIC_TOKEN"),
         DynamicToken("DYNAMIC_TOKEN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -177,7 +178,8 @@ public final class EndpointCredentials
      * The credential type. NONE indicates credentials are not needed to access the endpoint.
      * BASIC_AUTH represents a username and password based model. TOKEN could be static or dynamic.
      * In case of dynamic tokens, also specify the endpoint from which the token must be fetched.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
     private final CredentialType credentialType;
 
@@ -187,20 +189,21 @@ public final class EndpointCredentials
      * In case of dynamic tokens, also specify the endpoint from which the token must be fetched.
      *
      * @return the value
-     */
+     **/
     public CredentialType getCredentialType() {
         return credentialType;
     }
 
-    /** The named credential name on the management agent. */
+    /**
+     * The named credential name on the management agent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
     private final String credentialName;
 
     /**
      * The named credential name on the management agent.
-     *
      * @return the value
-     */
+     **/
     public String getCredentialName() {
         return credentialName;
     }
@@ -219,7 +222,6 @@ public final class EndpointCredentials
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

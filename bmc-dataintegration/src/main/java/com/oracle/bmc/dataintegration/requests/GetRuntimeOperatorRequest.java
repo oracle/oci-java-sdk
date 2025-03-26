@@ -6,50 +6,68 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimeOperatorExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRuntimeOperatorRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimeOperatorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRuntimeOperatorRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     private String workspaceId;
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /** The application key. */
+    /**
+     * The application key.
+     */
     private String applicationKey;
 
-    /** The application key. */
+    /**
+     * The application key.
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
-    /** Runtime Pipeline Key */
+    /**
+     * Runtime Pipeline Key
+     */
     private String runtimePipelineKey;
 
-    /** Runtime Pipeline Key */
+    /**
+     * Runtime Pipeline Key
+     */
     public String getRuntimePipelineKey() {
         return runtimePipelineKey;
     }
-    /** Runtime Operator Key */
+    /**
+     * Runtime Operator Key
+     */
     private String runtimeOperatorKey;
 
-    /** Runtime Operator Key */
+    /**
+     * Runtime Operator Key
+     */
     public String getRuntimeOperatorKey() {
         return runtimeOperatorKey;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -58,15 +76,17 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetRuntimeOperatorRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The workspace ID. */
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
-         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -75,12 +95,13 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The application key. */
+        /**
+         * The application key.
+         */
         private String applicationKey = null;
 
         /**
          * The application key.
-         *
          * @param applicationKey the value to set
          * @return this builder instance
          */
@@ -89,12 +110,13 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Runtime Pipeline Key */
+        /**
+         * Runtime Pipeline Key
+         */
         private String runtimePipelineKey = null;
 
         /**
          * Runtime Pipeline Key
-         *
          * @param runtimePipelineKey the value to set
          * @return this builder instance
          */
@@ -103,12 +125,13 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Runtime Operator Key */
+        /**
+         * Runtime Operator Key
+         */
         private String runtimeOperatorKey = null;
 
         /**
          * Runtime Operator Key
-         *
          * @param runtimeOperatorKey the value to set
          * @return this builder instance
          */
@@ -118,14 +141,17 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -137,19 +163,18 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -161,7 +186,6 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetRuntimeOperatorRequest o) {
@@ -178,11 +202,10 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of GetRuntimeOperatorRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetRuntimeOperatorRequest
          */
@@ -196,8 +219,7 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of GetRuntimeOperatorRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetRuntimeOperatorRequest
@@ -210,14 +232,12 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
             request.runtimeOperatorKey = runtimeOperatorKey;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetRuntimeOperatorRequest(workspaceId, applicationKey, runtimePipelineKey,
-            // runtimeOperatorKey, opcRequestId);
+            // new GetRuntimeOperatorRequest(workspaceId, applicationKey, runtimePipelineKey, runtimeOperatorKey, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -231,7 +251,6 @@ public class GetRuntimeOperatorRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

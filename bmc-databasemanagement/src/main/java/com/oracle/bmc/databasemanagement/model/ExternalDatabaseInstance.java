@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an external database instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an external database instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalDatabaseInstance.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalDatabaseInstance.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalDatabaseInstance
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"instanceNumber", "instanceName", "hostName"})
     public ExternalDatabaseInstance(Integer instanceNumber, String instanceName, String hostName) {
@@ -33,46 +32,49 @@ public final class ExternalDatabaseInstance
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The instance number of the database instance. */
+        /**
+         * The instance number of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
         private Integer instanceNumber;
 
         /**
          * The instance number of the database instance.
-         *
          * @param instanceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceNumber(Integer instanceNumber) {
             this.instanceNumber = instanceNumber;
             this.__explicitlySet__.add("instanceNumber");
             return this;
         }
-        /** The name of the database instance. */
+        /**
+         * The name of the database instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
         /**
          * The name of the database instance.
-         *
          * @param instanceName the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
-        /** The name of the host machine. */
+        /**
+         * The name of the host machine.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The name of the host machine.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
@@ -107,7 +109,9 @@ public final class ExternalDatabaseInstance
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +120,44 @@ public final class ExternalDatabaseInstance
         return new Builder().copy(this);
     }
 
-    /** The instance number of the database instance. */
+    /**
+     * The instance number of the database instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
     private final Integer instanceNumber;
 
     /**
      * The instance number of the database instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstanceNumber() {
         return instanceNumber;
     }
 
-    /** The name of the database instance. */
+    /**
+     * The name of the database instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
     /**
      * The name of the database instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceName() {
         return instanceName;
     }
 
-    /** The name of the host machine. */
+    /**
+     * The name of the host machine.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The name of the host machine.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
@@ -162,7 +169,6 @@ public final class ExternalDatabaseInstance
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

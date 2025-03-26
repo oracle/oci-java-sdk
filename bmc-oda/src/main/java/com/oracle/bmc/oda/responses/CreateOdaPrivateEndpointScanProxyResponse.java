@@ -6,15 +6,16 @@ package com.oracle.bmc.oda.responses;
 
 import com.oracle.bmc.oda.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateOdaPrivateEndpointScanProxyResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** Fully qualified URL for the newly created resource. */
+    /**
+     * Fully qualified URL for the newly created resource.
+     */
     private String location;
 
     /**
      * Fully qualified URL for the newly created resource.
-     *
      * @return the value
      */
     public String getLocation() {
@@ -22,15 +23,12 @@ public class CreateOdaPrivateEndpointScanProxyResponse
     }
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-     * control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
      */
     private String etag;
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-     * control.
-     *
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
      * @return the value
      */
     public String getEtag() {
@@ -38,14 +36,15 @@ public class CreateOdaPrivateEndpointScanProxyResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
+     * of the operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
+     * of the operation.
      *
      * @return the value
      */
@@ -54,14 +53,15 @@ public class CreateOdaPrivateEndpointScanProxyResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -69,12 +69,13 @@ public class CreateOdaPrivateEndpointScanProxyResponse
         return opcRequestId;
     }
 
-    /** The returned {@code OdaPrivateEndpointScanProxy} instance. */
+    /**
+     * The returned OdaPrivateEndpointScanProxy instance.
+     */
     private com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy odaPrivateEndpointScanProxy;
 
     /**
-     * The returned {@code OdaPrivateEndpointScanProxy} instance.
-     *
+     * The returned OdaPrivateEndpointScanProxy instance.
      * @return the value
      */
     public com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy getOdaPrivateEndpointScanProxy() {
@@ -92,7 +93,7 @@ public class CreateOdaPrivateEndpointScanProxyResponse
     })
     private CreateOdaPrivateEndpointScanProxyResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcWorkRequestId,
@@ -106,31 +107,28 @@ public class CreateOdaPrivateEndpointScanProxyResponse
         this.odaPrivateEndpointScanProxy = odaPrivateEndpointScanProxy;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateOdaPrivateEndpointScanProxyResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Fully qualified URL for the newly created resource. */
+        /**
+         * Fully qualified URL for the newly created resource.
+         */
         private String location;
 
         /**
          * Fully qualified URL for the newly created resource.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -140,15 +138,12 @@ public class CreateOdaPrivateEndpointScanProxyResponse
         }
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-         * control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
          */
         private String etag;
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-         * control.
-         *
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
          * @param etag the value to set
          * @return this builder
          */
@@ -158,14 +153,15 @@ public class CreateOdaPrivateEndpointScanProxyResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
+         * of the operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status
+         * of the operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -176,14 +172,15 @@ public class CreateOdaPrivateEndpointScanProxyResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -193,12 +190,13 @@ public class CreateOdaPrivateEndpointScanProxyResponse
             return this;
         }
 
-        /** The returned {@code OdaPrivateEndpointScanProxy} instance. */
+        /**
+         * The returned OdaPrivateEndpointScanProxy instance.
+         */
         private com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy odaPrivateEndpointScanProxy;
 
         /**
-         * The returned {@code OdaPrivateEndpointScanProxy} instance.
-         *
+         * The returned OdaPrivateEndpointScanProxy instance.
          * @param odaPrivateEndpointScanProxy the value to set
          * @return this builder
          */
@@ -210,10 +208,8 @@ public class CreateOdaPrivateEndpointScanProxyResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateOdaPrivateEndpointScanProxyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -228,10 +224,8 @@ public class CreateOdaPrivateEndpointScanProxyResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateOdaPrivateEndpointScanProxyResponse build() {
             return new CreateOdaPrivateEndpointScanProxyResponse(
                     __httpStatusCode__,
@@ -246,7 +240,6 @@ public class CreateOdaPrivateEndpointScanProxyResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

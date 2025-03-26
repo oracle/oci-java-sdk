@@ -5,21 +5,19 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The Monitoring Template Alarm Condition. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The Monitoring Template Alarm Condition.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Condition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Condition extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "severity",
@@ -47,109 +45,97 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Severity - Critical/Warning */
+        /**
+         * Severity - Critical/Warning
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private AlarmConditionSeverity severity;
 
         /**
          * Severity - Critical/Warning
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(AlarmConditionSeverity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** The Monitoring Query Language (MQL) expression to evaluate for the alarm. */
+        /**
+         * The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
          * The Monitoring Query Language (MQL) expression to evaluate for the alarm.
-         *
          * @param query the value to set
          * @return this builder
-         */
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
             return this;
         }
         /**
-         * The human-readable content of the delivered alarm notification. Oracle recommends
-         * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices. Avoid entering confidential information.
-         */
+         * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("body")
         private String body;
 
         /**
-         * The human-readable content of the delivered alarm notification. Oracle recommends
-         * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices. Avoid entering confidential information.
-         *
+         * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
          * @param body the value to set
          * @return this builder
-         */
+         **/
         public Builder body(String body) {
             this.body = body;
             this.__explicitlySet__.add("body");
             return this;
         }
         /**
-         * Whether the note need to add into bottom of the body for mapping the alarms information
-         * with template or not.
-         */
+         * Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldAppendNote")
         private Boolean shouldAppendNote;
 
         /**
-         * Whether the note need to add into bottom of the body for mapping the alarms information
-         * with template or not.
-         *
+         * Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
          * @param shouldAppendNote the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldAppendNote(Boolean shouldAppendNote) {
             this.shouldAppendNote = shouldAppendNote;
             this.__explicitlySet__.add("shouldAppendNote");
             return this;
         }
         /**
-         * Whether the URL need to add into bottom of the body for mapping the alarms information
-         * with template or not.
-         */
+         * Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldAppendUrl")
         private Boolean shouldAppendUrl;
 
         /**
-         * Whether the URL need to add into bottom of the body for mapping the alarms information
-         * with template or not.
-         *
+         * Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
          * @param shouldAppendUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldAppendUrl(Boolean shouldAppendUrl) {
             this.shouldAppendUrl = shouldAppendUrl;
             this.__explicitlySet__.add("shouldAppendUrl");
             return this;
         }
         /**
-         * The period of time that the condition defined in the alarm must persist before the alarm
-         * state changes from "OK" to "FIRING".
-         */
+         * The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerDelay")
         private String triggerDelay;
 
         /**
-         * The period of time that the condition defined in the alarm must persist before the alarm
-         * state changes from "OK" to "FIRING".
-         *
+         * The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
          * @param triggerDelay the value to set
          * @return this builder
-         */
+         **/
         public Builder triggerDelay(String triggerDelay) {
             this.triggerDelay = triggerDelay;
             this.__explicitlySet__.add("triggerDelay");
@@ -198,7 +184,9 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,98 +195,86 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Severity - Critical/Warning */
+    /**
+     * Severity - Critical/Warning
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final AlarmConditionSeverity severity;
 
     /**
      * Severity - Critical/Warning
-     *
      * @return the value
-     */
+     **/
     public AlarmConditionSeverity getSeverity() {
         return severity;
     }
 
-    /** The Monitoring Query Language (MQL) expression to evaluate for the alarm. */
+    /**
+     * The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
      * The Monitoring Query Language (MQL) expression to evaluate for the alarm.
-     *
      * @return the value
-     */
+     **/
     public String getQuery() {
         return query;
     }
 
     /**
-     * The human-readable content of the delivered alarm notification. Oracle recommends providing
-     * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices. Avoid entering confidential information.
-     */
+     * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("body")
     private final String body;
 
     /**
-     * The human-readable content of the delivered alarm notification. Oracle recommends providing
-     * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices. Avoid entering confidential information.
-     *
+     * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getBody() {
         return body;
     }
 
     /**
-     * Whether the note need to add into bottom of the body for mapping the alarms information with
-     * template or not.
-     */
+     * Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldAppendNote")
     private final Boolean shouldAppendNote;
 
     /**
-     * Whether the note need to add into bottom of the body for mapping the alarms information with
-     * template or not.
-     *
+     * Whether the note need to add into bottom of the body for mapping the alarms information with template or not.
      * @return the value
-     */
+     **/
     public Boolean getShouldAppendNote() {
         return shouldAppendNote;
     }
 
     /**
-     * Whether the URL need to add into bottom of the body for mapping the alarms information with
-     * template or not.
-     */
+     * Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldAppendUrl")
     private final Boolean shouldAppendUrl;
 
     /**
-     * Whether the URL need to add into bottom of the body for mapping the alarms information with
-     * template or not.
-     *
+     * Whether the URL need to add into bottom of the body for mapping the alarms information with template or not.
      * @return the value
-     */
+     **/
     public Boolean getShouldAppendUrl() {
         return shouldAppendUrl;
     }
 
     /**
-     * The period of time that the condition defined in the alarm must persist before the alarm
-     * state changes from "OK" to "FIRING".
-     */
+     * The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerDelay")
     private final String triggerDelay;
 
     /**
-     * The period of time that the condition defined in the alarm must persist before the alarm
-     * state changes from "OK" to "FIRING".
-     *
+     * The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING".
      * @return the value
-     */
+     **/
     public String getTriggerDelay() {
         return triggerDelay;
     }
@@ -310,7 +286,6 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

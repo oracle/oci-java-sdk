@@ -5,22 +5,19 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * Summary of dblm registered and unregistered resources. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * Summary of dblm registered and unregistered resources.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResourceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalResourcesCount",
@@ -48,91 +45,97 @@ public final class ResourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The total number of resources. */
+        /**
+         * The total number of resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalResourcesCount")
         private Integer totalResourcesCount;
 
         /**
          * The total number of resources.
-         *
          * @param totalResourcesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalResourcesCount(Integer totalResourcesCount) {
             this.totalResourcesCount = totalResourcesCount;
             this.__explicitlySet__.add("totalResourcesCount");
             return this;
         }
-        /** The total number of registered resources. */
+        /**
+         * The total number of registered resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registeredResourcesCount")
         private Integer registeredResourcesCount;
 
         /**
          * The total number of registered resources.
-         *
          * @param registeredResourcesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder registeredResourcesCount(Integer registeredResourcesCount) {
             this.registeredResourcesCount = registeredResourcesCount;
             this.__explicitlySet__.add("registeredResourcesCount");
             return this;
         }
-        /** The total number of resources that are not registered. */
+        /**
+         * The total number of resources that are not registered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notRegisteredResourcesCount")
         private Integer notRegisteredResourcesCount;
 
         /**
          * The total number of resources that are not registered.
-         *
          * @param notRegisteredResourcesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder notRegisteredResourcesCount(Integer notRegisteredResourcesCount) {
             this.notRegisteredResourcesCount = notRegisteredResourcesCount;
             this.__explicitlySet__.add("notRegisteredResourcesCount");
             return this;
         }
-        /** Total number of resources that have 1 or more vulnerabilities. */
+        /**
+         * Total number of resources that have 1 or more vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vulnerableResourcesCount")
         private Integer vulnerableResourcesCount;
 
         /**
          * Total number of resources that have 1 or more vulnerabilities.
-         *
          * @param vulnerableResourcesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder vulnerableResourcesCount(Integer vulnerableResourcesCount) {
             this.vulnerableResourcesCount = vulnerableResourcesCount;
             this.__explicitlySet__.add("vulnerableResourcesCount");
             return this;
         }
-        /** Total number of resources that have 0 vulnerabilities. */
+        /**
+         * Total number of resources that have 0 vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cleanResourcesCount")
         private Integer cleanResourcesCount;
 
         /**
          * Total number of resources that have 0 vulnerabilities.
-         *
          * @param cleanResourcesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder cleanResourcesCount(Integer cleanResourcesCount) {
             this.cleanResourcesCount = cleanResourcesCount;
             this.__explicitlySet__.add("cleanResourcesCount");
             return this;
         }
-        /** Total number of resources that contain an error. */
+        /**
+         * Total number of resources that contain an error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorResourcesCount")
         private Integer errorResourcesCount;
 
         /**
          * Total number of resources that contain an error.
-         *
          * @param errorResourcesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder errorResourcesCount(Integer errorResourcesCount) {
             this.errorResourcesCount = errorResourcesCount;
             this.__explicitlySet__.add("errorResourcesCount");
@@ -181,7 +184,9 @@ public final class ResourceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -190,80 +195,86 @@ public final class ResourceSummary
         return new Builder().copy(this);
     }
 
-    /** The total number of resources. */
+    /**
+     * The total number of resources.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalResourcesCount")
     private final Integer totalResourcesCount;
 
     /**
      * The total number of resources.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalResourcesCount() {
         return totalResourcesCount;
     }
 
-    /** The total number of registered resources. */
+    /**
+     * The total number of registered resources.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registeredResourcesCount")
     private final Integer registeredResourcesCount;
 
     /**
      * The total number of registered resources.
-     *
      * @return the value
-     */
+     **/
     public Integer getRegisteredResourcesCount() {
         return registeredResourcesCount;
     }
 
-    /** The total number of resources that are not registered. */
+    /**
+     * The total number of resources that are not registered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notRegisteredResourcesCount")
     private final Integer notRegisteredResourcesCount;
 
     /**
      * The total number of resources that are not registered.
-     *
      * @return the value
-     */
+     **/
     public Integer getNotRegisteredResourcesCount() {
         return notRegisteredResourcesCount;
     }
 
-    /** Total number of resources that have 1 or more vulnerabilities. */
+    /**
+     * Total number of resources that have 1 or more vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vulnerableResourcesCount")
     private final Integer vulnerableResourcesCount;
 
     /**
      * Total number of resources that have 1 or more vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getVulnerableResourcesCount() {
         return vulnerableResourcesCount;
     }
 
-    /** Total number of resources that have 0 vulnerabilities. */
+    /**
+     * Total number of resources that have 0 vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cleanResourcesCount")
     private final Integer cleanResourcesCount;
 
     /**
      * Total number of resources that have 0 vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getCleanResourcesCount() {
         return cleanResourcesCount;
     }
 
-    /** Total number of resources that contain an error. */
+    /**
+     * Total number of resources that contain an error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorResourcesCount")
     private final Integer errorResourcesCount;
 
     /**
      * Total number of resources that contain an error.
-     *
      * @return the value
-     */
+     **/
     public Integer getErrorResourcesCount() {
         return errorResourcesCount;
     }
@@ -275,7 +286,6 @@ public final class ResourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

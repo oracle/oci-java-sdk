@@ -5,25 +5,25 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a Cloud MACS-managed Exadata insight resource (ExaCC). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of a Cloud MACS-managed Exadata insight resource (ExaCC).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MacsManagedCloudExadataInsightSummary.Builder.class)
+    builder = MacsManagedCloudExadataInsightSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entitySource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -154,49 +154,48 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraId")
         private String exadataInfraId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata Infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
          * @param exadataInfraId the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataInfraId(String exadataInfraId) {
             this.exadataInfraId = exadataInfraId;
             this.__explicitlySet__.add("exadataInfraId");
             return this;
         }
-        /** OCI exadata infrastructure resource type */
+        /**
+         * OCI exadata infrastructure resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraResourceType")
         private ExadataResourceType exadataInfraResourceType;
 
         /**
          * OCI exadata infrastructure resource type
-         *
          * @param exadataInfraResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataInfraResourceType(ExadataResourceType exadataInfraResourceType) {
             this.exadataInfraResourceType = exadataInfraResourceType;
             this.__explicitlySet__.add("exadataInfraResourceType");
             return this;
         }
-        /** The shape of the Exadata Infrastructure. */
+        /**
+         * The shape of the Exadata Infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataShape")
         private String exadataShape;
 
         /**
          * The shape of the Exadata Infrastructure.
-         *
          * @param exadataShape the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataShape(String exadataShape) {
             this.exadataShape = exadataShape;
             this.__explicitlySet__.add("exadataShape");
@@ -289,7 +288,9 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -338,44 +339,43 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraId")
     private final String exadataInfraId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata Infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * @return the value
-     */
+     **/
     public String getExadataInfraId() {
         return exadataInfraId;
     }
 
-    /** OCI exadata infrastructure resource type */
+    /**
+     * OCI exadata infrastructure resource type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraResourceType")
     private final ExadataResourceType exadataInfraResourceType;
 
     /**
      * OCI exadata infrastructure resource type
-     *
      * @return the value
-     */
+     **/
     public ExadataResourceType getExadataInfraResourceType() {
         return exadataInfraResourceType;
     }
 
-    /** The shape of the Exadata Infrastructure. */
+    /**
+     * The shape of the Exadata Infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataShape")
     private final String exadataShape;
 
     /**
      * The shape of the Exadata Infrastructure.
-     *
      * @return the value
-     */
+     **/
     public String getExadataShape() {
         return exadataShape;
     }
@@ -387,7 +387,6 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

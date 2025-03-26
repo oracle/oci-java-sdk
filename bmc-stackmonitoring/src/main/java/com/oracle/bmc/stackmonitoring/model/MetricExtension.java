@@ -5,22 +5,19 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Detailed information of the Metric Extension resource <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Detailed information of the Metric Extension resource
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetricExtension.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MetricExtension
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MetricExtension extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -91,260 +88,256 @@ public final class MetricExtension
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Metric Extension resource
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * Metric Extension resource
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Metric Extension resource name */
+        /**
+         * Metric Extension resource name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Metric Extension resource name
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Metric Extension resource display name */
+        /**
+         * Metric Extension resource display name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Metric Extension resource display name
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the metric extension. */
+        /**
+         * Description of the metric extension.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the metric extension.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Resource type to which Metric Extension applies */
+        /**
+         * Resource type to which Metric Extension applies
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * Resource type to which Metric Extension applies
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         */
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         *
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Tenant Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         */
+         * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Tenant Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         *
+         * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** Collection Method Metric Extension applies */
+        /**
+         * Collection Method  Metric Extension applies
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collectionMethod")
         private String collectionMethod;
 
         /**
-         * Collection Method Metric Extension applies
-         *
+         * Collection Method  Metric Extension applies
          * @param collectionMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder collectionMethod(String collectionMethod) {
             this.collectionMethod = collectionMethod;
             this.__explicitlySet__.add("collectionMethod");
             return this;
         }
-        /** The current status of the metric extension i.e. whether it is Draft or Published */
+        /**
+         * The current status of the metric extension i.e. whether it is Draft or Published
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private MetricExtensionLifeCycleDetails status;
 
         /**
          * The current status of the metric extension i.e. whether it is Draft or Published
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(MetricExtensionLifeCycleDetails status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The current lifecycle state of the metric extension */
+        /**
+         * The current lifecycle state of the metric extension
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MetricExtensionLifeCycleStates lifecycleState;
 
         /**
          * The current lifecycle state of the metric extension
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(MetricExtensionLifeCycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Created by user */
+        /**
+         * Created by user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
          * Created by user
-         *
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** Last updated by user */
+        /**
+         * Last updated by user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
         private String lastUpdatedBy;
 
         /**
          * Last updated by user
-         *
          * @param lastUpdatedBy the value to set
          * @return this builder
-         */
+         **/
         public Builder lastUpdatedBy(String lastUpdatedBy) {
             this.lastUpdatedBy = lastUpdatedBy;
             this.__explicitlySet__.add("lastUpdatedBy");
             return this;
         }
-        /** Metric Extension creation time. An RFC3339 formatted datetime string. */
+        /**
+         * Metric Extension creation time. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Metric Extension creation time. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Metric Extension update time. An RFC3339 formatted datetime string. */
+        /**
+         * Metric Extension update time. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Metric Extension update time. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Schedule of metric extension should use RFC 5545 format -> recur-rule-part =
-         * "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid
-         * values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval
-         * of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
-         */
+         * Schedule of metric extension should use RFC 5545 format -> recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collectionRecurrences")
         private String collectionRecurrences;
 
         /**
-         * Schedule of metric extension should use RFC 5545 format -> recur-rule-part =
-         * "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid
-         * values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval
-         * of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
-         *
+         * Schedule of metric extension should use RFC 5545 format -> recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
          * @param collectionRecurrences the value to set
          * @return this builder
-         */
+         **/
         public Builder collectionRecurrences(String collectionRecurrences) {
             this.collectionRecurrences = collectionRecurrences;
             this.__explicitlySet__.add("collectionRecurrences");
             return this;
         }
-        /** List of metrics which are part of this metric extension */
+        /**
+         * List of metrics which are part of this metric extension
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricList")
         private java.util.List<Metric> metricList;
 
         /**
          * List of metrics which are part of this metric extension
-         *
          * @param metricList the value to set
          * @return this builder
-         */
+         **/
         public Builder metricList(java.util.List<Metric> metricList) {
             this.metricList = metricList;
             this.__explicitlySet__.add("metricList");
@@ -360,50 +353,49 @@ public final class MetricExtension
             return this;
         }
         /**
-         * List of resource details objects having resourceIds on which this metric extension is
-         * enabled.
-         */
+         * List of resource details objects having resourceIds on which this metric extension is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResources")
         private java.util.List<EnabledResourceDetails> enabledOnResources;
 
         /**
-         * List of resource details objects having resourceIds on which this metric extension is
-         * enabled.
-         *
+         * List of resource details objects having resourceIds on which this metric extension is enabled.
          * @param enabledOnResources the value to set
          * @return this builder
-         */
+         **/
         public Builder enabledOnResources(
                 java.util.List<EnabledResourceDetails> enabledOnResources) {
             this.enabledOnResources = enabledOnResources;
             this.__explicitlySet__.add("enabledOnResources");
             return this;
         }
-        /** Count of resources on which this metric extension is enabled. */
+        /**
+         * Count of resources on which this metric extension is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResourcesCount")
         private Integer enabledOnResourcesCount;
 
         /**
          * Count of resources on which this metric extension is enabled.
-         *
          * @param enabledOnResourcesCount the value to set
          * @return this builder
-         */
+         **/
         public Builder enabledOnResourcesCount(Integer enabledOnResourcesCount) {
             this.enabledOnResourcesCount = enabledOnResourcesCount;
             this.__explicitlySet__.add("enabledOnResourcesCount");
             return this;
         }
-        /** The URI path that the user can do a GET on to access the metric extension metadata */
+        /**
+         * The URI path that the user can do a GET on to access the metric extension metadata
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
         private String resourceUri;
 
         /**
          * The URI path that the user can do a GET on to access the metric extension metadata
-         *
          * @param resourceUri the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceUri(String resourceUri) {
             this.resourceUri = resourceUri;
             this.__explicitlySet__.add("resourceUri");
@@ -508,7 +500,9 @@ public final class MetricExtension
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -518,229 +512,225 @@ public final class MetricExtension
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric
-     * Extension resource
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric
-     * Extension resource
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Metric Extension resource name */
+    /**
+     * Metric Extension resource name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Metric Extension resource name
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Metric Extension resource display name */
+    /**
+     * Metric Extension resource display name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Metric Extension resource display name
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description of the metric extension. */
+    /**
+     * Description of the metric extension.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the metric extension.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Resource type to which Metric Extension applies */
+    /**
+     * Resource type to which Metric Extension applies
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * Resource type to which Metric Extension applies
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     */
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     *
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Tenant Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     */
+     * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Tenant Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     *
+     * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** Collection Method Metric Extension applies */
+    /**
+     * Collection Method  Metric Extension applies
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionMethod")
     private final String collectionMethod;
 
     /**
-     * Collection Method Metric Extension applies
-     *
+     * Collection Method  Metric Extension applies
      * @return the value
-     */
+     **/
     public String getCollectionMethod() {
         return collectionMethod;
     }
 
-    /** The current status of the metric extension i.e. whether it is Draft or Published */
+    /**
+     * The current status of the metric extension i.e. whether it is Draft or Published
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final MetricExtensionLifeCycleDetails status;
 
     /**
      * The current status of the metric extension i.e. whether it is Draft or Published
-     *
      * @return the value
-     */
+     **/
     public MetricExtensionLifeCycleDetails getStatus() {
         return status;
     }
 
-    /** The current lifecycle state of the metric extension */
+    /**
+     * The current lifecycle state of the metric extension
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MetricExtensionLifeCycleStates lifecycleState;
 
     /**
      * The current lifecycle state of the metric extension
-     *
      * @return the value
-     */
+     **/
     public MetricExtensionLifeCycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Created by user */
+    /**
+     * Created by user
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
      * Created by user
-     *
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** Last updated by user */
+    /**
+     * Last updated by user
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
     private final String lastUpdatedBy;
 
     /**
      * Last updated by user
-     *
      * @return the value
-     */
+     **/
     public String getLastUpdatedBy() {
         return lastUpdatedBy;
     }
 
-    /** Metric Extension creation time. An RFC3339 formatted datetime string. */
+    /**
+     * Metric Extension creation time. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Metric Extension creation time. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Metric Extension update time. An RFC3339 formatted datetime string. */
+    /**
+     * Metric Extension update time. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Metric Extension update time. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Schedule of metric extension should use RFC 5545 format -> recur-rule-part =
-     * "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values
-     * are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute,
-     * an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
-     */
+     * Schedule of metric extension should use RFC 5545 format -> recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionRecurrences")
     private final String collectionRecurrences;
 
     /**
-     * Schedule of metric extension should use RFC 5545 format -> recur-rule-part =
-     * "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values
-     * are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute,
-     * an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
-     *
+     * Schedule of metric extension should use RFC 5545 format -> recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
      * @return the value
-     */
+     **/
     public String getCollectionRecurrences() {
         return collectionRecurrences;
     }
 
-    /** List of metrics which are part of this metric extension */
+    /**
+     * List of metrics which are part of this metric extension
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricList")
     private final java.util.List<Metric> metricList;
 
     /**
      * List of metrics which are part of this metric extension
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Metric> getMetricList() {
         return metricList;
     }
@@ -753,44 +743,43 @@ public final class MetricExtension
     }
 
     /**
-     * List of resource details objects having resourceIds on which this metric extension is
-     * enabled.
-     */
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResources")
     private final java.util.List<EnabledResourceDetails> enabledOnResources;
 
     /**
-     * List of resource details objects having resourceIds on which this metric extension is
-     * enabled.
-     *
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
      * @return the value
-     */
+     **/
     public java.util.List<EnabledResourceDetails> getEnabledOnResources() {
         return enabledOnResources;
     }
 
-    /** Count of resources on which this metric extension is enabled. */
+    /**
+     * Count of resources on which this metric extension is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResourcesCount")
     private final Integer enabledOnResourcesCount;
 
     /**
      * Count of resources on which this metric extension is enabled.
-     *
      * @return the value
-     */
+     **/
     public Integer getEnabledOnResourcesCount() {
         return enabledOnResourcesCount;
     }
 
-    /** The URI path that the user can do a GET on to access the metric extension metadata */
+    /**
+     * The URI path that the user can do a GET on to access the metric extension metadata
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceUri")
     private final String resourceUri;
 
     /**
      * The URI path that the user can do a GET on to access the metric extension metadata
-     *
      * @return the value
-     */
+     **/
     public String getResourceUri() {
         return resourceUri;
     }
@@ -802,7 +791,6 @@ public final class MetricExtension
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

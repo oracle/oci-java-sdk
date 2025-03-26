@@ -5,11 +5,12 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Defines an ORDER BY clause on the selected SQL represented by SQLSET_ROW object. Possible values
- * are defined in the enum structure below.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum RankingMeasure implements com.oracle.bmc.http.internal.BmcEnum {
+ * Defines an ORDER BY clause on the selected SQL represented by SQLSET_ROW object.
+ * Possible values are defined in the enum structure below.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum RankingMeasure {
     ElapsedTime("ELAPSED_TIME"),
     CpuTime("CPU_TIME"),
     OptimizerCost("OPTIMIZER_COST"),

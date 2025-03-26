@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/** The state of the Virtual Node Pool. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-public enum VirtualNodePoolLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The state of the Virtual Node Pool.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+public enum VirtualNodePoolLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

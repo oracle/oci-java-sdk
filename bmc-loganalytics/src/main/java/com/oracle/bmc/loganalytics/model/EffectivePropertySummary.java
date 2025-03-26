@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A property and its effective value details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * A property and its effective value details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EffectivePropertySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EffectivePropertySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EffectivePropertySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "value", "effectiveLevel", "patterns"})
     public EffectivePropertySummary(
@@ -38,65 +37,67 @@ public final class EffectivePropertySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The property name. */
+        /**
+         * The property name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The property name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The effective value of the property. This is determined by considering the value set at
-         * the most effective level.
-         */
+         * The effective value of the property. This is determined by considering the value set at the most effective level.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The effective value of the property. This is determined by considering the value set at
-         * the most effective level.
+         * The effective value of the property. This is determined by considering the value set at the most effective level.
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** The level from which the effective value was determined. */
+        /**
+         * The level from which the effective value was determined.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("effectiveLevel")
         private String effectiveLevel;
 
         /**
          * The level from which the effective value was determined.
-         *
          * @param effectiveLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder effectiveLevel(String effectiveLevel) {
             this.effectiveLevel = effectiveLevel;
             this.__explicitlySet__.add("effectiveLevel");
             return this;
         }
-        /** A list of pattern level override values for the property. */
+        /**
+         * A list of pattern level override values for the property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patterns")
         private java.util.List<PatternOverride> patterns;
 
         /**
          * A list of pattern level override values for the property.
-         *
          * @param patterns the value to set
          * @return this builder
-         */
+         **/
         public Builder patterns(java.util.List<PatternOverride> patterns) {
             this.patterns = patterns;
             this.__explicitlySet__.add("patterns");
@@ -134,7 +135,9 @@ public final class EffectivePropertySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,58 +146,60 @@ public final class EffectivePropertySummary
         return new Builder().copy(this);
     }
 
-    /** The property name. */
+    /**
+     * The property name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The property name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The effective value of the property. This is determined by considering the value set at the
-     * most effective level.
-     */
+     * The effective value of the property. This is determined by considering the value set at the most effective level.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The effective value of the property. This is determined by considering the value set at the
-     * most effective level.
+     * The effective value of the property. This is determined by considering the value set at the most effective level.
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** The level from which the effective value was determined. */
+    /**
+     * The level from which the effective value was determined.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveLevel")
     private final String effectiveLevel;
 
     /**
      * The level from which the effective value was determined.
-     *
      * @return the value
-     */
+     **/
     public String getEffectiveLevel() {
         return effectiveLevel;
     }
 
-    /** A list of pattern level override values for the property. */
+    /**
+     * A list of pattern level override values for the property.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patterns")
     private final java.util.List<PatternOverride> patterns;
 
     /**
      * A list of pattern level override values for the property.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PatternOverride> getPatterns() {
         return patterns;
     }
@@ -206,7 +211,6 @@ public final class EffectivePropertySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Resource types available to be governed under Delegation Control */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum DelegationControlResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Resource types available to be governed under Delegation Control
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum DelegationControlResourceType {
     Vmcluster("VMCLUSTER"),
     Cloudvmcluster("CLOUDVMCLUSTER"),
 

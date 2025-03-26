@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Monitor request oauth scheme. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OAuthSchemes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Monitor request oauth scheme.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OAuthSchemes {
     None("NONE"),
     Basic("BASIC"),
 

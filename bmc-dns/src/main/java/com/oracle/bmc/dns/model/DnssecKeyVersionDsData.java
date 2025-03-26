@@ -5,23 +5,23 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * Data for a parent zone DS record corresponding to this key-signing key (KSK). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ * Data for a parent zone DS record corresponding to this key-signing key (KSK).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DnssecKeyVersionDsData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DnssecKeyVersionDsData.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DnssecKeyVersionDsData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rdata", "digestType"})
     public DnssecKeyVersionDsData(String rdata, DnssecDigestType digestType) {
@@ -33,27 +33,29 @@ public final class DnssecKeyVersionDsData
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Presentation-format DS record data that must be added to the parent zone. For more
-         * information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-         */
+         * Presentation-format DS record data that must be added to the parent zone. For more information about RDATA,
+         * see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
 
         /**
-         * Presentation-format DS record data that must be added to the parent zone. For more
-         * information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         * Presentation-format DS record data that must be added to the parent zone. For more information about RDATA,
+         * see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
          *
          * @param rdata the value to set
          * @return this builder
-         */
+         **/
         public Builder rdata(String rdata) {
             this.rdata = rdata;
             this.__explicitlySet__.add("rdata");
             return this;
         }
-        /** The type of the digest associated with the rdata. */
+        /**
+         * The type of the digest associated with the rdata.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digestType")
         private DnssecDigestType digestType;
 
@@ -62,7 +64,7 @@ public final class DnssecKeyVersionDsData
          *
          * @param digestType the value to set
          * @return this builder
-         */
+         **/
         public Builder digestType(DnssecDigestType digestType) {
             this.digestType = digestType;
             this.__explicitlySet__.add("digestType");
@@ -92,7 +94,9 @@ public final class DnssecKeyVersionDsData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,25 +106,27 @@ public final class DnssecKeyVersionDsData
     }
 
     /**
-     * Presentation-format DS record data that must be added to the parent zone. For more
-     * information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-     */
+     * Presentation-format DS record data that must be added to the parent zone. For more information about RDATA,
+     * see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
 
     /**
-     * Presentation-format DS record data that must be added to the parent zone. For more
-     * information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     * Presentation-format DS record data that must be added to the parent zone. For more information about RDATA,
+     * see [Supported DNS Resource Record Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      *
      * @return the value
-     */
+     **/
     public String getRdata() {
         return rdata;
     }
 
-    /** The type of the digest associated with the rdata. */
+    /**
+     * The type of the digest associated with the rdata.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("digestType")
     private final DnssecDigestType digestType;
 
@@ -128,7 +134,7 @@ public final class DnssecKeyVersionDsData
      * The type of the digest associated with the rdata.
      *
      * @return the value
-     */
+     **/
     public DnssecDigestType getDigestType() {
         return digestType;
     }
@@ -140,7 +146,6 @@ public final class DnssecKeyVersionDsData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

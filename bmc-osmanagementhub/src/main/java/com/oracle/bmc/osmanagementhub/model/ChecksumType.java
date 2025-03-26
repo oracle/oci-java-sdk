@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Type of checksum used for the software source. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ChecksumType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of checksum used for the software source.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ChecksumType {
     Sha1("SHA1"),
     Sha256("SHA256"),
     Sha384("SHA384"),

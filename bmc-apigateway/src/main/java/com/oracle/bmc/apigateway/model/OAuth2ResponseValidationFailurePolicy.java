@@ -5,25 +5,26 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Policy to specify OAuth2 flow configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * Policy to specify OAuth2 flow configuration.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OAuth2ResponseValidationFailurePolicy.Builder.class)
+    builder = OAuth2ResponseValidationFailurePolicy.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailurePolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -45,41 +46,46 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
             this.__explicitlySet__.add("sourceUriDetails");
             return this;
         }
-        /** List of scopes. */
+        /**
+         * List of scopes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopes")
         private java.util.List<String> scopes;
 
         /**
          * List of scopes.
-         *
          * @param scopes the value to set
          * @return this builder
-         */
+         **/
         public Builder scopes(java.util.List<String> scopes) {
             this.scopes = scopes;
             this.__explicitlySet__.add("scopes");
             return this;
         }
         /**
-         * The duration for which the OAuth2 success token should be cached before it is fetched
-         * again.
-         */
+         * The duration for which the OAuth2 success token should be cached before it is
+         * fetched again.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxExpiryDurationInHours")
         private Integer maxExpiryDurationInHours;
 
         /**
-         * The duration for which the OAuth2 success token should be cached before it is fetched
-         * again.
+         * The duration for which the OAuth2 success token should be cached before it is
+         * fetched again.
          *
          * @param maxExpiryDurationInHours the value to set
          * @return this builder
-         */
+         **/
         public Builder maxExpiryDurationInHours(Integer maxExpiryDurationInHours) {
             this.maxExpiryDurationInHours = maxExpiryDurationInHours;
             this.__explicitlySet__.add("maxExpiryDurationInHours");
             return this;
         }
-        /** Defines whether or not to use cookies for session maintenance. */
+        /**
+         * Defines whether or not to use cookies for session maintenance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("useCookiesForSession")
         private Boolean useCookiesForSession;
 
@@ -88,13 +94,16 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
          *
          * @param useCookiesForSession the value to set
          * @return this builder
-         */
+         **/
         public Builder useCookiesForSession(Boolean useCookiesForSession) {
             this.useCookiesForSession = useCookiesForSession;
             this.__explicitlySet__.add("useCookiesForSession");
             return this;
         }
-        /** Defines whether or not to use cookies for OAuth2 intermediate steps. */
+        /**
+         * Defines whether or not to use cookies for OAuth2 intermediate steps.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("useCookiesForIntermediateSteps")
         private Boolean useCookiesForIntermediateSteps;
 
@@ -103,13 +112,16 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
          *
          * @param useCookiesForIntermediateSteps the value to set
          * @return this builder
-         */
+         **/
         public Builder useCookiesForIntermediateSteps(Boolean useCookiesForIntermediateSteps) {
             this.useCookiesForIntermediateSteps = useCookiesForIntermediateSteps;
             this.__explicitlySet__.add("useCookiesForIntermediateSteps");
             return this;
         }
-        /** Defines whether or not to support PKCE. */
+        /**
+         * Defines whether or not to support PKCE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usePkce")
         private Boolean usePkce;
 
@@ -118,52 +130,55 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
          *
          * @param usePkce the value to set
          * @return this builder
-         */
+         **/
         public Builder usePkce(Boolean usePkce) {
             this.usePkce = usePkce;
             this.__explicitlySet__.add("usePkce");
             return this;
         }
-        /** Response Type. */
+        /**
+         * Response Type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responseType")
         private ResponseType responseType;
 
         /**
          * Response Type.
-         *
          * @param responseType the value to set
          * @return this builder
-         */
+         **/
         public Builder responseType(ResponseType responseType) {
             this.responseType = responseType;
             this.__explicitlySet__.add("responseType");
             return this;
         }
-        /** The path to be used as fallback after OAuth2. */
+        /**
+         * The path to be used as fallback after OAuth2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fallbackRedirectPath")
         private String fallbackRedirectPath;
 
         /**
          * The path to be used as fallback after OAuth2.
-         *
          * @param fallbackRedirectPath the value to set
          * @return this builder
-         */
+         **/
         public Builder fallbackRedirectPath(String fallbackRedirectPath) {
             this.fallbackRedirectPath = fallbackRedirectPath;
             this.__explicitlySet__.add("fallbackRedirectPath");
             return this;
         }
-        /** The path to be used as logout. */
+        /**
+         * The path to be used as logout.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logoutPath")
         private String logoutPath;
 
         /**
          * The path to be used as logout.
-         *
          * @param logoutPath the value to set
          * @return this builder
-         */
+         **/
         public Builder logoutPath(String logoutPath) {
             this.logoutPath = logoutPath;
             this.__explicitlySet__.add("logoutPath");
@@ -228,7 +243,9 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -276,35 +293,42 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
         return sourceUriDetails;
     }
 
-    /** List of scopes. */
+    /**
+     * List of scopes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopes")
     private final java.util.List<String> scopes;
 
     /**
      * List of scopes.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getScopes() {
         return scopes;
     }
 
     /**
-     * The duration for which the OAuth2 success token should be cached before it is fetched again.
-     */
+     * The duration for which the OAuth2 success token should be cached before it is
+     * fetched again.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxExpiryDurationInHours")
     private final Integer maxExpiryDurationInHours;
 
     /**
-     * The duration for which the OAuth2 success token should be cached before it is fetched again.
+     * The duration for which the OAuth2 success token should be cached before it is
+     * fetched again.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxExpiryDurationInHours() {
         return maxExpiryDurationInHours;
     }
 
-    /** Defines whether or not to use cookies for session maintenance. */
+    /**
+     * Defines whether or not to use cookies for session maintenance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("useCookiesForSession")
     private final Boolean useCookiesForSession;
 
@@ -312,12 +336,15 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
      * Defines whether or not to use cookies for session maintenance.
      *
      * @return the value
-     */
+     **/
     public Boolean getUseCookiesForSession() {
         return useCookiesForSession;
     }
 
-    /** Defines whether or not to use cookies for OAuth2 intermediate steps. */
+    /**
+     * Defines whether or not to use cookies for OAuth2 intermediate steps.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("useCookiesForIntermediateSteps")
     private final Boolean useCookiesForIntermediateSteps;
 
@@ -325,12 +352,15 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
      * Defines whether or not to use cookies for OAuth2 intermediate steps.
      *
      * @return the value
-     */
+     **/
     public Boolean getUseCookiesForIntermediateSteps() {
         return useCookiesForIntermediateSteps;
     }
 
-    /** Defines whether or not to support PKCE. */
+    /**
+     * Defines whether or not to support PKCE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usePkce")
     private final Boolean usePkce;
 
@@ -338,18 +368,20 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
      * Defines whether or not to support PKCE.
      *
      * @return the value
-     */
+     **/
     public Boolean getUsePkce() {
         return usePkce;
     }
 
-    /** Response Type. */
-    public enum ResponseType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Response Type.
+     **/
+    public enum ResponseType {
         Code("CODE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -388,41 +420,44 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
             return UnknownEnumValue;
         }
     };
-    /** Response Type. */
+    /**
+     * Response Type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseType")
     private final ResponseType responseType;
 
     /**
      * Response Type.
-     *
      * @return the value
-     */
+     **/
     public ResponseType getResponseType() {
         return responseType;
     }
 
-    /** The path to be used as fallback after OAuth2. */
+    /**
+     * The path to be used as fallback after OAuth2.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fallbackRedirectPath")
     private final String fallbackRedirectPath;
 
     /**
      * The path to be used as fallback after OAuth2.
-     *
      * @return the value
-     */
+     **/
     public String getFallbackRedirectPath() {
         return fallbackRedirectPath;
     }
 
-    /** The path to be used as logout. */
+    /**
+     * The path to be used as logout.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logoutPath")
     private final String logoutPath;
 
     /**
      * The path to be used as logout.
-     *
      * @return the value
-     */
+     **/
     public String getLogoutPath() {
         return logoutPath;
     }
@@ -434,7 +469,6 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

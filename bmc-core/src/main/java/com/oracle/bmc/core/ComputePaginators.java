@@ -9,31 +9,23 @@ import com.oracle.bmc.core.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Compute where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Compute where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ComputePaginators {
     private final Compute client;
 
@@ -42,13 +34,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAppCatalogListingResourceVersions operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAppCatalogListingResourceVersions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAppCatalogListingResourceVersionsResponse>
             listAppCatalogListingResourceVersionsResponseIterator(
@@ -101,15 +91,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary} objects contained in
-     * responses from the listAppCatalogListingResourceVersions operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary} objects
+     * contained in responses from the listAppCatalogListingResourceVersions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary>
             listAppCatalogListingResourceVersionsRecordIterator(
@@ -176,19 +164,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAppCatalogListings operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAppCatalogListings operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAppCatalogListingsResponse> listAppCatalogListingsResponseIterator(
             final ListAppCatalogListingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAppCatalogListingsRequest.Builder,
-                ListAppCatalogListingsRequest,
+                ListAppCatalogListingsRequest.Builder, ListAppCatalogListingsRequest,
                 ListAppCatalogListingsResponse>(
                 new java.util.function.Supplier<ListAppCatalogListingsRequest.Builder>() {
                     @Override
@@ -231,23 +216,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.AppCatalogListingSummary} objects contained in responses from the
-     * listAppCatalogListings operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingSummary} objects
+     * contained in responses from the listAppCatalogListings operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.AppCatalogListingSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.AppCatalogListingSummary>
             listAppCatalogListingsRecordIterator(final ListAppCatalogListingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAppCatalogListingsRequest.Builder,
-                ListAppCatalogListingsRequest,
-                ListAppCatalogListingsResponse,
-                com.oracle.bmc.core.model.AppCatalogListingSummary>(
+                ListAppCatalogListingsRequest.Builder, ListAppCatalogListingsRequest,
+                ListAppCatalogListingsResponse, com.oracle.bmc.core.model.AppCatalogListingSummary>(
                 new java.util.function.Supplier<ListAppCatalogListingsRequest.Builder>() {
                     @Override
                     public ListAppCatalogListingsRequest.Builder get() {
@@ -298,20 +279,17 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAppCatalogSubscriptions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAppCatalogSubscriptions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAppCatalogSubscriptionsResponse>
             listAppCatalogSubscriptionsResponseIterator(
                     final ListAppCatalogSubscriptionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAppCatalogSubscriptionsRequest.Builder,
-                ListAppCatalogSubscriptionsRequest,
+                ListAppCatalogSubscriptionsRequest.Builder, ListAppCatalogSubscriptionsRequest,
                 ListAppCatalogSubscriptionsResponse>(
                 new java.util.function.Supplier<ListAppCatalogSubscriptionsRequest.Builder>() {
                     @Override
@@ -354,22 +332,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} objects contained in responses from
-     * the listAppCatalogSubscriptions operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} objects
+     * contained in responses from the listAppCatalogSubscriptions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.AppCatalogSubscriptionSummary>
             listAppCatalogSubscriptionsRecordIterator(
                     final ListAppCatalogSubscriptionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAppCatalogSubscriptionsRequest.Builder,
-                ListAppCatalogSubscriptionsRequest,
+                ListAppCatalogSubscriptionsRequest.Builder, ListAppCatalogSubscriptionsRequest,
                 ListAppCatalogSubscriptionsResponse,
                 com.oracle.bmc.core.model.AppCatalogSubscriptionSummary>(
                 new java.util.function.Supplier<ListAppCatalogSubscriptionsRequest.Builder>() {
@@ -422,19 +397,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBootVolumeAttachments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listBootVolumeAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBootVolumeAttachmentsResponse> listBootVolumeAttachmentsResponseIterator(
             final ListBootVolumeAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBootVolumeAttachmentsRequest.Builder,
-                ListBootVolumeAttachmentsRequest,
+                ListBootVolumeAttachmentsRequest.Builder, ListBootVolumeAttachmentsRequest,
                 ListBootVolumeAttachmentsResponse>(
                 new java.util.function.Supplier<ListBootVolumeAttachmentsRequest.Builder>() {
                     @Override
@@ -477,24 +449,20 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.BootVolumeAttachment} objects contained in responses from the
-     * listBootVolumeAttachments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BootVolumeAttachment} objects
+     * contained in responses from the listBootVolumeAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.BootVolumeAttachment} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BootVolumeAttachment} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.BootVolumeAttachment>
             listBootVolumeAttachmentsRecordIterator(
                     final ListBootVolumeAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBootVolumeAttachmentsRequest.Builder,
-                ListBootVolumeAttachmentsRequest,
-                ListBootVolumeAttachmentsResponse,
-                com.oracle.bmc.core.model.BootVolumeAttachment>(
+                ListBootVolumeAttachmentsRequest.Builder, ListBootVolumeAttachmentsRequest,
+                ListBootVolumeAttachmentsResponse, com.oracle.bmc.core.model.BootVolumeAttachment>(
                 new java.util.function.Supplier<ListBootVolumeAttachmentsRequest.Builder>() {
                     @Override
                     public ListBootVolumeAttachmentsRequest.Builder get() {
@@ -545,13 +513,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeCapacityReservationInstanceShapes operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityReservationInstanceShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeCapacityReservationInstanceShapesResponse>
             listComputeCapacityReservationInstanceShapesResponseIterator(
@@ -607,15 +573,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} objects contained
-     * in responses from the listComputeCapacityReservationInstanceShapes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} objects
+     * contained in responses from the listComputeCapacityReservationInstanceShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary>
             listComputeCapacityReservationInstanceShapesRecordIterator(
@@ -685,13 +649,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeCapacityReservationInstances operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityReservationInstances operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeCapacityReservationInstancesResponse>
             listComputeCapacityReservationInstancesResponseIterator(
@@ -745,15 +707,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.CapacityReservationInstanceSummary} objects contained in responses
-     * from the listComputeCapacityReservationInstances operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CapacityReservationInstanceSummary} objects
+     * contained in responses from the listComputeCapacityReservationInstances operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.CapacityReservationInstanceSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CapacityReservationInstanceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.CapacityReservationInstanceSummary>
             listComputeCapacityReservationInstancesRecordIterator(
@@ -819,21 +779,18 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeCapacityReservations operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityReservations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeCapacityReservationsResponse>
             listComputeCapacityReservationsResponseIterator(
                     final ListComputeCapacityReservationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListComputeCapacityReservationsRequest.Builder,
-                ListComputeCapacityReservationsRequest,
-                ListComputeCapacityReservationsResponse>(
+                ListComputeCapacityReservationsRequest, ListComputeCapacityReservationsResponse>(
                 new java.util.function.Supplier<ListComputeCapacityReservationsRequest.Builder>() {
                     @Override
                     public ListComputeCapacityReservationsRequest.Builder get() {
@@ -876,23 +833,20 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeCapacityReservationSummary} objects contained in responses
-     * from the listComputeCapacityReservations operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationSummary} objects
+     * contained in responses from the listComputeCapacityReservations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeCapacityReservationSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityReservationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeCapacityReservationSummary>
             listComputeCapacityReservationsRecordIterator(
                     final ListComputeCapacityReservationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListComputeCapacityReservationsRequest.Builder,
-                ListComputeCapacityReservationsRequest,
-                ListComputeCapacityReservationsResponse,
+                ListComputeCapacityReservationsRequest, ListComputeCapacityReservationsResponse,
                 com.oracle.bmc.core.model.ComputeCapacityReservationSummary>(
                 new java.util.function.Supplier<ListComputeCapacityReservationsRequest.Builder>() {
                     @Override
@@ -947,20 +901,17 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeCapacityTopologies operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityTopologies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeCapacityTopologiesResponse>
             listComputeCapacityTopologiesResponseIterator(
                     final ListComputeCapacityTopologiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListComputeCapacityTopologiesRequest.Builder,
-                ListComputeCapacityTopologiesRequest,
+                ListComputeCapacityTopologiesRequest.Builder, ListComputeCapacityTopologiesRequest,
                 ListComputeCapacityTopologiesResponse>(
                 new java.util.function.Supplier<ListComputeCapacityTopologiesRequest.Builder>() {
                     @Override
@@ -1004,22 +955,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeCapacityTopologySummary} objects contained in responses from
-     * the listComputeCapacityTopologies operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityTopologySummary} objects
+     * contained in responses from the listComputeCapacityTopologies operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeCapacityTopologySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeCapacityTopologySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeCapacityTopologySummary>
             listComputeCapacityTopologiesRecordIterator(
                     final ListComputeCapacityTopologiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListComputeCapacityTopologiesRequest.Builder,
-                ListComputeCapacityTopologiesRequest,
+                ListComputeCapacityTopologiesRequest.Builder, ListComputeCapacityTopologiesRequest,
                 ListComputeCapacityTopologiesResponse,
                 com.oracle.bmc.core.model.ComputeCapacityTopologySummary>(
                 new java.util.function.Supplier<ListComputeCapacityTopologiesRequest.Builder>() {
@@ -1074,13 +1022,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeCapacityTopologyComputeBareMetalHosts operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityTopologyComputeBareMetalHosts operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeCapacityTopologyComputeBareMetalHostsResponse>
             listComputeCapacityTopologyComputeBareMetalHostsResponseIterator(
@@ -1136,15 +1082,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeBareMetalHostSummary} objects contained in responses from
-     * the listComputeCapacityTopologyComputeBareMetalHosts operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeBareMetalHostSummary} objects
+     * contained in responses from the listComputeCapacityTopologyComputeBareMetalHosts operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeBareMetalHostSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeBareMetalHostSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeBareMetalHostSummary>
             listComputeCapacityTopologyComputeBareMetalHostsRecordIterator(
@@ -1212,13 +1156,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeCapacityTopologyComputeHpcIslands operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityTopologyComputeHpcIslands operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeCapacityTopologyComputeHpcIslandsResponse>
             listComputeCapacityTopologyComputeHpcIslandsResponseIterator(
@@ -1274,15 +1216,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeHpcIslandSummary} objects contained in responses from the
-     * listComputeCapacityTopologyComputeHpcIslands operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeHpcIslandSummary} objects
+     * contained in responses from the listComputeCapacityTopologyComputeHpcIslands operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeHpcIslandSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeHpcIslandSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeHpcIslandSummary>
             listComputeCapacityTopologyComputeHpcIslandsRecordIterator(
@@ -1348,13 +1288,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeCapacityTopologyComputeNetworkBlocks operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeCapacityTopologyComputeNetworkBlocks operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeCapacityTopologyComputeNetworkBlocksResponse>
             listComputeCapacityTopologyComputeNetworkBlocksResponseIterator(
@@ -1410,15 +1348,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeNetworkBlockSummary} objects contained in responses from the
-     * listComputeCapacityTopologyComputeNetworkBlocks operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeNetworkBlockSummary} objects
+     * contained in responses from the listComputeCapacityTopologyComputeNetworkBlocks operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeNetworkBlockSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeNetworkBlockSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeNetworkBlockSummary>
             listComputeCapacityTopologyComputeNetworkBlocksRecordIterator(
@@ -1486,18 +1422,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeClusters operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeClusters operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeClustersResponse> listComputeClustersResponseIterator(
             final ListComputeClustersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListComputeClustersRequest.Builder,
-                ListComputeClustersRequest,
+                ListComputeClustersRequest.Builder, ListComputeClustersRequest,
                 ListComputeClustersResponse>(
                 new java.util.function.Supplier<ListComputeClustersRequest.Builder>() {
                     @Override
@@ -1539,22 +1473,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeClusterSummary} objects contained in responses from the
-     * listComputeClusters operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeClusterSummary} objects
+     * contained in responses from the listComputeClusters operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeClusterSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeClusterSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeClusterSummary>
             listComputeClustersRecordIterator(final ListComputeClustersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListComputeClustersRequest.Builder,
-                ListComputeClustersRequest,
-                ListComputeClustersResponse,
-                com.oracle.bmc.core.model.ComputeClusterSummary>(
+                ListComputeClustersRequest.Builder, ListComputeClustersRequest,
+                ListComputeClustersResponse, com.oracle.bmc.core.model.ComputeClusterSummary>(
                 new java.util.function.Supplier<ListComputeClustersRequest.Builder>() {
                     @Override
                     public ListComputeClustersRequest.Builder get() {
@@ -1604,13 +1535,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeGlobalImageCapabilitySchemaVersions operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeGlobalImageCapabilitySchemaVersions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeGlobalImageCapabilitySchemaVersionsResponse>
             listComputeGlobalImageCapabilitySchemaVersionsResponseIterator(
@@ -1666,15 +1595,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} objects contained
-     * in responses from the listComputeGlobalImageCapabilitySchemaVersions operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} objects
+     * contained in responses from the listComputeGlobalImageCapabilitySchemaVersions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary>
             listComputeGlobalImageCapabilitySchemaVersionsRecordIterator(
@@ -1744,13 +1671,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeGlobalImageCapabilitySchemas operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeGlobalImageCapabilitySchemas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeGlobalImageCapabilitySchemasResponse>
             listComputeGlobalImageCapabilitySchemasResponseIterator(
@@ -1804,15 +1729,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary} objects contained in
-     * responses from the listComputeGlobalImageCapabilitySchemas operation. This iterable will
-     * fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary} objects
+     * contained in responses from the listComputeGlobalImageCapabilitySchemas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
             listComputeGlobalImageCapabilitySchemasRecordIterator(
@@ -1880,13 +1803,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeGpuMemoryClusterInstances operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeGpuMemoryClusterInstances operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeGpuMemoryClusterInstancesResponse>
             listComputeGpuMemoryClusterInstancesResponseIterator(
@@ -1939,15 +1860,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary} objects contained in
-     * responses from the listComputeGpuMemoryClusterInstances operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary} objects
+     * contained in responses from the listComputeGpuMemoryClusterInstances operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceSummary>
             listComputeGpuMemoryClusterInstancesRecordIterator(
@@ -2014,20 +1933,17 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeGpuMemoryClusters operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeGpuMemoryClusters operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeGpuMemoryClustersResponse>
             listComputeGpuMemoryClustersResponseIterator(
                     final ListComputeGpuMemoryClustersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListComputeGpuMemoryClustersRequest.Builder,
-                ListComputeGpuMemoryClustersRequest,
+                ListComputeGpuMemoryClustersRequest.Builder, ListComputeGpuMemoryClustersRequest,
                 ListComputeGpuMemoryClustersResponse>(
                 new java.util.function.Supplier<ListComputeGpuMemoryClustersRequest.Builder>() {
                     @Override
@@ -2071,22 +1987,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary} objects contained in responses from
-     * the listComputeGpuMemoryClusters operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary} objects
+     * contained in responses from the listComputeGpuMemoryClusters operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary>
             listComputeGpuMemoryClustersRecordIterator(
                     final ListComputeGpuMemoryClustersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListComputeGpuMemoryClustersRequest.Builder,
-                ListComputeGpuMemoryClustersRequest,
+                ListComputeGpuMemoryClustersRequest.Builder, ListComputeGpuMemoryClustersRequest,
                 ListComputeGpuMemoryClustersResponse,
                 com.oracle.bmc.core.model.ComputeGpuMemoryClusterSummary>(
                 new java.util.function.Supplier<ListComputeGpuMemoryClustersRequest.Builder>() {
@@ -2141,20 +2054,17 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeGpuMemoryFabrics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listComputeGpuMemoryFabrics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeGpuMemoryFabricsResponse>
             listComputeGpuMemoryFabricsResponseIterator(
                     final ListComputeGpuMemoryFabricsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListComputeGpuMemoryFabricsRequest.Builder,
-                ListComputeGpuMemoryFabricsRequest,
+                ListComputeGpuMemoryFabricsRequest.Builder, ListComputeGpuMemoryFabricsRequest,
                 ListComputeGpuMemoryFabricsResponse>(
                 new java.util.function.Supplier<ListComputeGpuMemoryFabricsRequest.Builder>() {
                     @Override
@@ -2197,22 +2107,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary} objects contained in responses from
-     * the listComputeGpuMemoryFabrics operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary} objects
+     * contained in responses from the listComputeGpuMemoryFabrics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary>
             listComputeGpuMemoryFabricsRecordIterator(
                     final ListComputeGpuMemoryFabricsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListComputeGpuMemoryFabricsRequest.Builder,
-                ListComputeGpuMemoryFabricsRequest,
+                ListComputeGpuMemoryFabricsRequest.Builder, ListComputeGpuMemoryFabricsRequest,
                 ListComputeGpuMemoryFabricsResponse,
                 com.oracle.bmc.core.model.ComputeGpuMemoryFabricSummary>(
                 new java.util.function.Supplier<ListComputeGpuMemoryFabricsRequest.Builder>() {
@@ -2265,13 +2172,123 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listComputeImageCapabilitySchemas operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the responses received from the listComputeHosts operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeHostsResponse> listComputeHostsResponseIterator(
+            final ListComputeHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeHostsRequest.Builder, ListComputeHostsRequest, ListComputeHostsResponse>(
+                new java.util.function.Supplier<ListComputeHostsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostsRequest.Builder get() {
+                        return ListComputeHostsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostsRequest.Builder>,
+                        ListComputeHostsRequest>() {
+                    @Override
+                    public ListComputeHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsRequest, ListComputeHostsResponse>() {
+                    @Override
+                    public ListComputeHostsResponse apply(ListComputeHostsRequest request) {
+                        return client.listComputeHosts(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeHostSummary} objects
+     * contained in responses from the listComputeHosts operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeHostSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeHostSummary> listComputeHostsRecordIterator(
+            final ListComputeHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeHostsRequest.Builder, ListComputeHostsRequest, ListComputeHostsResponse,
+                com.oracle.bmc.core.model.ComputeHostSummary>(
+                new java.util.function.Supplier<ListComputeHostsRequest.Builder>() {
+                    @Override
+                    public ListComputeHostsRequest.Builder get() {
+                        return ListComputeHostsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeHostsResponse, String>() {
+                    @Override
+                    public String apply(ListComputeHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeHostsRequest.Builder>,
+                        ListComputeHostsRequest>() {
+                    @Override
+                    public ListComputeHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeHostsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsRequest, ListComputeHostsResponse>() {
+                    @Override
+                    public ListComputeHostsResponse apply(ListComputeHostsRequest request) {
+                        return client.listComputeHosts(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeHostsResponse,
+                        java.util.List<com.oracle.bmc.core.model.ComputeHostSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ComputeHostSummary> apply(
+                            ListComputeHostsResponse response) {
+                        return response.getComputeHostCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeImageCapabilitySchemas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListComputeImageCapabilitySchemasResponse>
             listComputeImageCapabilitySchemasResponseIterator(
@@ -2324,23 +2341,20 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} objects contained in responses
-     * from the listComputeImageCapabilitySchemas operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} objects
+     * contained in responses from the listComputeImageCapabilitySchemas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary>
             listComputeImageCapabilitySchemasRecordIterator(
                     final ListComputeImageCapabilitySchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListComputeImageCapabilitySchemasRequest.Builder,
-                ListComputeImageCapabilitySchemasRequest,
-                ListComputeImageCapabilitySchemasResponse,
+                ListComputeImageCapabilitySchemasRequest, ListComputeImageCapabilitySchemasResponse,
                 com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary>(
                 new java.util.function.Supplier<
                         ListComputeImageCapabilitySchemasRequest.Builder>() {
@@ -2397,18 +2411,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listConsoleHistories operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listConsoleHistories operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListConsoleHistoriesResponse> listConsoleHistoriesResponseIterator(
             final ListConsoleHistoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListConsoleHistoriesRequest.Builder,
-                ListConsoleHistoriesRequest,
+                ListConsoleHistoriesRequest.Builder, ListConsoleHistoriesRequest,
                 ListConsoleHistoriesResponse>(
                 new java.util.function.Supplier<ListConsoleHistoriesRequest.Builder>() {
                     @Override
@@ -2450,22 +2462,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ConsoleHistory} objects contained in responses from the
-     * listConsoleHistories operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ConsoleHistory} objects
+     * contained in responses from the listConsoleHistories operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ConsoleHistory} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ConsoleHistory} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ConsoleHistory> listConsoleHistoriesRecordIterator(
             final ListConsoleHistoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListConsoleHistoriesRequest.Builder,
-                ListConsoleHistoriesRequest,
-                ListConsoleHistoriesResponse,
-                com.oracle.bmc.core.model.ConsoleHistory>(
+                ListConsoleHistoriesRequest.Builder, ListConsoleHistoriesRequest,
+                ListConsoleHistoriesResponse, com.oracle.bmc.core.model.ConsoleHistory>(
                 new java.util.function.Supplier<ListConsoleHistoriesRequest.Builder>() {
                     @Override
                     public ListConsoleHistoriesRequest.Builder get() {
@@ -2515,13 +2524,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDedicatedVmHostInstanceShapes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHostInstanceShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDedicatedVmHostInstanceShapesResponse>
             listDedicatedVmHostInstanceShapesResponseIterator(
@@ -2574,23 +2581,20 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary} objects contained in responses
-     * from the listDedicatedVmHostInstanceShapes operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary} objects
+     * contained in responses from the listDedicatedVmHostInstanceShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary>
             listDedicatedVmHostInstanceShapesRecordIterator(
                     final ListDedicatedVmHostInstanceShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDedicatedVmHostInstanceShapesRequest.Builder,
-                ListDedicatedVmHostInstanceShapesRequest,
-                ListDedicatedVmHostInstanceShapesResponse,
+                ListDedicatedVmHostInstanceShapesRequest, ListDedicatedVmHostInstanceShapesResponse,
                 com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary>(
                 new java.util.function.Supplier<
                         ListDedicatedVmHostInstanceShapesRequest.Builder>() {
@@ -2647,20 +2651,17 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDedicatedVmHostInstances operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHostInstances operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDedicatedVmHostInstancesResponse>
             listDedicatedVmHostInstancesResponseIterator(
                     final ListDedicatedVmHostInstancesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDedicatedVmHostInstancesRequest.Builder,
-                ListDedicatedVmHostInstancesRequest,
+                ListDedicatedVmHostInstancesRequest.Builder, ListDedicatedVmHostInstancesRequest,
                 ListDedicatedVmHostInstancesResponse>(
                 new java.util.function.Supplier<ListDedicatedVmHostInstancesRequest.Builder>() {
                     @Override
@@ -2704,22 +2705,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary} objects contained in responses from
-     * the listDedicatedVmHostInstances operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary} objects
+     * contained in responses from the listDedicatedVmHostInstances operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary>
             listDedicatedVmHostInstancesRecordIterator(
                     final ListDedicatedVmHostInstancesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDedicatedVmHostInstancesRequest.Builder,
-                ListDedicatedVmHostInstancesRequest,
+                ListDedicatedVmHostInstancesRequest.Builder, ListDedicatedVmHostInstancesRequest,
                 ListDedicatedVmHostInstancesResponse,
                 com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary>(
                 new java.util.function.Supplier<ListDedicatedVmHostInstancesRequest.Builder>() {
@@ -2774,19 +2772,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDedicatedVmHostShapes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHostShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDedicatedVmHostShapesResponse> listDedicatedVmHostShapesResponseIterator(
             final ListDedicatedVmHostShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDedicatedVmHostShapesRequest.Builder,
-                ListDedicatedVmHostShapesRequest,
+                ListDedicatedVmHostShapesRequest.Builder, ListDedicatedVmHostShapesRequest,
                 ListDedicatedVmHostShapesResponse>(
                 new java.util.function.Supplier<ListDedicatedVmHostShapesRequest.Builder>() {
                     @Override
@@ -2829,22 +2824,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} objects contained in responses from
-     * the listDedicatedVmHostShapes operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} objects
+     * contained in responses from the listDedicatedVmHostShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DedicatedVmHostShapeSummary>
             listDedicatedVmHostShapesRecordIterator(
                     final ListDedicatedVmHostShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDedicatedVmHostShapesRequest.Builder,
-                ListDedicatedVmHostShapesRequest,
+                ListDedicatedVmHostShapesRequest.Builder, ListDedicatedVmHostShapesRequest,
                 ListDedicatedVmHostShapesResponse,
                 com.oracle.bmc.core.model.DedicatedVmHostShapeSummary>(
                 new java.util.function.Supplier<ListDedicatedVmHostShapesRequest.Builder>() {
@@ -2897,18 +2889,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDedicatedVmHosts operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHosts operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDedicatedVmHostsResponse> listDedicatedVmHostsResponseIterator(
             final ListDedicatedVmHostsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDedicatedVmHostsRequest.Builder,
-                ListDedicatedVmHostsRequest,
+                ListDedicatedVmHostsRequest.Builder, ListDedicatedVmHostsRequest,
                 ListDedicatedVmHostsResponse>(
                 new java.util.function.Supplier<ListDedicatedVmHostsRequest.Builder>() {
                     @Override
@@ -2950,22 +2940,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DedicatedVmHostSummary} objects contained in responses from the
-     * listDedicatedVmHosts operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostSummary} objects
+     * contained in responses from the listDedicatedVmHosts operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DedicatedVmHostSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DedicatedVmHostSummary>
             listDedicatedVmHostsRecordIterator(final ListDedicatedVmHostsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDedicatedVmHostsRequest.Builder,
-                ListDedicatedVmHostsRequest,
-                ListDedicatedVmHostsResponse,
-                com.oracle.bmc.core.model.DedicatedVmHostSummary>(
+                ListDedicatedVmHostsRequest.Builder, ListDedicatedVmHostsRequest,
+                ListDedicatedVmHostsResponse, com.oracle.bmc.core.model.DedicatedVmHostSummary>(
                 new java.util.function.Supplier<ListDedicatedVmHostsRequest.Builder>() {
                     @Override
                     public ListDedicatedVmHostsRequest.Builder get() {
@@ -3015,13 +3002,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listImageShapeCompatibilityEntries operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listImageShapeCompatibilityEntries operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListImageShapeCompatibilityEntriesResponse>
             listImageShapeCompatibilityEntriesResponseIterator(
@@ -3074,15 +3059,13 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} objects contained in responses from
-     * the listImageShapeCompatibilityEntries operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} objects
+     * contained in responses from the listImageShapeCompatibilityEntries operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ImageShapeCompatibilitySummary>
             listImageShapeCompatibilityEntriesRecordIterator(
@@ -3146,12 +3129,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listImages
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listImages operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListImagesResponse> listImagesResponseIterator(
             final ListImagesRequest request) {
@@ -3196,21 +3178,18 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Image}
-     * objects contained in responses from the listImages operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Image} objects
+     * contained in responses from the listImages operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Image} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Image} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Image> listImagesRecordIterator(
             final ListImagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListImagesRequest.Builder,
-                ListImagesRequest,
-                ListImagesResponse,
+                ListImagesRequest.Builder, ListImagesRequest, ListImagesResponse,
                 com.oracle.bmc.core.model.Image>(
                 new java.util.function.Supplier<ListImagesRequest.Builder>() {
                     @Override
@@ -3259,21 +3238,18 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInstanceConsoleConnections operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInstanceConsoleConnections operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInstanceConsoleConnectionsResponse>
             listInstanceConsoleConnectionsResponseIterator(
                     final ListInstanceConsoleConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListInstanceConsoleConnectionsRequest.Builder,
-                ListInstanceConsoleConnectionsRequest,
-                ListInstanceConsoleConnectionsResponse>(
+                ListInstanceConsoleConnectionsRequest, ListInstanceConsoleConnectionsResponse>(
                 new java.util.function.Supplier<ListInstanceConsoleConnectionsRequest.Builder>() {
                     @Override
                     public ListInstanceConsoleConnectionsRequest.Builder get() {
@@ -3316,23 +3292,20 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.InstanceConsoleConnection} objects contained in responses from the
-     * listInstanceConsoleConnections operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.InstanceConsoleConnection} objects
+     * contained in responses from the listInstanceConsoleConnections operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.InstanceConsoleConnection} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.InstanceConsoleConnection} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.InstanceConsoleConnection>
             listInstanceConsoleConnectionsRecordIterator(
                     final ListInstanceConsoleConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListInstanceConsoleConnectionsRequest.Builder,
-                ListInstanceConsoleConnectionsRequest,
-                ListInstanceConsoleConnectionsResponse,
+                ListInstanceConsoleConnectionsRequest, ListInstanceConsoleConnectionsResponse,
                 com.oracle.bmc.core.model.InstanceConsoleConnection>(
                 new java.util.function.Supplier<ListInstanceConsoleConnectionsRequest.Builder>() {
                     @Override
@@ -3385,18 +3358,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInstanceDevices operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInstanceDevices operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInstanceDevicesResponse> listInstanceDevicesResponseIterator(
             final ListInstanceDevicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListInstanceDevicesRequest.Builder,
-                ListInstanceDevicesRequest,
+                ListInstanceDevicesRequest.Builder, ListInstanceDevicesRequest,
                 ListInstanceDevicesResponse>(
                 new java.util.function.Supplier<ListInstanceDevicesRequest.Builder>() {
                     @Override
@@ -3438,22 +3409,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Device}
-     * objects contained in responses from the listInstanceDevices operation. This iterable will
-     * fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Device} objects
+     * contained in responses from the listInstanceDevices operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Device} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Device} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Device> listInstanceDevicesRecordIterator(
             final ListInstanceDevicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInstanceDevicesRequest.Builder,
-                ListInstanceDevicesRequest,
-                ListInstanceDevicesResponse,
-                com.oracle.bmc.core.model.Device>(
+                ListInstanceDevicesRequest.Builder, ListInstanceDevicesRequest,
+                ListInstanceDevicesResponse, com.oracle.bmc.core.model.Device>(
                 new java.util.function.Supplier<ListInstanceDevicesRequest.Builder>() {
                     @Override
                     public ListInstanceDevicesRequest.Builder get() {
@@ -3503,20 +3471,17 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInstanceMaintenanceEvents operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInstanceMaintenanceEvents operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInstanceMaintenanceEventsResponse>
             listInstanceMaintenanceEventsResponseIterator(
                     final ListInstanceMaintenanceEventsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListInstanceMaintenanceEventsRequest.Builder,
-                ListInstanceMaintenanceEventsRequest,
+                ListInstanceMaintenanceEventsRequest.Builder, ListInstanceMaintenanceEventsRequest,
                 ListInstanceMaintenanceEventsResponse>(
                 new java.util.function.Supplier<ListInstanceMaintenanceEventsRequest.Builder>() {
                     @Override
@@ -3560,22 +3525,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.InstanceMaintenanceEventSummary} objects contained in responses
-     * from the listInstanceMaintenanceEvents operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.InstanceMaintenanceEventSummary} objects
+     * contained in responses from the listInstanceMaintenanceEvents operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.InstanceMaintenanceEventSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.InstanceMaintenanceEventSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.InstanceMaintenanceEventSummary>
             listInstanceMaintenanceEventsRecordIterator(
                     final ListInstanceMaintenanceEventsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInstanceMaintenanceEventsRequest.Builder,
-                ListInstanceMaintenanceEventsRequest,
+                ListInstanceMaintenanceEventsRequest.Builder, ListInstanceMaintenanceEventsRequest,
                 ListInstanceMaintenanceEventsResponse,
                 com.oracle.bmc.core.model.InstanceMaintenanceEventSummary>(
                 new java.util.function.Supplier<ListInstanceMaintenanceEventsRequest.Builder>() {
@@ -3630,12 +3592,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listInstances
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInstances operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInstancesResponse> listInstancesResponseIterator(
             final ListInstancesRequest request) {
@@ -3680,21 +3641,18 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Instance}
-     * objects contained in responses from the listInstances operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Instance} objects
+     * contained in responses from the listInstances operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Instance} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Instance} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Instance> listInstancesRecordIterator(
             final ListInstancesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInstancesRequest.Builder,
-                ListInstancesRequest,
-                ListInstancesResponse,
+                ListInstancesRequest.Builder, ListInstancesRequest, ListInstancesResponse,
                 com.oracle.bmc.core.model.Instance>(
                 new java.util.function.Supplier<ListInstancesRequest.Builder>() {
                     @Override
@@ -3744,12 +3702,11 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listShapes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListShapesResponse> listShapesResponseIterator(
             final ListShapesRequest request) {
@@ -3794,21 +3751,18 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Shape}
-     * objects contained in responses from the listShapes operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Shape} objects
+     * contained in responses from the listShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Shape} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Shape} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Shape> listShapesRecordIterator(
             final ListShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListShapesRequest.Builder,
-                ListShapesRequest,
-                ListShapesResponse,
+                ListShapesRequest.Builder, ListShapesRequest, ListShapesResponse,
                 com.oracle.bmc.core.model.Shape>(
                 new java.util.function.Supplier<ListShapesRequest.Builder>() {
                     @Override
@@ -3857,18 +3811,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVnicAttachments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVnicAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVnicAttachmentsResponse> listVnicAttachmentsResponseIterator(
             final ListVnicAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVnicAttachmentsRequest.Builder,
-                ListVnicAttachmentsRequest,
+                ListVnicAttachmentsRequest.Builder, ListVnicAttachmentsRequest,
                 ListVnicAttachmentsResponse>(
                 new java.util.function.Supplier<ListVnicAttachmentsRequest.Builder>() {
                     @Override
@@ -3910,22 +3862,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VnicAttachment} objects contained in responses from the
-     * listVnicAttachments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VnicAttachment} objects
+     * contained in responses from the listVnicAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VnicAttachment} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VnicAttachment} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VnicAttachment> listVnicAttachmentsRecordIterator(
             final ListVnicAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVnicAttachmentsRequest.Builder,
-                ListVnicAttachmentsRequest,
-                ListVnicAttachmentsResponse,
-                com.oracle.bmc.core.model.VnicAttachment>(
+                ListVnicAttachmentsRequest.Builder, ListVnicAttachmentsRequest,
+                ListVnicAttachmentsResponse, com.oracle.bmc.core.model.VnicAttachment>(
                 new java.util.function.Supplier<ListVnicAttachmentsRequest.Builder>() {
                     @Override
                     public ListVnicAttachmentsRequest.Builder get() {
@@ -3975,19 +3924,16 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVolumeAttachments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listVolumeAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVolumeAttachmentsResponse> listVolumeAttachmentsResponseIterator(
             final ListVolumeAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVolumeAttachmentsRequest.Builder,
-                ListVolumeAttachmentsRequest,
+                ListVolumeAttachmentsRequest.Builder, ListVolumeAttachmentsRequest,
                 ListVolumeAttachmentsResponse>(
                 new java.util.function.Supplier<ListVolumeAttachmentsRequest.Builder>() {
                     @Override
@@ -4030,23 +3976,19 @@ public class ComputePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VolumeAttachment} objects contained in responses from the
-     * listVolumeAttachments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeAttachment} objects
+     * contained in responses from the listVolumeAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VolumeAttachment} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeAttachment} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VolumeAttachment> listVolumeAttachmentsRecordIterator(
             final ListVolumeAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVolumeAttachmentsRequest.Builder,
-                ListVolumeAttachmentsRequest,
-                ListVolumeAttachmentsResponse,
-                com.oracle.bmc.core.model.VolumeAttachment>(
+                ListVolumeAttachmentsRequest.Builder, ListVolumeAttachmentsRequest,
+                ListVolumeAttachmentsResponse, com.oracle.bmc.core.model.VolumeAttachment>(
                 new java.util.function.Supplier<ListVolumeAttachmentsRequest.Builder>() {
                     @Override
                     public ListVolumeAttachmentsRequest.Builder get() {

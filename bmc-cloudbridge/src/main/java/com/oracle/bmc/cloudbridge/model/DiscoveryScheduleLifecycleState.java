@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudbridge.model;
 
-/** Lifecycle state of a discovery schedule. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public enum DiscoveryScheduleLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle state of a discovery schedule.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+public enum DiscoveryScheduleLifecycleState {
     Active("ACTIVE"),
     Deleted("DELETED"),
 

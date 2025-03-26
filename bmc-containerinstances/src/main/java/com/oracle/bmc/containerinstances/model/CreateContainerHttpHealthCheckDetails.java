@@ -5,25 +5,25 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Container Health Check HTTP type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+ * Container Health Check HTTP type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateContainerHttpHealthCheckDetails.Builder.class)
+    builder = CreateContainerHttpHealthCheckDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "healthCheckType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "healthCheckType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateContainerHttpHealthCheckDetails extends CreateContainerHealthCheckDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -89,46 +89,49 @@ public final class CreateContainerHttpHealthCheckDetails extends CreateContainer
             this.__explicitlySet__.add("failureAction");
             return this;
         }
-        /** Container health check HTTP path. */
+        /**
+         * Container health check HTTP path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Container health check HTTP path.
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** Container health check HTTP port. */
+        /**
+         * Container health check HTTP port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Container health check HTTP port.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** Container health check HTTP headers. */
+        /**
+         * Container health check HTTP headers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HealthCheckHttpHeader> headers;
 
         /**
          * Container health check HTTP headers.
-         *
          * @param headers the value to set
          * @return this builder
-         */
+         **/
         public Builder headers(java.util.List<HealthCheckHttpHeader> headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
@@ -193,7 +196,9 @@ public final class CreateContainerHttpHealthCheckDetails extends CreateContainer
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -227,41 +232,44 @@ public final class CreateContainerHttpHealthCheckDetails extends CreateContainer
         this.headers = headers;
     }
 
-    /** Container health check HTTP path. */
+    /**
+     * Container health check HTTP path.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Container health check HTTP path.
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** Container health check HTTP port. */
+    /**
+     * Container health check HTTP port.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Container health check HTTP port.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** Container health check HTTP headers. */
+    /**
+     * Container health check HTTP headers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<HealthCheckHttpHeader> headers;
 
     /**
      * Container health check HTTP headers.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HealthCheckHttpHeader> getHeaders() {
         return headers;
     }
@@ -273,7 +281,6 @@ public final class CreateContainerHttpHealthCheckDetails extends CreateContainer
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,54 +6,75 @@ package com.oracle.bmc.fusionapps.requests;
 
 import com.oracle.bmc.fusionapps.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/ListScheduledActivitiesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListScheduledActivitiesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/ListScheduledActivitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScheduledActivitiesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class ListScheduledActivitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique FusionEnvironment identifier */
+    /**
+     * unique FusionEnvironment identifier
+     */
     private String fusionEnvironmentId;
 
-    /** unique FusionEnvironment identifier */
+    /**
+     * unique FusionEnvironment identifier
+     */
     public String getFusionEnvironmentId() {
         return fusionEnvironmentId;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter that returns all resources that are scheduled after this date */
+    /**
+     * A filter that returns all resources that are scheduled after this date
+     */
     private java.util.Date timeScheduledStartGreaterThanOrEqualTo;
 
-    /** A filter that returns all resources that are scheduled after this date */
+    /**
+     * A filter that returns all resources that are scheduled after this date
+     */
     public java.util.Date getTimeScheduledStartGreaterThanOrEqualTo() {
         return timeScheduledStartGreaterThanOrEqualTo;
     }
-    /** A filter that returns all resources that end before this date */
+    /**
+     * A filter that returns all resources that end before this date
+     */
     private java.util.Date timeExpectedFinishLessThanOrEqualTo;
 
-    /** A filter that returns all resources that end before this date */
+    /**
+     * A filter that returns all resources that end before this date
+     */
     public java.util.Date getTimeExpectedFinishLessThanOrEqualTo() {
         return timeExpectedFinishLessThanOrEqualTo;
     }
-    /** A filter that returns all resources that match the specified run cycle. */
+    /**
+     * A filter that returns all resources that match the specified run cycle.
+     */
     private com.oracle.bmc.fusionapps.model.ScheduledActivity.RunCycle runCycle;
 
-    /** A filter that returns all resources that match the specified run cycle. */
+    /**
+     * A filter that returns all resources that match the specified run cycle.
+     */
     public com.oracle.bmc.fusionapps.model.ScheduledActivity.RunCycle getRunCycle() {
         return runCycle;
     }
-    /** A filter that returns all resources that match the specified status */
+    /**
+     * A filter that returns all resources that match the specified status
+     */
     private com.oracle.bmc.fusionapps.model.ScheduledActivity.LifecycleState lifecycleState;
 
-    /** A filter that returns all resources that match the specified status */
+    /**
+     * A filter that returns all resources that match the specified status
+     */
     public com.oracle.bmc.fusionapps.model.ScheduledActivity.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -68,40 +89,50 @@ public class ListScheduledActivitiesRequest
     public String getScheduledActivityAssociationId() {
         return scheduledActivityAssociationId;
     }
-    /** A filter that returns all resources that match the specified scheduledActivityPhase. */
+    /**
+     * A filter that returns all resources that match the specified scheduledActivityPhase.
+     */
     private com.oracle.bmc.fusionapps.model.ScheduledActivity.ScheduledActivityPhase
             scheduledActivityPhase;
 
-    /** A filter that returns all resources that match the specified scheduledActivityPhase. */
+    /**
+     * A filter that returns all resources that match the specified scheduledActivityPhase.
+     */
     public com.oracle.bmc.fusionapps.model.ScheduledActivity.ScheduledActivityPhase
             getScheduledActivityPhase() {
         return scheduledActivityPhase;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -134,23 +165,23 @@ public class ListScheduledActivitiesRequest
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
         ;
@@ -184,17 +215,20 @@ public class ListScheduledActivitiesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -202,15 +236,17 @@ public class ListScheduledActivitiesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListScheduledActivitiesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique FusionEnvironment identifier */
+        /**
+         * unique FusionEnvironment identifier
+         */
         private String fusionEnvironmentId = null;
 
         /**
          * unique FusionEnvironment identifier
-         *
          * @param fusionEnvironmentId the value to set
          * @return this builder instance
          */
@@ -219,12 +255,13 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -233,12 +270,13 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** A filter that returns all resources that are scheduled after this date */
+        /**
+         * A filter that returns all resources that are scheduled after this date
+         */
         private java.util.Date timeScheduledStartGreaterThanOrEqualTo = null;
 
         /**
          * A filter that returns all resources that are scheduled after this date
-         *
          * @param timeScheduledStartGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -248,12 +286,13 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** A filter that returns all resources that end before this date */
+        /**
+         * A filter that returns all resources that end before this date
+         */
         private java.util.Date timeExpectedFinishLessThanOrEqualTo = null;
 
         /**
          * A filter that returns all resources that end before this date
-         *
          * @param timeExpectedFinishLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -263,12 +302,13 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** A filter that returns all resources that match the specified run cycle. */
+        /**
+         * A filter that returns all resources that match the specified run cycle.
+         */
         private com.oracle.bmc.fusionapps.model.ScheduledActivity.RunCycle runCycle = null;
 
         /**
          * A filter that returns all resources that match the specified run cycle.
-         *
          * @param runCycle the value to set
          * @return this builder instance
          */
@@ -278,13 +318,14 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** A filter that returns all resources that match the specified status */
+        /**
+         * A filter that returns all resources that match the specified status
+         */
         private com.oracle.bmc.fusionapps.model.ScheduledActivity.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter that returns all resources that match the specified status
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -295,15 +336,12 @@ public class ListScheduledActivitiesRequest
         }
 
         /**
-         * A filter that returns all resources that match the specified
-         * scheduledActivityAssociationId.
+         * A filter that returns all resources that match the specified scheduledActivityAssociationId.
          */
         private String scheduledActivityAssociationId = null;
 
         /**
-         * A filter that returns all resources that match the specified
-         * scheduledActivityAssociationId.
-         *
+         * A filter that returns all resources that match the specified scheduledActivityAssociationId.
          * @param scheduledActivityAssociationId the value to set
          * @return this builder instance
          */
@@ -312,13 +350,14 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** A filter that returns all resources that match the specified scheduledActivityPhase. */
+        /**
+         * A filter that returns all resources that match the specified scheduledActivityPhase.
+         */
         private com.oracle.bmc.fusionapps.model.ScheduledActivity.ScheduledActivityPhase
                 scheduledActivityPhase = null;
 
         /**
          * A filter that returns all resources that match the specified scheduledActivityPhase.
-         *
          * @param scheduledActivityPhase the value to set
          * @return this builder instance
          */
@@ -329,12 +368,13 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -344,15 +384,12 @@ public class ListScheduledActivitiesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -361,12 +398,13 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -376,16 +414,13 @@ public class ListScheduledActivitiesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -395,12 +430,13 @@ public class ListScheduledActivitiesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -411,19 +447,18 @@ public class ListScheduledActivitiesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -435,7 +470,6 @@ public class ListScheduledActivitiesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListScheduledActivitiesRequest o) {
@@ -460,11 +494,10 @@ public class ListScheduledActivitiesRequest
         /**
          * Build the instance of ListScheduledActivitiesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListScheduledActivitiesRequest
          */
@@ -478,8 +511,7 @@ public class ListScheduledActivitiesRequest
         /**
          * Build the instance of ListScheduledActivitiesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListScheduledActivitiesRequest
@@ -500,16 +532,12 @@ public class ListScheduledActivitiesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListScheduledActivitiesRequest(fusionEnvironmentId, displayName,
-            // timeScheduledStartGreaterThanOrEqualTo, timeExpectedFinishLessThanOrEqualTo,
-            // runCycle, lifecycleState, scheduledActivityAssociationId, scheduledActivityPhase,
-            // limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListScheduledActivitiesRequest(fusionEnvironmentId, displayName, timeScheduledStartGreaterThanOrEqualTo, timeExpectedFinishLessThanOrEqualTo, runCycle, lifecycleState, scheduledActivityAssociationId, scheduledActivityPhase, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -531,7 +559,6 @@ public class ListScheduledActivitiesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

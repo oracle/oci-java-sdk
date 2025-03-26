@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/** Keys for work request resource metadata. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Keys for work request resource metadata.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+public enum WorkRequestResourceMetadataKey {
     OperationName("OPERATION_NAME"),
 
     /**

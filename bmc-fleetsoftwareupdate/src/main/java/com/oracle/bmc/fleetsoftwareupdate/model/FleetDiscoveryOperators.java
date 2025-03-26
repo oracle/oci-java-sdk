@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible operators to join multiple filter criteria. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum FleetDiscoveryOperators implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operators to join multiple filter criteria.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum FleetDiscoveryOperators {
     And("AND"),
     Or("OR"),
 

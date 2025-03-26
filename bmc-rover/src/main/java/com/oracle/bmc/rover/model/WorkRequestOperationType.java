@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.rover.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
-public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+public enum WorkRequestOperationType {
     AddNodes("ADD_NODES"),
 
     /**

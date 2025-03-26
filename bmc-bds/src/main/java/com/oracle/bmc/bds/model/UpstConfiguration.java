@@ -5,23 +5,21 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Information about the UPST configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Information about the UPST configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpstConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpstConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = UpstConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UpstConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vaultId",
@@ -59,99 +57,97 @@ public final class UpstConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The instance OCID of the node, which is the resource from which the node backup was
-         * acquired.
-         */
+         * The instance OCID of the node, which is the resource from which the node backup was acquired.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The instance OCID of the node, which is the resource from which the node backup was
-         * acquired.
-         *
+         * The instance OCID of the node, which is the resource from which the node backup was acquired.
          * @param vaultId the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-        /** Master Encryption key used for encrypting token exchange keytab. */
+        /**
+         * Master Encryption key used for encrypting token exchange keytab.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterEncryptionKeyId")
         private String masterEncryptionKeyId;
 
         /**
          * Master Encryption key used for encrypting token exchange keytab.
-         *
          * @param masterEncryptionKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder masterEncryptionKeyId(String masterEncryptionKeyId) {
             this.masterEncryptionKeyId = masterEncryptionKeyId;
             this.__explicitlySet__.add("masterEncryptionKeyId");
             return this;
         }
-        /** Secret ID for token exchange keytab */
+        /**
+         * Secret ID for token exchange keytab
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
          * Secret ID for token exchange keytab
-         *
          * @param secretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
         /**
-         * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339
-         * formatted datetime string.
-         */
+         * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeTokenExchangeKeytabLastRefreshed")
         private java.util.Date timeTokenExchangeKeytabLastRefreshed;
 
         /**
-         * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339
-         * formatted datetime string.
-         *
+         * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
          * @param timeTokenExchangeKeytabLastRefreshed the value to set
          * @return this builder
-         */
+         **/
         public Builder timeTokenExchangeKeytabLastRefreshed(
                 java.util.Date timeTokenExchangeKeytabLastRefreshed) {
             this.timeTokenExchangeKeytabLastRefreshed = timeTokenExchangeKeytabLastRefreshed;
             this.__explicitlySet__.add("timeTokenExchangeKeytabLastRefreshed");
             return this;
         }
-        /** Token exchange kerberos Principal name in cluster */
+        /**
+         * Token exchange kerberos Principal name in cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tokenExchangePrincipalName")
         private String tokenExchangePrincipalName;
 
         /**
          * Token exchange kerberos Principal name in cluster
-         *
          * @param tokenExchangePrincipalName the value to set
          * @return this builder
-         */
+         **/
         public Builder tokenExchangePrincipalName(String tokenExchangePrincipalName) {
             this.tokenExchangePrincipalName = tokenExchangePrincipalName;
             this.__explicitlySet__.add("tokenExchangePrincipalName");
             return this;
         }
-        /** Lifecycle state of the UPST config */
+        /**
+         * Lifecycle state of the UPST config
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the UPST config
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -159,16 +155,15 @@ public final class UpstConfiguration
         }
         /**
          * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -176,35 +171,31 @@ public final class UpstConfiguration
         }
         /**
          * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The kerberos keytab content used for creating identity propagation trust config, in
-         * base64 format
-         */
+         * The kerberos keytab content used for creating identity propagation trust config, in base64 format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keytabContent")
         private String keytabContent;
 
         /**
-         * The kerberos keytab content used for creating identity propagation trust config, in
-         * base64 format
-         *
+         * The kerberos keytab content used for creating identity propagation trust config, in base64 format
          * @param keytabContent the value to set
          * @return this builder
-         */
+         **/
         public Builder keytabContent(String keytabContent) {
             this.keytabContent = keytabContent;
             this.__explicitlySet__.add("keytabContent");
@@ -266,7 +257,9 @@ public final class UpstConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -277,77 +270,78 @@ public final class UpstConfiguration
 
     /**
      * The instance OCID of the node, which is the resource from which the node backup was acquired.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
      * The instance OCID of the node, which is the resource from which the node backup was acquired.
-     *
      * @return the value
-     */
+     **/
     public String getVaultId() {
         return vaultId;
     }
 
-    /** Master Encryption key used for encrypting token exchange keytab. */
+    /**
+     * Master Encryption key used for encrypting token exchange keytab.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterEncryptionKeyId")
     private final String masterEncryptionKeyId;
 
     /**
      * Master Encryption key used for encrypting token exchange keytab.
-     *
      * @return the value
-     */
+     **/
     public String getMasterEncryptionKeyId() {
         return masterEncryptionKeyId;
     }
 
-    /** Secret ID for token exchange keytab */
+    /**
+     * Secret ID for token exchange keytab
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
      * Secret ID for token exchange keytab
-     *
      * @return the value
-     */
+     **/
     public String getSecretId() {
         return secretId;
     }
 
     /**
-     * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339
-     * formatted datetime string.
-     */
+     * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTokenExchangeKeytabLastRefreshed")
     private final java.util.Date timeTokenExchangeKeytabLastRefreshed;
 
     /**
-     * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339
-     * formatted datetime string.
-     *
+     * Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeTokenExchangeKeytabLastRefreshed() {
         return timeTokenExchangeKeytabLastRefreshed;
     }
 
-    /** Token exchange kerberos Principal name in cluster */
+    /**
+     * Token exchange kerberos Principal name in cluster
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tokenExchangePrincipalName")
     private final String tokenExchangePrincipalName;
 
     /**
      * Token exchange kerberos Principal name in cluster
-     *
      * @return the value
-     */
+     **/
     public String getTokenExchangePrincipalName() {
         return tokenExchangePrincipalName;
     }
 
-    /** Lifecycle state of the UPST config */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifecycle state of the UPST config
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
@@ -356,8 +350,8 @@ public final class UpstConfiguration
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -396,58 +390,58 @@ public final class UpstConfiguration
             return UnknownEnumValue;
         }
     };
-    /** Lifecycle state of the UPST config */
+    /**
+     * Lifecycle state of the UPST config
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the UPST config
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Time when this UPST config was created, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The kerberos keytab content used for creating identity propagation trust config, in base64
-     * format
-     */
+     * The kerberos keytab content used for creating identity propagation trust config, in base64 format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keytabContent")
     private final String keytabContent;
 
     /**
-     * The kerberos keytab content used for creating identity propagation trust config, in base64
-     * format
-     *
+     * The kerberos keytab content used for creating identity propagation trust config, in base64 format
      * @return the value
-     */
+     **/
     public String getKeytabContent() {
         return keytabContent;
     }
@@ -459,7 +453,6 @@ public final class UpstConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information about an erratum associated with a managed instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information about an erratum associated with a managed instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManagedInstanceErratumSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ManagedInstanceErratumSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ManagedInstanceErratumSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -49,95 +48,99 @@ public final class ManagedInstanceErratumSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The identifier of the erratum. */
+        /**
+         * The identifier of the erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The identifier of the erratum.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The advisory type of the erratum. */
+        /**
+         * The advisory type of the erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
         private ClassificationTypes advisoryType;
 
         /**
          * The advisory type of the erratum.
-         *
          * @param advisoryType the value to set
          * @return this builder
-         */
+         **/
         public Builder advisoryType(ClassificationTypes advisoryType) {
             this.advisoryType = advisoryType;
             this.__explicitlySet__.add("advisoryType");
             return this;
         }
         /**
-         * The date and time the package was issued by a providing erratum (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
         /**
-         * The date and time the package was issued by a providing erratum (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeIssued the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIssued(java.util.Date timeIssued) {
             this.timeIssued = timeIssued;
             this.__explicitlySet__.add("timeIssued");
             return this;
         }
-        /** A summary description of the erratum. */
+        /**
+         * A summary description of the erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
         private String synopsis;
 
         /**
          * A summary description of the erratum.
-         *
          * @param synopsis the value to set
          * @return this builder
-         */
+         **/
         public Builder synopsis(String synopsis) {
             this.synopsis = synopsis;
             this.__explicitlySet__.add("synopsis");
             return this;
         }
-        /** The list of CVEs applicable to this erratum. */
+        /**
+         * The list of CVEs applicable to this erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
         private java.util.List<String> relatedCves;
 
         /**
          * The list of CVEs applicable to this erratum.
-         *
          * @param relatedCves the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedCves(java.util.List<String> relatedCves) {
             this.relatedCves = relatedCves;
             this.__explicitlySet__.add("relatedCves");
             return this;
         }
-        /** The list of packages affected by this erratum. */
+        /**
+         * The list of packages affected by this erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private java.util.List<PackageNameSummary> packages;
 
         /**
          * The list of packages affected by this erratum.
-         *
          * @param packages the value to set
          * @return this builder
-         */
+         **/
         public Builder packages(java.util.List<PackageNameSummary> packages) {
             this.packages = packages;
             this.__explicitlySet__.add("packages");
@@ -186,7 +189,9 @@ public final class ManagedInstanceErratumSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,84 +200,88 @@ public final class ManagedInstanceErratumSummary
         return new Builder().copy(this);
     }
 
-    /** The identifier of the erratum. */
+    /**
+     * The identifier of the erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The identifier of the erratum.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The advisory type of the erratum. */
+    /**
+     * The advisory type of the erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
     private final ClassificationTypes advisoryType;
 
     /**
      * The advisory type of the erratum.
-     *
      * @return the value
-     */
+     **/
     public ClassificationTypes getAdvisoryType() {
         return advisoryType;
     }
 
     /**
-     * The date and time the package was issued by a providing erratum (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     private final java.util.Date timeIssued;
 
     /**
-     * The date and time the package was issued by a providing erratum (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIssued() {
         return timeIssued;
     }
 
-    /** A summary description of the erratum. */
+    /**
+     * A summary description of the erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
     private final String synopsis;
 
     /**
      * A summary description of the erratum.
-     *
      * @return the value
-     */
+     **/
     public String getSynopsis() {
         return synopsis;
     }
 
-    /** The list of CVEs applicable to this erratum. */
+    /**
+     * The list of CVEs applicable to this erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
     private final java.util.List<String> relatedCves;
 
     /**
      * The list of CVEs applicable to this erratum.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRelatedCves() {
         return relatedCves;
     }
 
-    /** The list of packages affected by this erratum. */
+    /**
+     * The list of packages affected by this erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final java.util.List<PackageNameSummary> packages;
 
     /**
      * The list of packages affected by this erratum.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PackageNameSummary> getPackages() {
         return packages;
     }
@@ -284,7 +293,6 @@ public final class ManagedInstanceErratumSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

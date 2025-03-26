@@ -7,25 +7,26 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 /**
  * Rollback Exadata Fleet Update Action creation details. This action will attempt to rollback the
  * specified Targets according to strategy to the source target version prior to patching in this
- * Exadata Fleet Update Cycle and remove them from the Collection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Exadata Fleet Update Cycle and remove them from the Collection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateRollbackActionDetails.Builder.class)
+    builder = CreateRollbackActionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateRollbackActionDetails extends CreateFsuActionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -65,7 +66,10 @@ public final class CreateRollbackActionDetails extends CreateFsuActionDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** OCID identifier for the Exadata Fleet Update Cycle the Action will be part of. */
+        /**
+         * OCID identifier for the Exadata Fleet Update Cycle the Action will be part of.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCycleId")
         private String fsuCycleId;
 
@@ -74,7 +78,7 @@ public final class CreateRollbackActionDetails extends CreateFsuActionDetails {
          *
          * @param fsuCycleId the value to set
          * @return this builder
-         */
+         **/
         public Builder fsuCycleId(String fsuCycleId) {
             this.fsuCycleId = fsuCycleId;
             this.__explicitlySet__.add("fsuCycleId");
@@ -145,7 +149,9 @@ public final class CreateRollbackActionDetails extends CreateFsuActionDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,7 +175,10 @@ public final class CreateRollbackActionDetails extends CreateFsuActionDetails {
         this.scheduleDetails = scheduleDetails;
     }
 
-    /** OCID identifier for the Exadata Fleet Update Cycle the Action will be part of. */
+    /**
+     * OCID identifier for the Exadata Fleet Update Cycle the Action will be part of.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCycleId")
     private final String fsuCycleId;
 
@@ -177,7 +186,7 @@ public final class CreateRollbackActionDetails extends CreateFsuActionDetails {
      * OCID identifier for the Exadata Fleet Update Cycle the Action will be part of.
      *
      * @return the value
-     */
+     **/
     public String getFsuCycleId() {
         return fsuCycleId;
     }
@@ -203,7 +212,6 @@ public final class CreateRollbackActionDetails extends CreateFsuActionDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.clusterplacementgroups.model;
 
-/** The type of work request operation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of work request operation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum OperationType {
     CreateClusterPlacementGroup("CREATE_CLUSTER_PLACEMENT_GROUP"),
     UpdateClusterPlacementGroup("UPDATE_CLUSTER_PLACEMENT_GROUP"),
     DeleteClusterPlacementGroup("DELETE_CLUSTER_PLACEMENT_GROUP"),

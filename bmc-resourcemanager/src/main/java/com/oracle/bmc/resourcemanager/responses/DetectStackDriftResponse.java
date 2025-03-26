@@ -6,14 +6,15 @@ package com.oracle.bmc.resourcemanager.responses;
 
 import com.oracle.bmc.resourcemanager.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
     /**
      * Unique identifier for the request.
-     *
      * @return the value
      */
     public String getOpcRequestId() {
@@ -21,15 +22,12 @@ public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -44,7 +42,7 @@ public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private DetectStackDriftResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
@@ -52,30 +50,28 @@ public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcRespon
         this.opcWorkRequestId = opcWorkRequestId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<DetectStackDriftResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -85,15 +81,12 @@ public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -104,10 +97,8 @@ public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DetectStackDriftResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,10 +110,8 @@ public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DetectStackDriftResponse build() {
             return new DetectStackDriftResponse(
                     __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
@@ -131,7 +120,6 @@ public class DetectStackDriftResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

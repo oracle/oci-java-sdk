@@ -5,25 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the build stage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies the build stage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BuildStageSummary.Builder.class)
+    builder = BuildStageSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "buildPipelineStageType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "buildPipelineStageType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BuildStageSummary extends BuildPipelineStageSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -154,50 +154,49 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Image for the build environment. */
+        /**
+         * Image for the build environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("image")
         private BuildStage.Image image;
 
         /**
          * Image for the build environment.
-         *
          * @param image the value to set
          * @return this builder
-         */
+         **/
         public Builder image(BuildStage.Image image) {
             this.image = image;
             this.__explicitlySet__.add("image");
             return this;
         }
         /**
-         * The path to the build specification file for this environment. The default location of
-         * the file if not specified is build_spec.yaml.
-         */
+         * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
         private String buildSpecFile;
 
         /**
-         * The path to the build specification file for this environment. The default location of
-         * the file if not specified is build_spec.yaml.
-         *
+         * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
          * @param buildSpecFile the value to set
          * @return this builder
-         */
+         **/
         public Builder buildSpecFile(String buildSpecFile) {
             this.buildSpecFile = buildSpecFile;
             this.__explicitlySet__.add("buildSpecFile");
             return this;
         }
-        /** Timeout for the build stage execution. Specify value in seconds. */
+        /**
+         * Timeout for the build stage execution. Specify value in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
         private Integer stageExecutionTimeoutInSeconds;
 
         /**
          * Timeout for the build stage execution. Specify value in seconds.
-         *
          * @param stageExecutionTimeoutInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder stageExecutionTimeoutInSeconds(Integer stageExecutionTimeoutInSeconds) {
             this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
             this.__explicitlySet__.add("stageExecutionTimeoutInSeconds");
@@ -213,19 +212,16 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
             return this;
         }
         /**
-         * Name of the build source where the build_spec.yml file is located. If not specified, the
-         * first entry in the build source collection is chosen as primary build source.
-         */
+         * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
         private String primaryBuildSource;
 
         /**
-         * Name of the build source where the build_spec.yml file is located. If not specified, the
-         * first entry in the build source collection is chosen as primary build source.
-         *
+         * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
          * @param primaryBuildSource the value to set
          * @return this builder
-         */
+         **/
         public Builder primaryBuildSource(String primaryBuildSource) {
             this.primaryBuildSource = primaryBuildSource;
             this.__explicitlySet__.add("primaryBuildSource");
@@ -353,7 +349,9 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -409,45 +407,44 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
         this.privateAccessConfig = privateAccessConfig;
     }
 
-    /** Image for the build environment. */
+    /**
+     * Image for the build environment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("image")
     private final BuildStage.Image image;
 
     /**
      * Image for the build environment.
-     *
      * @return the value
-     */
+     **/
     public BuildStage.Image getImage() {
         return image;
     }
 
     /**
-     * The path to the build specification file for this environment. The default location of the
-     * file if not specified is build_spec.yaml.
-     */
+     * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
     private final String buildSpecFile;
 
     /**
-     * The path to the build specification file for this environment. The default location of the
-     * file if not specified is build_spec.yaml.
-     *
+     * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      * @return the value
-     */
+     **/
     public String getBuildSpecFile() {
         return buildSpecFile;
     }
 
-    /** Timeout for the build stage execution. Specify value in seconds. */
+    /**
+     * Timeout for the build stage execution. Specify value in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
     private final Integer stageExecutionTimeoutInSeconds;
 
     /**
      * Timeout for the build stage execution. Specify value in seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getStageExecutionTimeoutInSeconds() {
         return stageExecutionTimeoutInSeconds;
     }
@@ -460,18 +457,15 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
     }
 
     /**
-     * Name of the build source where the build_spec.yml file is located. If not specified, the
-     * first entry in the build source collection is chosen as primary build source.
-     */
+     * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
     private final String primaryBuildSource;
 
     /**
-     * Name of the build source where the build_spec.yml file is located. If not specified, the
-     * first entry in the build source collection is chosen as primary build source.
-     *
+     * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      * @return the value
-     */
+     **/
     public String getPrimaryBuildSource() {
         return primaryBuildSource;
     }
@@ -497,7 +491,6 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

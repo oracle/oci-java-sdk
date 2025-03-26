@@ -5,23 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * delete block volumes for namespace <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * delete block volumes for namespace
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeleteBlockVolumesForNamespaceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeleteBlockVolumesForNamespaceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeleteBlockVolumesForNamespaceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clusterId", "namespace"})
     public DeleteBlockVolumesForNamespaceDetails(String clusterId, String namespace) {
@@ -32,31 +31,33 @@ public final class DeleteBlockVolumesForNamespaceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the Opensearch Cluster. */
+        /**
+         * OCID of the Opensearch Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
 
         /**
          * OCID of the Opensearch Cluster.
-         *
          * @param clusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterId(String clusterId) {
             this.clusterId = clusterId;
             this.__explicitlySet__.add("clusterId");
             return this;
         }
-        /** Namespace of the Opensearch Cluster. */
+        /**
+         * Namespace of the Opensearch Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * Namespace of the Opensearch Cluster.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -87,7 +88,9 @@ public final class DeleteBlockVolumesForNamespaceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class DeleteBlockVolumesForNamespaceDetails
         return new Builder().copy(this);
     }
 
-    /** OCID of the Opensearch Cluster. */
+    /**
+     * OCID of the Opensearch Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     private final String clusterId;
 
     /**
      * OCID of the Opensearch Cluster.
-     *
      * @return the value
-     */
+     **/
     public String getClusterId() {
         return clusterId;
     }
 
-    /** Namespace of the Opensearch Cluster. */
+    /**
+     * Namespace of the Opensearch Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * Namespace of the Opensearch Cluster.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -129,7 +134,6 @@ public final class DeleteBlockVolumesForNamespaceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

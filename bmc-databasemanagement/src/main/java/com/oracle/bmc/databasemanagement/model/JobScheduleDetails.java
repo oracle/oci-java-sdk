@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the job schedule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the job schedule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JobScheduleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobScheduleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = JobScheduleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobScheduleDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"startTime", "endTime", "intervalType", "intervalValue"})
     public JobScheduleDetails(
@@ -36,72 +34,64 @@ public final class JobScheduleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The start time of the scheduled job in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         */
+         * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private String startTime;
 
         /**
-         * The start time of the scheduled job in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         *
+         * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          * @param startTime the value to set
          * @return this builder
-         */
+         **/
         public Builder startTime(String startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
         /**
-         * The end time of the scheduled job in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         */
+         * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTime")
         private String endTime;
 
         /**
-         * The end time of the scheduled job in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         *
+         * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          * @param endTime the value to set
          * @return this builder
-         */
+         **/
         public Builder endTime(String endTime) {
             this.endTime = endTime;
             this.__explicitlySet__.add("endTime");
             return this;
         }
         /**
-         * The interval type for a recurring scheduled job. For a non-recurring (one time) job,
-         * NEVER must be specified as the interval type.
-         */
+         * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
         private IntervalType intervalType;
 
         /**
-         * The interval type for a recurring scheduled job. For a non-recurring (one time) job,
-         * NEVER must be specified as the interval type.
-         *
+         * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
          * @param intervalType the value to set
          * @return this builder
-         */
+         **/
         public Builder intervalType(IntervalType intervalType) {
             this.intervalType = intervalType;
             this.__explicitlySet__.add("intervalType");
             return this;
         }
-        /** The value for the interval period for a recurring scheduled job. */
+        /**
+         * The value for the interval period for a recurring scheduled job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
         private String intervalValue;
 
         /**
          * The value for the interval period for a recurring scheduled job.
-         *
          * @param intervalValue the value to set
          * @return this builder
-         */
+         **/
         public Builder intervalValue(String intervalValue) {
             this.intervalValue = intervalValue;
             this.__explicitlySet__.add("intervalValue");
@@ -139,7 +129,9 @@ public final class JobScheduleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,44 +141,37 @@ public final class JobScheduleDetails
     }
 
     /**
-     * The start time of the scheduled job in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     */
+     * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final String startTime;
 
     /**
-     * The start time of the scheduled job in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     *
+     * The start time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      * @return the value
-     */
+     **/
     public String getStartTime() {
         return startTime;
     }
 
     /**
-     * The end time of the scheduled job in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     */
+     * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
     private final String endTime;
 
     /**
-     * The end time of the scheduled job in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     *
+     * The end time of the scheduled job in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      * @return the value
-     */
+     **/
     public String getEndTime() {
         return endTime;
     }
 
     /**
-     * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER
-     * must be specified as the interval type.
-     */
-    public enum IntervalType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
+     **/
+    public enum IntervalType {
         Daily("DAILY"),
         Hourly("HOURLY"),
         Weekly("WEEKLY"),
@@ -194,8 +179,8 @@ public final class JobScheduleDetails
         Never("NEVER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -235,31 +220,29 @@ public final class JobScheduleDetails
         }
     };
     /**
-     * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER
-     * must be specified as the interval type.
-     */
+     * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
     private final IntervalType intervalType;
 
     /**
-     * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER
-     * must be specified as the interval type.
-     *
+     * The interval type for a recurring scheduled job. For a non-recurring (one time) job, NEVER must be specified as the interval type.
      * @return the value
-     */
+     **/
     public IntervalType getIntervalType() {
         return intervalType;
     }
 
-    /** The value for the interval period for a recurring scheduled job. */
+    /**
+     * The value for the interval period for a recurring scheduled job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
     private final String intervalValue;
 
     /**
      * The value for the interval period for a recurring scheduled job.
-     *
      * @return the value
-     */
+     **/
     public String getIntervalValue() {
         return intervalValue;
     }
@@ -271,7 +254,6 @@ public final class JobScheduleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

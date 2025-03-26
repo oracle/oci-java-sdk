@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * A set of metrics are collected periodically to assess the state and performance characteristics
- * of the execution instance of a job. The metrics are grouped based on their category and sub
- * categories and aggregated based on their batch information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * A set of metrics are collected periodically to assess the state and performance characteristics of the execution
+ * instance of a job. The metrics are grouped based on their category and sub categories and aggregated based on
+ * their batch information.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobMetric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobMetric extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -76,103 +75,105 @@ public final class JobMetric extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Key of the job metric that is immutable. */
+        /**
+         * Key of the job metric that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Key of the job metric that is immutable.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Detailed description of the metric. */
+        /**
+         * Detailed description of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the metric.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The unique key of the parent job execution for which the job metric resource is being
-         * created.
-         */
+         * The unique key of the parent job execution for which the job metric resource is being created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
         private String jobExecutionKey;
 
         /**
-         * The unique key of the parent job execution for which the job metric resource is being
-         * created.
-         *
+         * The unique key of the parent job execution for which the job metric resource is being created.
          * @param jobExecutionKey the value to set
          * @return this builder
-         */
+         **/
         public Builder jobExecutionKey(String jobExecutionKey) {
             this.jobExecutionKey = jobExecutionKey;
             this.__explicitlySet__.add("jobExecutionKey");
             return this;
         }
         /**
-         * The time the metric was logged or captured in the system where the job executed. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         */
+         * The time the metric was logged or captured in the system where the job executed.
+         * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeInserted")
         private java.util.Date timeInserted;
 
         /**
-         * The time the metric was logged or captured in the system where the job executed. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * The time the metric was logged or captured in the system where the job executed.
+         * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          *
          * @param timeInserted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeInserted(java.util.Date timeInserted) {
             this.timeInserted = timeInserted;
             this.__explicitlySet__.add("timeInserted");
             return this;
         }
-        /** Category of this metric. */
+        /**
+         * Category of this metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
          * Category of this metric.
-         *
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
-         */
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -180,152 +181,151 @@ public final class JobMetric extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Sub category of this metric under the category. Used for aggregating values. May be null.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subCategory")
         private String subCategory;
 
         /**
          * Sub category of this metric under the category. Used for aggregating values. May be null.
-         *
          * @param subCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder subCategory(String subCategory) {
             this.subCategory = subCategory;
             this.__explicitlySet__.add("subCategory");
             return this;
         }
-        /** Unit of this metric. */
+        /**
+         * Unit of this metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * Unit of this metric.
-         *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-        /** Value of this metric. */
+        /**
+         * Value of this metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Value of this metric.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Batch key for grouping, may be null. */
+        /**
+         * Batch key for grouping, may be null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchKey")
         private String batchKey;
 
         /**
          * Batch key for grouping, may be null.
-         *
          * @param batchKey the value to set
          * @return this builder
-         */
+         **/
         public Builder batchKey(String batchKey) {
             this.batchKey = batchKey;
             this.__explicitlySet__.add("batchKey");
             return this;
         }
-        /** URI to the job metric instance in the API. */
+        /**
+         * URI to the job metric instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
          * URI to the job metric instance in the API.
-         *
          * @param uri the value to set
          * @return this builder
-         */
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
         /**
-         * The date and time the job metric was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-         */
+         * The date and time the job metric was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the job metric was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+         * The date and time the job metric was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The last time that this metric was updated. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         */
+         * The last time that this metric was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The last time that this metric was updated. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         *
+         * The last time that this metric was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * OCID of the user who created the metric for this job. Usually the executor of the job
-         * instance.
-         */
+         * OCID of the user who created the metric for this job. Usually the executor of the job instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
         /**
-         * OCID of the user who created the metric for this job. Usually the executor of the job
-         * instance.
+         * OCID of the user who created the metric for this job. Usually the executor of the job instance.
          *
          * @param createdById the value to set
          * @return this builder
-         */
+         **/
         public Builder createdById(String createdById) {
             this.createdById = createdById;
             this.__explicitlySet__.add("createdById");
             return this;
         }
         /**
-         * OCID of the user who created the metric for this job. Usually the executor of the job
-         * instance.
-         */
+         * OCID of the user who created the metric for this job. Usually the executor of the job instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
         private String updatedById;
 
         /**
-         * OCID of the user who created the metric for this job. Usually the executor of the job
-         * instance.
+         * OCID of the user who created the metric for this job. Usually the executor of the job instance.
          *
          * @param updatedById the value to set
          * @return this builder
-         */
+         **/
         public Builder updatedById(String updatedById) {
             this.updatedById = updatedById;
             this.__explicitlySet__.add("updatedById");
@@ -410,7 +410,9 @@ public final class JobMetric extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -419,225 +421,228 @@ public final class JobMetric extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Key of the job metric that is immutable. */
+    /**
+     * Key of the job metric that is immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Key of the job metric that is immutable.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Detailed description of the metric. */
+    /**
+     * Detailed description of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The unique key of the parent job execution for which the job metric resource is being
-     * created.
-     */
+     * The unique key of the parent job execution for which the job metric resource is being created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
     private final String jobExecutionKey;
 
     /**
-     * The unique key of the parent job execution for which the job metric resource is being
-     * created.
-     *
+     * The unique key of the parent job execution for which the job metric resource is being created.
      * @return the value
-     */
+     **/
     public String getJobExecutionKey() {
         return jobExecutionKey;
     }
 
     /**
-     * The time the metric was logged or captured in the system where the job executed. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     */
+     * The time the metric was logged or captured in the system where the job executed.
+     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeInserted")
     private final java.util.Date timeInserted;
 
     /**
-     * The time the metric was logged or captured in the system where the job executed. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * The time the metric was logged or captured in the system where the job executed.
+     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeInserted() {
         return timeInserted;
     }
 
-    /** Category of this metric. */
+    /**
+     * Category of this metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
      * Category of this metric.
-     *
      * @return the value
-     */
+     **/
     public String getCategory() {
         return category;
     }
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Sub category of this metric under the category. Used for aggregating values. May be null. */
+    /**
+     * Sub category of this metric under the category. Used for aggregating values. May be null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subCategory")
     private final String subCategory;
 
     /**
      * Sub category of this metric under the category. Used for aggregating values. May be null.
-     *
      * @return the value
-     */
+     **/
     public String getSubCategory() {
         return subCategory;
     }
 
-    /** Unit of this metric. */
+    /**
+     * Unit of this metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * Unit of this metric.
-     *
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
 
-    /** Value of this metric. */
+    /**
+     * Value of this metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Value of this metric.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Batch key for grouping, may be null. */
+    /**
+     * Batch key for grouping, may be null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchKey")
     private final String batchKey;
 
     /**
      * Batch key for grouping, may be null.
-     *
      * @return the value
-     */
+     **/
     public String getBatchKey() {
         return batchKey;
     }
 
-    /** URI to the job metric instance in the API. */
+    /**
+     * URI to the job metric instance in the API.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
      * URI to the job metric instance in the API.
-     *
      * @return the value
-     */
+     **/
     public String getUri() {
         return uri;
     }
 
     /**
-     * The date and time the job metric was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-     */
+     * The date and time the job metric was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the job metric was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+     * The date and time the job metric was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The last time that this metric was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
-     */
+     * The last time that this metric was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The last time that this metric was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
-     *
+     * The last time that this metric was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * OCID of the user who created the metric for this job. Usually the executor of the job
-     * instance.
-     */
+     * OCID of the user who created the metric for this job. Usually the executor of the job instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
     private final String createdById;
 
     /**
-     * OCID of the user who created the metric for this job. Usually the executor of the job
-     * instance.
+     * OCID of the user who created the metric for this job. Usually the executor of the job instance.
      *
      * @return the value
-     */
+     **/
     public String getCreatedById() {
         return createdById;
     }
 
     /**
-     * OCID of the user who created the metric for this job. Usually the executor of the job
-     * instance.
-     */
+     * OCID of the user who created the metric for this job. Usually the executor of the job instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     private final String updatedById;
 
     /**
-     * OCID of the user who created the metric for this job. Usually the executor of the job
-     * instance.
+     * OCID of the user who created the metric for this job. Usually the executor of the job instance.
      *
      * @return the value
-     */
+     **/
     public String getUpdatedById() {
         return updatedById;
     }
@@ -649,7 +654,6 @@ public final class JobMetric extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

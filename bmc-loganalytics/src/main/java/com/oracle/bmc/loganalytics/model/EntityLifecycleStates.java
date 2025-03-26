@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Log analytics entity lifecycle state. Supported states are ACTIVE, DELETED */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum EntityLifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Log analytics entity lifecycle state. Supported states are ACTIVE, DELETED
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum EntityLifecycleStates {
     Active("ACTIVE"),
     Deleted("DELETED"),
 

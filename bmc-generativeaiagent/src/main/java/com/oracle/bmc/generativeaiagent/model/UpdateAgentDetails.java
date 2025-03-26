@@ -5,29 +5,29 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * The data to update an agent. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * The data to update an agent.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateAgentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpdateAgentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = UpdateAgentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UpdateAgentDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
         "knowledgeBaseIds",
         "welcomeMessage",
+        "llmConfig",
         "freeformTags",
         "definedTags"
     })
@@ -36,6 +36,7 @@ public final class UpdateAgentDetails
             String description,
             java.util.List<String> knowledgeBaseIds,
             String welcomeMessage,
+            LlmConfig llmConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -43,6 +44,7 @@ public final class UpdateAgentDetails
         this.description = description;
         this.knowledgeBaseIds = knowledgeBaseIds;
         this.welcomeMessage = welcomeMessage;
+        this.llmConfig = llmConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -50,118 +52,121 @@ public final class UpdateAgentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description about the agent. */
+        /**
+         * Description about the agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description about the agent.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the knowledgeBases associated with agent.
-         */
+         * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseIds")
         private java.util.List<String> knowledgeBaseIds;
 
         /**
-         * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the knowledgeBases associated with agent.
-         *
+         * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
          * @param knowledgeBaseIds the value to set
          * @return this builder
-         */
+         **/
         public Builder knowledgeBaseIds(java.util.List<String> knowledgeBaseIds) {
             this.knowledgeBaseIds = knowledgeBaseIds;
             this.__explicitlySet__.add("knowledgeBaseIds");
             return this;
         }
-        /** Details about purpose and responsibility of the agent */
+        /**
+         * Details about purpose and responsibility of the agent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("welcomeMessage")
         private String welcomeMessage;
 
         /**
          * Details about purpose and responsibility of the agent
-         *
          * @param welcomeMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder welcomeMessage(String welcomeMessage) {
             this.welcomeMessage = welcomeMessage;
             this.__explicitlySet__.add("welcomeMessage");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("llmConfig")
+        private LlmConfig llmConfig;
+
+        public Builder llmConfig(LlmConfig llmConfig) {
+            this.llmConfig = llmConfig;
+            this.__explicitlySet__.add("llmConfig");
+            return this;
+        }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -179,6 +184,7 @@ public final class UpdateAgentDetails
                             this.description,
                             this.knowledgeBaseIds,
                             this.welcomeMessage,
+                            this.llmConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -201,6 +207,9 @@ public final class UpdateAgentDetails
             if (model.wasPropertyExplicitlySet("welcomeMessage")) {
                 this.welcomeMessage(model.getWelcomeMessage());
             }
+            if (model.wasPropertyExplicitlySet("llmConfig")) {
+                this.llmConfig(model.getLlmConfig());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -211,7 +220,9 @@ public final class UpdateAgentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,107 +232,108 @@ public final class UpdateAgentDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description about the agent. */
+    /**
+     * Description about the agent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description about the agent.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * knowledgeBases associated with agent.
-     */
+     * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseIds")
     private final java.util.List<String> knowledgeBaseIds;
 
     /**
-     * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * knowledgeBases associated with agent.
-     *
+     * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      * @return the value
-     */
+     **/
     public java.util.List<String> getKnowledgeBaseIds() {
         return knowledgeBaseIds;
     }
 
-    /** Details about purpose and responsibility of the agent */
+    /**
+     * Details about purpose and responsibility of the agent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("welcomeMessage")
     private final String welcomeMessage;
 
     /**
      * Details about purpose and responsibility of the agent
-     *
      * @return the value
-     */
+     **/
     public String getWelcomeMessage() {
         return welcomeMessage;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("llmConfig")
+    private final LlmConfig llmConfig;
+
+    public LlmConfig getLlmConfig() {
+        return llmConfig;
+    }
+
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -333,7 +345,6 @@ public final class UpdateAgentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -345,6 +356,7 @@ public final class UpdateAgentDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", knowledgeBaseIds=").append(String.valueOf(this.knowledgeBaseIds));
         sb.append(", welcomeMessage=").append(String.valueOf(this.welcomeMessage));
+        sb.append(", llmConfig=").append(String.valueOf(this.llmConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -365,6 +377,7 @@ public final class UpdateAgentDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.knowledgeBaseIds, other.knowledgeBaseIds)
                 && java.util.Objects.equals(this.welcomeMessage, other.welcomeMessage)
+                && java.util.Objects.equals(this.llmConfig, other.llmConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -382,6 +395,7 @@ public final class UpdateAgentDetails
         result =
                 (result * PRIME)
                         + (this.welcomeMessage == null ? 43 : this.welcomeMessage.hashCode());
+        result = (result * PRIME) + (this.llmConfig == null ? 43 : this.llmConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

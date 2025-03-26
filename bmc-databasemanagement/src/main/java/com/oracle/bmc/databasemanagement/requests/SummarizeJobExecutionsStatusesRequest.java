@@ -6,114 +6,123 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeJobExecutionsStatusesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeJobExecutionsStatusesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeJobExecutionsStatusesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeJobExecutionsStatusesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class SummarizeJobExecutionsStatusesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The start time of the time range to retrieve the status summary of job executions in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the status summary of job executions
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String startTime;
 
     /**
-     * The start time of the time range to retrieve the status summary of job executions in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the status summary of job executions
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getStartTime() {
         return startTime;
     }
     /**
-     * The end time of the time range to retrieve the status summary of job executions in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the status summary of job executions
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String endTime;
 
     /**
-     * The end time of the time range to retrieve the status summary of job executions in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the status summary of job executions
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getEndTime() {
         return endTime;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The identifier of the resource. */
+    /**
+     * The identifier of the resource.
+     */
     private String id;
 
-    /** The identifier of the resource. */
+    /**
+     * The identifier of the resource.
+     */
     public String getId() {
         return id;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database Group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      */
     private String managedDatabaseGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database Group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      */
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /** A filter to return only resources that match the entire name. */
+    /**
+     * A filter to return only resources that match the entire name.
+     */
     private String name;
 
-    /** A filter to return only resources that match the entire name. */
+    /**
+     * A filter to return only resources that match the entire name.
+     */
     public String getName() {
         return name;
     }
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Name("NAME"),
         ;
@@ -147,22 +156,21 @@ public class SummarizeJobExecutionsStatusesRequest
     };
 
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
@@ -171,19 +179,17 @@ public class SummarizeJobExecutionsStatusesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeJobExecutionsStatusesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -193,14 +199,15 @@ public class SummarizeJobExecutionsStatusesRequest
         }
 
         /**
-         * The start time of the time range to retrieve the status summary of job executions in UTC
-         * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the status summary of job executions
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String startTime = null;
 
         /**
-         * The start time of the time range to retrieve the status summary of job executions in UTC
-         * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the status summary of job executions
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param startTime the value to set
          * @return this builder instance
@@ -211,14 +218,15 @@ public class SummarizeJobExecutionsStatusesRequest
         }
 
         /**
-         * The end time of the time range to retrieve the status summary of job executions in UTC in
-         * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the status summary of job executions
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String endTime = null;
 
         /**
-         * The end time of the time range to retrieve the status summary of job executions in UTC in
-         * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the status summary of job executions
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param endTime the value to set
          * @return this builder instance
@@ -228,12 +236,13 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -242,12 +251,13 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
-        /** The identifier of the resource. */
+        /**
+         * The identifier of the resource.
+         */
         private String id = null;
 
         /**
          * The identifier of the resource.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -257,15 +267,12 @@ public class SummarizeJobExecutionsStatusesRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database Group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
          */
         private String managedDatabaseGroupId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database Group.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
          * @param managedDatabaseGroupId the value to set
          * @return this builder instance
          */
@@ -275,15 +282,12 @@ public class SummarizeJobExecutionsStatusesRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -292,12 +296,13 @@ public class SummarizeJobExecutionsStatusesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the entire name. */
+        /**
+         * A filter to return only resources that match the entire name.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -308,15 +313,16 @@ public class SummarizeJobExecutionsStatusesRequest
 
         /**
          * The field to sort information by. Only one sortOrder can be used. The default sort order
-         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019
-         * is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
          * The field to sort information by. Only one sortOrder can be used. The default sort order
-         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019
-         * is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -327,15 +333,12 @@ public class SummarizeJobExecutionsStatusesRequest
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
-         *
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -346,19 +349,18 @@ public class SummarizeJobExecutionsStatusesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -370,7 +372,6 @@ public class SummarizeJobExecutionsStatusesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeJobExecutionsStatusesRequest o) {
@@ -392,11 +393,10 @@ public class SummarizeJobExecutionsStatusesRequest
         /**
          * Build the instance of SummarizeJobExecutionsStatusesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeJobExecutionsStatusesRequest
          */
@@ -410,8 +410,7 @@ public class SummarizeJobExecutionsStatusesRequest
         /**
          * Build the instance of SummarizeJobExecutionsStatusesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeJobExecutionsStatusesRequest
@@ -430,15 +429,12 @@ public class SummarizeJobExecutionsStatusesRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new SummarizeJobExecutionsStatusesRequest(compartmentId, startTime, endTime,
-            // opcRequestId, id, managedDatabaseGroupId, managedDatabaseId, name, sortBy,
-            // sortOrder);
+            // new SummarizeJobExecutionsStatusesRequest(compartmentId, startTime, endTime, opcRequestId, id, managedDatabaseGroupId, managedDatabaseId, name, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -457,7 +453,6 @@ public class SummarizeJobExecutionsStatusesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

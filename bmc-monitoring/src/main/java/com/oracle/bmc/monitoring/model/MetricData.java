@@ -5,35 +5,37 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The set of aggregated data returned for a metric. For information about metrics, see [Metrics
- * Overview](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+ * The set of aggregated data returned for a metric.
+ * For information about metrics, see
+ * [Metrics Overview](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+ * <p>
+ * Limits information for returned data follows.
+ * <p>
+ * Data points: 100,000.
+ * * Metric streams* within data points: 2,000.
+ * * Time range returned for 1-day resolution: 90 days.
+ * * Time range returned for 1-hour resolution: 90 days.
+ * * Time range returned for 5-minute resolution: 30 days.
+ * * Time range returned for 1-minute resolution: 7 days.
+ * <p>
+ *A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
+ * Metric streams cannot be aggregated across metric groups.
+ * A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
+ * For more information about metric-related concepts, see
+ * [Monitoring Concepts](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
  *
- * <p>Limits information for returned data follows.
- *
- * <p>Data points: 100,000. * Metric streams* within data points: 2,000. * Time range returned for
- * 1-day resolution: 90 days. * Time range returned for 1-hour resolution: 90 days. * Time range
- * returned for 5-minute resolution: 30 days. * Time range returned for 1-minute resolution: 7 days.
- *
- * <p>A metric stream is an individual set of aggregated data for a metric with zero or more
- * dimension values. Metric streams cannot be aggregated across metric groups. A metric group is the
- * combination of a given metric, metric namespace, and tenancy for the purpose of determining
- * limits. For more information about metric-related concepts, see [Monitoring
- * Concepts](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetricData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MetricData extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespace",
@@ -70,69 +72,66 @@ public final class MetricData extends com.oracle.bmc.http.client.internal.Explic
         /**
          * The reference provided in a metric definition to indicate the source service or
          * application that emitted the metric.
+         * <p>
+         * Example: {@code oci_computeagent}
          *
-         * <p>Example: {@code oci_computeagent}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The reference provided in a metric definition to indicate the source service or
          * application that emitted the metric.
-         *
-         * <p>Example: {@code oci_computeagent}
+         * <p>
+         * Example: {@code oci_computeagent}
          *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * Resource group provided with the posted metric. A resource group is a custom string that
-         * you can match when retrieving custom metrics. Only one resource group can be applied per
-         * metric. A valid resourceGroup value starts with an alphabetical character and includes
-         * only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs
-         * ($).
+         * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
          *
-         * <p>Example: {@code frontend-fleet}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
         /**
-         * Resource group provided with the posted metric. A resource group is a custom string that
-         * you can match when retrieving custom metrics. Only one resource group can be applied per
-         * metric. A valid resourceGroup value starts with an alphabetical character and includes
-         * only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs
-         * ($).
-         *
-         * <p>Example: {@code frontend-fleet}
+         * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
          *
          * @param resourceGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the resources that the aggregated data was returned from.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * resources that the aggregated data was returned from.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the resources that the aggregated data was returned from.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * resources that the aggregated data was returned from.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -140,66 +139,67 @@ public final class MetricData extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The name of the metric.
+         * <p>
+         * Example: {@code CpuUtilization}
          *
-         * <p>Example: {@code CpuUtilization}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the metric.
-         *
-         * <p>Example: {@code CpuUtilization}
+         * <p>
+         * Example: {@code CpuUtilization}
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Qualifiers provided in the definition of the returned metric. Available dimensions vary
-         * by metric namespace. Each dimension takes the form of a key-value pair.
+         * Qualifiers provided in the definition of the returned metric.
+         * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
-         * Qualifiers provided in the definition of the returned metric. Available dimensions vary
-         * by metric namespace. Each dimension takes the form of a key-value pair.
-         *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+         * Qualifiers provided in the definition of the returned metric.
+         * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
         /**
-         * The references provided in a metric definition to indicate extra information about the
-         * metric.
+         * The references provided in a metric definition to indicate extra information about the metric.
+         * <p>
+         * Example: {@code "unit": "bytes"}
          *
-         * <p>Example: {@code "unit": "bytes"}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
-         * The references provided in a metric definition to indicate extra information about the
-         * metric.
-         *
-         * <p>Example: {@code "unit": "bytes"}
+         * The references provided in a metric definition to indicate extra information about the metric.
+         * <p>
+         * Example: {@code "unit": "bytes"}
          *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -207,51 +207,49 @@ public final class MetricData extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The time between calculated aggregation windows. Use with the query interval to vary the
-         * frequency for returning aggregated data points. For example, use a query interval of 5
-         * minutes with a resolution of 1 minute to retrieve five-minute aggregations at a
-         * one-minute frequency. The resolution must be equal or less than the interval in the
-         * query. The default resolution is 1m (one minute). Supported values: {@code 1m}-{@code
-         * 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+         * frequency for returning aggregated data points. For example, use a query interval of
+         * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
+         * frequency. The resolution must be equal or less than the interval in the query. The default
+         * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+         * <p>
+         * Example: {@code 5m}
          *
-         * <p>Example: {@code 5m}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolution")
         private String resolution;
 
         /**
          * The time between calculated aggregation windows. Use with the query interval to vary the
-         * frequency for returning aggregated data points. For example, use a query interval of 5
-         * minutes with a resolution of 1 minute to retrieve five-minute aggregations at a
-         * one-minute frequency. The resolution must be equal or less than the interval in the
-         * query. The default resolution is 1m (one minute). Supported values: {@code 1m}-{@code
-         * 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
-         *
-         * <p>Example: {@code 5m}
+         * frequency for returning aggregated data points. For example, use a query interval of
+         * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
+         * frequency. The resolution must be equal or less than the interval in the query. The default
+         * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+         * <p>
+         * Example: {@code 5m}
          *
          * @param resolution the value to set
          * @return this builder
-         */
+         **/
         public Builder resolution(String resolution) {
             this.resolution = resolution;
             this.__explicitlySet__.add("resolution");
             return this;
         }
         /**
-         * The list of timestamp-value pairs returned for the specified request. Metric values are
-         * rolled up to the start time specified in the request. For important limits information
-         * related to data points, see MetricData Reference at the top of this page.
-         */
+         * The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request.
+         * For important limits information related to data points, see MetricData Reference at the top of this page.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedDatapoints")
         private java.util.List<AggregatedDatapoint> aggregatedDatapoints;
 
         /**
-         * The list of timestamp-value pairs returned for the specified request. Metric values are
-         * rolled up to the start time specified in the request. For important limits information
-         * related to data points, see MetricData Reference at the top of this page.
+         * The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request.
+         * For important limits information related to data points, see MetricData Reference at the top of this page.
          *
          * @param aggregatedDatapoints the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregatedDatapoints(
                 java.util.List<AggregatedDatapoint> aggregatedDatapoints) {
             this.aggregatedDatapoints = aggregatedDatapoints;
@@ -309,7 +307,9 @@ public final class MetricData extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -319,173 +319,171 @@ public final class MetricData extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The reference provided in a metric definition to indicate the source service or application
-     * that emitted the metric.
+     * The reference provided in a metric definition to indicate the source service or
+     * application that emitted the metric.
+     * <p>
+     * Example: {@code oci_computeagent}
      *
-     * <p>Example: {@code oci_computeagent}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The reference provided in a metric definition to indicate the source service or application
-     * that emitted the metric.
-     *
-     * <p>Example: {@code oci_computeagent}
+     * The reference provided in a metric definition to indicate the source service or
+     * application that emitted the metric.
+     * <p>
+     * Example: {@code oci_computeagent}
      *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
     /**
-     * Resource group provided with the posted metric. A resource group is a custom string that you
-     * can match when retrieving custom metrics. Only one resource group can be applied per metric.
-     * A valid resourceGroup value starts with an alphabetical character and includes only
-     * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * <p>
+     * Example: {@code frontend-fleet}
      *
-     * <p>Example: {@code frontend-fleet}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
     /**
-     * Resource group provided with the posted metric. A resource group is a custom string that you
-     * can match when retrieving custom metrics. Only one resource group can be applied per metric.
-     * A valid resourceGroup value starts with an alphabetical character and includes only
-     * alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-     *
-     * <p>Example: {@code frontend-fleet}
+     * Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * <p>
+     * Example: {@code frontend-fleet}
      *
      * @return the value
-     */
+     **/
     public String getResourceGroup() {
         return resourceGroup;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the resources that the aggregated data was returned from.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * resources that the aggregated data was returned from.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the resources that the aggregated data was returned from.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * resources that the aggregated data was returned from.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The name of the metric.
+     * <p>
+     * Example: {@code CpuUtilization}
      *
-     * <p>Example: {@code CpuUtilization}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the metric.
-     *
-     * <p>Example: {@code CpuUtilization}
+     * <p>
+     * Example: {@code CpuUtilization}
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Qualifiers provided in the definition of the returned metric. Available dimensions vary by
-     * metric namespace. Each dimension takes the form of a key-value pair.
+     * Qualifiers provided in the definition of the returned metric.
+     * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
-     * Qualifiers provided in the definition of the returned metric. Available dimensions vary by
-     * metric namespace. Each dimension takes the form of a key-value pair.
-     *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+     * Qualifiers provided in the definition of the returned metric.
+     * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
     /**
-     * The references provided in a metric definition to indicate extra information about the
-     * metric.
+     * The references provided in a metric definition to indicate extra information about the metric.
+     * <p>
+     * Example: {@code "unit": "bytes"}
      *
-     * <p>Example: {@code "unit": "bytes"}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
-     * The references provided in a metric definition to indicate extra information about the
-     * metric.
-     *
-     * <p>Example: {@code "unit": "bytes"}
+     * The references provided in a metric definition to indicate extra information about the metric.
+     * <p>
+     * Example: {@code "unit": "bytes"}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
 
     /**
      * The time between calculated aggregation windows. Use with the query interval to vary the
-     * frequency for returning aggregated data points. For example, use a query interval of 5
-     * minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
+     * frequency for returning aggregated data points. For example, use a query interval of
+     * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
      * frequency. The resolution must be equal or less than the interval in the query. The default
-     * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code
-     * 24h}, {@code 1d}.
+     * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+     * <p>
+     * Example: {@code 5m}
      *
-     * <p>Example: {@code 5m}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")
     private final String resolution;
 
     /**
      * The time between calculated aggregation windows. Use with the query interval to vary the
-     * frequency for returning aggregated data points. For example, use a query interval of 5
-     * minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
+     * frequency for returning aggregated data points. For example, use a query interval of
+     * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
      * frequency. The resolution must be equal or less than the interval in the query. The default
-     * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code
-     * 24h}, {@code 1d}.
-     *
-     * <p>Example: {@code 5m}
+     * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+     * <p>
+     * Example: {@code 5m}
      *
      * @return the value
-     */
+     **/
     public String getResolution() {
         return resolution;
     }
 
     /**
-     * The list of timestamp-value pairs returned for the specified request. Metric values are
-     * rolled up to the start time specified in the request. For important limits information
-     * related to data points, see MetricData Reference at the top of this page.
-     */
+     * The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request.
+     * For important limits information related to data points, see MetricData Reference at the top of this page.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedDatapoints")
     private final java.util.List<AggregatedDatapoint> aggregatedDatapoints;
 
     /**
-     * The list of timestamp-value pairs returned for the specified request. Metric values are
-     * rolled up to the start time specified in the request. For important limits information
-     * related to data points, see MetricData Reference at the top of this page.
+     * The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request.
+     * For important limits information related to data points, see MetricData Reference at the top of this page.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AggregatedDatapoint> getAggregatedDatapoints() {
         return aggregatedDatapoints;
     }
@@ -497,7 +495,6 @@ public final class MetricData extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

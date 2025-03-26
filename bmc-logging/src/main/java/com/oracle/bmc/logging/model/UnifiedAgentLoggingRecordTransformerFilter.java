@@ -5,26 +5,27 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Logging record transformer filter object mutates/transforms logs. Ref:
- * https://docs.fluentd.org/filter/record_transformer <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Logging record transformer filter object mutates/transforms logs.
+ * Ref: https://docs.fluentd.org/filter/record_transformer
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentLoggingRecordTransformerFilter.Builder.class)
+    builder = UnifiedAgentLoggingRecordTransformerFilter.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "filterType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "filterType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentLoggingRecordTransformerFilter extends UnifiedAgentLoggingFilter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,106 +37,113 @@ public final class UnifiedAgentLoggingRecordTransformerFilter extends UnifiedAge
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Add new key-value pairs in logs */
+        /**
+         * Add new key-value pairs in logs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recordList")
         private java.util.List<RecordTransformerPair> recordList;
 
         /**
          * Add new key-value pairs in logs
-         *
          * @param recordList the value to set
          * @return this builder
-         */
+         **/
         public Builder recordList(java.util.List<RecordTransformerPair> recordList) {
             this.recordList = recordList;
             this.__explicitlySet__.add("recordList");
             return this;
         }
-        /** When set to true, the full Ruby syntax is enabled in the ${} expression. */
+        /**
+         * When set to true, the full Ruby syntax is enabled in the ${} expression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRubyEnabled")
         private Boolean isRubyEnabled;
 
         /**
          * When set to true, the full Ruby syntax is enabled in the ${} expression.
-         *
          * @param isRubyEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isRubyEnabled(Boolean isRubyEnabled) {
             this.isRubyEnabled = isRubyEnabled;
             this.__explicitlySet__.add("isRubyEnabled");
             return this;
         }
-        /** If true, automatically casts the field types. */
+        /**
+         * If true, automatically casts the field types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoTypecastEnabled")
         private Boolean isAutoTypecastEnabled;
 
         /**
          * If true, automatically casts the field types.
-         *
          * @param isAutoTypecastEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoTypecastEnabled(Boolean isAutoTypecastEnabled) {
             this.isAutoTypecastEnabled = isAutoTypecastEnabled;
             this.__explicitlySet__.add("isAutoTypecastEnabled");
             return this;
         }
-        /** If true, it modifies a new empty hash */
+        /**
+         * If true, it modifies a new empty hash
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRenewRecordEnabled")
         private Boolean isRenewRecordEnabled;
 
         /**
          * If true, it modifies a new empty hash
-         *
          * @param isRenewRecordEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isRenewRecordEnabled(Boolean isRenewRecordEnabled) {
             this.isRenewRecordEnabled = isRenewRecordEnabled;
             this.__explicitlySet__.add("isRenewRecordEnabled");
             return this;
         }
-        /** Overwrites the time of logs with this value, this value must be a Unix timestamp. */
+        /**
+         * Overwrites the time of logs with this value, this value must be a Unix timestamp.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("renewTimeKey")
         private String renewTimeKey;
 
         /**
          * Overwrites the time of logs with this value, this value must be a Unix timestamp.
-         *
          * @param renewTimeKey the value to set
          * @return this builder
-         */
+         **/
         public Builder renewTimeKey(String renewTimeKey) {
             this.renewTimeKey = renewTimeKey;
             this.__explicitlySet__.add("renewTimeKey");
             return this;
         }
-        /** A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true */
+        /**
+         * A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keepKeys")
         private java.util.List<String> keepKeys;
 
         /**
          * A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
-         *
          * @param keepKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder keepKeys(java.util.List<String> keepKeys) {
             this.keepKeys = keepKeys;
             this.__explicitlySet__.add("keepKeys");
             return this;
         }
-        /** A list of keys to delete */
+        /**
+         * A list of keys to delete
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("removeKeys")
         private java.util.List<String> removeKeys;
 
         /**
          * A list of keys to delete
-         *
          * @param removeKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder removeKeys(java.util.List<String> removeKeys) {
             this.removeKeys = removeKeys;
             this.__explicitlySet__.add("removeKeys");
@@ -192,7 +200,9 @@ public final class UnifiedAgentLoggingRecordTransformerFilter extends UnifiedAge
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,93 +231,100 @@ public final class UnifiedAgentLoggingRecordTransformerFilter extends UnifiedAge
         this.removeKeys = removeKeys;
     }
 
-    /** Add new key-value pairs in logs */
+    /**
+     * Add new key-value pairs in logs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordList")
     private final java.util.List<RecordTransformerPair> recordList;
 
     /**
      * Add new key-value pairs in logs
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RecordTransformerPair> getRecordList() {
         return recordList;
     }
 
-    /** When set to true, the full Ruby syntax is enabled in the ${} expression. */
+    /**
+     * When set to true, the full Ruby syntax is enabled in the ${} expression.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRubyEnabled")
     private final Boolean isRubyEnabled;
 
     /**
      * When set to true, the full Ruby syntax is enabled in the ${} expression.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRubyEnabled() {
         return isRubyEnabled;
     }
 
-    /** If true, automatically casts the field types. */
+    /**
+     * If true, automatically casts the field types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTypecastEnabled")
     private final Boolean isAutoTypecastEnabled;
 
     /**
      * If true, automatically casts the field types.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoTypecastEnabled() {
         return isAutoTypecastEnabled;
     }
 
-    /** If true, it modifies a new empty hash */
+    /**
+     * If true, it modifies a new empty hash
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRenewRecordEnabled")
     private final Boolean isRenewRecordEnabled;
 
     /**
      * If true, it modifies a new empty hash
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRenewRecordEnabled() {
         return isRenewRecordEnabled;
     }
 
-    /** Overwrites the time of logs with this value, this value must be a Unix timestamp. */
+    /**
+     * Overwrites the time of logs with this value, this value must be a Unix timestamp.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("renewTimeKey")
     private final String renewTimeKey;
 
     /**
      * Overwrites the time of logs with this value, this value must be a Unix timestamp.
-     *
      * @return the value
-     */
+     **/
     public String getRenewTimeKey() {
         return renewTimeKey;
     }
 
-    /** A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true */
+    /**
+     * A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keepKeys")
     private final java.util.List<String> keepKeys;
 
     /**
      * A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getKeepKeys() {
         return keepKeys;
     }
 
-    /** A list of keys to delete */
+    /**
+     * A list of keys to delete
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("removeKeys")
     private final java.util.List<String> removeKeys;
 
     /**
      * A list of keys to delete
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRemoveKeys() {
         return removeKeys;
     }
@@ -319,7 +336,6 @@ public final class UnifiedAgentLoggingRecordTransformerFilter extends UnifiedAge
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

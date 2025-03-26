@@ -5,23 +5,22 @@
 package com.oracle.bmc.aidocument.model;
 
 /**
- * Key Value Detection Confidence Entry. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+ * Key Value Detection Confidence Entry.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KeyValueDetectionConfidenceEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = KeyValueDetectionConfidenceEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KeyValueDetectionConfidenceEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"threshold", "precision", "recall", "f1Score", "accuracy"})
     public KeyValueDetectionConfidenceEntry(
@@ -36,76 +35,81 @@ public final class KeyValueDetectionConfidenceEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Threshold used to calculate precision and recall. */
+        /**
+         * Threshold used to calculate precision and recall.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("threshold")
         private Float threshold;
 
         /**
          * Threshold used to calculate precision and recall.
-         *
          * @param threshold the value to set
          * @return this builder
-         */
+         **/
         public Builder threshold(Float threshold) {
             this.threshold = threshold;
             this.__explicitlySet__.add("threshold");
             return this;
         }
-        /** Precision under the threshold */
+        /**
+         * Precision under the threshold
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("precision")
         private Float precision;
 
         /**
          * Precision under the threshold
-         *
          * @param precision the value to set
          * @return this builder
-         */
+         **/
         public Builder precision(Float precision) {
             this.precision = precision;
             this.__explicitlySet__.add("precision");
             return this;
         }
-        /** Recall under the threshold */
+        /**
+         * Recall under the threshold
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recall")
         private Float recall;
 
         /**
          * Recall under the threshold
-         *
          * @param recall the value to set
          * @return this builder
-         */
+         **/
         public Builder recall(Float recall) {
             this.recall = recall;
             this.__explicitlySet__.add("recall");
             return this;
         }
-        /** f1Score under the threshold */
+        /**
+         * f1Score under the threshold
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("f1Score")
         private Float f1Score;
 
         /**
          * f1Score under the threshold
-         *
          * @param f1Score the value to set
          * @return this builder
-         */
+         **/
         public Builder f1Score(Float f1Score) {
             this.f1Score = f1Score;
             this.__explicitlySet__.add("f1Score");
             return this;
         }
-        /** accuracy under the threshold */
+        /**
+         * accuracy under the threshold
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accuracy")
         private Float accuracy;
 
         /**
          * accuracy under the threshold
-         *
          * @param accuracy the value to set
          * @return this builder
-         */
+         **/
         public Builder accuracy(Float accuracy) {
             this.accuracy = accuracy;
             this.__explicitlySet__.add("accuracy");
@@ -150,7 +154,9 @@ public final class KeyValueDetectionConfidenceEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,67 +165,72 @@ public final class KeyValueDetectionConfidenceEntry
         return new Builder().copy(this);
     }
 
-    /** Threshold used to calculate precision and recall. */
+    /**
+     * Threshold used to calculate precision and recall.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
     private final Float threshold;
 
     /**
      * Threshold used to calculate precision and recall.
-     *
      * @return the value
-     */
+     **/
     public Float getThreshold() {
         return threshold;
     }
 
-    /** Precision under the threshold */
+    /**
+     * Precision under the threshold
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("precision")
     private final Float precision;
 
     /**
      * Precision under the threshold
-     *
      * @return the value
-     */
+     **/
     public Float getPrecision() {
         return precision;
     }
 
-    /** Recall under the threshold */
+    /**
+     * Recall under the threshold
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recall")
     private final Float recall;
 
     /**
      * Recall under the threshold
-     *
      * @return the value
-     */
+     **/
     public Float getRecall() {
         return recall;
     }
 
-    /** f1Score under the threshold */
+    /**
+     * f1Score under the threshold
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("f1Score")
     private final Float f1Score;
 
     /**
      * f1Score under the threshold
-     *
      * @return the value
-     */
+     **/
     public Float getF1Score() {
         return f1Score;
     }
 
-    /** accuracy under the threshold */
+    /**
+     * accuracy under the threshold
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accuracy")
     private final Float accuracy;
 
     /**
      * accuracy under the threshold
-     *
      * @return the value
-     */
+     **/
     public Float getAccuracy() {
         return accuracy;
     }
@@ -231,7 +242,6 @@ public final class KeyValueDetectionConfidenceEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

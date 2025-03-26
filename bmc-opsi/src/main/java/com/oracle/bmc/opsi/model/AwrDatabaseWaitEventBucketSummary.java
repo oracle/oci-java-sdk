@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * A summary of the AWR wait event bucket and waits percentage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * A summary of the AWR wait event bucket and waits percentage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AwrDatabaseWaitEventBucketSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AwrDatabaseWaitEventBucketSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AwrDatabaseWaitEventBucketSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"category", "percentage"})
     public AwrDatabaseWaitEventBucketSummary(String category, Double percentage) {
@@ -33,34 +32,32 @@ public final class AwrDatabaseWaitEventBucketSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the wait event frequency category. Normally, it is the upper range of the
-         * waits within the AWR wait event bucket.
-         */
+         * The name of the wait event frequency category. Normally, it is the upper range of the waits within the AWR wait event bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
-         * The name of the wait event frequency category. Normally, it is the upper range of the
-         * waits within the AWR wait event bucket.
-         *
+         * The name of the wait event frequency category. Normally, it is the upper range of the waits within the AWR wait event bucket.
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** The percentage of waits in a wait event bucket over the total waits of the database. */
+        /**
+         * The percentage of waits in a wait event bucket over the total waits of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentage")
         private Double percentage;
 
         /**
          * The percentage of waits in a wait event bucket over the total waits of the database.
-         *
          * @param percentage the value to set
          * @return this builder
-         */
+         **/
         public Builder percentage(Double percentage) {
             this.percentage = percentage;
             this.__explicitlySet__.add("percentage");
@@ -91,7 +88,9 @@ public final class AwrDatabaseWaitEventBucketSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,31 +100,29 @@ public final class AwrDatabaseWaitEventBucketSummary
     }
 
     /**
-     * The name of the wait event frequency category. Normally, it is the upper range of the waits
-     * within the AWR wait event bucket.
-     */
+     * The name of the wait event frequency category. Normally, it is the upper range of the waits within the AWR wait event bucket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
-     * The name of the wait event frequency category. Normally, it is the upper range of the waits
-     * within the AWR wait event bucket.
-     *
+     * The name of the wait event frequency category. Normally, it is the upper range of the waits within the AWR wait event bucket.
      * @return the value
-     */
+     **/
     public String getCategory() {
         return category;
     }
 
-    /** The percentage of waits in a wait event bucket over the total waits of the database. */
+    /**
+     * The percentage of waits in a wait event bucket over the total waits of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentage")
     private final Double percentage;
 
     /**
      * The percentage of waits in a wait event bucket over the total waits of the database.
-     *
      * @return the value
-     */
+     **/
     public Double getPercentage() {
         return percentage;
     }
@@ -137,7 +134,6 @@ public final class AwrDatabaseWaitEventBucketSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

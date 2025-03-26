@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.tenantmanagercontrolplane.internal.http.*;
 import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for Organization service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Organization service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public class OrganizationAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements OrganizationAsync {
-    /** Service instance for Organization. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public class OrganizationAsyncClient implements OrganizationAsync {
+    /**
+     * Service instance for Organization.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ORGANIZATION")
@@ -40,489 +37,112 @@ public class OrganizationAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(OrganizationAsyncClient.class);
 
-    OrganizationAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, OrganizationAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "tenantmanagercontrolplane";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public OrganizationAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new OrganizationAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ApproveOrganizationTenancyForTransferResponse>
-            approveOrganizationTenancyForTransfer(
-                    ApproveOrganizationTenancyForTransferRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ApproveOrganizationTenancyForTransferRequest,
-                                    ApproveOrganizationTenancyForTransferResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Validate.notBlank(
-                request.getOrganizationTenancyId(), "organizationTenancyId must not be blank");
-
-        return clientCall(request, ApproveOrganizationTenancyForTransferResponse::builder)
-                .logger(LOG, "approveOrganizationTenancyForTransfer")
-                .serviceDetails(
-                        "Organization",
-                        "ApproveOrganizationTenancyForTransfer",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/ApproveOrganizationTenancyForTransfer")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ApproveOrganizationTenancyForTransferRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizationTenancies")
-                .appendPathParam(request.getOrganizationTenancyId())
-                .appendPathParam("actions")
-                .appendPathParam("approveForTransfer")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy.class,
-                        ApproveOrganizationTenancyForTransferResponse.Builder::organizationTenancy)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ApproveOrganizationTenancyForTransferResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", ApproveOrganizationTenancyForTransferResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateChildTenancyResponse> createChildTenancy(
-            CreateChildTenancyRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateChildTenancyRequest, CreateChildTenancyResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateChildTenancyDetails(), "createChildTenancyDetails is required");
-
-        return clientCall(request, CreateChildTenancyResponse::builder)
-                .logger(LOG, "createChildTenancy")
-                .serviceDetails("Organization", "CreateChildTenancy", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateChildTenancyRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("childTenancies")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateChildTenancyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateChildTenancyResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteOrganizationTenancyResponse> deleteOrganizationTenancy(
-            DeleteOrganizationTenancyRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteOrganizationTenancyRequest, DeleteOrganizationTenancyResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getOrganizationTenancyId(), "organizationTenancyId must not be blank");
-
-        return clientCall(request, DeleteOrganizationTenancyResponse::builder)
-                .logger(LOG, "deleteOrganizationTenancy")
-                .serviceDetails(
-                        "Organization",
-                        "DeleteOrganizationTenancy",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/DeleteOrganizationTenancy")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteOrganizationTenancyRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizationTenancies")
-                .appendPathParam(request.getOrganizationTenancyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteOrganizationTenancyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteOrganizationTenancyResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetOrganizationResponse> getOrganization(
-            GetOrganizationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetOrganizationRequest, GetOrganizationResponse>
-                    handler) {
-
-        Validate.notBlank(request.getOrganizationId(), "organizationId must not be blank");
-
-        return clientCall(request, GetOrganizationResponse::builder)
-                .logger(LOG, "getOrganization")
-                .serviceDetails(
-                        "Organization",
-                        "GetOrganization",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/GetOrganization")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetOrganizationRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizations")
-                .appendPathParam(request.getOrganizationId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.tenantmanagercontrolplane.model.Organization.class,
-                        GetOrganizationResponse.Builder::organization)
-                .handleResponseHeaderString("etag", GetOrganizationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetOrganizationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetOrganizationTenancyResponse> getOrganizationTenancy(
-            GetOrganizationTenancyRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetOrganizationTenancyRequest, GetOrganizationTenancyResponse>
-                    handler) {
-
-        Validate.notBlank(request.getOrganizationId(), "organizationId must not be blank");
-
-        Validate.notBlank(request.getTenancyId(), "tenancyId must not be blank");
-
-        return clientCall(request, GetOrganizationTenancyResponse::builder)
-                .logger(LOG, "getOrganizationTenancy")
-                .serviceDetails(
-                        "Organization",
-                        "GetOrganizationTenancy",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/GetOrganizationTenancy")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetOrganizationTenancyRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizations")
-                .appendPathParam(request.getOrganizationId())
-                .appendPathParam("tenancies")
-                .appendPathParam(request.getTenancyId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy.class,
-                        GetOrganizationTenancyResponse.Builder::organizationTenancy)
-                .handleResponseHeaderString("etag", GetOrganizationTenancyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetOrganizationTenancyResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListOrganizationTenanciesResponse> listOrganizationTenancies(
-            ListOrganizationTenanciesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListOrganizationTenanciesRequest, ListOrganizationTenanciesResponse>
-                    handler) {
-
-        Validate.notBlank(request.getOrganizationId(), "organizationId must not be blank");
-
-        return clientCall(request, ListOrganizationTenanciesResponse::builder)
-                .logger(LOG, "listOrganizationTenancies")
-                .serviceDetails(
-                        "Organization",
-                        "ListOrganizationTenancies",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizationTenancies")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOrganizationTenanciesRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizations")
-                .appendPathParam(request.getOrganizationId())
-                .appendPathParam("tenancies")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancyCollection
-                                .class,
-                        ListOrganizationTenanciesResponse.Builder::organizationTenancyCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOrganizationTenanciesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOrganizationTenanciesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListOrganizationsResponse> listOrganizations(
-            ListOrganizationsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListOrganizationsRequest, ListOrganizationsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListOrganizationsResponse::builder)
-                .logger(LOG, "listOrganizations")
-                .serviceDetails(
-                        "Organization",
-                        "ListOrganizations",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListOrganizationsRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizations")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationCollection.class,
-                        ListOrganizationsResponse.Builder::organizationCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListOrganizationsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListOrganizationsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RestoreOrganizationTenancyResponse>
-            restoreOrganizationTenancy(
-                    RestoreOrganizationTenancyRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RestoreOrganizationTenancyRequest,
-                                    RestoreOrganizationTenancyResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getOrganizationTenancyId(), "organizationTenancyId must not be blank");
-
-        return clientCall(request, RestoreOrganizationTenancyResponse::builder)
-                .logger(LOG, "restoreOrganizationTenancy")
-                .serviceDetails(
-                        "Organization",
-                        "RestoreOrganizationTenancy",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/RestoreOrganizationTenancy")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RestoreOrganizationTenancyRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizationTenancies")
-                .appendPathParam(request.getOrganizationTenancyId())
-                .appendPathParam("actions")
-                .appendPathParam("restore")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", RestoreOrganizationTenancyResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RestoreOrganizationTenancyResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnapproveOrganizationTenancyForTransferResponse>
-            unapproveOrganizationTenancyForTransfer(
-                    UnapproveOrganizationTenancyForTransferRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UnapproveOrganizationTenancyForTransferRequest,
-                                    UnapproveOrganizationTenancyForTransferResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Validate.notBlank(
-                request.getOrganizationTenancyId(), "organizationTenancyId must not be blank");
-
-        return clientCall(request, UnapproveOrganizationTenancyForTransferResponse::builder)
-                .logger(LOG, "unapproveOrganizationTenancyForTransfer")
-                .serviceDetails(
-                        "Organization",
-                        "UnapproveOrganizationTenancyForTransfer",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UnapproveOrganizationTenancyForTransferRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizationTenancies")
-                .appendPathParam(request.getOrganizationTenancyId())
-                .appendPathParam("actions")
-                .appendPathParam("unapproveForTransfer")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy.class,
-                        UnapproveOrganizationTenancyForTransferResponse.Builder
-                                ::organizationTenancy)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UnapproveOrganizationTenancyForTransferResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UnapproveOrganizationTenancyForTransferResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateOrganizationResponse> updateOrganization(
-            UpdateOrganizationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateOrganizationRequest, UpdateOrganizationResponse>
-                    handler) {
-
-        Validate.notBlank(request.getOrganizationId(), "organizationId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateOrganizationDetails(), "updateOrganizationDetails is required");
-
-        return clientCall(request, UpdateOrganizationResponse::builder)
-                .logger(LOG, "updateOrganization")
-                .serviceDetails(
-                        "Organization",
-                        "UpdateOrganization",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/UpdateOrganization")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateOrganizationRequest::builder)
-                .basePath("/20230401")
-                .appendPathParam("organizations")
-                .appendPathParam(request.getOrganizationId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateOrganizationResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateOrganizationResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public OrganizationAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public OrganizationAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public OrganizationAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public OrganizationAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public OrganizationAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -530,26 +150,26 @@ public class OrganizationAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public OrganizationAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -558,29 +178,29 @@ public class OrganizationAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public OrganizationAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -593,14 +213,749 @@ public class OrganizationAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public OrganizationAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, OrganizationAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public OrganizationAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new OrganizationAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApproveOrganizationTenancyForTransferResponse>
+            approveOrganizationTenancyForTransfer(
+                    ApproveOrganizationTenancyForTransferRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ApproveOrganizationTenancyForTransferRequest,
+                                    ApproveOrganizationTenancyForTransferResponse>
+                            handler) {
+        LOG.trace("Called async approveOrganizationTenancyForTransfer");
+        final ApproveOrganizationTenancyForTransferRequest interceptedRequest =
+                ApproveOrganizationTenancyForTransferConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ApproveOrganizationTenancyForTransferConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "ApproveOrganizationTenancyForTransfer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ApproveOrganizationTenancyForTransferResponse>
+                transformer =
+                        ApproveOrganizationTenancyForTransferConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ApproveOrganizationTenancyForTransferRequest,
+                        ApproveOrganizationTenancyForTransferResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ApproveOrganizationTenancyForTransferRequest,
+                                ApproveOrganizationTenancyForTransferResponse>,
+                        java.util.concurrent.Future<ApproveOrganizationTenancyForTransferResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ApproveOrganizationTenancyForTransferRequest,
+                    ApproveOrganizationTenancyForTransferResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChildTenancyResponse> createChildTenancy(
+            CreateChildTenancyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateChildTenancyRequest, CreateChildTenancyResponse>
+                    handler) {
+        LOG.trace("Called async createChildTenancy");
+        final CreateChildTenancyRequest interceptedRequest =
+                CreateChildTenancyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateChildTenancyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization", "CreateChildTenancy", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateChildTenancyResponse>
+                transformer =
+                        CreateChildTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateChildTenancyRequest, CreateChildTenancyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateChildTenancyRequest, CreateChildTenancyResponse>,
+                        java.util.concurrent.Future<CreateChildTenancyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateChildTenancyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateChildTenancyRequest, CreateChildTenancyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOrganizationTenancyResponse> deleteOrganizationTenancy(
+            DeleteOrganizationTenancyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOrganizationTenancyRequest, DeleteOrganizationTenancyResponse>
+                    handler) {
+        LOG.trace("Called async deleteOrganizationTenancy");
+        final DeleteOrganizationTenancyRequest interceptedRequest =
+                DeleteOrganizationTenancyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "DeleteOrganizationTenancy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/DeleteOrganizationTenancy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteOrganizationTenancyResponse>
+                transformer =
+                        DeleteOrganizationTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOrganizationTenancyRequest, DeleteOrganizationTenancyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOrganizationTenancyRequest,
+                                DeleteOrganizationTenancyResponse>,
+                        java.util.concurrent.Future<DeleteOrganizationTenancyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOrganizationTenancyRequest, DeleteOrganizationTenancyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationResponse> getOrganization(
+            GetOrganizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOrganizationRequest, GetOrganizationResponse>
+                    handler) {
+        LOG.trace("Called async getOrganization");
+        final GetOrganizationRequest interceptedRequest =
+                GetOrganizationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOrganizationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "GetOrganization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/GetOrganization");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetOrganizationResponse>
+                transformer =
+                        GetOrganizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetOrganizationRequest, GetOrganizationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOrganizationRequest, GetOrganizationResponse>,
+                        java.util.concurrent.Future<GetOrganizationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOrganizationRequest, GetOrganizationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationTenancyResponse> getOrganizationTenancy(
+            GetOrganizationTenancyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOrganizationTenancyRequest, GetOrganizationTenancyResponse>
+                    handler) {
+        LOG.trace("Called async getOrganizationTenancy");
+        final GetOrganizationTenancyRequest interceptedRequest =
+                GetOrganizationTenancyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "GetOrganizationTenancy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/GetOrganizationTenancy");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetOrganizationTenancyResponse>
+                transformer =
+                        GetOrganizationTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOrganizationTenancyRequest, GetOrganizationTenancyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOrganizationTenancyRequest, GetOrganizationTenancyResponse>,
+                        java.util.concurrent.Future<GetOrganizationTenancyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOrganizationTenancyRequest, GetOrganizationTenancyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationTenanciesResponse> listOrganizationTenancies(
+            ListOrganizationTenanciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOrganizationTenanciesRequest, ListOrganizationTenanciesResponse>
+                    handler) {
+        LOG.trace("Called async listOrganizationTenancies");
+        final ListOrganizationTenanciesRequest interceptedRequest =
+                ListOrganizationTenanciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOrganizationTenanciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "ListOrganizationTenancies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizationTenancies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOrganizationTenanciesResponse>
+                transformer =
+                        ListOrganizationTenanciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOrganizationTenanciesRequest, ListOrganizationTenanciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOrganizationTenanciesRequest,
+                                ListOrganizationTenanciesResponse>,
+                        java.util.concurrent.Future<ListOrganizationTenanciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOrganizationTenanciesRequest, ListOrganizationTenanciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationsResponse> listOrganizations(
+            ListOrganizationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOrganizationsRequest, ListOrganizationsResponse>
+                    handler) {
+        LOG.trace("Called async listOrganizations");
+        final ListOrganizationsRequest interceptedRequest =
+                ListOrganizationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOrganizationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "ListOrganizations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizations");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListOrganizationsResponse>
+                transformer =
+                        ListOrganizationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListOrganizationsRequest, ListOrganizationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOrganizationsRequest, ListOrganizationsResponse>,
+                        java.util.concurrent.Future<ListOrganizationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOrganizationsRequest, ListOrganizationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreOrganizationTenancyResponse>
+            restoreOrganizationTenancy(
+                    RestoreOrganizationTenancyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RestoreOrganizationTenancyRequest,
+                                    RestoreOrganizationTenancyResponse>
+                            handler) {
+        LOG.trace("Called async restoreOrganizationTenancy");
+        final RestoreOrganizationTenancyRequest interceptedRequest =
+                RestoreOrganizationTenancyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "RestoreOrganizationTenancy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/RestoreOrganizationTenancy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
+                transformer =
+                        RestoreOrganizationTenancyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RestoreOrganizationTenancyRequest, RestoreOrganizationTenancyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RestoreOrganizationTenancyRequest,
+                                RestoreOrganizationTenancyResponse>,
+                        java.util.concurrent.Future<RestoreOrganizationTenancyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RestoreOrganizationTenancyRequest, RestoreOrganizationTenancyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnapproveOrganizationTenancyForTransferResponse>
+            unapproveOrganizationTenancyForTransfer(
+                    UnapproveOrganizationTenancyForTransferRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UnapproveOrganizationTenancyForTransferRequest,
+                                    UnapproveOrganizationTenancyForTransferResponse>
+                            handler) {
+        LOG.trace("Called async unapproveOrganizationTenancyForTransfer");
+        final UnapproveOrganizationTenancyForTransferRequest interceptedRequest =
+                UnapproveOrganizationTenancyForTransferConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnapproveOrganizationTenancyForTransferConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "UnapproveOrganizationTenancyForTransfer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UnapproveOrganizationTenancyForTransferResponse>
+                transformer =
+                        UnapproveOrganizationTenancyForTransferConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UnapproveOrganizationTenancyForTransferRequest,
+                        UnapproveOrganizationTenancyForTransferResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UnapproveOrganizationTenancyForTransferRequest,
+                                UnapproveOrganizationTenancyForTransferResponse>,
+                        java.util.concurrent.Future<
+                                UnapproveOrganizationTenancyForTransferResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UnapproveOrganizationTenancyForTransferRequest,
+                    UnapproveOrganizationTenancyForTransferResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrganizationResponse> updateOrganization(
+            UpdateOrganizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOrganizationRequest, UpdateOrganizationResponse>
+                    handler) {
+        LOG.trace("Called async updateOrganization");
+        final UpdateOrganizationRequest interceptedRequest =
+                UpdateOrganizationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOrganizationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Organization",
+                        "UpdateOrganization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/UpdateOrganization");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateOrganizationResponse>
+                transformer =
+                        UpdateOrganizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateOrganizationRequest, UpdateOrganizationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOrganizationRequest, UpdateOrganizationResponse>,
+                        java.util.concurrent.Future<UpdateOrganizationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOrganizationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOrganizationRequest, UpdateOrganizationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

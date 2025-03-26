@@ -6,9 +6,12 @@ package com.oracle.bmc.mediaservices.responses;
 
 import com.oracle.bmc.mediaservices.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned {@code StreamDistributionChannel} instance. */
+    /**
+     * The returned StreamDistributionChannel instance.
+     */
     private com.oracle.bmc.mediaservices.model.StreamDistributionChannel streamDistributionChannel;
 
     /**
-     * The returned {@code StreamDistributionChannel} instance.
-     *
+     * The returned StreamDistributionChannel instance.
      * @return the value
      */
     public com.oracle.bmc.mediaservices.model.StreamDistributionChannel
@@ -58,7 +63,7 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
     })
     private CreateStreamDistributionChannelResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.StreamDistributionChannel
@@ -69,26 +74,25 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
         this.streamDistributionChannel = streamDistributionChannel;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateStreamDistributionChannelResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -103,14 +107,15 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -120,13 +125,14 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned {@code StreamDistributionChannel} instance. */
+        /**
+         * The returned StreamDistributionChannel instance.
+         */
         private com.oracle.bmc.mediaservices.model.StreamDistributionChannel
                 streamDistributionChannel;
 
         /**
-         * The returned {@code StreamDistributionChannel} instance.
-         *
+         * The returned StreamDistributionChannel instance.
          * @param streamDistributionChannel the value to set
          * @return this builder
          */
@@ -139,10 +145,8 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateStreamDistributionChannelResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,10 +159,8 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateStreamDistributionChannelResponse build() {
             return new CreateStreamDistributionChannelResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, streamDistributionChannel);
@@ -167,7 +169,6 @@ public class CreateStreamDistributionChannelResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

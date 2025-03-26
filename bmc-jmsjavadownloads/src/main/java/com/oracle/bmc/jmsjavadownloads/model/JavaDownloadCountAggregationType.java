@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** Aggregation type for the download count. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum JavaDownloadCountAggregationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Aggregation type for the download count.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum JavaDownloadCountAggregationType {
     JavaFamily("JAVA_FAMILY"),
     JavaRelease("JAVA_RELEASE"),
     Platform("PLATFORM"),

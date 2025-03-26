@@ -5,22 +5,19 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * anomaly evaluation result fo the data point <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * anomaly evaluation result fo the data point
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AnomalyDataPoint.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AnomalyDataPoint
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AnomalyDataPoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"anomaly", "low", "high", "timestamp", "value"})
     public AnomalyDataPoint(
@@ -36,79 +33,80 @@ public final class AnomalyDataPoint
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the
-         * threshold +1 indicates value is above the threshold
-         */
+         * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("anomaly")
         private Double anomaly;
 
         /**
-         * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the
-         * threshold +1 indicates value is above the threshold
-         *
+         * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
          * @param anomaly the value to set
          * @return this builder
-         */
+         **/
         public Builder anomaly(Double anomaly) {
             this.anomaly = anomaly;
             this.__explicitlySet__.add("anomaly");
             return this;
         }
-        /** lower threshold for the metric value */
+        /**
+         * lower threshold for the metric value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private Double low;
 
         /**
          * lower threshold for the metric value
-         *
          * @param low the value to set
          * @return this builder
-         */
+         **/
         public Builder low(Double low) {
             this.low = low;
             this.__explicitlySet__.add("low");
             return this;
         }
-        /** upper threshold for the metric value */
+        /**
+         * upper threshold for the metric value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private Double high;
 
         /**
          * upper threshold for the metric value
-         *
          * @param high the value to set
          * @return this builder
-         */
+         **/
         public Builder high(Double high) {
             this.high = high;
             this.__explicitlySet__.add("high");
             return this;
         }
-        /** timestamp of when the metric was collected */
+        /**
+         * timestamp of when the metric was collected
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * timestamp of when the metric was collected
-         *
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /** value for the metric data point */
+        /**
+         * value for the metric data point
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Double value;
 
         /**
          * value for the metric data point
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(Double value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -149,7 +147,9 @@ public final class AnomalyDataPoint
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,70 +159,71 @@ public final class AnomalyDataPoint
     }
 
     /**
-     * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the
-     * threshold +1 indicates value is above the threshold
-     */
+     * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("anomaly")
     private final Double anomaly;
 
     /**
-     * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the
-     * threshold +1 indicates value is above the threshold
-     *
+     * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
      * @return the value
-     */
+     **/
     public Double getAnomaly() {
         return anomaly;
     }
 
-    /** lower threshold for the metric value */
+    /**
+     * lower threshold for the metric value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final Double low;
 
     /**
      * lower threshold for the metric value
-     *
      * @return the value
-     */
+     **/
     public Double getLow() {
         return low;
     }
 
-    /** upper threshold for the metric value */
+    /**
+     * upper threshold for the metric value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final Double high;
 
     /**
      * upper threshold for the metric value
-     *
      * @return the value
-     */
+     **/
     public Double getHigh() {
         return high;
     }
 
-    /** timestamp of when the metric was collected */
+    /**
+     * timestamp of when the metric was collected
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * timestamp of when the metric was collected
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /** value for the metric data point */
+    /**
+     * value for the metric data point
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Double value;
 
     /**
      * value for the metric data point
-     *
      * @return the value
-     */
+     **/
     public Double getValue() {
         return value;
     }
@@ -234,7 +235,6 @@ public final class AnomalyDataPoint
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

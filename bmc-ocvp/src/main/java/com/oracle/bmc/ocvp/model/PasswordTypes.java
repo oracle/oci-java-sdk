@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/** SDDC password types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public enum PasswordTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * SDDC password types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public enum PasswordTypes {
     Vcenter("VCENTER"),
     Nsx("NSX"),
     Hcx("HCX"),

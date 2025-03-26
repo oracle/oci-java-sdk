@@ -6,30 +6,28 @@ package com.oracle.bmc.cims.responses;
 
 import com.oracle.bmc.cims.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code Incident} instance. */
+    /**
+     * The returned Incident instance.
+     */
     private com.oracle.bmc.cims.model.Incident incident;
 
     /**
-     * The returned {@code Incident} instance.
-     *
+     * The returned Incident instance.
      * @return the value
      */
     public com.oracle.bmc.cims.model.Incident getIncident() {
@@ -39,7 +37,7 @@ public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "incident"})
     private UpdateIncidentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.cims.model.Incident incident) {
         super(__httpStatusCode__, headers);
@@ -47,34 +45,28 @@ public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse
         this.incident = incident;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateIncidentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -83,12 +75,13 @@ public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code Incident} instance. */
+        /**
+         * The returned Incident instance.
+         */
         private com.oracle.bmc.cims.model.Incident incident;
 
         /**
-         * The returned {@code Incident} instance.
-         *
+         * The returned Incident instance.
          * @param incident the value to set
          * @return this builder
          */
@@ -99,10 +92,8 @@ public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateIncidentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -114,10 +105,8 @@ public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateIncidentResponse build() {
             return new UpdateIncidentResponse(__httpStatusCode__, headers, opcRequestId, incident);
         }
@@ -125,7 +114,6 @@ public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

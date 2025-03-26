@@ -5,26 +5,24 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Metadata about the bulk update notes operation. The bulk update notes operation is atomic and
- * binary. If the processing of any of the attributes in the bulk update notes request results in a
- * processing or validation error, then none of the notes in the update notes request are updated.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Metadata about the bulk update notes operation.  The bulk update notes operation is atomic and binary.  If the processing of any of the attributes
+ * in the bulk update notes request results in a processing or validation error, then none of the notes in the update notes request are updated.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkUpdateNotesMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkUpdateNotesMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkUpdateNotesMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationStatus",
@@ -47,35 +45,37 @@ public final class BulkUpdateNotesMetadata
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Operation status of the bulk update notes operation. SUCCESS - The bulk updates notes
-         * request has succeeded and all the attributes in the bulk update notes request have been
-         * updated with the provided notes. The following are error statuses for the bulk update
-         * notes operation. EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty
-         * and did not contain any attributes for which notes had to be updated.
-         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s)
-         * that resulted in a validation error, or an attribute that resulted in a processing error.
-         */
+         * Operation status of the bulk update notes operation.
+         * SUCCESS - The bulk updates notes request has succeeded and all the attributes in the bulk update notes request have been updated with the provided notes.
+         * The following are error statuses for the bulk update notes operation.
+         * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any attributes for which notes had to be updated.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
         /**
-         * Operation status of the bulk update notes operation. SUCCESS - The bulk updates notes
-         * request has succeeded and all the attributes in the bulk update notes request have been
-         * updated with the provided notes. The following are error statuses for the bulk update
-         * notes operation. EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty
-         * and did not contain any attributes for which notes had to be updated.
-         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s)
-         * that resulted in a validation error, or an attribute that resulted in a processing error.
+         * Operation status of the bulk update notes operation.
+         * SUCCESS - The bulk updates notes request has succeeded and all the attributes in the bulk update notes request have been updated with the provided notes.
+         * The following are error statuses for the bulk update notes operation.
+         * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any attributes for which notes had to be updated.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
          *
          * @param operationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-        /** Type of operation. */
+        /**
+         * Type of operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -84,45 +84,43 @@ public final class BulkUpdateNotesMetadata
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
         /**
-         * Total number attributes (both string and numeric) in TRACES namespace for which notes
-         * were updated.
-         */
+         * Total number attributes (both string and numeric) in TRACES namespace for which notes were updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributesNotesUpdated")
         private Integer attributesNotesUpdated;
 
         /**
-         * Total number attributes (both string and numeric) in TRACES namespace for which notes
-         * were updated.
+         * Total number attributes (both string and numeric) in TRACES namespace for which notes were updated.
          *
          * @param attributesNotesUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder attributesNotesUpdated(Integer attributesNotesUpdated) {
             this.attributesNotesUpdated = attributesNotesUpdated;
             this.__explicitlySet__.add("attributesNotesUpdated");
             return this;
         }
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * pinned.
-         */
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesPinned")
         private Integer syntheticAttributesPinned;
 
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * pinned.
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
          *
          * @param syntheticAttributesPinned the value to set
          * @return this builder
-         */
+         **/
         public Builder syntheticAttributesPinned(Integer syntheticAttributesPinned) {
             this.syntheticAttributesPinned = syntheticAttributesPinned;
             this.__explicitlySet__.add("syntheticAttributesPinned");
@@ -163,7 +161,9 @@ public final class BulkUpdateNotesMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,22 +173,22 @@ public final class BulkUpdateNotesMetadata
     }
 
     /**
-     * Operation status of the bulk update notes operation. SUCCESS - The bulk updates notes request
-     * has succeeded and all the attributes in the bulk update notes request have been updated with
-     * the provided notes. The following are error statuses for the bulk update notes operation.
-     * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any
-     * attributes for which notes had to be updated. INVALID_BULK_REQUEST - The bulk request
-     * contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an
-     * attribute that resulted in a processing error.
-     */
-    public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * Operation status of the bulk update notes operation.
+     * SUCCESS - The bulk updates notes request has succeeded and all the attributes in the bulk update notes request have been updated with the provided notes.
+     * The following are error statuses for the bulk update notes operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any attributes for which notes had to be updated.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
+    public enum OperationStatus {
         Success("SUCCESS"),
         EmptyAttributeList("EMPTY_ATTRIBUTE_LIST"),
         InvalidBulkRequest("INVALID_BULK_REQUEST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -228,39 +228,41 @@ public final class BulkUpdateNotesMetadata
         }
     };
     /**
-     * Operation status of the bulk update notes operation. SUCCESS - The bulk updates notes request
-     * has succeeded and all the attributes in the bulk update notes request have been updated with
-     * the provided notes. The following are error statuses for the bulk update notes operation.
-     * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any
-     * attributes for which notes had to be updated. INVALID_BULK_REQUEST - The bulk request
-     * contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an
-     * attribute that resulted in a processing error.
-     */
+     * Operation status of the bulk update notes operation.
+     * SUCCESS - The bulk updates notes request has succeeded and all the attributes in the bulk update notes request have been updated with the provided notes.
+     * The following are error statuses for the bulk update notes operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any attributes for which notes had to be updated.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
     /**
-     * Operation status of the bulk update notes operation. SUCCESS - The bulk updates notes request
-     * has succeeded and all the attributes in the bulk update notes request have been updated with
-     * the provided notes. The following are error statuses for the bulk update notes operation.
-     * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any
-     * attributes for which notes had to be updated. INVALID_BULK_REQUEST - The bulk request
-     * contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an
-     * attribute that resulted in a processing error.
+     * Operation status of the bulk update notes operation.
+     * SUCCESS - The bulk updates notes request has succeeded and all the attributes in the bulk update notes request have been updated with the provided notes.
+     * The following are error statuses for the bulk update notes operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk update notes request object was empty and did not contain any attributes for which notes had to be updated.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
      *
      * @return the value
-     */
+     **/
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
 
-    /** Type of operation. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation.
+     *
+     **/
+    public enum OperationType {
         UpdateNotes("UPDATE_NOTES"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -299,7 +301,10 @@ public final class BulkUpdateNotesMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type of operation. */
+    /**
+     * Type of operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -307,31 +312,31 @@ public final class BulkUpdateNotesMetadata
      * Type of operation.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
     /**
-     * Total number attributes (both string and numeric) in TRACES namespace for which notes were
-     * updated.
-     */
+     * Total number attributes (both string and numeric) in TRACES namespace for which notes were updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributesNotesUpdated")
     private final Integer attributesNotesUpdated;
 
     /**
-     * Total number attributes (both string and numeric) in TRACES namespace for which notes were
-     * updated.
+     * Total number attributes (both string and numeric) in TRACES namespace for which notes were updated.
      *
      * @return the value
-     */
+     **/
     public Integer getAttributesNotesUpdated() {
         return attributesNotesUpdated;
     }
 
     /**
      * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesPinned")
     private final Integer syntheticAttributesPinned;
 
@@ -339,7 +344,7 @@ public final class BulkUpdateNotesMetadata
      * Total number attributes (both string and numeric) in SYNTHETIC namespace that were pinned.
      *
      * @return the value
-     */
+     **/
     public Integer getSyntheticAttributesPinned() {
         return syntheticAttributesPinned;
     }
@@ -351,7 +356,6 @@ public final class BulkUpdateNotesMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

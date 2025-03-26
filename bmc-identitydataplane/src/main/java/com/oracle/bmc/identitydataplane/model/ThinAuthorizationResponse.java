@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ThinAuthorizationResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ThinAuthorizationResponse.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ThinAuthorizationResponse
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"authorizationRequest", "decisionCacheDuration"})
     public ThinAuthorizationResponse(
@@ -33,35 +32,37 @@ public final class ThinAuthorizationResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The policy string related to the request. */
+        /**
+         * The policy string related to the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
         private AuthorizationRequest authorizationRequest;
 
         /**
          * The policy string related to the request.
-         *
          * @param authorizationRequest the value to set
          * @return this builder
-         */
+         **/
         public Builder authorizationRequest(AuthorizationRequest authorizationRequest) {
             this.authorizationRequest = authorizationRequest;
             this.__explicitlySet__.add("authorizationRequest");
             return this;
         }
         /**
-         * The duration of how long this decision should be cached. Note that the type is of type
-         * java.time.Duration, not string.
-         */
+         * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
+         * string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
         private String decisionCacheDuration;
 
         /**
-         * The duration of how long this decision should be cached. Note that the type is of type
-         * java.time.Duration, not string.
+         * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
+         * string.
          *
          * @param decisionCacheDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder decisionCacheDuration(String decisionCacheDuration) {
             this.decisionCacheDuration = decisionCacheDuration;
             this.__explicitlySet__.add("decisionCacheDuration");
@@ -93,7 +94,9 @@ public final class ThinAuthorizationResponse
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,32 +105,34 @@ public final class ThinAuthorizationResponse
         return new Builder().copy(this);
     }
 
-    /** The policy string related to the request. */
+    /**
+     * The policy string related to the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationRequest")
     private final AuthorizationRequest authorizationRequest;
 
     /**
      * The policy string related to the request.
-     *
      * @return the value
-     */
+     **/
     public AuthorizationRequest getAuthorizationRequest() {
         return authorizationRequest;
     }
 
     /**
-     * The duration of how long this decision should be cached. Note that the type is of type
-     * java.time.Duration, not string.
-     */
+     * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
+     * string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
     private final String decisionCacheDuration;
 
     /**
-     * The duration of how long this decision should be cached. Note that the type is of type
-     * java.time.Duration, not string.
+     * The duration of how long this decision should be cached. Note that the type is of type java.time.Duration, not
+     * string.
      *
      * @return the value
-     */
+     **/
     public String getDecisionCacheDuration() {
         return decisionCacheDuration;
     }
@@ -139,7 +144,6 @@ public final class ThinAuthorizationResponse
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

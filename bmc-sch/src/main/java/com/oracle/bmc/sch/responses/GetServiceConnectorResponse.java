@@ -6,9 +6,12 @@ package com.oracle.bmc.sch.responses;
 
 import com.oracle.bmc.sch.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned {@code ServiceConnector} instance. */
+    /**
+     * The returned ServiceConnector instance.
+     */
     private com.oracle.bmc.sch.model.ServiceConnector serviceConnector;
 
     /**
-     * The returned {@code ServiceConnector} instance.
-     *
+     * The returned ServiceConnector instance.
      * @return the value
      */
     public com.oracle.bmc.sch.model.ServiceConnector getServiceConnector() {
@@ -57,7 +62,7 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
     })
     private GetServiceConnectorResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.sch.model.ServiceConnector serviceConnector) {
@@ -67,25 +72,25 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
         this.serviceConnector = serviceConnector;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetServiceConnectorResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +105,15 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code ServiceConnector} instance. */
+        /**
+         * The returned ServiceConnector instance.
+         */
         private com.oracle.bmc.sch.model.ServiceConnector serviceConnector;
 
         /**
-         * The returned {@code ServiceConnector} instance.
-         *
+         * The returned ServiceConnector instance.
          * @param serviceConnector the value to set
          * @return this builder
          */
@@ -134,10 +141,8 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetServiceConnectorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +155,8 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetServiceConnectorResponse build() {
             return new GetServiceConnectorResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, serviceConnector);
@@ -162,7 +165,6 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

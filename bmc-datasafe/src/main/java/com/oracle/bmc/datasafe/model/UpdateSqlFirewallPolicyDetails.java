@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details to update the SQL Firewall policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Details to update the SQL Firewall policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateSqlFirewallPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateSqlFirewallPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateSqlFirewallPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -65,191 +64,186 @@ public final class UpdateSqlFirewallPolicyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the SQL Firewall policy. The name does not have to be unique, and it
-         * is changeable.
-         */
+         * The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the SQL Firewall policy. The name does not have to be unique, and it
-         * is changeable.
-         *
+         * The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of the SQL Firewall policy. */
+        /**
+         * The description of the SQL Firewall policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the SQL Firewall policy.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Specifies whether the SQL Firewall policy is enabled or disabled. */
+        /**
+         * Specifies whether the SQL Firewall policy is enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Specifies whether the SQL Firewall policy is enabled or disabled.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Specifies the SQL Firewall policy enforcement option. */
+        /**
+         * Specifies the SQL Firewall policy enforcement option.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enforcementScope")
         private EnforcementScope enforcementScope;
 
         /**
          * Specifies the SQL Firewall policy enforcement option.
-         *
          * @param enforcementScope the value to set
          * @return this builder
-         */
+         **/
         public Builder enforcementScope(EnforcementScope enforcementScope) {
             this.enforcementScope = enforcementScope;
             this.__explicitlySet__.add("enforcementScope");
             return this;
         }
-        /** Specifies the SQL Firewall action based on detection of SQL Firewall violations. */
+        /**
+         * Specifies the SQL Firewall action based on detection of SQL Firewall violations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
         private ViolationAction violationAction;
 
         /**
          * Specifies the SQL Firewall action based on detection of SQL Firewall violations.
-         *
          * @param violationAction the value to set
          * @return this builder
-         */
+         **/
         public Builder violationAction(ViolationAction violationAction) {
             this.violationAction = violationAction;
             this.__explicitlySet__.add("violationAction");
             return this;
         }
         /**
-         * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
-         * policy violations.
-         */
+         * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("violationAudit")
         private ViolationAudit violationAudit;
 
         /**
-         * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
-         * policy violations.
-         *
+         * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
          * @param violationAudit the value to set
          * @return this builder
-         */
+         **/
         public Builder violationAudit(ViolationAudit violationAudit) {
             this.violationAudit = violationAudit;
             this.__explicitlySet__.add("violationAudit");
             return this;
         }
-        /** List of allowed ip addresses for the SQL Firewall policy. */
+        /**
+         * List of allowed ip addresses for the SQL Firewall policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedClientIps")
         private java.util.List<String> allowedClientIps;
 
         /**
          * List of allowed ip addresses for the SQL Firewall policy.
-         *
          * @param allowedClientIps the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedClientIps(java.util.List<String> allowedClientIps) {
             this.allowedClientIps = allowedClientIps;
             this.__explicitlySet__.add("allowedClientIps");
             return this;
         }
-        /** List of allowed operating system user names for the SQL Firewall policy. */
+        /**
+         * List of allowed operating system user names for the SQL Firewall policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedClientOsUsernames")
         private java.util.List<String> allowedClientOsUsernames;
 
         /**
          * List of allowed operating system user names for the SQL Firewall policy.
-         *
          * @param allowedClientOsUsernames the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedClientOsUsernames(java.util.List<String> allowedClientOsUsernames) {
             this.allowedClientOsUsernames = allowedClientOsUsernames;
             this.__explicitlySet__.add("allowedClientOsUsernames");
             return this;
         }
-        /** List of allowed client programs for the SQL Firewall policy. */
+        /**
+         * List of allowed client programs for the SQL Firewall policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedClientPrograms")
         private java.util.List<String> allowedClientPrograms;
 
         /**
          * List of allowed client programs for the SQL Firewall policy.
-         *
          * @param allowedClientPrograms the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedClientPrograms(java.util.List<String> allowedClientPrograms) {
             this.allowedClientPrograms = allowedClientPrograms;
             this.__explicitlySet__.add("allowedClientPrograms");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -319,7 +313,9 @@ public final class UpdateSqlFirewallPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -329,37 +325,37 @@ public final class UpdateSqlFirewallPolicyDetails
     }
 
     /**
-     * The display name of the SQL Firewall policy. The name does not have to be unique, and it is
-     * changeable.
-     */
+     * The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the SQL Firewall policy. The name does not have to be unique, and it is
-     * changeable.
-     *
+     * The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description of the SQL Firewall policy. */
+    /**
+     * The description of the SQL Firewall policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the SQL Firewall policy.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Specifies whether the SQL Firewall policy is enabled or disabled. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies whether the SQL Firewall policy is enabled or disabled.
+     **/
+    public enum Status {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         ;
@@ -391,21 +387,24 @@ public final class UpdateSqlFirewallPolicyDetails
             throw new IllegalArgumentException("Invalid Status: " + key);
         }
     };
-    /** Specifies whether the SQL Firewall policy is enabled or disabled. */
+    /**
+     * Specifies whether the SQL Firewall policy is enabled or disabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Specifies whether the SQL Firewall policy is enabled or disabled.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** Specifies the SQL Firewall policy enforcement option. */
-    public enum EnforcementScope implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the SQL Firewall policy enforcement option.
+     **/
+    public enum EnforcementScope {
         EnforceContext("ENFORCE_CONTEXT"),
         EnforceSql("ENFORCE_SQL"),
         EnforceAll("ENFORCE_ALL"),
@@ -438,21 +437,24 @@ public final class UpdateSqlFirewallPolicyDetails
             throw new IllegalArgumentException("Invalid EnforcementScope: " + key);
         }
     };
-    /** Specifies the SQL Firewall policy enforcement option. */
+    /**
+     * Specifies the SQL Firewall policy enforcement option.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enforcementScope")
     private final EnforcementScope enforcementScope;
 
     /**
      * Specifies the SQL Firewall policy enforcement option.
-     *
      * @return the value
-     */
+     **/
     public EnforcementScope getEnforcementScope() {
         return enforcementScope;
     }
 
-    /** Specifies the SQL Firewall action based on detection of SQL Firewall violations. */
-    public enum ViolationAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the SQL Firewall action based on detection of SQL Firewall violations.
+     **/
+    public enum ViolationAction {
         Block("BLOCK"),
         Observe("OBSERVE"),
         ;
@@ -484,24 +486,24 @@ public final class UpdateSqlFirewallPolicyDetails
             throw new IllegalArgumentException("Invalid ViolationAction: " + key);
         }
     };
-    /** Specifies the SQL Firewall action based on detection of SQL Firewall violations. */
+    /**
+     * Specifies the SQL Firewall action based on detection of SQL Firewall violations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("violationAction")
     private final ViolationAction violationAction;
 
     /**
      * Specifies the SQL Firewall action based on detection of SQL Firewall violations.
-     *
      * @return the value
-     */
+     **/
     public ViolationAction getViolationAction() {
         return violationAction;
     }
 
     /**
-     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
-     * policy violations.
-     */
-    public enum ViolationAudit implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
+     **/
+    public enum ViolationAudit {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         ;
@@ -534,101 +536,95 @@ public final class UpdateSqlFirewallPolicyDetails
         }
     };
     /**
-     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
-     * policy violations.
-     */
+     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("violationAudit")
     private final ViolationAudit violationAudit;
 
     /**
-     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall
-     * policy violations.
-     *
+     * Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      * @return the value
-     */
+     **/
     public ViolationAudit getViolationAudit() {
         return violationAudit;
     }
 
-    /** List of allowed ip addresses for the SQL Firewall policy. */
+    /**
+     * List of allowed ip addresses for the SQL Firewall policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedClientIps")
     private final java.util.List<String> allowedClientIps;
 
     /**
      * List of allowed ip addresses for the SQL Firewall policy.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAllowedClientIps() {
         return allowedClientIps;
     }
 
-    /** List of allowed operating system user names for the SQL Firewall policy. */
+    /**
+     * List of allowed operating system user names for the SQL Firewall policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedClientOsUsernames")
     private final java.util.List<String> allowedClientOsUsernames;
 
     /**
      * List of allowed operating system user names for the SQL Firewall policy.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAllowedClientOsUsernames() {
         return allowedClientOsUsernames;
     }
 
-    /** List of allowed client programs for the SQL Firewall policy. */
+    /**
+     * List of allowed client programs for the SQL Firewall policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedClientPrograms")
     private final java.util.List<String> allowedClientPrograms;
 
     /**
      * List of allowed client programs for the SQL Firewall policy.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAllowedClientPrograms() {
         return allowedClientPrograms;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -640,7 +636,6 @@ public final class UpdateSqlFirewallPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,26 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The policy that specifies the maintenance and upgrade preferences for an environment. For more
- * information about the options, see [Understanding Environment
- * Maintenance](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GetMaintenancePolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GetMaintenancePolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GetMaintenancePolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "quarterlyUpgradeBeginTimes",
@@ -54,19 +50,16 @@ public final class GetMaintenancePolicyDetails
             return this;
         }
         /**
-         * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle.
-         * This setting overrides the monthly patching setting of its Fusion environment family.
-         */
+         * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monthlyPatchingOverride")
         private MaintenancePolicy.MonthlyPatchingOverride monthlyPatchingOverride;
 
         /**
-         * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle.
-         * This setting overrides the monthly patching setting of its Fusion environment family.
-         *
+         * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
          * @param monthlyPatchingOverride the value to set
          * @return this builder
-         */
+         **/
         public Builder monthlyPatchingOverride(
                 MaintenancePolicy.MonthlyPatchingOverride monthlyPatchingOverride) {
             this.monthlyPatchingOverride = monthlyPatchingOverride;
@@ -74,19 +67,16 @@ public final class GetMaintenancePolicyDetails
             return this;
         }
         /**
-         * User choice to upgrade both production and non-production environments at the same time.
-         * Overrides the Fusion environment family setting.
-         */
+         * User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentMaintenanceOverride")
         private MaintenancePolicy.EnvironmentMaintenanceOverride environmentMaintenanceOverride;
 
         /**
-         * User choice to upgrade both production and non-production environments at the same time.
-         * Overrides the Fusion environment family setting.
-         *
+         * User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
          * @param environmentMaintenanceOverride the value to set
          * @return this builder
-         */
+         **/
         public Builder environmentMaintenanceOverride(
                 MaintenancePolicy.EnvironmentMaintenanceOverride environmentMaintenanceOverride) {
             this.environmentMaintenanceOverride = environmentMaintenanceOverride;
@@ -124,7 +114,9 @@ public final class GetMaintenancePolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,35 +133,29 @@ public final class GetMaintenancePolicyDetails
     }
 
     /**
-     * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle.
-     * This setting overrides the monthly patching setting of its Fusion environment family.
-     */
+     * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("monthlyPatchingOverride")
     private final MaintenancePolicy.MonthlyPatchingOverride monthlyPatchingOverride;
 
     /**
-     * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle.
-     * This setting overrides the monthly patching setting of its Fusion environment family.
-     *
+     * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
      * @return the value
-     */
+     **/
     public MaintenancePolicy.MonthlyPatchingOverride getMonthlyPatchingOverride() {
         return monthlyPatchingOverride;
     }
 
     /**
-     * User choice to upgrade both production and non-production environments at the same time.
-     * Overrides the Fusion environment family setting.
-     */
+     * User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentMaintenanceOverride")
     private final MaintenancePolicy.EnvironmentMaintenanceOverride environmentMaintenanceOverride;
 
     /**
-     * User choice to upgrade both production and non-production environments at the same time.
-     * Overrides the Fusion environment family setting.
-     *
+     * User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
      * @return the value
-     */
+     **/
     public MaintenancePolicy.EnvironmentMaintenanceOverride getEnvironmentMaintenanceOverride() {
         return environmentMaintenanceOverride;
     }
@@ -181,7 +167,6 @@ public final class GetMaintenancePolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

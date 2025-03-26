@@ -5,17 +5,22 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The execution statuses for a DR plan group. - QUEUED - DR plan group execution has been queued. -
- * DISABLED - DR plan group execution has been disabled. - IN_PROGRESS - DR plan group execution is
- * in progress. - SUCCEEDED - DR plan group execution has succeeded. - SUCCEEDED_WITH_WARNING - DR
- * plan group execution has succeeded, but with warnings. - FAILED - DR plan group execution has
- * failed. - FAILED_IGNORED - DR plan group execution has failed, but was ignored. - TIMED_OUT - DR
- * plan group execution has timed out. - TIMED_OUT_IGNORED - DR plan group execution has timed out,
- * but was ignored. - PAUSED - DR plan group execution is paused. - CANCELED - DR plan group
- * execution has been canceled.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DrPlanGroupExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
+ * The execution statuses for a DR plan group.
+ * - QUEUED - DR plan group execution has been queued.
+ * - DISABLED - DR plan group execution has been disabled.
+ * - IN_PROGRESS - DR plan group execution is in progress.
+ * - SUCCEEDED - DR plan group execution has succeeded.
+ * - SUCCEEDED_WITH_WARNING - DR plan group execution has succeeded, but with warnings.
+ * - FAILED - DR plan group execution has failed.
+ * - FAILED_IGNORED - DR plan group execution has failed, but was ignored.
+ * - TIMED_OUT - DR plan group execution has timed out.
+ * - TIMED_OUT_IGNORED - DR plan group execution has timed out, but was ignored.
+ * - PAUSED - DR plan group execution is paused.
+ * - CANCELED - DR plan group execution has been canceled.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum DrPlanGroupExecutionStatus {
     Queued("QUEUED"),
     Disabled("DISABLED"),
     InProgress("IN_PROGRESS"),

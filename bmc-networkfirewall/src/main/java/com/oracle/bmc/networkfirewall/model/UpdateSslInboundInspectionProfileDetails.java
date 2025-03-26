@@ -5,53 +5,55 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Update Request for SSLInboundInspection used on the firewall policy rules. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Update Request for SSLInboundInspection used on the firewall policy rules.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateSslInboundInspectionProfileDetails.Builder.class)
+    builder = UpdateSslInboundInspectionProfileDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateSslInboundInspectionProfileDetails extends UpdateDecryptionProfileDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Whether to block sessions if SSL version is not supported. */
+        /**
+         * Whether to block sessions if SSL version is not supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedVersionBlocked")
         private Boolean isUnsupportedVersionBlocked;
 
         /**
          * Whether to block sessions if SSL version is not supported.
-         *
          * @param isUnsupportedVersionBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnsupportedVersionBlocked(Boolean isUnsupportedVersionBlocked) {
             this.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
             this.__explicitlySet__.add("isUnsupportedVersionBlocked");
             return this;
         }
-        /** Whether to block sessions if SSL cipher suite is not supported. */
+        /**
+         * Whether to block sessions if SSL cipher suite is not supported.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedCipherBlocked")
         private Boolean isUnsupportedCipherBlocked;
 
         /**
          * Whether to block sessions if SSL cipher suite is not supported.
-         *
          * @param isUnsupportedCipherBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnsupportedCipherBlocked(Boolean isUnsupportedCipherBlocked) {
             this.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
             this.__explicitlySet__.add("isUnsupportedCipherBlocked");
@@ -59,16 +61,15 @@ public final class UpdateSslInboundInspectionProfileDetails extends UpdateDecryp
         }
         /**
          * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOutOfCapacityBlocked")
         private Boolean isOutOfCapacityBlocked;
 
         /**
          * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-         *
          * @param isOutOfCapacityBlocked the value to set
          * @return this builder
-         */
+         **/
         public Builder isOutOfCapacityBlocked(Boolean isOutOfCapacityBlocked) {
             this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
             this.__explicitlySet__.add("isOutOfCapacityBlocked");
@@ -105,7 +106,9 @@ public final class UpdateSslInboundInspectionProfileDetails extends UpdateDecryp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,41 +128,44 @@ public final class UpdateSslInboundInspectionProfileDetails extends UpdateDecryp
         this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
     }
 
-    /** Whether to block sessions if SSL version is not supported. */
+    /**
+     * Whether to block sessions if SSL version is not supported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedVersionBlocked")
     private final Boolean isUnsupportedVersionBlocked;
 
     /**
      * Whether to block sessions if SSL version is not supported.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUnsupportedVersionBlocked() {
         return isUnsupportedVersionBlocked;
     }
 
-    /** Whether to block sessions if SSL cipher suite is not supported. */
+    /**
+     * Whether to block sessions if SSL cipher suite is not supported.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsupportedCipherBlocked")
     private final Boolean isUnsupportedCipherBlocked;
 
     /**
      * Whether to block sessions if SSL cipher suite is not supported.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUnsupportedCipherBlocked() {
         return isUnsupportedCipherBlocked;
     }
 
-    /** Whether to block sessions if the firewall is temporarily unable to decrypt their traffic. */
+    /**
+     * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutOfCapacityBlocked")
     private final Boolean isOutOfCapacityBlocked;
 
     /**
      * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOutOfCapacityBlocked() {
         return isOutOfCapacityBlocked;
     }
@@ -171,7 +177,6 @@ public final class UpdateSslInboundInspectionProfileDetails extends UpdateDecryp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

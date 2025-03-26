@@ -5,23 +5,22 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Backup Copy Status details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Backup Copy Status details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BackupCopyStatusDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BackupCopyStatusDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BackupCopyStatusDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"state", "stateDetails", "backupId", "region"})
     public BackupCopyStatusDetails(
@@ -35,65 +34,65 @@ public final class BackupCopyStatusDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Copy States */
+        /**
+         * Copy States
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
         /**
          * Copy States
-         *
          * @param state the value to set
          * @return this builder
-         */
+         **/
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /** A message describing the current state of copy in more detail */
+        /**
+         * A message describing the current state of copy in more detail
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateDetails")
         private String stateDetails;
 
         /**
          * A message describing the current state of copy in more detail
-         *
          * @param stateDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder stateDetails(String stateDetails) {
             this.stateDetails = stateDetails;
             this.__explicitlySet__.add("stateDetails");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup in the source region
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup in the source region
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
          * @param backupId the value to set
          * @return this builder
-         */
+         **/
         public Builder backupId(String backupId) {
             this.backupId = backupId;
             this.__explicitlySet__.add("backupId");
             return this;
         }
-        /** Region name of the remote region */
+        /**
+         * Region name of the remote region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Region name of the remote region
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -131,7 +130,9 @@ public final class BackupCopyStatusDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,16 +141,18 @@ public final class BackupCopyStatusDetails
         return new Builder().copy(this);
     }
 
-    /** Copy States */
-    public enum State implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Copy States
+     **/
+    public enum State {
         NotStarted("NOT_STARTED"),
         Copying("COPYING"),
         Copied("COPIED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -187,58 +190,58 @@ public final class BackupCopyStatusDetails
             return UnknownEnumValue;
         }
     };
-    /** Copy States */
+    /**
+     * Copy States
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
     /**
      * Copy States
-     *
      * @return the value
-     */
+     **/
     public State getState() {
         return state;
     }
 
-    /** A message describing the current state of copy in more detail */
+    /**
+     * A message describing the current state of copy in more detail
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateDetails")
     private final String stateDetails;
 
     /**
      * A message describing the current state of copy in more detail
-     *
      * @return the value
-     */
+     **/
     public String getStateDetails() {
         return stateDetails;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup in the source region
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup in the source region
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
      * @return the value
-     */
+     **/
     public String getBackupId() {
         return backupId;
     }
 
-    /** Region name of the remote region */
+    /**
+     * Region name of the remote region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Region name of the remote region
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
@@ -250,7 +253,6 @@ public final class BackupCopyStatusDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -30,10 +30,8 @@ public class UserEmailExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -44,9 +42,9 @@ public class UserEmailExample {
         final String tenantId = provider.getTenantId();
         System.out.println("tenantId: " + tenantId);
 
-        Identity identityClient = IdentityClient.builder().build(provider);
+        Identity identityClient = new IdentityClient(provider);
 
-        // Create new user with email
+        //Create new user with email
         CreateUserDetails createUserDetails =
                 CreateUserDetails.builder()
                         .compartmentId(tenantId)
@@ -65,7 +63,7 @@ public class UserEmailExample {
                         + " with email: "
                         + createUserResponse.getUser().getEmail());
 
-        // Update existing user email
+        //Update existing user email
         UpdateUserDetails updateUserDetails =
                 UpdateUserDetails.builder().email("SDKsampleEmail2").build();
         UpdateUserRequest updateUserRequest =
@@ -81,7 +79,7 @@ public class UserEmailExample {
                         + " with email: "
                         + updateUserResponse.getUser().getEmail());
 
-        // Get user details with email
+        //Get user details with email
         GetUserRequest getUserRequest = GetUserRequest.builder().userId(userId).build();
         GetUserResponse getUserResponse = identityClient.getUser(getUserRequest);
 

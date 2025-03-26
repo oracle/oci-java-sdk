@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.optimizer.model;
 
-/** Possible importance types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
-public enum Importance implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible importance types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+public enum Importance {
     Critical("CRITICAL"),
     High("HIGH"),
     Moderate("MODERATE"),
